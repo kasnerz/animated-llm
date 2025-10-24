@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { useApp } from '../contexts/AppContext';
 import { useTranslation } from '../utils/i18n';
 import * as d3 from 'd3';
+import { gsap } from 'gsap';
 import config from '../config';
 import '../styles/visualization.css';
 
@@ -10,13 +11,14 @@ import '../styles/visualization.css';
  * Main SVG container for all D3 visualizations
  */
 function VisualizationCanvas() {
-  const { state } = useApp();
+  const { state, actions } = useApp();
   const { t } = useTranslation();
   const svgRef = useRef(null);
   const containerRef = useRef(null);
   const [isExpanded, setIsExpanded] = useState(false);
   const [embeddingExpanded, setEmbeddingExpanded] = useState({});
   const tokensLayoutRef = useRef({ positions: [], widths: [], visibleIndices: [], gap: 24, shouldCollapse: false });
+  const gsapRef = useRef(null);
 
   // Initialize SVG and get dimensions
   useEffect(() => {
@@ -53,45 +55,109 @@ function VisualizationCanvas() {
     const g = svg.append('g').attr('class', 'visualization-main');
 
     const tokenGroup = g.append('g').attr('class', 'token-group');
-    const embeddingGroup = g.append('g').attr('class', 'embedding-group');
-    const transformerGroup = g.append('g').attr('class', 'transformer-group');
+    const embeddingGroup = g.append('g').attr('class', 'embedding-group'); // outside (top)
+    const transformerGroup = g.append('g').attr('class', 'transformer-group'); // inside block
+    const bottomEmbeddingGroup = g.append('g').attr('class', 'bottom-embedding-group'); // outside (bottom)
     const outputGroup = g.append('g').attr('class', 'output-group');
 
     // Get SVG dimensions
     const width = parseFloat(svg.attr('width')) || 800;
     const height = parseFloat(svg.attr('height')) || 900;
 
-  // Determine if we need to collapse tokens
-  const maxVisibleTokens = Math.floor(width / 140) - 1; // basic heuristic; dynamic sizing handled below
+    // Determine if we need to collapse tokens
+    const maxVisibleTokens = Math.floor(width / 140) - 1; // basic heuristic; dynamic sizing handled below
     const shouldCollapse = step.tokens.length > maxVisibleTokens && !isExpanded;
 
     // Layout configuration with proper spacing
     const layout = {
-      tokenY: 90,
-      embeddingY: 240,
-      transformerY: 440,
-      outputY: 720,
+      tokenY: 80,
+      embeddingY: 200, // shifted down to leave room for ID → embedding arrows
       margin: 20,
       tokenSpacing: 140,
-      embeddingHeight: 100
+      blockPadding: 30,
     };
 
     // 1. Render tokens
-  renderTokens(tokenGroup, step, layout, width, shouldCollapse, maxVisibleTokens);
+    renderTokens(tokenGroup, step, layout, width, shouldCollapse, maxVisibleTokens);
 
     // 2. Render embeddings
-  renderEmbeddings(embeddingGroup, step, layout, width, shouldCollapse, maxVisibleTokens);
+    const outerMeta = renderOuterEmbeddings(embeddingGroup, step, layout, width, shouldCollapse, maxVisibleTokens);
 
-    // 3. Render transformer block
-    renderTransformer(transformerGroup, step, layout, width);
+    // 3. New transformer block pipeline
+    const blockMeta = renderTransformerBlock(transformerGroup, step, layout, width, outerMeta);
 
-    // 4. Render output distribution
+    // 4. Bottom outside embeddings + FFN arrows
+    const afterBottomY = renderBottomEmbeddings(bottomEmbeddingGroup, step, layout, width, blockMeta);
+
+    // 5. Output distribution below
+    const outputYOffset = 220;
+    layout.outputY = afterBottomY + outputYOffset;
     renderOutput(outputGroup, step, layout, width);
 
     // Add expand/collapse button if needed
     if (step.tokens.length > maxVisibleTokens) {
       renderExpandButton(g, layout, width, isExpanded);
     }
+
+    // Animate the sequence using GSAP
+    if (gsapRef.current) {
+      gsapRef.current.kill();
+      gsapRef.current = null;
+    }
+
+    const total = state.animationSpeed || config.defaults.animationSpeed || 10;
+    const phases = config.animation.phases;
+    const dToken = total * phases.tokenization; // tokens
+    const dIds = total * phases.tokenIds; // id arrows + ids
+    const dEmb = total * phases.embeddings; // outside embeddings
+    const dTrans = total * phases.transformer; // transformer internals
+    const dOut = total * phases.output; // bottom + output (minimal)
+
+    // Initial states
+    gsap.set(svgRef.current.querySelectorAll('.token'), { opacity: 0 });
+    gsap.set(svgRef.current.querySelectorAll('.token-id'), { opacity: 0 });
+    gsap.set(svgRef.current.querySelectorAll('.token-id-arrow'), { opacity: 0 });
+    gsap.set(svgRef.current.querySelectorAll('.embedding-group, .embedding-group *'), { opacity: 0, y: -8 });
+    gsap.set(svgRef.current.querySelectorAll('.transformer-group .transformer-box'), { opacity: 0, scaleY: 0.95, transformOrigin: '50% 0%' });
+    gsap.set(svgRef.current.querySelectorAll('.transformer-group .inside-top-embeddings, .transformer-group .inside-top-embeddings *'), { opacity: 0, y: -8 });
+    gsap.set(svgRef.current.querySelectorAll('.transformer-group .attention-mash, .transformer-group .attention-mash *'), { opacity: 0 });
+    gsap.set(svgRef.current.querySelectorAll('.transformer-group .inside-bottom-embeddings, .transformer-group .inside-bottom-embeddings *'), { opacity: 0, y: 8 });
+    gsap.set(svgRef.current.querySelectorAll('.bottom-embedding-group, .bottom-embedding-group *'), { opacity: 0, y: 8 });
+    gsap.set(svgRef.current.querySelectorAll('.id-to-emb-arrow'), { opacity: 0 });
+    gsap.set(svgRef.current.querySelectorAll('.outer-to-block-arrow'), { opacity: 0 });
+    gsap.set(svgRef.current.querySelectorAll('.ffn-arrow'), { opacity: 0 });
+    gsap.set(svgRef.current.querySelectorAll('.output-group'), { opacity: 0 });
+
+    const tl = gsap.timeline({ defaults: { ease: 'power2.out' } });
+
+    // 1) Tokens appear (nearly all at once)
+    tl.to(svgRef.current.querySelectorAll('.token'), { opacity: 1, duration: dToken * 0.7, stagger: 0.02 });
+
+    // 2) Token IDs + token→ID arrows
+    tl.to(svgRef.current.querySelectorAll('.token-id-arrow'), { opacity: 1, duration: dIds * 0.4 }, '>-0.2');
+    tl.to(svgRef.current.querySelectorAll('.token-id'), { opacity: 1, duration: dIds * 0.6, stagger: 0.02 }, '<');
+
+    // 3) Outside embeddings + ID→Embedding arrows
+    tl.to(svgRef.current.querySelectorAll('.embedding-group, .embedding-group *'), { opacity: 1, y: 0, duration: dEmb * 0.7 });
+    tl.to(svgRef.current.querySelectorAll('.id-to-emb-arrow'), { opacity: 1, duration: dEmb * 0.3 }, '<');
+
+    // 4) Transformer block internals
+    tl.to(svgRef.current.querySelectorAll('.transformer-group .transformer-box'), { opacity: 1, scaleY: 1, duration: dTrans * 0.1 });
+    tl.to(svgRef.current.querySelectorAll('.transformer-group .inside-top-embeddings, .transformer-group .inside-top-embeddings *'), { opacity: 1, y: 0, duration: dTrans * 0.2 });
+    tl.to(svgRef.current.querySelectorAll('.outer-to-block-arrow'), { opacity: 1, duration: dTrans * 0.1 }, '<');
+    tl.to(svgRef.current.querySelectorAll('.transformer-group .attention-mash, .transformer-group .attention-mash *'), { opacity: 1, duration: dTrans * 0.3 });
+    tl.to(svgRef.current.querySelectorAll('.transformer-group .inside-bottom-embeddings, .transformer-group .inside-bottom-embeddings *'), { opacity: 1, y: 0, duration: dTrans * 0.2 });
+    tl.to(svgRef.current.querySelectorAll('.ffn-arrow'), { opacity: 1, duration: dTrans * 0.2 }, '<');
+
+    // 5) Outside bottom embeddings + output
+    tl.to(svgRef.current.querySelectorAll('.bottom-embedding-group, .bottom-embedding-group *'), { opacity: 1, y: 0, duration: dOut * 0.5 });
+    tl.to(svgRef.current.querySelectorAll('.output-group'), { opacity: 1, duration: dOut * 0.5 });
+
+    tl.eventCallback('onComplete', () => {
+      actions.setIsPlaying(false);
+    });
+
+    gsapRef.current = tl;
 
   }, [state.currentStep, state.currentExample, isExpanded, embeddingExpanded]);
 
@@ -176,229 +242,304 @@ function VisualizationCanvas() {
         .style('fill', '#1a1a1a')
         .text(token);
 
-      // Arrow from token to ID
-      group.append('line')
-        .attr('x1', x)
-        .attr('y1', layout.tokenY + 30)
-        .attr('x2', x)
-        .attr('y2', layout.tokenY + 55)
+      // Arrow from token to ID (now appended to tokenG for relative positioning)
+      const arrowG = tokenG.append('g').attr('class', 'token-id-arrow');
+      arrowG.append('line')
+        .attr('x1', 0) // Relative to tokenG center
+        .attr('y1', 26)
+        .attr('x2', 0) // Relative to tokenG center
+        .attr('y2', 46)
         .style('stroke', '#ccc')
         .style('stroke-width', 1.5)
-        .style('opacity', 0.5);
+        .style('opacity', 0.7);
 
-      // Arrow head
-      group.append('polygon')
-        .attr('points', `${x},${layout.tokenY + 55} ${x - 4},${layout.tokenY + 48} ${x + 4},${layout.tokenY + 48}`)
+      arrowG.append('polygon')
+        .attr('points', `0,46 -4,40 4,40`) // Relative to tokenG center
         .style('fill', '#ccc')
-        .style('opacity', 0.5);
+        .style('opacity', 0.7);
 
-      // Token ID below - without "ID: " prefix, further down
+      // Token ID below - monospace numeric
       tokenG.append('text')
         .attr('text-anchor', 'middle')
-        .attr('y', 70)
+        .attr('y', 58)
         .attr('class', 'token-id')
-        .style('font-size', '14px')
+        .style('font-size', '20px')
         .style('fill', 'var(--text-secondary)')
         .text(step.token_ids[actualIndex]);
     });
-    
+
     // Render combined ellipsis between tokens and embeddings if collapsed
     if (shouldCollapse) {
-  const edgeCount = Math.floor(maxVisibleTokens / 2);
-  const ellipsisIndex = edgeCount; // index in visibleTokens
-  const ellipsisX = positions[ellipsisIndex];
-      const ellipsisY = (layout.tokenY + layout.embeddingY) / 2;
-      
-      group.append('text')
-        .attr('x', ellipsisX)
-        .attr('y', ellipsisY)
+      const edgeCount = Math.floor(maxVisibleTokens / 2);
+      const ellipsisIndex = edgeCount; // index in visibleTokens
+      const ellipsisX = positions[ellipsisIndex];
+
+      // Render ellipsis as a token-level group so it aligns exactly with IDs and animates with tokens
+      const ellipsisG = group.append('g')
+        .attr('class', 'token token-ellipsis')
+        .attr('transform', `translate(${ellipsisX}, ${layout.tokenY})`);
+      ellipsisG.append('text')
         .attr('text-anchor', 'middle')
-        .style('font-size', '24px')
-        .style('font-weight', 'bold')
+        .attr('y', 58)
+        .attr('class', 'token-id')
+        .style('font-size', '20px')
         .style('fill', 'var(--text-tertiary)')
         .text('⋯');
     }
   };
 
   /**
-   * Render embeddings
+   * Render outside (top) embeddings as vertical compact columns
    */
-  const renderEmbeddings = (group, step, layout, width, shouldCollapse, maxVisibleTokens) => {
+  const renderOuterEmbeddings = (group, step, layout, width, shouldCollapse, maxVisibleTokens) => {
     const embeddings = step.embeddings;
-
-    // Use token layout to determine visible indices and positions
     const { visibleIndices = [], positions = [] } = tokensLayoutRef.current || {};
+
+    const columnsMeta = [];
+    let maxOuterHeight = 0;
 
     visibleIndices.forEach((actualIndex, i) => {
       const x = positions[i] ?? (width / 2);
-      const embedding = actualIndex >= 0 ? embeddings[actualIndex] : null;
-      const embG = group.append('g')
-        .attr('class', 'embedding')
-        .attr('transform', `translate(${x}, ${layout.embeddingY})`);
+      if (actualIndex < 0) { columnsMeta.push(null); return; }
+      const values = embeddings[actualIndex]?.values || [];
+      const expanded = !!embeddingExpanded[actualIndex];
+      const meta = drawEmbeddingColumn(group, x, layout.embeddingY, values, { expanded, interactive: true, index: actualIndex });
+      columnsMeta.push(meta);
+      maxOuterHeight = Math.max(maxOuterHeight, meta.height);
 
-      // Handle ellipsis - skip, already rendered in tokens section
-      if (embedding === null) {
-        return;
-      }
-
-      // Embedding visualization as rounded squares in a row
-      const boxSize = 16;
-      const boxSpacing = 3;
-      const embeddingValues = embedding.values || [];
-      const isEmbExpanded = embeddingExpanded[actualIndex];
-
-      // Show first 2, ellipsis, last 2, or all if expanded
-      let displayValues = embeddingValues;
-      let hasEllipsis = false;
-
-      if (!isEmbExpanded && embeddingValues.length > 4) {
-        displayValues = [
-          ...embeddingValues.slice(0, 2),
-          null, // ellipsis marker
-          ...embeddingValues.slice(-2)
-        ];
-        hasEllipsis = true;
-      }
-
-      const totalBoxWidth = displayValues.length * (boxSize + boxSpacing) - boxSpacing;
-      const startBoxX = -totalBoxWidth / 2;
-
-      displayValues.forEach((value, j) => {
-        const boxX = startBoxX + j * (boxSize + boxSpacing);
-
-        if (value === null) {
-          // Ellipsis for hidden embedding dimensions
-          const ellipsisG = embG.append('g')
-            .attr('class', 'embedding-ellipsis')
-            .style('cursor', 'pointer')
-            .on('click', () => {
-              setEmbeddingExpanded(prev => ({
-                ...prev,
-                [actualIndex]: !prev[actualIndex]
-              }));
-            });
-
-          const ellipsisRect = ellipsisG.append('rect')
-            .attr('x', boxX)
-            .attr('y', -boxSize / 2)
-            .attr('width', boxSize)
-            .attr('height', boxSize)
-            .attr('rx', 3)
-            .attr('ry', 3)
-            .style('fill', '#f0f0f0')
-            .style('stroke', '#ddd')
-            .style('stroke-width', 1);
-
-          ellipsisG.append('text')
-            .attr('x', boxX + boxSize / 2)
-            .attr('y', boxSize / 2 - 3)
-            .attr('text-anchor', 'middle')
-            .style('font-size', '12px')
-            .style('font-weight', 'bold')
-            .style('fill', '#999')
-            .text('⋯');
-
-          // Hover effects
-          ellipsisG.on('mouseenter', function () {
-            ellipsisRect
-              .transition()
-              .duration(200)
-              .style('fill', '#e0e0e0')
-              .style('stroke', '#bbb');
-          }).on('mouseleave', function () {
-            ellipsisRect
-              .transition()
-              .duration(200)
-              .style('fill', '#f0f0f0')
-              .style('stroke', '#ddd');
-          });
-
-          return;
-        }
-
-        // Rounded square background
-        embG.append('rect')
-          .attr('x', boxX)
-          .attr('y', -boxSize / 2)
-          .attr('width', boxSize)
-          .attr('height', boxSize)
-          .attr('rx', 3)
-          .attr('ry', 3)
-          .attr('class', 'embedding-box')
-          .style('fill', '#e0e0e0')
-          .style('stroke', 'none');
-
-        // Value text inside
-        embG.append('text')
-          .attr('x', boxX + boxSize / 2)
-          .attr('y', boxSize / 2 - 4)
-          .attr('text-anchor', 'middle')
-          .attr('class', 'embedding-value')
-          .style('font-size', '8px')
-          .style('fill', '#333')
-          .text(value.toFixed(1));
-      });
-
-      // Connecting line from token to embedding (skip for ellipsis tokens)
-      if (actualIndex >= 0) {
-        group.append('line')
-          .attr('x1', x)
-          .attr('y1', layout.tokenY + 50)
-          .attr('x2', x)
-          .attr('y2', layout.embeddingY - 20)
-          .attr('class', 'connection-line')
-          .style('stroke', '#ccc')
-          .style('stroke-width', 1)
-          .style('opacity', 0.5);
-      }
+      // Arrow from token ID to embedding top
+      drawArrow(group, x, layout.tokenY + 68, x, meta.topY - 8, { className: 'id-to-emb-arrow' });
     });
+
+    return { columnsMeta, maxOuterHeight };
   };
 
-  /**
-   * Render transformer block
-   */
-  const renderTransformer = (group, step, layout, width) => {
-    const centerX = width / 2;
-    const boxWidth = 400;
-    const boxHeight = 140;
+  // Draw a compact vertical embedding column (rectangle divided into square cells)
+  const drawEmbeddingColumn = (group, centerX, topY, values, opts = {}) => {
+    const { expanded = false, interactive = false, index = -1 } = opts;
+    const cellSize = 16; // larger squares
+    const cellGap = 3;
+    const padding = 6; // larger rectangle padding
 
-    // Transformer box
-    group.append('rect')
-      .attr('x', centerX - boxWidth / 2)
-      .attr('y', layout.transformerY - boxHeight / 2)
-      .attr('width', boxWidth)
-      .attr('height', boxHeight)
-      .attr('class', 'transformer-block')
-      .attr('rx', 10)
-      .style('fill', '#f8f9fa')
-      .style('stroke', '#ddd')
-      .style('stroke-width', 2);
-
-    // Label
-    group.append('text')
-      .attr('x', centerX)
-      .attr('y', layout.transformerY - 40)
-      .attr('text-anchor', 'middle')
-      .attr('class', 'transformer-label')
-      .style('font-size', '18px')
-      .style('font-weight', '600')
-      .text('Transformer Block');
-
-    // Show some activation values
-    const sampleActivations = step.transformer_processing?.sample_activations || [];
-    if (sampleActivations.length > 0 && sampleActivations[0].values) {
-      const activationValues = sampleActivations[0].values.slice(0, 4);
-      activationValues.forEach((value, i) => {
-        group.append('text')
-          .attr('x', centerX)
-          .attr('y', layout.transformerY - 10 + i * 16)
-          .attr('text-anchor', 'middle')
-          .attr('class', 'activation-value')
-          .style('font-size', '12px')
-          .style('fill', '#666')
-          .text(`a${i}: ${value.toFixed(3)}`);
-      });
+    let displayValues = values;
+    if (!expanded && values.length > 4) {
+      displayValues = [...values.slice(0, 2), null, ...values.slice(-2)];
     }
+    const n = displayValues.length;
+    const width = cellSize + padding * 2;
+    const height = n * cellSize + (n - 1) * cellGap + padding * 2;
+    const leftX = centerX - width / 2;
+
+    // Outer rect
+    group.append('rect')
+      .attr('x', leftX)
+      .attr('y', topY)
+      .attr('width', width)
+      .attr('height', height)
+      .attr('rx', 4)
+      .style('fill', '#f2f3f5')
+      .style('stroke', '#e0e0e0');
+
+    // Cells
+    displayValues.forEach((v, i) => {
+      const y = topY + padding + i * (cellSize + cellGap);
+      if (v === null) {
+        const ellG = group.append('g');
+        const r = ellG.append('rect')
+          .attr('x', centerX - cellSize / 2)
+          .attr('y', y)
+          .attr('width', cellSize)
+          .attr('height', cellSize)
+          .attr('rx', 2)
+          .style('fill', '#e9eaed')
+          .style('stroke', '#d0d0d0');
+        ellG.append('text')
+          .attr('x', centerX)
+          .attr('y', y + cellSize / 2 + 3)
+          .attr('text-anchor', 'middle')
+          .style('font-size', '12px')
+          .style('fill', '#9aa0a6')
+          .text('⋯');
+        if (interactive) {
+          ellG.style('cursor', 'pointer')
+            .on('click', () => {
+              setEmbeddingExpanded(prev => ({ ...prev, [index]: !prev[index] }));
+            });
+        }
+        return;
+      }
+      const cell = group.append('rect')
+        .attr('x', centerX - cellSize / 2)
+        .attr('y', y)
+        .attr('width', cellSize)
+        .attr('height', cellSize)
+        .attr('rx', 2)
+        .style('fill', getEmbeddingColor(v))
+        .style('stroke', 'transparent');
+
+      // Numeric value inside each square
+      group.append('text')
+        .attr('x', centerX)
+        .attr('y', y + cellSize / 2 + 3)
+        .attr('text-anchor', 'middle')
+        .style('font-size', '9px')
+        .style('fill', '#333')
+        .text((typeof v === 'number') ? v.toFixed(1) : '');
+    });
+
+    return { topY, bottomY: topY + height, height, width, centerX };
+  };
+
+  // Utility to draw an arrow with optional small box (for FFN)
+  const drawArrow = (group, x1, y1, x2, y2, opts = {}) => {
+    const { withBox = false, className = '' } = opts;
+    const arrowG = group.append('g').attr('class', className);
+    arrowG.append('line')
+      .attr('x1', x1)
+      .attr('y1', y1)
+      .attr('x2', x2)
+      .attr('y2', y2)
+      .style('stroke', '#b0b0b0')
+      .style('stroke-width', 1.5)
+      .style('opacity', 0.8);
+
+    const angle = Math.atan2(y2 - y1, x2 - x1);
+    const headLen = 6;
+    const hx = x2 - Math.cos(angle) * headLen;
+    const hy = y2 - Math.sin(angle) * headLen;
+    const points = `${x2},${y2} ${hx - Math.sin(angle) * 3},${hy + Math.cos(angle) * 3} ${hx + Math.sin(angle) * 3},${hy - Math.cos(angle) * 3}`;
+    arrowG.append('polygon')
+      .attr('points', points)
+      .style('fill', '#b0b0b0')
+      .style('opacity', 0.8);
+
+    if (withBox) {
+      arrowG.append('rect')
+        .attr('x', x1 - 6)
+        .attr('y', y1 + 6)
+        .attr('width', 12)
+        .attr('height', 12)
+        .attr('rx', 2)
+        .style('fill', '#e8e8ff')
+        .style('stroke', '#c0c0ff')
+        .style('opacity', 0.9);
+    }
+  };
+
+  // New transformer block between outside embeddings
+  const renderTransformerBlock = (group, step, layout, width, outerMeta) => {
+    const { visibleIndices = [], positions = [] } = tokensLayoutRef.current || {};
+    const columnsMeta = outerMeta.columnsMeta;
+
+    // Determine block horizontal bounds from visible token positions
+    const validXs = positions.filter((_, i) => visibleIndices[i] >= 0);
+    if (validXs.length === 0) {
+      return { blockTopY: layout.embeddingY, blockBottomY: layout.embeddingY, insideBottomMeta: [] };
+    }
+    const minX = Math.min(...validXs) - 60;
+    const maxX = Math.max(...validXs) + 60;
+
+    const afterOuterBottom = layout.embeddingY + outerMeta.maxOuterHeight;
+    const blockTopY = afterOuterBottom + 40;
+    const insideTopY = blockTopY + layout.blockPadding;
+
+    // Inside top embeddings (copy of outside top values)
+    const embeddings = step.embeddings;
+    const insideTopGroup = group.append('g').attr('class', 'inside-top-embeddings');
+    const insideTopMeta = [];
+    let maxInsideTopHeight = 0;
+    visibleIndices.forEach((actualIndex, i) => {
+      const x = positions[i];
+      if (actualIndex < 0) { insideTopMeta.push(null); return; }
+      const vals = embeddings[actualIndex]?.values || [];
+      const meta = drawEmbeddingColumn(insideTopGroup, x, insideTopY, vals, { expanded: false });
+      insideTopMeta.push(meta);
+      maxInsideTopHeight = Math.max(maxInsideTopHeight, meta.height);
+      // Arrow from outside embeddings into the block
+      const outerCol = columnsMeta[i];
+      if (outerCol) {
+        drawArrow(group, x, outerCol.bottomY + 4, x, meta.topY - 8, { className: 'outer-to-block-arrow' });
+      }
+    });
+
+    // Attention mash: all-to-all lines between token centers with varied color/thickness
+    const attentionYTop = insideTopY + maxInsideTopHeight + 20;
+    const insideBottomY = attentionYTop + 60;
+    const attentionGroup = group.append('g').attr('class', 'attention-mash');
+    const centers = insideTopMeta.map(m => (m ? { x: m.centerX } : null));
+    centers.forEach((a, i) => {
+      if (!a) return;
+      centers.forEach((b, j) => {
+        if (!b || i === j) return;
+        // Deterministic pseudo-random strength per pair
+        const s = Math.abs(Math.sin((i * 37 + j * 17) * 12.9898)) % 1; // 0..1
+        const t = 1 - s; // color mix factor: 0 -> turquoise, 1 -> grey
+        const color = d3.interpolateRgb('#2EC4B6', '#B8C0CC')(t);
+        const width = 0.6 + s * 2.0;
+        const opacity = 0.35 + s * 0.35;
+
+        attentionGroup.append('line')
+          .attr('x1', a.x)
+          .attr('y1', attentionYTop - 30)
+          .attr('x2', b.x)
+          .attr('y2', attentionYTop + 30)
+          .style('stroke', color)
+          .style('stroke-width', width)
+          .style('opacity', opacity);
+      });
+    });
+
+    // Inside bottom embeddings (post-attention)
+    const insideBottomGroup = group.append('g').attr('class', 'inside-bottom-embeddings');
+    const insideBottomMeta = [];
+    let maxInsideBottomHeight = 0;
+    visibleIndices.forEach((actualIndex, i) => {
+      const x = positions[i];
+      if (actualIndex < 0) { insideBottomMeta.push(null); return; }
+      const vals = embeddings[actualIndex]?.values || [];
+      const meta = drawEmbeddingColumn(insideBottomGroup, x, insideBottomY, vals, { expanded: false });
+      insideBottomMeta.push(meta);
+      maxInsideBottomHeight = Math.max(maxInsideBottomHeight, meta.height);
+    });
+
+    const blockBottomY = insideBottomY + maxInsideBottomHeight + layout.blockPadding;
+
+    // Draw spacious gray box behind contents
+    group.insert('rect', ':first-child')
+      .attr('x', minX)
+      .attr('y', blockTopY)
+      .attr('width', maxX - minX)
+      .attr('height', blockBottomY - blockTopY)
+      .attr('rx', 10)
+      .attr('class', 'transformer-box')
+      .style('fill', '#f3f4f6')
+      .style('stroke', '#d9d9e3')
+      .style('stroke-dasharray', '4 4');
+
+    return { blockTopY, blockBottomY, insideBottomMeta };
+  };
+
+  // Outside (bottom) embeddings and FFN arrows
+  const renderBottomEmbeddings = (group, step, layout, width, blockMeta) => {
+    const { visibleIndices = [], positions = [] } = tokensLayoutRef.current || {};
+    const embeddings = step.embeddings;
+    const topY = blockMeta.blockBottomY + 40;
+
+    let maxHeight = 0;
+    visibleIndices.forEach((actualIndex, i) => {
+      const x = positions[i];
+      if (actualIndex < 0) return;
+      const vals = embeddings[actualIndex]?.values || [];
+      // FFN arrow with small box
+      const insideBottom = blockMeta.insideBottomMeta[i];
+      if (insideBottom) {
+        drawArrow(group, x, insideBottom.bottomY + 4, x, topY - 8, { withBox: true, className: 'ffn-arrow' });
+      }
+      const meta = drawEmbeddingColumn(group, x, topY, vals, { expanded: false });
+      maxHeight = Math.max(maxHeight, meta.height);
+    });
+
+    return topY + maxHeight;
   };
 
   /**

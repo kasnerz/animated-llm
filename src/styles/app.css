@@ -115,7 +115,8 @@
     border-radius: 24px;
     padding: 16px 60px 16px 12px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-    transition: none; /* remove hover animation */
+    transition: none;
+    /* remove hover animation */
     display: flex;
     align-items: center;
     gap: 8px;
@@ -241,12 +242,14 @@
     align-items: center;
     justify-content: center;
     color: white;
-    transition: none; /* no hover animation */
+    transition: none;
+    /* no hover animation */
     padding: 0;
 }
 
 .btn-play:hover:not(:disabled) {
-    background: var(--accent-hover); /* instant color change only */
+    background: var(--accent-hover);
+    /* instant color change only */
 }
 
 .btn-play:disabled {
