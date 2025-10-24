@@ -1,0 +1,812 @@
+{
+  "id": "example_007",
+  "prompt": "How do I bake chocolate chip cookies?",
+  "language": "en",
+  "model_info": {
+    "name": "meta-llama/Llama-3-8B",
+    "num_layers": 32,
+    "hidden_size": 4096,
+    "num_attention_heads": 32,
+    "vocab_size": 128256
+  },
+  "generation_steps": [
+    {
+      "step": 0,
+      "input_text": "How do I bake chocolate chip cookies?",
+      "tokens": [
+        "How",
+        " do",
+        " I",
+        " bake",
+        " chocolate",
+        " chip",
+        " cookies",
+        "?"
+      ],
+      "token_ids": [
+        87751,
+        17235,
+        50339,
+        40835,
+        44453,
+        31095,
+        73316,
+        49013
+      ],
+      "embeddings": [
+        {
+          "token": "How",
+          "values": [
+            0.0,
+            0.48,
+            0.84,
+            1.0
+          ]
+        },
+        {
+          "token": " do",
+          "values": [
+            0.1,
+            0.56,
+            0.89,
+            1.0
+          ]
+        },
+        {
+          "token": " I",
+          "values": [
+            0.2,
+            0.64,
+            0.93,
+            0.99
+          ]
+        },
+        {
+          "token": " bake",
+          "values": [
+            0.3,
+            0.72,
+            0.96,
+            0.97
+          ]
+        },
+        {
+          "token": " chocolate",
+          "values": [
+            0.39,
+            0.78,
+            0.99,
+            0.95
+          ]
+        },
+        {
+          "token": " chip",
+          "values": [
+            0.48,
+            0.84,
+            1.0,
+            0.91
+          ]
+        },
+        {
+          "token": " cookies",
+          "values": [
+            0.56,
+            0.89,
+            1.0,
+            0.86
+          ]
+        },
+        {
+          "token": "?",
+          "values": [
+            0.64,
+            0.93,
+            0.99,
+            0.81
+          ]
+        }
+      ],
+      "transformer_processing": {
+        "num_layers_shown": 1,
+        "sample_activations": [
+          {
+            "layer": 0,
+            "token_position": 3,
+            "values": [
+              0.8,
+              -0.6,
+              0.03,
+              0.74
+            ]
+          }
+        ]
+      },
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": " To",
+            "token_id": 8313,
+            "logprob": -0.3701,
+            "prob": 0.6907
+          },
+          {
+            "token": " The",
+            "token_id": 38211,
+            "logprob": -1.6757,
+            "prob": 0.1872
+          },
+          {
+            "token": " In",
+            "token_id": 35476,
+            "logprob": -3.0312,
+            "prob": 0.0483
+          },
+          {
+            "token": " This",
+            "token_id": 880,
+            "logprob": -3.545,
+            "prob": 0.0289
+          },
+          {
+            "token": " That",
+            "token_id": 39480,
+            "logprob": -3.6804,
+            "prob": 0.0252
+          },
+          {
+            "token": " Well",
+            "token_id": 56487,
+            "logprob": -4.3622,
+            "prob": 0.0127
+          },
+          {
+            "token": " So",
+            "token_id": 113743,
+            "logprob": -5.5645,
+            "prob": 0.0038
+          },
+          {
+            "token": " Yes",
+            "token_id": 112602,
+            "logprob": -6.4762,
+            "prob": 0.0015
+          },
+          {
+            "token": " Sure",
+            "token_id": 2460,
+            "logprob": -7.4864,
+            "prob": 0.0006
+          },
+          {
+            "token": " Here",
+            "token_id": 40468,
+            "logprob": -7.559,
+            "prob": 0.0005
+          }
+        ]
+      },
+      "selected_token": {
+        "token": " To",
+        "token_id": 8313,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 1,
+      "input_text": "How do I bake chocolate chip cookies? To",
+      "tokens": [
+        "How",
+        " do",
+        " I",
+        " bake",
+        " chocolate",
+        " chip",
+        " cookies",
+        "?",
+        " To"
+      ],
+      "token_ids": [
+        87751,
+        17235,
+        50339,
+        40835,
+        44453,
+        31095,
+        73316,
+        49013,
+        8313
+      ],
+      "embeddings": [
+        {
+          "token": "How",
+          "values": [
+            0.0,
+            0.48,
+            0.84,
+            1.0
+          ]
+        },
+        {
+          "token": " do",
+          "values": [
+            0.1,
+            0.56,
+            0.89,
+            1.0
+          ]
+        },
+        {
+          "token": " I",
+          "values": [
+            0.2,
+            0.64,
+            0.93,
+            0.99
+          ]
+        },
+        {
+          "token": " bake",
+          "values": [
+            0.3,
+            0.72,
+            0.96,
+            0.97
+          ]
+        },
+        {
+          "token": " chocolate",
+          "values": [
+            0.39,
+            0.78,
+            0.99,
+            0.95
+          ]
+        },
+        {
+          "token": " chip",
+          "values": [
+            0.48,
+            0.84,
+            1.0,
+            0.91
+          ]
+        },
+        {
+          "token": " cookies",
+          "values": [
+            0.56,
+            0.89,
+            1.0,
+            0.86
+          ]
+        },
+        {
+          "token": "?",
+          "values": [
+            0.64,
+            0.93,
+            0.99,
+            0.81
+          ]
+        },
+        {
+          "token": " To",
+          "values": [
+            0.72,
+            0.96,
+            0.97,
+            0.75
+          ]
+        }
+      ],
+      "transformer_processing": {
+        "num_layers_shown": 1,
+        "sample_activations": [
+          {
+            "layer": 0,
+            "token_position": 5,
+            "values": [
+              -0.69,
+              -0.65,
+              -0.96,
+              0.39
+            ]
+          }
+        ]
+      },
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": " is",
+            "token_id": 59220,
+            "logprob": -0.4475,
+            "prob": 0.6392
+          },
+          {
+            "token": " are",
+            "token_id": 14170,
+            "logprob": -2.0786,
+            "prob": 0.1251
+          },
+          {
+            "token": " will",
+            "token_id": 10828,
+            "logprob": -2.4706,
+            "prob": 0.0845
+          },
+          {
+            "token": " can",
+            "token_id": 91774,
+            "logprob": -2.6197,
+            "prob": 0.0728
+          },
+          {
+            "token": " should",
+            "token_id": 9843,
+            "logprob": -3.5241,
+            "prob": 0.0295
+          },
+          {
+            "token": " would",
+            "token_id": 21514,
+            "logprob": -3.6979,
+            "prob": 0.0248
+          },
+          {
+            "token": " could",
+            "token_id": 125930,
+            "logprob": -4.6526,
+            "prob": 0.0095
+          },
+          {
+            "token": " may",
+            "token_id": 108783,
+            "logprob": -4.8856,
+            "prob": 0.0076
+          },
+          {
+            "token": " might",
+            "token_id": 108303,
+            "logprob": -5.4815,
+            "prob": 0.0042
+          },
+          {
+            "token": " does",
+            "token_id": 111381,
+            "logprob": -6.298,
+            "prob": 0.0018
+          }
+        ]
+      },
+      "selected_token": {
+        "token": " is",
+        "token_id": 59220,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 2,
+      "input_text": "How do I bake chocolate chip cookies? To is",
+      "tokens": [
+        "How",
+        " do",
+        " I",
+        " bake",
+        " chocolate",
+        " chip",
+        " cookies",
+        "?",
+        " To",
+        " is"
+      ],
+      "token_ids": [
+        87751,
+        17235,
+        50339,
+        40835,
+        44453,
+        31095,
+        73316,
+        49013,
+        8313,
+        59220
+      ],
+      "embeddings": [
+        {
+          "token": "How",
+          "values": [
+            0.0,
+            0.48,
+            0.84,
+            1.0
+          ]
+        },
+        {
+          "token": " do",
+          "values": [
+            0.1,
+            0.56,
+            0.89,
+            1.0
+          ]
+        },
+        {
+          "token": " I",
+          "values": [
+            0.2,
+            0.64,
+            0.93,
+            0.99
+          ]
+        },
+        {
+          "token": " bake",
+          "values": [
+            0.3,
+            0.72,
+            0.96,
+            0.97
+          ]
+        },
+        {
+          "token": " chocolate",
+          "values": [
+            0.39,
+            0.78,
+            0.99,
+            0.95
+          ]
+        },
+        {
+          "token": " chip",
+          "values": [
+            0.48,
+            0.84,
+            1.0,
+            0.91
+          ]
+        },
+        {
+          "token": " cookies",
+          "values": [
+            0.56,
+            0.89,
+            1.0,
+            0.86
+          ]
+        },
+        {
+          "token": "?",
+          "values": [
+            0.64,
+            0.93,
+            0.99,
+            0.81
+          ]
+        },
+        {
+          "token": " To",
+          "values": [
+            0.72,
+            0.96,
+            0.97,
+            0.75
+          ]
+        },
+        {
+          "token": " is",
+          "values": [
+            0.78,
+            0.99,
+            0.95,
+            0.68
+          ]
+        }
+      ],
+      "transformer_processing": {
+        "num_layers_shown": 1,
+        "sample_activations": [
+          {
+            "layer": 0,
+            "token_position": 3,
+            "values": [
+              0.15,
+              0.79,
+              0.95,
+              0.75
+            ]
+          }
+        ]
+      },
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": " a",
+            "token_id": 38283,
+            "logprob": -0.4594,
+            "prob": 0.6317
+          },
+          {
+            "token": " the",
+            "token_id": 75004,
+            "logprob": -1.9225,
+            "prob": 0.1462
+          },
+          {
+            "token": " an",
+            "token_id": 24791,
+            "logprob": -2.0101,
+            "prob": 0.134
+          },
+          {
+            "token": " this",
+            "token_id": 7091,
+            "logprob": -3.2234,
+            "prob": 0.0398
+          },
+          {
+            "token": " that",
+            "token_id": 14632,
+            "logprob": -3.43,
+            "prob": 0.0324
+          },
+          {
+            "token": " many",
+            "token_id": 114863,
+            "logprob": -4.9957,
+            "prob": 0.0068
+          },
+          {
+            "token": " some",
+            "token_id": 122728,
+            "logprob": -5.1247,
+            "prob": 0.0059
+          },
+          {
+            "token": " few",
+            "token_id": 10371,
+            "logprob": -6.1754,
+            "prob": 0.0021
+          },
+          {
+            "token": " several",
+            "token_id": 20244,
+            "logprob": -7.395,
+            "prob": 0.0006
+          },
+          {
+            "token": " various",
+            "token_id": 83987,
+            "logprob": -7.9997,
+            "prob": 0.0003
+          }
+        ]
+      },
+      "selected_token": {
+        "token": " a",
+        "token_id": 38283,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 3,
+      "input_text": "How do I bake chocolate chip cookies? To is a",
+      "tokens": [
+        "How",
+        " do",
+        " I",
+        " bake",
+        " chocolate",
+        " chip",
+        " cookies",
+        "?",
+        " To",
+        " is",
+        " a"
+      ],
+      "token_ids": [
+        87751,
+        17235,
+        50339,
+        40835,
+        44453,
+        31095,
+        73316,
+        49013,
+        8313,
+        59220,
+        38283
+      ],
+      "embeddings": [
+        {
+          "token": "How",
+          "values": [
+            0.0,
+            0.48,
+            0.84,
+            1.0
+          ]
+        },
+        {
+          "token": " do",
+          "values": [
+            0.1,
+            0.56,
+            0.89,
+            1.0
+          ]
+        },
+        {
+          "token": " I",
+          "values": [
+            0.2,
+            0.64,
+            0.93,
+            0.99
+          ]
+        },
+        {
+          "token": " bake",
+          "values": [
+            0.3,
+            0.72,
+            0.96,
+            0.97
+          ]
+        },
+        {
+          "token": " chocolate",
+          "values": [
+            0.39,
+            0.78,
+            0.99,
+            0.95
+          ]
+        },
+        {
+          "token": " chip",
+          "values": [
+            0.48,
+            0.84,
+            1.0,
+            0.91
+          ]
+        },
+        {
+          "token": " cookies",
+          "values": [
+            0.56,
+            0.89,
+            1.0,
+            0.86
+          ]
+        },
+        {
+          "token": "?",
+          "values": [
+            0.64,
+            0.93,
+            0.99,
+            0.81
+          ]
+        },
+        {
+          "token": " To",
+          "values": [
+            0.72,
+            0.96,
+            0.97,
+            0.75
+          ]
+        },
+        {
+          "token": " is",
+          "values": [
+            0.78,
+            0.99,
+            0.95,
+            0.68
+          ]
+        },
+        {
+          "token": " a",
+          "values": [
+            0.84,
+            1.0,
+            0.91,
+            0.6
+          ]
+        }
+      ],
+      "transformer_processing": {
+        "num_layers_shown": 1,
+        "sample_activations": [
+          {
+            "layer": 0,
+            "token_position": 5,
+            "values": [
+              0.45,
+              0.56,
+              0.15,
+              0.65
+            ]
+          }
+        ]
+      },
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": " answer",
+            "token_id": 20986,
+            "logprob": -0.2921,
+            "prob": 0.7467
+          },
+          {
+            "token": " response",
+            "token_id": 123411,
+            "logprob": -1.7471,
+            "prob": 0.1743
+          },
+          {
+            "token": " result",
+            "token_id": 54418,
+            "logprob": -3.076,
+            "prob": 0.0461
+          },
+          {
+            "token": " solution",
+            "token_id": 26779,
+            "logprob": -4.5492,
+            "prob": 0.0106
+          },
+          {
+            "token": " way",
+            "token_id": 69386,
+            "logprob": -4.8403,
+            "prob": 0.0079
+          },
+          {
+            "token": " explanation",
+            "token_id": 29091,
+            "logprob": -4.9604,
+            "prob": 0.007
+          },
+          {
+            "token": " method",
+            "token_id": 42902,
+            "logprob": -5.8203,
+            "prob": 0.003
+          },
+          {
+            "token": " approach",
+            "token_id": 94927,
+            "logprob": -6.1277,
+            "prob": 0.0022
+          },
+          {
+            "token": " idea",
+            "token_id": 87352,
+            "logprob": -7.2074,
+            "prob": 0.0007
+          },
+          {
+            "token": " thing",
+            "token_id": 122868,
+            "logprob": -7.4087,
+            "prob": 0.0006
+          }
+        ]
+      },
+      "selected_token": {
+        "token": " answer",
+        "token_id": 20986,
+        "selection_method": "greedy"
+      }
+    }
+  ]
+}

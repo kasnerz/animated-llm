@@ -1,0 +1,724 @@
+{
+  "id": "example_004",
+  "prompt": "Explain photosynthesis in simple terms.",
+  "language": "en",
+  "model_info": {
+    "name": "meta-llama/Llama-3-8B",
+    "num_layers": 32,
+    "hidden_size": 4096,
+    "num_attention_heads": 32,
+    "vocab_size": 128256
+  },
+  "generation_steps": [
+    {
+      "step": 0,
+      "input_text": "Explain photosynthesis in simple terms.",
+      "tokens": [
+        "Explain",
+        " photosynthesis",
+        " in",
+        " simple",
+        " terms",
+        "."
+      ],
+      "token_ids": [
+        69067,
+        31408,
+        8852,
+        22807,
+        38333,
+        98949
+      ],
+      "embeddings": [
+        {
+          "token": "Explain",
+          "values": [
+            0.0,
+            0.48,
+            0.84,
+            1.0
+          ]
+        },
+        {
+          "token": " photosynthesis",
+          "values": [
+            0.1,
+            0.56,
+            0.89,
+            1.0
+          ]
+        },
+        {
+          "token": " in",
+          "values": [
+            0.2,
+            0.64,
+            0.93,
+            0.99
+          ]
+        },
+        {
+          "token": " simple",
+          "values": [
+            0.3,
+            0.72,
+            0.96,
+            0.97
+          ]
+        },
+        {
+          "token": " terms",
+          "values": [
+            0.39,
+            0.78,
+            0.99,
+            0.95
+          ]
+        },
+        {
+          "token": ".",
+          "values": [
+            0.48,
+            0.84,
+            1.0,
+            0.91
+          ]
+        }
+      ],
+      "transformer_processing": {
+        "num_layers_shown": 1,
+        "sample_activations": [
+          {
+            "layer": 0,
+            "token_position": 4,
+            "values": [
+              0.14,
+              0.59,
+              0.75,
+              0.59
+            ]
+          }
+        ]
+      },
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": " To",
+            "token_id": 8677,
+            "logprob": -0.3936,
+            "prob": 0.6746
+          },
+          {
+            "token": " The",
+            "token_id": 119374,
+            "logprob": -1.8498,
+            "prob": 0.1573
+          },
+          {
+            "token": " In",
+            "token_id": 61472,
+            "logprob": -2.593,
+            "prob": 0.0748
+          },
+          {
+            "token": " This",
+            "token_id": 93915,
+            "logprob": -2.9213,
+            "prob": 0.0539
+          },
+          {
+            "token": " That",
+            "token_id": 81352,
+            "logprob": -3.8699,
+            "prob": 0.0209
+          },
+          {
+            "token": " Well",
+            "token_id": 47226,
+            "logprob": -4.5964,
+            "prob": 0.0101
+          },
+          {
+            "token": " So",
+            "token_id": 77134,
+            "logprob": -5.1362,
+            "prob": 0.0059
+          },
+          {
+            "token": " Yes",
+            "token_id": 47772,
+            "logprob": -6.4072,
+            "prob": 0.0016
+          },
+          {
+            "token": " Here",
+            "token_id": 113268,
+            "logprob": -7.9507,
+            "prob": 0.0004
+          },
+          {
+            "token": " Sure",
+            "token_id": 54221,
+            "logprob": -7.9656,
+            "prob": 0.0003
+          }
+        ]
+      },
+      "selected_token": {
+        "token": " To",
+        "token_id": 8677,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 1,
+      "input_text": "Explain photosynthesis in simple terms. To",
+      "tokens": [
+        "Explain",
+        " photosynthesis",
+        " in",
+        " simple",
+        " terms",
+        ".",
+        " To"
+      ],
+      "token_ids": [
+        69067,
+        31408,
+        8852,
+        22807,
+        38333,
+        98949,
+        8677
+      ],
+      "embeddings": [
+        {
+          "token": "Explain",
+          "values": [
+            0.0,
+            0.48,
+            0.84,
+            1.0
+          ]
+        },
+        {
+          "token": " photosynthesis",
+          "values": [
+            0.1,
+            0.56,
+            0.89,
+            1.0
+          ]
+        },
+        {
+          "token": " in",
+          "values": [
+            0.2,
+            0.64,
+            0.93,
+            0.99
+          ]
+        },
+        {
+          "token": " simple",
+          "values": [
+            0.3,
+            0.72,
+            0.96,
+            0.97
+          ]
+        },
+        {
+          "token": " terms",
+          "values": [
+            0.39,
+            0.78,
+            0.99,
+            0.95
+          ]
+        },
+        {
+          "token": ".",
+          "values": [
+            0.48,
+            0.84,
+            1.0,
+            0.91
+          ]
+        },
+        {
+          "token": " To",
+          "values": [
+            0.56,
+            0.89,
+            1.0,
+            0.86
+          ]
+        }
+      ],
+      "transformer_processing": {
+        "num_layers_shown": 1,
+        "sample_activations": [
+          {
+            "layer": 0,
+            "token_position": 6,
+            "values": [
+              -0.64,
+              0.62,
+              -0.49,
+              -0.28
+            ]
+          }
+        ]
+      },
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": " is",
+            "token_id": 67478,
+            "logprob": -0.2363,
+            "prob": 0.7896
+          },
+          {
+            "token": " are",
+            "token_id": 82721,
+            "logprob": -2.4876,
+            "prob": 0.0831
+          },
+          {
+            "token": " can",
+            "token_id": 4973,
+            "logprob": -2.914,
+            "prob": 0.0543
+          },
+          {
+            "token": " will",
+            "token_id": 85238,
+            "logprob": -3.4389,
+            "prob": 0.0321
+          },
+          {
+            "token": " would",
+            "token_id": 67372,
+            "logprob": -3.7901,
+            "prob": 0.0226
+          },
+          {
+            "token": " should",
+            "token_id": 76379,
+            "logprob": -4.7084,
+            "prob": 0.009
+          },
+          {
+            "token": " could",
+            "token_id": 64493,
+            "logprob": -5.0903,
+            "prob": 0.0062
+          },
+          {
+            "token": " may",
+            "token_id": 76398,
+            "logprob": -6.4054,
+            "prob": 0.0017
+          },
+          {
+            "token": " might",
+            "token_id": 114326,
+            "logprob": -6.9511,
+            "prob": 0.001
+          },
+          {
+            "token": " does",
+            "token_id": 41835,
+            "logprob": -7.9918,
+            "prob": 0.0003
+          }
+        ]
+      },
+      "selected_token": {
+        "token": " is",
+        "token_id": 67478,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 2,
+      "input_text": "Explain photosynthesis in simple terms. To is",
+      "tokens": [
+        "Explain",
+        " photosynthesis",
+        " in",
+        " simple",
+        " terms",
+        ".",
+        " To",
+        " is"
+      ],
+      "token_ids": [
+        69067,
+        31408,
+        8852,
+        22807,
+        38333,
+        98949,
+        8677,
+        67478
+      ],
+      "embeddings": [
+        {
+          "token": "Explain",
+          "values": [
+            0.0,
+            0.48,
+            0.84,
+            1.0
+          ]
+        },
+        {
+          "token": " photosynthesis",
+          "values": [
+            0.1,
+            0.56,
+            0.89,
+            1.0
+          ]
+        },
+        {
+          "token": " in",
+          "values": [
+            0.2,
+            0.64,
+            0.93,
+            0.99
+          ]
+        },
+        {
+          "token": " simple",
+          "values": [
+            0.3,
+            0.72,
+            0.96,
+            0.97
+          ]
+        },
+        {
+          "token": " terms",
+          "values": [
+            0.39,
+            0.78,
+            0.99,
+            0.95
+          ]
+        },
+        {
+          "token": ".",
+          "values": [
+            0.48,
+            0.84,
+            1.0,
+            0.91
+          ]
+        },
+        {
+          "token": " To",
+          "values": [
+            0.56,
+            0.89,
+            1.0,
+            0.86
+          ]
+        },
+        {
+          "token": " is",
+          "values": [
+            0.64,
+            0.93,
+            0.99,
+            0.81
+          ]
+        }
+      ],
+      "transformer_processing": {
+        "num_layers_shown": 1,
+        "sample_activations": [
+          {
+            "layer": 0,
+            "token_position": 9,
+            "values": [
+              -0.72,
+              -0.71,
+              1.0,
+              -0.82
+            ]
+          }
+        ]
+      },
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": " a",
+            "token_id": 72243,
+            "logprob": -0.3699,
+            "prob": 0.6908
+          },
+          {
+            "token": " an",
+            "token_id": 55,
+            "logprob": -2.3049,
+            "prob": 0.0998
+          },
+          {
+            "token": " the",
+            "token_id": 10154,
+            "logprob": -2.4012,
+            "prob": 0.0906
+          },
+          {
+            "token": " this",
+            "token_id": 87403,
+            "logprob": -2.5899,
+            "prob": 0.075
+          },
+          {
+            "token": " that",
+            "token_id": 87460,
+            "logprob": -3.8726,
+            "prob": 0.0208
+          },
+          {
+            "token": " some",
+            "token_id": 41221,
+            "logprob": -4.6531,
+            "prob": 0.0095
+          },
+          {
+            "token": " many",
+            "token_id": 75419,
+            "logprob": -5.1184,
+            "prob": 0.006
+          },
+          {
+            "token": " few",
+            "token_id": 85511,
+            "logprob": -5.3426,
+            "prob": 0.0048
+          },
+          {
+            "token": " several",
+            "token_id": 6396,
+            "logprob": -6.6223,
+            "prob": 0.0013
+          },
+          {
+            "token": " various",
+            "token_id": 58041,
+            "logprob": -7.4227,
+            "prob": 0.0006
+          }
+        ]
+      },
+      "selected_token": {
+        "token": " a",
+        "token_id": 72243,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 3,
+      "input_text": "Explain photosynthesis in simple terms. To is a",
+      "tokens": [
+        "Explain",
+        " photosynthesis",
+        " in",
+        " simple",
+        " terms",
+        ".",
+        " To",
+        " is",
+        " a"
+      ],
+      "token_ids": [
+        69067,
+        31408,
+        8852,
+        22807,
+        38333,
+        98949,
+        8677,
+        67478,
+        72243
+      ],
+      "embeddings": [
+        {
+          "token": "Explain",
+          "values": [
+            0.0,
+            0.48,
+            0.84,
+            1.0
+          ]
+        },
+        {
+          "token": " photosynthesis",
+          "values": [
+            0.1,
+            0.56,
+            0.89,
+            1.0
+          ]
+        },
+        {
+          "token": " in",
+          "values": [
+            0.2,
+            0.64,
+            0.93,
+            0.99
+          ]
+        },
+        {
+          "token": " simple",
+          "values": [
+            0.3,
+            0.72,
+            0.96,
+            0.97
+          ]
+        },
+        {
+          "token": " terms",
+          "values": [
+            0.39,
+            0.78,
+            0.99,
+            0.95
+          ]
+        },
+        {
+          "token": ".",
+          "values": [
+            0.48,
+            0.84,
+            1.0,
+            0.91
+          ]
+        },
+        {
+          "token": " To",
+          "values": [
+            0.56,
+            0.89,
+            1.0,
+            0.86
+          ]
+        },
+        {
+          "token": " is",
+          "values": [
+            0.64,
+            0.93,
+            0.99,
+            0.81
+          ]
+        },
+        {
+          "token": " a",
+          "values": [
+            0.72,
+            0.96,
+            0.97,
+            0.75
+          ]
+        }
+      ],
+      "transformer_processing": {
+        "num_layers_shown": 1,
+        "sample_activations": [
+          {
+            "layer": 0,
+            "token_position": 6,
+            "values": [
+              0.95,
+              0.46,
+              -0.75,
+              -0.3
+            ]
+          }
+        ]
+      },
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": " answer",
+            "token_id": 486,
+            "logprob": -0.2291,
+            "prob": 0.7952
+          },
+          {
+            "token": " response",
+            "token_id": 45701,
+            "logprob": -2.6787,
+            "prob": 0.0687
+          },
+          {
+            "token": " solution",
+            "token_id": 46862,
+            "logprob": -3.0512,
+            "prob": 0.0473
+          },
+          {
+            "token": " result",
+            "token_id": 54052,
+            "logprob": -3.0759,
+            "prob": 0.0461
+          },
+          {
+            "token": " explanation",
+            "token_id": 18368,
+            "logprob": -3.6047,
+            "prob": 0.0272
+          },
+          {
+            "token": " way",
+            "token_id": 118202,
+            "logprob": -4.607,
+            "prob": 0.01
+          },
+          {
+            "token": " method",
+            "token_id": 40685,
+            "logprob": -5.9925,
+            "prob": 0.0025
+          },
+          {
+            "token": " approach",
+            "token_id": 26712,
+            "logprob": -6.6745,
+            "prob": 0.0013
+          },
+          {
+            "token": " idea",
+            "token_id": 115337,
+            "logprob": -6.8486,
+            "prob": 0.0011
+          },
+          {
+            "token": " thing",
+            "token_id": 78313,
+            "logprob": -8.1451,
+            "prob": 0.0003
+          }
+        ]
+      },
+      "selected_token": {
+        "token": " answer",
+        "token_id": 486,
+        "selection_method": "greedy"
+      }
+    }
+  ]
+}

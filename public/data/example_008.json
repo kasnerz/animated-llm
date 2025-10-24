@@ -1,0 +1,497 @@
+{
+  "id": "example_008",
+  "prompt": "What is machine learning?",
+  "language": "en",
+  "model_info": {
+    "name": "meta-llama/Llama-3-8B",
+    "num_layers": 32,
+    "hidden_size": 4096,
+    "num_attention_heads": 32,
+    "vocab_size": 128256
+  },
+  "generation_steps": [
+    {
+      "step": 0,
+      "input_text": "What is machine learning?",
+      "tokens": [
+        "What",
+        " is",
+        " machine",
+        " learning",
+        "?"
+      ],
+      "token_ids": [
+        93721,
+        60080,
+        16741,
+        9561,
+        32130
+      ],
+      "embeddings": [
+        {
+          "token": "What",
+          "values": [
+            0.0,
+            0.48,
+            0.84,
+            1.0
+          ]
+        },
+        {
+          "token": " is",
+          "values": [
+            0.1,
+            0.56,
+            0.89,
+            1.0
+          ]
+        },
+        {
+          "token": " machine",
+          "values": [
+            0.2,
+            0.64,
+            0.93,
+            0.99
+          ]
+        },
+        {
+          "token": " learning",
+          "values": [
+            0.3,
+            0.72,
+            0.96,
+            0.97
+          ]
+        },
+        {
+          "token": "?",
+          "values": [
+            0.39,
+            0.78,
+            0.99,
+            0.95
+          ]
+        }
+      ],
+      "transformer_processing": {
+        "num_layers_shown": 1,
+        "sample_activations": [
+          {
+            "layer": 0,
+            "token_position": 9,
+            "values": [
+              -0.86,
+              0.51,
+              0.78,
+              -0.98
+            ]
+          }
+        ]
+      },
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": " To",
+            "token_id": 126742,
+            "logprob": -0.2375,
+            "prob": 0.7886
+          },
+          {
+            "token": " The",
+            "token_id": 55241,
+            "logprob": -2.2833,
+            "prob": 0.1019
+          },
+          {
+            "token": " In",
+            "token_id": 903,
+            "logprob": -3.0312,
+            "prob": 0.0483
+          },
+          {
+            "token": " That",
+            "token_id": 79423,
+            "logprob": -3.8706,
+            "prob": 0.0208
+          },
+          {
+            "token": " This",
+            "token_id": 53228,
+            "logprob": -3.967,
+            "prob": 0.0189
+          },
+          {
+            "token": " Well",
+            "token_id": 79575,
+            "logprob": -4.5313,
+            "prob": 0.0108
+          },
+          {
+            "token": " So",
+            "token_id": 98901,
+            "logprob": -5.5909,
+            "prob": 0.0037
+          },
+          {
+            "token": " Yes",
+            "token_id": 31311,
+            "logprob": -5.7459,
+            "prob": 0.0032
+          },
+          {
+            "token": " Sure",
+            "token_id": 48487,
+            "logprob": -6.0151,
+            "prob": 0.0024
+          },
+          {
+            "token": " Here",
+            "token_id": 123753,
+            "logprob": -7.5079,
+            "prob": 0.0005
+          }
+        ]
+      },
+      "selected_token": {
+        "token": " To",
+        "token_id": 126742,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 1,
+      "input_text": "What is machine learning? To",
+      "tokens": [
+        "What",
+        " is",
+        " machine",
+        " learning",
+        "?",
+        " To"
+      ],
+      "token_ids": [
+        93721,
+        60080,
+        16741,
+        9561,
+        32130,
+        126742
+      ],
+      "embeddings": [
+        {
+          "token": "What",
+          "values": [
+            0.0,
+            0.48,
+            0.84,
+            1.0
+          ]
+        },
+        {
+          "token": " is",
+          "values": [
+            0.1,
+            0.56,
+            0.89,
+            1.0
+          ]
+        },
+        {
+          "token": " machine",
+          "values": [
+            0.2,
+            0.64,
+            0.93,
+            0.99
+          ]
+        },
+        {
+          "token": " learning",
+          "values": [
+            0.3,
+            0.72,
+            0.96,
+            0.97
+          ]
+        },
+        {
+          "token": "?",
+          "values": [
+            0.39,
+            0.78,
+            0.99,
+            0.95
+          ]
+        },
+        {
+          "token": " To",
+          "values": [
+            0.48,
+            0.84,
+            1.0,
+            0.91
+          ]
+        }
+      ],
+      "transformer_processing": {
+        "num_layers_shown": 1,
+        "sample_activations": [
+          {
+            "layer": 0,
+            "token_position": 1,
+            "values": [
+              -0.38,
+              -0.27,
+              -0.88,
+              -0.72
+            ]
+          }
+        ]
+      },
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": " is",
+            "token_id": 91507,
+            "logprob": -0.4258,
+            "prob": 0.6532
+          },
+          {
+            "token": " are",
+            "token_id": 20579,
+            "logprob": -1.4236,
+            "prob": 0.2408
+          },
+          {
+            "token": " can",
+            "token_id": 88614,
+            "logprob": -2.6343,
+            "prob": 0.0718
+          },
+          {
+            "token": " will",
+            "token_id": 63412,
+            "logprob": -3.9932,
+            "prob": 0.0184
+          },
+          {
+            "token": " would",
+            "token_id": 545,
+            "logprob": -4.7016,
+            "prob": 0.0091
+          },
+          {
+            "token": " should",
+            "token_id": 123217,
+            "logprob": -5.9517,
+            "prob": 0.0026
+          },
+          {
+            "token": " could",
+            "token_id": 13359,
+            "logprob": -6.0869,
+            "prob": 0.0023
+          },
+          {
+            "token": " may",
+            "token_id": 82974,
+            "logprob": -6.913,
+            "prob": 0.001
+          },
+          {
+            "token": " might",
+            "token_id": 109185,
+            "logprob": -7.7032,
+            "prob": 0.0005
+          },
+          {
+            "token": " does",
+            "token_id": 103086,
+            "logprob": -8.7471,
+            "prob": 0.0002
+          }
+        ]
+      },
+      "selected_token": {
+        "token": " is",
+        "token_id": 91507,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 2,
+      "input_text": "What is machine learning? To is",
+      "tokens": [
+        "What",
+        " is",
+        " machine",
+        " learning",
+        "?",
+        " To",
+        " is"
+      ],
+      "token_ids": [
+        93721,
+        60080,
+        16741,
+        9561,
+        32130,
+        126742,
+        91507
+      ],
+      "embeddings": [
+        {
+          "token": "What",
+          "values": [
+            0.0,
+            0.48,
+            0.84,
+            1.0
+          ]
+        },
+        {
+          "token": " is",
+          "values": [
+            0.1,
+            0.56,
+            0.89,
+            1.0
+          ]
+        },
+        {
+          "token": " machine",
+          "values": [
+            0.2,
+            0.64,
+            0.93,
+            0.99
+          ]
+        },
+        {
+          "token": " learning",
+          "values": [
+            0.3,
+            0.72,
+            0.96,
+            0.97
+          ]
+        },
+        {
+          "token": "?",
+          "values": [
+            0.39,
+            0.78,
+            0.99,
+            0.95
+          ]
+        },
+        {
+          "token": " To",
+          "values": [
+            0.48,
+            0.84,
+            1.0,
+            0.91
+          ]
+        },
+        {
+          "token": " is",
+          "values": [
+            0.56,
+            0.89,
+            1.0,
+            0.86
+          ]
+        }
+      ],
+      "transformer_processing": {
+        "num_layers_shown": 1,
+        "sample_activations": [
+          {
+            "layer": 0,
+            "token_position": 1,
+            "values": [
+              -0.14,
+              0.94,
+              -0.93,
+              0.82
+            ]
+          }
+        ]
+      },
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": " a",
+            "token_id": 37445,
+            "logprob": -0.2614,
+            "prob": 0.77
+          },
+          {
+            "token": " an",
+            "token_id": 125683,
+            "logprob": -2.1359,
+            "prob": 0.1181
+          },
+          {
+            "token": " the",
+            "token_id": 98258,
+            "logprob": -2.9312,
+            "prob": 0.0533
+          },
+          {
+            "token": " this",
+            "token_id": 72533,
+            "logprob": -3.6753,
+            "prob": 0.0253
+          },
+          {
+            "token": " some",
+            "token_id": 24443,
+            "logprob": -4.2542,
+            "prob": 0.0142
+          },
+          {
+            "token": " that",
+            "token_id": 103437,
+            "logprob": -4.3637,
+            "prob": 0.0127
+          },
+          {
+            "token": " many",
+            "token_id": 9340,
+            "logprob": -5.6451,
+            "prob": 0.0035
+          },
+          {
+            "token": " few",
+            "token_id": 113784,
+            "logprob": -6.4756,
+            "prob": 0.0015
+          },
+          {
+            "token": " several",
+            "token_id": 95781,
+            "logprob": -7.3702,
+            "prob": 0.0006
+          },
+          {
+            "token": " various",
+            "token_id": 26150,
+            "logprob": -7.8211,
+            "prob": 0.0004
+          }
+        ]
+      },
+      "selected_token": {
+        "token": " a",
+        "token_id": 37445,
+        "selection_method": "greedy"
+      }
+    }
+  ]
+}

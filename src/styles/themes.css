@@ -1,0 +1,66 @@
+/**
+ * Theme definitions for light and dark modes
+ * Uses CSS custom properties for easy theming
+ */
+
+:root {
+    /* Light theme colors */
+    --light-bg-primary: #ffffff;
+    --light-bg-secondary: #f8f9fa;
+    --light-text-primary: #1a1a1a;
+    --light-text-secondary: #666666;
+    --light-text-tertiary: #999999;
+    --light-border: #e0e0e0;
+    --light-shadow: rgba(0, 0, 0, 0.1);
+
+    /* Dark theme colors */
+    --dark-bg-primary: #1a1a1a;
+    --dark-bg-secondary: #2d2d2d;
+    --dark-text-primary: #f5f5f5;
+    --dark-text-secondary: #b0b0b0;
+    --dark-text-tertiary: #707070;
+    --dark-border: #404040;
+    --dark-shadow: rgba(0, 0, 0, 0.5);
+
+    /* Accent colors (same for both themes) */
+    --accent-primary: #006D5D;
+    --accent-secondary: #008C7A;
+    --accent-hover: #005548;
+    --accent-danger: #FF6B6B;
+    --accent-success: #51CF66;
+    --accent-warning: #FFA07A;
+
+    /* Token palette */
+    --token-color-1: #FF6B6B;
+    --token-color-2: #4ECDC4;
+    --token-color-3: #45B7D1;
+    --token-color-4: #FFA07A;
+    --token-color-5: #98D8C8;
+}
+
+/* Light theme (default) */
+body[data-theme="light"] {
+    --bg-primary: var(--light-bg-primary);
+    --bg-secondary: var(--light-bg-secondary);
+    --text-primary: var(--light-text-primary);
+    --text-secondary: var(--light-text-secondary);
+    --text-tertiary: var(--light-text-tertiary);
+    --border-color: var(--light-border);
+    --shadow-color: var(--light-shadow);
+}
+
+/* Dark theme */
+body[data-theme="dark"] {
+    --bg-primary: var(--dark-bg-primary);
+    --bg-secondary: var(--dark-bg-secondary);
+    --text-primary: var(--dark-text-primary);
+    --text-secondary: var(--dark-text-secondary);
+    --text-tertiary: var(--dark-text-tertiary);
+    --border-color: var(--dark-border);
+    --shadow-color: var(--dark-shadow);
+}
+
+/* Smooth theme transitions */
+body {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}

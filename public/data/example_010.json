@@ -1,0 +1,768 @@
+{
+  "id": "example_010",
+  "prompt": "How do I start learning Python?",
+  "language": "en",
+  "model_info": {
+    "name": "meta-llama/Llama-3-8B",
+    "num_layers": 32,
+    "hidden_size": 4096,
+    "num_attention_heads": 32,
+    "vocab_size": 128256
+  },
+  "generation_steps": [
+    {
+      "step": 0,
+      "input_text": "How do I start learning Python?",
+      "tokens": [
+        "How",
+        " do",
+        " I",
+        " start",
+        " learning",
+        " Python",
+        "?"
+      ],
+      "token_ids": [
+        12845,
+        73964,
+        5035,
+        20212,
+        53157,
+        75717,
+        7629
+      ],
+      "embeddings": [
+        {
+          "token": "How",
+          "values": [
+            0.0,
+            0.48,
+            0.84,
+            1.0
+          ]
+        },
+        {
+          "token": " do",
+          "values": [
+            0.1,
+            0.56,
+            0.89,
+            1.0
+          ]
+        },
+        {
+          "token": " I",
+          "values": [
+            0.2,
+            0.64,
+            0.93,
+            0.99
+          ]
+        },
+        {
+          "token": " start",
+          "values": [
+            0.3,
+            0.72,
+            0.96,
+            0.97
+          ]
+        },
+        {
+          "token": " learning",
+          "values": [
+            0.39,
+            0.78,
+            0.99,
+            0.95
+          ]
+        },
+        {
+          "token": " Python",
+          "values": [
+            0.48,
+            0.84,
+            1.0,
+            0.91
+          ]
+        },
+        {
+          "token": "?",
+          "values": [
+            0.56,
+            0.89,
+            1.0,
+            0.86
+          ]
+        }
+      ],
+      "transformer_processing": {
+        "num_layers_shown": 1,
+        "sample_activations": [
+          {
+            "layer": 0,
+            "token_position": 0,
+            "values": [
+              0.96,
+              0.37,
+              -0.3,
+              -0.69
+            ]
+          }
+        ]
+      },
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": " To",
+            "token_id": 12309,
+            "logprob": -0.4974,
+            "prob": 0.6081
+          },
+          {
+            "token": " The",
+            "token_id": 15994,
+            "logprob": -1.3247,
+            "prob": 0.2659
+          },
+          {
+            "token": " This",
+            "token_id": 72490,
+            "logprob": -2.8596,
+            "prob": 0.0573
+          },
+          {
+            "token": " In",
+            "token_id": 76842,
+            "logprob": -3.2665,
+            "prob": 0.0381
+          },
+          {
+            "token": " That",
+            "token_id": 93763,
+            "logprob": -4.0544,
+            "prob": 0.0173
+          },
+          {
+            "token": " Well",
+            "token_id": 7475,
+            "logprob": -5.2975,
+            "prob": 0.005
+          },
+          {
+            "token": " So",
+            "token_id": 115640,
+            "logprob": -5.4951,
+            "prob": 0.0041
+          },
+          {
+            "token": " Yes",
+            "token_id": 84396,
+            "logprob": -6.095,
+            "prob": 0.0023
+          },
+          {
+            "token": " Sure",
+            "token_id": 40076,
+            "logprob": -7.2795,
+            "prob": 0.0007
+          },
+          {
+            "token": " Here",
+            "token_id": 23302,
+            "logprob": -7.7061,
+            "prob": 0.0005
+          }
+        ]
+      },
+      "selected_token": {
+        "token": " To",
+        "token_id": 12309,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 1,
+      "input_text": "How do I start learning Python? To",
+      "tokens": [
+        "How",
+        " do",
+        " I",
+        " start",
+        " learning",
+        " Python",
+        "?",
+        " To"
+      ],
+      "token_ids": [
+        12845,
+        73964,
+        5035,
+        20212,
+        53157,
+        75717,
+        7629,
+        12309
+      ],
+      "embeddings": [
+        {
+          "token": "How",
+          "values": [
+            0.0,
+            0.48,
+            0.84,
+            1.0
+          ]
+        },
+        {
+          "token": " do",
+          "values": [
+            0.1,
+            0.56,
+            0.89,
+            1.0
+          ]
+        },
+        {
+          "token": " I",
+          "values": [
+            0.2,
+            0.64,
+            0.93,
+            0.99
+          ]
+        },
+        {
+          "token": " start",
+          "values": [
+            0.3,
+            0.72,
+            0.96,
+            0.97
+          ]
+        },
+        {
+          "token": " learning",
+          "values": [
+            0.39,
+            0.78,
+            0.99,
+            0.95
+          ]
+        },
+        {
+          "token": " Python",
+          "values": [
+            0.48,
+            0.84,
+            1.0,
+            0.91
+          ]
+        },
+        {
+          "token": "?",
+          "values": [
+            0.56,
+            0.89,
+            1.0,
+            0.86
+          ]
+        },
+        {
+          "token": " To",
+          "values": [
+            0.64,
+            0.93,
+            0.99,
+            0.81
+          ]
+        }
+      ],
+      "transformer_processing": {
+        "num_layers_shown": 1,
+        "sample_activations": [
+          {
+            "layer": 0,
+            "token_position": 6,
+            "values": [
+              -0.16,
+              0.24,
+              -0.22,
+              -0.02
+            ]
+          }
+        ]
+      },
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": " is",
+            "token_id": 108663,
+            "logprob": -0.3688,
+            "prob": 0.6916
+          },
+          {
+            "token": " are",
+            "token_id": 107309,
+            "logprob": -1.8839,
+            "prob": 0.152
+          },
+          {
+            "token": " can",
+            "token_id": 96222,
+            "logprob": -2.5932,
+            "prob": 0.0748
+          },
+          {
+            "token": " will",
+            "token_id": 37773,
+            "logprob": -3.1335,
+            "prob": 0.0436
+          },
+          {
+            "token": " would",
+            "token_id": 102607,
+            "logprob": -4.1802,
+            "prob": 0.0153
+          },
+          {
+            "token": " should",
+            "token_id": 55647,
+            "logprob": -4.3798,
+            "prob": 0.0125
+          },
+          {
+            "token": " could",
+            "token_id": 76921,
+            "logprob": -5.6508,
+            "prob": 0.0035
+          },
+          {
+            "token": " may",
+            "token_id": 90883,
+            "logprob": -6.0131,
+            "prob": 0.0024
+          },
+          {
+            "token": " might",
+            "token_id": 21799,
+            "logprob": -6.2361,
+            "prob": 0.002
+          },
+          {
+            "token": " does",
+            "token_id": 29338,
+            "logprob": -7.0428,
+            "prob": 0.0009
+          }
+        ]
+      },
+      "selected_token": {
+        "token": " is",
+        "token_id": 108663,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 2,
+      "input_text": "How do I start learning Python? To is",
+      "tokens": [
+        "How",
+        " do",
+        " I",
+        " start",
+        " learning",
+        " Python",
+        "?",
+        " To",
+        " is"
+      ],
+      "token_ids": [
+        12845,
+        73964,
+        5035,
+        20212,
+        53157,
+        75717,
+        7629,
+        12309,
+        108663
+      ],
+      "embeddings": [
+        {
+          "token": "How",
+          "values": [
+            0.0,
+            0.48,
+            0.84,
+            1.0
+          ]
+        },
+        {
+          "token": " do",
+          "values": [
+            0.1,
+            0.56,
+            0.89,
+            1.0
+          ]
+        },
+        {
+          "token": " I",
+          "values": [
+            0.2,
+            0.64,
+            0.93,
+            0.99
+          ]
+        },
+        {
+          "token": " start",
+          "values": [
+            0.3,
+            0.72,
+            0.96,
+            0.97
+          ]
+        },
+        {
+          "token": " learning",
+          "values": [
+            0.39,
+            0.78,
+            0.99,
+            0.95
+          ]
+        },
+        {
+          "token": " Python",
+          "values": [
+            0.48,
+            0.84,
+            1.0,
+            0.91
+          ]
+        },
+        {
+          "token": "?",
+          "values": [
+            0.56,
+            0.89,
+            1.0,
+            0.86
+          ]
+        },
+        {
+          "token": " To",
+          "values": [
+            0.64,
+            0.93,
+            0.99,
+            0.81
+          ]
+        },
+        {
+          "token": " is",
+          "values": [
+            0.72,
+            0.96,
+            0.97,
+            0.75
+          ]
+        }
+      ],
+      "transformer_processing": {
+        "num_layers_shown": 1,
+        "sample_activations": [
+          {
+            "layer": 0,
+            "token_position": 2,
+            "values": [
+              0.33,
+              -0.31,
+              0.36,
+              0.76
+            ]
+          }
+        ]
+      },
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": " a",
+            "token_id": 69727,
+            "logprob": -0.2636,
+            "prob": 0.7683
+          },
+          {
+            "token": " an",
+            "token_id": 38285,
+            "logprob": -2.2761,
+            "prob": 0.1027
+          },
+          {
+            "token": " the",
+            "token_id": 78038,
+            "logprob": -2.4624,
+            "prob": 0.0852
+          },
+          {
+            "token": " this",
+            "token_id": 91877,
+            "logprob": -3.8493,
+            "prob": 0.0213
+          },
+          {
+            "token": " that",
+            "token_id": 104466,
+            "logprob": -4.1615,
+            "prob": 0.0156
+          },
+          {
+            "token": " some",
+            "token_id": 116435,
+            "logprob": -5.3984,
+            "prob": 0.0045
+          },
+          {
+            "token": " many",
+            "token_id": 71626,
+            "logprob": -6.5036,
+            "prob": 0.0015
+          },
+          {
+            "token": " few",
+            "token_id": 61398,
+            "logprob": -7.7555,
+            "prob": 0.0004
+          },
+          {
+            "token": " several",
+            "token_id": 37908,
+            "logprob": -8.8016,
+            "prob": 0.0002
+          },
+          {
+            "token": " various",
+            "token_id": 86166,
+            "logprob": -8.6553,
+            "prob": 0.0002
+          }
+        ]
+      },
+      "selected_token": {
+        "token": " a",
+        "token_id": 69727,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 3,
+      "input_text": "How do I start learning Python? To is a",
+      "tokens": [
+        "How",
+        " do",
+        " I",
+        " start",
+        " learning",
+        " Python",
+        "?",
+        " To",
+        " is",
+        " a"
+      ],
+      "token_ids": [
+        12845,
+        73964,
+        5035,
+        20212,
+        53157,
+        75717,
+        7629,
+        12309,
+        108663,
+        69727
+      ],
+      "embeddings": [
+        {
+          "token": "How",
+          "values": [
+            0.0,
+            0.48,
+            0.84,
+            1.0
+          ]
+        },
+        {
+          "token": " do",
+          "values": [
+            0.1,
+            0.56,
+            0.89,
+            1.0
+          ]
+        },
+        {
+          "token": " I",
+          "values": [
+            0.2,
+            0.64,
+            0.93,
+            0.99
+          ]
+        },
+        {
+          "token": " start",
+          "values": [
+            0.3,
+            0.72,
+            0.96,
+            0.97
+          ]
+        },
+        {
+          "token": " learning",
+          "values": [
+            0.39,
+            0.78,
+            0.99,
+            0.95
+          ]
+        },
+        {
+          "token": " Python",
+          "values": [
+            0.48,
+            0.84,
+            1.0,
+            0.91
+          ]
+        },
+        {
+          "token": "?",
+          "values": [
+            0.56,
+            0.89,
+            1.0,
+            0.86
+          ]
+        },
+        {
+          "token": " To",
+          "values": [
+            0.64,
+            0.93,
+            0.99,
+            0.81
+          ]
+        },
+        {
+          "token": " is",
+          "values": [
+            0.72,
+            0.96,
+            0.97,
+            0.75
+          ]
+        },
+        {
+          "token": " a",
+          "values": [
+            0.78,
+            0.99,
+            0.95,
+            0.68
+          ]
+        }
+      ],
+      "transformer_processing": {
+        "num_layers_shown": 1,
+        "sample_activations": [
+          {
+            "layer": 0,
+            "token_position": 10,
+            "values": [
+              -0.17,
+              -0.58,
+              -0.19,
+              0.06
+            ]
+          }
+        ]
+      },
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": " answer",
+            "token_id": 102294,
+            "logprob": -0.476,
+            "prob": 0.6213
+          },
+          {
+            "token": " response",
+            "token_id": 72606,
+            "logprob": -1.5604,
+            "prob": 0.21
+          },
+          {
+            "token": " result",
+            "token_id": 56016,
+            "logprob": -2.3173,
+            "prob": 0.0985
+          },
+          {
+            "token": " solution",
+            "token_id": 122479,
+            "logprob": -3.7446,
+            "prob": 0.0236
+          },
+          {
+            "token": " explanation",
+            "token_id": 27290,
+            "logprob": -3.8826,
+            "prob": 0.0206
+          },
+          {
+            "token": " way",
+            "token_id": 46141,
+            "logprob": -4.3719,
+            "prob": 0.0126
+          },
+          {
+            "token": " method",
+            "token_id": 101308,
+            "logprob": -4.7466,
+            "prob": 0.0087
+          },
+          {
+            "token": " approach",
+            "token_id": 33219,
+            "logprob": -6.1865,
+            "prob": 0.0021
+          },
+          {
+            "token": " idea",
+            "token_id": 112304,
+            "logprob": -6.7663,
+            "prob": 0.0012
+          },
+          {
+            "token": " thing",
+            "token_id": 42854,
+            "logprob": -7.602,
+            "prob": 0.0005
+          }
+        ]
+      },
+      "selected_token": {
+        "token": " answer",
+        "token_id": 102294,
+        "selection_method": "greedy"
+      }
+    }
+  ]
+}

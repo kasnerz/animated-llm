@@ -1,0 +1,596 @@
+{
+  "id": "example_009",
+  "prompt": "Give me a fun fact about dolphins.",
+  "language": "en",
+  "model_info": {
+    "name": "meta-llama/Llama-3-8B",
+    "num_layers": 32,
+    "hidden_size": 4096,
+    "num_attention_heads": 32,
+    "vocab_size": 128256
+  },
+  "generation_steps": [
+    {
+      "step": 0,
+      "input_text": "Give me a fun fact about dolphins.",
+      "tokens": [
+        "Give",
+        " me",
+        " a",
+        " fun",
+        " fact",
+        " about",
+        " dolphins",
+        "."
+      ],
+      "token_ids": [
+        27816,
+        19205,
+        54244,
+        75364,
+        95984,
+        60630,
+        90901,
+        16708
+      ],
+      "embeddings": [
+        {
+          "token": "Give",
+          "values": [
+            0.0,
+            0.48,
+            0.84,
+            1.0
+          ]
+        },
+        {
+          "token": " me",
+          "values": [
+            0.1,
+            0.56,
+            0.89,
+            1.0
+          ]
+        },
+        {
+          "token": " a",
+          "values": [
+            0.2,
+            0.64,
+            0.93,
+            0.99
+          ]
+        },
+        {
+          "token": " fun",
+          "values": [
+            0.3,
+            0.72,
+            0.96,
+            0.97
+          ]
+        },
+        {
+          "token": " fact",
+          "values": [
+            0.39,
+            0.78,
+            0.99,
+            0.95
+          ]
+        },
+        {
+          "token": " about",
+          "values": [
+            0.48,
+            0.84,
+            1.0,
+            0.91
+          ]
+        },
+        {
+          "token": " dolphins",
+          "values": [
+            0.56,
+            0.89,
+            1.0,
+            0.86
+          ]
+        },
+        {
+          "token": ".",
+          "values": [
+            0.64,
+            0.93,
+            0.99,
+            0.81
+          ]
+        }
+      ],
+      "transformer_processing": {
+        "num_layers_shown": 1,
+        "sample_activations": [
+          {
+            "layer": 0,
+            "token_position": 4,
+            "values": [
+              -0.71,
+              -0.17,
+              -0.95,
+              -0.05
+            ]
+          }
+        ]
+      },
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": " To",
+            "token_id": 3734,
+            "logprob": -0.3764,
+            "prob": 0.6863
+          },
+          {
+            "token": " The",
+            "token_id": 5298,
+            "logprob": -1.9861,
+            "prob": 0.1372
+          },
+          {
+            "token": " In",
+            "token_id": 94373,
+            "logprob": -2.645,
+            "prob": 0.071
+          },
+          {
+            "token": " This",
+            "token_id": 12284,
+            "logprob": -2.8389,
+            "prob": 0.0585
+          },
+          {
+            "token": " That",
+            "token_id": 68231,
+            "logprob": -3.6763,
+            "prob": 0.0253
+          },
+          {
+            "token": " Well",
+            "token_id": 36745,
+            "logprob": -4.5107,
+            "prob": 0.011
+          },
+          {
+            "token": " So",
+            "token_id": 23341,
+            "logprob": -5.4587,
+            "prob": 0.0043
+          },
+          {
+            "token": " Yes",
+            "token_id": 96719,
+            "logprob": -5.5635,
+            "prob": 0.0038
+          },
+          {
+            "token": " Sure",
+            "token_id": 123271,
+            "logprob": -6.3895,
+            "prob": 0.0017
+          },
+          {
+            "token": " Here",
+            "token_id": 30037,
+            "logprob": -8.1104,
+            "prob": 0.0003
+          }
+        ]
+      },
+      "selected_token": {
+        "token": " To",
+        "token_id": 3734,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 1,
+      "input_text": "Give me a fun fact about dolphins. To",
+      "tokens": [
+        "Give",
+        " me",
+        " a",
+        " fun",
+        " fact",
+        " about",
+        " dolphins",
+        ".",
+        " To"
+      ],
+      "token_ids": [
+        27816,
+        19205,
+        54244,
+        75364,
+        95984,
+        60630,
+        90901,
+        16708,
+        3734
+      ],
+      "embeddings": [
+        {
+          "token": "Give",
+          "values": [
+            0.0,
+            0.48,
+            0.84,
+            1.0
+          ]
+        },
+        {
+          "token": " me",
+          "values": [
+            0.1,
+            0.56,
+            0.89,
+            1.0
+          ]
+        },
+        {
+          "token": " a",
+          "values": [
+            0.2,
+            0.64,
+            0.93,
+            0.99
+          ]
+        },
+        {
+          "token": " fun",
+          "values": [
+            0.3,
+            0.72,
+            0.96,
+            0.97
+          ]
+        },
+        {
+          "token": " fact",
+          "values": [
+            0.39,
+            0.78,
+            0.99,
+            0.95
+          ]
+        },
+        {
+          "token": " about",
+          "values": [
+            0.48,
+            0.84,
+            1.0,
+            0.91
+          ]
+        },
+        {
+          "token": " dolphins",
+          "values": [
+            0.56,
+            0.89,
+            1.0,
+            0.86
+          ]
+        },
+        {
+          "token": ".",
+          "values": [
+            0.64,
+            0.93,
+            0.99,
+            0.81
+          ]
+        },
+        {
+          "token": " To",
+          "values": [
+            0.72,
+            0.96,
+            0.97,
+            0.75
+          ]
+        }
+      ],
+      "transformer_processing": {
+        "num_layers_shown": 1,
+        "sample_activations": [
+          {
+            "layer": 0,
+            "token_position": 8,
+            "values": [
+              0.75,
+              0.99,
+              0.07,
+              0.34
+            ]
+          }
+        ]
+      },
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": " is",
+            "token_id": 24057,
+            "logprob": -0.2805,
+            "prob": 0.7554
+          },
+          {
+            "token": " are",
+            "token_id": 65146,
+            "logprob": -2.0124,
+            "prob": 0.1337
+          },
+          {
+            "token": " can",
+            "token_id": 23753,
+            "logprob": -2.6988,
+            "prob": 0.0673
+          },
+          {
+            "token": " will",
+            "token_id": 30059,
+            "logprob": -3.9559,
+            "prob": 0.0191
+          },
+          {
+            "token": " would",
+            "token_id": 99281,
+            "logprob": -4.1991,
+            "prob": 0.015
+          },
+          {
+            "token": " should",
+            "token_id": 37418,
+            "logprob": -5.3668,
+            "prob": 0.0047
+          },
+          {
+            "token": " could",
+            "token_id": 53477,
+            "logprob": -5.9862,
+            "prob": 0.0025
+          },
+          {
+            "token": " may",
+            "token_id": 36304,
+            "logprob": -6.6939,
+            "prob": 0.0012
+          },
+          {
+            "token": " might",
+            "token_id": 94066,
+            "logprob": -7.2524,
+            "prob": 0.0007
+          },
+          {
+            "token": " does",
+            "token_id": 10281,
+            "logprob": -8.7377,
+            "prob": 0.0002
+          }
+        ]
+      },
+      "selected_token": {
+        "token": " is",
+        "token_id": 24057,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 2,
+      "input_text": "Give me a fun fact about dolphins. To is",
+      "tokens": [
+        "Give",
+        " me",
+        " a",
+        " fun",
+        " fact",
+        " about",
+        " dolphins",
+        ".",
+        " To",
+        " is"
+      ],
+      "token_ids": [
+        27816,
+        19205,
+        54244,
+        75364,
+        95984,
+        60630,
+        90901,
+        16708,
+        3734,
+        24057
+      ],
+      "embeddings": [
+        {
+          "token": "Give",
+          "values": [
+            0.0,
+            0.48,
+            0.84,
+            1.0
+          ]
+        },
+        {
+          "token": " me",
+          "values": [
+            0.1,
+            0.56,
+            0.89,
+            1.0
+          ]
+        },
+        {
+          "token": " a",
+          "values": [
+            0.2,
+            0.64,
+            0.93,
+            0.99
+          ]
+        },
+        {
+          "token": " fun",
+          "values": [
+            0.3,
+            0.72,
+            0.96,
+            0.97
+          ]
+        },
+        {
+          "token": " fact",
+          "values": [
+            0.39,
+            0.78,
+            0.99,
+            0.95
+          ]
+        },
+        {
+          "token": " about",
+          "values": [
+            0.48,
+            0.84,
+            1.0,
+            0.91
+          ]
+        },
+        {
+          "token": " dolphins",
+          "values": [
+            0.56,
+            0.89,
+            1.0,
+            0.86
+          ]
+        },
+        {
+          "token": ".",
+          "values": [
+            0.64,
+            0.93,
+            0.99,
+            0.81
+          ]
+        },
+        {
+          "token": " To",
+          "values": [
+            0.72,
+            0.96,
+            0.97,
+            0.75
+          ]
+        },
+        {
+          "token": " is",
+          "values": [
+            0.78,
+            0.99,
+            0.95,
+            0.68
+          ]
+        }
+      ],
+      "transformer_processing": {
+        "num_layers_shown": 1,
+        "sample_activations": [
+          {
+            "layer": 0,
+            "token_position": 0,
+            "values": [
+              0.74,
+              -0.21,
+              0.66,
+              -0.97
+            ]
+          }
+        ]
+      },
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": " a",
+            "token_id": 3277,
+            "logprob": -0.3262,
+            "prob": 0.7217
+          },
+          {
+            "token": " an",
+            "token_id": 27650,
+            "logprob": -2.1816,
+            "prob": 0.1129
+          },
+          {
+            "token": " the",
+            "token_id": 90215,
+            "logprob": -2.352,
+            "prob": 0.0952
+          },
+          {
+            "token": " this",
+            "token_id": 80854,
+            "logprob": -3.0363,
+            "prob": 0.048
+          },
+          {
+            "token": " that",
+            "token_id": 101461,
+            "logprob": -4.2068,
+            "prob": 0.0149
+          },
+          {
+            "token": " some",
+            "token_id": 30197,
+            "logprob": -5.4403,
+            "prob": 0.0043
+          },
+          {
+            "token": " many",
+            "token_id": 42465,
+            "logprob": -6.688,
+            "prob": 0.0012
+          },
+          {
+            "token": " few",
+            "token_id": 108788,
+            "logprob": -6.729,
+            "prob": 0.0012
+          },
+          {
+            "token": " several",
+            "token_id": 124098,
+            "logprob": -7.9769,
+            "prob": 0.0003
+          },
+          {
+            "token": " various",
+            "token_id": 122212,
+            "logprob": -9.1147,
+            "prob": 0.0001
+          }
+        ]
+      },
+      "selected_token": {
+        "token": " a",
+        "token_id": 3277,
+        "selection_method": "greedy"
+      }
+    }
+  ]
+}

@@ -1,0 +1,198 @@
+/**
+ * Visualization-specific styles for D3/SVG elements
+ */
+
+/* Token ID Labels */
+.token-id {
+    font-family: 'Consolas', 'Courier New', monospace;
+    font-size: 20px;
+    fill: var(--text-primary);
+    text-anchor: middle;
+    font-weight: 600;
+}
+
+/* Arrows */
+.arrow {
+    stroke: #cccccc;
+    stroke-width: 1.5;
+    fill: none;
+    marker-end: url(#arrowhead);
+}
+
+.arrow-animated {
+    stroke-dasharray: 5, 5;
+    animation: dash 1s linear infinite;
+}
+
+@keyframes dash {
+    to {
+        stroke-dashoffset: -10;
+    }
+}
+
+/* Embedding Squares */
+.embedding-square {
+    stroke: var(--border-color);
+    stroke-width: 1;
+    transition: all 0.3s ease;
+}
+
+.embedding-square:hover {
+    stroke: var(--accent-primary);
+    stroke-width: 2;
+}
+
+.embedding-value {
+    font-family: 'Consolas', 'Courier New', monospace;
+    font-size: 14px;
+    fill: var(--text-primary);
+    text-anchor: middle;
+}
+
+/* Transformer Block */
+.transformer-block {
+    fill: transparent;
+    stroke: #cccccc;
+    stroke-width: 1.5;
+    stroke-dasharray: 4, 4;
+    rx: 8;
+}
+
+.transformer-label {
+    font-size: 22px;
+    font-weight: 600;
+    fill: var(--text-primary);
+    text-anchor: middle;
+}
+
+.layer-label {
+    font-size: 16px;
+    fill: var(--text-secondary);
+    text-anchor: middle;
+}
+
+/* Attention Connections */
+.attention-line {
+    stroke: var(--accent-primary);
+    stroke-width: 1;
+    opacity: 0.3;
+    fill: none;
+}
+
+.attention-line.active {
+    opacity: 0.8;
+    stroke-width: 2;
+}
+
+/* Feed-Forward Connections */
+.feedforward-line {
+    stroke: var(--accent-secondary);
+    stroke-width: 2;
+    opacity: 0.5;
+    fill: none;
+}
+
+.feedforward-line.active {
+    opacity: 1;
+    stroke-width: 3;
+}
+
+/* Output Distribution */
+.distribution-bar {
+    fill: #bfbfbf; /* default grey, may be overridden inline */
+    transition: all 0.3s ease;
+}
+
+.distribution-bar:hover {
+    opacity: 0.85;
+}
+
+.distribution-bar.selected {
+    fill: #8B0000; /* dark red */
+}
+
+.distribution-label {
+    font-size: 16px;
+    fill: var(--text-primary);
+}
+
+.distribution-token {
+    font-family: 'Consolas', 'Courier New', monospace;
+    font-weight: 600;
+}
+
+.distribution-prob {
+    font-size: 14px;
+    fill: var(--text-secondary);
+}
+
+/* Section Headers in SVG */
+.section-header {
+    font-size: 24px;
+    font-weight: 600;
+    fill: var(--text-primary);
+}
+
+/* Gradient Definitions */
+.embedding-gradient-low {
+    stop-color: #FF6B6B;
+}
+
+.embedding-gradient-mid {
+    stop-color: #FFA07A;
+}
+
+.embedding-gradient-high {
+    stop-color: #51CF66;
+}
+
+/* Animation States */
+.fade-in {
+    opacity: 0;
+}
+
+.fade-in.visible {
+    opacity: 1;
+}
+
+.pulse {
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 0.5;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+/* Vector Grid */
+.vector-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 2px;
+}
+
+/* Tooltip */
+.viz-tooltip {
+    position: absolute;
+    padding: 8px 12px;
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 12px;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    box-shadow: 0 2px 8px var(--shadow-color);
+    z-index: 1000;
+}
+
+.viz-tooltip.visible {
+    opacity: 1;
+}
