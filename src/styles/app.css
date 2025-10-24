@@ -113,7 +113,7 @@
     background: var(--bg-primary);
     border: 1px solid var(--border-color);
     border-radius: 24px;
-    padding: 16px 60px 16px 12px;
+    padding: 16px 12px; /* even padding; no reserved space for absolutely positioned button */
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
     transition: none;
     /* remove hover animation */
@@ -228,10 +228,8 @@
 
 /* Play button */
 .btn-play {
-    position: absolute;
-    right: 12px;
-    top: 50%;
-    transform: translateY(-50%);
+    position: static; /* participate in flex layout to avoid subpixel jump on hover */
+    margin-left: auto; /* push to the right */
     width: 36px;
     height: 36px;
     border-radius: 50%;
@@ -256,7 +254,6 @@
     opacity: 0.5;
     cursor: not-allowed;
     background: var(--text-tertiary);
-    transform: translateY(-50%);
 }
 
 .btn-play svg {

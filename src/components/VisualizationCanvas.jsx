@@ -248,20 +248,20 @@ function VisualizationCanvas() {
         .attr('x1', 0) // Relative to tokenG center
         .attr('y1', 26)
         .attr('x2', 0) // Relative to tokenG center
-        .attr('y2', 46)
+        .attr('y2', 52) // slightly longer for more top margin above ID
         .style('stroke', '#ccc')
         .style('stroke-width', 1.5)
         .style('opacity', 0.7);
 
       arrowG.append('polygon')
-        .attr('points', `0,46 -4,40 4,40`) // Relative to tokenG center
+        .attr('points', `0,52 -4,46 4,46`) // Relative to tokenG center
         .style('fill', '#ccc')
         .style('opacity', 0.7);
 
       // Token ID below - monospace numeric
       tokenG.append('text')
         .attr('text-anchor', 'middle')
-        .attr('y', 58)
+        .attr('y', 72) // pushed down to increase top and bottom margins
         .attr('class', 'token-id')
         .style('font-size', '20px')
         .style('fill', 'var(--text-secondary)')
@@ -280,7 +280,7 @@ function VisualizationCanvas() {
         .attr('transform', `translate(${ellipsisX}, ${layout.tokenY})`);
       ellipsisG.append('text')
         .attr('text-anchor', 'middle')
-        .attr('y', 58)
+        .attr('y', 72)
         .attr('class', 'token-id')
         .style('font-size', '20px')
         .style('fill', 'var(--text-tertiary)')
@@ -308,7 +308,19 @@ function VisualizationCanvas() {
       maxOuterHeight = Math.max(maxOuterHeight, meta.height);
 
       // Arrow from token ID to embedding top
-      drawArrow(group, x, layout.tokenY + 68, x, meta.topY - 8, { className: 'id-to-emb-arrow' });
+      // First, a connector line down from below the ID to just above the embedding,
+      // then a short arrow segment (≈20px) that ends exactly on the embedding top edge.
+      const connectorStart = layout.tokenY + 84;      // a bit below the ID baseline (72)
+      const arrowStart = meta.topY - 20;              // short arrow begins 20px above top of embedding
+      group.append('line')
+        .attr('x1', x)
+        .attr('y1', connectorStart)
+        .attr('x2', x)
+        .attr('y2', arrowStart)
+        .style('stroke', '#ccc')
+        .style('stroke-width', 1.5)
+        .style('opacity', 0.7);
+      drawArrow(group, x, arrowStart, x, meta.topY, { className: 'id-to-emb-arrow' });
     });
 
     return { columnsMeta, maxOuterHeight };
@@ -399,9 +411,9 @@ function VisualizationCanvas() {
       .attr('y1', y1)
       .attr('x2', x2)
       .attr('y2', y2)
-      .style('stroke', '#b0b0b0')
+      .style('stroke', '#ccc')
       .style('stroke-width', 1.5)
-      .style('opacity', 0.8);
+      .style('opacity', 0.7);
 
     const angle = Math.atan2(y2 - y1, x2 - x1);
     const headLen = 6;
@@ -410,8 +422,8 @@ function VisualizationCanvas() {
     const points = `${x2},${y2} ${hx - Math.sin(angle) * 3},${hy + Math.cos(angle) * 3} ${hx + Math.sin(angle) * 3},${hy - Math.cos(angle) * 3}`;
     arrowG.append('polygon')
       .attr('points', points)
-      .style('fill', '#b0b0b0')
-      .style('opacity', 0.8);
+      .style('fill', '#ccc')
+      .style('opacity', 0.7);
 
     if (withBox) {
       arrowG.append('rect')
@@ -463,8 +475,9 @@ function VisualizationCanvas() {
     });
 
     // Attention mash: all-to-all lines between token centers with varied color/thickness
-    const attentionYTop = insideTopY + maxInsideTopHeight + 20;
-    const insideBottomY = attentionYTop + 60;
+    // The attention connections should start exactly at the bottom of the top embeddings
+    const attentionStartY = insideTopY + maxInsideTopHeight; // bottom edge of top embeddings
+    const insideBottomY = attentionStartY + 60; // spacing inside the block before bottom embeddings
     const attentionGroup = group.append('g').attr('class', 'attention-mash');
     const centers = insideTopMeta.map(m => (m ? { x: m.centerX } : null));
     centers.forEach((a, i) => {
@@ -472,17 +485,17 @@ function VisualizationCanvas() {
       centers.forEach((b, j) => {
         if (!b || i === j) return;
         // Deterministic pseudo-random strength per pair
-        const s = Math.abs(Math.sin((i * 37 + j * 17) * 12.9898)) % 1; // 0..1
-        const t = 1 - s; // color mix factor: 0 -> turquoise, 1 -> grey
-        const color = d3.interpolateRgb('#2EC4B6', '#B8C0CC')(t);
-        const width = 0.6 + s * 2.0;
-        const opacity = 0.35 + s * 0.35;
+  const s = Math.abs(Math.sin((i * 37 + j * 17) * 12.9898)) % 1; // 0..1
+  // Use lighter grayscale tones so they don't overpower; still visible on gray box
+  const color = d3.interpolateRgb('#C5CBD3', '#9AA0A6')(s);
+  const width = 0.6 + s * 2.0;
+  const opacity = 0.25 + s * 0.25; // 0.25..0.5
 
         attentionGroup.append('line')
           .attr('x1', a.x)
-          .attr('y1', attentionYTop - 30)
+          .attr('y1', attentionStartY)
           .attr('x2', b.x)
-          .attr('y2', attentionYTop + 30)
+          .attr('y2', insideBottomY)
           .style('stroke', color)
           .style('stroke-width', width)
           .style('opacity', opacity);
