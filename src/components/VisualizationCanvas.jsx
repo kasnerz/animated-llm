@@ -87,12 +87,12 @@ function VisualizationCanvas() {
     const blockMeta = renderTransformerBlock(transformerGroup, step, layout, width, outerMeta);
 
     // 4. Bottom outside embeddings + FFN arrows
-    const afterBottomY = renderBottomEmbeddings(bottomEmbeddingGroup, step, layout, width, blockMeta);
+    const bottomInfo = renderBottomEmbeddings(bottomEmbeddingGroup, step, layout, width, blockMeta);
 
     // 5. Output distribution below
     const outputYOffset = 220;
-    layout.outputY = afterBottomY + outputYOffset;
-    renderOutput(outputGroup, step, layout, width);
+    layout.outputY = bottomInfo.afterBottomY + outputYOffset;
+    renderOutput(outputGroup, step, layout, width, bottomInfo);
 
     // Add expand/collapse button if needed
     if (step.tokens.length > maxVisibleTokens) {
@@ -126,7 +126,7 @@ function VisualizationCanvas() {
     gsap.set(svgRef.current.querySelectorAll('.id-to-emb-arrow'), { opacity: 0 });
     gsap.set(svgRef.current.querySelectorAll('.outer-to-block-arrow'), { opacity: 0 });
     gsap.set(svgRef.current.querySelectorAll('.ffn-arrow'), { opacity: 0 });
-    gsap.set(svgRef.current.querySelectorAll('.output-group'), { opacity: 0 });
+    gsap.set(svgRef.current.querySelectorAll('.extracted-embedding, .extracted-horizontal, .logprob-vector, .logprob-arrow, .extracted-path-arrow, .distribution-bar, .distribution-token-label, .distribution-percentage-label'), { opacity: 0 });
 
     const tl = gsap.timeline({ defaults: { ease: 'power2.out' } });
 
@@ -151,7 +151,22 @@ function VisualizationCanvas() {
 
     // 5) Outside bottom embeddings + output
     tl.to(svgRef.current.querySelectorAll('.bottom-embedding-group, .bottom-embedding-group *'), { opacity: 1, y: 0, duration: dOut * 0.5 });
-    tl.to(svgRef.current.querySelectorAll('.output-group'), { opacity: 1, duration: dOut * 0.5 });
+
+    // 6) Extract rightmost embedding -> move/rotate/enlarge to center, show path, then reveal logprobs and bars
+    const extractedNode = svgRef.current.querySelector('.output-group .extracted-embedding');
+    if (extractedNode) {
+      const dx = parseFloat(extractedNode.getAttribute('data-dx') || '0');
+      const dy = parseFloat(extractedNode.getAttribute('data-dy') || '0');
+      tl.to(extractedNode, { opacity: 1, duration: dOut * 0.12 });
+      tl.to(svgRef.current.querySelectorAll('.extracted-path-arrow'), { opacity: 1, duration: dOut * 0.15 }, '<');
+      tl.to(extractedNode, { x: dx, y: dy, rotation: -90, scale: 1.3, transformOrigin: '50% 50%', duration: dOut * 0.7, ease: 'power2.inOut' });
+      tl.to(svgRef.current.querySelectorAll('.extracted-horizontal'), { opacity: 1, scale: 1.35, transformOrigin: '50% 50%', duration: dOut * 0.3 }, '>-0.1');
+      tl.to(extractedNode, { opacity: 0.0, duration: dOut * 0.15 }, '<');
+      tl.to(svgRef.current.querySelectorAll('.logprob-arrow'), { opacity: 1, duration: dOut * 0.1 }, '>-0.05');
+      tl.to(svgRef.current.querySelectorAll('.logprob-vector'), { opacity: 1, duration: dOut * 0.2 }, '<');
+      tl.fromTo(svgRef.current.querySelectorAll('.distribution-bar'), { opacity: 0, scaleY: 0.1, transformOrigin: '50% 100%' }, { opacity: 1, scaleY: 1, duration: dOut * 0.55, stagger: 0.02, ease: 'power2.out' }, '>-0.05');
+      tl.to(svgRef.current.querySelectorAll('.distribution-token-label, .distribution-percentage-label'), { opacity: 1, duration: dOut * 0.3, stagger: 0.015 }, '<+0.1');
+    }
 
     tl.eventCallback('onComplete', () => {
       actions.setIsPlaying(false);
@@ -303,7 +318,8 @@ function VisualizationCanvas() {
       if (actualIndex < 0) { columnsMeta.push(null); return; }
       const values = embeddings[actualIndex]?.values || [];
       const expanded = !!embeddingExpanded[actualIndex];
-      const meta = drawEmbeddingColumn(group, x, layout.embeddingY, values, { expanded, interactive: true, index: actualIndex });
+      const tokenColor = getTokenColor(actualIndex);
+      const meta = drawEmbeddingColumn(group, x, layout.embeddingY, values, { expanded, interactive: true, index: actualIndex, tokenColor });
       columnsMeta.push(meta);
       maxOuterHeight = Math.max(maxOuterHeight, meta.height);
 
@@ -328,7 +344,7 @@ function VisualizationCanvas() {
 
   // Draw a compact vertical embedding column (rectangle divided into square cells)
   const drawEmbeddingColumn = (group, centerX, topY, values, opts = {}) => {
-    const { expanded = false, interactive = false, index = -1 } = opts;
+    const { expanded = false, interactive = false, index = -1, tokenColor = null } = opts;
     const cellSize = 16; // larger squares
     const cellGap = 3;
     const padding = 6; // larger rectangle padding
@@ -342,15 +358,24 @@ function VisualizationCanvas() {
     const height = n * cellSize + (n - 1) * cellGap + padding * 2;
     const leftX = centerX - width / 2;
 
-    // Outer rect
+    // Outer rect - use lightened token color if provided
+    let outerFill = '#f2f3f5';
+    let outerStroke = '#e0e0e0';
+    if (tokenColor) {
+      // Lighten the token color by mixing with white
+      const lightenedColor = d3.interpolateRgb(tokenColor, '#ffffff')(0.7); // 70% towards white
+      outerFill = lightenedColor;
+      outerStroke = d3.interpolateRgb(tokenColor, '#ffffff')(0.5); // 50% towards white for border
+    }
+
     group.append('rect')
       .attr('x', leftX)
       .attr('y', topY)
       .attr('width', width)
       .attr('height', height)
       .attr('rx', 4)
-      .style('fill', '#f2f3f5')
-      .style('stroke', '#e0e0e0');
+      .style('fill', outerFill)
+      .style('stroke', outerStroke);
 
     // Cells
     displayValues.forEach((v, i) => {
@@ -386,8 +411,8 @@ function VisualizationCanvas() {
         .attr('width', cellSize)
         .attr('height', cellSize)
         .attr('rx', 2)
-        .style('fill', getEmbeddingColor(v))
-        .style('stroke', 'transparent');
+        .style('fill', 'transparent')
+        .style('stroke', 'none');
 
       // Numeric value inside each square
       group.append('text')
@@ -438,6 +463,25 @@ function VisualizationCanvas() {
     }
   };
 
+  // Create a right-angled path with rounded corner
+  const rightAngleRoundedPath = (x1, y1, x2, y2, radius = 10) => {
+    // Go down from (x1, y1), then horizontally to (x2, y2)
+    const midY = y2; // the turn happens at y2
+
+    // Calculate the corner points
+    const cornerX1 = x1;
+    const cornerY1 = midY - (y2 > y1 ? radius : -radius);
+    const cornerX2 = x1 + (x2 > x1 ? radius : -radius);
+    const cornerY2 = midY;
+
+    return `
+      M ${x1},${y1}
+      L ${cornerX1},${cornerY1}
+      Q ${x1},${midY} ${cornerX2},${cornerY2}
+      L ${x2},${y2}
+    `;
+  };
+
   // New transformer block between outside embeddings
   const renderTransformerBlock = (group, step, layout, width, outerMeta) => {
     const { visibleIndices = [], positions = [] } = tokensLayoutRef.current || {};
@@ -464,7 +508,8 @@ function VisualizationCanvas() {
       const x = positions[i];
       if (actualIndex < 0) { insideTopMeta.push(null); return; }
       const vals = embeddings[actualIndex]?.values || [];
-      const meta = drawEmbeddingColumn(insideTopGroup, x, insideTopY, vals, { expanded: false });
+      const tokenColor = getTokenColor(actualIndex);
+      const meta = drawEmbeddingColumn(insideTopGroup, x, insideTopY, vals, { expanded: false, tokenColor });
       insideTopMeta.push(meta);
       maxInsideTopHeight = Math.max(maxInsideTopHeight, meta.height);
       // Arrow from outside embeddings into the block
@@ -485,11 +530,11 @@ function VisualizationCanvas() {
       centers.forEach((b, j) => {
         if (!b || i === j) return;
         // Deterministic pseudo-random strength per pair
-  const s = Math.abs(Math.sin((i * 37 + j * 17) * 12.9898)) % 1; // 0..1
-  // Use lighter grayscale tones so they don't overpower; still visible on gray box
-  const color = d3.interpolateRgb('#C5CBD3', '#9AA0A6')(s);
-  const width = 0.6 + s * 2.0;
-  const opacity = 0.25 + s * 0.25; // 0.25..0.5
+        const s = Math.abs(Math.sin((i * 37 + j * 17) * 12.9898)) % 1; // 0..1
+        // Use lighter grayscale tones so they don't overpower; still visible on gray box
+        const color = d3.interpolateRgb('#C5CBD3', '#9AA0A6')(s);
+        const width = 0.6 + s * 2.0;
+        const opacity = 0.25 + s * 0.25; // 0.25..0.5
 
         attentionGroup.append('line')
           .attr('x1', a.x)
@@ -510,7 +555,8 @@ function VisualizationCanvas() {
       const x = positions[i];
       if (actualIndex < 0) { insideBottomMeta.push(null); return; }
       const vals = embeddings[actualIndex]?.values || [];
-      const meta = drawEmbeddingColumn(insideBottomGroup, x, insideBottomY, vals, { expanded: false });
+      const tokenColor = getTokenColor(actualIndex);
+      const meta = drawEmbeddingColumn(insideBottomGroup, x, insideBottomY, vals, { expanded: false, tokenColor });
       insideBottomMeta.push(meta);
       maxInsideBottomHeight = Math.max(maxInsideBottomHeight, meta.height);
     });
@@ -539,72 +585,212 @@ function VisualizationCanvas() {
     const topY = blockMeta.blockBottomY + 40;
 
     let maxHeight = 0;
+    const metas = [];
     visibleIndices.forEach((actualIndex, i) => {
       const x = positions[i];
       if (actualIndex < 0) return;
       const vals = embeddings[actualIndex]?.values || [];
+      const tokenColor = getTokenColor(actualIndex);
       // FFN arrow with small box
       const insideBottom = blockMeta.insideBottomMeta[i];
       if (insideBottom) {
         drawArrow(group, x, insideBottom.bottomY + 4, x, topY - 8, { withBox: true, className: 'ffn-arrow' });
       }
-      const meta = drawEmbeddingColumn(group, x, topY, vals, { expanded: false });
+      const meta = drawEmbeddingColumn(group, x, topY, vals, { expanded: false, tokenColor });
+      metas[i] = meta;
       maxHeight = Math.max(maxHeight, meta.height);
     });
 
-    return topY + maxHeight;
+    // find rightmost visible index
+    let rightmostIdx = -1;
+    for (let i = visibleIndices.length - 1; i >= 0; i--) {
+      if (visibleIndices[i] >= 0) { rightmostIdx = i; break; }
+    }
+    const rightmostMeta = rightmostIdx >= 0 ? metas[rightmostIdx] : null;
+
+    return { afterBottomY: topY + maxHeight, topY, maxHeight, metas, rightmostIdx, rightmostMeta };
   };
 
   /**
    * Render output distribution
    */
-  const renderOutput = (group, step, layout, width) => {
+  const renderOutput = (group, step, layout, width, bottomInfo) => {
     const candidates = step.output_distribution?.candidates || [];
-    const barWidth = 60;
-    const barSpacing = 10;
-    const maxBarHeight = 80;
-    const totalWidth = candidates.length * (barWidth + barSpacing);
-    const startX = (width - totalWidth) / 2;
 
-    candidates.forEach((item, i) => {
-      const x = startX + i * (barWidth + barSpacing);
-      const barHeight = item.prob * maxBarHeight;
+    // 1) Extract the rightmost bottom embedding and animate it to center as a horizontal vector
+    const rm = bottomInfo.rightmostMeta;
+    const { visibleIndices = [], positions = [] } = tokensLayoutRef.current || {};
+    let rightmostActualIndex = -1;
+    for (let i = visibleIndices.length - 1; i >= 0; i--) {
+      if (visibleIndices[i] >= 0) { rightmostActualIndex = visibleIndices[i]; break; }
+    }
+    const tokenColor = rightmostActualIndex >= 0 ? getTokenColor(rightmostActualIndex) : '#999';
+    const baseFill = d3.interpolateRgb(tokenColor, '#ffffff')(0.7);
+    const baseStroke = d3.interpolateRgb(tokenColor, '#ffffff')(0.5);
 
-      // Bar
+    // Target placement for the rotated version
+    const horizY = bottomInfo.afterBottomY + 60; // below the last embeddings
+    const horizCenterX = width / 2;
+
+    // Draw the right-angle path FIRST (behind vectors)
+    if (rm) {
+      const startX = rm.centerX;
+      const startY = rm.topY + rm.height / 2;
+      const endX = horizCenterX;
+      const endY = horizY + 12; // near the horizontal vector
+      const pathD = rightAngleRoundedPath(startX, startY, endX, endY, 20);
+      group.append('path')
+        .attr('d', pathD)
+        .attr('class', 'extracted-path-arrow')
+        .style('fill', 'none')
+        .style('stroke', '#c0c0c0')
+        .style('stroke-width', 1.5)
+        .style('stroke-linecap', 'round')
+        .style('stroke-linejoin', 'round')
+        .style('opacity', 0.9)
+        .attr('marker-end', 'url(#arrowhead)');
+    }
+
+    const extracted = group.append('g').attr('class', 'extracted-embedding');
+    if (rm) {
+      extracted.append('rect')
+        .attr('x', rm.centerX - rm.width / 2)
+        .attr('y', rm.topY)
+        .attr('width', rm.width)
+        .attr('height', rm.height)
+        .attr('rx', 4)
+        .style('fill', baseFill)
+        .style('stroke', baseStroke);
+      // store deltas for GSAP animation (move from current position to horiz target)
+      const dx = horizCenterX - rm.centerX;
+      const dy = (horizY + (rm.height / 2)) - (rm.topY + (rm.height / 2));
+      extracted.attr('data-dx', dx).attr('data-dy', dy);
+    }
+    // Draw final horizontal vector (hidden initially) representing the copied embedding
+    const sampleValues = (rightmostActualIndex >= 0 ? (step.embeddings?.[rightmostActualIndex]?.values || []) : []).slice(0, 8);
+    const hv1 = drawHorizontalVector(group, horizCenterX, horizY, sampleValues, { className: 'extracted-horizontal', tokenColor, bgFill: baseFill });
+
+    // 2) Arrow with a small box to logprob vector
+    const logprobY = hv1.bottomY + 40;
+    const probs = candidates.map(c => c.prob);
+    const hv2 = drawHorizontalVector(group, horizCenterX, logprobY, probs, { className: 'logprob-vector', tokenColor: '#8B5CF6', format: v => (v).toFixed(2) });
+    // arrow from hv1 to hv2
+    drawArrow(group, horizCenterX, hv1.bottomY + 6, horizCenterX, hv2.topY - 8, { withBox: true, className: 'logprob-arrow' });
+
+    // 3) Output distribution bars aligned to hv2 cells, positioned below the vector
+    const maxBarHeight = 100;
+    const barTopY = hv2.bottomY + 30; // bars start below logprob vector
+    const barBaselineY = barTopY + maxBarHeight; // baseline for bar heights
+
+    hv2.centers.forEach((cx, i) => {
+      const p = probs[i] ?? 0;
+      const barH = p * maxBarHeight;
+      const bw = Math.max(12, hv2.cellWidth * 0.7); // wider bars for visibility
+      const color = getPurpleByProb(p);
+
       group.append('rect')
-        .attr('x', x)
-        .attr('y', layout.outputY - barHeight)
-        .attr('width', barWidth)
-        .attr('height', barHeight)
+        .attr('x', cx - bw / 2)
+        .attr('y', barBaselineY - barH)
+        .attr('width', bw)
+        .attr('height', barH)
+        .attr('rx', 4)
         .attr('class', 'distribution-bar')
-        .style('fill', `hsl(${200 + i * 10}, 70%, 60%)`);
+        .style('fill', color);
+    });
+
+    // 4) Legend below bars with token labels and percentages
+    const legendY = barBaselineY + 20;
+    hv2.centers.forEach((cx, i) => {
+      const p = probs[i] ?? 0;
+      const token = candidates[i]?.token ?? '';
+      const percentage = (p * 100).toFixed(1) + '%';
 
       // Token label
       group.append('text')
-        .attr('x', x + barWidth / 2)
-        .attr('y', layout.outputY + 15)
+        .attr('x', cx)
+        .attr('y', legendY)
         .attr('text-anchor', 'middle')
-        .attr('class', 'distribution-label')
+        .attr('class', 'distribution-token-label')
         .style('font-size', '11px')
-        .text(item.token);
+        .style('font-weight', '500')
+        .style('fill', '#333')
+        .text(token);
 
-      // Probability
+      // Percentage label below token
       group.append('text')
-        .attr('x', x + barWidth / 2)
-        .attr('y', layout.outputY - barHeight - 5)
+        .attr('x', cx)
+        .attr('y', legendY + 16)
         .attr('text-anchor', 'middle')
-        .attr('class', 'distribution-prob')
+        .attr('class', 'distribution-percentage-label')
+        .style('font-size', '9px')
+        .style('fill', '#666')
+        .text(percentage);
+    });
+  };
+
+  // Draw a horizontal vector with numbers inside narrow cells; returns centers for alignment
+  const drawHorizontalVector = (group, centerX, topY, values, opts = {}) => {
+    const { className = '', tokenColor = '#ddd', bgFill = null, format } = opts;
+    const g = group.append('g').attr('class', className);
+    const n = values.length;
+    const cellWidth = 26;
+    const cellHeight = 18;
+    const gap = 6;
+    const width = n * cellWidth + (n - 1) * gap + 12;
+    const leftX = centerX - width / 2 + 6;
+    const centers = [];
+
+    // background pill using lightened token color
+    const bg = bgFill ?? d3.interpolateRgb(typeof tokenColor === 'string' ? tokenColor : '#ddd', '#ffffff')(0.85);
+    g.append('rect')
+      .attr('x', leftX - 6)
+      .attr('y', topY)
+      .attr('width', width)
+      .attr('height', cellHeight + 12)
+      .attr('rx', 10)
+      .style('fill', bg)
+      .style('stroke', '#e5e7eb');
+
+    values.forEach((v, i) => {
+      const x = leftX + i * (cellWidth + gap);
+      const cx = x + cellWidth / 2;
+      centers.push(cx);
+      // transparent cell
+      g.append('rect')
+        .attr('x', x)
+        .attr('y', topY + 6)
+        .attr('width', cellWidth)
+        .attr('height', cellHeight)
+        .attr('rx', 4)
+        .style('fill', 'transparent');
+      // number
+      g.append('text')
+        .attr('x', cx)
+        .attr('y', topY + 6 + cellHeight / 2 + 3)
+        .attr('text-anchor', 'middle')
         .style('font-size', '10px')
-        .text(`${(item.prob * 100).toFixed(1)}%`);
+        .style('fill', '#111')
+        .text(format ? format(v) : (typeof v === 'number' ? v.toFixed(1) : ''));
     });
 
-    // Title
-    group.append('text')
-      .attr('x', width / 2)
-      .attr('y', layout.outputY - maxBarHeight - 20)
-      .attr('text-anchor', 'middle')
-      .attr('class', 'output-title')
-      .text(t('output_distribution'));
+    return { topY, bottomY: topY + cellHeight + 12, centers, width, cellWidth };
+  };
+
+  // Utility: smooth connector path (downward then right) using cubic bezier
+  const smoothConnectorPath = (x1, y1, x2, y2) => {
+    const dx = x2 - x1;
+    const dy = y2 - y1;
+    const c1x = x1;
+    const c1y = y1 + dy * 0.6; // pull mostly downward from start
+    const c2x = x2 - dx * 0.4; // then ease into the end horizontally
+    const c2y = y2;
+    return `M ${x1} ${y1} C ${c1x} ${c1y}, ${c2x} ${c2y}, ${x2} ${y2}`;
+  };
+
+  const getPurpleByProb = (p) => {
+    const s = 45 + Math.round(p * 45); // 45%..90%
+    const l = 62 - Math.round(p * 10); // 62%..52%
+    return `hsl(270, ${s}%, ${l}%)`;
   };
 
   /**

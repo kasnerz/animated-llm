@@ -113,7 +113,8 @@
     background: var(--bg-primary);
     border: 1px solid var(--border-color);
     border-radius: 24px;
-    padding: 16px 12px; /* even padding; no reserved space for absolutely positioned button */
+    padding: 16px 12px;
+    /* even padding; no reserved space for absolutely positioned button */
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
     transition: none;
     /* remove hover animation */
@@ -228,8 +229,10 @@
 
 /* Play button */
 .btn-play {
-    position: static; /* participate in flex layout to avoid subpixel jump on hover */
-    margin-left: auto; /* push to the right */
+    position: static;
+    /* participate in flex layout to avoid subpixel jump on hover */
+    margin-left: auto;
+    /* push to the right */
     width: 36px;
     height: 36px;
     border-radius: 50%;
@@ -313,7 +316,7 @@
 .visualization-section {
     background: transparent;
     padding: 0;
-    min-height: 900px;
+    min-height: 1100px;
     position: relative;
     display: flex;
     justify-content: center;
@@ -348,7 +351,7 @@
 .visualization-canvas {
     width: 100%;
     max-width: 1000px;
-    height: 900px;
+    height: 1100px;
     background: transparent;
 }
 
