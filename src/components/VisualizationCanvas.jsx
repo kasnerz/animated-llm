@@ -113,44 +113,97 @@ function VisualizationCanvas() {
     const dTrans = total * phases.transformer; // transformer internals
     const dOut = total * phases.output; // bottom + output (minimal)
 
-    // Initial states
-    gsap.set(svgRef.current.querySelectorAll('.token'), { opacity: 0 });
-    gsap.set(svgRef.current.querySelectorAll('.token-id'), { opacity: 0 });
-    gsap.set(svgRef.current.querySelectorAll('.token-id-arrow'), { opacity: 0 });
-    gsap.set(svgRef.current.querySelectorAll('.embedding-group, .embedding-group *'), { opacity: 0, y: -8 });
-    gsap.set(svgRef.current.querySelectorAll('.transformer-group .transformer-box'), { opacity: 0, scaleY: 0.95, transformOrigin: '50% 0%' });
-    gsap.set(svgRef.current.querySelectorAll('.transformer-group .inside-top-embeddings, .transformer-group .inside-top-embeddings *'), { opacity: 0, y: -8 });
-    gsap.set(svgRef.current.querySelectorAll('.transformer-group .attention-mash, .transformer-group .attention-mash *'), { opacity: 0 });
-    gsap.set(svgRef.current.querySelectorAll('.transformer-group .inside-bottom-embeddings, .transformer-group .inside-bottom-embeddings *'), { opacity: 0, y: 8 });
-    gsap.set(svgRef.current.querySelectorAll('.bottom-embedding-group, .bottom-embedding-group *'), { opacity: 0, y: 8 });
-    gsap.set(svgRef.current.querySelectorAll('.id-to-emb-arrow'), { opacity: 0 });
-    gsap.set(svgRef.current.querySelectorAll('.outer-to-block-arrow'), { opacity: 0 });
-    gsap.set(svgRef.current.querySelectorAll('.ffn-arrow'), { opacity: 0 });
-    gsap.set(svgRef.current.querySelectorAll('.extracted-embedding, .extracted-horizontal, .logprob-vector, .logprob-arrow, .extracted-path-arrow, .distribution-bar, .distribution-token-label, .distribution-percentage-label'), { opacity: 0 });
+    const isInitialStep = state.currentStep === 1; // first visualization render: precompute KV for all prompt tokens
+
+    if (isInitialStep) {
+      // Initial visualization: animate all tokens/stacks in parallel (KV cache precompute)
+      gsap.set(svgRef.current.querySelectorAll('.token'), { opacity: 0 });
+      gsap.set(svgRef.current.querySelectorAll('.token-id'), { opacity: 0 });
+      gsap.set(svgRef.current.querySelectorAll('.token-id-arrow'), { opacity: 0 });
+      gsap.set(svgRef.current.querySelectorAll('.embedding-group, .embedding-group *'), { opacity: 0, y: -8 });
+      gsap.set(svgRef.current.querySelectorAll('.transformer-group .transformer-box'), { opacity: 0, scaleY: 0.95, transformOrigin: '50% 0%' });
+      gsap.set(svgRef.current.querySelectorAll('.transformer-group .inside-top-embeddings, .transformer-group .inside-top-embeddings *'), { opacity: 0, y: -8 });
+      gsap.set(svgRef.current.querySelectorAll('.transformer-group .attention-mash, .transformer-group .attention-mash *'), { opacity: 0 });
+      gsap.set(svgRef.current.querySelectorAll('.transformer-group .inside-bottom-embeddings, .transformer-group .inside-bottom-embeddings *'), { opacity: 0, y: 8 });
+      gsap.set(svgRef.current.querySelectorAll('.bottom-embedding-group, .bottom-embedding-group *'), { opacity: 0, y: 8 });
+      gsap.set(svgRef.current.querySelectorAll('.id-to-emb-arrow'), { opacity: 0 });
+      gsap.set(svgRef.current.querySelectorAll('.outer-to-block-arrow'), { opacity: 0 });
+      gsap.set(svgRef.current.querySelectorAll('.ffn-arrow'), { opacity: 0 });
+      gsap.set(svgRef.current.querySelectorAll('.extracted-embedding, .extracted-horizontal, .logprob-vector, .logprob-arrow, .extracted-path-arrow, .distribution-bar, .distribution-token-label, .distribution-percentage-label'), { opacity: 0 });
+    } else {
+      // Subsequent steps: keep previous stacks visible; animate only the new stack
+      gsap.set(svgRef.current.querySelectorAll('.token.prev-token'), { opacity: 1 });
+      gsap.set(svgRef.current.querySelectorAll('.token.new-token'), { opacity: 0 });
+      gsap.set(svgRef.current.querySelectorAll('.token-id.prev-token'), { opacity: 1 });
+      gsap.set(svgRef.current.querySelectorAll('.token-id.new-token'), { opacity: 0 });
+      gsap.set(svgRef.current.querySelectorAll('.token-id-arrow.prev-token'), { opacity: 1 });
+      gsap.set(svgRef.current.querySelectorAll('.token-id-arrow.new-token'), { opacity: 0 });
+      gsap.set(svgRef.current.querySelectorAll('.embedding-group .embedding-col.prev-token'), { opacity: 1, y: 0 });
+      gsap.set(svgRef.current.querySelectorAll('.embedding-group .embedding-col.new-token'), { opacity: 0, y: -8 });
+      gsap.set(svgRef.current.querySelectorAll('.transformer-group .transformer-box'), { opacity: 1, scaleY: 1, transformOrigin: '50% 0%' });
+      gsap.set(svgRef.current.querySelectorAll('.transformer-group .inside-top-embeddings .embedding-col.prev-token'), { opacity: 1, y: 0 });
+      gsap.set(svgRef.current.querySelectorAll('.transformer-group .inside-top-embeddings .embedding-col.new-token'), { opacity: 0, y: -8 });
+      gsap.set(svgRef.current.querySelectorAll('.transformer-group .attention-mash, .transformer-group .attention-mash *'), { opacity: 1 });
+      gsap.set(svgRef.current.querySelectorAll('.transformer-group .inside-bottom-embeddings .embedding-col.prev-token'), { opacity: 1, y: 0 });
+      gsap.set(svgRef.current.querySelectorAll('.transformer-group .inside-bottom-embeddings .embedding-col.new-token'), { opacity: 0, y: 8 });
+      gsap.set(svgRef.current.querySelectorAll('.bottom-embedding-group .embedding-col.prev-token'), { opacity: 1, y: 0 });
+      gsap.set(svgRef.current.querySelectorAll('.bottom-embedding-group .embedding-col.new-token'), { opacity: 0, y: 8 });
+      gsap.set(svgRef.current.querySelectorAll('.id-to-emb-arrow.prev-token'), { opacity: 1 });
+      gsap.set(svgRef.current.querySelectorAll('.id-to-emb-arrow.new-token'), { opacity: 0 });
+      gsap.set(svgRef.current.querySelectorAll('.outer-to-block-arrow.prev-token'), { opacity: 1 });
+      gsap.set(svgRef.current.querySelectorAll('.outer-to-block-arrow.new-token'), { opacity: 0 });
+      gsap.set(svgRef.current.querySelectorAll('.ffn-arrow.prev-token'), { opacity: 1 });
+      gsap.set(svgRef.current.querySelectorAll('.ffn-arrow.new-token'), { opacity: 0 });
+      gsap.set(svgRef.current.querySelectorAll('.extracted-embedding, .extracted-horizontal, .logprob-vector, .logprob-arrow, .extracted-path-arrow, .distribution-bar, .distribution-token-label, .distribution-percentage-label'), { opacity: 0 });
+    }
 
     const tl = gsap.timeline({ defaults: { ease: 'power2.out' } });
 
-    // 1) Tokens appear (nearly all at once)
-    tl.to(svgRef.current.querySelectorAll('.token'), { opacity: 1, duration: dToken * 0.7, stagger: 0.02 });
+    if (isInitialStep) {
+      // Full first-step animation: animate all tokens/stacks together
+      // 1) Tokens appear
+      tl.to(svgRef.current.querySelectorAll('.token'), { opacity: 1, duration: dToken * 0.7, stagger: 0.02 });
 
-    // 2) Token IDs + token→ID arrows
-    tl.to(svgRef.current.querySelectorAll('.token-id-arrow'), { opacity: 1, duration: dIds * 0.4 }, '>-0.2');
-    tl.to(svgRef.current.querySelectorAll('.token-id'), { opacity: 1, duration: dIds * 0.6, stagger: 0.02 }, '<');
+      // 2) Token IDs + token→ID arrows
+      tl.to(svgRef.current.querySelectorAll('.token-id-arrow'), { opacity: 1, duration: dIds * 0.4 }, '>-0.2');
+      tl.to(svgRef.current.querySelectorAll('.token-id'), { opacity: 1, duration: dIds * 0.6, stagger: 0.02 }, '<');
 
-    // 3) Outside embeddings + ID→Embedding arrows
-    tl.to(svgRef.current.querySelectorAll('.embedding-group, .embedding-group *'), { opacity: 1, y: 0, duration: dEmb * 0.7 });
-    tl.to(svgRef.current.querySelectorAll('.id-to-emb-arrow'), { opacity: 1, duration: dEmb * 0.3 }, '<');
+      // 3) Outside embeddings + ID→Embedding arrows
+      tl.to(svgRef.current.querySelectorAll('.embedding-group, .embedding-group *'), { opacity: 1, y: 0, duration: dEmb * 0.7 });
+      tl.to(svgRef.current.querySelectorAll('.id-to-emb-arrow'), { opacity: 1, duration: dEmb * 0.3 }, '<');
 
-    // 4) Transformer block internals
-    tl.to(svgRef.current.querySelectorAll('.transformer-group .transformer-box'), { opacity: 1, scaleY: 1, duration: dTrans * 0.1 });
-    tl.to(svgRef.current.querySelectorAll('.transformer-group .inside-top-embeddings, .transformer-group .inside-top-embeddings *'), { opacity: 1, y: 0, duration: dTrans * 0.2 });
-    tl.to(svgRef.current.querySelectorAll('.outer-to-block-arrow'), { opacity: 1, duration: dTrans * 0.1 }, '<');
-    tl.to(svgRef.current.querySelectorAll('.transformer-group .attention-mash, .transformer-group .attention-mash *'), { opacity: 1, duration: dTrans * 0.3 });
-    tl.to(svgRef.current.querySelectorAll('.transformer-group .inside-bottom-embeddings, .transformer-group .inside-bottom-embeddings *'), { opacity: 1, y: 0, duration: dTrans * 0.2 });
-    tl.to(svgRef.current.querySelectorAll('.ffn-arrow'), { opacity: 1, duration: dTrans * 0.2 }, '<');
+      // 4) Transformer block internals
+      tl.to(svgRef.current.querySelectorAll('.transformer-group .transformer-box'), { opacity: 1, scaleY: 1, duration: dTrans * 0.1 });
+      tl.to(svgRef.current.querySelectorAll('.transformer-group .inside-top-embeddings, .transformer-group .inside-top-embeddings *'), { opacity: 1, y: 0, duration: dTrans * 0.2 });
+      tl.to(svgRef.current.querySelectorAll('.outer-to-block-arrow'), { opacity: 1, duration: dTrans * 0.1 }, '<');
+      tl.to(svgRef.current.querySelectorAll('.transformer-group .attention-mash, .transformer-group .attention-mash *'), { opacity: 1, duration: dTrans * 0.3 });
+      tl.to(svgRef.current.querySelectorAll('.transformer-group .inside-bottom-embeddings, .transformer-group .inside-bottom-embeddings *'), { opacity: 1, y: 0, duration: dTrans * 0.2 });
+      tl.to(svgRef.current.querySelectorAll('.ffn-arrow'), { opacity: 1, duration: dTrans * 0.2 }, '<');
 
-    // 5) Outside bottom embeddings + output
-    tl.to(svgRef.current.querySelectorAll('.bottom-embedding-group, .bottom-embedding-group *'), { opacity: 1, y: 0, duration: dOut * 0.5 });
+      // 5) Outside bottom embeddings + output
+      tl.to(svgRef.current.querySelectorAll('.bottom-embedding-group, .bottom-embedding-group *'), { opacity: 1, y: 0, duration: dOut * 0.5 });
+    } else {
+      // Subsequent steps: animate only new token stack
+      // 1) Tokens appear (only the new one)
+      tl.to(svgRef.current.querySelectorAll('.token.new-token'), { opacity: 1, duration: dToken * 0.7 });
+
+      // 2) Token IDs + token→ID arrows (only for the new token)
+      tl.to(svgRef.current.querySelectorAll('.token-id-arrow.new-token'), { opacity: 1, duration: dIds * 0.4 }, '>-0.2');
+      tl.to(svgRef.current.querySelectorAll('.token-id.new-token'), { opacity: 1, duration: dIds * 0.6 }, '<');
+
+      // 3) Outside embeddings + ID→Embedding arrows (new token column only)
+      tl.to(svgRef.current.querySelectorAll('.embedding-group .embedding-col.new-token'), { opacity: 1, y: 0, duration: dEmb * 0.7 });
+      tl.to(svgRef.current.querySelectorAll('.id-to-emb-arrow.new-token'), { opacity: 1, duration: dEmb * 0.3 }, '<');
+
+      // 4) Transformer block internals (only new token columns; keep box and mash static)
+      tl.to(svgRef.current.querySelectorAll('.transformer-group .inside-top-embeddings .embedding-col.new-token'), { opacity: 1, y: 0, duration: dTrans * 0.2 });
+      tl.to(svgRef.current.querySelectorAll('.outer-to-block-arrow.new-token'), { opacity: 1, duration: dTrans * 0.1 }, '<');
+      tl.to(svgRef.current.querySelectorAll('.transformer-group .inside-bottom-embeddings .embedding-col.new-token'), { opacity: 1, y: 0, duration: dTrans * 0.2 });
+      tl.to(svgRef.current.querySelectorAll('.ffn-arrow.new-token'), { opacity: 1, duration: dTrans * 0.2 }, '<');
+
+      // 5) Outside bottom embeddings + output (animate only new bottom column, but full output vector)
+      tl.to(svgRef.current.querySelectorAll('.bottom-embedding-group .embedding-col.new-token'), { opacity: 1, y: 0, duration: dOut * 0.3 });
+    }
 
     // 6) Extract rightmost embedding -> move/rotate/enlarge to center, show path, then reveal logprobs and bars
     const extractedNode = svgRef.current.querySelector('.output-group .extracted-embedding');
@@ -169,7 +222,7 @@ function VisualizationCanvas() {
     }
 
     tl.eventCallback('onComplete', () => {
-      actions.setIsPlaying(false);
+      actions.onStepAnimationComplete();
     });
 
     gsapRef.current = tl;
@@ -181,6 +234,7 @@ function VisualizationCanvas() {
    */
   const renderTokens = (group, step, layout, width, shouldCollapse, maxVisibleTokens) => {
     const tokens = step.tokens;
+    const lastActualIndex = tokens.length - 1;
     let visibleTokens = tokens;
     let tokenIndices = tokens.map((_, i) => i);
 
@@ -224,8 +278,9 @@ function VisualizationCanvas() {
     visibleTokens.forEach((token, i) => {
       const actualIndex = tokenIndices[i];
       const x = positions[i];
+      const isNew = actualIndex === lastActualIndex;
       const tokenG = group.append('g')
-        .attr('class', 'token')
+        .attr('class', `token ${isNew ? 'new-token' : 'prev-token'}`)
         .attr('transform', `translate(${x}, ${layout.tokenY})`);
 
       // Handle ellipsis - skip rendering for token, will render combined one later
@@ -258,7 +313,7 @@ function VisualizationCanvas() {
         .text(token);
 
       // Arrow from token to ID (now appended to tokenG for relative positioning)
-      const arrowG = tokenG.append('g').attr('class', 'token-id-arrow');
+      const arrowG = tokenG.append('g').attr('class', `token-id-arrow ${isNew ? 'new-token' : 'prev-token'}`);
       arrowG.append('line')
         .attr('x1', 0) // Relative to tokenG center
         .attr('y1', 26)
@@ -277,7 +332,7 @@ function VisualizationCanvas() {
       tokenG.append('text')
         .attr('text-anchor', 'middle')
         .attr('y', 72) // pushed down to increase top and bottom margins
-        .attr('class', 'token-id')
+        .attr('class', `token-id ${isNew ? 'new-token' : 'prev-token'}`)
         .style('font-size', '20px')
         .style('fill', 'var(--text-secondary)')
         .text(step.token_ids[actualIndex]);
@@ -309,6 +364,7 @@ function VisualizationCanvas() {
   const renderOuterEmbeddings = (group, step, layout, width, shouldCollapse, maxVisibleTokens) => {
     const embeddings = step.embeddings;
     const { visibleIndices = [], positions = [] } = tokensLayoutRef.current || {};
+    const lastActualIndex = (step.tokens || []).length - 1;
 
     const columnsMeta = [];
     let maxOuterHeight = 0;
@@ -319,7 +375,8 @@ function VisualizationCanvas() {
       const values = embeddings[actualIndex]?.values || [];
       const expanded = !!embeddingExpanded[actualIndex];
       const tokenColor = getTokenColor(actualIndex);
-      const meta = drawEmbeddingColumn(group, x, layout.embeddingY, values, { expanded, interactive: true, index: actualIndex, tokenColor });
+      const isNew = actualIndex === lastActualIndex;
+      const meta = drawEmbeddingColumn(group, x, layout.embeddingY, values, { expanded, interactive: true, index: actualIndex, tokenColor, className: isNew ? 'new-token' : 'prev-token' });
       columnsMeta.push(meta);
       maxOuterHeight = Math.max(maxOuterHeight, meta.height);
 
@@ -336,7 +393,7 @@ function VisualizationCanvas() {
         .style('stroke', '#ccc')
         .style('stroke-width', 1.5)
         .style('opacity', 0.7);
-      drawArrow(group, x, arrowStart, x, meta.topY, { className: 'id-to-emb-arrow' });
+      drawArrow(group, x, arrowStart, x, meta.topY, { className: `id-to-emb-arrow ${isNew ? 'new-token' : 'prev-token'}` });
     });
 
     return { columnsMeta, maxOuterHeight };
@@ -344,7 +401,7 @@ function VisualizationCanvas() {
 
   // Draw a compact vertical embedding column (rectangle divided into square cells)
   const drawEmbeddingColumn = (group, centerX, topY, values, opts = {}) => {
-    const { expanded = false, interactive = false, index = -1, tokenColor = null } = opts;
+    const { expanded = false, interactive = false, index = -1, tokenColor = null, className = '' } = opts;
     const cellSize = 16; // larger squares
     const cellGap = 3;
     const padding = 6; // larger rectangle padding
@@ -358,6 +415,9 @@ function VisualizationCanvas() {
     const height = n * cellSize + (n - 1) * cellGap + padding * 2;
     const leftX = centerX - width / 2;
 
+    // wrap into a column group so we can animate per-token
+    const colG = group.append('g').attr('class', `embedding-col ${className}`);
+
     // Outer rect - use lightened token color if provided
     let outerFill = '#f2f3f5';
     let outerStroke = '#e0e0e0';
@@ -368,7 +428,7 @@ function VisualizationCanvas() {
       outerStroke = d3.interpolateRgb(tokenColor, '#ffffff')(0.5); // 50% towards white for border
     }
 
-    group.append('rect')
+    colG.append('rect')
       .attr('x', leftX)
       .attr('y', topY)
       .attr('width', width)
@@ -405,7 +465,7 @@ function VisualizationCanvas() {
         }
         return;
       }
-      const cell = group.append('rect')
+      const cell = colG.append('rect')
         .attr('x', centerX - cellSize / 2)
         .attr('y', y)
         .attr('width', cellSize)
@@ -415,7 +475,7 @@ function VisualizationCanvas() {
         .style('stroke', 'none');
 
       // Numeric value inside each square
-      group.append('text')
+      colG.append('text')
         .attr('x', centerX)
         .attr('y', y + cellSize / 2 + 3)
         .attr('text-anchor', 'middle')
@@ -509,13 +569,14 @@ function VisualizationCanvas() {
       if (actualIndex < 0) { insideTopMeta.push(null); return; }
       const vals = embeddings[actualIndex]?.values || [];
       const tokenColor = getTokenColor(actualIndex);
-      const meta = drawEmbeddingColumn(insideTopGroup, x, insideTopY, vals, { expanded: false, tokenColor });
+      const isNew = actualIndex === (step.tokens?.length - 1);
+      const meta = drawEmbeddingColumn(insideTopGroup, x, insideTopY, vals, { expanded: false, tokenColor, className: isNew ? 'new-token' : 'prev-token' });
       insideTopMeta.push(meta);
       maxInsideTopHeight = Math.max(maxInsideTopHeight, meta.height);
       // Arrow from outside embeddings into the block
       const outerCol = columnsMeta[i];
       if (outerCol) {
-        drawArrow(group, x, outerCol.bottomY + 4, x, meta.topY - 8, { className: 'outer-to-block-arrow' });
+        drawArrow(group, x, outerCol.bottomY + 4, x, meta.topY - 8, { className: `outer-to-block-arrow ${isNew ? 'new-token' : 'prev-token'}` });
       }
     });
 
@@ -556,7 +617,8 @@ function VisualizationCanvas() {
       if (actualIndex < 0) { insideBottomMeta.push(null); return; }
       const vals = embeddings[actualIndex]?.values || [];
       const tokenColor = getTokenColor(actualIndex);
-      const meta = drawEmbeddingColumn(insideBottomGroup, x, insideBottomY, vals, { expanded: false, tokenColor });
+      const isNew = actualIndex === (step.tokens?.length - 1);
+      const meta = drawEmbeddingColumn(insideBottomGroup, x, insideBottomY, vals, { expanded: false, tokenColor, className: isNew ? 'new-token' : 'prev-token' });
       insideBottomMeta.push(meta);
       maxInsideBottomHeight = Math.max(maxInsideBottomHeight, meta.height);
     });
@@ -593,10 +655,11 @@ function VisualizationCanvas() {
       const tokenColor = getTokenColor(actualIndex);
       // FFN arrow with small box
       const insideBottom = blockMeta.insideBottomMeta[i];
+      const isNew = actualIndex === (step.tokens?.length - 1);
       if (insideBottom) {
-        drawArrow(group, x, insideBottom.bottomY + 4, x, topY - 8, { withBox: true, className: 'ffn-arrow' });
+        drawArrow(group, x, insideBottom.bottomY + 4, x, topY - 8, { withBox: true, className: `ffn-arrow ${isNew ? 'new-token' : 'prev-token'}` });
       }
-      const meta = drawEmbeddingColumn(group, x, topY, vals, { expanded: false, tokenColor });
+      const meta = drawEmbeddingColumn(group, x, topY, vals, { expanded: false, tokenColor, className: isNew ? 'new-token' : 'prev-token' });
       metas[i] = meta;
       maxHeight = Math.max(maxHeight, meta.height);
     });
@@ -688,14 +751,15 @@ function VisualizationCanvas() {
       const bw = Math.max(12, hv2.cellWidth * 0.7); // wider bars for visibility
       const color = getPurpleByProb(p);
 
+      const isSelected = i === 0; // greedy selection (first)
       group.append('rect')
         .attr('x', cx - bw / 2)
         .attr('y', barBaselineY - barH)
         .attr('width', bw)
         .attr('height', barH)
         .attr('rx', 4)
-        .attr('class', 'distribution-bar')
-        .style('fill', color);
+        .attr('class', `distribution-bar ${isSelected ? 'selected' : ''}`)
+        .style('fill', isSelected ? '#e11d48' : color);
     });
 
     // 4) Legend below bars with token labels and percentages
@@ -706,14 +770,15 @@ function VisualizationCanvas() {
       const percentage = (p * 100).toFixed(1) + '%';
 
       // Token label
+      const isSelected = i === 0;
       group.append('text')
         .attr('x', cx)
         .attr('y', legendY)
         .attr('text-anchor', 'middle')
         .attr('class', 'distribution-token-label')
         .style('font-size', '11px')
-        .style('font-weight', '500')
-        .style('fill', '#333')
+        .style('font-weight', isSelected ? '700' : '500')
+        .style('fill', isSelected ? '#e11d48' : '#333')
         .text(token);
 
       // Percentage label below token
@@ -723,7 +788,7 @@ function VisualizationCanvas() {
         .attr('text-anchor', 'middle')
         .attr('class', 'distribution-percentage-label')
         .style('font-size', '9px')
-        .style('fill', '#666')
+        .style('fill', isSelected ? '#e11d48' : '#666')
         .text(percentage);
     });
   };

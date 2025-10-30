@@ -19,6 +19,8 @@ function InputSection() {
   };
 
   const handleGenerate = () => {
+    // Enable auto-generation and kick off the first/next step
+    if (actions.setAutoGenerate) actions.setAutoGenerate(true);
     if (state.currentStep === 0) {
       actions.nextStep();
     } else if (state.currentStep < state.currentExample.generation_steps.length - 1) {

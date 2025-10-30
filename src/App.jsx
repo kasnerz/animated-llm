@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { AppProvider, useApp } from './contexts/AppContext';
 import { useTranslation } from './utils/i18n';
 import InputSection from './components/InputSection';
+import GeneratedAnswer from './components/GeneratedAnswer';
 import VisualizationCanvas from './components/VisualizationCanvas';
 import './index.css';
 
@@ -94,6 +95,11 @@ function AppContent() {
       <main className="app-main">
         {/* Input section */}
         <InputSection />
+
+        {/* Generated answer area: only after generation starts */}
+        {state.currentExample && state.currentStep > 0 && (
+          <GeneratedAnswer />
+        )}
 
         {/* Visualization canvas */}
         {state.currentExample && (

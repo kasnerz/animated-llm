@@ -14,16 +14,18 @@ export function AppProvider({ children }) {
     currentExampleId: null,
     currentExample: null,
     currentStep: 0,
-    
+    generatedAnswer: '',
+    autoGenerate: false,
+
     // UI settings
     theme: config.defaults.theme,
     language: config.defaults.language,
     animationSpeed: config.defaults.animationSpeed,
-    
+
     // Animation state
     isPlaying: false,
     isPaused: false,
-    
+
     // Loading state
     isLoading: false,
     error: null
@@ -43,7 +45,7 @@ export function AppProvider({ children }) {
         examples: data.examples,
         isLoading: false
       }));
-      
+
       // Load first example by default
       if (data.examples.length > 0) {
         await loadExample(data.examples[0].id);
@@ -72,6 +74,8 @@ export function AppProvider({ children }) {
         currentExampleId: exampleId,
         currentExample: data,
         currentStep: 0,
+        generatedAnswer: '',
+        autoGenerate: false,
         isPlaying: false,
         isPaused: false,
         isLoading: false
@@ -94,7 +98,7 @@ export function AppProvider({ children }) {
       if (!prev.currentExample) return prev;
       const maxSteps = prev.currentExample.generation_steps.length;
       if (prev.currentStep >= maxSteps - 1) return prev;
-      
+
       return {
         ...prev,
         currentStep: prev.currentStep + 1,
@@ -110,6 +114,8 @@ export function AppProvider({ children }) {
     setState(prev => ({
       ...prev,
       currentStep: 0,
+      generatedAnswer: '',
+      autoGenerate: false,
       isPlaying: false,
       isPaused: false
     }));
@@ -143,8 +149,8 @@ export function AppProvider({ children }) {
   const setAnimationSpeed = useCallback((speed) => {
     setState(prev => ({
       ...prev,
-      animationSpeed: Math.max(config.animation.minSpeed, 
-                               Math.min(config.animation.maxSpeed, speed))
+      animationSpeed: Math.max(config.animation.minSpeed,
+        Math.min(config.animation.maxSpeed, speed))
     }));
   }, []);
 
@@ -160,6 +166,54 @@ export function AppProvider({ children }) {
    */
   const setIsPaused = useCallback((isPaused) => {
     setState(prev => ({ ...prev, isPaused }));
+  }, []);
+
+  /** Enable/disable automatic multi-step generation */
+  const setAutoGenerate = useCallback((auto) => {
+    setState(prev => ({ ...prev, autoGenerate: !!auto }));
+  }, []);
+
+  /**
+   * Called when a step's visualization animation completes.
+   * Appends the selected token to the generated answer, and
+   * either advances to the next step (auto-play) or stops at the end.
+   */
+  const onStepAnimationComplete = useCallback(() => {
+    setState(prev => {
+      const ex = prev.currentExample;
+      if (!ex) return prev;
+      const steps = ex.generation_steps || [];
+      const idx = prev.currentStep - 1; // current rendered step index
+      if (idx < 0 || idx >= steps.length) return { ...prev, isPlaying: false };
+
+      const selectedTok = steps[idx]?.selected_token?.token ?? '';
+      const newAnswer = prev.generatedAnswer + (selectedTok || '');
+
+      // If we're at the last step, stop.
+      const isLast = prev.currentStep >= steps.length;
+      if (isLast) {
+        return {
+          ...prev,
+          generatedAnswer: newAnswer,
+          isPlaying: false
+        };
+      }
+
+      // If auto-generate is enabled, auto-advance; otherwise stop after appending
+      if (prev.autoGenerate) {
+        return {
+          ...prev,
+          generatedAnswer: newAnswer,
+          currentStep: prev.currentStep + 1,
+          isPlaying: true
+        };
+      }
+      return {
+        ...prev,
+        generatedAnswer: newAnswer,
+        isPlaying: false
+      };
+    });
   }, []);
 
   // Load examples on mount
@@ -183,7 +237,9 @@ export function AppProvider({ children }) {
       toggleLanguage,
       setAnimationSpeed,
       setIsPlaying,
-      setIsPaused
+      setIsPaused,
+      setAutoGenerate,
+      onStepAnimationComplete
     }
   };
 

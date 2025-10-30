@@ -236,6 +236,49 @@ h2 {
     margin: 0 auto;
 }
 
+/* Generated Answer Section */
+.generated-answer-section {
+    margin: 2rem 0;
+    padding: 0 2rem;
+}
+
+.answer-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.answer-box {
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.answer-text {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--text-primary);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    word-wrap: break-word;
+}
+
+.answer-cursor {
+    display: inline-block;
+    margin-left: 2px;
+    animation: blink 1s step-end infinite;
+    color: var(--text-secondary);
+}
+
+@keyframes blink {
+    0%, 50% {
+        opacity: 1;
+    }
+    51%, 100% {
+        opacity: 0;
+    }
+}
+
 /* Loading Spinner */
 .spinner {
     border: 3px solid var(--border-color);

@@ -268,6 +268,32 @@
     text-align: center;
 }
 
+/* Generated Answer */
+.answer-section {
+    max-width: 800px;
+    margin: -1rem auto 2rem auto;
+}
+
+.answer-box {
+    background: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 16px 20px;
+    color: var(--text-primary);
+    min-height: 44px;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    white-space: pre-wrap;
+}
+
+.answer-caret {
+    display: inline-block;
+    margin-left: 2px;
+    color: var(--text-primary);
+    animation: blink 1s step-end infinite;
+}
+
 .prompt-text-large {
     font-size: 2rem;
     line-height: 1.4;
