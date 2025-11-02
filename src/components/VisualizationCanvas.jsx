@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 import { useEffect, useRef, useState } from 'react';
 import { useApp } from '../contexts/AppContext';
+import { useI18n } from '../i18n/I18nProvider';
 import * as d3 from 'd3';
 import { gsap } from 'gsap';
 import { getTokenColor, getEmbeddingColor, getPurpleByProb } from '../visualization/core/colors';
@@ -11,6 +12,7 @@ import {
   renderTransformerBlockLayer,
   renderBottomEmbeddingsLayer,
   renderOutputLayer,
+  renderStageLabels,
 } from '../visualization/layers/renderLayers';
 import '../styles/visualization.css';
 
@@ -20,6 +22,7 @@ import '../styles/visualization.css';
  */
 function VisualizationCanvas() {
   const { state, actions } = useApp();
+  const { t } = useI18n();
   // Extract stable callbacks to avoid re-running effects when the provider re-renders
   const { onStepAnimationComplete } = actions;
   const svgRef = useRef(null);
@@ -77,13 +80,16 @@ function VisualizationCanvas() {
     const transformerGroup = g.append('g').attr('class', 'transformer-group'); // inside block
     const bottomEmbeddingGroup = g.append('g').attr('class', 'bottom-embedding-group'); // outside (bottom)
     const outputGroup = g.append('g').attr('class', 'output-group');
+    const labelsGroup = g.append('g').attr('class', 'stage-labels-group');
 
-    // Get SVG dimensions
+    // Get SVG dimensions - reserve space for labels on the right
     const width = parseFloat(svg.attr('width')) || 800;
+    const labelAreaWidth = 200; // Space reserved for labels
+    const visualizationWidth = width - labelAreaWidth; // Actual space for main visualization
     // const height = parseFloat(svg.attr('height')) || 900;
 
     // Determine if we need to collapse tokens
-    const maxVisibleTokens = Math.floor(width / 140) - 1; // basic heuristic; dynamic sizing handled below
+    const maxVisibleTokens = Math.floor(visualizationWidth / 140) - 1; // basic heuristic; dynamic sizing handled below
     const shouldCollapse = step.tokens.length > maxVisibleTokens && !isExpanded;
 
     // Layout configuration with proper spacing
@@ -100,7 +106,7 @@ function VisualizationCanvas() {
       tokenGroup,
       step,
       layout,
-      width,
+      visualizationWidth,
       shouldCollapse,
       maxVisibleTokens,
       tokensLayoutRef
@@ -140,7 +146,25 @@ function VisualizationCanvas() {
     // Reduce vertical offset before the output area to keep bars within the canvas height
     const outputYOffset = 120;
     layout.outputY = bottomInfo.afterBottomY + outputYOffset;
-    renderOutputLayer(outputGroup, step, layout, width, svgRef.current, bottomInfo, subStep);
+    renderOutputLayer(
+      outputGroup,
+      step,
+      layout,
+      visualizationWidth,
+      svgRef.current,
+      bottomInfo,
+      subStep
+    );
+
+    // 6. Collect Y positions for stage labels
+    // We need to determine Y positions for each stage based on the actual layout
+    layout.attentionY = blockMeta.blockTopY + 60; // Position inside transformer block
+    layout.ffnY = blockMeta.blockTopY + (blockMeta.blockBottomY - blockMeta.blockTopY) / 2 + 40;
+    layout.bottomEmbeddingY = bottomInfo.topY + 20;
+    layout.extractedY = bottomInfo.afterBottomY + 40;
+
+    // 7. Render stage labels on the right
+    renderStageLabels(labelsGroup, layout, width, subStep, t);
 
     const animDuration = 0.6; // Duration for each transition
     const isInitialStep = state.currentStep === 1;

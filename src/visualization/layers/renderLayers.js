@@ -891,3 +891,113 @@ export function renderOutputLayer(group, step, layout, width, svgRoot, bottomInf
     });
   }
 }
+
+/**
+ * Render stage labels on the right side of the visualization
+ * @param {d3.Selection} group - D3 group selection
+ * @param {Object} layout - Layout configuration with Y positions for each stage
+ * @param {number} canvasWidth - Canvas width
+ * @param {number} subStep - Current animation sub-step (0-9)
+ * @param {Function} t - Translation function
+ */
+export function renderStageLabels(group, layout, canvasWidth, subStep, t) {
+  const labels = [
+    { key: 'stage_tokenization', y: layout.tokenY + 10, subStep: 0 },
+    { key: 'stage_token_ids', y: layout.tokenY + 70, subStep: 1 },
+    { key: 'stage_input_embeddings', y: layout.embeddingY + 30, subStep: 2 },
+    {
+      key: 'stage_attention_layer',
+      y: layout.attentionY + 40 || layout.embeddingY + 220,
+      subStep: 4,
+    },
+    { key: 'stage_feedforward_layer', y: layout.ffnY + 30 || layout.embeddingY + 280, subStep: 5 },
+    {
+      key: 'stage_output_embeddings',
+      y: layout.bottomEmbeddingY + 10 || layout.embeddingY + 350,
+      subStep: 6,
+    },
+    {
+      key: 'stage_last_embedding',
+      y: layout.extractedY + 10 || layout.embeddingY + 430,
+      subStep: 7,
+    },
+    {
+      key: 'stage_output_probabilities',
+      y: layout.outputY + 10 || layout.embeddingY + 530,
+      subStep: 9,
+    },
+  ];
+
+  const verticalLineX = canvasWidth - 320; // Position of the vertical delimiter line (closer)
+  const labelX = canvasWidth - 270; // Position labels closer to the line
+  const highlightWidth = 150;
+  const highlightHeight = 26;
+
+  // Draw vertical delimiter line
+  group
+    .append('line')
+    .attr('x1', verticalLineX)
+    .attr('y1', labels[0].y - 40)
+    .attr('x2', verticalLineX)
+    .attr('y2', labels[labels.length - 1].y + 40)
+    .attr('class', 'stage-delimiter-line')
+    .style('stroke', 'var(--viz-stage-line, #999)')
+    .style('stroke-width', 1)
+    .style('opacity', 0.3);
+
+  labels.forEach((label) => {
+    const isActive = subStep === label.subStep;
+    const isVisible = subStep >= label.subStep;
+
+    // Don't render labels that haven't appeared yet
+    if (!isVisible) {
+      return;
+    }
+
+    const opacity = isVisible ? 1 : 0.3;
+
+    const labelGroup = group
+      .append('g')
+      .attr('class', `stage-label ${isActive ? 'active' : 'inactive'}`)
+      .attr('transform', `translate(${labelX}, ${label.y})`);
+
+    // Background highlight bar (darker background) - only for active label
+    if (isActive) {
+      labelGroup
+        .append('rect')
+        .attr('x', -5)
+        .attr('y', -12)
+        .attr('width', highlightWidth)
+        .attr('height', highlightHeight)
+        .attr('rx', 4)
+        .style('fill', 'var(--viz-stage-highlight, rgba(0, 0, 0, 0.08))')
+        .style('opacity', 0.6);
+    }
+
+    // Horizontal dotted line connecting label to the vertical delimiter
+    group
+      .append('line')
+      .attr('x1', verticalLineX)
+      .attr('y1', label.y)
+      .attr('x2', labelX - 10)
+      .attr('y2', label.y)
+      .attr('class', 'stage-connector-line')
+      .style('stroke', 'var(--viz-stage-line, #999)')
+      .style('stroke-width', 1)
+      .style('stroke-dasharray', '3,3')
+      .style('opacity', isActive ? 0.6 : 0.3);
+
+    // Label text
+    labelGroup
+      .append('text')
+      .attr('x', 0)
+      .attr('y', 5)
+      .attr('class', 'stage-label-text')
+      .style('font-size', '13px')
+      .style('font-weight', '500')
+      .style('fill', 'var(--text-tertiary, #999)')
+      .style('opacity', opacity)
+      .style('font-family', '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif')
+      .text(t(label.key));
+  });
+}

@@ -220,3 +220,18 @@
 .viz-tooltip.visible {
   opacity: 1;
 }
+
+/* Stage labels */
+.stage-label {
+  transition: opacity 0.3s ease;
+}
+
+.stage-label.active rect {
+  fill: var(--viz-stage-highlight, rgba(0, 0, 0, 0.08));
+}
+
+.stage-label-text {
+  font-size: 12px;
+  font-weight: 500;
+  fill: var(--text-tertiary, #999);
+}

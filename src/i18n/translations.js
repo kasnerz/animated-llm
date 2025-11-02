@@ -42,6 +42,15 @@ export const translations = {
     play_pause: 'Play/Pause',
     theme: 'Theme',
     language: 'Language',
+    // Stage labels
+    stage_tokenization: 'Tokenization',
+    stage_token_ids: 'Token ids',
+    stage_input_embeddings: 'Input embeddings',
+    stage_attention_layer: 'Attention layer',
+    stage_feedforward_layer: 'Feed-forward layer',
+    stage_output_embeddings: 'Output embeddings',
+    stage_last_embedding: 'Last embedding',
+    stage_output_probabilities: 'Output probabilities',
   },
   cs: {
     app_title: 'Interaktivní Vizualizace Transformeru',
@@ -81,6 +90,15 @@ export const translations = {
     play_pause: 'Přehrát/Pozastavit',
     theme: 'Téma',
     language: 'Jazyk',
+    // Stage labels
+    stage_tokenization: 'Tokenizace',
+    stage_token_ids: 'Id tokenů',
+    stage_input_embeddings: 'Vstupní embeddingy',
+    stage_attention_layer: 'Vrstva Attention',
+    stage_feedforward_layer: 'Vrstva Feed-forward',
+    stage_output_embeddings: 'Výstupní embeddingy',
+    stage_last_embedding: 'Poslední embedding',
+    stage_output_probabilities: 'Pravděpodobnosti výstupu',
   },
 };
 
