@@ -117,6 +117,52 @@ export function verticalThenHorizontalRoundedPath(x1, y1, x2, y2, radius = 10) {
 }
 
 /**
+ * Draw an arbitrary SVG path with an arrowhead at the end.
+ * Useful for multi-segment/curved connectors.
+ * @param {d3.Selection} group - D3 selection to append to
+ * @param {string} pathD - The SVG path 'd' attribute
+ * @param {Object} opts - Options: className, color, strokeWidth, markerSize, opacity
+ */
+export function drawCurvedArrowPath(group, pathD, opts = {}) {
+  const {
+    className = '',
+    color = COLORS.getArrowColor(),
+    strokeWidth = STROKE.WIDTH_THICK,
+    markerSize = STROKE.MARKER_SIZE,
+    opacity = STROKE.OPACITY_DEFAULT,
+  } = opts;
+
+  const markerId = `arrowhead-${Math.random().toString(36).slice(2, 9)}`;
+
+  // Define arrowhead marker
+  group
+    .append('defs')
+    .append('marker')
+    .attr('id', markerId)
+    .attr('markerWidth', markerSize)
+    .attr('markerHeight', markerSize)
+    .attr('refX', markerSize / 2)
+    .attr('refY', markerSize / 2)
+    .attr('orient', 'auto')
+    .append('polygon')
+    .attr('points', `0 0, ${markerSize} ${markerSize / 2}, 0 ${markerSize}`)
+    .attr('fill', color);
+
+  // Draw path
+  group
+    .append('path')
+    .attr('class', className)
+    .attr('d', pathD)
+    .attr('fill', 'none')
+    .attr('stroke', color)
+    .attr('stroke-width', strokeWidth)
+    .attr('marker-end', `url(#${markerId})`)
+    .attr('opacity', opacity)
+    .attr('stroke-linecap', 'round')
+    .attr('stroke-linejoin', 'round');
+}
+
+/**
  * Draw a vertical embedding column (stack of colored rectangles)
  * @param {d3.Selection} group - D3 selection to append to
  * @param {number} centerX - Center x coordinate

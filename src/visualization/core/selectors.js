@@ -32,6 +32,10 @@ export const EMBEDDING_SELECTORS = {
 export const TRANSFORMER_SELECTORS = {
   transformerGroup: '.transformer-group',
   transformerBox: '.transformer-group .transformer-box',
+  transformerShadowBox: '.transformer-shadow-box',
+  shadowToBlockArrow: '.shadow-to-block-arrow',
+  shadowToBlockArrowNew: '.shadow-to-block-arrow.new-token',
+  shadowToBlockArrowPrev: '.shadow-to-block-arrow.prev-token',
   insideTopEmbeddings: '.transformer-group .inside-top-embeddings',
   insideTopEmbeddingsAll:
     '.transformer-group .inside-top-embeddings, .transformer-group .inside-top-embeddings *',
@@ -51,6 +55,12 @@ export const TRANSFORMER_SELECTORS = {
     '.transformer-group .inside-bottom-embeddings .embedding-col.new-token',
   insideBottomEmbeddingColPrev:
     '.transformer-group .inside-bottom-embeddings .embedding-col.prev-token',
+  insideFfnEmbeddings: '.transformer-group .inside-ffn-embeddings',
+  insideFfnEmbeddingsAll:
+    '.transformer-group .inside-ffn-embeddings, .transformer-group .inside-ffn-embeddings *',
+  insideFfnEmbeddingCol: '.transformer-group .inside-ffn-embeddings .embedding-col',
+  insideFfnEmbeddingColNew: '.transformer-group .inside-ffn-embeddings .embedding-col.new-token',
+  insideFfnEmbeddingColPrev: '.transformer-group .inside-ffn-embeddings .embedding-col.prev-token',
   ffnArrow: '.ffn-arrow',
   ffnArrowNew: '.ffn-arrow.new-token',
   ffnArrowPrev: '.ffn-arrow.prev-token',
@@ -63,6 +73,9 @@ export const BOTTOM_EMBEDDING_SELECTORS = {
   bottomEmbeddingCol: '.bottom-embedding-group .embedding-col',
   bottomEmbeddingColNew: '.bottom-embedding-group .embedding-col.new-token',
   bottomEmbeddingColPrev: '.bottom-embedding-group .embedding-col.prev-token',
+  blockToOutsideArrow: '.block-to-outside-arrow',
+  blockToOutsideArrowNew: '.block-to-outside-arrow.new-token',
+  blockToOutsideArrowPrev: '.block-to-outside-arrow.prev-token',
 };
 
 // Output distribution selectors

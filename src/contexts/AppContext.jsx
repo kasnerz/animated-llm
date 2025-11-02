@@ -41,6 +41,7 @@ const initialState = {
   currentExample: null,
   currentStep: 0,
   currentAnimationSubStep: 0,
+  currentTransformerLayer: 0, // Track which transformer layer we're animating
   generatedAnswer: '',
   generatedTokens: [], // Array of { token, index } to track colors
   autoGenerate: false,
@@ -90,6 +91,7 @@ function appReducer(state, action) {
         currentExample: action.payload.example,
         currentStep: 0,
         currentAnimationSubStep: 0,
+        currentTransformerLayer: 0,
         generatedAnswer: '',
         generatedTokens: [],
         autoGenerate: false,
@@ -115,12 +117,30 @@ function appReducer(state, action) {
         ...state,
         currentStep: state.currentStep + 1,
         currentAnimationSubStep: 0,
+        currentTransformerLayer: 0,
         isPlaying: true,
       };
     }
 
     case ActionTypes.NEXT_ANIMATION_SUB_STEP: {
-      const maxSubSteps = 10;
+      const numLayers = state.currentExample?.model_info?.num_layers || 1;
+      const maxSubSteps = 11; // Updated to account for new substep
+
+      // Determine if we're in the transformer layer animation phase (substeps 3-5)
+      const isInTransformerPhase =
+        state.currentAnimationSubStep >= 3 && state.currentAnimationSubStep <= 5;
+
+      if (isInTransformerPhase && state.currentTransformerLayer < numLayers - 1) {
+        // If we're at substep 5 (end of one layer) and there are more layers, move to next layer
+        if (state.currentAnimationSubStep === 5) {
+          return {
+            ...state,
+            currentTransformerLayer: state.currentTransformerLayer + 1,
+            currentAnimationSubStep: 3, // Go back to beginning of transformer block
+          };
+        }
+      }
+
       if (state.currentAnimationSubStep >= maxSubSteps - 1) {
         return state;
       }
@@ -136,6 +156,7 @@ function appReducer(state, action) {
         ...state,
         currentStep: 0,
         currentAnimationSubStep: 0,
+        currentTransformerLayer: 0,
         generatedAnswer: '',
         generatedTokens: [],
         autoGenerate: false,
@@ -178,6 +199,7 @@ function appReducer(state, action) {
         generatedTokens: newGeneratedTokens,
         currentStep: state.currentStep + 1,
         currentAnimationSubStep: 0,
+        currentTransformerLayer: 0,
         isPlaying: true,
       };
     }

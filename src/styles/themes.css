@@ -44,6 +44,11 @@
   --viz-muted-color: #666666;
   --viz-neutral-color: #cccccc;
 
+  /* Token and transformer colors (light theme defaults) */
+  --viz-token-text: #1a1a1a;
+  --viz-transformer-bg: #f3f4f6;
+  --viz-transformer-border: #d9d9e3;
+
   /* Embedding gradient colors */
   --embed-negative: #3498db;
   --embed-neutral: #ecf0f1;
@@ -85,6 +90,11 @@ body[data-theme='dark'] {
   --text-tertiary: var(--dark-text-tertiary);
   --border-color: var(--dark-border);
   --shadow-color: var(--dark-shadow);
+
+  /* Dark mode visualization overrides */
+  --viz-token-text: #f5f5f5;
+  --viz-transformer-bg: #2a2a2a;
+  --viz-transformer-border: #404040;
 }
 
 /* Smooth theme transitions */

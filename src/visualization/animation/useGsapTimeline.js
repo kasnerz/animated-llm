@@ -9,7 +9,14 @@ import { buildTimeline, setInitialStates } from './timeline';
  * @param {Object} deps - Dependencies: svgRef, subStep, currentStep, animDuration, onComplete
  * @returns {Object} Timeline ref
  */
-export function useGsapTimeline({ svgRef, subStep, currentStep, animDuration = 0.6, onComplete }) {
+export function useGsapTimeline({
+  svgRef,
+  subStep,
+  currentStep,
+  animDuration = 0.6,
+  onComplete,
+  numLayers = 1,
+}) {
   const timelineRef = useRef(null);
 
   useEffect(() => {
@@ -24,7 +31,7 @@ export function useGsapTimeline({ svgRef, subStep, currentStep, animDuration = 0
     const isInitialStep = currentStep === 1;
 
     // Set initial states
-    setInitialStates(svgRef.current, subStep, isInitialStep);
+    setInitialStates(svgRef.current, subStep, isInitialStep, numLayers);
 
     // Build and play timeline
     timelineRef.current = buildTimeline(
@@ -32,7 +39,8 @@ export function useGsapTimeline({ svgRef, subStep, currentStep, animDuration = 0
       subStep,
       isInitialStep,
       animDuration,
-      onComplete
+      onComplete,
+      numLayers
     );
 
     // Cleanup on unmount
@@ -42,7 +50,7 @@ export function useGsapTimeline({ svgRef, subStep, currentStep, animDuration = 0
         timelineRef.current = null;
       }
     };
-  }, [svgRef, subStep, currentStep, animDuration, onComplete]);
+  }, [svgRef, subStep, currentStep, animDuration, onComplete, numLayers]);
 
   return timelineRef;
 }

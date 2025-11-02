@@ -109,7 +109,7 @@ export function renderTokensLayer(
       .style('font-size', '18px')
       .style('font-family', '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif')
       .style('font-weight', '500')
-      .style('fill', '#1a1a1a')
+      .style('fill', 'var(--viz-token-text)')
       .text(token);
 
     // Colored heavy underline
@@ -353,9 +353,18 @@ export function renderOuterEmbeddingsLayer(
 
 /**
  * Render transformer block layer (inside top embeddings, attention mash, inside bottom embeddings)
+ * Now supports multiple stacked transformer layers with card-style offset
  * @returns {Object} { blockTopY, blockBottomY, insideBottomMeta }
  */
-export function renderTransformerBlockLayer(group, step, layout, tokensLayoutRef, outerMeta) {
+export function renderTransformerBlockLayer(
+  group,
+  step,
+  layout,
+  tokensLayoutRef,
+  outerMeta,
+  currentLayer
+  // numLayers is passed but not currently used - kept for future enhancements
+) {
   const { visibleIndices = [], positions = [] } = tokensLayoutRef.current || {};
   const columnsMeta = outerMeta.columnsMeta;
 
@@ -370,9 +379,72 @@ export function renderTransformerBlockLayer(group, step, layout, tokensLayoutRef
 
   const afterOuterBottom = layout.embeddingY + outerMeta.maxOuterHeight;
   const blockTopY = afterOuterBottom + 40;
+
+  // Card stack offset: each previous layer is offset to the bottom-right
+  const stackOffsetX = 8;
+  const stackOffsetY = 8;
+
+  // First, calculate the full block dimensions so we can render shadows with correct height
   const insideTopY = blockTopY + layout.blockPadding;
 
   const embeddings = step.embeddings;
+
+  // Calculate heights for all sections to determine total block height
+  let estimatedInsideTopHeight = 0;
+  let estimatedInsideBottomHeight = 0;
+  let estimatedFfnHeight = 0;
+
+  // Quick pass to calculate heights
+  visibleIndices.forEach((actualIndex) => {
+    if (actualIndex < 0) return;
+    const vals = embeddings[actualIndex]?.values || [];
+    // Approximate height calculation (each cell is ~16px + 3px gap, plus padding)
+    const cellCount = vals.length > 4 ? 5 : vals.length; // collapsed view shows max 5 cells
+    const approximateHeight = cellCount * 16 + (cellCount - 1) * 3 + 12;
+    estimatedInsideTopHeight = Math.max(estimatedInsideTopHeight, approximateHeight);
+    estimatedInsideBottomHeight = Math.max(estimatedInsideBottomHeight, approximateHeight);
+    estimatedFfnHeight = Math.max(estimatedFfnHeight, approximateHeight);
+  });
+
+  const attentionHeight = 60;
+  const ffnArrowGap = 20;
+  const totalBlockHeight =
+    layout.blockPadding +
+    estimatedInsideTopHeight +
+    attentionHeight +
+    estimatedInsideBottomHeight +
+    ffnArrowGap +
+    estimatedFfnHeight +
+    layout.blockPadding;
+
+  // Render shadow layers for all previous blocks with correct height
+  for (let layer = 0; layer < currentLayer; layer++) {
+    const offsetX = (currentLayer - layer) * stackOffsetX;
+    const offsetY = (currentLayer - layer) * stackOffsetY;
+
+    const shadowGroup = group
+      .append('g')
+      .attr('class', `transformer-shadow-layer layer-${layer}`)
+      .attr('transform', `translate(${offsetX}, ${offsetY})`);
+
+    const minX = Math.min(...validXs);
+    const maxX = Math.max(...validXs);
+    const shadowPadding = 60;
+
+    shadowGroup
+      .append('rect')
+      .attr('x', minX - shadowPadding)
+      .attr('y', blockTopY)
+      .attr('width', maxX + shadowPadding - (minX - shadowPadding))
+      .attr('height', totalBlockHeight)
+      .attr('rx', 10)
+      .attr('class', 'transformer-shadow-box')
+      .style('fill', 'var(--viz-transformer-bg)')
+      .style('stroke', 'var(--viz-transformer-border)')
+      .style('stroke-width', 2);
+  }
+
+  // Render the current active layer
   const insideTopGroup = group.append('g').attr('class', 'inside-top-embeddings');
   const insideTopMeta = [];
   let maxInsideTopHeight = 0;
@@ -399,37 +471,58 @@ export function renderTransformerBlockLayer(group, step, layout, tokensLayoutRef
     );
     insideTopMeta.push(meta);
     maxInsideTopHeight = Math.max(maxInsideTopHeight, meta.height);
-    const outerCol = columnsMeta[i];
-    if (outerCol) {
-      drawArrow(group, x, outerCol.bottomY + 4, x, meta.topY - 8, {
-        className: `outer-to-block-arrow ${isNew ? 'new-token' : 'prev-token'}`,
-      });
+
+    // Arrow from outer embedding or previous layer to inside top
+    if (currentLayer === 0) {
+      // First layer: arrow comes from outer embeddings
+      const outerCol = columnsMeta[i];
+      if (outerCol) {
+        drawArrow(group, x, outerCol.bottomY + 4, x, meta.topY - 8, {
+          className: `outer-to-block-arrow ${isNew ? 'new-token' : 'prev-token'}`,
+        });
+      }
+    } else {
+      // Subsequent layers: draw a U-shaped feedback arrow that appears to emerge from the
+      // previous stack (shifted to the right) and feeds into the current top embeddings.
+      const startX = x + stackOffsetX; // align with immediate previous layer's horizontal shift
+      const startY = blockTopY - 6; // start just above the box so the tail looks hidden below
+      const endX = x;
+      const endY = meta.topY - 8;
+      const lift = 28; // how far above the box the U-curve rises
+
+      // Define an arrowhead marker for the feedback path
+      const markerId = `feedback-head-${Math.random().toString(36).slice(2, 9)}`;
+      const defs = group.append('defs');
+      defs
+        .append('marker')
+        .attr('id', markerId)
+        .attr('markerWidth', 10)
+        .attr('markerHeight', 10)
+        .attr('refX', 5)
+        .attr('refY', 5)
+        .attr('orient', 'auto')
+        .append('polygon')
+        .attr('points', '0 0, 10 5, 0 10')
+        .attr('fill', '#c0c0c0');
+
+      // U-shaped cubic bezier: up from startX, arc over towards endX, then down to endY
+      const d = `M ${startX},${startY}
+        C ${startX},${blockTopY - lift} ${endX},${blockTopY - lift} ${endX},${endY}`;
+
+      group
+        .append('path')
+        .attr('d', d)
+        .attr('class', `shadow-to-block-arrow ${isNew ? 'new-token' : 'prev-token'}`)
+        .style('fill', 'none')
+        .style('stroke', '#c0c0c0')
+        .style('stroke-width', 1.5)
+        .style('opacity', 0.9)
+        .attr('marker-end', `url(#${markerId})`);
     }
   });
 
   const attentionStartY = insideTopY + maxInsideTopHeight;
   const insideBottomY = attentionStartY + 60;
-  const attentionGroup = group.append('g').attr('class', 'attention-mash');
-  const centers = insideTopMeta.map((m) => (m ? { x: m.centerX } : null));
-  centers.forEach((a, i) => {
-    if (!a) return;
-    centers.forEach((b, j) => {
-      if (!b || i === j) return;
-      const s = Math.abs(Math.sin((i * 37 + j * 17) * 12.9898)) % 1;
-      const color = d3.interpolateRgb('#C5CBD3', '#9AA0A6')(s);
-      const width = 0.6 + s * 2.0;
-      const opacity = 0.25 + s * 0.25;
-      attentionGroup
-        .append('line')
-        .attr('x1', a.x)
-        .attr('y1', attentionStartY)
-        .attr('x2', b.x)
-        .attr('y2', insideBottomY)
-        .style('stroke', color)
-        .style('stroke-width', width)
-        .style('opacity', opacity);
-    });
-  });
 
   const insideBottomGroup = group.append('g').attr('class', 'inside-bottom-embeddings');
   const insideBottomMeta = [];
@@ -459,8 +552,73 @@ export function renderTransformerBlockLayer(group, step, layout, tokensLayoutRef
     maxInsideBottomHeight = Math.max(maxInsideBottomHeight, meta.height);
   });
 
-  const blockBottomY = insideBottomY + maxInsideBottomHeight + layout.blockPadding;
+  // Render attention connections between top and bottom embeddings
+  const attentionGroup = group.append('g').attr('class', 'attention-mash');
+  const centers = insideTopMeta.map((m) => (m ? { x: m.centerX } : null));
+  centers.forEach((a, i) => {
+    if (!a) return;
+    centers.forEach((b, j) => {
+      if (!b || i === j) return;
+      const s = Math.abs(Math.sin((i * 37 + j * 17) * 12.9898)) % 1;
+      // Use lighter grey colors with less variation
+      const color = d3.interpolateRgb('#E5E7EB', '#797b7dff')(s);
+      // Use minimal line width
+      const width = 0.5;
+      // Keep opacity light
+      const opacity = 0.3 + s * 0.15;
+      attentionGroup
+        .append('line')
+        .attr('x1', a.x)
+        .attr('y1', attentionStartY)
+        .attr('x2', b.x)
+        .attr('y2', insideBottomY)
+        .style('stroke', color)
+        .style('stroke-width', width)
+        .style('opacity', opacity);
+    });
+  });
 
+  // Add FFN embeddings (output embeddings after feed forward) inside the transformer block
+  const ffnY = insideBottomY + maxInsideBottomHeight + 20;
+  const ffnGroup = group.append('g').attr('class', 'inside-ffn-embeddings');
+  const ffnMeta = [];
+  let maxFfnHeight = 0;
+
+  visibleIndices.forEach((actualIndex, i) => {
+    const x = positions[i];
+    if (actualIndex < 0) {
+      ffnMeta.push(null);
+      return;
+    }
+    const vals = embeddings[actualIndex]?.values || [];
+    const tokenColor = getTokenColor(actualIndex);
+    const isNew = actualIndex === step.tokens?.length - 1;
+    const insideBottom = insideBottomMeta[i];
+    if (insideBottom) {
+      drawArrow(group, x, insideBottom.bottomY + 4, x, ffnY - 8, {
+        withBox: true,
+        className: `ffn-arrow ${isNew ? 'new-token' : 'prev-token'}`,
+      });
+    }
+    const meta = drawEmbeddingColumnInternal(
+      ffnGroup,
+      x,
+      ffnY,
+      vals,
+      false,
+      tokenColor,
+      isNew ? 'new-token' : 'prev-token',
+      {},
+      () => {},
+      actualIndex
+    );
+    ffnMeta.push(meta);
+    maxFfnHeight = Math.max(maxFfnHeight, meta.height);
+  });
+
+  const blockBottomY = ffnY + maxFfnHeight + layout.blockPadding;
+
+  // Render the main transformer box with same style as shadows
   group
     .insert('rect', ':first-child')
     .attr('x', Math.min(...validXs) - 60)
@@ -469,15 +627,15 @@ export function renderTransformerBlockLayer(group, step, layout, tokensLayoutRef
     .attr('height', blockBottomY - blockTopY)
     .attr('rx', 10)
     .attr('class', 'transformer-box')
-    .style('fill', '#f3f4f6')
-    .style('stroke', '#d9d9e3')
-    .style('stroke-dasharray', '4 4');
+    .style('fill', 'var(--viz-transformer-bg)')
+    .style('stroke', 'var(--viz-transformer-border)')
+    .style('stroke-width', 2);
 
-  return { blockTopY, blockBottomY, insideBottomMeta };
+  return { blockTopY, blockBottomY, insideBottomMeta: ffnMeta };
 }
 
 /**
- * Render outside bottom embeddings and FFN arrows
+ * Render outside bottom embeddings (now simplified, no FFN arrows since they're inside the block)
  * @returns {Object} bottom info
  */
 export function renderBottomEmbeddingsLayer(group, step, layout, tokensLayoutRef, blockMeta) {
@@ -494,10 +652,11 @@ export function renderBottomEmbeddingsLayer(group, step, layout, tokensLayoutRef
     const tokenColor = getTokenColor(actualIndex);
     const insideBottom = blockMeta.insideBottomMeta[i];
     const isNew = actualIndex === step.tokens?.length - 1;
+
+    // Arrow from inside bottom (FFN output) to outside bottom
     if (insideBottom) {
       drawArrow(group, x, insideBottom.bottomY + 4, x, topY - 8, {
-        withBox: true,
-        className: `ffn-arrow ${isNew ? 'new-token' : 'prev-token'}`,
+        className: `block-to-outside-arrow ${isNew ? 'new-token' : 'prev-token'}`,
       });
     }
     const meta = drawEmbeddingColumnInternal(

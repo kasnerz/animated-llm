@@ -43,36 +43,43 @@ export function setInitialStates(svgElement, subStep, isInitialStep) {
       y: prev >= 3 ? 0 : -8,
     });
     setIfAny(svgElement, SEL.outerToBlockArrow, { opacity: prev >= 3 ? 1 : 0 });
-    setIfAny(svgElement, SEL.attentionMashAll, { opacity: prev >= 3 ? 1 : 0 });
+    setIfAny(svgElement, SEL.shadowToBlockArrow, { opacity: prev >= 3 ? 1 : 0 });
 
     setIfAny(svgElement, SEL.insideBottomEmbeddingsAll, {
       opacity: prev >= 4 ? 1 : 0,
       y: prev >= 4 ? 0 : 8,
     });
-    setIfAny(svgElement, SEL.ffnArrow, { opacity: prev >= 4 ? 1 : 0 });
+    setIfAny(svgElement, SEL.attentionMashAll, { opacity: prev >= 4 ? 1 : 0 });
 
-    setIfAny(svgElement, SEL.bottomEmbeddingGroupAll, {
+    setIfAny(svgElement, SEL.insideFfnEmbeddingsAll, {
       opacity: prev >= 5 ? 1 : 0,
       y: prev >= 5 ? 0 : 8,
     });
+    setIfAny(svgElement, SEL.ffnArrow, { opacity: prev >= 5 ? 1 : 0 });
+
+    setIfAny(svgElement, SEL.bottomEmbeddingGroupAll, {
+      opacity: prev >= 6 ? 1 : 0,
+      y: prev >= 6 ? 0 : 8,
+    });
+    setIfAny(svgElement, SEL.blockToOutsideArrow, { opacity: prev >= 6 ? 1 : 0 });
 
     setIfAny(svgElement, SEL.extractedEmbedding, { opacity: 0 });
     setIfAny(svgElement, SEL.extractedPathArrow, {
-      opacity: prev >= 6 ? 1 : 0,
+      opacity: prev >= 7 ? 1 : 0,
     });
     setIfAny(svgElement, SEL.extractedHorizontal, {
-      opacity: prev >= 6 ? 1 : 0,
+      opacity: prev >= 7 ? 1 : 0,
     });
-    setIfAny(svgElement, SEL.logprobArrow, { opacity: prev >= 7 ? 1 : 0 });
-    setIfAny(svgElement, SEL.logprobVector, { opacity: prev >= 7 ? 1 : 0 });
+    setIfAny(svgElement, SEL.logprobArrow, { opacity: prev >= 8 ? 1 : 0 });
+    setIfAny(svgElement, SEL.logprobVector, { opacity: prev >= 8 ? 1 : 0 });
 
     setIfAny(svgElement, SEL.distributionBar, {
-      opacity: prev >= 8 ? 1 : 0,
-      scaleY: prev >= 8 ? 1 : 0.1,
+      opacity: prev >= 9 ? 1 : 0,
+      scaleY: prev >= 9 ? 1 : 0.1,
       transformOrigin: '50% 100%',
     });
     setIfAny(svgElement, SEL.distributionLabels, {
-      opacity: prev >= 8 ? 1 : 0,
+      opacity: prev >= 9 ? 1 : 0,
     });
   } else {
     // Subsequent steps: keep previous stacks visible based on sub-step
@@ -108,41 +115,50 @@ export function setInitialStates(svgElement, subStep, isInitialStep) {
 
     setIfAny(svgElement, SEL.outerToBlockArrowPrev, { opacity: 1 });
     setIfAny(svgElement, SEL.outerToBlockArrowNew, { opacity: prev >= 3 ? 1 : 0 });
-
-    setIfAny(svgElement, SEL.attentionMashAll, { opacity: 1 });
+    setIfAny(svgElement, SEL.shadowToBlockArrowPrev, { opacity: 1 });
+    setIfAny(svgElement, SEL.shadowToBlockArrowNew, { opacity: prev >= 3 ? 1 : 0 });
 
     setIfAny(svgElement, SEL.insideBottomEmbeddingColPrev, { opacity: 1, y: 0 });
     setIfAny(svgElement, SEL.insideBottomEmbeddingColNew, {
       opacity: prev >= 4 ? 1 : 0,
       y: prev >= 4 ? 0 : 8,
     });
+    setIfAny(svgElement, SEL.attentionMashAll, { opacity: prev >= 4 ? 1 : 0 });
 
-    setIfAny(svgElement, SEL.ffnArrowPrev, { opacity: 1 });
-    setIfAny(svgElement, SEL.ffnArrowNew, { opacity: prev >= 4 ? 1 : 0 });
-
-    setIfAny(svgElement, SEL.bottomEmbeddingColPrev, { opacity: 1, y: 0 });
-    setIfAny(svgElement, SEL.bottomEmbeddingColNew, {
+    setIfAny(svgElement, SEL.insideFfnEmbeddingColPrev, { opacity: 1, y: 0 });
+    setIfAny(svgElement, SEL.insideFfnEmbeddingColNew, {
       opacity: prev >= 5 ? 1 : 0,
       y: prev >= 5 ? 0 : 8,
     });
 
+    setIfAny(svgElement, SEL.ffnArrowPrev, { opacity: 1 });
+    setIfAny(svgElement, SEL.ffnArrowNew, { opacity: prev >= 5 ? 1 : 0 });
+
+    setIfAny(svgElement, SEL.bottomEmbeddingColPrev, { opacity: 1, y: 0 });
+    setIfAny(svgElement, SEL.bottomEmbeddingColNew, {
+      opacity: prev >= 6 ? 1 : 0,
+      y: prev >= 6 ? 0 : 8,
+    });
+    setIfAny(svgElement, SEL.blockToOutsideArrowPrev, { opacity: 1 });
+    setIfAny(svgElement, SEL.blockToOutsideArrowNew, { opacity: prev >= 6 ? 1 : 0 });
+
     setIfAny(svgElement, SEL.extractedEmbedding, { opacity: 0 });
     setIfAny(svgElement, SEL.extractedPathArrow, {
-      opacity: prev >= 6 ? 1 : 0,
+      opacity: prev >= 7 ? 1 : 0,
     });
     setIfAny(svgElement, SEL.extractedHorizontal, {
-      opacity: prev >= 6 ? 1 : 0,
+      opacity: prev >= 7 ? 1 : 0,
     });
-    setIfAny(svgElement, SEL.logprobArrow, { opacity: prev >= 7 ? 1 : 0 });
-    setIfAny(svgElement, SEL.logprobVector, { opacity: prev >= 7 ? 1 : 0 });
+    setIfAny(svgElement, SEL.logprobArrow, { opacity: prev >= 8 ? 1 : 0 });
+    setIfAny(svgElement, SEL.logprobVector, { opacity: prev >= 8 ? 1 : 0 });
 
     setIfAny(svgElement, SEL.distributionBar, {
-      opacity: prev >= 8 ? 1 : 0,
-      scaleY: prev >= 8 ? 1 : 0.1,
+      opacity: prev >= 9 ? 1 : 0,
+      scaleY: prev >= 9 ? 1 : 0.1,
       transformOrigin: '50% 100%',
     });
     setIfAny(svgElement, SEL.distributionLabels, {
-      opacity: prev >= 8 ? 1 : 0,
+      opacity: prev >= 9 ? 1 : 0,
     });
   }
 }
@@ -216,14 +232,23 @@ export function buildTimeline(svgElement, subStep, isInitialStep, animDuration, 
         toIfAny(SEL.transformerBox, { opacity: 1, scaleY: 1, duration: animDuration });
         toIfAny(SEL.insideTopEmbeddingsAll, { opacity: 1, y: 0, duration: animDuration }, '<');
         toIfAny(SEL.outerToBlockArrow, { opacity: 1, duration: animDuration }, '<');
-        toIfAny(SEL.attentionMashAll, { opacity: 1, duration: animDuration }, '<');
+        toIfAny(SEL.shadowToBlockArrow, { opacity: 1, duration: animDuration }, '<');
       } else {
         toIfAny(SEL.insideTopEmbeddingColNew, { opacity: 1, y: 0, duration: animDuration });
         toIfAny(SEL.outerToBlockArrowNew, { opacity: 1, duration: animDuration }, '<');
+        toIfAny(SEL.shadowToBlockArrowNew, { opacity: 1, duration: animDuration }, '<');
       }
       break;
     case 4:
       toIfAny(isInitialStep ? SEL.insideBottomEmbeddingsAll : SEL.insideBottomEmbeddingColNew, {
+        opacity: 1,
+        y: 0,
+        duration: animDuration,
+      });
+      toIfAny(SEL.attentionMashAll, { opacity: 1, duration: animDuration }, '<');
+      break;
+    case 5:
+      toIfAny(isInitialStep ? SEL.insideFfnEmbeddingsAll : SEL.insideFfnEmbeddingColNew, {
         opacity: 1,
         y: 0,
         duration: animDuration,
@@ -234,27 +259,32 @@ export function buildTimeline(svgElement, subStep, isInitialStep, animDuration, 
         '<'
       );
       break;
-    case 5:
+    case 6:
       toIfAny(isInitialStep ? SEL.bottomEmbeddingGroupAll : SEL.bottomEmbeddingColNew, {
         opacity: 1,
         y: 0,
         duration: animDuration,
       });
+      toIfAny(
+        isInitialStep ? SEL.blockToOutsideArrow : SEL.blockToOutsideArrowNew,
+        { opacity: 1, duration: animDuration },
+        '<'
+      );
       break;
-    case 6:
+    case 7:
       animateExtraction();
       toIfAny(SEL.extractedPathArrow, { opacity: 1, duration: animDuration });
       toIfAny(SEL.extractedHorizontal, { opacity: 1, duration: animDuration });
       break;
-    case 7:
+    case 8:
       toIfAny(SEL.logprobArrow, { opacity: 1, duration: animDuration });
       toIfAny(SEL.logprobVector, { opacity: 1, duration: animDuration }, '<');
       break;
-    case 8:
+    case 9:
       toIfAny(SEL.distributionBar, { opacity: 1, scaleY: 1, duration: animDuration });
       toIfAny(SEL.distributionLabels, { opacity: 1, duration: animDuration }, '<');
       break;
-    case 9:
+    case 10:
       // No visuals by default; tiny delay to keep async behavior consistent
       tl.to({}, { duration: Math.max(0.05, animDuration * 0.2) });
       break;
@@ -262,7 +292,7 @@ export function buildTimeline(svgElement, subStep, isInitialStep, animDuration, 
       break;
   }
 
-  if (subStep === 9 && typeof onStepComplete === 'function') {
+  if (subStep === 10 && typeof onStepComplete === 'function') {
     tl.eventCallback('onComplete', onStepComplete);
   }
 

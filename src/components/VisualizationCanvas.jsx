@@ -63,6 +63,8 @@ function VisualizationCanvas() {
     const svg = d3.select(svgRef.current);
     const step = state.currentExample.generation_steps[state.currentStep - 1];
     const subStep = state.currentAnimationSubStep;
+    const currentLayer = state.currentTransformerLayer;
+    const numLayers = state.currentExample.model_info?.num_layers || 1;
 
     // Clear previous visualization
     svg.selectAll('*').remove();
@@ -114,16 +116,18 @@ function VisualizationCanvas() {
       setEmbeddingExpanded
     );
 
-    // 3. New transformer block pipeline
+    // 3. New transformer block pipeline with layer stacking
     const blockMeta = renderTransformerBlockLayer(
       transformerGroup,
       step,
       layout,
       tokensLayoutRef,
-      outerMeta
+      outerMeta,
+      currentLayer,
+      numLayers
     );
 
-    // 4. Bottom outside embeddings + FFN arrows
+    // 4. Bottom outside embeddings (no FFN arrows now)
     const bottomInfo = renderBottomEmbeddingsLayer(
       bottomEmbeddingGroup,
       step,
@@ -154,6 +158,7 @@ function VisualizationCanvas() {
     state.currentStep,
     state.currentExample,
     state.currentAnimationSubStep,
+    state.currentTransformerLayer,
     isExpanded,
     embeddingExpanded,
     onStepAnimationComplete,
