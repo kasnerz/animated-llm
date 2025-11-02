@@ -25,11 +25,10 @@ function InputSection() {
     }
   };
 
-  const isAtEnd = state.currentExample &&
-    state.currentStep > 0;  // Disable after first click
+  const isAtEnd = state.currentExample && state.currentStep > 0; // Disable after first click
 
   // Find current example index
-  const currentIndex = state.examples.findIndex(ex => ex.id === state.currentExampleId);
+  const currentIndex = state.examples.findIndex((ex) => ex.id === state.currentExampleId);
 
   return (
     <section className="input-section-minimal">
@@ -45,7 +44,14 @@ function InputSection() {
                   onClick={() => setIsDropdownOpen(!isDropdownOpen)}
                   aria-label="Select prompt"
                 >
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                  >
                     <polyline points="6 9 12 15 18 9"></polyline>
                   </svg>
                 </button>
@@ -75,7 +81,14 @@ function InputSection() {
                 className="btn-play"
                 aria-label={state.currentStep === 0 ? t('start_generation') : t('next_token')}
               >
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                >
                   <polygon points="5 3 19 12 5 21 5 3"></polygon>
                 </svg>
               </button>
@@ -87,10 +100,7 @@ function InputSection() {
       {/* Reset button */}
       {state.currentStep > 0 && (
         <div className="reset-container">
-          <button
-            onClick={actions.reset}
-            className="btn-minimal btn-reset-minimal"
-          >
+          <button onClick={actions.reset} className="btn-minimal btn-reset-minimal">
             {t('reset')}
           </button>
         </div>

@@ -29,7 +29,7 @@ export function AppProvider({ children }) {
 
     // Loading state
     isLoading: false,
-    error: null
+    error: null,
   });
 
   /**
@@ -37,28 +37,29 @@ export function AppProvider({ children }) {
    */
   const loadExamples = useCallback(async () => {
     try {
-      setState(prev => ({ ...prev, isLoading: true, error: null }));
+      setState((prev) => ({ ...prev, isLoading: true, error: null }));
       const response = await fetch('/data/examples.json');
       if (!response.ok) throw new Error('Failed to load examples');
       const data = await response.json();
-      setState(prev => ({
+      setState((prev) => ({
         ...prev,
         examples: data.examples,
-        isLoading: false
+        isLoading: false,
       }));
 
       // Load first example by default
       if (data.examples.length > 0) {
-        await loadExample(data.examples[0].id);
+        loadExample(data.examples[0].id);
       }
     } catch (error) {
       console.error('Error loading examples:', error);
-      setState(prev => ({
+      setState((prev) => ({
         ...prev,
         isLoading: false,
-        error: error.message
+        error: error.message,
       }));
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   /**
@@ -66,11 +67,11 @@ export function AppProvider({ children }) {
    */
   const loadExample = useCallback(async (exampleId) => {
     try {
-      setState(prev => ({ ...prev, isLoading: true, error: null }));
+      setState((prev) => ({ ...prev, isLoading: true, error: null }));
       const response = await fetch(`/data/${exampleId}.json`);
       if (!response.ok) throw new Error(`Failed to load example ${exampleId}`);
       const data = await response.json();
-      setState(prev => ({
+      setState((prev) => ({
         ...prev,
         currentExampleId: exampleId,
         currentExample: data,
@@ -79,14 +80,14 @@ export function AppProvider({ children }) {
         autoGenerate: false,
         isPlaying: false,
         isPaused: false,
-        isLoading: false
+        isLoading: false,
       }));
     } catch (error) {
       console.error('Error loading example:', error);
-      setState(prev => ({
+      setState((prev) => ({
         ...prev,
         isLoading: false,
-        error: error.message
+        error: error.message,
       }));
     }
   }, []);
@@ -95,7 +96,7 @@ export function AppProvider({ children }) {
    * Advance to next step in current example
    */
   const nextStep = useCallback(() => {
-    setState(prev => {
+    setState((prev) => {
       if (!prev.currentExample) return prev;
       const maxSteps = prev.currentExample.generation_steps.length;
       if (prev.currentStep >= maxSteps - 1) return prev;
@@ -104,7 +105,7 @@ export function AppProvider({ children }) {
         ...prev,
         currentStep: prev.currentStep + 1,
         currentAnimationSubStep: 0, // Reset to first sub-step when moving to next generation step
-        isPlaying: true
+        isPlaying: true,
       };
     });
   }, []);
@@ -113,7 +114,7 @@ export function AppProvider({ children }) {
    * Advance to next animation sub-step
    */
   const nextAnimationSubStep = useCallback(() => {
-    setState(prev => {
+    setState((prev) => {
       // Total sub-steps: 0-9 (10 steps total)
       // 0: tokens
       // 1: ids
@@ -134,7 +135,7 @@ export function AppProvider({ children }) {
 
       return {
         ...prev,
-        currentAnimationSubStep: prev.currentAnimationSubStep + 1
+        currentAnimationSubStep: prev.currentAnimationSubStep + 1,
       };
     });
   }, []);
@@ -143,14 +144,14 @@ export function AppProvider({ children }) {
    * Reset to initial prompt
    */
   const reset = useCallback(() => {
-    setState(prev => ({
+    setState((prev) => ({
       ...prev,
       currentStep: 0,
       currentAnimationSubStep: 0,
       generatedAnswer: '',
       autoGenerate: false,
       isPlaying: false,
-      isPaused: false
+      isPaused: false,
     }));
   }, []);
 
@@ -158,7 +159,7 @@ export function AppProvider({ children }) {
    * Toggle theme between dark and light
    */
   const toggleTheme = useCallback(() => {
-    setState(prev => {
+    setState((prev) => {
       const newTheme = prev.theme === 'dark' ? 'light' : 'dark';
       // Update document body attribute
       document.body.setAttribute('data-theme', newTheme);
@@ -170,9 +171,9 @@ export function AppProvider({ children }) {
    * Toggle language between English and Czech
    */
   const toggleLanguage = useCallback(() => {
-    setState(prev => ({
+    setState((prev) => ({
       ...prev,
-      language: prev.language === 'en' ? 'cs' : 'en'
+      language: prev.language === 'en' ? 'cs' : 'en',
     }));
   }, []);
 
@@ -180,10 +181,12 @@ export function AppProvider({ children }) {
    * Set animation speed
    */
   const setAnimationSpeed = useCallback((speed) => {
-    setState(prev => ({
+    setState((prev) => ({
       ...prev,
-      animationSpeed: Math.max(config.animation.minSpeed,
-        Math.min(config.animation.maxSpeed, speed))
+      animationSpeed: Math.max(
+        config.animation.minSpeed,
+        Math.min(config.animation.maxSpeed, speed)
+      ),
     }));
   }, []);
 
@@ -191,19 +194,19 @@ export function AppProvider({ children }) {
    * Set playing state
    */
   const setIsPlaying = useCallback((isPlaying) => {
-    setState(prev => ({ ...prev, isPlaying }));
+    setState((prev) => ({ ...prev, isPlaying }));
   }, []);
 
   /**
    * Set paused state
    */
   const setIsPaused = useCallback((isPaused) => {
-    setState(prev => ({ ...prev, isPaused }));
+    setState((prev) => ({ ...prev, isPaused }));
   }, []);
 
   /** Enable/disable automatic multi-step generation */
   const setAutoGenerate = useCallback((auto) => {
-    setState(prev => ({ ...prev, autoGenerate: !!auto }));
+    setState((prev) => ({ ...prev, autoGenerate: !!auto }));
   }, []);
 
   /**
@@ -212,7 +215,7 @@ export function AppProvider({ children }) {
    * either advances to the next step (auto-play) or stops at the end.
    */
   const onStepAnimationComplete = useCallback(() => {
-    setState(prev => {
+    setState((prev) => {
       const ex = prev.currentExample;
       if (!ex) return prev;
       const steps = ex.generation_steps || [];
@@ -228,7 +231,7 @@ export function AppProvider({ children }) {
         return {
           ...prev,
           generatedAnswer: newAnswer,
-          isPlaying: false
+          isPlaying: false,
         };
       }
 
@@ -239,7 +242,7 @@ export function AppProvider({ children }) {
         generatedAnswer: newAnswer,
         currentStep: prev.currentStep + 1,
         currentAnimationSubStep: 0, // Reset sub-step for the new step
-        isPlaying: true
+        isPlaying: true,
       };
     });
   }, []);
@@ -252,6 +255,7 @@ export function AppProvider({ children }) {
   // Set initial theme on mount
   useEffect(() => {
     document.body.setAttribute('data-theme', state.theme);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const value = {
@@ -268,15 +272,11 @@ export function AppProvider({ children }) {
       setIsPlaying,
       setIsPaused,
       setAutoGenerate,
-      onStepAnimationComplete
-    }
+      onStepAnimationComplete,
+    },
   };
 
-  return (
-    <AppContext.Provider value={value}>
-      {children}
-    </AppContext.Provider>
-  );
+  return <AppContext.Provider value={value}>{children}</AppContext.Provider>;
 }
 
 /**
@@ -289,5 +289,3 @@ export function useApp() {
   }
   return context;
 }
-
-export default AppContext;

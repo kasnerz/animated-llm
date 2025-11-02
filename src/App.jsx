@@ -60,9 +60,7 @@ function AppContent() {
       <div className="error-container">
         <h2>{t('error')}</h2>
         <p>{state.error}</p>
-        <button onClick={actions.loadExamples}>
-          {t('retry')}
-        </button>
+        <button onClick={actions.loadExamples}>{t('retry')}</button>
       </div>
     );
   }
@@ -95,14 +93,10 @@ function AppContent() {
         <InputSection />
 
         {/* Generated answer area: only after generation starts */}
-        {state.currentExample && state.currentStep > 0 && (
-          <GeneratedAnswer />
-        )}
+        {state.currentExample && state.currentStep > 0 && <GeneratedAnswer />}
 
         {/* Visualization canvas */}
-        {state.currentExample && (
-          <VisualizationCanvas />
-        )}
+        {state.currentExample && <VisualizationCanvas />}
       </main>
     </div>
   );

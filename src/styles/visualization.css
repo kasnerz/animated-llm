@@ -4,216 +4,219 @@
 
 /* Token ID Labels */
 .token-id {
-    font-family: 'Consolas', 'Courier New', monospace;
-    font-size: 20px;
-    fill: var(--text-primary);
-    text-anchor: middle;
-    font-weight: 600;
+  font-family: 'Consolas', 'Courier New', monospace;
+  font-size: 20px;
+  fill: var(--text-primary);
+  text-anchor: middle;
+  font-weight: 600;
 }
 
 /* Arrows */
 .arrow {
-    stroke: #cccccc;
-    stroke-width: 1.5;
-    fill: none;
-    marker-end: url(#arrowhead);
+  stroke: #cccccc;
+  stroke-width: 1.5;
+  fill: none;
+  marker-end: url(#arrowhead);
 }
 
 .arrow-animated {
-    stroke-dasharray: 5, 5;
-    animation: dash 1s linear infinite;
+  stroke-dasharray: 5, 5;
+  animation: dash 1s linear infinite;
 }
 
 @keyframes dash {
-    to {
-        stroke-dashoffset: -10;
-    }
+  to {
+    stroke-dashoffset: -10;
+  }
 }
 
 /* Embedding Squares */
 .embedding-square {
-    stroke: var(--border-color);
-    stroke-width: 1;
-    transition: all 0.3s ease;
+  stroke: var(--border-color);
+  stroke-width: 1;
+  transition: all 0.3s ease;
 }
 
 .embedding-square:hover {
-    stroke: var(--accent-primary);
-    stroke-width: 2;
+  stroke: var(--accent-primary);
+  stroke-width: 2;
 }
 
 .embedding-value {
-    font-family: 'Consolas', 'Courier New', monospace;
-    font-size: 14px;
-    fill: var(--text-primary);
-    text-anchor: middle;
+  font-family: 'Consolas', 'Courier New', monospace;
+  font-size: 14px;
+  fill: var(--text-primary);
+  text-anchor: middle;
 }
 
 /* Transformer Block */
 .transformer-block {
-    fill: transparent;
-    stroke: #cccccc;
-    stroke-width: 1.5;
-    stroke-dasharray: 4, 4;
-    rx: 8;
+  fill: transparent;
+  stroke: #cccccc;
+  stroke-width: 1.5;
+  stroke-dasharray: 4, 4;
+  rx: 8;
 }
 
 .transformer-label {
-    font-size: 22px;
-    font-weight: 600;
-    fill: var(--text-primary);
-    text-anchor: middle;
+  font-size: 22px;
+  font-weight: 600;
+  fill: var(--text-primary);
+  text-anchor: middle;
 }
 
 .layer-label {
-    font-size: 16px;
-    fill: var(--text-secondary);
-    text-anchor: middle;
+  font-size: 16px;
+  fill: var(--text-secondary);
+  text-anchor: middle;
 }
 
 /* Attention Connections */
 .attention-line {
-    stroke: var(--accent-primary);
-    stroke-width: 1;
-    opacity: 0.3;
-    fill: none;
+  stroke: var(--accent-primary);
+  stroke-width: 1;
+  opacity: 0.3;
+  fill: none;
 }
 
 .attention-line.active {
-    opacity: 0.8;
-    stroke-width: 2;
+  opacity: 0.8;
+  stroke-width: 2;
 }
 
 /* Feed-Forward Connections */
 .feedforward-line {
-    stroke: var(--accent-secondary);
-    stroke-width: 2;
-    opacity: 0.5;
-    fill: none;
+  stroke: var(--accent-secondary);
+  stroke-width: 2;
+  opacity: 0.5;
+  fill: none;
 }
 
 .feedforward-line.active {
-    opacity: 1;
-    stroke-width: 3;
+  opacity: 1;
+  stroke-width: 3;
 }
 
 /* Output Distribution */
 .distribution-bar {
-    fill: #bfbfbf; /* default grey, may be overridden inline */
-    transition: all 0.3s ease;
-    /* subtle outline so low-saturation fills remain visible on light backgrounds */
-    stroke: rgba(0,0,0,0.06);
-    stroke-width: 1px;
-    shape-rendering: geometricPrecision;
+  fill: #bfbfbf; /* default grey, may be overridden inline */
+  transition: all 0.3s ease;
+  /* subtle outline so low-saturation fills remain visible on light backgrounds */
+  stroke: rgba(0, 0, 0, 0.06);
+  stroke-width: 1px;
+  shape-rendering: geometricPrecision;
 }
 
 .distribution-bar:hover {
-    opacity: 0.85;
+  opacity: 0.85;
 }
 
 .distribution-bar.selected {
-    fill: #8B0000; /* dark red */
+  fill: #8b0000; /* dark red */
 }
 
 .distribution-label {
-    font-size: 16px;
-    fill: var(--text-primary);
+  font-size: 16px;
+  fill: var(--text-primary);
 }
 
 .distribution-token {
-    font-family: 'Consolas', 'Courier New', monospace;
-    font-weight: 600;
+  font-family: 'Consolas', 'Courier New', monospace;
+  font-weight: 600;
 }
 
 .distribution-prob {
-    font-size: 14px;
-    fill: var(--text-secondary);
+  font-size: 14px;
+  fill: var(--text-secondary);
 }
 
 /* Section Headers in SVG */
 .section-header {
-    font-size: 24px;
-    font-weight: 600;
-    fill: var(--text-primary);
+  font-size: 24px;
+  font-weight: 600;
+  fill: var(--text-primary);
 }
 
 /* Gradient Definitions */
 .embedding-gradient-low {
-    stop-color: #FF6B6B;
+  stop-color: #ff6b6b;
 }
 
 .embedding-gradient-mid {
-    stop-color: #FFA07A;
+  stop-color: #ffa07a;
 }
 
 .embedding-gradient-high {
-    stop-color: #51CF66;
+  stop-color: #51cf66;
 }
 
 /* Animation States */
 .fade-in {
-    opacity: 0;
+  opacity: 0;
 }
 
 .fade-in.visible {
-    opacity: 1;
+  opacity: 1;
 }
 
 /* Step-wise gentle transitions */
 .phase-hidden {
-    opacity: 0 !important;
-    transform: translateY(6px);
-    /* Make transforms behave for SVG elements */
-    transform-box: fill-box;
-    transform-origin: center;
-    transition: opacity 220ms ease, transform 220ms ease;
-    pointer-events: none;
+  opacity: 0 !important;
+  transform: translateY(6px);
+  /* Make transforms behave for SVG elements */
+  transform-box: fill-box;
+  transform-origin: center;
+  transition:
+    opacity 220ms ease,
+    transform 220ms ease;
+  pointer-events: none;
 }
 
 .phase-visible {
-    opacity: 1 !important;
-    transform: translateY(0);
-    transition: opacity 260ms ease, transform 260ms ease;
+  opacity: 1 !important;
+  transform: translateY(0);
+  transition:
+    opacity 260ms ease,
+    transform 260ms ease;
 }
 
 .pulse {
-    animation: pulse 2s ease-in-out infinite;
+  animation: pulse 2s ease-in-out infinite;
 }
 
 @keyframes pulse {
+  0%,
+  100% {
+    opacity: 0.5;
+  }
 
-    0%,
-    100% {
-        opacity: 0.5;
-    }
-
-    50% {
-        opacity: 1;
-    }
+  50% {
+    opacity: 1;
+  }
 }
 
 /* Vector Grid */
 .vector-grid {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 2px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 2px;
 }
 
 /* Tooltip */
 .viz-tooltip {
-    position: absolute;
-    padding: 8px 12px;
-    background-color: var(--bg-primary);
-    border: 1px solid var(--border-color);
-    border-radius: 4px;
-    font-size: 12px;
-    pointer-events: none;
-    opacity: 0;
-    transition: opacity 0.2s ease;
-    box-shadow: 0 2px 8px var(--shadow-color);
-    z-index: 1000;
+  position: absolute;
+  padding: 8px 12px;
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  font-size: 12px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  box-shadow: 0 2px 8px var(--shadow-color);
+  z-index: 1000;
 }
 
 .viz-tooltip.visible {
-    opacity: 1;
+  opacity: 1;
 }
