@@ -407,7 +407,7 @@ export function renderTransformerBlockLayer(
   });
 
   const attentionHeight = 60;
-  const ffnArrowGap = 20;
+  const ffnArrowGap = 80; // Increased from 60 to 80 for longer arrows
   const totalBlockHeight =
     layout.blockPadding +
     estimatedInsideTopHeight +
@@ -579,7 +579,7 @@ export function renderTransformerBlockLayer(
   });
 
   // Add FFN embeddings (output embeddings after feed forward) inside the transformer block
-  const ffnY = insideBottomY + maxInsideBottomHeight + 20;
+  const ffnY = insideBottomY + maxInsideBottomHeight + 80; // Increased from 60 to 80 for longer arrows
   const ffnGroup = group.append('g').attr('class', 'inside-ffn-embeddings');
   const ffnMeta = [];
   let maxFfnHeight = 0;
@@ -693,10 +693,10 @@ function drawHorizontalVectorRich(group, centerX, topY, values, opts = {}) {
   const g = group.append('g').attr('class', className);
   const n = values.length;
 
-  const cellWidth = isLogprob ? 80 : 26;
-  const cellHeight = isLogprob ? 36 : 18;
-  const gap = isLogprob ? 12 : 6;
-  const fontSize = isLogprob ? '18px' : '10px';
+  const cellWidth = isLogprob ? 54 : 26; // Reduced from 80 to 54 (about 2/3)
+  const cellHeight = isLogprob ? 24 : 18; // Reduced from 36 to 24
+  const gap = isLogprob ? 8 : 6; // Reduced from 12 to 8
+  const fontSize = '10px'; // Same font size for both, keep larger gaps for logprob to align with bars
 
   const width = n * cellWidth + (n - 1) * gap + 12;
   const leftX = centerX - width / 2 + 6;
@@ -730,7 +730,7 @@ function drawHorizontalVectorRich(group, centerX, topY, values, opts = {}) {
       .attr('y', topY + 6 + cellHeight / 2 + (isLogprob ? 6 : 3))
       .attr('text-anchor', 'middle')
       .style('font-size', fontSize)
-      .style('font-weight', isLogprob ? '600' : 'normal')
+      .style('font-weight', 'normal') // Same weight for both vectors
       .style('fill', '#111')
       .text(format ? format(v) : typeof v === 'number' ? v.toFixed(1) : '');
   });
@@ -822,7 +822,7 @@ export function renderOutputLayer(group, step, layout, width, svgRoot, bottomInf
   }
 
   let hv2 = null;
-  let logprobY = (hv1 ? hv1.bottomY : horizY + 36) + 28;
+  let logprobY = (hv1 ? hv1.bottomY : horizY + 36) + 60; // Increased from 28 to 60 for longer arrow with box
   const probs = candidates.map((c) => c.prob);
   if (subStep >= 7) {
     hv2 = drawHorizontalVectorRich(group, horizCenterX, logprobY, probs, {
@@ -847,7 +847,7 @@ export function renderOutputLayer(group, step, layout, width, svgRoot, bottomInf
     probs.forEach((p, i) => {
       const cx = hv2.centers[i];
       const barH = (p ?? 0) * maxBarHeight;
-      const bw = Math.max(40, hv2.cellWidth * 0.8);
+      const bw = Math.max(30, hv2.cellWidth * 0.7); // Reduced multiplier from 0.8 to 0.7, min from 40 to 30
       const color = getPurpleByProb(p ?? 0);
       const isSelected = i === 0;
       group

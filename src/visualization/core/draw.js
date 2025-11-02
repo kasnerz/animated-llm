@@ -11,7 +11,7 @@ import { COLORS, STROKE, FONTS, LAYOUT } from './constants.js';
  * @param {number} y1 - Start y
  * @param {number} x2 - End x
  * @param {number} y2 - End y
- * @param {Object} opts - Options: className, color, strokeWidth, markerSize, opacity
+ * @param {Object} opts - Options: className, color, strokeWidth, markerSize, opacity, withBox
  */
 export function drawArrow(group, x1, y1, x2, y2, opts = {}) {
   const {
@@ -20,6 +20,7 @@ export function drawArrow(group, x1, y1, x2, y2, opts = {}) {
     strokeWidth = STROKE.WIDTH_THICK,
     markerSize = STROKE.MARKER_SIZE,
     opacity = STROKE.OPACITY_DEFAULT,
+    withBox = false,
   } = opts;
 
   const markerId = `arrowhead-${Math.random().toString(36).slice(2, 9)}`;
@@ -38,18 +39,63 @@ export function drawArrow(group, x1, y1, x2, y2, opts = {}) {
     .attr('points', `0 0, ${markerSize} ${markerSize / 2}, 0 ${markerSize}`)
     .attr('fill', color);
 
-  // Draw line
-  group
-    .append('line')
-    .attr('class', className)
-    .attr('x1', x1)
-    .attr('y1', y1)
-    .attr('x2', x2)
-    .attr('y2', y2)
-    .attr('stroke', color)
-    .attr('stroke-width', strokeWidth)
-    .attr('marker-end', `url(#${markerId})`)
-    .attr('opacity', opacity);
+  if (withBox) {
+    // Draw arrow with a box in the middle (for feedforward projection)
+    const midY = (y1 + y2) / 2;
+    const boxSize = 18; // Reduced from 24 to 18
+    const boxRadius = 5;
+
+    // Draw first segment (from start to box)
+    group
+      .append('line')
+      .attr('class', className)
+      .attr('x1', x1)
+      .attr('y1', y1)
+      .attr('x2', x2)
+      .attr('y2', midY - boxSize / 2 - 4)
+      .attr('stroke', color)
+      .attr('stroke-width', strokeWidth)
+      .attr('opacity', opacity);
+
+    // Draw projection box
+    group
+      .append('rect')
+      .attr('class', `${className} projection-box`)
+      .attr('x', x2 - boxSize / 2)
+      .attr('y', midY - boxSize / 2)
+      .attr('width', boxSize)
+      .attr('height', boxSize)
+      .attr('rx', boxRadius)
+      .attr('ry', boxRadius)
+      .style('fill', color)
+      .style('opacity', opacity);
+
+    // Draw second segment (from box to end with arrowhead)
+    group
+      .append('line')
+      .attr('class', className)
+      .attr('x1', x2)
+      .attr('y1', midY + boxSize / 2 + 4)
+      .attr('x2', x2)
+      .attr('y2', y2)
+      .attr('stroke', color)
+      .attr('stroke-width', strokeWidth)
+      .attr('marker-end', `url(#${markerId})`)
+      .attr('opacity', opacity);
+  } else {
+    // Draw simple line with arrowhead
+    group
+      .append('line')
+      .attr('class', className)
+      .attr('x1', x1)
+      .attr('y1', y1)
+      .attr('x2', x2)
+      .attr('y2', y2)
+      .attr('stroke', color)
+      .attr('stroke-width', strokeWidth)
+      .attr('marker-end', `url(#${markerId})`)
+      .attr('opacity', opacity);
+  }
 }
 
 /**
@@ -114,52 +160,6 @@ export function verticalThenHorizontalRoundedPath(x1, y1, x2, y2, radius = 10) {
     Q ${cornerCtrlX},${cornerCtrlY} ${cornerX},${cornerY}
     L ${x2},${y2}
   `;
-}
-
-/**
- * Draw an arbitrary SVG path with an arrowhead at the end.
- * Useful for multi-segment/curved connectors.
- * @param {d3.Selection} group - D3 selection to append to
- * @param {string} pathD - The SVG path 'd' attribute
- * @param {Object} opts - Options: className, color, strokeWidth, markerSize, opacity
- */
-export function drawCurvedArrowPath(group, pathD, opts = {}) {
-  const {
-    className = '',
-    color = COLORS.getArrowColor(),
-    strokeWidth = STROKE.WIDTH_THICK,
-    markerSize = STROKE.MARKER_SIZE,
-    opacity = STROKE.OPACITY_DEFAULT,
-  } = opts;
-
-  const markerId = `arrowhead-${Math.random().toString(36).slice(2, 9)}`;
-
-  // Define arrowhead marker
-  group
-    .append('defs')
-    .append('marker')
-    .attr('id', markerId)
-    .attr('markerWidth', markerSize)
-    .attr('markerHeight', markerSize)
-    .attr('refX', markerSize / 2)
-    .attr('refY', markerSize / 2)
-    .attr('orient', 'auto')
-    .append('polygon')
-    .attr('points', `0 0, ${markerSize} ${markerSize / 2}, 0 ${markerSize}`)
-    .attr('fill', color);
-
-  // Draw path
-  group
-    .append('path')
-    .attr('class', className)
-    .attr('d', pathD)
-    .attr('fill', 'none')
-    .attr('stroke', color)
-    .attr('stroke-width', strokeWidth)
-    .attr('marker-end', `url(#${markerId})`)
-    .attr('opacity', opacity)
-    .attr('stroke-linecap', 'round')
-    .attr('stroke-linejoin', 'round');
 }
 
 /**
