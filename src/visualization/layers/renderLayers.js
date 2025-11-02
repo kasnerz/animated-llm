@@ -4,7 +4,8 @@
  * to minimize refactoring risk while improving modularity
  */
 import * as d3 from 'd3';
-import { getTokenColor } from '../core/colors';
+import { getTokenColor, getPurpleByProb } from '../core/colors';
+import { drawArrow, rightAngleRoundedPath } from '../core/draw';
 
 /**
  * Render tokens layer
@@ -334,4 +335,374 @@ export function renderOuterEmbeddingsLayer(
   const afterEmbY = layout.embeddingY + maxOuterHeight;
 
   return { columnsMeta, maxOuterHeight, startX, totalWidth, afterEmbY };
+}
+
+/**
+ * Render transformer block layer (inside top embeddings, attention mash, inside bottom embeddings)
+ * @returns {Object} { blockTopY, blockBottomY, insideBottomMeta }
+ */
+export function renderTransformerBlockLayer(group, step, layout, tokensLayoutRef, outerMeta) {
+  const { visibleIndices = [], positions = [] } = tokensLayoutRef.current || {};
+  const columnsMeta = outerMeta.columnsMeta;
+
+  const validXs = positions.filter((_, i) => visibleIndices[i] >= 0);
+  if (validXs.length === 0) {
+    return {
+      blockTopY: layout.embeddingY,
+      blockBottomY: layout.embeddingY,
+      insideBottomMeta: [],
+    };
+  }
+
+  const afterOuterBottom = layout.embeddingY + outerMeta.maxOuterHeight;
+  const blockTopY = afterOuterBottom + 40;
+  const insideTopY = blockTopY + layout.blockPadding;
+
+  const embeddings = step.embeddings;
+  const insideTopGroup = group.append('g').attr('class', 'inside-top-embeddings');
+  const insideTopMeta = [];
+  let maxInsideTopHeight = 0;
+  visibleIndices.forEach((actualIndex, i) => {
+    const x = positions[i];
+    if (actualIndex < 0) {
+      insideTopMeta.push(null);
+      return;
+    }
+    const vals = embeddings[actualIndex]?.values || [];
+    const tokenColor = getTokenColor(actualIndex);
+    const isNew = actualIndex === step.tokens?.length - 1;
+    const meta = drawEmbeddingColumnInternal(
+      insideTopGroup,
+      x,
+      insideTopY,
+      vals,
+      false,
+      tokenColor,
+      isNew ? 'new-token' : 'prev-token',
+      {},
+      () => {},
+      actualIndex
+    );
+    insideTopMeta.push(meta);
+    maxInsideTopHeight = Math.max(maxInsideTopHeight, meta.height);
+    const outerCol = columnsMeta[i];
+    if (outerCol) {
+      drawArrow(group, x, outerCol.bottomY + 4, x, meta.topY - 8, {
+        className: `outer-to-block-arrow ${isNew ? 'new-token' : 'prev-token'}`,
+      });
+    }
+  });
+
+  const attentionStartY = insideTopY + maxInsideTopHeight;
+  const insideBottomY = attentionStartY + 60;
+  const attentionGroup = group.append('g').attr('class', 'attention-mash');
+  const centers = insideTopMeta.map((m) => (m ? { x: m.centerX } : null));
+  centers.forEach((a, i) => {
+    if (!a) return;
+    centers.forEach((b, j) => {
+      if (!b || i === j) return;
+      const s = Math.abs(Math.sin((i * 37 + j * 17) * 12.9898)) % 1;
+      const color = d3.interpolateRgb('#C5CBD3', '#9AA0A6')(s);
+      const width = 0.6 + s * 2.0;
+      const opacity = 0.25 + s * 0.25;
+      attentionGroup
+        .append('line')
+        .attr('x1', a.x)
+        .attr('y1', attentionStartY)
+        .attr('x2', b.x)
+        .attr('y2', insideBottomY)
+        .style('stroke', color)
+        .style('stroke-width', width)
+        .style('opacity', opacity);
+    });
+  });
+
+  const insideBottomGroup = group.append('g').attr('class', 'inside-bottom-embeddings');
+  const insideBottomMeta = [];
+  let maxInsideBottomHeight = 0;
+  visibleIndices.forEach((actualIndex, i) => {
+    const x = positions[i];
+    if (actualIndex < 0) {
+      insideBottomMeta.push(null);
+      return;
+    }
+    const vals = embeddings[actualIndex]?.values || [];
+    const tokenColor = getTokenColor(actualIndex);
+    const isNew = actualIndex === step.tokens?.length - 1;
+    const meta = drawEmbeddingColumnInternal(
+      insideBottomGroup,
+      x,
+      insideBottomY,
+      vals,
+      false,
+      tokenColor,
+      isNew ? 'new-token' : 'prev-token',
+      {},
+      () => {},
+      actualIndex
+    );
+    insideBottomMeta.push(meta);
+    maxInsideBottomHeight = Math.max(maxInsideBottomHeight, meta.height);
+  });
+
+  const blockBottomY = insideBottomY + maxInsideBottomHeight + layout.blockPadding;
+
+  group
+    .insert('rect', ':first-child')
+    .attr('x', Math.min(...validXs) - 60)
+    .attr('y', blockTopY)
+    .attr('width', Math.max(...validXs) + 60 - (Math.min(...validXs) - 60))
+    .attr('height', blockBottomY - blockTopY)
+    .attr('rx', 10)
+    .attr('class', 'transformer-box')
+    .style('fill', '#f3f4f6')
+    .style('stroke', '#d9d9e3')
+    .style('stroke-dasharray', '4 4');
+
+  return { blockTopY, blockBottomY, insideBottomMeta };
+}
+
+/**
+ * Render outside bottom embeddings and FFN arrows
+ * @returns {Object} bottom info
+ */
+export function renderBottomEmbeddingsLayer(group, step, layout, tokensLayoutRef, blockMeta) {
+  const { visibleIndices = [], positions = [] } = tokensLayoutRef.current || {};
+  const embeddings = step.embeddings;
+  const topY = blockMeta.blockBottomY + 40;
+
+  let maxHeight = 0;
+  const metas = [];
+  visibleIndices.forEach((actualIndex, i) => {
+    const x = positions[i];
+    if (actualIndex < 0) return;
+    const vals = embeddings[actualIndex]?.values || [];
+    const tokenColor = getTokenColor(actualIndex);
+    const insideBottom = blockMeta.insideBottomMeta[i];
+    const isNew = actualIndex === step.tokens?.length - 1;
+    if (insideBottom) {
+      drawArrow(group, x, insideBottom.bottomY + 4, x, topY - 8, {
+        withBox: true,
+        className: `ffn-arrow ${isNew ? 'new-token' : 'prev-token'}`,
+      });
+    }
+    const meta = drawEmbeddingColumnInternal(
+      group,
+      x,
+      topY,
+      vals,
+      false,
+      tokenColor,
+      isNew ? 'new-token' : 'prev-token',
+      {},
+      () => {},
+      actualIndex
+    );
+    metas[i] = meta;
+    maxHeight = Math.max(maxHeight, meta.height);
+  });
+
+  let rightmostIdx = -1;
+  for (let i = visibleIndices.length - 1; i >= 0; i--) {
+    if (visibleIndices[i] >= 0) {
+      rightmostIdx = i;
+      break;
+    }
+  }
+  const rightmostMeta = rightmostIdx >= 0 ? metas[rightmostIdx] : null;
+
+  return { afterBottomY: topY + maxHeight, topY, maxHeight, metas, rightmostIdx, rightmostMeta };
+}
+
+// Local helper: rich horizontal vector with centers and optional logprob styling
+function drawHorizontalVectorRich(group, centerX, topY, values, opts = {}) {
+  const { className = '', tokenColor = '#ddd', bgFill = null, format, isLogprob = false } = opts;
+  const g = group.append('g').attr('class', className);
+  const n = values.length;
+
+  const cellWidth = isLogprob ? 80 : 26;
+  const cellHeight = isLogprob ? 36 : 18;
+  const gap = isLogprob ? 12 : 6;
+  const fontSize = isLogprob ? '18px' : '10px';
+
+  const width = n * cellWidth + (n - 1) * gap + 12;
+  const leftX = centerX - width / 2 + 6;
+  const centers = [];
+
+  const bg =
+    bgFill ??
+    d3.interpolateRgb(typeof tokenColor === 'string' ? tokenColor : '#ddd', '#ffffff')(0.85);
+  g.append('rect')
+    .attr('x', leftX - 6)
+    .attr('y', topY)
+    .attr('width', width)
+    .attr('height', cellHeight + 12)
+    .attr('rx', 10)
+    .style('fill', bg)
+    .style('stroke', '#e5e7eb');
+
+  values.forEach((v, i) => {
+    const x = leftX + i * (cellWidth + gap);
+    const cx = x + cellWidth / 2;
+    centers.push(cx);
+    g.append('rect')
+      .attr('x', x)
+      .attr('y', topY + 6)
+      .attr('width', cellWidth)
+      .attr('height', cellHeight)
+      .attr('rx', 4)
+      .style('fill', 'transparent');
+    g.append('text')
+      .attr('x', cx)
+      .attr('y', topY + 6 + cellHeight / 2 + (isLogprob ? 6 : 3))
+      .attr('text-anchor', 'middle')
+      .style('font-size', fontSize)
+      .style('font-weight', isLogprob ? '600' : 'normal')
+      .style('fill', '#111')
+      .text(format ? format(v) : typeof v === 'number' ? v.toFixed(1) : '');
+  });
+
+  return { topY, bottomY: topY + cellHeight + 12, centers, width, cellWidth };
+}
+
+/**
+ * Render output distribution below bottom embeddings
+ */
+export function renderOutputLayer(group, step, layout, width, svgRoot, bottomInfo, subStep) {
+  const candidates = step.output_distribution?.candidates || [];
+
+  const rm = bottomInfo.rightmostMeta;
+  let rightmostActualIndex = -1;
+  for (let i = bottomInfo.metas.length - 1; i >= 0; i--) {
+    if (bottomInfo.metas[i]) {
+      rightmostActualIndex = i;
+      break;
+    }
+  }
+  const tokenColor = rightmostActualIndex >= 0 ? getTokenColor(rightmostActualIndex) : '#999';
+  const baseFill = d3.interpolateRgb(tokenColor, '#ffffff')(0.7);
+  const baseStroke = d3.interpolateRgb(tokenColor, '#ffffff')(0.5);
+
+  const horizY = bottomInfo.afterBottomY + 20;
+  const horizCenterX = width / 2;
+
+  const mainRoot = d3.select(svgRoot).select('g.visualization-main');
+  const extractionBg = mainRoot
+    .insert('g', '.bottom-embedding-group')
+    .attr('class', 'extraction-bg-layer');
+
+  if (rm && subStep >= 6) {
+    const startX = rm.centerX;
+    const startY = rm.topY + rm.height / 2;
+    const endX = horizCenterX;
+    const endY = horizY + 12;
+    const pathD = rightAngleRoundedPath(startX, startY, endX, endY, 20);
+    extractionBg
+      .append('path')
+      .attr('d', pathD)
+      .attr('class', 'extracted-path-arrow')
+      .style('fill', 'none')
+      .style('stroke', '#c0c0c0')
+      .style('stroke-width', 1.5)
+      .style('stroke-linecap', 'round')
+      .style('stroke-linejoin', 'round')
+      .style('opacity', 0.9);
+  }
+
+  const underlays = group.append('g').attr('class', 'output-underlays');
+
+  let hv1 = null;
+  if (subStep >= 6) {
+    const extracted = extractionBg.append('g').attr('class', 'extracted-embedding');
+    if (rm) {
+      extracted
+        .append('rect')
+        .attr('x', rm.centerX - rm.width / 2)
+        .attr('y', rm.topY)
+        .attr('width', rm.width)
+        .attr('height', rm.height)
+        .attr('rx', 4)
+        .style('fill', baseFill)
+        .style('stroke', baseStroke);
+      const dx = horizCenterX - rm.centerX;
+      const dy = horizY + rm.height / 2 - (rm.topY + rm.height / 2);
+      extracted.attr('data-dx', dx).attr('data-dy', dy);
+    }
+    const sampleValues = (step.embeddings?.[rightmostActualIndex]?.values || []).slice(0, 8);
+    hv1 = drawHorizontalVectorRich(group, horizCenterX, horizY, sampleValues, {
+      className: 'extracted-horizontal',
+      tokenColor,
+      bgFill: baseFill,
+    });
+  }
+
+  let hv2 = null;
+  let logprobY = (hv1 ? hv1.bottomY : horizY + 36) + 28;
+  const probs = candidates.map((c) => c.prob);
+  if (subStep >= 7) {
+    hv2 = drawHorizontalVectorRich(group, horizCenterX, logprobY, probs, {
+      className: 'logprob-vector',
+      tokenColor: '#8B5CF6',
+      format: (v) => v.toFixed(2),
+      isLogprob: true,
+    });
+    if (hv1 && hv2) {
+      drawArrow(underlays, horizCenterX, hv1.bottomY + 6, horizCenterX, hv2.topY - 8, {
+        withBox: true,
+        className: 'logprob-arrow',
+      });
+    }
+  }
+
+  if (subStep >= 8 && hv2) {
+    const maxBarHeight = 140;
+    const barTopY = hv2.bottomY + 20;
+    const barBaselineY = barTopY + maxBarHeight;
+
+    probs.forEach((p, i) => {
+      const cx = hv2.centers[i];
+      const barH = (p ?? 0) * maxBarHeight;
+      const bw = Math.max(40, hv2.cellWidth * 0.8);
+      const color = getPurpleByProb(p ?? 0);
+      const isSelected = i === 0;
+      group
+        .append('rect')
+        .attr('x', cx - bw / 2)
+        .attr('y', barBaselineY - barH)
+        .attr('width', bw)
+        .attr('height', barH)
+        .attr('rx', 4)
+        .attr('class', `distribution-bar ${isSelected ? 'selected' : ''}`)
+        .style('fill', isSelected ? '#e11d48' : color);
+    });
+
+    const legendY = barBaselineY + 24;
+    probs.forEach((p, i) => {
+      const cx = hv2.centers[i];
+      const token = candidates[i]?.token ?? '';
+      const percentage = ((p ?? 0) * 100).toFixed(1) + '%';
+      const isSelected = i === 0;
+      group
+        .append('text')
+        .attr('x', cx)
+        .attr('y', legendY)
+        .attr('text-anchor', 'middle')
+        .attr('class', 'distribution-token-label')
+        .style('font-size', '18px')
+        .style('font-weight', isSelected ? '700' : '600')
+        .style('fill', isSelected ? '#e11d48' : '#333')
+        .text(token);
+
+      group
+        .append('text')
+        .attr('x', cx)
+        .attr('y', legendY + 24)
+        .attr('text-anchor', 'middle')
+        .attr('class', 'distribution-percentage-label')
+        .style('font-size', '16px')
+        .style('font-weight', '500')
+        .style('fill', isSelected ? '#e11d48' : '#666')
+        .text(percentage);
+    });
+  }
 }
