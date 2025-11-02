@@ -3,6 +3,8 @@ import { useEffect, useRef, useState } from 'react';
 import { useApp } from '../contexts/AppContext';
 import * as d3 from 'd3';
 import { gsap } from 'gsap';
+import { getTokenColor, getEmbeddingColor, getPurpleByProb } from '../visualization/core/colors';
+import { setInitialStates, buildTimeline } from '../visualization/animation/timeline';
 import '../styles/visualization.css';
 
 /**
@@ -1271,12 +1273,6 @@ function VisualizationCanvas() {
     return `M ${x1} ${y1} C ${c1x} ${c1y}, ${c2x} ${c2y}, ${x2} ${y2}`;
   };
 
-  const getPurpleByProb = (p) => {
-    const s = 45 + Math.round(p * 45); // 45%..90%
-    const l = 62 - Math.round(p * 10); // 62%..52%
-    return `hsl(270, ${s}%, ${l}%)`;
-  };
-
   /**
    * Render expand/collapse button
    */
@@ -1348,33 +1344,6 @@ function VisualizationCanvas() {
           .style('opacity', 0.6)
           .style('stroke', 'var(--border-color)');
       });
-  };
-
-  /**
-   * Get color for token
-   */
-  const getTokenColor = (index) => {
-    // Vibrant palette inspired by tokenizer playground
-    const colors = [
-      '#FF7A7A', // bright coral red
-      '#6EC1FF', // vivid sky blue
-      '#7DFFA0', // bright mint
-      '#FFD166', // warm sunflower
-      '#C792EA', // vibrant purple
-      '#F78C6B', // orange salmon
-      '#2ED1A2', // aqua green
-    ];
-    return colors[index % colors.length];
-  };
-
-  /**
-   * Get color for embedding value
-   */
-  const getEmbeddingColor = (value) => {
-    // Map -1 to 1 range to grayscale
-    const normalized = (value + 1) / 2;
-    const gray = Math.floor(normalized * 200 + 55);
-    return `rgb(${gray}, ${gray}, ${gray})`;
   };
 
   return (
