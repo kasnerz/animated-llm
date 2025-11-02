@@ -26,8 +26,22 @@ function AppContent() {
       // Space: advance to next animation sub-step
       if (e.code === 'Space' && !e.target.matches('input, textarea')) {
         e.preventDefault();
-        if (state.currentStep > 0) {
+        // If no example loaded, nothing to do
+        if (!state.currentExample) return;
+
+        // If generation hasn't started yet, start first step
+        if (state.currentStep === 0) {
+          actions.nextStep();
+          return;
+        }
+
+        // Advance through sub-steps; if already at final sub-step, finalize the step
+        const lastSubStep = 9; // keep in sync with animation timeline
+        if (state.currentAnimationSubStep < lastSubStep) {
           actions.nextAnimationSubStep();
+        } else {
+          // Commit the selected token and move to next step
+          actions.onStepAnimationComplete();
         }
       }
       // R: reset
@@ -49,7 +63,13 @@ function AppContent() {
 
     window.addEventListener('keydown', handleKeyPress);
     return () => window.removeEventListener('keydown', handleKeyPress);
-  }, [state.currentStep, actions, toggleLanguage]);
+  }, [
+    state.currentStep,
+    state.currentExample,
+    state.currentAnimationSubStep,
+    actions,
+    toggleLanguage,
+  ]);
 
   // Loading state
   if (state.isLoading && !state.currentExample) {
@@ -94,17 +114,24 @@ function AppContent() {
         </button>
       </div>
 
-      {/* Main content */}
-      <main className="app-main">
+      {/* Floating top section */}
+      <div className="floating-top-section">
         {/* Input section */}
         <InputSection />
+      </div>
 
-        {/* Generated answer area: only after generation starts */}
-        {state.currentExample && state.currentStep > 0 && <GeneratedAnswer />}
-
+      {/* Main content */}
+      <main className="app-main">
         {/* Visualization canvas */}
         {state.currentExample && <VisualizationCanvas />}
       </main>
+
+      {/* Floating bottom section - only after generation starts */}
+      {state.currentExample && state.currentStep > 0 && (
+        <div className="floating-bottom-section">
+          <GeneratedAnswer />
+        </div>
+      )}
     </div>
   );
 }

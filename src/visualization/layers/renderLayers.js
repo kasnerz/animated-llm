@@ -5,7 +5,7 @@
  */
 import * as d3 from 'd3';
 import { getTokenColor, getPurpleByProb } from '../core/colors';
-import { drawArrow, rightAngleRoundedPath } from '../core/draw';
+import { drawArrow, verticalThenHorizontalRoundedPath } from '../core/draw';
 
 /**
  * Render tokens layer
@@ -591,23 +591,7 @@ export function renderOutputLayer(group, step, layout, width, svgRoot, bottomInf
     .insert('g', '.bottom-embedding-group')
     .attr('class', 'extraction-bg-layer');
 
-  if (rm && subStep >= 6) {
-    const startX = rm.centerX;
-    const startY = rm.topY + rm.height / 2;
-    const endX = horizCenterX;
-    const endY = horizY + 12;
-    const pathD = rightAngleRoundedPath(startX, startY, endX, endY, 20);
-    extractionBg
-      .append('path')
-      .attr('d', pathD)
-      .attr('class', 'extracted-path-arrow')
-      .style('fill', 'none')
-      .style('stroke', '#c0c0c0')
-      .style('stroke-width', 1.5)
-      .style('stroke-linecap', 'round')
-      .style('stroke-linejoin', 'round')
-      .style('opacity', 0.9);
-  }
+  // Note: we now draw the path to the horizontal vector AFTER we know its geometry (hv1 below)
 
   const underlays = group.append('g').attr('class', 'output-underlays');
 
@@ -624,9 +608,16 @@ export function renderOutputLayer(group, step, layout, width, svgRoot, bottomInf
         .attr('rx', 4)
         .style('fill', baseFill)
         .style('stroke', baseStroke);
+      // Align the moving (dummy) rectangle with the horizontal vector center
+      // Horizontal vector background height in drawHorizontalVectorRich() is (cellHeight + 12) where cellHeight=18
+      const targetHalfHeight = (18 + 12) / 2; // 15px
       const dx = horizCenterX - rm.centerX;
-      const dy = horizY + rm.height / 2 - (rm.topY + rm.height / 2);
-      extracted.attr('data-dx', dx).attr('data-dy', dy);
+      const dy = horizY + targetHalfHeight - (rm.topY + rm.height / 2);
+      extracted
+        .attr('data-dx', dx)
+        .attr('data-dy', dy)
+        // hint for rotation (consumed in timeline)
+        .attr('data-rotate', 90);
     }
     const sampleValues = (step.embeddings?.[rightmostActualIndex]?.values || []).slice(0, 8);
     hv1 = drawHorizontalVectorRich(group, horizCenterX, horizY, sampleValues, {
@@ -634,6 +625,27 @@ export function renderOutputLayer(group, step, layout, width, svgRoot, bottomInf
       tokenColor,
       bgFill: baseFill,
     });
+
+    // After hv1 exists, draw the extracted path arrow so it ENDS at hv1, not at the logprob vector.
+    // Arrow starts below the dummy rectangle (rm.topY + rm.height) to stay below it after rotation.
+    if (rm && hv1) {
+      const startX = rm.centerX;
+      const startY = rm.topY + rm.height + 4; // Below the dummy rectangle (not center)
+      // Aim to the LEFT side of the horizontal vector to avoid interfering with other elements
+      const hv1LeftX = horizCenterX - hv1.width / 2;
+      const hv1CenterY = horizY + 15; // matches target center used above
+      const pathD = verticalThenHorizontalRoundedPath(startX, startY, hv1LeftX, hv1CenterY, 20);
+      extractionBg
+        .append('path')
+        .attr('d', pathD)
+        .attr('class', 'extracted-path-arrow')
+        .style('fill', 'none')
+        .style('stroke', '#c0c0c0')
+        .style('stroke-width', 1.5)
+        .style('stroke-linecap', 'round')
+        .style('stroke-linejoin', 'round')
+        .style('opacity', 0.9);
+    }
   }
 
   let hv2 = null;

@@ -5,6 +5,13 @@
 import { gsap } from 'gsap';
 import { ALL_SELECTORS as SEL } from '../core/selectors';
 
+// Helper utilities to avoid GSAP warnings when selectors return no elements
+const qsa = (root, selector) => (root ? Array.from(root.querySelectorAll(selector)) : []);
+const setIfAny = (root, selector, vars) => {
+  const nodes = qsa(root, selector);
+  if (nodes.length) gsap.set(nodes, vars);
+};
+
 /**
  * Set initial states for all elements based on current sub-step
  * @param {HTMLElement} svgElement - SVG DOM element
@@ -12,130 +19,130 @@ import { ALL_SELECTORS as SEL } from '../core/selectors';
  * @param {boolean} isInitialStep - Whether this is step 1
  */
 export function setInitialStates(svgElement, subStep, isInitialStep) {
+  // Initialize to the previous sub-step's visual state so we can animate only the delta
+  const prev = Math.max(0, (typeof subStep === 'number' ? subStep : 0) - 1);
   if (isInitialStep) {
     // Initial visualization: set states based on what should already be visible
-    gsap.set(svgElement.querySelectorAll(SEL.token), { opacity: subStep >= 0 ? 1 : 0 });
-    gsap.set(svgElement.querySelectorAll(SEL.tokenId), { opacity: subStep >= 1 ? 1 : 0 });
-    gsap.set(svgElement.querySelectorAll(SEL.tokenIdArrow), { opacity: subStep >= 1 ? 1 : 0 });
+    setIfAny(svgElement, SEL.token, { opacity: prev >= 0 ? 1 : 0 });
+    setIfAny(svgElement, SEL.tokenId, { opacity: prev >= 1 ? 1 : 0 });
+    setIfAny(svgElement, SEL.tokenIdArrow, { opacity: prev >= 1 ? 1 : 0 });
 
-    gsap.set(svgElement.querySelectorAll(SEL.embeddingGroupAll), {
-      opacity: subStep >= 2 ? 1 : 0,
-      y: subStep >= 2 ? 0 : -8,
+    setIfAny(svgElement, SEL.embeddingGroupAll, {
+      opacity: prev >= 2 ? 1 : 0,
+      y: prev >= 2 ? 0 : -8,
     });
-    gsap.set(svgElement.querySelectorAll(SEL.idToEmbArrow), { opacity: subStep >= 2 ? 1 : 0 });
+    setIfAny(svgElement, SEL.idToEmbArrow, { opacity: prev >= 2 ? 1 : 0 });
 
-    gsap.set(svgElement.querySelectorAll(SEL.transformerBox), {
-      opacity: subStep >= 3 ? 1 : 0,
-      scaleY: subStep >= 3 ? 1 : 0.95,
+    setIfAny(svgElement, SEL.transformerBox, {
+      opacity: prev >= 3 ? 1 : 0,
+      scaleY: prev >= 3 ? 1 : 0.95,
       transformOrigin: '50% 0%',
     });
-    gsap.set(svgElement.querySelectorAll(SEL.insideTopEmbeddingsAll), {
-      opacity: subStep >= 3 ? 1 : 0,
-      y: subStep >= 3 ? 0 : -8,
+    setIfAny(svgElement, SEL.insideTopEmbeddingsAll, {
+      opacity: prev >= 3 ? 1 : 0,
+      y: prev >= 3 ? 0 : -8,
     });
-    gsap.set(svgElement.querySelectorAll(SEL.outerToBlockArrow), { opacity: subStep >= 3 ? 1 : 0 });
-    gsap.set(svgElement.querySelectorAll(SEL.attentionMashAll), { opacity: subStep >= 3 ? 1 : 0 });
+    setIfAny(svgElement, SEL.outerToBlockArrow, { opacity: prev >= 3 ? 1 : 0 });
+    setIfAny(svgElement, SEL.attentionMashAll, { opacity: prev >= 3 ? 1 : 0 });
 
-    gsap.set(svgElement.querySelectorAll(SEL.insideBottomEmbeddingsAll), {
-      opacity: subStep >= 4 ? 1 : 0,
-      y: subStep >= 4 ? 0 : 8,
+    setIfAny(svgElement, SEL.insideBottomEmbeddingsAll, {
+      opacity: prev >= 4 ? 1 : 0,
+      y: prev >= 4 ? 0 : 8,
     });
-    gsap.set(svgElement.querySelectorAll(SEL.ffnArrow), { opacity: subStep >= 4 ? 1 : 0 });
+    setIfAny(svgElement, SEL.ffnArrow, { opacity: prev >= 4 ? 1 : 0 });
 
-    gsap.set(svgElement.querySelectorAll(SEL.bottomEmbeddingGroupAll), {
-      opacity: subStep >= 5 ? 1 : 0,
-      y: subStep >= 5 ? 0 : 8,
+    setIfAny(svgElement, SEL.bottomEmbeddingGroupAll, {
+      opacity: prev >= 5 ? 1 : 0,
+      y: prev >= 5 ? 0 : 8,
     });
 
-    gsap.set(svgElement.querySelectorAll(SEL.extractedEmbedding), { opacity: 0 });
-    gsap.set(svgElement.querySelectorAll(SEL.extractedPathArrow), {
-      opacity: subStep >= 7 ? 1 : 0,
+    setIfAny(svgElement, SEL.extractedEmbedding, { opacity: 0 });
+    setIfAny(svgElement, SEL.extractedPathArrow, {
+      opacity: prev >= 6 ? 1 : 0,
     });
-    gsap.set(svgElement.querySelectorAll(SEL.extractedHorizontal), {
-      opacity: subStep >= 7 ? 1 : 0,
+    setIfAny(svgElement, SEL.extractedHorizontal, {
+      opacity: prev >= 6 ? 1 : 0,
     });
-    gsap.set(svgElement.querySelectorAll(SEL.logprobArrow), { opacity: subStep >= 7 ? 1 : 0 });
-    gsap.set(svgElement.querySelectorAll(SEL.logprobVector), { opacity: subStep >= 7 ? 1 : 0 });
+    setIfAny(svgElement, SEL.logprobArrow, { opacity: prev >= 7 ? 1 : 0 });
+    setIfAny(svgElement, SEL.logprobVector, { opacity: prev >= 7 ? 1 : 0 });
 
-    gsap.set(svgElement.querySelectorAll(SEL.distributionBar), {
-      opacity: subStep >= 8 ? 1 : 0,
-      scaleY: subStep >= 8 ? 1 : 0.1,
+    setIfAny(svgElement, SEL.distributionBar, {
+      opacity: prev >= 8 ? 1 : 0,
+      scaleY: prev >= 8 ? 1 : 0.1,
       transformOrigin: '50% 100%',
     });
-    gsap.set(svgElement.querySelectorAll(SEL.distributionLabels), {
-      opacity: subStep >= 8 ? 1 : 0,
+    setIfAny(svgElement, SEL.distributionLabels, {
+      opacity: prev >= 8 ? 1 : 0,
     });
   } else {
     // Subsequent steps: keep previous stacks visible based on sub-step
-    gsap.set(svgElement.querySelectorAll(SEL.tokenPrev), { opacity: 1 });
-    gsap.set(svgElement.querySelectorAll(SEL.tokenNew), { opacity: subStep >= 0 ? 1 : 0 });
+    setIfAny(svgElement, SEL.tokenPrev, { opacity: 1 });
+    setIfAny(svgElement, SEL.tokenNew, { opacity: prev >= 0 ? 1 : 0 });
 
-    gsap.set(svgElement.querySelectorAll(SEL.tokenIdPrev), { opacity: 1 });
-    gsap.set(svgElement.querySelectorAll(SEL.tokenIdNew), { opacity: subStep >= 1 ? 1 : 0 });
+    setIfAny(svgElement, SEL.tokenIdPrev, { opacity: 1 });
+    setIfAny(svgElement, SEL.tokenIdNew, { opacity: prev >= 1 ? 1 : 0 });
 
-    gsap.set(svgElement.querySelectorAll(SEL.tokenIdArrowPrev), { opacity: 1 });
-    gsap.set(svgElement.querySelectorAll(SEL.tokenIdArrowNew), { opacity: subStep >= 1 ? 1 : 0 });
+    setIfAny(svgElement, SEL.tokenIdArrowPrev, { opacity: 1 });
+    setIfAny(svgElement, SEL.tokenIdArrowNew, { opacity: prev >= 1 ? 1 : 0 });
 
-    gsap.set(svgElement.querySelectorAll(SEL.embeddingColPrev), { opacity: 1, y: 0 });
-    gsap.set(svgElement.querySelectorAll(SEL.embeddingColNew), {
-      opacity: subStep >= 2 ? 1 : 0,
-      y: subStep >= 2 ? 0 : -8,
+    setIfAny(svgElement, SEL.embeddingColPrev, { opacity: 1, y: 0 });
+    setIfAny(svgElement, SEL.embeddingColNew, {
+      opacity: prev >= 2 ? 1 : 0,
+      y: prev >= 2 ? 0 : -8,
     });
 
-    gsap.set(svgElement.querySelectorAll(SEL.idToEmbArrowPrev), { opacity: 1 });
-    gsap.set(svgElement.querySelectorAll(SEL.idToEmbArrowNew), { opacity: subStep >= 2 ? 1 : 0 });
+    setIfAny(svgElement, SEL.idToEmbArrowPrev, { opacity: 1 });
+    setIfAny(svgElement, SEL.idToEmbArrowNew, { opacity: prev >= 2 ? 1 : 0 });
 
-    gsap.set(svgElement.querySelectorAll(SEL.transformerBox), {
+    setIfAny(svgElement, SEL.transformerBox, {
       opacity: 1,
       scaleY: 1,
       transformOrigin: '50% 0%',
     });
 
-    gsap.set(svgElement.querySelectorAll(SEL.insideTopEmbeddingColPrev), { opacity: 1, y: 0 });
-    gsap.set(svgElement.querySelectorAll(SEL.insideTopEmbeddingColNew), {
-      opacity: subStep >= 3 ? 1 : 0,
-      y: subStep >= 3 ? 0 : -8,
+    setIfAny(svgElement, SEL.insideTopEmbeddingColPrev, { opacity: 1, y: 0 });
+    setIfAny(svgElement, SEL.insideTopEmbeddingColNew, {
+      opacity: prev >= 3 ? 1 : 0,
+      y: prev >= 3 ? 0 : -8,
     });
 
-    gsap.set(svgElement.querySelectorAll(SEL.outerToBlockArrowPrev), { opacity: 1 });
-    gsap.set(svgElement.querySelectorAll(SEL.outerToBlockArrowNew), {
-      opacity: subStep >= 3 ? 1 : 0,
+    setIfAny(svgElement, SEL.outerToBlockArrowPrev, { opacity: 1 });
+    setIfAny(svgElement, SEL.outerToBlockArrowNew, { opacity: prev >= 3 ? 1 : 0 });
+
+    setIfAny(svgElement, SEL.attentionMashAll, { opacity: 1 });
+
+    setIfAny(svgElement, SEL.insideBottomEmbeddingColPrev, { opacity: 1, y: 0 });
+    setIfAny(svgElement, SEL.insideBottomEmbeddingColNew, {
+      opacity: prev >= 4 ? 1 : 0,
+      y: prev >= 4 ? 0 : 8,
     });
 
-    gsap.set(svgElement.querySelectorAll(SEL.attentionMashAll), { opacity: 1 });
+    setIfAny(svgElement, SEL.ffnArrowPrev, { opacity: 1 });
+    setIfAny(svgElement, SEL.ffnArrowNew, { opacity: prev >= 4 ? 1 : 0 });
 
-    gsap.set(svgElement.querySelectorAll(SEL.insideBottomEmbeddingColPrev), { opacity: 1, y: 0 });
-    gsap.set(svgElement.querySelectorAll(SEL.insideBottomEmbeddingColNew), {
-      opacity: subStep >= 4 ? 1 : 0,
-      y: subStep >= 4 ? 0 : 8,
+    setIfAny(svgElement, SEL.bottomEmbeddingColPrev, { opacity: 1, y: 0 });
+    setIfAny(svgElement, SEL.bottomEmbeddingColNew, {
+      opacity: prev >= 5 ? 1 : 0,
+      y: prev >= 5 ? 0 : 8,
     });
 
-    gsap.set(svgElement.querySelectorAll(SEL.ffnArrowPrev), { opacity: 1 });
-    gsap.set(svgElement.querySelectorAll(SEL.ffnArrowNew), { opacity: subStep >= 4 ? 1 : 0 });
-
-    gsap.set(svgElement.querySelectorAll(SEL.bottomEmbeddingColPrev), { opacity: 1, y: 0 });
-    gsap.set(svgElement.querySelectorAll(SEL.bottomEmbeddingColNew), {
-      opacity: subStep >= 5 ? 1 : 0,
-      y: subStep >= 5 ? 0 : 8,
+    setIfAny(svgElement, SEL.extractedEmbedding, { opacity: 0 });
+    setIfAny(svgElement, SEL.extractedPathArrow, {
+      opacity: prev >= 6 ? 1 : 0,
     });
-
-    gsap.set(svgElement.querySelectorAll(SEL.extractedEmbedding), { opacity: 0 });
-    gsap.set(svgElement.querySelectorAll(SEL.extractedPathArrow), {
-      opacity: subStep >= 7 ? 1 : 0,
+    setIfAny(svgElement, SEL.extractedHorizontal, {
+      opacity: prev >= 6 ? 1 : 0,
     });
-    gsap.set(svgElement.querySelectorAll(SEL.extractedHorizontal), {
-      opacity: subStep >= 7 ? 1 : 0,
-    });
-    gsap.set(svgElement.querySelectorAll(SEL.logprobArrow), { opacity: subStep >= 7 ? 1 : 0 });
-    gsap.set(svgElement.querySelectorAll(SEL.logprobVector), { opacity: subStep >= 7 ? 1 : 0 });
+    setIfAny(svgElement, SEL.logprobArrow, { opacity: prev >= 7 ? 1 : 0 });
+    setIfAny(svgElement, SEL.logprobVector, { opacity: prev >= 7 ? 1 : 0 });
 
-    gsap.set(svgElement.querySelectorAll(SEL.distributionBar), {
-      opacity: subStep >= 8 ? 1 : 0,
-      scaleY: subStep >= 8 ? 1 : 0.1,
+    setIfAny(svgElement, SEL.distributionBar, {
+      opacity: prev >= 8 ? 1 : 0,
+      scaleY: prev >= 8 ? 1 : 0.1,
       transformOrigin: '50% 100%',
     });
-    gsap.set(svgElement.querySelectorAll(SEL.distributionLabels), {
-      opacity: subStep >= 8 ? 1 : 0,
+    setIfAny(svgElement, SEL.distributionLabels, {
+      opacity: prev >= 8 ? 1 : 0,
     });
   }
 }
@@ -146,193 +153,117 @@ export function setInitialStates(svgElement, subStep, isInitialStep) {
  * @param {number} subStep - Current animation sub-step
  * @param {boolean} isInitialStep - Whether this is step 1
  * @param {number} animDuration - Duration for each transition
- * @param {Function} onComplete - Callback when animation completes
+ * @param {Function} onSubStepComplete - Callback when sub-step animation completes
+ * @param {Function} onStepComplete - Callback when full step completes (only called on final sub-step)
  * @returns {gsap.core.Timeline} GSAP timeline
  */
-export function buildTimeline(svgElement, subStep, isInitialStep, animDuration, onComplete) {
-  const tl = gsap.timeline({
-    onComplete: () => {
-      if (onComplete) onComplete();
-    },
-  });
+export function buildTimeline(svgElement, subStep, isInitialStep, animDuration, onStepComplete) {
+  const tl = gsap.timeline();
+  const toIfAny = (selector, vars, position) => {
+    const nodes = qsa(svgElement, selector);
+    if (nodes.length) tl.to(nodes, vars, position);
+  };
 
-  // Initial step has special timeline
-  if (isInitialStep) {
-    tl.to(svgElement.querySelectorAll(SEL.token), { opacity: 1, duration: animDuration }, 0);
-    tl.to(
-      svgElement.querySelectorAll(SEL.tokenId),
-      { opacity: 1, duration: animDuration },
-      `+=${animDuration * 0.5}`
-    );
-    tl.to(
-      svgElement.querySelectorAll(SEL.tokenIdArrow),
-      { opacity: 1, duration: animDuration },
-      '<'
-    );
+  // Optional: animate extracted embedding movement using stored deltas
+  const animateExtraction = () => {
+    const nodes = Array.from(svgElement.querySelectorAll(SEL.extractedEmbedding));
+    nodes.forEach((el) => {
+      const dx = Number(el.getAttribute('data-dx') || 0);
+      const dy = Number(el.getAttribute('data-dy') || 0);
+      const rot = Number(el.getAttribute('data-rotate') || 90);
+      tl.to(el, { opacity: 1, duration: animDuration * 0.5 }, 0);
+      if (dx !== 0 || dy !== 0) {
+        // Move and rotate the extracted dummy rectangle so it aligns with the horizontal vector
+        tl.to(
+          el,
+          { x: dx, y: dy, rotation: rot, transformOrigin: '50% 50%', duration: animDuration },
+          '<'
+        );
+      }
+    });
+  };
 
-    tl.to(
-      svgElement.querySelectorAll(SEL.embeddingGroupAll),
-      { opacity: 1, y: 0, duration: animDuration },
-      `+=${animDuration * 0.5}`
-    );
-    tl.to(
-      svgElement.querySelectorAll(SEL.idToEmbArrow),
-      { opacity: 1, duration: animDuration },
-      '<'
-    );
+  // Animate only the current sub-step delta
+  switch (subStep) {
+    case 0:
+      toIfAny(isInitialStep ? SEL.token : SEL.tokenNew, { opacity: 1, duration: animDuration });
+      break;
+    case 1:
+      toIfAny(isInitialStep ? SEL.tokenId : SEL.tokenIdNew, {
+        opacity: 1,
+        duration: animDuration,
+      });
+      toIfAny(
+        isInitialStep ? SEL.tokenIdArrow : SEL.tokenIdArrowNew,
+        { opacity: 1, duration: animDuration },
+        '<'
+      );
+      break;
+    case 2:
+      toIfAny(isInitialStep ? SEL.embeddingGroupAll : SEL.embeddingColNew, {
+        opacity: 1,
+        y: 0,
+        duration: animDuration,
+      });
+      toIfAny(
+        isInitialStep ? SEL.idToEmbArrow : SEL.idToEmbArrowNew,
+        { opacity: 1, duration: animDuration },
+        '<'
+      );
+      break;
+    case 3:
+      if (isInitialStep) {
+        toIfAny(SEL.transformerBox, { opacity: 1, scaleY: 1, duration: animDuration });
+        toIfAny(SEL.insideTopEmbeddingsAll, { opacity: 1, y: 0, duration: animDuration }, '<');
+        toIfAny(SEL.outerToBlockArrow, { opacity: 1, duration: animDuration }, '<');
+        toIfAny(SEL.attentionMashAll, { opacity: 1, duration: animDuration }, '<');
+      } else {
+        toIfAny(SEL.insideTopEmbeddingColNew, { opacity: 1, y: 0, duration: animDuration });
+        toIfAny(SEL.outerToBlockArrowNew, { opacity: 1, duration: animDuration }, '<');
+      }
+      break;
+    case 4:
+      toIfAny(isInitialStep ? SEL.insideBottomEmbeddingsAll : SEL.insideBottomEmbeddingColNew, {
+        opacity: 1,
+        y: 0,
+        duration: animDuration,
+      });
+      toIfAny(
+        isInitialStep ? SEL.ffnArrow : SEL.ffnArrowNew,
+        { opacity: 1, duration: animDuration },
+        '<'
+      );
+      break;
+    case 5:
+      toIfAny(isInitialStep ? SEL.bottomEmbeddingGroupAll : SEL.bottomEmbeddingColNew, {
+        opacity: 1,
+        y: 0,
+        duration: animDuration,
+      });
+      break;
+    case 6:
+      animateExtraction();
+      toIfAny(SEL.extractedPathArrow, { opacity: 1, duration: animDuration });
+      toIfAny(SEL.extractedHorizontal, { opacity: 1, duration: animDuration });
+      break;
+    case 7:
+      toIfAny(SEL.logprobArrow, { opacity: 1, duration: animDuration });
+      toIfAny(SEL.logprobVector, { opacity: 1, duration: animDuration }, '<');
+      break;
+    case 8:
+      toIfAny(SEL.distributionBar, { opacity: 1, scaleY: 1, duration: animDuration });
+      toIfAny(SEL.distributionLabels, { opacity: 1, duration: animDuration }, '<');
+      break;
+    case 9:
+      // No visuals by default; tiny delay to keep async behavior consistent
+      tl.to({}, { duration: Math.max(0.05, animDuration * 0.2) });
+      break;
+    default:
+      break;
+  }
 
-    tl.to(
-      svgElement.querySelectorAll(SEL.transformerBox),
-      { opacity: 1, scaleY: 1, duration: animDuration },
-      `+=${animDuration * 0.5}`
-    );
-    tl.to(
-      svgElement.querySelectorAll(SEL.insideTopEmbeddingsAll),
-      { opacity: 1, y: 0, duration: animDuration },
-      '<'
-    );
-    tl.to(
-      svgElement.querySelectorAll(SEL.outerToBlockArrow),
-      { opacity: 1, duration: animDuration },
-      '<'
-    );
-    tl.to(
-      svgElement.querySelectorAll(SEL.attentionMashAll),
-      { opacity: 1, duration: animDuration },
-      '<'
-    );
-
-    tl.to(
-      svgElement.querySelectorAll(SEL.insideBottomEmbeddingsAll),
-      { opacity: 1, y: 0, duration: animDuration },
-      `+=${animDuration * 0.5}`
-    );
-    tl.to(svgElement.querySelectorAll(SEL.ffnArrow), { opacity: 1, duration: animDuration }, '<');
-
-    tl.to(
-      svgElement.querySelectorAll(SEL.bottomEmbeddingGroupAll),
-      { opacity: 1, y: 0, duration: animDuration },
-      `+=${animDuration * 0.5}`
-    );
-
-    tl.to(
-      svgElement.querySelectorAll(SEL.extractedPathArrow),
-      { opacity: 1, duration: animDuration },
-      `+=${animDuration * 0.5}`
-    );
-    tl.to(
-      svgElement.querySelectorAll(SEL.extractedHorizontal),
-      { opacity: 1, duration: animDuration },
-      '<'
-    );
-
-    tl.to(
-      svgElement.querySelectorAll(SEL.logprobArrow),
-      { opacity: 1, duration: animDuration },
-      `+=${animDuration * 0.5}`
-    );
-    tl.to(
-      svgElement.querySelectorAll(SEL.logprobVector),
-      { opacity: 1, duration: animDuration },
-      '<'
-    );
-
-    tl.to(
-      svgElement.querySelectorAll(SEL.distributionBar),
-      { opacity: 1, scaleY: 1, duration: animDuration },
-      `+=${animDuration * 0.5}`
-    );
-    tl.to(
-      svgElement.querySelectorAll(SEL.distributionLabels),
-      { opacity: 1, duration: animDuration },
-      '<'
-    );
-  } else {
-    // Subsequent steps: animate new elements only
-    tl.to(svgElement.querySelectorAll(SEL.tokenNew), { opacity: 1, duration: animDuration }, 0);
-
-    tl.to(
-      svgElement.querySelectorAll(SEL.tokenIdNew),
-      { opacity: 1, duration: animDuration },
-      `+=${animDuration * 0.5}`
-    );
-    tl.to(
-      svgElement.querySelectorAll(SEL.tokenIdArrowNew),
-      { opacity: 1, duration: animDuration },
-      '<'
-    );
-
-    tl.to(
-      svgElement.querySelectorAll(SEL.embeddingColNew),
-      { opacity: 1, y: 0, duration: animDuration },
-      `+=${animDuration * 0.5}`
-    );
-    tl.to(
-      svgElement.querySelectorAll(SEL.idToEmbArrowNew),
-      { opacity: 1, duration: animDuration },
-      '<'
-    );
-
-    tl.to(
-      svgElement.querySelectorAll(SEL.insideTopEmbeddingColNew),
-      { opacity: 1, y: 0, duration: animDuration },
-      `+=${animDuration * 0.5}`
-    );
-    tl.to(
-      svgElement.querySelectorAll(SEL.outerToBlockArrowNew),
-      { opacity: 1, duration: animDuration },
-      '<'
-    );
-
-    tl.to(
-      svgElement.querySelectorAll(SEL.insideBottomEmbeddingColNew),
-      { opacity: 1, y: 0, duration: animDuration },
-      `+=${animDuration * 0.5}`
-    );
-    tl.to(
-      svgElement.querySelectorAll(SEL.ffnArrowNew),
-      { opacity: 1, duration: animDuration },
-      '<'
-    );
-
-    tl.to(
-      svgElement.querySelectorAll(SEL.bottomEmbeddingColNew),
-      { opacity: 1, y: 0, duration: animDuration },
-      `+=${animDuration * 0.5}`
-    );
-
-    tl.to(
-      svgElement.querySelectorAll(SEL.extractedPathArrow),
-      { opacity: 1, duration: animDuration },
-      `+=${animDuration * 0.5}`
-    );
-    tl.to(
-      svgElement.querySelectorAll(SEL.extractedHorizontal),
-      { opacity: 1, duration: animDuration },
-      '<'
-    );
-
-    tl.to(
-      svgElement.querySelectorAll(SEL.logprobArrow),
-      { opacity: 1, duration: animDuration },
-      `+=${animDuration * 0.5}`
-    );
-    tl.to(
-      svgElement.querySelectorAll(SEL.logprobVector),
-      { opacity: 1, duration: animDuration },
-      '<'
-    );
-
-    tl.to(
-      svgElement.querySelectorAll(SEL.distributionBar),
-      { opacity: 1, scaleY: 1, duration: animDuration },
-      `+=${animDuration * 0.5}`
-    );
-    tl.to(
-      svgElement.querySelectorAll(SEL.distributionLabels),
-      { opacity: 1, duration: animDuration },
-      '<'
-    );
+  if (subStep === 9 && typeof onStepComplete === 'function') {
+    tl.eventCallback('onComplete', onStepComplete);
   }
 
   return tl;

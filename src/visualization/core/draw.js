@@ -2,6 +2,7 @@
  * Pure SVG drawing primitives using D3
  * All functions are pure: they take data/config and return nothing (imperative D3 append)
  */
+import { COLORS, STROKE, FONTS, LAYOUT } from './constants.js';
 
 /**
  * Draw a straight arrow from (x1,y1) to (x2,y2)
@@ -13,7 +14,13 @@
  * @param {Object} opts - Options: className, color, strokeWidth, markerSize, opacity
  */
 export function drawArrow(group, x1, y1, x2, y2, opts = {}) {
-  const { className = '', color = '#999', strokeWidth = 2, markerSize = 6, opacity = 0.8 } = opts;
+  const {
+    className = '',
+    color = COLORS.getArrowColor(),
+    strokeWidth = STROKE.WIDTH_THICK,
+    markerSize = STROKE.MARKER_SIZE,
+    opacity = STROKE.OPACITY_DEFAULT,
+  } = opts;
 
   const markerId = `arrowhead-${Math.random().toString(36).slice(2, 9)}`;
 
@@ -54,7 +61,7 @@ export function drawArrow(group, x1, y1, x2, y2, opts = {}) {
  * @param {number} radius - Corner radius
  * @returns {string} SVG path d attribute
  */
-export function rightAngleRoundedPath(x1, y1, x2, y2, radius = 10) {
+export function rightAngleRoundedPath(x1, y1, x2, y2, radius = LAYOUT.CORNER_RADIUS) {
   const midY = (y1 + y2) / 2;
   const r = Math.min(radius, Math.abs(y2 - y1) / 2);
 
@@ -82,6 +89,34 @@ export function smoothConnectorPath(x1, y1, x2, y2) {
 }
 
 /**
+ * Generate a path that first goes vertically (down/up) from (x1,y1) toward y2,
+ * then turns with a rounded corner and proceeds horizontally to x2.
+ * Useful when you want a "down then left/right" route and terminate on a side.
+ * @param {number} x1 - Start x
+ * @param {number} y1 - Start y
+ * @param {number} x2 - End x
+ * @param {number} y2 - End y
+ * @param {number} radius - Corner radius
+ * @returns {string} SVG path d attribute
+ */
+export function verticalThenHorizontalRoundedPath(x1, y1, x2, y2, radius = 10) {
+  const goingRight = x2 > x1;
+  const r = Math.max(0, Math.min(radius, Math.abs(y2 - y1)));
+  const preCornerY = y2 - (y2 > y1 ? r : -r);
+  const cornerCtrlX = x1;
+  const cornerCtrlY = y2;
+  const cornerX = x1 + (goingRight ? r : -r);
+  const cornerY = y2;
+
+  return `
+    M ${x1},${y1}
+    L ${x1},${preCornerY}
+    Q ${cornerCtrlX},${cornerCtrlY} ${cornerX},${cornerY}
+    L ${x2},${y2}
+  `;
+}
+
+/**
  * Draw a vertical embedding column (stack of colored rectangles)
  * @param {d3.Selection} group - D3 selection to append to
  * @param {number} centerX - Center x coordinate
@@ -92,9 +127,9 @@ export function smoothConnectorPath(x1, y1, x2, y2) {
 export function drawEmbeddingColumn(group, centerX, topY, values, opts = {}) {
   const {
     className = '',
-    width = 40,
-    cellHeight = 8,
-    getColor = () => '#ccc',
+    width = LAYOUT.EMBEDDING_WIDTH,
+    cellHeight = LAYOUT.CELL_HEIGHT,
+    getColor = () => COLORS.getNeutralColor(),
     showValues = false,
     isExpanded = false,
     onClick = null,
@@ -117,8 +152,8 @@ export function drawEmbeddingColumn(group, centerX, topY, values, opts = {}) {
       .attr('width', width)
       .attr('height', cellHeight)
       .attr('fill', getColor(val))
-      .attr('stroke', '#555')
-      .attr('stroke-width', 0.5);
+      .attr('stroke', COLORS.getStrokeColor())
+      .attr('stroke-width', STROKE.WIDTH_THIN);
 
     // Show value text if requested
     if (showValues) {
@@ -128,8 +163,8 @@ export function drawEmbeddingColumn(group, centerX, topY, values, opts = {}) {
         .attr('y', y + cellHeight / 2)
         .attr('text-anchor', 'middle')
         .attr('dominant-baseline', 'middle')
-        .attr('font-size', '8px')
-        .attr('fill', '#333')
+        .attr('font-size', FONTS.SIZE_SMALL)
+        .attr('fill', COLORS.getTextColor())
         .text(val.toFixed(2));
     }
   });
@@ -143,8 +178,8 @@ export function drawEmbeddingColumn(group, centerX, topY, values, opts = {}) {
       .attr('y', dotsY + cellHeight / 2)
       .attr('text-anchor', 'middle')
       .attr('dominant-baseline', 'middle')
-      .attr('font-size', '12px')
-      .attr('fill', '#666')
+      .attr('font-size', FONTS.SIZE_NORMAL)
+      .attr('fill', COLORS.getMutedColor())
       .text('⋯')
       .style('cursor', onClick ? 'pointer' : 'default');
   }
@@ -171,9 +206,9 @@ export function drawEmbeddingColumn(group, centerX, topY, values, opts = {}) {
 export function drawHorizontalVector(group, centerX, topY, values, opts = {}) {
   const {
     className = '',
-    cellWidth = 8,
-    height = 40,
-    getColor = () => '#ccc',
+    cellWidth = LAYOUT.CELL_WIDTH,
+    height = LAYOUT.VECTOR_HEIGHT,
+    getColor = () => COLORS.getNeutralColor(),
     maxCells = 50,
   } = opts;
 
@@ -195,8 +230,8 @@ export function drawHorizontalVector(group, centerX, topY, values, opts = {}) {
       .attr('width', cellWidth)
       .attr('height', height)
       .attr('fill', getColor(val))
-      .attr('stroke', '#555')
-      .attr('stroke-width', 0.5);
+      .attr('stroke', COLORS.getStrokeColor())
+      .attr('stroke-width', STROKE.WIDTH_THIN);
   });
 
   return {

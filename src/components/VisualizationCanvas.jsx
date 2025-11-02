@@ -24,6 +24,7 @@ function VisualizationCanvas() {
   const { onStepAnimationComplete } = actions;
   const svgRef = useRef(null);
   const containerRef = useRef(null);
+  const [containerWidth, setContainerWidth] = useState(800);
   const [isExpanded, setIsExpanded] = useState(false);
   const [embeddingExpanded, setEmbeddingExpanded] = useState({});
   const tokensLayoutRef = useRef({
@@ -45,6 +46,7 @@ function VisualizationCanvas() {
     // Update SVG dimensions based on container
     const updateDimensions = () => {
       const rect = container.getBoundingClientRect();
+      setContainerWidth(rect.width || 800);
       svg.attr('width', rect.width).attr('height', rect.height);
     };
 
@@ -166,6 +168,26 @@ function VisualizationCanvas() {
         transition: 'all 0.3s ease',
       }}
     >
+      {/* Expand/Collapse button - only show when tokens would be collapsed */}
+      {(() => {
+        const currentStepData = state.currentExample?.generation_steps?.[state.currentStep - 1];
+        const tokens = currentStepData?.tokens || [];
+        const width = containerWidth || 800;
+        const maxVisibleTokens = Math.floor(width / 140) - 1;
+        const shouldShowButton = tokens.length > maxVisibleTokens;
+
+        return shouldShowButton ? (
+          <button
+            className="expand-tokens-button"
+            onClick={() => setIsExpanded(!isExpanded)}
+            aria-label={isExpanded ? 'Collapse tokens' : 'Expand all tokens'}
+            title={isExpanded ? 'Collapse tokens' : 'Expand all tokens'}
+          >
+            {isExpanded ? '←' : '→'}
+          </button>
+        ) : null;
+      })()}
+
       {(() => {
         // Estimate dynamic min-width when expanded based on token content
         const currentStepData = state.currentExample?.generation_steps?.[state.currentStep - 1];

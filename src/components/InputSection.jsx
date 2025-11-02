@@ -71,10 +71,7 @@ function InputSection() {
                 )}
               </div>
 
-              <div className="prompt-text-chat">
-                {state.currentExample.prompt}
-                <span className="prompt-cursor">|</span>
-              </div>
+              <div className="prompt-text-chat">{state.currentExample.prompt}</div>
               <button
                 onClick={handleGenerate}
                 disabled={isAtEnd || state.isPlaying}
@@ -94,15 +91,6 @@ function InputSection() {
               </button>
             </div>
           </div>
-        </div>
-      )}
-
-      {/* Reset button */}
-      {state.currentStep > 0 && (
-        <div className="reset-container">
-          <button onClick={actions.reset} className="btn-minimal btn-reset-minimal">
-            {t('reset')}
-          </button>
         </div>
       )}
     </section>

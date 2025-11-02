@@ -2,6 +2,7 @@
  * Layout calculations and positioning logic
  * Pure functions that compute positions, dimensions, and visibility
  */
+import { LAYOUT } from './constants.js';
 
 /**
  * Calculate token layout (positions, widths, collapse state)
@@ -12,7 +13,7 @@
  * @returns {Object} Layout metadata: positions, widths, visibleIndices, shouldCollapse, gap
  */
 export function calculateTokenLayout(tokens, width, isExpanded, config = {}) {
-  const { tokenSpacing = 140, margin = 20 } = config;
+  const { tokenSpacing = LAYOUT.TOKEN_SPACING, margin = LAYOUT.MARGIN } = config;
 
   const maxVisibleTokens = Math.floor(width / tokenSpacing) - 1;
   const shouldCollapse = tokens.length > maxVisibleTokens && !isExpanded;
@@ -20,7 +21,7 @@ export function calculateTokenLayout(tokens, width, isExpanded, config = {}) {
   let positions = [];
   let widths = [];
   let visibleIndices = [];
-  const gap = 24; // Gap for collapsed indicator
+  const gap = LAYOUT.GAP_WIDTH;
 
   if (shouldCollapse) {
     // Show first few and last token with gap
@@ -75,11 +76,11 @@ export function calculateTokenLayout(tokens, width, isExpanded, config = {}) {
  */
 export function getBaseLayout() {
   return {
-    tokenY: 80,
-    embeddingY: 200,
-    margin: 20,
-    tokenSpacing: 140,
-    blockPadding: 30,
+    tokenY: LAYOUT.TOKEN_Y,
+    embeddingY: LAYOUT.EMBEDDING_Y,
+    margin: LAYOUT.MARGIN,
+    tokenSpacing: LAYOUT.TOKEN_SPACING,
+    blockPadding: LAYOUT.BLOCK_PADDING,
   };
 }
 

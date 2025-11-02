@@ -5,17 +5,17 @@ import '../styles/generated-answer.css';
 function GeneratedAnswer() {
   const { state } = useApp();
 
-  if (!state.currentExample) return null;
+  if (!state.currentExample || !state.generatedAnswer || state.generatedAnswer.length === 0) {
+    return null;
+  }
 
   return (
     <section className="generated-answer-section">
-      <div className="generated-answer-box" aria-live="polite">
+      <div className="generated-answer-container">
         <div className="generated-answer-label">Model answer</div>
-        <div className="generated-answer-text">
+        <div className="generated-answer-text" aria-live="polite">
           {state.generatedAnswer}
-          {state.generatedAnswer && state.generatedAnswer.length > 0 ? (
-            <span className="answer-caret">|</span>
-          ) : null}
+          <span className="answer-caret">|</span>
         </div>
       </div>
     </section>
