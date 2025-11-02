@@ -39,8 +39,7 @@ const translations = {
         shortcuts: "Shortcuts",
         play_pause: "Play/Pause",
         theme: "Theme",
-        language: "Language",
-        model_answer: "Model Answer"
+        language: "Language"
     },
     cs: {
         app_title: "Interaktivní Vizualizace Transformeru",
@@ -79,8 +78,7 @@ const translations = {
         shortcuts: "Zkratky",
         play_pause: "Přehrát/Pozastavit",
         theme: "Téma",
-        language: "Jazyk",
-        model_answer: "Odpověď modelu"
+        language: "Jazyk"
     }
 };
 

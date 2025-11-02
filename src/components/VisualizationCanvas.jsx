@@ -12,6 +12,8 @@ import '../styles/visualization.css';
  */
 function VisualizationCanvas() {
   const { state, actions } = useApp();
+  // Extract stable callbacks to avoid re-running effects when the provider re-renders
+  const { onStepAnimationComplete } = actions;
   const { t } = useTranslation();
   const svgRef = useRef(null);
   const containerRef = useRef(null);
@@ -47,6 +49,7 @@ function VisualizationCanvas() {
 
     const svg = d3.select(svgRef.current);
     const step = state.currentExample.generation_steps[state.currentStep - 1];
+    const subStep = state.currentAnimationSubStep;
 
     // Clear previous visualization
     svg.selectAll('*').remove();
@@ -90,144 +93,187 @@ function VisualizationCanvas() {
     const bottomInfo = renderBottomEmbeddings(bottomEmbeddingGroup, step, layout, width, blockMeta);
 
     // 5. Output distribution below
-    const outputYOffset = 220;
+    // Reduce vertical offset before the output area to keep bars within the canvas height
+    const outputYOffset = 120;
     layout.outputY = bottomInfo.afterBottomY + outputYOffset;
-    renderOutput(outputGroup, step, layout, width, bottomInfo);
+    renderOutput(outputGroup, step, layout, width, bottomInfo, subStep);
 
     // Add expand/collapse button if needed
     if (step.tokens.length > maxVisibleTokens) {
       renderExpandButton(g, layout, width, isExpanded);
     }
 
-    // Animate the sequence using GSAP
+    // Animate the sequence using GSAP - now controlled by sub-steps
     if (gsapRef.current) {
       gsapRef.current.kill();
       gsapRef.current = null;
     }
 
-    const total = state.animationSpeed || config.defaults.animationSpeed || 10;
-    const phases = config.animation.phases;
-    const dToken = total * phases.tokenization; // tokens
-    const dIds = total * phases.tokenIds; // id arrows + ids
-    const dEmb = total * phases.embeddings; // outside embeddings
-    const dTrans = total * phases.transformer; // transformer internals
-    const dOut = total * phases.output; // bottom + output (minimal)
+    const animDuration = 0.6; // Duration for each transition
+    const isInitialStep = state.currentStep === 1;
 
-    const isInitialStep = state.currentStep === 1; // first visualization render: precompute KV for all prompt tokens
-
+    // Set initial states for all elements based on current sub-step
+    // Everything before current sub-step should be visible, everything after should be hidden
     if (isInitialStep) {
-      // Initial visualization: animate all tokens/stacks in parallel (KV cache precompute)
-      gsap.set(svgRef.current.querySelectorAll('.token'), { opacity: 0 });
-      gsap.set(svgRef.current.querySelectorAll('.token-id'), { opacity: 0 });
-      gsap.set(svgRef.current.querySelectorAll('.token-id-arrow'), { opacity: 0 });
-      gsap.set(svgRef.current.querySelectorAll('.embedding-group, .embedding-group *'), { opacity: 0, y: -8 });
-      gsap.set(svgRef.current.querySelectorAll('.transformer-group .transformer-box'), { opacity: 0, scaleY: 0.95, transformOrigin: '50% 0%' });
-      gsap.set(svgRef.current.querySelectorAll('.transformer-group .inside-top-embeddings, .transformer-group .inside-top-embeddings *'), { opacity: 0, y: -8 });
-      gsap.set(svgRef.current.querySelectorAll('.transformer-group .attention-mash, .transformer-group .attention-mash *'), { opacity: 0 });
-      gsap.set(svgRef.current.querySelectorAll('.transformer-group .inside-bottom-embeddings, .transformer-group .inside-bottom-embeddings *'), { opacity: 0, y: 8 });
-      gsap.set(svgRef.current.querySelectorAll('.bottom-embedding-group, .bottom-embedding-group *'), { opacity: 0, y: 8 });
-      gsap.set(svgRef.current.querySelectorAll('.id-to-emb-arrow'), { opacity: 0 });
-      gsap.set(svgRef.current.querySelectorAll('.outer-to-block-arrow'), { opacity: 0 });
-      gsap.set(svgRef.current.querySelectorAll('.ffn-arrow'), { opacity: 0 });
-      gsap.set(svgRef.current.querySelectorAll('.extracted-embedding, .extracted-horizontal, .logprob-vector, .logprob-arrow, .extracted-path-arrow, .distribution-bar, .distribution-token-label, .distribution-percentage-label'), { opacity: 0 });
+      // Initial visualization: set states based on what should already be visible
+      gsap.set(svgRef.current.querySelectorAll('.token'), { opacity: subStep >= 0 ? 1 : 0 });
+      gsap.set(svgRef.current.querySelectorAll('.token-id'), { opacity: subStep >= 1 ? 1 : 0 });
+      gsap.set(svgRef.current.querySelectorAll('.token-id-arrow'), { opacity: subStep >= 1 ? 1 : 0 });
+      gsap.set(svgRef.current.querySelectorAll('.embedding-group, .embedding-group *'), { opacity: subStep >= 2 ? 1 : 0, y: subStep >= 2 ? 0 : -8 });
+      gsap.set(svgRef.current.querySelectorAll('.id-to-emb-arrow'), { opacity: subStep >= 2 ? 1 : 0 });
+
+      gsap.set(svgRef.current.querySelectorAll('.transformer-group .transformer-box'), { opacity: subStep >= 3 ? 1 : 0, scaleY: subStep >= 3 ? 1 : 0.95, transformOrigin: '50% 0%' });
+      gsap.set(svgRef.current.querySelectorAll('.transformer-group .inside-top-embeddings, .transformer-group .inside-top-embeddings *'), { opacity: subStep >= 3 ? 1 : 0, y: subStep >= 3 ? 0 : -8 });
+      gsap.set(svgRef.current.querySelectorAll('.outer-to-block-arrow'), { opacity: subStep >= 3 ? 1 : 0 });
+      gsap.set(svgRef.current.querySelectorAll('.transformer-group .attention-mash, .transformer-group .attention-mash *'), { opacity: subStep >= 3 ? 1 : 0 });
+
+      gsap.set(svgRef.current.querySelectorAll('.transformer-group .inside-bottom-embeddings, .transformer-group .inside-bottom-embeddings *'), { opacity: subStep >= 4 ? 1 : 0, y: subStep >= 4 ? 0 : 8 });
+      gsap.set(svgRef.current.querySelectorAll('.ffn-arrow'), { opacity: subStep >= 4 ? 1 : 0 });
+
+      gsap.set(svgRef.current.querySelectorAll('.bottom-embedding-group, .bottom-embedding-group *'), { opacity: subStep >= 5 ? 1 : 0, y: subStep >= 5 ? 0 : 8 });
+
+      gsap.set(svgRef.current.querySelectorAll('.extracted-embedding'), { opacity: 0 });
+      // Keep the connector path and rotated vector hidden until after the dummy fits in place
+      gsap.set(svgRef.current.querySelectorAll('.extracted-path-arrow'), { opacity: subStep >= 7 ? 1 : 0 });
+      gsap.set(svgRef.current.querySelectorAll('.extracted-horizontal'), { opacity: subStep >= 7 ? 1 : 0 });
+      gsap.set(svgRef.current.querySelectorAll('.logprob-arrow'), { opacity: subStep >= 7 ? 1 : 0 });
+      gsap.set(svgRef.current.querySelectorAll('.logprob-vector'), { opacity: subStep >= 7 ? 1 : 0 });
+      gsap.set(svgRef.current.querySelectorAll('.distribution-bar'), { opacity: subStep >= 8 ? 1 : 0, scaleY: subStep >= 8 ? 1 : 0.1, transformOrigin: '50% 100%' });
+      gsap.set(svgRef.current.querySelectorAll('.distribution-token-label, .distribution-percentage-label'), { opacity: subStep >= 8 ? 1 : 0 });
     } else {
-      // Subsequent steps: keep previous stacks visible; animate only the new stack
+      // Subsequent steps: keep previous stacks visible based on sub-step
       gsap.set(svgRef.current.querySelectorAll('.token.prev-token'), { opacity: 1 });
-      gsap.set(svgRef.current.querySelectorAll('.token.new-token'), { opacity: 0 });
+      gsap.set(svgRef.current.querySelectorAll('.token.new-token'), { opacity: subStep >= 0 ? 1 : 0 });
       gsap.set(svgRef.current.querySelectorAll('.token-id.prev-token'), { opacity: 1 });
-      gsap.set(svgRef.current.querySelectorAll('.token-id.new-token'), { opacity: 0 });
+      gsap.set(svgRef.current.querySelectorAll('.token-id.new-token'), { opacity: subStep >= 1 ? 1 : 0 });
       gsap.set(svgRef.current.querySelectorAll('.token-id-arrow.prev-token'), { opacity: 1 });
-      gsap.set(svgRef.current.querySelectorAll('.token-id-arrow.new-token'), { opacity: 0 });
+      gsap.set(svgRef.current.querySelectorAll('.token-id-arrow.new-token'), { opacity: subStep >= 1 ? 1 : 0 });
+
       gsap.set(svgRef.current.querySelectorAll('.embedding-group .embedding-col.prev-token'), { opacity: 1, y: 0 });
-      gsap.set(svgRef.current.querySelectorAll('.embedding-group .embedding-col.new-token'), { opacity: 0, y: -8 });
+      gsap.set(svgRef.current.querySelectorAll('.embedding-group .embedding-col.new-token'), { opacity: subStep >= 2 ? 1 : 0, y: subStep >= 2 ? 0 : -8 });
+      gsap.set(svgRef.current.querySelectorAll('.id-to-emb-arrow.prev-token'), { opacity: 1 });
+      gsap.set(svgRef.current.querySelectorAll('.id-to-emb-arrow.new-token'), { opacity: subStep >= 2 ? 1 : 0 });
+
       gsap.set(svgRef.current.querySelectorAll('.transformer-group .transformer-box'), { opacity: 1, scaleY: 1, transformOrigin: '50% 0%' });
       gsap.set(svgRef.current.querySelectorAll('.transformer-group .inside-top-embeddings .embedding-col.prev-token'), { opacity: 1, y: 0 });
-      gsap.set(svgRef.current.querySelectorAll('.transformer-group .inside-top-embeddings .embedding-col.new-token'), { opacity: 0, y: -8 });
-      gsap.set(svgRef.current.querySelectorAll('.transformer-group .attention-mash, .transformer-group .attention-mash *'), { opacity: 1 });
-      gsap.set(svgRef.current.querySelectorAll('.transformer-group .inside-bottom-embeddings .embedding-col.prev-token'), { opacity: 1, y: 0 });
-      gsap.set(svgRef.current.querySelectorAll('.transformer-group .inside-bottom-embeddings .embedding-col.new-token'), { opacity: 0, y: 8 });
-      gsap.set(svgRef.current.querySelectorAll('.bottom-embedding-group .embedding-col.prev-token'), { opacity: 1, y: 0 });
-      gsap.set(svgRef.current.querySelectorAll('.bottom-embedding-group .embedding-col.new-token'), { opacity: 0, y: 8 });
-      gsap.set(svgRef.current.querySelectorAll('.id-to-emb-arrow.prev-token'), { opacity: 1 });
-      gsap.set(svgRef.current.querySelectorAll('.id-to-emb-arrow.new-token'), { opacity: 0 });
+      gsap.set(svgRef.current.querySelectorAll('.transformer-group .inside-top-embeddings .embedding-col.new-token'), { opacity: subStep >= 3 ? 1 : 0, y: subStep >= 3 ? 0 : -8 });
       gsap.set(svgRef.current.querySelectorAll('.outer-to-block-arrow.prev-token'), { opacity: 1 });
-      gsap.set(svgRef.current.querySelectorAll('.outer-to-block-arrow.new-token'), { opacity: 0 });
+      gsap.set(svgRef.current.querySelectorAll('.outer-to-block-arrow.new-token'), { opacity: subStep >= 3 ? 1 : 0 });
+      gsap.set(svgRef.current.querySelectorAll('.transformer-group .attention-mash, .transformer-group .attention-mash *'), { opacity: 1 });
+
+      gsap.set(svgRef.current.querySelectorAll('.transformer-group .inside-bottom-embeddings .embedding-col.prev-token'), { opacity: 1, y: 0 });
+      gsap.set(svgRef.current.querySelectorAll('.transformer-group .inside-bottom-embeddings .embedding-col.new-token'), { opacity: subStep >= 4 ? 1 : 0, y: subStep >= 4 ? 0 : 8 });
       gsap.set(svgRef.current.querySelectorAll('.ffn-arrow.prev-token'), { opacity: 1 });
-      gsap.set(svgRef.current.querySelectorAll('.ffn-arrow.new-token'), { opacity: 0 });
-      gsap.set(svgRef.current.querySelectorAll('.extracted-embedding, .extracted-horizontal, .logprob-vector, .logprob-arrow, .extracted-path-arrow, .distribution-bar, .distribution-token-label, .distribution-percentage-label'), { opacity: 0 });
+      gsap.set(svgRef.current.querySelectorAll('.ffn-arrow.new-token'), { opacity: subStep >= 4 ? 1 : 0 });
+
+      gsap.set(svgRef.current.querySelectorAll('.bottom-embedding-group .embedding-col.prev-token'), { opacity: 1, y: 0 });
+      gsap.set(svgRef.current.querySelectorAll('.bottom-embedding-group .embedding-col.new-token'), { opacity: subStep >= 5 ? 1 : 0, y: subStep >= 5 ? 0 : 8 });
+
+      gsap.set(svgRef.current.querySelectorAll('.extracted-embedding'), { opacity: 0 });
+      // Keep the connector path and rotated vector hidden until after the dummy fits in place
+      gsap.set(svgRef.current.querySelectorAll('.extracted-path-arrow'), { opacity: subStep >= 7 ? 1 : 0 });
+      gsap.set(svgRef.current.querySelectorAll('.extracted-horizontal'), { opacity: subStep >= 7 ? 1 : 0 });
+      gsap.set(svgRef.current.querySelectorAll('.logprob-arrow'), { opacity: subStep >= 7 ? 1 : 0 });
+      gsap.set(svgRef.current.querySelectorAll('.logprob-vector'), { opacity: subStep >= 7 ? 1 : 0 });
+      gsap.set(svgRef.current.querySelectorAll('.distribution-bar'), { opacity: subStep >= 8 ? 1 : 0, scaleY: subStep >= 8 ? 1 : 0.1, transformOrigin: '50% 100%' });
+      gsap.set(svgRef.current.querySelectorAll('.distribution-token-label, .distribution-percentage-label'), { opacity: subStep >= 8 ? 1 : 0 });
     }
 
     const tl = gsap.timeline({ defaults: { ease: 'power2.out' } });
 
+    // Animation sub-steps - only animate the CURRENT sub-step
+    // 0: Show tokens only
+    // 1: Show IDs (token->ID arrows + ID labels)
+    // 2: Show embeddings (ID->embedding arrows + embedding columns)
+    // 3: Show attention (transformer box + top embeddings + outer-to-block arrows + attention mash)
+    // 4: Show feed-forward (bottom embeddings inside block + FFN arrows)
+    // 5: Show extraction (bottom embeddings outside block)
+    // 6: Extract & rotate last vector (move to center, rotate)
+    // 7: Project to probabilities (show logprob vector)
+    // 8: Show bar chart
+    // 9: Select token & complete (highlight selection, add to output)
+
     if (isInitialStep) {
-      // Full first-step animation: animate all tokens/stacks together
-      // 1) Tokens appear
-      tl.to(svgRef.current.querySelectorAll('.token'), { opacity: 1, duration: dToken * 0.7, stagger: 0.02 });
-
-      // 2) Token IDs + token→ID arrows
-      tl.to(svgRef.current.querySelectorAll('.token-id-arrow'), { opacity: 1, duration: dIds * 0.4 }, '>-0.2');
-      tl.to(svgRef.current.querySelectorAll('.token-id'), { opacity: 1, duration: dIds * 0.6, stagger: 0.02 }, '<');
-
-      // 3) Outside embeddings + ID→Embedding arrows
-      tl.to(svgRef.current.querySelectorAll('.embedding-group, .embedding-group *'), { opacity: 1, y: 0, duration: dEmb * 0.7 });
-      tl.to(svgRef.current.querySelectorAll('.id-to-emb-arrow'), { opacity: 1, duration: dEmb * 0.3 }, '<');
-
-      // 4) Transformer block internals
-      tl.to(svgRef.current.querySelectorAll('.transformer-group .transformer-box'), { opacity: 1, scaleY: 1, duration: dTrans * 0.1 });
-      tl.to(svgRef.current.querySelectorAll('.transformer-group .inside-top-embeddings, .transformer-group .inside-top-embeddings *'), { opacity: 1, y: 0, duration: dTrans * 0.2 });
-      tl.to(svgRef.current.querySelectorAll('.outer-to-block-arrow'), { opacity: 1, duration: dTrans * 0.1 }, '<');
-      tl.to(svgRef.current.querySelectorAll('.transformer-group .attention-mash, .transformer-group .attention-mash *'), { opacity: 1, duration: dTrans * 0.3 });
-      tl.to(svgRef.current.querySelectorAll('.transformer-group .inside-bottom-embeddings, .transformer-group .inside-bottom-embeddings *'), { opacity: 1, y: 0, duration: dTrans * 0.2 });
-      tl.to(svgRef.current.querySelectorAll('.ffn-arrow'), { opacity: 1, duration: dTrans * 0.2 }, '<');
-
-      // 5) Outside bottom embeddings + output
-      tl.to(svgRef.current.querySelectorAll('.bottom-embedding-group, .bottom-embedding-group *'), { opacity: 1, y: 0, duration: dOut * 0.5 });
+      // For the first step, animate all tokens together
+      if (subStep === 0) {
+        tl.to(svgRef.current.querySelectorAll('.token'), { opacity: 1, duration: animDuration, stagger: 0.02 });
+      } else if (subStep === 1) {
+        tl.to(svgRef.current.querySelectorAll('.token-id-arrow'), { opacity: 1, duration: animDuration * 0.5 });
+        tl.to(svgRef.current.querySelectorAll('.token-id'), { opacity: 1, duration: animDuration, stagger: 0.02 }, '<');
+      } else if (subStep === 2) {
+        tl.to(svgRef.current.querySelectorAll('.embedding-group, .embedding-group *'), { opacity: 1, y: 0, duration: animDuration });
+        tl.to(svgRef.current.querySelectorAll('.id-to-emb-arrow'), { opacity: 1, duration: animDuration * 0.5 }, '<');
+      } else if (subStep === 3) {
+        tl.to(svgRef.current.querySelectorAll('.transformer-group .transformer-box'), { opacity: 1, scaleY: 1, duration: animDuration * 0.8 });
+        tl.to(svgRef.current.querySelectorAll('.transformer-group .inside-top-embeddings, .transformer-group .inside-top-embeddings *'), { opacity: 1, y: 0, duration: animDuration });
+        tl.to(svgRef.current.querySelectorAll('.outer-to-block-arrow'), { opacity: 1, duration: animDuration * 0.5 }, '<');
+        tl.to(svgRef.current.querySelectorAll('.transformer-group .attention-mash, .transformer-group .attention-mash *'), { opacity: 1, duration: animDuration });
+      } else if (subStep === 4) {
+        tl.to(svgRef.current.querySelectorAll('.transformer-group .inside-bottom-embeddings, .transformer-group .inside-bottom-embeddings *'), { opacity: 1, y: 0, duration: animDuration });
+        tl.to(svgRef.current.querySelectorAll('.ffn-arrow'), { opacity: 1, duration: animDuration * 0.5 }, '<');
+      } else if (subStep === 5) {
+        tl.to(svgRef.current.querySelectorAll('.bottom-embedding-group, .bottom-embedding-group *'), { opacity: 1, y: 0, duration: animDuration });
+      }
     } else {
       // Subsequent steps: animate only new token stack
-      // 1) Tokens appear (only the new one)
-      tl.to(svgRef.current.querySelectorAll('.token.new-token'), { opacity: 1, duration: dToken * 0.7 });
-
-      // 2) Token IDs + token→ID arrows (only for the new token)
-      tl.to(svgRef.current.querySelectorAll('.token-id-arrow.new-token'), { opacity: 1, duration: dIds * 0.4 }, '>-0.2');
-      tl.to(svgRef.current.querySelectorAll('.token-id.new-token'), { opacity: 1, duration: dIds * 0.6 }, '<');
-
-      // 3) Outside embeddings + ID→Embedding arrows (new token column only)
-      tl.to(svgRef.current.querySelectorAll('.embedding-group .embedding-col.new-token'), { opacity: 1, y: 0, duration: dEmb * 0.7 });
-      tl.to(svgRef.current.querySelectorAll('.id-to-emb-arrow.new-token'), { opacity: 1, duration: dEmb * 0.3 }, '<');
-
-      // 4) Transformer block internals (only new token columns; keep box and mash static)
-      tl.to(svgRef.current.querySelectorAll('.transformer-group .inside-top-embeddings .embedding-col.new-token'), { opacity: 1, y: 0, duration: dTrans * 0.2 });
-      tl.to(svgRef.current.querySelectorAll('.outer-to-block-arrow.new-token'), { opacity: 1, duration: dTrans * 0.1 }, '<');
-      tl.to(svgRef.current.querySelectorAll('.transformer-group .inside-bottom-embeddings .embedding-col.new-token'), { opacity: 1, y: 0, duration: dTrans * 0.2 });
-      tl.to(svgRef.current.querySelectorAll('.ffn-arrow.new-token'), { opacity: 1, duration: dTrans * 0.2 }, '<');
-
-      // 5) Outside bottom embeddings + output (animate only new bottom column, but full output vector)
-      tl.to(svgRef.current.querySelectorAll('.bottom-embedding-group .embedding-col.new-token'), { opacity: 1, y: 0, duration: dOut * 0.3 });
+      if (subStep === 0) {
+        tl.to(svgRef.current.querySelectorAll('.token.new-token'), { opacity: 1, duration: animDuration });
+      } else if (subStep === 1) {
+        tl.to(svgRef.current.querySelectorAll('.token-id-arrow.new-token'), { opacity: 1, duration: animDuration * 0.5 });
+        tl.to(svgRef.current.querySelectorAll('.token-id.new-token'), { opacity: 1, duration: animDuration }, '<');
+      } else if (subStep === 2) {
+        tl.to(svgRef.current.querySelectorAll('.embedding-group .embedding-col.new-token'), { opacity: 1, y: 0, duration: animDuration });
+        tl.to(svgRef.current.querySelectorAll('.id-to-emb-arrow.new-token'), { opacity: 1, duration: animDuration * 0.5 }, '<');
+      } else if (subStep === 3) {
+        tl.to(svgRef.current.querySelectorAll('.transformer-group .inside-top-embeddings .embedding-col.new-token'), { opacity: 1, y: 0, duration: animDuration });
+        tl.to(svgRef.current.querySelectorAll('.outer-to-block-arrow.new-token'), { opacity: 1, duration: animDuration * 0.5 }, '<');
+      } else if (subStep === 4) {
+        tl.to(svgRef.current.querySelectorAll('.transformer-group .inside-bottom-embeddings .embedding-col.new-token'), { opacity: 1, y: 0, duration: animDuration });
+        tl.to(svgRef.current.querySelectorAll('.ffn-arrow.new-token'), { opacity: 1, duration: animDuration * 0.5 }, '<');
+      } else if (subStep === 5) {
+        tl.to(svgRef.current.querySelectorAll('.bottom-embedding-group .embedding-col.new-token'), { opacity: 1, y: 0, duration: animDuration });
+      }
     }
 
-    // 6) Extract rightmost embedding -> move/rotate/enlarge to center, show path, then reveal logprobs and bars
-    const extractedNode = svgRef.current.querySelector('.output-group .extracted-embedding');
-    if (extractedNode) {
+    // Steps 6-9: Extract, rotate, project, and show output (same for both initial and subsequent)
+    const extractedNode = svgRef.current.querySelector('.extracted-embedding');
+    if (subStep === 6 && extractedNode) {
       const dx = parseFloat(extractedNode.getAttribute('data-dx') || '0');
       const dy = parseFloat(extractedNode.getAttribute('data-dy') || '0');
-      tl.to(extractedNode, { opacity: 1, duration: dOut * 0.12 });
-      tl.to(svgRef.current.querySelectorAll('.extracted-path-arrow'), { opacity: 1, duration: dOut * 0.15 }, '<');
-      tl.to(extractedNode, { x: dx, y: dy, rotation: -90, scale: 1.3, transformOrigin: '50% 50%', duration: dOut * 0.7, ease: 'power2.inOut' });
-      tl.to(svgRef.current.querySelectorAll('.extracted-horizontal'), { opacity: 1, scale: 1.35, transformOrigin: '50% 50%', duration: dOut * 0.3 }, '>-0.1');
-      tl.to(extractedNode, { opacity: 0.0, duration: dOut * 0.15 }, '<');
-      tl.to(svgRef.current.querySelectorAll('.logprob-arrow'), { opacity: 1, duration: dOut * 0.1 }, '>-0.05');
-      tl.to(svgRef.current.querySelectorAll('.logprob-vector'), { opacity: 1, duration: dOut * 0.2 }, '<');
-      tl.fromTo(svgRef.current.querySelectorAll('.distribution-bar'), { opacity: 0, scaleY: 0.1, transformOrigin: '50% 100%' }, { opacity: 1, scaleY: 1, duration: dOut * 0.55, stagger: 0.02, ease: 'power2.out' }, '>-0.05');
-      tl.to(svgRef.current.querySelectorAll('.distribution-token-label, .distribution-percentage-label'), { opacity: 1, duration: dOut * 0.3, stagger: 0.015 }, '<+0.1');
+      // 1) Show the dummy rectangle
+      tl.to(extractedNode, { opacity: 1, duration: animDuration * 0.4 });
+      // 2) Move and rotate the dummy into place
+      tl.to(extractedNode, { x: dx, y: dy, rotation: -90, scale: 1.3, transformOrigin: '50% 50%', duration: animDuration * 1.5, ease: 'power2.inOut' });
+      // 3) After it fits, reveal the connector path and the rotated horizontal vector
+      tl.to(svgRef.current.querySelectorAll('.extracted-path-arrow'), { opacity: 1, duration: animDuration * 0.4 }, '>-0.1');
+      tl.to(svgRef.current.querySelectorAll('.extracted-horizontal'), { opacity: 1, scale: 1.35, transformOrigin: '50% 50%', duration: animDuration * 0.7 }, '<');
+      // 4) Fade the dummy out
+      tl.to(extractedNode, { opacity: 0.0, duration: animDuration * 0.4 }, '>-0.2');
     }
 
-    tl.eventCallback('onComplete', () => {
-      actions.onStepAnimationComplete();
-    });
+    if (subStep === 7) {
+      tl.to(svgRef.current.querySelectorAll('.logprob-arrow'), { opacity: 1, duration: animDuration * 0.5 });
+      tl.to(svgRef.current.querySelectorAll('.logprob-vector'), { opacity: 1, duration: animDuration }, '<');
+    }
+
+    if (subStep === 8) {
+      tl.fromTo(svgRef.current.querySelectorAll('.distribution-bar'),
+        { opacity: 0, scaleY: 0.1, transformOrigin: '50% 100%' },
+        { opacity: 1, scaleY: 1, duration: animDuration * 1.2, stagger: 0.02, ease: 'power2.out' });
+      tl.to(svgRef.current.querySelectorAll('.distribution-token-label, .distribution-percentage-label'),
+        { opacity: 1, duration: animDuration * 0.8, stagger: 0.015 }, '<+0.2');
+    }
+
+    if (subStep === 9) {
+      // Mark animation as complete and add token to output
+      tl.eventCallback('onComplete', () => {
+        onStepAnimationComplete();
+      });
+    }
 
     gsapRef.current = tl;
 
-  }, [state.currentStep, state.currentExample, isExpanded, embeddingExpanded]);
+  }, [state.currentStep, state.currentExample, state.currentAnimationSubStep, isExpanded, embeddingExpanded, onStepAnimationComplete]);
 
   /**
    * Render token sequence
@@ -677,7 +723,7 @@ function VisualizationCanvas() {
   /**
    * Render output distribution
    */
-  const renderOutput = (group, step, layout, width, bottomInfo) => {
+  const renderOutput = (group, step, layout, width, bottomInfo, subStep) => {
     const candidates = step.output_distribution?.candidates || [];
 
     // 1) Extract the rightmost bottom embedding and animate it to center as a horizontal vector
@@ -692,17 +738,22 @@ function VisualizationCanvas() {
     const baseStroke = d3.interpolateRgb(tokenColor, '#ffffff')(0.5);
 
     // Target placement for the rotated version
-    const horizY = bottomInfo.afterBottomY + 60; // below the last embeddings
+    // Bring the horizontal embedding vector closer to the bottom embeddings so the bars fit
+    const horizY = bottomInfo.afterBottomY + 20; // was +60
     const horizCenterX = width / 2;
 
-    // Draw the right-angle path FIRST (behind vectors)
-    if (rm) {
+    // Create a background layer inserted under bottom embeddings for extraction visuals
+    const mainRoot = d3.select(svgRef.current).select('g.visualization-main');
+    const extractionBg = mainRoot.insert('g', '.bottom-embedding-group').attr('class', 'extraction-bg-layer');
+
+    // Draw the right-angle path FIRST (behind everything) - only when needed (subStep >= 6)
+    if (rm && subStep >= 6) {
       const startX = rm.centerX;
       const startY = rm.topY + rm.height / 2;
       const endX = horizCenterX;
       const endY = horizY + 12; // near the horizontal vector
       const pathD = rightAngleRoundedPath(startX, startY, endX, endY, 20);
-      group.append('path')
+      extractionBg.append('path')
         .attr('d', pathD)
         .attr('class', 'extracted-path-arrow')
         .style('fill', 'none')
@@ -710,97 +761,124 @@ function VisualizationCanvas() {
         .style('stroke-width', 1.5)
         .style('stroke-linecap', 'round')
         .style('stroke-linejoin', 'round')
-        .style('opacity', 0.9)
-        .attr('marker-end', 'url(#arrowhead)');
+        .style('opacity', 0.9);
     }
 
-    const extracted = group.append('g').attr('class', 'extracted-embedding');
-    if (rm) {
-      extracted.append('rect')
-        .attr('x', rm.centerX - rm.width / 2)
-        .attr('y', rm.topY)
-        .attr('width', rm.width)
-        .attr('height', rm.height)
-        .attr('rx', 4)
-        .style('fill', baseFill)
-        .style('stroke', baseStroke);
-      // store deltas for GSAP animation (move from current position to horiz target)
-      const dx = horizCenterX - rm.centerX;
-      const dy = (horizY + (rm.height / 2)) - (rm.topY + (rm.height / 2));
-      extracted.attr('data-dx', dx).attr('data-dy', dy);
-    }
-    // Draw final horizontal vector (hidden initially) representing the copied embedding
-    const sampleValues = (rightmostActualIndex >= 0 ? (step.embeddings?.[rightmostActualIndex]?.values || []) : []).slice(0, 8);
-    const hv1 = drawHorizontalVector(group, horizCenterX, horizY, sampleValues, { className: 'extracted-horizontal', tokenColor, bgFill: baseFill });
+    // Underlay group inside output for arrows under vectors
+    const underlays = group.append('g').attr('class', 'output-underlays');
 
-    // 2) Arrow with a small box to logprob vector
-    const logprobY = hv1.bottomY + 40;
+    let hv1 = null;
+    if (subStep >= 6) {
+      // Draw the animated dummy rectangle in the background (below bottom embeddings)
+      const extracted = extractionBg.append('g').attr('class', 'extracted-embedding');
+      if (rm) {
+        extracted.append('rect')
+          .attr('x', rm.centerX - rm.width / 2)
+          .attr('y', rm.topY)
+          .attr('width', rm.width)
+          .attr('height', rm.height)
+          .attr('rx', 4)
+          .style('fill', baseFill)
+          .style('stroke', baseStroke);
+        // store deltas for GSAP animation (move from current position to horiz target)
+        const dx = horizCenterX - rm.centerX;
+        const dy = (horizY + (rm.height / 2)) - (rm.topY + (rm.height / 2));
+        extracted.attr('data-dx', dx).attr('data-dy', dy);
+      }
+      // Draw final horizontal vector (hidden initially) representing the copied embedding
+      const sampleValues = (rightmostActualIndex >= 0 ? (step.embeddings?.[rightmostActualIndex]?.values || []) : []).slice(0, 8);
+      hv1 = drawHorizontalVector(group, horizCenterX, horizY, sampleValues, { className: 'extracted-horizontal', tokenColor, bgFill: baseFill });
+    }
+
+    // 2) Arrow with a small box to logprob vector (only subStep >= 7)
+    let hv2 = null;
+    // Tighten spacing between the copied embedding vector and the logprob vector
+    let logprobY = (hv1 ? hv1.bottomY : (horizY + 36)) + 28; // was +40
     const probs = candidates.map(c => c.prob);
-    const hv2 = drawHorizontalVector(group, horizCenterX, logprobY, probs, { className: 'logprob-vector', tokenColor: '#8B5CF6', format: v => (v).toFixed(2) });
-    // arrow from hv1 to hv2
-    drawArrow(group, horizCenterX, hv1.bottomY + 6, horizCenterX, hv2.topY - 8, { withBox: true, className: 'logprob-arrow' });
+    if (subStep >= 7) {
+      hv2 = drawHorizontalVector(group, horizCenterX, logprobY, probs, {
+        className: 'logprob-vector',
+        tokenColor: '#8B5CF6',
+        format: v => (v).toFixed(2),
+        isLogprob: true  // Mark this as logprob vector for larger sizing
+      });
+      // arrow from hv1 to hv2
+      if (hv1 && hv2) {
+        drawArrow(underlays, horizCenterX, hv1.bottomY + 6, horizCenterX, hv2.topY - 8, { withBox: true, className: 'logprob-arrow' });
+      }
+    }
 
-    // 3) Output distribution bars aligned to hv2 cells, positioned below the vector
-    const maxBarHeight = 100;
-    const barTopY = hv2.bottomY + 30; // bars start below logprob vector
-    const barBaselineY = barTopY + maxBarHeight; // baseline for bar heights
+    // 3) Output distribution bars aligned to hv2 cells, positioned below the vector (only subStep >= 8)
+    if (subStep >= 8 && hv2) {
+      // Keep the bars comfortably within the canvas height
+      const maxBarHeight = 140;  // was 180
+      const barTopY = hv2.bottomY + 20; // was +50
+      const barBaselineY = barTopY + maxBarHeight; // baseline for bar heights
 
-    hv2.centers.forEach((cx, i) => {
-      const p = probs[i] ?? 0;
-      const barH = p * maxBarHeight;
-      const bw = Math.max(12, hv2.cellWidth * 0.7); // wider bars for visibility
-      const color = getPurpleByProb(p);
+      hv2.centers.forEach((cx, i) => {
+        const p = probs[i] ?? 0;
+        const barH = p * maxBarHeight;
+        const bw = Math.max(40, hv2.cellWidth * 0.8); // Much wider bars for better visibility
 
-      const isSelected = i === 0; // greedy selection (first)
-      group.append('rect')
-        .attr('x', cx - bw / 2)
-        .attr('y', barBaselineY - barH)
-        .attr('width', bw)
-        .attr('height', barH)
-        .attr('rx', 4)
-        .attr('class', `distribution-bar ${isSelected ? 'selected' : ''}`)
-        .style('fill', isSelected ? '#e11d48' : color);
-    });
+        const color = getPurpleByProb(p);
 
-    // 4) Legend below bars with token labels and percentages
-    const legendY = barBaselineY + 20;
-    hv2.centers.forEach((cx, i) => {
-      const p = probs[i] ?? 0;
-      const token = candidates[i]?.token ?? '';
-      const percentage = (p * 100).toFixed(1) + '%';
+        const isSelected = i === 0; // greedy selection (first)
+        group.append('rect')
+          .attr('x', cx - bw / 2)
+          .attr('y', barBaselineY - barH)
+          .attr('width', bw)
+          .attr('height', barH)
+          .attr('rx', 4)
+          .attr('class', `distribution-bar ${isSelected ? 'selected' : ''}`)
+          .style('fill', isSelected ? '#e11d48' : color);
+      });
 
-      // Token label
-      const isSelected = i === 0;
-      group.append('text')
-        .attr('x', cx)
-        .attr('y', legendY)
-        .attr('text-anchor', 'middle')
-        .attr('class', 'distribution-token-label')
-        .style('font-size', '11px')
-        .style('font-weight', isSelected ? '700' : '500')
-        .style('fill', isSelected ? '#e11d48' : '#333')
-        .text(token);
+      // 4) Legend below bars with token labels and percentages
+      // Slightly less space under bars so labels are visible within canvas
+      const legendY = barBaselineY + 24;  // was +30
+      hv2.centers.forEach((cx, i) => {
+        const p = probs[i] ?? 0;
+        const token = candidates[i]?.token ?? '';
+        const percentage = (p * 100).toFixed(1) + '%';
 
-      // Percentage label below token
-      group.append('text')
-        .attr('x', cx)
-        .attr('y', legendY + 16)
-        .attr('text-anchor', 'middle')
-        .attr('class', 'distribution-percentage-label')
-        .style('font-size', '9px')
-        .style('fill', isSelected ? '#e11d48' : '#666')
-        .text(percentage);
-    });
+        // Token label - much larger font
+        const isSelected = i === 0;
+        group.append('text')
+          .attr('x', cx)
+          .attr('y', legendY)
+          .attr('text-anchor', 'middle')
+          .attr('class', 'distribution-token-label')
+          .style('font-size', '18px')  // Increased from 11px
+          .style('font-weight', isSelected ? '700' : '600')
+          .style('fill', isSelected ? '#e11d48' : '#333')
+          .text(token);
+
+        // Percentage label below token - much larger font
+        group.append('text')
+          .attr('x', cx)
+          .attr('y', legendY + 24)  // More vertical space
+          .attr('text-anchor', 'middle')
+          .attr('class', 'distribution-percentage-label')
+          .style('font-size', '16px')  // Increased from 9px
+          .style('font-weight', '500')
+          .style('fill', isSelected ? '#e11d48' : '#666')
+          .text(percentage);
+      });
+    }
   };
 
   // Draw a horizontal vector with numbers inside narrow cells; returns centers for alignment
   const drawHorizontalVector = (group, centerX, topY, values, opts = {}) => {
-    const { className = '', tokenColor = '#ddd', bgFill = null, format } = opts;
+    const { className = '', tokenColor = '#ddd', bgFill = null, format, isLogprob = false } = opts;
     const g = group.append('g').attr('class', className);
     const n = values.length;
-    const cellWidth = 26;
-    const cellHeight = 18;
-    const gap = 6;
+
+    // Make logprob vector much larger and stretch to ~2/3 of canvas width
+    const cellWidth = isLogprob ? 80 : 26;
+    const cellHeight = isLogprob ? 36 : 18;
+    const gap = isLogprob ? 12 : 6;
+    const fontSize = isLogprob ? '18px' : '10px';
+
     const width = n * cellWidth + (n - 1) * gap + 12;
     const leftX = centerX - width / 2 + 6;
     const centers = [];
@@ -831,9 +909,10 @@ function VisualizationCanvas() {
       // number
       g.append('text')
         .attr('x', cx)
-        .attr('y', topY + 6 + cellHeight / 2 + 3)
+        .attr('y', topY + 6 + cellHeight / 2 + (isLogprob ? 6 : 3))
         .attr('text-anchor', 'middle')
-        .style('font-size', '10px')
+        .style('font-size', fontSize)
+        .style('font-weight', isLogprob ? '600' : 'normal')
         .style('fill', '#111')
         .text(format ? format(v) : (typeof v === 'number' ? v.toFixed(1) : ''));
     });

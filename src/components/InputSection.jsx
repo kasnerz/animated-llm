@@ -19,17 +19,14 @@ function InputSection() {
   };
 
   const handleGenerate = () => {
-    // Enable auto-generation and kick off the first/next step
-    if (actions.setAutoGenerate) actions.setAutoGenerate(true);
+    // Start generation: move to first step and begin animation
     if (state.currentStep === 0) {
-      actions.nextStep();
-    } else if (state.currentStep < state.currentExample.generation_steps.length - 1) {
       actions.nextStep();
     }
   };
 
   const isAtEnd = state.currentExample &&
-    state.currentStep >= state.currentExample.generation_steps.length - 1;
+    state.currentStep > 0;  // Disable after first click
 
   // Find current example index
   const currentIndex = state.examples.findIndex(ex => ex.id === state.currentExampleId);

@@ -14,6 +14,7 @@ export function AppProvider({ children }) {
     currentExampleId: null,
     currentExample: null,
     currentStep: 0,
+    currentAnimationSubStep: 0, // Track which part of the animation to show
     generatedAnswer: '',
     autoGenerate: false,
 
@@ -102,7 +103,38 @@ export function AppProvider({ children }) {
       return {
         ...prev,
         currentStep: prev.currentStep + 1,
+        currentAnimationSubStep: 0, // Reset to first sub-step when moving to next generation step
         isPlaying: true
+      };
+    });
+  }, []);
+
+  /**
+   * Advance to next animation sub-step
+   */
+  const nextAnimationSubStep = useCallback(() => {
+    setState(prev => {
+      // Total sub-steps: 0-9 (10 steps total)
+      // 0: tokens
+      // 1: ids
+      // 2: embeddings
+      // 3: attention
+      // 4: feed-forward
+      // 5: extract & rotate
+      // 6: project to probabilities
+      // 7: show bar chart
+      // 8: select token
+      // 9: add to output (complete)
+      const maxSubSteps = 10;
+
+      if (prev.currentAnimationSubStep >= maxSubSteps - 1) {
+        // Animation complete for this step
+        return prev;
+      }
+
+      return {
+        ...prev,
+        currentAnimationSubStep: prev.currentAnimationSubStep + 1
       };
     });
   }, []);
@@ -114,6 +146,7 @@ export function AppProvider({ children }) {
     setState(prev => ({
       ...prev,
       currentStep: 0,
+      currentAnimationSubStep: 0,
       generatedAnswer: '',
       autoGenerate: false,
       isPlaying: false,
@@ -189,7 +222,7 @@ export function AppProvider({ children }) {
       const selectedTok = steps[idx]?.selected_token?.token ?? '';
       const newAnswer = prev.generatedAnswer + (selectedTok || '');
 
-      // If we're at the last step, stop.
+      // If we're at the last step, just finalize.
       const isLast = prev.currentStep >= steps.length;
       if (isLast) {
         return {
@@ -199,19 +232,14 @@ export function AppProvider({ children }) {
         };
       }
 
-      // If auto-generate is enabled, auto-advance; otherwise stop after appending
-      if (prev.autoGenerate) {
-        return {
-          ...prev,
-          generatedAnswer: newAnswer,
-          currentStep: prev.currentStep + 1,
-          isPlaying: true
-        };
-      }
+      // Always advance to the next generation step after completing sub-step 9
+      // so the newly selected token appears to the right and the pass repeats.
       return {
         ...prev,
         generatedAnswer: newAnswer,
-        isPlaying: false
+        currentStep: prev.currentStep + 1,
+        currentAnimationSubStep: 0, // Reset sub-step for the new step
+        isPlaying: true
       };
     });
   }, []);
@@ -232,6 +260,7 @@ export function AppProvider({ children }) {
       loadExample,
       loadExamples,
       nextStep,
+      nextAnimationSubStep,
       reset,
       toggleTheme,
       toggleLanguage,

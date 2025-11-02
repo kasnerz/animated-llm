@@ -101,6 +101,10 @@
 .distribution-bar {
     fill: #bfbfbf; /* default grey, may be overridden inline */
     transition: all 0.3s ease;
+    /* subtle outline so low-saturation fills remain visible on light backgrounds */
+    stroke: rgba(0,0,0,0.06);
+    stroke-width: 1px;
+    shape-rendering: geometricPrecision;
 }
 
 .distribution-bar:hover {
@@ -153,6 +157,23 @@
 
 .fade-in.visible {
     opacity: 1;
+}
+
+/* Step-wise gentle transitions */
+.phase-hidden {
+    opacity: 0 !important;
+    transform: translateY(6px);
+    /* Make transforms behave for SVG elements */
+    transform-box: fill-box;
+    transform-origin: center;
+    transition: opacity 220ms ease, transform 220ms ease;
+    pointer-events: none;
+}
+
+.phase-visible {
+    opacity: 1 !important;
+    transform: translateY(0);
+    transition: opacity 260ms ease, transform 260ms ease;
 }
 
 .pulse {

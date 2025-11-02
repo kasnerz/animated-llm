@@ -16,13 +16,11 @@ function AppContent() {
   // Handle keyboard shortcuts
   useEffect(() => {
     const handleKeyPress = (e) => {
-      // Space: play/pause
+      // Space: advance to next animation sub-step
       if (e.code === 'Space' && !e.target.matches('input, textarea')) {
         e.preventDefault();
-        if (state.isPlaying) {
-          actions.setIsPaused(!state.isPaused);
-        } else {
-          actions.nextStep();
+        if (state.currentStep > 0) {
+          actions.nextAnimationSubStep();
         }
       }
       // R: reset
@@ -44,7 +42,7 @@ function AppContent() {
 
     window.addEventListener('keydown', handleKeyPress);
     return () => window.removeEventListener('keydown', handleKeyPress);
-  }, [state.isPlaying, state.isPaused, actions]);
+  }, [state.currentStep, actions]);
 
   // Loading state
   if (state.isLoading && !state.currentExample) {
