@@ -1,50 +1,245 @@
-import { createContext, useContext, useState, useEffect, useCallback } from 'react';
+import { createContext, useContext, useReducer, useEffect, useCallback } from 'react';
 import config from '../config';
 import * as examplesApi from '../services/examplesApi';
+import { useThemeEffect } from '../hooks/useThemeEffect';
 
 const AppContext = createContext();
+
+// Action types
+const ActionTypes = {
+  // Data loading
+  LOAD_EXAMPLES_START: 'LOAD_EXAMPLES_START',
+  LOAD_EXAMPLES_SUCCESS: 'LOAD_EXAMPLES_SUCCESS',
+  LOAD_EXAMPLES_ERROR: 'LOAD_EXAMPLES_ERROR',
+  LOAD_EXAMPLE_START: 'LOAD_EXAMPLE_START',
+  LOAD_EXAMPLE_SUCCESS: 'LOAD_EXAMPLE_SUCCESS',
+  LOAD_EXAMPLE_ERROR: 'LOAD_EXAMPLE_ERROR',
+
+  // Generation control
+  NEXT_STEP: 'NEXT_STEP',
+  NEXT_ANIMATION_SUB_STEP: 'NEXT_ANIMATION_SUB_STEP',
+  RESET: 'RESET',
+  STEP_ANIMATION_COMPLETE: 'STEP_ANIMATION_COMPLETE',
+
+  // Settings
+  TOGGLE_THEME: 'TOGGLE_THEME',
+  TOGGLE_LANGUAGE: 'TOGGLE_LANGUAGE',
+  SET_LANGUAGE: 'SET_LANGUAGE',
+  SET_ANIMATION_SPEED: 'SET_ANIMATION_SPEED',
+
+  // Playback state
+  SET_IS_PLAYING: 'SET_IS_PLAYING',
+  SET_IS_PAUSED: 'SET_IS_PAUSED',
+  SET_AUTO_GENERATE: 'SET_AUTO_GENERATE',
+};
+
+// Initial state
+const initialState = {
+  // Example data
+  examples: [],
+  currentExampleId: null,
+  currentExample: null,
+  currentStep: 0,
+  currentAnimationSubStep: 0,
+  generatedAnswer: '',
+  autoGenerate: false,
+
+  // UI settings
+  theme: config.defaults.theme,
+  language: config.defaults.language,
+  animationSpeed: config.defaults.animationSpeed,
+
+  // Animation state
+  isPlaying: false,
+  isPaused: false,
+
+  // Loading state
+  isLoading: false,
+  error: null,
+};
+
+// Reducer function
+function appReducer(state, action) {
+  switch (action.type) {
+    case ActionTypes.LOAD_EXAMPLES_START:
+      return { ...state, isLoading: true, error: null };
+
+    case ActionTypes.LOAD_EXAMPLES_SUCCESS:
+      return {
+        ...state,
+        examples: action.payload.examples,
+        isLoading: false,
+        error: null,
+      };
+
+    case ActionTypes.LOAD_EXAMPLES_ERROR:
+      return {
+        ...state,
+        isLoading: false,
+        error: action.payload.error,
+      };
+
+    case ActionTypes.LOAD_EXAMPLE_START:
+      return { ...state, isLoading: true, error: null };
+
+    case ActionTypes.LOAD_EXAMPLE_SUCCESS:
+      return {
+        ...state,
+        currentExampleId: action.payload.exampleId,
+        currentExample: action.payload.example,
+        currentStep: 0,
+        currentAnimationSubStep: 0,
+        generatedAnswer: '',
+        autoGenerate: false,
+        isPlaying: false,
+        isPaused: false,
+        isLoading: false,
+        error: null,
+      };
+
+    case ActionTypes.LOAD_EXAMPLE_ERROR:
+      return {
+        ...state,
+        isLoading: false,
+        error: action.payload.error,
+      };
+
+    case ActionTypes.NEXT_STEP: {
+      if (!state.currentExample) return state;
+      const maxSteps = state.currentExample.generation_steps.length;
+      if (state.currentStep >= maxSteps - 1) return state;
+
+      return {
+        ...state,
+        currentStep: state.currentStep + 1,
+        currentAnimationSubStep: 0,
+        isPlaying: true,
+      };
+    }
+
+    case ActionTypes.NEXT_ANIMATION_SUB_STEP: {
+      const maxSubSteps = 10;
+      if (state.currentAnimationSubStep >= maxSubSteps - 1) {
+        return state;
+      }
+
+      return {
+        ...state,
+        currentAnimationSubStep: state.currentAnimationSubStep + 1,
+      };
+    }
+
+    case ActionTypes.RESET:
+      return {
+        ...state,
+        currentStep: 0,
+        currentAnimationSubStep: 0,
+        generatedAnswer: '',
+        autoGenerate: false,
+        isPlaying: false,
+        isPaused: false,
+      };
+
+    case ActionTypes.STEP_ANIMATION_COMPLETE: {
+      const ex = state.currentExample;
+      if (!ex) return { ...state, isPlaying: false };
+
+      const steps = ex.generation_steps || [];
+      const idx = state.currentStep - 1;
+      if (idx < 0 || idx >= steps.length) return { ...state, isPlaying: false };
+
+      const selectedTok = steps[idx]?.selected_token?.token ?? '';
+      const newAnswer = state.generatedAnswer + (selectedTok || '');
+
+      const isLast = state.currentStep >= steps.length;
+      if (isLast) {
+        return {
+          ...state,
+          generatedAnswer: newAnswer,
+          isPlaying: false,
+        };
+      }
+
+      return {
+        ...state,
+        generatedAnswer: newAnswer,
+        currentStep: state.currentStep + 1,
+        currentAnimationSubStep: 0,
+        isPlaying: true,
+      };
+    }
+
+    case ActionTypes.TOGGLE_THEME:
+      return {
+        ...state,
+        theme: state.theme === 'dark' ? 'light' : 'dark',
+      };
+
+    case ActionTypes.TOGGLE_LANGUAGE:
+      return {
+        ...state,
+        language: state.language === 'en' ? 'cs' : 'en',
+      };
+
+    case ActionTypes.SET_LANGUAGE:
+      return {
+        ...state,
+        language: action.payload.language,
+      };
+
+    case ActionTypes.SET_ANIMATION_SPEED:
+      return {
+        ...state,
+        animationSpeed: Math.max(
+          config.animation.minSpeed,
+          Math.min(config.animation.maxSpeed, action.payload.speed)
+        ),
+      };
+
+    case ActionTypes.SET_IS_PLAYING:
+      return {
+        ...state,
+        isPlaying: action.payload.isPlaying,
+      };
+
+    case ActionTypes.SET_IS_PAUSED:
+      return {
+        ...state,
+        isPaused: action.payload.isPaused,
+      };
+
+    case ActionTypes.SET_AUTO_GENERATE:
+      return {
+        ...state,
+        autoGenerate: !!action.payload.autoGenerate,
+      };
+
+    default:
+      return state;
+  }
+}
 
 /**
  * App Context Provider
  * Manages global application state including theme, language, examples, and animation
  */
 export function AppProvider({ children }) {
-  const [state, setState] = useState({
-    // Example data
-    examples: [],
-    currentExampleId: null,
-    currentExample: null,
-    currentStep: 0,
-    currentAnimationSubStep: 0, // Track which part of the animation to show
-    generatedAnswer: '',
-    autoGenerate: false,
+  const [state, dispatch] = useReducer(appReducer, initialState);
 
-    // UI settings
-    theme: config.defaults.theme,
-    language: config.defaults.language,
-    animationSpeed: config.defaults.animationSpeed,
-
-    // Animation state
-    isPlaying: false,
-    isPaused: false,
-
-    // Loading state
-    isLoading: false,
-    error: null,
-  });
+  // Apply theme side effect
+  useThemeEffect(state.theme);
 
   /**
    * Load all examples from examples.json
    */
   const loadExamples = useCallback(async () => {
     try {
-      setState((prev) => ({ ...prev, isLoading: true, error: null }));
+      dispatch({ type: ActionTypes.LOAD_EXAMPLES_START });
       const examples = await examplesApi.listExamples();
-      setState((prev) => ({
-        ...prev,
-        examples,
-        isLoading: false,
-      }));
+      dispatch({
+        type: ActionTypes.LOAD_EXAMPLES_SUCCESS,
+        payload: { examples },
+      });
 
       // Load first example by default
       if (examples.length > 0) {
@@ -52,11 +247,10 @@ export function AppProvider({ children }) {
       }
     } catch (error) {
       console.error('Error loading examples:', error);
-      setState((prev) => ({
-        ...prev,
-        isLoading: false,
-        error: error.message,
-      }));
+      dispatch({
+        type: ActionTypes.LOAD_EXAMPLES_ERROR,
+        payload: { error: error.message },
+      });
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -66,26 +260,18 @@ export function AppProvider({ children }) {
    */
   const loadExample = useCallback(async (exampleId) => {
     try {
-      setState((prev) => ({ ...prev, isLoading: true, error: null }));
+      dispatch({ type: ActionTypes.LOAD_EXAMPLE_START });
       const data = await examplesApi.getExample(exampleId);
-      setState((prev) => ({
-        ...prev,
-        currentExampleId: exampleId,
-        currentExample: data,
-        currentStep: 0,
-        generatedAnswer: '',
-        autoGenerate: false,
-        isPlaying: false,
-        isPaused: false,
-        isLoading: false,
-      }));
+      dispatch({
+        type: ActionTypes.LOAD_EXAMPLE_SUCCESS,
+        payload: { exampleId, example: data },
+      });
     } catch (error) {
       console.error('Error loading example:', error);
-      setState((prev) => ({
-        ...prev,
-        isLoading: false,
-        error: error.message,
-      }));
+      dispatch({
+        type: ActionTypes.LOAD_EXAMPLE_ERROR,
+        payload: { error: error.message },
+      });
     }
   }, []);
 
@@ -93,127 +279,83 @@ export function AppProvider({ children }) {
    * Advance to next step in current example
    */
   const nextStep = useCallback(() => {
-    setState((prev) => {
-      if (!prev.currentExample) return prev;
-      const maxSteps = prev.currentExample.generation_steps.length;
-      if (prev.currentStep >= maxSteps - 1) return prev;
-
-      return {
-        ...prev,
-        currentStep: prev.currentStep + 1,
-        currentAnimationSubStep: 0, // Reset to first sub-step when moving to next generation step
-        isPlaying: true,
-      };
-    });
+    dispatch({ type: ActionTypes.NEXT_STEP });
   }, []);
 
   /**
    * Advance to next animation sub-step
    */
   const nextAnimationSubStep = useCallback(() => {
-    setState((prev) => {
-      // Total sub-steps: 0-9 (10 steps total)
-      // 0: tokens
-      // 1: ids
-      // 2: embeddings
-      // 3: attention
-      // 4: feed-forward
-      // 5: extract & rotate
-      // 6: project to probabilities
-      // 7: show bar chart
-      // 8: select token
-      // 9: add to output (complete)
-      const maxSubSteps = 10;
-
-      if (prev.currentAnimationSubStep >= maxSubSteps - 1) {
-        // Animation complete for this step
-        return prev;
-      }
-
-      return {
-        ...prev,
-        currentAnimationSubStep: prev.currentAnimationSubStep + 1,
-      };
-    });
+    dispatch({ type: ActionTypes.NEXT_ANIMATION_SUB_STEP });
   }, []);
 
   /**
    * Reset to initial prompt
    */
   const reset = useCallback(() => {
-    setState((prev) => ({
-      ...prev,
-      currentStep: 0,
-      currentAnimationSubStep: 0,
-      generatedAnswer: '',
-      autoGenerate: false,
-      isPlaying: false,
-      isPaused: false,
-    }));
+    dispatch({ type: ActionTypes.RESET });
   }, []);
 
   /**
    * Toggle theme between dark and light
    */
   const toggleTheme = useCallback(() => {
-    setState((prev) => {
-      const newTheme = prev.theme === 'dark' ? 'light' : 'dark';
-      // Update document body attribute
-      document.body.setAttribute('data-theme', newTheme);
-      return { ...prev, theme: newTheme };
-    });
+    dispatch({ type: ActionTypes.TOGGLE_THEME });
   }, []);
 
   /**
    * Toggle language between English and Czech
    */
   const toggleLanguage = useCallback(() => {
-    setState((prev) => ({
-      ...prev,
-      language: prev.language === 'en' ? 'cs' : 'en',
-    }));
+    dispatch({ type: ActionTypes.TOGGLE_LANGUAGE });
   }, []);
 
   /**
    * Set language explicitly
    */
   const setLanguage = useCallback((lang) => {
-    setState((prev) => ({
-      ...prev,
-      language: lang,
-    }));
+    dispatch({
+      type: ActionTypes.SET_LANGUAGE,
+      payload: { language: lang },
+    });
   }, []);
 
   /**
    * Set animation speed
    */
   const setAnimationSpeed = useCallback((speed) => {
-    setState((prev) => ({
-      ...prev,
-      animationSpeed: Math.max(
-        config.animation.minSpeed,
-        Math.min(config.animation.maxSpeed, speed)
-      ),
-    }));
+    dispatch({
+      type: ActionTypes.SET_ANIMATION_SPEED,
+      payload: { speed },
+    });
   }, []);
 
   /**
    * Set playing state
    */
   const setIsPlaying = useCallback((isPlaying) => {
-    setState((prev) => ({ ...prev, isPlaying }));
+    dispatch({
+      type: ActionTypes.SET_IS_PLAYING,
+      payload: { isPlaying },
+    });
   }, []);
 
   /**
    * Set paused state
    */
   const setIsPaused = useCallback((isPaused) => {
-    setState((prev) => ({ ...prev, isPaused }));
+    dispatch({
+      type: ActionTypes.SET_IS_PAUSED,
+      payload: { isPaused },
+    });
   }, []);
 
   /** Enable/disable automatic multi-step generation */
   const setAutoGenerate = useCallback((auto) => {
-    setState((prev) => ({ ...prev, autoGenerate: !!auto }));
+    dispatch({
+      type: ActionTypes.SET_AUTO_GENERATE,
+      payload: { autoGenerate: auto },
+    });
   }, []);
 
   /**
@@ -222,36 +364,7 @@ export function AppProvider({ children }) {
    * either advances to the next step (auto-play) or stops at the end.
    */
   const onStepAnimationComplete = useCallback(() => {
-    setState((prev) => {
-      const ex = prev.currentExample;
-      if (!ex) return prev;
-      const steps = ex.generation_steps || [];
-      const idx = prev.currentStep - 1; // current rendered step index
-      if (idx < 0 || idx >= steps.length) return { ...prev, isPlaying: false };
-
-      const selectedTok = steps[idx]?.selected_token?.token ?? '';
-      const newAnswer = prev.generatedAnswer + (selectedTok || '');
-
-      // If we're at the last step, just finalize.
-      const isLast = prev.currentStep >= steps.length;
-      if (isLast) {
-        return {
-          ...prev,
-          generatedAnswer: newAnswer,
-          isPlaying: false,
-        };
-      }
-
-      // Always advance to the next generation step after completing sub-step 9
-      // so the newly selected token appears to the right and the pass repeats.
-      return {
-        ...prev,
-        generatedAnswer: newAnswer,
-        currentStep: prev.currentStep + 1,
-        currentAnimationSubStep: 0, // Reset sub-step for the new step
-        isPlaying: true,
-      };
-    });
+    dispatch({ type: ActionTypes.STEP_ANIMATION_COMPLETE });
   }, []);
 
   // Load examples on mount
