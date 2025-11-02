@@ -42,6 +42,7 @@ const initialState = {
   currentStep: 0,
   currentAnimationSubStep: 0,
   generatedAnswer: '',
+  generatedTokens: [], // Array of { token, index } to track colors
   autoGenerate: false,
 
   // UI settings
@@ -90,6 +91,7 @@ function appReducer(state, action) {
         currentStep: 0,
         currentAnimationSubStep: 0,
         generatedAnswer: '',
+        generatedTokens: [],
         autoGenerate: false,
         isPlaying: false,
         isPaused: false,
@@ -135,6 +137,7 @@ function appReducer(state, action) {
         currentStep: 0,
         currentAnimationSubStep: 0,
         generatedAnswer: '',
+        generatedTokens: [],
         autoGenerate: false,
         isPlaying: false,
         isPaused: false,
@@ -151,11 +154,20 @@ function appReducer(state, action) {
       const selectedTok = steps[idx]?.selected_token?.token ?? '';
       const newAnswer = state.generatedAnswer + (selectedTok || '');
 
+      // Track the generated token with its index (based on input tokens count + generated count)
+      const inputTokensCount = steps[0]?.tokens?.length || 0;
+      const tokenIndex = inputTokensCount + state.generatedTokens.length;
+      const newGeneratedTokens = [
+        ...state.generatedTokens,
+        { token: selectedTok, index: tokenIndex },
+      ];
+
       const isLast = state.currentStep >= steps.length;
       if (isLast) {
         return {
           ...state,
           generatedAnswer: newAnswer,
+          generatedTokens: newGeneratedTokens,
           isPlaying: false,
         };
       }
@@ -163,6 +175,7 @@ function appReducer(state, action) {
       return {
         ...state,
         generatedAnswer: newAnswer,
+        generatedTokens: newGeneratedTokens,
         currentStep: state.currentStep + 1,
         currentAnimationSubStep: 0,
         isPlaying: true,

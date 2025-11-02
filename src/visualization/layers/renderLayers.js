@@ -86,8 +86,9 @@ export function renderTokensLayer(
     }
 
     const estimatedWidth = widths[i];
+    const tokenColor = getTokenColor(actualIndex);
 
-    // Token box
+    // Token box (white background, no border)
     tokenG
       .append('rect')
       .attr('x', -estimatedWidth / 2)
@@ -96,7 +97,8 @@ export function renderTokensLayer(
       .attr('height', 44)
       .attr('rx', 8)
       .attr('class', 'token-box')
-      .style('fill', getTokenColor(actualIndex));
+      .style('fill', 'transparent')
+      .style('stroke', 'none');
 
     // Token text
     tokenG
@@ -109,6 +111,18 @@ export function renderTokensLayer(
       .style('font-weight', '500')
       .style('fill', '#1a1a1a')
       .text(token);
+
+    // Colored heavy underline
+    tokenG
+      .append('line')
+      .attr('x1', -estimatedWidth / 2 + 8)
+      .attr('y1', 18)
+      .attr('x2', estimatedWidth / 2 - 8)
+      .attr('y2', 18)
+      .attr('class', 'token-underline')
+      .style('stroke', tokenColor)
+      .style('stroke-width', 6)
+      .style('stroke-linecap', 'round');
 
     // Arrow from token to ID
     const arrowG = tokenG

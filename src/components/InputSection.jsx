@@ -1,6 +1,7 @@
 import { useApp } from '../contexts/AppContext';
 import { useI18n } from '../i18n/I18nProvider';
 import { useState } from 'react';
+import { getTokenColor } from '../visualization/core/colors';
 import '../styles/main.css';
 
 /**
@@ -29,6 +30,10 @@ function InputSection() {
 
   // Find current example index
   const currentIndex = state.examples.findIndex((ex) => ex.id === state.currentExampleId);
+
+  // Get tokens from the initial step if visualization has started
+  const shouldShowTokens = state.currentStep > 0 && state.currentExample;
+  const tokens = shouldShowTokens ? state.currentExample.generation_steps[0].tokens : [];
 
   return (
     <section className="input-section-minimal">
@@ -71,7 +76,25 @@ function InputSection() {
                 )}
               </div>
 
-              <div className="prompt-text-chat">{state.currentExample.prompt}</div>
+              <div className="prompt-text-chat">
+                {shouldShowTokens ? (
+                  <span className="tokenized-text">
+                    {tokens.map((token, index) => (
+                      <span
+                        key={index}
+                        className="token-with-underline"
+                        style={{
+                          borderBottom: `4px solid ${getTokenColor(index)}`,
+                        }}
+                      >
+                        {token}
+                      </span>
+                    ))}
+                  </span>
+                ) : (
+                  state.currentExample.prompt
+                )}
+              </div>
               <button
                 onClick={handleGenerate}
                 disabled={isAtEnd || state.isPlaying}
