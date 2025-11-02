@@ -284,9 +284,10 @@ export function renderOuterEmbeddingsLayer(
   layout,
   tokensLayoutRef,
   embeddingExpanded,
-  setEmbeddingExpanded
+  setEmbeddingExpanded,
+  computedEmbeddings
 ) {
-  const embeddings = step.embeddings;
+  const embeddingsOuter = computedEmbeddings?.outer || [];
   const { visibleIndices = [], positions = [] } = tokensLayoutRef.current || {};
   const lastActualIndex = (step.tokens || []).length - 1;
 
@@ -299,7 +300,7 @@ export function renderOuterEmbeddingsLayer(
       columnsMeta.push(null);
       return;
     }
-    const values = embeddings[actualIndex]?.values || [];
+    const values = embeddingsOuter[actualIndex] || [];
     const expanded = !!embeddingExpanded[actualIndex];
     const tokenColor = getTokenColor(actualIndex);
     const isNew = actualIndex === lastActualIndex;
@@ -362,7 +363,8 @@ export function renderTransformerBlockLayer(
   layout,
   tokensLayoutRef,
   outerMeta,
-  currentLayer
+  currentLayer,
+  computedEmbeddings
   // numLayers is passed but not currently used - kept for future enhancements
 ) {
   const { visibleIndices = [], positions = [] } = tokensLayoutRef.current || {};
@@ -387,7 +389,9 @@ export function renderTransformerBlockLayer(
   // First, calculate the full block dimensions so we can render shadows with correct height
   const insideTopY = blockTopY + layout.blockPadding;
 
-  const embeddings = step.embeddings;
+  const embTop = computedEmbeddings?.insideTop || [];
+  const embBottom = computedEmbeddings?.insideBottom || [];
+  const embFfn = computedEmbeddings?.ffn || [];
 
   // Calculate heights for all sections to determine total block height
   let estimatedInsideTopHeight = 0;
@@ -397,7 +401,7 @@ export function renderTransformerBlockLayer(
   // Quick pass to calculate heights
   visibleIndices.forEach((actualIndex) => {
     if (actualIndex < 0) return;
-    const vals = embeddings[actualIndex]?.values || [];
+    const vals = embTop[actualIndex] || [];
     // Approximate height calculation (each cell is ~16px + 3px gap, plus padding)
     const cellCount = vals.length > 4 ? 5 : vals.length; // collapsed view shows max 5 cells
     const approximateHeight = cellCount * 16 + (cellCount - 1) * 3 + 12;
@@ -454,7 +458,7 @@ export function renderTransformerBlockLayer(
       insideTopMeta.push(null);
       return;
     }
-    const vals = embeddings[actualIndex]?.values || [];
+    const vals = embTop[actualIndex] || [];
     const tokenColor = getTokenColor(actualIndex);
     const isNew = actualIndex === step.tokens?.length - 1;
     const meta = drawEmbeddingColumnInternal(
@@ -533,7 +537,7 @@ export function renderTransformerBlockLayer(
       insideBottomMeta.push(null);
       return;
     }
-    const vals = embeddings[actualIndex]?.values || [];
+    const vals = embBottom[actualIndex] || [];
     const tokenColor = getTokenColor(actualIndex);
     const isNew = actualIndex === step.tokens?.length - 1;
     const meta = drawEmbeddingColumnInternal(
@@ -590,7 +594,7 @@ export function renderTransformerBlockLayer(
       ffnMeta.push(null);
       return;
     }
-    const vals = embeddings[actualIndex]?.values || [];
+    const vals = embFfn[actualIndex] || [];
     const tokenColor = getTokenColor(actualIndex);
     const isNew = actualIndex === step.tokens?.length - 1;
     const insideBottom = insideBottomMeta[i];
@@ -638,9 +642,16 @@ export function renderTransformerBlockLayer(
  * Render outside bottom embeddings (now simplified, no FFN arrows since they're inside the block)
  * @returns {Object} bottom info
  */
-export function renderBottomEmbeddingsLayer(group, step, layout, tokensLayoutRef, blockMeta) {
+export function renderBottomEmbeddingsLayer(
+  group,
+  step,
+  layout,
+  tokensLayoutRef,
+  blockMeta,
+  computedEmbeddings
+) {
   const { visibleIndices = [], positions = [] } = tokensLayoutRef.current || {};
-  const embeddings = step.embeddings;
+  const embeddings = computedEmbeddings?.outsideBottom || [];
   const topY = blockMeta.blockBottomY + 40;
 
   let maxHeight = 0;
@@ -648,7 +659,7 @@ export function renderBottomEmbeddingsLayer(group, step, layout, tokensLayoutRef
   visibleIndices.forEach((actualIndex, i) => {
     const x = positions[i];
     if (actualIndex < 0) return;
-    const vals = embeddings[actualIndex]?.values || [];
+    const vals = embeddings[actualIndex] || [];
     const tokenColor = getTokenColor(actualIndex);
     const insideBottom = blockMeta.insideBottomMeta[i];
     const isNew = actualIndex === step.tokens?.length - 1;
@@ -741,7 +752,16 @@ function drawHorizontalVectorRich(group, centerX, topY, values, opts = {}) {
 /**
  * Render output distribution below bottom embeddings
  */
-export function renderOutputLayer(group, step, layout, width, svgRoot, bottomInfo, subStep) {
+export function renderOutputLayer(
+  group,
+  step,
+  layout,
+  width,
+  svgRoot,
+  bottomInfo,
+  subStep,
+  computedEmbeddings
+) {
   const candidates = step.output_distribution?.candidates || [];
 
   const rm = bottomInfo.rightmostMeta;
@@ -792,7 +812,10 @@ export function renderOutputLayer(group, step, layout, width, svgRoot, bottomInf
         // hint for rotation (consumed in timeline)
         .attr('data-rotate', 90);
     }
-    const sampleValues = (step.embeddings?.[rightmostActualIndex]?.values || []).slice(0, 8);
+    const sampleValues = (computedEmbeddings?.outsideBottom?.[rightmostActualIndex] || []).slice(
+      0,
+      8
+    );
     hv1 = drawHorizontalVectorRich(group, horizCenterX, horizY, sampleValues, {
       className: 'extracted-horizontal',
       tokenColor,

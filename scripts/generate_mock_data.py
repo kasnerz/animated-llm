@@ -32,25 +32,39 @@ def get_mock_token_ids(tokens):
 
 
 def generate_mock_embeddings(tokens):
-    """Generate mock embedding values using sine waves (4 dimensions per token)"""
+    """Generate mock embedding values as random floats in [-1, 1] (4 dims), rounded to 1 decimal.
+
+    Each token receives its own vector of independently sampled values to ensure
+    vectors differ across tokens.
+    """
+    def rnd():
+        v = round(random.uniform(-1, 1), 1)
+        return 0.0 if v == 0.0 else v
+
     embeddings = []
-    for i, token in enumerate(tokens):
-        # First 2 + last 2 dimensions (4 total)
-        values = [round(math.sin(i * 0.1 + j * 0.5), 2) for j in range(4)]
+    for token in tokens:
+        values = [rnd() for _ in range(4)]
         embeddings.append({"token": token, "values": values})
     return embeddings
 
 
 def generate_mock_activations():
-    """Generate mock transformer activation values"""
+    """Generate mock transformer activation (hidden state) values.
+
+    Values are random floats in [-1, 1], rounded to 1 decimal to match requirements.
+    """
     # 4 sample values for coloring
+    def rnd():
+        v = round(random.uniform(-1, 1), 1)
+        return 0.0 if v == 0.0 else v
+
     return {
         "num_layers_shown": 1,
         "sample_activations": [
             {
                 "layer": 0,
                 "token_position": random.randint(0, 10),
-                "values": [round(random.uniform(-1, 1), 2) for _ in range(4)],
+                "values": [rnd() for _ in range(4)],
             }
         ],
     }
@@ -317,8 +331,7 @@ def generate_mock_example(
             "input_text": current_text,
             "tokens": current_tokens.copy(),
             "token_ids": current_token_ids.copy(),
-            "embeddings": generate_mock_embeddings(current_tokens),
-            "transformer_processing": generate_mock_activations(),
+            # embeddings & transformer_processing intentionally omitted; generated at runtime in UI
             "output_distribution": generate_mock_distribution(language, step, prompt),
             "selected_token": {},  # Set from distribution
         }
@@ -344,7 +357,7 @@ def generate_mock_example(
         "language": language,
         "model_info": {
             "name": "meta-llama/Llama-3-8B",
-            "num_layers": 32,
+            "num_layers": 4,
             "hidden_size": 4096,
             "num_attention_heads": 32,
             "vocab_size": 128256,

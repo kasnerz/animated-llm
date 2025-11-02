@@ -13,549 +13,228 @@
     {
       "step": 0,
       "input_text": "How do I reset my password?",
-      "tokens": [
-        "How",
-        " do",
-        " I",
-        " reset",
-        " my",
-        " password",
-        "?"
-      ],
-      "token_ids": [
-        23221,
-        80122,
-        64268,
-        26234,
-        8179,
-        62248,
-        44615
-      ],
-      "embeddings": [
-        {
-          "token": "How",
-          "values": [
-            0.0,
-            0.48,
-            0.84,
-            1.0
-          ]
-        },
-        {
-          "token": " do",
-          "values": [
-            0.1,
-            0.56,
-            0.89,
-            1.0
-          ]
-        },
-        {
-          "token": " I",
-          "values": [
-            0.2,
-            0.64,
-            0.93,
-            0.99
-          ]
-        },
-        {
-          "token": " reset",
-          "values": [
-            0.3,
-            0.72,
-            0.96,
-            0.97
-          ]
-        },
-        {
-          "token": " my",
-          "values": [
-            0.39,
-            0.78,
-            0.99,
-            0.95
-          ]
-        },
-        {
-          "token": " password",
-          "values": [
-            0.48,
-            0.84,
-            1.0,
-            0.91
-          ]
-        },
-        {
-          "token": "?",
-          "values": [
-            0.56,
-            0.89,
-            1.0,
-            0.86
-          ]
-        }
-      ],
-      "transformer_processing": {
-        "num_layers_shown": 1,
-        "sample_activations": [
-          {
-            "layer": 0,
-            "token_position": 10,
-            "values": [
-              -0.35,
-              0.55,
-              0.1,
-              -0.31
-            ]
-          }
-        ]
-      },
+      "tokens": ["How", " do", " I", " reset", " my", " password", "?"],
+      "token_ids": [51454, 63782, 75451, 34139, 4024, 32945, 74354],
       "output_distribution": {
         "top_k": 10,
         "candidates": [
           {
             "token": " To",
-            "token_id": 39593,
-            "logprob": -0.2793,
-            "prob": 0.7563
+            "token_id": 119572,
+            "logprob": -0.2833,
+            "prob": 0.7533
           },
           {
             "token": " You",
-            "token_id": 75710,
-            "logprob": -2.0043,
-            "prob": 0.1348
+            "token_id": 106462,
+            "logprob": -1.8596,
+            "prob": 0.1557
           },
           {
             "token": " First",
-            "token_id": 23841,
-            "logprob": -3.3537,
-            "prob": 0.035
+            "token_id": 64636,
+            "logprob": -2.9126,
+            "prob": 0.0543
           },
           {
             "token": " Click",
-            "token_id": 55775,
-            "logprob": -3.3613,
-            "prob": 0.0347
+            "token_id": 95286,
+            "logprob": -4.5074,
+            "prob": 0.011
           },
           {
             "token": " Go",
-            "token_id": 69394,
-            "logprob": -3.89,
-            "prob": 0.0204
+            "token_id": 91035,
+            "logprob": -4.7512,
+            "prob": 0.0086
           },
           {
             "token": " Navigate",
-            "token_id": 72265,
-            "logprob": -4.5881,
-            "prob": 0.0102
+            "token_id": 118975,
+            "logprob": -4.8945,
+            "prob": 0.0075
           },
           {
             "token": " Visit",
-            "token_id": 64098,
-            "logprob": -5.2875,
-            "prob": 0.0051
+            "token_id": 94452,
+            "logprob": -5.0894,
+            "prob": 0.0062
           },
           {
             "token": " Open",
-            "token_id": 107516,
-            "logprob": -6.3445,
-            "prob": 0.0018
-          },
-          {
-            "token": " Check",
-            "token_id": 64490,
-            "logprob": -7.1702,
-            "prob": 0.0008
+            "token_id": 86014,
+            "logprob": -6.5361,
+            "prob": 0.0015
           },
           {
             "token": " Try",
-            "token_id": 104306,
-            "logprob": -7.3971,
+            "token_id": 118423,
+            "logprob": -6.9049,
+            "prob": 0.001
+          },
+          {
+            "token": " Check",
+            "token_id": 117349,
+            "logprob": -7.4745,
             "prob": 0.0006
           }
         ]
       },
       "selected_token": {
         "token": " To",
-        "token_id": 39593,
+        "token_id": 119572,
         "selection_method": "greedy"
       }
     },
     {
       "step": 1,
       "input_text": "How do I reset my password? To",
-      "tokens": [
-        "How",
-        " do",
-        " I",
-        " reset",
-        " my",
-        " password",
-        "?",
-        " To"
-      ],
-      "token_ids": [
-        23221,
-        80122,
-        64268,
-        26234,
-        8179,
-        62248,
-        44615,
-        39593
-      ],
-      "embeddings": [
-        {
-          "token": "How",
-          "values": [
-            0.0,
-            0.48,
-            0.84,
-            1.0
-          ]
-        },
-        {
-          "token": " do",
-          "values": [
-            0.1,
-            0.56,
-            0.89,
-            1.0
-          ]
-        },
-        {
-          "token": " I",
-          "values": [
-            0.2,
-            0.64,
-            0.93,
-            0.99
-          ]
-        },
-        {
-          "token": " reset",
-          "values": [
-            0.3,
-            0.72,
-            0.96,
-            0.97
-          ]
-        },
-        {
-          "token": " my",
-          "values": [
-            0.39,
-            0.78,
-            0.99,
-            0.95
-          ]
-        },
-        {
-          "token": " password",
-          "values": [
-            0.48,
-            0.84,
-            1.0,
-            0.91
-          ]
-        },
-        {
-          "token": "?",
-          "values": [
-            0.56,
-            0.89,
-            1.0,
-            0.86
-          ]
-        },
-        {
-          "token": " To",
-          "values": [
-            0.64,
-            0.93,
-            0.99,
-            0.81
-          ]
-        }
-      ],
-      "transformer_processing": {
-        "num_layers_shown": 1,
-        "sample_activations": [
-          {
-            "layer": 0,
-            "token_position": 8,
-            "values": [
-              -0.27,
-              0.71,
-              0.88,
-              0.47
-            ]
-          }
-        ]
-      },
+      "tokens": ["How", " do", " I", " reset", " my", " password", "?", " To"],
+      "token_ids": [51454, 63782, 75451, 34139, 4024, 32945, 74354, 119572],
       "output_distribution": {
         "top_k": 10,
         "candidates": [
           {
             "token": " reset",
-            "token_id": 63720,
-            "logprob": -0.3386,
-            "prob": 0.7128
+            "token_id": 61057,
+            "logprob": -0.2664,
+            "prob": 0.7661
           },
           {
             "token": " change",
-            "token_id": 5616,
-            "logprob": -1.8464,
-            "prob": 0.1578
+            "token_id": 38402,
+            "logprob": -1.8555,
+            "prob": 0.1564
           },
           {
             "token": " recover",
-            "token_id": 126339,
-            "logprob": -3.0331,
-            "prob": 0.0482
+            "token_id": 121720,
+            "logprob": -2.9574,
+            "prob": 0.052
           },
           {
             "token": " update",
-            "token_id": 88390,
-            "logprob": -3.5549,
-            "prob": 0.0286
+            "token_id": 27199,
+            "logprob": -4.2161,
+            "prob": 0.0148
           },
           {
             "token": " modify",
-            "token_id": 75711,
-            "logprob": -3.7602,
-            "prob": 0.0233
+            "token_id": 124942,
+            "logprob": -5.4767,
+            "prob": 0.0042
           },
           {
             "token": " set",
-            "token_id": 87192,
-            "logprob": -4.2187,
-            "prob": 0.0147
+            "token_id": 51040,
+            "logprob": -5.9708,
+            "prob": 0.0026
           },
           {
             "token": " create",
-            "token_id": 58766,
-            "logprob": -4.7731,
-            "prob": 0.0085
+            "token_id": 116694,
+            "logprob": -6.3679,
+            "prob": 0.0017
           },
           {
             "token": " enter",
-            "token_id": 122304,
-            "logprob": -6.1309,
-            "prob": 0.0022
+            "token_id": 22954,
+            "logprob": -6.4374,
+            "prob": 0.0016
           },
           {
             "token": " type",
-            "token_id": 119945,
-            "logprob": -6.669,
-            "prob": 0.0013
+            "token_id": 67767,
+            "logprob": -8.0773,
+            "prob": 0.0003
           },
           {
             "token": " use",
-            "token_id": 121490,
-            "logprob": -6.8302,
-            "prob": 0.0011
+            "token_id": 91583,
+            "logprob": -8.6825,
+            "prob": 0.0002
           }
         ]
       },
       "selected_token": {
         "token": " reset",
-        "token_id": 63720,
+        "token_id": 61057,
         "selection_method": "greedy"
       }
     },
     {
       "step": 2,
       "input_text": "How do I reset my password? To reset",
-      "tokens": [
-        "How",
-        " do",
-        " I",
-        " reset",
-        " my",
-        " password",
-        "?",
-        " To",
-        " reset"
-      ],
-      "token_ids": [
-        23221,
-        80122,
-        64268,
-        26234,
-        8179,
-        62248,
-        44615,
-        39593,
-        63720
-      ],
-      "embeddings": [
-        {
-          "token": "How",
-          "values": [
-            0.0,
-            0.48,
-            0.84,
-            1.0
-          ]
-        },
-        {
-          "token": " do",
-          "values": [
-            0.1,
-            0.56,
-            0.89,
-            1.0
-          ]
-        },
-        {
-          "token": " I",
-          "values": [
-            0.2,
-            0.64,
-            0.93,
-            0.99
-          ]
-        },
-        {
-          "token": " reset",
-          "values": [
-            0.3,
-            0.72,
-            0.96,
-            0.97
-          ]
-        },
-        {
-          "token": " my",
-          "values": [
-            0.39,
-            0.78,
-            0.99,
-            0.95
-          ]
-        },
-        {
-          "token": " password",
-          "values": [
-            0.48,
-            0.84,
-            1.0,
-            0.91
-          ]
-        },
-        {
-          "token": "?",
-          "values": [
-            0.56,
-            0.89,
-            1.0,
-            0.86
-          ]
-        },
-        {
-          "token": " To",
-          "values": [
-            0.64,
-            0.93,
-            0.99,
-            0.81
-          ]
-        },
-        {
-          "token": " reset",
-          "values": [
-            0.72,
-            0.96,
-            0.97,
-            0.75
-          ]
-        }
-      ],
-      "transformer_processing": {
-        "num_layers_shown": 1,
-        "sample_activations": [
-          {
-            "layer": 0,
-            "token_position": 1,
-            "values": [
-              -0.62,
-              -0.01,
-              -0.56,
-              -0.57
-            ]
-          }
-        ]
-      },
+      "tokens": ["How", " do", " I", " reset", " my", " password", "?", " To", " reset"],
+      "token_ids": [51454, 63782, 75451, 34139, 4024, 32945, 74354, 119572, 61057],
       "output_distribution": {
         "top_k": 10,
         "candidates": [
           {
             "token": " your",
-            "token_id": 81021,
-            "logprob": -0.2253,
-            "prob": 0.7983
+            "token_id": 105123,
+            "logprob": -0.4466,
+            "prob": 0.6398
           },
           {
             "token": " the",
-            "token_id": 92179,
-            "logprob": -2.7628,
-            "prob": 0.0631
+            "token_id": 59504,
+            "logprob": -1.5728,
+            "prob": 0.2075
           },
           {
             "token": " a",
-            "token_id": 118385,
-            "logprob": -3.1053,
-            "prob": 0.0448
+            "token_id": 34024,
+            "logprob": -2.67,
+            "prob": 0.0692
           },
           {
             "token": " my",
-            "token_id": 19314,
-            "logprob": -3.4966,
-            "prob": 0.0303
-          },
-          {
-            "token": " that",
-            "token_id": 18902,
-            "logprob": -3.6189,
-            "prob": 0.0268
+            "token_id": 20434,
+            "logprob": -3.1735,
+            "prob": 0.0419
           },
           {
             "token": " this",
-            "token_id": 90763,
-            "logprob": -3.9324,
-            "prob": 0.0196
+            "token_id": 37439,
+            "logprob": -4.2046,
+            "prob": 0.0149
           },
           {
-            "token": " new",
-            "token_id": 104002,
-            "logprob": -4.7039,
-            "prob": 0.0091
+            "token": " that",
+            "token_id": 46235,
+            "logprob": -4.229,
+            "prob": 0.0146
           },
           {
             "token": " old",
-            "token_id": 90855,
-            "logprob": -5.299,
-            "prob": 0.005
+            "token_id": 356,
+            "logprob": -5.2845,
+            "prob": 0.0051
+          },
+          {
+            "token": " new",
+            "token_id": 32923,
+            "logprob": -5.398,
+            "prob": 0.0045
           },
           {
             "token": " current",
-            "token_id": 99316,
-            "logprob": -6.4315,
-            "prob": 0.0016
+            "token_id": 48634,
+            "logprob": -6.9617,
+            "prob": 0.0009
           },
           {
             "token": " existing",
-            "token_id": 51470,
-            "logprob": -7.6913,
-            "prob": 0.0005
+            "token_id": 96518,
+            "logprob": -7.2312,
+            "prob": 0.0007
           }
         ]
       },
       "selected_token": {
         "token": " your",
-        "token_id": 81021,
+        "token_id": 105123,
         "selection_method": "greedy"
       }
     }

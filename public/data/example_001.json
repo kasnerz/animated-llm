@@ -4,7 +4,7 @@
   "language": "en",
   "model_info": {
     "name": "meta-llama/Llama-3-8B",
-    "num_layers": 4,
+    "num_layers": 32,
     "hidden_size": 4096,
     "num_attention_heads": 32,
     "vocab_size": 128256
@@ -25,127 +25,75 @@
         " eggs",
         "?"
       ],
-      "token_ids": [29913, 26848, 75122, 55796, 19657, 76988, 91402, 84833, 87210, 66124],
-      "embeddings": [
-        {
-          "token": "Which",
-          "values": [0.0, 0.48, 0.84, 1.0]
-        },
-        {
-          "token": " ingredients",
-          "values": [0.1, 0.56, 0.89, 1.0]
-        },
-        {
-          "token": " do",
-          "values": [0.2, 0.64, 0.93, 0.99]
-        },
-        {
-          "token": " I",
-          "values": [0.3, 0.72, 0.96, 0.97]
-        },
-        {
-          "token": " need",
-          "values": [0.39, 0.78, 0.99, 0.95]
-        },
-        {
-          "token": " to",
-          "values": [0.48, 0.84, 1.0, 0.91]
-        },
-        {
-          "token": " make",
-          "values": [0.56, 0.89, 1.0, 0.86]
-        },
-        {
-          "token": " scrambled",
-          "values": [0.64, 0.93, 0.99, 0.81]
-        },
-        {
-          "token": " eggs",
-          "values": [0.72, 0.96, 0.97, 0.75]
-        },
-        {
-          "token": "?",
-          "values": [0.78, 0.99, 0.95, 0.68]
-        }
-      ],
-      "transformer_processing": {
-        "num_layers_shown": 1,
-        "sample_activations": [
-          {
-            "layer": 0,
-            "token_position": 2,
-            "values": [-0.04, 0.85, -0.56, 0.43]
-          }
-        ]
-      },
+      "token_ids": [62523, 39690, 1867, 10380, 41659, 94498, 13202, 19653, 15545, 92357],
       "output_distribution": {
         "top_k": 10,
         "candidates": [
           {
             "token": " To",
-            "token_id": 103997,
-            "logprob": -0.2708,
-            "prob": 0.7628
+            "token_id": 30842,
+            "logprob": -0.4961,
+            "prob": 0.6089
           },
           {
             "token": " You",
-            "token_id": 125442,
-            "logprob": -2.4025,
-            "prob": 0.0905
+            "token_id": 120245,
+            "logprob": -1.6993,
+            "prob": 0.1828
           },
           {
             "token": " For",
-            "token_id": 39408,
-            "logprob": -2.5142,
-            "prob": 0.0809
+            "token_id": 85399,
+            "logprob": -1.9276,
+            "prob": 0.1455
           },
           {
             "token": " The",
-            "token_id": 82755,
-            "logprob": -3.1572,
-            "prob": 0.0425
+            "token_id": 11152,
+            "logprob": -3.1642,
+            "prob": 0.0422
           },
           {
             "token": " Sc",
-            "token_id": 46408,
-            "logprob": -4.2018,
-            "prob": 0.015
+            "token_id": 39240,
+            "logprob": -4.5579,
+            "prob": 0.0105
           },
           {
             "token": " Here",
-            "token_id": 9198,
-            "logprob": -5.261,
-            "prob": 0.0052
-          },
-          {
-            "token": " All",
-            "token_id": 99919,
-            "logprob": -6.8497,
-            "prob": 0.0011
+            "token_id": 80473,
+            "logprob": -5.4357,
+            "prob": 0.0044
           },
           {
             "token": " Eggs",
-            "token_id": 111988,
-            "logprob": -7.0166,
-            "prob": 0.0009
+            "token_id": 20520,
+            "logprob": -5.9419,
+            "prob": 0.0026
+          },
+          {
+            "token": " All",
+            "token_id": 104325,
+            "logprob": -6.3103,
+            "prob": 0.0018
           },
           {
             "token": "\n",
-            "token_id": 124567,
-            "logprob": -7.432,
-            "prob": 0.0006
+            "token_id": 104103,
+            "logprob": -7.0662,
+            "prob": 0.0009
           },
           {
             "token": " Basic",
-            "token_id": 109959,
-            "logprob": -8.5962,
+            "token_id": 94568,
+            "logprob": -8.4596,
             "prob": 0.0002
           }
         ]
       },
       "selected_token": {
         "token": " To",
-        "token_id": 103997,
+        "token_id": 30842,
         "selection_method": "greedy"
       }
     },
@@ -165,131 +113,75 @@
         "?",
         " To"
       ],
-      "token_ids": [29913, 26848, 75122, 55796, 19657, 76988, 91402, 84833, 87210, 66124, 103997],
-      "embeddings": [
-        {
-          "token": "Which",
-          "values": [0.0, 0.48, 0.84, 1.0]
-        },
-        {
-          "token": " ingredients",
-          "values": [0.1, 0.56, 0.89, 1.0]
-        },
-        {
-          "token": " do",
-          "values": [0.2, 0.64, 0.93, 0.99]
-        },
-        {
-          "token": " I",
-          "values": [0.3, 0.72, 0.96, 0.97]
-        },
-        {
-          "token": " need",
-          "values": [0.39, 0.78, 0.99, 0.95]
-        },
-        {
-          "token": " to",
-          "values": [0.48, 0.84, 1.0, 0.91]
-        },
-        {
-          "token": " make",
-          "values": [0.56, 0.89, 1.0, 0.86]
-        },
-        {
-          "token": " scrambled",
-          "values": [0.64, 0.93, 0.99, 0.81]
-        },
-        {
-          "token": " eggs",
-          "values": [0.72, 0.96, 0.97, 0.75]
-        },
-        {
-          "token": "?",
-          "values": [0.78, 0.99, 0.95, 0.68]
-        },
-        {
-          "token": " To",
-          "values": [0.84, 1.0, 0.91, 0.6]
-        }
-      ],
-      "transformer_processing": {
-        "num_layers_shown": 1,
-        "sample_activations": [
-          {
-            "layer": 0,
-            "token_position": 6,
-            "values": [0.35, -0.41, 0.37, -0.95]
-          }
-        ]
-      },
+      "token_ids": [62523, 39690, 1867, 10380, 41659, 94498, 13202, 19653, 15545, 92357, 30842],
       "output_distribution": {
         "top_k": 10,
         "candidates": [
           {
             "token": " make",
-            "token_id": 67086,
-            "logprob": -0.4236,
-            "prob": 0.6547
+            "token_id": 33187,
+            "logprob": -0.3288,
+            "prob": 0.7198
           },
           {
             "token": " prepare",
-            "token_id": 59977,
-            "logprob": -1.5282,
-            "prob": 0.2169
+            "token_id": 118539,
+            "logprob": -1.9888,
+            "prob": 0.1369
           },
           {
             "token": " cook",
-            "token_id": 8436,
-            "logprob": -2.6297,
-            "prob": 0.0721
-          },
-          {
-            "token": " get",
-            "token_id": 104349,
-            "logprob": -3.7932,
-            "prob": 0.0225
+            "token_id": 68418,
+            "logprob": -2.6318,
+            "prob": 0.0719
           },
           {
             "token": " create",
-            "token_id": 56440,
-            "logprob": -3.8641,
-            "prob": 0.021
+            "token_id": 8587,
+            "logprob": -3.3981,
+            "prob": 0.0334
+          },
+          {
+            "token": " get",
+            "token_id": 62286,
+            "logprob": -4.1256,
+            "prob": 0.0162
           },
           {
             "token": " whip",
-            "token_id": 99372,
-            "logprob": -4.741,
-            "prob": 0.0087
+            "token_id": 79995,
+            "logprob": -4.6615,
+            "prob": 0.0095
           },
           {
             "token": " start",
-            "token_id": 55515,
-            "logprob": -6.526,
-            "prob": 0.0015
+            "token_id": 11993,
+            "logprob": -5.2791,
+            "prob": 0.0051
           },
           {
             "token": " begin",
-            "token_id": 115848,
-            "logprob": -6.5983,
-            "prob": 0.0014
+            "token_id": 45816,
+            "logprob": -5.7393,
+            "prob": 0.0032
           },
           {
             "token": " have",
-            "token_id": 77056,
-            "logprob": -7.3629,
-            "prob": 0.0006
+            "token_id": 99694,
+            "logprob": -5.8855,
+            "prob": 0.0028
           },
           {
             "token": " scramble",
-            "token_id": 41834,
-            "logprob": -7.914,
-            "prob": 0.0004
+            "token_id": 99123,
+            "logprob": -7.178,
+            "prob": 0.0008
           }
         ]
       },
       "selected_token": {
         "token": " make",
-        "token_id": 67086,
+        "token_id": 33187,
         "selection_method": "greedy"
       }
     },
@@ -311,136 +203,76 @@
         " make"
       ],
       "token_ids": [
-        29913, 26848, 75122, 55796, 19657, 76988, 91402, 84833, 87210, 66124, 103997, 67086
+        62523, 39690, 1867, 10380, 41659, 94498, 13202, 19653, 15545, 92357, 30842, 33187
       ],
-      "embeddings": [
-        {
-          "token": "Which",
-          "values": [0.0, 0.48, 0.84, 1.0]
-        },
-        {
-          "token": " ingredients",
-          "values": [0.1, 0.56, 0.89, 1.0]
-        },
-        {
-          "token": " do",
-          "values": [0.2, 0.64, 0.93, 0.99]
-        },
-        {
-          "token": " I",
-          "values": [0.3, 0.72, 0.96, 0.97]
-        },
-        {
-          "token": " need",
-          "values": [0.39, 0.78, 0.99, 0.95]
-        },
-        {
-          "token": " to",
-          "values": [0.48, 0.84, 1.0, 0.91]
-        },
-        {
-          "token": " make",
-          "values": [0.56, 0.89, 1.0, 0.86]
-        },
-        {
-          "token": " scrambled",
-          "values": [0.64, 0.93, 0.99, 0.81]
-        },
-        {
-          "token": " eggs",
-          "values": [0.72, 0.96, 0.97, 0.75]
-        },
-        {
-          "token": "?",
-          "values": [0.78, 0.99, 0.95, 0.68]
-        },
-        {
-          "token": " To",
-          "values": [0.84, 1.0, 0.91, 0.6]
-        },
-        {
-          "token": " make",
-          "values": [0.89, 1.0, 0.86, 0.52]
-        }
-      ],
-      "transformer_processing": {
-        "num_layers_shown": 1,
-        "sample_activations": [
-          {
-            "layer": 0,
-            "token_position": 2,
-            "values": [0.84, 0.58, 0.06, -0.37]
-          }
-        ]
-      },
       "output_distribution": {
         "top_k": 10,
         "candidates": [
           {
             "token": " scrambled",
-            "token_id": 28179,
-            "logprob": -0.3243,
-            "prob": 0.723
-          },
-          {
-            "token": " perfect",
-            "token_id": 4350,
-            "logprob": -1.8889,
-            "prob": 0.1512
+            "token_id": 77378,
+            "logprob": -0.2396,
+            "prob": 0.7869
           },
           {
             "token": " delicious",
-            "token_id": 16232,
-            "logprob": -3.249,
-            "prob": 0.0388
+            "token_id": 110353,
+            "logprob": -2.6035,
+            "prob": 0.074
           },
           {
-            "token": " fluffy",
-            "token_id": 101050,
-            "logprob": -3.2871,
-            "prob": 0.0374
+            "token": " perfect",
+            "token_id": 75612,
+            "logprob": -2.7202,
+            "prob": 0.0659
           },
           {
             "token": " good",
-            "token_id": 117385,
-            "logprob": -3.5547,
-            "prob": 0.0286
+            "token_id": 65419,
+            "logprob": -3.7393,
+            "prob": 0.0238
+          },
+          {
+            "token": " fluffy",
+            "token_id": 101775,
+            "logprob": -3.7498,
+            "prob": 0.0235
           },
           {
             "token": " basic",
-            "token_id": 16401,
-            "logprob": -4.8189,
-            "prob": 0.0081
+            "token_id": 112635,
+            "logprob": -4.034,
+            "prob": 0.0177
           },
           {
             "token": " simple",
-            "token_id": 88345,
-            "logprob": -5.031,
-            "prob": 0.0065
-          },
-          {
-            "token": " easy",
-            "token_id": 77955,
-            "logprob": -5.6097,
-            "prob": 0.0037
+            "token_id": 89442,
+            "logprob": -5.3746,
+            "prob": 0.0046
           },
           {
             "token": " great",
-            "token_id": 53255,
-            "logprob": -6.7593,
+            "token_id": 86542,
+            "logprob": -6.5117,
+            "prob": 0.0015
+          },
+          {
+            "token": " easy",
+            "token_id": 44557,
+            "logprob": -6.7028,
             "prob": 0.0012
           },
           {
             "token": " classic",
-            "token_id": 120438,
-            "logprob": -6.9557,
-            "prob": 0.001
+            "token_id": 56183,
+            "logprob": -7.9623,
+            "prob": 0.0003
           }
         ]
       },
       "selected_token": {
         "token": " scrambled",
-        "token_id": 28179,
+        "token_id": 77378,
         "selection_method": "greedy"
       }
     }

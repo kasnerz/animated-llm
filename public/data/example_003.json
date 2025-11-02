@@ -13,355 +13,152 @@
     {
       "step": 0,
       "input_text": "What is the capital of France?",
-      "tokens": [
-        "What",
-        " is",
-        " the",
-        " capital",
-        " of",
-        " France",
-        "?"
-      ],
-      "token_ids": [
-        2192,
-        54907,
-        26749,
-        71449,
-        26635,
-        43083,
-        33016
-      ],
-      "embeddings": [
-        {
-          "token": "What",
-          "values": [
-            0.0,
-            0.48,
-            0.84,
-            1.0
-          ]
-        },
-        {
-          "token": " is",
-          "values": [
-            0.1,
-            0.56,
-            0.89,
-            1.0
-          ]
-        },
-        {
-          "token": " the",
-          "values": [
-            0.2,
-            0.64,
-            0.93,
-            0.99
-          ]
-        },
-        {
-          "token": " capital",
-          "values": [
-            0.3,
-            0.72,
-            0.96,
-            0.97
-          ]
-        },
-        {
-          "token": " of",
-          "values": [
-            0.39,
-            0.78,
-            0.99,
-            0.95
-          ]
-        },
-        {
-          "token": " France",
-          "values": [
-            0.48,
-            0.84,
-            1.0,
-            0.91
-          ]
-        },
-        {
-          "token": "?",
-          "values": [
-            0.56,
-            0.89,
-            1.0,
-            0.86
-          ]
-        }
-      ],
-      "transformer_processing": {
-        "num_layers_shown": 1,
-        "sample_activations": [
-          {
-            "layer": 0,
-            "token_position": 3,
-            "values": [
-              0.19,
-              1.0,
-              -0.97,
-              0.85
-            ]
-          }
-        ]
-      },
+      "tokens": ["What", " is", " the", " capital", " of", " France", "?"],
+      "token_ids": [40026, 51391, 72503, 99207, 23584, 61794, 20273],
       "output_distribution": {
         "top_k": 10,
         "candidates": [
           {
             "token": " The",
-            "token_id": 13309,
-            "logprob": -0.2629,
-            "prob": 0.7688
+            "token_id": 22744,
+            "logprob": -0.3837,
+            "prob": 0.6814
           },
           {
             "token": " Paris",
-            "token_id": 88561,
-            "logprob": -1.9373,
-            "prob": 0.1441
+            "token_id": 80244,
+            "logprob": -1.7606,
+            "prob": 0.1719
           },
           {
             "token": " France",
-            "token_id": 72318,
-            "logprob": -2.9214,
-            "prob": 0.0539
+            "token_id": 9477,
+            "logprob": -2.5398,
+            "prob": 0.0789
           },
           {
             "token": " It",
-            "token_id": 23447,
-            "logprob": -4.117,
-            "prob": 0.0163
+            "token_id": 44361,
+            "logprob": -3.6811,
+            "prob": 0.0252
           },
           {
             "token": " Its",
-            "token_id": 112678,
-            "logprob": -4.7761,
-            "prob": 0.0084
+            "token_id": 55574,
+            "logprob": -3.7033,
+            "prob": 0.0246
           },
           {
             "token": " That",
-            "token_id": 92962,
-            "logprob": -5.3527,
-            "prob": 0.0047
+            "token_id": 74670,
+            "logprob": -4.6932,
+            "prob": 0.0092
           },
           {
             "token": " This",
-            "token_id": 63914,
-            "logprob": -6.6348,
-            "prob": 0.0013
+            "token_id": 18976,
+            "logprob": -5.4982,
+            "prob": 0.0041
           },
           {
             "token": " Well",
-            "token_id": 72792,
-            "logprob": -6.9573,
-            "prob": 0.001
+            "token_id": 73925,
+            "logprob": -5.7178,
+            "prob": 0.0033
           },
           {
             "token": " Ah",
-            "token_id": 119384,
-            "logprob": -7.2024,
-            "prob": 0.0007
+            "token_id": 110417,
+            "logprob": -7.3979,
+            "prob": 0.0006
           },
           {
             "token": " So",
-            "token_id": 47086,
-            "logprob": -7.7216,
+            "token_id": 40707,
+            "logprob": -7.8406,
             "prob": 0.0004
           }
         ]
       },
       "selected_token": {
         "token": " The",
-        "token_id": 13309,
+        "token_id": 22744,
         "selection_method": "greedy"
       }
     },
     {
       "step": 1,
       "input_text": "What is the capital of France? The",
-      "tokens": [
-        "What",
-        " is",
-        " the",
-        " capital",
-        " of",
-        " France",
-        "?",
-        " The"
-      ],
-      "token_ids": [
-        2192,
-        54907,
-        26749,
-        71449,
-        26635,
-        43083,
-        33016,
-        13309
-      ],
-      "embeddings": [
-        {
-          "token": "What",
-          "values": [
-            0.0,
-            0.48,
-            0.84,
-            1.0
-          ]
-        },
-        {
-          "token": " is",
-          "values": [
-            0.1,
-            0.56,
-            0.89,
-            1.0
-          ]
-        },
-        {
-          "token": " the",
-          "values": [
-            0.2,
-            0.64,
-            0.93,
-            0.99
-          ]
-        },
-        {
-          "token": " capital",
-          "values": [
-            0.3,
-            0.72,
-            0.96,
-            0.97
-          ]
-        },
-        {
-          "token": " of",
-          "values": [
-            0.39,
-            0.78,
-            0.99,
-            0.95
-          ]
-        },
-        {
-          "token": " France",
-          "values": [
-            0.48,
-            0.84,
-            1.0,
-            0.91
-          ]
-        },
-        {
-          "token": "?",
-          "values": [
-            0.56,
-            0.89,
-            1.0,
-            0.86
-          ]
-        },
-        {
-          "token": " The",
-          "values": [
-            0.64,
-            0.93,
-            0.99,
-            0.81
-          ]
-        }
-      ],
-      "transformer_processing": {
-        "num_layers_shown": 1,
-        "sample_activations": [
-          {
-            "layer": 0,
-            "token_position": 8,
-            "values": [
-              0.6,
-              -0.25,
-              0.61,
-              -0.8
-            ]
-          }
-        ]
-      },
+      "tokens": ["What", " is", " the", " capital", " of", " France", "?", " The"],
+      "token_ids": [40026, 51391, 72503, 99207, 23584, 61794, 20273, 22744],
       "output_distribution": {
         "top_k": 10,
         "candidates": [
           {
             "token": " capital",
-            "token_id": 72987,
-            "logprob": -0.2268,
-            "prob": 0.7971
+            "token_id": 111108,
+            "logprob": -0.27,
+            "prob": 0.7634
           },
           {
             "token": " city",
-            "token_id": 72356,
-            "logprob": -2.2762,
-            "prob": 0.1027
+            "token_id": 17527,
+            "logprob": -2.2419,
+            "prob": 0.1063
           },
           {
             "token": " main",
-            "token_id": 43846,
-            "logprob": -2.7155,
-            "prob": 0.0662
+            "token_id": 113135,
+            "logprob": -2.641,
+            "prob": 0.0713
           },
           {
             "token": " largest",
-            "token_id": 43807,
-            "logprob": -4.1009,
-            "prob": 0.0166
+            "token_id": 103106,
+            "logprob": -3.6226,
+            "prob": 0.0267
           },
           {
             "token": " biggest",
-            "token_id": 20994,
-            "logprob": -4.6077,
-            "prob": 0.01
+            "token_id": 118712,
+            "logprob": -4.09,
+            "prob": 0.0167
           },
           {
             "token": " major",
-            "token_id": 109380,
-            "logprob": -5.3132,
-            "prob": 0.0049
+            "token_id": 437,
+            "logprob": -5.1761,
+            "prob": 0.0057
           },
           {
             "token": " central",
-            "token_id": 101014,
-            "logprob": -6.7392,
-            "prob": 0.0012
-          },
-          {
-            "token": " primary",
-            "token_id": 12880,
-            "logprob": -6.9712,
-            "prob": 0.0009
+            "token_id": 62608,
+            "logprob": -5.2638,
+            "prob": 0.0052
           },
           {
             "token": " key",
-            "token_id": 72991,
-            "logprob": -8.7616,
-            "prob": 0.0002
+            "token_id": 73167,
+            "logprob": -6.1265,
+            "prob": 0.0022
+          },
+          {
+            "token": " primary",
+            "token_id": 24250,
+            "logprob": -6.4609,
+            "prob": 0.0016
           },
           {
             "token": " important",
-            "token_id": 108990,
-            "logprob": -8.7568,
-            "prob": 0.0002
+            "token_id": 108118,
+            "logprob": -8.073,
+            "prob": 0.0003
           }
         ]
       },
       "selected_token": {
         "token": " capital",
-        "token_id": 72987,
+        "token_id": 111108,
         "selection_method": "greedy"
       }
     }

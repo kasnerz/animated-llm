@@ -14,6 +14,7 @@ import {
   renderOutputLayer,
   renderStageLabels,
 } from '../visualization/layers/renderLayers';
+import { computeEmbeddingsForStep } from '../visualization/core/embeddings';
 import '../styles/visualization.css';
 
 /**
@@ -65,6 +66,7 @@ function VisualizationCanvas() {
 
     const svg = d3.select(svgRef.current);
     const step = state.currentExample.generation_steps[state.currentStep - 1];
+    const computedEmbeddings = computeEmbeddingsForStep(step, 3);
     const subStep = state.currentAnimationSubStep;
     const currentLayer = state.currentTransformerLayer;
     const numLayers = state.currentExample.model_info?.num_layers || 1;
@@ -119,7 +121,8 @@ function VisualizationCanvas() {
       layout,
       tokensLayoutRef,
       embeddingExpanded,
-      setEmbeddingExpanded
+      setEmbeddingExpanded,
+      computedEmbeddings
     );
 
     // 3. New transformer block pipeline with layer stacking
@@ -130,6 +133,7 @@ function VisualizationCanvas() {
       tokensLayoutRef,
       outerMeta,
       currentLayer,
+      computedEmbeddings,
       numLayers
     );
 
@@ -139,7 +143,8 @@ function VisualizationCanvas() {
       step,
       layout,
       tokensLayoutRef,
-      blockMeta
+      blockMeta,
+      computedEmbeddings
     );
 
     // 5. Output distribution below
@@ -153,7 +158,8 @@ function VisualizationCanvas() {
       visualizationWidth,
       svgRef.current,
       bottomInfo,
-      subStep
+      subStep,
+      computedEmbeddings
     );
 
     // 6. Collect Y positions for stage labels
@@ -186,6 +192,7 @@ function VisualizationCanvas() {
     isExpanded,
     embeddingExpanded,
     onStepAnimationComplete,
+    t,
   ]);
 
   return (

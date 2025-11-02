@@ -13,549 +13,228 @@
     {
       "step": 0,
       "input_text": "What are the benefits of exercise?",
-      "tokens": [
-        "What",
-        " are",
-        " the",
-        " benefits",
-        " of",
-        " exercise",
-        "?"
-      ],
-      "token_ids": [
-        74313,
-        68835,
-        22353,
-        63348,
-        10285,
-        25779,
-        12724
-      ],
-      "embeddings": [
-        {
-          "token": "What",
-          "values": [
-            0.0,
-            0.48,
-            0.84,
-            1.0
-          ]
-        },
-        {
-          "token": " are",
-          "values": [
-            0.1,
-            0.56,
-            0.89,
-            1.0
-          ]
-        },
-        {
-          "token": " the",
-          "values": [
-            0.2,
-            0.64,
-            0.93,
-            0.99
-          ]
-        },
-        {
-          "token": " benefits",
-          "values": [
-            0.3,
-            0.72,
-            0.96,
-            0.97
-          ]
-        },
-        {
-          "token": " of",
-          "values": [
-            0.39,
-            0.78,
-            0.99,
-            0.95
-          ]
-        },
-        {
-          "token": " exercise",
-          "values": [
-            0.48,
-            0.84,
-            1.0,
-            0.91
-          ]
-        },
-        {
-          "token": "?",
-          "values": [
-            0.56,
-            0.89,
-            1.0,
-            0.86
-          ]
-        }
-      ],
-      "transformer_processing": {
-        "num_layers_shown": 1,
-        "sample_activations": [
-          {
-            "layer": 0,
-            "token_position": 4,
-            "values": [
-              -0.52,
-              -0.53,
-              0.47,
-              -0.47
-            ]
-          }
-        ]
-      },
+      "tokens": ["What", " are", " the", " benefits", " of", " exercise", "?"],
+      "token_ids": [38376, 32075, 17722, 78513, 3047, 20322, 9719],
       "output_distribution": {
         "top_k": 10,
         "candidates": [
           {
             "token": " To",
-            "token_id": 29640,
-            "logprob": -0.3753,
-            "prob": 0.6871
+            "token_id": 85893,
+            "logprob": -0.3291,
+            "prob": 0.7196
           },
           {
             "token": " The",
-            "token_id": 8091,
-            "logprob": -2.2109,
-            "prob": 0.1096
+            "token_id": 82354,
+            "logprob": -1.8112,
+            "prob": 0.1635
           },
           {
             "token": " In",
-            "token_id": 120725,
-            "logprob": -2.4462,
-            "prob": 0.0866
+            "token_id": 115680,
+            "logprob": -3.0347,
+            "prob": 0.0481
           },
           {
             "token": " This",
-            "token_id": 77421,
-            "logprob": -2.7278,
-            "prob": 0.0654
+            "token_id": 73635,
+            "logprob": -3.5288,
+            "prob": 0.0293
           },
           {
             "token": " That",
-            "token_id": 54358,
-            "logprob": -3.7347,
-            "prob": 0.0239
+            "token_id": 52993,
+            "logprob": -4.0724,
+            "prob": 0.017
           },
           {
             "token": " Well",
-            "token_id": 12273,
-            "logprob": -4.3749,
-            "prob": 0.0126
-          },
-          {
-            "token": " Yes",
-            "token_id": 125578,
-            "logprob": -5.0844,
-            "prob": 0.0062
+            "token_id": 127776,
+            "logprob": -4.8356,
+            "prob": 0.0079
           },
           {
             "token": " So",
-            "token_id": 26383,
-            "logprob": -5.1194,
-            "prob": 0.006
+            "token_id": 32190,
+            "logprob": -5.2466,
+            "prob": 0.0053
           },
           {
-            "token": " Sure",
-            "token_id": 34072,
-            "logprob": -6.295,
-            "prob": 0.0018
+            "token": " Yes",
+            "token_id": 119820,
+            "logprob": -5.5307,
+            "prob": 0.004
           },
           {
             "token": " Here",
-            "token_id": 38610,
-            "logprob": -8.0987,
-            "prob": 0.0003
+            "token_id": 64419,
+            "logprob": -5.9969,
+            "prob": 0.0025
+          },
+          {
+            "token": " Sure",
+            "token_id": 28957,
+            "logprob": -6.3951,
+            "prob": 0.0017
           }
         ]
       },
       "selected_token": {
         "token": " To",
-        "token_id": 29640,
+        "token_id": 85893,
         "selection_method": "greedy"
       }
     },
     {
       "step": 1,
       "input_text": "What are the benefits of exercise? To",
-      "tokens": [
-        "What",
-        " are",
-        " the",
-        " benefits",
-        " of",
-        " exercise",
-        "?",
-        " To"
-      ],
-      "token_ids": [
-        74313,
-        68835,
-        22353,
-        63348,
-        10285,
-        25779,
-        12724,
-        29640
-      ],
-      "embeddings": [
-        {
-          "token": "What",
-          "values": [
-            0.0,
-            0.48,
-            0.84,
-            1.0
-          ]
-        },
-        {
-          "token": " are",
-          "values": [
-            0.1,
-            0.56,
-            0.89,
-            1.0
-          ]
-        },
-        {
-          "token": " the",
-          "values": [
-            0.2,
-            0.64,
-            0.93,
-            0.99
-          ]
-        },
-        {
-          "token": " benefits",
-          "values": [
-            0.3,
-            0.72,
-            0.96,
-            0.97
-          ]
-        },
-        {
-          "token": " of",
-          "values": [
-            0.39,
-            0.78,
-            0.99,
-            0.95
-          ]
-        },
-        {
-          "token": " exercise",
-          "values": [
-            0.48,
-            0.84,
-            1.0,
-            0.91
-          ]
-        },
-        {
-          "token": "?",
-          "values": [
-            0.56,
-            0.89,
-            1.0,
-            0.86
-          ]
-        },
-        {
-          "token": " To",
-          "values": [
-            0.64,
-            0.93,
-            0.99,
-            0.81
-          ]
-        }
-      ],
-      "transformer_processing": {
-        "num_layers_shown": 1,
-        "sample_activations": [
-          {
-            "layer": 0,
-            "token_position": 2,
-            "values": [
-              0.49,
-              0.96,
-              -0.9,
-              0.02
-            ]
-          }
-        ]
-      },
+      "tokens": ["What", " are", " the", " benefits", " of", " exercise", "?", " To"],
+      "token_ids": [38376, 32075, 17722, 78513, 3047, 20322, 9719, 85893],
       "output_distribution": {
         "top_k": 10,
         "candidates": [
           {
             "token": " is",
-            "token_id": 19463,
-            "logprob": -0.4719,
-            "prob": 0.6238
+            "token_id": 26776,
+            "logprob": -0.2623,
+            "prob": 0.7693
           },
           {
             "token": " are",
-            "token_id": 20406,
-            "logprob": -1.341,
-            "prob": 0.2616
+            "token_id": 113241,
+            "logprob": -2.1733,
+            "prob": 0.1138
           },
           {
             "token": " can",
-            "token_id": 56544,
-            "logprob": -2.5646,
-            "prob": 0.077
+            "token_id": 97146,
+            "logprob": -2.9717,
+            "prob": 0.0512
           },
           {
             "token": " will",
-            "token_id": 21511,
-            "logprob": -4.4086,
-            "prob": 0.0122
+            "token_id": 44450,
+            "logprob": -3.55,
+            "prob": 0.0287
           },
           {
             "token": " would",
-            "token_id": 8576,
-            "logprob": -4.6368,
-            "prob": 0.0097
+            "token_id": 79164,
+            "logprob": -4.1163,
+            "prob": 0.0163
           },
           {
             "token": " should",
-            "token_id": 114582,
-            "logprob": -4.9385,
-            "prob": 0.0072
+            "token_id": 64732,
+            "logprob": -4.7878,
+            "prob": 0.0083
           },
           {
             "token": " could",
-            "token_id": 52387,
-            "logprob": -5.2018,
-            "prob": 0.0055
+            "token_id": 75306,
+            "logprob": -4.9836,
+            "prob": 0.0068
           },
           {
             "token": " may",
-            "token_id": 64775,
-            "logprob": -6.1573,
-            "prob": 0.0021
+            "token_id": 40611,
+            "logprob": -5.581,
+            "prob": 0.0038
           },
           {
             "token": " might",
-            "token_id": 117877,
-            "logprob": -8.107,
-            "prob": 0.0003
+            "token_id": 71314,
+            "logprob": -7.4906,
+            "prob": 0.0006
           },
           {
             "token": " does",
-            "token_id": 19566,
-            "logprob": -7.9899,
-            "prob": 0.0003
+            "token_id": 66271,
+            "logprob": -7.5802,
+            "prob": 0.0005
           }
         ]
       },
       "selected_token": {
         "token": " is",
-        "token_id": 19463,
+        "token_id": 26776,
         "selection_method": "greedy"
       }
     },
     {
       "step": 2,
       "input_text": "What are the benefits of exercise? To is",
-      "tokens": [
-        "What",
-        " are",
-        " the",
-        " benefits",
-        " of",
-        " exercise",
-        "?",
-        " To",
-        " is"
-      ],
-      "token_ids": [
-        74313,
-        68835,
-        22353,
-        63348,
-        10285,
-        25779,
-        12724,
-        29640,
-        19463
-      ],
-      "embeddings": [
-        {
-          "token": "What",
-          "values": [
-            0.0,
-            0.48,
-            0.84,
-            1.0
-          ]
-        },
-        {
-          "token": " are",
-          "values": [
-            0.1,
-            0.56,
-            0.89,
-            1.0
-          ]
-        },
-        {
-          "token": " the",
-          "values": [
-            0.2,
-            0.64,
-            0.93,
-            0.99
-          ]
-        },
-        {
-          "token": " benefits",
-          "values": [
-            0.3,
-            0.72,
-            0.96,
-            0.97
-          ]
-        },
-        {
-          "token": " of",
-          "values": [
-            0.39,
-            0.78,
-            0.99,
-            0.95
-          ]
-        },
-        {
-          "token": " exercise",
-          "values": [
-            0.48,
-            0.84,
-            1.0,
-            0.91
-          ]
-        },
-        {
-          "token": "?",
-          "values": [
-            0.56,
-            0.89,
-            1.0,
-            0.86
-          ]
-        },
-        {
-          "token": " To",
-          "values": [
-            0.64,
-            0.93,
-            0.99,
-            0.81
-          ]
-        },
-        {
-          "token": " is",
-          "values": [
-            0.72,
-            0.96,
-            0.97,
-            0.75
-          ]
-        }
-      ],
-      "transformer_processing": {
-        "num_layers_shown": 1,
-        "sample_activations": [
-          {
-            "layer": 0,
-            "token_position": 4,
-            "values": [
-              0.67,
-              -0.66,
-              0.74,
-              0.5
-            ]
-          }
-        ]
-      },
+      "tokens": ["What", " are", " the", " benefits", " of", " exercise", "?", " To", " is"],
+      "token_ids": [38376, 32075, 17722, 78513, 3047, 20322, 9719, 85893, 26776],
       "output_distribution": {
         "top_k": 10,
         "candidates": [
           {
             "token": " a",
-            "token_id": 94410,
-            "logprob": -0.2257,
-            "prob": 0.798
+            "token_id": 53974,
+            "logprob": -0.4096,
+            "prob": 0.6639
           },
           {
             "token": " an",
-            "token_id": 72847,
-            "logprob": -2.0206,
-            "prob": 0.1326
+            "token_id": 91004,
+            "logprob": -1.976,
+            "prob": 0.1386
           },
           {
             "token": " the",
-            "token_id": 37606,
-            "logprob": -3.1122,
-            "prob": 0.0445
+            "token_id": 21655,
+            "logprob": -2.1732,
+            "prob": 0.1138
           },
           {
             "token": " this",
-            "token_id": 32895,
-            "logprob": -4.6375,
-            "prob": 0.0097
+            "token_id": 97687,
+            "logprob": -2.9317,
+            "prob": 0.0533
           },
           {
             "token": " that",
-            "token_id": 23583,
-            "logprob": -4.6675,
-            "prob": 0.0094
+            "token_id": 107593,
+            "logprob": -4.309,
+            "prob": 0.0134
           },
           {
             "token": " some",
-            "token_id": 42224,
-            "logprob": -5.5441,
-            "prob": 0.0039
+            "token_id": 41196,
+            "logprob": -4.6652,
+            "prob": 0.0094
           },
           {
             "token": " many",
-            "token_id": 53581,
-            "logprob": -7.1503,
-            "prob": 0.0008
+            "token_id": 7397,
+            "logprob": -5.4059,
+            "prob": 0.0045
           },
           {
             "token": " few",
-            "token_id": 103253,
-            "logprob": -7.3757,
-            "prob": 0.0006
+            "token_id": 26076,
+            "logprob": -6.3143,
+            "prob": 0.0018
           },
           {
             "token": " several",
-            "token_id": 77144,
-            "logprob": -8.3385,
-            "prob": 0.0002
+            "token_id": 6229,
+            "logprob": -7.3153,
+            "prob": 0.0007
           },
           {
             "token": " various",
-            "token_id": 80241,
-            "logprob": -9.1786,
-            "prob": 0.0001
+            "token_id": 29179,
+            "logprob": -8.4797,
+            "prob": 0.0002
           }
         ]
       },
       "selected_token": {
         "token": " a",
-        "token_id": 94410,
+        "token_id": 53974,
         "selection_method": "greedy"
       }
     }

@@ -13,915 +13,380 @@
     {
       "step": 0,
       "input_text": "Write a haiku about coding.",
-      "tokens": [
-        "Write",
-        " a",
-        " haiku",
-        " about",
-        " coding",
-        "."
-      ],
-      "token_ids": [
-        93028,
-        20982,
-        58910,
-        92436,
-        55427,
-        97067
-      ],
-      "embeddings": [
-        {
-          "token": "Write",
-          "values": [
-            0.0,
-            0.48,
-            0.84,
-            1.0
-          ]
-        },
-        {
-          "token": " a",
-          "values": [
-            0.1,
-            0.56,
-            0.89,
-            1.0
-          ]
-        },
-        {
-          "token": " haiku",
-          "values": [
-            0.2,
-            0.64,
-            0.93,
-            0.99
-          ]
-        },
-        {
-          "token": " about",
-          "values": [
-            0.3,
-            0.72,
-            0.96,
-            0.97
-          ]
-        },
-        {
-          "token": " coding",
-          "values": [
-            0.39,
-            0.78,
-            0.99,
-            0.95
-          ]
-        },
-        {
-          "token": ".",
-          "values": [
-            0.48,
-            0.84,
-            1.0,
-            0.91
-          ]
-        }
-      ],
-      "transformer_processing": {
-        "num_layers_shown": 1,
-        "sample_activations": [
-          {
-            "layer": 0,
-            "token_position": 1,
-            "values": [
-              -0.99,
-              -0.04,
-              -0.83,
-              -0.42
-            ]
-          }
-        ]
-      },
+      "tokens": ["Write", " a", " haiku", " about", " coding", "."],
+      "token_ids": [31716, 97981, 10636, 77197, 53387, 78240],
       "output_distribution": {
         "top_k": 10,
         "candidates": [
           {
             "token": " To",
-            "token_id": 83796,
-            "logprob": -0.3558,
-            "prob": 0.7006
+            "token_id": 23417,
+            "logprob": -0.3649,
+            "prob": 0.6943
           },
           {
             "token": " The",
-            "token_id": 93541,
-            "logprob": -1.6403,
-            "prob": 0.1939
+            "token_id": 24503,
+            "logprob": -1.5974,
+            "prob": 0.2024
           },
           {
             "token": " In",
-            "token_id": 89237,
-            "logprob": -3.1601,
-            "prob": 0.0424
+            "token_id": 88877,
+            "logprob": -2.6626,
+            "prob": 0.0698
           },
           {
             "token": " This",
-            "token_id": 99351,
-            "logprob": -3.8478,
-            "prob": 0.0213
-          },
-          {
-            "token": " Well",
-            "token_id": 101786,
-            "logprob": -4.0168,
-            "prob": 0.018
+            "token_id": 83612,
+            "logprob": -3.8921,
+            "prob": 0.0204
           },
           {
             "token": " That",
-            "token_id": 29241,
-            "logprob": -4.3338,
-            "prob": 0.0131
+            "token_id": 30443,
+            "logprob": -5.2652,
+            "prob": 0.0052
           },
           {
             "token": " So",
-            "token_id": 22608,
-            "logprob": -5.3903,
-            "prob": 0.0046
-          },
-          {
-            "token": " Yes",
-            "token_id": 35231,
-            "logprob": -5.6174,
+            "token_id": 104887,
+            "logprob": -5.629,
             "prob": 0.0036
           },
           {
+            "token": " Well",
+            "token_id": 33342,
+            "logprob": -5.8686,
+            "prob": 0.0028
+          },
+          {
+            "token": " Yes",
+            "token_id": 52499,
+            "logprob": -7.5487,
+            "prob": 0.0005
+          },
+          {
             "token": " Sure",
-            "token_id": 43990,
-            "logprob": -6.8301,
-            "prob": 0.0011
+            "token_id": 50260,
+            "logprob": -7.6169,
+            "prob": 0.0005
           },
           {
             "token": " Here",
-            "token_id": 553,
-            "logprob": -7.0508,
-            "prob": 0.0009
+            "token_id": 90093,
+            "logprob": -8.7353,
+            "prob": 0.0002
           }
         ]
       },
       "selected_token": {
         "token": " To",
-        "token_id": 83796,
+        "token_id": 23417,
         "selection_method": "greedy"
       }
     },
     {
       "step": 1,
       "input_text": "Write a haiku about coding. To",
-      "tokens": [
-        "Write",
-        " a",
-        " haiku",
-        " about",
-        " coding",
-        ".",
-        " To"
-      ],
-      "token_ids": [
-        93028,
-        20982,
-        58910,
-        92436,
-        55427,
-        97067,
-        83796
-      ],
-      "embeddings": [
-        {
-          "token": "Write",
-          "values": [
-            0.0,
-            0.48,
-            0.84,
-            1.0
-          ]
-        },
-        {
-          "token": " a",
-          "values": [
-            0.1,
-            0.56,
-            0.89,
-            1.0
-          ]
-        },
-        {
-          "token": " haiku",
-          "values": [
-            0.2,
-            0.64,
-            0.93,
-            0.99
-          ]
-        },
-        {
-          "token": " about",
-          "values": [
-            0.3,
-            0.72,
-            0.96,
-            0.97
-          ]
-        },
-        {
-          "token": " coding",
-          "values": [
-            0.39,
-            0.78,
-            0.99,
-            0.95
-          ]
-        },
-        {
-          "token": ".",
-          "values": [
-            0.48,
-            0.84,
-            1.0,
-            0.91
-          ]
-        },
-        {
-          "token": " To",
-          "values": [
-            0.56,
-            0.89,
-            1.0,
-            0.86
-          ]
-        }
-      ],
-      "transformer_processing": {
-        "num_layers_shown": 1,
-        "sample_activations": [
-          {
-            "layer": 0,
-            "token_position": 3,
-            "values": [
-              -0.2,
-              0.87,
-              -0.45,
-              -0.69
-            ]
-          }
-        ]
-      },
+      "tokens": ["Write", " a", " haiku", " about", " coding", ".", " To"],
+      "token_ids": [31716, 97981, 10636, 77197, 53387, 78240, 23417],
       "output_distribution": {
         "top_k": 10,
         "candidates": [
           {
             "token": " is",
-            "token_id": 76096,
-            "logprob": -0.3525,
-            "prob": 0.7029
-          },
-          {
-            "token": " are",
-            "token_id": 53939,
-            "logprob": -2.1268,
-            "prob": 0.1192
-          },
-          {
-            "token": " will",
-            "token_id": 59913,
-            "logprob": -2.619,
-            "prob": 0.0729
+            "token_id": 9421,
+            "logprob": -0.4827,
+            "prob": 0.6171
           },
           {
             "token": " can",
-            "token_id": 89922,
-            "logprob": -2.8523,
-            "prob": 0.0577
+            "token_id": 32799,
+            "logprob": -2.043,
+            "prob": 0.1296
+          },
+          {
+            "token": " are",
+            "token_id": 2186,
+            "logprob": -2.1446,
+            "prob": 0.1171
+          },
+          {
+            "token": " will",
+            "token_id": 112539,
+            "logprob": -2.3978,
+            "prob": 0.0909
           },
           {
             "token": " would",
-            "token_id": 43821,
-            "logprob": -3.7502,
-            "prob": 0.0235
+            "token_id": 62938,
+            "logprob": -3.7735,
+            "prob": 0.023
           },
           {
             "token": " should",
-            "token_id": 65050,
-            "logprob": -4.3696,
-            "prob": 0.0127
-          },
-          {
-            "token": " could",
-            "token_id": 33053,
-            "logprob": -5.0531,
-            "prob": 0.0064
+            "token_id": 64248,
+            "logprob": -4.3139,
+            "prob": 0.0134
           },
           {
             "token": " may",
-            "token_id": 119620,
-            "logprob": -6.4977,
-            "prob": 0.0015
+            "token_id": 55594,
+            "logprob": -5.5803,
+            "prob": 0.0038
           },
           {
-            "token": " might",
-            "token_id": 82173,
-            "logprob": -6.8565,
-            "prob": 0.0011
+            "token": " could",
+            "token_id": 68295,
+            "logprob": -5.6581,
+            "prob": 0.0035
           },
           {
             "token": " does",
-            "token_id": 12364,
-            "logprob": -7.0851,
-            "prob": 0.0008
+            "token_id": 29118,
+            "logprob": -7.3042,
+            "prob": 0.0007
+          },
+          {
+            "token": " might",
+            "token_id": 123223,
+            "logprob": -7.3576,
+            "prob": 0.0006
           }
         ]
       },
       "selected_token": {
         "token": " is",
-        "token_id": 76096,
+        "token_id": 9421,
         "selection_method": "greedy"
       }
     },
     {
       "step": 2,
       "input_text": "Write a haiku about coding. To is",
-      "tokens": [
-        "Write",
-        " a",
-        " haiku",
-        " about",
-        " coding",
-        ".",
-        " To",
-        " is"
-      ],
-      "token_ids": [
-        93028,
-        20982,
-        58910,
-        92436,
-        55427,
-        97067,
-        83796,
-        76096
-      ],
-      "embeddings": [
-        {
-          "token": "Write",
-          "values": [
-            0.0,
-            0.48,
-            0.84,
-            1.0
-          ]
-        },
-        {
-          "token": " a",
-          "values": [
-            0.1,
-            0.56,
-            0.89,
-            1.0
-          ]
-        },
-        {
-          "token": " haiku",
-          "values": [
-            0.2,
-            0.64,
-            0.93,
-            0.99
-          ]
-        },
-        {
-          "token": " about",
-          "values": [
-            0.3,
-            0.72,
-            0.96,
-            0.97
-          ]
-        },
-        {
-          "token": " coding",
-          "values": [
-            0.39,
-            0.78,
-            0.99,
-            0.95
-          ]
-        },
-        {
-          "token": ".",
-          "values": [
-            0.48,
-            0.84,
-            1.0,
-            0.91
-          ]
-        },
-        {
-          "token": " To",
-          "values": [
-            0.56,
-            0.89,
-            1.0,
-            0.86
-          ]
-        },
-        {
-          "token": " is",
-          "values": [
-            0.64,
-            0.93,
-            0.99,
-            0.81
-          ]
-        }
-      ],
-      "transformer_processing": {
-        "num_layers_shown": 1,
-        "sample_activations": [
-          {
-            "layer": 0,
-            "token_position": 0,
-            "values": [
-              0.96,
-              -0.5,
-              0.02,
-              0.58
-            ]
-          }
-        ]
-      },
+      "tokens": ["Write", " a", " haiku", " about", " coding", ".", " To", " is"],
+      "token_ids": [31716, 97981, 10636, 77197, 53387, 78240, 23417, 9421],
       "output_distribution": {
         "top_k": 10,
         "candidates": [
           {
             "token": " a",
-            "token_id": 119917,
-            "logprob": -0.3052,
-            "prob": 0.737
+            "token_id": 84178,
+            "logprob": -0.4596,
+            "prob": 0.6315
           },
           {
             "token": " an",
-            "token_id": 68678,
-            "logprob": -2.0497,
-            "prob": 0.1288
+            "token_id": 57000,
+            "logprob": -1.4334,
+            "prob": 0.2385
           },
           {
             "token": " the",
-            "token_id": 95073,
-            "logprob": -2.3791,
-            "prob": 0.0926
+            "token_id": 74995,
+            "logprob": -2.8022,
+            "prob": 0.0607
           },
           {
             "token": " this",
-            "token_id": 55359,
-            "logprob": -3.6103,
-            "prob": 0.027
+            "token_id": 112318,
+            "logprob": -3.08,
+            "prob": 0.046
           },
           {
             "token": " that",
-            "token_id": 103490,
-            "logprob": -4.6669,
-            "prob": 0.0094
+            "token_id": 22552,
+            "logprob": -4.1191,
+            "prob": 0.0163
           },
           {
             "token": " some",
-            "token_id": 45629,
-            "logprob": -5.7755,
+            "token_id": 22321,
+            "logprob": -5.7759,
             "prob": 0.0031
           },
           {
             "token": " many",
-            "token_id": 9607,
-            "logprob": -7.0286,
-            "prob": 0.0009
+            "token_id": 26370,
+            "logprob": -6.1318,
+            "prob": 0.0022
           },
           {
             "token": " few",
-            "token_id": 91571,
-            "logprob": -7.1263,
-            "prob": 0.0008
+            "token_id": 73082,
+            "logprob": -7.0048,
+            "prob": 0.0009
           },
           {
             "token": " several",
-            "token_id": 23054,
-            "logprob": -8.5052,
-            "prob": 0.0002
+            "token_id": 82168,
+            "logprob": -8.2074,
+            "prob": 0.0003
           },
           {
             "token": " various",
-            "token_id": 81296,
-            "logprob": -9.2698,
-            "prob": 0.0001
+            "token_id": 90273,
+            "logprob": -8.0103,
+            "prob": 0.0003
           }
         ]
       },
       "selected_token": {
         "token": " a",
-        "token_id": 119917,
+        "token_id": 84178,
         "selection_method": "greedy"
       }
     },
     {
       "step": 3,
       "input_text": "Write a haiku about coding. To is a",
-      "tokens": [
-        "Write",
-        " a",
-        " haiku",
-        " about",
-        " coding",
-        ".",
-        " To",
-        " is",
-        " a"
-      ],
-      "token_ids": [
-        93028,
-        20982,
-        58910,
-        92436,
-        55427,
-        97067,
-        83796,
-        76096,
-        119917
-      ],
-      "embeddings": [
-        {
-          "token": "Write",
-          "values": [
-            0.0,
-            0.48,
-            0.84,
-            1.0
-          ]
-        },
-        {
-          "token": " a",
-          "values": [
-            0.1,
-            0.56,
-            0.89,
-            1.0
-          ]
-        },
-        {
-          "token": " haiku",
-          "values": [
-            0.2,
-            0.64,
-            0.93,
-            0.99
-          ]
-        },
-        {
-          "token": " about",
-          "values": [
-            0.3,
-            0.72,
-            0.96,
-            0.97
-          ]
-        },
-        {
-          "token": " coding",
-          "values": [
-            0.39,
-            0.78,
-            0.99,
-            0.95
-          ]
-        },
-        {
-          "token": ".",
-          "values": [
-            0.48,
-            0.84,
-            1.0,
-            0.91
-          ]
-        },
-        {
-          "token": " To",
-          "values": [
-            0.56,
-            0.89,
-            1.0,
-            0.86
-          ]
-        },
-        {
-          "token": " is",
-          "values": [
-            0.64,
-            0.93,
-            0.99,
-            0.81
-          ]
-        },
-        {
-          "token": " a",
-          "values": [
-            0.72,
-            0.96,
-            0.97,
-            0.75
-          ]
-        }
-      ],
-      "transformer_processing": {
-        "num_layers_shown": 1,
-        "sample_activations": [
-          {
-            "layer": 0,
-            "token_position": 3,
-            "values": [
-              -0.82,
-              -0.64,
-              0.1,
-              0.52
-            ]
-          }
-        ]
-      },
+      "tokens": ["Write", " a", " haiku", " about", " coding", ".", " To", " is", " a"],
+      "token_ids": [31716, 97981, 10636, 77197, 53387, 78240, 23417, 9421, 84178],
       "output_distribution": {
         "top_k": 10,
         "candidates": [
           {
             "token": " answer",
-            "token_id": 50150,
-            "logprob": -0.3817,
-            "prob": 0.6827
+            "token_id": 57340,
+            "logprob": -0.2971,
+            "prob": 0.743
           },
           {
             "token": " response",
-            "token_id": 33697,
-            "logprob": -1.6347,
-            "prob": 0.195
+            "token_id": 4659,
+            "logprob": -2.1069,
+            "prob": 0.1216
           },
           {
             "token": " result",
-            "token_id": 22186,
-            "logprob": -2.9794,
-            "prob": 0.0508
+            "token_id": 62854,
+            "logprob": -2.6537,
+            "prob": 0.0704
           },
           {
             "token": " solution",
-            "token_id": 5361,
-            "logprob": -3.036,
-            "prob": 0.048
+            "token_id": 101652,
+            "logprob": -3.1688,
+            "prob": 0.0421
           },
           {
             "token": " explanation",
-            "token_id": 36022,
-            "logprob": -4.5539,
-            "prob": 0.0105
+            "token_id": 69044,
+            "logprob": -4.1711,
+            "prob": 0.0154
           },
           {
             "token": " way",
-            "token_id": 14772,
-            "logprob": -4.7882,
-            "prob": 0.0083
+            "token_id": 73952,
+            "logprob": -5.3174,
+            "prob": 0.0049
           },
           {
             "token": " method",
-            "token_id": 98113,
-            "logprob": -6.2722,
-            "prob": 0.0019
+            "token_id": 65192,
+            "logprob": -6.8456,
+            "prob": 0.0011
           },
           {
             "token": " approach",
-            "token_id": 30255,
-            "logprob": -7.081,
-            "prob": 0.0008
-          },
-          {
-            "token": " thing",
-            "token_id": 83004,
-            "logprob": -7.1531,
-            "prob": 0.0008
+            "token_id": 16713,
+            "logprob": -7.3098,
+            "prob": 0.0007
           },
           {
             "token": " idea",
-            "token_id": 109172,
-            "logprob": -7.3912,
-            "prob": 0.0006
+            "token_id": 10233,
+            "logprob": -7.558,
+            "prob": 0.0005
+          },
+          {
+            "token": " thing",
+            "token_id": 52445,
+            "logprob": -9.0368,
+            "prob": 0.0001
           }
         ]
       },
       "selected_token": {
         "token": " answer",
-        "token_id": 50150,
+        "token_id": 57340,
         "selection_method": "greedy"
       }
     },
     {
       "step": 4,
       "input_text": "Write a haiku about coding. To is a answer",
-      "tokens": [
-        "Write",
-        " a",
-        " haiku",
-        " about",
-        " coding",
-        ".",
-        " To",
-        " is",
-        " a",
-        " answer"
-      ],
-      "token_ids": [
-        93028,
-        20982,
-        58910,
-        92436,
-        55427,
-        97067,
-        83796,
-        76096,
-        119917,
-        50150
-      ],
-      "embeddings": [
-        {
-          "token": "Write",
-          "values": [
-            0.0,
-            0.48,
-            0.84,
-            1.0
-          ]
-        },
-        {
-          "token": " a",
-          "values": [
-            0.1,
-            0.56,
-            0.89,
-            1.0
-          ]
-        },
-        {
-          "token": " haiku",
-          "values": [
-            0.2,
-            0.64,
-            0.93,
-            0.99
-          ]
-        },
-        {
-          "token": " about",
-          "values": [
-            0.3,
-            0.72,
-            0.96,
-            0.97
-          ]
-        },
-        {
-          "token": " coding",
-          "values": [
-            0.39,
-            0.78,
-            0.99,
-            0.95
-          ]
-        },
-        {
-          "token": ".",
-          "values": [
-            0.48,
-            0.84,
-            1.0,
-            0.91
-          ]
-        },
-        {
-          "token": " To",
-          "values": [
-            0.56,
-            0.89,
-            1.0,
-            0.86
-          ]
-        },
-        {
-          "token": " is",
-          "values": [
-            0.64,
-            0.93,
-            0.99,
-            0.81
-          ]
-        },
-        {
-          "token": " a",
-          "values": [
-            0.72,
-            0.96,
-            0.97,
-            0.75
-          ]
-        },
-        {
-          "token": " answer",
-          "values": [
-            0.78,
-            0.99,
-            0.95,
-            0.68
-          ]
-        }
-      ],
-      "transformer_processing": {
-        "num_layers_shown": 1,
-        "sample_activations": [
-          {
-            "layer": 0,
-            "token_position": 10,
-            "values": [
-              0.88,
-              -0.18,
-              0.11,
-              0.6
-            ]
-          }
-        ]
-      },
+      "tokens": ["Write", " a", " haiku", " about", " coding", ".", " To", " is", " a", " answer"],
+      "token_ids": [31716, 97981, 10636, 77197, 53387, 78240, 23417, 9421, 84178, 57340],
       "output_distribution": {
         "top_k": 10,
         "candidates": [
           {
             "token": " answer",
-            "token_id": 63494,
-            "logprob": -0.4078,
-            "prob": 0.6651
+            "token_id": 84545,
+            "logprob": -0.2939,
+            "prob": 0.7453
           },
           {
             "token": " response",
-            "token_id": 1450,
-            "logprob": -1.6087,
-            "prob": 0.2002
+            "token_id": 101426,
+            "logprob": -1.8509,
+            "prob": 0.1571
           },
           {
             "token": " result",
-            "token_id": 77284,
-            "logprob": -2.3926,
-            "prob": 0.0914
+            "token_id": 62085,
+            "logprob": -3.0771,
+            "prob": 0.0461
           },
           {
             "token": " solution",
-            "token_id": 18810,
-            "logprob": -3.8091,
-            "prob": 0.0222
+            "token_id": 10636,
+            "logprob": -3.5217,
+            "prob": 0.0295
           },
           {
             "token": " explanation",
-            "token_id": 125456,
-            "logprob": -4.9186,
-            "prob": 0.0073
+            "token_id": 41379,
+            "logprob": -4.5018,
+            "prob": 0.0111
           },
           {
             "token": " way",
-            "token_id": 43386,
-            "logprob": -5.402,
-            "prob": 0.0045
-          },
-          {
-            "token": " approach",
-            "token_id": 82386,
-            "logprob": -5.5904,
-            "prob": 0.0037
+            "token_id": 73619,
+            "logprob": -4.9564,
+            "prob": 0.007
           },
           {
             "token": " method",
-            "token_id": 31393,
-            "logprob": -5.7287,
-            "prob": 0.0033
+            "token_id": 60642,
+            "logprob": -5.9578,
+            "prob": 0.0026
+          },
+          {
+            "token": " approach",
+            "token_id": 4332,
+            "logprob": -7.3469,
+            "prob": 0.0006
           },
           {
             "token": " idea",
-            "token_id": 126933,
-            "logprob": -6.8598,
-            "prob": 0.001
+            "token_id": 61739,
+            "logprob": -7.9242,
+            "prob": 0.0004
           },
           {
             "token": " thing",
-            "token_id": 693,
-            "logprob": -7.5922,
-            "prob": 0.0005
+            "token_id": 79753,
+            "logprob": -9.2387,
+            "prob": 0.0001
           }
         ]
       },
       "selected_token": {
         "token": " answer",
-        "token_id": 63494,
+        "token_id": 84545,
         "selection_method": "greedy"
       }
     }
