@@ -1,5 +1,6 @@
 import { createContext, useContext, useState, useEffect, useCallback } from 'react';
 import config from '../config';
+import * as examplesApi from '../services/examplesApi';
 
 const AppContext = createContext();
 
@@ -38,18 +39,16 @@ export function AppProvider({ children }) {
   const loadExamples = useCallback(async () => {
     try {
       setState((prev) => ({ ...prev, isLoading: true, error: null }));
-      const response = await fetch('/data/examples.json');
-      if (!response.ok) throw new Error('Failed to load examples');
-      const data = await response.json();
+      const examples = await examplesApi.listExamples();
       setState((prev) => ({
         ...prev,
-        examples: data.examples,
+        examples,
         isLoading: false,
       }));
 
       // Load first example by default
-      if (data.examples.length > 0) {
-        loadExample(data.examples[0].id);
+      if (examples.length > 0) {
+        loadExample(examples[0].id);
       }
     } catch (error) {
       console.error('Error loading examples:', error);
@@ -68,9 +67,7 @@ export function AppProvider({ children }) {
   const loadExample = useCallback(async (exampleId) => {
     try {
       setState((prev) => ({ ...prev, isLoading: true, error: null }));
-      const response = await fetch(`/data/${exampleId}.json`);
-      if (!response.ok) throw new Error(`Failed to load example ${exampleId}`);
-      const data = await response.json();
+      const data = await examplesApi.getExample(exampleId);
       setState((prev) => ({
         ...prev,
         currentExampleId: exampleId,
@@ -178,6 +175,16 @@ export function AppProvider({ children }) {
   }, []);
 
   /**
+   * Set language explicitly
+   */
+  const setLanguage = useCallback((lang) => {
+    setState((prev) => ({
+      ...prev,
+      language: lang,
+    }));
+  }, []);
+
+  /**
    * Set animation speed
    */
   const setAnimationSpeed = useCallback((speed) => {
@@ -268,6 +275,7 @@ export function AppProvider({ children }) {
       reset,
       toggleTheme,
       toggleLanguage,
+      setLanguage,
       setAnimationSpeed,
       setIsPlaying,
       setIsPaused,

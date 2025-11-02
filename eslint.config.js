@@ -25,7 +25,7 @@ export default [
       ...reactHooks.configs.recommended.rules,
       'react-refresh/only-export-components': [
         'warn',
-        { allowConstantExport: true, allowExportNames: ['useApp', 'useTranslation'] },
+        { allowConstantExport: true, allowExportNames: ['useApp', 'useI18n'] },
       ],
       'no-unused-vars': ['error', { varsIgnorePattern: '^[A-Z_]' }],
     },

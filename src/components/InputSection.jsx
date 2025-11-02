@@ -1,5 +1,5 @@
 import { useApp } from '../contexts/AppContext';
-import { useTranslation } from '../utils/i18n';
+import { useI18n } from '../i18n/I18nProvider';
 import { useState } from 'react';
 import '../styles/main.css';
 
@@ -9,7 +9,7 @@ import '../styles/main.css';
  */
 function InputSection() {
   const { state, actions } = useApp();
-  const { t } = useTranslation();
+  const { t } = useI18n();
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const handleExampleChange = (index) => {

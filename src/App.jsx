@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { AppProvider, useApp } from './contexts/AppContext';
-import { useTranslation } from './utils/i18n';
+import { I18nProvider, useI18n } from './i18n/I18nProvider';
 import InputSection from './components/InputSection';
 import GeneratedAnswer from './components/GeneratedAnswer';
 import VisualizationCanvas from './components/VisualizationCanvas';
@@ -11,7 +11,14 @@ import './index.css';
  */
 function AppContent() {
   const { state, actions } = useApp();
-  const { t } = useTranslation();
+  const { t, language, toggleLanguage } = useI18n();
+
+  // Sync language changes from i18n to app context
+  useEffect(() => {
+    if (state.language !== language) {
+      actions.setLanguage(language);
+    }
+  }, [language, state.language, actions]);
 
   // Handle keyboard shortcuts
   useEffect(() => {
@@ -36,13 +43,13 @@ function AppContent() {
       // L: toggle language
       if (e.code === 'KeyL' && e.ctrlKey) {
         e.preventDefault();
-        actions.toggleLanguage();
+        toggleLanguage();
       }
     };
 
     window.addEventListener('keydown', handleKeyPress);
     return () => window.removeEventListener('keydown', handleKeyPress);
-  }, [state.currentStep, actions]);
+  }, [state.currentStep, actions, toggleLanguage]);
 
   // Loading state
   if (state.isLoading && !state.currentExample) {
@@ -78,12 +85,12 @@ function AppContent() {
           {state.theme === 'dark' ? '☀️' : '🌙'}
         </button>
         <button
-          onClick={actions.toggleLanguage}
+          onClick={toggleLanguage}
           className="icon-button-minimal"
           title={t('toggle_language')}
           aria-label={t('toggle_language')}
         >
-          {state.language === 'en' ? '🇬🇧' : '🇨🇿'}
+          {language === 'en' ? '🇬🇧' : '🇨🇿'}
         </button>
       </div>
 
@@ -103,12 +110,14 @@ function AppContent() {
 }
 
 /**
- * Root App component wrapped with provider
+ * Root App component wrapped with providers
  */
 function App() {
   return (
     <AppProvider>
-      <AppContent />
+      <I18nProvider initialLanguage="en">
+        <AppContent />
+      </I18nProvider>
     </AppProvider>
   );
 }
