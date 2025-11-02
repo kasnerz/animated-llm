@@ -1,0 +1,318 @@
+{
+  "id": "example_010",
+  "prompt": "How do I start learning Python?",
+  "language": "en",
+  "model_info": {
+    "name": "meta-llama/Llama-3-8B",
+    "num_layers": 4,
+    "hidden_size": 4096,
+    "num_attention_heads": 32,
+    "vocab_size": 128256
+  },
+  "generation_steps": [
+    {
+      "step": 0,
+      "input_text": "How do I start learning Python?",
+      "tokens": ["How", " do", " I", " start", " learning", " Python", "?"],
+      "token_ids": [32580, 89904, 63793, 44180, 8540, 13247, 20070],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": " To",
+            "token_id": 39899,
+            "logprob": -0.2706,
+            "prob": 0.7629
+          },
+          {
+            "token": " The",
+            "token_id": 117887,
+            "logprob": -1.8196,
+            "prob": 0.1621
+          },
+          {
+            "token": " This",
+            "token_id": 97324,
+            "logprob": -3.4385,
+            "prob": 0.0321
+          },
+          {
+            "token": " In",
+            "token_id": 38037,
+            "logprob": -3.5776,
+            "prob": 0.0279
+          },
+          {
+            "token": " Well",
+            "token_id": 88457,
+            "logprob": -5.1403,
+            "prob": 0.0059
+          },
+          {
+            "token": " That",
+            "token_id": 64556,
+            "logprob": -5.4048,
+            "prob": 0.0045
+          },
+          {
+            "token": " So",
+            "token_id": 42786,
+            "logprob": -6.0696,
+            "prob": 0.0023
+          },
+          {
+            "token": " Yes",
+            "token_id": 368,
+            "logprob": -6.5584,
+            "prob": 0.0014
+          },
+          {
+            "token": " Sure",
+            "token_id": 108930,
+            "logprob": -7.5637,
+            "prob": 0.0005
+          },
+          {
+            "token": " Here",
+            "token_id": 67773,
+            "logprob": -8.913,
+            "prob": 0.0001
+          }
+        ]
+      },
+      "selected_token": {
+        "token": " To",
+        "token_id": 39899,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 1,
+      "input_text": "How do I start learning Python? To",
+      "tokens": ["How", " do", " I", " start", " learning", " Python", "?", " To"],
+      "token_ids": [32580, 89904, 63793, 44180, 8540, 13247, 20070, 39899],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": " is",
+            "token_id": 43270,
+            "logprob": -0.4328,
+            "prob": 0.6487
+          },
+          {
+            "token": " are",
+            "token_id": 101173,
+            "logprob": -1.4626,
+            "prob": 0.2316
+          },
+          {
+            "token": " can",
+            "token_id": 4118,
+            "logprob": -2.6306,
+            "prob": 0.072
+          },
+          {
+            "token": " will",
+            "token_id": 23632,
+            "logprob": -3.8481,
+            "prob": 0.0213
+          },
+          {
+            "token": " would",
+            "token_id": 60743,
+            "logprob": -4.1945,
+            "prob": 0.0151
+          },
+          {
+            "token": " should",
+            "token_id": 89140,
+            "logprob": -4.8581,
+            "prob": 0.0078
+          },
+          {
+            "token": " could",
+            "token_id": 14392,
+            "logprob": -6.2012,
+            "prob": 0.002
+          },
+          {
+            "token": " may",
+            "token_id": 127147,
+            "logprob": -7.3941,
+            "prob": 0.0006
+          },
+          {
+            "token": " does",
+            "token_id": 125620,
+            "logprob": -7.9321,
+            "prob": 0.0004
+          },
+          {
+            "token": " might",
+            "token_id": 13058,
+            "logprob": -8.0997,
+            "prob": 0.0003
+          }
+        ]
+      },
+      "selected_token": {
+        "token": " is",
+        "token_id": 43270,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 2,
+      "input_text": "How do I start learning Python? To is",
+      "tokens": ["How", " do", " I", " start", " learning", " Python", "?", " To", " is"],
+      "token_ids": [32580, 89904, 63793, 44180, 8540, 13247, 20070, 39899, 43270],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": " a",
+            "token_id": 70450,
+            "logprob": -0.3629,
+            "prob": 0.6956
+          },
+          {
+            "token": " an",
+            "token_id": 8056,
+            "logprob": -1.7562,
+            "prob": 0.1727
+          },
+          {
+            "token": " the",
+            "token_id": 114303,
+            "logprob": -2.7484,
+            "prob": 0.064
+          },
+          {
+            "token": " this",
+            "token_id": 110327,
+            "logprob": -3.0891,
+            "prob": 0.0455
+          },
+          {
+            "token": " that",
+            "token_id": 67429,
+            "logprob": -4.2082,
+            "prob": 0.0149
+          },
+          {
+            "token": " some",
+            "token_id": 65797,
+            "logprob": -5.9493,
+            "prob": 0.0026
+          },
+          {
+            "token": " many",
+            "token_id": 113623,
+            "logprob": -6.1398,
+            "prob": 0.0022
+          },
+          {
+            "token": " few",
+            "token_id": 30506,
+            "logprob": -6.9433,
+            "prob": 0.001
+          },
+          {
+            "token": " several",
+            "token_id": 87153,
+            "logprob": -7.0425,
+            "prob": 0.0009
+          },
+          {
+            "token": " various",
+            "token_id": 61951,
+            "logprob": -8.1179,
+            "prob": 0.0003
+          }
+        ]
+      },
+      "selected_token": {
+        "token": " a",
+        "token_id": 70450,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 3,
+      "input_text": "How do I start learning Python? To is a",
+      "tokens": ["How", " do", " I", " start", " learning", " Python", "?", " To", " is", " a"],
+      "token_ids": [32580, 89904, 63793, 44180, 8540, 13247, 20070, 39899, 43270, 70450],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": " answer",
+            "token_id": 126425,
+            "logprob": -0.3267,
+            "prob": 0.7213
+          },
+          {
+            "token": " response",
+            "token_id": 121445,
+            "logprob": -1.7785,
+            "prob": 0.1689
+          },
+          {
+            "token": " result",
+            "token_id": 72189,
+            "logprob": -2.8555,
+            "prob": 0.0575
+          },
+          {
+            "token": " solution",
+            "token_id": 73639,
+            "logprob": -3.8439,
+            "prob": 0.0214
+          },
+          {
+            "token": " way",
+            "token_id": 69749,
+            "logprob": -4.3253,
+            "prob": 0.0132
+          },
+          {
+            "token": " explanation",
+            "token_id": 57503,
+            "logprob": -4.4562,
+            "prob": 0.0116
+          },
+          {
+            "token": " method",
+            "token_id": 67473,
+            "logprob": -5.6389,
+            "prob": 0.0036
+          },
+          {
+            "token": " approach",
+            "token_id": 97014,
+            "logprob": -6.731,
+            "prob": 0.0012
+          },
+          {
+            "token": " idea",
+            "token_id": 10364,
+            "logprob": -7.0951,
+            "prob": 0.0008
+          },
+          {
+            "token": " thing",
+            "token_id": 107550,
+            "logprob": -8.2045,
+            "prob": 0.0003
+          }
+        ]
+      },
+      "selected_token": {
+        "token": " answer",
+        "token_id": 126425,
+        "selection_method": "greedy"
+      }
+    }
+  ]
+}

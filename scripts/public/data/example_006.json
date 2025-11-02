@@ -1,0 +1,242 @@
+{
+  "id": "example_006",
+  "prompt": "What are the benefits of exercise?",
+  "language": "en",
+  "model_info": {
+    "name": "meta-llama/Llama-3-8B",
+    "num_layers": 4,
+    "hidden_size": 4096,
+    "num_attention_heads": 32,
+    "vocab_size": 128256
+  },
+  "generation_steps": [
+    {
+      "step": 0,
+      "input_text": "What are the benefits of exercise?",
+      "tokens": ["What", " are", " the", " benefits", " of", " exercise", "?"],
+      "token_ids": [52735, 69501, 41005, 79382, 38700, 85104, 79807],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": " To",
+            "token_id": 48189,
+            "logprob": -0.2709,
+            "prob": 0.7627
+          },
+          {
+            "token": " The",
+            "token_id": 72615,
+            "logprob": -1.9637,
+            "prob": 0.1403
+          },
+          {
+            "token": " In",
+            "token_id": 49722,
+            "logprob": -2.722,
+            "prob": 0.0657
+          },
+          {
+            "token": " That",
+            "token_id": 14764,
+            "logprob": -4.2514,
+            "prob": 0.0142
+          },
+          {
+            "token": " This",
+            "token_id": 55502,
+            "logprob": -4.6369,
+            "prob": 0.0097
+          },
+          {
+            "token": " Well",
+            "token_id": 54388,
+            "logprob": -5.3301,
+            "prob": 0.0048
+          },
+          {
+            "token": " So",
+            "token_id": 53851,
+            "logprob": -6.8517,
+            "prob": 0.0011
+          },
+          {
+            "token": " Yes",
+            "token_id": 114571,
+            "logprob": -6.9528,
+            "prob": 0.001
+          },
+          {
+            "token": " Sure",
+            "token_id": 58353,
+            "logprob": -8.6282,
+            "prob": 0.0002
+          },
+          {
+            "token": " Here",
+            "token_id": 99532,
+            "logprob": -8.8013,
+            "prob": 0.0002
+          }
+        ]
+      },
+      "selected_token": {
+        "token": " To",
+        "token_id": 48189,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 1,
+      "input_text": "What are the benefits of exercise? To",
+      "tokens": ["What", " are", " the", " benefits", " of", " exercise", "?", " To"],
+      "token_ids": [52735, 69501, 41005, 79382, 38700, 85104, 79807, 48189],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": " is",
+            "token_id": 682,
+            "logprob": -0.3324,
+            "prob": 0.7172
+          },
+          {
+            "token": " can",
+            "token_id": 52665,
+            "logprob": -2.096,
+            "prob": 0.1229
+          },
+          {
+            "token": " are",
+            "token_id": 57793,
+            "logprob": -2.3967,
+            "prob": 0.091
+          },
+          {
+            "token": " will",
+            "token_id": 78083,
+            "logprob": -3.59,
+            "prob": 0.0276
+          },
+          {
+            "token": " would",
+            "token_id": 81111,
+            "logprob": -3.5901,
+            "prob": 0.0276
+          },
+          {
+            "token": " should",
+            "token_id": 74134,
+            "logprob": -4.6971,
+            "prob": 0.0091
+          },
+          {
+            "token": " could",
+            "token_id": 107619,
+            "logprob": -6.4335,
+            "prob": 0.0016
+          },
+          {
+            "token": " may",
+            "token_id": 28524,
+            "logprob": -6.9881,
+            "prob": 0.0009
+          },
+          {
+            "token": " might",
+            "token_id": 76082,
+            "logprob": -7.2984,
+            "prob": 0.0007
+          },
+          {
+            "token": " does",
+            "token_id": 45841,
+            "logprob": -7.4877,
+            "prob": 0.0006
+          }
+        ]
+      },
+      "selected_token": {
+        "token": " is",
+        "token_id": 682,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 2,
+      "input_text": "What are the benefits of exercise? To is",
+      "tokens": ["What", " are", " the", " benefits", " of", " exercise", "?", " To", " is"],
+      "token_ids": [52735, 69501, 41005, 79382, 38700, 85104, 79807, 48189, 682],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": " a",
+            "token_id": 104275,
+            "logprob": -0.3521,
+            "prob": 0.7032
+          },
+          {
+            "token": " an",
+            "token_id": 34121,
+            "logprob": -2.3371,
+            "prob": 0.0966
+          },
+          {
+            "token": " the",
+            "token_id": 39883,
+            "logprob": -2.4912,
+            "prob": 0.0828
+          },
+          {
+            "token": " this",
+            "token_id": 103615,
+            "logprob": -3.2809,
+            "prob": 0.0376
+          },
+          {
+            "token": " some",
+            "token_id": 127906,
+            "logprob": -3.5316,
+            "prob": 0.0293
+          },
+          {
+            "token": " that",
+            "token_id": 3505,
+            "logprob": -3.691,
+            "prob": 0.0249
+          },
+          {
+            "token": " few",
+            "token_id": 109195,
+            "logprob": -4.5011,
+            "prob": 0.0111
+          },
+          {
+            "token": " many",
+            "token_id": 44786,
+            "logprob": -4.699,
+            "prob": 0.0091
+          },
+          {
+            "token": " several",
+            "token_id": 105482,
+            "logprob": -5.6253,
+            "prob": 0.0036
+          },
+          {
+            "token": " various",
+            "token_id": 68803,
+            "logprob": -6.8973,
+            "prob": 0.001
+          }
+        ]
+      },
+      "selected_token": {
+        "token": " a",
+        "token_id": 104275,
+        "selection_method": "greedy"
+      }
+    }
+  ]
+}

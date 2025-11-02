@@ -1,0 +1,242 @@
+{
+  "id": "example_002",
+  "prompt": "How do I reset my password?",
+  "language": "en",
+  "model_info": {
+    "name": "meta-llama/Llama-3-8B",
+    "num_layers": 4,
+    "hidden_size": 4096,
+    "num_attention_heads": 32,
+    "vocab_size": 128256
+  },
+  "generation_steps": [
+    {
+      "step": 0,
+      "input_text": "How do I reset my password?",
+      "tokens": ["How", " do", " I", " reset", " my", " password", "?"],
+      "token_ids": [28640, 79398, 32051, 20016, 51879, 72199, 12146],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": " To",
+            "token_id": 104991,
+            "logprob": -0.3396,
+            "prob": 0.7121
+          },
+          {
+            "token": " You",
+            "token_id": 4156,
+            "logprob": -1.9433,
+            "prob": 0.1432
+          },
+          {
+            "token": " First",
+            "token_id": 89963,
+            "logprob": -2.4291,
+            "prob": 0.0881
+          },
+          {
+            "token": " Click",
+            "token_id": 62859,
+            "logprob": -3.3393,
+            "prob": 0.0355
+          },
+          {
+            "token": " Go",
+            "token_id": 114050,
+            "logprob": -4.2243,
+            "prob": 0.0146
+          },
+          {
+            "token": " Navigate",
+            "token_id": 67379,
+            "logprob": -5.764,
+            "prob": 0.0031
+          },
+          {
+            "token": " Visit",
+            "token_id": 121810,
+            "logprob": -6.1136,
+            "prob": 0.0022
+          },
+          {
+            "token": " Try",
+            "token_id": 127256,
+            "logprob": -7.6181,
+            "prob": 0.0005
+          },
+          {
+            "token": " Open",
+            "token_id": 84477,
+            "logprob": -7.8635,
+            "prob": 0.0004
+          },
+          {
+            "token": " Check",
+            "token_id": 83128,
+            "logprob": -9.1779,
+            "prob": 0.0001
+          }
+        ]
+      },
+      "selected_token": {
+        "token": " To",
+        "token_id": 104991,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 1,
+      "input_text": "How do I reset my password? To",
+      "tokens": ["How", " do", " I", " reset", " my", " password", "?", " To"],
+      "token_ids": [28640, 79398, 32051, 20016, 51879, 72199, 12146, 104991],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": " reset",
+            "token_id": 32646,
+            "logprob": -0.3891,
+            "prob": 0.6776
+          },
+          {
+            "token": " change",
+            "token_id": 47728,
+            "logprob": -1.5473,
+            "prob": 0.2128
+          },
+          {
+            "token": " recover",
+            "token_id": 36863,
+            "logprob": -2.5693,
+            "prob": 0.0766
+          },
+          {
+            "token": " update",
+            "token_id": 94413,
+            "logprob": -4.568,
+            "prob": 0.0104
+          },
+          {
+            "token": " modify",
+            "token_id": 22083,
+            "logprob": -4.5987,
+            "prob": 0.0101
+          },
+          {
+            "token": " set",
+            "token_id": 72262,
+            "logprob": -5.1042,
+            "prob": 0.0061
+          },
+          {
+            "token": " create",
+            "token_id": 11946,
+            "logprob": -5.4175,
+            "prob": 0.0044
+          },
+          {
+            "token": " enter",
+            "token_id": 28846,
+            "logprob": -7.0624,
+            "prob": 0.0009
+          },
+          {
+            "token": " type",
+            "token_id": 106546,
+            "logprob": -7.3591,
+            "prob": 0.0006
+          },
+          {
+            "token": " use",
+            "token_id": 121480,
+            "logprob": -8.2317,
+            "prob": 0.0003
+          }
+        ]
+      },
+      "selected_token": {
+        "token": " reset",
+        "token_id": 32646,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 2,
+      "input_text": "How do I reset my password? To reset",
+      "tokens": ["How", " do", " I", " reset", " my", " password", "?", " To", " reset"],
+      "token_ids": [28640, 79398, 32051, 20016, 51879, 72199, 12146, 104991, 32646],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": " your",
+            "token_id": 1458,
+            "logprob": -0.4983,
+            "prob": 0.6076
+          },
+          {
+            "token": " the",
+            "token_id": 92109,
+            "logprob": -1.6029,
+            "prob": 0.2013
+          },
+          {
+            "token": " a",
+            "token_id": 98979,
+            "logprob": -2.0465,
+            "prob": 0.1292
+          },
+          {
+            "token": " my",
+            "token_id": 115571,
+            "logprob": -3.1755,
+            "prob": 0.0418
+          },
+          {
+            "token": " this",
+            "token_id": 14771,
+            "logprob": -4.5945,
+            "prob": 0.0101
+          },
+          {
+            "token": " that",
+            "token_id": 17972,
+            "logprob": -4.9843,
+            "prob": 0.0068
+          },
+          {
+            "token": " new",
+            "token_id": 76341,
+            "logprob": -6.2636,
+            "prob": 0.0019
+          },
+          {
+            "token": " old",
+            "token_id": 41100,
+            "logprob": -7.0515,
+            "prob": 0.0009
+          },
+          {
+            "token": " current",
+            "token_id": 41439,
+            "logprob": -8.1355,
+            "prob": 0.0003
+          },
+          {
+            "token": " existing",
+            "token_id": 75894,
+            "logprob": -9.1679,
+            "prob": 0.0001
+          }
+        ]
+      },
+      "selected_token": {
+        "token": " your",
+        "token_id": 1458,
+        "selection_method": "greedy"
+      }
+    }
+  ]
+}

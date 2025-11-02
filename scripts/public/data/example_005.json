@@ -1,0 +1,394 @@
+{
+  "id": "example_005",
+  "prompt": "Write a haiku about coding.",
+  "language": "en",
+  "model_info": {
+    "name": "meta-llama/Llama-3-8B",
+    "num_layers": 4,
+    "hidden_size": 4096,
+    "num_attention_heads": 32,
+    "vocab_size": 128256
+  },
+  "generation_steps": [
+    {
+      "step": 0,
+      "input_text": "Write a haiku about coding.",
+      "tokens": ["Write", " a", " haiku", " about", " coding", "."],
+      "token_ids": [81751, 19449, 70577, 81675, 76396, 86748],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": " To",
+            "token_id": 72716,
+            "logprob": -0.4178,
+            "prob": 0.6585
+          },
+          {
+            "token": " The",
+            "token_id": 5522,
+            "logprob": -1.5402,
+            "prob": 0.2143
+          },
+          {
+            "token": " In",
+            "token_id": 100331,
+            "logprob": -3.0239,
+            "prob": 0.0486
+          },
+          {
+            "token": " This",
+            "token_id": 72202,
+            "logprob": -3.6499,
+            "prob": 0.026
+          },
+          {
+            "token": " That",
+            "token_id": 44853,
+            "logprob": -3.9641,
+            "prob": 0.019
+          },
+          {
+            "token": " Well",
+            "token_id": 34352,
+            "logprob": -4.5461,
+            "prob": 0.0106
+          },
+          {
+            "token": " So",
+            "token_id": 92883,
+            "logprob": -4.826,
+            "prob": 0.008
+          },
+          {
+            "token": " Yes",
+            "token_id": 66137,
+            "logprob": -5.1506,
+            "prob": 0.0058
+          },
+          {
+            "token": " Sure",
+            "token_id": 17494,
+            "logprob": -5.647,
+            "prob": 0.0035
+          },
+          {
+            "token": " Here",
+            "token_id": 102719,
+            "logprob": -5.7974,
+            "prob": 0.003
+          }
+        ]
+      },
+      "selected_token": {
+        "token": " To",
+        "token_id": 72716,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 1,
+      "input_text": "Write a haiku about coding. To",
+      "tokens": ["Write", " a", " haiku", " about", " coding", ".", " To"],
+      "token_ids": [81751, 19449, 70577, 81675, 76396, 86748, 72716],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": " is",
+            "token_id": 108283,
+            "logprob": -0.2805,
+            "prob": 0.7554
+          },
+          {
+            "token": " are",
+            "token_id": 15476,
+            "logprob": -2.3075,
+            "prob": 0.0995
+          },
+          {
+            "token": " can",
+            "token_id": 26556,
+            "logprob": -2.6346,
+            "prob": 0.0717
+          },
+          {
+            "token": " will",
+            "token_id": 29908,
+            "logprob": -3.5732,
+            "prob": 0.0281
+          },
+          {
+            "token": " would",
+            "token_id": 45522,
+            "logprob": -3.6919,
+            "prob": 0.0249
+          },
+          {
+            "token": " should",
+            "token_id": 12764,
+            "logprob": -4.5119,
+            "prob": 0.011
+          },
+          {
+            "token": " could",
+            "token_id": 15258,
+            "logprob": -5.2066,
+            "prob": 0.0055
+          },
+          {
+            "token": " may",
+            "token_id": 105915,
+            "logprob": -6.2767,
+            "prob": 0.0019
+          },
+          {
+            "token": " might",
+            "token_id": 98266,
+            "logprob": -6.8402,
+            "prob": 0.0011
+          },
+          {
+            "token": " does",
+            "token_id": 1821,
+            "logprob": -8.0957,
+            "prob": 0.0003
+          }
+        ]
+      },
+      "selected_token": {
+        "token": " is",
+        "token_id": 108283,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 2,
+      "input_text": "Write a haiku about coding. To is",
+      "tokens": ["Write", " a", " haiku", " about", " coding", ".", " To", " is"],
+      "token_ids": [81751, 19449, 70577, 81675, 76396, 86748, 72716, 108283],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": " a",
+            "token_id": 27380,
+            "logprob": -0.5075,
+            "prob": 0.602
+          },
+          {
+            "token": " an",
+            "token_id": 122828,
+            "logprob": -1.519,
+            "prob": 0.2189
+          },
+          {
+            "token": " the",
+            "token_id": 104318,
+            "logprob": -2.6489,
+            "prob": 0.0707
+          },
+          {
+            "token": " this",
+            "token_id": 103238,
+            "logprob": -3.1115,
+            "prob": 0.0445
+          },
+          {
+            "token": " that",
+            "token_id": 108841,
+            "logprob": -3.5407,
+            "prob": 0.029
+          },
+          {
+            "token": " some",
+            "token_id": 39070,
+            "logprob": -4.4752,
+            "prob": 0.0114
+          },
+          {
+            "token": " many",
+            "token_id": 12352,
+            "logprob": -4.8927,
+            "prob": 0.0075
+          },
+          {
+            "token": " few",
+            "token_id": 66666,
+            "logprob": -4.91,
+            "prob": 0.0074
+          },
+          {
+            "token": " several",
+            "token_id": 47981,
+            "logprob": -5.8011,
+            "prob": 0.003
+          },
+          {
+            "token": " various",
+            "token_id": 97221,
+            "logprob": -6.2998,
+            "prob": 0.0018
+          }
+        ]
+      },
+      "selected_token": {
+        "token": " a",
+        "token_id": 27380,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 3,
+      "input_text": "Write a haiku about coding. To is a",
+      "tokens": ["Write", " a", " haiku", " about", " coding", ".", " To", " is", " a"],
+      "token_ids": [81751, 19449, 70577, 81675, 76396, 86748, 72716, 108283, 27380],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": " answer",
+            "token_id": 20796,
+            "logprob": -0.2402,
+            "prob": 0.7865
+          },
+          {
+            "token": " response",
+            "token_id": 42183,
+            "logprob": -2.1839,
+            "prob": 0.1126
+          },
+          {
+            "token": " result",
+            "token_id": 89711,
+            "logprob": -2.7754,
+            "prob": 0.0623
+          },
+          {
+            "token": " solution",
+            "token_id": 60178,
+            "logprob": -3.7366,
+            "prob": 0.0238
+          },
+          {
+            "token": " explanation",
+            "token_id": 17127,
+            "logprob": -4.8013,
+            "prob": 0.0082
+          },
+          {
+            "token": " way",
+            "token_id": 73305,
+            "logprob": -5.5522,
+            "prob": 0.0039
+          },
+          {
+            "token": " method",
+            "token_id": 102536,
+            "logprob": -6.3565,
+            "prob": 0.0017
+          },
+          {
+            "token": " approach",
+            "token_id": 72021,
+            "logprob": -7.6863,
+            "prob": 0.0005
+          },
+          {
+            "token": " idea",
+            "token_id": 56084,
+            "logprob": -8.0595,
+            "prob": 0.0003
+          },
+          {
+            "token": " thing",
+            "token_id": 73867,
+            "logprob": -9.6756,
+            "prob": 0.0001
+          }
+        ]
+      },
+      "selected_token": {
+        "token": " answer",
+        "token_id": 20796,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 4,
+      "input_text": "Write a haiku about coding. To is a answer",
+      "tokens": ["Write", " a", " haiku", " about", " coding", ".", " To", " is", " a", " answer"],
+      "token_ids": [81751, 19449, 70577, 81675, 76396, 86748, 72716, 108283, 27380, 20796],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": " answer",
+            "token_id": 19332,
+            "logprob": -0.3607,
+            "prob": 0.6972
+          },
+          {
+            "token": " response",
+            "token_id": 43605,
+            "logprob": -1.798,
+            "prob": 0.1656
+          },
+          {
+            "token": " result",
+            "token_id": 26649,
+            "logprob": -2.9664,
+            "prob": 0.0515
+          },
+          {
+            "token": " solution",
+            "token_id": 73295,
+            "logprob": -2.986,
+            "prob": 0.0505
+          },
+          {
+            "token": " explanation",
+            "token_id": 10184,
+            "logprob": -3.7968,
+            "prob": 0.0224
+          },
+          {
+            "token": " way",
+            "token_id": 81152,
+            "logprob": -5.2343,
+            "prob": 0.0053
+          },
+          {
+            "token": " method",
+            "token_id": 67623,
+            "logprob": -5.3873,
+            "prob": 0.0046
+          },
+          {
+            "token": " approach",
+            "token_id": 126645,
+            "logprob": -6.3113,
+            "prob": 0.0018
+          },
+          {
+            "token": " idea",
+            "token_id": 101222,
+            "logprob": -7.6147,
+            "prob": 0.0005
+          },
+          {
+            "token": " thing",
+            "token_id": 10112,
+            "logprob": -7.9263,
+            "prob": 0.0004
+          }
+        ]
+      },
+      "selected_token": {
+        "token": " answer",
+        "token_id": 19332,
+        "selection_method": "greedy"
+      }
+    }
+  ]
+}

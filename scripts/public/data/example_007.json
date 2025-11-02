@@ -1,0 +1,330 @@
+{
+  "id": "example_007",
+  "prompt": "How do I bake chocolate chip cookies?",
+  "language": "en",
+  "model_info": {
+    "name": "meta-llama/Llama-3-8B",
+    "num_layers": 4,
+    "hidden_size": 4096,
+    "num_attention_heads": 32,
+    "vocab_size": 128256
+  },
+  "generation_steps": [
+    {
+      "step": 0,
+      "input_text": "How do I bake chocolate chip cookies?",
+      "tokens": ["How", " do", " I", " bake", " chocolate", " chip", " cookies", "?"],
+      "token_ids": [60304, 42379, 89879, 17043, 31054, 97854, 74238, 98329],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": " To",
+            "token_id": 104630,
+            "logprob": -0.2941,
+            "prob": 0.7452
+          },
+          {
+            "token": " The",
+            "token_id": 29706,
+            "logprob": -2.2673,
+            "prob": 0.1036
+          },
+          {
+            "token": " In",
+            "token_id": 124843,
+            "logprob": -3.0271,
+            "prob": 0.0485
+          },
+          {
+            "token": " This",
+            "token_id": 71913,
+            "logprob": -3.4227,
+            "prob": 0.0326
+          },
+          {
+            "token": " That",
+            "token_id": 112934,
+            "logprob": -3.7767,
+            "prob": 0.0229
+          },
+          {
+            "token": " Well",
+            "token_id": 91869,
+            "logprob": -4.0305,
+            "prob": 0.0178
+          },
+          {
+            "token": " So",
+            "token_id": 3568,
+            "logprob": -4.4397,
+            "prob": 0.0118
+          },
+          {
+            "token": " Yes",
+            "token_id": 14908,
+            "logprob": -4.5469,
+            "prob": 0.0106
+          },
+          {
+            "token": " Here",
+            "token_id": 124989,
+            "logprob": -5.9681,
+            "prob": 0.0026
+          },
+          {
+            "token": " Sure",
+            "token_id": 27196,
+            "logprob": -6.1447,
+            "prob": 0.0021
+          }
+        ]
+      },
+      "selected_token": {
+        "token": " To",
+        "token_id": 104630,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 1,
+      "input_text": "How do I bake chocolate chip cookies? To",
+      "tokens": ["How", " do", " I", " bake", " chocolate", " chip", " cookies", "?", " To"],
+      "token_ids": [60304, 42379, 89879, 17043, 31054, 97854, 74238, 98329, 104630],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": " is",
+            "token_id": 22703,
+            "logprob": -0.4498,
+            "prob": 0.6378
+          },
+          {
+            "token": " are",
+            "token_id": 71591,
+            "logprob": -1.4858,
+            "prob": 0.2263
+          },
+          {
+            "token": " can",
+            "token_id": 5411,
+            "logprob": -2.5607,
+            "prob": 0.0773
+          },
+          {
+            "token": " will",
+            "token_id": 92740,
+            "logprob": -3.6238,
+            "prob": 0.0267
+          },
+          {
+            "token": " would",
+            "token_id": 98534,
+            "logprob": -4.3316,
+            "prob": 0.0131
+          },
+          {
+            "token": " should",
+            "token_id": 60228,
+            "logprob": -5.1452,
+            "prob": 0.0058
+          },
+          {
+            "token": " could",
+            "token_id": 23916,
+            "logprob": -5.251,
+            "prob": 0.0052
+          },
+          {
+            "token": " might",
+            "token_id": 25116,
+            "logprob": -5.738,
+            "prob": 0.0032
+          },
+          {
+            "token": " may",
+            "token_id": 115654,
+            "logprob": -5.9312,
+            "prob": 0.0027
+          },
+          {
+            "token": " does",
+            "token_id": 32542,
+            "logprob": -6.8985,
+            "prob": 0.001
+          }
+        ]
+      },
+      "selected_token": {
+        "token": " is",
+        "token_id": 22703,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 2,
+      "input_text": "How do I bake chocolate chip cookies? To is",
+      "tokens": ["How", " do", " I", " bake", " chocolate", " chip", " cookies", "?", " To", " is"],
+      "token_ids": [60304, 42379, 89879, 17043, 31054, 97854, 74238, 98329, 104630, 22703],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": " a",
+            "token_id": 122860,
+            "logprob": -0.2908,
+            "prob": 0.7477
+          },
+          {
+            "token": " an",
+            "token_id": 59634,
+            "logprob": -2.0399,
+            "prob": 0.13
+          },
+          {
+            "token": " the",
+            "token_id": 9380,
+            "logprob": -3.0012,
+            "prob": 0.0497
+          },
+          {
+            "token": " this",
+            "token_id": 72628,
+            "logprob": -3.1334,
+            "prob": 0.0436
+          },
+          {
+            "token": " that",
+            "token_id": 113496,
+            "logprob": -4.3106,
+            "prob": 0.0134
+          },
+          {
+            "token": " some",
+            "token_id": 114149,
+            "logprob": -4.7479,
+            "prob": 0.0087
+          },
+          {
+            "token": " many",
+            "token_id": 58707,
+            "logprob": -6.0084,
+            "prob": 0.0025
+          },
+          {
+            "token": " few",
+            "token_id": 54127,
+            "logprob": -6.2152,
+            "prob": 0.002
+          },
+          {
+            "token": " several",
+            "token_id": 46012,
+            "logprob": -6.4857,
+            "prob": 0.0015
+          },
+          {
+            "token": " various",
+            "token_id": 28854,
+            "logprob": -7.8689,
+            "prob": 0.0004
+          }
+        ]
+      },
+      "selected_token": {
+        "token": " a",
+        "token_id": 122860,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 3,
+      "input_text": "How do I bake chocolate chip cookies? To is a",
+      "tokens": [
+        "How",
+        " do",
+        " I",
+        " bake",
+        " chocolate",
+        " chip",
+        " cookies",
+        "?",
+        " To",
+        " is",
+        " a"
+      ],
+      "token_ids": [60304, 42379, 89879, 17043, 31054, 97854, 74238, 98329, 104630, 22703, 122860],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": " answer",
+            "token_id": 22477,
+            "logprob": -0.5006,
+            "prob": 0.6062
+          },
+          {
+            "token": " response",
+            "token_id": 86590,
+            "logprob": -1.3324,
+            "prob": 0.2639
+          },
+          {
+            "token": " result",
+            "token_id": 118531,
+            "logprob": -2.7867,
+            "prob": 0.0616
+          },
+          {
+            "token": " solution",
+            "token_id": 114644,
+            "logprob": -3.0805,
+            "prob": 0.0459
+          },
+          {
+            "token": " explanation",
+            "token_id": 53833,
+            "logprob": -4.3848,
+            "prob": 0.0125
+          },
+          {
+            "token": " way",
+            "token_id": 89382,
+            "logprob": -5.3253,
+            "prob": 0.0049
+          },
+          {
+            "token": " method",
+            "token_id": 17605,
+            "logprob": -6.1959,
+            "prob": 0.002
+          },
+          {
+            "token": " approach",
+            "token_id": 40078,
+            "logprob": -6.6276,
+            "prob": 0.0013
+          },
+          {
+            "token": " idea",
+            "token_id": 85000,
+            "logprob": -7.2081,
+            "prob": 0.0007
+          },
+          {
+            "token": " thing",
+            "token_id": 35322,
+            "logprob": -7.6917,
+            "prob": 0.0005
+          }
+        ]
+      },
+      "selected_token": {
+        "token": " answer",
+        "token_id": 22477,
+        "selection_method": "greedy"
+      }
+    }
+  ]
+}

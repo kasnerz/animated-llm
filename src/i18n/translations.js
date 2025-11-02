@@ -12,6 +12,7 @@ export const translations = {
     loading: 'Loading...',
     error: 'Error',
     retry: 'Retry',
+    model_answer: 'Model answer',
     // Stage labels
     stage_tokenization: 'Tokenization',
     stage_token_ids: 'Token ids',
@@ -30,6 +31,7 @@ export const translations = {
     loading: 'Načítání...',
     error: 'Chyba',
     retry: 'Zkusit znovu',
+    model_answer: 'Odpověď modelu',
     // Stage labels
     stage_tokenization: 'Tokenizace',
     stage_token_ids: 'Id tokenů',

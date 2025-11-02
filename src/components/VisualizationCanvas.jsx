@@ -86,8 +86,8 @@ function VisualizationCanvas() {
 
     // Get SVG dimensions - reserve space for labels on the right
     const width = parseFloat(svg.attr('width')) || 800;
-    const labelAreaWidth = 200; // Space reserved for labels
-    const visualizationWidth = width - labelAreaWidth; // Actual space for main visualization
+    // We'll anchor labels relative to the rightmost content, not a reserved area
+    const visualizationWidth = width; // Use current width as a baseline for content layout
     // const height = parseFloat(svg.attr('height')) || 900;
 
     // Determine if we need to collapse tokens
@@ -170,7 +170,30 @@ function VisualizationCanvas() {
     layout.extractedY = bottomInfo.afterBottomY + 40;
 
     // 7. Render stage labels on the right
-    renderStageLabels(labelsGroup, layout, width, subStep, t);
+    // Determine the right edge of the content to anchor labels consistently
+    const { visibleIndices = [], positions = [], widths = [] } = tokensLayoutRef.current || {};
+    let rightmostContentX = 0;
+    if (bottomInfo?.rightmostMeta) {
+      rightmostContentX = bottomInfo.rightmostMeta.centerX + bottomInfo.rightmostMeta.width / 2;
+    } else if (positions.length) {
+      // Fallback to rightmost token box edge
+      let maxX = 0;
+      positions.forEach((cx, i) => {
+        if (visibleIndices[i] >= 0) {
+          const w = widths[i] || 0;
+          maxX = Math.max(maxX, cx + w / 2);
+        }
+      });
+      rightmostContentX = maxX;
+    }
+
+    // Render stage labels anchored to the content's right edge
+    renderStageLabels(labelsGroup, layout, rightmostContentX, subStep, t);
+
+    // If labels overflow the current SVG width, expand SVG width to make room and allow scroll
+    const extraRight = 260; // delimiter + label spacing + margin
+    const neededWidth = Math.max(width, rightmostContentX + extraRight);
+    svg.attr('width', neededWidth);
 
     const animDuration = 0.6; // Duration for each transition
     const isInitialStep = state.currentStep === 1;
@@ -200,7 +223,8 @@ function VisualizationCanvas() {
       className={`visualization-section ${isExpanded ? 'expanded' : ''}`}
       ref={containerRef}
       style={{
-        overflowX: isExpanded ? 'auto' : 'hidden',
+        // Allow horizontal scrolling when the SVG exceeds the container
+        overflowX: 'auto',
         transition: 'all 0.3s ease',
       }}
     >

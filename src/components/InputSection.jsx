@@ -2,6 +2,7 @@ import { useApp } from '../contexts/AppContext';
 import { useI18n } from '../i18n/I18nProvider';
 import { useState } from 'react';
 import { getTokenColor } from '../visualization/core/colors';
+import { processTokenForText } from '../utils/tokenProcessing';
 import '../styles/main.css';
 
 /**
@@ -87,7 +88,7 @@ function InputSection() {
                           borderBottom: `4px solid ${getTokenColor(index)}`,
                         }}
                       >
-                        {token}
+                        {processTokenForText(token)}
                       </span>
                     ))}
                   </span>

@@ -6,6 +6,7 @@
 import * as d3 from 'd3';
 import { getTokenColor, getPurpleByProb } from '../core/colors';
 import { drawArrow, verticalThenHorizontalRoundedPath } from '../core/draw';
+import { processTokenForVisualization } from '../../utils/tokenProcessing';
 
 /**
  * Render tokens layer
@@ -49,7 +50,9 @@ export function renderTokensLayer(
   const horizPadding = 16;
   const gap = 24;
   const widths = visibleTokens.map((tok) =>
-    tok === '...' ? 24 : Math.max(minBox, tok.length * 10 + horizPadding)
+    tok === '...'
+      ? 24
+      : Math.max(minBox, processTokenForVisualization(tok).length * 10 + horizPadding)
   );
   const contentWidth = widths.reduce((a, b) => a + b, 0) + gap * (visibleTokens.length - 1);
   const startX = (width - contentWidth) / 2;
@@ -110,7 +113,7 @@ export function renderTokensLayer(
       .style('font-family', '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif')
       .style('font-weight', '500')
       .style('fill', 'var(--viz-token-text)')
-      .text(token);
+      .text(processTokenForVisualization(token));
 
     // Colored heavy underline
     tokenG
@@ -899,7 +902,7 @@ export function renderOutputLayer(
         .style('font-size', '18px')
         .style('font-weight', isSelected ? '700' : '600')
         .style('fill', isSelected ? '#e11d48' : '#333')
-        .text(token);
+        .text(processTokenForVisualization(token));
 
       group
         .append('text')
@@ -923,7 +926,8 @@ export function renderOutputLayer(
  * @param {number} subStep - Current animation sub-step (0-9)
  * @param {Function} t - Translation function
  */
-export function renderStageLabels(group, layout, canvasWidth, subStep, t) {
+// Place stage labels a fixed distance to the right of the content's right edge (anchorX)
+export function renderStageLabels(group, layout, anchorX, subStep, t) {
   const labels = [
     { key: 'stage_tokenization', y: layout.tokenY + 10, subStep: 0 },
     { key: 'stage_token_ids', y: layout.tokenY + 70, subStep: 1 },
@@ -951,8 +955,11 @@ export function renderStageLabels(group, layout, canvasWidth, subStep, t) {
     },
   ];
 
-  const verticalLineX = canvasWidth - 320; // Position of the vertical delimiter line (closer)
-  const labelX = canvasWidth - 270; // Position labels closer to the line
+  // Keep a stable spacing from the rightmost token stack
+  const gapToLine = 80;
+  const gapLineToLabel = 50;
+  const verticalLineX = anchorX + gapToLine; // Delimiter just right of content
+  const labelX = verticalLineX + gapLineToLabel; // Labels to the right of the delimiter
   const highlightWidth = 150;
   const highlightHeight = 26;
 
