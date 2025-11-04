@@ -232,18 +232,19 @@ h2 {
 .visualization-section {
   margin-bottom: 3rem;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
 }
 
 .visualization-canvas {
   width: 100%;
-  max-width: 1600px;
+  min-width: 100%;
   min-height: 800px;
   background-color: transparent;
   border-radius: 12px;
   display: block;
-  margin: 0 auto;
+  margin: 0;
 }
 
 /* Loading Spinner */

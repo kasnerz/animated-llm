@@ -16,7 +16,8 @@
   right: 0;
   z-index: 100;
   background: var(--bg-primary);
-  padding: 0.75rem 2rem 1rem 2rem;
+  /* compact top/bottom padding to reduce vertical footprint */
+  padding: 0.5rem 2rem 0.5rem 2rem;
   box-shadow: 0 2px 12px var(--shadow-color);
   transition: box-shadow 0.3s ease;
 }
@@ -63,7 +64,6 @@
 /* Main content */
 .app-main {
   flex: 1;
-  max-width: 1400px;
   width: 100%;
   margin: 0 auto;
   padding-top: 6rem;
@@ -127,7 +127,8 @@
 
 /* ChatGPT-style prompt container */
 .prompt-container {
-  margin-bottom: 1rem;
+  /* Reduce bottom spacing so input box sits closer to floating panel edge */
+  margin-bottom: 0;
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
@@ -141,12 +142,11 @@
   position: relative;
   background: var(--bg-primary);
   border: 1px solid var(--border-color);
-  border-radius: 20px;
-  padding: 10px 12px;
-  /* even padding; no reserved space for absolutely positioned button */
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  border-radius: 16px;
+  /* Reduce vertical padding to make the box less high */
+  padding: 6px 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
   transition: none;
-  /* remove hover animation */
   display: flex;
   align-items: center;
   gap: 8px;
@@ -365,20 +365,61 @@
 
 /* Visualization Section */
 .visualization-section {
+  --labels-width: 420px;
   background: transparent;
   padding: 0;
   min-height: 800px;
   position: relative;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: flex-start;
-  align-items: center;
+  align-items: flex-start;
   padding-top: 0rem;
+  width: 100%;
+  overflow-x: visible;
+  /* horizontal scroll is on .viz-scroll */
+  overflow-y: visible;
 }
 
 .visualization-section.expanded {
   justify-content: flex-start;
+}
+
+/* Scrollable content area */
+.viz-scroll {
+  width: calc(100% - var(--labels-width));
   overflow-x: auto;
+  overflow-y: visible;
+  display: flex;
+  flex-direction: column-reverse;
+  /* puts scrollbar at top */
+}
+
+.viz-scroll > svg {
+  /* ensure svg is still rendered top-down */
+  transform: scaleY(1);
+}
+
+/* Sticky labels panel on the right */
+.viz-labels {
+  position: sticky;
+  top: 0;
+  right: 0;
+  flex: 0 0 var(--labels-width);
+  width: var(--labels-width);
+  height: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  pointer-events: none;
+  /* pass through events to content */
+}
+
+.visualization-labels-canvas {
+  width: 100%;
+  height: 1100px;
+  /* align with .visualization-canvas height */
+  display: block;
 }
 
 /* Expand tokens button */
@@ -412,35 +453,31 @@
   transform: scale(0.95);
 }
 
-/* Custom scrollbar for expanded view */
-.visualization-section.expanded::-webkit-scrollbar {
-  height: 8px;
+/* Custom scrollbar for viz-scroll */
+.viz-scroll::-webkit-scrollbar {
+  height: 10px;
 }
 
-.visualization-section.expanded::-webkit-scrollbar-track {
+.viz-scroll::-webkit-scrollbar-track {
   background: var(--bg-secondary);
   border-radius: 4px;
 }
 
-.visualization-section.expanded::-webkit-scrollbar-thumb {
+.viz-scroll::-webkit-scrollbar-thumb {
   background: var(--border-color);
   border-radius: 4px;
   transition: background 0.2s ease;
 }
 
-.visualization-section.expanded::-webkit-scrollbar-thumb:hover {
+.viz-scroll::-webkit-scrollbar-thumb:hover {
   background: var(--text-tertiary);
 }
 
 .visualization-canvas {
-  width: 100%;
-  max-width: 1000px;
-  height: 1400px;
+  height: 1100px;
+  /* reduced from 1400px */
   background: transparent;
-}
-
-.visualization-section.expanded .visualization-canvas {
-  max-width: none;
+  display: block;
 }
 
 /* Responsive design */

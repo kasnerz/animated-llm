@@ -48,14 +48,16 @@ export function renderTokensLayer(
   // Compute dynamic widths based on token length
   const minBox = 36;
   const horizPadding = 16;
-  const gap = 24;
+  const gap = 70; // increased spacing so horizontal embedding rows fit comfortably
   const widths = visibleTokens.map((tok) =>
     tok === '...'
       ? 24
       : Math.max(minBox, processTokenForVisualization(tok).length * 10 + horizPadding)
   );
   const contentWidth = widths.reduce((a, b) => a + b, 0) + gap * (visibleTokens.length - 1);
-  const startX = (width - contentWidth) / 2;
+  const minMargin = layout?.margin ?? 0;
+  const leftBias = layout?.leftBias || 0; // shift content a bit to the left when space allows
+  const startX = Math.max(minMargin, (width - contentWidth) / 2 - leftBias);
 
   // Precompute center positions for each visible token
   const positions = [];
@@ -191,22 +193,19 @@ function drawEmbeddingColumnInternal(
   values,
   expanded,
   tokenColor,
-  className,
-  embeddingExpanded,
-  setEmbeddingExpanded,
-  index
+  className
 ) {
-  const cellSize = 16;
-  const cellGap = 3;
-  const padding = 6;
+  // Horizontal mini-vector (3 values) replacing vertical column
+  const cellWidth = 26;
+  const cellHeight = 18;
+  const gap = 6;
+  const paddingX = 6;
+  const paddingY = 6;
 
-  let displayValues = values;
-  if (!expanded && values.length > 4) {
-    displayValues = [...values.slice(0, 2), null, ...values.slice(-2)];
-  }
-  const n = displayValues.length;
-  const width = cellSize + padding * 2;
-  const height = n * cellSize + (n - 1) * cellGap + padding * 2;
+  const displayValues = (values || []).slice(0, 3);
+  const n = displayValues.length || 3;
+  const width = n * cellWidth + (n - 1) * gap + paddingX * 2;
+  const height = cellHeight + paddingY * 2;
   const leftX = centerX - width / 2;
 
   const colG = group.append('g').attr('class', `embedding-col ${className}`);
@@ -214,9 +213,9 @@ function drawEmbeddingColumnInternal(
   let outerFill = '#f2f3f5';
   let outerStroke = '#e0e0e0';
   if (tokenColor) {
-    const lightenedColor = d3.interpolateRgb(tokenColor, '#ffffff')(0.7);
+    const lightenedColor = d3.interpolateRgb(tokenColor, '#ffffff')(0.85);
     outerFill = lightenedColor;
-    outerStroke = d3.interpolateRgb(tokenColor, '#ffffff')(0.5);
+    outerStroke = d3.interpolateRgb(tokenColor, '#ffffff')(0.6);
   }
 
   colG
@@ -225,57 +224,34 @@ function drawEmbeddingColumnInternal(
     .attr('y', topY)
     .attr('width', width)
     .attr('height', height)
-    .attr('rx', 4)
+    .attr('rx', 8)
     .style('fill', outerFill)
     .style('stroke', outerStroke);
 
   displayValues.forEach((v, i) => {
-    const y = topY + padding + i * (cellSize + cellGap);
-    if (v === null) {
-      const ellG = colG.append('g');
-      ellG
-        .append('rect')
-        .attr('x', centerX - cellSize / 2)
-        .attr('y', y)
-        .attr('width', cellSize)
-        .attr('height', cellSize)
-        .attr('rx', 2)
-        .style('fill', '#e9eaed')
-        .style('stroke', '#d0d0d0');
-      ellG
-        .append('text')
-        .attr('x', centerX)
-        .attr('y', y + cellSize / 2 + 3)
-        .attr('text-anchor', 'middle')
-        .style('font-size', '12px')
-        .style('fill', '#9aa0a6')
-        .text('⋯');
-      ellG.style('cursor', 'pointer').on('click', () => {
-        setEmbeddingExpanded((prev) => ({ ...prev, [index]: !prev[index] }));
-      });
-      return;
-    }
+    const x = leftX + paddingX + i * (cellWidth + gap);
+    const cx = x + cellWidth / 2;
+    const cy = topY + paddingY + cellHeight / 2;
     colG
       .append('rect')
-      .attr('x', centerX - cellSize / 2)
-      .attr('y', y)
-      .attr('width', cellSize)
-      .attr('height', cellSize)
-      .attr('rx', 2)
-      .style('fill', 'transparent')
-      .style('stroke', 'none');
-
+      .attr('x', x)
+      .attr('y', topY + paddingY)
+      .attr('width', cellWidth)
+      .attr('height', cellHeight)
+      .attr('rx', 4)
+      .style('fill', 'transparent');
     colG
       .append('text')
-      .attr('x', centerX)
-      .attr('y', y + cellSize / 2 + 3)
+      .attr('x', cx)
+      .attr('y', cy + 3)
       .attr('text-anchor', 'middle')
-      .style('font-size', '9px')
-      .style('fill', '#333')
+      .style('font-size', '10px')
+      .style('fill', '#111')
       .text(typeof v === 'number' ? v.toFixed(1) : '');
   });
 
-  return { topY, bottomY: topY + height, height, width, centerX };
+  const centerY = topY + height / 2;
+  return { topY, bottomY: topY + height, height, width, centerX, centerY };
 }
 
 /**
@@ -290,6 +266,9 @@ export function renderOuterEmbeddingsLayer(
   setEmbeddingExpanded,
   computedEmbeddings
 ) {
+  // Underlays container to ensure arrows are behind vectors
+  const underlays = group.append('g').attr('class', 'outer-underlays');
+
   const embeddingsOuter = computedEmbeddings?.outer || [];
   const { visibleIndices = [], positions = [] } = tokensLayoutRef.current || {};
   const lastActualIndex = (step.tokens || []).length - 1;
@@ -315,18 +294,15 @@ export function renderOuterEmbeddingsLayer(
       values,
       expanded,
       tokenColor,
-      isNew ? 'new-token' : 'prev-token',
-      embeddingExpanded,
-      setEmbeddingExpanded,
-      actualIndex
+      isNew ? 'new-token' : 'prev-token'
     );
 
     // Arrow from token ID to embedding
-    const arrowG = group
+    const arrowG = underlays
       .append('g')
       .attr('class', `id-to-emb-arrow ${isNew ? 'new-token' : 'prev-token'}`);
     const y1 = layout.tokenY + 82;
-    const y2 = layout.embeddingY - 4;
+    const y2 = meta.topY + meta.height / 2; // connect to center of horizontal vector
     arrowG
       .append('line')
       .attr('x1', x)
@@ -423,7 +399,8 @@ export function renderTransformerBlockLayer(
 
   const attentionHeight = 60;
   const ffnArrowGap = 80; // Increased from 60 to 80 for longer arrows
-  const totalBlockHeight =
+  // Calculate estimated block height (not currently used but kept for future layout calculations)
+  const _totalBlockHeight =
     layout.blockPadding +
     estimatedInsideTopHeight +
     attentionHeight +
@@ -432,39 +409,21 @@ export function renderTransformerBlockLayer(
     estimatedFfnHeight +
     layout.blockPadding;
 
-  // Render shadow layers for the entire stack (limited to 3), initially hidden.
-  // They will be revealed in a dedicated animation sub-step.
+  // Prepare common geometry for shadows (we will insert them later once final height is known)
   const minX = Math.min(...validXs);
   const maxX = Math.max(...validXs);
   const shadowPadding = 60;
   const totalShadows = Math.min(3, Math.max(0, (numLayers || 1) - 1));
-  // Draw from farthest (back) to closest so nearer cards sit above farther ones
-  for (let s = totalShadows; s >= 1; s--) {
-    const offsetX = s * stackOffsetX;
-    const offsetY = s * stackOffsetY;
 
-    const shadowGroup = group
-      .append('g')
-      .attr('class', `transformer-shadow-layer layer-${s}`)
-      .attr('transform', `translate(${offsetX}, ${offsetY})`);
-
-    shadowGroup
-      .append('rect')
-      .attr('x', minX - shadowPadding)
-      .attr('y', blockTopY)
-      .attr('width', maxX + shadowPadding - (minX - shadowPadding))
-      .attr('height', totalBlockHeight)
-      .attr('rx', 10)
-      .attr('class', 'transformer-shadow-box')
-      .style('fill', 'var(--viz-transformer-bg)')
-      .style('stroke', 'var(--viz-transformer-border)')
-      .style('stroke-width', 2);
-  }
+  // Underlays container inside transformer for arrows/lines to appear behind vectors
+  const underlays = group.append('g').attr('class', 'transformer-underlays');
 
   // Render the current active layer
   const insideTopGroup = group.append('g').attr('class', 'inside-top-embeddings');
   const insideTopMeta = [];
   let maxInsideTopHeight = 0;
+  // Collect feedback arrowhead positions to draw on top of vectors later
+  const feedbackArrowheads = [];
   visibleIndices.forEach((actualIndex, i) => {
     const x = positions[i];
     if (actualIndex < 0) {
@@ -481,10 +440,7 @@ export function renderTransformerBlockLayer(
       vals,
       false,
       tokenColor,
-      isNew ? 'new-token' : 'prev-token',
-      {},
-      () => {},
-      actualIndex
+      isNew ? 'new-token' : 'prev-token'
     );
     insideTopMeta.push(meta);
     maxInsideTopHeight = Math.max(maxInsideTopHeight, meta.height);
@@ -494,9 +450,16 @@ export function renderTransformerBlockLayer(
       // First layer: arrow comes from outer embeddings
       const outerCol = columnsMeta[i];
       if (outerCol) {
-        drawArrow(group, x, outerCol.bottomY + 4, x, meta.topY - 8, {
-          className: `outer-to-block-arrow ${isNew ? 'new-token' : 'prev-token'}`,
-        });
+        drawArrow(
+          underlays,
+          x,
+          outerCol.topY + outerCol.height / 2,
+          x,
+          meta.topY + meta.height / 2,
+          {
+            className: `outer-to-block-arrow ${isNew ? 'new-token' : 'prev-token'}`,
+          }
+        );
       }
     } else {
       // Subsequent layers: draw a U-shaped feedback arrow that appears to emerge from the
@@ -504,42 +467,45 @@ export function renderTransformerBlockLayer(
       const startX = x + stackOffsetX; // align with immediate previous layer's horizontal shift
       const startY = blockTopY - 6; // start just above the box so the tail looks hidden below
       const endX = x;
-      const endY = meta.topY - 8;
+      // End exactly at the middle of the TOP edge of the top embedding vector
+      const endYTop = meta.topY; // top edge of the horizontal vector
       const lift = 28; // how far above the box the U-curve rises
 
-      // Define an arrowhead marker for the feedback path
-      const markerId = `feedback-head-${Math.random().toString(36).slice(2, 9)}`;
-      const defs = group.append('defs');
-      defs
-        .append('marker')
-        .attr('id', markerId)
-        .attr('markerWidth', 10)
-        .attr('markerHeight', 10)
-        .attr('refX', 5)
-        .attr('refY', 5)
-        .attr('orient', 'auto')
-        .append('polygon')
-        .attr('points', '0 0, 10 5, 0 10')
-        .attr('fill', '#c0c0c0');
-
-      // U-shaped cubic bezier: up from startX, arc over towards endX, then down to endY
+      // U-shaped cubic bezier: up from startX, arc over towards endX, then down to just above the top edge
       const d = `M ${startX},${startY}
-        C ${startX},${blockTopY - lift} ${endX},${blockTopY - lift} ${endX},${endY}`;
+        C ${startX},${blockTopY - lift} ${endX},${blockTopY - lift} ${endX},${endYTop - 2}`;
 
-      group
+      underlays
         .append('path')
         .attr('d', d)
         .attr('class', `shadow-to-block-arrow ${isNew ? 'new-token' : 'prev-token'}`)
         .style('fill', 'none')
         .style('stroke', '#c0c0c0')
         .style('stroke-width', 1.5)
-        .style('opacity', 0.9)
-        .attr('marker-end', `url(#${markerId})`);
+        .style('opacity', 0.9);
+
+      // Record arrowhead position to draw above the vectors
+      feedbackArrowheads.push({ x: endX, y: endYTop, isNew });
     }
   });
 
+  // Draw feedback arrowheads on top of the top embeddings so they remain visible
+  if (feedbackArrowheads.length) {
+    const overlays = group.append('g').attr('class', 'transformer-overlays');
+    feedbackArrowheads.forEach(({ x, y, isNew }) => {
+      // Downward-pointing triangle with tip touching the top edge center
+      const size = 6;
+      overlays
+        .append('polygon')
+        .attr('points', `${x},${y} ${x - size},${y - size * 1.4} ${x + size},${y - size * 1.4}`)
+        .attr('class', `feedback-arrowhead ${isNew ? 'new-token' : 'prev-token'}`)
+        .style('fill', '#c0c0c0')
+        .style('opacity', 0.95);
+    });
+  }
+
   const attentionStartY = insideTopY + maxInsideTopHeight;
-  const insideBottomY = attentionStartY + 60;
+  const insideBottomY = attentionStartY + 40;
 
   const insideBottomGroup = group.append('g').attr('class', 'inside-bottom-embeddings');
   const insideBottomMeta = [];
@@ -560,17 +526,14 @@ export function renderTransformerBlockLayer(
       vals,
       false,
       tokenColor,
-      isNew ? 'new-token' : 'prev-token',
-      {},
-      () => {},
-      actualIndex
+      isNew ? 'new-token' : 'prev-token'
     );
     insideBottomMeta.push(meta);
     maxInsideBottomHeight = Math.max(maxInsideBottomHeight, meta.height);
   });
 
   // Render attention connections between top and bottom embeddings
-  const attentionGroup = group.append('g').attr('class', 'attention-mash');
+  const attentionGroup = underlays.append('g').attr('class', 'attention-mash');
   const centers = insideTopMeta.map((m) => (m ? { x: m.centerX } : null));
   centers.forEach((a, i) => {
     if (!a) return;
@@ -586,9 +549,9 @@ export function renderTransformerBlockLayer(
       attentionGroup
         .append('line')
         .attr('x1', a.x)
-        .attr('y1', attentionStartY)
+        .attr('y1', insideTopMeta[i].topY + insideTopMeta[i].height / 2)
         .attr('x2', b.x)
-        .attr('y2', insideBottomY)
+        .attr('y2', insideBottomMeta[j].topY + insideBottomMeta[j].height / 2)
         .style('stroke', color)
         .style('stroke-width', width)
         .style('opacity', opacity);
@@ -596,7 +559,7 @@ export function renderTransformerBlockLayer(
   });
 
   // Add FFN embeddings (output embeddings after feed forward) inside the transformer block
-  const ffnY = insideBottomY + maxInsideBottomHeight + 80; // Increased from 60 to 80 for longer arrows
+  const ffnY = insideBottomY + maxInsideBottomHeight + 60; // slightly reduced to compact block
   const ffnGroup = group.append('g').attr('class', 'inside-ffn-embeddings');
   const ffnMeta = [];
   let maxFfnHeight = 0;
@@ -610,13 +573,6 @@ export function renderTransformerBlockLayer(
     const vals = embFfn[actualIndex] || [];
     const tokenColor = getTokenColor(actualIndex);
     const isNew = actualIndex === step.tokens?.length - 1;
-    const insideBottom = insideBottomMeta[i];
-    if (insideBottom) {
-      drawArrow(group, x, insideBottom.bottomY + 4, x, ffnY - 8, {
-        withBox: true,
-        className: `ffn-arrow ${isNew ? 'new-token' : 'prev-token'}`,
-      });
-    }
     const meta = drawEmbeddingColumnInternal(
       ffnGroup,
       x,
@@ -624,16 +580,50 @@ export function renderTransformerBlockLayer(
       vals,
       false,
       tokenColor,
-      isNew ? 'new-token' : 'prev-token',
-      {},
-      () => {},
-      actualIndex
+      isNew ? 'new-token' : 'prev-token'
     );
+    const insideBottom = insideBottomMeta[i];
+    if (insideBottom && meta) {
+      drawArrow(
+        underlays,
+        x,
+        insideBottom.topY + insideBottom.height / 2,
+        x,
+        meta.topY + meta.height / 2,
+        {
+          withBox: true,
+          className: `ffn-arrow ${isNew ? 'new-token' : 'prev-token'}`,
+        }
+      );
+    }
     ffnMeta.push(meta);
     maxFfnHeight = Math.max(maxFfnHeight, meta.height);
   });
 
   const blockBottomY = ffnY + maxFfnHeight + layout.blockPadding;
+
+  // Insert shadow layers now with the correct final height, behind the main box and inner content
+  for (let s = totalShadows; s >= 1; s--) {
+    const offsetX = s * stackOffsetX;
+    const offsetY = s * stackOffsetY;
+
+    const shadowGroup = group
+      .insert('g', '.inside-top-embeddings')
+      .attr('class', `transformer-shadow-layer layer-${s}`)
+      .attr('transform', `translate(${offsetX}, ${offsetY})`);
+
+    shadowGroup
+      .append('rect')
+      .attr('x', minX - shadowPadding)
+      .attr('y', blockTopY)
+      .attr('width', maxX + shadowPadding - (minX - shadowPadding))
+      .attr('height', blockBottomY - blockTopY)
+      .attr('rx', 10)
+      .attr('class', 'transformer-shadow-box')
+      .style('fill', 'var(--viz-transformer-bg)')
+      .style('stroke', 'var(--viz-transformer-border)')
+      .style('stroke-width', 2);
+  }
 
   // Render the main transformer box with same style as shadows.
   // Insert it just before the inside content so it's above shadows but below inner elements.
@@ -649,80 +639,34 @@ export function renderTransformerBlockLayer(
     .style('stroke', 'var(--viz-transformer-border)')
     .style('stroke-width', 2);
 
-  // Add stack size label (e.g., "Nx") next to the stack; hidden until reveal step.
+  // Ensure underlays (arrows/lines) sit above the transformer box and shadows,
+  // but still below the inside vectors by placing them just before inside-top group.
+  try {
+    group.insert(() => underlays.node(), '.inside-top-embeddings');
+  } catch {
+    // non-fatal: if insert fails, leave as-is
+  }
+
+  // Add stack size label (e.g., "Nx") at bottom right of the top block; hidden until reveal step.
   const boxRightX = maxX + 60;
   group
     .append('text')
     .attr('x', boxRightX + 14)
-    .attr('y', blockTopY + 18)
+    .attr('y', blockBottomY + 6)
     .attr('class', 'transformer-stack-label')
     .style('font-size', '14px')
     .style('font-weight', '600')
     .style('fill', 'var(--text-tertiary)')
     .text(`${Math.max(1, numLayers || 1)}x`);
 
-  return { blockTopY, blockBottomY, insideBottomMeta: ffnMeta };
+  return { blockTopY, blockBottomY, insideBottomMeta: ffnMeta, ffnY };
 }
 
 /**
  * Render outside bottom embeddings (now simplified, no FFN arrows since they're inside the block)
  * @returns {Object} bottom info
  */
-export function renderBottomEmbeddingsLayer(
-  group,
-  step,
-  layout,
-  tokensLayoutRef,
-  blockMeta,
-  computedEmbeddings
-) {
-  const { visibleIndices = [], positions = [] } = tokensLayoutRef.current || {};
-  const embeddings = computedEmbeddings?.outsideBottom || [];
-  const topY = blockMeta.blockBottomY + 40;
-
-  let maxHeight = 0;
-  const metas = [];
-  visibleIndices.forEach((actualIndex, i) => {
-    const x = positions[i];
-    if (actualIndex < 0) return;
-    const vals = embeddings[actualIndex] || [];
-    const tokenColor = getTokenColor(actualIndex);
-    const insideBottom = blockMeta.insideBottomMeta[i];
-    const isNew = actualIndex === step.tokens?.length - 1;
-
-    // Arrow from inside bottom (FFN output) to outside bottom
-    if (insideBottom) {
-      drawArrow(group, x, insideBottom.bottomY + 4, x, topY - 8, {
-        className: `block-to-outside-arrow ${isNew ? 'new-token' : 'prev-token'}`,
-      });
-    }
-    const meta = drawEmbeddingColumnInternal(
-      group,
-      x,
-      topY,
-      vals,
-      false,
-      tokenColor,
-      isNew ? 'new-token' : 'prev-token',
-      {},
-      () => {},
-      actualIndex
-    );
-    metas[i] = meta;
-    maxHeight = Math.max(maxHeight, meta.height);
-  });
-
-  let rightmostIdx = -1;
-  for (let i = visibleIndices.length - 1; i >= 0; i--) {
-    if (visibleIndices[i] >= 0) {
-      rightmostIdx = i;
-      break;
-    }
-  }
-  const rightmostMeta = rightmostIdx >= 0 ? metas[rightmostIdx] : null;
-
-  return { afterBottomY: topY + maxHeight, topY, maxHeight, metas, rightmostIdx, rightmostMeta };
-}
+// Outside bottom embeddings layer removed — we now project directly from the FFN layer inside the block
 
 // Local helper: rich horizontal vector with centers and optional logprob styling
 function drawHorizontalVectorRich(group, centerX, topY, values, opts = {}) {
@@ -786,7 +730,8 @@ export function renderOutputLayer(
   svgRoot,
   bottomInfo,
   subStep,
-  computedEmbeddings
+  computedEmbeddings,
+  contentCenterX // optional: center alignment override
 ) {
   const candidates = step.output_distribution?.candidates || [];
 
@@ -803,7 +748,7 @@ export function renderOutputLayer(
   const baseStroke = d3.interpolateRgb(tokenColor, '#ffffff')(0.5);
 
   const horizY = bottomInfo.afterBottomY + 20;
-  const horizCenterX = width / 2;
+  const horizCenterX = contentCenterX != null ? contentCenterX : width / 2;
 
   const mainRoot = d3.select(svgRoot).select('g.visualization-main');
   const extractionBg = mainRoot
@@ -832,16 +777,9 @@ export function renderOutputLayer(
       const targetHalfHeight = (18 + 12) / 2; // 15px
       const dx = horizCenterX - rm.centerX;
       const dy = horizY + targetHalfHeight - (rm.topY + rm.height / 2);
-      extracted
-        .attr('data-dx', dx)
-        .attr('data-dy', dy)
-        // hint for rotation (consumed in timeline)
-        .attr('data-rotate', 90);
+      extracted.attr('data-dx', dx).attr('data-dy', dy);
     }
-    const sampleValues = (computedEmbeddings?.outsideBottom?.[rightmostActualIndex] || []).slice(
-      0,
-      8
-    );
+    const sampleValues = (computedEmbeddings?.ffn?.[rightmostActualIndex] || []).slice(0, 8);
     hv1 = drawHorizontalVectorRich(group, horizCenterX, horizY, sampleValues, {
       className: 'extracted-horizontal',
       tokenColor,
@@ -948,9 +886,10 @@ export function renderOutputLayer(
  * @param {number} canvasWidth - Canvas width
  * @param {number} subStep - Current animation sub-step (0-9)
  * @param {Function} t - Translation function
+ * @param {boolean} showGradual - If true, labels appear progressively by subStep; otherwise all visible at once and only the active highlight shifts
  */
 // Place stage labels a fixed distance to the right of the content's right edge (anchorX)
-export function renderStageLabels(group, layout, anchorX, subStep, t) {
+export function renderStageLabels(group, layout, anchorX, subStep, t, showGradual = true) {
   const labels = [
     { key: 'stage_tokenization', y: layout.tokenY + 10, subStep: 0 },
     { key: 'stage_token_ids', y: layout.tokenY + 70, subStep: 1 },
@@ -961,11 +900,6 @@ export function renderStageLabels(group, layout, anchorX, subStep, t) {
       subStep: 4,
     },
     { key: 'stage_feedforward_layer', y: layout.ffnY + 30 || layout.embeddingY + 280, subStep: 5 },
-    {
-      key: 'stage_output_embeddings',
-      y: layout.bottomEmbeddingY + 10 || layout.embeddingY + 350,
-      subStep: 7,
-    },
     {
       key: 'stage_last_embedding',
       y: layout.extractedY + 10 || layout.embeddingY + 430,
@@ -978,12 +912,12 @@ export function renderStageLabels(group, layout, anchorX, subStep, t) {
     },
   ];
 
-  // Keep a stable spacing from the rightmost token stack
-  // Increased gap to move labels further to the right
-  const gapToLine = 120;
-  const gapLineToLabel = 70;
-  const verticalLineX = anchorX + gapToLine; // Delimiter just right of content
-  const labelX = verticalLineX + gapLineToLabel; // Labels to the right of the delimiter
+  // Position delimiter line at the right edge of the visualization canvas
+  // In sticky layout, anchorX=0 so the line starts at the left edge of the panel
+  const gapToLine = 20; // Small gap from panel edge to delimiter line
+  const gapLineToLabel = 20; // Small gap from line to labels
+  const verticalLineX = anchorX + gapToLine; // Delimiter acts as right edge of canvas
+  const labelX = verticalLineX + gapLineToLabel; // Labels close to the delimiter
   const highlightWidth = 280;
   const highlightHeight = 54;
 
@@ -1001,7 +935,7 @@ export function renderStageLabels(group, layout, anchorX, subStep, t) {
 
   labels.forEach((label) => {
     const isActive = subStep === label.subStep;
-    const isVisible = subStep >= label.subStep;
+    const isVisible = showGradual ? subStep >= label.subStep : true;
 
     // Don't render labels that haven't appeared yet
     if (!isVisible) {

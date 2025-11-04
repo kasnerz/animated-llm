@@ -78,21 +78,16 @@ export function setInitialStates(svgElement, subStep, isInitialStep) {
       }
     }
 
-    setIfAny(svgElement, SEL.bottomEmbeddingGroupAll, {
-      opacity: prev >= 7 ? 1 : 0,
-      y: prev >= 7 ? 0 : 8,
-    });
-    setIfAny(svgElement, SEL.blockToOutsideArrow, { opacity: prev >= 7 ? 1 : 0 });
-
+    // Bottom outside embeddings removed. Proceed directly to extraction after FFN.
     setIfAny(svgElement, SEL.extractedEmbedding, { opacity: 0 });
     setIfAny(svgElement, SEL.extractedPathArrow, {
-      opacity: prev >= 8 ? 1 : 0,
+      opacity: prev >= 7 ? 1 : 0,
     });
     setIfAny(svgElement, SEL.extractedHorizontal, {
-      opacity: prev >= 8 ? 1 : 0,
+      opacity: prev >= 7 ? 1 : 0,
     });
-    setIfAny(svgElement, SEL.logprobArrow, { opacity: prev >= 9 ? 1 : 0 });
-    setIfAny(svgElement, SEL.logprobVector, { opacity: prev >= 9 ? 1 : 0 });
+    setIfAny(svgElement, SEL.logprobArrow, { opacity: prev >= 8 ? 1 : 0 });
+    setIfAny(svgElement, SEL.logprobVector, { opacity: prev >= 8 ? 1 : 0 });
 
     setIfAny(svgElement, SEL.distributionBar, {
       opacity: prev >= 10 ? 1 : 0,
@@ -171,23 +166,16 @@ export function setInitialStates(svgElement, subStep, isInitialStep) {
       }
     }
 
-    setIfAny(svgElement, SEL.bottomEmbeddingColPrev, { opacity: 1, y: 0 });
-    setIfAny(svgElement, SEL.bottomEmbeddingColNew, {
-      opacity: prev >= 7 ? 1 : 0,
-      y: prev >= 7 ? 0 : 8,
-    });
-    setIfAny(svgElement, SEL.blockToOutsideArrowPrev, { opacity: 1 });
-    setIfAny(svgElement, SEL.blockToOutsideArrowNew, { opacity: prev >= 7 ? 1 : 0 });
-
+    // Bottom outside embeddings removed. Proceed directly to extraction after FFN.
     setIfAny(svgElement, SEL.extractedEmbedding, { opacity: 0 });
     setIfAny(svgElement, SEL.extractedPathArrow, {
-      opacity: prev >= 8 ? 1 : 0,
+      opacity: prev >= 7 ? 1 : 0,
     });
     setIfAny(svgElement, SEL.extractedHorizontal, {
-      opacity: prev >= 8 ? 1 : 0,
+      opacity: prev >= 7 ? 1 : 0,
     });
-    setIfAny(svgElement, SEL.logprobArrow, { opacity: prev >= 9 ? 1 : 0 });
-    setIfAny(svgElement, SEL.logprobVector, { opacity: prev >= 9 ? 1 : 0 });
+    setIfAny(svgElement, SEL.logprobArrow, { opacity: prev >= 8 ? 1 : 0 });
+    setIfAny(svgElement, SEL.logprobVector, { opacity: prev >= 8 ? 1 : 0 });
 
     setIfAny(svgElement, SEL.distributionBar, {
       opacity: prev >= 10 ? 1 : 0,
@@ -223,7 +211,7 @@ export function buildTimeline(svgElement, subStep, isInitialStep, animDuration, 
     nodes.forEach((el) => {
       const dx = Number(el.getAttribute('data-dx') || 0);
       const dy = Number(el.getAttribute('data-dy') || 0);
-      const rot = Number(el.getAttribute('data-rotate') || 90);
+      const rot = Number(el.getAttribute('data-rotate') || 0);
       tl.to(el, { opacity: 1, duration: animDuration * 0.5 }, 0);
       if (dx !== 0 || dy !== 0) {
         // Move and rotate the extracted dummy rectangle so it aligns with the horizontal vector
@@ -315,31 +303,19 @@ export function buildTimeline(svgElement, subStep, isInitialStep, animDuration, 
       }
       break;
     case 7:
-      toIfAny(isInitialStep ? SEL.bottomEmbeddingGroupAll : SEL.bottomEmbeddingColNew, {
-        opacity: 1,
-        y: 0,
-        duration: animDuration,
-      });
-      toIfAny(
-        isInitialStep ? SEL.blockToOutsideArrow : SEL.blockToOutsideArrowNew,
-        { opacity: 1, duration: animDuration },
-        '<'
-      );
-      break;
-    case 8:
       animateExtraction();
       toIfAny(SEL.extractedPathArrow, { opacity: 1, duration: animDuration });
       toIfAny(SEL.extractedHorizontal, { opacity: 1, duration: animDuration });
       break;
-    case 9:
+    case 8:
       toIfAny(SEL.logprobArrow, { opacity: 1, duration: animDuration });
       toIfAny(SEL.logprobVector, { opacity: 1, duration: animDuration }, '<');
       break;
-    case 10:
+    case 9:
       toIfAny(SEL.distributionBar, { opacity: 1, scaleY: 1, duration: animDuration });
       toIfAny(SEL.distributionLabels, { opacity: 1, duration: animDuration }, '<');
       break;
-    case 11:
+    case 10:
       // No visuals by default; tiny delay to keep async behavior consistent
       tl.to({}, { duration: Math.max(0.05, animDuration * 0.2) });
       break;
