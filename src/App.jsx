@@ -20,44 +20,74 @@ function AppContent() {
     }
   }, [language, state.language, actions]);
 
-  // Handle keyboard shortcuts
+  // Handle keyboard shortcuts (Play/Pause and stepping)
   useEffect(() => {
     const handleKeyPress = (e) => {
-      // Space: advance to next animation sub-step
-      if (e.code === 'Space' && !e.target.matches('input, textarea')) {
-        e.preventDefault();
-        // If no example loaded, nothing to do
-        if (!state.currentExample) return;
+      if (!e || e.target.matches('input, textarea')) return;
 
-        // If generation hasn't started yet, start first step
+      // Space: toggle Play/Pause
+      if (e.code === 'Space') {
+        e.preventDefault();
+        if (!state.currentExample) return;
+        // Start from beginning if needed
         if (state.currentStep === 0) {
           actions.nextStep();
+          actions.setIsPlaying(true);
           return;
         }
-
-        // Advance through sub-steps; if already at final sub-step, finalize the step
-        const lastSubStep = 10; // keep in sync with animation timeline (0..10 visible + 11 delay)
-        if (state.currentAnimationSubStep < lastSubStep) {
-          actions.nextAnimationSubStep();
-        } else {
-          // Commit the selected token and move to next step
-          actions.onStepAnimationComplete();
-        }
+        actions.setIsPlaying(!state.isPlaying);
+        return;
       }
+
+      // ArrowRight: step forward when paused; holding should not force play mode
+      if (e.code === 'ArrowRight') {
+        e.preventDefault();
+        if (!state.currentExample) return;
+        if (state.currentStep === 0) {
+          // Start the very first step but remain paused for manual stepping
+          actions.nextStep();
+          actions.setIsPlaying(false);
+          return;
+        }
+        if (!state.isPlaying) {
+          const lastSubStep = 10;
+          if (state.currentAnimationSubStep < lastSubStep) {
+            actions.nextAnimationSubStep();
+          } else {
+            // Complete token manually; remain paused at next step
+            actions.onStepAnimationComplete(false);
+          }
+        }
+        return;
+      }
+
+      // ArrowLeft: step backward when paused
+      if (e.code === 'ArrowLeft') {
+        e.preventDefault();
+        if (!state.currentExample) return;
+        if (!state.isPlaying) {
+          actions.prevAnimationSubStep();
+        }
+        return;
+      }
+
       // R: reset
-      if (e.code === 'KeyR' && !e.target.matches('input, textarea')) {
+      if (e.code === 'KeyR') {
         e.preventDefault();
         actions.reset();
+        return;
       }
       // T: toggle theme
       if (e.code === 'KeyT' && e.ctrlKey) {
         e.preventDefault();
         actions.toggleTheme();
+        return;
       }
       // L: toggle language
       if (e.code === 'KeyL' && e.ctrlKey) {
         e.preventDefault();
         toggleLanguage();
+        return;
       }
     };
 
@@ -67,8 +97,45 @@ function AppContent() {
     state.currentStep,
     state.currentExample,
     state.currentAnimationSubStep,
+    state.isPlaying,
     actions,
     toggleLanguage,
+  ]);
+
+  // Autoplay: when isPlaying is true, advance at steady pace as if pressing Space repeatedly
+  useEffect(() => {
+    if (!state.isPlaying) return;
+    if (!state.currentExample) return;
+
+    // Derive per-substep interval: total step duration divided by 12 substeps
+    const totalSec = state.animationSpeed || 7.5; // fallback
+    const perSubStepMs = Math.max(150, (totalSec / 12) * 1000);
+
+    const lastSubStep = 10; // keep in sync with timeline
+
+    const tick = () => {
+      // If generation hasn't started yet
+      if (state.currentStep === 0) {
+        actions.nextStep();
+        return;
+      }
+      if (state.currentAnimationSubStep < lastSubStep) {
+        actions.nextAnimationSubStep();
+      } else {
+        // Advancing due to autoplay: keep playing into the next step
+        actions.onStepAnimationComplete(true);
+      }
+    };
+
+    const id = setInterval(tick, perSubStepMs);
+    return () => clearInterval(id);
+  }, [
+    state.isPlaying,
+    state.currentExample,
+    state.currentStep,
+    state.currentAnimationSubStep,
+    state.animationSpeed,
+    actions,
   ]);
 
   // Loading state

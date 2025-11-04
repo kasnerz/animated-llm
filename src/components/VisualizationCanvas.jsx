@@ -17,6 +17,11 @@ import { computeEmbeddingsForStep } from '../visualization/core/embeddings';
 import '../styles/visualization.css';
 import { processTokenForVisualization } from '../utils/tokenProcessing';
 import { LAYOUT as CONSTS } from '../visualization/core/constants';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faUpRightAndDownLeftFromCenter,
+  faDownLeftAndUpRightToCenter,
+} from '@fortawesome/free-solid-svg-icons';
 
 /**
  * VisualizationCanvas Component
@@ -286,7 +291,10 @@ function VisualizationCanvas() {
       stage_attention_layer: blockMeta.attentionCenterY ?? blockMeta.blockTopY + 40,
       stage_feedforward_layer: blockMeta.ffnY + (blockMeta.maxFfnHeight || 0) / 2,
       stage_last_embedding: outputsMeta?.extractedCenterY ?? ffnInfo.afterBottomY + 20 + 15,
-      stage_output_probabilities: outputsMeta?.logprobCenterY ?? ffnInfo.afterBottomY + 90,
+      // Use a stable fallback that matches the on-screen vector center when visible.
+      // When visible, logprob center = horizY + 108, where horizY = afterBottomY + 20.
+      // So center ≈ afterBottomY + 128 regardless of whether hv1 exists.
+      stage_output_probabilities: outputsMeta?.logprobCenterY ?? ffnInfo.afterBottomY + 128,
     };
 
     // 7. Render stage labels on the right
@@ -328,17 +336,14 @@ function VisualizationCanvas() {
     svg.attr('height', dynamicHeight);
     labelsSvg.attr('height', dynamicHeight);
 
-    const animDuration = 0.6; // Duration for each transition
+    // Duration for transitions; when rewinding (ArrowLeft), disable animation
+    const animDuration = state.instantTransition ? 0 : 0.6;
     const isInitialStep = state.currentStep === 1;
 
     // Use modular animation utilities
     setInitialStates(svgRef.current, subStep, isInitialStep);
-    gsapRef.current = buildTimeline(
-      svgRef.current,
-      subStep,
-      isInitialStep,
-      animDuration,
-      onStepAnimationComplete
+    gsapRef.current = buildTimeline(svgRef.current, subStep, isInitialStep, animDuration, () =>
+      onStepAnimationComplete(state.isPlaying)
     );
   }, [
     state.currentStep,
@@ -347,6 +352,8 @@ function VisualizationCanvas() {
     state.currentTransformerLayer,
     // Re-render visualization immediately when theme changes so D3 colors update
     state.theme,
+    state.instantTransition,
+    state.isPlaying,
     isExpanded,
     embeddingExpanded,
     onStepAnimationComplete,
@@ -450,30 +457,11 @@ function VisualizationCanvas() {
               aria-label={isExpanded ? 'Collapse tokens' : 'Expand tokens'}
               title={isExpanded ? 'Collapse tokens' : 'Expand tokens'}
             >
-              {/* Icon: arrows only, direction indicates the action */}
-              <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true">
-                {isExpanded ? (
-                  // Collapse inward: arrows pointing inward
-                  <g stroke="currentColor" strokeWidth="2" strokeLinecap="round" fill="none">
-                    <path d="M4 12 h7" />
-                    <path d="M11 12 l-3 -3" />
-                    <path d="M11 12 l-3 3" />
-                    <path d="M20 12 h-7" />
-                    <path d="M13 12 l3 -3" />
-                    <path d="M13 12 l3 3" />
-                  </g>
-                ) : (
-                  // Expand outward: arrows pointing outward
-                  <g stroke="currentColor" strokeWidth="2" strokeLinecap="round" fill="none">
-                    <path d="M4 12 h7" />
-                    <path d="M4 12 l3 -3" />
-                    <path d="M4 12 l3 3" />
-                    <path d="M20 12 h-7" />
-                    <path d="M20 12 l-3 -3" />
-                    <path d="M20 12 l-3 3" />
-                  </g>
-                )}
-              </svg>
+              <FontAwesomeIcon
+                icon={isExpanded ? faDownLeftAndUpRightToCenter : faUpRightAndDownLeftFromCenter}
+                style={{ fontSize: 20 }}
+                aria-hidden="true"
+              />
             </button>
           );
         })()}
@@ -499,7 +487,7 @@ function VisualizationCanvas() {
           const scrollAreaWidth = Math.max(320, widthForCalc - labelsWidthCalc);
           // When expanded, add horizontal padding so the rightmost content isn't trimmed.
           // Keep this in sync with layout.margin (~20px on the left) and potential positioning biases.
-          const extraPadding = 240; // layout.margin * 2 for symmetric room
+          const extraPadding = 400; // layout.margin * 2 for symmetric room
           const svgWidth = isExpanded
             ? Math.max(scrollAreaWidth, estimatedContentWidth + extraPadding)
             : scrollAreaWidth;

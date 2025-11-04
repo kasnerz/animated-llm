@@ -65,6 +65,15 @@ export const TRANSFORMER_SELECTORS = {
   ffnArrow: '.ffn-arrow',
   ffnArrowNew: '.ffn-arrow.new-token',
   ffnArrowPrev: '.ffn-arrow.prev-token',
+  ffnArrowIn: '.ffn-arrow-in',
+  ffnArrowInNew: '.ffn-arrow-in.new-token',
+  ffnArrowInPrev: '.ffn-arrow-in.prev-token',
+  ffnArrowOut: '.ffn-arrow-out',
+  ffnArrowOutNew: '.ffn-arrow-out.new-token',
+  ffnArrowOutPrev: '.ffn-arrow-out.prev-token',
+  ffnProjectionBox: '.projection-box.ffn',
+  ffnProjectionBoxNew: '.projection-box.ffn.new-token',
+  ffnProjectionBoxPrev: '.projection-box.ffn.prev-token',
 };
 
 // Bottom embeddings selectors

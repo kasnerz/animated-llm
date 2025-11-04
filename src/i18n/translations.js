@@ -3,8 +3,10 @@
  * Supports English (en) and Czech (cs)
  */
 
-export const translations = {
+const translations = {
   en: {
+    play: 'Play',
+    pause: 'Pause',
     start_generation: 'Start Generation',
     next_token: 'Next Token',
     toggle_theme: 'Toggle Theme',
@@ -32,6 +34,8 @@ export const translations = {
     stage_output_probabilities_hint: 'Probabilities for each token',
   },
   cs: {
+    play: 'Přehrát',
+    pause: 'Pozastavit',
     start_generation: 'Začít generování',
     next_token: 'Další token',
     toggle_theme: 'Přepnout téma',
@@ -60,12 +64,4 @@ export const translations = {
   },
 };
 
-/**
- * Get translated text for a key
- * @param {string} key - Translation key
- * @param {string} language - Language code ('en' or 'cs')
- * @returns {string} Translated text
- */
-export function translate(key, language = 'en') {
-  return translations[language]?.[key] || translations.en[key] || key;
-}
+export default translations;

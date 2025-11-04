@@ -61,6 +61,9 @@ export function setInitialStates(svgElement, subStep, isInitialStep) {
       y: prev >= 5 ? 0 : 8,
     });
     setIfAny(svgElement, SEL.ffnArrow, { opacity: prev >= 5 ? 1 : 0 });
+    setIfAny(svgElement, SEL.ffnArrowIn, { opacity: prev >= 5 ? 1 : 0 });
+    setIfAny(svgElement, SEL.ffnArrowOut, { opacity: prev >= 5 ? 1 : 0 });
+    setIfAny(svgElement, SEL.ffnProjectionBox, { opacity: prev >= 5 ? 1 : 0 });
 
     // Transformer stack reveal (shadows + label) — keep visible once revealed within the step
     {
@@ -149,6 +152,12 @@ export function setInitialStates(svgElement, subStep, isInitialStep) {
 
     setIfAny(svgElement, SEL.ffnArrowPrev, { opacity: 1 });
     setIfAny(svgElement, SEL.ffnArrowNew, { opacity: prev >= 5 ? 1 : 0 });
+    setIfAny(svgElement, SEL.ffnArrowInPrev, { opacity: 1 });
+    setIfAny(svgElement, SEL.ffnArrowInNew, { opacity: prev >= 5 ? 1 : 0 });
+    setIfAny(svgElement, SEL.ffnArrowOutPrev, { opacity: 1 });
+    setIfAny(svgElement, SEL.ffnArrowOutNew, { opacity: prev >= 5 ? 1 : 0 });
+    setIfAny(svgElement, SEL.ffnProjectionBoxPrev, { opacity: 1 });
+    setIfAny(svgElement, SEL.ffnProjectionBoxNew, { opacity: prev >= 5 ? 1 : 0 });
 
     // Transformer stack reveal (shadows + label) — keep visible once revealed within the step
     {
@@ -280,6 +289,21 @@ export function buildTimeline(svgElement, subStep, isInitialStep, animDuration, 
       });
       toIfAny(
         isInitialStep ? SEL.ffnArrow : SEL.ffnArrowNew,
+        { opacity: 1, duration: animDuration },
+        '<'
+      );
+      toIfAny(
+        isInitialStep ? SEL.ffnArrowIn : SEL.ffnArrowInNew,
+        { opacity: 1, duration: animDuration },
+        '<'
+      );
+      toIfAny(
+        isInitialStep ? SEL.ffnArrowOut : SEL.ffnArrowOutNew,
+        { opacity: 1, duration: animDuration },
+        '<'
+      );
+      toIfAny(
+        isInitialStep ? SEL.ffnProjectionBox : SEL.ffnProjectionBoxNew,
         { opacity: 1, duration: animDuration },
         '<'
       );

@@ -18,6 +18,7 @@ const ActionTypes = {
   // Generation control
   NEXT_STEP: 'NEXT_STEP',
   NEXT_ANIMATION_SUB_STEP: 'NEXT_ANIMATION_SUB_STEP',
+  PREV_ANIMATION_SUB_STEP: 'PREV_ANIMATION_SUB_STEP',
   RESET: 'RESET',
   STEP_ANIMATION_COMPLETE: 'STEP_ANIMATION_COMPLETE',
 
@@ -54,6 +55,10 @@ const initialState = {
   // Animation state
   isPlaying: false,
   isPaused: false,
+
+  // Navigation/animation control
+  // When true, visualization should update instantly without transition effects
+  instantTransition: false,
 
   // Loading state
   isLoading: false,
@@ -99,6 +104,7 @@ function appReducer(state, action) {
         isPaused: false,
         isLoading: false,
         error: null,
+        instantTransition: false,
       };
 
     case ActionTypes.LOAD_EXAMPLE_ERROR:
@@ -119,6 +125,7 @@ function appReducer(state, action) {
         currentAnimationSubStep: 0,
         currentTransformerLayer: 0,
         isPlaying: true,
+        instantTransition: false,
       };
     }
 
@@ -140,6 +147,7 @@ function appReducer(state, action) {
         return {
           ...state,
           currentAnimationSubStep: 7, // skip reveal directly to outside embeddings
+          instantTransition: false,
         };
       }
 
@@ -148,6 +156,7 @@ function appReducer(state, action) {
         return {
           ...state,
           currentAnimationSubStep: 6,
+          instantTransition: false,
         };
       }
 
@@ -157,6 +166,7 @@ function appReducer(state, action) {
           ...state,
           currentTransformerLayer: Math.max(0, numLayers - 1),
           currentAnimationSubStep: 3,
+          instantTransition: false,
         };
       }
 
@@ -165,6 +175,7 @@ function appReducer(state, action) {
         return {
           ...state,
           currentAnimationSubStep: 7,
+          instantTransition: false,
         };
       }
 
@@ -175,6 +186,106 @@ function appReducer(state, action) {
       return {
         ...state,
         currentAnimationSubStep: state.currentAnimationSubStep + 1,
+        instantTransition: false,
+      };
+    }
+
+    case ActionTypes.PREV_ANIMATION_SUB_STEP: {
+      const numLayers = state.currentExample?.model_info?.num_layers || 1;
+      const sub = state.currentAnimationSubStep;
+      const currentLayer = state.currentTransformerLayer;
+
+      // If at very beginning, nothing to do
+      if (state.currentStep === 0 && sub <= 0) {
+        return { ...state, instantTransition: true };
+      }
+
+      // If at the start of a step (sub==0), move back to previous step's end and undo last generated token
+      if (sub === 0) {
+        // If we are at the first step, go back to initial state (no visualization)
+        if (state.currentStep === 1) {
+          return {
+            ...state,
+            currentStep: 0,
+            currentAnimationSubStep: 0,
+            currentTransformerLayer: 0,
+            // Rolling back to the very beginning clears any generated output
+            generatedAnswer: '',
+            generatedTokens: [],
+            instantTransition: true,
+          };
+        }
+
+        // Otherwise, go to the previous step and set to its last visible sub-step
+        const prevStep = Math.max(1, state.currentStep - 1);
+        const lastVisibleSub = 10; // keep in sync with timeline
+
+        // Undo the last generated token (if any)
+        const gt = state.generatedTokens || [];
+        const last = gt.length > 0 ? gt[gt.length - 1] : null;
+        const newGeneratedTokens = gt.length > 0 ? gt.slice(0, gt.length - 1) : gt;
+        const tokenStr = last?.token ?? '';
+        const newGeneratedAnswer = tokenStr
+          ? state.generatedAnswer.slice(
+              0,
+              Math.max(0, state.generatedAnswer.length - tokenStr.length)
+            )
+          : state.generatedAnswer;
+
+        return {
+          ...state,
+          currentStep: prevStep,
+          currentAnimationSubStep: lastVisibleSub,
+          currentTransformerLayer: Math.max(0, numLayers - 1),
+          generatedAnswer: newGeneratedAnswer,
+          generatedTokens: newGeneratedTokens,
+          instantTransition: true,
+        };
+      }
+
+      // Reverse special jumps used in NEXT_ANIMATION_SUB_STEP
+      // If we skipped reveal due to single-layer model (went 5 -> 7), allow 7 -> 5
+      if (numLayers <= 1 && sub === 7) {
+        return {
+          ...state,
+          currentAnimationSubStep: 5,
+          instantTransition: true,
+        };
+      }
+
+      // If we are right after reveal jump for multi-layer second pass entry (layer switched to last and sub=3), go back to reveal (sub=6, layer=0)
+      if (numLayers > 1 && currentLayer >= Math.max(0, numLayers - 1) && sub === 3) {
+        return {
+          ...state,
+          currentTransformerLayer: 0,
+          currentAnimationSubStep: 6,
+          instantTransition: true,
+        };
+      }
+
+      // If we are at reveal (sub=6) during first pass, go back to end of first pass (sub=5)
+      if (numLayers > 1 && currentLayer === 0 && sub === 6) {
+        return {
+          ...state,
+          currentAnimationSubStep: 5,
+          instantTransition: true,
+        };
+      }
+
+      // If we jumped from second pass end (sub=5 on last layer) to 7, allow back to 5
+      if (numLayers > 1 && currentLayer >= numLayers - 1 && sub === 7) {
+        return {
+          ...state,
+          currentAnimationSubStep: 5,
+          instantTransition: true,
+        };
+      }
+
+      // Default: step one sub-step back
+      return {
+        ...state,
+        currentAnimationSubStep: Math.max(0, sub - 1),
+        instantTransition: true,
       };
     }
 
@@ -189,9 +300,11 @@ function appReducer(state, action) {
         autoGenerate: false,
         isPlaying: false,
         isPaused: false,
+        instantTransition: false,
       };
 
     case ActionTypes.STEP_ANIMATION_COMPLETE: {
+      const isAuto = !!(action.payload && action.payload.auto);
       const ex = state.currentExample;
       if (!ex) return { ...state, isPlaying: false };
 
@@ -212,11 +325,27 @@ function appReducer(state, action) {
 
       const isLast = state.currentStep >= steps.length;
       if (isLast) {
+        // If autoplay, loop the animation from the beginning for the same input
+        if (isAuto) {
+          return {
+            ...state,
+            // Restart visualization from the beginning
+            currentStep: 0,
+            currentAnimationSubStep: 0,
+            currentTransformerLayer: 0,
+            generatedAnswer: '',
+            generatedTokens: [],
+            isPlaying: true,
+            instantTransition: false,
+          };
+        }
+        // Manual stepping: finish and pause at the end with full answer visible
         return {
           ...state,
           generatedAnswer: newAnswer,
           generatedTokens: newGeneratedTokens,
           isPlaying: false,
+          instantTransition: false,
         };
       }
 
@@ -227,7 +356,8 @@ function appReducer(state, action) {
         currentStep: state.currentStep + 1,
         currentAnimationSubStep: 0,
         currentTransformerLayer: 0,
-        isPlaying: true,
+        isPlaying: isAuto,
+        instantTransition: false,
       };
     }
 
@@ -353,6 +483,13 @@ export function AppProvider({ children }) {
   }, []);
 
   /**
+   * Go back one animation sub-step
+   */
+  const prevAnimationSubStep = useCallback(() => {
+    dispatch({ type: ActionTypes.PREV_ANIMATION_SUB_STEP });
+  }, []);
+
+  /**
    * Reset to initial prompt
    */
   const reset = useCallback(() => {
@@ -428,8 +565,8 @@ export function AppProvider({ children }) {
    * Appends the selected token to the generated answer, and
    * either advances to the next step (auto-play) or stops at the end.
    */
-  const onStepAnimationComplete = useCallback(() => {
-    dispatch({ type: ActionTypes.STEP_ANIMATION_COMPLETE });
+  const onStepAnimationComplete = useCallback((auto = false) => {
+    dispatch({ type: ActionTypes.STEP_ANIMATION_COMPLETE, payload: { auto } });
   }, []);
 
   // Load examples on mount with initial language
@@ -461,6 +598,7 @@ export function AppProvider({ children }) {
       loadExamples,
       nextStep,
       nextAnimationSubStep,
+      prevAnimationSubStep,
       reset,
       toggleTheme,
       toggleLanguage,

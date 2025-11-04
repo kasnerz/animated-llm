@@ -4,6 +4,8 @@ import { useState } from 'react';
 import { getTokenColor } from '../visualization/core/colors';
 import { processTokenForText } from '../utils/tokenProcessing';
 import '../styles/main.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPlay, faPause, faChevronDown } from '@fortawesome/free-solid-svg-icons';
 
 /**
  * InputSection Component
@@ -20,14 +22,16 @@ function InputSection() {
     setIsDropdownOpen(false);
   };
 
-  const handleGenerate = () => {
-    // Start generation: move to first step and begin animation
+  const handlePlayPause = () => {
+    if (!state.currentExample) return;
+    // If generation hasn't started yet, start and begin playing
     if (state.currentStep === 0) {
       actions.nextStep();
+      actions.setIsPlaying(true);
+      return;
     }
+    actions.setIsPlaying(!state.isPlaying);
   };
-
-  const isAtEnd = state.currentExample && state.currentStep > 0; // Disable after first click
 
   // Find current example index
   const currentIndex = state.examples.findIndex((ex) => ex.id === state.currentExampleId);
@@ -50,16 +54,7 @@ function InputSection() {
                   onClick={() => setIsDropdownOpen(!isDropdownOpen)}
                   aria-label="Select prompt"
                 >
-                  <svg
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                  >
-                    <polyline points="6 9 12 15 18 9"></polyline>
-                  </svg>
+                  <FontAwesomeIcon icon={faChevronDown} style={{ fontSize: 16 }} />
                 </button>
 
                 {isDropdownOpen && (
@@ -102,21 +97,15 @@ function InputSection() {
                 )}
               </div>
               <button
-                onClick={handleGenerate}
-                disabled={isAtEnd || state.isPlaying}
+                onClick={handlePlayPause}
                 className="btn-play"
-                aria-label={state.currentStep === 0 ? t('start_generation') : t('next_token')}
+                aria-label={state.isPlaying ? t('pause') : t('play')}
+                title={state.isPlaying ? t('pause') : t('play')}
               >
-                <svg
-                  width="14"
-                  height="14"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                >
-                  <polygon points="5 3 19 12 5 21 5 3"></polygon>
-                </svg>
+                <FontAwesomeIcon
+                  icon={state.isPlaying ? faPause : faPlay}
+                  style={{ fontSize: 14 }}
+                />
               </button>
             </div>
           </div>

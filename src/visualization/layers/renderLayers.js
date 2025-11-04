@@ -209,10 +209,12 @@ function drawEmbeddingColumnInternal(
     .style('fill', outerFill)
     .style('stroke', outerStroke);
 
+  const cellCentersX = [];
   displayValues.forEach((v, i) => {
     const x = leftX + paddingX + i * (cellWidth + gap);
     const cx = x + cellWidth / 2;
     const cy = topY + paddingY + cellHeight / 2;
+    cellCentersX.push(cx);
     colG
       .append('rect')
       .attr('x', x)
@@ -232,7 +234,20 @@ function drawEmbeddingColumnInternal(
   });
 
   const centerY = topY + height / 2;
-  return { topY, bottomY: topY + height, height, width, centerX, centerY };
+  const innerTopY = topY + paddingY;
+  const innerBottomY = topY + paddingY + cellHeight;
+  return {
+    topY,
+    bottomY: topY + height,
+    height,
+    width,
+    centerX,
+    centerY,
+    // per-cell geometry for connectors
+    cellCentersX,
+    innerTopY,
+    innerBottomY,
+  };
 }
 
 /**
@@ -571,17 +586,75 @@ export function renderTransformerBlockLayer(
     );
     const insideBottom = insideBottomMeta[i];
     if (insideBottom && meta) {
-      drawArrow(
-        underlays,
-        x,
-        insideBottom.topY + insideBottom.height / 2,
-        x,
-        meta.topY + meta.height / 2,
-        {
-          withBox: true,
-          className: `ffn-arrow ${isNew ? 'new-token' : 'prev-token'}`,
-        }
-      );
+      // Draw feed-forward connector with multiple input/output lines and a box in the middle
+      const inCenters =
+        insideBottom.cellCentersX && insideBottom.cellCentersX.length
+          ? insideBottom.cellCentersX
+          : [x];
+      const outCenters = meta.cellCentersX && meta.cellCentersX.length ? meta.cellCentersX : [x];
+
+      // Match number of lines between top (input) and bottom (output)
+      const lineCount = Math.min(inCenters.length, outCenters.length);
+      const startY = insideBottom.innerBottomY ?? insideBottom.topY + insideBottom.height / 2;
+      const endY = meta.innerTopY ?? meta.topY + meta.height / 2;
+      const centerX = x;
+
+      const midY = (startY + endY) / 2;
+      const boxSize = 18;
+      const boxRadius = 5;
+      const boxTopY = midY - boxSize / 2;
+      const boxBottomY = midY + boxSize / 2;
+
+      // Incoming lines (from each input cell to the center of the box)
+      for (let k = 0; k < lineCount; k++) {
+        // Random variation using same logic as attention lines
+        const s = Math.abs(Math.sin((i * 37 + k * 17) * 12.9898)) % 1;
+        const color = d3.interpolateRgb('#E5E7EB', '#797b7dff')(s);
+        const width = 0.5;
+
+        underlays
+          .append('line')
+          .attr('class', `ffn-arrow-in ${isNew ? 'new-token' : 'prev-token'}`)
+          .attr('x1', inCenters[k])
+          .attr('y1', startY)
+          .attr('x2', centerX)
+          .attr('y2', boxTopY - 4)
+          .style('stroke', color)
+          .style('stroke-width', width)
+          .style('opacity', 0);
+      }
+
+      // Projection box
+      underlays
+        .append('rect')
+        .attr('class', `projection-box ffn ${isNew ? 'new-token' : 'prev-token'}`)
+        .attr('x', centerX - boxSize / 2)
+        .attr('y', boxTopY)
+        .attr('width', boxSize)
+        .attr('height', boxSize)
+        .attr('rx', boxRadius)
+        .attr('ry', boxRadius)
+        .style('fill', '#c0c0c0')
+        .style('opacity', 0);
+
+      // Outgoing lines (from just below the box to each output cell)
+      for (let k = 0; k < lineCount; k++) {
+        // Random variation using same logic as attention lines
+        const s = Math.abs(Math.sin((i * 41 + k * 23) * 12.9898)) % 1;
+        const color = d3.interpolateRgb('#E5E7EB', '#797b7dff')(s);
+        const width = 0.5;
+
+        underlays
+          .append('line')
+          .attr('class', `ffn-arrow-out ${isNew ? 'new-token' : 'prev-token'}`)
+          .attr('x1', centerX)
+          .attr('y1', boxBottomY + 4)
+          .attr('x2', outCenters[k])
+          .attr('y2', endY)
+          .style('stroke', color)
+          .style('stroke-width', width)
+          .style('opacity', 0);
+      }
     }
     ffnMeta.push(meta);
     maxFfnHeight = Math.max(maxFfnHeight, meta.height);

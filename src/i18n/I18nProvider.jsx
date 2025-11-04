@@ -1,5 +1,5 @@
 import { createContext, useContext, useState } from 'react';
-import { translate } from './translations';
+import translations from './translations';
 
 const I18nContext = createContext();
 
@@ -32,7 +32,10 @@ export function I18nProvider({ children, initialLanguage = 'en' }) {
    * @param {string} key - Translation key
    * @returns {string} Translated text
    */
-  const t = (key) => translate(key, language);
+  const t = (key) => {
+    const table = translations[language] || translations.en || {};
+    return table[key] || (translations.en ? translations.en[key] : key) || key;
+  };
 
   const value = {
     language,

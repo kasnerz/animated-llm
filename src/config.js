@@ -7,7 +7,7 @@ export const config = {
   defaults: {
     theme: 'light',
     language: 'en',
-    animationSpeed: 7.5, // seconds (2x faster)
+    animationSpeed: 10, // seconds (2x faster)
     prompt: 'Which ingredients do I need to make scrambled eggs?',
   },
   animation: {
