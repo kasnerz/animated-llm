@@ -4,7 +4,7 @@
  * to minimize refactoring risk while improving modularity
  */
 import * as d3 from 'd3';
-import { getTokenColor, getPurpleByProb } from '../core/colors';
+import { getTokenColor, getVectorBoxColors, getVectorTextColor } from '../core/colors';
 import { drawArrow, verticalThenHorizontalRoundedPath } from '../core/draw';
 import { processTokenForVisualization } from '../../utils/tokenProcessing';
 
@@ -160,25 +160,8 @@ export function renderTokensLayer(
       .text(step.token_ids[actualIndex]);
   });
 
-  // Render ellipsis if collapsed
-  if (shouldCollapse) {
-    const edgeCount = Math.floor(maxVisibleTokens / 2);
-    const ellipsisIndex = edgeCount;
-    const ellipsisX = positions[ellipsisIndex];
-
-    const ellipsisG = group
-      .append('g')
-      .attr('class', 'token token-ellipsis')
-      .attr('transform', `translate(${ellipsisX}, ${layout.tokenY})`);
-    ellipsisG
-      .append('text')
-      .attr('text-anchor', 'middle')
-      .attr('y', 72)
-      .attr('class', 'token-id')
-      .style('font-size', '20px')
-      .style('fill', 'var(--text-tertiary)')
-      .text('⋯');
-  }
+  // Ellipsis rendering removed - now using collapse toggle button instead
+  // The button with arrows is positioned between tokens and embeddings
 
   return { positions, widths, visibleIndices: tokenIndices };
 }
@@ -193,7 +176,8 @@ function drawEmbeddingColumnInternal(
   values,
   expanded,
   tokenColor,
-  className
+  className,
+  isDarkMode
 ) {
   // Horizontal mini-vector (3 values) replacing vertical column
   const cellWidth = 26;
@@ -210,13 +194,10 @@ function drawEmbeddingColumnInternal(
 
   const colG = group.append('g').attr('class', `embedding-col ${className}`);
 
-  let outerFill = '#f2f3f5';
-  let outerStroke = '#e0e0e0';
-  if (tokenColor) {
-    const lightenedColor = d3.interpolateRgb(tokenColor, '#ffffff')(0.85);
-    outerFill = lightenedColor;
-    outerStroke = d3.interpolateRgb(tokenColor, '#ffffff')(0.6);
-  }
+  // Centralized theme-aware colors for box
+  const { fill: outerFill, stroke: outerStroke } = getVectorBoxColors(tokenColor, {
+    isDarkMode,
+  });
 
   colG
     .append('rect')
@@ -246,7 +227,7 @@ function drawEmbeddingColumnInternal(
       .attr('y', cy + 3)
       .attr('text-anchor', 'middle')
       .style('font-size', '10px')
-      .style('fill', '#111')
+      .style('fill', getVectorTextColor(!!isDarkMode))
       .text(typeof v === 'number' ? v.toFixed(1) : '');
   });
 
@@ -264,7 +245,8 @@ export function renderOuterEmbeddingsLayer(
   tokensLayoutRef,
   embeddingExpanded,
   setEmbeddingExpanded,
-  computedEmbeddings
+  computedEmbeddings,
+  isDarkMode
 ) {
   // Underlays container to ensure arrows are behind vectors
   const underlays = group.append('g').attr('class', 'outer-underlays');
@@ -294,7 +276,8 @@ export function renderOuterEmbeddingsLayer(
       values,
       expanded,
       tokenColor,
-      isNew ? 'new-token' : 'prev-token'
+      isNew ? 'new-token' : 'prev-token',
+      isDarkMode
     );
 
     // Arrow from token ID to embedding
@@ -344,7 +327,8 @@ export function renderTransformerBlockLayer(
   outerMeta,
   currentLayer,
   computedEmbeddings,
-  numLayers
+  numLayers,
+  isDarkMode = null
   // numLayers is passed but not currently used - kept for future enhancements
 ) {
   // Expose current layer and total layers to the DOM so the animation layer can infer state
@@ -440,7 +424,8 @@ export function renderTransformerBlockLayer(
       vals,
       false,
       tokenColor,
-      isNew ? 'new-token' : 'prev-token'
+      isNew ? 'new-token' : 'prev-token',
+      isDarkMode
     );
     insideTopMeta.push(meta);
     maxInsideTopHeight = Math.max(maxInsideTopHeight, meta.height);
@@ -526,7 +511,8 @@ export function renderTransformerBlockLayer(
       vals,
       false,
       tokenColor,
-      isNew ? 'new-token' : 'prev-token'
+      isNew ? 'new-token' : 'prev-token',
+      isDarkMode
     );
     insideBottomMeta.push(meta);
     maxInsideBottomHeight = Math.max(maxInsideBottomHeight, meta.height);
@@ -580,7 +566,8 @@ export function renderTransformerBlockLayer(
       vals,
       false,
       tokenColor,
-      isNew ? 'new-token' : 'prev-token'
+      isNew ? 'new-token' : 'prev-token',
+      isDarkMode
     );
     const insideBottom = insideBottomMeta[i];
     if (insideBottom && meta) {
@@ -659,7 +646,20 @@ export function renderTransformerBlockLayer(
     .style('fill', 'var(--text-tertiary)')
     .text(`${Math.max(1, numLayers || 1)}x`);
 
-  return { blockTopY, blockBottomY, insideBottomMeta: ffnMeta, ffnY };
+  const attentionCenterY = attentionStartY + 20; // middle of attention gap
+  return {
+    blockTopY,
+    blockBottomY,
+    insideBottomMeta: ffnMeta,
+    ffnY,
+    // expose geometry for precise label alignment
+    insideTopY,
+    maxInsideTopHeight,
+    insideBottomY,
+    maxInsideBottomHeight,
+    maxFfnHeight,
+    attentionCenterY,
+  };
 }
 
 /**
@@ -670,30 +670,42 @@ export function renderTransformerBlockLayer(
 
 // Local helper: rich horizontal vector with centers and optional logprob styling
 function drawHorizontalVectorRich(group, centerX, topY, values, opts = {}) {
-  const { className = '', tokenColor = '#ddd', bgFill = null, format, isLogprob = false } = opts;
+  const {
+    className = '',
+    tokenColor = '#ddd',
+    bgFill = null,
+    format,
+    isLogprob = false,
+    ellipsisLast = false,
+    isDarkMode: darkFlag = null,
+  } = opts;
   const g = group.append('g').attr('class', className);
   const n = values.length;
 
-  const cellWidth = isLogprob ? 54 : 26; // Reduced from 80 to 54 (about 2/3)
+  const cellWidth = isLogprob ? 60 : 26; // 54 * 1.2 ≈ 65 for ~20% wider logprob vector
   const cellHeight = isLogprob ? 24 : 18; // Reduced from 36 to 24
-  const gap = isLogprob ? 8 : 6; // Reduced from 12 to 8
+  const gap = isLogprob ? 9 : 6; // Increased from 8 to 10 for ~20% more spacing between cells
   const fontSize = '10px'; // Same font size for both, keep larger gaps for logprob to align with bars
 
   const width = n * cellWidth + (n - 1) * gap + 12;
   const leftX = centerX - width / 2 + 6;
   const centers = [];
 
-  const bg =
-    bgFill ??
-    d3.interpolateRgb(typeof tokenColor === 'string' ? tokenColor : '#ddd', '#ffffff')(0.85);
+  // Resolve dark mode from opts if provided, avoid DOM reads to prevent lag on first toggle
+  const isDarkMode = !!darkFlag;
+  // Background and stroke from centralized helper
+  const colors = bgFill
+    ? { fill: bgFill, stroke: getVectorBoxColors(tokenColor, { isDarkMode }).stroke }
+    : getVectorBoxColors(tokenColor, { isDarkMode });
+
   g.append('rect')
     .attr('x', leftX - 6)
     .attr('y', topY)
     .attr('width', width)
     .attr('height', cellHeight + 12)
     .attr('rx', 10)
-    .style('fill', bg)
-    .style('stroke', '#e5e7eb');
+    .style('fill', colors.fill)
+    .style('stroke', colors.stroke);
 
   values.forEach((v, i) => {
     const x = leftX + i * (cellWidth + gap);
@@ -706,14 +718,18 @@ function drawHorizontalVectorRich(group, centerX, topY, values, opts = {}) {
       .attr('height', cellHeight)
       .attr('rx', 4)
       .style('fill', 'transparent');
+
+    const isLastAndEllipsis = ellipsisLast && i === n - 1;
     g.append('text')
       .attr('x', cx)
       .attr('y', topY + 6 + cellHeight / 2 + (isLogprob ? 6 : 3))
       .attr('text-anchor', 'middle')
-      .style('font-size', fontSize)
+      .style('font-size', isLastAndEllipsis ? '16px' : fontSize)
       .style('font-weight', 'normal') // Same weight for both vectors
-      .style('fill', '#111')
-      .text(format ? format(v) : typeof v === 'number' ? v.toFixed(1) : '');
+      .style('fill', getVectorTextColor(isDarkMode))
+      .text(
+        isLastAndEllipsis ? '⋯' : format ? format(v) : typeof v === 'number' ? v.toFixed(1) : ''
+      );
   });
 
   return { topY, bottomY: topY + cellHeight + 12, centers, width, cellWidth };
@@ -731,21 +747,21 @@ export function renderOutputLayer(
   bottomInfo,
   subStep,
   computedEmbeddings,
-  contentCenterX // optional: center alignment override
+  contentCenterX, // optional: center alignment override
+  isDarkMode
 ) {
   const candidates = step.output_distribution?.candidates || [];
 
   const rm = bottomInfo.rightmostMeta;
-  let rightmostActualIndex = -1;
-  for (let i = bottomInfo.metas.length - 1; i >= 0; i--) {
-    if (bottomInfo.metas[i]) {
-      rightmostActualIndex = i;
-      break;
-    }
-  }
+  // Use the actual token index passed from the layout (not the visible column index)
+  const rightmostActualIndex = bottomInfo.rightmostActualIndex ?? -1;
   const tokenColor = rightmostActualIndex >= 0 ? getTokenColor(rightmostActualIndex) : '#999';
-  const baseFill = d3.interpolateRgb(tokenColor, '#ffffff')(0.7);
-  const baseStroke = d3.interpolateRgb(tokenColor, '#ffffff')(0.5);
+  // Use the same interpolation settings as embedding columns for exact shade match
+  const baseBox = getVectorBoxColors(tokenColor, {
+    isDarkMode,
+  });
+  const baseFill = baseBox.fill;
+  const baseStroke = baseBox.stroke;
 
   const horizY = bottomInfo.afterBottomY + 20;
   const horizCenterX = contentCenterX != null ? contentCenterX : width / 2;
@@ -784,6 +800,7 @@ export function renderOutputLayer(
       className: 'extracted-horizontal',
       tokenColor,
       bgFill: baseFill,
+      isDarkMode,
     });
 
     // After hv1 exists, draw the extracted path arrow so it ENDS at hv1, not at the logprob vector.
@@ -791,10 +808,10 @@ export function renderOutputLayer(
     if (rm && hv1) {
       const startX = rm.centerX;
       const startY = rm.topY + rm.height + 4; // Below the dummy rectangle (not center)
-      // Aim to the LEFT side of the horizontal vector to avoid interfering with other elements
-      const hv1LeftX = horizCenterX - hv1.width / 2;
+      // Aim to the RIGHT side of the horizontal vector
+      const hv1RightX = horizCenterX + hv1.width / 2;
       const hv1CenterY = horizY + 15; // matches target center used above
-      const pathD = verticalThenHorizontalRoundedPath(startX, startY, hv1LeftX, hv1CenterY, 20);
+      const pathD = verticalThenHorizontalRoundedPath(startX, startY, hv1RightX, hv1CenterY, 20);
       extractionBg
         .append('path')
         .attr('d', pathD)
@@ -811,12 +828,14 @@ export function renderOutputLayer(
   let hv2 = null;
   let logprobY = (hv1 ? hv1.bottomY : horizY + 36) + 60; // Increased from 28 to 60 for longer arrow with box
   const probs = candidates.map((c) => c.prob);
-  if (subStep >= 7) {
+  if (subStep >= 8) {
     hv2 = drawHorizontalVectorRich(group, horizCenterX, logprobY, probs, {
       className: 'logprob-vector',
-      tokenColor: '#8B5CF6',
+      tokenColor: '#2c6ec5ff',
       format: (v) => v.toFixed(2),
       isLogprob: true,
+      ellipsisLast: true,
+      isDarkMode,
     });
     if (hv1 && hv2) {
       drawArrow(underlays, horizCenterX, hv1.bottomY + 6, horizCenterX, hv2.topY - 8, {
@@ -826,57 +845,97 @@ export function renderOutputLayer(
     }
   }
 
-  if (subStep >= 8 && hv2) {
-    const maxBarHeight = 140;
-    const barTopY = hv2.bottomY + 20;
-    const barBaselineY = barTopY + maxBarHeight;
+  if (subStep >= 9 && hv2) {
+    // Draw arrows and labels below each probability value (except the last one which is ellipsis)
+    const arrowStartY = hv2.bottomY + 8;
+    const arrowEndY = arrowStartY + 18;
+    const labelGap = 6;
+    const labelSpacing = 20; // Gap between token and percentage labels
 
-    probs.forEach((p, i) => {
-      const cx = hv2.centers[i];
-      const barH = (p ?? 0) * maxBarHeight;
-      const bw = Math.max(30, hv2.cellWidth * 0.7); // Reduced multiplier from 0.8 to 0.7, min from 40 to 30
-      const color = getPurpleByProb(p ?? 0);
-      const isSelected = i === 0;
-      group
-        .append('rect')
-        .attr('x', cx - bw / 2)
-        .attr('y', barBaselineY - barH)
-        .attr('width', bw)
-        .attr('height', barH)
-        .attr('rx', 4)
-        .attr('class', `distribution-bar ${isSelected ? 'selected' : ''}`)
-        .style('fill', isSelected ? '#e11d48' : color);
-    });
-
-    const legendY = barBaselineY + 24;
-    probs.forEach((p, i) => {
+    // Skip the last cell (ellipsis) - only render arrows/labels for the first n-1 cells
+    probs.slice(0, -1).forEach((p, i) => {
       const cx = hv2.centers[i];
       const token = candidates[i]?.token ?? '';
       const percentage = ((p ?? 0) * 100).toFixed(1) + '%';
       const isSelected = i === 0;
+
+      // Draw arrow from vector cell to labels
       group
-        .append('text')
-        .attr('x', cx)
-        .attr('y', legendY)
-        .attr('text-anchor', 'middle')
-        .attr('class', 'distribution-token-label')
-        .style('font-size', '18px')
-        .style('font-weight', isSelected ? '700' : '600')
-        .style('fill', isSelected ? '#e11d48' : '#333')
-        .text(processTokenForVisualization(token));
+        .append('line')
+        .attr('x1', cx)
+        .attr('y1', arrowStartY)
+        .attr('x2', cx)
+        .attr('y2', arrowEndY)
+        .attr('class', 'distribution-arrow')
+        .style('stroke', '#999')
+        .style('stroke-width', 1.5)
+        .style('opacity', 0.7);
+
+      // Arrowhead
+      group
+        .append('polygon')
+        .attr('points', `${cx},${arrowEndY} ${cx - 4},${arrowEndY - 6} ${cx + 4},${arrowEndY - 6}`)
+        .attr('class', 'distribution-arrow-head')
+        .style('fill', '#999')
+        .style('opacity', 0.7);
+
+      // Token label (first) - truncate if too long to prevent overlap
+      const displayToken = processTokenForVisualization(token);
+      // Max width is cellWidth - small padding; approximate char width ~7px for 13px font
+      const maxChars = Math.floor((hv2.cellWidth - 4) / 7);
+      const truncatedToken =
+        displayToken.length > maxChars
+          ? displayToken.substring(0, maxChars - 1) + '…'
+          : displayToken;
 
       group
         .append('text')
         .attr('x', cx)
-        .attr('y', legendY + 24)
+        .attr('y', arrowEndY + labelGap + 10)
+        .attr('text-anchor', 'middle')
+        .attr('class', 'distribution-token-label')
+        .style('font-size', '13px')
+        .style('font-weight', isSelected ? '600' : 'normal')
+        .style('fill', 'var(--viz-text-color)')
+        .text(truncatedToken);
+
+      // Percentage label (second)
+      group
+        .append('text')
+        .attr('x', cx)
+        .attr('y', arrowEndY + labelGap + 10 + labelSpacing)
         .attr('text-anchor', 'middle')
         .attr('class', 'distribution-percentage-label')
-        .style('font-size', '16px')
-        .style('font-weight', '500')
-        .style('fill', isSelected ? '#e11d48' : '#666')
+        .style('font-size', '12px')
+        .style('font-weight', isSelected ? '600' : 'normal')
+        .style('fill', 'var(--viz-muted-color)')
         .text(percentage);
     });
+
+    // Add ellipsis label for the last cell, centered between token and percentage positions
+    if (hv2.centers.length > 0) {
+      const lastCx = hv2.centers[hv2.centers.length - 1];
+      const tokenY = arrowEndY + labelGap + 10;
+      const percentageY = arrowEndY + labelGap + 10 + labelSpacing;
+      const ellipsisY = (tokenY + percentageY) / 2;
+
+      group
+        .append('text')
+        .attr('x', lastCx)
+        .attr('y', ellipsisY)
+        .attr('text-anchor', 'middle')
+        .attr('class', 'distribution-ellipsis-label')
+        .style('font-size', '16px')
+        .style('font-weight', 'normal')
+        .style('fill', '#999')
+        .text('⋯');
+    }
   }
+
+  // Return centers for alignment, when available
+  const extractedCenterY = hv1 ? (hv1.topY + hv1.bottomY) / 2 : null;
+  const logprobCenterY = hv2 ? (hv2.topY + hv2.bottomY) / 2 : null;
+  return { extractedCenterY, logprobCenterY };
 }
 
 /**
@@ -890,25 +949,47 @@ export function renderOutputLayer(
  */
 // Place stage labels a fixed distance to the right of the content's right edge (anchorX)
 export function renderStageLabels(group, layout, anchorX, subStep, t, showGradual = true) {
+  // Prefer precise positions from layout.stageY when available
+  const stageY = layout.stageY || {};
   const labels = [
-    { key: 'stage_tokenization', y: layout.tokenY + 10, subStep: 0 },
-    { key: 'stage_token_ids', y: layout.tokenY + 70, subStep: 1 },
-    { key: 'stage_input_embeddings', y: layout.embeddingY + 30, subStep: 2 },
+    { key: 'stage_tokenization', y: stageY.stage_tokenization ?? layout.tokenY + 10, subStep: 0 },
+    { key: 'stage_token_ids', y: stageY.stage_token_ids ?? layout.tokenY + 70, subStep: 1 },
+    {
+      key: 'stage_input_embeddings',
+      y: stageY.stage_input_embeddings ?? layout.embeddingY + 30,
+      subStep: 2,
+    },
     {
       key: 'stage_attention_layer',
-      y: layout.attentionY + 40 || layout.embeddingY + 220,
+      y:
+        stageY.stage_attention_layer ??
+        (layout.attentionY != null ? layout.attentionY + 40 : null) ??
+        layout.embeddingY + 220,
       subStep: 4,
     },
-    { key: 'stage_feedforward_layer', y: layout.ffnY + 30 || layout.embeddingY + 280, subStep: 5 },
+    {
+      key: 'stage_feedforward_layer',
+      y:
+        stageY.stage_feedforward_layer ??
+        (layout.ffnY != null ? layout.ffnY + 30 : null) ??
+        layout.embeddingY + 280,
+      subStep: 5,
+    },
     {
       key: 'stage_last_embedding',
-      y: layout.extractedY + 10 || layout.embeddingY + 430,
-      subStep: 8,
+      y:
+        stageY.stage_last_embedding ??
+        (layout.extractedY != null ? layout.extractedY + 10 : null) ??
+        layout.embeddingY + 430,
+      subStep: 7,
     },
     {
       key: 'stage_output_probabilities',
-      y: layout.outputY + 10 || layout.embeddingY + 530,
-      subStep: 10,
+      y:
+        stageY.stage_output_probabilities ??
+        (layout.outputY != null ? layout.outputY + 10 : null) ??
+        layout.embeddingY + 530,
+      subStep: 8,
     },
   ];
 

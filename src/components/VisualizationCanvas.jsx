@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, useMemo, useCallback } from 'react';
 import { useApp } from '../contexts/AppContext';
 import { useI18n } from '../i18n/I18nProvider';
 import * as d3 from 'd3';
@@ -15,6 +15,8 @@ import {
 } from '../visualization/layers/renderLayers';
 import { computeEmbeddingsForStep } from '../visualization/core/embeddings';
 import '../styles/visualization.css';
+import { processTokenForVisualization } from '../utils/tokenProcessing';
+import { LAYOUT as CONSTS } from '../visualization/core/constants';
 
 /**
  * VisualizationCanvas Component
@@ -27,10 +29,12 @@ function VisualizationCanvas() {
   const { onStepAnimationComplete } = actions;
   const svgRef = useRef(null);
   const labelsSvgRef = useRef(null);
+  const scrollRef = useRef(null);
   const containerRef = useRef(null);
   const [containerWidth, setContainerWidth] = useState(800);
   const [isExpanded, setIsExpanded] = useState(false);
   const [embeddingExpanded, setEmbeddingExpanded] = useState({});
+  const [scrollLeft, setScrollLeft] = useState(0);
   const tokensLayoutRef = useRef({
     positions: [],
     widths: [],
@@ -52,13 +56,71 @@ function VisualizationCanvas() {
     const updateDimensions = () => {
       const rect = container.getBoundingClientRect();
       setContainerWidth(rect.width || 800);
-      svg.attr('width', rect.width).attr('height', rect.height);
+      svg.attr('width', rect.width);
+      // Height is now set dynamically in the render effect based on actual content
     };
 
     updateDimensions();
     window.addEventListener('resize', updateDimensions);
 
     return () => window.removeEventListener('resize', updateDimensions);
+  }, []);
+
+  // Clear and reset visualization when prompt (example) or language changes
+  useEffect(() => {
+    if (!svgRef.current) return;
+    // Kill any running animations
+    if (gsapRef.current && typeof gsapRef.current.kill === 'function') {
+      try {
+        gsapRef.current.kill();
+      } catch (e) {
+        console.debug('GSAP kill failed (safe to ignore):', e);
+      }
+      gsapRef.current = null;
+    }
+    // Clear SVGs
+    try {
+      d3.select(svgRef.current).selectAll('*').remove();
+      if (labelsSvgRef.current) d3.select(labelsSvgRef.current).selectAll('*').remove();
+    } catch (e) {
+      console.debug('Clearing SVG failed (safe to ignore):', e);
+    }
+    // Reset local UI state (deferred to avoid setState-in-effect lint and cascading renders)
+    const deferReset = () => {
+      setIsExpanded(false);
+      setEmbeddingExpanded({});
+      setScrollLeft(0);
+      tokensLayoutRef.current = {
+        positions: [],
+        widths: [],
+        visibleIndices: [],
+        gap: 24,
+        shouldCollapse: false,
+      };
+      // Reset scroll position of the scroll container
+      if (scrollRef.current) {
+        try {
+          scrollRef.current.scrollLeft = 0;
+        } catch (e) {
+          console.debug('Reset scroll failed (safe to ignore):', e);
+        }
+      }
+    };
+    // Use microtask to defer state updates out of the effect body
+    if (typeof queueMicrotask === 'function') {
+      queueMicrotask(deferReset);
+    } else {
+      setTimeout(deferReset, 0);
+    }
+  }, [state.currentExampleId, state.language]);
+
+  // Track horizontal scroll to align the collapse toggle with the ellipsis axis
+  useEffect(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+    const onScroll = () => setScrollLeft(el.scrollLeft || 0);
+    el.addEventListener('scroll', onScroll, { passive: true });
+    return () => el.removeEventListener('scroll', onScroll);
   }, []);
 
   // Render visualization based on current step
@@ -134,6 +196,7 @@ function VisualizationCanvas() {
     );
 
     // 2. Render embeddings
+    const isDarkMode = state.theme === 'dark';
     const outerMeta = renderOuterEmbeddingsLayer(
       embeddingGroup,
       step,
@@ -141,7 +204,8 @@ function VisualizationCanvas() {
       tokensLayoutRef,
       embeddingExpanded,
       setEmbeddingExpanded,
-      computedEmbeddings
+      computedEmbeddings,
+      isDarkMode
     );
 
     // 3. New transformer block pipeline with layer stacking
@@ -153,7 +217,8 @@ function VisualizationCanvas() {
       outerMeta,
       currentLayer,
       computedEmbeddings,
-      numLayers
+      numLayers,
+      isDarkMode
     );
 
     // 4. Project directly from FFN inside the transformer block (no outside bottom embeddings)
@@ -171,13 +236,13 @@ function VisualizationCanvas() {
       topY: blockMeta.ffnY,
       metas: ffnMetas,
       rightmostIdx,
+      rightmostActualIndex:
+        rightmostIdx >= 0 ? (tokensLayoutRef.current?.visibleIndices?.[rightmostIdx] ?? -1) : -1,
       rightmostMeta: rightmostIdx >= 0 ? ffnMetas[rightmostIdx] : null,
     };
 
-    // 5. Output distribution below
-    // Reduce vertical offset before the output area to keep bars within the canvas height
-    const outputYOffset = 120;
-    layout.outputY = ffnInfo.afterBottomY + outputYOffset;
+    // 5. Output distribution below — use centralized offset
+    layout.outputY = ffnInfo.afterBottomY + CONSTS.OUTPUT_Y_OFFSET;
     // Compute center of current content (token stack) to align bottom outputs
     const {
       positions: posArr = [],
@@ -198,7 +263,7 @@ function VisualizationCanvas() {
         ? (minEdge + maxEdge) / 2
         : visualizationWidth / 2;
 
-    renderOutputLayer(
+    const outputsMeta = renderOutputLayer(
       outputGroup,
       step,
       layout,
@@ -207,15 +272,22 @@ function VisualizationCanvas() {
       ffnInfo,
       subStep,
       computedEmbeddings,
-      contentCenterX
+      contentCenterX,
+      isDarkMode
     );
 
     // 6. Collect Y positions for stage labels
     // We need to determine Y positions for each stage based on the actual layout
-    layout.attentionY = blockMeta.blockTopY + 40; // Slightly lower to fit reduced block height
-    layout.ffnY = blockMeta.ffnY + 10;
-    layout.bottomEmbeddingY = blockMeta.ffnY + 10; // Repurpose to label FFN output since outside bottom is removed
-    layout.extractedY = ffnInfo.afterBottomY + 40;
+    // Build shared stage positions for precise alignment
+    layout.stageY = {
+      stage_tokenization: layout.tokenY + 6,
+      stage_token_ids: layout.tokenY + 72,
+      stage_input_embeddings: layout.embeddingY + (outerMeta.maxOuterHeight || 0) / 2,
+      stage_attention_layer: blockMeta.attentionCenterY ?? blockMeta.blockTopY + 40,
+      stage_feedforward_layer: blockMeta.ffnY + (blockMeta.maxFfnHeight || 0) / 2,
+      stage_last_embedding: outputsMeta?.extractedCenterY ?? ffnInfo.afterBottomY + 20 + 15,
+      stage_output_probabilities: outputsMeta?.logprobCenterY ?? ffnInfo.afterBottomY + 90,
+    };
 
     // 7. Render stage labels on the right
     // Determine the right edge of the content to anchor labels consistently
@@ -241,6 +313,21 @@ function VisualizationCanvas() {
     // Size the labels SVG to the panel width
     labelsSvg.attr('width', labelsWidthDynamic);
 
+    // Calculate dynamic SVG height from actual rendered content using bounding boxes.
+    // Consider BOTH the main visualization and the stage labels so the scroll bottom
+    // is always within CONSTS.BOTTOM_PADDING of the lowest element.
+    const mainG = svg.select('.visualization-main').node();
+    const labelsGNode = labelsGroup && labelsGroup.node ? labelsGroup.node() : null;
+    const getBottom = (node) => {
+      if (!node || !node.getBBox) return 0;
+      const b = node.getBBox();
+      return b.y + b.height;
+    };
+    const contentBottom = Math.max(getBottom(mainG), getBottom(labelsGNode));
+    const dynamicHeight = Math.max(600, Math.ceil(contentBottom + CONSTS.BOTTOM_PADDING));
+    svg.attr('height', dynamicHeight);
+    labelsSvg.attr('height', dynamicHeight);
+
     const animDuration = 0.6; // Duration for each transition
     const isInitialStep = state.currentStep === 1;
 
@@ -258,6 +345,8 @@ function VisualizationCanvas() {
     state.currentExample,
     state.currentAnimationSubStep,
     state.currentTransformerLayer,
+    // Re-render visualization immediately when theme changes so D3 colors update
+    state.theme,
     isExpanded,
     embeddingExpanded,
     onStepAnimationComplete,
@@ -291,27 +380,103 @@ function VisualizationCanvas() {
       ref={containerRef}
       style={{ ['--labels-width']: `${labelsWidthStyle}px` }}
     >
-      {/* Expand/Collapse button - only show when tokens would be collapsed */}
-      {(() => {
-        const currentStepData = state.currentExample?.generation_steps?.[state.currentStep - 1];
-        const tokens = currentStepData?.tokens || [];
-        const width = containerWidth || 800;
-        const maxVisibleTokens = Math.floor(width / 140) - 1;
-        const shouldShowButton = tokens.length > maxVisibleTokens;
+      {/* Scrollable visualization area with overlay controls */}
+      <div className="viz-scroll" ref={scrollRef}>
+        {/* Subtle collapse/expand toggle aligned with ellipsis axis */}
+        {(() => {
+          const step = state.currentExample?.generation_steps?.[state.currentStep - 1];
+          if (!step) return null;
 
-        return shouldShowButton ? (
-          <button
-            className="expand-tokens-button"
-            onClick={() => setIsExpanded(!isExpanded)}
-            aria-label={isExpanded ? 'Collapse tokens' : 'Expand all tokens'}
-            title={isExpanded ? 'Collapse tokens' : 'Expand all tokens'}
-          >
-            {isExpanded ? '←' : '→'}
-          </button>
-        ) : null;
-      })()}
+          // Compute scrollable content width and token threshold similar to SVG render
+          const tokens = step.tokens || [];
+          const gap = 70;
+          const widthForCalc = containerWidth || 800;
+          const maxLabelsWidthCalc = Math.max(360, Math.round(widthForCalc * 0.5));
+          const minLabelsWidthCalc = 340;
+          const denomCalc = Math.max(1, widthForCalc - minLabelsWidthCalc);
+          const estWidths = tokens.map((tok) =>
+            Math.max(36, processTokenForVisualization(tok).length * 10 + 16)
+          );
+          const estimatedContentWidth =
+            estWidths.reduce((a, b) => a + b, 0) +
+            (tokens.length > 0 ? gap * (tokens.length - 1) : 0) +
+            40;
+          const labelsWidthCalc = Math.round(
+            maxLabelsWidthCalc -
+              (maxLabelsWidthCalc - minLabelsWidthCalc) *
+                Math.max(0, Math.min(1, estimatedContentWidth / denomCalc))
+          );
+          const scrollAreaWidth = Math.max(320, widthForCalc - labelsWidthCalc);
 
-      <div className="viz-scroll">
+          const maxVisibleTokens = Math.floor(scrollAreaWidth / 140) - 1;
+          const shouldShow = tokens.length > maxVisibleTokens;
+          if (!shouldShow) return null;
+
+          // Compute would-be ellipsis center X for collapsed layout (in SVG coords)
+          const edgeCount = Math.max(1, Math.floor(maxVisibleTokens / 2));
+          const leftTokens = tokens.slice(0, edgeCount);
+          const rightTokens = tokens.slice(-edgeCount);
+          const visibleCollapsed = [...leftTokens, '...', ...rightTokens];
+          const widthsCollapsed = visibleCollapsed.map((tok) =>
+            tok === '...' ? 24 : Math.max(36, processTokenForVisualization(tok).length * 10 + 16)
+          );
+          const contentWidthCollapsed =
+            widthsCollapsed.reduce((a, b) => a + b, 0) + gap * (visibleCollapsed.length - 1);
+          const minMargin = 20; // keep in sync with layout.margin default
+          const leftBias = -100; // keep in sync with layout.leftBias
+          const startX = Math.max(
+            minMargin,
+            (scrollAreaWidth - contentWidthCollapsed) / 2 - leftBias
+          );
+          let cursor = startX;
+          const positionsCollapsed = widthsCollapsed.map((w) => {
+            const c = cursor + w / 2;
+            cursor += w + gap;
+            return c;
+          });
+          const ellipsisIndex = edgeCount; // where '...' sits
+          const ellipsisCenterX = positionsCollapsed[ellipsisIndex] ?? scrollAreaWidth / 2;
+
+          // Position the button between token IDs and embeddings, adjust for horizontal scroll
+          const buttonHalf = 16; // 32px / 2
+          const left = Math.round(ellipsisCenterX - scrollLeft - buttonHalf);
+          const clampedLeft = Math.max(4, Math.min(left, scrollAreaWidth - buttonHalf * 2 - 4));
+
+          return (
+            <button
+              className={`collapse-toggle ${isExpanded ? 'state-expanded' : 'state-collapsed'}`}
+              style={{ left: `${clampedLeft}px`, top: '95px' }}
+              onClick={() => setIsExpanded((v) => !v)}
+              aria-label={isExpanded ? 'Collapse tokens' : 'Expand tokens'}
+              title={isExpanded ? 'Collapse tokens' : 'Expand tokens'}
+            >
+              {/* Icon: arrows only, direction indicates the action */}
+              <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true">
+                {isExpanded ? (
+                  // Collapse inward: arrows pointing inward
+                  <g stroke="currentColor" strokeWidth="2" strokeLinecap="round" fill="none">
+                    <path d="M4 12 h7" />
+                    <path d="M11 12 l-3 -3" />
+                    <path d="M11 12 l-3 3" />
+                    <path d="M20 12 h-7" />
+                    <path d="M13 12 l3 -3" />
+                    <path d="M13 12 l3 3" />
+                  </g>
+                ) : (
+                  // Expand outward: arrows pointing outward
+                  <g stroke="currentColor" strokeWidth="2" strokeLinecap="round" fill="none">
+                    <path d="M4 12 h7" />
+                    <path d="M4 12 l3 -3" />
+                    <path d="M4 12 l3 3" />
+                    <path d="M20 12 h-7" />
+                    <path d="M20 12 l-3 -3" />
+                    <path d="M20 12 l-3 3" />
+                  </g>
+                )}
+              </svg>
+            </button>
+          );
+        })()}
         {(() => {
           // Estimate dynamic width based on token content (labels are in a separate sticky panel)
           const currentStepData = state.currentExample?.generation_steps?.[state.currentStep - 1];
@@ -332,8 +497,11 @@ function VisualizationCanvas() {
             maxLabelsWidthCalc - (maxLabelsWidthCalc - minLabelsWidthCalc) * growthRatioCalc
           );
           const scrollAreaWidth = Math.max(320, widthForCalc - labelsWidthCalc);
+          // When expanded, add horizontal padding so the rightmost content isn't trimmed.
+          // Keep this in sync with layout.margin (~20px on the left) and potential positioning biases.
+          const extraPadding = 240; // layout.margin * 2 for symmetric room
           const svgWidth = isExpanded
-            ? Math.max(scrollAreaWidth, estimatedContentWidth)
+            ? Math.max(scrollAreaWidth, estimatedContentWidth + extraPadding)
             : scrollAreaWidth;
 
           // Render SVG with computed width

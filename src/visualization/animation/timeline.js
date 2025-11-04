@@ -90,12 +90,12 @@ export function setInitialStates(svgElement, subStep, isInitialStep) {
     setIfAny(svgElement, SEL.logprobVector, { opacity: prev >= 8 ? 1 : 0 });
 
     setIfAny(svgElement, SEL.distributionBar, {
-      opacity: prev >= 10 ? 1 : 0,
-      scaleY: prev >= 10 ? 1 : 0.1,
+      opacity: prev >= 9 ? 1 : 0,
+      scaleY: prev >= 9 ? 1 : 0.1,
       transformOrigin: '50% 100%',
     });
     setIfAny(svgElement, SEL.distributionLabels, {
-      opacity: prev >= 10 ? 1 : 0,
+      opacity: prev >= 9 ? 1 : 0,
     });
   } else {
     // Subsequent steps: keep previous stacks visible based on sub-step
@@ -178,12 +178,12 @@ export function setInitialStates(svgElement, subStep, isInitialStep) {
     setIfAny(svgElement, SEL.logprobVector, { opacity: prev >= 8 ? 1 : 0 });
 
     setIfAny(svgElement, SEL.distributionBar, {
-      opacity: prev >= 10 ? 1 : 0,
-      scaleY: prev >= 10 ? 1 : 0.1,
+      opacity: prev >= 9 ? 1 : 0,
+      scaleY: prev >= 9 ? 1 : 0.1,
       transformOrigin: '50% 100%',
     });
     setIfAny(svgElement, SEL.distributionLabels, {
-      opacity: prev >= 10 ? 1 : 0,
+      opacity: prev >= 9 ? 1 : 0,
     });
   }
 }

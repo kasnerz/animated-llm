@@ -22,6 +22,9 @@ export const LAYOUT = {
   BLOCK_PADDING: 30,
   TOKEN_Y: 10,
   EMBEDDING_Y: 140,
+  // Vertical spacing controls
+  OUTPUT_Y_OFFSET: 90, // distance from FFN bottom to output area
+  BOTTOM_PADDING: 80, // final padding under the lowest element (easy to tweak)
   CELL_HEIGHT: 8,
   CELL_WIDTH: 8,
   EMBEDDING_WIDTH: 40,

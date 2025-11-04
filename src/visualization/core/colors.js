@@ -58,3 +58,59 @@ export function getAttentionColor(weight) {
   const opacity = Math.max(0.1, Math.min(1, weight));
   return `rgba(106, 27, 154, ${opacity})`; // Purple with varying opacity
 }
+
+/**
+ * Centralized helper to get background fill and stroke for vector boxes
+ * Applies theme-aware lightening/darkening using the tokenColor as a base.
+ * @param {string} tokenColor - Base color (hex/rgb)
+ * @param {Object} options
+ * @param {boolean} options.isDarkMode - Whether dark mode is active
+ * @param {number} [options.lighten=0.85] - Interpolation toward white for light mode
+ * @param {number} [options.darken=0.5] - Interpolation toward black for dark mode
+ * @param {number} [options.strokeLighten=0.6] - Stroke interpolation toward white (light mode)
+ * @param {number} [options.strokeDarken=0.3] - Stroke interpolation toward black (dark mode)
+ * @param {string} [options.fallbackFillLight='#f2f3f5']
+ * @param {string} [options.fallbackStrokeLight='#e0e0e0']
+ * @param {string} [options.fallbackFillDark='#2d2d2d']
+ * @param {string} [options.fallbackStrokeDark='#404040']
+ * @returns {{ fill: string, stroke: string }}
+ */
+export function getVectorBoxColors(
+  tokenColor,
+  {
+    isDarkMode,
+    lighten = 0.85,
+    darken = 0.5,
+    strokeLighten = 0.6,
+    strokeDarken = 0.3,
+    fallbackFillLight = '#f2f3f5',
+    fallbackStrokeLight = '#e0e0e0',
+    fallbackFillDark = '#2d2d2d',
+    fallbackStrokeDark = '#404040',
+  } = {}
+) {
+  const hasColor = typeof tokenColor === 'string' && tokenColor.length > 0;
+  if (isDarkMode) {
+    return hasColor
+      ? {
+          fill: d3.interpolateRgb(tokenColor, '#000000')(darken),
+          stroke: d3.interpolateRgb(tokenColor, '#000000')(strokeDarken),
+        }
+      : { fill: fallbackFillDark, stroke: fallbackStrokeDark };
+  }
+  return hasColor
+    ? {
+        fill: d3.interpolateRgb(tokenColor, '#ffffff')(lighten),
+        stroke: d3.interpolateRgb(tokenColor, '#ffffff')(strokeLighten),
+      }
+    : { fill: fallbackFillLight, stroke: fallbackStrokeLight };
+}
+
+/**
+ * Text color for numbers inside vectors, theme-aware.
+ * @param {boolean} isDarkMode
+ * @returns {string}
+ */
+export function getVectorTextColor(isDarkMode) {
+  return isDarkMode ? '#e0e0e0' : '#111';
+}
