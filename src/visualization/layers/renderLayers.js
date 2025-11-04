@@ -367,9 +367,17 @@ export function renderTransformerBlockLayer(
   tokensLayoutRef,
   outerMeta,
   currentLayer,
-  computedEmbeddings
+  computedEmbeddings,
+  numLayers
   // numLayers is passed but not currently used - kept for future enhancements
 ) {
+  // Expose current layer and total layers to the DOM so the animation layer can infer state
+  try {
+    group.attr('data-current-layer', String(currentLayer ?? 0));
+    if (numLayers != null) group.attr('data-num-layers', String(numLayers));
+  } catch {
+    // non-fatal
+  }
   const { visibleIndices = [], positions = [] } = tokensLayoutRef.current || {};
   const columnsMeta = outerMeta.columnsMeta;
 
@@ -385,9 +393,9 @@ export function renderTransformerBlockLayer(
   const afterOuterBottom = layout.embeddingY + outerMeta.maxOuterHeight;
   const blockTopY = afterOuterBottom + 40;
 
-  // Card stack offset: each previous layer is offset to the bottom-right
+  // Card stack offset: each previous layer is offset to the top-right (behind the active card)
   const stackOffsetX = 8;
-  const stackOffsetY = 8;
+  const stackOffsetY = -8;
 
   // First, calculate the full block dimensions so we can render shadows with correct height
   const insideTopY = blockTopY + layout.blockPadding;
@@ -424,19 +432,21 @@ export function renderTransformerBlockLayer(
     estimatedFfnHeight +
     layout.blockPadding;
 
-  // Render shadow layers for all previous blocks with correct height
-  for (let layer = 0; layer < currentLayer; layer++) {
-    const offsetX = (currentLayer - layer) * stackOffsetX;
-    const offsetY = (currentLayer - layer) * stackOffsetY;
+  // Render shadow layers for the entire stack (limited to 3), initially hidden.
+  // They will be revealed in a dedicated animation sub-step.
+  const minX = Math.min(...validXs);
+  const maxX = Math.max(...validXs);
+  const shadowPadding = 60;
+  const totalShadows = Math.min(3, Math.max(0, (numLayers || 1) - 1));
+  // Draw from farthest (back) to closest so nearer cards sit above farther ones
+  for (let s = totalShadows; s >= 1; s--) {
+    const offsetX = s * stackOffsetX;
+    const offsetY = s * stackOffsetY;
 
     const shadowGroup = group
       .append('g')
-      .attr('class', `transformer-shadow-layer layer-${layer}`)
+      .attr('class', `transformer-shadow-layer layer-${s}`)
       .attr('transform', `translate(${offsetX}, ${offsetY})`);
-
-    const minX = Math.min(...validXs);
-    const maxX = Math.max(...validXs);
-    const shadowPadding = 60;
 
     shadowGroup
       .append('rect')
@@ -625,9 +635,10 @@ export function renderTransformerBlockLayer(
 
   const blockBottomY = ffnY + maxFfnHeight + layout.blockPadding;
 
-  // Render the main transformer box with same style as shadows
+  // Render the main transformer box with same style as shadows.
+  // Insert it just before the inside content so it's above shadows but below inner elements.
   group
-    .insert('rect', ':first-child')
+    .insert('rect', '.inside-top-embeddings')
     .attr('x', Math.min(...validXs) - 60)
     .attr('y', blockTopY)
     .attr('width', Math.max(...validXs) + 60 - (Math.min(...validXs) - 60))
@@ -637,6 +648,18 @@ export function renderTransformerBlockLayer(
     .style('fill', 'var(--viz-transformer-bg)')
     .style('stroke', 'var(--viz-transformer-border)')
     .style('stroke-width', 2);
+
+  // Add stack size label (e.g., "Nx") next to the stack; hidden until reveal step.
+  const boxRightX = maxX + 60;
+  group
+    .append('text')
+    .attr('x', boxRightX + 14)
+    .attr('y', blockTopY + 18)
+    .attr('class', 'transformer-stack-label')
+    .style('font-size', '14px')
+    .style('font-weight', '600')
+    .style('fill', 'var(--text-tertiary)')
+    .text(`${Math.max(1, numLayers || 1)}x`);
 
   return { blockTopY, blockBottomY, insideBottomMeta: ffnMeta };
 }
@@ -941,17 +964,17 @@ export function renderStageLabels(group, layout, anchorX, subStep, t) {
     {
       key: 'stage_output_embeddings',
       y: layout.bottomEmbeddingY + 10 || layout.embeddingY + 350,
-      subStep: 6,
+      subStep: 7,
     },
     {
       key: 'stage_last_embedding',
       y: layout.extractedY + 10 || layout.embeddingY + 430,
-      subStep: 7,
+      subStep: 8,
     },
     {
       key: 'stage_output_probabilities',
       y: layout.outputY + 10 || layout.embeddingY + 530,
-      subStep: 9,
+      subStep: 10,
     },
   ];
 

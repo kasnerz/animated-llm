@@ -69,6 +69,7 @@ function VisualizationCanvas() {
     const computedEmbeddings = computeEmbeddingsForStep(step, 3);
     const subStep = state.currentAnimationSubStep;
     const currentLayer = state.currentTransformerLayer;
+    const transformerPassPhase = state.transformerPassPhase;
     const numLayers = state.currentExample.model_info?.num_layers || 1;
 
     // Clear previous visualization
@@ -134,7 +135,9 @@ function VisualizationCanvas() {
       outerMeta,
       currentLayer,
       computedEmbeddings,
-      numLayers
+      numLayers,
+      transformerPassPhase,
+      subStep
     );
 
     // 4. Bottom outside embeddings (no FFN arrows now)
@@ -212,6 +215,7 @@ function VisualizationCanvas() {
     state.currentExample,
     state.currentAnimationSubStep,
     state.currentTransformerLayer,
+    state.transformerPassPhase,
     isExpanded,
     embeddingExpanded,
     onStepAnimationComplete,

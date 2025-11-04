@@ -36,7 +36,7 @@ function AppContent() {
         }
 
         // Advance through sub-steps; if already at final sub-step, finalize the step
-        const lastSubStep = 9; // keep in sync with animation timeline
+        const lastSubStep = 10; // keep in sync with animation timeline (0..10 visible + 11 delay)
         if (state.currentAnimationSubStep < lastSubStep) {
           actions.nextAnimationSubStep();
         } else {

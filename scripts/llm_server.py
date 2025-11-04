@@ -241,8 +241,8 @@ async def generate(request: GenerateRequest):
 
                 # For display: show only the original prompt + tokens generated so far (exclude current selection)
                 if request.apply_chat_template:
-                    # Tokenize the original prompt for display
-                    prompt_token_ids = tokenizer(request.prompt, return_tensors="pt").input_ids[0].tolist()
+                    # Tokenize the original prompt for display (without any trailing spaces)
+                    prompt_token_ids = tokenizer(request.prompt.rstrip(), return_tensors="pt", add_special_tokens=False).input_ids[0].tolist()
                     prompt_tokens = tokenizer.convert_ids_to_tokens(prompt_token_ids)
                     
                     # Filter out special tokens like <|begin_of_text|>

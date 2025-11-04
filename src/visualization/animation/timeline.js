@@ -21,6 +21,11 @@ const setIfAny = (root, selector, vars) => {
 export function setInitialStates(svgElement, subStep, isInitialStep) {
   // Initialize to the previous sub-step's visual state so we can animate only the delta
   const prev = Math.max(0, (typeof subStep === 'number' ? subStep : 0) - 1);
+  // Read transformer state flags from DOM (set by renderer)
+  const tg = svgElement ? svgElement.querySelector(SEL.transformerGroup) : null;
+  const curLayer = tg ? Number(tg.getAttribute('data-current-layer') || '0') : 0;
+  const totalLayers = tg ? Number(tg.getAttribute('data-num-layers') || '1') : 1;
+  const keepStackVisible = totalLayers > 1 && curLayer > 0; // second pass
   if (isInitialStep) {
     // Initial visualization: set states based on what should already be visible
     setIfAny(svgElement, SEL.token, { opacity: prev >= 0 ? 1 : 0 });
@@ -57,29 +62,45 @@ export function setInitialStates(svgElement, subStep, isInitialStep) {
     });
     setIfAny(svgElement, SEL.ffnArrow, { opacity: prev >= 5 ? 1 : 0 });
 
+    // Transformer stack reveal (shadows + label) — keep visible once revealed within the step
+    {
+      const nodes = qsa(svgElement, SEL.transformerShadowBox);
+      if (nodes.length) {
+        const anyRevealed = nodes.some((n) => n.getAttribute('data-revealed') === '1');
+        gsap.set(nodes, { opacity: anyRevealed || keepStackVisible || prev >= 6 ? 1 : 0 });
+      }
+    }
+    {
+      const nodes = qsa(svgElement, SEL.transformerStackLabel);
+      if (nodes.length) {
+        const anyRevealed = nodes.some((n) => n.getAttribute('data-revealed') === '1');
+        gsap.set(nodes, { opacity: anyRevealed || keepStackVisible || prev >= 6 ? 1 : 0 });
+      }
+    }
+
     setIfAny(svgElement, SEL.bottomEmbeddingGroupAll, {
-      opacity: prev >= 6 ? 1 : 0,
-      y: prev >= 6 ? 0 : 8,
+      opacity: prev >= 7 ? 1 : 0,
+      y: prev >= 7 ? 0 : 8,
     });
-    setIfAny(svgElement, SEL.blockToOutsideArrow, { opacity: prev >= 6 ? 1 : 0 });
+    setIfAny(svgElement, SEL.blockToOutsideArrow, { opacity: prev >= 7 ? 1 : 0 });
 
     setIfAny(svgElement, SEL.extractedEmbedding, { opacity: 0 });
     setIfAny(svgElement, SEL.extractedPathArrow, {
-      opacity: prev >= 7 ? 1 : 0,
+      opacity: prev >= 8 ? 1 : 0,
     });
     setIfAny(svgElement, SEL.extractedHorizontal, {
-      opacity: prev >= 7 ? 1 : 0,
+      opacity: prev >= 8 ? 1 : 0,
     });
-    setIfAny(svgElement, SEL.logprobArrow, { opacity: prev >= 8 ? 1 : 0 });
-    setIfAny(svgElement, SEL.logprobVector, { opacity: prev >= 8 ? 1 : 0 });
+    setIfAny(svgElement, SEL.logprobArrow, { opacity: prev >= 9 ? 1 : 0 });
+    setIfAny(svgElement, SEL.logprobVector, { opacity: prev >= 9 ? 1 : 0 });
 
     setIfAny(svgElement, SEL.distributionBar, {
-      opacity: prev >= 9 ? 1 : 0,
-      scaleY: prev >= 9 ? 1 : 0.1,
+      opacity: prev >= 10 ? 1 : 0,
+      scaleY: prev >= 10 ? 1 : 0.1,
       transformOrigin: '50% 100%',
     });
     setIfAny(svgElement, SEL.distributionLabels, {
-      opacity: prev >= 9 ? 1 : 0,
+      opacity: prev >= 10 ? 1 : 0,
     });
   } else {
     // Subsequent steps: keep previous stacks visible based on sub-step
@@ -134,31 +155,47 @@ export function setInitialStates(svgElement, subStep, isInitialStep) {
     setIfAny(svgElement, SEL.ffnArrowPrev, { opacity: 1 });
     setIfAny(svgElement, SEL.ffnArrowNew, { opacity: prev >= 5 ? 1 : 0 });
 
+    // Transformer stack reveal (shadows + label) — keep visible once revealed within the step
+    {
+      const nodes = qsa(svgElement, SEL.transformerShadowBox);
+      if (nodes.length) {
+        const anyRevealed = nodes.some((n) => n.getAttribute('data-revealed') === '1');
+        gsap.set(nodes, { opacity: anyRevealed || keepStackVisible || prev >= 6 ? 1 : 0 });
+      }
+    }
+    {
+      const nodes = qsa(svgElement, SEL.transformerStackLabel);
+      if (nodes.length) {
+        const anyRevealed = nodes.some((n) => n.getAttribute('data-revealed') === '1');
+        gsap.set(nodes, { opacity: anyRevealed || keepStackVisible || prev >= 6 ? 1 : 0 });
+      }
+    }
+
     setIfAny(svgElement, SEL.bottomEmbeddingColPrev, { opacity: 1, y: 0 });
     setIfAny(svgElement, SEL.bottomEmbeddingColNew, {
-      opacity: prev >= 6 ? 1 : 0,
-      y: prev >= 6 ? 0 : 8,
+      opacity: prev >= 7 ? 1 : 0,
+      y: prev >= 7 ? 0 : 8,
     });
     setIfAny(svgElement, SEL.blockToOutsideArrowPrev, { opacity: 1 });
-    setIfAny(svgElement, SEL.blockToOutsideArrowNew, { opacity: prev >= 6 ? 1 : 0 });
+    setIfAny(svgElement, SEL.blockToOutsideArrowNew, { opacity: prev >= 7 ? 1 : 0 });
 
     setIfAny(svgElement, SEL.extractedEmbedding, { opacity: 0 });
     setIfAny(svgElement, SEL.extractedPathArrow, {
-      opacity: prev >= 7 ? 1 : 0,
+      opacity: prev >= 8 ? 1 : 0,
     });
     setIfAny(svgElement, SEL.extractedHorizontal, {
-      opacity: prev >= 7 ? 1 : 0,
+      opacity: prev >= 8 ? 1 : 0,
     });
-    setIfAny(svgElement, SEL.logprobArrow, { opacity: prev >= 8 ? 1 : 0 });
-    setIfAny(svgElement, SEL.logprobVector, { opacity: prev >= 8 ? 1 : 0 });
+    setIfAny(svgElement, SEL.logprobArrow, { opacity: prev >= 9 ? 1 : 0 });
+    setIfAny(svgElement, SEL.logprobVector, { opacity: prev >= 9 ? 1 : 0 });
 
     setIfAny(svgElement, SEL.distributionBar, {
-      opacity: prev >= 9 ? 1 : 0,
-      scaleY: prev >= 9 ? 1 : 0.1,
+      opacity: prev >= 10 ? 1 : 0,
+      scaleY: prev >= 10 ? 1 : 0.1,
       transformOrigin: '50% 100%',
     });
     setIfAny(svgElement, SEL.distributionLabels, {
-      opacity: prev >= 9 ? 1 : 0,
+      opacity: prev >= 10 ? 1 : 0,
     });
   }
 }
@@ -260,6 +297,24 @@ export function buildTimeline(svgElement, subStep, isInitialStep, animDuration, 
       );
       break;
     case 6:
+      // Reveal transformer stack (shadow cards) and 'Nx' label in a quick succession
+      toIfAny(SEL.transformerShadowBox, {
+        opacity: 1,
+        stagger: 0.03,
+        duration: animDuration * 0.4,
+      });
+      toIfAny(SEL.transformerStackLabel, { opacity: 1, duration: animDuration * 0.5 }, '<');
+      // Mark as revealed so subsequent sub-steps in the same generation keep them visible
+      {
+        const nodes = qsa(svgElement, SEL.transformerShadowBox);
+        if (nodes.length) tl.set(nodes, { attr: { 'data-revealed': '1' } }, '>-0.1');
+      }
+      {
+        const nodes = qsa(svgElement, SEL.transformerStackLabel);
+        if (nodes.length) tl.set(nodes, { attr: { 'data-revealed': '1' } }, '<');
+      }
+      break;
+    case 7:
       toIfAny(isInitialStep ? SEL.bottomEmbeddingGroupAll : SEL.bottomEmbeddingColNew, {
         opacity: 1,
         y: 0,
@@ -271,20 +326,20 @@ export function buildTimeline(svgElement, subStep, isInitialStep, animDuration, 
         '<'
       );
       break;
-    case 7:
+    case 8:
       animateExtraction();
       toIfAny(SEL.extractedPathArrow, { opacity: 1, duration: animDuration });
       toIfAny(SEL.extractedHorizontal, { opacity: 1, duration: animDuration });
       break;
-    case 8:
+    case 9:
       toIfAny(SEL.logprobArrow, { opacity: 1, duration: animDuration });
       toIfAny(SEL.logprobVector, { opacity: 1, duration: animDuration }, '<');
       break;
-    case 9:
+    case 10:
       toIfAny(SEL.distributionBar, { opacity: 1, scaleY: 1, duration: animDuration });
       toIfAny(SEL.distributionLabels, { opacity: 1, duration: animDuration }, '<');
       break;
-    case 10:
+    case 11:
       // No visuals by default; tiny delay to keep async behavior consistent
       tl.to({}, { duration: Math.max(0.05, animDuration * 0.2) });
       break;
@@ -292,7 +347,7 @@ export function buildTimeline(svgElement, subStep, isInitialStep, animDuration, 
       break;
   }
 
-  if (subStep === 10 && typeof onStepComplete === 'function') {
+  if (subStep === 11 && typeof onStepComplete === 'function') {
     tl.eventCallback('onComplete', onStepComplete);
   }
 

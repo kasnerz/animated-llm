@@ -1,4 +1,4 @@
-import { createContext, useContext, useReducer, useEffect, useCallback } from 'react';
+import { createContext, useContext, useReducer, useEffect, useCallback, useRef } from 'react';
 import config from '../config';
 import * as examplesApi from '../services/examplesApi';
 import { useThemeEffect } from '../hooks/useThemeEffect';
@@ -124,21 +124,48 @@ function appReducer(state, action) {
 
     case ActionTypes.NEXT_ANIMATION_SUB_STEP: {
       const numLayers = state.currentExample?.model_info?.num_layers || 1;
-      const maxSubSteps = 11; // Updated to account for new substep
+      const maxSubSteps = 12; // timeline now has 0..11
 
-      // Determine if we're in the transformer layer animation phase (substeps 3-5)
-      const isInTransformerPhase =
-        state.currentAnimationSubStep >= 3 && state.currentAnimationSubStep <= 5;
+      // Two-stage transformer flow:
+      // - First pass (substeps 3..5) with currentTransformerLayer = 0
+      // - Reveal stack (substep 6) in one press
+      // - Second pass (substeps 3..5) with currentTransformerLayer = numLayers-1
+      // - Continue with the rest (substep 7..)
 
-      if (isInTransformerPhase && state.currentTransformerLayer < numLayers - 1) {
-        // If we're at substep 5 (end of one layer) and there are more layers, move to next layer
-        if (state.currentAnimationSubStep === 5) {
-          return {
-            ...state,
-            currentTransformerLayer: state.currentTransformerLayer + 1,
-            currentAnimationSubStep: 3, // Go back to beginning of transformer block
-          };
-        }
+      const sub = state.currentAnimationSubStep;
+      const currentLayer = state.currentTransformerLayer;
+
+      // If numLayers <= 1, skip reveal and second pass
+      if (numLayers <= 1 && sub === 5) {
+        return {
+          ...state,
+          currentAnimationSubStep: 7, // skip reveal directly to outside embeddings
+        };
+      }
+
+      // After finishing first pass at substep 5, go to reveal (6)
+      if (sub === 5 && currentLayer === 0 && numLayers > 1) {
+        return {
+          ...state,
+          currentAnimationSubStep: 6,
+        };
+      }
+
+      // At reveal substep, switch to last layer and re-enter transformer at substep 3
+      if (sub === 6 && numLayers > 1) {
+        return {
+          ...state,
+          currentTransformerLayer: Math.max(0, numLayers - 1),
+          currentAnimationSubStep: 3,
+        };
+      }
+
+      // After finishing the second pass at substep 5 on the last layer, skip reveal
+      if (sub === 5 && currentLayer >= numLayers - 1 && numLayers > 1) {
+        return {
+          ...state,
+          currentAnimationSubStep: 7,
+        };
       }
 
       if (state.currentAnimationSubStep >= maxSubSteps - 1) {
@@ -260,6 +287,7 @@ function appReducer(state, action) {
  */
 export function AppProvider({ children }) {
   const [state, dispatch] = useReducer(appReducer, initialState);
+  const isFirstRender = useRef(true);
 
   // Apply theme side effect
   useThemeEffect(state.theme);
@@ -267,10 +295,10 @@ export function AppProvider({ children }) {
   /**
    * Load all examples from examples.json
    */
-  const loadExamples = useCallback(async () => {
+  const loadExamples = useCallback(async (language = null) => {
     try {
       dispatch({ type: ActionTypes.LOAD_EXAMPLES_START });
-      const examples = await examplesApi.listExamples();
+      const examples = await examplesApi.listExamples(language);
       dispatch({
         type: ActionTypes.LOAD_EXAMPLES_SUCCESS,
         payload: { examples },
@@ -342,6 +370,8 @@ export function AppProvider({ children }) {
    * Toggle language between English and Czech
    */
   const toggleLanguage = useCallback(() => {
+    // Get current state synchronously through a ref pattern
+    // First dispatch the toggle
     dispatch({ type: ActionTypes.TOGGLE_LANGUAGE });
   }, []);
 
@@ -402,10 +432,21 @@ export function AppProvider({ children }) {
     dispatch({ type: ActionTypes.STEP_ANIMATION_COMPLETE });
   }, []);
 
-  // Load examples on mount
+  // Load examples on mount with initial language
   useEffect(() => {
-    loadExamples();
-  }, [loadExamples]);
+    loadExamples(initialState.language);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  // Reload examples when language changes (but not on first render)
+  useEffect(() => {
+    if (isFirstRender.current) {
+      isFirstRender.current = false;
+      return;
+    }
+    loadExamples(state.language);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [state.language]);
 
   // Set initial theme on mount
   useEffect(() => {

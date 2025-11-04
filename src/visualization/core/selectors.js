@@ -33,6 +33,7 @@ export const TRANSFORMER_SELECTORS = {
   transformerGroup: '.transformer-group',
   transformerBox: '.transformer-group .transformer-box',
   transformerShadowBox: '.transformer-shadow-box',
+  transformerStackLabel: '.transformer-stack-label',
   shadowToBlockArrow: '.shadow-to-block-arrow',
   shadowToBlockArrowNew: '.shadow-to-block-arrow.new-token',
   shadowToBlockArrowPrev: '.shadow-to-block-arrow.prev-token',

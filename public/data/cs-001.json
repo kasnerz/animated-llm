@@ -1,0 +1,3358 @@
+{
+  "id": "generated_20251104_113200",
+  "prompt": "Ahoj světe",
+  "language": "cs",
+  "model_info": {
+    "name": "meta-llama/Llama-3.2-1B-Instruct",
+    "num_layers": 16,
+    "hidden_size": 2048,
+    "num_attention_heads": 32,
+    "vocab_size": 128256
+  },
+  "generation_steps": [
+    {
+      "step": 0,
+      "input_text": "Ahoj světe",
+      "tokens": ["A", "ho", "j", "Ġsvě", "te"],
+      "token_ids": [32, 6292, 73, 107549, 668],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "A",
+            "token_id": 32,
+            "logprob": -1.9258,
+            "prob": 0.1458
+          },
+          {
+            "token": "Jak",
+            "token_id": 90372,
+            "logprob": -2.2773,
+            "prob": 0.1025
+          },
+          {
+            "token": "J",
+            "token_id": 41,
+            "logprob": -2.6914,
+            "prob": 0.0677
+          },
+          {
+            "token": "D",
+            "token_id": 35,
+            "logprob": -2.9258,
+            "prob": 0.0536
+          },
+          {
+            "token": "Ch",
+            "token_id": 1163,
+            "logprob": -3.0664,
+            "prob": 0.0466
+          },
+          {
+            "token": "ĠJak",
+            "token_id": 35934,
+            "logprob": -3.2617,
+            "prob": 0.0383
+          },
+          {
+            "token": "Je",
+            "token_id": 30854,
+            "logprob": -3.3789,
+            "prob": 0.0341
+          },
+          {
+            "token": "Ž",
+            "token_id": 107881,
+            "logprob": -3.5508,
+            "prob": 0.0287
+          },
+          {
+            "token": "Js",
+            "token_id": 31580,
+            "logprob": -3.7617,
+            "prob": 0.0232
+          },
+          {
+            "token": "Ah",
+            "token_id": 25797,
+            "logprob": -4.0117,
+            "prob": 0.0181
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "A",
+        "token_id": 32,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 1,
+      "input_text": "Ahoj světe A",
+      "tokens": ["A", "ho", "j", "Ġsvě", "te", "A"],
+      "token_ids": [32, 6292, 73, 107549, 668, 32],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "ho",
+            "token_id": 6292,
+            "logprob": -0.1654,
+            "prob": 0.8477
+          },
+          {
+            "token": "cho",
+            "token_id": 971,
+            "logprob": -2.9473,
+            "prob": 0.0525
+          },
+          {
+            "token": "HO",
+            "token_id": 24755,
+            "logprob": -3.6191,
+            "prob": 0.0268
+          },
+          {
+            "token": "vo",
+            "token_id": 3415,
+            "logprob": -5.2344,
+            "prob": 0.0053
+          },
+          {
+            "token": "ko",
+            "token_id": 9509,
+            "logprob": -5.3125,
+            "prob": 0.0049
+          },
+          {
+            "token": "ĠHo",
+            "token_id": 17723,
+            "logprob": -6.0312,
+            "prob": 0.0024
+          },
+          {
+            "token": "Ho",
+            "token_id": 49078,
+            "logprob": -6.1797,
+            "prob": 0.0021
+          },
+          {
+            "token": "ch",
+            "token_id": 331,
+            "logprob": -6.1875,
+            "prob": 0.0021
+          },
+          {
+            "token": "Ġco",
+            "token_id": 1080,
+            "logprob": -6.2891,
+            "prob": 0.0019
+          },
+          {
+            "token": "Ġ\"",
+            "token_id": 330,
+            "logprob": -6.4141,
+            "prob": 0.0016
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "ho",
+        "token_id": 6292,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 2,
+      "input_text": "Ahoj světe Aho",
+      "tokens": ["A", "ho", "j", "Ġsvě", "te", "A", "ho"],
+      "token_ids": [32, 6292, 73, 107549, 668, 32, 6292],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "j",
+            "token_id": 73,
+            "logprob": -0.0053,
+            "prob": 0.9946
+          },
+          {
+            "token": "jte",
+            "token_id": 111715,
+            "logprob": -5.832,
+            "prob": 0.0029
+          },
+          {
+            "token": "je",
+            "token_id": 3841,
+            "logprob": -6.6992,
+            "prob": 0.0012
+          },
+          {
+            "token": "Ġje",
+            "token_id": 4864,
+            "logprob": -8.375,
+            "prob": 0.0002
+          },
+          {
+            "token": "ji",
+            "token_id": 7910,
+            "logprob": -8.8672,
+            "prob": 0.0001
+          },
+          {
+            "token": "J",
+            "token_id": 41,
+            "logprob": -9.2422,
+            "prob": 0.0001
+          },
+          {
+            "token": "z",
+            "token_id": 89,
+            "logprob": -10.0312,
+            "prob": 0.0
+          },
+          {
+            "token": "jie",
+            "token_id": 97337,
+            "logprob": -10.1094,
+            "prob": 0.0
+          },
+          {
+            "token": "js",
+            "token_id": 2580,
+            "logprob": -10.2266,
+            "prob": 0.0
+          },
+          {
+            "token": "jen",
+            "token_id": 24041,
+            "logprob": -10.3594,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "j",
+        "token_id": 73,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 3,
+      "input_text": "Ahoj světe Ahoj",
+      "tokens": ["A", "ho", "j", "Ġsvě", "te", "A", "ho", "j"],
+      "token_ids": [32, 6292, 73, 107549, 668, 32, 6292, 73],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġ(",
+            "token_id": 320,
+            "logprob": -1.4463,
+            "prob": 0.2355
+          },
+          {
+            "token": "!",
+            "token_id": 0,
+            "logprob": -2.125,
+            "prob": 0.1193
+          },
+          {
+            "token": "Ġsv",
+            "token_id": 13871,
+            "logprob": -2.8125,
+            "prob": 0.06
+          },
+          {
+            "token": ",",
+            "token_id": 11,
+            "logprob": -2.8125,
+            "prob": 0.06
+          },
+          {
+            "token": "Ġsvě",
+            "token_id": 107549,
+            "logprob": -3.2812,
+            "prob": 0.0376
+          },
+          {
+            "token": "Ġse",
+            "token_id": 513,
+            "logprob": -4.1758,
+            "prob": 0.0154
+          },
+          {
+            "token": "-sw",
+            "token_id": 62979,
+            "logprob": -4.8047,
+            "prob": 0.0082
+          },
+          {
+            "token": "สว",
+            "token_id": 106123,
+            "logprob": -5.1914,
+            "prob": 0.0056
+          },
+          {
+            "token": "Ġсв",
+            "token_id": 45916,
+            "logprob": -5.2227,
+            "prob": 0.0054
+          },
+          {
+            "token": ".",
+            "token_id": 13,
+            "logprob": -5.2617,
+            "prob": 0.0052
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġ(",
+        "token_id": 320,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 4,
+      "input_text": "Ahoj světe AhojĠ(",
+      "tokens": ["A", "ho", "j", "Ġsvě", "te", "A", "ho", "j", "Ġ("],
+      "token_ids": [32, 6292, 73, 107549, 668, 32, 6292, 73, 320],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "c",
+            "token_id": 66,
+            "logprob": -2.1641,
+            "prob": 0.1148
+          },
+          {
+            "token": "pron",
+            "token_id": 72239,
+            "logprob": -2.2812,
+            "prob": 0.1021
+          },
+          {
+            "token": "p",
+            "token_id": 79,
+            "logprob": -2.7422,
+            "prob": 0.0644
+          },
+          {
+            "token": "v",
+            "token_id": 85,
+            "logprob": -2.7656,
+            "prob": 0.0629
+          },
+          {
+            "token": "sv",
+            "token_id": 3576,
+            "logprob": -3.1719,
+            "prob": 0.0419
+          },
+          {
+            "token": "č",
+            "token_id": 13453,
+            "logprob": -3.3125,
+            "prob": 0.0364
+          },
+          {
+            "token": "š",
+            "token_id": 11906,
+            "logprob": -4.2656,
+            "prob": 0.014
+          },
+          {
+            "token": "ĠCzech",
+            "token_id": 34250,
+            "logprob": -4.3125,
+            "prob": 0.0134
+          },
+          {
+            "token": "s",
+            "token_id": 82,
+            "logprob": -4.3594,
+            "prob": 0.0128
+          },
+          {
+            "token": "or",
+            "token_id": 269,
+            "logprob": -4.4062,
+            "prob": 0.0122
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "c",
+        "token_id": 66,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 5,
+      "input_text": "Ahoj světe AhojĠ(c",
+      "tokens": ["A", "ho", "j", "Ġsvě", "te", "A", "ho", "j", "Ġ(", "c"],
+      "token_ids": [32, 6292, 73, 107549, 668, 32, 6292, 73, 320, 66],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "zech",
+            "token_id": 26835,
+            "logprob": -0.4727,
+            "prob": 0.6235
+          },
+          {
+            "token": "ít",
+            "token_id": 16485,
+            "logprob": -3.7461,
+            "prob": 0.0236
+          },
+          {
+            "token": "ó",
+            "token_id": 1832,
+            "logprob": -4.4258,
+            "prob": 0.012
+          },
+          {
+            "token": "ze",
+            "token_id": 3059,
+            "logprob": -4.5352,
+            "prob": 0.0107
+          },
+          {
+            "token": "iche",
+            "token_id": 12333,
+            "logprob": -4.9102,
+            "prob": 0.0074
+          },
+          {
+            "token": "loses",
+            "token_id": 50441,
+            "logprob": -5.043,
+            "prob": 0.0065
+          },
+          {
+            "token": "ya",
+            "token_id": 7911,
+            "logprob": -5.0742,
+            "prob": 0.0063
+          },
+          {
+            "token": "ýt",
+            "token_id": 97700,
+            "logprob": -5.1602,
+            "prob": 0.0057
+          },
+          {
+            "token": "ich",
+            "token_id": 718,
+            "logprob": -5.2539,
+            "prob": 0.0052
+          },
+          {
+            "token": "á",
+            "token_id": 1995,
+            "logprob": -5.4648,
+            "prob": 0.0042
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "zech",
+        "token_id": 26835,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 6,
+      "input_text": "Ahoj světe AhojĠ(czech",
+      "tokens": ["A", "ho", "j", "Ġsvě", "te", "A", "ho", "j", "Ġ(", "c", "zech"],
+      "token_ids": [32, 6292, 73, 107549, 668, 32, 6292, 73, 320, 66, 26835],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġpronunciation",
+            "token_id": 71722,
+            "logprob": -2.7949,
+            "prob": 0.0612
+          },
+          {
+            "token": "Ġfor",
+            "token_id": 369,
+            "logprob": -2.8809,
+            "prob": 0.0561
+          },
+          {
+            "token": "ou",
+            "token_id": 283,
+            "logprob": -2.9355,
+            "prob": 0.0531
+          },
+          {
+            "token": "á",
+            "token_id": 1995,
+            "logprob": -3.0684,
+            "prob": 0.0465
+          },
+          {
+            "token": "ă",
+            "token_id": 6845,
+            "logprob": -3.7168,
+            "prob": 0.0243
+          },
+          {
+            "token": "ák",
+            "token_id": 72542,
+            "logprob": -3.8652,
+            "prob": 0.021
+          },
+          {
+            "token": ")",
+            "token_id": 8,
+            "logprob": -4.082,
+            "prob": 0.0168
+          },
+          {
+            "token": "ace",
+            "token_id": 580,
+            "logprob": -4.2148,
+            "prob": 0.0148
+          },
+          {
+            "token": "ó",
+            "token_id": 1832,
+            "logprob": -4.2617,
+            "prob": 0.0141
+          },
+          {
+            "token": "ú",
+            "token_id": 6792,
+            "logprob": -4.4453,
+            "prob": 0.0117
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġpronunciation",
+        "token_id": 71722,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 7,
+      "input_text": "Ahoj světe AhojĠ(czechĠpronunciation",
+      "tokens": ["A", "ho", "j", "Ġsvě", "te", "A", "ho", "j", "Ġ(", "c", "zech", "Ġpronunciation"],
+      "token_ids": [32, 6292, 73, 107549, 668, 32, 6292, 73, 320, 66, 26835, 71722],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": ":",
+            "token_id": 25,
+            "logprob": -0.3655,
+            "prob": 0.6938
+          },
+          {
+            "token": ")",
+            "token_id": 8,
+            "logprob": -1.6699,
+            "prob": 0.1882
+          },
+          {
+            "token": "Ġ[",
+            "token_id": 510,
+            "logprob": -3.1699,
+            "prob": 0.042
+          },
+          {
+            "token": "Ġ\"",
+            "token_id": 330,
+            "logprob": -4.6328,
+            "prob": 0.0097
+          },
+          {
+            "token": "),",
+            "token_id": 705,
+            "logprob": -4.9062,
+            "prob": 0.0074
+          },
+          {
+            "token": "Ġpronounced",
+            "token_id": 38617,
+            "logprob": -5.2266,
+            "prob": 0.0054
+          },
+          {
+            "token": ":)",
+            "token_id": 29589,
+            "logprob": -5.3047,
+            "prob": 0.005
+          },
+          {
+            "token": ").",
+            "token_id": 570,
+            "logprob": -5.9453,
+            "prob": 0.0026
+          },
+          {
+            "token": ",",
+            "token_id": 11,
+            "logprob": -6.1953,
+            "prob": 0.002
+          },
+          {
+            "token": "Ġis",
+            "token_id": 374,
+            "logprob": -6.2812,
+            "prob": 0.0019
+          }
+        ]
+      },
+      "selected_token": {
+        "token": ":",
+        "token_id": 25,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 8,
+      "input_text": "Ahoj světe AhojĠ(czechĠpronunciation:",
+      "tokens": [
+        "A",
+        "ho",
+        "j",
+        "Ġsvě",
+        "te",
+        "A",
+        "ho",
+        "j",
+        "Ġ(",
+        "c",
+        "zech",
+        "Ġpronunciation",
+        ":"
+      ],
+      "token_ids": [32, 6292, 73, 107549, 668, 32, 6292, 73, 320, 66, 26835, 71722, 25],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġ[",
+            "token_id": 510,
+            "logprob": -0.3306,
+            "prob": 0.7188
+          },
+          {
+            "token": "Ġ\"",
+            "token_id": 330,
+            "logprob": -2.3145,
+            "prob": 0.0988
+          },
+          {
+            "token": "ĠAH",
+            "token_id": 48388,
+            "logprob": -4.0352,
+            "prob": 0.0177
+          },
+          {
+            "token": "Ġah",
+            "token_id": 23128,
+            "logprob": -4.043,
+            "prob": 0.0176
+          },
+          {
+            "token": "Ġ[\"",
+            "token_id": 4482,
+            "logprob": -4.043,
+            "prob": 0.0176
+          },
+          {
+            "token": "ĠAh",
+            "token_id": 16770,
+            "logprob": -4.2773,
+            "prob": 0.0139
+          },
+          {
+            "token": "Ġ",
+            "token_id": 220,
+            "logprob": -4.543,
+            "prob": 0.0107
+          },
+          {
+            "token": "Ġ'",
+            "token_id": 364,
+            "logprob": -4.582,
+            "prob": 0.0102
+          },
+          {
+            "token": "Ġ�",
+            "token_id": 10044,
+            "logprob": -5.3789,
+            "prob": 0.0046
+          },
+          {
+            "token": "Ġ['",
+            "token_id": 2570,
+            "logprob": -5.3945,
+            "prob": 0.0045
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġ[",
+        "token_id": 510,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 9,
+      "input_text": "Ahoj světe AhojĠ(czechĠpronunciation:Ġ[",
+      "tokens": [
+        "A",
+        "ho",
+        "j",
+        "Ġsvě",
+        "te",
+        "A",
+        "ho",
+        "j",
+        "Ġ(",
+        "c",
+        "zech",
+        "Ġpronunciation",
+        ":",
+        "Ġ["
+      ],
+      "token_ids": [32, 6292, 73, 107549, 668, 32, 6292, 73, 320, 66, 26835, 71722, 25, 510],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "�",
+            "token_id": 135,
+            "logprob": -0.4756,
+            "prob": 0.6216
+          },
+          {
+            "token": "ah",
+            "token_id": 1494,
+            "logprob": -2.0137,
+            "prob": 0.1334
+          },
+          {
+            "token": "a",
+            "token_id": 64,
+            "logprob": -2.8809,
+            "prob": 0.056
+          },
+          {
+            "token": "ha",
+            "token_id": 4317,
+            "logprob": -2.9434,
+            "prob": 0.0526
+          },
+          {
+            "token": "ǎ",
+            "token_id": 119608,
+            "logprob": -4.1875,
+            "prob": 0.0152
+          },
+          {
+            "token": "�",
+            "token_id": 133,
+            "logprob": -4.2344,
+            "prob": 0.0145
+          },
+          {
+            "token": "�",
+            "token_id": 134,
+            "logprob": -4.2656,
+            "prob": 0.0141
+          },
+          {
+            "token": "h",
+            "token_id": 71,
+            "logprob": -4.375,
+            "prob": 0.0126
+          },
+          {
+            "token": "ax",
+            "token_id": 710,
+            "logprob": -4.6016,
+            "prob": 0.01
+          },
+          {
+            "token": "ə",
+            "token_id": 99638,
+            "logprob": -5.0625,
+            "prob": 0.0063
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "�",
+        "token_id": 135,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 10,
+      "input_text": "Ahoj světe AhojĠ(czechĠpronunciation:Ġ[�",
+      "tokens": [
+        "A",
+        "ho",
+        "j",
+        "Ġsvě",
+        "te",
+        "A",
+        "ho",
+        "j",
+        "Ġ(",
+        "c",
+        "zech",
+        "Ġpronunciation",
+        ":",
+        "Ġ[",
+        "�"
+      ],
+      "token_ids": [32, 6292, 73, 107549, 668, 32, 6292, 73, 320, 66, 26835, 71722, 25, 510, 135],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "�",
+            "token_id": 230,
+            "logprob": -0.0067,
+            "prob": 0.9932
+          },
+          {
+            "token": "�",
+            "token_id": 238,
+            "logprob": -5.2109,
+            "prob": 0.0055
+          },
+          {
+            "token": "�",
+            "token_id": 234,
+            "logprob": -7.8359,
+            "prob": 0.0004
+          },
+          {
+            "token": "�",
+            "token_id": 98,
+            "logprob": -8.4297,
+            "prob": 0.0002
+          },
+          {
+            "token": "�",
+            "token_id": 233,
+            "logprob": -9.0547,
+            "prob": 0.0001
+          },
+          {
+            "token": "�",
+            "token_id": 231,
+            "logprob": -9.1797,
+            "prob": 0.0001
+          },
+          {
+            "token": "�",
+            "token_id": 232,
+            "logprob": -9.6328,
+            "prob": 0.0001
+          },
+          {
+            "token": "�",
+            "token_id": 251,
+            "logprob": -9.8516,
+            "prob": 0.0001
+          },
+          {
+            "token": "�",
+            "token_id": 250,
+            "logprob": -10.0703,
+            "prob": 0.0
+          },
+          {
+            "token": "�",
+            "token_id": 236,
+            "logprob": -10.1016,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "�",
+        "token_id": 230,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 11,
+      "input_text": "Ahoj světe AhojĠ(czechĠpronunciation:Ġ[��",
+      "tokens": [
+        "A",
+        "ho",
+        "j",
+        "Ġsvě",
+        "te",
+        "A",
+        "ho",
+        "j",
+        "Ġ(",
+        "c",
+        "zech",
+        "Ġpronunciation",
+        ":",
+        "Ġ[",
+        "�",
+        "�"
+      ],
+      "token_ids": [
+        32, 6292, 73, 107549, 668, 32, 6292, 73, 320, 66, 26835, 71722, 25, 510, 135, 230
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "�",
+            "token_id": 133,
+            "logprob": -0.8276,
+            "prob": 0.437
+          },
+          {
+            "token": "a",
+            "token_id": 64,
+            "logprob": -1.4053,
+            "prob": 0.2452
+          },
+          {
+            "token": "ah",
+            "token_id": 1494,
+            "logprob": -2.4844,
+            "prob": 0.0834
+          },
+          {
+            "token": "�",
+            "token_id": 134,
+            "logprob": -3.625,
+            "prob": 0.0267
+          },
+          {
+            "token": "ax",
+            "token_id": 710,
+            "logprob": -3.6875,
+            "prob": 0.0251
+          },
+          {
+            "token": "ǎ",
+            "token_id": 119608,
+            "logprob": -3.7656,
+            "prob": 0.0232
+          },
+          {
+            "token": "aho",
+            "token_id": 29682,
+            "logprob": -3.7734,
+            "prob": 0.023
+          },
+          {
+            "token": "o",
+            "token_id": 78,
+            "logprob": -3.9609,
+            "prob": 0.0191
+          },
+          {
+            "token": "�",
+            "token_id": 135,
+            "logprob": -4.3438,
+            "prob": 0.013
+          },
+          {
+            "token": "ho",
+            "token_id": 6292,
+            "logprob": -4.375,
+            "prob": 0.0126
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "�",
+        "token_id": 133,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 12,
+      "input_text": "Ahoj světe AhojĠ(czechĠpronunciation:Ġ[���",
+      "tokens": [
+        "A",
+        "ho",
+        "j",
+        "Ġsvě",
+        "te",
+        "A",
+        "ho",
+        "j",
+        "Ġ(",
+        "c",
+        "zech",
+        "Ġpronunciation",
+        ":",
+        "Ġ[",
+        "�",
+        "�",
+        "�"
+      ],
+      "token_ids": [
+        32, 6292, 73, 107549, 668, 32, 6292, 73, 320, 66, 26835, 71722, 25, 510, 135, 230, 133
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "�",
+            "token_id": 239,
+            "logprob": -0.1682,
+            "prob": 0.8452
+          },
+          {
+            "token": "�",
+            "token_id": 242,
+            "logprob": -2.293,
+            "prob": 0.101
+          },
+          {
+            "token": "�",
+            "token_id": 249,
+            "logprob": -4.418,
+            "prob": 0.0121
+          },
+          {
+            "token": "�",
+            "token_id": 99,
+            "logprob": -4.543,
+            "prob": 0.0106
+          },
+          {
+            "token": "�",
+            "token_id": 240,
+            "logprob": -4.9023,
+            "prob": 0.0074
+          },
+          {
+            "token": "�",
+            "token_id": 238,
+            "logprob": -5.2617,
+            "prob": 0.0052
+          },
+          {
+            "token": "�",
+            "token_id": 100,
+            "logprob": -5.3711,
+            "prob": 0.0046
+          },
+          {
+            "token": "�",
+            "token_id": 97,
+            "logprob": -5.668,
+            "prob": 0.0035
+          },
+          {
+            "token": "�",
+            "token_id": 243,
+            "logprob": -6.5664,
+            "prob": 0.0014
+          },
+          {
+            "token": "�",
+            "token_id": 244,
+            "logprob": -6.6211,
+            "prob": 0.0013
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "�",
+        "token_id": 239,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 13,
+      "input_text": "Ahoj světe AhojĠ(czechĠpronunciation:Ġ[����",
+      "tokens": [
+        "A",
+        "ho",
+        "j",
+        "Ġsvě",
+        "te",
+        "A",
+        "ho",
+        "j",
+        "Ġ(",
+        "c",
+        "zech",
+        "Ġpronunciation",
+        ":",
+        "Ġ[",
+        "�",
+        "�",
+        "�",
+        "�"
+      ],
+      "token_ids": [
+        32, 6292, 73, 107549, 668, 32, 6292, 73, 320, 66, 26835, 71722, 25, 510, 135, 230, 133, 239
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "�",
+            "token_id": 135,
+            "logprob": -1.2959,
+            "prob": 0.2737
+          },
+          {
+            "token": "x",
+            "token_id": 87,
+            "logprob": -1.4287,
+            "prob": 0.2397
+          },
+          {
+            "token": "h",
+            "token_id": 71,
+            "logprob": -1.7256,
+            "prob": 0.1781
+          },
+          {
+            "token": "ho",
+            "token_id": 6292,
+            "logprob": -2.8496,
+            "prob": 0.0578
+          },
+          {
+            "token": "�",
+            "token_id": 134,
+            "logprob": -3.1855,
+            "prob": 0.0413
+          },
+          {
+            "token": "xo",
+            "token_id": 41922,
+            "logprob": -3.1934,
+            "prob": 0.041
+          },
+          {
+            "token": "j",
+            "token_id": 73,
+            "logprob": -3.5684,
+            "prob": 0.0282
+          },
+          {
+            "token": "xt",
+            "token_id": 2302,
+            "logprob": -4.4375,
+            "prob": 0.0118
+          },
+          {
+            "token": "χ",
+            "token_id": 90202,
+            "logprob": -4.5938,
+            "prob": 0.0101
+          },
+          {
+            "token": "�",
+            "token_id": 136,
+            "logprob": -4.8281,
+            "prob": 0.008
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "�",
+        "token_id": 135,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 14,
+      "input_text": "Ahoj světe AhojĠ(czechĠpronunciation:Ġ[�����",
+      "tokens": [
+        "A",
+        "ho",
+        "j",
+        "Ġsvě",
+        "te",
+        "A",
+        "ho",
+        "j",
+        "Ġ(",
+        "c",
+        "zech",
+        "Ġpronunciation",
+        ":",
+        "Ġ[",
+        "�",
+        "�",
+        "�",
+        "�",
+        "�"
+      ],
+      "token_ids": [
+        32, 6292, 73, 107549, 668, 32, 6292, 73, 320, 66, 26835, 71722, 25, 510, 135, 230, 133, 239,
+        135
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "�",
+            "token_id": 238,
+            "logprob": -0.0729,
+            "prob": 0.9297
+          },
+          {
+            "token": "�",
+            "token_id": 230,
+            "logprob": -3.1816,
+            "prob": 0.0415
+          },
+          {
+            "token": "�",
+            "token_id": 234,
+            "logprob": -4.1367,
+            "prob": 0.016
+          },
+          {
+            "token": "�",
+            "token_id": 254,
+            "logprob": -5.2617,
+            "prob": 0.0052
+          },
+          {
+            "token": "�",
+            "token_id": 250,
+            "logprob": -6.7852,
+            "prob": 0.0011
+          },
+          {
+            "token": "�",
+            "token_id": 232,
+            "logprob": -6.8008,
+            "prob": 0.0011
+          },
+          {
+            "token": "�",
+            "token_id": 100,
+            "logprob": -7.332,
+            "prob": 0.0007
+          },
+          {
+            "token": "�",
+            "token_id": 233,
+            "logprob": -7.4258,
+            "prob": 0.0006
+          },
+          {
+            "token": "�",
+            "token_id": 97,
+            "logprob": -7.5117,
+            "prob": 0.0005
+          },
+          {
+            "token": "�",
+            "token_id": 222,
+            "logprob": -7.7852,
+            "prob": 0.0004
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "�",
+        "token_id": 238,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 15,
+      "input_text": "Ahoj světe AhojĠ(czechĠpronunciation:Ġ[������",
+      "tokens": [
+        "A",
+        "ho",
+        "j",
+        "Ġsvě",
+        "te",
+        "A",
+        "ho",
+        "j",
+        "Ġ(",
+        "c",
+        "zech",
+        "Ġpronunciation",
+        ":",
+        "Ġ[",
+        "�",
+        "�",
+        "�",
+        "�",
+        "�",
+        "�"
+      ],
+      "token_ids": [
+        32, 6292, 73, 107549, 668, 32, 6292, 73, 320, 66, 26835, 71722, 25, 510, 135, 230, 133, 239,
+        135, 238
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "ho",
+            "token_id": 6292,
+            "logprob": -0.2585,
+            "prob": 0.7725
+          },
+          {
+            "token": "�",
+            "token_id": 134,
+            "logprob": -2.9297,
+            "prob": 0.0534
+          },
+          {
+            "token": "xo",
+            "token_id": 41922,
+            "logprob": -3.3281,
+            "prob": 0.0358
+          },
+          {
+            "token": "x",
+            "token_id": 87,
+            "logprob": -3.3906,
+            "prob": 0.0337
+          },
+          {
+            "token": "h",
+            "token_id": 71,
+            "logprob": -3.8672,
+            "prob": 0.0209
+          },
+          {
+            "token": "jo",
+            "token_id": 7453,
+            "logprob": -3.9297,
+            "prob": 0.0196
+          },
+          {
+            "token": "�",
+            "token_id": 133,
+            "logprob": -4.5391,
+            "prob": 0.0107
+          },
+          {
+            "token": "j",
+            "token_id": 73,
+            "logprob": -4.6641,
+            "prob": 0.0094
+          },
+          {
+            "token": "o",
+            "token_id": 78,
+            "logprob": -5.1875,
+            "prob": 0.0056
+          },
+          {
+            "token": "oh",
+            "token_id": 2319,
+            "logprob": -5.6016,
+            "prob": 0.0037
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "ho",
+        "token_id": 6292,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 16,
+      "input_text": "Ahoj světe AhojĠ(czechĠpronunciation:Ġ[������ho",
+      "tokens": [
+        "A",
+        "ho",
+        "j",
+        "Ġsvě",
+        "te",
+        "A",
+        "ho",
+        "j",
+        "Ġ(",
+        "c",
+        "zech",
+        "Ġpronunciation",
+        ":",
+        "Ġ[",
+        "�",
+        "�",
+        "�",
+        "�",
+        "�",
+        "�",
+        "ho"
+      ],
+      "token_ids": [
+        32, 6292, 73, 107549, 668, 32, 6292, 73, 320, 66, 26835, 71722, 25, 510, 135, 230, 133, 239,
+        135, 238, 6292
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "j",
+            "token_id": 73,
+            "logprob": -0.1266,
+            "prob": 0.8813
+          },
+          {
+            "token": "�",
+            "token_id": 135,
+            "logprob": -2.5957,
+            "prob": 0.0746
+          },
+          {
+            "token": "�",
+            "token_id": 134,
+            "logprob": -3.6035,
+            "prob": 0.0272
+          },
+          {
+            "token": "�",
+            "token_id": 133,
+            "logprob": -4.6016,
+            "prob": 0.01
+          },
+          {
+            "token": "�",
+            "token_id": 131,
+            "logprob": -6.1797,
+            "prob": 0.0021
+          },
+          {
+            "token": "�",
+            "token_id": 128,
+            "logprob": -6.8828,
+            "prob": 0.001
+          },
+          {
+            "token": "�",
+            "token_id": 136,
+            "logprob": -7.25,
+            "prob": 0.0007
+          },
+          {
+            "token": "jt",
+            "token_id": 58305,
+            "logprob": -7.5078,
+            "prob": 0.0005
+          },
+          {
+            "token": "�",
+            "token_id": 137,
+            "logprob": -8.5625,
+            "prob": 0.0002
+          },
+          {
+            "token": "�",
+            "token_id": 129,
+            "logprob": -8.5859,
+            "prob": 0.0002
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "j",
+        "token_id": 73,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 17,
+      "input_text": "Ahoj světe AhojĠ(czechĠpronunciation:Ġ[������hoj",
+      "tokens": [
+        "A",
+        "ho",
+        "j",
+        "Ġsvě",
+        "te",
+        "A",
+        "ho",
+        "j",
+        "Ġ(",
+        "c",
+        "zech",
+        "Ġpronunciation",
+        ":",
+        "Ġ[",
+        "�",
+        "�",
+        "�",
+        "�",
+        "�",
+        "�",
+        "ho",
+        "j"
+      ],
+      "token_ids": [
+        32, 6292, 73, 107549, 668, 32, 6292, 73, 320, 66, 26835, 71722, 25, 510, 135, 230, 133, 239,
+        135, 238, 6292, 73
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "])",
+            "token_id": 2526,
+            "logprob": -0.4268,
+            "prob": 0.6523
+          },
+          {
+            "token": "]",
+            "token_id": 60,
+            "logprob": -1.4424,
+            "prob": 0.2363
+          },
+          {
+            "token": "]),",
+            "token_id": 9918,
+            "logprob": -3.2559,
+            "prob": 0.0386
+          },
+          {
+            "token": "],",
+            "token_id": 1145,
+            "logprob": -3.4434,
+            "prob": 0.032
+          },
+          {
+            "token": "];",
+            "token_id": 5378,
+            "logprob": -4.0742,
+            "prob": 0.017
+          },
+          {
+            "token": ",",
+            "token_id": 11,
+            "logprob": -4.7539,
+            "prob": 0.0086
+          },
+          {
+            "token": "�",
+            "token_id": 135,
+            "logprob": -6.0664,
+            "prob": 0.0023
+          },
+          {
+            "token": "]).",
+            "token_id": 10927,
+            "logprob": -6.4023,
+            "prob": 0.0017
+          },
+          {
+            "token": "]);",
+            "token_id": 15328,
+            "logprob": -6.6133,
+            "prob": 0.0013
+          },
+          {
+            "token": ")",
+            "token_id": 8,
+            "logprob": -6.9883,
+            "prob": 0.0009
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "])",
+        "token_id": 2526,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 18,
+      "input_text": "Ahoj světe AhojĠ(czechĠpronunciation:Ġ[������hoj])",
+      "tokens": [
+        "A",
+        "ho",
+        "j",
+        "Ġsvě",
+        "te",
+        "A",
+        "ho",
+        "j",
+        "Ġ(",
+        "c",
+        "zech",
+        "Ġpronunciation",
+        ":",
+        "Ġ[",
+        "�",
+        "�",
+        "�",
+        "�",
+        "�",
+        "�",
+        "ho",
+        "j",
+        "])"
+      ],
+      "token_ids": [
+        32, 6292, 73, 107549, 668, 32, 6292, 73, 320, 66, 26835, 71722, 25, 510, 135, 230, 133, 239,
+        135, 238, 6292, 73, 2526
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġje",
+            "token_id": 4864,
+            "logprob": -0.396,
+            "prob": 0.6729
+          },
+          {
+            "token": "Ġ-",
+            "token_id": 482,
+            "logprob": -2.373,
+            "prob": 0.0933
+          },
+          {
+            "token": "Ġ(",
+            "token_id": 320,
+            "logprob": -3.7246,
+            "prob": 0.0241
+          },
+          {
+            "token": "Ġmeans",
+            "token_id": 3445,
+            "logprob": -4.0352,
+            "prob": 0.0177
+          },
+          {
+            "token": "Ġto",
+            "token_id": 311,
+            "logprob": -4.4727,
+            "prob": 0.0114
+          },
+          {
+            "token": "Ġsignifica",
+            "token_id": 68832,
+            "logprob": -4.707,
+            "prob": 0.009
+          },
+          {
+            "token": "Ġis",
+            "token_id": 374,
+            "logprob": -4.7148,
+            "prob": 0.0089
+          },
+          {
+            "token": "Ġadalah",
+            "token_id": 38660,
+            "logprob": -5.1719,
+            "prob": 0.0057
+          },
+          {
+            "token": "Ġ–",
+            "token_id": 1389,
+            "logprob": -5.3672,
+            "prob": 0.0047
+          },
+          {
+            "token": "Ġznamená",
+            "token_id": 117036,
+            "logprob": -5.3672,
+            "prob": 0.0047
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġje",
+        "token_id": 4864,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 19,
+      "input_text": "Ahoj světe AhojĠ(czechĠpronunciation:Ġ[������hoj])Ġje",
+      "tokens": [
+        "A",
+        "ho",
+        "j",
+        "Ġsvě",
+        "te",
+        "A",
+        "ho",
+        "j",
+        "Ġ(",
+        "c",
+        "zech",
+        "Ġpronunciation",
+        ":",
+        "Ġ[",
+        "�",
+        "�",
+        "�",
+        "�",
+        "�",
+        "�",
+        "ho",
+        "j",
+        "])",
+        "Ġje"
+      ],
+      "token_ids": [
+        32, 6292, 73, 107549, 668, 32, 6292, 73, 320, 66, 26835, 71722, 25, 510, 135, 230, 133, 239,
+        135, 238, 6292, 73, 2526, 4864
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġoz",
+            "token_id": 25616,
+            "logprob": -3.0293,
+            "prob": 0.0483
+          },
+          {
+            "token": "Ġang",
+            "token_id": 6590,
+            "logprob": -3.127,
+            "prob": 0.0439
+          },
+          {
+            "token": "Ġslo",
+            "token_id": 18067,
+            "logprob": -3.252,
+            "prob": 0.0387
+          },
+          {
+            "token": "Ġstar",
+            "token_id": 6917,
+            "logprob": -4.1445,
+            "prob": 0.0159
+          },
+          {
+            "token": "Ġc",
+            "token_id": 272,
+            "logprob": -4.6836,
+            "prob": 0.0093
+          },
+          {
+            "token": "Ġna",
+            "token_id": 4415,
+            "logprob": -4.8047,
+            "prob": 0.0082
+          },
+          {
+            "token": "Ġp",
+            "token_id": 281,
+            "logprob": -4.8438,
+            "prob": 0.0079
+          },
+          {
+            "token": "Ġjed",
+            "token_id": 18806,
+            "logprob": -4.9336,
+            "prob": 0.0072
+          },
+          {
+            "token": "Ġod",
+            "token_id": 11018,
+            "logprob": -4.9414,
+            "prob": 0.0072
+          },
+          {
+            "token": "Ġv",
+            "token_id": 348,
+            "logprob": -5.0,
+            "prob": 0.0067
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġoz",
+        "token_id": 25616,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 20,
+      "input_text": "Ahoj světe AhojĠ(czechĠpronunciation:Ġ[������hoj])ĠjeĠoz",
+      "tokens": [
+        "A",
+        "ho",
+        "j",
+        "Ġsvě",
+        "te",
+        "A",
+        "ho",
+        "j",
+        "Ġ(",
+        "c",
+        "zech",
+        "Ġpronunciation",
+        ":",
+        "Ġ[",
+        "�",
+        "�",
+        "�",
+        "�",
+        "�",
+        "�",
+        "ho",
+        "j",
+        "])",
+        "Ġje",
+        "Ġoz"
+      ],
+      "token_ids": [
+        32, 6292, 73, 107549, 668, 32, 6292, 73, 320, 66, 26835, 71722, 25, 510, 135, 230, 133, 239,
+        135, 238, 6292, 73, 2526, 4864, 25616
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "načení",
+            "token_id": 125140,
+            "logprob": -0.8955,
+            "prob": 0.4084
+          },
+          {
+            "token": "na",
+            "token_id": 3458,
+            "logprob": -2.2539,
+            "prob": 0.1049
+          },
+          {
+            "token": "nam",
+            "token_id": 12682,
+            "logprob": -3.832,
+            "prob": 0.0217
+          },
+          {
+            "token": "ad",
+            "token_id": 329,
+            "logprob": -3.9492,
+            "prob": 0.0193
+          },
+          {
+            "token": "v",
+            "token_id": 85,
+            "logprob": -3.9883,
+            "prob": 0.0185
+          },
+          {
+            "token": "vl",
+            "token_id": 14878,
+            "logprob": -4.2461,
+            "prob": 0.0143
+          },
+          {
+            "token": "dr",
+            "token_id": 3696,
+            "logprob": -4.2773,
+            "prob": 0.0139
+          },
+          {
+            "token": "vy",
+            "token_id": 14029,
+            "logprob": -4.5039,
+            "prob": 0.0111
+          },
+          {
+            "token": "aj",
+            "token_id": 1662,
+            "logprob": -4.7617,
+            "prob": 0.0085
+          },
+          {
+            "token": "ak",
+            "token_id": 587,
+            "logprob": -4.7773,
+            "prob": 0.0084
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "načení",
+        "token_id": 125140,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 21,
+      "input_text": "Ahoj světe AhojĠ(czechĠpronunciation:Ġ[������hoj])ĠjeĠoznačení",
+      "tokens": [
+        "A",
+        "ho",
+        "j",
+        "Ġsvě",
+        "te",
+        "A",
+        "ho",
+        "j",
+        "Ġ(",
+        "c",
+        "zech",
+        "Ġpronunciation",
+        ":",
+        "Ġ[",
+        "�",
+        "�",
+        "�",
+        "�",
+        "�",
+        "�",
+        "ho",
+        "j",
+        "])",
+        "Ġje",
+        "Ġoz",
+        "načení"
+      ],
+      "token_ids": [
+        32, 6292, 73, 107549, 668, 32, 6292, 73, 320, 66, 26835, 71722, 25, 510, 135, 230, 133, 239,
+        135, 238, 6292, 73, 2526, 4864, 25616, 125140
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġpro",
+            "token_id": 463,
+            "logprob": -0.1718,
+            "prob": 0.8423
+          },
+          {
+            "token": ",",
+            "token_id": 11,
+            "logprob": -3.0781,
+            "prob": 0.0461
+          },
+          {
+            "token": "Ġpouží",
+            "token_id": 106180,
+            "logprob": -5.8711,
+            "prob": 0.0028
+          },
+          {
+            "token": "Ġza",
+            "token_id": 15036,
+            "logprob": -5.9727,
+            "prob": 0.0025
+          },
+          {
+            "token": "Ġna",
+            "token_id": 4415,
+            "logprob": -6.3281,
+            "prob": 0.0018
+          },
+          {
+            "token": "Ġv",
+            "token_id": 348,
+            "logprob": -6.5508,
+            "prob": 0.0014
+          },
+          {
+            "token": "Ġang",
+            "token_id": 6590,
+            "logprob": -6.6289,
+            "prob": 0.0013
+          },
+          {
+            "token": "Ġ„",
+            "token_id": 15179,
+            "logprob": -7.0625,
+            "prob": 0.0009
+          },
+          {
+            "token": "Ġp",
+            "token_id": 281,
+            "logprob": -7.0703,
+            "prob": 0.0009
+          },
+          {
+            "token": "Ġz",
+            "token_id": 1167,
+            "logprob": -7.1641,
+            "prob": 0.0008
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġpro",
+        "token_id": 463,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 22,
+      "input_text": "Ahoj světe AhojĠ(czechĠpronunciation:Ġ[������hoj])ĠjeĠoznačeníĠpro",
+      "tokens": [
+        "A",
+        "ho",
+        "j",
+        "Ġsvě",
+        "te",
+        "A",
+        "ho",
+        "j",
+        "Ġ(",
+        "c",
+        "zech",
+        "Ġpronunciation",
+        ":",
+        "Ġ[",
+        "�",
+        "�",
+        "�",
+        "�",
+        "�",
+        "�",
+        "ho",
+        "j",
+        "])",
+        "Ġje",
+        "Ġoz",
+        "načení",
+        "Ġpro"
+      ],
+      "token_ids": [
+        32, 6292, 73, 107549, 668, 32, 6292, 73, 320, 66, 26835, 71722, 25, 510, 135, 230, 133, 239,
+        135, 238, 6292, 73, 2526, 4864, 25616, 125140, 463
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġp",
+            "token_id": 281,
+            "logprob": -4.6172,
+            "prob": 0.0099
+          },
+          {
+            "token": "Ġjeden",
+            "token_id": 54265,
+            "logprob": -5.0469,
+            "prob": 0.0064
+          },
+          {
+            "token": "Ġang",
+            "token_id": 6590,
+            "logprob": -5.1094,
+            "prob": 0.006
+          },
+          {
+            "token": "Ġstar",
+            "token_id": 6917,
+            "logprob": -5.1367,
+            "prob": 0.0059
+          },
+          {
+            "token": "Ġněkolik",
+            "token_id": 107153,
+            "logprob": -5.3086,
+            "prob": 0.0049
+          },
+          {
+            "token": "Ġliter",
+            "token_id": 7080,
+            "logprob": -5.5234,
+            "prob": 0.004
+          },
+          {
+            "token": "Ġsex",
+            "token_id": 1877,
+            "logprob": -5.6016,
+            "prob": 0.0037
+          },
+          {
+            "token": "Ġob",
+            "token_id": 1536,
+            "logprob": -5.6758,
+            "prob": 0.0034
+          },
+          {
+            "token": "Ġml",
+            "token_id": 16116,
+            "logprob": -5.7188,
+            "prob": 0.0033
+          },
+          {
+            "token": "Ġdva",
+            "token_id": 107890,
+            "logprob": -5.832,
+            "prob": 0.0029
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġp",
+        "token_id": 281,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 23,
+      "input_text": "Ahoj světe AhojĠ(czechĠpronunciation:Ġ[������hoj])ĠjeĠoznačeníĠproĠp",
+      "tokens": [
+        "A",
+        "ho",
+        "j",
+        "Ġsvě",
+        "te",
+        "A",
+        "ho",
+        "j",
+        "Ġ(",
+        "c",
+        "zech",
+        "Ġpronunciation",
+        ":",
+        "Ġ[",
+        "�",
+        "�",
+        "�",
+        "�",
+        "�",
+        "�",
+        "ho",
+        "j",
+        "])",
+        "Ġje",
+        "Ġoz",
+        "načení",
+        "Ġpro",
+        "Ġp"
+      ],
+      "token_ids": [
+        32, 6292, 73, 107549, 668, 32, 6292, 73, 320, 66, 26835, 71722, 25, 510, 135, 230, 133, 239,
+        135, 238, 6292, 73, 2526, 4864, 25616, 125140, 463, 281
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "ades",
+            "token_id": 3536,
+            "logprob": -1.8047,
+            "prob": 0.1646
+          },
+          {
+            "token": "í",
+            "token_id": 2483,
+            "logprob": -1.8828,
+            "prob": 0.1521
+          },
+          {
+            "token": "oci",
+            "token_id": 2168,
+            "logprob": -3.6406,
+            "prob": 0.0262
+          },
+          {
+            "token": "ůvodu",
+            "token_id": 115659,
+            "logprob": -3.6406,
+            "prob": 0.0262
+          },
+          {
+            "token": "out",
+            "token_id": 412,
+            "logprob": -3.8906,
+            "prob": 0.0204
+          },
+          {
+            "token": "lyn",
+            "token_id": 18499,
+            "logprob": -3.9688,
+            "prob": 0.0189
+          },
+          {
+            "token": "ohl",
+            "token_id": 40437,
+            "logprob": -4.0625,
+            "prob": 0.0172
+          },
+          {
+            "token": "ít",
+            "token_id": 16485,
+            "logprob": -4.3281,
+            "prob": 0.0132
+          },
+          {
+            "token": "estr",
+            "token_id": 15462,
+            "logprob": -4.3359,
+            "prob": 0.0131
+          },
+          {
+            "token": "oko",
+            "token_id": 28342,
+            "logprob": -4.5,
+            "prob": 0.0111
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "ades",
+        "token_id": 3536,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 24,
+      "input_text": "Ahoj světe AhojĠ(czechĠpronunciation:Ġ[������hoj])ĠjeĠoznačeníĠproĠpades",
+      "tokens": [
+        "A",
+        "ho",
+        "j",
+        "Ġsvě",
+        "te",
+        "A",
+        "ho",
+        "j",
+        "Ġ(",
+        "c",
+        "zech",
+        "Ġpronunciation",
+        ":",
+        "Ġ[",
+        "�",
+        "�",
+        "�",
+        "�",
+        "�",
+        "�",
+        "ho",
+        "j",
+        "])",
+        "Ġje",
+        "Ġoz",
+        "načení",
+        "Ġpro",
+        "Ġp",
+        "ades"
+      ],
+      "token_ids": [
+        32, 6292, 73, 107549, 668, 32, 6292, 73, 320, 66, 26835, 71722, 25, 510, 135, 230, 133, 239,
+        135, 238, 6292, 73, 2526, 4864, 25616, 125140, 463, 281, 3536
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "át",
+            "token_id": 17099,
+            "logprob": -0.0486,
+            "prob": 0.9526
+          },
+          {
+            "token": "l",
+            "token_id": 75,
+            "logprob": -4.9062,
+            "prob": 0.0074
+          },
+          {
+            "token": "á",
+            "token_id": 1995,
+            "logprob": -5.2344,
+            "prob": 0.0053
+          },
+          {
+            "token": "at",
+            "token_id": 266,
+            "logprob": -5.5312,
+            "prob": 0.004
+          },
+          {
+            "token": "lat",
+            "token_id": 5641,
+            "logprob": -5.5938,
+            "prob": 0.0037
+          },
+          {
+            "token": "lav",
+            "token_id": 79936,
+            "logprob": -6.3984,
+            "prob": 0.0017
+          },
+          {
+            "token": "aat",
+            "token_id": 39367,
+            "logprob": -6.5625,
+            "prob": 0.0014
+          },
+          {
+            "token": "iat",
+            "token_id": 10574,
+            "logprob": -6.6484,
+            "prob": 0.0013
+          },
+          {
+            "token": "ati",
+            "token_id": 9491,
+            "logprob": -6.8125,
+            "prob": 0.0011
+          },
+          {
+            "token": "áticas",
+            "token_id": 92355,
+            "logprob": -7.0859,
+            "prob": 0.0008
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "át",
+        "token_id": 17099,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 25,
+      "input_text": "Ahoj světe AhojĠ(czechĠpronunciation:Ġ[������hoj])ĠjeĠoznačeníĠproĠpadesát",
+      "tokens": [
+        "A",
+        "ho",
+        "j",
+        "Ġsvě",
+        "te",
+        "A",
+        "ho",
+        "j",
+        "Ġ(",
+        "c",
+        "zech",
+        "Ġpronunciation",
+        ":",
+        "Ġ[",
+        "�",
+        "�",
+        "�",
+        "�",
+        "�",
+        "�",
+        "ho",
+        "j",
+        "])",
+        "Ġje",
+        "Ġoz",
+        "načení",
+        "Ġpro",
+        "Ġp",
+        "ades",
+        "át"
+      ],
+      "token_ids": [
+        32, 6292, 73, 107549, 668, 32, 6292, 73, 320, 66, 26835, 71722, 25, 510, 135, 230, 133, 239,
+        135, 238, 6292, 73, 2526, 4864, 25616, 125140, 463, 281, 3536, 17099
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "ý",
+            "token_id": 20195,
+            "logprob": -1.7012,
+            "prob": 0.1824
+          },
+          {
+            "token": "é",
+            "token_id": 978,
+            "logprob": -3.291,
+            "prob": 0.0372
+          },
+          {
+            "token": "ých",
+            "token_id": 98955,
+            "logprob": -4.25,
+            "prob": 0.0143
+          },
+          {
+            "token": "ou",
+            "token_id": 283,
+            "logprob": -4.2617,
+            "prob": 0.0141
+          },
+          {
+            "token": "ka",
+            "token_id": 4657,
+            "logprob": -4.4453,
+            "prob": 0.0118
+          },
+          {
+            "token": "im",
+            "token_id": 318,
+            "logprob": -4.4805,
+            "prob": 0.0113
+          },
+          {
+            "token": "Ġp",
+            "token_id": 281,
+            "logprob": -4.6172,
+            "prob": 0.0099
+          },
+          {
+            "token": "ým",
+            "token_id": 100434,
+            "logprob": -4.7031,
+            "prob": 0.0091
+          },
+          {
+            "token": ",",
+            "token_id": 11,
+            "logprob": -4.7031,
+            "prob": 0.0091
+          },
+          {
+            "token": "ého",
+            "token_id": 100448,
+            "logprob": -4.7305,
+            "prob": 0.0088
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "ý",
+        "token_id": 20195,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 26,
+      "input_text": "Ahoj světe AhojĠ(czechĠpronunciation:Ġ[������hoj])ĠjeĠoznačeníĠproĠpadesátý",
+      "tokens": [
+        "A",
+        "ho",
+        "j",
+        "Ġsvě",
+        "te",
+        "A",
+        "ho",
+        "j",
+        "Ġ(",
+        "c",
+        "zech",
+        "Ġpronunciation",
+        ":",
+        "Ġ[",
+        "�",
+        "�",
+        "�",
+        "�",
+        "�",
+        "�",
+        "ho",
+        "j",
+        "])",
+        "Ġje",
+        "Ġoz",
+        "načení",
+        "Ġpro",
+        "Ġp",
+        "ades",
+        "át",
+        "ý"
+      ],
+      "token_ids": [
+        32, 6292, 73, 107549, 668, 32, 6292, 73, 320, 66, 26835, 71722, 25, 510, 135, 230, 133, 239,
+        135, 238, 6292, 73, 2526, 4864, 25616, 125140, 463, 281, 3536, 17099, 20195
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġden",
+            "token_id": 3453,
+            "logprob": -1.916,
+            "prob": 0.1472
+          },
+          {
+            "token": "Ġp",
+            "token_id": 281,
+            "logprob": -4.1016,
+            "prob": 0.0165
+          },
+          {
+            "token": "Ġlet",
+            "token_id": 1095,
+            "logprob": -4.4219,
+            "prob": 0.012
+          },
+          {
+            "token": "Ġ(",
+            "token_id": 320,
+            "logprob": -4.4336,
+            "prob": 0.0118
+          },
+          {
+            "token": "Ġpr",
+            "token_id": 550,
+            "logprob": -4.5586,
+            "prob": 0.0105
+          },
+          {
+            "token": "Ġd",
+            "token_id": 294,
+            "logprob": -4.6133,
+            "prob": 0.0099
+          },
+          {
+            "token": "Ġa",
+            "token_id": 264,
+            "logprob": -4.707,
+            "prob": 0.009
+          },
+          {
+            "token": "Ġdn",
+            "token_id": 48588,
+            "logprob": -4.7617,
+            "prob": 0.0085
+          },
+          {
+            "token": ",",
+            "token_id": 11,
+            "logprob": -4.8047,
+            "prob": 0.0082
+          },
+          {
+            "token": "Ġdruhý",
+            "token_id": 125277,
+            "logprob": -4.8438,
+            "prob": 0.0079
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġden",
+        "token_id": 3453,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 27,
+      "input_text": "Ahoj světe AhojĠ(czechĠpronunciation:Ġ[������hoj])ĠjeĠoznačeníĠproĠpadesátýĠden",
+      "tokens": [
+        "A",
+        "ho",
+        "j",
+        "Ġsvě",
+        "te",
+        "A",
+        "ho",
+        "j",
+        "Ġ(",
+        "c",
+        "zech",
+        "Ġpronunciation",
+        ":",
+        "Ġ[",
+        "�",
+        "�",
+        "�",
+        "�",
+        "�",
+        "�",
+        "ho",
+        "j",
+        "])",
+        "Ġje",
+        "Ġoz",
+        "načení",
+        "Ġpro",
+        "Ġp",
+        "ades",
+        "át",
+        "ý",
+        "Ġden"
+      ],
+      "token_ids": [
+        32, 6292, 73, 107549, 668, 32, 6292, 73, 320, 66, 26835, 71722, 25, 510, 135, 230, 133, 239,
+        135, 238, 6292, 73, 2526, 4864, 25616, 125140, 463, 281, 3536, 17099, 20195, 3453
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġv",
+            "token_id": 348,
+            "logprob": -0.9009,
+            "prob": 0.4062
+          },
+          {
+            "token": "Ġpo",
+            "token_id": 3273,
+            "logprob": -2.3926,
+            "prob": 0.0914
+          },
+          {
+            "token": "Ġod",
+            "token_id": 11018,
+            "logprob": -3.2441,
+            "prob": 0.039
+          },
+          {
+            "token": "Ġroku",
+            "token_id": 56402,
+            "logprob": -4.0508,
+            "prob": 0.0174
+          },
+          {
+            "token": "Ġro",
+            "token_id": 938,
+            "logprob": -4.1211,
+            "prob": 0.0163
+          },
+          {
+            "token": "Ġve",
+            "token_id": 5320,
+            "logprob": -4.7695,
+            "prob": 0.0085
+          },
+          {
+            "token": ",",
+            "token_id": 11,
+            "logprob": -4.8672,
+            "prob": 0.0077
+          },
+          {
+            "token": "Ġpřed",
+            "token_id": 100668,
+            "logprob": -5.3633,
+            "prob": 0.0047
+          },
+          {
+            "token": "Ġmezi",
+            "token_id": 103324,
+            "logprob": -5.4414,
+            "prob": 0.0043
+          },
+          {
+            "token": "Ġmonth",
+            "token_id": 2305,
+            "logprob": -5.543,
+            "prob": 0.0039
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġv",
+        "token_id": 348,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 28,
+      "input_text": "Ahoj světe AhojĠ(czechĠpronunciation:Ġ[������hoj])ĠjeĠoznačeníĠproĠpadesátýĠdenĠv",
+      "tokens": [
+        "A",
+        "ho",
+        "j",
+        "Ġsvě",
+        "te",
+        "A",
+        "ho",
+        "j",
+        "Ġ(",
+        "c",
+        "zech",
+        "Ġpronunciation",
+        ":",
+        "Ġ[",
+        "�",
+        "�",
+        "�",
+        "�",
+        "�",
+        "�",
+        "ho",
+        "j",
+        "])",
+        "Ġje",
+        "Ġoz",
+        "načení",
+        "Ġpro",
+        "Ġp",
+        "ades",
+        "át",
+        "ý",
+        "Ġden",
+        "Ġv"
+      ],
+      "token_ids": [
+        32, 6292, 73, 107549, 668, 32, 6292, 73, 320, 66, 26835, 71722, 25, 510, 135, 230, 133, 239,
+        135, 238, 6292, 73, 2526, 4864, 25616, 125140, 463, 281, 3536, 17099, 20195, 3453, 348
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġroce",
+            "token_id": 102528,
+            "logprob": -2.0859,
+            "prob": 0.1243
+          },
+          {
+            "token": "Ġmonth",
+            "token_id": 2305,
+            "logprob": -3.6484,
+            "prob": 0.026
+          },
+          {
+            "token": "č",
+            "token_id": 13453,
+            "logprob": -3.9336,
+            "prob": 0.0196
+          },
+          {
+            "token": "Ġtýd",
+            "token_id": 113006,
+            "logprob": -4.0234,
+            "prob": 0.0179
+          },
+          {
+            "token": "Ġú",
+            "token_id": 18448,
+            "logprob": -4.1484,
+            "prob": 0.0158
+          },
+          {
+            "token": "Ġměsí",
+            "token_id": 106714,
+            "logprob": -4.2852,
+            "prob": 0.0138
+          },
+          {
+            "token": "Ġro",
+            "token_id": 938,
+            "logprob": -4.3398,
+            "prob": 0.013
+          },
+          {
+            "token": "Ġče",
+            "token_id": 123791,
+            "logprob": -4.3945,
+            "prob": 0.0124
+          },
+          {
+            "token": "Ġroku",
+            "token_id": 56402,
+            "logprob": -4.7539,
+            "prob": 0.0086
+          },
+          {
+            "token": "Ġled",
+            "token_id": 6197,
+            "logprob": -4.9492,
+            "prob": 0.0071
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġroce",
+        "token_id": 102528,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 29,
+      "input_text": "Ahoj světe AhojĠ(czechĠpronunciation:Ġ[������hoj])ĠjeĠoznačeníĠproĠpadesátýĠdenĠvĠroce",
+      "tokens": [
+        "A",
+        "ho",
+        "j",
+        "Ġsvě",
+        "te",
+        "A",
+        "ho",
+        "j",
+        "Ġ(",
+        "c",
+        "zech",
+        "Ġpronunciation",
+        ":",
+        "Ġ[",
+        "�",
+        "�",
+        "�",
+        "�",
+        "�",
+        "�",
+        "ho",
+        "j",
+        "])",
+        "Ġje",
+        "Ġoz",
+        "načení",
+        "Ġpro",
+        "Ġp",
+        "ades",
+        "át",
+        "ý",
+        "Ġden",
+        "Ġv",
+        "Ġroce"
+      ],
+      "token_ids": [
+        32, 6292, 73, 107549, 668, 32, 6292, 73, 320, 66, 26835, 71722, 25, 510, 135, 230, 133, 239,
+        135, 238, 6292, 73, 2526, 4864, 25616, 125140, 463, 281, 3536, 17099, 20195, 3453, 348,
+        102528
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġ",
+            "token_id": 220,
+            "logprob": -0.8452,
+            "prob": 0.4294
+          },
+          {
+            "token": "Ġ(",
+            "token_id": 320,
+            "logprob": -1.5254,
+            "prob": 0.2177
+          },
+          {
+            "token": ",",
+            "token_id": 11,
+            "logprob": -1.5566,
+            "prob": 0.2109
+          },
+          {
+            "token": ".",
+            "token_id": 13,
+            "logprob": -3.8691,
+            "prob": 0.0209
+          },
+          {
+            "token": "zech",
+            "token_id": 26835,
+            "logprob": -5.1562,
+            "prob": 0.0058
+          },
+          {
+            "token": "Ġv",
+            "token_id": 348,
+            "logprob": -5.2383,
+            "prob": 0.0053
+          },
+          {
+            "token": "Ġna",
+            "token_id": 4415,
+            "logprob": -5.7148,
+            "prob": 0.0033
+          },
+          {
+            "token": "Ġa",
+            "token_id": 264,
+            "logprob": -5.7695,
+            "prob": 0.0031
+          },
+          {
+            "token": "Ġpo",
+            "token_id": 3273,
+            "logprob": -5.8945,
+            "prob": 0.0028
+          },
+          {
+            "token": "vé",
+            "token_id": 52274,
+            "logprob": -6.1211,
+            "prob": 0.0022
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġ",
+        "token_id": 220,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 30,
+      "input_text": "Ahoj světe AhojĠ(czechĠpronunciation:Ġ[������hoj])ĠjeĠoznačeníĠproĠpadesátýĠdenĠvĠroceĠ",
+      "tokens": [
+        "A",
+        "ho",
+        "j",
+        "Ġsvě",
+        "te",
+        "A",
+        "ho",
+        "j",
+        "Ġ(",
+        "c",
+        "zech",
+        "Ġpronunciation",
+        ":",
+        "Ġ[",
+        "�",
+        "�",
+        "�",
+        "�",
+        "�",
+        "�",
+        "ho",
+        "j",
+        "])",
+        "Ġje",
+        "Ġoz",
+        "načení",
+        "Ġpro",
+        "Ġp",
+        "ades",
+        "át",
+        "ý",
+        "Ġden",
+        "Ġv",
+        "Ġroce",
+        "Ġ"
+      ],
+      "token_ids": [
+        32, 6292, 73, 107549, 668, 32, 6292, 73, 320, 66, 26835, 71722, 25, 510, 135, 230, 133, 239,
+        135, 238, 6292, 73, 2526, 4864, 25616, 125140, 463, 281, 3536, 17099, 20195, 3453, 348,
+        102528, 220
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "202",
+            "token_id": 2366,
+            "logprob": -0.563,
+            "prob": 0.5693
+          },
+          {
+            "token": "201",
+            "token_id": 679,
+            "logprob": -2.5469,
+            "prob": 0.0783
+          },
+          {
+            "token": "199",
+            "token_id": 2550,
+            "logprob": -2.9688,
+            "prob": 0.0514
+          },
+          {
+            "token": "200",
+            "token_id": 1049,
+            "logprob": -3.0,
+            "prob": 0.0498
+          },
+          {
+            "token": "190",
+            "token_id": 7028,
+            "logprob": -3.2578,
+            "prob": 0.0385
+          },
+          {
+            "token": "191",
+            "token_id": 7529,
+            "logprob": -3.2812,
+            "prob": 0.0376
+          },
+          {
+            "token": "198",
+            "token_id": 3753,
+            "logprob": -3.8359,
+            "prob": 0.0216
+          },
+          {
+            "token": "194",
+            "token_id": 6393,
+            "logprob": -4.2344,
+            "prob": 0.0145
+          },
+          {
+            "token": "196",
+            "token_id": 5162,
+            "logprob": -4.2969,
+            "prob": 0.0136
+          },
+          {
+            "token": "197",
+            "token_id": 4468,
+            "logprob": -4.3672,
+            "prob": 0.0127
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "202",
+        "token_id": 2366,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 31,
+      "input_text": "Ahoj světe AhojĠ(czechĠpronunciation:Ġ[������hoj])ĠjeĠoznačeníĠproĠpadesátýĠdenĠvĠroceĠ202",
+      "tokens": [
+        "A",
+        "ho",
+        "j",
+        "Ġsvě",
+        "te",
+        "A",
+        "ho",
+        "j",
+        "Ġ(",
+        "c",
+        "zech",
+        "Ġpronunciation",
+        ":",
+        "Ġ[",
+        "�",
+        "�",
+        "�",
+        "�",
+        "�",
+        "�",
+        "ho",
+        "j",
+        "])",
+        "Ġje",
+        "Ġoz",
+        "načení",
+        "Ġpro",
+        "Ġp",
+        "ades",
+        "át",
+        "ý",
+        "Ġden",
+        "Ġv",
+        "Ġroce",
+        "Ġ",
+        "202"
+      ],
+      "token_ids": [
+        32, 6292, 73, 107549, 668, 32, 6292, 73, 320, 66, 26835, 71722, 25, 510, 135, 230, 133, 239,
+        135, 238, 6292, 73, 2526, 4864, 25616, 125140, 463, 281, 3536, 17099, 20195, 3453, 348,
+        102528, 220, 2366
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "3",
+            "token_id": 18,
+            "logprob": -0.2942,
+            "prob": 0.7451
+          },
+          {
+            "token": "4",
+            "token_id": 19,
+            "logprob": -1.3877,
+            "prob": 0.2496
+          },
+          {
+            "token": "2",
+            "token_id": 17,
+            "logprob": -6.1055,
+            "prob": 0.0022
+          },
+          {
+            "token": "0",
+            "token_id": 15,
+            "logprob": -6.793,
+            "prob": 0.0011
+          },
+          {
+            "token": "5",
+            "token_id": 20,
+            "logprob": -6.8867,
+            "prob": 0.001
+          },
+          {
+            "token": "1",
+            "token_id": 16,
+            "logprob": -7.0117,
+            "prob": 0.0009
+          },
+          {
+            "token": "6",
+            "token_id": 21,
+            "logprob": -10.4219,
+            "prob": 0.0
+          },
+          {
+            "token": "7",
+            "token_id": 22,
+            "logprob": -11.2969,
+            "prob": 0.0
+          },
+          {
+            "token": "9",
+            "token_id": 24,
+            "logprob": -12.0312,
+            "prob": 0.0
+          },
+          {
+            "token": "8",
+            "token_id": 23,
+            "logprob": -12.5625,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "3",
+        "token_id": 18,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 32,
+      "input_text": "Ahoj světe AhojĠ(czechĠpronunciation:Ġ[������hoj])ĠjeĠoznačeníĠproĠpadesátýĠdenĠvĠroceĠ2023",
+      "tokens": [
+        "A",
+        "ho",
+        "j",
+        "Ġsvě",
+        "te",
+        "A",
+        "ho",
+        "j",
+        "Ġ(",
+        "c",
+        "zech",
+        "Ġpronunciation",
+        ":",
+        "Ġ[",
+        "�",
+        "�",
+        "�",
+        "�",
+        "�",
+        "�",
+        "ho",
+        "j",
+        "])",
+        "Ġje",
+        "Ġoz",
+        "načení",
+        "Ġpro",
+        "Ġp",
+        "ades",
+        "át",
+        "ý",
+        "Ġden",
+        "Ġv",
+        "Ġroce",
+        "Ġ",
+        "202",
+        "3"
+      ],
+      "token_ids": [
+        32, 6292, 73, 107549, 668, 32, 6292, 73, 320, 66, 26835, 71722, 25, 510, 135, 230, 133, 239,
+        135, 238, 6292, 73, 2526, 4864, 25616, 125140, 463, 281, 3536, 17099, 20195, 3453, 348,
+        102528, 220, 2366, 18
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": ".",
+            "token_id": 13,
+            "logprob": -0.5728,
+            "prob": 0.564
+          },
+          {
+            "token": ",",
+            "token_id": 11,
+            "logprob": -1.5264,
+            "prob": 0.2174
+          },
+          {
+            "token": "Ġ(",
+            "token_id": 320,
+            "logprob": -2.5098,
+            "prob": 0.0812
+          },
+          {
+            "token": "Ġv",
+            "token_id": 348,
+            "logprob": -3.1426,
+            "prob": 0.0432
+          },
+          {
+            "token": "Ġa",
+            "token_id": 264,
+            "logprob": -3.4551,
+            "prob": 0.0316
+          },
+          {
+            "token": "Ġve",
+            "token_id": 5320,
+            "logprob": -5.2617,
+            "prob": 0.0052
+          },
+          {
+            "token": ".\n\n",
+            "token_id": 382,
+            "logprob": -5.7617,
+            "prob": 0.0031
+          },
+          {
+            "token": "Ġ-",
+            "token_id": 482,
+            "logprob": -5.7695,
+            "prob": 0.0031
+          },
+          {
+            "token": "Ġna",
+            "token_id": 4415,
+            "logprob": -5.9023,
+            "prob": 0.0027
+          },
+          {
+            "token": ";",
+            "token_id": 26,
+            "logprob": -5.9805,
+            "prob": 0.0025
+          }
+        ]
+      },
+      "selected_token": {
+        "token": ".",
+        "token_id": 13,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 33,
+      "input_text": "Ahoj světe AhojĠ(czechĠpronunciation:Ġ[������hoj])ĠjeĠoznačeníĠproĠpadesátýĠdenĠvĠroceĠ2023.",
+      "tokens": [
+        "A",
+        "ho",
+        "j",
+        "Ġsvě",
+        "te",
+        "A",
+        "ho",
+        "j",
+        "Ġ(",
+        "c",
+        "zech",
+        "Ġpronunciation",
+        ":",
+        "Ġ[",
+        "�",
+        "�",
+        "�",
+        "�",
+        "�",
+        "�",
+        "ho",
+        "j",
+        "])",
+        "Ġje",
+        "Ġoz",
+        "načení",
+        "Ġpro",
+        "Ġp",
+        "ades",
+        "át",
+        "ý",
+        "Ġden",
+        "Ġv",
+        "Ġroce",
+        "Ġ",
+        "202",
+        "3",
+        "."
+      ],
+      "token_ids": [
+        32, 6292, 73, 107549, 668, 32, 6292, 73, 320, 66, 26835, 71722, 25, 510, 135, 230, 133, 239,
+        135, 238, 6292, 73, 2526, 4864, 25616, 125140, 463, 281, 3536, 17099, 20195, 3453, 348,
+        102528, 220, 2366, 18, 13
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "<|eot_id|>",
+            "token_id": 128009,
+            "logprob": -0.3115,
+            "prob": 0.7324
+          },
+          {
+            "token": "ĠV",
+            "token_id": 650,
+            "logprob": -3.1953,
+            "prob": 0.041
+          },
+          {
+            "token": "ĠJe",
+            "token_id": 14465,
+            "logprob": -3.2031,
+            "prob": 0.0407
+          },
+          {
+            "token": "ĠP",
+            "token_id": 393,
+            "logprob": -4.5078,
+            "prob": 0.011
+          },
+          {
+            "token": "ĠO",
+            "token_id": 507,
+            "logprob": -4.9609,
+            "prob": 0.007
+          },
+          {
+            "token": "ĠDatum",
+            "token_id": 69559,
+            "logprob": -4.9609,
+            "prob": 0.007
+          },
+          {
+            "token": "ĠJ",
+            "token_id": 622,
+            "logprob": -5.125,
+            "prob": 0.006
+          },
+          {
+            "token": "ĠD",
+            "token_id": 423,
+            "logprob": -5.4609,
+            "prob": 0.0043
+          },
+          {
+            "token": "ĠA",
+            "token_id": 362,
+            "logprob": -5.5234,
+            "prob": 0.004
+          },
+          {
+            "token": "ĠTo",
+            "token_id": 2057,
+            "logprob": -5.5469,
+            "prob": 0.0039
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "<|eot_id|>",
+        "token_id": 128009,
+        "selection_method": "greedy"
+      }
+    }
+  ]
+}

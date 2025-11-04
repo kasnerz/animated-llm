@@ -51,8 +51,8 @@ function InputSection() {
                   aria-label="Select prompt"
                 >
                   <svg
-                    width="20"
-                    height="20"
+                    width="16"
+                    height="16"
                     viewBox="0 0 24 24"
                     fill="none"
                     stroke="currentColor"
@@ -70,7 +70,12 @@ function InputSection() {
                         className={`dropdown-item ${index === currentIndex ? 'active' : ''}`}
                         onClick={() => handleExampleChange(index)}
                       >
-                        {example.prompt}
+                        <div className="dropdown-item-content">
+                          <span className="dropdown-item-prompt">{example.prompt}</span>
+                          {example.model_id && (
+                            <span className="dropdown-item-model">{example.model_id}</span>
+                          )}
+                        </div>
                       </button>
                     ))}
                   </div>
@@ -103,8 +108,8 @@ function InputSection() {
                 aria-label={state.currentStep === 0 ? t('start_generation') : t('next_token')}
               >
                 <svg
-                  width="20"
-                  height="20"
+                  width="14"
+                  height="14"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
