@@ -979,12 +979,13 @@ export function renderStageLabels(group, layout, anchorX, subStep, t) {
   ];
 
   // Keep a stable spacing from the rightmost token stack
-  const gapToLine = 80;
-  const gapLineToLabel = 50;
+  // Increased gap to move labels further to the right
+  const gapToLine = 120;
+  const gapLineToLabel = 70;
   const verticalLineX = anchorX + gapToLine; // Delimiter just right of content
   const labelX = verticalLineX + gapLineToLabel; // Labels to the right of the delimiter
-  const highlightWidth = 150;
-  const highlightHeight = 26;
+  const highlightWidth = 280;
+  const highlightHeight = 54;
 
   // Draw vertical delimiter line
   group
@@ -995,8 +996,8 @@ export function renderStageLabels(group, layout, anchorX, subStep, t) {
     .attr('y2', labels[labels.length - 1].y + 40)
     .attr('class', 'stage-delimiter-line')
     .style('stroke', 'var(--viz-stage-line, #999)')
-    .style('stroke-width', 1)
-    .style('opacity', 0.3);
+    .style('stroke-width', 1.5)
+    .style('opacity', 0.4);
 
   labels.forEach((label) => {
     const isActive = subStep === label.subStep;
@@ -1018,11 +1019,11 @@ export function renderStageLabels(group, layout, anchorX, subStep, t) {
     if (isActive) {
       labelGroup
         .append('rect')
-        .attr('x', -5)
-        .attr('y', -12)
+        .attr('x', -10)
+        .attr('y', -18)
         .attr('width', highlightWidth)
         .attr('height', highlightHeight)
-        .attr('rx', 4)
+        .attr('rx', 6)
         .style('fill', 'var(--viz-stage-highlight, rgba(0, 0, 0, 0.08))')
         .style('opacity', 0.6);
     }
@@ -1032,7 +1033,7 @@ export function renderStageLabels(group, layout, anchorX, subStep, t) {
       .append('line')
       .attr('x1', verticalLineX)
       .attr('y1', label.y)
-      .attr('x2', labelX - 10)
+      .attr('x2', labelX - 15)
       .attr('y2', label.y)
       .attr('class', 'stage-connector-line')
       .style('stroke', 'var(--viz-stage-line, #999)')
@@ -1040,17 +1041,30 @@ export function renderStageLabels(group, layout, anchorX, subStep, t) {
       .style('stroke-dasharray', '3,3')
       .style('opacity', isActive ? 0.6 : 0.3);
 
-    // Label text
+    // Label heading text (larger, bolder)
     labelGroup
       .append('text')
       .attr('x', 0)
-      .attr('y', 5)
-      .attr('class', 'stage-label-text')
-      .style('font-size', '13px')
-      .style('font-weight', '500')
-      .style('fill', 'var(--text-tertiary, #999)')
+      .attr('y', 0)
+      .attr('class', 'stage-label-heading')
+      .style('font-size', '17px')
+      .style('font-weight', '600')
+      .style('fill', isActive ? 'var(--text-primary, #333)' : 'var(--text-tertiary, #999)')
       .style('opacity', opacity)
       .style('font-family', '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif')
       .text(t(label.key));
+
+    // Hint text below the label (smaller, lighter)
+    labelGroup
+      .append('text')
+      .attr('x', 0)
+      .attr('y', 16)
+      .attr('class', 'stage-label-hint')
+      .style('font-size', '11px')
+      .style('font-weight', '400')
+      .style('fill', 'var(--text-tertiary, #999)')
+      .style('opacity', opacity * 0.8)
+      .style('font-family', '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif')
+      .text(t(`${label.key}_hint`));
   });
 }
