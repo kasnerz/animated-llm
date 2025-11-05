@@ -171,7 +171,7 @@ function VisualizationCanvas() {
     // const height = parseFloat(svg.attr('height')) || 900;
 
     // Determine if we need to collapse tokens
-    const maxVisibleTokens = Math.floor(visualizationWidth / 140) - 1; // basic heuristic; dynamic sizing handled below
+    const maxVisibleTokens = Math.floor(visualizationWidth / 170) - 1; // basic heuristic; dynamic sizing handled below
     const shouldCollapse = step.tokens.length > maxVisibleTokens && !isExpanded;
 
     // Layout configuration with proper spacing
@@ -294,6 +294,12 @@ function VisualizationCanvas() {
       // When visible, logprob center = horizY + 108, where horizY = afterBottomY + 20.
       // So center ≈ afterBottomY + 128 regardless of whether hv1 exists.
       stage_output_probabilities: outputsMeta?.logprobCenterY ?? ffnInfo.afterBottomY + 128,
+      // Align with the midpoint between token and percentage rows (ellipsis); fallback below probabilities
+      stage_next_token:
+        outputsMeta?.selectionCenterY ??
+        (outputsMeta?.logprobCenterY != null
+          ? outputsMeta.logprobCenterY + 70
+          : ffnInfo.afterBottomY + 198),
     };
 
     // 7. Render stage labels on the right
@@ -341,8 +347,15 @@ function VisualizationCanvas() {
 
     // Use modular animation utilities
     setInitialStates(svgRef.current, subStep, isInitialStep);
-    gsapRef.current = buildTimeline(svgRef.current, subStep, isInitialStep, animDuration, () =>
-      onStepAnimationComplete(state.isPlaying)
+    const stepCompleteCb = state.instantTransition
+      ? null
+      : () => onStepAnimationComplete(state.isPlaying);
+    gsapRef.current = buildTimeline(
+      svgRef.current,
+      subStep,
+      isInitialStep,
+      animDuration,
+      stepCompleteCb
     );
   }, [
     state.currentStep,

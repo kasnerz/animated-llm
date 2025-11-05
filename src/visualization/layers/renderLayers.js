@@ -451,16 +451,12 @@ export function renderTransformerBlockLayer(
       // First layer: arrow comes from outer embeddings
       const outerCol = columnsMeta[i];
       if (outerCol) {
-        drawArrow(
-          underlays,
-          x,
-          outerCol.topY + outerCol.height / 2,
-          x,
-          meta.topY + meta.height / 2,
-          {
-            className: `outer-to-block-arrow ${isNew ? 'new-token' : 'prev-token'}`,
-          }
-        );
+        // Start the arrow just BELOW the outer vector to avoid covering it visually
+        const startY = (outerCol.bottomY ?? outerCol.topY + outerCol.height) + 4;
+        const endY = meta.topY + meta.height / 2;
+        drawArrow(underlays, x, startY, x, endY, {
+          className: `outer-to-block-arrow ${isNew ? 'new-token' : 'prev-token'}`,
+        });
       }
     } else {
       // Subsequent layers: draw a U-shaped feedback arrow that appears to emerge from the
@@ -535,30 +531,76 @@ export function renderTransformerBlockLayer(
   });
 
   // Render attention connections between top and bottom embeddings
+  // Rule: For the very first generation step (step.step === 0), show all-to-all.
+  // After that, show all-to-one (to the newest/last token's hidden state).
   const attentionGroup = underlays.append('g').attr('class', 'attention-mash');
   const centers = insideTopMeta.map((m) => (m ? { x: m.centerX } : null));
-  centers.forEach((a, i) => {
-    if (!a) return;
-    centers.forEach((b, j) => {
-      if (!b || i === j) return;
-      const s = Math.abs(Math.sin((i * 37 + j * 17) * 12.9898)) % 1;
-      // Use lighter grey colors with less variation
-      const color = d3.interpolateRgb('#E5E7EB', '#797b7dff')(s);
-      // Use minimal line width
-      const width = 0.5;
-      // Keep opacity light
-      const opacity = 0.3 + s * 0.15;
-      attentionGroup
-        .append('line')
-        .attr('x1', a.x)
-        .attr('y1', insideTopMeta[i].topY + insideTopMeta[i].height / 2)
-        .attr('x2', b.x)
-        .attr('y2', insideBottomMeta[j].topY + insideBottomMeta[j].height / 2)
-        .style('stroke', color)
-        .style('stroke-width', width)
-        .style('opacity', opacity);
+  const isFirstGenStep = Number(step?.step) === 0;
+
+  if (isFirstGenStep) {
+    // Original all-to-all visualization (except self)
+    centers.forEach((a, i) => {
+      if (!a || !insideTopMeta[i]) return;
+      centers.forEach((b, j) => {
+        if (!b || !insideBottomMeta[j] || i === j) return;
+        const s = Math.abs(Math.sin((i * 37 + j * 17) * 12.9898)) % 1;
+        const color = d3.interpolateRgb('#E5E7EB', '#797b7dff')(s);
+        const width = 0.5;
+        const opacity = 0.3 + s * 0.15;
+        attentionGroup
+          .append('line')
+          .attr('x1', a.x)
+          .attr('y1', insideTopMeta[i].topY + insideTopMeta[i].height / 2)
+          .attr('x2', b.x)
+          .attr('y2', insideBottomMeta[j].topY + insideBottomMeta[j].height / 2)
+          .style('stroke', color)
+          .style('stroke-width', width)
+          .style('opacity', opacity);
+      });
     });
-  });
+  } else {
+    // All-to-one: connect every top embedding to the last token's bottom embedding
+    const lastActualIndex = (step.tokens || []).length - 1;
+    // Find visible index corresponding to the last actual token; fallback to rightmost visible
+    let targetIdx = -1;
+    for (let i = 0; i < (tokensLayoutRef.current?.visibleIndices?.length || 0); i++) {
+      const vi = tokensLayoutRef.current.visibleIndices[i];
+      if (vi === lastActualIndex) {
+        targetIdx = i;
+        break;
+      }
+    }
+    if (targetIdx < 0) {
+      for (let i = centers.length - 1; i >= 0; i--) {
+        const vi = tokensLayoutRef.current?.visibleIndices?.[i] ?? -1;
+        if (vi >= 0) {
+          targetIdx = i;
+          break;
+        }
+      }
+    }
+
+    if (targetIdx >= 0 && insideBottomMeta[targetIdx]) {
+      const bx = centers[targetIdx]?.x ?? insideBottomMeta[targetIdx].centerX;
+      const by = insideBottomMeta[targetIdx].topY + insideBottomMeta[targetIdx].height / 2;
+      centers.forEach((a, i) => {
+        if (!a || !insideTopMeta[i]) return;
+        const s = Math.abs(Math.sin((i * 37 + targetIdx * 17) * 12.9898)) % 1;
+        const color = d3.interpolateRgb('#E5E7EB', '#797b7dff')(s);
+        const width = 0.5;
+        const opacity = 0.35; // a tad stronger since fewer lines
+        attentionGroup
+          .append('line')
+          .attr('x1', a.x)
+          .attr('y1', insideTopMeta[i].topY + insideTopMeta[i].height / 2)
+          .attr('x2', bx)
+          .attr('y2', by)
+          .style('stroke', color)
+          .style('stroke-width', width)
+          .style('opacity', opacity);
+      });
+    }
+  }
 
   // Add FFN embeddings (output embeddings after feed forward) inside the transformer block
   const ffnY = insideBottomY + maxInsideBottomHeight + 60; // slightly reduced to compact block
@@ -586,7 +628,11 @@ export function renderTransformerBlockLayer(
       isDarkMode
     );
     const insideBottom = insideBottomMeta[i];
-    if (insideBottom && meta) {
+    // Only show the FFN computation connectors (lines + box) when they're actually computed:
+    // - For the very first generated token, render for all tokens (current behavior)
+    // - For subsequent tokens, render ONLY for the last/new token and hide previous ones
+    const shouldRenderFfnConnectors = isFirstGenStep || isNew;
+    if (insideBottom && meta && shouldRenderFfnConnectors) {
       // Draw feed-forward connector with multiple input/output lines and a box in the middle
       const inCenters =
         insideBottom.cellCentersX && insideBottom.cellCentersX.length
@@ -606,9 +652,9 @@ export function renderTransformerBlockLayer(
       const boxTopY = midY - boxSize / 2;
       const boxBottomY = midY + boxSize / 2;
 
-      // Store the projection box center Y for the first visible token (for stage label alignment)
-      if (ffnMeta.length === 0) {
-        // Mark this as the FFN center Y for stage labels (same approach as attention)
+      // Store the projection box center Y for stage label alignment.
+      // Using the first encountered is fine since all boxes share the same Y; also set on the new token.
+      if (ffnMeta.length === 0 || isNew) {
         meta.ffnProjectionCenterY = midY;
       }
 
@@ -923,17 +969,29 @@ export function renderOutputLayer(
   }
 
   let hv2 = null;
+  let selectionCenterY = null; // vertical center between token and percentage rows (aligned with ellipsis)
   let logprobY = (hv1 ? hv1.bottomY : horizY + 36) + 60; // Increased from 28 to 60 for longer arrow with box
   const probs = candidates.map((c) => c.prob);
   if (subStep >= 8) {
     hv2 = drawHorizontalVectorRich(group, horizCenterX, logprobY, probs, {
       className: 'logprob-vector',
-      tokenColor: '#2c6ec5ff',
+      tokenColor: '#16a34cff',
       format: (v) => v.toFixed(2),
       isLogprob: true,
       ellipsisLast: true,
       isDarkMode,
     });
+    // Even if token/percentage rows are not shown yet (subStep < 9),
+    // precompute the center line between them to align the stage label.
+    if (hv2) {
+      const arrowStartY = hv2.bottomY + 8;
+      const arrowEndY = arrowStartY + 18;
+      const labelGap = 6;
+      const labelSpacing = 20;
+      const tokenY = arrowEndY + labelGap + 10;
+      const percentageY = tokenY + labelSpacing;
+      selectionCenterY = (tokenY + percentageY) / 2;
+    }
     if (hv1 && hv2) {
       drawArrow(underlays, horizCenterX, hv1.bottomY + 6, horizCenterX, hv2.topY - 8, {
         withBox: true,
@@ -956,8 +1014,14 @@ export function renderOutputLayer(
       const percentage = ((p ?? 0) * 100).toFixed(1) + '%';
       const isSelected = i === 0;
 
+      // Container group for all visuals of a single candidate (arrow + labels)
+      const itemG = group
+        .append('g')
+        .attr('class', `distribution-item${isSelected ? ' selected' : ''}`)
+        .attr('data-index', String(i));
+
       // Draw arrow from vector cell to labels
-      group
+      itemG
         .append('line')
         .attr('x1', cx)
         .attr('y1', arrowStartY)
@@ -969,7 +1033,7 @@ export function renderOutputLayer(
         .style('opacity', 0.7);
 
       // Arrowhead
-      group
+      itemG
         .append('polygon')
         .attr('points', `${cx},${arrowEndY} ${cx - 4},${arrowEndY - 6} ${cx + 4},${arrowEndY - 6}`)
         .attr('class', 'distribution-arrow-head')
@@ -985,29 +1049,59 @@ export function renderOutputLayer(
           ? displayToken.substring(0, maxChars - 1) + '…'
           : displayToken;
 
-      group
+      itemG
         .append('text')
         .attr('x', cx)
         .attr('y', arrowEndY + labelGap + 10)
         .attr('text-anchor', 'middle')
         .attr('class', 'distribution-token-label')
         .style('font-size', '13px')
-        .style('font-weight', isSelected ? '600' : 'normal')
+        .style('font-weight', 'normal') // selected highlight will be animated later
         .style('fill', 'var(--viz-text-color)')
         .text(truncatedToken);
 
       // Percentage label (second)
-      group
+      itemG
         .append('text')
         .attr('x', cx)
         .attr('y', arrowEndY + labelGap + 10 + labelSpacing)
         .attr('text-anchor', 'middle')
         .attr('class', 'distribution-percentage-label')
         .style('font-size', '12px')
-        .style('font-weight', isSelected ? '600' : 'normal')
+        .style('font-weight', 'normal') // selected highlight will be animated later
         .style('fill', 'var(--viz-muted-color)')
         .text(percentage);
     });
+
+    // Create a purple rounded outline around the selected candidate (index 0)
+    // This rectangle covers the logprob cell, the arrow, token label and percentage label
+    if (hv2.centers.length > 0) {
+      const selIdx = 0;
+      const selCx = hv2.centers[selIdx];
+      if (typeof selCx === 'number') {
+        const cellHalf = (hv2.cellWidth || 26) / 2;
+        const left = selCx - cellHalf - 10;
+        const right = selCx + cellHalf + 10;
+        const top = hv2.topY - 8;
+        const bottom = arrowEndY + labelGap + 10 + labelSpacing + 8;
+        const rectW = Math.max(28, right - left);
+        const rectH = Math.max(28, bottom - top);
+
+        group
+          .append('rect')
+          .attr('class', 'distribution-highlight-rect')
+          .attr('x', left)
+          .attr('y', top)
+          .attr('width', rectW)
+          .attr('height', rectH)
+          .attr('rx', 12)
+          .style('fill', 'none')
+          .style('stroke', '#007E66')
+          .style('stroke-width', 3)
+          .style('opacity', 0)
+          .style('pointer-events', 'none');
+      }
+    }
 
     // Add ellipsis label for the last cell, centered between token and percentage positions
     if (hv2.centers.length > 0) {
@@ -1015,6 +1109,8 @@ export function renderOutputLayer(
       const tokenY = arrowEndY + labelGap + 10;
       const percentageY = arrowEndY + labelGap + 10 + labelSpacing;
       const ellipsisY = (tokenY + percentageY) / 2;
+      // Already computed above; ensure consistency if needed
+      selectionCenterY = selectionCenterY ?? ellipsisY;
 
       group
         .append('text')
@@ -1029,10 +1125,142 @@ export function renderOutputLayer(
     }
   }
 
+  // Sub-step 11: draw an append arrow from the selected probability down, then horizontally to the
+  // X of where the next token will appear, then up to the token baseline. Place on the backmost layer.
+  // Also draw a preview of the next token with its underline at the target position.
+  if (subStep >= 11 && hv2) {
+    try {
+      // Determine start at the selected candidate's highlight rectangle bottom edge (index 0)
+      const selIdx = 0;
+      const sx = hv2.centers?.[selIdx];
+      if (typeof sx === 'number') {
+        // Recreate the label Y math from above scope to calculate rectangle bottom
+        const arrowStartY = hv2.bottomY + 8;
+        const arrowEndY = arrowStartY + 18;
+        const labelGap = 6;
+        const labelSpacing = 20;
+        const rectBottom = arrowEndY + labelGap + 10 + labelSpacing + 8; // bottom edge of highlight rectangle
+        const y1 = rectBottom + 4; // start a few pixels below the rectangle
+        const downY = y1 + 26; // go down a bit more
+
+        // Compute target X for next token position using current last token geometry + next token width
+        const mainRootSel = d3.select(svgRoot).select('g.visualization-main');
+        const tokenNodes = mainRootSel.selectAll('.token-group .token').nodes();
+        if (tokenNodes && tokenNodes.length > 0) {
+          const lastTokenNode = tokenNodes[tokenNodes.length - 1];
+          const lastSel = d3.select(lastTokenNode);
+          const transform = lastSel.attr('transform') || 'translate(0,0)';
+          const m = /translate\(([-\d.]+),\s*([-\d.]+)\)/.exec(transform);
+          const lastCenterX = m ? parseFloat(m[1]) : 0;
+          // Get last token width from its box
+          const lastWidth = parseFloat(lastSel.select('rect.token-box').attr('width')) || 36;
+          const gap = 70; // keep in sync with renderTokensLayer
+          const nextTokenStr = step?.selected_token?.token || '';
+          const nextTokenDisplay = processTokenForVisualization(nextTokenStr);
+          const nextWidth = Math.max(36, nextTokenDisplay.length * 10 + 16);
+          const targetX = lastCenterX + lastWidth / 2 + gap + nextWidth / 2;
+          const targetY = layout.tokenY + 30; // token underline position
+
+          // Build a rounded-corner polyline path: down, horizontal, up
+          const r = 10;
+          const x1 = sx;
+          const x2 = targetX;
+          const y2 = targetY;
+          const hY = downY; // horizontal baseline
+
+          const pathD = [
+            `M ${x1},${y1}`,
+            `L ${x1},${hY - r}`,
+            // corner to horizontal
+            `Q ${x1},${hY} ${x1 + r},${hY}`,
+            `L ${x2 - r},${hY}`,
+            // corner up
+            `Q ${x2},${hY} ${x2},${hY - r}`,
+            `L ${x2},${y2}`,
+          ].join(' ');
+
+          // Put on the very back: first child of main container
+          const backLayer = mainRootSel
+            .insert('g', ':first-child')
+            .attr('class', 'append-path-underlay');
+
+          // Define arrowhead marker with lighter color
+          const markerId = `append-arrowhead-${Math.random().toString(36).slice(2, 9)}`;
+          const defs = backLayer.append('defs');
+          defs
+            .append('marker')
+            .attr('id', markerId)
+            .attr('markerWidth', 6)
+            .attr('markerHeight', 6)
+            .attr('refX', 3)
+            .attr('refY', 3)
+            .attr('orient', 'auto')
+            .append('polygon')
+            .attr('points', '0 0, 6 3, 0 6')
+            .attr('fill', '#ccc');
+
+          backLayer
+            .append('path')
+            .attr('d', pathD)
+            .attr('class', 'append-path-arrow')
+            .style('fill', 'none')
+            .style('stroke', '#969595ff')
+            .style('stroke-width', 1)
+            .style('stroke-dasharray', '4,4')
+            .style('stroke-linecap', 'round')
+            .style('stroke-linejoin', 'round')
+            .style('opacity', 0)
+            .attr('marker-end', `url(#${markerId})`);
+
+          // Draw preview of the next token with underline at the target position
+          // Get the actual token index for the next token
+          const nextTokenIndex = step.tokens ? step.tokens.length : 0;
+          const nextTokenColor = getTokenColor(nextTokenIndex);
+
+          const previewG = mainRootSel
+            .append('g')
+            .attr('class', 'append-target-token-preview')
+            .attr('transform', `translate(${targetX}, ${layout.tokenY})`);
+
+          // Token text
+          previewG
+            .append('text')
+            .attr('text-anchor', 'middle')
+            .attr('y', 6)
+            .attr('class', 'preview-token-text')
+            .style('font-size', '18px')
+            .style(
+              'font-family',
+              '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif'
+            )
+            .style('font-weight', '500')
+            .style('fill', 'var(--viz-token-text)')
+            .style('opacity', 0)
+            .text(nextTokenDisplay);
+
+          // Colored heavy underline
+          previewG
+            .append('line')
+            .attr('x1', -nextWidth / 2 + 8)
+            .attr('y1', 18)
+            .attr('x2', nextWidth / 2 - 8)
+            .attr('y2', 18)
+            .attr('class', 'preview-token-underline')
+            .style('stroke', nextTokenColor)
+            .style('stroke-width', 6)
+            .style('stroke-linecap', 'round')
+            .style('opacity', 0);
+        }
+      }
+    } catch {
+      // Non-fatal; if geometry missing, just skip drawing the path
+    }
+  }
+
   // Return centers for alignment, when available
   const extractedCenterY = hv1 ? (hv1.topY + hv1.bottomY) / 2 : null;
   const logprobCenterY = hv2 ? (hv2.topY + hv2.bottomY) / 2 : null;
-  return { extractedCenterY, logprobCenterY };
+  return { extractedCenterY, logprobCenterY, selectionCenterY };
 }
 
 /**
@@ -1087,6 +1315,15 @@ export function renderStageLabels(group, layout, anchorX, subStep, t, showGradua
         (layout.outputY != null ? layout.outputY + 10 : null) ??
         layout.embeddingY + 530,
       subStep: 8,
+    },
+    {
+      key: 'stage_next_token',
+      y:
+        stageY.stage_next_token ??
+        (stageY.stage_output_probabilities != null
+          ? stageY.stage_output_probabilities + 44
+          : layout.embeddingY + 574),
+      subStep: 10,
     },
   ];
 

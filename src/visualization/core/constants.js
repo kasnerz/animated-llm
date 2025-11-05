@@ -32,7 +32,7 @@ export const LAYOUT = {
   CORNER_RADIUS: 10,
   GAP_WIDTH: 24,
   // Output probabilities display limit
-  MAX_OUTPUT_TOKENS: 7, // Show at most this many tokens (+ ellipsis if more exist)
+  MAX_OUTPUT_TOKENS: 8, // Show at most this many tokens (+ ellipsis if more exist)
 };
 
 /**

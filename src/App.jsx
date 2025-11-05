@@ -39,7 +39,7 @@ function AppContent() {
         return;
       }
 
-      // ArrowRight: step forward when paused; holding should not force play mode
+      // ArrowRight: step forward; if playing, pause first then step
       if (e.code === 'ArrowRight') {
         e.preventDefault();
         if (!state.currentExample) return;
@@ -49,25 +49,29 @@ function AppContent() {
           actions.setIsPlaying(false);
           return;
         }
-        if (!state.isPlaying) {
-          const lastSubStep = 10;
-          if (state.currentAnimationSubStep < lastSubStep) {
-            actions.nextAnimationSubStep();
-          } else {
-            // Complete token manually; remain paused at next step
-            actions.onStepAnimationComplete(false);
-          }
+        // If playing, pause and then step forward
+        if (state.isPlaying) {
+          actions.setIsPlaying(false);
+        }
+        const lastSubStep = 12; // keep in sync with timeline
+        if (state.currentAnimationSubStep < lastSubStep) {
+          actions.nextAnimationSubStep();
+        } else {
+          // Complete token manually; remain paused at next step
+          actions.onStepAnimationComplete(false);
         }
         return;
       }
 
-      // ArrowLeft: step backward when paused
+      // ArrowLeft: step backward; if playing, pause first then step
       if (e.code === 'ArrowLeft') {
         e.preventDefault();
         if (!state.currentExample) return;
-        if (!state.isPlaying) {
-          actions.prevAnimationSubStep();
+        // If playing, pause and then step backward
+        if (state.isPlaying) {
+          actions.setIsPlaying(false);
         }
+        actions.prevAnimationSubStep();
         return;
       }
 
@@ -109,9 +113,9 @@ function AppContent() {
 
     // Derive per-substep interval: total step duration divided by 12 substeps
     const totalSec = state.animationSpeed || 7.5; // fallback
-    const perSubStepMs = Math.max(150, (totalSec / 12) * 1000);
+    const perSubStepMs = Math.max(150, (totalSec / 13) * 1000);
 
-    const lastSubStep = 10; // keep in sync with timeline
+    const lastSubStep = 12; // keep in sync with timeline
 
     const tick = () => {
       // If generation hasn't started yet

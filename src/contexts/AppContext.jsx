@@ -131,7 +131,7 @@ function appReducer(state, action) {
 
     case ActionTypes.NEXT_ANIMATION_SUB_STEP: {
       const numLayers = state.currentExample?.model_info?.num_layers || 1;
-      const maxSubSteps = 12; // timeline now has 0..11
+      const maxSubSteps = 13; // timeline now has 0..12
 
       // Two-stage transformer flow:
       // - First pass (substeps 3..5) with currentTransformerLayer = 0
@@ -218,7 +218,7 @@ function appReducer(state, action) {
 
         // Otherwise, go to the previous step and set to its last visible sub-step
         const prevStep = Math.max(1, state.currentStep - 1);
-        const lastVisibleSub = 10; // keep in sync with timeline
+        const lastVisibleSub = 11; // land on arrow (no step complete) when stepping back a step
 
         // Undo the last generated token (if any)
         const gt = state.generatedTokens || [];

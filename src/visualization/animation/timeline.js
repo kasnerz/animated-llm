@@ -100,6 +100,15 @@ export function setInitialStates(svgElement, subStep, isInitialStep) {
     setIfAny(svgElement, SEL.distributionLabels, {
       opacity: prev >= 9 ? 1 : 0,
     });
+    // Distribution items (arrows + labels) should be visible when distribution labels are
+    setIfAny(svgElement, SEL.distributionItem, { opacity: prev >= 9 ? 1 : 0, y: 0 });
+    // Highlight rectangle appears at the highlight sub-step (10)
+    setIfAny(svgElement, SEL.distributionHighlightRect, { opacity: prev >= 10 ? 1 : 0 });
+    // Append path arrow appears at sub-step 11 and stays through 12
+    setIfAny(svgElement, SEL.appendPathArrow, { opacity: prev >= 11 ? 1 : 0 });
+    // Preview token (text and underline) appears at sub-step 11
+    setIfAny(svgElement, SEL.previewTokenText, { opacity: prev >= 11 ? 1 : 0 });
+    setIfAny(svgElement, SEL.previewTokenUnderline, { opacity: prev >= 11 ? 1 : 0 });
   } else {
     // Subsequent steps: keep previous stacks visible based on sub-step
     setIfAny(svgElement, SEL.tokenPrev, { opacity: 1 });
@@ -194,6 +203,11 @@ export function setInitialStates(svgElement, subStep, isInitialStep) {
     setIfAny(svgElement, SEL.distributionLabels, {
       opacity: prev >= 9 ? 1 : 0,
     });
+    setIfAny(svgElement, SEL.distributionItem, { opacity: prev >= 9 ? 1 : 0, y: 0 });
+    setIfAny(svgElement, SEL.distributionHighlightRect, { opacity: prev >= 10 ? 1 : 0 });
+    setIfAny(svgElement, SEL.appendPathArrow, { opacity: prev >= 11 ? 1 : 0 });
+    setIfAny(svgElement, SEL.previewTokenText, { opacity: prev >= 11 ? 1 : 0 });
+    setIfAny(svgElement, SEL.previewTokenUnderline, { opacity: prev >= 11 ? 1 : 0 });
   }
 }
 
@@ -336,18 +350,78 @@ export function buildTimeline(svgElement, subStep, isInitialStep, animDuration, 
       toIfAny(SEL.logprobVector, { opacity: 1, duration: animDuration }, '<');
       break;
     case 9:
-      toIfAny(SEL.distributionBar, { opacity: 1, scaleY: 1, duration: animDuration });
+      // Show arrows + labels for all candidates without highlighting
+      toIfAny(SEL.distributionItem, { opacity: 1, duration: animDuration });
+      toIfAny(SEL.distributionBar, { opacity: 1, scaleY: 1, duration: animDuration }, '<');
       toIfAny(SEL.distributionLabels, { opacity: 1, duration: animDuration }, '<');
       break;
     case 10:
-      // No visuals by default; tiny delay to keep async behavior consistent
-      tl.to({}, { duration: Math.max(0.05, animDuration * 0.2) });
+      // Highlight the selected output token: bolden and pulse the token label
+      toIfAny(`${SEL.distributionItemSelected} ${SEL.distributionTokenLabel}`, {
+        fontWeight: 700,
+        duration: animDuration * 0.6,
+      });
+      // Subtle pulse (zoom in then out) on the token label
+      toIfAny(
+        `${SEL.distributionItemSelected} ${SEL.distributionTokenLabel}`,
+        {
+          scale: 1.12,
+          transformOrigin: '50% 50%',
+          duration: animDuration * 0.45,
+          yoyo: true,
+          repeat: 1,
+          ease: 'power1.inOut',
+        },
+        '<+0.02'
+      );
+      // Slightly emphasize the percentage label too (no pulse)
+      toIfAny(
+        `${SEL.distributionItemSelected} ${SEL.distributionPercentageLabel}`,
+        { fontWeight: 700, duration: animDuration * 0.35 },
+        '<'
+      );
+      // Pulse the percentage label together with token label
+      toIfAny(
+        `${SEL.distributionItemSelected} ${SEL.distributionPercentageLabel}`,
+        {
+          scale: 1.12,
+          transformOrigin: '50% 50%',
+          duration: animDuration * 0.45,
+          yoyo: true,
+          repeat: 1,
+          ease: 'power1.inOut',
+        },
+        '<+0.02'
+      );
+
+      // Show purple rounded outline around the selected item (covering arrow, token and percentage and the logprob cell)
+      toIfAny(
+        SEL.distributionHighlightRect,
+        {
+          opacity: 1,
+          scale: 1,
+          transformOrigin: '50% 50%',
+          duration: animDuration * 0.45,
+          ease: 'power1.out',
+        },
+        '<'
+      );
+      break;
+    case 11:
+      // Show the backmost append path arrow (drawn by renderer) and the preview token
+      toIfAny(SEL.appendPathArrow, { opacity: 1, duration: animDuration * 0.6 });
+      toIfAny(SEL.previewTokenText, { opacity: 1, duration: animDuration * 0.6 }, '<');
+      toIfAny(SEL.previewTokenUnderline, { opacity: 1, duration: animDuration * 0.6 }, '<');
+      break;
+    case 12:
+      // Arrow stays visible; tiny delay to allow user to see it before step completes
+      tl.to({}, { duration: Math.max(0.05, animDuration * 0.3) });
       break;
     default:
       break;
   }
 
-  if (subStep === 11 && typeof onStepComplete === 'function') {
+  if (subStep === 12 && typeof onStepComplete === 'function') {
     tl.eventCallback('onComplete', onStepComplete);
   }
 
