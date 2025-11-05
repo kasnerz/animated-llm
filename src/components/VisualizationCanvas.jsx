@@ -427,7 +427,9 @@ function VisualizationCanvas() {
           );
           const scrollAreaWidth = Math.max(320, widthForCalc - labelsWidthCalc);
 
-          const maxVisibleTokens = Math.floor(scrollAreaWidth / 140) - 1;
+          const maxVisibleTokens = Math.floor(scrollAreaWidth / 170) - 1; // Match the render logic
+          // Show button whenever there are enough tokens that collapsing would be beneficial
+          // This matches the logic used in the render effect (line ~173)
           const shouldShow = tokens.length > maxVisibleTokens;
           if (!shouldShow) return null;
 

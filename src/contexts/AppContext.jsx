@@ -339,11 +339,14 @@ function appReducer(state, action) {
             instantTransition: false,
           };
         }
-        // Manual stepping: finish and pause at the end with full answer visible
+        // Manual stepping: restart from the beginning (paused) to avoid repeatedly appending the last token
         return {
           ...state,
-          generatedAnswer: newAnswer,
-          generatedTokens: newGeneratedTokens,
+          currentStep: 0,
+          currentAnimationSubStep: 0,
+          currentTransformerLayer: 0,
+          generatedAnswer: '',
+          generatedTokens: [],
           isPlaying: false,
           instantTransition: false,
         };
@@ -382,10 +385,7 @@ function appReducer(state, action) {
     case ActionTypes.SET_ANIMATION_SPEED:
       return {
         ...state,
-        animationSpeed: Math.max(
-          config.animation.minSpeed,
-          Math.min(config.animation.maxSpeed, action.payload.speed)
-        ),
+        animationSpeed: action.payload.speed,
       };
 
     case ActionTypes.SET_IS_PLAYING:

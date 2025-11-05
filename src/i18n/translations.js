@@ -48,7 +48,7 @@ const translations = {
     stage_tokenization: 'Tokenizace',
     stage_tokenization_hint: 'Textu je rozdělen na menší části',
     stage_token_ids: 'Id tokenů',
-    stage_token_ids_hint: 'Každý token je převeden na číselný identifikátor',
+    stage_token_ids_hint: 'Každý token má svůj číselný identifikátor',
     stage_input_embeddings: 'Vstupní embeddingy',
     stage_input_embeddings_hint: 'Každý identifikátor má svou vektorovou reprezentaci',
     stage_attention_layer: 'Attention vrstva',

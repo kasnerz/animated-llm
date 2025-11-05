@@ -1,9 +1,10 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { AppProvider, useApp } from './contexts/AppContext';
 import { I18nProvider, useI18n } from './i18n/I18nProvider';
 import InputSection from './components/InputSection';
 import GeneratedAnswer from './components/GeneratedAnswer';
 import VisualizationCanvas from './components/VisualizationCanvas';
+import { config } from './config';
 import './index.css';
 
 /**
@@ -12,6 +13,8 @@ import './index.css';
 function AppContent() {
   const { state, actions } = useApp();
   const { t, language, toggleLanguage } = useI18n();
+  // Guard to avoid invoking step completion multiple times while state is catching up
+  const completionGuardRef = useRef({ step: -1, sub: -1 });
 
   // Sync language changes from i18n to app context
   useEffect(() => {
@@ -47,6 +50,8 @@ function AppContent() {
           // Start the very first step but remain paused for manual stepping
           actions.nextStep();
           actions.setIsPlaying(false);
+          // Reset guard at the beginning of a new step
+          completionGuardRef.current = { step: -1, sub: -1 };
           return;
         }
         // If playing, pause and then step forward
@@ -56,8 +61,16 @@ function AppContent() {
         const lastSubStep = 12; // keep in sync with timeline
         if (state.currentAnimationSubStep < lastSubStep) {
           actions.nextAnimationSubStep();
+          // Moving sub-steps clears any pending completion guard
+          completionGuardRef.current = { step: -1, sub: -1 };
         } else {
           // Complete token manually; remain paused at next step
+          const key = { step: state.currentStep, sub: state.currentAnimationSubStep };
+          const last = completionGuardRef.current;
+          if (last.step === key.step && last.sub === key.sub) {
+            return; // already completed for this edge; ignore key repeat
+          }
+          completionGuardRef.current = key;
           actions.onStepAnimationComplete(false);
         }
         return;
@@ -106,6 +119,11 @@ function AppContent() {
     toggleLanguage,
   ]);
 
+  // Clear completion guard whenever step/substep changes (state advanced)
+  useEffect(() => {
+    completionGuardRef.current = { step: -1, sub: -1 };
+  }, [state.currentStep, state.currentAnimationSubStep]);
+
   // Autoplay: when isPlaying is true, advance at steady pace as if pressing Space repeatedly
   useEffect(() => {
     if (!state.isPlaying) return;
@@ -121,12 +139,23 @@ function AppContent() {
       // If generation hasn't started yet
       if (state.currentStep === 0) {
         actions.nextStep();
+        // Reset completion guard at the start of a fresh step
+        completionGuardRef.current = { step: -1, sub: -1 };
         return;
       }
       if (state.currentAnimationSubStep < lastSubStep) {
         actions.nextAnimationSubStep();
+        // Moving sub-steps clears any pending completion guard
+        completionGuardRef.current = { step: -1, sub: -1 };
       } else {
         // Advancing due to autoplay: keep playing into the next step
+        // Prevent duplicate completion calls while state updates
+        const key = { step: state.currentStep, sub: state.currentAnimationSubStep };
+        const last = completionGuardRef.current;
+        if (last.step === key.step && last.sub === key.sub) {
+          return; // already dispatched for this frame
+        }
+        completionGuardRef.current = key;
         actions.onStepAnimationComplete(true);
       }
     };
@@ -213,7 +242,7 @@ function AppContent() {
 function App() {
   return (
     <AppProvider>
-      <I18nProvider initialLanguage="en">
+      <I18nProvider initialLanguage={config.defaults.language}>
         <AppContent />
       </I18nProvider>
     </AppProvider>
