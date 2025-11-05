@@ -7,6 +7,7 @@ import * as d3 from 'd3';
 import { getTokenColor, getVectorBoxColors, getVectorTextColor } from '../core/colors';
 import { drawArrow, verticalThenHorizontalRoundedPath } from '../core/draw';
 import { processTokenForVisualization } from '../../utils/tokenProcessing';
+import { LAYOUT as CONSTS } from '../core/constants';
 
 /**
  * Render tokens layer
@@ -605,6 +606,12 @@ export function renderTransformerBlockLayer(
       const boxTopY = midY - boxSize / 2;
       const boxBottomY = midY + boxSize / 2;
 
+      // Store the projection box center Y for the first visible token (for stage label alignment)
+      if (ffnMeta.length === 0) {
+        // Mark this as the FFN center Y for stage labels (same approach as attention)
+        meta.ffnProjectionCenterY = midY;
+      }
+
       // Incoming lines (from each input cell to the center of the box)
       for (let k = 0; k < lineCount; k++) {
         // Random variation using same logic as attention lines
@@ -720,6 +727,16 @@ export function renderTransformerBlockLayer(
     .text(`${Math.max(1, numLayers || 1)}x`);
 
   const attentionCenterY = attentionStartY + 20; // middle of attention gap
+
+  // Collect FFN projection box center Y from the first visible token's metadata
+  let ffnProjectionCenterY = null;
+  for (const m of ffnMeta) {
+    if (m && m.ffnProjectionCenterY != null) {
+      ffnProjectionCenterY = m.ffnProjectionCenterY;
+      break;
+    }
+  }
+
   return {
     blockTopY,
     blockBottomY,
@@ -732,6 +749,7 @@ export function renderTransformerBlockLayer(
     maxInsideBottomHeight,
     maxFfnHeight,
     attentionCenterY,
+    ffnProjectionCenterY, // Center Y of the FFN projection box for stage label alignment
   };
 }
 
@@ -823,7 +841,13 @@ export function renderOutputLayer(
   contentCenterX, // optional: center alignment override
   isDarkMode
 ) {
-  const candidates = step.output_distribution?.candidates || [];
+  const allCandidates = step.output_distribution?.candidates || [];
+  // Limit to MAX_OUTPUT_TOKENS candidates + ellipsis if there are more
+  const maxTokens = CONSTS.MAX_OUTPUT_TOKENS;
+  const candidates =
+    allCandidates.length > maxTokens
+      ? [...allCandidates.slice(0, maxTokens), { token: '...', prob: 0 }]
+      : allCandidates;
 
   const rm = bottomInfo.rightmostMeta;
   // Use the actual token index passed from the layout (not the visible column index)

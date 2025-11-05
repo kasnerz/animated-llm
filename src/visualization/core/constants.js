@@ -31,6 +31,8 @@ export const LAYOUT = {
   VECTOR_HEIGHT: 40,
   CORNER_RADIUS: 10,
   GAP_WIDTH: 24,
+  // Output probabilities display limit
+  MAX_OUTPUT_TOKENS: 7, // Show at most this many tokens (+ ellipsis if more exist)
 };
 
 /**

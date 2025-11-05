@@ -17,11 +17,8 @@ import { computeEmbeddingsForStep } from '../visualization/core/embeddings';
 import '../styles/visualization.css';
 import { processTokenForVisualization } from '../utils/tokenProcessing';
 import { LAYOUT as CONSTS } from '../visualization/core/constants';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faUpRightAndDownLeftFromCenter,
-  faDownLeftAndUpRightToCenter,
-} from '@fortawesome/free-solid-svg-icons';
+import Icon from '@mdi/react';
+import { mdiArrowExpandHorizontal, mdiArrowCollapseHorizontal } from '@mdi/js';
 
 /**
  * VisualizationCanvas Component
@@ -289,7 +286,9 @@ function VisualizationCanvas() {
       stage_token_ids: layout.tokenY + 72,
       stage_input_embeddings: layout.embeddingY + (outerMeta.maxOuterHeight || 0) / 2,
       stage_attention_layer: blockMeta.attentionCenterY ?? blockMeta.blockTopY + 40,
-      stage_feedforward_layer: blockMeta.ffnY + (blockMeta.maxFfnHeight || 0) / 2,
+      // Center with the FFN projection box (same as attention layer approach)
+      stage_feedforward_layer:
+        blockMeta.ffnProjectionCenterY ?? blockMeta.ffnY + (blockMeta.maxFfnHeight || 0) / 2,
       stage_last_embedding: outputsMeta?.extractedCenterY ?? ffnInfo.afterBottomY + 20 + 15,
       // Use a stable fallback that matches the on-screen vector center when visible.
       // When visible, logprob center = horizY + 108, where horizY = afterBottomY + 20.
@@ -457,10 +456,9 @@ function VisualizationCanvas() {
               aria-label={isExpanded ? 'Collapse tokens' : 'Expand tokens'}
               title={isExpanded ? 'Collapse tokens' : 'Expand tokens'}
             >
-              <FontAwesomeIcon
-                icon={isExpanded ? faDownLeftAndUpRightToCenter : faUpRightAndDownLeftFromCenter}
-                style={{ fontSize: 20 }}
-                aria-hidden="true"
+              <Icon
+                path={isExpanded ? mdiArrowCollapseHorizontal : mdiArrowExpandHorizontal}
+                size={0.8}
               />
             </button>
           );

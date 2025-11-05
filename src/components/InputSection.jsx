@@ -4,8 +4,8 @@ import { useState } from 'react';
 import { getTokenColor } from '../visualization/core/colors';
 import { processTokenForText } from '../utils/tokenProcessing';
 import '../styles/main.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlay, faPause, faChevronDown } from '@fortawesome/free-solid-svg-icons';
+import Icon from '@mdi/react';
+import { mdiPlay, mdiPause, mdiChevronDown } from '@mdi/js';
 
 /**
  * InputSection Component
@@ -54,7 +54,7 @@ function InputSection() {
                   onClick={() => setIsDropdownOpen(!isDropdownOpen)}
                   aria-label="Select prompt"
                 >
-                  <FontAwesomeIcon icon={faChevronDown} style={{ fontSize: 16 }} />
+                  <Icon path={mdiChevronDown} size={0.65} />
                 </button>
 
                 {isDropdownOpen && (
@@ -102,10 +102,7 @@ function InputSection() {
                 aria-label={state.isPlaying ? t('pause') : t('play')}
                 title={state.isPlaying ? t('pause') : t('play')}
               >
-                <FontAwesomeIcon
-                  icon={state.isPlaying ? faPause : faPlay}
-                  style={{ fontSize: 14 }}
-                />
+                <Icon path={state.isPlaying ? mdiPause : mdiPlay} size={0.7} />
               </button>
             </div>
           </div>

@@ -10,6 +10,7 @@
   box-sizing: border-box;
 }
 
+html,
 body {
   font-family:
     'Inter',
@@ -25,6 +26,8 @@ body {
   transition:
     background-color 0.3s ease,
     color 0.3s ease;
+  /* Prevent transient page-level horizontal scrollbar during zoom/layout shifts */
+  overflow-x: hidden;
 }
 
 #root {
