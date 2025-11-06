@@ -460,21 +460,29 @@
 }
 
 .temp-option {
-  width: 36px;
-  height: 36px;
   display: inline-flex;
   align-items: center;
-  justify-content: center;
+  gap: 6px;
+  padding: 6px 8px;
   border-radius: 8px;
   border: 1px solid var(--border-color);
   background: var(--bg-secondary);
   cursor: pointer;
-  font-size: 18px;
 }
 
 .temp-option.selected {
   outline: 2px solid var(--accent-primary);
   background: rgba(78, 205, 196, 0.08);
+}
+
+.temp-emoji {
+  font-size: 18px;
+  line-height: 1;
+}
+
+.temp-value {
+  font-family: 'Monaco', 'Menlo', 'Courier New', monospace;
+  font-size: 0.9rem;
 }
 
 .prompt-display-minimal {

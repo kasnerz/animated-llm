@@ -179,7 +179,11 @@ function InputSection() {
                   <div className="settings-section">
                     <div className="settings-label">Temp</div>
                     <div className="temp-options">
-                      {['🧊', '🌡️', '🌶️'].map((emoji) => (
+                      {[
+                        { emoji: '🧊', value: '0.0' },
+                        { emoji: '🌡️', value: '1.0' },
+                        { emoji: '🌶️', value: '5.0' },
+                      ].map(({ emoji, value }) => (
                         <button
                           key={emoji}
                           className={`temp-option ${state.selectedTemperatureEmoji === emoji ? 'selected' : ''}`}
@@ -187,12 +191,13 @@ function InputSection() {
                             actions.setSelectedTemperatureEmoji(emoji);
                             setIsSettingsOpen(false);
                           }}
-                          aria-label={`Temperature ${emoji}`}
-                          title={`Temperature ${emoji}`}
+                          aria-label={`Temperature ${value}`}
+                          title={`Temperature ${value}`}
                         >
                           <span className="temp-emoji" aria-hidden>
                             {emoji}
                           </span>
+                          <span className="temp-value">{value}</span>
                         </button>
                       ))}
                     </div>
