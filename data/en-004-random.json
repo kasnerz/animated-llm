@@ -1,0 +1,7852 @@
+{
+  "id": "generated_20251106_140503",
+  "prompt": "What is the capital of Czechia?",
+  "language": "en",
+  "temperature": 5.0,
+  "top_k": 10,
+  "model_info": {
+    "name": "CohereLabs/aya-expanse-8b",
+    "num_layers": 32,
+    "hidden_size": 4096,
+    "num_attention_heads": 32,
+    "vocab_size": 256000
+  },
+  "generation_steps": [
+    {
+      "step": 0,
+      "input_text": "What is the capital of Czechia?",
+      "tokens": ["What", "Ġis", "Ġthe", "Ġcapital", "Ġof", "ĠCzech", "ia", "?"],
+      "token_ids": [11214, 1801, 1690, 7784, 1719, 18106, 1804, 38],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "The",
+            "token_id": 2162,
+            "logprob": -0.0092,
+            "prob": 0.9907
+          },
+          {
+            "token": "P",
+            "token_id": 55,
+            "logprob": -4.8203,
+            "prob": 0.0081
+          },
+          {
+            "token": "Czech",
+            "token_id": 113409,
+            "logprob": -7.2109,
+            "prob": 0.0007
+          },
+          {
+            "token": "Praha",
+            "token_id": 172961,
+            "logprob": -8.6641,
+            "prob": 0.0002
+          },
+          {
+            "token": "ĠPrague",
+            "token_id": 34606,
+            "logprob": -9.7734,
+            "prob": 0.0001
+          },
+          {
+            "token": "Prag",
+            "token_id": 232665,
+            "logprob": -9.8984,
+            "prob": 0.0001
+          },
+          {
+            "token": "Pra",
+            "token_id": 53894,
+            "logprob": -11.75,
+            "prob": 0.0
+          },
+          {
+            "token": "布拉格",
+            "token_id": 215817,
+            "logprob": -12.375,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠPraga",
+            "token_id": 65299,
+            "logprob": -12.8906,
+            "prob": 0.0
+          },
+          {
+            "token": "П",
+            "token_id": 3042,
+            "logprob": -13.1094,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "P",
+        "token_id": 55,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 1,
+      "input_text": "What is the capital of Czechia? P",
+      "tokens": ["What", "Ġis", "Ġthe", "Ġcapital", "Ġof", "ĠCzech", "ia", "?", "P"],
+      "token_ids": [11214, 1801, 1690, 7784, 1719, 18106, 1804, 38, 55],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "rague",
+            "token_id": 104592,
+            "logprob": -0.0001,
+            "prob": 1.0
+          },
+          {
+            "token": "raga",
+            "token_id": 30812,
+            "logprob": -9.2656,
+            "prob": 0.0001
+          },
+          {
+            "token": "ra",
+            "token_id": 1775,
+            "logprob": -10.8125,
+            "prob": 0.0
+          },
+          {
+            "token": "rag",
+            "token_id": 3459,
+            "logprob": -10.8906,
+            "prob": 0.0
+          },
+          {
+            "token": "rage",
+            "token_id": 8773,
+            "logprob": -12.5938,
+            "prob": 0.0
+          },
+          {
+            "token": "raz",
+            "token_id": 5956,
+            "logprob": -13.6094,
+            "prob": 0.0
+          },
+          {
+            "token": "rah",
+            "token_id": 23578,
+            "logprob": -13.9766,
+            "prob": 0.0
+          },
+          {
+            "token": "rakt",
+            "token_id": 46225,
+            "logprob": -14.0234,
+            "prob": 0.0
+          },
+          {
+            "token": "RA",
+            "token_id": 8284,
+            "logprob": -14.7969,
+            "prob": 0.0
+          },
+          {
+            "token": "ragma",
+            "token_id": 33657,
+            "logprob": -14.9062,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "rague",
+        "token_id": 104592,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 2,
+      "input_text": "What is the capital of Czechia? Prague",
+      "tokens": ["What", "Ġis", "Ġthe", "Ġcapital", "Ġof", "ĠCzech", "ia", "?", "P", "rague"],
+      "token_ids": [11214, 1801, 1690, 7784, 1719, 18106, 1804, 38, 55, 104592],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġis",
+            "token_id": 1801,
+            "logprob": -0.2776,
+            "prob": 0.7578
+          },
+          {
+            "token": "Ġ(",
+            "token_id": 1737,
+            "logprob": -1.8086,
+            "prob": 0.1638
+          },
+          {
+            "token": ".",
+            "token_id": 21,
+            "logprob": -2.5898,
+            "prob": 0.075
+          },
+          {
+            "token": "<|END_OF_TURN_TOKEN|>",
+            "token_id": 255001,
+            "logprob": -5.9648,
+            "prob": 0.0026
+          },
+          {
+            "token": ",",
+            "token_id": 19,
+            "logprob": -7.1055,
+            "prob": 0.0008
+          },
+          {
+            "token": "Ġhas",
+            "token_id": 2222,
+            "logprob": -9.7969,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġserves",
+            "token_id": 17018,
+            "logprob": -10.8125,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġwas",
+            "token_id": 1898,
+            "logprob": -13.8281,
+            "prob": 0.0
+          },
+          {
+            "token": "is",
+            "token_id": 1685,
+            "logprob": -13.8594,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġ(\"",
+            "token_id": 7176,
+            "logprob": -13.8906,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġis",
+        "token_id": 1801,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 3,
+      "input_text": "What is the capital of Czechia? PragueĠis",
+      "tokens": [
+        "What",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "Ġof",
+        "ĠCzech",
+        "ia",
+        "?",
+        "P",
+        "rague",
+        "Ġis"
+      ],
+      "token_ids": [11214, 1801, 1690, 7784, 1719, 18106, 1804, 38, 55, 104592, 1801],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġthe",
+            "token_id": 1690,
+            "logprob": -0.0,
+            "prob": 1.0
+          },
+          {
+            "token": "Ġcapital",
+            "token_id": 7784,
+            "logprob": -13.5938,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġboth",
+            "token_id": 3821,
+            "logprob": -15.0625,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġa",
+            "token_id": 1671,
+            "logprob": -15.2969,
+            "prob": 0.0
+          },
+          {
+            "token": ",",
+            "token_id": 19,
+            "logprob": -15.5234,
+            "prob": 0.0
+          },
+          {
+            "token": "the",
+            "token_id": 3798,
+            "logprob": -16.4062,
+            "prob": 0.0
+          },
+          {
+            "token": "<CLS>",
+            "token_id": 2,
+            "logprob": -32.6875,
+            "prob": 0.0
+          },
+          {
+            "token": "<SEP>",
+            "token_id": 3,
+            "logprob": -32.8125,
+            "prob": 0.0
+          },
+          {
+            "token": "<UNK>",
+            "token_id": 1,
+            "logprob": -32.8125,
+            "prob": 0.0
+          },
+          {
+            "token": "<PAD>",
+            "token_id": 0,
+            "logprob": -32.5,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġthe",
+        "token_id": 1690,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 4,
+      "input_text": "What is the capital of Czechia? PragueĠisĠthe",
+      "tokens": [
+        "What",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "Ġof",
+        "ĠCzech",
+        "ia",
+        "?",
+        "P",
+        "rague",
+        "Ġis",
+        "Ġthe"
+      ],
+      "token_ids": [11214, 1801, 1690, 7784, 1719, 18106, 1804, 38, 55, 104592, 1801, 1690],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġcapital",
+            "token_id": 7784,
+            "logprob": -0.0,
+            "prob": 1.0
+          },
+          {
+            "token": "Ġcapitale",
+            "token_id": 35403,
+            "logprob": -15.6562,
+            "prob": 0.0
+          },
+          {
+            "token": "capital",
+            "token_id": 71100,
+            "logprob": -16.5938,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠCapital",
+            "token_id": 19131,
+            "logprob": -16.9062,
+            "prob": 0.0
+          },
+          {
+            "token": "<SEP>",
+            "token_id": 3,
+            "logprob": -35.4688,
+            "prob": 0.0
+          },
+          {
+            "token": "<CLS>",
+            "token_id": 2,
+            "logprob": -35.3438,
+            "prob": 0.0
+          },
+          {
+            "token": "<MASK_TOKEN>",
+            "token_id": 4,
+            "logprob": -35.0938,
+            "prob": 0.0
+          },
+          {
+            "token": "<BOS_TOKEN>",
+            "token_id": 5,
+            "logprob": -40.7188,
+            "prob": 0.0
+          },
+          {
+            "token": "<PAD>",
+            "token_id": 0,
+            "logprob": -34.9688,
+            "prob": 0.0
+          },
+          {
+            "token": "<UNK>",
+            "token_id": 1,
+            "logprob": -35.75,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġcapital",
+        "token_id": 7784,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 5,
+      "input_text": "What is the capital of Czechia? PragueĠisĠtheĠcapital",
+      "tokens": [
+        "What",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "Ġof",
+        "ĠCzech",
+        "ia",
+        "?",
+        "P",
+        "rague",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital"
+      ],
+      "token_ids": [11214, 1801, 1690, 7784, 1719, 18106, 1804, 38, 55, 104592, 1801, 1690, 7784],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġof",
+            "token_id": 1719,
+            "logprob": -0.1234,
+            "prob": 0.8838
+          },
+          {
+            "token": "Ġand",
+            "token_id": 1728,
+            "logprob": -2.1543,
+            "prob": 0.116
+          },
+          {
+            "token": "Ġcity",
+            "token_id": 5079,
+            "logprob": -9.2656,
+            "prob": 0.0001
+          },
+          {
+            "token": ",",
+            "token_id": 19,
+            "logprob": -10.3906,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġ(",
+            "token_id": 1737,
+            "logprob": -13.7891,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġcủa",
+            "token_id": 3355,
+            "logprob": -14.4062,
+            "prob": 0.0
+          },
+          {
+            "token": "of",
+            "token_id": 3010,
+            "logprob": -14.6641,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġor",
+            "token_id": 1888,
+            "logprob": -15.5703,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġin",
+            "token_id": 1709,
+            "logprob": -15.8516,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠCity",
+            "token_id": 4509,
+            "logprob": -15.875,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "of",
+        "token_id": 3010,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 6,
+      "input_text": "What is the capital of Czechia? PragueĠisĠtheĠcapitalof",
+      "tokens": [
+        "What",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "Ġof",
+        "ĠCzech",
+        "ia",
+        "?",
+        "P",
+        "rague",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "of"
+      ],
+      "token_ids": [
+        11214, 1801, 1690, 7784, 1719, 18106, 1804, 38, 55, 104592, 1801, 1690, 7784, 3010
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "ĠCzech",
+            "token_id": 18106,
+            "logprob": -0.3291,
+            "prob": 0.7197
+          },
+          {
+            "token": "Ġthe",
+            "token_id": 1690,
+            "logprob": -1.2822,
+            "prob": 0.2773
+          },
+          {
+            "token": "Ġof",
+            "token_id": 1719,
+            "logprob": -5.875,
+            "prob": 0.0028
+          },
+          {
+            "token": "the",
+            "token_id": 3798,
+            "logprob": -10.3125,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġand",
+            "token_id": 1728,
+            "logprob": -11.0,
+            "prob": 0.0
+          },
+          {
+            "token": "Czech",
+            "token_id": 113409,
+            "logprob": -11.2031,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġ",
+            "token_id": 228,
+            "logprob": -11.625,
+            "prob": 0.0
+          },
+          {
+            "token": "of",
+            "token_id": 3010,
+            "logprob": -12.0469,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠCzechoslovakia",
+            "token_id": 75032,
+            "logprob": -12.625,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠRepublic",
+            "token_id": 7190,
+            "logprob": -12.7578,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġthe",
+        "token_id": 1690,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 7,
+      "input_text": "What is the capital of Czechia? PragueĠisĠtheĠcapitalofĠthe",
+      "tokens": [
+        "What",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "Ġof",
+        "ĠCzech",
+        "ia",
+        "?",
+        "P",
+        "rague",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "of",
+        "Ġthe"
+      ],
+      "token_ids": [
+        11214, 1801, 1690, 7784, 1719, 18106, 1804, 38, 55, 104592, 1801, 1690, 7784, 3010, 1690
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "ĠCzech",
+            "token_id": 18106,
+            "logprob": -0.0,
+            "prob": 1.0
+          },
+          {
+            "token": "ĠRepublic",
+            "token_id": 7190,
+            "logprob": -11.2656,
+            "prob": 0.0
+          },
+          {
+            "token": "Czech",
+            "token_id": 113409,
+            "logprob": -12.625,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠTschech",
+            "token_id": 160300,
+            "logprob": -13.4062,
+            "prob": 0.0
+          },
+          {
+            "token": "捷克",
+            "token_id": 102205,
+            "logprob": -13.7812,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġczech",
+            "token_id": 238836,
+            "logprob": -13.875,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġrepublic",
+            "token_id": 29824,
+            "logprob": -15.0156,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠEuropean",
+            "token_id": 7225,
+            "logprob": -15.0938,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠČeská",
+            "token_id": 95441,
+            "logprob": -15.0312,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠČeské",
+            "token_id": 38398,
+            "logprob": -15.1641,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "ĠCzech",
+        "token_id": 18106,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 8,
+      "input_text": "What is the capital of Czechia? PragueĠisĠtheĠcapitalofĠtheĠCzech",
+      "tokens": [
+        "What",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "Ġof",
+        "ĠCzech",
+        "ia",
+        "?",
+        "P",
+        "rague",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "of",
+        "Ġthe",
+        "ĠCzech"
+      ],
+      "token_ids": [
+        11214, 1801, 1690, 7784, 1719, 18106, 1804, 38, 55, 104592, 1801, 1690, 7784, 3010, 1690,
+        18106
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "ĠRepublic",
+            "token_id": 7190,
+            "logprob": -0.0959,
+            "prob": 0.9087
+          },
+          {
+            "token": "ia",
+            "token_id": 1804,
+            "logprob": -2.3926,
+            "prob": 0.0914
+          },
+          {
+            "token": "ĠRep",
+            "token_id": 4936,
+            "logprob": -10.7031,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠRepublik",
+            "token_id": 34163,
+            "logprob": -11.1719,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġrepublic",
+            "token_id": 29824,
+            "logprob": -11.6875,
+            "prob": 0.0
+          },
+          {
+            "token": "IA",
+            "token_id": 9973,
+            "logprob": -12.375,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠRepublican",
+            "token_id": 15248,
+            "logprob": -12.5312,
+            "prob": 0.0
+          },
+          {
+            "token": "Republic",
+            "token_id": 37647,
+            "logprob": -13.0078,
+            "prob": 0.0
+          },
+          {
+            "token": "共和国",
+            "token_id": 17187,
+            "logprob": -13.9219,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠRépublique",
+            "token_id": 26652,
+            "logprob": -14.1094,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "ĠRepublic",
+        "token_id": 7190,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 9,
+      "input_text": "What is the capital of Czechia? PragueĠisĠtheĠcapitalofĠtheĠCzechĠRepublic",
+      "tokens": [
+        "What",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "Ġof",
+        "ĠCzech",
+        "ia",
+        "?",
+        "P",
+        "rague",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "of",
+        "Ġthe",
+        "ĠCzech",
+        "ĠRepublic"
+      ],
+      "token_ids": [
+        11214, 1801, 1690, 7784, 1719, 18106, 1804, 38, 55, 104592, 1801, 1690, 7784, 3010, 1690,
+        18106, 7190
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": ",",
+            "token_id": 19,
+            "logprob": -0.0542,
+            "prob": 0.9473
+          },
+          {
+            "token": "Ġ(",
+            "token_id": 1737,
+            "logprob": -3.2266,
+            "prob": 0.0397
+          },
+          {
+            "token": ".",
+            "token_id": 21,
+            "logprob": -4.3516,
+            "prob": 0.0129
+          },
+          {
+            "token": "Ġwhich",
+            "token_id": 2274,
+            "logprob": -10.4766,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġ—",
+            "token_id": 2518,
+            "logprob": -10.7266,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġand",
+            "token_id": 1728,
+            "logprob": -10.7578,
+            "prob": 0.0
+          },
+          {
+            "token": "—",
+            "token_id": 2062,
+            "logprob": -11.1484,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġ–",
+            "token_id": 2129,
+            "logprob": -11.7734,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġ,",
+            "token_id": 3254,
+            "logprob": -11.8203,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġ-",
+            "token_id": 1945,
+            "logprob": -12.0859,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": ",",
+        "token_id": 19,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 10,
+      "input_text": "What is the capital of Czechia? PragueĠisĠtheĠcapitalofĠtheĠCzechĠRepublic,",
+      "tokens": [
+        "What",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "Ġof",
+        "ĠCzech",
+        "ia",
+        "?",
+        "P",
+        "rague",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "of",
+        "Ġthe",
+        "ĠCzech",
+        "ĠRepublic",
+        ","
+      ],
+      "token_ids": [
+        11214, 1801, 1690, 7784, 1719, 18106, 1804, 38, 55, 104592, 1801, 1690, 7784, 3010, 1690,
+        18106, 7190, 19
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġcommonly",
+            "token_id": 17151,
+            "logprob": -0.9956,
+            "prob": 0.3694
+          },
+          {
+            "token": "Ġoften",
+            "token_id": 5350,
+            "logprob": -1.2305,
+            "prob": 0.2922
+          },
+          {
+            "token": "Ġalso",
+            "token_id": 2328,
+            "logprob": -1.4961,
+            "prob": 0.2241
+          },
+          {
+            "token": "Ġwhich",
+            "token_id": 2274,
+            "logprob": -2.9961,
+            "prob": 0.05
+          },
+          {
+            "token": "Ġor",
+            "token_id": 1888,
+            "logprob": -3.8711,
+            "prob": 0.0208
+          },
+          {
+            "token": "Ġa",
+            "token_id": 1671,
+            "logprob": -4.0898,
+            "prob": 0.0168
+          },
+          {
+            "token": "Ġfrequently",
+            "token_id": 17011,
+            "logprob": -4.7148,
+            "prob": 0.009
+          },
+          {
+            "token": "Ġknown",
+            "token_id": 4376,
+            "logprob": -5.668,
+            "prob": 0.0035
+          },
+          {
+            "token": "Ġsometimes",
+            "token_id": 10349,
+            "logprob": -5.8555,
+            "prob": 0.0029
+          },
+          {
+            "token": "Ġformerly",
+            "token_id": 25543,
+            "logprob": -6.6367,
+            "prob": 0.0013
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġfrequently",
+        "token_id": 17011,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 11,
+      "input_text": "What is the capital of Czechia? PragueĠisĠtheĠcapitalofĠtheĠCzechĠRepublic,Ġfrequently",
+      "tokens": [
+        "What",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "Ġof",
+        "ĠCzech",
+        "ia",
+        "?",
+        "P",
+        "rague",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "of",
+        "Ġthe",
+        "ĠCzech",
+        "ĠRepublic",
+        ",",
+        "Ġfrequently"
+      ],
+      "token_ids": [
+        11214, 1801, 1690, 7784, 1719, 18106, 1804, 38, 55, 104592, 1801, 1690, 7784, 3010, 1690,
+        18106, 7190, 19, 17011
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġreferred",
+            "token_id": 15353,
+            "logprob": -0.0966,
+            "prob": 0.9077
+          },
+          {
+            "token": "Ġknown",
+            "token_id": 4376,
+            "logprob": -2.6113,
+            "prob": 0.0734
+          },
+          {
+            "token": "Ġcalled",
+            "token_id": 4754,
+            "logprob": -5.2852,
+            "prob": 0.0051
+          },
+          {
+            "token": "Ġshortened",
+            "token_id": 74146,
+            "logprob": -5.5508,
+            "prob": 0.0039
+          },
+          {
+            "token": "Ġabbreviated",
+            "token_id": 89868,
+            "logprob": -5.6289,
+            "prob": 0.0036
+          },
+          {
+            "token": "Ġalso",
+            "token_id": 2328,
+            "logprob": -5.8008,
+            "prob": 0.003
+          },
+          {
+            "token": "Ġrefer",
+            "token_id": 5499,
+            "logprob": -7.0352,
+            "prob": 0.0009
+          },
+          {
+            "token": "Ġ(",
+            "token_id": 1737,
+            "logprob": -8.6641,
+            "prob": 0.0002
+          },
+          {
+            "token": "Ġdenoted",
+            "token_id": 145622,
+            "logprob": -8.9297,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġnicknamed",
+            "token_id": 70204,
+            "logprob": -8.9375,
+            "prob": 0.0001
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġshortened",
+        "token_id": 74146,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 12,
+      "input_text": "What is the capital of Czechia? PragueĠisĠtheĠcapitalofĠtheĠCzechĠRepublic,ĠfrequentlyĠshortened",
+      "tokens": [
+        "What",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "Ġof",
+        "ĠCzech",
+        "ia",
+        "?",
+        "P",
+        "rague",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "of",
+        "Ġthe",
+        "ĠCzech",
+        "ĠRepublic",
+        ",",
+        "Ġfrequently",
+        "Ġshortened"
+      ],
+      "token_ids": [
+        11214, 1801, 1690, 7784, 1719, 18106, 1804, 38, 55, 104592, 1801, 1690, 7784, 3010, 1690,
+        18106, 7190, 19, 17011, 74146
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġto",
+            "token_id": 1726,
+            "logprob": -0.0015,
+            "prob": 0.9985
+          },
+          {
+            "token": "Ġor",
+            "token_id": 1888,
+            "logprob": -7.4219,
+            "prob": 0.0006
+          },
+          {
+            "token": "Ġin",
+            "token_id": 1709,
+            "logprob": -8.0312,
+            "prob": 0.0003
+          },
+          {
+            "token": "Ġas",
+            "token_id": 1843,
+            "logprob": -8.3594,
+            "prob": 0.0002
+          },
+          {
+            "token": "Ġand",
+            "token_id": 1728,
+            "logprob": -9.5938,
+            "prob": 0.0001
+          },
+          {
+            "token": "to",
+            "token_id": 2025,
+            "logprob": -9.8984,
+            "prob": 0.0001
+          },
+          {
+            "token": ".",
+            "token_id": 21,
+            "logprob": -10.7188,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġby",
+            "token_id": 1943,
+            "logprob": -11.2578,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġlocally",
+            "token_id": 25978,
+            "logprob": -11.3672,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġ(",
+            "token_id": 1737,
+            "logprob": -11.5625,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġlocally",
+        "token_id": 25978,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 13,
+      "input_text": "What is the capital of Czechia? PragueĠisĠtheĠcapitalofĠtheĠCzechĠRepublic,ĠfrequentlyĠshortenedĠlocally",
+      "tokens": [
+        "What",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "Ġof",
+        "ĠCzech",
+        "ia",
+        "?",
+        "P",
+        "rague",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "of",
+        "Ġthe",
+        "ĠCzech",
+        "ĠRepublic",
+        ",",
+        "Ġfrequently",
+        "Ġshortened",
+        "Ġlocally"
+      ],
+      "token_ids": [
+        11214, 1801, 1690, 7784, 1719, 18106, 1804, 38, 55, 104592, 1801, 1690, 7784, 3010, 1690,
+        18106, 7190, 19, 17011, 74146, 25978
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġand",
+            "token_id": 1728,
+            "logprob": -0.6528,
+            "prob": 0.5205
+          },
+          {
+            "token": "Ġas",
+            "token_id": 1843,
+            "logprob": -1.2002,
+            "prob": 0.3013
+          },
+          {
+            "token": "Ġto",
+            "token_id": 1726,
+            "logprob": -1.9346,
+            "prob": 0.1445
+          },
+          {
+            "token": "Ġor",
+            "token_id": 1888,
+            "logprob": -3.8867,
+            "prob": 0.0205
+          },
+          {
+            "token": ",",
+            "token_id": 19,
+            "logprob": -5.2148,
+            "prob": 0.0054
+          },
+          {
+            "token": "Ġin",
+            "token_id": 1709,
+            "logprob": -5.2305,
+            "prob": 0.0053
+          },
+          {
+            "token": "Ġ(",
+            "token_id": 1737,
+            "logprob": -7.0586,
+            "prob": 0.0009
+          },
+          {
+            "token": ".",
+            "token_id": 21,
+            "logprob": -8.2734,
+            "prob": 0.0003
+          },
+          {
+            "token": "Ġbut",
+            "token_id": 2326,
+            "logprob": -9.0234,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġby",
+            "token_id": 1943,
+            "logprob": -9.1406,
+            "prob": 0.0001
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġas",
+        "token_id": 1843,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 14,
+      "input_text": "What is the capital of Czechia? PragueĠisĠtheĠcapitalofĠtheĠCzechĠRepublic,ĠfrequentlyĠshortenedĠlocallyĠas",
+      "tokens": [
+        "What",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "Ġof",
+        "ĠCzech",
+        "ia",
+        "?",
+        "P",
+        "rague",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "of",
+        "Ġthe",
+        "ĠCzech",
+        "ĠRepublic",
+        ",",
+        "Ġfrequently",
+        "Ġshortened",
+        "Ġlocally",
+        "Ġas"
+      ],
+      "token_ids": [
+        11214, 1801, 1690, 7784, 1719, 18106, 1804, 38, 55, 104592, 1801, 1690, 7784, 3010, 1690,
+        18106, 7190, 19, 17011, 74146, 25978, 1843
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "ĠCzech",
+            "token_id": 18106,
+            "logprob": -0.1465,
+            "prob": 0.8638
+          },
+          {
+            "token": "Ġthe",
+            "token_id": 1690,
+            "logprob": -2.1152,
+            "prob": 0.1206
+          },
+          {
+            "token": "Ġ\"",
+            "token_id": 1789,
+            "logprob": -4.3047,
+            "prob": 0.0135
+          },
+          {
+            "token": "Ġ“",
+            "token_id": 7838,
+            "logprob": -7.3203,
+            "prob": 0.0007
+          },
+          {
+            "token": "Ġ*",
+            "token_id": 1987,
+            "logprob": -7.7109,
+            "prob": 0.0004
+          },
+          {
+            "token": "Ġ'",
+            "token_id": 2155,
+            "logprob": -7.9141,
+            "prob": 0.0004
+          },
+          {
+            "token": "Ġ„",
+            "token_id": 4352,
+            "logprob": -8.0078,
+            "prob": 0.0003
+          },
+          {
+            "token": "Ġ**",
+            "token_id": 4434,
+            "logprob": -9.8672,
+            "prob": 0.0001
+          },
+          {
+            "token": "ĠČeská",
+            "token_id": 95441,
+            "logprob": -9.9375,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġ‘",
+            "token_id": 18521,
+            "logprob": -9.9922,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġ“",
+        "token_id": 7838,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 15,
+      "input_text": "What is the capital of Czechia? PragueĠisĠtheĠcapitalofĠtheĠCzechĠRepublic,ĠfrequentlyĠshortenedĠlocallyĠasĠ“",
+      "tokens": [
+        "What",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "Ġof",
+        "ĠCzech",
+        "ia",
+        "?",
+        "P",
+        "rague",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "of",
+        "Ġthe",
+        "ĠCzech",
+        "ĠRepublic",
+        ",",
+        "Ġfrequently",
+        "Ġshortened",
+        "Ġlocally",
+        "Ġas",
+        "Ġ“"
+      ],
+      "token_ids": [
+        11214, 1801, 1690, 7784, 1719, 18106, 1804, 38, 55, 104592, 1801, 1690, 7784, 3010, 1690,
+        18106, 7190, 19, 17011, 74146, 25978, 1843, 7838
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Czech",
+            "token_id": 113409,
+            "logprob": -0.0165,
+            "prob": 0.9834
+          },
+          {
+            "token": "Č",
+            "token_id": 16946,
+            "logprob": -4.9375,
+            "prob": 0.0072
+          },
+          {
+            "token": "Česká",
+            "token_id": 189247,
+            "logprob": -6.1719,
+            "prob": 0.0021
+          },
+          {
+            "token": "the",
+            "token_id": 3798,
+            "logprob": -6.1875,
+            "prob": 0.0021
+          },
+          {
+            "token": "ĠCzech",
+            "token_id": 18106,
+            "logprob": -7.1875,
+            "prob": 0.0008
+          },
+          {
+            "token": "捷克",
+            "token_id": 102205,
+            "logprob": -7.4609,
+            "prob": 0.0006
+          },
+          {
+            "token": "Chile",
+            "token_id": 86083,
+            "logprob": -8.2578,
+            "prob": 0.0003
+          },
+          {
+            "token": "CZ",
+            "token_id": 113405,
+            "logprob": -8.2969,
+            "prob": 0.0002
+          },
+          {
+            "token": "Cz",
+            "token_id": 49026,
+            "logprob": -8.375,
+            "prob": 0.0002
+          },
+          {
+            "token": "Česko",
+            "token_id": 222453,
+            "logprob": -8.5391,
+            "prob": 0.0002
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Czech",
+        "token_id": 113409,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 16,
+      "input_text": "What is the capital of Czechia? PragueĠisĠtheĠcapitalofĠtheĠCzechĠRepublic,ĠfrequentlyĠshortenedĠlocallyĠasĠ“Czech",
+      "tokens": [
+        "What",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "Ġof",
+        "ĠCzech",
+        "ia",
+        "?",
+        "P",
+        "rague",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "of",
+        "Ġthe",
+        "ĠCzech",
+        "ĠRepublic",
+        ",",
+        "Ġfrequently",
+        "Ġshortened",
+        "Ġlocally",
+        "Ġas",
+        "Ġ“",
+        "Czech"
+      ],
+      "token_ids": [
+        11214, 1801, 1690, 7784, 1719, 18106, 1804, 38, 55, 104592, 1801, 1690, 7784, 3010, 1690,
+        18106, 7190, 19, 17011, 74146, 25978, 1843, 7838, 113409
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "ia",
+            "token_id": 1804,
+            "logprob": -0.0,
+            "prob": 1.0
+          },
+          {
+            "token": "يا",
+            "token_id": 11075,
+            "logprob": -14.4375,
+            "prob": 0.0
+          },
+          {
+            "token": "IA",
+            "token_id": 9973,
+            "logprob": -14.6406,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠRepublic",
+            "token_id": 7190,
+            "logprob": -15.9062,
+            "prob": 0.0
+          },
+          {
+            "token": "ias",
+            "token_id": 4130,
+            "logprob": -16.7969,
+            "prob": 0.0
+          },
+          {
+            "token": "ian",
+            "token_id": 2038,
+            "logprob": -16.7031,
+            "prob": 0.0
+          },
+          {
+            "token": "<CLS>",
+            "token_id": 2,
+            "logprob": -35.0312,
+            "prob": 0.0
+          },
+          {
+            "token": "<SEP>",
+            "token_id": 3,
+            "logprob": -35.75,
+            "prob": 0.0
+          },
+          {
+            "token": "<UNK>",
+            "token_id": 1,
+            "logprob": -35.2812,
+            "prob": 0.0
+          },
+          {
+            "token": "<PAD>",
+            "token_id": 0,
+            "logprob": -34.9062,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "ia",
+        "token_id": 1804,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 17,
+      "input_text": "What is the capital of Czechia? PragueĠisĠtheĠcapitalofĠtheĠCzechĠRepublic,ĠfrequentlyĠshortenedĠlocallyĠasĠ“Czechia",
+      "tokens": [
+        "What",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "Ġof",
+        "ĠCzech",
+        "ia",
+        "?",
+        "P",
+        "rague",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "of",
+        "Ġthe",
+        "ĠCzech",
+        "ĠRepublic",
+        ",",
+        "Ġfrequently",
+        "Ġshortened",
+        "Ġlocally",
+        "Ġas",
+        "Ġ“",
+        "Czech",
+        "ia"
+      ],
+      "token_ids": [
+        11214, 1801, 1690, 7784, 1719, 18106, 1804, 38, 55, 104592, 1801, 1690, 7784, 3010, 1690,
+        18106, 7190, 19, 17011, 74146, 25978, 1843, 7838, 113409, 1804
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": ".”",
+            "token_id": 46612,
+            "logprob": -0.3804,
+            "prob": 0.6836
+          },
+          {
+            "token": "”.",
+            "token_id": 13094,
+            "logprob": -1.2236,
+            "prob": 0.2939
+          },
+          {
+            "token": ",”",
+            "token_id": 175554,
+            "logprob": -4.582,
+            "prob": 0.0102
+          },
+          {
+            "token": "”",
+            "token_id": 3495,
+            "logprob": -5.4727,
+            "prob": 0.0042
+          },
+          {
+            "token": ".\"",
+            "token_id": 2875,
+            "logprob": -6.0039,
+            "prob": 0.0025
+          },
+          {
+            "token": "”,",
+            "token_id": 11983,
+            "logprob": -6.1289,
+            "prob": 0.0022
+          },
+          {
+            "token": ".",
+            "token_id": 21,
+            "logprob": -6.8164,
+            "prob": 0.0011
+          },
+          {
+            "token": "\".",
+            "token_id": 3193,
+            "logprob": -7.3008,
+            "prob": 0.0007
+          },
+          {
+            "token": "“.",
+            "token_id": 23670,
+            "logprob": -7.4258,
+            "prob": 0.0006
+          },
+          {
+            "token": ".“",
+            "token_id": 42503,
+            "logprob": -7.5664,
+            "prob": 0.0005
+          }
+        ]
+      },
+      "selected_token": {
+        "token": ".”",
+        "token_id": 46612,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 18,
+      "input_text": "What is the capital of Czechia? PragueĠisĠtheĠcapitalofĠtheĠCzechĠRepublic,ĠfrequentlyĠshortenedĠlocallyĠasĠ“Czechia.”",
+      "tokens": [
+        "What",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "Ġof",
+        "ĠCzech",
+        "ia",
+        "?",
+        "P",
+        "rague",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "of",
+        "Ġthe",
+        "ĠCzech",
+        "ĠRepublic",
+        ",",
+        "Ġfrequently",
+        "Ġshortened",
+        "Ġlocally",
+        "Ġas",
+        "Ġ“",
+        "Czech",
+        "ia",
+        ".”"
+      ],
+      "token_ids": [
+        11214, 1801, 1690, 7784, 1719, 18106, 1804, 38, 55, 104592, 1801, 1690, 7784, 3010, 1690,
+        18106, 7190, 19, 17011, 74146, 25978, 1843, 7838, 113409, 1804, 46612
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "<|END_OF_TURN_TOKEN|>",
+            "token_id": 255001,
+            "logprob": -0.2893,
+            "prob": 0.7485
+          },
+          {
+            "token": "ĠIt",
+            "token_id": 2332,
+            "logprob": -1.5078,
+            "prob": 0.2213
+          },
+          {
+            "token": "ĠThe",
+            "token_id": 1896,
+            "logprob": -5.0703,
+            "prob": 0.0063
+          },
+          {
+            "token": "ĠPrague",
+            "token_id": 34606,
+            "logprob": -5.0703,
+            "prob": 0.0063
+          },
+          {
+            "token": "ĠLocated",
+            "token_id": 55708,
+            "logprob": -5.6016,
+            "prob": 0.0037
+          },
+          {
+            "token": "Ġ",
+            "token_id": 228,
+            "logprob": -5.9609,
+            "prob": 0.0026
+          },
+          {
+            "token": "ĠCzech",
+            "token_id": 18106,
+            "logprob": -6.1484,
+            "prob": 0.0021
+          },
+          {
+            "token": "ĠIn",
+            "token_id": 2020,
+            "logprob": -6.8359,
+            "prob": 0.0011
+          },
+          {
+            "token": "ĠSituated",
+            "token_id": 185845,
+            "logprob": -7.125,
+            "prob": 0.0008
+          },
+          {
+            "token": "ĠAs",
+            "token_id": 3143,
+            "logprob": -7.1641,
+            "prob": 0.0008
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "ĠIt",
+        "token_id": 2332,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 19,
+      "input_text": "What is the capital of Czechia? PragueĠisĠtheĠcapitalofĠtheĠCzechĠRepublic,ĠfrequentlyĠshortenedĠlocallyĠasĠ“Czechia.”ĠIt",
+      "tokens": [
+        "What",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "Ġof",
+        "ĠCzech",
+        "ia",
+        "?",
+        "P",
+        "rague",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "of",
+        "Ġthe",
+        "ĠCzech",
+        "ĠRepublic",
+        ",",
+        "Ġfrequently",
+        "Ġshortened",
+        "Ġlocally",
+        "Ġas",
+        "Ġ“",
+        "Czech",
+        "ia",
+        ".”",
+        "ĠIt"
+      ],
+      "token_ids": [
+        11214, 1801, 1690, 7784, 1719, 18106, 1804, 38, 55, 104592, 1801, 1690, 7784, 3010, 1690,
+        18106, 7190, 19, 17011, 74146, 25978, 1843, 7838, 113409, 1804, 46612, 2332
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġis",
+            "token_id": 1801,
+            "logprob": -0.3945,
+            "prob": 0.6738
+          },
+          {
+            "token": "’",
+            "token_id": 2932,
+            "logprob": -1.3945,
+            "prob": 0.2479
+          },
+          {
+            "token": "'s",
+            "token_id": 1914,
+            "logprob": -2.832,
+            "prob": 0.0589
+          },
+          {
+            "token": "Ġlies",
+            "token_id": 20141,
+            "logprob": -4.6914,
+            "prob": 0.0092
+          },
+          {
+            "token": "Ġstands",
+            "token_id": 20560,
+            "logprob": -4.8945,
+            "prob": 0.0075
+          },
+          {
+            "token": "Ġhas",
+            "token_id": 2222,
+            "logprob": -6.4727,
+            "prob": 0.0015
+          },
+          {
+            "token": "Ġsits",
+            "token_id": 39659,
+            "logprob": -7.6602,
+            "prob": 0.0005
+          },
+          {
+            "token": "Ġwas",
+            "token_id": 1898,
+            "logprob": -8.8203,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġcomes",
+            "token_id": 6778,
+            "logprob": -9.7109,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġoccupies",
+            "token_id": 85161,
+            "logprob": -9.8359,
+            "prob": 0.0001
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "'s",
+        "token_id": 1914,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 20,
+      "input_text": "What is the capital of Czechia? PragueĠisĠtheĠcapitalofĠtheĠCzechĠRepublic,ĠfrequentlyĠshortenedĠlocallyĠasĠ“Czechia.”ĠIt's",
+      "tokens": [
+        "What",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "Ġof",
+        "ĠCzech",
+        "ia",
+        "?",
+        "P",
+        "rague",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "of",
+        "Ġthe",
+        "ĠCzech",
+        "ĠRepublic",
+        ",",
+        "Ġfrequently",
+        "Ġshortened",
+        "Ġlocally",
+        "Ġas",
+        "Ġ“",
+        "Czech",
+        "ia",
+        ".”",
+        "ĠIt",
+        "'s"
+      ],
+      "token_ids": [
+        11214, 1801, 1690, 7784, 1719, 18106, 1804, 38, 55, 104592, 1801, 1690, 7784, 3010, 1690,
+        18106, 7190, 19, 17011, 74146, 25978, 1843, 7838, 113409, 1804, 46612, 2332, 1914
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġa",
+            "token_id": 1671,
+            "logprob": -0.6284,
+            "prob": 0.5332
+          },
+          {
+            "token": "Ġknown",
+            "token_id": 4376,
+            "logprob": -1.3008,
+            "prob": 0.2725
+          },
+          {
+            "token": "Ġthe",
+            "token_id": 1690,
+            "logprob": -2.332,
+            "prob": 0.0972
+          },
+          {
+            "token": "Ġlocated",
+            "token_id": 6090,
+            "logprob": -3.4883,
+            "prob": 0.0306
+          },
+          {
+            "token": "Ġan",
+            "token_id": 1844,
+            "logprob": -4.2539,
+            "prob": 0.0142
+          },
+          {
+            "token": "Ġrenowned",
+            "token_id": 37755,
+            "logprob": -4.332,
+            "prob": 0.0131
+          },
+          {
+            "token": "Ġfamous",
+            "token_id": 13410,
+            "logprob": -4.8008,
+            "prob": 0.0082
+          },
+          {
+            "token": "Ġsituated",
+            "token_id": 24520,
+            "logprob": -4.9883,
+            "prob": 0.0068
+          },
+          {
+            "token": "Ġone",
+            "token_id": 2371,
+            "logprob": -5.0977,
+            "prob": 0.0061
+          },
+          {
+            "token": "Ġin",
+            "token_id": 1709,
+            "logprob": -5.5664,
+            "prob": 0.0038
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġknown",
+        "token_id": 4376,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 21,
+      "input_text": "What is the capital of Czechia? PragueĠisĠtheĠcapitalofĠtheĠCzechĠRepublic,ĠfrequentlyĠshortenedĠlocallyĠasĠ“Czechia.”ĠIt'sĠknown",
+      "tokens": [
+        "What",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "Ġof",
+        "ĠCzech",
+        "ia",
+        "?",
+        "P",
+        "rague",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "of",
+        "Ġthe",
+        "ĠCzech",
+        "ĠRepublic",
+        ",",
+        "Ġfrequently",
+        "Ġshortened",
+        "Ġlocally",
+        "Ġas",
+        "Ġ“",
+        "Czech",
+        "ia",
+        ".”",
+        "ĠIt",
+        "'s",
+        "Ġknown"
+      ],
+      "token_ids": [
+        11214, 1801, 1690, 7784, 1719, 18106, 1804, 38, 55, 104592, 1801, 1690, 7784, 3010, 1690,
+        18106, 7190, 19, 17011, 74146, 25978, 1843, 7838, 113409, 1804, 46612, 2332, 1914, 4376
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġfor",
+            "token_id": 1794,
+            "logprob": -0.0,
+            "prob": 1.0
+          },
+          {
+            "token": "for",
+            "token_id": 3693,
+            "logprob": -12.5781,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġas",
+            "token_id": 1843,
+            "logprob": -15.875,
+            "prob": 0.0
+          },
+          {
+            "token": "<PAD>",
+            "token_id": 0,
+            "logprob": -34.5938,
+            "prob": 0.0
+          },
+          {
+            "token": "<EOS_TOKEN>",
+            "token_id": 6,
+            "logprob": -26.625,
+            "prob": 0.0
+          },
+          {
+            "token": "<SEP>",
+            "token_id": 3,
+            "logprob": -34.1875,
+            "prob": 0.0
+          },
+          {
+            "token": "<BOS_TOKEN>",
+            "token_id": 5,
+            "logprob": -36.5938,
+            "prob": 0.0
+          },
+          {
+            "token": "<MASK_TOKEN>",
+            "token_id": 4,
+            "logprob": -34.6562,
+            "prob": 0.0
+          },
+          {
+            "token": "<UNK>",
+            "token_id": 1,
+            "logprob": -33.375,
+            "prob": 0.0
+          },
+          {
+            "token": "<CLS>",
+            "token_id": 2,
+            "logprob": -34.2812,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġfor",
+        "token_id": 1794,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 22,
+      "input_text": "What is the capital of Czechia? PragueĠisĠtheĠcapitalofĠtheĠCzechĠRepublic,ĠfrequentlyĠshortenedĠlocallyĠasĠ“Czechia.”ĠIt'sĠknownĠfor",
+      "tokens": [
+        "What",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "Ġof",
+        "ĠCzech",
+        "ia",
+        "?",
+        "P",
+        "rague",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "of",
+        "Ġthe",
+        "ĠCzech",
+        "ĠRepublic",
+        ",",
+        "Ġfrequently",
+        "Ġshortened",
+        "Ġlocally",
+        "Ġas",
+        "Ġ“",
+        "Czech",
+        "ia",
+        ".”",
+        "ĠIt",
+        "'s",
+        "Ġknown",
+        "Ġfor"
+      ],
+      "token_ids": [
+        11214, 1801, 1690, 7784, 1719, 18106, 1804, 38, 55, 104592, 1801, 1690, 7784, 3010, 1690,
+        18106, 7190, 19, 17011, 74146, 25978, 1843, 7838, 113409, 1804, 46612, 2332, 1914, 4376,
+        1794
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġits",
+            "token_id": 2517,
+            "logprob": -0.0489,
+            "prob": 0.9521
+          },
+          {
+            "token": "Ġa",
+            "token_id": 1671,
+            "logprob": -3.0488,
+            "prob": 0.0474
+          },
+          {
+            "token": "Ġhistoric",
+            "token_id": 17943,
+            "logprob": -9.2188,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġthe",
+            "token_id": 1690,
+            "logprob": -9.6406,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġarchitectural",
+            "token_id": 31721,
+            "logprob": -10.4062,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġarchitecture",
+            "token_id": 16717,
+            "logprob": -10.7344,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġmedieval",
+            "token_id": 25470,
+            "logprob": -10.875,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġhistorical",
+            "token_id": 14986,
+            "logprob": -11.4531,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġan",
+            "token_id": 1844,
+            "logprob": -11.9062,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġone",
+            "token_id": 2371,
+            "logprob": -12.5234,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġarchitectural",
+        "token_id": 31721,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 23,
+      "input_text": "What is the capital of Czechia? PragueĠisĠtheĠcapitalofĠtheĠCzechĠRepublic,ĠfrequentlyĠshortenedĠlocallyĠasĠ“Czechia.”ĠIt'sĠknownĠforĠarchitectural",
+      "tokens": [
+        "What",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "Ġof",
+        "ĠCzech",
+        "ia",
+        "?",
+        "P",
+        "rague",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "of",
+        "Ġthe",
+        "ĠCzech",
+        "ĠRepublic",
+        ",",
+        "Ġfrequently",
+        "Ġshortened",
+        "Ġlocally",
+        "Ġas",
+        "Ġ“",
+        "Czech",
+        "ia",
+        ".”",
+        "ĠIt",
+        "'s",
+        "Ġknown",
+        "Ġfor",
+        "Ġarchitectural"
+      ],
+      "token_ids": [
+        11214, 1801, 1690, 7784, 1719, 18106, 1804, 38, 55, 104592, 1801, 1690, 7784, 3010, 1690,
+        18106, 7190, 19, 17011, 74146, 25978, 1843, 7838, 113409, 1804, 46612, 2332, 1914, 4376,
+        1794, 31721
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġheritage",
+            "token_id": 27553,
+            "logprob": -1.1865,
+            "prob": 0.3054
+          },
+          {
+            "token": "Ġwonders",
+            "token_id": 74177,
+            "logprob": -1.2646,
+            "prob": 0.2825
+          },
+          {
+            "token": "Ġmarvel",
+            "token_id": 91230,
+            "logprob": -1.7334,
+            "prob": 0.1768
+          },
+          {
+            "token": "Ġlandmarks",
+            "token_id": 87987,
+            "logprob": -2.2793,
+            "prob": 0.1023
+          },
+          {
+            "token": "Ġhighlights",
+            "token_id": 32662,
+            "logprob": -3.8574,
+            "prob": 0.0211
+          },
+          {
+            "token": "Ġmasterpieces",
+            "token_id": 183242,
+            "logprob": -4.25,
+            "prob": 0.0143
+          },
+          {
+            "token": "Ġbeauties",
+            "token_id": 223761,
+            "logprob": -4.5078,
+            "prob": 0.011
+          },
+          {
+            "token": "Ġmilestones",
+            "token_id": 99281,
+            "logprob": -4.6719,
+            "prob": 0.0094
+          },
+          {
+            "token": "Ġlegacy",
+            "token_id": 28126,
+            "logprob": -4.8828,
+            "prob": 0.0076
+          },
+          {
+            "token": "Ġgems",
+            "token_id": 82782,
+            "logprob": -5.4297,
+            "prob": 0.0044
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġmilestones",
+        "token_id": 99281,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 24,
+      "input_text": "What is the capital of Czechia? PragueĠisĠtheĠcapitalofĠtheĠCzechĠRepublic,ĠfrequentlyĠshortenedĠlocallyĠasĠ“Czechia.”ĠIt'sĠknownĠforĠarchitecturalĠmilestones",
+      "tokens": [
+        "What",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "Ġof",
+        "ĠCzech",
+        "ia",
+        "?",
+        "P",
+        "rague",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "of",
+        "Ġthe",
+        "ĠCzech",
+        "ĠRepublic",
+        ",",
+        "Ġfrequently",
+        "Ġshortened",
+        "Ġlocally",
+        "Ġas",
+        "Ġ“",
+        "Czech",
+        "ia",
+        ".”",
+        "ĠIt",
+        "'s",
+        "Ġknown",
+        "Ġfor",
+        "Ġarchitectural",
+        "Ġmilestones"
+      ],
+      "token_ids": [
+        11214, 1801, 1690, 7784, 1719, 18106, 1804, 38, 55, 104592, 1801, 1690, 7784, 3010, 1690,
+        18106, 7190, 19, 17011, 74146, 25978, 1843, 7838, 113409, 1804, 46612, 2332, 1914, 4376,
+        1794, 31721, 99281
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġlike",
+            "token_id": 3026,
+            "logprob": -0.0164,
+            "prob": 0.9839
+          },
+          {
+            "token": "Ġsuch",
+            "token_id": 3213,
+            "logprob": -4.3438,
+            "prob": 0.013
+          },
+          {
+            "token": ",",
+            "token_id": 19,
+            "logprob": -6.6406,
+            "prob": 0.0013
+          },
+          {
+            "token": "Ġof",
+            "token_id": 1719,
+            "logprob": -7.0625,
+            "prob": 0.0009
+          },
+          {
+            "token": "Ġon",
+            "token_id": 1812,
+            "logprob": -7.2031,
+            "prob": 0.0007
+          },
+          {
+            "token": "Ġthat",
+            "token_id": 1875,
+            "logprob": -9.8281,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġincluding",
+            "token_id": 3832,
+            "logprob": -10.2188,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġspanning",
+            "token_id": 63348,
+            "logprob": -10.2188,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġin",
+            "token_id": 1709,
+            "logprob": -10.3594,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġand",
+            "token_id": 1728,
+            "logprob": -10.4375,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġsuch",
+        "token_id": 3213,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 25,
+      "input_text": "What is the capital of Czechia? PragueĠisĠtheĠcapitalofĠtheĠCzechĠRepublic,ĠfrequentlyĠshortenedĠlocallyĠasĠ“Czechia.”ĠIt'sĠknownĠforĠarchitecturalĠmilestonesĠsuch",
+      "tokens": [
+        "What",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "Ġof",
+        "ĠCzech",
+        "ia",
+        "?",
+        "P",
+        "rague",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "of",
+        "Ġthe",
+        "ĠCzech",
+        "ĠRepublic",
+        ",",
+        "Ġfrequently",
+        "Ġshortened",
+        "Ġlocally",
+        "Ġas",
+        "Ġ“",
+        "Czech",
+        "ia",
+        ".”",
+        "ĠIt",
+        "'s",
+        "Ġknown",
+        "Ġfor",
+        "Ġarchitectural",
+        "Ġmilestones",
+        "Ġsuch"
+      ],
+      "token_ids": [
+        11214, 1801, 1690, 7784, 1719, 18106, 1804, 38, 55, 104592, 1801, 1690, 7784, 3010, 1690,
+        18106, 7190, 19, 17011, 74146, 25978, 1843, 7838, 113409, 1804, 46612, 2332, 1914, 4376,
+        1794, 31721, 99281, 3213
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġas",
+            "token_id": 1843,
+            "logprob": -0.0002,
+            "prob": 1.0
+          },
+          {
+            "token": "Ġthe",
+            "token_id": 1690,
+            "logprob": -9.5938,
+            "prob": 0.0001
+          },
+          {
+            "token": "as",
+            "token_id": 1694,
+            "logprob": -10.5859,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġa",
+            "token_id": 1671,
+            "logprob": -11.4609,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġat",
+            "token_id": 1915,
+            "logprob": -11.7344,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġand",
+            "token_id": 1728,
+            "logprob": -11.8906,
+            "prob": 0.0
+          },
+          {
+            "token": "s",
+            "token_id": 90,
+            "logprob": -11.9297,
+            "prob": 0.0
+          },
+          {
+            "token": ",",
+            "token_id": 19,
+            "logprob": -12.0234,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġthat",
+            "token_id": 1875,
+            "logprob": -12.4297,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġfor",
+            "token_id": 1794,
+            "logprob": -12.6719,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "s",
+        "token_id": 90,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 26,
+      "input_text": "What is the capital of Czechia? PragueĠisĠtheĠcapitalofĠtheĠCzechĠRepublic,ĠfrequentlyĠshortenedĠlocallyĠasĠ“Czechia.”ĠIt'sĠknownĠforĠarchitecturalĠmilestonesĠsuchs",
+      "tokens": [
+        "What",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "Ġof",
+        "ĠCzech",
+        "ia",
+        "?",
+        "P",
+        "rague",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "of",
+        "Ġthe",
+        "ĠCzech",
+        "ĠRepublic",
+        ",",
+        "Ġfrequently",
+        "Ġshortened",
+        "Ġlocally",
+        "Ġas",
+        "Ġ“",
+        "Czech",
+        "ia",
+        ".”",
+        "ĠIt",
+        "'s",
+        "Ġknown",
+        "Ġfor",
+        "Ġarchitectural",
+        "Ġmilestones",
+        "Ġsuch",
+        "s"
+      ],
+      "token_ids": [
+        11214, 1801, 1690, 7784, 1719, 18106, 1804, 38, 55, 104592, 1801, 1690, 7784, 3010, 1690,
+        18106, 7190, 19, 17011, 74146, 25978, 1843, 7838, 113409, 1804, 46612, 2332, 1914, 4376,
+        1794, 31721, 99281, 3213, 90
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġas",
+            "token_id": 1843,
+            "logprob": -0.0001,
+            "prob": 1.0
+          },
+          {
+            "token": "Ġthe",
+            "token_id": 1690,
+            "logprob": -10.5547,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġa",
+            "token_id": 1671,
+            "logprob": -11.9844,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġast",
+            "token_id": 8256,
+            "logprob": -13.3281,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġash",
+            "token_id": 48560,
+            "logprob": -13.3906,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġhas",
+            "token_id": 2222,
+            "logprob": -13.8047,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġals",
+            "token_id": 4561,
+            "logprob": -14.0156,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠAs",
+            "token_id": 3143,
+            "logprob": -14.0,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġat",
+            "token_id": 1915,
+            "logprob": -14.0781,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠPrague",
+            "token_id": 34606,
+            "logprob": -14.4531,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġthe",
+        "token_id": 1690,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 27,
+      "input_text": "What is the capital of Czechia? PragueĠisĠtheĠcapitalofĠtheĠCzechĠRepublic,ĠfrequentlyĠshortenedĠlocallyĠasĠ“Czechia.”ĠIt'sĠknownĠforĠarchitecturalĠmilestonesĠsuchsĠthe",
+      "tokens": [
+        "What",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "Ġof",
+        "ĠCzech",
+        "ia",
+        "?",
+        "P",
+        "rague",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "of",
+        "Ġthe",
+        "ĠCzech",
+        "ĠRepublic",
+        ",",
+        "Ġfrequently",
+        "Ġshortened",
+        "Ġlocally",
+        "Ġas",
+        "Ġ“",
+        "Czech",
+        "ia",
+        ".”",
+        "ĠIt",
+        "'s",
+        "Ġknown",
+        "Ġfor",
+        "Ġarchitectural",
+        "Ġmilestones",
+        "Ġsuch",
+        "s",
+        "Ġthe"
+      ],
+      "token_ids": [
+        11214, 1801, 1690, 7784, 1719, 18106, 1804, 38, 55, 104592, 1801, 1690, 7784, 3010, 1690,
+        18106, 7190, 19, 17011, 74146, 25978, 1843, 7838, 113409, 1804, 46612, 2332, 1914, 4376,
+        1794, 31721, 99281, 3213, 90, 1690
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "ĠPrague",
+            "token_id": 34606,
+            "logprob": -0.2347,
+            "prob": 0.791
+          },
+          {
+            "token": "Ġ",
+            "token_id": 228,
+            "logprob": -1.9375,
+            "prob": 0.144
+          },
+          {
+            "token": "Ġmedieval",
+            "token_id": 25470,
+            "logprob": -4.8047,
+            "prob": 0.0082
+          },
+          {
+            "token": "ĠGothic",
+            "token_id": 47001,
+            "logprob": -4.8125,
+            "prob": 0.0081
+          },
+          {
+            "token": "ĠOld",
+            "token_id": 9947,
+            "logprob": -5.1484,
+            "prob": 0.0058
+          },
+          {
+            "token": "Ġiconic",
+            "token_id": 39502,
+            "logprob": -5.625,
+            "prob": 0.0036
+          },
+          {
+            "token": "Ġhistoric",
+            "token_id": 17943,
+            "logprob": -6.2109,
+            "prob": 0.002
+          },
+          {
+            "token": "ĠParis",
+            "token_id": 5641,
+            "logprob": -6.5625,
+            "prob": 0.0014
+          },
+          {
+            "token": "ĠBaroque",
+            "token_id": 69773,
+            "logprob": -6.5938,
+            "prob": 0.0014
+          },
+          {
+            "token": "Ġsprawling",
+            "token_id": 155317,
+            "logprob": -6.7266,
+            "prob": 0.0012
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "ĠBaroque",
+        "token_id": 69773,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 28,
+      "input_text": "What is the capital of Czechia? PragueĠisĠtheĠcapitalofĠtheĠCzechĠRepublic,ĠfrequentlyĠshortenedĠlocallyĠasĠ“Czechia.”ĠIt'sĠknownĠforĠarchitecturalĠmilestonesĠsuchsĠtheĠBaroque",
+      "tokens": [
+        "What",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "Ġof",
+        "ĠCzech",
+        "ia",
+        "?",
+        "P",
+        "rague",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "of",
+        "Ġthe",
+        "ĠCzech",
+        "ĠRepublic",
+        ",",
+        "Ġfrequently",
+        "Ġshortened",
+        "Ġlocally",
+        "Ġas",
+        "Ġ“",
+        "Czech",
+        "ia",
+        ".”",
+        "ĠIt",
+        "'s",
+        "Ġknown",
+        "Ġfor",
+        "Ġarchitectural",
+        "Ġmilestones",
+        "Ġsuch",
+        "s",
+        "Ġthe",
+        "ĠBaroque"
+      ],
+      "token_ids": [
+        11214, 1801, 1690, 7784, 1719, 18106, 1804, 38, 55, 104592, 1801, 1690, 7784, 3010, 1690,
+        18106, 7190, 19, 17011, 74146, 25978, 1843, 7838, 113409, 1804, 46612, 2332, 1914, 4376,
+        1794, 31721, 99281, 3213, 90, 1690, 69773
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "ĠCharles",
+            "token_id": 7072,
+            "logprob": -0.0129,
+            "prob": 0.9873
+          },
+          {
+            "token": "ĠChar",
+            "token_id": 5291,
+            "logprob": -5.0117,
+            "prob": 0.0067
+          },
+          {
+            "token": "Ġchar",
+            "token_id": 3476,
+            "logprob": -6.4961,
+            "prob": 0.0015
+          },
+          {
+            "token": "ĠCharlie",
+            "token_id": 20637,
+            "logprob": -6.5742,
+            "prob": 0.0014
+          },
+          {
+            "token": "ĠPrague",
+            "token_id": 34606,
+            "logprob": -7.0117,
+            "prob": 0.0009
+          },
+          {
+            "token": "ĠCharity",
+            "token_id": 62535,
+            "logprob": -7.043,
+            "prob": 0.0009
+          },
+          {
+            "token": "ĠCharlotte",
+            "token_id": 22195,
+            "logprob": -7.4336,
+            "prob": 0.0006
+          },
+          {
+            "token": "查理",
+            "token_id": 111661,
+            "logprob": -8.8594,
+            "prob": 0.0001
+          },
+          {
+            "token": "Charles",
+            "token_id": 30505,
+            "logprob": -9.4766,
+            "prob": 0.0001
+          },
+          {
+            "token": "ĠOld",
+            "token_id": 9947,
+            "logprob": -9.5,
+            "prob": 0.0001
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "ĠPrague",
+        "token_id": 34606,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 29,
+      "input_text": "What is the capital of Czechia? PragueĠisĠtheĠcapitalofĠtheĠCzechĠRepublic,ĠfrequentlyĠshortenedĠlocallyĠasĠ“Czechia.”ĠIt'sĠknownĠforĠarchitecturalĠmilestonesĠsuchsĠtheĠBaroqueĠPrague",
+      "tokens": [
+        "What",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "Ġof",
+        "ĠCzech",
+        "ia",
+        "?",
+        "P",
+        "rague",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "of",
+        "Ġthe",
+        "ĠCzech",
+        "ĠRepublic",
+        ",",
+        "Ġfrequently",
+        "Ġshortened",
+        "Ġlocally",
+        "Ġas",
+        "Ġ“",
+        "Czech",
+        "ia",
+        ".”",
+        "ĠIt",
+        "'s",
+        "Ġknown",
+        "Ġfor",
+        "Ġarchitectural",
+        "Ġmilestones",
+        "Ġsuch",
+        "s",
+        "Ġthe",
+        "ĠBaroque",
+        "ĠPrague"
+      ],
+      "token_ids": [
+        11214, 1801, 1690, 7784, 1719, 18106, 1804, 38, 55, 104592, 1801, 1690, 7784, 3010, 1690,
+        18106, 7190, 19, 17011, 74146, 25978, 1843, 7838, 113409, 1804, 46612, 2332, 1914, 4376,
+        1794, 31721, 99281, 3213, 90, 1690, 69773, 34606
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "ĠCastle",
+            "token_id": 18045,
+            "logprob": -0.0003,
+            "prob": 0.9995
+          },
+          {
+            "token": "Ġcastle",
+            "token_id": 28543,
+            "logprob": -9.4531,
+            "prob": 0.0001
+          },
+          {
+            "token": "Castle",
+            "token_id": 121362,
+            "logprob": -9.4844,
+            "prob": 0.0001
+          },
+          {
+            "token": "ĠCastel",
+            "token_id": 54456,
+            "logprob": -9.8125,
+            "prob": 0.0001
+          },
+          {
+            "token": "ĠCastello",
+            "token_id": 87774,
+            "logprob": -10.3125,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠCastillo",
+            "token_id": 44429,
+            "logprob": -10.6406,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠCast",
+            "token_id": 6350,
+            "logprob": -10.8125,
+            "prob": 0.0
+          },
+          {
+            "token": "城堡",
+            "token_id": 81019,
+            "logprob": -10.8438,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠCastles",
+            "token_id": 189977,
+            "logprob": -11.8125,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠΚάστρο",
+            "token_id": 235672,
+            "logprob": -12.0156,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "ĠΚάστρο",
+        "token_id": 235672,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 30,
+      "input_text": "What is the capital of Czechia? PragueĠisĠtheĠcapitalofĠtheĠCzechĠRepublic,ĠfrequentlyĠshortenedĠlocallyĠasĠ“Czechia.”ĠIt'sĠknownĠforĠarchitecturalĠmilestonesĠsuchsĠtheĠBaroqueĠPragueĠΚάστρο",
+      "tokens": [
+        "What",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "Ġof",
+        "ĠCzech",
+        "ia",
+        "?",
+        "P",
+        "rague",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "of",
+        "Ġthe",
+        "ĠCzech",
+        "ĠRepublic",
+        ",",
+        "Ġfrequently",
+        "Ġshortened",
+        "Ġlocally",
+        "Ġas",
+        "Ġ“",
+        "Czech",
+        "ia",
+        ".”",
+        "ĠIt",
+        "'s",
+        "Ġknown",
+        "Ġfor",
+        "Ġarchitectural",
+        "Ġmilestones",
+        "Ġsuch",
+        "s",
+        "Ġthe",
+        "ĠBaroque",
+        "ĠPrague",
+        "ĠΚάστρο"
+      ],
+      "token_ids": [
+        11214, 1801, 1690, 7784, 1719, 18106, 1804, 38, 55, 104592, 1801, 1690, 7784, 3010, 1690,
+        18106, 7190, 19, 17011, 74146, 25978, 1843, 7838, 113409, 1804, 46612, 2332, 1914, 4376,
+        1794, 31721, 99281, 3213, 90, 1690, 69773, 34606, 235672
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġand",
+            "token_id": 1728,
+            "logprob": -0.749,
+            "prob": 0.4729
+          },
+          {
+            "token": "Ġ(",
+            "token_id": 1737,
+            "logprob": -1.2334,
+            "prob": 0.2913
+          },
+          {
+            "token": ",",
+            "token_id": 19,
+            "logprob": -1.5303,
+            "prob": 0.2164
+          },
+          {
+            "token": "Ġhill",
+            "token_id": 27913,
+            "logprob": -4.4062,
+            "prob": 0.0122
+          },
+          {
+            "token": "ĠHill",
+            "token_id": 9338,
+            "logprob": -5.4844,
+            "prob": 0.0042
+          },
+          {
+            "token": "—",
+            "token_id": 2062,
+            "logprob": -6.5,
+            "prob": 0.0015
+          },
+          {
+            "token": "Ġcomplex",
+            "token_id": 8184,
+            "logprob": -8.1016,
+            "prob": 0.0003
+          },
+          {
+            "token": "Ġhills",
+            "token_id": 41905,
+            "logprob": -8.4453,
+            "prob": 0.0002
+          },
+          {
+            "token": "ĠHills",
+            "token_id": 20566,
+            "logprob": -8.8828,
+            "prob": 0.0001
+          },
+          {
+            "token": "and",
+            "token_id": 1807,
+            "logprob": -8.9609,
+            "prob": 0.0001
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġand",
+        "token_id": 1728,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 31,
+      "input_text": "What is the capital of Czechia? PragueĠisĠtheĠcapitalofĠtheĠCzechĠRepublic,ĠfrequentlyĠshortenedĠlocallyĠasĠ“Czechia.”ĠIt'sĠknownĠforĠarchitecturalĠmilestonesĠsuchsĠtheĠBaroqueĠPragueĠΚάστροĠand",
+      "tokens": [
+        "What",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "Ġof",
+        "ĠCzech",
+        "ia",
+        "?",
+        "P",
+        "rague",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "of",
+        "Ġthe",
+        "ĠCzech",
+        "ĠRepublic",
+        ",",
+        "Ġfrequently",
+        "Ġshortened",
+        "Ġlocally",
+        "Ġas",
+        "Ġ“",
+        "Czech",
+        "ia",
+        ".”",
+        "ĠIt",
+        "'s",
+        "Ġknown",
+        "Ġfor",
+        "Ġarchitectural",
+        "Ġmilestones",
+        "Ġsuch",
+        "s",
+        "Ġthe",
+        "ĠBaroque",
+        "ĠPrague",
+        "ĠΚάστρο",
+        "Ġand"
+      ],
+      "token_ids": [
+        11214, 1801, 1690, 7784, 1719, 18106, 1804, 38, 55, 104592, 1801, 1690, 7784, 3010, 1690,
+        18106, 7190, 19, 17011, 74146, 25978, 1843, 7838, 113409, 1804, 46612, 2332, 1914, 4376,
+        1794, 31721, 99281, 3213, 90, 1690, 69773, 34606, 235672, 1728
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġthe",
+            "token_id": 1690,
+            "logprob": -0.0861,
+            "prob": 0.9175
+          },
+          {
+            "token": "ĠCharles",
+            "token_id": 7072,
+            "logprob": -2.6016,
+            "prob": 0.0742
+          },
+          {
+            "token": "Ġiconic",
+            "token_id": 39502,
+            "logprob": -6.1328,
+            "prob": 0.0022
+          },
+          {
+            "token": "Ġchar",
+            "token_id": 3476,
+            "logprob": -6.4609,
+            "prob": 0.0016
+          },
+          {
+            "token": "ĠGothic",
+            "token_id": 47001,
+            "logprob": -6.5391,
+            "prob": 0.0014
+          },
+          {
+            "token": "Ġfor",
+            "token_id": 1794,
+            "logprob": -7.7969,
+            "prob": 0.0004
+          },
+          {
+            "token": "Ġhistoric",
+            "token_id": 17943,
+            "logprob": -8.1797,
+            "prob": 0.0003
+          },
+          {
+            "token": "ĠCharlie",
+            "token_id": 20637,
+            "logprob": -8.3203,
+            "prob": 0.0002
+          },
+          {
+            "token": "Ġmedieval",
+            "token_id": 25470,
+            "logprob": -8.4141,
+            "prob": 0.0002
+          },
+          {
+            "token": "Ġbridge",
+            "token_id": 15914,
+            "logprob": -8.5469,
+            "prob": 0.0002
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "ĠCharlie",
+        "token_id": 20637,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 32,
+      "input_text": "What is the capital of Czechia? PragueĠisĠtheĠcapitalofĠtheĠCzechĠRepublic,ĠfrequentlyĠshortenedĠlocallyĠasĠ“Czechia.”ĠIt'sĠknownĠforĠarchitecturalĠmilestonesĠsuchsĠtheĠBaroqueĠPragueĠΚάστροĠandĠCharlie",
+      "tokens": [
+        "What",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "Ġof",
+        "ĠCzech",
+        "ia",
+        "?",
+        "P",
+        "rague",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "of",
+        "Ġthe",
+        "ĠCzech",
+        "ĠRepublic",
+        ",",
+        "Ġfrequently",
+        "Ġshortened",
+        "Ġlocally",
+        "Ġas",
+        "Ġ“",
+        "Czech",
+        "ia",
+        ".”",
+        "ĠIt",
+        "'s",
+        "Ġknown",
+        "Ġfor",
+        "Ġarchitectural",
+        "Ġmilestones",
+        "Ġsuch",
+        "s",
+        "Ġthe",
+        "ĠBaroque",
+        "ĠPrague",
+        "ĠΚάστρο",
+        "Ġand",
+        "ĠCharlie"
+      ],
+      "token_ids": [
+        11214, 1801, 1690, 7784, 1719, 18106, 1804, 38, 55, 104592, 1801, 1690, 7784, 3010, 1690,
+        18106, 7190, 19, 17011, 74146, 25978, 1843, 7838, 113409, 1804, 46612, 2332, 1914, 4376,
+        1794, 31721, 99281, 3213, 90, 1690, 69773, 34606, 235672, 1728, 20637
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "ĠBridge",
+            "token_id": 15706,
+            "logprob": -0.3223,
+            "prob": 0.7246
+          },
+          {
+            "token": "'s",
+            "token_id": 1914,
+            "logprob": -1.3535,
+            "prob": 0.2583
+          },
+          {
+            "token": "’",
+            "token_id": 2932,
+            "logprob": -4.1523,
+            "prob": 0.0158
+          },
+          {
+            "token": "ĠTower",
+            "token_id": 24274,
+            "logprob": -6.6211,
+            "prob": 0.0013
+          },
+          {
+            "token": "Bridge",
+            "token_id": 56234,
+            "logprob": -9.0078,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġbridge",
+            "token_id": 15914,
+            "logprob": -12.4219,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠSquare",
+            "token_id": 18611,
+            "logprob": -13.1484,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠBridges",
+            "token_id": 64716,
+            "logprob": -13.6016,
+            "prob": 0.0
+          },
+          {
+            "token": "bridge",
+            "token_id": 21092,
+            "logprob": -13.5781,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠClock",
+            "token_id": 58646,
+            "logprob": -13.6719,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "ĠBridge",
+        "token_id": 15706,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 33,
+      "input_text": "What is the capital of Czechia? PragueĠisĠtheĠcapitalofĠtheĠCzechĠRepublic,ĠfrequentlyĠshortenedĠlocallyĠasĠ“Czechia.”ĠIt'sĠknownĠforĠarchitecturalĠmilestonesĠsuchsĠtheĠBaroqueĠPragueĠΚάστροĠandĠCharlieĠBridge",
+      "tokens": [
+        "What",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "Ġof",
+        "ĠCzech",
+        "ia",
+        "?",
+        "P",
+        "rague",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "of",
+        "Ġthe",
+        "ĠCzech",
+        "ĠRepublic",
+        ",",
+        "Ġfrequently",
+        "Ġshortened",
+        "Ġlocally",
+        "Ġas",
+        "Ġ“",
+        "Czech",
+        "ia",
+        ".”",
+        "ĠIt",
+        "'s",
+        "Ġknown",
+        "Ġfor",
+        "Ġarchitectural",
+        "Ġmilestones",
+        "Ġsuch",
+        "s",
+        "Ġthe",
+        "ĠBaroque",
+        "ĠPrague",
+        "ĠΚάστρο",
+        "Ġand",
+        "ĠCharlie",
+        "ĠBridge"
+      ],
+      "token_ids": [
+        11214, 1801, 1690, 7784, 1719, 18106, 1804, 38, 55, 104592, 1801, 1690, 7784, 3010, 1690,
+        18106, 7190, 19, 17011, 74146, 25978, 1843, 7838, 113409, 1804, 46612, 2332, 1914, 4376,
+        1794, 31721, 99281, 3213, 90, 1690, 69773, 34606, 235672, 1728, 20637, 15706
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": ",",
+            "token_id": 19,
+            "logprob": -0.0897,
+            "prob": 0.9141
+          },
+          {
+            "token": ".",
+            "token_id": 21,
+            "logprob": -2.5742,
+            "prob": 0.0762
+          },
+          {
+            "token": "Ġand",
+            "token_id": 1728,
+            "logprob": -5.3398,
+            "prob": 0.0048
+          },
+          {
+            "token": "Ġacross",
+            "token_id": 6094,
+            "logprob": -5.793,
+            "prob": 0.003
+          },
+          {
+            "token": "Ġ(",
+            "token_id": 1737,
+            "logprob": -7.5117,
+            "prob": 0.0005
+          },
+          {
+            "token": "Ġspanning",
+            "token_id": 63348,
+            "logprob": -7.9492,
+            "prob": 0.0004
+          },
+          {
+            "token": "Ġover",
+            "token_id": 2515,
+            "logprob": -9.1172,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġcrossing",
+            "token_id": 32242,
+            "logprob": -9.1641,
+            "prob": 0.0001
+          },
+          {
+            "token": ";",
+            "token_id": 34,
+            "logprob": -9.2109,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġas",
+            "token_id": 1843,
+            "logprob": -9.4453,
+            "prob": 0.0001
+          }
+        ]
+      },
+      "selected_token": {
+        "token": ".",
+        "token_id": 21,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 34,
+      "input_text": "What is the capital of Czechia? PragueĠisĠtheĠcapitalofĠtheĠCzechĠRepublic,ĠfrequentlyĠshortenedĠlocallyĠasĠ“Czechia.”ĠIt'sĠknownĠforĠarchitecturalĠmilestonesĠsuchsĠtheĠBaroqueĠPragueĠΚάστροĠandĠCharlieĠBridge.",
+      "tokens": [
+        "What",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "Ġof",
+        "ĠCzech",
+        "ia",
+        "?",
+        "P",
+        "rague",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "of",
+        "Ġthe",
+        "ĠCzech",
+        "ĠRepublic",
+        ",",
+        "Ġfrequently",
+        "Ġshortened",
+        "Ġlocally",
+        "Ġas",
+        "Ġ“",
+        "Czech",
+        "ia",
+        ".”",
+        "ĠIt",
+        "'s",
+        "Ġknown",
+        "Ġfor",
+        "Ġarchitectural",
+        "Ġmilestones",
+        "Ġsuch",
+        "s",
+        "Ġthe",
+        "ĠBaroque",
+        "ĠPrague",
+        "ĠΚάστρο",
+        "Ġand",
+        "ĠCharlie",
+        "ĠBridge",
+        "."
+      ],
+      "token_ids": [
+        11214, 1801, 1690, 7784, 1719, 18106, 1804, 38, 55, 104592, 1801, 1690, 7784, 3010, 1690,
+        18106, 7190, 19, 17011, 74146, 25978, 1843, 7838, 113409, 1804, 46612, 2332, 1914, 4376,
+        1794, 31721, 99281, 3213, 90, 1690, 69773, 34606, 235672, 1728, 20637, 15706, 21
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "ĠThe",
+            "token_id": 1896,
+            "logprob": -0.0948,
+            "prob": 0.9097
+          },
+          {
+            "token": "ĠHistoric",
+            "token_id": 18822,
+            "logprob": -2.6426,
+            "prob": 0.0712
+          },
+          {
+            "token": "ĠAt",
+            "token_id": 3818,
+            "logprob": -5.1172,
+            "prob": 0.006
+          },
+          {
+            "token": "ĠIts",
+            "token_id": 11708,
+            "logprob": -6.1328,
+            "prob": 0.0022
+          },
+          {
+            "token": "ĠIn",
+            "token_id": 2020,
+            "logprob": -6.7266,
+            "prob": 0.0012
+          },
+          {
+            "token": "<|END_OF_TURN_TOKEN|>",
+            "token_id": 255001,
+            "logprob": -6.875,
+            "prob": 0.001
+          },
+          {
+            "token": "Ġhistoric",
+            "token_id": 17943,
+            "logprob": -8.2109,
+            "prob": 0.0003
+          },
+          {
+            "token": "ĠA",
+            "token_id": 1736,
+            "logprob": -8.2188,
+            "prob": 0.0003
+          },
+          {
+            "token": "ĠIt",
+            "token_id": 2332,
+            "logprob": -8.375,
+            "prob": 0.0002
+          },
+          {
+            "token": "ĠHoly",
+            "token_id": 18819,
+            "logprob": -8.4844,
+            "prob": 0.0002
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "ĠIt",
+        "token_id": 2332,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 35,
+      "input_text": "What is the capital of Czechia? PragueĠisĠtheĠcapitalofĠtheĠCzechĠRepublic,ĠfrequentlyĠshortenedĠlocallyĠasĠ“Czechia.”ĠIt'sĠknownĠforĠarchitecturalĠmilestonesĠsuchsĠtheĠBaroqueĠPragueĠΚάστροĠandĠCharlieĠBridge.ĠIt",
+      "tokens": [
+        "What",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "Ġof",
+        "ĠCzech",
+        "ia",
+        "?",
+        "P",
+        "rague",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "of",
+        "Ġthe",
+        "ĠCzech",
+        "ĠRepublic",
+        ",",
+        "Ġfrequently",
+        "Ġshortened",
+        "Ġlocally",
+        "Ġas",
+        "Ġ“",
+        "Czech",
+        "ia",
+        ".”",
+        "ĠIt",
+        "'s",
+        "Ġknown",
+        "Ġfor",
+        "Ġarchitectural",
+        "Ġmilestones",
+        "Ġsuch",
+        "s",
+        "Ġthe",
+        "ĠBaroque",
+        "ĠPrague",
+        "ĠΚάστρο",
+        "Ġand",
+        "ĠCharlie",
+        "ĠBridge",
+        ".",
+        "ĠIt"
+      ],
+      "token_ids": [
+        11214, 1801, 1690, 7784, 1719, 18106, 1804, 38, 55, 104592, 1801, 1690, 7784, 3010, 1690,
+        18106, 7190, 19, 17011, 74146, 25978, 1843, 7838, 113409, 1804, 46612, 2332, 1914, 4376,
+        1794, 31721, 99281, 3213, 90, 1690, 69773, 34606, 235672, 1728, 20637, 15706, 21, 2332
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġlies",
+            "token_id": 20141,
+            "logprob": -0.0294,
+            "prob": 0.9712
+          },
+          {
+            "token": "’",
+            "token_id": 2932,
+            "logprob": -4.125,
+            "prob": 0.0162
+          },
+          {
+            "token": "Ġoccupies",
+            "token_id": 85161,
+            "logprob": -5.2969,
+            "prob": 0.005
+          },
+          {
+            "token": "Ġwas",
+            "token_id": 1898,
+            "logprob": -5.875,
+            "prob": 0.0028
+          },
+          {
+            "token": "'s",
+            "token_id": 1914,
+            "logprob": -6.6875,
+            "prob": 0.0012
+          },
+          {
+            "token": "Ġstands",
+            "token_id": 20560,
+            "logprob": -6.6875,
+            "prob": 0.0012
+          },
+          {
+            "token": "Ġsits",
+            "token_id": 39659,
+            "logprob": -7.0938,
+            "prob": 0.0008
+          },
+          {
+            "token": "Ġlays",
+            "token_id": 108133,
+            "logprob": -8.0781,
+            "prob": 0.0003
+          },
+          {
+            "token": "Ġshares",
+            "token_id": 20196,
+            "logprob": -8.2969,
+            "prob": 0.0002
+          },
+          {
+            "token": "Ġhas",
+            "token_id": 2222,
+            "logprob": -8.375,
+            "prob": 0.0002
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "'s",
+        "token_id": 1914,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 36,
+      "input_text": "What is the capital of Czechia? PragueĠisĠtheĠcapitalofĠtheĠCzechĠRepublic,ĠfrequentlyĠshortenedĠlocallyĠasĠ“Czechia.”ĠIt'sĠknownĠforĠarchitecturalĠmilestonesĠsuchsĠtheĠBaroqueĠPragueĠΚάστροĠandĠCharlieĠBridge.ĠIt's",
+      "tokens": [
+        "What",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "Ġof",
+        "ĠCzech",
+        "ia",
+        "?",
+        "P",
+        "rague",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "of",
+        "Ġthe",
+        "ĠCzech",
+        "ĠRepublic",
+        ",",
+        "Ġfrequently",
+        "Ġshortened",
+        "Ġlocally",
+        "Ġas",
+        "Ġ“",
+        "Czech",
+        "ia",
+        ".”",
+        "ĠIt",
+        "'s",
+        "Ġknown",
+        "Ġfor",
+        "Ġarchitectural",
+        "Ġmilestones",
+        "Ġsuch",
+        "s",
+        "Ġthe",
+        "ĠBaroque",
+        "ĠPrague",
+        "ĠΚάστρο",
+        "Ġand",
+        "ĠCharlie",
+        "ĠBridge",
+        ".",
+        "ĠIt",
+        "'s"
+      ],
+      "token_ids": [
+        11214, 1801, 1690, 7784, 1719, 18106, 1804, 38, 55, 104592, 1801, 1690, 7784, 3010, 1690,
+        18106, 7190, 19, 17011, 74146, 25978, 1843, 7838, 113409, 1804, 46612, 2332, 1914, 4376,
+        1794, 31721, 99281, 3213, 90, 1690, 69773, 34606, 235672, 1728, 20637, 15706, 21, 2332, 1914
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġalso",
+            "token_id": 2328,
+            "logprob": -0.6865,
+            "prob": 0.5034
+          },
+          {
+            "token": "Ġsituated",
+            "token_id": 24520,
+            "logprob": -1.6396,
+            "prob": 0.194
+          },
+          {
+            "token": "Ġthe",
+            "token_id": 1690,
+            "logprob": -1.7021,
+            "prob": 0.1823
+          },
+          {
+            "token": "Ġlocated",
+            "token_id": 6090,
+            "logprob": -3.6562,
+            "prob": 0.0258
+          },
+          {
+            "token": "Ġset",
+            "token_id": 2522,
+            "logprob": -3.75,
+            "prob": 0.0235
+          },
+          {
+            "token": "Ġin",
+            "token_id": 1709,
+            "logprob": -3.9531,
+            "prob": 0.0192
+          },
+          {
+            "token": "Ġa",
+            "token_id": 1671,
+            "logprob": -3.9844,
+            "prob": 0.0186
+          },
+          {
+            "token": "Ġone",
+            "token_id": 2371,
+            "logprob": -4.6562,
+            "prob": 0.0095
+          },
+          {
+            "token": "Ġhome",
+            "token_id": 3780,
+            "logprob": -5.7812,
+            "prob": 0.0031
+          },
+          {
+            "token": "Ġnestled",
+            "token_id": 158677,
+            "logprob": -5.9688,
+            "prob": 0.0026
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġsituated",
+        "token_id": 24520,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 37,
+      "input_text": "What is the capital of Czechia? PragueĠisĠtheĠcapitalofĠtheĠCzechĠRepublic,ĠfrequentlyĠshortenedĠlocallyĠasĠ“Czechia.”ĠIt'sĠknownĠforĠarchitecturalĠmilestonesĠsuchsĠtheĠBaroqueĠPragueĠΚάστροĠandĠCharlieĠBridge.ĠIt'sĠsituated",
+      "tokens": [
+        "What",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "Ġof",
+        "ĠCzech",
+        "ia",
+        "?",
+        "P",
+        "rague",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "of",
+        "Ġthe",
+        "ĠCzech",
+        "ĠRepublic",
+        ",",
+        "Ġfrequently",
+        "Ġshortened",
+        "Ġlocally",
+        "Ġas",
+        "Ġ“",
+        "Czech",
+        "ia",
+        ".”",
+        "ĠIt",
+        "'s",
+        "Ġknown",
+        "Ġfor",
+        "Ġarchitectural",
+        "Ġmilestones",
+        "Ġsuch",
+        "s",
+        "Ġthe",
+        "ĠBaroque",
+        "ĠPrague",
+        "ĠΚάστρο",
+        "Ġand",
+        "ĠCharlie",
+        "ĠBridge",
+        ".",
+        "ĠIt",
+        "'s",
+        "Ġsituated"
+      ],
+      "token_ids": [
+        11214, 1801, 1690, 7784, 1719, 18106, 1804, 38, 55, 104592, 1801, 1690, 7784, 3010, 1690,
+        18106, 7190, 19, 17011, 74146, 25978, 1843, 7838, 113409, 1804, 46612, 2332, 1914, 4376,
+        1794, 31721, 99281, 3213, 90, 1690, 69773, 34606, 235672, 1728, 20637, 15706, 21, 2332,
+        1914, 24520
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġin",
+            "token_id": 1709,
+            "logprob": -0.0168,
+            "prob": 0.9834
+          },
+          {
+            "token": "Ġon",
+            "token_id": 1812,
+            "logprob": -4.1406,
+            "prob": 0.0159
+          },
+          {
+            "token": "Ġatop",
+            "token_id": 69347,
+            "logprob": -8.3594,
+            "prob": 0.0002
+          },
+          {
+            "token": "Ġbeside",
+            "token_id": 57170,
+            "logprob": -9.1562,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġalong",
+            "token_id": 4974,
+            "logprob": -9.4219,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġnear",
+            "token_id": 5679,
+            "logprob": -10.1953,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġfrom",
+            "token_id": 1988,
+            "logprob": -10.6172,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġacross",
+            "token_id": 6094,
+            "logprob": -10.625,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġhalfway",
+            "token_id": 73946,
+            "logprob": -10.7969,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġalongside",
+            "token_id": 16417,
+            "logprob": -10.8594,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġacross",
+        "token_id": 6094,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 38,
+      "input_text": "What is the capital of Czechia? PragueĠisĠtheĠcapitalofĠtheĠCzechĠRepublic,ĠfrequentlyĠshortenedĠlocallyĠasĠ“Czechia.”ĠIt'sĠknownĠforĠarchitecturalĠmilestonesĠsuchsĠtheĠBaroqueĠPragueĠΚάστροĠandĠCharlieĠBridge.ĠIt'sĠsituatedĠacross",
+      "tokens": [
+        "What",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "Ġof",
+        "ĠCzech",
+        "ia",
+        "?",
+        "P",
+        "rague",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "of",
+        "Ġthe",
+        "ĠCzech",
+        "ĠRepublic",
+        ",",
+        "Ġfrequently",
+        "Ġshortened",
+        "Ġlocally",
+        "Ġas",
+        "Ġ“",
+        "Czech",
+        "ia",
+        ".”",
+        "ĠIt",
+        "'s",
+        "Ġknown",
+        "Ġfor",
+        "Ġarchitectural",
+        "Ġmilestones",
+        "Ġsuch",
+        "s",
+        "Ġthe",
+        "ĠBaroque",
+        "ĠPrague",
+        "ĠΚάστρο",
+        "Ġand",
+        "ĠCharlie",
+        "ĠBridge",
+        ".",
+        "ĠIt",
+        "'s",
+        "Ġsituated",
+        "Ġacross"
+      ],
+      "token_ids": [
+        11214, 1801, 1690, 7784, 1719, 18106, 1804, 38, 55, 104592, 1801, 1690, 7784, 3010, 1690,
+        18106, 7190, 19, 17011, 74146, 25978, 1843, 7838, 113409, 1804, 46612, 2332, 1914, 4376,
+        1794, 31721, 99281, 3213, 90, 1690, 69773, 34606, 235672, 1728, 20637, 15706, 21, 2332,
+        1914, 24520, 6094
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġthe",
+            "token_id": 1690,
+            "logprob": -0.0101,
+            "prob": 0.9897
+          },
+          {
+            "token": "Ġboth",
+            "token_id": 3821,
+            "logprob": -4.6055,
+            "prob": 0.01
+          },
+          {
+            "token": "the",
+            "token_id": 3798,
+            "logprob": -11.9219,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġfrom",
+            "token_id": 1988,
+            "logprob": -11.9844,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġrivers",
+            "token_id": 34575,
+            "logprob": -12.1172,
+            "prob": 0.0
+          },
+          {
+            "token": "both",
+            "token_id": 38132,
+            "logprob": -13.1172,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġtwo",
+            "token_id": 2816,
+            "logprob": -13.1797,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠVlt",
+            "token_id": 135358,
+            "logprob": -13.2734,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġa",
+            "token_id": 1671,
+            "logprob": -13.625,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġriver",
+            "token_id": 13500,
+            "logprob": -13.7344,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġrivers",
+        "token_id": 34575,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 39,
+      "input_text": "What is the capital of Czechia? PragueĠisĠtheĠcapitalofĠtheĠCzechĠRepublic,ĠfrequentlyĠshortenedĠlocallyĠasĠ“Czechia.”ĠIt'sĠknownĠforĠarchitecturalĠmilestonesĠsuchsĠtheĠBaroqueĠPragueĠΚάστροĠandĠCharlieĠBridge.ĠIt'sĠsituatedĠacrossĠrivers",
+      "tokens": [
+        "What",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "Ġof",
+        "ĠCzech",
+        "ia",
+        "?",
+        "P",
+        "rague",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "of",
+        "Ġthe",
+        "ĠCzech",
+        "ĠRepublic",
+        ",",
+        "Ġfrequently",
+        "Ġshortened",
+        "Ġlocally",
+        "Ġas",
+        "Ġ“",
+        "Czech",
+        "ia",
+        ".”",
+        "ĠIt",
+        "'s",
+        "Ġknown",
+        "Ġfor",
+        "Ġarchitectural",
+        "Ġmilestones",
+        "Ġsuch",
+        "s",
+        "Ġthe",
+        "ĠBaroque",
+        "ĠPrague",
+        "ĠΚάστρο",
+        "Ġand",
+        "ĠCharlie",
+        "ĠBridge",
+        ".",
+        "ĠIt",
+        "'s",
+        "Ġsituated",
+        "Ġacross",
+        "Ġrivers"
+      ],
+      "token_ids": [
+        11214, 1801, 1690, 7784, 1719, 18106, 1804, 38, 55, 104592, 1801, 1690, 7784, 3010, 1690,
+        18106, 7190, 19, 17011, 74146, 25978, 1843, 7838, 113409, 1804, 46612, 2332, 1914, 4376,
+        1794, 31721, 99281, 3213, 90, 1690, 69773, 34606, 235672, 1728, 20637, 15706, 21, 2332,
+        1914, 24520, 6094, 34575
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "ide",
+            "token_id": 2074,
+            "logprob": -0.1547,
+            "prob": 0.8569
+          },
+          {
+            "token": "Ġthat",
+            "token_id": 1875,
+            "logprob": -2.0605,
+            "prob": 0.1273
+          },
+          {
+            "token": "Ġthe",
+            "token_id": 1690,
+            "logprob": -4.5938,
+            "prob": 0.0101
+          },
+          {
+            "token": "ides",
+            "token_id": 3753,
+            "logprob": -6.2109,
+            "prob": 0.002
+          },
+          {
+            "token": ",",
+            "token_id": 19,
+            "logprob": -7.3125,
+            "prob": 0.0007
+          },
+          {
+            "token": "ĠVlt",
+            "token_id": 135358,
+            "logprob": -7.3906,
+            "prob": 0.0006
+          },
+          {
+            "token": "Ġin",
+            "token_id": 1709,
+            "logprob": -7.6016,
+            "prob": 0.0005
+          },
+          {
+            "token": "Ġwhich",
+            "token_id": 2274,
+            "logprob": -8.7031,
+            "prob": 0.0002
+          },
+          {
+            "token": "Ġwith",
+            "token_id": 1865,
+            "logprob": -9.2734,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġof",
+            "token_id": 1719,
+            "logprob": -9.3672,
+            "prob": 0.0001
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "ides",
+        "token_id": 3753,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 40,
+      "input_text": "What is the capital of Czechia? PragueĠisĠtheĠcapitalofĠtheĠCzechĠRepublic,ĠfrequentlyĠshortenedĠlocallyĠasĠ“Czechia.”ĠIt'sĠknownĠforĠarchitecturalĠmilestonesĠsuchsĠtheĠBaroqueĠPragueĠΚάστροĠandĠCharlieĠBridge.ĠIt'sĠsituatedĠacrossĠriversides",
+      "tokens": [
+        "What",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "Ġof",
+        "ĠCzech",
+        "ia",
+        "?",
+        "P",
+        "rague",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "of",
+        "Ġthe",
+        "ĠCzech",
+        "ĠRepublic",
+        ",",
+        "Ġfrequently",
+        "Ġshortened",
+        "Ġlocally",
+        "Ġas",
+        "Ġ“",
+        "Czech",
+        "ia",
+        ".”",
+        "ĠIt",
+        "'s",
+        "Ġknown",
+        "Ġfor",
+        "Ġarchitectural",
+        "Ġmilestones",
+        "Ġsuch",
+        "s",
+        "Ġthe",
+        "ĠBaroque",
+        "ĠPrague",
+        "ĠΚάστρο",
+        "Ġand",
+        "ĠCharlie",
+        "ĠBridge",
+        ".",
+        "ĠIt",
+        "'s",
+        "Ġsituated",
+        "Ġacross",
+        "Ġrivers",
+        "ides"
+      ],
+      "token_ids": [
+        11214, 1801, 1690, 7784, 1719, 18106, 1804, 38, 55, 104592, 1801, 1690, 7784, 3010, 1690,
+        18106, 7190, 19, 17011, 74146, 25978, 1843, 7838, 113409, 1804, 46612, 2332, 1914, 4376,
+        1794, 31721, 99281, 3213, 90, 1690, 69773, 34606, 235672, 1728, 20637, 15706, 21, 2332,
+        1914, 24520, 6094, 34575, 3753
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġin",
+            "token_id": 1709,
+            "logprob": -0.075,
+            "prob": 0.9277
+          },
+          {
+            "token": "Ġon",
+            "token_id": 1812,
+            "logprob": -4.0586,
+            "prob": 0.0173
+          },
+          {
+            "token": "Ġwith",
+            "token_id": 1865,
+            "logprob": -4.1367,
+            "prob": 0.016
+          },
+          {
+            "token": "Ġof",
+            "token_id": 1719,
+            "logprob": -4.3398,
+            "prob": 0.013
+          },
+          {
+            "token": "Ġand",
+            "token_id": 1728,
+            "logprob": -4.418,
+            "prob": 0.012
+          },
+          {
+            "token": ",",
+            "token_id": 19,
+            "logprob": -5.2461,
+            "prob": 0.0053
+          },
+          {
+            "token": "Ġalong",
+            "token_id": 4974,
+            "logprob": -5.8242,
+            "prob": 0.003
+          },
+          {
+            "token": "Ġfrom",
+            "token_id": 1988,
+            "logprob": -7.0898,
+            "prob": 0.0008
+          },
+          {
+            "token": "Ġat",
+            "token_id": 1915,
+            "logprob": -7.2461,
+            "prob": 0.0007
+          },
+          {
+            "token": "Ġas",
+            "token_id": 1843,
+            "logprob": -7.5117,
+            "prob": 0.0005
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġat",
+        "token_id": 1915,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 41,
+      "input_text": "What is the capital of Czechia? PragueĠisĠtheĠcapitalofĠtheĠCzechĠRepublic,ĠfrequentlyĠshortenedĠlocallyĠasĠ“Czechia.”ĠIt'sĠknownĠforĠarchitecturalĠmilestonesĠsuchsĠtheĠBaroqueĠPragueĠΚάστροĠandĠCharlieĠBridge.ĠIt'sĠsituatedĠacrossĠriversidesĠat",
+      "tokens": [
+        "What",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "Ġof",
+        "ĠCzech",
+        "ia",
+        "?",
+        "P",
+        "rague",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "of",
+        "Ġthe",
+        "ĠCzech",
+        "ĠRepublic",
+        ",",
+        "Ġfrequently",
+        "Ġshortened",
+        "Ġlocally",
+        "Ġas",
+        "Ġ“",
+        "Czech",
+        "ia",
+        ".”",
+        "ĠIt",
+        "'s",
+        "Ġknown",
+        "Ġfor",
+        "Ġarchitectural",
+        "Ġmilestones",
+        "Ġsuch",
+        "s",
+        "Ġthe",
+        "ĠBaroque",
+        "ĠPrague",
+        "ĠΚάστρο",
+        "Ġand",
+        "ĠCharlie",
+        "ĠBridge",
+        ".",
+        "ĠIt",
+        "'s",
+        "Ġsituated",
+        "Ġacross",
+        "Ġrivers",
+        "ides",
+        "Ġat"
+      ],
+      "token_ids": [
+        11214, 1801, 1690, 7784, 1719, 18106, 1804, 38, 55, 104592, 1801, 1690, 7784, 3010, 1690,
+        18106, 7190, 19, 17011, 74146, 25978, 1843, 7838, 113409, 1804, 46612, 2332, 1914, 4376,
+        1794, 31721, 99281, 3213, 90, 1690, 69773, 34606, 235672, 1728, 20637, 15706, 21, 2332,
+        1914, 24520, 6094, 34575, 3753, 1915
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġthe",
+            "token_id": 1690,
+            "logprob": -0.0,
+            "prob": 1.0
+          },
+          {
+            "token": "Ġa",
+            "token_id": 1671,
+            "logprob": -12.3906,
+            "prob": 0.0
+          },
+          {
+            "token": "the",
+            "token_id": 3798,
+            "logprob": -13.625,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġan",
+            "token_id": 1844,
+            "logprob": -14.4375,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠThe",
+            "token_id": 1896,
+            "logprob": -17.0938,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġriver",
+            "token_id": 13500,
+            "logprob": -17.2188,
+            "prob": 0.0
+          },
+          {
+            "token": "<CLS>",
+            "token_id": 2,
+            "logprob": -29.9531,
+            "prob": 0.0
+          },
+          {
+            "token": "<SEP>",
+            "token_id": 3,
+            "logprob": -30.7031,
+            "prob": 0.0
+          },
+          {
+            "token": "<UNK>",
+            "token_id": 1,
+            "logprob": -29.4375,
+            "prob": 0.0
+          },
+          {
+            "token": "<PAD>",
+            "token_id": 0,
+            "logprob": -30.7188,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġthe",
+        "token_id": 1690,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 42,
+      "input_text": "What is the capital of Czechia? PragueĠisĠtheĠcapitalofĠtheĠCzechĠRepublic,ĠfrequentlyĠshortenedĠlocallyĠasĠ“Czechia.”ĠIt'sĠknownĠforĠarchitecturalĠmilestonesĠsuchsĠtheĠBaroqueĠPragueĠΚάστροĠandĠCharlieĠBridge.ĠIt'sĠsituatedĠacrossĠriversidesĠatĠthe",
+      "tokens": [
+        "What",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "Ġof",
+        "ĠCzech",
+        "ia",
+        "?",
+        "P",
+        "rague",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "of",
+        "Ġthe",
+        "ĠCzech",
+        "ĠRepublic",
+        ",",
+        "Ġfrequently",
+        "Ġshortened",
+        "Ġlocally",
+        "Ġas",
+        "Ġ“",
+        "Czech",
+        "ia",
+        ".”",
+        "ĠIt",
+        "'s",
+        "Ġknown",
+        "Ġfor",
+        "Ġarchitectural",
+        "Ġmilestones",
+        "Ġsuch",
+        "s",
+        "Ġthe",
+        "ĠBaroque",
+        "ĠPrague",
+        "ĠΚάστρο",
+        "Ġand",
+        "ĠCharlie",
+        "ĠBridge",
+        ".",
+        "ĠIt",
+        "'s",
+        "Ġsituated",
+        "Ġacross",
+        "Ġrivers",
+        "ides",
+        "Ġat",
+        "Ġthe"
+      ],
+      "token_ids": [
+        11214, 1801, 1690, 7784, 1719, 18106, 1804, 38, 55, 104592, 1801, 1690, 7784, 3010, 1690,
+        18106, 7190, 19, 17011, 74146, 25978, 1843, 7838, 113409, 1804, 46612, 2332, 1914, 4376,
+        1794, 31721, 99281, 3213, 90, 1690, 69773, 34606, 235672, 1728, 20637, 15706, 21, 2332,
+        1914, 24520, 6094, 34575, 3753, 1915, 1690
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġconfluence",
+            "token_id": 77125,
+            "logprob": -1.3086,
+            "prob": 0.2703
+          },
+          {
+            "token": "Ġmeeting",
+            "token_id": 10185,
+            "logprob": -1.918,
+            "prob": 0.1469
+          },
+          {
+            "token": "Ġheart",
+            "token_id": 8279,
+            "logprob": -2.0117,
+            "prob": 0.1338
+          },
+          {
+            "token": "ĠVlt",
+            "token_id": 135358,
+            "logprob": -2.0742,
+            "prob": 0.1256
+          },
+          {
+            "token": "Ġbottom",
+            "token_id": 12012,
+            "logprob": -2.1523,
+            "prob": 0.1162
+          },
+          {
+            "token": "Ġintersection",
+            "token_id": 33941,
+            "logprob": -3.4492,
+            "prob": 0.0318
+          },
+          {
+            "token": "Ġtop",
+            "token_id": 3808,
+            "logprob": -3.8008,
+            "prob": 0.0224
+          },
+          {
+            "token": "Ġcenter",
+            "token_id": 7524,
+            "logprob": -4.1211,
+            "prob": 0.0162
+          },
+          {
+            "token": "Ġcentre",
+            "token_id": 10590,
+            "logprob": -4.3398,
+            "prob": 0.013
+          },
+          {
+            "token": "Ġpoint",
+            "token_id": 3732,
+            "logprob": -4.4258,
+            "prob": 0.012
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġbottom",
+        "token_id": 12012,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 43,
+      "input_text": "What is the capital of Czechia? PragueĠisĠtheĠcapitalofĠtheĠCzechĠRepublic,ĠfrequentlyĠshortenedĠlocallyĠasĠ“Czechia.”ĠIt'sĠknownĠforĠarchitecturalĠmilestonesĠsuchsĠtheĠBaroqueĠPragueĠΚάστροĠandĠCharlieĠBridge.ĠIt'sĠsituatedĠacrossĠriversidesĠatĠtheĠbottom",
+      "tokens": [
+        "What",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "Ġof",
+        "ĠCzech",
+        "ia",
+        "?",
+        "P",
+        "rague",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "of",
+        "Ġthe",
+        "ĠCzech",
+        "ĠRepublic",
+        ",",
+        "Ġfrequently",
+        "Ġshortened",
+        "Ġlocally",
+        "Ġas",
+        "Ġ“",
+        "Czech",
+        "ia",
+        ".”",
+        "ĠIt",
+        "'s",
+        "Ġknown",
+        "Ġfor",
+        "Ġarchitectural",
+        "Ġmilestones",
+        "Ġsuch",
+        "s",
+        "Ġthe",
+        "ĠBaroque",
+        "ĠPrague",
+        "ĠΚάστρο",
+        "Ġand",
+        "ĠCharlie",
+        "ĠBridge",
+        ".",
+        "ĠIt",
+        "'s",
+        "Ġsituated",
+        "Ġacross",
+        "Ġrivers",
+        "ides",
+        "Ġat",
+        "Ġthe",
+        "Ġbottom"
+      ],
+      "token_ids": [
+        11214, 1801, 1690, 7784, 1719, 18106, 1804, 38, 55, 104592, 1801, 1690, 7784, 3010, 1690,
+        18106, 7190, 19, 17011, 74146, 25978, 1843, 7838, 113409, 1804, 46612, 2332, 1914, 4376,
+        1794, 31721, 99281, 3213, 90, 1690, 69773, 34606, 235672, 1728, 20637, 15706, 21, 2332,
+        1914, 24520, 6094, 34575, 3753, 1915, 1690, 12012
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġof",
+            "token_id": 1719,
+            "logprob": -0.0,
+            "prob": 1.0
+          },
+          {
+            "token": "of",
+            "token_id": 3010,
+            "logprob": -12.5312,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġ(",
+            "token_id": 1737,
+            "logprob": -12.7266,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġand",
+            "token_id": 1728,
+            "logprob": -14.2656,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġcủa",
+            "token_id": 3355,
+            "logprob": -14.3359,
+            "prob": 0.0
+          },
+          {
+            "token": ",",
+            "token_id": 19,
+            "logprob": -14.5469,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġin",
+            "token_id": 1709,
+            "logprob": -14.75,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġedge",
+            "token_id": 14505,
+            "logprob": -14.6562,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġfrom",
+            "token_id": 1988,
+            "logprob": -14.8047,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġשל",
+            "token_id": 5042,
+            "logprob": -14.8438,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġof",
+        "token_id": 1719,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 44,
+      "input_text": "What is the capital of Czechia? PragueĠisĠtheĠcapitalofĠtheĠCzechĠRepublic,ĠfrequentlyĠshortenedĠlocallyĠasĠ“Czechia.”ĠIt'sĠknownĠforĠarchitecturalĠmilestonesĠsuchsĠtheĠBaroqueĠPragueĠΚάστροĠandĠCharlieĠBridge.ĠIt'sĠsituatedĠacrossĠriversidesĠatĠtheĠbottomĠof",
+      "tokens": [
+        "What",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "Ġof",
+        "ĠCzech",
+        "ia",
+        "?",
+        "P",
+        "rague",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "of",
+        "Ġthe",
+        "ĠCzech",
+        "ĠRepublic",
+        ",",
+        "Ġfrequently",
+        "Ġshortened",
+        "Ġlocally",
+        "Ġas",
+        "Ġ“",
+        "Czech",
+        "ia",
+        ".”",
+        "ĠIt",
+        "'s",
+        "Ġknown",
+        "Ġfor",
+        "Ġarchitectural",
+        "Ġmilestones",
+        "Ġsuch",
+        "s",
+        "Ġthe",
+        "ĠBaroque",
+        "ĠPrague",
+        "ĠΚάστρο",
+        "Ġand",
+        "ĠCharlie",
+        "ĠBridge",
+        ".",
+        "ĠIt",
+        "'s",
+        "Ġsituated",
+        "Ġacross",
+        "Ġrivers",
+        "ides",
+        "Ġat",
+        "Ġthe",
+        "Ġbottom",
+        "Ġof"
+      ],
+      "token_ids": [
+        11214, 1801, 1690, 7784, 1719, 18106, 1804, 38, 55, 104592, 1801, 1690, 7784, 3010, 1690,
+        18106, 7190, 19, 17011, 74146, 25978, 1843, 7838, 113409, 1804, 46612, 2332, 1914, 4376,
+        1794, 31721, 99281, 3213, 90, 1690, 69773, 34606, 235672, 1728, 20637, 15706, 21, 2332,
+        1914, 24520, 6094, 34575, 3753, 1915, 1690, 12012, 1719
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġa",
+            "token_id": 1671,
+            "logprob": -0.0003,
+            "prob": 0.9995
+          },
+          {
+            "token": "Ġan",
+            "token_id": 1844,
+            "logprob": -8.8438,
+            "prob": 0.0001
+          },
+          {
+            "token": "ĠPrague",
+            "token_id": 34606,
+            "logprob": -9.4844,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġthe",
+            "token_id": 1690,
+            "logprob": -10.5234,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġhills",
+            "token_id": 41905,
+            "logprob": -11.3203,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠPet",
+            "token_id": 7253,
+            "logprob": -11.8828,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠHill",
+            "token_id": 9338,
+            "logprob": -12.2266,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠPra",
+            "token_id": 10075,
+            "logprob": -12.6094,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġhill",
+            "token_id": 27913,
+            "logprob": -12.9219,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠPrager",
+            "token_id": 232576,
+            "logprob": -13.2188,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġan",
+        "token_id": 1844,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 45,
+      "input_text": "What is the capital of Czechia? PragueĠisĠtheĠcapitalofĠtheĠCzechĠRepublic,ĠfrequentlyĠshortenedĠlocallyĠasĠ“Czechia.”ĠIt'sĠknownĠforĠarchitecturalĠmilestonesĠsuchsĠtheĠBaroqueĠPragueĠΚάστροĠandĠCharlieĠBridge.ĠIt'sĠsituatedĠacrossĠriversidesĠatĠtheĠbottomĠofĠan",
+      "tokens": [
+        "What",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "Ġof",
+        "ĠCzech",
+        "ia",
+        "?",
+        "P",
+        "rague",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "of",
+        "Ġthe",
+        "ĠCzech",
+        "ĠRepublic",
+        ",",
+        "Ġfrequently",
+        "Ġshortened",
+        "Ġlocally",
+        "Ġas",
+        "Ġ“",
+        "Czech",
+        "ia",
+        ".”",
+        "ĠIt",
+        "'s",
+        "Ġknown",
+        "Ġfor",
+        "Ġarchitectural",
+        "Ġmilestones",
+        "Ġsuch",
+        "s",
+        "Ġthe",
+        "ĠBaroque",
+        "ĠPrague",
+        "ĠΚάστρο",
+        "Ġand",
+        "ĠCharlie",
+        "ĠBridge",
+        ".",
+        "ĠIt",
+        "'s",
+        "Ġsituated",
+        "Ġacross",
+        "Ġrivers",
+        "ides",
+        "Ġat",
+        "Ġthe",
+        "Ġbottom",
+        "Ġof",
+        "Ġan"
+      ],
+      "token_ids": [
+        11214, 1801, 1690, 7784, 1719, 18106, 1804, 38, 55, 104592, 1801, 1690, 7784, 3010, 1690,
+        18106, 7190, 19, 17011, 74146, 25978, 1843, 7838, 113409, 1804, 46612, 2332, 1914, 4376,
+        1794, 31721, 99281, 3213, 90, 1690, 69773, 34606, 235672, 1728, 20637, 15706, 21, 2332,
+        1914, 24520, 6094, 34575, 3753, 1915, 1690, 12012, 1719, 1844
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġancient",
+            "token_id": 17030,
+            "logprob": -2.2285,
+            "prob": 0.1077
+          },
+          {
+            "token": "Ġescarp",
+            "token_id": 159146,
+            "logprob": -2.4629,
+            "prob": 0.0852
+          },
+          {
+            "token": "Ġundulating",
+            "token_id": 247576,
+            "logprob": -2.502,
+            "prob": 0.0819
+          },
+          {
+            "token": "Ġelongated",
+            "token_id": 118507,
+            "logprob": -3.0254,
+            "prob": 0.0485
+          },
+          {
+            "token": "Ġvalley",
+            "token_id": 30722,
+            "logprob": -3.5957,
+            "prob": 0.0274
+          },
+          {
+            "token": "Ġamphithe",
+            "token_id": 191525,
+            "logprob": -3.6816,
+            "prob": 0.0252
+          },
+          {
+            "token": "Ġupland",
+            "token_id": 244621,
+            "logprob": -3.7441,
+            "prob": 0.0237
+          },
+          {
+            "token": "Ġexpansive",
+            "token_id": 92186,
+            "logprob": -3.9004,
+            "prob": 0.0202
+          },
+          {
+            "token": "Ġincline",
+            "token_id": 181432,
+            "logprob": -3.9004,
+            "prob": 0.0202
+          },
+          {
+            "token": "Ġexpanse",
+            "token_id": 229607,
+            "logprob": -3.916,
+            "prob": 0.0199
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġundulating",
+        "token_id": 247576,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 46,
+      "input_text": "What is the capital of Czechia? PragueĠisĠtheĠcapitalofĠtheĠCzechĠRepublic,ĠfrequentlyĠshortenedĠlocallyĠasĠ“Czechia.”ĠIt'sĠknownĠforĠarchitecturalĠmilestonesĠsuchsĠtheĠBaroqueĠPragueĠΚάστροĠandĠCharlieĠBridge.ĠIt'sĠsituatedĠacrossĠriversidesĠatĠtheĠbottomĠofĠanĠundulating",
+      "tokens": [
+        "What",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "Ġof",
+        "ĠCzech",
+        "ia",
+        "?",
+        "P",
+        "rague",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "of",
+        "Ġthe",
+        "ĠCzech",
+        "ĠRepublic",
+        ",",
+        "Ġfrequently",
+        "Ġshortened",
+        "Ġlocally",
+        "Ġas",
+        "Ġ“",
+        "Czech",
+        "ia",
+        ".”",
+        "ĠIt",
+        "'s",
+        "Ġknown",
+        "Ġfor",
+        "Ġarchitectural",
+        "Ġmilestones",
+        "Ġsuch",
+        "s",
+        "Ġthe",
+        "ĠBaroque",
+        "ĠPrague",
+        "ĠΚάστρο",
+        "Ġand",
+        "ĠCharlie",
+        "ĠBridge",
+        ".",
+        "ĠIt",
+        "'s",
+        "Ġsituated",
+        "Ġacross",
+        "Ġrivers",
+        "ides",
+        "Ġat",
+        "Ġthe",
+        "Ġbottom",
+        "Ġof",
+        "Ġan",
+        "Ġundulating"
+      ],
+      "token_ids": [
+        11214, 1801, 1690, 7784, 1719, 18106, 1804, 38, 55, 104592, 1801, 1690, 7784, 3010, 1690,
+        18106, 7190, 19, 17011, 74146, 25978, 1843, 7838, 113409, 1804, 46612, 2332, 1914, 4376,
+        1794, 31721, 99281, 3213, 90, 1690, 69773, 34606, 235672, 1728, 20637, 15706, 21, 2332,
+        1914, 24520, 6094, 34575, 3753, 1915, 1690, 12012, 1719, 1844, 247576
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġhill",
+            "token_id": 27913,
+            "logprob": -0.0266,
+            "prob": 0.9736
+          },
+          {
+            "token": "Ġhills",
+            "token_id": 41905,
+            "logprob": -4.1992,
+            "prob": 0.015
+          },
+          {
+            "token": "Ġplateau",
+            "token_id": 52516,
+            "logprob": -5.668,
+            "prob": 0.0035
+          },
+          {
+            "token": "Ġhillside",
+            "token_id": 164760,
+            "logprob": -6.0586,
+            "prob": 0.0023
+          },
+          {
+            "token": "Ġhilltop",
+            "token_id": 247165,
+            "logprob": -6.6211,
+            "prob": 0.0013
+          },
+          {
+            "token": "ĠHill",
+            "token_id": 9338,
+            "logprob": -7.0117,
+            "prob": 0.0009
+          },
+          {
+            "token": "Ġridge",
+            "token_id": 60894,
+            "logprob": -7.3086,
+            "prob": 0.0007
+          },
+          {
+            "token": "Ġhilly",
+            "token_id": 153332,
+            "logprob": -7.8086,
+            "prob": 0.0004
+          },
+          {
+            "token": "Ġcolline",
+            "token_id": 107954,
+            "logprob": -8.4766,
+            "prob": 0.0002
+          },
+          {
+            "token": "Ġvalley",
+            "token_id": 30722,
+            "logprob": -8.5,
+            "prob": 0.0002
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġhilly",
+        "token_id": 153332,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 47,
+      "input_text": "What is the capital of Czechia? PragueĠisĠtheĠcapitalofĠtheĠCzechĠRepublic,ĠfrequentlyĠshortenedĠlocallyĠasĠ“Czechia.”ĠIt'sĠknownĠforĠarchitecturalĠmilestonesĠsuchsĠtheĠBaroqueĠPragueĠΚάστροĠandĠCharlieĠBridge.ĠIt'sĠsituatedĠacrossĠriversidesĠatĠtheĠbottomĠofĠanĠundulatingĠhilly",
+      "tokens": [
+        "What",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "Ġof",
+        "ĠCzech",
+        "ia",
+        "?",
+        "P",
+        "rague",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "of",
+        "Ġthe",
+        "ĠCzech",
+        "ĠRepublic",
+        ",",
+        "Ġfrequently",
+        "Ġshortened",
+        "Ġlocally",
+        "Ġas",
+        "Ġ“",
+        "Czech",
+        "ia",
+        ".”",
+        "ĠIt",
+        "'s",
+        "Ġknown",
+        "Ġfor",
+        "Ġarchitectural",
+        "Ġmilestones",
+        "Ġsuch",
+        "s",
+        "Ġthe",
+        "ĠBaroque",
+        "ĠPrague",
+        "ĠΚάστρο",
+        "Ġand",
+        "ĠCharlie",
+        "ĠBridge",
+        ".",
+        "ĠIt",
+        "'s",
+        "Ġsituated",
+        "Ġacross",
+        "Ġrivers",
+        "ides",
+        "Ġat",
+        "Ġthe",
+        "Ġbottom",
+        "Ġof",
+        "Ġan",
+        "Ġundulating",
+        "Ġhilly"
+      ],
+      "token_ids": [
+        11214, 1801, 1690, 7784, 1719, 18106, 1804, 38, 55, 104592, 1801, 1690, 7784, 3010, 1690,
+        18106, 7190, 19, 17011, 74146, 25978, 1843, 7838, 113409, 1804, 46612, 2332, 1914, 4376,
+        1794, 31721, 99281, 3213, 90, 1690, 69773, 34606, 235672, 1728, 20637, 15706, 21, 2332,
+        1914, 24520, 6094, 34575, 3753, 1915, 1690, 12012, 1719, 1844, 247576, 153332
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġlandscape",
+            "token_id": 21663,
+            "logprob": -0.0497,
+            "prob": 0.9517
+          },
+          {
+            "token": "Ġterrain",
+            "token_id": 27532,
+            "logprob": -3.4863,
+            "prob": 0.0306
+          },
+          {
+            "token": "Ġarea",
+            "token_id": 4345,
+            "logprob": -4.3789,
+            "prob": 0.0126
+          },
+          {
+            "token": "Ġplateau",
+            "token_id": 52516,
+            "logprob": -7.4102,
+            "prob": 0.0006
+          },
+          {
+            "token": "Ġregion",
+            "token_id": 6842,
+            "logprob": -7.4727,
+            "prob": 0.0006
+          },
+          {
+            "token": "Ġvalley",
+            "token_id": 30722,
+            "logprob": -7.6445,
+            "prob": 0.0005
+          },
+          {
+            "token": "Ġsetting",
+            "token_id": 10460,
+            "logprob": -7.7383,
+            "prob": 0.0004
+          },
+          {
+            "token": "Ġexpanse",
+            "token_id": 229607,
+            "logprob": -7.9414,
+            "prob": 0.0004
+          },
+          {
+            "token": "Ġterritory",
+            "token_id": 19709,
+            "logprob": -8.0312,
+            "prob": 0.0003
+          },
+          {
+            "token": "Ġcountryside",
+            "token_id": 63148,
+            "logprob": -8.0312,
+            "prob": 0.0003
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġlandscape",
+        "token_id": 21663,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 48,
+      "input_text": "What is the capital of Czechia? PragueĠisĠtheĠcapitalofĠtheĠCzechĠRepublic,ĠfrequentlyĠshortenedĠlocallyĠasĠ“Czechia.”ĠIt'sĠknownĠforĠarchitecturalĠmilestonesĠsuchsĠtheĠBaroqueĠPragueĠΚάστροĠandĠCharlieĠBridge.ĠIt'sĠsituatedĠacrossĠriversidesĠatĠtheĠbottomĠofĠanĠundulatingĠhillyĠlandscape",
+      "tokens": [
+        "What",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "Ġof",
+        "ĠCzech",
+        "ia",
+        "?",
+        "P",
+        "rague",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "of",
+        "Ġthe",
+        "ĠCzech",
+        "ĠRepublic",
+        ",",
+        "Ġfrequently",
+        "Ġshortened",
+        "Ġlocally",
+        "Ġas",
+        "Ġ“",
+        "Czech",
+        "ia",
+        ".”",
+        "ĠIt",
+        "'s",
+        "Ġknown",
+        "Ġfor",
+        "Ġarchitectural",
+        "Ġmilestones",
+        "Ġsuch",
+        "s",
+        "Ġthe",
+        "ĠBaroque",
+        "ĠPrague",
+        "ĠΚάστρο",
+        "Ġand",
+        "ĠCharlie",
+        "ĠBridge",
+        ".",
+        "ĠIt",
+        "'s",
+        "Ġsituated",
+        "Ġacross",
+        "Ġrivers",
+        "ides",
+        "Ġat",
+        "Ġthe",
+        "Ġbottom",
+        "Ġof",
+        "Ġan",
+        "Ġundulating",
+        "Ġhilly",
+        "Ġlandscape"
+      ],
+      "token_ids": [
+        11214, 1801, 1690, 7784, 1719, 18106, 1804, 38, 55, 104592, 1801, 1690, 7784, 3010, 1690,
+        18106, 7190, 19, 17011, 74146, 25978, 1843, 7838, 113409, 1804, 46612, 2332, 1914, 4376,
+        1794, 31721, 99281, 3213, 90, 1690, 69773, 34606, 235672, 1728, 20637, 15706, 21, 2332,
+        1914, 24520, 6094, 34575, 3753, 1915, 1690, 12012, 1719, 1844, 247576, 153332, 21663
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": ".",
+            "token_id": 21,
+            "logprob": -0.0097,
+            "prob": 0.9902
+          },
+          {
+            "token": ",",
+            "token_id": 19,
+            "logprob": -5.6797,
+            "prob": 0.0034
+          },
+          {
+            "token": "Ġin",
+            "token_id": 1709,
+            "logprob": -5.7578,
+            "prob": 0.0032
+          },
+          {
+            "token": "Ġand",
+            "token_id": 1728,
+            "logprob": -5.9766,
+            "prob": 0.0025
+          },
+          {
+            "token": "Ġwith",
+            "token_id": 1865,
+            "logprob": -9.2578,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġthat",
+            "token_id": 1875,
+            "logprob": -10.0703,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġon",
+            "token_id": 1812,
+            "logprob": -10.0703,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġ.",
+            "token_id": 2475,
+            "logprob": -10.2734,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġ(",
+            "token_id": 1737,
+            "logprob": -10.3672,
+            "prob": 0.0
+          },
+          {
+            "token": ";",
+            "token_id": 34,
+            "logprob": -10.4062,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": ";",
+        "token_id": 34,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 49,
+      "input_text": "What is the capital of Czechia? PragueĠisĠtheĠcapitalofĠtheĠCzechĠRepublic,ĠfrequentlyĠshortenedĠlocallyĠasĠ“Czechia.”ĠIt'sĠknownĠforĠarchitecturalĠmilestonesĠsuchsĠtheĠBaroqueĠPragueĠΚάστροĠandĠCharlieĠBridge.ĠIt'sĠsituatedĠacrossĠriversidesĠatĠtheĠbottomĠofĠanĠundulatingĠhillyĠlandscape;",
+      "tokens": [
+        "What",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "Ġof",
+        "ĠCzech",
+        "ia",
+        "?",
+        "P",
+        "rague",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "of",
+        "Ġthe",
+        "ĠCzech",
+        "ĠRepublic",
+        ",",
+        "Ġfrequently",
+        "Ġshortened",
+        "Ġlocally",
+        "Ġas",
+        "Ġ“",
+        "Czech",
+        "ia",
+        ".”",
+        "ĠIt",
+        "'s",
+        "Ġknown",
+        "Ġfor",
+        "Ġarchitectural",
+        "Ġmilestones",
+        "Ġsuch",
+        "s",
+        "Ġthe",
+        "ĠBaroque",
+        "ĠPrague",
+        "ĠΚάστρο",
+        "Ġand",
+        "ĠCharlie",
+        "ĠBridge",
+        ".",
+        "ĠIt",
+        "'s",
+        "Ġsituated",
+        "Ġacross",
+        "Ġrivers",
+        "ides",
+        "Ġat",
+        "Ġthe",
+        "Ġbottom",
+        "Ġof",
+        "Ġan",
+        "Ġundulating",
+        "Ġhilly",
+        "Ġlandscape",
+        ";"
+      ],
+      "token_ids": [
+        11214, 1801, 1690, 7784, 1719, 18106, 1804, 38, 55, 104592, 1801, 1690, 7784, 3010, 1690,
+        18106, 7190, 19, 17011, 74146, 25978, 1843, 7838, 113409, 1804, 46612, 2332, 1914, 4376,
+        1794, 31721, 99281, 3213, 90, 1690, 69773, 34606, 235672, 1728, 20637, 15706, 21, 2332,
+        1914, 24520, 6094, 34575, 3753, 1915, 1690, 12012, 1719, 1844, 247576, 153332, 21663, 34
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġthe",
+            "token_id": 1690,
+            "logprob": -0.0012,
+            "prob": 0.999
+          },
+          {
+            "token": "Ġthis",
+            "token_id": 2075,
+            "logprob": -7.4531,
+            "prob": 0.0006
+          },
+          {
+            "token": "Ġits",
+            "token_id": 2517,
+            "logprob": -8.4688,
+            "prob": 0.0002
+          },
+          {
+            "token": "Ġthese",
+            "token_id": 3172,
+            "logprob": -8.6094,
+            "prob": 0.0002
+          },
+          {
+            "token": "Ġat",
+            "token_id": 1915,
+            "logprob": -9.8281,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġrivers",
+            "token_id": 34575,
+            "logprob": -11.0,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġit",
+            "token_id": 1894,
+            "logprob": -11.0312,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġa",
+            "token_id": 1671,
+            "logprob": -11.2188,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġone",
+            "token_id": 2371,
+            "logprob": -11.7188,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġin",
+            "token_id": 1709,
+            "logprob": -11.8594,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġthe",
+        "token_id": 1690,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 50,
+      "input_text": "What is the capital of Czechia? PragueĠisĠtheĠcapitalofĠtheĠCzechĠRepublic,ĠfrequentlyĠshortenedĠlocallyĠasĠ“Czechia.”ĠIt'sĠknownĠforĠarchitecturalĠmilestonesĠsuchsĠtheĠBaroqueĠPragueĠΚάστροĠandĠCharlieĠBridge.ĠIt'sĠsituatedĠacrossĠriversidesĠatĠtheĠbottomĠofĠanĠundulatingĠhillyĠlandscape;Ġthe",
+      "tokens": [
+        "What",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "Ġof",
+        "ĠCzech",
+        "ia",
+        "?",
+        "P",
+        "rague",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "of",
+        "Ġthe",
+        "ĠCzech",
+        "ĠRepublic",
+        ",",
+        "Ġfrequently",
+        "Ġshortened",
+        "Ġlocally",
+        "Ġas",
+        "Ġ“",
+        "Czech",
+        "ia",
+        ".”",
+        "ĠIt",
+        "'s",
+        "Ġknown",
+        "Ġfor",
+        "Ġarchitectural",
+        "Ġmilestones",
+        "Ġsuch",
+        "s",
+        "Ġthe",
+        "ĠBaroque",
+        "ĠPrague",
+        "ĠΚάστρο",
+        "Ġand",
+        "ĠCharlie",
+        "ĠBridge",
+        ".",
+        "ĠIt",
+        "'s",
+        "Ġsituated",
+        "Ġacross",
+        "Ġrivers",
+        "ides",
+        "Ġat",
+        "Ġthe",
+        "Ġbottom",
+        "Ġof",
+        "Ġan",
+        "Ġundulating",
+        "Ġhilly",
+        "Ġlandscape",
+        ";",
+        "Ġthe"
+      ],
+      "token_ids": [
+        11214, 1801, 1690, 7784, 1719, 18106, 1804, 38, 55, 104592, 1801, 1690, 7784, 3010, 1690,
+        18106, 7190, 19, 17011, 74146, 25978, 1843, 7838, 113409, 1804, 46612, 2332, 1914, 4376,
+        1794, 31721, 99281, 3213, 90, 1690, 69773, 34606, 235672, 1728, 20637, 15706, 21, 2332,
+        1914, 24520, 6094, 34575, 3753, 1915, 1690, 12012, 1719, 1844, 247576, 153332, 21663, 34,
+        1690
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "ĠVlt",
+            "token_id": 135358,
+            "logprob": -0.0667,
+            "prob": 0.9355
+          },
+          {
+            "token": "Ġriver",
+            "token_id": 13500,
+            "logprob": -3.7852,
+            "prob": 0.0227
+          },
+          {
+            "token": "ĠRiver",
+            "token_id": 7092,
+            "logprob": -5.4336,
+            "prob": 0.0044
+          },
+          {
+            "token": "Ġrivers",
+            "token_id": 34575,
+            "logprob": -5.5039,
+            "prob": 0.0041
+          },
+          {
+            "token": "Ġcity",
+            "token_id": 5079,
+            "logprob": -5.9648,
+            "prob": 0.0026
+          },
+          {
+            "token": "Ġhistoric",
+            "token_id": 17943,
+            "logprob": -6.1836,
+            "prob": 0.0021
+          },
+          {
+            "token": "ĠPrague",
+            "token_id": 34606,
+            "logprob": -6.1992,
+            "prob": 0.002
+          },
+          {
+            "token": "Ġvast",
+            "token_id": 17564,
+            "logprob": -6.4414,
+            "prob": 0.0016
+          },
+          {
+            "token": "ĠVienna",
+            "token_id": 26792,
+            "logprob": -6.6602,
+            "prob": 0.0013
+          },
+          {
+            "token": "ĠThames",
+            "token_id": 55794,
+            "logprob": -6.8477,
+            "prob": 0.0011
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "ĠPrague",
+        "token_id": 34606,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 51,
+      "input_text": "What is the capital of Czechia? PragueĠisĠtheĠcapitalofĠtheĠCzechĠRepublic,ĠfrequentlyĠshortenedĠlocallyĠasĠ“Czechia.”ĠIt'sĠknownĠforĠarchitecturalĠmilestonesĠsuchsĠtheĠBaroqueĠPragueĠΚάστροĠandĠCharlieĠBridge.ĠIt'sĠsituatedĠacrossĠriversidesĠatĠtheĠbottomĠofĠanĠundulatingĠhillyĠlandscape;ĠtheĠPrague",
+      "tokens": [
+        "What",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "Ġof",
+        "ĠCzech",
+        "ia",
+        "?",
+        "P",
+        "rague",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "of",
+        "Ġthe",
+        "ĠCzech",
+        "ĠRepublic",
+        ",",
+        "Ġfrequently",
+        "Ġshortened",
+        "Ġlocally",
+        "Ġas",
+        "Ġ“",
+        "Czech",
+        "ia",
+        ".”",
+        "ĠIt",
+        "'s",
+        "Ġknown",
+        "Ġfor",
+        "Ġarchitectural",
+        "Ġmilestones",
+        "Ġsuch",
+        "s",
+        "Ġthe",
+        "ĠBaroque",
+        "ĠPrague",
+        "ĠΚάστρο",
+        "Ġand",
+        "ĠCharlie",
+        "ĠBridge",
+        ".",
+        "ĠIt",
+        "'s",
+        "Ġsituated",
+        "Ġacross",
+        "Ġrivers",
+        "ides",
+        "Ġat",
+        "Ġthe",
+        "Ġbottom",
+        "Ġof",
+        "Ġan",
+        "Ġundulating",
+        "Ġhilly",
+        "Ġlandscape",
+        ";",
+        "Ġthe",
+        "ĠPrague"
+      ],
+      "token_ids": [
+        11214, 1801, 1690, 7784, 1719, 18106, 1804, 38, 55, 104592, 1801, 1690, 7784, 3010, 1690,
+        18106, 7190, 19, 17011, 74146, 25978, 1843, 7838, 113409, 1804, 46612, 2332, 1914, 4376,
+        1794, 31721, 99281, 3213, 90, 1690, 69773, 34606, 235672, 1728, 20637, 15706, 21, 2332,
+        1914, 24520, 6094, 34575, 3753, 1915, 1690, 12012, 1719, 1844, 247576, 153332, 21663, 34,
+        1690, 34606
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "ĠBasin",
+            "token_id": 51934,
+            "logprob": -0.1068,
+            "prob": 0.8984
+          },
+          {
+            "token": "Ġbasin",
+            "token_id": 49480,
+            "logprob": -2.6074,
+            "prob": 0.0738
+          },
+          {
+            "token": "Ġcity",
+            "token_id": 5079,
+            "logprob": -4.5586,
+            "prob": 0.0105
+          },
+          {
+            "token": "ĠOr",
+            "token_id": 3052,
+            "logprob": -6.1211,
+            "prob": 0.0022
+          },
+          {
+            "token": "ĠCity",
+            "token_id": 4509,
+            "logprob": -6.418,
+            "prob": 0.0016
+          },
+          {
+            "token": "Ġskyline",
+            "token_id": 151307,
+            "logprob": -7.0039,
+            "prob": 0.0009
+          },
+          {
+            "token": "ĠReservoir",
+            "token_id": 74899,
+            "logprob": -7.2773,
+            "prob": 0.0007
+          },
+          {
+            "token": "Ġmetropolis",
+            "token_id": 148063,
+            "logprob": -7.5195,
+            "prob": 0.0005
+          },
+          {
+            "token": "ĠMetropolis",
+            "token_id": 104323,
+            "logprob": -7.6367,
+            "prob": 0.0005
+          },
+          {
+            "token": "盆地",
+            "token_id": 146770,
+            "logprob": -7.6914,
+            "prob": 0.0005
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "ĠOr",
+        "token_id": 3052,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 52,
+      "input_text": "What is the capital of Czechia? PragueĠisĠtheĠcapitalofĠtheĠCzechĠRepublic,ĠfrequentlyĠshortenedĠlocallyĠasĠ“Czechia.”ĠIt'sĠknownĠforĠarchitecturalĠmilestonesĠsuchsĠtheĠBaroqueĠPragueĠΚάστροĠandĠCharlieĠBridge.ĠIt'sĠsituatedĠacrossĠriversidesĠatĠtheĠbottomĠofĠanĠundulatingĠhillyĠlandscape;ĠtheĠPragueĠOr",
+      "tokens": [
+        "What",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "Ġof",
+        "ĠCzech",
+        "ia",
+        "?",
+        "P",
+        "rague",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "of",
+        "Ġthe",
+        "ĠCzech",
+        "ĠRepublic",
+        ",",
+        "Ġfrequently",
+        "Ġshortened",
+        "Ġlocally",
+        "Ġas",
+        "Ġ“",
+        "Czech",
+        "ia",
+        ".”",
+        "ĠIt",
+        "'s",
+        "Ġknown",
+        "Ġfor",
+        "Ġarchitectural",
+        "Ġmilestones",
+        "Ġsuch",
+        "s",
+        "Ġthe",
+        "ĠBaroque",
+        "ĠPrague",
+        "ĠΚάστρο",
+        "Ġand",
+        "ĠCharlie",
+        "ĠBridge",
+        ".",
+        "ĠIt",
+        "'s",
+        "Ġsituated",
+        "Ġacross",
+        "Ġrivers",
+        "ides",
+        "Ġat",
+        "Ġthe",
+        "Ġbottom",
+        "Ġof",
+        "Ġan",
+        "Ġundulating",
+        "Ġhilly",
+        "Ġlandscape",
+        ";",
+        "Ġthe",
+        "ĠPrague",
+        "ĠOr"
+      ],
+      "token_ids": [
+        11214, 1801, 1690, 7784, 1719, 18106, 1804, 38, 55, 104592, 1801, 1690, 7784, 3010, 1690,
+        18106, 7190, 19, 17011, 74146, 25978, 1843, 7838, 113409, 1804, 46612, 2332, 1914, 4376,
+        1794, 31721, 99281, 3213, 90, 1690, 69773, 34606, 235672, 1728, 20637, 15706, 21, 2332,
+        1914, 24520, 6094, 34575, 3753, 1915, 1690, 12012, 1719, 1844, 247576, 153332, 21663, 34,
+        1690, 34606, 3052
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "lop",
+            "token_id": 45719,
+            "logprob": -1.1699,
+            "prob": 0.3103
+          },
+          {
+            "token": "l",
+            "token_id": 83,
+            "logprob": -1.3574,
+            "prob": 0.2573
+          },
+          {
+            "token": "loj",
+            "token_id": 88212,
+            "logprob": -2.498,
+            "prob": 0.0822
+          },
+          {
+            "token": "lic",
+            "token_id": 2135,
+            "logprob": -2.9043,
+            "prob": 0.0547
+          },
+          {
+            "token": "lik",
+            "token_id": 8845,
+            "logprob": -3.1074,
+            "prob": 0.0447
+          },
+          {
+            "token": "lo",
+            "token_id": 2275,
+            "logprob": -3.248,
+            "prob": 0.0388
+          },
+          {
+            "token": "lon",
+            "token_id": 15861,
+            "logprob": -3.5605,
+            "prob": 0.0284
+          },
+          {
+            "token": "log",
+            "token_id": 3990,
+            "logprob": -3.9043,
+            "prob": 0.0201
+          },
+          {
+            "token": "lom",
+            "token_id": 11415,
+            "logprob": -4.125,
+            "prob": 0.0162
+          },
+          {
+            "token": "lus",
+            "token_id": 55878,
+            "logprob": -4.2656,
+            "prob": 0.0141
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "lus",
+        "token_id": 55878,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 53,
+      "input_text": "What is the capital of Czechia? PragueĠisĠtheĠcapitalofĠtheĠCzechĠRepublic,ĠfrequentlyĠshortenedĠlocallyĠasĠ“Czechia.”ĠIt'sĠknownĠforĠarchitecturalĠmilestonesĠsuchsĠtheĠBaroqueĠPragueĠΚάστροĠandĠCharlieĠBridge.ĠIt'sĠsituatedĠacrossĠriversidesĠatĠtheĠbottomĠofĠanĠundulatingĠhillyĠlandscape;ĠtheĠPragueĠOrlus",
+      "tokens": [
+        "What",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "Ġof",
+        "ĠCzech",
+        "ia",
+        "?",
+        "P",
+        "rague",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "of",
+        "Ġthe",
+        "ĠCzech",
+        "ĠRepublic",
+        ",",
+        "Ġfrequently",
+        "Ġshortened",
+        "Ġlocally",
+        "Ġas",
+        "Ġ“",
+        "Czech",
+        "ia",
+        ".”",
+        "ĠIt",
+        "'s",
+        "Ġknown",
+        "Ġfor",
+        "Ġarchitectural",
+        "Ġmilestones",
+        "Ġsuch",
+        "s",
+        "Ġthe",
+        "ĠBaroque",
+        "ĠPrague",
+        "ĠΚάστρο",
+        "Ġand",
+        "ĠCharlie",
+        "ĠBridge",
+        ".",
+        "ĠIt",
+        "'s",
+        "Ġsituated",
+        "Ġacross",
+        "Ġrivers",
+        "ides",
+        "Ġat",
+        "Ġthe",
+        "Ġbottom",
+        "Ġof",
+        "Ġan",
+        "Ġundulating",
+        "Ġhilly",
+        "Ġlandscape",
+        ";",
+        "Ġthe",
+        "ĠPrague",
+        "ĠOr",
+        "lus"
+      ],
+      "token_ids": [
+        11214, 1801, 1690, 7784, 1719, 18106, 1804, 38, 55, 104592, 1801, 1690, 7784, 3010, 1690,
+        18106, 7190, 19, 17011, 74146, 25978, 1843, 7838, 113409, 1804, 46612, 2332, 1914, 4376,
+        1794, 31721, 99281, 3213, 90, 1690, 69773, 34606, 235672, 1728, 20637, 15706, 21, 2332,
+        1914, 24520, 6094, 34575, 3753, 1915, 1690, 12012, 1719, 1844, 247576, 153332, 21663, 34,
+        1690, 34606, 3052, 55878
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġ(",
+            "token_id": 1737,
+            "logprob": -0.004,
+            "prob": 0.9961
+          },
+          {
+            "token": ",",
+            "token_id": 19,
+            "logprob": -5.5977,
+            "prob": 0.0037
+          },
+          {
+            "token": "Ġand",
+            "token_id": 1728,
+            "logprob": -8.3203,
+            "prob": 0.0002
+          },
+          {
+            "token": "Ġis",
+            "token_id": 1801,
+            "logprob": -12.4609,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġhas",
+            "token_id": 2222,
+            "logprob": -12.9609,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġ(\"",
+            "token_id": 7176,
+            "logprob": -13.1641,
+            "prob": 0.0
+          },
+          {
+            "token": "(",
+            "token_id": 15,
+            "logprob": -13.2266,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġin",
+            "token_id": 1709,
+            "logprob": -13.3203,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġ–",
+            "token_id": 2129,
+            "logprob": -13.5234,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġor",
+            "token_id": 1888,
+            "logprob": -13.9922,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġ(",
+        "token_id": 1737,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 54,
+      "input_text": "What is the capital of Czechia? PragueĠisĠtheĠcapitalofĠtheĠCzechĠRepublic,ĠfrequentlyĠshortenedĠlocallyĠasĠ“Czechia.”ĠIt'sĠknownĠforĠarchitecturalĠmilestonesĠsuchsĠtheĠBaroqueĠPragueĠΚάστροĠandĠCharlieĠBridge.ĠIt'sĠsituatedĠacrossĠriversidesĠatĠtheĠbottomĠofĠanĠundulatingĠhillyĠlandscape;ĠtheĠPragueĠOrlusĠ(",
+      "tokens": [
+        "What",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "Ġof",
+        "ĠCzech",
+        "ia",
+        "?",
+        "P",
+        "rague",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "of",
+        "Ġthe",
+        "ĠCzech",
+        "ĠRepublic",
+        ",",
+        "Ġfrequently",
+        "Ġshortened",
+        "Ġlocally",
+        "Ġas",
+        "Ġ“",
+        "Czech",
+        "ia",
+        ".”",
+        "ĠIt",
+        "'s",
+        "Ġknown",
+        "Ġfor",
+        "Ġarchitectural",
+        "Ġmilestones",
+        "Ġsuch",
+        "s",
+        "Ġthe",
+        "ĠBaroque",
+        "ĠPrague",
+        "ĠΚάστρο",
+        "Ġand",
+        "ĠCharlie",
+        "ĠBridge",
+        ".",
+        "ĠIt",
+        "'s",
+        "Ġsituated",
+        "Ġacross",
+        "Ġrivers",
+        "ides",
+        "Ġat",
+        "Ġthe",
+        "Ġbottom",
+        "Ġof",
+        "Ġan",
+        "Ġundulating",
+        "Ġhilly",
+        "Ġlandscape",
+        ";",
+        "Ġthe",
+        "ĠPrague",
+        "ĠOr",
+        "lus",
+        "Ġ("
+      ],
+      "token_ids": [
+        11214, 1801, 1690, 7784, 1719, 18106, 1804, 38, 55, 104592, 1801, 1690, 7784, 3010, 1690,
+        18106, 7190, 19, 17011, 74146, 25978, 1843, 7838, 113409, 1804, 46612, 2332, 1914, 4376,
+        1794, 31721, 99281, 3213, 90, 1690, 69773, 34606, 235672, 1728, 20637, 15706, 21, 2332,
+        1914, 24520, 6094, 34575, 3753, 1915, 1690, 12012, 1719, 1844, 247576, 153332, 21663, 34,
+        1690, 34606, 3052, 55878, 1737
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "P",
+            "token_id": 55,
+            "logprob": -0.0939,
+            "prob": 0.9102
+          },
+          {
+            "token": "p",
+            "token_id": 87,
+            "logprob": -3.2812,
+            "prob": 0.0376
+          },
+          {
+            "token": "the",
+            "token_id": 3798,
+            "logprob": -4.9375,
+            "prob": 0.0072
+          },
+          {
+            "token": "or",
+            "token_id": 1677,
+            "logprob": -5.6484,
+            "prob": 0.0035
+          },
+          {
+            "token": "e",
+            "token_id": 76,
+            "logprob": -5.6875,
+            "prob": 0.0034
+          },
+          {
+            "token": "1",
+            "token_id": 24,
+            "logprob": -6.0469,
+            "prob": 0.0024
+          },
+          {
+            "token": "E",
+            "token_id": 44,
+            "logprob": -6.4844,
+            "prob": 0.0015
+          },
+          {
+            "token": "St",
+            "token_id": 2445,
+            "logprob": -6.5,
+            "prob": 0.0015
+          },
+          {
+            "token": "in",
+            "token_id": 1670,
+            "logprob": -6.6641,
+            "prob": 0.0013
+          },
+          {
+            "token": "and",
+            "token_id": 1807,
+            "logprob": -6.6953,
+            "prob": 0.0012
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "1",
+        "token_id": 24,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 55,
+      "input_text": "What is the capital of Czechia? PragueĠisĠtheĠcapitalofĠtheĠCzechĠRepublic,ĠfrequentlyĠshortenedĠlocallyĠasĠ“Czechia.”ĠIt'sĠknownĠforĠarchitecturalĠmilestonesĠsuchsĠtheĠBaroqueĠPragueĠΚάστροĠandĠCharlieĠBridge.ĠIt'sĠsituatedĠacrossĠriversidesĠatĠtheĠbottomĠofĠanĠundulatingĠhillyĠlandscape;ĠtheĠPragueĠOrlusĠ(1",
+      "tokens": [
+        "What",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "Ġof",
+        "ĠCzech",
+        "ia",
+        "?",
+        "P",
+        "rague",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "of",
+        "Ġthe",
+        "ĠCzech",
+        "ĠRepublic",
+        ",",
+        "Ġfrequently",
+        "Ġshortened",
+        "Ġlocally",
+        "Ġas",
+        "Ġ“",
+        "Czech",
+        "ia",
+        ".”",
+        "ĠIt",
+        "'s",
+        "Ġknown",
+        "Ġfor",
+        "Ġarchitectural",
+        "Ġmilestones",
+        "Ġsuch",
+        "s",
+        "Ġthe",
+        "ĠBaroque",
+        "ĠPrague",
+        "ĠΚάστρο",
+        "Ġand",
+        "ĠCharlie",
+        "ĠBridge",
+        ".",
+        "ĠIt",
+        "'s",
+        "Ġsituated",
+        "Ġacross",
+        "Ġrivers",
+        "ides",
+        "Ġat",
+        "Ġthe",
+        "Ġbottom",
+        "Ġof",
+        "Ġan",
+        "Ġundulating",
+        "Ġhilly",
+        "Ġlandscape",
+        ";",
+        "Ġthe",
+        "ĠPrague",
+        "ĠOr",
+        "lus",
+        "Ġ(",
+        "1"
+      ],
+      "token_ids": [
+        11214, 1801, 1690, 7784, 1719, 18106, 1804, 38, 55, 104592, 1801, 1690, 7784, 3010, 1690,
+        18106, 7190, 19, 17011, 74146, 25978, 1843, 7838, 113409, 1804, 46612, 2332, 1914, 4376,
+        1794, 31721, 99281, 3213, 90, 1690, 69773, 34606, 235672, 1728, 20637, 15706, 21, 2332,
+        1914, 24520, 6094, 34575, 3753, 1915, 1690, 12012, 1719, 1844, 247576, 153332, 21663, 34,
+        1690, 34606, 3052, 55878, 1737, 24
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "1",
+            "token_id": 24,
+            "logprob": -0.7456,
+            "prob": 0.4744
+          },
+          {
+            "token": "0",
+            "token_id": 23,
+            "logprob": -1.3232,
+            "prob": 0.2661
+          },
+          {
+            "token": "8",
+            "token_id": 31,
+            "logprob": -2.6055,
+            "prob": 0.0739
+          },
+          {
+            "token": "3",
+            "token_id": 26,
+            "logprob": -2.6211,
+            "prob": 0.0728
+          },
+          {
+            "token": ",",
+            "token_id": 19,
+            "logprob": -2.668,
+            "prob": 0.0695
+          },
+          {
+            "token": "4",
+            "token_id": 27,
+            "logprob": -4.3711,
+            "prob": 0.0126
+          },
+          {
+            "token": "2",
+            "token_id": 25,
+            "logprob": -4.4961,
+            "prob": 0.0112
+          },
+          {
+            "token": "7",
+            "token_id": 30,
+            "logprob": -4.7305,
+            "prob": 0.0088
+          },
+          {
+            "token": "6",
+            "token_id": 29,
+            "logprob": -5.7461,
+            "prob": 0.0032
+          },
+          {
+            "token": ".",
+            "token_id": 21,
+            "logprob": -5.9805,
+            "prob": 0.0025
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "3",
+        "token_id": 26,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 56,
+      "input_text": "What is the capital of Czechia? PragueĠisĠtheĠcapitalofĠtheĠCzechĠRepublic,ĠfrequentlyĠshortenedĠlocallyĠasĠ“Czechia.”ĠIt'sĠknownĠforĠarchitecturalĠmilestonesĠsuchsĠtheĠBaroqueĠPragueĠΚάστροĠandĠCharlieĠBridge.ĠIt'sĠsituatedĠacrossĠriversidesĠatĠtheĠbottomĠofĠanĠundulatingĠhillyĠlandscape;ĠtheĠPragueĠOrlusĠ(13",
+      "tokens": [
+        "What",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "Ġof",
+        "ĠCzech",
+        "ia",
+        "?",
+        "P",
+        "rague",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "of",
+        "Ġthe",
+        "ĠCzech",
+        "ĠRepublic",
+        ",",
+        "Ġfrequently",
+        "Ġshortened",
+        "Ġlocally",
+        "Ġas",
+        "Ġ“",
+        "Czech",
+        "ia",
+        ".”",
+        "ĠIt",
+        "'s",
+        "Ġknown",
+        "Ġfor",
+        "Ġarchitectural",
+        "Ġmilestones",
+        "Ġsuch",
+        "s",
+        "Ġthe",
+        "ĠBaroque",
+        "ĠPrague",
+        "ĠΚάστρο",
+        "Ġand",
+        "ĠCharlie",
+        "ĠBridge",
+        ".",
+        "ĠIt",
+        "'s",
+        "Ġsituated",
+        "Ġacross",
+        "Ġrivers",
+        "ides",
+        "Ġat",
+        "Ġthe",
+        "Ġbottom",
+        "Ġof",
+        "Ġan",
+        "Ġundulating",
+        "Ġhilly",
+        "Ġlandscape",
+        ";",
+        "Ġthe",
+        "ĠPrague",
+        "ĠOr",
+        "lus",
+        "Ġ(",
+        "1",
+        "3"
+      ],
+      "token_ids": [
+        11214, 1801, 1690, 7784, 1719, 18106, 1804, 38, 55, 104592, 1801, 1690, 7784, 3010, 1690,
+        18106, 7190, 19, 17011, 74146, 25978, 1843, 7838, 113409, 1804, 46612, 2332, 1914, 4376,
+        1794, 31721, 99281, 3213, 90, 1690, 69773, 34606, 235672, 1728, 20637, 15706, 21, 2332,
+        1914, 24520, 6094, 34575, 3753, 1915, 1690, 12012, 1719, 1844, 247576, 153332, 21663, 34,
+        1690, 34606, 3052, 55878, 1737, 24, 26
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "5",
+            "token_id": 28,
+            "logprob": -0.0774,
+            "prob": 0.9258
+          },
+          {
+            "token": "4",
+            "token_id": 27,
+            "logprob": -2.9375,
+            "prob": 0.053
+          },
+          {
+            "token": "7",
+            "token_id": 30,
+            "logprob": -4.375,
+            "prob": 0.0126
+          },
+          {
+            "token": "0",
+            "token_id": 23,
+            "logprob": -6.1719,
+            "prob": 0.0021
+          },
+          {
+            "token": "th",
+            "token_id": 1811,
+            "logprob": -6.2031,
+            "prob": 0.002
+          },
+          {
+            "token": "6",
+            "token_id": 29,
+            "logprob": -6.2812,
+            "prob": 0.0019
+          },
+          {
+            "token": "Ġrivers",
+            "token_id": 34575,
+            "logprob": -7.5,
+            "prob": 0.0006
+          },
+          {
+            "token": "8",
+            "token_id": 31,
+            "logprob": -8.0312,
+            "prob": 0.0003
+          },
+          {
+            "token": "Ġpeaks",
+            "token_id": 60422,
+            "logprob": -8.0781,
+            "prob": 0.0003
+          },
+          {
+            "token": "2",
+            "token_id": 25,
+            "logprob": -8.2422,
+            "prob": 0.0003
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "2",
+        "token_id": 25,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 57,
+      "input_text": "What is the capital of Czechia? PragueĠisĠtheĠcapitalofĠtheĠCzechĠRepublic,ĠfrequentlyĠshortenedĠlocallyĠasĠ“Czechia.”ĠIt'sĠknownĠforĠarchitecturalĠmilestonesĠsuchsĠtheĠBaroqueĠPragueĠΚάστροĠandĠCharlieĠBridge.ĠIt'sĠsituatedĠacrossĠriversidesĠatĠtheĠbottomĠofĠanĠundulatingĠhillyĠlandscape;ĠtheĠPragueĠOrlusĠ(132",
+      "tokens": [
+        "What",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "Ġof",
+        "ĠCzech",
+        "ia",
+        "?",
+        "P",
+        "rague",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "of",
+        "Ġthe",
+        "ĠCzech",
+        "ĠRepublic",
+        ",",
+        "Ġfrequently",
+        "Ġshortened",
+        "Ġlocally",
+        "Ġas",
+        "Ġ“",
+        "Czech",
+        "ia",
+        ".”",
+        "ĠIt",
+        "'s",
+        "Ġknown",
+        "Ġfor",
+        "Ġarchitectural",
+        "Ġmilestones",
+        "Ġsuch",
+        "s",
+        "Ġthe",
+        "ĠBaroque",
+        "ĠPrague",
+        "ĠΚάστρο",
+        "Ġand",
+        "ĠCharlie",
+        "ĠBridge",
+        ".",
+        "ĠIt",
+        "'s",
+        "Ġsituated",
+        "Ġacross",
+        "Ġrivers",
+        "ides",
+        "Ġat",
+        "Ġthe",
+        "Ġbottom",
+        "Ġof",
+        "Ġan",
+        "Ġundulating",
+        "Ġhilly",
+        "Ġlandscape",
+        ";",
+        "Ġthe",
+        "ĠPrague",
+        "ĠOr",
+        "lus",
+        "Ġ(",
+        "1",
+        "3",
+        "2"
+      ],
+      "token_ids": [
+        11214, 1801, 1690, 7784, 1719, 18106, 1804, 38, 55, 104592, 1801, 1690, 7784, 3010, 1690,
+        18106, 7190, 19, 17011, 74146, 25978, 1843, 7838, 113409, 1804, 46612, 2332, 1914, 4376,
+        1794, 31721, 99281, 3213, 90, 1690, 69773, 34606, 235672, 1728, 20637, 15706, 21, 2332,
+        1914, 24520, 6094, 34575, 3753, 1915, 1690, 12012, 1719, 1844, 247576, 153332, 21663, 34,
+        1690, 34606, 3052, 55878, 1737, 24, 26, 25
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġmeters",
+            "token_id": 24754,
+            "logprob": -0.7554,
+            "prob": 0.47
+          },
+          {
+            "token": "m",
+            "token_id": 84,
+            "logprob": -0.8335,
+            "prob": 0.4346
+          },
+          {
+            "token": "Ġmetres",
+            "token_id": 22042,
+            "logprob": -2.7559,
+            "prob": 0.0636
+          },
+          {
+            "token": "Ġm",
+            "token_id": 1698,
+            "logprob": -3.8965,
+            "prob": 0.0203
+          },
+          {
+            "token": "-",
+            "token_id": 20,
+            "logprob": -5.5352,
+            "prob": 0.0039
+          },
+          {
+            "token": "Ġmeter",
+            "token_id": 22898,
+            "logprob": -5.8164,
+            "prob": 0.003
+          },
+          {
+            "token": "0",
+            "token_id": 23,
+            "logprob": -7.5977,
+            "prob": 0.0005
+          },
+          {
+            "token": "Ġmetre",
+            "token_id": 40610,
+            "logprob": -7.7461,
+            "prob": 0.0004
+          },
+          {
+            "token": "5",
+            "token_id": 28,
+            "logprob": -7.9648,
+            "prob": 0.0003
+          },
+          {
+            "token": "7",
+            "token_id": 30,
+            "logprob": -7.9648,
+            "prob": 0.0003
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġmetres",
+        "token_id": 22042,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 58,
+      "input_text": "What is the capital of Czechia? PragueĠisĠtheĠcapitalofĠtheĠCzechĠRepublic,ĠfrequentlyĠshortenedĠlocallyĠasĠ“Czechia.”ĠIt'sĠknownĠforĠarchitecturalĠmilestonesĠsuchsĠtheĠBaroqueĠPragueĠΚάστροĠandĠCharlieĠBridge.ĠIt'sĠsituatedĠacrossĠriversidesĠatĠtheĠbottomĠofĠanĠundulatingĠhillyĠlandscape;ĠtheĠPragueĠOrlusĠ(132Ġmetres",
+      "tokens": [
+        "What",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "Ġof",
+        "ĠCzech",
+        "ia",
+        "?",
+        "P",
+        "rague",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "of",
+        "Ġthe",
+        "ĠCzech",
+        "ĠRepublic",
+        ",",
+        "Ġfrequently",
+        "Ġshortened",
+        "Ġlocally",
+        "Ġas",
+        "Ġ“",
+        "Czech",
+        "ia",
+        ".”",
+        "ĠIt",
+        "'s",
+        "Ġknown",
+        "Ġfor",
+        "Ġarchitectural",
+        "Ġmilestones",
+        "Ġsuch",
+        "s",
+        "Ġthe",
+        "ĠBaroque",
+        "ĠPrague",
+        "ĠΚάστρο",
+        "Ġand",
+        "ĠCharlie",
+        "ĠBridge",
+        ".",
+        "ĠIt",
+        "'s",
+        "Ġsituated",
+        "Ġacross",
+        "Ġrivers",
+        "ides",
+        "Ġat",
+        "Ġthe",
+        "Ġbottom",
+        "Ġof",
+        "Ġan",
+        "Ġundulating",
+        "Ġhilly",
+        "Ġlandscape",
+        ";",
+        "Ġthe",
+        "ĠPrague",
+        "ĠOr",
+        "lus",
+        "Ġ(",
+        "1",
+        "3",
+        "2",
+        "Ġmetres"
+      ],
+      "token_ids": [
+        11214, 1801, 1690, 7784, 1719, 18106, 1804, 38, 55, 104592, 1801, 1690, 7784, 3010, 1690,
+        18106, 7190, 19, 17011, 74146, 25978, 1843, 7838, 113409, 1804, 46612, 2332, 1914, 4376,
+        1794, 31721, 99281, 3213, 90, 1690, 69773, 34606, 235672, 1728, 20637, 15706, 21, 2332,
+        1914, 24520, 6094, 34575, 3753, 1915, 1690, 12012, 1719, 1844, 247576, 153332, 21663, 34,
+        1690, 34606, 3052, 55878, 1737, 24, 26, 25, 22042
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "/",
+            "token_id": 22,
+            "logprob": -0.0655,
+            "prob": 0.9365
+          },
+          {
+            "token": ")",
+            "token_id": 16,
+            "logprob": -3.3633,
+            "prob": 0.0346
+          },
+          {
+            "token": "Ġhigh",
+            "token_id": 2974,
+            "logprob": -4.582,
+            "prob": 0.0102
+          },
+          {
+            "token": ",",
+            "token_id": 19,
+            "logprob": -4.7852,
+            "prob": 0.0084
+          },
+          {
+            "token": "Ġor",
+            "token_id": 1888,
+            "logprob": -5.1445,
+            "prob": 0.0058
+          },
+          {
+            "token": "Ġ/",
+            "token_id": 2531,
+            "logprob": -6.5508,
+            "prob": 0.0014
+          },
+          {
+            "token": "),",
+            "token_id": 1969,
+            "logprob": -7.1914,
+            "prob": 0.0008
+          },
+          {
+            "token": "Ġat",
+            "token_id": 1915,
+            "logprob": -7.2227,
+            "prob": 0.0007
+          },
+          {
+            "token": "Ġ(",
+            "token_id": 1737,
+            "logprob": -7.9883,
+            "prob": 0.0003
+          },
+          {
+            "token": "Ġ[",
+            "token_id": 2254,
+            "logprob": -8.1719,
+            "prob": 0.0003
+          }
+        ]
+      },
+      "selected_token": {
+        "token": ")",
+        "token_id": 16,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 59,
+      "input_text": "What is the capital of Czechia? PragueĠisĠtheĠcapitalofĠtheĠCzechĠRepublic,ĠfrequentlyĠshortenedĠlocallyĠasĠ“Czechia.”ĠIt'sĠknownĠforĠarchitecturalĠmilestonesĠsuchsĠtheĠBaroqueĠPragueĠΚάστροĠandĠCharlieĠBridge.ĠIt'sĠsituatedĠacrossĠriversidesĠatĠtheĠbottomĠofĠanĠundulatingĠhillyĠlandscape;ĠtheĠPragueĠOrlusĠ(132Ġmetres)",
+      "tokens": [
+        "What",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "Ġof",
+        "ĠCzech",
+        "ia",
+        "?",
+        "P",
+        "rague",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "of",
+        "Ġthe",
+        "ĠCzech",
+        "ĠRepublic",
+        ",",
+        "Ġfrequently",
+        "Ġshortened",
+        "Ġlocally",
+        "Ġas",
+        "Ġ“",
+        "Czech",
+        "ia",
+        ".”",
+        "ĠIt",
+        "'s",
+        "Ġknown",
+        "Ġfor",
+        "Ġarchitectural",
+        "Ġmilestones",
+        "Ġsuch",
+        "s",
+        "Ġthe",
+        "ĠBaroque",
+        "ĠPrague",
+        "ĠΚάστρο",
+        "Ġand",
+        "ĠCharlie",
+        "ĠBridge",
+        ".",
+        "ĠIt",
+        "'s",
+        "Ġsituated",
+        "Ġacross",
+        "Ġrivers",
+        "ides",
+        "Ġat",
+        "Ġthe",
+        "Ġbottom",
+        "Ġof",
+        "Ġan",
+        "Ġundulating",
+        "Ġhilly",
+        "Ġlandscape",
+        ";",
+        "Ġthe",
+        "ĠPrague",
+        "ĠOr",
+        "lus",
+        "Ġ(",
+        "1",
+        "3",
+        "2",
+        "Ġmetres",
+        ")"
+      ],
+      "token_ids": [
+        11214, 1801, 1690, 7784, 1719, 18106, 1804, 38, 55, 104592, 1801, 1690, 7784, 3010, 1690,
+        18106, 7190, 19, 17011, 74146, 25978, 1843, 7838, 113409, 1804, 46612, 2332, 1914, 4376,
+        1794, 31721, 99281, 3213, 90, 1690, 69773, 34606, 235672, 1728, 20637, 15706, 21, 2332,
+        1914, 24520, 6094, 34575, 3753, 1915, 1690, 12012, 1719, 1844, 247576, 153332, 21663, 34,
+        1690, 34606, 3052, 55878, 1737, 24, 26, 25, 22042, 16
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġoffers",
+            "token_id": 7346,
+            "logprob": -0.3474,
+            "prob": 0.7065
+          },
+          {
+            "token": "Ġis",
+            "token_id": 1801,
+            "logprob": -2.6133,
+            "prob": 0.0733
+          },
+          {
+            "token": "Ġoffer",
+            "token_id": 4465,
+            "logprob": -2.8164,
+            "prob": 0.0598
+          },
+          {
+            "token": "Ġtowers",
+            "token_id": 53667,
+            "logprob": -3.1758,
+            "prob": 0.0418
+          },
+          {
+            "token": "Ġaffords",
+            "token_id": 183150,
+            "logprob": -3.5195,
+            "prob": 0.0296
+          },
+          {
+            "token": "Ġprovides",
+            "token_id": 7144,
+            "logprob": -3.6758,
+            "prob": 0.0253
+          },
+          {
+            "token": "Ġdominates",
+            "token_id": 152811,
+            "logprob": -4.1445,
+            "prob": 0.0159
+          },
+          {
+            "token": "Ġdominate",
+            "token_id": 76542,
+            "logprob": -4.4258,
+            "prob": 0.012
+          },
+          {
+            "token": "Ġtower",
+            "token_id": 22804,
+            "logprob": -4.8008,
+            "prob": 0.0082
+          },
+          {
+            "token": "Ġand",
+            "token_id": 1728,
+            "logprob": -5.957,
+            "prob": 0.0026
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġaffords",
+        "token_id": 183150,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 60,
+      "input_text": "What is the capital of Czechia? PragueĠisĠtheĠcapitalofĠtheĠCzechĠRepublic,ĠfrequentlyĠshortenedĠlocallyĠasĠ“Czechia.”ĠIt'sĠknownĠforĠarchitecturalĠmilestonesĠsuchsĠtheĠBaroqueĠPragueĠΚάστροĠandĠCharlieĠBridge.ĠIt'sĠsituatedĠacrossĠriversidesĠatĠtheĠbottomĠofĠanĠundulatingĠhillyĠlandscape;ĠtheĠPragueĠOrlusĠ(132Ġmetres)Ġaffords",
+      "tokens": [
+        "What",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "Ġof",
+        "ĠCzech",
+        "ia",
+        "?",
+        "P",
+        "rague",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "of",
+        "Ġthe",
+        "ĠCzech",
+        "ĠRepublic",
+        ",",
+        "Ġfrequently",
+        "Ġshortened",
+        "Ġlocally",
+        "Ġas",
+        "Ġ“",
+        "Czech",
+        "ia",
+        ".”",
+        "ĠIt",
+        "'s",
+        "Ġknown",
+        "Ġfor",
+        "Ġarchitectural",
+        "Ġmilestones",
+        "Ġsuch",
+        "s",
+        "Ġthe",
+        "ĠBaroque",
+        "ĠPrague",
+        "ĠΚάστρο",
+        "Ġand",
+        "ĠCharlie",
+        "ĠBridge",
+        ".",
+        "ĠIt",
+        "'s",
+        "Ġsituated",
+        "Ġacross",
+        "Ġrivers",
+        "ides",
+        "Ġat",
+        "Ġthe",
+        "Ġbottom",
+        "Ġof",
+        "Ġan",
+        "Ġundulating",
+        "Ġhilly",
+        "Ġlandscape",
+        ";",
+        "Ġthe",
+        "ĠPrague",
+        "ĠOr",
+        "lus",
+        "Ġ(",
+        "1",
+        "3",
+        "2",
+        "Ġmetres",
+        ")",
+        "Ġaffords"
+      ],
+      "token_ids": [
+        11214, 1801, 1690, 7784, 1719, 18106, 1804, 38, 55, 104592, 1801, 1690, 7784, 3010, 1690,
+        18106, 7190, 19, 17011, 74146, 25978, 1843, 7838, 113409, 1804, 46612, 2332, 1914, 4376,
+        1794, 31721, 99281, 3213, 90, 1690, 69773, 34606, 235672, 1728, 20637, 15706, 21, 2332,
+        1914, 24520, 6094, 34575, 3753, 1915, 1690, 12012, 1719, 1844, 247576, 153332, 21663, 34,
+        1690, 34606, 3052, 55878, 1737, 24, 26, 25, 22042, 16, 183150
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġpanoramic",
+            "token_id": 111184,
+            "logprob": -0.0266,
+            "prob": 0.9736
+          },
+          {
+            "token": "Ġa",
+            "token_id": 1671,
+            "logprob": -4.3086,
+            "prob": 0.0135
+          },
+          {
+            "token": "Ġpanor",
+            "token_id": 81582,
+            "logprob": -6.4492,
+            "prob": 0.0016
+          },
+          {
+            "token": "Ġspectacular",
+            "token_id": 45795,
+            "logprob": -6.5742,
+            "prob": 0.0014
+          },
+          {
+            "token": "Ġpanoram",
+            "token_id": 161523,
+            "logprob": -6.6992,
+            "prob": 0.0012
+          },
+          {
+            "token": "Ġgreat",
+            "token_id": 4153,
+            "logprob": -7.043,
+            "prob": 0.0009
+          },
+          {
+            "token": "Ġfantastic",
+            "token_id": 24306,
+            "logprob": -7.1055,
+            "prob": 0.0008
+          },
+          {
+            "token": "Ġpanorama",
+            "token_id": 88898,
+            "logprob": -7.1992,
+            "prob": 0.0007
+          },
+          {
+            "token": "Ġexcellent",
+            "token_id": 12393,
+            "logprob": -7.293,
+            "prob": 0.0007
+          },
+          {
+            "token": "Ġstunning",
+            "token_id": 31796,
+            "logprob": -7.4961,
+            "prob": 0.0006
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġpanoramic",
+        "token_id": 111184,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 61,
+      "input_text": "What is the capital of Czechia? PragueĠisĠtheĠcapitalofĠtheĠCzechĠRepublic,ĠfrequentlyĠshortenedĠlocallyĠasĠ“Czechia.”ĠIt'sĠknownĠforĠarchitecturalĠmilestonesĠsuchsĠtheĠBaroqueĠPragueĠΚάστροĠandĠCharlieĠBridge.ĠIt'sĠsituatedĠacrossĠriversidesĠatĠtheĠbottomĠofĠanĠundulatingĠhillyĠlandscape;ĠtheĠPragueĠOrlusĠ(132Ġmetres)ĠaffordsĠpanoramic",
+      "tokens": [
+        "What",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "Ġof",
+        "ĠCzech",
+        "ia",
+        "?",
+        "P",
+        "rague",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "of",
+        "Ġthe",
+        "ĠCzech",
+        "ĠRepublic",
+        ",",
+        "Ġfrequently",
+        "Ġshortened",
+        "Ġlocally",
+        "Ġas",
+        "Ġ“",
+        "Czech",
+        "ia",
+        ".”",
+        "ĠIt",
+        "'s",
+        "Ġknown",
+        "Ġfor",
+        "Ġarchitectural",
+        "Ġmilestones",
+        "Ġsuch",
+        "s",
+        "Ġthe",
+        "ĠBaroque",
+        "ĠPrague",
+        "ĠΚάστρο",
+        "Ġand",
+        "ĠCharlie",
+        "ĠBridge",
+        ".",
+        "ĠIt",
+        "'s",
+        "Ġsituated",
+        "Ġacross",
+        "Ġrivers",
+        "ides",
+        "Ġat",
+        "Ġthe",
+        "Ġbottom",
+        "Ġof",
+        "Ġan",
+        "Ġundulating",
+        "Ġhilly",
+        "Ġlandscape",
+        ";",
+        "Ġthe",
+        "ĠPrague",
+        "ĠOr",
+        "lus",
+        "Ġ(",
+        "1",
+        "3",
+        "2",
+        "Ġmetres",
+        ")",
+        "Ġaffords",
+        "Ġpanoramic"
+      ],
+      "token_ids": [
+        11214, 1801, 1690, 7784, 1719, 18106, 1804, 38, 55, 104592, 1801, 1690, 7784, 3010, 1690,
+        18106, 7190, 19, 17011, 74146, 25978, 1843, 7838, 113409, 1804, 46612, 2332, 1914, 4376,
+        1794, 31721, 99281, 3213, 90, 1690, 69773, 34606, 235672, 1728, 20637, 15706, 21, 2332,
+        1914, 24520, 6094, 34575, 3753, 1915, 1690, 12012, 1719, 1844, 247576, 153332, 21663, 34,
+        1690, 34606, 3052, 55878, 1737, 24, 26, 25, 22042, 16, 183150, 111184
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġviews",
+            "token_id": 14378,
+            "logprob": -0.2352,
+            "prob": 0.7905
+          },
+          {
+            "token": "Ġcity",
+            "token_id": 5079,
+            "logprob": -1.626,
+            "prob": 0.1968
+          },
+          {
+            "token": "Ġvistas",
+            "token_id": 87605,
+            "logprob": -5.625,
+            "prob": 0.0036
+          },
+          {
+            "token": "Ġpanoramic",
+            "token_id": 111184,
+            "logprob": -6.0156,
+            "prob": 0.0024
+          },
+          {
+            "token": "Ġview",
+            "token_id": 5069,
+            "logprob": -6.2812,
+            "prob": 0.0019
+          },
+          {
+            "token": "Ġsights",
+            "token_id": 65188,
+            "logprob": -6.5625,
+            "prob": 0.0014
+          },
+          {
+            "token": "Ġpanor",
+            "token_id": 81582,
+            "logprob": -7.0938,
+            "prob": 0.0008
+          },
+          {
+            "token": "Ġsight",
+            "token_id": 25496,
+            "logprob": -7.4375,
+            "prob": 0.0006
+          },
+          {
+            "token": "Ġoutlook",
+            "token_id": 57899,
+            "logprob": -8.2656,
+            "prob": 0.0003
+          },
+          {
+            "token": ",",
+            "token_id": 19,
+            "logprob": -8.3906,
+            "prob": 0.0002
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġcity",
+        "token_id": 5079,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 62,
+      "input_text": "What is the capital of Czechia? PragueĠisĠtheĠcapitalofĠtheĠCzechĠRepublic,ĠfrequentlyĠshortenedĠlocallyĠasĠ“Czechia.”ĠIt'sĠknownĠforĠarchitecturalĠmilestonesĠsuchsĠtheĠBaroqueĠPragueĠΚάστροĠandĠCharlieĠBridge.ĠIt'sĠsituatedĠacrossĠriversidesĠatĠtheĠbottomĠofĠanĠundulatingĠhillyĠlandscape;ĠtheĠPragueĠOrlusĠ(132Ġmetres)ĠaffordsĠpanoramicĠcity",
+      "tokens": [
+        "What",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "Ġof",
+        "ĠCzech",
+        "ia",
+        "?",
+        "P",
+        "rague",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "of",
+        "Ġthe",
+        "ĠCzech",
+        "ĠRepublic",
+        ",",
+        "Ġfrequently",
+        "Ġshortened",
+        "Ġlocally",
+        "Ġas",
+        "Ġ“",
+        "Czech",
+        "ia",
+        ".”",
+        "ĠIt",
+        "'s",
+        "Ġknown",
+        "Ġfor",
+        "Ġarchitectural",
+        "Ġmilestones",
+        "Ġsuch",
+        "s",
+        "Ġthe",
+        "ĠBaroque",
+        "ĠPrague",
+        "ĠΚάστρο",
+        "Ġand",
+        "ĠCharlie",
+        "ĠBridge",
+        ".",
+        "ĠIt",
+        "'s",
+        "Ġsituated",
+        "Ġacross",
+        "Ġrivers",
+        "ides",
+        "Ġat",
+        "Ġthe",
+        "Ġbottom",
+        "Ġof",
+        "Ġan",
+        "Ġundulating",
+        "Ġhilly",
+        "Ġlandscape",
+        ";",
+        "Ġthe",
+        "ĠPrague",
+        "ĠOr",
+        "lus",
+        "Ġ(",
+        "1",
+        "3",
+        "2",
+        "Ġmetres",
+        ")",
+        "Ġaffords",
+        "Ġpanoramic",
+        "Ġcity"
+      ],
+      "token_ids": [
+        11214, 1801, 1690, 7784, 1719, 18106, 1804, 38, 55, 104592, 1801, 1690, 7784, 3010, 1690,
+        18106, 7190, 19, 17011, 74146, 25978, 1843, 7838, 113409, 1804, 46612, 2332, 1914, 4376,
+        1794, 31721, 99281, 3213, 90, 1690, 69773, 34606, 235672, 1728, 20637, 15706, 21, 2332,
+        1914, 24520, 6094, 34575, 3753, 1915, 1690, 12012, 1719, 1844, 247576, 153332, 21663, 34,
+        1690, 34606, 3052, 55878, 1737, 24, 26, 25, 22042, 16, 183150, 111184, 5079
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġviews",
+            "token_id": 14378,
+            "logprob": -0.0954,
+            "prob": 0.9092
+          },
+          {
+            "token": "Ġview",
+            "token_id": 5069,
+            "logprob": -3.1113,
+            "prob": 0.0446
+          },
+          {
+            "token": "Ġpanor",
+            "token_id": 81582,
+            "logprob": -4.1719,
+            "prob": 0.0154
+          },
+          {
+            "token": "Ġvistas",
+            "token_id": 87605,
+            "logprob": -4.25,
+            "prob": 0.0142
+          },
+          {
+            "token": "views",
+            "token_id": 29759,
+            "logprob": -5.3281,
+            "prob": 0.0048
+          },
+          {
+            "token": "Ġpanoramic",
+            "token_id": 111184,
+            "logprob": -6.0156,
+            "prob": 0.0024
+          },
+          {
+            "token": "scape",
+            "token_id": 191225,
+            "logprob": -6.1094,
+            "prob": 0.0022
+          },
+          {
+            "token": "Ġpanorama",
+            "token_id": 88898,
+            "logprob": -6.125,
+            "prob": 0.0022
+          },
+          {
+            "token": "Ġand",
+            "token_id": 1728,
+            "logprob": -6.1875,
+            "prob": 0.0021
+          },
+          {
+            "token": "-",
+            "token_id": 20,
+            "logprob": -7.4375,
+            "prob": 0.0006
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġviews",
+        "token_id": 14378,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 63,
+      "input_text": "What is the capital of Czechia? PragueĠisĠtheĠcapitalofĠtheĠCzechĠRepublic,ĠfrequentlyĠshortenedĠlocallyĠasĠ“Czechia.”ĠIt'sĠknownĠforĠarchitecturalĠmilestonesĠsuchsĠtheĠBaroqueĠPragueĠΚάστροĠandĠCharlieĠBridge.ĠIt'sĠsituatedĠacrossĠriversidesĠatĠtheĠbottomĠofĠanĠundulatingĠhillyĠlandscape;ĠtheĠPragueĠOrlusĠ(132Ġmetres)ĠaffordsĠpanoramicĠcityĠviews",
+      "tokens": [
+        "What",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "Ġof",
+        "ĠCzech",
+        "ia",
+        "?",
+        "P",
+        "rague",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "of",
+        "Ġthe",
+        "ĠCzech",
+        "ĠRepublic",
+        ",",
+        "Ġfrequently",
+        "Ġshortened",
+        "Ġlocally",
+        "Ġas",
+        "Ġ“",
+        "Czech",
+        "ia",
+        ".”",
+        "ĠIt",
+        "'s",
+        "Ġknown",
+        "Ġfor",
+        "Ġarchitectural",
+        "Ġmilestones",
+        "Ġsuch",
+        "s",
+        "Ġthe",
+        "ĠBaroque",
+        "ĠPrague",
+        "ĠΚάστρο",
+        "Ġand",
+        "ĠCharlie",
+        "ĠBridge",
+        ".",
+        "ĠIt",
+        "'s",
+        "Ġsituated",
+        "Ġacross",
+        "Ġrivers",
+        "ides",
+        "Ġat",
+        "Ġthe",
+        "Ġbottom",
+        "Ġof",
+        "Ġan",
+        "Ġundulating",
+        "Ġhilly",
+        "Ġlandscape",
+        ";",
+        "Ġthe",
+        "ĠPrague",
+        "ĠOr",
+        "lus",
+        "Ġ(",
+        "1",
+        "3",
+        "2",
+        "Ġmetres",
+        ")",
+        "Ġaffords",
+        "Ġpanoramic",
+        "Ġcity",
+        "Ġviews"
+      ],
+      "token_ids": [
+        11214, 1801, 1690, 7784, 1719, 18106, 1804, 38, 55, 104592, 1801, 1690, 7784, 3010, 1690,
+        18106, 7190, 19, 17011, 74146, 25978, 1843, 7838, 113409, 1804, 46612, 2332, 1914, 4376,
+        1794, 31721, 99281, 3213, 90, 1690, 69773, 34606, 235672, 1728, 20637, 15706, 21, 2332,
+        1914, 24520, 6094, 34575, 3753, 1915, 1690, 12012, 1719, 1844, 247576, 153332, 21663, 34,
+        1690, 34606, 3052, 55878, 1737, 24, 26, 25, 22042, 16, 183150, 111184, 5079, 14378
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": ".",
+            "token_id": 21,
+            "logprob": -0.0042,
+            "prob": 0.9956
+          },
+          {
+            "token": "Ġfrom",
+            "token_id": 1988,
+            "logprob": -5.8945,
+            "prob": 0.0028
+          },
+          {
+            "token": "Ġand",
+            "token_id": 1728,
+            "logprob": -7.3789,
+            "prob": 0.0006
+          },
+          {
+            "token": ",",
+            "token_id": 19,
+            "logprob": -7.8789,
+            "prob": 0.0004
+          },
+          {
+            "token": "Ġin",
+            "token_id": 1709,
+            "logprob": -9.3984,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġ(",
+            "token_id": 1737,
+            "logprob": -9.7109,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġover",
+            "token_id": 2515,
+            "logprob": -10.5391,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġat",
+            "token_id": 1915,
+            "logprob": -10.7422,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġas",
+            "token_id": 1843,
+            "logprob": -10.8047,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġwith",
+            "token_id": 1865,
+            "logprob": -10.8047,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": ".",
+        "token_id": 21,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 64,
+      "input_text": "What is the capital of Czechia? PragueĠisĠtheĠcapitalofĠtheĠCzechĠRepublic,ĠfrequentlyĠshortenedĠlocallyĠasĠ“Czechia.”ĠIt'sĠknownĠforĠarchitecturalĠmilestonesĠsuchsĠtheĠBaroqueĠPragueĠΚάστροĠandĠCharlieĠBridge.ĠIt'sĠsituatedĠacrossĠriversidesĠatĠtheĠbottomĠofĠanĠundulatingĠhillyĠlandscape;ĠtheĠPragueĠOrlusĠ(132Ġmetres)ĠaffordsĠpanoramicĠcityĠviews.",
+      "tokens": [
+        "What",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "Ġof",
+        "ĠCzech",
+        "ia",
+        "?",
+        "P",
+        "rague",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "of",
+        "Ġthe",
+        "ĠCzech",
+        "ĠRepublic",
+        ",",
+        "Ġfrequently",
+        "Ġshortened",
+        "Ġlocally",
+        "Ġas",
+        "Ġ“",
+        "Czech",
+        "ia",
+        ".”",
+        "ĠIt",
+        "'s",
+        "Ġknown",
+        "Ġfor",
+        "Ġarchitectural",
+        "Ġmilestones",
+        "Ġsuch",
+        "s",
+        "Ġthe",
+        "ĠBaroque",
+        "ĠPrague",
+        "ĠΚάστρο",
+        "Ġand",
+        "ĠCharlie",
+        "ĠBridge",
+        ".",
+        "ĠIt",
+        "'s",
+        "Ġsituated",
+        "Ġacross",
+        "Ġrivers",
+        "ides",
+        "Ġat",
+        "Ġthe",
+        "Ġbottom",
+        "Ġof",
+        "Ġan",
+        "Ġundulating",
+        "Ġhilly",
+        "Ġlandscape",
+        ";",
+        "Ġthe",
+        "ĠPrague",
+        "ĠOr",
+        "lus",
+        "Ġ(",
+        "1",
+        "3",
+        "2",
+        "Ġmetres",
+        ")",
+        "Ġaffords",
+        "Ġpanoramic",
+        "Ġcity",
+        "Ġviews",
+        "."
+      ],
+      "token_ids": [
+        11214, 1801, 1690, 7784, 1719, 18106, 1804, 38, 55, 104592, 1801, 1690, 7784, 3010, 1690,
+        18106, 7190, 19, 17011, 74146, 25978, 1843, 7838, 113409, 1804, 46612, 2332, 1914, 4376,
+        1794, 31721, 99281, 3213, 90, 1690, 69773, 34606, 235672, 1728, 20637, 15706, 21, 2332,
+        1914, 24520, 6094, 34575, 3753, 1915, 1690, 12012, 1719, 1844, 247576, 153332, 21663, 34,
+        1690, 34606, 3052, 55878, 1737, 24, 26, 25, 22042, 16, 183150, 111184, 5079, 14378, 21
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "<|END_OF_TURN_TOKEN|>",
+            "token_id": 255001,
+            "logprob": -0.5063,
+            "prob": 0.6025
+          },
+          {
+            "token": "ĠIts",
+            "token_id": 11708,
+            "logprob": -1.8184,
+            "prob": 0.1622
+          },
+          {
+            "token": "ĠThe",
+            "token_id": 1896,
+            "logprob": -2.584,
+            "prob": 0.0754
+          },
+          {
+            "token": "ĠAt",
+            "token_id": 3818,
+            "logprob": -2.6465,
+            "prob": 0.0709
+          },
+          {
+            "token": "ĠIn",
+            "token_id": 2020,
+            "logprob": -3.834,
+            "prob": 0.0216
+          },
+          {
+            "token": "ĠA",
+            "token_id": 1736,
+            "logprob": -4.0234,
+            "prob": 0.0179
+          },
+          {
+            "token": "ĠHistoric",
+            "token_id": 18822,
+            "logprob": -4.3594,
+            "prob": 0.0128
+          },
+          {
+            "token": "ĠSince",
+            "token_id": 11550,
+            "logprob": -6.0312,
+            "prob": 0.0024
+          },
+          {
+            "token": "ĠIt",
+            "token_id": 2332,
+            "logprob": -6.0469,
+            "prob": 0.0024
+          },
+          {
+            "token": "ĠPrague",
+            "token_id": 34606,
+            "logprob": -6.6328,
+            "prob": 0.0013
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "<|END_OF_TURN_TOKEN|>",
+        "token_id": 255001,
+        "selection_method": "sampling"
+      }
+    }
+  ]
+}
