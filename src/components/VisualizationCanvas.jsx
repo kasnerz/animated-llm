@@ -116,6 +116,54 @@ function VisualizationCanvas() {
     }
   }, [state.currentExampleId, state.language]);
 
+  // Also clear visualization when resetting to the beginning (currentStep === 0)
+  // so that pressing 'r' (reset) wipes the canvas even if the example doesn't change.
+  useEffect(() => {
+    if (!svgRef.current) return;
+    if (state.currentStep !== 0) return;
+
+    // Kill any running animations
+    if (gsapRef.current && typeof gsapRef.current.kill === 'function') {
+      try {
+        gsapRef.current.kill();
+      } catch (e) {
+        console.debug('GSAP kill failed (safe to ignore):', e);
+      }
+      gsapRef.current = null;
+    }
+
+    // Clear SVGs
+    try {
+      d3.select(svgRef.current).selectAll('*').remove();
+      if (labelsSvgRef.current) d3.select(labelsSvgRef.current).selectAll('*').remove();
+    } catch (e) {
+      console.debug('Clearing SVG failed (safe to ignore):', e);
+    }
+
+    // Reset local UI state (deferred to avoid setState-in-effect lint and cascading renders)
+    const deferReset = () => {
+      setEmbeddingExpanded({});
+      setScrollLeft(0);
+      tokensLayoutRef.current = {
+        positions: [],
+        widths: [],
+        visibleIndices: [],
+        gap: 24,
+        shouldCollapse: false,
+      };
+      // Reset scroll position of the scroll container
+      if (scrollRef.current) {
+        try {
+          scrollRef.current.scrollLeft = 0;
+        } catch (e) {
+          console.debug('Reset scroll failed (safe to ignore):', e);
+        }
+      }
+    };
+    if (typeof queueMicrotask === 'function') queueMicrotask(deferReset);
+    else setTimeout(deferReset, 0);
+  }, [state.currentStep]);
+
   // Track horizontal scroll to align the collapse toggle with the ellipsis axis
   useEffect(() => {
     const el = scrollRef.current;
@@ -124,6 +172,23 @@ function VisualizationCanvas() {
     el.addEventListener('scroll', onScroll, { passive: true });
     return () => el.removeEventListener('scroll', onScroll);
   }, []);
+
+  // Keyboard shortcut: 'e' toggles collapse/expand of the middle tokens section
+  // Matches interruptive behavior: pause animation if playing, then toggle
+  useEffect(() => {
+    const onKeyDown = (e) => {
+      if (!e || e.target.matches('input, textarea')) return;
+      if (e.code === 'KeyE') {
+        e.preventDefault();
+        if (state.isPlaying) {
+          actions.setIsPlaying(false);
+        }
+        setIsExpanded((v) => !v);
+      }
+    };
+    window.addEventListener('keydown', onKeyDown);
+    return () => window.removeEventListener('keydown', onKeyDown);
+  }, [state.isPlaying, actions]);
 
   // Render visualization based on current step
   useEffect(() => {

@@ -88,6 +88,41 @@ function AppContent() {
         return;
       }
 
+      // N: skip to next token (end of current step)
+      if (e.code === 'KeyN') {
+        e.preventDefault();
+        if (!state.currentExample) return;
+        if (state.currentStep === 0) {
+          // Start the very first step
+          actions.nextStep();
+          actions.setIsPlaying(false);
+          completionGuardRef.current = { step: -1, sub: -1 };
+          return;
+        }
+        // If playing, pause first
+        if (state.isPlaying) {
+          actions.setIsPlaying(false);
+        }
+        // Skip to the end of the current token's visualization
+        actions.skipToNextToken();
+        completionGuardRef.current = { step: -1, sub: -1 };
+        return;
+      }
+
+      // G: skip to end of generation (all tokens)
+      if (e.code === 'KeyG') {
+        e.preventDefault();
+        if (!state.currentExample) return;
+        // If playing, pause first
+        if (state.isPlaying) {
+          actions.setIsPlaying(false);
+        }
+        // Skip to the very end showing all generated tokens
+        actions.skipToEnd();
+        completionGuardRef.current = { step: -1, sub: -1 };
+        return;
+      }
+
       // R: reset
       if (e.code === 'KeyR') {
         e.preventDefault();
@@ -113,6 +148,7 @@ function AppContent() {
   }, [
     state.currentStep,
     state.currentExample,
+    state.currentExampleId,
     state.currentAnimationSubStep,
     state.isPlaying,
     actions,

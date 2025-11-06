@@ -19,6 +19,8 @@ const ActionTypes = {
   NEXT_STEP: 'NEXT_STEP',
   NEXT_ANIMATION_SUB_STEP: 'NEXT_ANIMATION_SUB_STEP',
   PREV_ANIMATION_SUB_STEP: 'PREV_ANIMATION_SUB_STEP',
+  SKIP_TO_NEXT_TOKEN: 'SKIP_TO_NEXT_TOKEN',
+  SKIP_TO_END: 'SKIP_TO_END',
   RESET: 'RESET',
   STEP_ANIMATION_COMPLETE: 'STEP_ANIMATION_COMPLETE',
 
@@ -289,6 +291,57 @@ function appReducer(state, action) {
       };
     }
 
+    case ActionTypes.SKIP_TO_NEXT_TOKEN: {
+      // Skip to the end of the current token generation (last sub-step)
+      // This shows the selected token immediately without animating through all sub-steps
+      if (!state.currentExample) return state;
+
+      // Pause if playing; jump to highlight of the next token in the row (sub-step 10)
+      const highlightSubStep = 10;
+
+      return {
+        ...state,
+        currentAnimationSubStep: highlightSubStep,
+        isPlaying: false,
+        instantTransition: true,
+      };
+    }
+
+    case ActionTypes.SKIP_TO_END: {
+      // Skip to the very end of generation, showing all generated tokens
+      if (!state.currentExample) return state;
+
+      const steps = state.currentExample.generation_steps || [];
+      if (steps.length === 0) return state;
+
+      // Build the full generated answer by concatenating all selected tokens
+      const inputTokensCount = steps[0]?.tokens?.length || 0;
+      let fullAnswer = '';
+      const allGeneratedTokens = [];
+
+      steps.forEach((step, idx) => {
+        const selectedTok = step?.selected_token?.token ?? '';
+        fullAnswer += selectedTok;
+        const tokenIndex = inputTokensCount + idx;
+        allGeneratedTokens.push({ token: selectedTok, index: tokenIndex });
+      });
+
+      // Go to the last step's last sub-step
+      return {
+        ...state,
+        currentStep: steps.length,
+        currentAnimationSubStep: 12,
+        currentTransformerLayer: Math.max(
+          0,
+          (state.currentExample?.model_info?.num_layers || 1) - 1
+        ),
+        generatedAnswer: fullAnswer,
+        generatedTokens: allGeneratedTokens,
+        isPlaying: false,
+        instantTransition: true,
+      };
+    }
+
     case ActionTypes.RESET:
       return {
         ...state,
@@ -490,6 +543,20 @@ export function AppProvider({ children }) {
   }, []);
 
   /**
+   * Skip to the next token (end of current step)
+   */
+  const skipToNextToken = useCallback(() => {
+    dispatch({ type: ActionTypes.SKIP_TO_NEXT_TOKEN });
+  }, []);
+
+  /**
+   * Skip to the end of generation (all tokens)
+   */
+  const skipToEnd = useCallback(() => {
+    dispatch({ type: ActionTypes.SKIP_TO_END });
+  }, []);
+
+  /**
    * Reset to initial prompt
    */
   const reset = useCallback(() => {
@@ -599,6 +666,8 @@ export function AppProvider({ children }) {
       nextStep,
       nextAnimationSubStep,
       prevAnimationSubStep,
+      skipToNextToken,
+      skipToEnd,
       reset,
       toggleTheme,
       toggleLanguage,
