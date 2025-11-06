@@ -1,9 +1,12 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { AppProvider, useApp } from './contexts/AppContext';
 import { I18nProvider, useI18n } from './i18n/I18nProvider';
 import InputSection from './components/InputSection';
 import GeneratedAnswer from './components/GeneratedAnswer';
 import VisualizationCanvas from './components/VisualizationCanvas';
+import KeyboardShortcutsModal from './components/KeyboardShortcutsModal';
+import Icon from '@mdi/react';
+import { mdiKeyboard } from '@mdi/js';
 import { config } from './config';
 import './index.css';
 
@@ -13,6 +16,7 @@ import './index.css';
 function AppContent() {
   const { state, actions } = useApp();
   const { t, language, toggleLanguage } = useI18n();
+  const [isKeyboardShortcutsOpen, setIsKeyboardShortcutsOpen] = useState(false);
   // Guard to avoid invoking step completion multiple times while state is catching up
   const completionGuardRef = useRef({ step: -1, sub: -1 });
 
@@ -88,24 +92,30 @@ function AppContent() {
         return;
       }
 
-      // N: skip to next token (end of current step)
+      // N: finish current token and move to the next (repeatable)
       if (e.code === 'KeyN') {
         e.preventDefault();
         if (!state.currentExample) return;
-        if (state.currentStep === 0) {
-          // Start the very first step
-          actions.nextStep();
-          actions.setIsPlaying(false);
-          completionGuardRef.current = { step: -1, sub: -1 };
-          return;
-        }
         // If playing, pause first
         if (state.isPlaying) {
           actions.setIsPlaying(false);
         }
-        // Skip to the end of the current token's visualization
-        actions.skipToNextToken();
-        completionGuardRef.current = { step: -1, sub: -1 };
+        if (state.currentStep === 0) {
+          // From initial state: start and immediately complete first token
+          actions.nextStep();
+          actions.onStepAnimationComplete(false);
+          completionGuardRef.current = { step: -1, sub: -1 };
+          return;
+        }
+        // Complete token manually; remain paused at next step
+        const key = { step: state.currentStep, sub: state.currentAnimationSubStep };
+        const last = completionGuardRef.current;
+        if (last.step === key.step && last.sub === key.sub) {
+          // already completed for this edge; ignore key repeat
+          return;
+        }
+        completionGuardRef.current = key;
+        actions.onStepAnimationComplete(false);
         return;
       }
 
@@ -130,15 +140,21 @@ function AppContent() {
         return;
       }
       // T: toggle theme
-      if (e.code === 'KeyT' && e.ctrlKey) {
+      if (e.code === 'KeyT') {
         e.preventDefault();
         actions.toggleTheme();
         return;
       }
       // L: toggle language
-      if (e.code === 'KeyL' && e.ctrlKey) {
+      if (e.code === 'KeyL') {
         e.preventDefault();
         toggleLanguage();
+        return;
+      }
+      // H or ?: show keyboard shortcuts
+      if (e.code === 'KeyH' || (e.code === 'Slash' && e.shiftKey)) {
+        e.preventDefault();
+        setIsKeyboardShortcutsOpen(true);
         return;
       }
     };
@@ -233,6 +249,14 @@ function AppContent() {
       {/* Header controls - minimal */}
       <div className="header-controls">
         <button
+          onClick={() => setIsKeyboardShortcutsOpen(true)}
+          className="icon-button-minimal"
+          title={t('keyboard_shortcuts')}
+          aria-label={t('keyboard_shortcuts')}
+        >
+          <Icon path={mdiKeyboard} size={1.4} color="#555" />
+        </button>
+        <button
           onClick={actions.toggleTheme}
           className="icon-button-minimal"
           title={t('toggle_theme')}
@@ -249,6 +273,12 @@ function AppContent() {
           {language === 'en' ? '🇬🇧' : '🇨🇿'}
         </button>
       </div>
+
+      {/* Keyboard Shortcuts Modal */}
+      <KeyboardShortcutsModal
+        isOpen={isKeyboardShortcutsOpen}
+        onClose={() => setIsKeyboardShortcutsOpen(false)}
+      />
 
       {/* Floating top section */}
       <div className="floating-top-section">

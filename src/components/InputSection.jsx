@@ -1,11 +1,12 @@
 import { useApp } from '../contexts/AppContext';
 import { useI18n } from '../i18n/I18nProvider';
-import { useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { getTokenColor } from '../visualization/core/colors';
 import { processTokenForText } from '../utils/tokenProcessing';
+import { MODEL_REGISTRY, getModelInfo, getTemperatureEmoji } from '../config/modelConfig';
 import '../styles/main.css';
 import Icon from '@mdi/react';
-import { mdiPlay, mdiPause, mdiChevronDown } from '@mdi/js';
+import { mdiPlay, mdiPause, mdiChevronDown, mdiTune } from '@mdi/js';
 
 /**
  * InputSection Component
@@ -15,9 +16,9 @@ function InputSection() {
   const { state, actions } = useApp();
   const { t } = useI18n();
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isSettingsOpen, setIsSettingsOpen] = useState(false);
 
-  const handleExampleChange = (index) => {
-    const exampleId = state.examples[index].id;
+  const handleExampleChange = (exampleId) => {
     actions.loadExample(exampleId);
     setIsDropdownOpen(false);
   };
@@ -33,8 +34,34 @@ function InputSection() {
     actions.setIsPlaying(!state.isPlaying);
   };
 
-  // Find current example index
-  const currentIndex = state.examples.findIndex((ex) => ex.id === state.currentExampleId);
+  // Filter examples by selected model and temperature
+  const filteredExamples = useMemo(() => {
+    const modelEntry = MODEL_REGISTRY[state.selectedModelIndex];
+    const modelPattern = modelEntry
+      ? typeof modelEntry.pattern === 'string'
+        ? new RegExp(modelEntry.pattern, 'i')
+        : modelEntry.pattern
+      : null;
+
+    return state.examples.filter((ex) => {
+      const byModel = modelPattern ? modelPattern.test(ex.model_id || '') : true;
+      const byTemp = getTemperatureEmoji(ex.temperature) === state.selectedTemperatureEmoji;
+      return byModel && byTemp;
+    });
+  }, [state.examples, state.selectedModelIndex, state.selectedTemperatureEmoji]);
+
+  // Find current example index within filtered list
+  const currentIndex = filteredExamples.findIndex((ex) => ex.id === state.currentExampleId);
+
+  // Ensure current example matches filter; if not, auto-load first matching
+  useEffect(() => {
+    if (!state.currentExampleId && filteredExamples.length > 0) return; // will load on language load
+    const isCurrentValid = filteredExamples.some((ex) => ex.id === state.currentExampleId);
+    if (!isCurrentValid && filteredExamples.length > 0) {
+      actions.loadExample(filteredExamples[0].id);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [state.selectedModelIndex, state.selectedTemperatureEmoji, filteredExamples.length]);
 
   // Get tokens from the initial step if visualization has started
   const shouldShowTokens = state.currentStep > 0 && state.currentExample;
@@ -46,12 +73,15 @@ function InputSection() {
       {state.currentExample && (
         <div className="prompt-container">
           <div className="chat-input-wrapper">
-            <div className="chat-input-box">
+            <div className="chat-input-box" onClick={() => setIsDropdownOpen(!isDropdownOpen)}>
               {/* Dropdown selector */}
               <div className="prompt-dropdown">
                 <button
                   className="dropdown-toggle"
-                  onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setIsDropdownOpen(!isDropdownOpen);
+                  }}
                   aria-label="Select prompt"
                 >
                   <Icon path={mdiChevronDown} size={0.65} />
@@ -59,17 +89,14 @@ function InputSection() {
 
                 {isDropdownOpen && (
                   <div className="dropdown-menu">
-                    {state.examples.map((example, index) => (
+                    {filteredExamples.map((example, index) => (
                       <button
                         key={example.id}
                         className={`dropdown-item ${index === currentIndex ? 'active' : ''}`}
-                        onClick={() => handleExampleChange(index)}
+                        onClick={() => handleExampleChange(example.id)}
                       >
                         <div className="dropdown-item-content">
                           <span className="dropdown-item-prompt">{example.prompt}</span>
-                          {example.model_id && (
-                            <span className="dropdown-item-model">{example.model_id}</span>
-                          )}
                         </div>
                       </button>
                     ))}
@@ -96,14 +123,82 @@ function InputSection() {
                   state.currentExample.prompt
                 )}
               </div>
+              {/* Settings toggle (model & temperature) */}
               <button
-                onClick={handlePlayPause}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setIsSettingsOpen((v) => !v);
+                  setIsDropdownOpen(false);
+                }}
+                className="btn-settings"
+                aria-label={t('settings') || 'Model and temperature'}
+                title={t('settings') || 'Model and temperature'}
+              >
+                <Icon path={mdiTune} size={0.9} />
+              </button>
+
+              {/* Play/Pause */}
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  handlePlayPause();
+                }}
                 className="btn-play"
                 aria-label={state.isPlaying ? t('pause') : t('play')}
                 title={state.isPlaying ? t('pause') : t('play')}
               >
                 <Icon path={state.isPlaying ? mdiPause : mdiPlay} size={0.7} />
               </button>
+
+              {isSettingsOpen && (
+                <div className="settings-popover" onClick={(e) => e.stopPropagation()}>
+                  <div className="settings-section">
+                    <div className="settings-label">Model</div>
+                    <div className="model-options">
+                      {MODEL_REGISTRY.map((entry, idx) => (
+                        <button
+                          key={idx}
+                          className={`model-option ${state.selectedModelIndex === idx ? 'selected' : ''}`}
+                          onClick={() => {
+                            actions.setSelectedModelIndex(idx);
+                            setIsSettingsOpen(false);
+                          }}
+                          title={getModelInfo(entry.pattern.toString())?.name || 'Model'}
+                          aria-label={`Model ${idx + 1}`}
+                        >
+                          <img
+                            src={`/src/assets/model-logos/${entry.logo}`}
+                            alt=""
+                            className="model-logo"
+                          />
+                          <span className="model-size">{entry.size}</span>
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                  <div className="settings-section">
+                    <div className="settings-label">Temp</div>
+                    <div className="temp-options">
+                      {['🧊', '🌡️', '🌶️'].map((emoji) => (
+                        <button
+                          key={emoji}
+                          className={`temp-option ${state.selectedTemperatureEmoji === emoji ? 'selected' : ''}`}
+                          onClick={() => {
+                            actions.setSelectedTemperatureEmoji(emoji);
+                            setIsSettingsOpen(false);
+                          }}
+                          aria-label={`Temperature ${emoji}`}
+                          title={`Temperature ${emoji}`}
+                        >
+                          <span className="temp-emoji" aria-hidden>
+                            {emoji}
+                          </span>
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         </div>

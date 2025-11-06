@@ -34,6 +34,10 @@ const ActionTypes = {
   SET_IS_PLAYING: 'SET_IS_PLAYING',
   SET_IS_PAUSED: 'SET_IS_PAUSED',
   SET_AUTO_GENERATE: 'SET_AUTO_GENERATE',
+
+  // Model/temperature selection
+  SET_SELECTED_MODEL_INDEX: 'SET_SELECTED_MODEL_INDEX',
+  SET_SELECTED_TEMPERATURE_EMOJI: 'SET_SELECTED_TEMPERATURE_EMOJI',
 };
 
 // Initial state
@@ -65,6 +69,11 @@ const initialState = {
   // Loading state
   isLoading: false,
   error: null,
+
+  // Model and temperature configuration (decoupled from examples)
+  // Default to first model (index 0) and neutral temperature 🌡️
+  selectedModelIndex: 0,
+  selectedTemperatureEmoji: '🌡️',
 };
 
 // Reducer function
@@ -459,6 +468,18 @@ function appReducer(state, action) {
         autoGenerate: !!action.payload.autoGenerate,
       };
 
+    case ActionTypes.SET_SELECTED_MODEL_INDEX:
+      return {
+        ...state,
+        selectedModelIndex: action.payload.index,
+      };
+
+    case ActionTypes.SET_SELECTED_TEMPERATURE_EMOJI:
+      return {
+        ...state,
+        selectedTemperatureEmoji: action.payload.emoji,
+      };
+
     default:
       return state;
   }
@@ -627,6 +648,22 @@ export function AppProvider({ children }) {
     });
   }, []);
 
+  /** Set selected model by index in MODEL_REGISTRY */
+  const setSelectedModelIndex = useCallback((index) => {
+    dispatch({
+      type: ActionTypes.SET_SELECTED_MODEL_INDEX,
+      payload: { index },
+    });
+  }, []);
+
+  /** Set selected temperature emoji (🧊 | 🌡️ | 🌶️) */
+  const setSelectedTemperatureEmoji = useCallback((emoji) => {
+    dispatch({
+      type: ActionTypes.SET_SELECTED_TEMPERATURE_EMOJI,
+      payload: { emoji },
+    });
+  }, []);
+
   /**
    * Called when a step's visualization animation completes.
    * Appends the selected token to the generated answer, and
@@ -676,6 +713,8 @@ export function AppProvider({ children }) {
       setIsPlaying,
       setIsPaused,
       setAutoGenerate,
+      setSelectedModelIndex,
+      setSelectedTemperatureEmoji,
       onStepAnimationComplete,
     },
   };

@@ -1,0 +1,4277 @@
+{
+  "id": "generated_20251106_140441",
+  "prompt": "Hello world!",
+  "language": "en",
+  "temperature": 0.0,
+  "top_k": 10,
+  "model_info": {
+    "name": "CohereLabs/aya-expanse-8b",
+    "num_layers": 32,
+    "hidden_size": 4096,
+    "num_attention_heads": 32,
+    "vocab_size": 256000
+  },
+  "generation_steps": [
+    {
+      "step": 0,
+      "input_text": "Hello world!",
+      "tokens": ["Hello", "Ġworld", "!"],
+      "token_ids": [28339, 3845, 8],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Hello",
+            "token_id": 28339,
+            "logprob": -0.0,
+            "prob": 1.0
+          },
+          {
+            "token": "Hi",
+            "token_id": 37535,
+            "logprob": -10.9219,
+            "prob": 0.0
+          },
+          {
+            "token": "Greet",
+            "token_id": 172869,
+            "logprob": -11.6406,
+            "prob": 0.0
+          },
+          {
+            "token": "It",
+            "token_id": 3472,
+            "logprob": -12.6719,
+            "prob": 0.0
+          },
+          {
+            "token": "Welcome",
+            "token_id": 42446,
+            "logprob": -12.8281,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠHello",
+            "token_id": 46609,
+            "logprob": -13.0312,
+            "prob": 0.0
+          },
+          {
+            "token": "Hey",
+            "token_id": 48261,
+            "logprob": -14.0,
+            "prob": 0.0
+          },
+          {
+            "token": "Thank",
+            "token_id": 37244,
+            "logprob": -14.6875,
+            "prob": 0.0
+          },
+          {
+            "token": "I",
+            "token_id": 48,
+            "logprob": -15.2812,
+            "prob": 0.0
+          },
+          {
+            "token": "H",
+            "token_id": 47,
+            "logprob": -15.5938,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Hello",
+        "token_id": 28339,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 1,
+      "input_text": "Hello world! Hello",
+      "tokens": ["Hello", "Ġworld", "!", "Hello"],
+      "token_ids": [28339, 3845, 8, 28339],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "!",
+            "token_id": 8,
+            "logprob": -0.0018,
+            "prob": 0.998
+          },
+          {
+            "token": "Ġthere",
+            "token_id": 2782,
+            "logprob": -6.6875,
+            "prob": 0.0012
+          },
+          {
+            "token": "Ġto",
+            "token_id": 1726,
+            "logprob": -7.5312,
+            "prob": 0.0005
+          },
+          {
+            "token": ",",
+            "token_id": 19,
+            "logprob": -12.75,
+            "prob": 0.0
+          },
+          {
+            "token": "!\\",
+            "token_id": 104731,
+            "logprob": -13.875,
+            "prob": 0.0
+          },
+          {
+            "token": "!**",
+            "token_id": 238128,
+            "logprob": -14.1562,
+            "prob": 0.0
+          },
+          {
+            "token": "!)",
+            "token_id": 26211,
+            "logprob": -14.9062,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġback",
+            "token_id": 3080,
+            "logprob": -15.0781,
+            "prob": 0.0
+          },
+          {
+            "token": "！",
+            "token_id": 23911,
+            "logprob": -15.375,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġindeed",
+            "token_id": 29255,
+            "logprob": -15.3594,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "!",
+        "token_id": 8,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 2,
+      "input_text": "Hello world! Hello!",
+      "tokens": ["Hello", "Ġworld", "!", "Hello", "!"],
+      "token_ids": [28339, 3845, 8, 28339, 8],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "ĠHow",
+            "token_id": 4070,
+            "logprob": -0.2255,
+            "prob": 0.7983
+          },
+          {
+            "token": "ĠIt",
+            "token_id": 2332,
+            "logprob": -1.6787,
+            "prob": 0.1866
+          },
+          {
+            "token": "ĠI",
+            "token_id": 1767,
+            "logprob": -4.4766,
+            "prob": 0.0114
+          },
+          {
+            "token": "ĠWelcome",
+            "token_id": 50328,
+            "logprob": -6.1641,
+            "prob": 0.0021
+          },
+          {
+            "token": "ĠThat",
+            "token_id": 6466,
+            "logprob": -7.7266,
+            "prob": 0.0004
+          },
+          {
+            "token": "ĠIs",
+            "token_id": 3294,
+            "logprob": -8.1484,
+            "prob": 0.0003
+          },
+          {
+            "token": "ĠNice",
+            "token_id": 34030,
+            "logprob": -8.6328,
+            "prob": 0.0002
+          },
+          {
+            "token": "ĠWhat",
+            "token_id": 8300,
+            "logprob": -8.7109,
+            "prob": 0.0002
+          },
+          {
+            "token": "ĠAs",
+            "token_id": 3143,
+            "logprob": -9.0078,
+            "prob": 0.0001
+          },
+          {
+            "token": "ĠThis",
+            "token_id": 2708,
+            "logprob": -9.0234,
+            "prob": 0.0001
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "ĠHow",
+        "token_id": 4070,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 3,
+      "input_text": "Hello world! Hello!ĠHow",
+      "tokens": ["Hello", "Ġworld", "!", "Hello", "!", "ĠHow"],
+      "token_ids": [28339, 3845, 8, 28339, 8, 4070],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġcan",
+            "token_id": 2063,
+            "logprob": -0.0002,
+            "prob": 1.0
+          },
+          {
+            "token": "Ġmay",
+            "token_id": 2729,
+            "logprob": -8.6562,
+            "prob": 0.0002
+          },
+          {
+            "token": "Ġare",
+            "token_id": 1955,
+            "logprob": -12.125,
+            "prob": 0.0
+          },
+          {
+            "token": "'s",
+            "token_id": 1914,
+            "logprob": -13.25,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġcould",
+            "token_id": 3645,
+            "logprob": -13.2656,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠCan",
+            "token_id": 3733,
+            "logprob": -13.6719,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġmight",
+            "token_id": 5408,
+            "logprob": -13.9688,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġkann",
+            "token_id": 28963,
+            "logprob": -15.3906,
+            "prob": 0.0
+          },
+          {
+            "token": "can",
+            "token_id": 6645,
+            "logprob": -15.6797,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠI",
+            "token_id": 1767,
+            "logprob": -16.1094,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġcan",
+        "token_id": 2063,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 4,
+      "input_text": "Hello world! Hello!ĠHowĠcan",
+      "tokens": ["Hello", "Ġworld", "!", "Hello", "!", "ĠHow", "Ġcan"],
+      "token_ids": [28339, 3845, 8, 28339, 8, 4070, 2063],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "ĠI",
+            "token_id": 1767,
+            "logprob": -0.0,
+            "prob": 1.0
+          },
+          {
+            "token": "Ġi",
+            "token_id": 2305,
+            "logprob": -14.7344,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġassist",
+            "token_id": 6385,
+            "logprob": -15.1094,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġwe",
+            "token_id": 2076,
+            "logprob": -15.375,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġyou",
+            "token_id": 1933,
+            "logprob": -15.3281,
+            "prob": 0.0
+          },
+          {
+            "token": "I",
+            "token_id": 48,
+            "logprob": -15.5625,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġassistance",
+            "token_id": 16266,
+            "logprob": -16.7812,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠAssist",
+            "token_id": 74008,
+            "logprob": -17.2969,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġя",
+            "token_id": 3981,
+            "logprob": -16.9531,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠAss",
+            "token_id": 3880,
+            "logprob": -17.1875,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "ĠI",
+        "token_id": 1767,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 5,
+      "input_text": "Hello world! Hello!ĠHowĠcanĠI",
+      "tokens": ["Hello", "Ġworld", "!", "Hello", "!", "ĠHow", "Ġcan", "ĠI"],
+      "token_ids": [28339, 3845, 8, 28339, 8, 4070, 2063, 1767],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġassist",
+            "token_id": 6385,
+            "logprob": -0.0226,
+            "prob": 0.9775
+          },
+          {
+            "token": "Ġhelp",
+            "token_id": 3153,
+            "logprob": -3.8047,
+            "prob": 0.0223
+          },
+          {
+            "token": "Ġassistance",
+            "token_id": 16266,
+            "logprob": -10.8984,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġassists",
+            "token_id": 34567,
+            "logprob": -11.7422,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġaid",
+            "token_id": 17157,
+            "logprob": -12.1797,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġbe",
+            "token_id": 1818,
+            "logprob": -12.9531,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠAssist",
+            "token_id": 74008,
+            "logprob": -13.1094,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġprovide",
+            "token_id": 4815,
+            "logprob": -13.2812,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġassistant",
+            "token_id": 17091,
+            "logprob": -13.2812,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġasist",
+            "token_id": 31511,
+            "logprob": -13.4844,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġassist",
+        "token_id": 6385,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 6,
+      "input_text": "Hello world! Hello!ĠHowĠcanĠIĠassist",
+      "tokens": ["Hello", "Ġworld", "!", "Hello", "!", "ĠHow", "Ġcan", "ĠI", "Ġassist"],
+      "token_ids": [28339, 3845, 8, 28339, 8, 4070, 2063, 1767, 6385],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġyou",
+            "token_id": 1933,
+            "logprob": -0.0,
+            "prob": 1.0
+          },
+          {
+            "token": "你",
+            "token_id": 23972,
+            "logprob": -17.1094,
+            "prob": 0.0
+          },
+          {
+            "token": "you",
+            "token_id": 17004,
+            "logprob": -17.1719,
+            "prob": 0.0
+          },
+          {
+            "token": "<PAD>",
+            "token_id": 0,
+            "logprob": -37.1875,
+            "prob": 0.0
+          },
+          {
+            "token": "<EOS_TOKEN>",
+            "token_id": 6,
+            "logprob": -26.4688,
+            "prob": 0.0
+          },
+          {
+            "token": "<SEP>",
+            "token_id": 3,
+            "logprob": -36.9688,
+            "prob": 0.0
+          },
+          {
+            "token": "<BOS_TOKEN>",
+            "token_id": 5,
+            "logprob": -39.625,
+            "prob": 0.0
+          },
+          {
+            "token": "<MASK_TOKEN>",
+            "token_id": 4,
+            "logprob": -37.25,
+            "prob": 0.0
+          },
+          {
+            "token": "<UNK>",
+            "token_id": 1,
+            "logprob": -36.1875,
+            "prob": 0.0
+          },
+          {
+            "token": "<CLS>",
+            "token_id": 2,
+            "logprob": -36.9375,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġyou",
+        "token_id": 1933,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 7,
+      "input_text": "Hello world! Hello!ĠHowĠcanĠIĠassistĠyou",
+      "tokens": ["Hello", "Ġworld", "!", "Hello", "!", "ĠHow", "Ġcan", "ĠI", "Ġassist", "Ġyou"],
+      "token_ids": [28339, 3845, 8, 28339, 8, 4070, 2063, 1767, 6385, 1933],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġtoday",
+            "token_id": 6683,
+            "logprob": -0.0,
+            "prob": 1.0
+          },
+          {
+            "token": "Ġhoy",
+            "token_id": 40058,
+            "logprob": -17.2969,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠToday",
+            "token_id": 17063,
+            "logprob": -17.0625,
+            "prob": 0.0
+          },
+          {
+            "token": "?",
+            "token_id": 38,
+            "logprob": -16.875,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġtonight",
+            "token_id": 58125,
+            "logprob": -16.8594,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġtomorrow",
+            "token_id": 40331,
+            "logprob": -17.1875,
+            "prob": 0.0
+          },
+          {
+            "token": "<CLS>",
+            "token_id": 2,
+            "logprob": -39.7812,
+            "prob": 0.0
+          },
+          {
+            "token": "<SEP>",
+            "token_id": 3,
+            "logprob": -39.625,
+            "prob": 0.0
+          },
+          {
+            "token": "<UNK>",
+            "token_id": 1,
+            "logprob": -38.7812,
+            "prob": 0.0
+          },
+          {
+            "token": "<PAD>",
+            "token_id": 0,
+            "logprob": -39.7812,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġtoday",
+        "token_id": 6683,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 8,
+      "input_text": "Hello world! Hello!ĠHowĠcanĠIĠassistĠyouĠtoday",
+      "tokens": [
+        "Hello",
+        "Ġworld",
+        "!",
+        "Hello",
+        "!",
+        "ĠHow",
+        "Ġcan",
+        "ĠI",
+        "Ġassist",
+        "Ġyou",
+        "Ġtoday"
+      ],
+      "token_ids": [28339, 3845, 8, 28339, 8, 4070, 2063, 1767, 6385, 1933, 6683],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "?",
+            "token_id": 38,
+            "logprob": -0.0,
+            "prob": 1.0
+          },
+          {
+            "token": "?\\",
+            "token_id": 137636,
+            "logprob": -13.7656,
+            "prob": 0.0
+          },
+          {
+            "token": ",",
+            "token_id": 19,
+            "logprob": -14.6406,
+            "prob": 0.0
+          },
+          {
+            "token": "？",
+            "token_id": 33176,
+            "logprob": -15.1719,
+            "prob": 0.0
+          },
+          {
+            "token": "؟",
+            "token_id": 120600,
+            "logprob": -15.3906,
+            "prob": 0.0
+          },
+          {
+            "token": "?\"",
+            "token_id": 13470,
+            "logprob": -16.0938,
+            "prob": 0.0
+          },
+          {
+            "token": "?!",
+            "token_id": 64509,
+            "logprob": -17.2969,
+            "prob": 0.0
+          },
+          {
+            "token": "?**",
+            "token_id": 126429,
+            "logprob": -16.3906,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġ?",
+            "token_id": 5691,
+            "logprob": -16.3125,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġ(",
+            "token_id": 1737,
+            "logprob": -17.25,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "?",
+        "token_id": 38,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 9,
+      "input_text": "Hello world! Hello!ĠHowĠcanĠIĠassistĠyouĠtoday?",
+      "tokens": [
+        "Hello",
+        "Ġworld",
+        "!",
+        "Hello",
+        "!",
+        "ĠHow",
+        "Ġcan",
+        "ĠI",
+        "Ġassist",
+        "Ġyou",
+        "Ġtoday",
+        "?"
+      ],
+      "token_ids": [28339, 3845, 8, 28339, 8, 4070, 2063, 1767, 6385, 1933, 6683, 38],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "ĠIf",
+            "token_id": 3490,
+            "logprob": -0.7607,
+            "prob": 0.4673
+          },
+          {
+            "token": "\n",
+            "token_id": 206,
+            "logprob": -1.3232,
+            "prob": 0.2664
+          },
+          {
+            "token": "ĠI",
+            "token_id": 1767,
+            "logprob": -1.8857,
+            "prob": 0.1517
+          },
+          {
+            "token": "<|END_OF_TURN_TOKEN|>",
+            "token_id": 255001,
+            "logprob": -2.2598,
+            "prob": 0.1043
+          },
+          {
+            "token": "ĠIt",
+            "token_id": 2332,
+            "logprob": -5.3086,
+            "prob": 0.005
+          },
+          {
+            "token": "ĠWhether",
+            "token_id": 19121,
+            "logprob": -5.7305,
+            "prob": 0.0032
+          },
+          {
+            "token": "ĠAs",
+            "token_id": 3143,
+            "logprob": -7.2773,
+            "prob": 0.0007
+          },
+          {
+            "token": "ĠMy",
+            "token_id": 5309,
+            "logprob": -7.8242,
+            "prob": 0.0004
+          },
+          {
+            "token": "Ġ\n",
+            "token_id": 1973,
+            "logprob": -8.3203,
+            "prob": 0.0002
+          },
+          {
+            "token": "ĠIs",
+            "token_id": 3294,
+            "logprob": -8.4297,
+            "prob": 0.0002
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "ĠIf",
+        "token_id": 3490,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 10,
+      "input_text": "Hello world! Hello!ĠHowĠcanĠIĠassistĠyouĠtoday?ĠIf",
+      "tokens": [
+        "Hello",
+        "Ġworld",
+        "!",
+        "Hello",
+        "!",
+        "ĠHow",
+        "Ġcan",
+        "ĠI",
+        "Ġassist",
+        "Ġyou",
+        "Ġtoday",
+        "?",
+        "ĠIf"
+      ],
+      "token_ids": [28339, 3845, 8, 28339, 8, 4070, 2063, 1767, 6385, 1933, 6683, 38, 3490],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġyou",
+            "token_id": 1933,
+            "logprob": -0.0,
+            "prob": 1.0
+          },
+          {
+            "token": "Ġthis",
+            "token_id": 2075,
+            "logprob": -14.0781,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġyour",
+            "token_id": 2092,
+            "logprob": -14.4844,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġthere",
+            "token_id": 2782,
+            "logprob": -15.1875,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġit",
+            "token_id": 1894,
+            "logprob": -15.9219,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġvous",
+            "token_id": 61096,
+            "logprob": -16.4688,
+            "prob": 0.0
+          },
+          {
+            "token": "you",
+            "token_id": 17004,
+            "logprob": -16.9062,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġwe",
+            "token_id": 2076,
+            "logprob": -17.3281,
+            "prob": 0.0
+          },
+          {
+            "token": "<PAD>",
+            "token_id": 0,
+            "logprob": -34.4688,
+            "prob": 0.0
+          },
+          {
+            "token": "<UNK>",
+            "token_id": 1,
+            "logprob": -33.5,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġyou",
+        "token_id": 1933,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 11,
+      "input_text": "Hello world! Hello!ĠHowĠcanĠIĠassistĠyouĠtoday?ĠIfĠyou",
+      "tokens": [
+        "Hello",
+        "Ġworld",
+        "!",
+        "Hello",
+        "!",
+        "ĠHow",
+        "Ġcan",
+        "ĠI",
+        "Ġassist",
+        "Ġyou",
+        "Ġtoday",
+        "?",
+        "ĠIf",
+        "Ġyou"
+      ],
+      "token_ids": [28339, 3845, 8, 28339, 8, 4070, 2063, 1767, 6385, 1933, 6683, 38, 3490, 1933],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġhave",
+            "token_id": 2143,
+            "logprob": -0.037,
+            "prob": 0.9639
+          },
+          {
+            "token": "'re",
+            "token_id": 3885,
+            "logprob": -3.3809,
+            "prob": 0.034
+          },
+          {
+            "token": "'ve",
+            "token_id": 5125,
+            "logprob": -6.0664,
+            "prob": 0.0023
+          },
+          {
+            "token": "Ġare",
+            "token_id": 1955,
+            "logprob": -11.8359,
+            "prob": 0.0
+          },
+          {
+            "token": "'d",
+            "token_id": 4256,
+            "logprob": -12.3828,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġhaven",
+            "token_id": 20395,
+            "logprob": -12.4141,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġjust",
+            "token_id": 3128,
+            "logprob": -14.0078,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġwere",
+            "token_id": 2380,
+            "logprob": -14.2578,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġhad",
+            "token_id": 2516,
+            "logprob": -14.2109,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġneed",
+            "token_id": 2818,
+            "logprob": -14.5859,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġhave",
+        "token_id": 2143,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 12,
+      "input_text": "Hello world! Hello!ĠHowĠcanĠIĠassistĠyouĠtoday?ĠIfĠyouĠhave",
+      "tokens": [
+        "Hello",
+        "Ġworld",
+        "!",
+        "Hello",
+        "!",
+        "ĠHow",
+        "Ġcan",
+        "ĠI",
+        "Ġassist",
+        "Ġyou",
+        "Ġtoday",
+        "?",
+        "ĠIf",
+        "Ġyou",
+        "Ġhave"
+      ],
+      "token_ids": [
+        28339, 3845, 8, 28339, 8, 4070, 2063, 1767, 6385, 1933, 6683, 38, 3490, 1933, 2143
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġany",
+            "token_id": 2617,
+            "logprob": -0.0001,
+            "prob": 1.0
+          },
+          {
+            "token": "Ġa",
+            "token_id": 1671,
+            "logprob": -9.5312,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġquestions",
+            "token_id": 8397,
+            "logprob": -10.2969,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠANY",
+            "token_id": 28340,
+            "logprob": -16.0156,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠAny",
+            "token_id": 12589,
+            "logprob": -16.5938,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġanything",
+            "token_id": 10088,
+            "logprob": -16.6875,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġأي",
+            "token_id": 21894,
+            "logprob": -17.2969,
+            "prob": 0.0
+          },
+          {
+            "token": "任何",
+            "token_id": 29823,
+            "logprob": -17.2031,
+            "prob": 0.0
+          },
+          {
+            "token": "any",
+            "token_id": 2251,
+            "logprob": -16.875,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġsome",
+            "token_id": 2725,
+            "logprob": -17.2656,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġany",
+        "token_id": 2617,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 13,
+      "input_text": "Hello world! Hello!ĠHowĠcanĠIĠassistĠyouĠtoday?ĠIfĠyouĠhaveĠany",
+      "tokens": [
+        "Hello",
+        "Ġworld",
+        "!",
+        "Hello",
+        "!",
+        "ĠHow",
+        "Ġcan",
+        "ĠI",
+        "Ġassist",
+        "Ġyou",
+        "Ġtoday",
+        "?",
+        "ĠIf",
+        "Ġyou",
+        "Ġhave",
+        "Ġany"
+      ],
+      "token_ids": [
+        28339, 3845, 8, 28339, 8, 4070, 2063, 1767, 6385, 1933, 6683, 38, 3490, 1933, 2143, 2617
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġquestions",
+            "token_id": 8397,
+            "logprob": -0.0,
+            "prob": 1.0
+          },
+          {
+            "token": "Ġquestion",
+            "token_id": 8365,
+            "logprob": -13.1094,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġqueries",
+            "token_id": 32289,
+            "logprob": -14.0156,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠQuestions",
+            "token_id": 67578,
+            "logprob": -15.125,
+            "prob": 0.0
+          },
+          {
+            "token": "questions",
+            "token_id": 79953,
+            "logprob": -15.4844,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġgeneral",
+            "token_id": 5396,
+            "logprob": -15.9219,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġtopics",
+            "token_id": 20048,
+            "logprob": -16.0625,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġanswers",
+            "token_id": 24679,
+            "logprob": -17.125,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġtasks",
+            "token_id": 15718,
+            "logprob": -17.3281,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġproblems",
+            "token_id": 8758,
+            "logprob": -16.5625,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġquestions",
+        "token_id": 8397,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 14,
+      "input_text": "Hello world! Hello!ĠHowĠcanĠIĠassistĠyouĠtoday?ĠIfĠyouĠhaveĠanyĠquestions",
+      "tokens": [
+        "Hello",
+        "Ġworld",
+        "!",
+        "Hello",
+        "!",
+        "ĠHow",
+        "Ġcan",
+        "ĠI",
+        "Ġassist",
+        "Ġyou",
+        "Ġtoday",
+        "?",
+        "ĠIf",
+        "Ġyou",
+        "Ġhave",
+        "Ġany",
+        "Ġquestions"
+      ],
+      "token_ids": [
+        28339, 3845, 8, 28339, 8, 4070, 2063, 1767, 6385, 1933, 6683, 38, 3490, 1933, 2143, 2617,
+        8397
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġor",
+            "token_id": 1888,
+            "logprob": -0.0446,
+            "prob": 0.9565
+          },
+          {
+            "token": ",",
+            "token_id": 19,
+            "logprob": -3.1387,
+            "prob": 0.0434
+          },
+          {
+            "token": "Ġabout",
+            "token_id": 2613,
+            "logprob": -8.1406,
+            "prob": 0.0003
+          },
+          {
+            "token": "Ġon",
+            "token_id": 1812,
+            "logprob": -12.0,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġfor",
+            "token_id": 1794,
+            "logprob": -13.5,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġrelated",
+            "token_id": 8625,
+            "logprob": -13.8906,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġили",
+            "token_id": 10702,
+            "logprob": -14.125,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġoder",
+            "token_id": 13624,
+            "logprob": -14.1328,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġand",
+            "token_id": 1728,
+            "logprob": -14.8516,
+            "prob": 0.0
+          },
+          {
+            "token": "or",
+            "token_id": 1677,
+            "logprob": -15.6953,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġor",
+        "token_id": 1888,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 15,
+      "input_text": "Hello world! Hello!ĠHowĠcanĠIĠassistĠyouĠtoday?ĠIfĠyouĠhaveĠanyĠquestionsĠor",
+      "tokens": [
+        "Hello",
+        "Ġworld",
+        "!",
+        "Hello",
+        "!",
+        "ĠHow",
+        "Ġcan",
+        "ĠI",
+        "Ġassist",
+        "Ġyou",
+        "Ġtoday",
+        "?",
+        "ĠIf",
+        "Ġyou",
+        "Ġhave",
+        "Ġany",
+        "Ġquestions",
+        "Ġor"
+      ],
+      "token_ids": [
+        28339, 3845, 8, 28339, 8, 4070, 2063, 1767, 6385, 1933, 6683, 38, 3490, 1933, 2143, 2617,
+        8397, 1888
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġneed",
+            "token_id": 2818,
+            "logprob": -0.0104,
+            "prob": 0.9897
+          },
+          {
+            "token": "Ġtopics",
+            "token_id": 20048,
+            "logprob": -4.6992,
+            "prob": 0.0091
+          },
+          {
+            "token": "Ġtasks",
+            "token_id": 15718,
+            "logprob": -7.2617,
+            "prob": 0.0007
+          },
+          {
+            "token": "Ġif",
+            "token_id": 2198,
+            "logprob": -8.5391,
+            "prob": 0.0002
+          },
+          {
+            "token": "Ġneeds",
+            "token_id": 6147,
+            "logprob": -9.1797,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġjust",
+            "token_id": 3128,
+            "logprob": -9.3359,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġare",
+            "token_id": 1955,
+            "logprob": -9.3828,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġneeded",
+            "token_id": 8061,
+            "logprob": -11.5234,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġwould",
+            "token_id": 2892,
+            "logprob": -12.3984,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġsimply",
+            "token_id": 8804,
+            "logprob": -12.5859,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġneed",
+        "token_id": 2818,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 16,
+      "input_text": "Hello world! Hello!ĠHowĠcanĠIĠassistĠyouĠtoday?ĠIfĠyouĠhaveĠanyĠquestionsĠorĠneed",
+      "tokens": [
+        "Hello",
+        "Ġworld",
+        "!",
+        "Hello",
+        "!",
+        "ĠHow",
+        "Ġcan",
+        "ĠI",
+        "Ġassist",
+        "Ġyou",
+        "Ġtoday",
+        "?",
+        "ĠIf",
+        "Ġyou",
+        "Ġhave",
+        "Ġany",
+        "Ġquestions",
+        "Ġor",
+        "Ġneed"
+      ],
+      "token_ids": [
+        28339, 3845, 8, 28339, 8, 4070, 2063, 1767, 6385, 1933, 6683, 38, 3490, 1933, 2143, 2617,
+        8397, 1888, 2818
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġhelp",
+            "token_id": 3153,
+            "logprob": -0.0014,
+            "prob": 0.9985
+          },
+          {
+            "token": "Ġinformation",
+            "token_id": 3682,
+            "logprob": -6.7812,
+            "prob": 0.0011
+          },
+          {
+            "token": "Ġassistance",
+            "token_id": 16266,
+            "logprob": -9.2656,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġany",
+            "token_id": 2617,
+            "logprob": -9.4844,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġaid",
+            "token_id": 17157,
+            "logprob": -9.9688,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġguidance",
+            "token_id": 22488,
+            "logprob": -10.2031,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġadvice",
+            "token_id": 15079,
+            "logprob": -10.2812,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġsupport",
+            "token_id": 3437,
+            "logprob": -12.1719,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġsome",
+            "token_id": 2725,
+            "logprob": -13.5625,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġhelps",
+            "token_id": 10516,
+            "logprob": -13.7031,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġhelp",
+        "token_id": 3153,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 17,
+      "input_text": "Hello world! Hello!ĠHowĠcanĠIĠassistĠyouĠtoday?ĠIfĠyouĠhaveĠanyĠquestionsĠorĠneedĠhelp",
+      "tokens": [
+        "Hello",
+        "Ġworld",
+        "!",
+        "Hello",
+        "!",
+        "ĠHow",
+        "Ġcan",
+        "ĠI",
+        "Ġassist",
+        "Ġyou",
+        "Ġtoday",
+        "?",
+        "ĠIf",
+        "Ġyou",
+        "Ġhave",
+        "Ġany",
+        "Ġquestions",
+        "Ġor",
+        "Ġneed",
+        "Ġhelp"
+      ],
+      "token_ids": [
+        28339, 3845, 8, 28339, 8, 4070, 2063, 1767, 6385, 1933, 6683, 38, 3490, 1933, 2143, 2617,
+        8397, 1888, 2818, 3153
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġwith",
+            "token_id": 1865,
+            "logprob": -0.0,
+            "prob": 1.0
+          },
+          {
+            "token": ",",
+            "token_id": 19,
+            "logprob": -11.2812,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġon",
+            "token_id": 1812,
+            "logprob": -13.1406,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġavec",
+            "token_id": 4374,
+            "logprob": -14.4531,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġvới",
+            "token_id": 5673,
+            "logprob": -16.3281,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġregarding",
+            "token_id": 13071,
+            "logprob": -17.2188,
+            "prob": 0.0
+          },
+          {
+            "token": "<CLS>",
+            "token_id": 2,
+            "logprob": -34.0938,
+            "prob": 0.0
+          },
+          {
+            "token": "<SEP>",
+            "token_id": 3,
+            "logprob": -33.6562,
+            "prob": 0.0
+          },
+          {
+            "token": "<UNK>",
+            "token_id": 1,
+            "logprob": -33.9688,
+            "prob": 0.0
+          },
+          {
+            "token": "<PAD>",
+            "token_id": 0,
+            "logprob": -34.25,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġwith",
+        "token_id": 1865,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 18,
+      "input_text": "Hello world! Hello!ĠHowĠcanĠIĠassistĠyouĠtoday?ĠIfĠyouĠhaveĠanyĠquestionsĠorĠneedĠhelpĠwith",
+      "tokens": [
+        "Hello",
+        "Ġworld",
+        "!",
+        "Hello",
+        "!",
+        "ĠHow",
+        "Ġcan",
+        "ĠI",
+        "Ġassist",
+        "Ġyou",
+        "Ġtoday",
+        "?",
+        "ĠIf",
+        "Ġyou",
+        "Ġhave",
+        "Ġany",
+        "Ġquestions",
+        "Ġor",
+        "Ġneed",
+        "Ġhelp",
+        "Ġwith"
+      ],
+      "token_ids": [
+        28339, 3845, 8, 28339, 8, 4070, 2063, 1767, 6385, 1933, 6683, 38, 3490, 1933, 2143, 2617,
+        8397, 1888, 2818, 3153, 1865
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġa",
+            "token_id": 1671,
+            "logprob": -0.6631,
+            "prob": 0.5151
+          },
+          {
+            "token": "Ġsomething",
+            "token_id": 6007,
+            "logprob": -0.7256,
+            "prob": 0.4841
+          },
+          {
+            "token": "Ġanything",
+            "token_id": 10088,
+            "logprob": -7.6016,
+            "prob": 0.0005
+          },
+          {
+            "token": "Ġany",
+            "token_id": 2617,
+            "logprob": -12.9766,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġspecific",
+            "token_id": 6452,
+            "logprob": -13.2266,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġalgo",
+            "token_id": 31731,
+            "logprob": -13.6797,
+            "prob": 0.0
+          },
+          {
+            "token": "something",
+            "token_id": 65792,
+            "logprob": -14.8047,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġsomeone",
+            "token_id": 9284,
+            "logprob": -15.2734,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġtopics",
+            "token_id": 20048,
+            "logprob": -15.2578,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġan",
+            "token_id": 1844,
+            "logprob": -16.1094,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġa",
+        "token_id": 1671,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 19,
+      "input_text": "Hello world! Hello!ĠHowĠcanĠIĠassistĠyouĠtoday?ĠIfĠyouĠhaveĠanyĠquestionsĠorĠneedĠhelpĠwithĠa",
+      "tokens": [
+        "Hello",
+        "Ġworld",
+        "!",
+        "Hello",
+        "!",
+        "ĠHow",
+        "Ġcan",
+        "ĠI",
+        "Ġassist",
+        "Ġyou",
+        "Ġtoday",
+        "?",
+        "ĠIf",
+        "Ġyou",
+        "Ġhave",
+        "Ġany",
+        "Ġquestions",
+        "Ġor",
+        "Ġneed",
+        "Ġhelp",
+        "Ġwith",
+        "Ġa"
+      ],
+      "token_ids": [
+        28339, 3845, 8, 28339, 8, 4070, 2063, 1767, 6385, 1933, 6683, 38, 3490, 1933, 2143, 2617,
+        8397, 1888, 2818, 3153, 1865, 1671
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġspecific",
+            "token_id": 6452,
+            "logprob": -0.3772,
+            "prob": 0.6855
+          },
+          {
+            "token": "Ġtopic",
+            "token_id": 16818,
+            "logprob": -1.7832,
+            "prob": 0.1681
+          },
+          {
+            "token": "Ġparticular",
+            "token_id": 5807,
+            "logprob": -1.9395,
+            "prob": 0.1438
+          },
+          {
+            "token": "Ġtask",
+            "token_id": 7499,
+            "logprob": -6.0508,
+            "prob": 0.0024
+          },
+          {
+            "token": "Ġcertain",
+            "token_id": 6087,
+            "logprob": -9.7969,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġproblem",
+            "token_id": 7668,
+            "logprob": -13.2969,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġtopics",
+            "token_id": 20048,
+            "logprob": -14.1562,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġproject",
+            "token_id": 4123,
+            "logprob": -14.4531,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġspecif",
+            "token_id": 13177,
+            "logprob": -14.3906,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġsubject",
+            "token_id": 7720,
+            "logprob": -14.8281,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġspecific",
+        "token_id": 6452,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 20,
+      "input_text": "Hello world! Hello!ĠHowĠcanĠIĠassistĠyouĠtoday?ĠIfĠyouĠhaveĠanyĠquestionsĠorĠneedĠhelpĠwithĠaĠspecific",
+      "tokens": [
+        "Hello",
+        "Ġworld",
+        "!",
+        "Hello",
+        "!",
+        "ĠHow",
+        "Ġcan",
+        "ĠI",
+        "Ġassist",
+        "Ġyou",
+        "Ġtoday",
+        "?",
+        "ĠIf",
+        "Ġyou",
+        "Ġhave",
+        "Ġany",
+        "Ġquestions",
+        "Ġor",
+        "Ġneed",
+        "Ġhelp",
+        "Ġwith",
+        "Ġa",
+        "Ġspecific"
+      ],
+      "token_ids": [
+        28339, 3845, 8, 28339, 8, 4070, 2063, 1767, 6385, 1933, 6683, 38, 3490, 1933, 2143, 2617,
+        8397, 1888, 2818, 3153, 1865, 1671, 6452
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġtopic",
+            "token_id": 16818,
+            "logprob": -0.0021,
+            "prob": 0.998
+          },
+          {
+            "token": "Ġtask",
+            "token_id": 7499,
+            "logprob": -6.1602,
+            "prob": 0.0021
+          },
+          {
+            "token": "Ġtopics",
+            "token_id": 20048,
+            "logprob": -13.0938,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġsubject",
+            "token_id": 7720,
+            "logprob": -15.2188,
+            "prob": 0.0
+          },
+          {
+            "token": "topic",
+            "token_id": 24697,
+            "logprob": -15.5938,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġissue",
+            "token_id": 7672,
+            "logprob": -15.5938,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġproblem",
+            "token_id": 7668,
+            "logprob": -16.1719,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠTopic",
+            "token_id": 89885,
+            "logprob": -16.3438,
+            "prob": 0.0
+          },
+          {
+            "token": "<PAD>",
+            "token_id": 0,
+            "logprob": -33.5312,
+            "prob": 0.0
+          },
+          {
+            "token": "<UNK>",
+            "token_id": 1,
+            "logprob": -33.375,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġtopic",
+        "token_id": 16818,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 21,
+      "input_text": "Hello world! Hello!ĠHowĠcanĠIĠassistĠyouĠtoday?ĠIfĠyouĠhaveĠanyĠquestionsĠorĠneedĠhelpĠwithĠaĠspecificĠtopic",
+      "tokens": [
+        "Hello",
+        "Ġworld",
+        "!",
+        "Hello",
+        "!",
+        "ĠHow",
+        "Ġcan",
+        "ĠI",
+        "Ġassist",
+        "Ġyou",
+        "Ġtoday",
+        "?",
+        "ĠIf",
+        "Ġyou",
+        "Ġhave",
+        "Ġany",
+        "Ġquestions",
+        "Ġor",
+        "Ġneed",
+        "Ġhelp",
+        "Ġwith",
+        "Ġa",
+        "Ġspecific",
+        "Ġtopic"
+      ],
+      "token_ids": [
+        28339, 3845, 8, 28339, 8, 4070, 2063, 1767, 6385, 1933, 6683, 38, 3490, 1933, 2143, 2617,
+        8397, 1888, 2818, 3153, 1865, 1671, 6452, 16818
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": ",",
+            "token_id": 19,
+            "logprob": -0.0,
+            "prob": 1.0
+          },
+          {
+            "token": "Ġ(",
+            "token_id": 1737,
+            "logprob": -11.0469,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġor",
+            "token_id": 1888,
+            "logprob": -15.0469,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġ—",
+            "token_id": 2518,
+            "logprob": -15.8281,
+            "prob": 0.0
+          },
+          {
+            "token": "—",
+            "token_id": 2062,
+            "logprob": -16.2188,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġ–",
+            "token_id": 2129,
+            "logprob": -16.0312,
+            "prob": 0.0
+          },
+          {
+            "token": ".",
+            "token_id": 21,
+            "logprob": -16.9219,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġ-",
+            "token_id": 1945,
+            "logprob": -16.4688,
+            "prob": 0.0
+          },
+          {
+            "token": "<PAD>",
+            "token_id": 0,
+            "logprob": -34.0625,
+            "prob": 0.0
+          },
+          {
+            "token": "<UNK>",
+            "token_id": 1,
+            "logprob": -34.2188,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": ",",
+        "token_id": 19,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 22,
+      "input_text": "Hello world! Hello!ĠHowĠcanĠIĠassistĠyouĠtoday?ĠIfĠyouĠhaveĠanyĠquestionsĠorĠneedĠhelpĠwithĠaĠspecificĠtopic,",
+      "tokens": [
+        "Hello",
+        "Ġworld",
+        "!",
+        "Hello",
+        "!",
+        "ĠHow",
+        "Ġcan",
+        "ĠI",
+        "Ġassist",
+        "Ġyou",
+        "Ġtoday",
+        "?",
+        "ĠIf",
+        "Ġyou",
+        "Ġhave",
+        "Ġany",
+        "Ġquestions",
+        "Ġor",
+        "Ġneed",
+        "Ġhelp",
+        "Ġwith",
+        "Ġa",
+        "Ġspecific",
+        "Ġtopic",
+        ","
+      ],
+      "token_ids": [
+        28339, 3845, 8, 28339, 8, 4070, 2063, 1767, 6385, 1933, 6683, 38, 3490, 1933, 2143, 2617,
+        8397, 1888, 2818, 3153, 1865, 1671, 6452, 16818, 19
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġfeel",
+            "token_id": 5388,
+            "logprob": -0.0001,
+            "prob": 1.0
+          },
+          {
+            "token": "Ġplease",
+            "token_id": 8840,
+            "logprob": -10.8594,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġdon",
+            "token_id": 3287,
+            "logprob": -11.0469,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠI",
+            "token_id": 1767,
+            "logprob": -11.2656,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġjust",
+            "token_id": 3128,
+            "logprob": -12.4219,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠFeel",
+            "token_id": 41639,
+            "logprob": -13.5312,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġfeeling",
+            "token_id": 14920,
+            "logprob": -13.7344,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġwhether",
+            "token_id": 6944,
+            "logprob": -14.3906,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġfeels",
+            "token_id": 21787,
+            "logprob": -14.4375,
+            "prob": 0.0
+          },
+          {
+            "token": "feel",
+            "token_id": 133985,
+            "logprob": -15.0,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġfeel",
+        "token_id": 5388,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 23,
+      "input_text": "Hello world! Hello!ĠHowĠcanĠIĠassistĠyouĠtoday?ĠIfĠyouĠhaveĠanyĠquestionsĠorĠneedĠhelpĠwithĠaĠspecificĠtopic,Ġfeel",
+      "tokens": [
+        "Hello",
+        "Ġworld",
+        "!",
+        "Hello",
+        "!",
+        "ĠHow",
+        "Ġcan",
+        "ĠI",
+        "Ġassist",
+        "Ġyou",
+        "Ġtoday",
+        "?",
+        "ĠIf",
+        "Ġyou",
+        "Ġhave",
+        "Ġany",
+        "Ġquestions",
+        "Ġor",
+        "Ġneed",
+        "Ġhelp",
+        "Ġwith",
+        "Ġa",
+        "Ġspecific",
+        "Ġtopic",
+        ",",
+        "Ġfeel"
+      ],
+      "token_ids": [
+        28339, 3845, 8, 28339, 8, 4070, 2063, 1767, 6385, 1933, 6683, 38, 3490, 1933, 2143, 2617,
+        8397, 1888, 2818, 3153, 1865, 1671, 6452, 16818, 19, 5388
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġfree",
+            "token_id": 4755,
+            "logprob": 0.0,
+            "prob": 1.0
+          },
+          {
+            "token": "<UNK>",
+            "token_id": 1,
+            "logprob": -36.875,
+            "prob": 0.0
+          },
+          {
+            "token": "<SEP>",
+            "token_id": 3,
+            "logprob": -37.6875,
+            "prob": 0.0
+          },
+          {
+            "token": "<EOS_TOKEN>",
+            "token_id": 6,
+            "logprob": -32.7812,
+            "prob": 0.0
+          },
+          {
+            "token": "<EOP_TOKEN>",
+            "token_id": 7,
+            "logprob": -38.0312,
+            "prob": 0.0
+          },
+          {
+            "token": "<PAD>",
+            "token_id": 0,
+            "logprob": -37.9688,
+            "prob": 0.0
+          },
+          {
+            "token": "<CLS>",
+            "token_id": 2,
+            "logprob": -38.0,
+            "prob": 0.0
+          },
+          {
+            "token": "<BOS_TOKEN>",
+            "token_id": 5,
+            "logprob": -40.8125,
+            "prob": 0.0
+          },
+          {
+            "token": "!",
+            "token_id": 8,
+            "logprob": -31.2188,
+            "prob": 0.0
+          },
+          {
+            "token": "<MASK_TOKEN>",
+            "token_id": 4,
+            "logprob": -37.9688,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġfree",
+        "token_id": 4755,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 24,
+      "input_text": "Hello world! Hello!ĠHowĠcanĠIĠassistĠyouĠtoday?ĠIfĠyouĠhaveĠanyĠquestionsĠorĠneedĠhelpĠwithĠaĠspecificĠtopic,ĠfeelĠfree",
+      "tokens": [
+        "Hello",
+        "Ġworld",
+        "!",
+        "Hello",
+        "!",
+        "ĠHow",
+        "Ġcan",
+        "ĠI",
+        "Ġassist",
+        "Ġyou",
+        "Ġtoday",
+        "?",
+        "ĠIf",
+        "Ġyou",
+        "Ġhave",
+        "Ġany",
+        "Ġquestions",
+        "Ġor",
+        "Ġneed",
+        "Ġhelp",
+        "Ġwith",
+        "Ġa",
+        "Ġspecific",
+        "Ġtopic",
+        ",",
+        "Ġfeel",
+        "Ġfree"
+      ],
+      "token_ids": [
+        28339, 3845, 8, 28339, 8, 4070, 2063, 1767, 6385, 1933, 6683, 38, 3490, 1933, 2143, 2617,
+        8397, 1888, 2818, 3153, 1865, 1671, 6452, 16818, 19, 5388, 4755
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġto",
+            "token_id": 1726,
+            "logprob": 0.0,
+            "prob": 1.0
+          },
+          {
+            "token": "<UNK>",
+            "token_id": 1,
+            "logprob": -34.5312,
+            "prob": 0.0
+          },
+          {
+            "token": "<SEP>",
+            "token_id": 3,
+            "logprob": -34.75,
+            "prob": 0.0
+          },
+          {
+            "token": "<EOS_TOKEN>",
+            "token_id": 6,
+            "logprob": -28.8125,
+            "prob": 0.0
+          },
+          {
+            "token": "<EOP_TOKEN>",
+            "token_id": 7,
+            "logprob": -35.4688,
+            "prob": 0.0
+          },
+          {
+            "token": "<PAD>",
+            "token_id": 0,
+            "logprob": -35.3125,
+            "prob": 0.0
+          },
+          {
+            "token": "<CLS>",
+            "token_id": 2,
+            "logprob": -35.1875,
+            "prob": 0.0
+          },
+          {
+            "token": "<BOS_TOKEN>",
+            "token_id": 5,
+            "logprob": -37.9375,
+            "prob": 0.0
+          },
+          {
+            "token": "!",
+            "token_id": 8,
+            "logprob": -25.6719,
+            "prob": 0.0
+          },
+          {
+            "token": "<MASK_TOKEN>",
+            "token_id": 4,
+            "logprob": -35.4375,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġto",
+        "token_id": 1726,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 25,
+      "input_text": "Hello world! Hello!ĠHowĠcanĠIĠassistĠyouĠtoday?ĠIfĠyouĠhaveĠanyĠquestionsĠorĠneedĠhelpĠwithĠaĠspecificĠtopic,ĠfeelĠfreeĠto",
+      "tokens": [
+        "Hello",
+        "Ġworld",
+        "!",
+        "Hello",
+        "!",
+        "ĠHow",
+        "Ġcan",
+        "ĠI",
+        "Ġassist",
+        "Ġyou",
+        "Ġtoday",
+        "?",
+        "ĠIf",
+        "Ġyou",
+        "Ġhave",
+        "Ġany",
+        "Ġquestions",
+        "Ġor",
+        "Ġneed",
+        "Ġhelp",
+        "Ġwith",
+        "Ġa",
+        "Ġspecific",
+        "Ġtopic",
+        ",",
+        "Ġfeel",
+        "Ġfree",
+        "Ġto"
+      ],
+      "token_ids": [
+        28339, 3845, 8, 28339, 8, 4070, 2063, 1767, 6385, 1933, 6683, 38, 3490, 1933, 2143, 2617,
+        8397, 1888, 2818, 3153, 1865, 1671, 6452, 16818, 19, 5388, 4755, 1726
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġask",
+            "token_id": 5825,
+            "logprob": -0.0352,
+            "prob": 0.9653
+          },
+          {
+            "token": "Ġlet",
+            "token_id": 3844,
+            "logprob": -3.3633,
+            "prob": 0.0346
+          },
+          {
+            "token": "ĠAsk",
+            "token_id": 28463,
+            "logprob": -12.2734,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġshare",
+            "token_id": 7156,
+            "logprob": -12.6328,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġasked",
+            "token_id": 10495,
+            "logprob": -12.9141,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġtell",
+            "token_id": 8418,
+            "logprob": -13.0391,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġasks",
+            "token_id": 31036,
+            "logprob": -13.1328,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġasking",
+            "token_id": 20621,
+            "logprob": -13.3828,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġinquire",
+            "token_id": 110982,
+            "logprob": -13.5234,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠASK",
+            "token_id": 222816,
+            "logprob": -13.6484,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġask",
+        "token_id": 5825,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 26,
+      "input_text": "Hello world! Hello!ĠHowĠcanĠIĠassistĠyouĠtoday?ĠIfĠyouĠhaveĠanyĠquestionsĠorĠneedĠhelpĠwithĠaĠspecificĠtopic,ĠfeelĠfreeĠtoĠask",
+      "tokens": [
+        "Hello",
+        "Ġworld",
+        "!",
+        "Hello",
+        "!",
+        "ĠHow",
+        "Ġcan",
+        "ĠI",
+        "Ġassist",
+        "Ġyou",
+        "Ġtoday",
+        "?",
+        "ĠIf",
+        "Ġyou",
+        "Ġhave",
+        "Ġany",
+        "Ġquestions",
+        "Ġor",
+        "Ġneed",
+        "Ġhelp",
+        "Ġwith",
+        "Ġa",
+        "Ġspecific",
+        "Ġtopic",
+        ",",
+        "Ġfeel",
+        "Ġfree",
+        "Ġto",
+        "Ġask"
+      ],
+      "token_ids": [
+        28339, 3845, 8, 28339, 8, 4070, 2063, 1767, 6385, 1933, 6683, 38, 3490, 1933, 2143, 2617,
+        8397, 1888, 2818, 3153, 1865, 1671, 6452, 16818, 19, 5388, 4755, 1726, 5825
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": ".",
+            "token_id": 21,
+            "logprob": -0.0054,
+            "prob": 0.9946
+          },
+          {
+            "token": "!",
+            "token_id": 8,
+            "logprob": -5.3789,
+            "prob": 0.0046
+          },
+          {
+            "token": ",",
+            "token_id": 19,
+            "logprob": -7.1914,
+            "prob": 0.0008
+          },
+          {
+            "token": "Ġaway",
+            "token_id": 6242,
+            "logprob": -10.9453,
+            "prob": 0.0
+          },
+          {
+            "token": ";",
+            "token_id": 34,
+            "logprob": -13.5391,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġme",
+            "token_id": 2307,
+            "logprob": -13.5859,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġand",
+            "token_id": 1728,
+            "logprob": -13.5703,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġor",
+            "token_id": 1888,
+            "logprob": -14.7578,
+            "prob": 0.0
+          },
+          {
+            "token": "—",
+            "token_id": 2062,
+            "logprob": -15.6719,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġ(",
+            "token_id": 1737,
+            "logprob": -16.0156,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": ".",
+        "token_id": 21,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 27,
+      "input_text": "Hello world! Hello!ĠHowĠcanĠIĠassistĠyouĠtoday?ĠIfĠyouĠhaveĠanyĠquestionsĠorĠneedĠhelpĠwithĠaĠspecificĠtopic,ĠfeelĠfreeĠtoĠask.",
+      "tokens": [
+        "Hello",
+        "Ġworld",
+        "!",
+        "Hello",
+        "!",
+        "ĠHow",
+        "Ġcan",
+        "ĠI",
+        "Ġassist",
+        "Ġyou",
+        "Ġtoday",
+        "?",
+        "ĠIf",
+        "Ġyou",
+        "Ġhave",
+        "Ġany",
+        "Ġquestions",
+        "Ġor",
+        "Ġneed",
+        "Ġhelp",
+        "Ġwith",
+        "Ġa",
+        "Ġspecific",
+        "Ġtopic",
+        ",",
+        "Ġfeel",
+        "Ġfree",
+        "Ġto",
+        "Ġask",
+        "."
+      ],
+      "token_ids": [
+        28339, 3845, 8, 28339, 8, 4070, 2063, 1767, 6385, 1933, 6683, 38, 3490, 1933, 2143, 2617,
+        8397, 1888, 2818, 3153, 1865, 1671, 6452, 16818, 19, 5388, 4755, 1726, 5825, 21
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "ĠI",
+            "token_id": 1767,
+            "logprob": -0.079,
+            "prob": 0.9238
+          },
+          {
+            "token": "<|END_OF_TURN_TOKEN|>",
+            "token_id": 255001,
+            "logprob": -2.7656,
+            "prob": 0.0629
+          },
+          {
+            "token": "ĠWhether",
+            "token_id": 19121,
+            "logprob": -4.3594,
+            "prob": 0.0128
+          },
+          {
+            "token": "ĠOtherwise",
+            "token_id": 37434,
+            "logprob": -8.375,
+            "prob": 0.0002
+          },
+          {
+            "token": "ĠHere",
+            "token_id": 10244,
+            "logprob": -11.0938,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠIt",
+            "token_id": 2332,
+            "logprob": -11.2188,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠEnjoy",
+            "token_id": 48493,
+            "logprob": -11.625,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠHappy",
+            "token_id": 30364,
+            "logprob": -11.6875,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠIf",
+            "token_id": 3490,
+            "logprob": -12.0391,
+            "prob": 0.0
+          },
+          {
+            "token": "\n",
+            "token_id": 206,
+            "logprob": -12.125,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "ĠI",
+        "token_id": 1767,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 28,
+      "input_text": "Hello world! Hello!ĠHowĠcanĠIĠassistĠyouĠtoday?ĠIfĠyouĠhaveĠanyĠquestionsĠorĠneedĠhelpĠwithĠaĠspecificĠtopic,ĠfeelĠfreeĠtoĠask.ĠI",
+      "tokens": [
+        "Hello",
+        "Ġworld",
+        "!",
+        "Hello",
+        "!",
+        "ĠHow",
+        "Ġcan",
+        "ĠI",
+        "Ġassist",
+        "Ġyou",
+        "Ġtoday",
+        "?",
+        "ĠIf",
+        "Ġyou",
+        "Ġhave",
+        "Ġany",
+        "Ġquestions",
+        "Ġor",
+        "Ġneed",
+        "Ġhelp",
+        "Ġwith",
+        "Ġa",
+        "Ġspecific",
+        "Ġtopic",
+        ",",
+        "Ġfeel",
+        "Ġfree",
+        "Ġto",
+        "Ġask",
+        ".",
+        "ĠI"
+      ],
+      "token_ids": [
+        28339, 3845, 8, 28339, 8, 4070, 2063, 1767, 6385, 1933, 6683, 38, 3490, 1933, 2143, 2617,
+        8397, 1888, 2818, 3153, 1865, 1671, 6452, 16818, 19, 5388, 4755, 1726, 5825, 21, 1767
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "'m",
+            "token_id": 6071,
+            "logprob": -0.0026,
+            "prob": 0.9976
+          },
+          {
+            "token": "'ll",
+            "token_id": 4961,
+            "logprob": -6.2695,
+            "prob": 0.0019
+          },
+          {
+            "token": "Ġam",
+            "token_id": 2437,
+            "logprob": -8.3438,
+            "prob": 0.0002
+          },
+          {
+            "token": "'re",
+            "token_id": 3885,
+            "logprob": -8.5312,
+            "prob": 0.0002
+          },
+          {
+            "token": "Ġcan",
+            "token_id": 2063,
+            "logprob": -9.0,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġcover",
+            "token_id": 5339,
+            "logprob": -9.25,
+            "prob": 0.0001
+          },
+          {
+            "token": "'d",
+            "token_id": 4256,
+            "logprob": -10.0469,
+            "prob": 0.0
+          },
+          {
+            "token": "'",
+            "token_id": 14,
+            "logprob": -11.1094,
+            "prob": 0.0
+          },
+          {
+            "token": "'ve",
+            "token_id": 5125,
+            "logprob": -11.1562,
+            "prob": 0.0
+          },
+          {
+            "token": "'s",
+            "token_id": 1914,
+            "logprob": -12.3828,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "'m",
+        "token_id": 6071,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 29,
+      "input_text": "Hello world! Hello!ĠHowĠcanĠIĠassistĠyouĠtoday?ĠIfĠyouĠhaveĠanyĠquestionsĠorĠneedĠhelpĠwithĠaĠspecificĠtopic,ĠfeelĠfreeĠtoĠask.ĠI'm",
+      "tokens": [
+        "Hello",
+        "Ġworld",
+        "!",
+        "Hello",
+        "!",
+        "ĠHow",
+        "Ġcan",
+        "ĠI",
+        "Ġassist",
+        "Ġyou",
+        "Ġtoday",
+        "?",
+        "ĠIf",
+        "Ġyou",
+        "Ġhave",
+        "Ġany",
+        "Ġquestions",
+        "Ġor",
+        "Ġneed",
+        "Ġhelp",
+        "Ġwith",
+        "Ġa",
+        "Ġspecific",
+        "Ġtopic",
+        ",",
+        "Ġfeel",
+        "Ġfree",
+        "Ġto",
+        "Ġask",
+        ".",
+        "ĠI",
+        "'m"
+      ],
+      "token_ids": [
+        28339, 3845, 8, 28339, 8, 4070, 2063, 1767, 6385, 1933, 6683, 38, 3490, 1933, 2143, 2617,
+        8397, 1888, 2818, 3153, 1865, 1671, 6452, 16818, 19, 5388, 4755, 1726, 5825, 21, 1767, 6071
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġhere",
+            "token_id": 4613,
+            "logprob": -0.0,
+            "prob": 1.0
+          },
+          {
+            "token": "Ġdesigned",
+            "token_id": 7251,
+            "logprob": -10.7969,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġan",
+            "token_id": 1844,
+            "logprob": -12.25,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġaquí",
+            "token_id": 78380,
+            "logprob": -12.8281,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġhappy",
+            "token_id": 11996,
+            "logprob": -12.9531,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġa",
+            "token_id": 1671,
+            "logprob": -13.0391,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġready",
+            "token_id": 10027,
+            "logprob": -13.1016,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠHere",
+            "token_id": 10244,
+            "logprob": -13.1094,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġaqui",
+            "token_id": 91794,
+            "logprob": -13.7266,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġздесь",
+            "token_id": 45358,
+            "logprob": -14.1562,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġhere",
+        "token_id": 4613,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 30,
+      "input_text": "Hello world! Hello!ĠHowĠcanĠIĠassistĠyouĠtoday?ĠIfĠyouĠhaveĠanyĠquestionsĠorĠneedĠhelpĠwithĠaĠspecificĠtopic,ĠfeelĠfreeĠtoĠask.ĠI'mĠhere",
+      "tokens": [
+        "Hello",
+        "Ġworld",
+        "!",
+        "Hello",
+        "!",
+        "ĠHow",
+        "Ġcan",
+        "ĠI",
+        "Ġassist",
+        "Ġyou",
+        "Ġtoday",
+        "?",
+        "ĠIf",
+        "Ġyou",
+        "Ġhave",
+        "Ġany",
+        "Ġquestions",
+        "Ġor",
+        "Ġneed",
+        "Ġhelp",
+        "Ġwith",
+        "Ġa",
+        "Ġspecific",
+        "Ġtopic",
+        ",",
+        "Ġfeel",
+        "Ġfree",
+        "Ġto",
+        "Ġask",
+        ".",
+        "ĠI",
+        "'m",
+        "Ġhere"
+      ],
+      "token_ids": [
+        28339, 3845, 8, 28339, 8, 4070, 2063, 1767, 6385, 1933, 6683, 38, 3490, 1933, 2143, 2617,
+        8397, 1888, 2818, 3153, 1865, 1671, 6452, 16818, 19, 5388, 4755, 1726, 5825, 21, 1767, 6071,
+        4613
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġto",
+            "token_id": 1726,
+            "logprob": -0.0,
+            "prob": 1.0
+          },
+          {
+            "token": "Ġfor",
+            "token_id": 1794,
+            "logprob": -10.2344,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġas",
+            "token_id": 1843,
+            "logprob": -11.6094,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġwith",
+            "token_id": 1865,
+            "logprob": -15.3516,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġand",
+            "token_id": 1728,
+            "logprob": -16.6875,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġin",
+            "token_id": 1709,
+            "logprob": -16.7031,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġfrom",
+            "token_id": 1988,
+            "logprob": -17.1094,
+            "prob": 0.0
+          },
+          {
+            "token": "to",
+            "token_id": 2025,
+            "logprob": -16.9688,
+            "prob": 0.0
+          },
+          {
+            "token": ",",
+            "token_id": 19,
+            "logprob": -16.9375,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġ",
+            "token_id": 228,
+            "logprob": -16.4375,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġto",
+        "token_id": 1726,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 31,
+      "input_text": "Hello world! Hello!ĠHowĠcanĠIĠassistĠyouĠtoday?ĠIfĠyouĠhaveĠanyĠquestionsĠorĠneedĠhelpĠwithĠaĠspecificĠtopic,ĠfeelĠfreeĠtoĠask.ĠI'mĠhereĠto",
+      "tokens": [
+        "Hello",
+        "Ġworld",
+        "!",
+        "Hello",
+        "!",
+        "ĠHow",
+        "Ġcan",
+        "ĠI",
+        "Ġassist",
+        "Ġyou",
+        "Ġtoday",
+        "?",
+        "ĠIf",
+        "Ġyou",
+        "Ġhave",
+        "Ġany",
+        "Ġquestions",
+        "Ġor",
+        "Ġneed",
+        "Ġhelp",
+        "Ġwith",
+        "Ġa",
+        "Ġspecific",
+        "Ġtopic",
+        ",",
+        "Ġfeel",
+        "Ġfree",
+        "Ġto",
+        "Ġask",
+        ".",
+        "ĠI",
+        "'m",
+        "Ġhere",
+        "Ġto"
+      ],
+      "token_ids": [
+        28339, 3845, 8, 28339, 8, 4070, 2063, 1767, 6385, 1933, 6683, 38, 3490, 1933, 2143, 2617,
+        8397, 1888, 2818, 3153, 1865, 1671, 6452, 16818, 19, 5388, 4755, 1726, 5825, 21, 1767, 6071,
+        4613, 1726
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġprovide",
+            "token_id": 4815,
+            "logprob": -0.0916,
+            "prob": 0.9126
+          },
+          {
+            "token": "Ġhelp",
+            "token_id": 3153,
+            "logprob": -2.498,
+            "prob": 0.0823
+          },
+          {
+            "token": "Ġassist",
+            "token_id": 6385,
+            "logprob": -5.7617,
+            "prob": 0.0031
+          },
+          {
+            "token": "Ġoffer",
+            "token_id": 4465,
+            "logprob": -7.168,
+            "prob": 0.0008
+          },
+          {
+            "token": "Ġchat",
+            "token_id": 19816,
+            "logprob": -7.793,
+            "prob": 0.0004
+          },
+          {
+            "token": "Ġsupport",
+            "token_id": 3437,
+            "logprob": -8.0781,
+            "prob": 0.0003
+          },
+          {
+            "token": "Ġmake",
+            "token_id": 3059,
+            "logprob": -8.3125,
+            "prob": 0.0002
+          },
+          {
+            "token": "Ġaid",
+            "token_id": 17157,
+            "logprob": -9.2188,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġguide",
+            "token_id": 12299,
+            "logprob": -9.2188,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġlend",
+            "token_id": 43906,
+            "logprob": -9.7656,
+            "prob": 0.0001
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġprovide",
+        "token_id": 4815,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 32,
+      "input_text": "Hello world! Hello!ĠHowĠcanĠIĠassistĠyouĠtoday?ĠIfĠyouĠhaveĠanyĠquestionsĠorĠneedĠhelpĠwithĠaĠspecificĠtopic,ĠfeelĠfreeĠtoĠask.ĠI'mĠhereĠtoĠprovide",
+      "tokens": [
+        "Hello",
+        "Ġworld",
+        "!",
+        "Hello",
+        "!",
+        "ĠHow",
+        "Ġcan",
+        "ĠI",
+        "Ġassist",
+        "Ġyou",
+        "Ġtoday",
+        "?",
+        "ĠIf",
+        "Ġyou",
+        "Ġhave",
+        "Ġany",
+        "Ġquestions",
+        "Ġor",
+        "Ġneed",
+        "Ġhelp",
+        "Ġwith",
+        "Ġa",
+        "Ġspecific",
+        "Ġtopic",
+        ",",
+        "Ġfeel",
+        "Ġfree",
+        "Ġto",
+        "Ġask",
+        ".",
+        "ĠI",
+        "'m",
+        "Ġhere",
+        "Ġto",
+        "Ġprovide"
+      ],
+      "token_ids": [
+        28339, 3845, 8, 28339, 8, 4070, 2063, 1767, 6385, 1933, 6683, 38, 3490, 1933, 2143, 2617,
+        8397, 1888, 2818, 3153, 1865, 1671, 6452, 16818, 19, 5388, 4755, 1726, 5825, 21, 1767, 6071,
+        4613, 1726, 4815
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġinformation",
+            "token_id": 3682,
+            "logprob": -0.0032,
+            "prob": 0.9966
+          },
+          {
+            "token": "Ġthorough",
+            "token_id": 24280,
+            "logprob": -7.1914,
+            "prob": 0.0008
+          },
+          {
+            "token": "Ġyou",
+            "token_id": 1933,
+            "logprob": -7.3008,
+            "prob": 0.0007
+          },
+          {
+            "token": "Ġhelpful",
+            "token_id": 19264,
+            "logprob": -7.3477,
+            "prob": 0.0006
+          },
+          {
+            "token": "Ġaccurate",
+            "token_id": 20114,
+            "logprob": -7.7383,
+            "prob": 0.0004
+          },
+          {
+            "token": "Ġuseful",
+            "token_id": 12765,
+            "logprob": -8.2656,
+            "prob": 0.0003
+          },
+          {
+            "token": "Ġinformative",
+            "token_id": 63652,
+            "logprob": -9.125,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġguidance",
+            "token_id": 22488,
+            "logprob": -9.4062,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġclear",
+            "token_id": 7947,
+            "logprob": -9.8125,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġdetailed",
+            "token_id": 17361,
+            "logprob": -10.6562,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġinformation",
+        "token_id": 3682,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 33,
+      "input_text": "Hello world! Hello!ĠHowĠcanĠIĠassistĠyouĠtoday?ĠIfĠyouĠhaveĠanyĠquestionsĠorĠneedĠhelpĠwithĠaĠspecificĠtopic,ĠfeelĠfreeĠtoĠask.ĠI'mĠhereĠtoĠprovideĠinformation",
+      "tokens": [
+        "Hello",
+        "Ġworld",
+        "!",
+        "Hello",
+        "!",
+        "ĠHow",
+        "Ġcan",
+        "ĠI",
+        "Ġassist",
+        "Ġyou",
+        "Ġtoday",
+        "?",
+        "ĠIf",
+        "Ġyou",
+        "Ġhave",
+        "Ġany",
+        "Ġquestions",
+        "Ġor",
+        "Ġneed",
+        "Ġhelp",
+        "Ġwith",
+        "Ġa",
+        "Ġspecific",
+        "Ġtopic",
+        ",",
+        "Ġfeel",
+        "Ġfree",
+        "Ġto",
+        "Ġask",
+        ".",
+        "ĠI",
+        "'m",
+        "Ġhere",
+        "Ġto",
+        "Ġprovide",
+        "Ġinformation"
+      ],
+      "token_ids": [
+        28339, 3845, 8, 28339, 8, 4070, 2063, 1767, 6385, 1933, 6683, 38, 3490, 1933, 2143, 2617,
+        8397, 1888, 2818, 3153, 1865, 1671, 6452, 16818, 19, 5388, 4755, 1726, 5825, 21, 1767, 6071,
+        4613, 1726, 4815, 3682
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": ",",
+            "token_id": 19,
+            "logprob": -0.4463,
+            "prob": 0.6401
+          },
+          {
+            "token": "Ġand",
+            "token_id": 1728,
+            "logprob": -1.0244,
+            "prob": 0.3589
+          },
+          {
+            "token": "Ġor",
+            "token_id": 1888,
+            "logprob": -6.8359,
+            "prob": 0.0011
+          },
+          {
+            "token": "Ġto",
+            "token_id": 1726,
+            "logprob": -10.9922,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġon",
+            "token_id": 1812,
+            "logprob": -12.3359,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġin",
+            "token_id": 1709,
+            "logprob": -13.7344,
+            "prob": 0.0
+          },
+          {
+            "token": ".",
+            "token_id": 21,
+            "logprob": -13.7734,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġfrom",
+            "token_id": 1988,
+            "logprob": -14.3984,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġ(",
+            "token_id": 1737,
+            "logprob": -14.6016,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġacross",
+            "token_id": 6094,
+            "logprob": -15.0938,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": ",",
+        "token_id": 19,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 34,
+      "input_text": "Hello world! Hello!ĠHowĠcanĠIĠassistĠyouĠtoday?ĠIfĠyouĠhaveĠanyĠquestionsĠorĠneedĠhelpĠwithĠaĠspecificĠtopic,ĠfeelĠfreeĠtoĠask.ĠI'mĠhereĠtoĠprovideĠinformation,",
+      "tokens": [
+        "Hello",
+        "Ġworld",
+        "!",
+        "Hello",
+        "!",
+        "ĠHow",
+        "Ġcan",
+        "ĠI",
+        "Ġassist",
+        "Ġyou",
+        "Ġtoday",
+        "?",
+        "ĠIf",
+        "Ġyou",
+        "Ġhave",
+        "Ġany",
+        "Ġquestions",
+        "Ġor",
+        "Ġneed",
+        "Ġhelp",
+        "Ġwith",
+        "Ġa",
+        "Ġspecific",
+        "Ġtopic",
+        ",",
+        "Ġfeel",
+        "Ġfree",
+        "Ġto",
+        "Ġask",
+        ".",
+        "ĠI",
+        "'m",
+        "Ġhere",
+        "Ġto",
+        "Ġprovide",
+        "Ġinformation",
+        ","
+      ],
+      "token_ids": [
+        28339, 3845, 8, 28339, 8, 4070, 2063, 1767, 6385, 1933, 6683, 38, 3490, 1933, 2143, 2617,
+        8397, 1888, 2818, 3153, 1865, 1671, 6452, 16818, 19, 5388, 4755, 1726, 5825, 21, 1767, 6071,
+        4613, 1726, 4815, 3682, 19
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġanswer",
+            "token_id": 11205,
+            "logprob": -0.2791,
+            "prob": 0.7563
+          },
+          {
+            "token": "Ġexplain",
+            "token_id": 17508,
+            "logprob": -2.2793,
+            "prob": 0.1024
+          },
+          {
+            "token": "Ġclarify",
+            "token_id": 75458,
+            "logprob": -2.6855,
+            "prob": 0.0682
+          },
+          {
+            "token": "Ġoffer",
+            "token_id": 4465,
+            "logprob": -3.623,
+            "prob": 0.0267
+          },
+          {
+            "token": "Ġguidance",
+            "token_id": 22488,
+            "logprob": -4.2773,
+            "prob": 0.0139
+          },
+          {
+            "token": "Ġadvice",
+            "token_id": 15079,
+            "logprob": -4.6211,
+            "prob": 0.0098
+          },
+          {
+            "token": "Ġinsights",
+            "token_id": 29642,
+            "logprob": -4.7461,
+            "prob": 0.0087
+          },
+          {
+            "token": "Ġexplanations",
+            "token_id": 80480,
+            "logprob": -5.1836,
+            "prob": 0.0056
+          },
+          {
+            "token": "Ġanswers",
+            "token_id": 24679,
+            "logprob": -6.1055,
+            "prob": 0.0022
+          },
+          {
+            "token": "Ġsolve",
+            "token_id": 23570,
+            "logprob": -6.1367,
+            "prob": 0.0022
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġanswer",
+        "token_id": 11205,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 35,
+      "input_text": "Hello world! Hello!ĠHowĠcanĠIĠassistĠyouĠtoday?ĠIfĠyouĠhaveĠanyĠquestionsĠorĠneedĠhelpĠwithĠaĠspecificĠtopic,ĠfeelĠfreeĠtoĠask.ĠI'mĠhereĠtoĠprovideĠinformation,Ġanswer",
+      "tokens": [
+        "Hello",
+        "Ġworld",
+        "!",
+        "Hello",
+        "!",
+        "ĠHow",
+        "Ġcan",
+        "ĠI",
+        "Ġassist",
+        "Ġyou",
+        "Ġtoday",
+        "?",
+        "ĠIf",
+        "Ġyou",
+        "Ġhave",
+        "Ġany",
+        "Ġquestions",
+        "Ġor",
+        "Ġneed",
+        "Ġhelp",
+        "Ġwith",
+        "Ġa",
+        "Ġspecific",
+        "Ġtopic",
+        ",",
+        "Ġfeel",
+        "Ġfree",
+        "Ġto",
+        "Ġask",
+        ".",
+        "ĠI",
+        "'m",
+        "Ġhere",
+        "Ġto",
+        "Ġprovide",
+        "Ġinformation",
+        ",",
+        "Ġanswer"
+      ],
+      "token_ids": [
+        28339, 3845, 8, 28339, 8, 4070, 2063, 1767, 6385, 1933, 6683, 38, 3490, 1933, 2143, 2617,
+        8397, 1888, 2818, 3153, 1865, 1671, 6452, 16818, 19, 5388, 4755, 1726, 5825, 21, 1767, 6071,
+        4613, 1726, 4815, 3682, 19, 11205
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġqueries",
+            "token_id": 32289,
+            "logprob": -0.1918,
+            "prob": 0.8257
+          },
+          {
+            "token": "Ġquestions",
+            "token_id": 8397,
+            "logprob": -1.8008,
+            "prob": 0.1652
+          },
+          {
+            "token": "Ġcurios",
+            "token_id": 48130,
+            "logprob": -5.6758,
+            "prob": 0.0034
+          },
+          {
+            "token": "Ġinquiries",
+            "token_id": 74112,
+            "logprob": -5.9883,
+            "prob": 0.0025
+          },
+          {
+            "token": "Ġcuriosity",
+            "token_id": 71118,
+            "logprob": -6.4727,
+            "prob": 0.0015
+          },
+          {
+            "token": "Ġtrivia",
+            "token_id": 155403,
+            "logprob": -7.207,
+            "prob": 0.0007
+          },
+          {
+            "token": "Ġyour",
+            "token_id": 2092,
+            "logprob": -7.2383,
+            "prob": 0.0007
+          },
+          {
+            "token": "Ġdoubts",
+            "token_id": 73825,
+            "logprob": -8.7891,
+            "prob": 0.0002
+          },
+          {
+            "token": "Ġcurious",
+            "token_id": 48489,
+            "logprob": -9.4609,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġcur",
+            "token_id": 5991,
+            "logprob": -9.9141,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġqueries",
+        "token_id": 32289,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 36,
+      "input_text": "Hello world! Hello!ĠHowĠcanĠIĠassistĠyouĠtoday?ĠIfĠyouĠhaveĠanyĠquestionsĠorĠneedĠhelpĠwithĠaĠspecificĠtopic,ĠfeelĠfreeĠtoĠask.ĠI'mĠhereĠtoĠprovideĠinformation,ĠanswerĠqueries",
+      "tokens": [
+        "Hello",
+        "Ġworld",
+        "!",
+        "Hello",
+        "!",
+        "ĠHow",
+        "Ġcan",
+        "ĠI",
+        "Ġassist",
+        "Ġyou",
+        "Ġtoday",
+        "?",
+        "ĠIf",
+        "Ġyou",
+        "Ġhave",
+        "Ġany",
+        "Ġquestions",
+        "Ġor",
+        "Ġneed",
+        "Ġhelp",
+        "Ġwith",
+        "Ġa",
+        "Ġspecific",
+        "Ġtopic",
+        ",",
+        "Ġfeel",
+        "Ġfree",
+        "Ġto",
+        "Ġask",
+        ".",
+        "ĠI",
+        "'m",
+        "Ġhere",
+        "Ġto",
+        "Ġprovide",
+        "Ġinformation",
+        ",",
+        "Ġanswer",
+        "Ġqueries"
+      ],
+      "token_ids": [
+        28339, 3845, 8, 28339, 8, 4070, 2063, 1767, 6385, 1933, 6683, 38, 3490, 1933, 2143, 2617,
+        8397, 1888, 2818, 3153, 1865, 1671, 6452, 16818, 19, 5388, 4755, 1726, 5825, 21, 1767, 6071,
+        4613, 1726, 4815, 3682, 19, 11205, 32289
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": ",",
+            "token_id": 19,
+            "logprob": -0.0,
+            "prob": 1.0
+          },
+          {
+            "token": "Ġand",
+            "token_id": 1728,
+            "logprob": -11.4219,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġto",
+            "token_id": 1726,
+            "logprob": -11.9688,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġor",
+            "token_id": 1888,
+            "logprob": -14.3438,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġon",
+            "token_id": 1812,
+            "logprob": -16.9219,
+            "prob": 0.0
+          },
+          {
+            "token": "<SEP>",
+            "token_id": 3,
+            "logprob": -34.4375,
+            "prob": 0.0
+          },
+          {
+            "token": "<MASK_TOKEN>",
+            "token_id": 4,
+            "logprob": -34.5938,
+            "prob": 0.0
+          },
+          {
+            "token": "<CLS>",
+            "token_id": 2,
+            "logprob": -34.375,
+            "prob": 0.0
+          },
+          {
+            "token": "<PAD>",
+            "token_id": 0,
+            "logprob": -34.4688,
+            "prob": 0.0
+          },
+          {
+            "token": "<UNK>",
+            "token_id": 1,
+            "logprob": -33.4688,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": ",",
+        "token_id": 19,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 37,
+      "input_text": "Hello world! Hello!ĠHowĠcanĠIĠassistĠyouĠtoday?ĠIfĠyouĠhaveĠanyĠquestionsĠorĠneedĠhelpĠwithĠaĠspecificĠtopic,ĠfeelĠfreeĠtoĠask.ĠI'mĠhereĠtoĠprovideĠinformation,ĠanswerĠqueries,",
+      "tokens": [
+        "Hello",
+        "Ġworld",
+        "!",
+        "Hello",
+        "!",
+        "ĠHow",
+        "Ġcan",
+        "ĠI",
+        "Ġassist",
+        "Ġyou",
+        "Ġtoday",
+        "?",
+        "ĠIf",
+        "Ġyou",
+        "Ġhave",
+        "Ġany",
+        "Ġquestions",
+        "Ġor",
+        "Ġneed",
+        "Ġhelp",
+        "Ġwith",
+        "Ġa",
+        "Ġspecific",
+        "Ġtopic",
+        ",",
+        "Ġfeel",
+        "Ġfree",
+        "Ġto",
+        "Ġask",
+        ".",
+        "ĠI",
+        "'m",
+        "Ġhere",
+        "Ġto",
+        "Ġprovide",
+        "Ġinformation",
+        ",",
+        "Ġanswer",
+        "Ġqueries",
+        ","
+      ],
+      "token_ids": [
+        28339, 3845, 8, 28339, 8, 4070, 2063, 1767, 6385, 1933, 6683, 38, 3490, 1933, 2143, 2617,
+        8397, 1888, 2818, 3153, 1865, 1671, 6452, 16818, 19, 5388, 4755, 1726, 5825, 21, 1767, 6071,
+        4613, 1726, 4815, 3682, 19, 11205, 32289, 19
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġor",
+            "token_id": 1888,
+            "logprob": -0.5977,
+            "prob": 0.5503
+          },
+          {
+            "token": "Ġand",
+            "token_id": 1728,
+            "logprob": -0.8008,
+            "prob": 0.449
+          },
+          {
+            "token": "Ġengage",
+            "token_id": 22450,
+            "logprob": -7.7539,
+            "prob": 0.0004
+          },
+          {
+            "token": "Ġoffer",
+            "token_id": 4465,
+            "logprob": -8.2031,
+            "prob": 0.0003
+          },
+          {
+            "token": "Ġbrainstorm",
+            "token_id": 120665,
+            "logprob": -10.4219,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġassist",
+            "token_id": 6385,
+            "logprob": -10.9844,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġhelp",
+            "token_id": 3153,
+            "logprob": -11.4844,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġdiscuss",
+            "token_id": 7491,
+            "logprob": -11.9062,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġgenerate",
+            "token_id": 13897,
+            "logprob": -12.8594,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġhave",
+            "token_id": 2143,
+            "logprob": -13.25,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġor",
+        "token_id": 1888,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 38,
+      "input_text": "Hello world! Hello!ĠHowĠcanĠIĠassistĠyouĠtoday?ĠIfĠyouĠhaveĠanyĠquestionsĠorĠneedĠhelpĠwithĠaĠspecificĠtopic,ĠfeelĠfreeĠtoĠask.ĠI'mĠhereĠtoĠprovideĠinformation,ĠanswerĠqueries,Ġor",
+      "tokens": [
+        "Hello",
+        "Ġworld",
+        "!",
+        "Hello",
+        "!",
+        "ĠHow",
+        "Ġcan",
+        "ĠI",
+        "Ġassist",
+        "Ġyou",
+        "Ġtoday",
+        "?",
+        "ĠIf",
+        "Ġyou",
+        "Ġhave",
+        "Ġany",
+        "Ġquestions",
+        "Ġor",
+        "Ġneed",
+        "Ġhelp",
+        "Ġwith",
+        "Ġa",
+        "Ġspecific",
+        "Ġtopic",
+        ",",
+        "Ġfeel",
+        "Ġfree",
+        "Ġto",
+        "Ġask",
+        ".",
+        "ĠI",
+        "'m",
+        "Ġhere",
+        "Ġto",
+        "Ġprovide",
+        "Ġinformation",
+        ",",
+        "Ġanswer",
+        "Ġqueries",
+        ",",
+        "Ġor"
+      ],
+      "token_ids": [
+        28339, 3845, 8, 28339, 8, 4070, 2063, 1767, 6385, 1933, 6683, 38, 3490, 1933, 2143, 2617,
+        8397, 1888, 2818, 3153, 1865, 1671, 6452, 16818, 19, 5388, 4755, 1726, 5825, 21, 1767, 6071,
+        4613, 1726, 4815, 3682, 19, 11205, 32289, 19, 1888
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġjust",
+            "token_id": 3128,
+            "logprob": -0.6528,
+            "prob": 0.5205
+          },
+          {
+            "token": "Ġsimply",
+            "token_id": 8804,
+            "logprob": -1.043,
+            "prob": 0.3523
+          },
+          {
+            "token": "Ġengage",
+            "token_id": 22450,
+            "logprob": -2.1367,
+            "prob": 0.118
+          },
+          {
+            "token": "Ġeven",
+            "token_id": 3676,
+            "logprob": -5.5898,
+            "prob": 0.0037
+          },
+          {
+            "token": "Ġhave",
+            "token_id": 2143,
+            "logprob": -5.918,
+            "prob": 0.0027
+          },
+          {
+            "token": "Ġchat",
+            "token_id": 19816,
+            "logprob": -5.9961,
+            "prob": 0.0025
+          },
+          {
+            "token": "Ġparticipate",
+            "token_id": 18570,
+            "logprob": -8.8594,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġпросто",
+            "token_id": 63283,
+            "logprob": -10.9375,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġmerely",
+            "token_id": 32801,
+            "logprob": -11.3906,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġdiscuss",
+            "token_id": 7491,
+            "logprob": -11.4062,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġjust",
+        "token_id": 3128,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 39,
+      "input_text": "Hello world! Hello!ĠHowĠcanĠIĠassistĠyouĠtoday?ĠIfĠyouĠhaveĠanyĠquestionsĠorĠneedĠhelpĠwithĠaĠspecificĠtopic,ĠfeelĠfreeĠtoĠask.ĠI'mĠhereĠtoĠprovideĠinformation,ĠanswerĠqueries,ĠorĠjust",
+      "tokens": [
+        "Hello",
+        "Ġworld",
+        "!",
+        "Hello",
+        "!",
+        "ĠHow",
+        "Ġcan",
+        "ĠI",
+        "Ġassist",
+        "Ġyou",
+        "Ġtoday",
+        "?",
+        "ĠIf",
+        "Ġyou",
+        "Ġhave",
+        "Ġany",
+        "Ġquestions",
+        "Ġor",
+        "Ġneed",
+        "Ġhelp",
+        "Ġwith",
+        "Ġa",
+        "Ġspecific",
+        "Ġtopic",
+        ",",
+        "Ġfeel",
+        "Ġfree",
+        "Ġto",
+        "Ġask",
+        ".",
+        "ĠI",
+        "'m",
+        "Ġhere",
+        "Ġto",
+        "Ġprovide",
+        "Ġinformation",
+        ",",
+        "Ġanswer",
+        "Ġqueries",
+        ",",
+        "Ġor",
+        "Ġjust"
+      ],
+      "token_ids": [
+        28339, 3845, 8, 28339, 8, 4070, 2063, 1767, 6385, 1933, 6683, 38, 3490, 1933, 2143, 2617,
+        8397, 1888, 2818, 3153, 1865, 1671, 6452, 16818, 19, 5388, 4755, 1726, 5825, 21, 1767, 6071,
+        4613, 1726, 4815, 3682, 19, 11205, 32289, 19, 1888, 3128
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġchat",
+            "token_id": 19816,
+            "logprob": -0.4624,
+            "prob": 0.6299
+          },
+          {
+            "token": "Ġhave",
+            "token_id": 2143,
+            "logprob": -1.0713,
+            "prob": 0.3425
+          },
+          {
+            "token": "Ġengage",
+            "token_id": 22450,
+            "logprob": -3.5879,
+            "prob": 0.0277
+          },
+          {
+            "token": "Ġtalk",
+            "token_id": 8107,
+            "logprob": -10.6172,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġhold",
+            "token_id": 6034,
+            "logprob": -11.1484,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġconverse",
+            "token_id": 189496,
+            "logprob": -11.8828,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġkeep",
+            "token_id": 4880,
+            "logprob": -11.9297,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġstrike",
+            "token_id": 23114,
+            "logprob": -11.9922,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġshare",
+            "token_id": 7156,
+            "logprob": -12.3047,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġcasually",
+            "token_id": 176583,
+            "logprob": -12.3672,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġchat",
+        "token_id": 19816,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 40,
+      "input_text": "Hello world! Hello!ĠHowĠcanĠIĠassistĠyouĠtoday?ĠIfĠyouĠhaveĠanyĠquestionsĠorĠneedĠhelpĠwithĠaĠspecificĠtopic,ĠfeelĠfreeĠtoĠask.ĠI'mĠhereĠtoĠprovideĠinformation,ĠanswerĠqueries,ĠorĠjustĠchat",
+      "tokens": [
+        "Hello",
+        "Ġworld",
+        "!",
+        "Hello",
+        "!",
+        "ĠHow",
+        "Ġcan",
+        "ĠI",
+        "Ġassist",
+        "Ġyou",
+        "Ġtoday",
+        "?",
+        "ĠIf",
+        "Ġyou",
+        "Ġhave",
+        "Ġany",
+        "Ġquestions",
+        "Ġor",
+        "Ġneed",
+        "Ġhelp",
+        "Ġwith",
+        "Ġa",
+        "Ġspecific",
+        "Ġtopic",
+        ",",
+        "Ġfeel",
+        "Ġfree",
+        "Ġto",
+        "Ġask",
+        ".",
+        "ĠI",
+        "'m",
+        "Ġhere",
+        "Ġto",
+        "Ġprovide",
+        "Ġinformation",
+        ",",
+        "Ġanswer",
+        "Ġqueries",
+        ",",
+        "Ġor",
+        "Ġjust",
+        "Ġchat"
+      ],
+      "token_ids": [
+        28339, 3845, 8, 28339, 8, 4070, 2063, 1767, 6385, 1933, 6683, 38, 3490, 1933, 2143, 2617,
+        8397, 1888, 2818, 3153, 1865, 1671, 6452, 16818, 19, 5388, 4755, 1726, 5825, 21, 1767, 6071,
+        4613, 1726, 4815, 3682, 19, 11205, 32289, 19, 1888, 3128, 19816
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": ".",
+            "token_id": 21,
+            "logprob": -0.1361,
+            "prob": 0.8726
+          },
+          {
+            "token": "Ġon",
+            "token_id": 1812,
+            "logprob": -2.418,
+            "prob": 0.0892
+          },
+          {
+            "token": "Ġabout",
+            "token_id": 2613,
+            "logprob": -3.543,
+            "prob": 0.0289
+          },
+          {
+            "token": "!",
+            "token_id": 8,
+            "logprob": -5.0117,
+            "prob": 0.0067
+          },
+          {
+            "token": "Ġif",
+            "token_id": 2198,
+            "logprob": -6.7148,
+            "prob": 0.0012
+          },
+          {
+            "token": ",",
+            "token_id": 19,
+            "logprob": -7.9492,
+            "prob": 0.0004
+          },
+          {
+            "token": "Ġwhenever",
+            "token_id": 25580,
+            "logprob": -7.9492,
+            "prob": 0.0004
+          },
+          {
+            "token": "Ġcasually",
+            "token_id": 176583,
+            "logprob": -8.1641,
+            "prob": 0.0003
+          },
+          {
+            "token": "Ġaway",
+            "token_id": 6242,
+            "logprob": -9.5234,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġand",
+            "token_id": 1728,
+            "logprob": -9.9766,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": ".",
+        "token_id": 21,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 41,
+      "input_text": "Hello world! Hello!ĠHowĠcanĠIĠassistĠyouĠtoday?ĠIfĠyouĠhaveĠanyĠquestionsĠorĠneedĠhelpĠwithĠaĠspecificĠtopic,ĠfeelĠfreeĠtoĠask.ĠI'mĠhereĠtoĠprovideĠinformation,ĠanswerĠqueries,ĠorĠjustĠchat.",
+      "tokens": [
+        "Hello",
+        "Ġworld",
+        "!",
+        "Hello",
+        "!",
+        "ĠHow",
+        "Ġcan",
+        "ĠI",
+        "Ġassist",
+        "Ġyou",
+        "Ġtoday",
+        "?",
+        "ĠIf",
+        "Ġyou",
+        "Ġhave",
+        "Ġany",
+        "Ġquestions",
+        "Ġor",
+        "Ġneed",
+        "Ġhelp",
+        "Ġwith",
+        "Ġa",
+        "Ġspecific",
+        "Ġtopic",
+        ",",
+        "Ġfeel",
+        "Ġfree",
+        "Ġto",
+        "Ġask",
+        ".",
+        "ĠI",
+        "'m",
+        "Ġhere",
+        "Ġto",
+        "Ġprovide",
+        "Ġinformation",
+        ",",
+        "Ġanswer",
+        "Ġqueries",
+        ",",
+        "Ġor",
+        "Ġjust",
+        "Ġchat",
+        "."
+      ],
+      "token_ids": [
+        28339, 3845, 8, 28339, 8, 4070, 2063, 1767, 6385, 1933, 6683, 38, 3490, 1933, 2143, 2617,
+        8397, 1888, 2818, 3153, 1865, 1671, 6452, 16818, 19, 5388, 4755, 1726, 5825, 21, 1767, 6071,
+        4613, 1726, 4815, 3682, 19, 11205, 32289, 19, 1888, 3128, 19816, 21
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "<|END_OF_TURN_TOKEN|>",
+            "token_id": 255001,
+            "logprob": -0.0003,
+            "prob": 0.9995
+          },
+          {
+            "token": "ĠEnjoy",
+            "token_id": 48493,
+            "logprob": -9.125,
+            "prob": 0.0001
+          },
+          {
+            "token": "ĠWhat",
+            "token_id": 8300,
+            "logprob": -9.2031,
+            "prob": 0.0001
+          },
+          {
+            "token": "\n",
+            "token_id": 206,
+            "logprob": -9.7812,
+            "prob": 0.0001
+          },
+          {
+            "token": "ĠHow",
+            "token_id": 4070,
+            "logprob": -10.3125,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠHappy",
+            "token_id": 30364,
+            "logprob": -13.4844,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠWhether",
+            "token_id": 19121,
+            "logprob": -13.6953,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠLet",
+            "token_id": 8747,
+            "logprob": -14.0703,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠIf",
+            "token_id": 3490,
+            "logprob": -14.8281,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠIt",
+            "token_id": 2332,
+            "logprob": -15.0938,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "<|END_OF_TURN_TOKEN|>",
+        "token_id": 255001,
+        "selection_method": "greedy"
+      }
+    }
+  ]
+}

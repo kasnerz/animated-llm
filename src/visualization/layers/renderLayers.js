@@ -895,6 +895,32 @@ export function renderOutputLayer(
       ? [...allCandidates.slice(0, maxTokens), { token: '...', prob: 0 }]
       : allCandidates;
 
+  // Determine which candidate was actually selected (by token_id when available, fallback to token string)
+  const selectedTokenId = step?.selected_token?.token_id;
+  const selectedTokenStr = step?.selected_token?.token;
+  const findSelectedIndex = (arr) => {
+    if (!arr || !arr.length) return -1;
+    if (selectedTokenId != null) {
+      const byId = arr.findIndex((c) => c && c.token_id === selectedTokenId);
+      if (byId !== -1) return byId;
+    }
+    if (selectedTokenStr != null) {
+      const byStr = arr.findIndex((c) => c && c.token === selectedTokenStr);
+      if (byStr !== -1) return byStr;
+    }
+    return -1;
+  };
+  const selectedIdxAll = findSelectedIndex(allCandidates);
+  // Map to the (possibly truncated) candidates array; if outside, point to ellipsis
+  let selectedIdx = 0; // safe fallback to first
+  if (selectedIdxAll >= 0) {
+    if (allCandidates.length > maxTokens && selectedIdxAll >= maxTokens) {
+      selectedIdx = candidates.length - 1; // ellipsis cell
+    } else {
+      selectedIdx = selectedIdxAll;
+    }
+  }
+
   const rm = bottomInfo.rightmostMeta;
   // Use the actual token index passed from the layout (not the visible column index)
   const rightmostActualIndex = bottomInfo.rightmostActualIndex ?? -1;
@@ -1012,7 +1038,7 @@ export function renderOutputLayer(
       const cx = hv2.centers[i];
       const token = candidates[i]?.token ?? '';
       const percentage = ((p ?? 0) * 100).toFixed(1) + '%';
-      const isSelected = i === 0;
+      const isSelected = i === selectedIdx;
 
       // Container group for all visuals of a single candidate (arrow + labels)
       const itemG = group
@@ -1076,14 +1102,20 @@ export function renderOutputLayer(
     // Create a purple rounded outline around the selected candidate (index 0)
     // This rectangle covers the logprob cell, the arrow, token label and percentage label
     if (hv2.centers.length > 0) {
-      const selIdx = 0;
+      const selIdx = selectedIdx;
       const selCx = hv2.centers[selIdx];
       if (typeof selCx === 'number') {
         const cellHalf = (hv2.cellWidth || 26) / 2;
         const left = selCx - cellHalf - 10;
         const right = selCx + cellHalf + 10;
         const top = hv2.topY - 8;
-        const bottom = arrowEndY + labelGap + 10 + labelSpacing + 8;
+        // If selected index points to the ellipsis cell, we don't have labels/arrows below it.
+        // In that case, highlight just the logprob cell area; otherwise include labels area.
+        const isEllipsisSelected =
+          selIdx === candidates.length - 1 && candidates.length > maxTokens;
+        const bottom = isEllipsisSelected
+          ? hv2.bottomY + 8
+          : arrowEndY + labelGap + 10 + labelSpacing + 8;
         const rectW = Math.max(28, right - left);
         const rectH = Math.max(28, bottom - top);
 
@@ -1131,7 +1163,7 @@ export function renderOutputLayer(
   if (subStep >= 11 && hv2) {
     try {
       // Determine start at the selected candidate's highlight rectangle bottom edge (index 0)
-      const selIdx = 0;
+      const selIdx = selectedIdx;
       const sx = hv2.centers?.[selIdx];
       if (typeof sx === 'number') {
         // Recreate the label Y math from above scope to calculate rectangle bottom
@@ -1139,7 +1171,11 @@ export function renderOutputLayer(
         const arrowEndY = arrowStartY + 18;
         const labelGap = 6;
         const labelSpacing = 20;
-        const rectBottom = arrowEndY + labelGap + 10 + labelSpacing + 8; // bottom edge of highlight rectangle
+        const isEllipsisSelected =
+          selIdx === candidates.length - 1 && candidates.length > maxTokens;
+        const rectBottom = isEllipsisSelected
+          ? hv2.bottomY + 8
+          : arrowEndY + labelGap + 10 + labelSpacing + 8; // bottom edge of highlight rectangle
         const y1 = rectBottom + 4; // start a few pixels below the rectangle
         const downY = y1 + 26; // go down a bit more
 

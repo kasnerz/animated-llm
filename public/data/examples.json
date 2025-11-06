@@ -1,76 +1,268 @@
 {
   "examples": [
     {
-      "id": "cs-001",
-      "prompt": "Ahoj Transformere!",
+      "id": "cs-001-greedy",
+      "prompt": "Ahoj světe!",
       "language": "cs",
-      "description": "Ahoj Transformere!",
-      "num_tokens": 100,
+      "description": "Ahoj světe!",
+      "num_tokens": 88,
       "model_id": "CohereLabs/aya-expanse-8b",
-      "file": "cs-001.json"
+      "temperature": 0.0,
+      "top_k": 10,
+      "file": "cs-001-greedy.json"
     },
     {
-      "id": "cs-002",
+      "id": "cs-001-random",
+      "prompt": "Ahoj světe!",
+      "language": "cs",
+      "description": "Ahoj světe!",
+      "num_tokens": 81,
+      "model_id": "CohereLabs/aya-expanse-8b",
+      "temperature": 5.0,
+      "top_k": 10,
+      "file": "cs-001-random.json"
+    },
+    {
+      "id": "cs-001-sampling",
+      "prompt": "Ahoj světe!",
+      "language": "cs",
+      "description": "Ahoj světe!",
+      "num_tokens": 100,
+      "model_id": "CohereLabs/aya-expanse-8b",
+      "temperature": 1.0,
+      "top_k": 10,
+      "file": "cs-001-sampling.json"
+    },
+    {
+      "id": "cs-002-greedy",
       "prompt": "Kdo jsi?",
       "language": "cs",
       "description": "Kdo jsi?",
       "num_tokens": 100,
       "model_id": "CohereLabs/aya-expanse-8b",
-      "file": "cs-002.json"
+      "temperature": 0.0,
+      "top_k": 10,
+      "file": "cs-002-greedy.json"
     },
     {
-      "id": "cs-003",
+      "id": "cs-002-random",
+      "prompt": "Kdo jsi?",
+      "language": "cs",
+      "description": "Kdo jsi?",
+      "num_tokens": 100,
+      "model_id": "CohereLabs/aya-expanse-8b",
+      "temperature": 5.0,
+      "top_k": 10,
+      "file": "cs-002-random.json"
+    },
+    {
+      "id": "cs-002-sampling",
+      "prompt": "Kdo jsi?",
+      "language": "cs",
+      "description": "Kdo jsi?",
+      "num_tokens": 71,
+      "model_id": "CohereLabs/aya-expanse-8b",
+      "temperature": 1.0,
+      "top_k": 10,
+      "file": "cs-002-sampling.json"
+    },
+    {
+      "id": "cs-003-greedy",
       "prompt": "Řekni mi vtip",
       "language": "cs",
       "description": "Řekni mi vtip",
       "num_tokens": 82,
       "model_id": "CohereLabs/aya-expanse-8b",
-      "file": "cs-003.json"
+      "temperature": 0.0,
+      "top_k": 10,
+      "file": "cs-003-greedy.json"
     },
     {
-      "id": "cs-004",
+      "id": "cs-003-random",
+      "prompt": "Řekni mi vtip",
+      "language": "cs",
+      "description": "Řekni mi vtip",
+      "num_tokens": 100,
+      "model_id": "CohereLabs/aya-expanse-8b",
+      "temperature": 5.0,
+      "top_k": 10,
+      "file": "cs-003-random.json"
+    },
+    {
+      "id": "cs-003-sampling",
+      "prompt": "Řekni mi vtip",
+      "language": "cs",
+      "description": "Řekni mi vtip",
+      "num_tokens": 77,
+      "model_id": "CohereLabs/aya-expanse-8b",
+      "temperature": 1.0,
+      "top_k": 10,
+      "file": "cs-003-sampling.json"
+    },
+    {
+      "id": "cs-004-greedy",
       "prompt": "Jaké je hlavní město Česka?",
       "language": "cs",
       "description": "Jaké je hlavní město Česka?",
-      "num_tokens": 74,
-      "model_id": "CohereLabs/aya-expanse-8b",
-      "file": "cs-004.json"
-    },
-    {
-      "id": "en-001",
-      "prompt": "Hello Transformer!",
-      "language": "en",
-      "description": "Hello Transformer!",
       "num_tokens": 100,
       "model_id": "CohereLabs/aya-expanse-8b",
-      "file": "en-001.json"
+      "temperature": 0.0,
+      "top_k": 10,
+      "file": "cs-004-greedy.json"
     },
     {
-      "id": "en-002",
+      "id": "cs-004-random",
+      "prompt": "Jaké je hlavní město Česka?",
+      "language": "cs",
+      "description": "Jaké je hlavní město Česka?",
+      "num_tokens": 100,
+      "model_id": "CohereLabs/aya-expanse-8b",
+      "temperature": 5.0,
+      "top_k": 10,
+      "file": "cs-004-random.json"
+    },
+    {
+      "id": "cs-004-sampling",
+      "prompt": "Jaké je hlavní město Česka?",
+      "language": "cs",
+      "description": "Jaké je hlavní město Česka?",
+      "num_tokens": 100,
+      "model_id": "CohereLabs/aya-expanse-8b",
+      "temperature": 1.0,
+      "top_k": 10,
+      "file": "cs-004-sampling.json"
+    },
+    {
+      "id": "en-001-greedy",
+      "prompt": "Hello world!",
+      "language": "en",
+      "description": "Hello world!",
+      "num_tokens": 42,
+      "model_id": "CohereLabs/aya-expanse-8b",
+      "temperature": 0.0,
+      "top_k": 10,
+      "file": "en-001-greedy.json"
+    },
+    {
+      "id": "en-001-random",
+      "prompt": "Hello world!",
+      "language": "en",
+      "description": "Hello world!",
+      "num_tokens": 100,
+      "model_id": "CohereLabs/aya-expanse-8b",
+      "temperature": 5.0,
+      "top_k": 10,
+      "file": "en-001-random.json"
+    },
+    {
+      "id": "en-001-sampling",
+      "prompt": "Hello world!",
+      "language": "en",
+      "description": "Hello world!",
+      "num_tokens": 51,
+      "model_id": "CohereLabs/aya-expanse-8b",
+      "temperature": 1.0,
+      "top_k": 10,
+      "file": "en-001-sampling.json"
+    },
+    {
+      "id": "en-002-greedy",
       "prompt": "Who are you?",
       "language": "en",
       "description": "Who are you?",
       "num_tokens": 100,
       "model_id": "CohereLabs/aya-expanse-8b",
-      "file": "en-002.json"
+      "temperature": 0.0,
+      "top_k": 10,
+      "file": "en-002-greedy.json"
     },
     {
-      "id": "en-003",
+      "id": "en-002-random",
+      "prompt": "Who are you?",
+      "language": "en",
+      "description": "Who are you?",
+      "num_tokens": 100,
+      "model_id": "CohereLabs/aya-expanse-8b",
+      "temperature": 5.0,
+      "top_k": 10,
+      "file": "en-002-random.json"
+    },
+    {
+      "id": "en-002-sampling",
+      "prompt": "Who are you?",
+      "language": "en",
+      "description": "Who are you?",
+      "num_tokens": 100,
+      "model_id": "CohereLabs/aya-expanse-8b",
+      "temperature": 1.0,
+      "top_k": 10,
+      "file": "en-002-sampling.json"
+    },
+    {
+      "id": "en-003-greedy",
       "prompt": "Tell me a joke",
       "language": "en",
       "description": "Tell me a joke",
       "num_tokens": 58,
       "model_id": "CohereLabs/aya-expanse-8b",
-      "file": "en-003.json"
+      "temperature": 0.0,
+      "top_k": 10,
+      "file": "en-003-greedy.json"
     },
     {
-      "id": "en-004",
+      "id": "en-003-random",
+      "prompt": "Tell me a joke",
+      "language": "en",
+      "description": "Tell me a joke",
+      "num_tokens": 100,
+      "model_id": "CohereLabs/aya-expanse-8b",
+      "temperature": 5.0,
+      "top_k": 10,
+      "file": "en-003-random.json"
+    },
+    {
+      "id": "en-003-sampling",
+      "prompt": "Tell me a joke",
+      "language": "en",
+      "description": "Tell me a joke",
+      "num_tokens": 57,
+      "model_id": "CohereLabs/aya-expanse-8b",
+      "temperature": 1.0,
+      "top_k": 10,
+      "file": "en-003-sampling.json"
+    },
+    {
+      "id": "en-004-greedy",
       "prompt": "What is the capital of Czechia?",
       "language": "en",
       "description": "What is the capital of Czechia?",
       "num_tokens": 52,
       "model_id": "CohereLabs/aya-expanse-8b",
-      "file": "en-004.json"
+      "temperature": 0.0,
+      "top_k": 10,
+      "file": "en-004-greedy.json"
+    },
+    {
+      "id": "en-004-random",
+      "prompt": "What is the capital of Czechia?",
+      "language": "en",
+      "description": "What is the capital of Czechia?",
+      "num_tokens": 65,
+      "model_id": "CohereLabs/aya-expanse-8b",
+      "temperature": 5.0,
+      "top_k": 10,
+      "file": "en-004-random.json"
+    },
+    {
+      "id": "en-004-sampling",
+      "prompt": "What is the capital of Czechia?",
+      "language": "en",
+      "description": "What is the capital of Czechia?",
+      "num_tokens": 55,
+      "model_id": "CohereLabs/aya-expanse-8b",
+      "temperature": 1.0,
+      "top_k": 10,
+      "file": "en-004-sampling.json"
     }
   ]
 }

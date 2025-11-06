@@ -147,6 +147,7 @@
   display: flex;
   align-items: center;
   gap: 8px;
+  cursor: pointer;
 }
 
 /* No hover effect on the prompt input box (rule removed) */
@@ -221,6 +222,59 @@
   min-width: 0;
 }
 
+/* Renamed from dropdown-item-model to dropdown-item-meta for consistency */
+.dropdown-item-meta {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  opacity: 0.7;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.dropdown-item.active .dropdown-item-meta {
+  color: rgba(255, 255, 255, 0.8);
+  opacity: 1;
+}
+
+/* Model info with logo */
+.model-info {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.model-logo {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+  display: block;
+}
+
+.model-size {
+  font-family: 'Monaco', 'Menlo', 'Courier New', monospace;
+  font-size: 0.9rem;
+}
+
+/* Fallback for unknown models */
+.model-id {
+  font-family: 'Monaco', 'Menlo', 'Courier New', monospace;
+  font-size: 0.9rem;
+}
+
+/* Temperature display */
+.temperature-display {
+  font-family: 'Monaco', 'Menlo', 'Courier New', monospace;
+  font-size: 0.9rem;
+}
+
+/* Separator between meta items */
+.meta-separator {
+  opacity: 0.5;
+}
+
+/* Keep old class for backward compatibility */
 .dropdown-item-model {
   font-size: 0.75rem;
   color: var(--text-secondary);
@@ -316,6 +370,111 @@
   margin-left: 1px;
   width: 12px;
   height: 12px;
+}
+
+/* Settings (model & temperature) */
+.btn-settings {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-tertiary);
+  transition:
+    color 0.2s ease,
+    opacity 0.2s ease;
+  padding: 0;
+  flex-shrink: 0;
+  margin-right: 4px;
+  opacity: 1;
+  font-size: 24px;
+  /* controls @mdi/react Icon (1em) */
+  line-height: 1;
+}
+
+.btn-settings:hover {
+  color: var(--text-primary);
+  opacity: 1;
+}
+
+.btn-settings svg {
+  display: block;
+}
+
+.settings-popover {
+  position: absolute;
+  right: 8px;
+  top: calc(100% + 6px);
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  z-index: 1100;
+  padding: 8px 10px;
+  min-width: 220px;
+}
+
+.settings-section + .settings-section {
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px dashed var(--border-color);
+}
+
+.settings-label {
+  font-size: 0.7rem;
+  color: var(--text-tertiary);
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.model-options {
+  display: flex;
+  gap: 6px;
+}
+
+.model-option {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 8px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  cursor: pointer;
+}
+
+.model-option.selected {
+  outline: 2px solid var(--accent-primary);
+  background: rgba(78, 205, 196, 0.08);
+}
+
+.temp-options {
+  display: flex;
+  gap: 6px;
+}
+
+.temp-option {
+  width: 36px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-secondary);
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.temp-option.selected {
+  outline: 2px solid var(--accent-primary);
+  background: rgba(78, 205, 196, 0.08);
 }
 
 .prompt-display-minimal {
