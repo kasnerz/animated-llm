@@ -7,6 +7,17 @@
 let cachedExamplesList = null;
 const cachedExamples = new Map();
 
+// Build a URL to a data file that works both in dev (base='/') and
+// on GitHub Pages (base='/animated-llm/').
+function buildDataUrl(path) {
+  const base = (import.meta.env && import.meta.env.BASE_URL) || '/';
+  // Ensure single trailing slash on base
+  const normalizedBase = base.endsWith('/') ? base : base + '/';
+  // Remove any leading slash from path to avoid double slashes
+  const cleanPath = path.startsWith('/') ? path.slice(1) : path;
+  return normalizedBase + cleanPath;
+}
+
 /**
  * List all available examples
  * @param {string} language - Optional language filter ('en' or 'cs')
@@ -16,7 +27,7 @@ export async function listExamples(language = null) {
   try {
     // Always fetch fresh data if we don't have it cached
     if (!cachedExamplesList) {
-      const response = await fetch('/data/examples.json');
+      const response = await fetch(buildDataUrl('data/examples.json'));
       if (!response.ok) {
         throw new Error(`Failed to load examples: ${response.statusText}`);
       }
@@ -59,7 +70,7 @@ export async function getExample(exampleId) {
 
     // Use the filename from the examples list
     const filename = exampleMeta.file || `${exampleId}.json`;
-    const response = await fetch(`/data/${filename}`);
+    const response = await fetch(buildDataUrl(`data/${filename}`));
 
     if (!response.ok) {
       throw new Error(`Failed to load example ${exampleId}: ${response.statusText}`);
