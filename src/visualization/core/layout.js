@@ -32,7 +32,7 @@ export function calculateTokenLayout(tokens, width, isExpanded, config = {}) {
     for (let i = 0; i < firstVisible; i++) {
       const x = margin + i * tokenSpacing;
       positions.push(x);
-      widths.push(tokenSpacing - 10);
+      widths.push(tokenSpacing - LAYOUT.TOKEN_WIDTH_REDUCTION);
       visibleIndices.push(i);
     }
 
@@ -47,7 +47,7 @@ export function calculateTokenLayout(tokens, width, isExpanded, config = {}) {
     for (let i = 0; i < lastVisible; i++) {
       const x = gapX + gap + i * tokenSpacing;
       positions.push(x);
-      widths.push(tokenSpacing - 10);
+      widths.push(tokenSpacing - LAYOUT.TOKEN_WIDTH_REDUCTION);
       visibleIndices.push(startIdx + i);
     }
   } else {
@@ -55,7 +55,7 @@ export function calculateTokenLayout(tokens, width, isExpanded, config = {}) {
     for (let i = 0; i < tokens.length; i++) {
       const x = margin + i * tokenSpacing;
       positions.push(x);
-      widths.push(tokenSpacing - 10);
+      widths.push(tokenSpacing - LAYOUT.TOKEN_WIDTH_REDUCTION);
       visibleIndices.push(i);
     }
   }
@@ -81,7 +81,7 @@ export function calculateBlockDimensions(outerMeta, layout) {
   const { blockPadding } = layout;
 
   const blockX = startX - blockPadding;
-  const blockY = afterEmbY + 60;
+  const blockY = afterEmbY + LAYOUT.BLOCK_Y_OFFSET;
   const blockWidth = totalWidth + 2 * blockPadding;
 
   // Vertical layout inside block:
@@ -89,9 +89,9 @@ export function calculateBlockDimensions(outerMeta, layout) {
   // - Attention mash in middle
   // - Bottom embeddings after attention
   const insideTopY = blockY + blockPadding;
-  const embeddingHeight = 50; // Approximate
-  const attentionHeight = 80;
-  const insideBottomY = insideTopY + embeddingHeight + attentionHeight + 20;
+  const embeddingHeight = LAYOUT.INSIDE_EMBEDDING_HEIGHT;
+  const attentionHeight = LAYOUT.INSIDE_ATTENTION_HEIGHT;
+  const insideBottomY = insideTopY + embeddingHeight + attentionHeight + LAYOUT.INSIDE_SPACING;
   const blockHeight = insideBottomY - blockY + embeddingHeight + blockPadding;
 
   return {
@@ -112,12 +112,15 @@ export function calculateBlockDimensions(outerMeta, layout) {
  * @returns {Object} Layout: barPositions, barWidths, barHeights, maxHeight
  */
 export function calculateOutputLayout(distribution, width, startY) {
-  const margin = 20;
+  const margin = LAYOUT.OUTPUT_MARGIN;
   const availableWidth = width - 2 * margin;
   const barCount = distribution.length;
-  const spacing = 4;
-  const barWidth = Math.min(80, (availableWidth - (barCount - 1) * spacing) / barCount);
-  const maxHeight = 200;
+  const spacing = LAYOUT.OUTPUT_BAR_SPACING;
+  const barWidth = Math.min(
+    LAYOUT.OUTPUT_MAX_BAR_WIDTH,
+    (availableWidth - (barCount - 1) * spacing) / barCount
+  );
+  const maxHeight = LAYOUT.OUTPUT_MAX_HEIGHT;
 
   // Normalize probabilities to bar heights
   const maxProb = Math.max(...distribution.map((d) => d.probability));

@@ -153,6 +153,16 @@ function appReducer(state, action) {
       const sub = state.currentAnimationSubStep;
       const currentLayer = state.currentTransformerLayer;
 
+      // Skip the no-op substep right after tokenization (sub 1)
+      // Jump directly from 0 -> 2 so the flow goes straight to input embeddings
+      if (sub === 0) {
+        return {
+          ...state,
+          currentAnimationSubStep: 2,
+          instantTransition: false,
+        };
+      }
+
       // If numLayers <= 1, skip reveal and second pass
       if (numLayers <= 1 && sub === 5) {
         return {
@@ -205,6 +215,15 @@ function appReducer(state, action) {
       const numLayers = state.currentExample?.model_info?.num_layers || 1;
       const sub = state.currentAnimationSubStep;
       const currentLayer = state.currentTransformerLayer;
+
+      // Symmetric skip: when going back from sub 2, jump to 0 (skip 1)
+      if (sub === 2) {
+        return {
+          ...state,
+          currentAnimationSubStep: 0,
+          instantTransition: true,
+        };
+      }
 
       // If at very beginning, nothing to do
       if (state.currentStep === 0 && sub <= 0) {

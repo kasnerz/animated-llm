@@ -16,7 +16,7 @@ import {
 import { computeEmbeddingsForStep } from '../visualization/core/embeddings';
 import '../styles/visualization.css';
 import { processTokenForVisualization } from '../utils/tokenProcessing';
-import { LAYOUT as CONSTS } from '../visualization/core/constants';
+import { LAYOUT as CONSTS, TOKEN } from '../visualization/core/constants';
 import Icon from '@mdi/react';
 import { mdiArrowExpandHorizontal, mdiArrowCollapseHorizontal } from '@mdi/js';
 
@@ -217,38 +217,41 @@ function VisualizationCanvas() {
     const labelsGroup = labelsSvg.append('g').attr('class', 'stage-labels-group');
 
     // Get SVG dimensions - use full container width for layout
-    const width = containerWidth || 800;
+    const width = containerWidth || CONSTS.DEFAULT_CONTAINER_WIDTH;
     // Dynamically size the sticky labels panel based on estimated token content width
-    const estimateGap = 70; // keep in sync with renderTokensLayer spacing
-    const estWidths = (step.tokens || []).map((tok) => Math.max(36, tok.length * 10 + 16));
+    const estimateGap = TOKEN.GAP;
+    const estWidths = (step.tokens || []).map((tok) =>
+      Math.max(TOKEN.MIN_BOX_WIDTH, tok.length * TOKEN.CHAR_WIDTH + TOKEN.HORIZ_PADDING)
+    );
     const estimatedContentWidth =
       estWidths.reduce((a, b) => a + b, 0) +
       ((step.tokens || []).length > 0 ? estimateGap * ((step.tokens || []).length - 1) : 0) +
-      40;
-    const maxLabelsWidth = Math.max(360, Math.round(width * 0.5));
-    const minLabelsWidth = 340;
+      CONSTS.CONTENT_PADDING;
+    const maxLabelsWidth = Math.max(
+      CONSTS.MAX_LABELS_WIDTH,
+      Math.round(width * CONSTS.MAX_LABELS_WIDTH_RATIO)
+    );
+    const minLabelsWidth = CONSTS.MIN_LABELS_WIDTH;
     const denom = Math.max(1, width - minLabelsWidth);
     const growthRatio = Math.max(0, Math.min(1, estimatedContentWidth / denom));
     const labelsWidthDynamic = Math.round(
       maxLabelsWidth - (maxLabelsWidth - minLabelsWidth) * growthRatio
     );
-    const visualizationWidth = Math.max(420, width - labelsWidthDynamic); // Content area width
+    const visualizationWidth = Math.max(CONSTS.MIN_VISUALIZATION_WIDTH, width - labelsWidthDynamic); // Content area width
     // const height = parseFloat(svg.attr('height')) || 900;
 
     // Determine if we need to collapse tokens
-    const maxVisibleTokens = Math.floor(visualizationWidth / 170) - 1; // basic heuristic; dynamic sizing handled below
+    const maxVisibleTokens = Math.floor(visualizationWidth / CONSTS.TOKEN_SPACING_ESTIMATE) - 1;
     const shouldCollapse = step.tokens.length > maxVisibleTokens && !isExpanded;
 
     // Layout configuration with proper spacing
     const layout = {
-      // Make tokens appear ~10px below the top of the visualization area
-      tokenY: 10,
-      // Input embeddings positioned closer to tokens (moved up from 110)
-      embeddingY: 85,
-      margin: 20,
-      leftBias: -100, // shift overall layout ~200px to the left when space allows
-      tokenSpacing: 140,
-      blockPadding: 30,
+      tokenY: CONSTS.TOKEN_Y,
+      embeddingY: CONSTS.EMBEDDING_Y,
+      margin: CONSTS.MARGIN,
+      leftBias: CONSTS.LEFT_BIAS,
+      tokenSpacing: CONSTS.TOKEN_SPACING,
+      blockPadding: CONSTS.BLOCK_PADDING,
     };
 
     // 1. Render tokens
@@ -397,9 +400,12 @@ function VisualizationCanvas() {
     }
 
     // Render stage labels into the sticky right panel; anchor within the panel (x=0)
-    // Always show labels gradually based on substep, regardless of token/layer
-    const showLabelsGradually = true;
-    renderStageLabels(labelsGroup, layout, 0, subStep, t, showLabelsGradually);
+    // Show labels gradually only on first pass (step 1); after that show all labels
+    const showLabelsGradually = state.currentStep === 1;
+    renderStageLabels(labelsGroup, layout, 0, subStep, t, showLabelsGradually, {
+      currentLayer: state.currentTransformerLayer,
+      numLayers,
+    });
     // Size the labels SVG to the panel width
     labelsSvg.attr('width', labelsWidthDynamic);
 
@@ -453,14 +459,19 @@ function VisualizationCanvas() {
   // Compute dynamic labels width again for layout styling
   const currentStepDataForStyle = state.currentExample?.generation_steps?.[state.currentStep - 1];
   const tokensForStyle = currentStepDataForStyle?.tokens || [];
-  const estWidthsForStyle = tokensForStyle.map((tok) => Math.max(36, tok.length * 10 + 16));
+  const estWidthsForStyle = tokensForStyle.map((tok) =>
+    Math.max(TOKEN.MIN_BOX_WIDTH, tok.length * TOKEN.CHAR_WIDTH + TOKEN.HORIZ_PADDING)
+  );
   const estimatedContentWidthForStyle =
     estWidthsForStyle.reduce((a, b) => a + b, 0) +
-    (tokensForStyle.length > 0 ? 70 * (tokensForStyle.length - 1) : 0) +
-    40;
-  const widthForStyle = containerWidth || 800;
-  const maxLabelsWidthForStyle = Math.max(360, Math.round(widthForStyle * 0.5));
-  const minLabelsWidthForStyle = 340;
+    (tokensForStyle.length > 0 ? TOKEN.GAP * (tokensForStyle.length - 1) : 0) +
+    CONSTS.CONTENT_PADDING;
+  const widthForStyle = containerWidth || CONSTS.DEFAULT_CONTAINER_WIDTH;
+  const maxLabelsWidthForStyle = Math.max(
+    CONSTS.MAX_LABELS_WIDTH,
+    Math.round(widthForStyle * CONSTS.MAX_LABELS_WIDTH_RATIO)
+  );
+  const minLabelsWidthForStyle = CONSTS.MIN_LABELS_WIDTH;
   const denomForStyle = Math.max(1, widthForStyle - minLabelsWidthForStyle);
   const growthRatioForStyle = Math.max(
     0,
@@ -485,26 +496,35 @@ function VisualizationCanvas() {
 
           // Compute scrollable content width and token threshold similar to SVG render
           const tokens = step.tokens || [];
-          const gap = 70;
-          const widthForCalc = containerWidth || 800;
-          const maxLabelsWidthCalc = Math.max(360, Math.round(widthForCalc * 0.5));
-          const minLabelsWidthCalc = 340;
+          const gap = TOKEN.GAP;
+          const widthForCalc = containerWidth || CONSTS.DEFAULT_CONTAINER_WIDTH;
+          const maxLabelsWidthCalc = Math.max(
+            CONSTS.MAX_LABELS_WIDTH,
+            Math.round(widthForCalc * CONSTS.MAX_LABELS_WIDTH_RATIO)
+          );
+          const minLabelsWidthCalc = CONSTS.MIN_LABELS_WIDTH;
           const denomCalc = Math.max(1, widthForCalc - minLabelsWidthCalc);
           const estWidths = tokens.map((tok) =>
-            Math.max(36, processTokenForVisualization(tok).length * 10 + 16)
+            Math.max(
+              TOKEN.MIN_BOX_WIDTH,
+              processTokenForVisualization(tok).length * TOKEN.CHAR_WIDTH + TOKEN.HORIZ_PADDING
+            )
           );
           const estimatedContentWidth =
             estWidths.reduce((a, b) => a + b, 0) +
             (tokens.length > 0 ? gap * (tokens.length - 1) : 0) +
-            40;
+            CONSTS.CONTENT_PADDING;
           const labelsWidthCalc = Math.round(
             maxLabelsWidthCalc -
               (maxLabelsWidthCalc - minLabelsWidthCalc) *
                 Math.max(0, Math.min(1, estimatedContentWidth / denomCalc))
           );
-          const scrollAreaWidth = Math.max(320, widthForCalc - labelsWidthCalc);
+          const scrollAreaWidth = Math.max(
+            CONSTS.MIN_SCROLL_AREA_WIDTH,
+            widthForCalc - labelsWidthCalc
+          );
 
-          const maxVisibleTokens = Math.floor(scrollAreaWidth / 170) - 1; // Match the render logic
+          const maxVisibleTokens = Math.floor(scrollAreaWidth / CONSTS.TOKEN_SPACING_ESTIMATE) - 1;
           // Show button whenever there are enough tokens that collapsing would be beneficial
           // This matches the logic used in the render effect (line ~173)
           const shouldShow = tokens.length > maxVisibleTokens;
@@ -516,12 +536,17 @@ function VisualizationCanvas() {
           const rightTokens = tokens.slice(-edgeCount);
           const visibleCollapsed = [...leftTokens, '...', ...rightTokens];
           const widthsCollapsed = visibleCollapsed.map((tok) =>
-            tok === '...' ? 24 : Math.max(36, processTokenForVisualization(tok).length * 10 + 16)
+            tok === '...'
+              ? TOKEN.ELLIPSIS_WIDTH
+              : Math.max(
+                  TOKEN.MIN_BOX_WIDTH,
+                  processTokenForVisualization(tok).length * TOKEN.CHAR_WIDTH + TOKEN.HORIZ_PADDING
+                )
           );
           const contentWidthCollapsed =
             widthsCollapsed.reduce((a, b) => a + b, 0) + gap * (visibleCollapsed.length - 1);
-          const minMargin = 20; // keep in sync with layout.margin default
-          const leftBias = -100; // keep in sync with layout.leftBias
+          const minMargin = CONSTS.MARGIN;
+          const leftBias = CONSTS.LEFT_BIAS;
           const startX = Math.max(
             minMargin,
             (scrollAreaWidth - contentWidthCollapsed) / 2 - leftBias
@@ -536,14 +561,17 @@ function VisualizationCanvas() {
           const ellipsisCenterX = positionsCollapsed[ellipsisIndex] ?? scrollAreaWidth / 2;
 
           // Position the button between token IDs and embeddings, adjust for horizontal scroll
-          const buttonHalf = 16; // 32px / 2
+          const buttonHalf = CONSTS.COLLAPSE_BUTTON_SIZE / 2;
           const left = Math.round(ellipsisCenterX - scrollLeft - buttonHalf);
-          const clampedLeft = Math.max(4, Math.min(left, scrollAreaWidth - buttonHalf * 2 - 4));
+          const clampedLeft = Math.max(
+            CONSTS.COLLAPSE_BUTTON_EDGE_MARGIN,
+            Math.min(left, scrollAreaWidth - buttonHalf * 2 - CONSTS.COLLAPSE_BUTTON_EDGE_MARGIN)
+          );
 
           return (
             <button
               className={`collapse-toggle ${isExpanded ? 'state-expanded' : 'state-collapsed'}`}
-              style={{ left: `${clampedLeft}px`, top: '80px' }}
+              style={{ left: `${clampedLeft}px`, top: `${CONSTS.COLLAPSE_BUTTON_TOP}px` }}
               onClick={() => setIsExpanded((v) => !v)}
               aria-label={isExpanded ? 'Collapse tokens' : 'Expand tokens'}
               title={isExpanded ? 'Collapse tokens' : 'Expand tokens'}
@@ -559,25 +587,32 @@ function VisualizationCanvas() {
           // Estimate dynamic width based on token content (labels are in a separate sticky panel)
           const currentStepData = state.currentExample?.generation_steps?.[state.currentStep - 1];
           const tokens = currentStepData?.tokens || [];
-          const gap = 70; // keep in sync with renderTokensLayer spacing
-          const estWidths = tokens.map((tok) => Math.max(36, tok.length * 10 + 16));
+          const gap = TOKEN.GAP;
+          const estWidths = tokens.map((tok) =>
+            Math.max(TOKEN.MIN_BOX_WIDTH, tok.length * TOKEN.CHAR_WIDTH + TOKEN.HORIZ_PADDING)
+          );
           const estimatedContentWidth =
             estWidths.reduce((a, b) => a + b, 0) +
             (tokens.length > 0 ? gap * (tokens.length - 1) : 0) +
-            40;
+            CONSTS.CONTENT_PADDING;
           // Use full scrollable width (container minus dynamic panel) or estimated width, whichever is larger
-          const widthForCalc = containerWidth || 800;
-          const maxLabelsWidthCalc = Math.max(360, Math.round(widthForCalc * 0.5));
-          const minLabelsWidthCalc = 340;
+          const widthForCalc = containerWidth || CONSTS.DEFAULT_CONTAINER_WIDTH;
+          const maxLabelsWidthCalc = Math.max(
+            CONSTS.MAX_LABELS_WIDTH,
+            Math.round(widthForCalc * CONSTS.MAX_LABELS_WIDTH_RATIO)
+          );
+          const minLabelsWidthCalc = CONSTS.MIN_LABELS_WIDTH;
           const denomCalc = Math.max(1, widthForCalc - minLabelsWidthCalc);
           const growthRatioCalc = Math.max(0, Math.min(1, estimatedContentWidth / denomCalc));
           const labelsWidthCalc = Math.round(
             maxLabelsWidthCalc - (maxLabelsWidthCalc - minLabelsWidthCalc) * growthRatioCalc
           );
-          const scrollAreaWidth = Math.max(320, widthForCalc - labelsWidthCalc);
+          const scrollAreaWidth = Math.max(
+            CONSTS.MIN_SCROLL_AREA_WIDTH,
+            widthForCalc - labelsWidthCalc
+          );
           // When expanded, add horizontal padding so the rightmost content isn't trimmed.
-          // Keep this in sync with layout.margin (~20px on the left) and potential positioning biases.
-          const extraPadding = 400; // layout.margin * 2 for symmetric room
+          const extraPadding = CONSTS.EXPANDED_EXTRA_PADDING;
           const svgWidth = isExpanded
             ? Math.max(scrollAreaWidth, estimatedContentWidth + extraPadding)
             : scrollAreaWidth;

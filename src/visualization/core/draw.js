@@ -17,7 +17,7 @@ export function drawArrow(group, x1, y1, x2, y2, opts = {}) {
   const {
     className = '',
     color = COLORS.getArrowColor(),
-    strokeWidth = STROKE.WIDTH_THICK,
+    strokeWidth = STROKE.WIDTH_NORMAL,
     markerSize = STROKE.MARKER_SIZE,
     opacity = STROKE.OPACITY_DEFAULT,
     withBox = false,
