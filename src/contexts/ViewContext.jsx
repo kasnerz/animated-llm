@@ -1,5 +1,6 @@
-import { createContext, useContext, useState } from 'react';
+import { createContext, useContext, useState, useCallback } from 'react';
 import { mdiTextBoxEditOutline, mdiAbacus, mdiCogPlay } from '@mdi/js';
+import { useApp } from './AppContext';
 
 const ViewContext = createContext();
 
@@ -40,7 +41,20 @@ export const VIEW_INFO = {
  * ViewProvider component
  */
 export function ViewProvider({ children, initialView = VIEW_TYPES.TEXT_GENERATION }) {
-  const [currentView, setCurrentView] = useState(initialView);
+  const [currentView, setCurrentViewState] = useState(initialView);
+  const { actions } = useApp();
+
+  // Wrap setCurrentView to also reset animation state
+  const setCurrentView = useCallback(
+    (newView) => {
+      if (newView !== currentView) {
+        setCurrentViewState(newView);
+        // Reset animation state when changing views
+        actions.reset();
+      }
+    },
+    [currentView, actions]
+  );
 
   const value = {
     currentView,

@@ -611,11 +611,19 @@ function VisualizationCanvas() {
             CONSTS.MIN_SCROLL_AREA_WIDTH,
             widthForCalc - labelsWidthCalc
           );
-          // When expanded, add horizontal padding so the rightmost content isn't trimmed.
+          // When expanded, calculate the actual required width including margins
+          // Match the layout calculation from tokenRenderer.js:
+          // startX = Math.max(minMargin, (width - contentWidth) / 2 - leftBias)
+          // Total width needed = startX + contentWidth + rightMargin
+          const minMargin = CONSTS.MARGIN;
+          const leftBias = CONSTS.LEFT_BIAS;
           const extraPadding = CONSTS.EXPANDED_EXTRA_PADDING;
-          const svgWidth = isExpanded
-            ? Math.max(scrollAreaWidth, estimatedContentWidth + extraPadding)
-            : scrollAreaWidth;
+          const startX = Math.max(
+            minMargin,
+            (scrollAreaWidth - estimatedContentWidth) / 2 - leftBias
+          );
+          const requiredWidth = startX + estimatedContentWidth + minMargin + extraPadding;
+          const svgWidth = isExpanded ? Math.max(scrollAreaWidth, requiredWidth) : scrollAreaWidth;
 
           // Render SVG with computed width
           return (

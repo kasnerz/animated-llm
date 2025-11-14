@@ -8,7 +8,7 @@ import DecodingView from './views/DecodingView';
 import InputSection from './components/InputSection';
 import KeyboardShortcutsModal from './components/KeyboardShortcutsModal';
 import LanguageSelector from './components/LanguageSelector';
-import ViewSelector from './components/ViewSelector';
+import LeftPanel from './components/LeftPanel';
 import Icon from '@mdi/react';
 import { mdiKeyboard } from '@mdi/js';
 import { config } from './config';
@@ -23,6 +23,8 @@ function AppContent() {
   const { t, language, toggleLanguage } = useI18n();
   const { currentView } = useView();
   const [isKeyboardShortcutsOpen, setIsKeyboardShortcutsOpen] = useState(false);
+  const [isHamburgerOpen, setIsHamburgerOpen] = useState(false);
+  const [isLeftPanelCollapsed, setIsLeftPanelCollapsed] = useState(true);
   // Guard to avoid invoking step completion multiple times while state is catching up
   const completionGuardRef = useRef({ step: -1, sub: -1 });
 
@@ -251,43 +253,51 @@ function AppContent() {
   }
 
   return (
-    <div className="app-container">
+    <div
+      className={`app-container with-left-panel ${isLeftPanelCollapsed ? 'panel-collapsed' : ''} ${isHamburgerOpen ? 'hamburger-open' : ''}`}
+    >
       {/* Keyboard Shortcuts Modal */}
       <KeyboardShortcutsModal
         isOpen={isKeyboardShortcutsOpen}
         onClose={() => setIsKeyboardShortcutsOpen(false)}
       />
 
+      {/* Left Panel with view selector */}
+      <LeftPanel
+        isCollapsed={isLeftPanelCollapsed}
+        onToggleCollapse={() => setIsLeftPanelCollapsed(!isLeftPanelCollapsed)}
+      />
+
       {/* Floating top section */}
       <div className="floating-top-section">
         <div className="floating-top-content">
+          {/* Logo */}
+          <div className="app-logo">
+            <span className="logo-text">Animated LLM</span>
+          </div>
+
           {/* View-specific content (input section or placeholder) */}
           {renderViewTopContent()}
 
           {/* Header controls - minimal */}
-          <div className="header-controls">
+          <div className={`header-controls ${isHamburgerOpen ? 'open' : ''}`}>
             <button
               className="hamburger-toggle"
               onClick={() => {
-                const controls = document.querySelector('.header-controls');
-                controls?.classList.toggle('open');
+                setIsHamburgerOpen(!isHamburgerOpen);
               }}
               aria-label="Menu"
             >
               ☰
             </button>
             <div className="header-controls-list">
-              <div className="view-menu-wrapper">
-                <ViewSelector />
-                <span className="menu-label">{t('view_label') || 'View'}</span>
-              </div>
               <button
                 onClick={() => setIsKeyboardShortcutsOpen(true)}
                 className="menu-item-with-label"
                 title={t('keyboard_shortcuts')}
                 aria-label={t('keyboard_shortcuts')}
               >
-                <Icon path={mdiKeyboard} size={1.4} color="#555" />
+                <Icon path={mdiKeyboard} size={1.2} color="#555" />
                 <span className="menu-label">{t('keyboard_shortcuts')}</span>
               </button>
               <button

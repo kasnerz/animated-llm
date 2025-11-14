@@ -44,17 +44,17 @@ export const LAYOUT = {
   VECTOR_HEIGHT: 40,
   CORNER_RADIUS: 10,
   // Output distribution
-  MAX_OUTPUT_TOKENS: 8, // Show at most this many tokens (+ ellipsis if more exist)
+  MAX_OUTPUT_TOKENS: 7, // Show at most this many tokens (+ ellipsis if more exist)
   OUTPUT_MARGIN: 20, // Margin for output distribution
   OUTPUT_BAR_SPACING: 4, // Spacing between distribution bars
   OUTPUT_MAX_BAR_WIDTH: 80, // Maximum width of distribution bars
   OUTPUT_MAX_HEIGHT: 200, // Maximum height of distribution visualization
   // Content width calculations
-  CONTENT_PADDING: 40, // Padding added to estimated content width
-  EXPANDED_EXTRA_PADDING: 400, // Extra padding when tokens are expanded
+  CONTENT_PADDING: 0, // Padding added to estimated content width
+  EXPANDED_EXTRA_PADDING: 40, // Extra padding when tokens are expanded (to ensure scrollbar appears)
   // Sizing and thresholds
-  MIN_VISUALIZATION_WIDTH: 420,
-  MIN_SCROLL_AREA_WIDTH: 320,
+  MIN_VISUALIZATION_WIDTH: 0,
+  MIN_SCROLL_AREA_WIDTH: 500,
   DEFAULT_CONTAINER_WIDTH: 800,
   MIN_LABELS_WIDTH: 340,
   MAX_LABELS_WIDTH: 360,
@@ -160,13 +160,13 @@ export const OUTPUT = {
  * Stage label constants
  */
 export const STAGE_LABEL = {
-  GAP_TO_LINE: 20,
+  GAP_TO_LINE: 30,
   GAP_LINE_TO_LABEL: 20,
-  HIGHLIGHT_WIDTH: 340,
-  HIGHLIGHT_HEIGHT: 54,
+  HIGHLIGHT_WIDTH: 300,
+  HIGHLIGHT_HEIGHT: 50,
   HIGHLIGHT_RADIUS: 6,
-  HEADING_SIZE: '18px',
-  HINT_SIZE: '12px',
+  HEADING_SIZE: '17px',
+  HINT_SIZE: '11px',
   HINT_Y_OFFSET: 19,
   LINE_WIDTH: 1.5,
   CONNECTOR_DASHARRAY: '3,3',
