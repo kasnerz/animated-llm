@@ -294,6 +294,7 @@ h2 {
 /* Token underlines */
 .tokenized-text {
   display: inline;
+  word-break: break-word; /* Allow breaking long words on small screens */
 }
 
 .token-with-underline {
@@ -304,4 +305,19 @@ h2 {
   border-radius: 2px;
   margin-right: 4px;
   line-height: 1.6;
+}
+
+/* Responsive adjustments for tokens */
+@media (max-width: 640px) {
+  .token-with-underline {
+    border-bottom-width: 4px;
+    margin-right: 2px;
+  }
+}
+
+@media (max-width: 480px) {
+  .token-with-underline {
+    border-bottom-width: 3px;
+    margin-right: 1px;
+  }
 }

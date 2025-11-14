@@ -247,27 +247,6 @@ function AppContent() {
 
   return (
     <div className="app-container">
-      {/* Header controls - minimal */}
-      <div className="header-controls">
-        <button
-          onClick={() => setIsKeyboardShortcutsOpen(true)}
-          className="icon-button-minimal"
-          title={t('keyboard_shortcuts')}
-          aria-label={t('keyboard_shortcuts')}
-        >
-          <Icon path={mdiKeyboard} size={1.4} color="#555" />
-        </button>
-        <button
-          onClick={actions.toggleTheme}
-          className="icon-button-minimal"
-          title={t('toggle_theme')}
-          aria-label={t('toggle_theme')}
-        >
-          {state.theme === 'dark' ? '☀️' : '🌙'}
-        </button>
-        <LanguageSelector />
-      </div>
-
       {/* Keyboard Shortcuts Modal */}
       <KeyboardShortcutsModal
         isOpen={isKeyboardShortcutsOpen}
@@ -276,8 +255,45 @@ function AppContent() {
 
       {/* Floating top section */}
       <div className="floating-top-section">
-        {/* Input section */}
-        <InputSection />
+        <div className="floating-top-content">
+          {/* Input section */}
+          <div className="top-panel-input">
+            <InputSection />
+          </div>
+
+          {/* Header controls - minimal */}
+          <div className="header-controls">
+            <button
+              className="hamburger-toggle"
+              onClick={() => {
+                const controls = document.querySelector('.header-controls');
+                controls?.classList.toggle('open');
+              }}
+              aria-label="Menu"
+            >
+              ☰
+            </button>
+            <div className="header-controls-list">
+              <button
+                onClick={() => setIsKeyboardShortcutsOpen(true)}
+                className="icon-button-minimal"
+                title={t('keyboard_shortcuts')}
+                aria-label={t('keyboard_shortcuts')}
+              >
+                <Icon path={mdiKeyboard} size={1.4} color="#555" />
+              </button>
+              <button
+                onClick={actions.toggleTheme}
+                className="icon-button-minimal"
+                title={t('toggle_theme')}
+                aria-label={t('toggle_theme')}
+              >
+                {state.theme === 'dark' ? '☀️' : '🌙'}
+              </button>
+              <LanguageSelector />
+            </div>
+          </div>
+        </div>
       </div>
 
       {/* Main content */}

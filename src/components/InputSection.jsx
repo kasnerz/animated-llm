@@ -1,12 +1,12 @@
 import { useApp } from '../contexts/AppContext';
 import { useI18n } from '../i18n/I18nProvider';
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { getTokenColor } from '../visualization/core/colors';
 import { processTokenForText } from '../utils/tokenProcessing';
 import { MODEL_REGISTRY, getModelInfo, getTemperatureEmoji } from '../config/modelConfig';
 import '../styles/main.css';
 import Icon from '@mdi/react';
-import { mdiPlay, mdiPause, mdiChevronDown, mdiTune } from '@mdi/js';
+import { mdiPlay, mdiPause, mdiChevronDown, mdiTune, mdiDotsHorizontal } from '@mdi/js';
 
 /**
  * InputSection Component
@@ -17,6 +17,8 @@ function InputSection() {
   const { t } = useI18n();
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
+  const [isActionMenuOpen, setIsActionMenuOpen] = useState(false);
+  const actionMenuRef = useRef(null);
 
   const handleExampleChange = (exampleId) => {
     actions.loadExample(exampleId);
@@ -67,6 +69,20 @@ function InputSection() {
   const shouldShowTokens = state.currentStep > 0 && state.currentExample;
   const tokens = shouldShowTokens ? state.currentExample.generation_steps[0].tokens : [];
 
+  // Close the compact action menu when clicking outside of it
+  useEffect(() => {
+    if (!isActionMenuOpen) return;
+
+    const handleClickOutside = (event) => {
+      if (actionMenuRef.current && !actionMenuRef.current.contains(event.target)) {
+        setIsActionMenuOpen(false);
+      }
+    };
+
+    window.addEventListener('pointerdown', handleClickOutside);
+    return () => window.removeEventListener('pointerdown', handleClickOutside);
+  }, [isActionMenuOpen]);
+
   return (
     <section className="input-section-minimal">
       {/* ChatGPT-style prompt display */}
@@ -74,81 +90,125 @@ function InputSection() {
         <div className="prompt-container">
           <div className="chat-input-wrapper">
             <div className="chat-input-box" onClick={() => setIsDropdownOpen(!isDropdownOpen)}>
-              {/* Dropdown selector */}
-              <div className="prompt-dropdown">
+              <div className="prompt-main">
+                {/* Dropdown selector */}
+                <div className="prompt-dropdown">
+                  <button
+                    className="dropdown-toggle"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setIsDropdownOpen(!isDropdownOpen);
+                    }}
+                    aria-label="Select prompt"
+                  >
+                    <Icon path={mdiChevronDown} size={0.65} />
+                  </button>
+
+                  {isDropdownOpen && (
+                    <div className="dropdown-menu">
+                      {filteredExamples.map((example, index) => (
+                        <button
+                          key={example.id}
+                          className={`dropdown-item ${index === currentIndex ? 'active' : ''}`}
+                          onClick={() => handleExampleChange(example.id)}
+                        >
+                          <div className="dropdown-item-content">
+                            <span className="dropdown-item-prompt">{example.prompt}</span>
+                          </div>
+                        </button>
+                      ))}
+                    </div>
+                  )}
+                </div>
+
+                <div className={`prompt-text-chat ${shouldShowTokens ? 'has-tokens' : ''}`}>
+                  {shouldShowTokens ? (
+                    <span className="tokenized-text">
+                      {tokens.map((token, index) => (
+                        <span
+                          key={index}
+                          className="token-with-underline"
+                          style={{
+                            borderBottom: `4px solid ${getTokenColor(index)}`,
+                          }}
+                        >
+                          {processTokenForText(token)}
+                        </span>
+                      ))}
+                    </span>
+                  ) : (
+                    state.currentExample.prompt
+                  )}
+                </div>
+              </div>
+
+              <div
+                className="prompt-actions"
+                ref={actionMenuRef}
+                onClick={(e) => e.stopPropagation()}
+              >
+                {/* Settings toggle (model & temperature) */}
                 <button
-                  className="dropdown-toggle"
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    setIsDropdownOpen(!isDropdownOpen);
+                  onClick={() => {
+                    setIsSettingsOpen((v) => !v);
+                    setIsDropdownOpen(false);
+                    setIsActionMenuOpen(false);
                   }}
-                  aria-label="Select prompt"
+                  className="btn-settings"
+                  aria-label={t('settings') || 'Model and temperature'}
+                  title={t('settings') || 'Model and temperature'}
                 >
-                  <Icon path={mdiChevronDown} size={0.65} />
+                  <Icon path={mdiTune} size={0.9} />
                 </button>
 
-                {isDropdownOpen && (
-                  <div className="dropdown-menu">
-                    {filteredExamples.map((example, index) => (
-                      <button
-                        key={example.id}
-                        className={`dropdown-item ${index === currentIndex ? 'active' : ''}`}
-                        onClick={() => handleExampleChange(example.id)}
-                      >
-                        <div className="dropdown-item-content">
-                          <span className="dropdown-item-prompt">{example.prompt}</span>
-                        </div>
-                      </button>
-                    ))}
+                {/* Play/Pause */}
+                <button
+                  onClick={() => {
+                    handlePlayPause();
+                    setIsActionMenuOpen(false);
+                  }}
+                  className="btn-play"
+                  aria-label={state.isPlaying ? t('pause') : t('play')}
+                  title={state.isPlaying ? t('pause') : t('play')}
+                >
+                  <Icon path={state.isPlaying ? mdiPause : mdiPlay} size={0.7} />
+                </button>
+
+                <button
+                  className={`btn-action-toggle ${isActionMenuOpen ? 'open' : ''}`}
+                  onClick={() => setIsActionMenuOpen((v) => !v)}
+                  aria-label={t('more_actions') || 'More prompt actions'}
+                  title={t('more_actions') || 'More prompt actions'}
+                >
+                  <Icon path={mdiDotsHorizontal} size={0.85} />
+                </button>
+
+                {isActionMenuOpen && (
+                  <div className="prompt-actions-menu">
+                    <button
+                      className="prompt-actions-item"
+                      onClick={() => {
+                        setIsSettingsOpen((v) => !v);
+                        setIsDropdownOpen(false);
+                        setIsActionMenuOpen(false);
+                      }}
+                    >
+                      <Icon path={mdiTune} size={0.8} />
+                      <span>{t('settings') || 'Settings'}</span>
+                    </button>
+                    <button
+                      className="prompt-actions-item"
+                      onClick={() => {
+                        handlePlayPause();
+                        setIsActionMenuOpen(false);
+                      }}
+                    >
+                      <Icon path={state.isPlaying ? mdiPause : mdiPlay} size={0.7} />
+                      <span>{state.isPlaying ? t('pause') : t('play')}</span>
+                    </button>
                   </div>
                 )}
               </div>
-
-              <div className="prompt-text-chat">
-                {shouldShowTokens ? (
-                  <span className="tokenized-text">
-                    {tokens.map((token, index) => (
-                      <span
-                        key={index}
-                        className="token-with-underline"
-                        style={{
-                          borderBottom: `4px solid ${getTokenColor(index)}`,
-                        }}
-                      >
-                        {processTokenForText(token)}
-                      </span>
-                    ))}
-                  </span>
-                ) : (
-                  state.currentExample.prompt
-                )}
-              </div>
-              {/* Settings toggle (model & temperature) */}
-              <button
-                onClick={(e) => {
-                  e.stopPropagation();
-                  setIsSettingsOpen((v) => !v);
-                  setIsDropdownOpen(false);
-                }}
-                className="btn-settings"
-                aria-label={t('settings') || 'Model and temperature'}
-                title={t('settings') || 'Model and temperature'}
-              >
-                <Icon path={mdiTune} size={0.9} />
-              </button>
-
-              {/* Play/Pause */}
-              <button
-                onClick={(e) => {
-                  e.stopPropagation();
-                  handlePlayPause();
-                }}
-                className="btn-play"
-                aria-label={state.isPlaying ? t('pause') : t('play')}
-                title={state.isPlaying ? t('pause') : t('play')}
-              >
-                <Icon path={state.isPlaying ? mdiPause : mdiPlay} size={0.7} />
-              </button>
 
               {isSettingsOpen && (
                 <div className="settings-popover" onClick={(e) => e.stopPropagation()}>

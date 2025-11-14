@@ -16,9 +16,35 @@
   z-index: 100;
   background: var(--bg-primary);
   /* compact top/bottom padding to reduce vertical footprint */
-  padding: 0.5rem 2rem 0.5rem 2rem;
+  padding: 0.5rem 10px 0.5rem 10px;
+  /* 10px gap from screen edges */
   box-shadow: 0 2px 12px var(--shadow-color);
   transition: box-shadow 0.3s ease;
+}
+
+.floating-top-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* center the input block */
+  gap: 1.25rem;
+  width: 100%;
+  /* span full width so input is centered relative to viewport */
+  margin: 0;
+  position: relative;
+  /* allow absolute positioning of header controls */
+}
+
+.top-panel-input {
+  flex: 1 1 auto;
+  /* Allow input to shrink more aggressively */
+  min-width: 0;
+  max-width: min(800px, calc(100vw - 200px));
+  /* Maximum width on large screens, but shrink when screen narrows */
+}
+
+.top-panel-input .input-section-minimal {
+  width: 100%;
 }
 
 /* Floating bottom section */
@@ -36,12 +62,49 @@
 
 /* Minimal header controls */
 .header-controls {
-  position: fixed;
-  top: 1rem;
-  right: 1.5rem;
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  /* ~10px from right screen edge due to section padding */
+  transform: translateY(-50%);
   display: flex;
+  align-items: center;
+  justify-content: flex-end;
   gap: 0.5rem;
-  z-index: 1000;
+  min-width: fit-content;
+}
+
+.header-controls-list {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.header-controls-list > * {
+  flex: 0 0 auto;
+}
+
+.header-controls .language-selector {
+  display: flex;
+}
+
+.hamburger-toggle {
+  display: none;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 1.35rem;
+  color: var(--text-primary);
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.2s ease;
+}
+
+.hamburger-toggle:hover {
+  opacity: 0.8;
 }
 
 .icon-button-minimal {
@@ -120,15 +183,17 @@
 /* Minimal Input Section */
 .input-section-minimal {
   margin-bottom: 0;
+  width: 100%;
 }
 
 /* ChatGPT-style prompt container */
 .prompt-container {
   /* Reduce bottom spacing so input box sits closer to floating panel edge */
   margin-bottom: 0;
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
+  width: 100%;
+  max-width: 100%;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 .chat-input-wrapper {
@@ -148,6 +213,10 @@
   align-items: center;
   gap: 8px;
   cursor: pointer;
+  /* Prevent overflow */
+  width: 100%;
+  overflow: visible;
+  flex-wrap: nowrap;
 }
 
 /* No hover effect on the prompt input box (rule removed) */
@@ -305,14 +374,42 @@
   background: var(--accent-hover);
 }
 
+.prompt-main {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
 .prompt-text-chat {
-  flex: 1;
+  flex: 1 1 auto;
   font-size: 1rem;
   line-height: 1.4;
   color: var(--text-primary);
   font-weight: 400;
   min-height: 22px;
   padding-right: 8px;
+  min-width: 0;
+  /* Allow flex item to shrink below content size */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: block;
+}
+
+.prompt-text-chat.has-tokens {
+  text-overflow: clip;
+  white-space: normal;
+}
+
+.prompt-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex: 0 0 auto;
+  margin-left: 4px;
+  position: relative;
 }
 
 .prompt-cursor {
@@ -338,11 +435,14 @@
 .btn-play {
   position: static;
   /* participate in flex layout to avoid subpixel jump on hover */
-  margin-left: auto;
-  /* push to the right */
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
+  --btn-play-size: 40px;
+  width: var(--btn-play-size) !important;
+  height: var(--btn-play-size) !important;
+  min-width: var(--btn-play-size) !important;
+  min-height: var(--btn-play-size) !important;
+  max-width: var(--btn-play-size) !important;
+  max-height: var(--btn-play-size) !important;
+  border-radius: 50% !important;
   background: var(--accent-primary);
   border: none;
   cursor: pointer;
@@ -352,7 +452,9 @@
   color: white;
   transition: background 0.2s ease;
   padding: 0;
+  flex: 0 0 auto;
   flex-shrink: 0;
+  aspect-ratio: 1 / 1;
 }
 
 .btn-play:hover:not(:disabled) {
@@ -388,12 +490,72 @@
     color 0.2s ease,
     opacity 0.2s ease;
   padding: 0;
-  flex-shrink: 0;
+  flex: 0 0 auto;
   margin-right: 4px;
   opacity: 1;
   font-size: 24px;
   /* controls @mdi/react Icon (1em) */
   line-height: 1;
+}
+
+.btn-action-toggle {
+  display: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--text-tertiary);
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  transition:
+    color 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease;
+  flex: 0 0 auto;
+  padding: 0;
+}
+
+.btn-action-toggle:hover,
+.btn-action-toggle.open {
+  color: var(--text-primary);
+  border-color: var(--border-color);
+  background: rgba(0, 0, 0, 0.02);
+}
+
+.prompt-actions-menu {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 6px);
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  padding: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 150px;
+  z-index: 1200;
+}
+
+.prompt-actions-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  border: none;
+  background: transparent;
+  color: var(--text-primary);
+  cursor: pointer;
+  padding: 6px 8px;
+  border-radius: 8px;
+  transition: background 0.2s ease;
+}
+
+.prompt-actions-item:hover {
+  background: var(--bg-secondary);
 }
 
 .btn-settings:hover {
@@ -644,6 +806,89 @@
 }
 
 /* Responsive design */
+
+/* Large tablets and smaller - start making adjustments */
+@media (max-width: 1200px) {
+  .floating-top-content {
+    gap: 1rem;
+  }
+
+  .top-panel-input {
+    max-width: min(700px, calc(100vw - 200px));
+  }
+
+  .chat-input-box {
+    gap: 6px;
+  }
+
+  .prompt-text-chat {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .top-panel-input {
+    max-width: min(600px, calc(100vw - 200px));
+  }
+}
+
+/* When screen becomes too small for both input and header controls */
+@media (max-width: 1150px) {
+  .floating-top-content {
+    gap: 0.5rem;
+    justify-content: space-between;
+    /* Push input and hamburger apart */
+  }
+
+  .header-controls {
+    position: static;
+    /* Put hamburger back in flex flow */
+    transform: none;
+  }
+
+  .header-controls-list {
+    display: none;
+  }
+
+  .header-controls.open .header-controls-list {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    right: 0;
+    padding: 0.75rem;
+    background: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+    min-width: 200px;
+    gap: 0.75rem;
+    z-index: 101;
+  }
+
+  .header-controls.open .header-controls-list > * {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .header-controls.open .language-selector {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hamburger-toggle {
+    display: inline-flex;
+  }
+
+  .top-panel-input {
+    flex: 1 1 auto;
+    max-width: none;
+    /* Allow input to take available space */
+  }
+}
+
+/* Smaller tablets and large phones */
 @media (max-width: 768px) {
   .floating-top-section {
     padding: 0.5rem 1rem 0.75rem 1rem;
@@ -669,12 +914,18 @@
     gap: 1rem;
   }
 
+  .prompt-container {
+    width: 100%;
+    padding: 0 0.25rem;
+  }
+
   .prompt-text-chat {
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
 
   .chat-input-box {
-    padding: 12px 8px;
+    padding: 10px 8px;
+    gap: 6px;
   }
 
   .dropdown-menu {
@@ -682,9 +933,152 @@
     max-width: calc(100vw - 2rem);
   }
 
-  .header-controls {
-    top: 0.75rem;
-    right: 1rem;
+  /* Keep play button round with fixed size */
+  .btn-play {
+    --btn-play-size: 36px;
+    width: var(--btn-play-size) !important;
+    height: var(--btn-play-size) !important;
+    min-width: var(--btn-play-size) !important;
+    min-height: var(--btn-play-size) !important;
+    max-width: var(--btn-play-size) !important;
+    max-height: var(--btn-play-size) !important;
+  }
+
+  .btn-play svg {
+    width: 13px;
+    height: 13px;
+  }
+
+  /* Reduce settings button size */
+  .btn-settings {
+    width: 36px;
+    height: 36px;
+    font-size: 20px;
+  }
+}
+
+/* Mobile - progressive narrowing and hamburger menu */
+@media (max-width: 640px) {
+  .prompt-container {
+    max-width: 100%;
+    padding: 0 0.5rem;
+  }
+
+  .chat-input-box {
+    padding: 8px 6px;
+    gap: 4px;
+  }
+
+  .prompt-text-chat {
+    font-size: 0.85rem;
+    padding-right: 4px;
+  }
+
+  .btn-play {
+    --btn-play-size: 32px;
+    width: var(--btn-play-size) !important;
+    height: var(--btn-play-size) !important;
+    min-width: var(--btn-play-size) !important;
+    min-height: var(--btn-play-size) !important;
+    max-width: var(--btn-play-size) !important;
+    max-height: var(--btn-play-size) !important;
+  }
+
+  .btn-play svg {
+    width: 12px;
+    height: 12px;
+  }
+
+  .btn-settings {
+    width: 32px;
+    height: 32px;
+    margin-right: 2px;
+    font-size: 18px;
+  }
+
+  .dropdown-toggle {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+/* Very small screens - hamburger menu for header controls */
+@media (max-width: 480px) {
+  .prompt-container {
+    padding: 0 0.25rem;
+  }
+
+  .prompt-text-chat {
+    font-size: 0.8rem;
+  }
+
+  .chat-input-box {
+    padding: 6px 4px;
+    gap: 3px;
+  }
+
+  .btn-play {
+    --btn-play-size: 28px;
+    width: var(--btn-play-size) !important;
+    height: var(--btn-play-size) !important;
+    min-width: var(--btn-play-size) !important;
+    min-height: var(--btn-play-size) !important;
+    max-width: var(--btn-play-size) !important;
+    max-height: var(--btn-play-size) !important;
+  }
+
+  .btn-play svg {
+    width: 10px;
+    height: 10px;
+  }
+
+  .btn-settings {
+    width: 28px;
+    height: 28px;
+    margin-right: 1px;
+    font-size: 16px;
+  }
+
+  .dropdown-toggle {
+    width: 20px;
+    height: 20px;
+  }
+
+  /* Ensure dropdown menu is full width on very small screens */
+  .dropdown-menu {
+    left: -6px;
+    right: -6px;
+    width: calc(100% + 12px);
+  }
+
+  /* Adjust settings popover position on small screens */
+  .settings-popover {
+    right: auto;
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: 200px;
+  }
+}
+
+/* Compact actions for very small prompt widths */
+@media (max-width: 420px) {
+  .prompt-container {
+    padding: 0 0.25rem;
+  }
+
+  .btn-play {
+    --btn-play-size: 24px;
+    width: var(--btn-play-size) !important;
+    height: var(--btn-play-size) !important;
+    min-width: var(--btn-play-size) !important;
+    min-height: var(--btn-play-size) !important;
+    max-width: var(--btn-play-size) !important;
+    max-height: var(--btn-play-size) !important;
+  }
+
+  .btn-play svg {
+    width: 9px;
+    height: 9px;
   }
 }
 
