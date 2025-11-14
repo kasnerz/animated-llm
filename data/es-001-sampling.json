@@ -1,0 +1,1372 @@
+{
+  "id": "generated_20251113_160228",
+  "prompt": "¡Hola mundo!",
+  "language": "es",
+  "temperature": 1.0,
+  "top_k": 10,
+  "model_info": {
+    "name": "CohereLabs/aya-expanse-8b",
+    "num_layers": 32,
+    "hidden_size": 4096,
+    "num_attention_heads": 32,
+    "vocab_size": 256000
+  },
+  "generation_steps": [
+    {
+      "step": 0,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>¡Hola mundo!<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "¡",
+        "H",
+        "ola",
+        "Ġmundo",
+        "!",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>"
+      ],
+      "token_ids": [5, 255000, 255006, 113490, 47, 4524, 12695, 8, 255001, 255000, 255007],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "¡",
+            "token_id": 113490,
+            "logprob": -0.0,
+            "prob": 1.0
+          },
+          {
+            "token": "H",
+            "token_id": 47,
+            "logprob": -14.7188,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġ¡",
+            "token_id": 81581,
+            "logprob": -14.875,
+            "prob": 0.0
+          },
+          {
+            "token": "**",
+            "token_id": 2093,
+            "logprob": -15.0156,
+            "prob": 0.0
+          },
+          {
+            "token": "<SEP>",
+            "token_id": 3,
+            "logprob": -35.625,
+            "prob": 0.0
+          },
+          {
+            "token": "<CLS>",
+            "token_id": 2,
+            "logprob": -35.25,
+            "prob": 0.0
+          },
+          {
+            "token": "<MASK_TOKEN>",
+            "token_id": 4,
+            "logprob": -35.6562,
+            "prob": 0.0
+          },
+          {
+            "token": "<BOS_TOKEN>",
+            "token_id": 5,
+            "logprob": -39.9375,
+            "prob": 0.0
+          },
+          {
+            "token": "<PAD>",
+            "token_id": 0,
+            "logprob": -35.5312,
+            "prob": 0.0
+          },
+          {
+            "token": "<UNK>",
+            "token_id": 1,
+            "logprob": -33.9062,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "¡",
+        "token_id": 113490,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 1,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>¡Hola mundo!<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>¡",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "¡",
+        "H",
+        "ola",
+        "Ġmundo",
+        "!",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "¡"
+      ],
+      "token_ids": [5, 255000, 255006, 113490, 47, 4524, 12695, 8, 255001, 255000, 255007, 113490],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "H",
+            "token_id": 47,
+            "logprob": -0.0,
+            "prob": 1.0
+          },
+          {
+            "token": "Hello",
+            "token_id": 28339,
+            "logprob": -16.8438,
+            "prob": 0.0
+          },
+          {
+            "token": "Hol",
+            "token_id": 21366,
+            "logprob": -16.75,
+            "prob": 0.0
+          },
+          {
+            "token": "<PAD>",
+            "token_id": 0,
+            "logprob": -33.7812,
+            "prob": 0.0
+          },
+          {
+            "token": "<EOS_TOKEN>",
+            "token_id": 6,
+            "logprob": -40.4062,
+            "prob": 0.0
+          },
+          {
+            "token": "<SEP>",
+            "token_id": 3,
+            "logprob": -33.7812,
+            "prob": 0.0
+          },
+          {
+            "token": "<BOS_TOKEN>",
+            "token_id": 5,
+            "logprob": -36.2188,
+            "prob": 0.0
+          },
+          {
+            "token": "<MASK_TOKEN>",
+            "token_id": 4,
+            "logprob": -33.7812,
+            "prob": 0.0
+          },
+          {
+            "token": "<UNK>",
+            "token_id": 1,
+            "logprob": -33.0312,
+            "prob": 0.0
+          },
+          {
+            "token": "<CLS>",
+            "token_id": 2,
+            "logprob": -33.6875,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "H",
+        "token_id": 47,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 2,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>¡Hola mundo!<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>¡H",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "¡",
+        "H",
+        "ola",
+        "Ġmundo",
+        "!",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "¡",
+        "H"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 113490, 47, 4524, 12695, 8, 255001, 255000, 255007, 113490, 47
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "ola",
+            "token_id": 4524,
+            "logprob": -0.0,
+            "prob": 1.0
+          },
+          {
+            "token": "ола",
+            "token_id": 38330,
+            "logprob": -17.3125,
+            "prob": 0.0
+          },
+          {
+            "token": "<PAD>",
+            "token_id": 0,
+            "logprob": -35.1875,
+            "prob": 0.0
+          },
+          {
+            "token": "<UNK>",
+            "token_id": 1,
+            "logprob": -35.4688,
+            "prob": 0.0
+          },
+          {
+            "token": "<EOS_TOKEN>",
+            "token_id": 6,
+            "logprob": -36.1562,
+            "prob": 0.0
+          },
+          {
+            "token": "<EOP_TOKEN>",
+            "token_id": 7,
+            "logprob": -35.1875,
+            "prob": 0.0
+          },
+          {
+            "token": "<BOS_TOKEN>",
+            "token_id": 5,
+            "logprob": -38.75,
+            "prob": 0.0
+          },
+          {
+            "token": "<MASK_TOKEN>",
+            "token_id": 4,
+            "logprob": -35.1875,
+            "prob": 0.0
+          },
+          {
+            "token": "<CLS>",
+            "token_id": 2,
+            "logprob": -34.875,
+            "prob": 0.0
+          },
+          {
+            "token": "<SEP>",
+            "token_id": 3,
+            "logprob": -34.7812,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "ola",
+        "token_id": 4524,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 3,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>¡Hola mundo!<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>¡Hola",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "¡",
+        "H",
+        "ola",
+        "Ġmundo",
+        "!",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "¡",
+        "H",
+        "ola"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 113490, 47, 4524, 12695, 8, 255001, 255000, 255007, 113490, 47, 4524
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "!",
+            "token_id": 8,
+            "logprob": -0.0018,
+            "prob": 0.998
+          },
+          {
+            "token": "Ġmundo",
+            "token_id": 12695,
+            "logprob": -6.3125,
+            "prob": 0.0018
+          },
+          {
+            "token": "!\\",
+            "token_id": 104731,
+            "logprob": -17.1875,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġmondo",
+            "token_id": 32591,
+            "logprob": -16.5156,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġmundial",
+            "token_id": 25027,
+            "logprob": -16.9219,
+            "prob": 0.0
+          },
+          {
+            "token": "<SEP>",
+            "token_id": 3,
+            "logprob": -34.8438,
+            "prob": 0.0
+          },
+          {
+            "token": "<MASK_TOKEN>",
+            "token_id": 4,
+            "logprob": -34.6562,
+            "prob": 0.0
+          },
+          {
+            "token": "<CLS>",
+            "token_id": 2,
+            "logprob": -34.1875,
+            "prob": 0.0
+          },
+          {
+            "token": "<PAD>",
+            "token_id": 0,
+            "logprob": -34.75,
+            "prob": 0.0
+          },
+          {
+            "token": "<UNK>",
+            "token_id": 1,
+            "logprob": -33.4375,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "!",
+        "token_id": 8,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 4,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>¡Hola mundo!<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>¡Hola!",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "¡",
+        "H",
+        "ola",
+        "Ġmundo",
+        "!",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "¡",
+        "H",
+        "ola",
+        "!"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 113490, 47, 4524, 12695, 8, 255001, 255000, 255007, 113490, 47, 4524, 8
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġ¿",
+            "token_id": 69560,
+            "logprob": -0.0001,
+            "prob": 1.0
+          },
+          {
+            "token": "ĠParece",
+            "token_id": 230466,
+            "logprob": -9.7969,
+            "prob": 0.0001
+          },
+          {
+            "token": "ĠEs",
+            "token_id": 6154,
+            "logprob": -10.0312,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġ¡",
+            "token_id": 81581,
+            "logprob": -13.3281,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠEso",
+            "token_id": 221970,
+            "logprob": -13.3672,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠSoy",
+            "token_id": 47603,
+            "logprob": -14.3203,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġ\"¿",
+            "token_id": 236824,
+            "logprob": -14.3672,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠBien",
+            "token_id": 36285,
+            "logprob": -14.2891,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠAquí",
+            "token_id": 154336,
+            "logprob": -14.9062,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠQué",
+            "token_id": 190336,
+            "logprob": -14.8672,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġ¿",
+        "token_id": 69560,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 5,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>¡Hola mundo!<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>¡Hola! ¿",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "¡",
+        "H",
+        "ola",
+        "Ġmundo",
+        "!",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "¡",
+        "H",
+        "ola",
+        "!",
+        "Ġ¿"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 113490, 47, 4524, 12695, 8, 255001, 255000, 255007, 113490, 47, 4524, 8,
+        69560
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "En",
+            "token_id": 3000,
+            "logprob": -0.0222,
+            "prob": 0.978
+          },
+          {
+            "token": "Có",
+            "token_id": 71712,
+            "logprob": -3.8184,
+            "prob": 0.0219
+          },
+          {
+            "token": "Qué",
+            "token_id": 141832,
+            "logprob": -11.7734,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġcómo",
+            "token_id": 57727,
+            "logprob": -14.0547,
+            "prob": 0.0
+          },
+          {
+            "token": "có",
+            "token_id": 77453,
+            "logprob": -14.2891,
+            "prob": 0.0
+          },
+          {
+            "token": "Nec",
+            "token_id": 111189,
+            "logprob": -14.4922,
+            "prob": 0.0
+          },
+          {
+            "token": "How",
+            "token_id": 10084,
+            "logprob": -15.0859,
+            "prob": 0.0
+          },
+          {
+            "token": "Como",
+            "token_id": 29504,
+            "logprob": -15.3828,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠEn",
+            "token_id": 2888,
+            "logprob": -15.2578,
+            "prob": 0.0
+          },
+          {
+            "token": "P",
+            "token_id": 55,
+            "logprob": -15.4453,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "En",
+        "token_id": 3000,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 6,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>¡Hola mundo!<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>¡Hola! ¿En",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "¡",
+        "H",
+        "ola",
+        "Ġmundo",
+        "!",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "¡",
+        "H",
+        "ola",
+        "!",
+        "Ġ¿",
+        "En"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 113490, 47, 4524, 12695, 8, 255001, 255000, 255007, 113490, 47, 4524, 8,
+        69560, 3000
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġqué",
+            "token_id": 62671,
+            "logprob": -0.0,
+            "prob": 1.0
+          },
+          {
+            "token": "Qué",
+            "token_id": 141832,
+            "logprob": -14.3594,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġquoi",
+            "token_id": 108177,
+            "logprob": -14.8281,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠQué",
+            "token_id": 190336,
+            "logprob": -14.7812,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġque",
+            "token_id": 2108,
+            "logprob": -15.8906,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġnào",
+            "token_id": 30733,
+            "logprob": -16.875,
+            "prob": 0.0
+          },
+          {
+            "token": "qué",
+            "token_id": 34776,
+            "logprob": -16.3281,
+            "prob": 0.0
+          },
+          {
+            "token": "<CLS>",
+            "token_id": 2,
+            "logprob": -34.875,
+            "prob": 0.0
+          },
+          {
+            "token": "<UNK>",
+            "token_id": 1,
+            "logprob": -35.0625,
+            "prob": 0.0
+          },
+          {
+            "token": "<PAD>",
+            "token_id": 0,
+            "logprob": -35.1562,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġqué",
+        "token_id": 62671,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 7,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>¡Hola mundo!<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>¡Hola! ¿En qué",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "¡",
+        "H",
+        "ola",
+        "Ġmundo",
+        "!",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "¡",
+        "H",
+        "ola",
+        "!",
+        "Ġ¿",
+        "En",
+        "Ġqué"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 113490, 47, 4524, 12695, 8, 255001, 255000, 255007, 113490, 47, 4524, 8,
+        69560, 3000, 62671
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġpued",
+            "token_id": 9719,
+            "logprob": -0.0001,
+            "prob": 1.0
+          },
+          {
+            "token": "Ġte",
+            "token_id": 2109,
+            "logprob": -8.875,
+            "prob": 0.0001
+          },
+          {
+            "token": "ĠPued",
+            "token_id": 240862,
+            "logprob": -12.2031,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġpueda",
+            "token_id": 98170,
+            "logprob": -13.7031,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġpu",
+            "token_id": 10058,
+            "logprob": -16.0469,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġpuede",
+            "token_id": 13907,
+            "logprob": -16.2812,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġμπο",
+            "token_id": 23161,
+            "logprob": -16.5469,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġpodemos",
+            "token_id": 76218,
+            "logprob": -16.7344,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġيمكن",
+            "token_id": 57310,
+            "logprob": -17.1875,
+            "prob": 0.0
+          },
+          {
+            "token": "<PAD>",
+            "token_id": 0,
+            "logprob": -32.9688,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġpued",
+        "token_id": 9719,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 8,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>¡Hola mundo!<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>¡Hola! ¿En qué pued",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "¡",
+        "H",
+        "ola",
+        "Ġmundo",
+        "!",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "¡",
+        "H",
+        "ola",
+        "!",
+        "Ġ¿",
+        "En",
+        "Ġqué",
+        "Ġpued"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 113490, 47, 4524, 12695, 8, 255001, 255000, 255007, 113490, 47, 4524, 8,
+        69560, 3000, 62671, 9719
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "o",
+            "token_id": 86,
+            "logprob": 0.0,
+            "prob": 1.0
+          },
+          {
+            "token": "<UNK>",
+            "token_id": 1,
+            "logprob": -40.9062,
+            "prob": 0.0
+          },
+          {
+            "token": "<SEP>",
+            "token_id": 3,
+            "logprob": -42.4062,
+            "prob": 0.0
+          },
+          {
+            "token": "<EOS_TOKEN>",
+            "token_id": 6,
+            "logprob": -36.375,
+            "prob": 0.0
+          },
+          {
+            "token": "<EOP_TOKEN>",
+            "token_id": 7,
+            "logprob": -41.9062,
+            "prob": 0.0
+          },
+          {
+            "token": "<PAD>",
+            "token_id": 0,
+            "logprob": -41.75,
+            "prob": 0.0
+          },
+          {
+            "token": "<CLS>",
+            "token_id": 2,
+            "logprob": -41.5312,
+            "prob": 0.0
+          },
+          {
+            "token": "<BOS_TOKEN>",
+            "token_id": 5,
+            "logprob": -40.5,
+            "prob": 0.0
+          },
+          {
+            "token": "!",
+            "token_id": 8,
+            "logprob": -34.4688,
+            "prob": 0.0
+          },
+          {
+            "token": "<MASK_TOKEN>",
+            "token_id": 4,
+            "logprob": -41.8438,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "o",
+        "token_id": 86,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 9,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>¡Hola mundo!<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>¡Hola! ¿En qué puedo",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "¡",
+        "H",
+        "ola",
+        "Ġmundo",
+        "!",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "¡",
+        "H",
+        "ola",
+        "!",
+        "Ġ¿",
+        "En",
+        "Ġqué",
+        "Ġpued",
+        "o"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 113490, 47, 4524, 12695, 8, 255001, 255000, 255007, 113490, 47, 4524, 8,
+        69560, 3000, 62671, 9719, 86
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġayud",
+            "token_id": 48869,
+            "logprob": -0.0,
+            "prob": 1.0
+          },
+          {
+            "token": "Ġayudar",
+            "token_id": 72932,
+            "logprob": -10.1406,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġasistir",
+            "token_id": 163023,
+            "logprob": -14.7344,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġayuda",
+            "token_id": 45155,
+            "logprob": -14.9375,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġaiut",
+            "token_id": 87127,
+            "logprob": -15.25,
+            "prob": 0.0
+          },
+          {
+            "token": "<SEP>",
+            "token_id": 3,
+            "logprob": -34.9062,
+            "prob": 0.0
+          },
+          {
+            "token": "<MASK_TOKEN>",
+            "token_id": 4,
+            "logprob": -34.8438,
+            "prob": 0.0
+          },
+          {
+            "token": "<CLS>",
+            "token_id": 2,
+            "logprob": -34.9688,
+            "prob": 0.0
+          },
+          {
+            "token": "<PAD>",
+            "token_id": 0,
+            "logprob": -34.7188,
+            "prob": 0.0
+          },
+          {
+            "token": "<UNK>",
+            "token_id": 1,
+            "logprob": -34.8438,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġayud",
+        "token_id": 48869,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 10,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>¡Hola mundo!<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>¡Hola! ¿En qué puedo ayud",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "¡",
+        "H",
+        "ola",
+        "Ġmundo",
+        "!",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "¡",
+        "H",
+        "ola",
+        "!",
+        "Ġ¿",
+        "En",
+        "Ġqué",
+        "Ġpued",
+        "o",
+        "Ġayud"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 113490, 47, 4524, 12695, 8, 255001, 255000, 255007, 113490, 47, 4524, 8,
+        69560, 3000, 62671, 9719, 86, 48869
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "arte",
+            "token_id": 13801,
+            "logprob": 0.0,
+            "prob": 1.0
+          },
+          {
+            "token": "<UNK>",
+            "token_id": 1,
+            "logprob": -37.7812,
+            "prob": 0.0
+          },
+          {
+            "token": "<SEP>",
+            "token_id": 3,
+            "logprob": -39.2188,
+            "prob": 0.0
+          },
+          {
+            "token": "<EOS_TOKEN>",
+            "token_id": 6,
+            "logprob": -36.2188,
+            "prob": 0.0
+          },
+          {
+            "token": "<EOP_TOKEN>",
+            "token_id": 7,
+            "logprob": -38.6562,
+            "prob": 0.0
+          },
+          {
+            "token": "<PAD>",
+            "token_id": 0,
+            "logprob": -38.875,
+            "prob": 0.0
+          },
+          {
+            "token": "<CLS>",
+            "token_id": 2,
+            "logprob": -39.1875,
+            "prob": 0.0
+          },
+          {
+            "token": "<BOS_TOKEN>",
+            "token_id": 5,
+            "logprob": -36.25,
+            "prob": 0.0
+          },
+          {
+            "token": "!",
+            "token_id": 8,
+            "logprob": -35.75,
+            "prob": 0.0
+          },
+          {
+            "token": "<MASK_TOKEN>",
+            "token_id": 4,
+            "logprob": -38.6875,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "arte",
+        "token_id": 13801,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 11,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>¡Hola mundo!<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>¡Hola! ¿En qué puedo ayudarte",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "¡",
+        "H",
+        "ola",
+        "Ġmundo",
+        "!",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "¡",
+        "H",
+        "ola",
+        "!",
+        "Ġ¿",
+        "En",
+        "Ġqué",
+        "Ġpued",
+        "o",
+        "Ġayud",
+        "arte"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 113490, 47, 4524, 12695, 8, 255001, 255000, 255007, 113490, 47, 4524, 8,
+        69560, 3000, 62671, 9719, 86, 48869, 13801
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġhoy",
+            "token_id": 40058,
+            "logprob": -0.0,
+            "prob": 1.0
+          },
+          {
+            "token": "?",
+            "token_id": 38,
+            "logprob": -13.625,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġhoje",
+            "token_id": 33983,
+            "logprob": -14.0312,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġaujourd",
+            "token_id": 30986,
+            "logprob": -14.8594,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġoggi",
+            "token_id": 54985,
+            "logprob": -15.9688,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠHoy",
+            "token_id": 48601,
+            "logprob": -15.9375,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġاليوم",
+            "token_id": 102928,
+            "logprob": -15.8281,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġtoday",
+            "token_id": 6683,
+            "logprob": -16.8594,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġo",
+            "token_id": 1691,
+            "logprob": -16.7969,
+            "prob": 0.0
+          },
+          {
+            "token": "<PAD>",
+            "token_id": 0,
+            "logprob": -38.875,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġhoy",
+        "token_id": 40058,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 12,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>¡Hola mundo!<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>¡Hola! ¿En qué puedo ayudarte hoy",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "¡",
+        "H",
+        "ola",
+        "Ġmundo",
+        "!",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "¡",
+        "H",
+        "ola",
+        "!",
+        "Ġ¿",
+        "En",
+        "Ġqué",
+        "Ġpued",
+        "o",
+        "Ġayud",
+        "arte",
+        "Ġhoy"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 113490, 47, 4524, 12695, 8, 255001, 255000, 255007, 113490, 47, 4524, 8,
+        69560, 3000, 62671, 9719, 86, 48869, 13801, 40058
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "?",
+            "token_id": 38,
+            "logprob": 0.0,
+            "prob": 1.0
+          },
+          {
+            "token": "<UNK>",
+            "token_id": 1,
+            "logprob": -39.125,
+            "prob": 0.0
+          },
+          {
+            "token": "<SEP>",
+            "token_id": 3,
+            "logprob": -41.4375,
+            "prob": 0.0
+          },
+          {
+            "token": "<EOS_TOKEN>",
+            "token_id": 6,
+            "logprob": -31.8125,
+            "prob": 0.0
+          },
+          {
+            "token": "<EOP_TOKEN>",
+            "token_id": 7,
+            "logprob": -40.9062,
+            "prob": 0.0
+          },
+          {
+            "token": "<PAD>",
+            "token_id": 0,
+            "logprob": -40.9688,
+            "prob": 0.0
+          },
+          {
+            "token": "<CLS>",
+            "token_id": 2,
+            "logprob": -41.0,
+            "prob": 0.0
+          },
+          {
+            "token": "<BOS_TOKEN>",
+            "token_id": 5,
+            "logprob": -37.9062,
+            "prob": 0.0
+          },
+          {
+            "token": "!",
+            "token_id": 8,
+            "logprob": -26.1406,
+            "prob": 0.0
+          },
+          {
+            "token": "<MASK_TOKEN>",
+            "token_id": 4,
+            "logprob": -40.875,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "?",
+        "token_id": 38,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 13,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>¡Hola mundo!<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>¡Hola! ¿En qué puedo ayudarte hoy?",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "¡",
+        "H",
+        "ola",
+        "Ġmundo",
+        "!",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "¡",
+        "H",
+        "ola",
+        "!",
+        "Ġ¿",
+        "En",
+        "Ġqué",
+        "Ġpued",
+        "o",
+        "Ġayud",
+        "arte",
+        "Ġhoy",
+        "?"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 113490, 47, 4524, 12695, 8, 255001, 255000, 255007, 113490, 47, 4524, 8,
+        69560, 3000, 62671, 9719, 86, 48869, 13801, 40058, 38
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "<|END_OF_TURN_TOKEN|>",
+            "token_id": 255001,
+            "logprob": -0.196,
+            "prob": 0.8218
+          },
+          {
+            "token": "ĠEst",
+            "token_id": 3499,
+            "logprob": -1.8213,
+            "prob": 0.1619
+          },
+          {
+            "token": "\n",
+            "token_id": 206,
+            "logprob": -5.5859,
+            "prob": 0.0037
+          },
+          {
+            "token": "ĠSoy",
+            "token_id": 47603,
+            "logprob": -5.6797,
+            "prob": 0.0034
+          },
+          {
+            "token": "ĠEs",
+            "token_id": 6154,
+            "logprob": -5.8359,
+            "prob": 0.0029
+          },
+          {
+            "token": "ĠSi",
+            "token_id": 12452,
+            "logprob": -6.0078,
+            "prob": 0.0025
+          },
+          {
+            "token": "ĠParece",
+            "token_id": 230466,
+            "logprob": -6.1328,
+            "prob": 0.0022
+          },
+          {
+            "token": "ĠPar",
+            "token_id": 3070,
+            "logprob": -7.4141,
+            "prob": 0.0006
+          },
+          {
+            "token": "ĠComo",
+            "token_id": 20400,
+            "logprob": -7.9453,
+            "prob": 0.0004
+          },
+          {
+            "token": "ĠMe",
+            "token_id": 3953,
+            "logprob": -8.2266,
+            "prob": 0.0003
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "<|END_OF_TURN_TOKEN|>",
+        "token_id": 255001,
+        "selection_method": "sampling"
+      }
+    }
+  ]
+}

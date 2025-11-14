@@ -1,0 +1,6118 @@
+{
+  "id": "generated_20251113_160217",
+  "prompt": "Translate to French: The quick brown fox jumps over the lazy dog",
+  "language": "en",
+  "temperature": 1.0,
+  "top_k": 10,
+  "model_info": {
+    "name": "CohereLabs/aya-expanse-8b",
+    "num_layers": 32,
+    "hidden_size": 4096,
+    "num_attention_heads": 32,
+    "vocab_size": 256000
+  },
+  "generation_steps": [
+    {
+      "step": 0,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Translate to French: The quick brown fox jumps over the lazy dog<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Translate",
+        "Ġto",
+        "ĠFrench",
+        ":",
+        "ĠThe",
+        "Ġquick",
+        "Ġbrown",
+        "Ġfox",
+        "Ġjumps",
+        "Ġover",
+        "Ġthe",
+        "Ġlazy",
+        "Ġdog",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 96028, 1726, 6855, 33, 1896, 6629, 19883, 73388, 75436, 2515, 1690,
+        46189, 9507, 255001, 255000, 255007
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Le",
+            "token_id": 3729,
+            "logprob": -0.0715,
+            "prob": 0.9312
+          },
+          {
+            "token": "La",
+            "token_id": 3857,
+            "logprob": -2.7598,
+            "prob": 0.0634
+          },
+          {
+            "token": "L",
+            "token_id": 51,
+            "logprob": -5.2891,
+            "prob": 0.005
+          },
+          {
+            "token": "En",
+            "token_id": 3000,
+            "logprob": -8.1641,
+            "prob": 0.0003
+          },
+          {
+            "token": "Dans",
+            "token_id": 23843,
+            "logprob": -9.2266,
+            "prob": 0.0001
+          },
+          {
+            "token": "«",
+            "token_id": 9227,
+            "logprob": -9.8516,
+            "prob": 0.0001
+          },
+          {
+            "token": "Il",
+            "token_id": 6535,
+            "logprob": -10.7266,
+            "prob": 0.0
+          },
+          {
+            "token": "Cette",
+            "token_id": 29883,
+            "logprob": -10.8047,
+            "prob": 0.0
+          },
+          {
+            "token": "Voici",
+            "token_id": 224040,
+            "logprob": -10.9609,
+            "prob": 0.0
+          },
+          {
+            "token": "El",
+            "token_id": 4624,
+            "logprob": -11.4062,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "La",
+        "token_id": 3857,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 1,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Translate to French: The quick brown fox jumps over the lazy dog<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>La",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Translate",
+        "Ġto",
+        "ĠFrench",
+        ":",
+        "ĠThe",
+        "Ġquick",
+        "Ġbrown",
+        "Ġfox",
+        "Ġjumps",
+        "Ġover",
+        "Ġthe",
+        "Ġlazy",
+        "Ġdog",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "La"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 96028, 1726, 6855, 33, 1896, 6629, 19883, 73388, 75436, 2515, 1690,
+        46189, 9507, 255001, 255000, 255007, 3857
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġren",
+            "token_id": 5418,
+            "logprob": -0.2649,
+            "prob": 0.7671
+          },
+          {
+            "token": "Ġrapide",
+            "token_id": 68500,
+            "logprob": -2.2031,
+            "prob": 0.1105
+          },
+          {
+            "token": "Ġv",
+            "token_id": 1745,
+            "logprob": -3.5547,
+            "prob": 0.0286
+          },
+          {
+            "token": "Ġsouris",
+            "token_id": 212224,
+            "logprob": -3.9375,
+            "prob": 0.0195
+          },
+          {
+            "token": "Ġfausse",
+            "token_id": 221148,
+            "logprob": -4.2812,
+            "prob": 0.0138
+          },
+          {
+            "token": "Ġvul",
+            "token_id": 14520,
+            "logprob": -5.1328,
+            "prob": 0.0059
+          },
+          {
+            "token": "Ġch",
+            "token_id": 1907,
+            "logprob": -5.1875,
+            "prob": 0.0056
+          },
+          {
+            "token": "Ġrap",
+            "token_id": 6399,
+            "logprob": -5.25,
+            "prob": 0.0053
+          },
+          {
+            "token": "Ġfox",
+            "token_id": 73388,
+            "logprob": -5.2969,
+            "prob": 0.005
+          },
+          {
+            "token": "Ġvig",
+            "token_id": 21002,
+            "logprob": -5.4609,
+            "prob": 0.0043
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġren",
+        "token_id": 5418,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 2,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Translate to French: The quick brown fox jumps over the lazy dog<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>La ren",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Translate",
+        "Ġto",
+        "ĠFrench",
+        ":",
+        "ĠThe",
+        "Ġquick",
+        "Ġbrown",
+        "Ġfox",
+        "Ġjumps",
+        "Ġover",
+        "Ġthe",
+        "Ġlazy",
+        "Ġdog",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "La",
+        "Ġren"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 96028, 1726, 6855, 33, 1896, 6629, 19883, 73388, 75436, 2515, 1690,
+        46189, 9507, 255001, 255000, 255007, 3857, 5418
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "arde",
+            "token_id": 8487,
+            "logprob": -0.2043,
+            "prob": 0.8149
+          },
+          {
+            "token": "ard",
+            "token_id": 1927,
+            "logprob": -1.6885,
+            "prob": 0.1847
+          },
+          {
+            "token": "ardo",
+            "token_id": 8081,
+            "logprob": -10.9688,
+            "prob": 0.0
+          },
+          {
+            "token": "arda",
+            "token_id": 11317,
+            "logprob": -11.0469,
+            "prob": 0.0
+          },
+          {
+            "token": "ards",
+            "token_id": 4388,
+            "logprob": -11.375,
+            "prob": 0.0
+          },
+          {
+            "token": "ardi",
+            "token_id": 22380,
+            "logprob": -11.7188,
+            "prob": 0.0
+          },
+          {
+            "token": "arder",
+            "token_id": 141928,
+            "logprob": -11.75,
+            "prob": 0.0
+          },
+          {
+            "token": "ette",
+            "token_id": 4389,
+            "logprob": -12.0938,
+            "prob": 0.0
+          },
+          {
+            "token": "ارد",
+            "token_id": 12996,
+            "logprob": -12.7812,
+            "prob": 0.0
+          },
+          {
+            "token": "art",
+            "token_id": 1869,
+            "logprob": -12.9688,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "arde",
+        "token_id": 8487,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 3,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Translate to French: The quick brown fox jumps over the lazy dog<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>La renarde",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Translate",
+        "Ġto",
+        "ĠFrench",
+        ":",
+        "ĠThe",
+        "Ġquick",
+        "Ġbrown",
+        "Ġfox",
+        "Ġjumps",
+        "Ġover",
+        "Ġthe",
+        "Ġlazy",
+        "Ġdog",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "La",
+        "Ġren",
+        "arde"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 96028, 1726, 6855, 33, 1896, 6629, 19883, 73388, 75436, 2515, 1690,
+        46189, 9507, 255001, 255000, 255007, 3857, 5418, 8487
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġbrune",
+            "token_id": 240906,
+            "logprob": -0.0159,
+            "prob": 0.9844
+          },
+          {
+            "token": "Ġbrun",
+            "token_id": 73486,
+            "logprob": -5.2812,
+            "prob": 0.0051
+          },
+          {
+            "token": "Ġbr",
+            "token_id": 2797,
+            "logprob": -5.4844,
+            "prob": 0.0042
+          },
+          {
+            "token": "Ġmarron",
+            "token_id": 228543,
+            "logprob": -5.6562,
+            "prob": 0.0035
+          },
+          {
+            "token": "Ġr",
+            "token_id": 1791,
+            "logprob": -6.4219,
+            "prob": 0.0016
+          },
+          {
+            "token": "Ġrapide",
+            "token_id": 68500,
+            "logprob": -7.6953,
+            "prob": 0.0005
+          },
+          {
+            "token": "Ġrus",
+            "token_id": 12692,
+            "logprob": -9.1094,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġrou",
+            "token_id": 14663,
+            "logprob": -9.1406,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġgrise",
+            "token_id": 128869,
+            "logprob": -9.1797,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġbru",
+            "token_id": 40917,
+            "logprob": -9.4766,
+            "prob": 0.0001
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġbrune",
+        "token_id": 240906,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 4,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Translate to French: The quick brown fox jumps over the lazy dog<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>La renarde brune",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Translate",
+        "Ġto",
+        "ĠFrench",
+        ":",
+        "ĠThe",
+        "Ġquick",
+        "Ġbrown",
+        "Ġfox",
+        "Ġjumps",
+        "Ġover",
+        "Ġthe",
+        "Ġlazy",
+        "Ġdog",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "La",
+        "Ġren",
+        "arde",
+        "Ġbrune"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 96028, 1726, 6855, 33, 1896, 6629, 19883, 73388, 75436, 2515, 1690,
+        46189, 9507, 255001, 255000, 255007, 3857, 5418, 8487, 240906
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġrapide",
+            "token_id": 68500,
+            "logprob": -0.0155,
+            "prob": 0.9844
+          },
+          {
+            "token": "Ġet",
+            "token_id": 2113,
+            "logprob": -4.6562,
+            "prob": 0.0095
+          },
+          {
+            "token": "Ġagile",
+            "token_id": 81330,
+            "logprob": -5.2188,
+            "prob": 0.0054
+          },
+          {
+            "token": "Ġrus",
+            "token_id": 12692,
+            "logprob": -9.3516,
+            "prob": 0.0001
+          },
+          {
+            "token": ",",
+            "token_id": 19,
+            "logprob": -9.7188,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġvive",
+            "token_id": 35047,
+            "logprob": -10.2266,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġrap",
+            "token_id": 6399,
+            "logprob": -10.6094,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġrapides",
+            "token_id": 166846,
+            "logprob": -10.8438,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġtra",
+            "token_id": 2526,
+            "logprob": -11.2344,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġqui",
+            "token_id": 3805,
+            "logprob": -11.4219,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġrapide",
+        "token_id": 68500,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 5,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Translate to French: The quick brown fox jumps over the lazy dog<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>La renarde brune rapide",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Translate",
+        "Ġto",
+        "ĠFrench",
+        ":",
+        "ĠThe",
+        "Ġquick",
+        "Ġbrown",
+        "Ġfox",
+        "Ġjumps",
+        "Ġover",
+        "Ġthe",
+        "Ġlazy",
+        "Ġdog",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "La",
+        "Ġren",
+        "arde",
+        "Ġbrune",
+        "Ġrapide"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 96028, 1726, 6855, 33, 1896, 6629, 19883, 73388, 75436, 2515, 1690,
+        46189, 9507, 255001, 255000, 255007, 3857, 5418, 8487, 240906, 68500
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġsaute",
+            "token_id": 200776,
+            "logprob": -0.013,
+            "prob": 0.9873
+          },
+          {
+            "token": "Ġbond",
+            "token_id": 22138,
+            "logprob": -4.6836,
+            "prob": 0.0092
+          },
+          {
+            "token": "Ġsa",
+            "token_id": 2642,
+            "logprob": -6.3711,
+            "prob": 0.0017
+          },
+          {
+            "token": "Ġsaut",
+            "token_id": 81159,
+            "logprob": -6.3867,
+            "prob": 0.0017
+          },
+          {
+            "token": "Ġsauté",
+            "token_id": 189841,
+            "logprob": -8.9844,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġtraverse",
+            "token_id": 52636,
+            "logprob": -9.5625,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġpasse",
+            "token_id": 28325,
+            "logprob": -10.3906,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġfranch",
+            "token_id": 19078,
+            "logprob": -10.875,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġreb",
+            "token_id": 18342,
+            "logprob": -11.7422,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġenj",
+            "token_id": 244859,
+            "logprob": -12.1875,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġsaute",
+        "token_id": 200776,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 6,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Translate to French: The quick brown fox jumps over the lazy dog<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>La renarde brune rapide saute",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Translate",
+        "Ġto",
+        "ĠFrench",
+        ":",
+        "ĠThe",
+        "Ġquick",
+        "Ġbrown",
+        "Ġfox",
+        "Ġjumps",
+        "Ġover",
+        "Ġthe",
+        "Ġlazy",
+        "Ġdog",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "La",
+        "Ġren",
+        "arde",
+        "Ġbrune",
+        "Ġrapide",
+        "Ġsaute"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 96028, 1726, 6855, 33, 1896, 6629, 19883, 73388, 75436, 2515, 1690,
+        46189, 9507, 255001, 255000, 255007, 3857, 5418, 8487, 240906, 68500, 200776
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġpar",
+            "token_id": 2023,
+            "logprob": -0.0068,
+            "prob": 0.9932
+          },
+          {
+            "token": "Ġau",
+            "token_id": 2470,
+            "logprob": -5.0859,
+            "prob": 0.0062
+          },
+          {
+            "token": "Ġsur",
+            "token_id": 2653,
+            "logprob": -7.3984,
+            "prob": 0.0006
+          },
+          {
+            "token": "Ġà",
+            "token_id": 2243,
+            "logprob": -11.2422,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġle",
+            "token_id": 1885,
+            "logprob": -13.4922,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġoutre",
+            "token_id": 35231,
+            "logprob": -13.6641,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġdevant",
+            "token_id": 31508,
+            "logprob": -14.1328,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġdessus",
+            "token_id": 144102,
+            "logprob": -15.2812,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġsous",
+            "token_id": 8468,
+            "logprob": -15.1953,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġautour",
+            "token_id": 36223,
+            "logprob": -15.5156,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġpar",
+        "token_id": 2023,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 7,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Translate to French: The quick brown fox jumps over the lazy dog<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>La renarde brune rapide saute par",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Translate",
+        "Ġto",
+        "ĠFrench",
+        ":",
+        "ĠThe",
+        "Ġquick",
+        "Ġbrown",
+        "Ġfox",
+        "Ġjumps",
+        "Ġover",
+        "Ġthe",
+        "Ġlazy",
+        "Ġdog",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "La",
+        "Ġren",
+        "arde",
+        "Ġbrune",
+        "Ġrapide",
+        "Ġsaute",
+        "Ġpar"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 96028, 1726, 6855, 33, 1896, 6629, 19883, 73388, 75436, 2515, 1690,
+        46189, 9507, 255001, 255000, 255007, 3857, 5418, 8487, 240906, 68500, 200776, 2023
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "-",
+            "token_id": 20,
+            "logprob": -0.0001,
+            "prob": 1.0
+          },
+          {
+            "token": "Ġdessus",
+            "token_id": 144102,
+            "logprob": -9.4531,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġpar",
+            "token_id": 2023,
+            "logprob": -15.0625,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġencima",
+            "token_id": 81793,
+            "logprob": -17.0781,
+            "prob": 0.0
+          },
+          {
+            "token": "dessus",
+            "token_id": 53047,
+            "logprob": -16.2344,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġau",
+            "token_id": 2470,
+            "logprob": -16.8906,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġhaut",
+            "token_id": 26887,
+            "logprob": -17.1875,
+            "prob": 0.0
+          },
+          {
+            "token": "<CLS>",
+            "token_id": 2,
+            "logprob": -30.4062,
+            "prob": 0.0
+          },
+          {
+            "token": "<UNK>",
+            "token_id": 1,
+            "logprob": -31.7344,
+            "prob": 0.0
+          },
+          {
+            "token": "<PAD>",
+            "token_id": 0,
+            "logprob": -30.0,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "-",
+        "token_id": 20,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 8,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Translate to French: The quick brown fox jumps over the lazy dog<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>La renarde brune rapide saute par-",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Translate",
+        "Ġto",
+        "ĠFrench",
+        ":",
+        "ĠThe",
+        "Ġquick",
+        "Ġbrown",
+        "Ġfox",
+        "Ġjumps",
+        "Ġover",
+        "Ġthe",
+        "Ġlazy",
+        "Ġdog",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "La",
+        "Ġren",
+        "arde",
+        "Ġbrune",
+        "Ġrapide",
+        "Ġsaute",
+        "Ġpar",
+        "-"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 96028, 1726, 6855, 33, 1896, 6629, 19883, 73388, 75436, 2515, 1690,
+        46189, 9507, 255001, 255000, 255007, 3857, 5418, 8487, 240906, 68500, 200776, 2023, 20
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "dessus",
+            "token_id": 53047,
+            "logprob": -0.0022,
+            "prob": 0.9976
+          },
+          {
+            "token": "delà",
+            "token_id": 80540,
+            "logprob": -6.2852,
+            "prob": 0.0019
+          },
+          {
+            "token": "dessous",
+            "token_id": 95374,
+            "logprob": -9.7031,
+            "prob": 0.0001
+          },
+          {
+            "token": "dé",
+            "token_id": 60001,
+            "logprob": -10.0,
+            "prob": 0.0
+          },
+          {
+            "token": "de",
+            "token_id": 1966,
+            "logprob": -10.1094,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġdessus",
+            "token_id": 144102,
+            "logprob": -10.4844,
+            "prob": 0.0
+          },
+          {
+            "token": "dev",
+            "token_id": 6249,
+            "logprob": -10.7188,
+            "prob": 0.0
+          },
+          {
+            "token": "del",
+            "token_id": 10048,
+            "logprob": -10.7578,
+            "prob": 0.0
+          },
+          {
+            "token": "des",
+            "token_id": 4699,
+            "logprob": -11.2734,
+            "prob": 0.0
+          },
+          {
+            "token": "sur",
+            "token_id": 11790,
+            "logprob": -11.4219,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "dessus",
+        "token_id": 53047,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 9,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Translate to French: The quick brown fox jumps over the lazy dog<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>La renarde brune rapide saute par-dessus",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Translate",
+        "Ġto",
+        "ĠFrench",
+        ":",
+        "ĠThe",
+        "Ġquick",
+        "Ġbrown",
+        "Ġfox",
+        "Ġjumps",
+        "Ġover",
+        "Ġthe",
+        "Ġlazy",
+        "Ġdog",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "La",
+        "Ġren",
+        "arde",
+        "Ġbrune",
+        "Ġrapide",
+        "Ġsaute",
+        "Ġpar",
+        "-",
+        "dessus"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 96028, 1726, 6855, 33, 1896, 6629, 19883, 73388, 75436, 2515, 1690,
+        46189, 9507, 255001, 255000, 255007, 3857, 5418, 8487, 240906, 68500, 200776, 2023, 20,
+        53047
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġle",
+            "token_id": 1885,
+            "logprob": -0.0,
+            "prob": 1.0
+          },
+          {
+            "token": "Ġun",
+            "token_id": 1880,
+            "logprob": -10.1875,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġl",
+            "token_id": 1711,
+            "logprob": -13.3281,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġchien",
+            "token_id": 109818,
+            "logprob": -13.8594,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġles",
+            "token_id": 2620,
+            "logprob": -14.3984,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġson",
+            "token_id": 2917,
+            "logprob": -14.4141,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġce",
+            "token_id": 4697,
+            "logprob": -15.2578,
+            "prob": 0.0
+          },
+          {
+            "token": "le",
+            "token_id": 1693,
+            "logprob": -15.4531,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġla",
+            "token_id": 1848,
+            "logprob": -17.0156,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġel",
+            "token_id": 2043,
+            "logprob": -16.7969,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġle",
+        "token_id": 1885,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 10,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Translate to French: The quick brown fox jumps over the lazy dog<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>La renarde brune rapide saute par-dessus le",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Translate",
+        "Ġto",
+        "ĠFrench",
+        ":",
+        "ĠThe",
+        "Ġquick",
+        "Ġbrown",
+        "Ġfox",
+        "Ġjumps",
+        "Ġover",
+        "Ġthe",
+        "Ġlazy",
+        "Ġdog",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "La",
+        "Ġren",
+        "arde",
+        "Ġbrune",
+        "Ġrapide",
+        "Ġsaute",
+        "Ġpar",
+        "-",
+        "dessus",
+        "Ġle"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 96028, 1726, 6855, 33, 1896, 6629, 19883, 73388, 75436, 2515, 1690,
+        46189, 9507, 255001, 255000, 255007, 3857, 5418, 8487, 240906, 68500, 200776, 2023, 20,
+        53047, 1885
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġchien",
+            "token_id": 109818,
+            "logprob": -0.0002,
+            "prob": 1.0
+          },
+          {
+            "token": "Ġdog",
+            "token_id": 9507,
+            "logprob": -8.8438,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġvieux",
+            "token_id": 80077,
+            "logprob": -11.2188,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġchi",
+            "token_id": 17159,
+            "logprob": -11.375,
+            "prob": 0.0
+          },
+          {
+            "token": "chien",
+            "token_id": 191734,
+            "logprob": -12.2969,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġchat",
+            "token_id": 19816,
+            "logprob": -12.375,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġgros",
+            "token_id": 40985,
+            "logprob": -12.3984,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġperro",
+            "token_id": 125759,
+            "logprob": -12.4453,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġpetit",
+            "token_id": 30044,
+            "logprob": -13.0312,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġchiens",
+            "token_id": 182538,
+            "logprob": -13.0859,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġchien",
+        "token_id": 109818,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 11,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Translate to French: The quick brown fox jumps over the lazy dog<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>La renarde brune rapide saute par-dessus le chien",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Translate",
+        "Ġto",
+        "ĠFrench",
+        ":",
+        "ĠThe",
+        "Ġquick",
+        "Ġbrown",
+        "Ġfox",
+        "Ġjumps",
+        "Ġover",
+        "Ġthe",
+        "Ġlazy",
+        "Ġdog",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "La",
+        "Ġren",
+        "arde",
+        "Ġbrune",
+        "Ġrapide",
+        "Ġsaute",
+        "Ġpar",
+        "-",
+        "dessus",
+        "Ġle",
+        "Ġchien"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 96028, 1726, 6855, 33, 1896, 6629, 19883, 73388, 75436, 2515, 1690,
+        46189, 9507, 255001, 255000, 255007, 3857, 5418, 8487, 240906, 68500, 200776, 2023, 20,
+        53047, 1885, 109818
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġpar",
+            "token_id": 2023,
+            "logprob": -0.0022,
+            "prob": 0.9976
+          },
+          {
+            "token": "Ġf",
+            "token_id": 1696,
+            "logprob": -6.1445,
+            "prob": 0.0021
+          },
+          {
+            "token": "Ġind",
+            "token_id": 3031,
+            "logprob": -11.1641,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġfe",
+            "token_id": 2575,
+            "logprob": -11.6016,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġo",
+            "token_id": 1691,
+            "logprob": -12.7812,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġmol",
+            "token_id": 12122,
+            "logprob": -12.875,
+            "prob": 0.0
+          },
+          {
+            "token": "par",
+            "token_id": 2385,
+            "logprob": -13.4453,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġlé",
+            "token_id": 30138,
+            "logprob": -13.9609,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġlent",
+            "token_id": 38405,
+            "logprob": -14.1406,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġmou",
+            "token_id": 60203,
+            "logprob": -14.1172,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġpar",
+        "token_id": 2023,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 12,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Translate to French: The quick brown fox jumps over the lazy dog<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>La renarde brune rapide saute par-dessus le chien par",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Translate",
+        "Ġto",
+        "ĠFrench",
+        ":",
+        "ĠThe",
+        "Ġquick",
+        "Ġbrown",
+        "Ġfox",
+        "Ġjumps",
+        "Ġover",
+        "Ġthe",
+        "Ġlazy",
+        "Ġdog",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "La",
+        "Ġren",
+        "arde",
+        "Ġbrune",
+        "Ġrapide",
+        "Ġsaute",
+        "Ġpar",
+        "-",
+        "dessus",
+        "Ġle",
+        "Ġchien",
+        "Ġpar"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 96028, 1726, 6855, 33, 1896, 6629, 19883, 73388, 75436, 2515, 1690,
+        46189, 9507, 255001, 255000, 255007, 3857, 5418, 8487, 240906, 68500, 200776, 2023, 20,
+        53047, 1885, 109818, 2023
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "esse",
+            "token_id": 6830,
+            "logprob": -0.0007,
+            "prob": 0.9995
+          },
+          {
+            "token": "ess",
+            "token_id": 1823,
+            "logprob": -7.3438,
+            "prob": 0.0006
+          },
+          {
+            "token": "esser",
+            "token_id": 33774,
+            "logprob": -11.8438,
+            "prob": 0.0
+          },
+          {
+            "token": "essa",
+            "token_id": 12621,
+            "logprob": -12.6094,
+            "prob": 0.0
+          },
+          {
+            "token": "ès",
+            "token_id": 3846,
+            "logprob": -12.9062,
+            "prob": 0.0
+          },
+          {
+            "token": "esso",
+            "token_id": 6809,
+            "logprob": -14.2266,
+            "prob": 0.0
+          },
+          {
+            "token": "és",
+            "token_id": 2528,
+            "logprob": -14.3672,
+            "prob": 0.0
+          },
+          {
+            "token": "essi",
+            "token_id": 54779,
+            "logprob": -14.4766,
+            "prob": 0.0
+          },
+          {
+            "token": "ese",
+            "token_id": 2381,
+            "logprob": -14.5625,
+            "prob": 0.0
+          },
+          {
+            "token": "Ess",
+            "token_id": 38016,
+            "logprob": -14.6406,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "esse",
+        "token_id": 6830,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 13,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Translate to French: The quick brown fox jumps over the lazy dog<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>La renarde brune rapide saute par-dessus le chien paresse",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Translate",
+        "Ġto",
+        "ĠFrench",
+        ":",
+        "ĠThe",
+        "Ġquick",
+        "Ġbrown",
+        "Ġfox",
+        "Ġjumps",
+        "Ġover",
+        "Ġthe",
+        "Ġlazy",
+        "Ġdog",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "La",
+        "Ġren",
+        "arde",
+        "Ġbrune",
+        "Ġrapide",
+        "Ġsaute",
+        "Ġpar",
+        "-",
+        "dessus",
+        "Ġle",
+        "Ġchien",
+        "Ġpar",
+        "esse"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 96028, 1726, 6855, 33, 1896, 6629, 19883, 73388, 75436, 2515, 1690,
+        46189, 9507, 255001, 255000, 255007, 3857, 5418, 8487, 240906, 68500, 200776, 2023, 20,
+        53047, 1885, 109818, 2023, 6830
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "ux",
+            "token_id": 3078,
+            "logprob": 0.0,
+            "prob": 1.0
+          },
+          {
+            "token": "UX",
+            "token_id": 33337,
+            "logprob": -17.2188,
+            "prob": 0.0
+          },
+          {
+            "token": "use",
+            "token_id": 2472,
+            "logprob": -17.0156,
+            "prob": 0.0
+          },
+          {
+            "token": "<PAD>",
+            "token_id": 0,
+            "logprob": -38.5,
+            "prob": 0.0
+          },
+          {
+            "token": "<EOS_TOKEN>",
+            "token_id": 6,
+            "logprob": -29.625,
+            "prob": 0.0
+          },
+          {
+            "token": "<SEP>",
+            "token_id": 3,
+            "logprob": -38.9688,
+            "prob": 0.0
+          },
+          {
+            "token": "<BOS_TOKEN>",
+            "token_id": 5,
+            "logprob": -35.5625,
+            "prob": 0.0
+          },
+          {
+            "token": "<MASK_TOKEN>",
+            "token_id": 4,
+            "logprob": -38.5312,
+            "prob": 0.0
+          },
+          {
+            "token": "<UNK>",
+            "token_id": 1,
+            "logprob": -37.0312,
+            "prob": 0.0
+          },
+          {
+            "token": "<CLS>",
+            "token_id": 2,
+            "logprob": -38.3125,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "ux",
+        "token_id": 3078,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 14,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Translate to French: The quick brown fox jumps over the lazy dog<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>La renarde brune rapide saute par-dessus le chien paresseux",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Translate",
+        "Ġto",
+        "ĠFrench",
+        ":",
+        "ĠThe",
+        "Ġquick",
+        "Ġbrown",
+        "Ġfox",
+        "Ġjumps",
+        "Ġover",
+        "Ġthe",
+        "Ġlazy",
+        "Ġdog",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "La",
+        "Ġren",
+        "arde",
+        "Ġbrune",
+        "Ġrapide",
+        "Ġsaute",
+        "Ġpar",
+        "-",
+        "dessus",
+        "Ġle",
+        "Ġchien",
+        "Ġpar",
+        "esse",
+        "ux"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 96028, 1726, 6855, 33, 1896, 6629, 19883, 73388, 75436, 2515, 1690,
+        46189, 9507, 255001, 255000, 255007, 3857, 5418, 8487, 240906, 68500, 200776, 2023, 20,
+        53047, 1885, 109818, 2023, 6830, 3078
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": ".",
+            "token_id": 21,
+            "logprob": -0.0,
+            "prob": 1.0
+          },
+          {
+            "token": "<|END_OF_TURN_TOKEN|>",
+            "token_id": 255001,
+            "logprob": -11.1094,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġ(",
+            "token_id": 1737,
+            "logprob": -11.8594,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġest",
+            "token_id": 2072,
+            "logprob": -13.6094,
+            "prob": 0.0
+          },
+          {
+            "token": "\n",
+            "token_id": 206,
+            "logprob": -14.2031,
+            "prob": 0.0
+          },
+          {
+            "token": ",",
+            "token_id": 19,
+            "logprob": -15.0156,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġ!",
+            "token_id": 3316,
+            "logprob": -15.0859,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġen",
+            "token_id": 1819,
+            "logprob": -15.5312,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġ.",
+            "token_id": 2475,
+            "logprob": -15.8672,
+            "prob": 0.0
+          },
+          {
+            "token": "<PAD>",
+            "token_id": 0,
+            "logprob": -33.5625,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": ".",
+        "token_id": 21,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 15,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Translate to French: The quick brown fox jumps over the lazy dog<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>La renarde brune rapide saute par-dessus le chien paresseux.",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Translate",
+        "Ġto",
+        "ĠFrench",
+        ":",
+        "ĠThe",
+        "Ġquick",
+        "Ġbrown",
+        "Ġfox",
+        "Ġjumps",
+        "Ġover",
+        "Ġthe",
+        "Ġlazy",
+        "Ġdog",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "La",
+        "Ġren",
+        "arde",
+        "Ġbrune",
+        "Ġrapide",
+        "Ġsaute",
+        "Ġpar",
+        "-",
+        "dessus",
+        "Ġle",
+        "Ġchien",
+        "Ġpar",
+        "esse",
+        "ux",
+        "."
+      ],
+      "token_ids": [
+        5, 255000, 255006, 96028, 1726, 6855, 33, 1896, 6629, 19883, 73388, 75436, 2515, 1690,
+        46189, 9507, 255001, 255000, 255007, 3857, 5418, 8487, 240906, 68500, 200776, 2023, 20,
+        53047, 1885, 109818, 2023, 6830, 3078, 21
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "\n",
+            "token_id": 206,
+            "logprob": -0.0228,
+            "prob": 0.9775
+          },
+          {
+            "token": "<|END_OF_TURN_TOKEN|>",
+            "token_id": 255001,
+            "logprob": -3.8047,
+            "prob": 0.0223
+          },
+          {
+            "token": "Ġ\n",
+            "token_id": 1973,
+            "logprob": -8.2266,
+            "prob": 0.0003
+          },
+          {
+            "token": "\n\n",
+            "token_id": 2126,
+            "logprob": -11.0078,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġ(",
+            "token_id": 1737,
+            "logprob": -11.0703,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġ \n",
+            "token_id": 8261,
+            "logprob": -13.7891,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġ\n\n",
+            "token_id": 3972,
+            "logprob": -13.7891,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġ»",
+            "token_id": 5739,
+            "logprob": -13.8281,
+            "prob": 0.0
+          },
+          {
+            "token": "\n\n\n",
+            "token_id": 11516,
+            "logprob": -15.0703,
+            "prob": 0.0
+          },
+          {
+            "token": "\n \n",
+            "token_id": 5748,
+            "logprob": -15.6406,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "\n",
+        "token_id": 206,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 16,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Translate to French: The quick brown fox jumps over the lazy dog<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>La renarde brune rapide saute par-dessus le chien paresseux.\n",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Translate",
+        "Ġto",
+        "ĠFrench",
+        ":",
+        "ĠThe",
+        "Ġquick",
+        "Ġbrown",
+        "Ġfox",
+        "Ġjumps",
+        "Ġover",
+        "Ġthe",
+        "Ġlazy",
+        "Ġdog",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "La",
+        "Ġren",
+        "arde",
+        "Ġbrune",
+        "Ġrapide",
+        "Ġsaute",
+        "Ġpar",
+        "-",
+        "dessus",
+        "Ġle",
+        "Ġchien",
+        "Ġpar",
+        "esse",
+        "ux",
+        ".",
+        "\n"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 96028, 1726, 6855, 33, 1896, 6629, 19883, 73388, 75436, 2515, 1690,
+        46189, 9507, 255001, 255000, 255007, 3857, 5418, 8487, 240906, 68500, 200776, 2023, 20,
+        53047, 1885, 109818, 2023, 6830, 3078, 21, 206
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "\n",
+            "token_id": 206,
+            "logprob": 0.0,
+            "prob": 1.0
+          },
+          {
+            "token": "<UNK>",
+            "token_id": 1,
+            "logprob": -39.875,
+            "prob": 0.0
+          },
+          {
+            "token": "<SEP>",
+            "token_id": 3,
+            "logprob": -41.3125,
+            "prob": 0.0
+          },
+          {
+            "token": "<EOS_TOKEN>",
+            "token_id": 6,
+            "logprob": -27.9375,
+            "prob": 0.0
+          },
+          {
+            "token": "<EOP_TOKEN>",
+            "token_id": 7,
+            "logprob": -42.1562,
+            "prob": 0.0
+          },
+          {
+            "token": "<PAD>",
+            "token_id": 0,
+            "logprob": -42.1875,
+            "prob": 0.0
+          },
+          {
+            "token": "<CLS>",
+            "token_id": 2,
+            "logprob": -41.5625,
+            "prob": 0.0
+          },
+          {
+            "token": "<BOS_TOKEN>",
+            "token_id": 5,
+            "logprob": -38.9688,
+            "prob": 0.0
+          },
+          {
+            "token": "!",
+            "token_id": 8,
+            "logprob": -34.25,
+            "prob": 0.0
+          },
+          {
+            "token": "<MASK_TOKEN>",
+            "token_id": 4,
+            "logprob": -42.0938,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "\n",
+        "token_id": 206,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 17,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Translate to French: The quick brown fox jumps over the lazy dog<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>La renarde brune rapide saute par-dessus le chien paresseux.\n\n",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Translate",
+        "Ġto",
+        "ĠFrench",
+        ":",
+        "ĠThe",
+        "Ġquick",
+        "Ġbrown",
+        "Ġfox",
+        "Ġjumps",
+        "Ġover",
+        "Ġthe",
+        "Ġlazy",
+        "Ġdog",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "La",
+        "Ġren",
+        "arde",
+        "Ġbrune",
+        "Ġrapide",
+        "Ġsaute",
+        "Ġpar",
+        "-",
+        "dessus",
+        "Ġle",
+        "Ġchien",
+        "Ġpar",
+        "esse",
+        "ux",
+        ".",
+        "\n",
+        "\n"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 96028, 1726, 6855, 33, 1896, 6629, 19883, 73388, 75436, 2515, 1690,
+        46189, 9507, 255001, 255000, 255007, 3857, 5418, 8487, 240906, 68500, 200776, 2023, 20,
+        53047, 1885, 109818, 2023, 6830, 3078, 21, 206, 206
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Cette",
+            "token_id": 29883,
+            "logprob": -0.174,
+            "prob": 0.8403
+          },
+          {
+            "token": "Il",
+            "token_id": 6535,
+            "logprob": -2.1738,
+            "prob": 0.1137
+          },
+          {
+            "token": "C",
+            "token_id": 42,
+            "logprob": -3.1113,
+            "prob": 0.0445
+          },
+          {
+            "token": "(",
+            "token_id": 15,
+            "logprob": -7.5039,
+            "prob": 0.0006
+          },
+          {
+            "token": "Ce",
+            "token_id": 31294,
+            "logprob": -8.0938,
+            "prob": 0.0003
+          },
+          {
+            "token": "Ou",
+            "token_id": 101385,
+            "logprob": -8.5312,
+            "prob": 0.0002
+          },
+          {
+            "token": "Cet",
+            "token_id": 72139,
+            "logprob": -9.0469,
+            "prob": 0.0001
+          },
+          {
+            "token": "Voici",
+            "token_id": 224040,
+            "logprob": -9.5469,
+            "prob": 0.0001
+          },
+          {
+            "token": "Note",
+            "token_id": 7526,
+            "logprob": -10.5312,
+            "prob": 0.0
+          },
+          {
+            "token": "This",
+            "token_id": 4184,
+            "logprob": -11.1875,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Cette",
+        "token_id": 29883,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 18,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Translate to French: The quick brown fox jumps over the lazy dog<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>La renarde brune rapide saute par-dessus le chien paresseux.\n\nCette",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Translate",
+        "Ġto",
+        "ĠFrench",
+        ":",
+        "ĠThe",
+        "Ġquick",
+        "Ġbrown",
+        "Ġfox",
+        "Ġjumps",
+        "Ġover",
+        "Ġthe",
+        "Ġlazy",
+        "Ġdog",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "La",
+        "Ġren",
+        "arde",
+        "Ġbrune",
+        "Ġrapide",
+        "Ġsaute",
+        "Ġpar",
+        "-",
+        "dessus",
+        "Ġle",
+        "Ġchien",
+        "Ġpar",
+        "esse",
+        "ux",
+        ".",
+        "\n",
+        "\n",
+        "Cette"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 96028, 1726, 6855, 33, 1896, 6629, 19883, 73388, 75436, 2515, 1690,
+        46189, 9507, 255001, 255000, 255007, 3857, 5418, 8487, 240906, 68500, 200776, 2023, 20,
+        53047, 1885, 109818, 2023, 6830, 3078, 21, 206, 206, 29883
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġphrase",
+            "token_id": 30997,
+            "logprob": -0.0,
+            "prob": 1.0
+          },
+          {
+            "token": "Ġfrase",
+            "token_id": 68331,
+            "logprob": -12.2969,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġsentence",
+            "token_id": 27281,
+            "logprob": -12.9062,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġphrases",
+            "token_id": 50772,
+            "logprob": -13.5,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġcélèbre",
+            "token_id": 53118,
+            "logprob": -13.75,
+            "prob": 0.0
+          },
+          {
+            "token": "phrase",
+            "token_id": 68277,
+            "logprob": -13.8281,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠPhrase",
+            "token_id": 253493,
+            "logprob": -14.25,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġexpression",
+            "token_id": 15063,
+            "logprob": -14.6406,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġphase",
+            "token_id": 15223,
+            "logprob": -16.0938,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġtraduction",
+            "token_id": 63009,
+            "logprob": -15.7266,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġphrase",
+        "token_id": 30997,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 19,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Translate to French: The quick brown fox jumps over the lazy dog<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>La renarde brune rapide saute par-dessus le chien paresseux.\n\nCette phrase",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Translate",
+        "Ġto",
+        "ĠFrench",
+        ":",
+        "ĠThe",
+        "Ġquick",
+        "Ġbrown",
+        "Ġfox",
+        "Ġjumps",
+        "Ġover",
+        "Ġthe",
+        "Ġlazy",
+        "Ġdog",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "La",
+        "Ġren",
+        "arde",
+        "Ġbrune",
+        "Ġrapide",
+        "Ġsaute",
+        "Ġpar",
+        "-",
+        "dessus",
+        "Ġle",
+        "Ġchien",
+        "Ġpar",
+        "esse",
+        "ux",
+        ".",
+        "\n",
+        "\n",
+        "Cette",
+        "Ġphrase"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 96028, 1726, 6855, 33, 1896, 6629, 19883, 73388, 75436, 2515, 1690,
+        46189, 9507, 255001, 255000, 255007, 3857, 5418, 8487, 240906, 68500, 200776, 2023, 20,
+        53047, 1885, 109818, 2023, 6830, 3078, 21, 206, 206, 29883, 30997
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġest",
+            "token_id": 2072,
+            "logprob": -0.0002,
+            "prob": 1.0
+          },
+          {
+            "token": ",",
+            "token_id": 19,
+            "logprob": -8.9219,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġen",
+            "token_id": 1819,
+            "logprob": -9.8594,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġutilise",
+            "token_id": 54069,
+            "logprob": -13.5938,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġ(",
+            "token_id": 1737,
+            "logprob": -14.4375,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġcontient",
+            "token_id": 64052,
+            "logprob": -14.7656,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġfait",
+            "token_id": 8055,
+            "logprob": -15.1875,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġcorrespond",
+            "token_id": 9703,
+            "logprob": -15.1953,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġpeut",
+            "token_id": 12691,
+            "logprob": -16.1406,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġcélèbre",
+            "token_id": 53118,
+            "logprob": -15.7734,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġest",
+        "token_id": 2072,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 20,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Translate to French: The quick brown fox jumps over the lazy dog<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>La renarde brune rapide saute par-dessus le chien paresseux.\n\nCette phrase est",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Translate",
+        "Ġto",
+        "ĠFrench",
+        ":",
+        "ĠThe",
+        "Ġquick",
+        "Ġbrown",
+        "Ġfox",
+        "Ġjumps",
+        "Ġover",
+        "Ġthe",
+        "Ġlazy",
+        "Ġdog",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "La",
+        "Ġren",
+        "arde",
+        "Ġbrune",
+        "Ġrapide",
+        "Ġsaute",
+        "Ġpar",
+        "-",
+        "dessus",
+        "Ġle",
+        "Ġchien",
+        "Ġpar",
+        "esse",
+        "ux",
+        ".",
+        "\n",
+        "\n",
+        "Cette",
+        "Ġphrase",
+        "Ġest"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 96028, 1726, 6855, 33, 1896, 6629, 19883, 73388, 75436, 2515, 1690,
+        46189, 9507, 255001, 255000, 255007, 3857, 5418, 8487, 240906, 68500, 200776, 2023, 20,
+        53047, 1885, 109818, 2023, 6830, 3078, 21, 206, 206, 29883, 30997, 2072
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġsouvent",
+            "token_id": 25728,
+            "logprob": -0.4609,
+            "prob": 0.6309
+          },
+          {
+            "token": "Ġun",
+            "token_id": 1880,
+            "logprob": -1.0078,
+            "prob": 0.365
+          },
+          {
+            "token": "Ġconnue",
+            "token_id": 51317,
+            "logprob": -6.7422,
+            "prob": 0.0012
+          },
+          {
+            "token": "Ġcélèbre",
+            "token_id": 53118,
+            "logprob": -6.9453,
+            "prob": 0.001
+          },
+          {
+            "token": "Ġintéress",
+            "token_id": 89307,
+            "logprob": -7.3359,
+            "prob": 0.0007
+          },
+          {
+            "token": "Ġune",
+            "token_id": 3201,
+            "logprob": -8.0391,
+            "prob": 0.0003
+          },
+          {
+            "token": "Ġparfois",
+            "token_id": 36325,
+            "logprob": -8.1797,
+            "prob": 0.0003
+          },
+          {
+            "token": "Ġparticulièrement",
+            "token_id": 47181,
+            "logprob": -8.2422,
+            "prob": 0.0003
+          },
+          {
+            "token": "Ġutilisée",
+            "token_id": 53079,
+            "logprob": -8.7031,
+            "prob": 0.0002
+          },
+          {
+            "token": "Ġcouramment",
+            "token_id": 166494,
+            "logprob": -8.8984,
+            "prob": 0.0001
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġsouvent",
+        "token_id": 25728,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 21,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Translate to French: The quick brown fox jumps over the lazy dog<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>La renarde brune rapide saute par-dessus le chien paresseux.\n\nCette phrase est souvent",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Translate",
+        "Ġto",
+        "ĠFrench",
+        ":",
+        "ĠThe",
+        "Ġquick",
+        "Ġbrown",
+        "Ġfox",
+        "Ġjumps",
+        "Ġover",
+        "Ġthe",
+        "Ġlazy",
+        "Ġdog",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "La",
+        "Ġren",
+        "arde",
+        "Ġbrune",
+        "Ġrapide",
+        "Ġsaute",
+        "Ġpar",
+        "-",
+        "dessus",
+        "Ġle",
+        "Ġchien",
+        "Ġpar",
+        "esse",
+        "ux",
+        ".",
+        "\n",
+        "\n",
+        "Cette",
+        "Ġphrase",
+        "Ġest",
+        "Ġsouvent"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 96028, 1726, 6855, 33, 1896, 6629, 19883, 73388, 75436, 2515, 1690,
+        46189, 9507, 255001, 255000, 255007, 3857, 5418, 8487, 240906, 68500, 200776, 2023, 20,
+        53047, 1885, 109818, 2023, 6830, 3078, 21, 206, 206, 29883, 30997, 2072, 25728
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġutilisée",
+            "token_id": 53079,
+            "logprob": -0.0003,
+            "prob": 0.9995
+          },
+          {
+            "token": "Ġcitée",
+            "token_id": 237218,
+            "logprob": -8.3125,
+            "prob": 0.0002
+          },
+          {
+            "token": "Ġemployée",
+            "token_id": 240002,
+            "logprob": -12.0625,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġutilisées",
+            "token_id": 91385,
+            "logprob": -12.1719,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġutilisé",
+            "token_id": 34653,
+            "logprob": -12.2812,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġutilisés",
+            "token_id": 65874,
+            "logprob": -12.9219,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġutilizada",
+            "token_id": 51330,
+            "logprob": -13.4922,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġmentionnée",
+            "token_id": 220853,
+            "logprob": -14.0625,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġappelée",
+            "token_id": 57342,
+            "logprob": -14.1875,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġused",
+            "token_id": 3099,
+            "logprob": -14.5234,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġutilisée",
+        "token_id": 53079,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 22,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Translate to French: The quick brown fox jumps over the lazy dog<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>La renarde brune rapide saute par-dessus le chien paresseux.\n\nCette phrase est souvent utilisée",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Translate",
+        "Ġto",
+        "ĠFrench",
+        ":",
+        "ĠThe",
+        "Ġquick",
+        "Ġbrown",
+        "Ġfox",
+        "Ġjumps",
+        "Ġover",
+        "Ġthe",
+        "Ġlazy",
+        "Ġdog",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "La",
+        "Ġren",
+        "arde",
+        "Ġbrune",
+        "Ġrapide",
+        "Ġsaute",
+        "Ġpar",
+        "-",
+        "dessus",
+        "Ġle",
+        "Ġchien",
+        "Ġpar",
+        "esse",
+        "ux",
+        ".",
+        "\n",
+        "\n",
+        "Cette",
+        "Ġphrase",
+        "Ġest",
+        "Ġsouvent",
+        "Ġutilisée"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 96028, 1726, 6855, 33, 1896, 6629, 19883, 73388, 75436, 2515, 1690,
+        46189, 9507, 255001, 255000, 255007, 3857, 5418, 8487, 240906, 68500, 200776, 2023, 20,
+        53047, 1885, 109818, 2023, 6830, 3078, 21, 206, 206, 29883, 30997, 2072, 25728, 53079
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġcomme",
+            "token_id": 6898,
+            "logprob": -0.1615,
+            "prob": 0.8511
+          },
+          {
+            "token": "Ġpour",
+            "token_id": 3346,
+            "logprob": -2.0996,
+            "prob": 0.1226
+          },
+          {
+            "token": "Ġdans",
+            "token_id": 3027,
+            "logprob": -4.082,
+            "prob": 0.0168
+          },
+          {
+            "token": "Ġen",
+            "token_id": 1819,
+            "logprob": -4.6602,
+            "prob": 0.0095
+          },
+          {
+            "token": "Ġcar",
+            "token_id": 2825,
+            "logprob": -8.8359,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġà",
+            "token_id": 2243,
+            "logprob": -9.9609,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġparce",
+            "token_id": 50624,
+            "logprob": -9.9922,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġcomo",
+            "token_id": 2790,
+            "logprob": -11.2891,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġpar",
+            "token_id": 2023,
+            "logprob": -12.8203,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġsous",
+            "token_id": 8468,
+            "logprob": -12.8359,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġcomme",
+        "token_id": 6898,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 23,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Translate to French: The quick brown fox jumps over the lazy dog<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>La renarde brune rapide saute par-dessus le chien paresseux.\n\nCette phrase est souvent utilisée comme",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Translate",
+        "Ġto",
+        "ĠFrench",
+        ":",
+        "ĠThe",
+        "Ġquick",
+        "Ġbrown",
+        "Ġfox",
+        "Ġjumps",
+        "Ġover",
+        "Ġthe",
+        "Ġlazy",
+        "Ġdog",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "La",
+        "Ġren",
+        "arde",
+        "Ġbrune",
+        "Ġrapide",
+        "Ġsaute",
+        "Ġpar",
+        "-",
+        "dessus",
+        "Ġle",
+        "Ġchien",
+        "Ġpar",
+        "esse",
+        "ux",
+        ".",
+        "\n",
+        "\n",
+        "Cette",
+        "Ġphrase",
+        "Ġest",
+        "Ġsouvent",
+        "Ġutilisée",
+        "Ġcomme"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 96028, 1726, 6855, 33, 1896, 6629, 19883, 73388, 75436, 2515, 1690,
+        46189, 9507, 255001, 255000, 255007, 3857, 5418, 8487, 240906, 68500, 200776, 2023, 20,
+        53047, 1885, 109818, 2023, 6830, 3078, 21, 206, 206, 29883, 30997, 2072, 25728, 53079, 6898
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġune",
+            "token_id": 3201,
+            "logprob": -0.7627,
+            "prob": 0.4666
+          },
+          {
+            "token": "Ġun",
+            "token_id": 1880,
+            "logprob": -0.9658,
+            "prob": 0.3806
+          },
+          {
+            "token": "Ġexemple",
+            "token_id": 28258,
+            "logprob": -1.9814,
+            "prob": 0.1379
+          },
+          {
+            "token": "Ġtexte",
+            "token_id": 46521,
+            "logprob": -5.1836,
+            "prob": 0.0056
+          },
+          {
+            "token": "Ġtest",
+            "token_id": 3282,
+            "logprob": -5.9961,
+            "prob": 0.0025
+          },
+          {
+            "token": "Ġ«",
+            "token_id": 2364,
+            "logprob": -5.9961,
+            "prob": 0.0025
+          },
+          {
+            "token": "Ġ\"",
+            "token_id": 1789,
+            "logprob": -6.5352,
+            "prob": 0.0015
+          },
+          {
+            "token": "Ġphrase",
+            "token_id": 30997,
+            "logprob": -7.0195,
+            "prob": 0.0009
+          },
+          {
+            "token": "Ġexercice",
+            "token_id": 254357,
+            "logprob": -7.4258,
+            "prob": 0.0006
+          },
+          {
+            "token": "Ġuna",
+            "token_id": 2783,
+            "logprob": -9.0391,
+            "prob": 0.0001
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġexemple",
+        "token_id": 28258,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 24,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Translate to French: The quick brown fox jumps over the lazy dog<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>La renarde brune rapide saute par-dessus le chien paresseux.\n\nCette phrase est souvent utilisée comme exemple",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Translate",
+        "Ġto",
+        "ĠFrench",
+        ":",
+        "ĠThe",
+        "Ġquick",
+        "Ġbrown",
+        "Ġfox",
+        "Ġjumps",
+        "Ġover",
+        "Ġthe",
+        "Ġlazy",
+        "Ġdog",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "La",
+        "Ġren",
+        "arde",
+        "Ġbrune",
+        "Ġrapide",
+        "Ġsaute",
+        "Ġpar",
+        "-",
+        "dessus",
+        "Ġle",
+        "Ġchien",
+        "Ġpar",
+        "esse",
+        "ux",
+        ".",
+        "\n",
+        "\n",
+        "Cette",
+        "Ġphrase",
+        "Ġest",
+        "Ġsouvent",
+        "Ġutilisée",
+        "Ġcomme",
+        "Ġexemple"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 96028, 1726, 6855, 33, 1896, 6629, 19883, 73388, 75436, 2515, 1690,
+        46189, 9507, 255001, 255000, 255007, 3857, 5418, 8487, 240906, 68500, 200776, 2023, 20,
+        53047, 1885, 109818, 2023, 6830, 3078, 21, 206, 206, 29883, 30997, 2072, 25728, 53079, 6898,
+        28258
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġde",
+            "token_id": 1715,
+            "logprob": -0.1355,
+            "prob": 0.873
+          },
+          {
+            "token": "Ġpour",
+            "token_id": 3346,
+            "logprob": -2.666,
+            "prob": 0.0695
+          },
+          {
+            "token": "Ġdans",
+            "token_id": 3027,
+            "logprob": -2.8691,
+            "prob": 0.0567
+          },
+          {
+            "token": "Ġen",
+            "token_id": 1819,
+            "logprob": -8.0078,
+            "prob": 0.0003
+          },
+          {
+            "token": "Ġou",
+            "token_id": 3841,
+            "logprob": -9.9922,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġà",
+            "token_id": 2243,
+            "logprob": -10.25,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġd",
+            "token_id": 1676,
+            "logprob": -10.6484,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġavec",
+            "token_id": 4374,
+            "logprob": -10.7734,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġcomplet",
+            "token_id": 4839,
+            "logprob": -11.1094,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġcar",
+            "token_id": 2825,
+            "logprob": -11.4609,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġde",
+        "token_id": 1715,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 25,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Translate to French: The quick brown fox jumps over the lazy dog<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>La renarde brune rapide saute par-dessus le chien paresseux.\n\nCette phrase est souvent utilisée comme exemple de",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Translate",
+        "Ġto",
+        "ĠFrench",
+        ":",
+        "ĠThe",
+        "Ġquick",
+        "Ġbrown",
+        "Ġfox",
+        "Ġjumps",
+        "Ġover",
+        "Ġthe",
+        "Ġlazy",
+        "Ġdog",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "La",
+        "Ġren",
+        "arde",
+        "Ġbrune",
+        "Ġrapide",
+        "Ġsaute",
+        "Ġpar",
+        "-",
+        "dessus",
+        "Ġle",
+        "Ġchien",
+        "Ġpar",
+        "esse",
+        "ux",
+        ".",
+        "\n",
+        "\n",
+        "Cette",
+        "Ġphrase",
+        "Ġest",
+        "Ġsouvent",
+        "Ġutilisée",
+        "Ġcomme",
+        "Ġexemple",
+        "Ġde"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 96028, 1726, 6855, 33, 1896, 6629, 19883, 73388, 75436, 2515, 1690,
+        46189, 9507, 255001, 255000, 255007, 3857, 5418, 8487, 240906, 68500, 200776, 2023, 20,
+        53047, 1885, 109818, 2023, 6830, 3078, 21, 206, 206, 29883, 30997, 2072, 25728, 53079, 6898,
+        28258, 1715
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġphrase",
+            "token_id": 30997,
+            "logprob": -0.0381,
+            "prob": 0.9624
+          },
+          {
+            "token": "Ġpang",
+            "token_id": 118801,
+            "logprob": -3.4297,
+            "prob": 0.0324
+          },
+          {
+            "token": "Ġ«",
+            "token_id": 2364,
+            "logprob": -7.0703,
+            "prob": 0.0009
+          },
+          {
+            "token": "Ġla",
+            "token_id": 1848,
+            "logprob": -7.4609,
+            "prob": 0.0006
+          },
+          {
+            "token": "Ġpan",
+            "token_id": 6643,
+            "logprob": -7.7031,
+            "prob": 0.0005
+          },
+          {
+            "token": "pang",
+            "token_id": 144116,
+            "logprob": -8.2656,
+            "prob": 0.0003
+          },
+          {
+            "token": "Ġpav",
+            "token_id": 28525,
+            "logprob": -8.2891,
+            "prob": 0.0003
+          },
+          {
+            "token": "Ġfrase",
+            "token_id": 68331,
+            "logprob": -8.4062,
+            "prob": 0.0002
+          },
+          {
+            "token": "Ġ\"",
+            "token_id": 1789,
+            "logprob": -8.4844,
+            "prob": 0.0002
+          },
+          {
+            "token": "ĠPang",
+            "token_id": 51488,
+            "logprob": -8.5391,
+            "prob": 0.0002
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġphrase",
+        "token_id": 30997,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 26,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Translate to French: The quick brown fox jumps over the lazy dog<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>La renarde brune rapide saute par-dessus le chien paresseux.\n\nCette phrase est souvent utilisée comme exemple de phrase",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Translate",
+        "Ġto",
+        "ĠFrench",
+        ":",
+        "ĠThe",
+        "Ġquick",
+        "Ġbrown",
+        "Ġfox",
+        "Ġjumps",
+        "Ġover",
+        "Ġthe",
+        "Ġlazy",
+        "Ġdog",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "La",
+        "Ġren",
+        "arde",
+        "Ġbrune",
+        "Ġrapide",
+        "Ġsaute",
+        "Ġpar",
+        "-",
+        "dessus",
+        "Ġle",
+        "Ġchien",
+        "Ġpar",
+        "esse",
+        "ux",
+        ".",
+        "\n",
+        "\n",
+        "Cette",
+        "Ġphrase",
+        "Ġest",
+        "Ġsouvent",
+        "Ġutilisée",
+        "Ġcomme",
+        "Ġexemple",
+        "Ġde",
+        "Ġphrase"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 96028, 1726, 6855, 33, 1896, 6629, 19883, 73388, 75436, 2515, 1690,
+        46189, 9507, 255001, 255000, 255007, 3857, 5418, 8487, 240906, 68500, 200776, 2023, 20,
+        53047, 1885, 109818, 2023, 6830, 3078, 21, 206, 206, 29883, 30997, 2072, 25728, 53079, 6898,
+        28258, 1715, 30997
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġcontenant",
+            "token_id": 88422,
+            "logprob": -0.019,
+            "prob": 0.981
+          },
+          {
+            "token": "Ġcomprenant",
+            "token_id": 96592,
+            "logprob": -5.2695,
+            "prob": 0.0051
+          },
+          {
+            "token": "Ġqui",
+            "token_id": 3805,
+            "logprob": -5.3555,
+            "prob": 0.0047
+          },
+          {
+            "token": "Ġpang",
+            "token_id": 118801,
+            "logprob": -6.1445,
+            "prob": 0.0021
+          },
+          {
+            "token": "Ġ«",
+            "token_id": 2364,
+            "logprob": -6.6367,
+            "prob": 0.0013
+          },
+          {
+            "token": "Ġen",
+            "token_id": 1819,
+            "logprob": -6.7617,
+            "prob": 0.0012
+          },
+          {
+            "token": "Ġcouvrant",
+            "token_id": 143317,
+            "logprob": -7.3477,
+            "prob": 0.0006
+          },
+          {
+            "token": "Ġincluant",
+            "token_id": 144675,
+            "logprob": -7.918,
+            "prob": 0.0004
+          },
+          {
+            "token": "Ġpant",
+            "token_id": 31391,
+            "logprob": -8.1328,
+            "prob": 0.0003
+          },
+          {
+            "token": "Ġde",
+            "token_id": 1715,
+            "logprob": -8.1719,
+            "prob": 0.0003
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġcontenant",
+        "token_id": 88422,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 27,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Translate to French: The quick brown fox jumps over the lazy dog<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>La renarde brune rapide saute par-dessus le chien paresseux.\n\nCette phrase est souvent utilisée comme exemple de phrase contenant",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Translate",
+        "Ġto",
+        "ĠFrench",
+        ":",
+        "ĠThe",
+        "Ġquick",
+        "Ġbrown",
+        "Ġfox",
+        "Ġjumps",
+        "Ġover",
+        "Ġthe",
+        "Ġlazy",
+        "Ġdog",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "La",
+        "Ġren",
+        "arde",
+        "Ġbrune",
+        "Ġrapide",
+        "Ġsaute",
+        "Ġpar",
+        "-",
+        "dessus",
+        "Ġle",
+        "Ġchien",
+        "Ġpar",
+        "esse",
+        "ux",
+        ".",
+        "\n",
+        "\n",
+        "Cette",
+        "Ġphrase",
+        "Ġest",
+        "Ġsouvent",
+        "Ġutilisée",
+        "Ġcomme",
+        "Ġexemple",
+        "Ġde",
+        "Ġphrase",
+        "Ġcontenant"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 96028, 1726, 6855, 33, 1896, 6629, 19883, 73388, 75436, 2515, 1690,
+        46189, 9507, 255001, 255000, 255007, 3857, 5418, 8487, 240906, 68500, 200776, 2023, 20,
+        53047, 1885, 109818, 2023, 6830, 3078, 21, 206, 206, 29883, 30997, 2072, 25728, 53079, 6898,
+        28258, 1715, 30997, 88422
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġtoutes",
+            "token_id": 27763,
+            "logprob": -0.0001,
+            "prob": 1.0
+          },
+          {
+            "token": "Ġla",
+            "token_id": 1848,
+            "logprob": -9.7969,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġtous",
+            "token_id": 18067,
+            "logprob": -9.8594,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġl",
+            "token_id": 1711,
+            "logprob": -11.8906,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġtodas",
+            "token_id": 16967,
+            "logprob": -12.5156,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġles",
+            "token_id": 2620,
+            "logprob": -13.8281,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġchaque",
+            "token_id": 25995,
+            "logprob": -13.9375,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġtoute",
+            "token_id": 22189,
+            "logprob": -14.1094,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠToutes",
+            "token_id": 159061,
+            "logprob": -14.7344,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġtutte",
+            "token_id": 46017,
+            "logprob": -15.0469,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġtoutes",
+        "token_id": 27763,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 28,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Translate to French: The quick brown fox jumps over the lazy dog<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>La renarde brune rapide saute par-dessus le chien paresseux.\n\nCette phrase est souvent utilisée comme exemple de phrase contenant toutes",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Translate",
+        "Ġto",
+        "ĠFrench",
+        ":",
+        "ĠThe",
+        "Ġquick",
+        "Ġbrown",
+        "Ġfox",
+        "Ġjumps",
+        "Ġover",
+        "Ġthe",
+        "Ġlazy",
+        "Ġdog",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "La",
+        "Ġren",
+        "arde",
+        "Ġbrune",
+        "Ġrapide",
+        "Ġsaute",
+        "Ġpar",
+        "-",
+        "dessus",
+        "Ġle",
+        "Ġchien",
+        "Ġpar",
+        "esse",
+        "ux",
+        ".",
+        "\n",
+        "\n",
+        "Cette",
+        "Ġphrase",
+        "Ġest",
+        "Ġsouvent",
+        "Ġutilisée",
+        "Ġcomme",
+        "Ġexemple",
+        "Ġde",
+        "Ġphrase",
+        "Ġcontenant",
+        "Ġtoutes"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 96028, 1726, 6855, 33, 1896, 6629, 19883, 73388, 75436, 2515, 1690,
+        46189, 9507, 255001, 255000, 255007, 3857, 5418, 8487, 240906, 68500, 200776, 2023, 20,
+        53047, 1885, 109818, 2023, 6830, 3078, 21, 206, 206, 29883, 30997, 2072, 25728, 53079, 6898,
+        28258, 1715, 30997, 88422, 27763
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġles",
+            "token_id": 2620,
+            "logprob": 0.0,
+            "prob": 1.0
+          },
+          {
+            "token": "<UNK>",
+            "token_id": 1,
+            "logprob": -36.5,
+            "prob": 0.0
+          },
+          {
+            "token": "<SEP>",
+            "token_id": 3,
+            "logprob": -38.25,
+            "prob": 0.0
+          },
+          {
+            "token": "<EOS_TOKEN>",
+            "token_id": 6,
+            "logprob": -34.7188,
+            "prob": 0.0
+          },
+          {
+            "token": "<EOP_TOKEN>",
+            "token_id": 7,
+            "logprob": -38.3438,
+            "prob": 0.0
+          },
+          {
+            "token": "<PAD>",
+            "token_id": 0,
+            "logprob": -38.4375,
+            "prob": 0.0
+          },
+          {
+            "token": "<CLS>",
+            "token_id": 2,
+            "logprob": -38.1562,
+            "prob": 0.0
+          },
+          {
+            "token": "<BOS_TOKEN>",
+            "token_id": 5,
+            "logprob": -34.375,
+            "prob": 0.0
+          },
+          {
+            "token": "!",
+            "token_id": 8,
+            "logprob": -34.9375,
+            "prob": 0.0
+          },
+          {
+            "token": "<MASK_TOKEN>",
+            "token_id": 4,
+            "logprob": -38.3438,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġles",
+        "token_id": 2620,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 29,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Translate to French: The quick brown fox jumps over the lazy dog<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>La renarde brune rapide saute par-dessus le chien paresseux.\n\nCette phrase est souvent utilisée comme exemple de phrase contenant toutes les",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Translate",
+        "Ġto",
+        "ĠFrench",
+        ":",
+        "ĠThe",
+        "Ġquick",
+        "Ġbrown",
+        "Ġfox",
+        "Ġjumps",
+        "Ġover",
+        "Ġthe",
+        "Ġlazy",
+        "Ġdog",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "La",
+        "Ġren",
+        "arde",
+        "Ġbrune",
+        "Ġrapide",
+        "Ġsaute",
+        "Ġpar",
+        "-",
+        "dessus",
+        "Ġle",
+        "Ġchien",
+        "Ġpar",
+        "esse",
+        "ux",
+        ".",
+        "\n",
+        "\n",
+        "Cette",
+        "Ġphrase",
+        "Ġest",
+        "Ġsouvent",
+        "Ġutilisée",
+        "Ġcomme",
+        "Ġexemple",
+        "Ġde",
+        "Ġphrase",
+        "Ġcontenant",
+        "Ġtoutes",
+        "Ġles"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 96028, 1726, 6855, 33, 1896, 6629, 19883, 73388, 75436, 2515, 1690,
+        46189, 9507, 255001, 255000, 255007, 3857, 5418, 8487, 240906, 68500, 200776, 2023, 20,
+        53047, 1885, 109818, 2023, 6830, 3078, 21, 206, 206, 29883, 30997, 2072, 25728, 53079, 6898,
+        28258, 1715, 30997, 88422, 27763, 2620
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġlettres",
+            "token_id": 49618,
+            "logprob": -0.0001,
+            "prob": 1.0
+          },
+          {
+            "token": "Ġlettre",
+            "token_id": 62466,
+            "logprob": -10.8281,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġletras",
+            "token_id": 47142,
+            "logprob": -11.0781,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠLettres",
+            "token_id": 84911,
+            "logprob": -11.4531,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġletters",
+            "token_id": 19622,
+            "logprob": -11.5156,
+            "prob": 0.0
+          },
+          {
+            "token": "lettres",
+            "token_id": 241119,
+            "logprob": -13.7344,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġlettere",
+            "token_id": 130722,
+            "logprob": -14.375,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġconson",
+            "token_id": 58813,
+            "logprob": -14.5312,
+            "prob": 0.0
+          },
+          {
+            "token": "letters",
+            "token_id": 73393,
+            "logprob": -14.5078,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġalphab",
+            "token_id": 124103,
+            "logprob": -14.875,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġlettres",
+        "token_id": 49618,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 30,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Translate to French: The quick brown fox jumps over the lazy dog<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>La renarde brune rapide saute par-dessus le chien paresseux.\n\nCette phrase est souvent utilisée comme exemple de phrase contenant toutes les lettres",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Translate",
+        "Ġto",
+        "ĠFrench",
+        ":",
+        "ĠThe",
+        "Ġquick",
+        "Ġbrown",
+        "Ġfox",
+        "Ġjumps",
+        "Ġover",
+        "Ġthe",
+        "Ġlazy",
+        "Ġdog",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "La",
+        "Ġren",
+        "arde",
+        "Ġbrune",
+        "Ġrapide",
+        "Ġsaute",
+        "Ġpar",
+        "-",
+        "dessus",
+        "Ġle",
+        "Ġchien",
+        "Ġpar",
+        "esse",
+        "ux",
+        ".",
+        "\n",
+        "\n",
+        "Cette",
+        "Ġphrase",
+        "Ġest",
+        "Ġsouvent",
+        "Ġutilisée",
+        "Ġcomme",
+        "Ġexemple",
+        "Ġde",
+        "Ġphrase",
+        "Ġcontenant",
+        "Ġtoutes",
+        "Ġles",
+        "Ġlettres"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 96028, 1726, 6855, 33, 1896, 6629, 19883, 73388, 75436, 2515, 1690,
+        46189, 9507, 255001, 255000, 255007, 3857, 5418, 8487, 240906, 68500, 200776, 2023, 20,
+        53047, 1885, 109818, 2023, 6830, 3078, 21, 206, 206, 29883, 30997, 2072, 25728, 53079, 6898,
+        28258, 1715, 30997, 88422, 27763, 2620, 49618
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġde",
+            "token_id": 1715,
+            "logprob": -0.0,
+            "prob": 1.0
+          },
+          {
+            "token": "Ġd",
+            "token_id": 1676,
+            "logprob": -12.6719,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġdu",
+            "token_id": 2333,
+            "logprob": -13.6562,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġalphab",
+            "token_id": 124103,
+            "logprob": -16.1875,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġdes",
+            "token_id": 2003,
+            "logprob": -15.9531,
+            "prob": 0.0
+          },
+          {
+            "token": "<SEP>",
+            "token_id": 3,
+            "logprob": -32.8438,
+            "prob": 0.0
+          },
+          {
+            "token": "<MASK_TOKEN>",
+            "token_id": 4,
+            "logprob": -32.2188,
+            "prob": 0.0
+          },
+          {
+            "token": "<CLS>",
+            "token_id": 2,
+            "logprob": -32.3438,
+            "prob": 0.0
+          },
+          {
+            "token": "<PAD>",
+            "token_id": 0,
+            "logprob": -32.375,
+            "prob": 0.0
+          },
+          {
+            "token": "<UNK>",
+            "token_id": 1,
+            "logprob": -30.7188,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġde",
+        "token_id": 1715,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 31,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Translate to French: The quick brown fox jumps over the lazy dog<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>La renarde brune rapide saute par-dessus le chien paresseux.\n\nCette phrase est souvent utilisée comme exemple de phrase contenant toutes les lettres de",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Translate",
+        "Ġto",
+        "ĠFrench",
+        ":",
+        "ĠThe",
+        "Ġquick",
+        "Ġbrown",
+        "Ġfox",
+        "Ġjumps",
+        "Ġover",
+        "Ġthe",
+        "Ġlazy",
+        "Ġdog",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "La",
+        "Ġren",
+        "arde",
+        "Ġbrune",
+        "Ġrapide",
+        "Ġsaute",
+        "Ġpar",
+        "-",
+        "dessus",
+        "Ġle",
+        "Ġchien",
+        "Ġpar",
+        "esse",
+        "ux",
+        ".",
+        "\n",
+        "\n",
+        "Cette",
+        "Ġphrase",
+        "Ġest",
+        "Ġsouvent",
+        "Ġutilisée",
+        "Ġcomme",
+        "Ġexemple",
+        "Ġde",
+        "Ġphrase",
+        "Ġcontenant",
+        "Ġtoutes",
+        "Ġles",
+        "Ġlettres",
+        "Ġde"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 96028, 1726, 6855, 33, 1896, 6629, 19883, 73388, 75436, 2515, 1690,
+        46189, 9507, 255001, 255000, 255007, 3857, 5418, 8487, 240906, 68500, 200776, 2023, 20,
+        53047, 1885, 109818, 2023, 6830, 3078, 21, 206, 206, 29883, 30997, 2072, 25728, 53079, 6898,
+        28258, 1715, 30997, 88422, 27763, 2620, 49618, 1715
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġl",
+            "token_id": 1711,
+            "logprob": 0.0,
+            "prob": 1.0
+          },
+          {
+            "token": "<UNK>",
+            "token_id": 1,
+            "logprob": -31.0,
+            "prob": 0.0
+          },
+          {
+            "token": "<SEP>",
+            "token_id": 3,
+            "logprob": -33.4688,
+            "prob": 0.0
+          },
+          {
+            "token": "<EOS_TOKEN>",
+            "token_id": 6,
+            "logprob": -31.0625,
+            "prob": 0.0
+          },
+          {
+            "token": "<EOP_TOKEN>",
+            "token_id": 7,
+            "logprob": -32.8125,
+            "prob": 0.0
+          },
+          {
+            "token": "<PAD>",
+            "token_id": 0,
+            "logprob": -32.8438,
+            "prob": 0.0
+          },
+          {
+            "token": "<CLS>",
+            "token_id": 2,
+            "logprob": -33.0938,
+            "prob": 0.0
+          },
+          {
+            "token": "<BOS_TOKEN>",
+            "token_id": 5,
+            "logprob": -32.0938,
+            "prob": 0.0
+          },
+          {
+            "token": "!",
+            "token_id": 8,
+            "logprob": -31.6875,
+            "prob": 0.0
+          },
+          {
+            "token": "<MASK_TOKEN>",
+            "token_id": 4,
+            "logprob": -32.7812,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġl",
+        "token_id": 1711,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 32,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Translate to French: The quick brown fox jumps over the lazy dog<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>La renarde brune rapide saute par-dessus le chien paresseux.\n\nCette phrase est souvent utilisée comme exemple de phrase contenant toutes les lettres de l",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Translate",
+        "Ġto",
+        "ĠFrench",
+        ":",
+        "ĠThe",
+        "Ġquick",
+        "Ġbrown",
+        "Ġfox",
+        "Ġjumps",
+        "Ġover",
+        "Ġthe",
+        "Ġlazy",
+        "Ġdog",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "La",
+        "Ġren",
+        "arde",
+        "Ġbrune",
+        "Ġrapide",
+        "Ġsaute",
+        "Ġpar",
+        "-",
+        "dessus",
+        "Ġle",
+        "Ġchien",
+        "Ġpar",
+        "esse",
+        "ux",
+        ".",
+        "\n",
+        "\n",
+        "Cette",
+        "Ġphrase",
+        "Ġest",
+        "Ġsouvent",
+        "Ġutilisée",
+        "Ġcomme",
+        "Ġexemple",
+        "Ġde",
+        "Ġphrase",
+        "Ġcontenant",
+        "Ġtoutes",
+        "Ġles",
+        "Ġlettres",
+        "Ġde",
+        "Ġl"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 96028, 1726, 6855, 33, 1896, 6629, 19883, 73388, 75436, 2515, 1690,
+        46189, 9507, 255001, 255000, 255007, 3857, 5418, 8487, 240906, 68500, 200776, 2023, 20,
+        53047, 1885, 109818, 2023, 6830, 3078, 21, 206, 206, 29883, 30997, 2072, 25728, 53079, 6898,
+        28258, 1715, 30997, 88422, 27763, 2620, 49618, 1715, 1711
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "'",
+            "token_id": 14,
+            "logprob": -0.0,
+            "prob": 1.0
+          },
+          {
+            "token": "’",
+            "token_id": 2932,
+            "logprob": -14.625,
+            "prob": 0.0
+          },
+          {
+            "token": "<PAD>",
+            "token_id": 0,
+            "logprob": -40.0938,
+            "prob": 0.0
+          },
+          {
+            "token": "<UNK>",
+            "token_id": 1,
+            "logprob": -37.0938,
+            "prob": 0.0
+          },
+          {
+            "token": "<EOS_TOKEN>",
+            "token_id": 6,
+            "logprob": -38.2188,
+            "prob": 0.0
+          },
+          {
+            "token": "<EOP_TOKEN>",
+            "token_id": 7,
+            "logprob": -40.0,
+            "prob": 0.0
+          },
+          {
+            "token": "<BOS_TOKEN>",
+            "token_id": 5,
+            "logprob": -38.875,
+            "prob": 0.0
+          },
+          {
+            "token": "<MASK_TOKEN>",
+            "token_id": 4,
+            "logprob": -39.9375,
+            "prob": 0.0
+          },
+          {
+            "token": "<CLS>",
+            "token_id": 2,
+            "logprob": -39.875,
+            "prob": 0.0
+          },
+          {
+            "token": "<SEP>",
+            "token_id": 3,
+            "logprob": -39.8125,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "'",
+        "token_id": 14,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 33,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Translate to French: The quick brown fox jumps over the lazy dog<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>La renarde brune rapide saute par-dessus le chien paresseux.\n\nCette phrase est souvent utilisée comme exemple de phrase contenant toutes les lettres de l'",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Translate",
+        "Ġto",
+        "ĠFrench",
+        ":",
+        "ĠThe",
+        "Ġquick",
+        "Ġbrown",
+        "Ġfox",
+        "Ġjumps",
+        "Ġover",
+        "Ġthe",
+        "Ġlazy",
+        "Ġdog",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "La",
+        "Ġren",
+        "arde",
+        "Ġbrune",
+        "Ġrapide",
+        "Ġsaute",
+        "Ġpar",
+        "-",
+        "dessus",
+        "Ġle",
+        "Ġchien",
+        "Ġpar",
+        "esse",
+        "ux",
+        ".",
+        "\n",
+        "\n",
+        "Cette",
+        "Ġphrase",
+        "Ġest",
+        "Ġsouvent",
+        "Ġutilisée",
+        "Ġcomme",
+        "Ġexemple",
+        "Ġde",
+        "Ġphrase",
+        "Ġcontenant",
+        "Ġtoutes",
+        "Ġles",
+        "Ġlettres",
+        "Ġde",
+        "Ġl",
+        "'"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 96028, 1726, 6855, 33, 1896, 6629, 19883, 73388, 75436, 2515, 1690,
+        46189, 9507, 255001, 255000, 255007, 3857, 5418, 8487, 240906, 68500, 200776, 2023, 20,
+        53047, 1885, 109818, 2023, 6830, 3078, 21, 206, 206, 29883, 30997, 2072, 25728, 53079, 6898,
+        28258, 1715, 30997, 88422, 27763, 2620, 49618, 1715, 1711, 14
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "alphabet",
+            "token_id": 121746,
+            "logprob": -0.0003,
+            "prob": 0.9995
+          },
+          {
+            "token": "alph",
+            "token_id": 22787,
+            "logprob": -9.1562,
+            "prob": 0.0001
+          },
+          {
+            "token": "alf",
+            "token_id": 5330,
+            "logprob": -9.3281,
+            "prob": 0.0001
+          },
+          {
+            "token": "アルファ",
+            "token_id": 233762,
+            "logprob": -11.0156,
+            "prob": 0.0
+          },
+          {
+            "token": "Alphabet",
+            "token_id": 207810,
+            "logprob": -11.2812,
+            "prob": 0.0
+          },
+          {
+            "token": "alpha",
+            "token_id": 21159,
+            "logprob": -11.5156,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġalfabeto",
+            "token_id": 113875,
+            "logprob": -12.6953,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġalphabet",
+            "token_id": 48063,
+            "logprob": -12.7344,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġalphabétique",
+            "token_id": 232955,
+            "logprob": -12.8359,
+            "prob": 0.0
+          },
+          {
+            "token": "alfa",
+            "token_id": 99094,
+            "logprob": -13.2109,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "alphabet",
+        "token_id": 121746,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 34,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Translate to French: The quick brown fox jumps over the lazy dog<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>La renarde brune rapide saute par-dessus le chien paresseux.\n\nCette phrase est souvent utilisée comme exemple de phrase contenant toutes les lettres de l'alphabet",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Translate",
+        "Ġto",
+        "ĠFrench",
+        ":",
+        "ĠThe",
+        "Ġquick",
+        "Ġbrown",
+        "Ġfox",
+        "Ġjumps",
+        "Ġover",
+        "Ġthe",
+        "Ġlazy",
+        "Ġdog",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "La",
+        "Ġren",
+        "arde",
+        "Ġbrune",
+        "Ġrapide",
+        "Ġsaute",
+        "Ġpar",
+        "-",
+        "dessus",
+        "Ġle",
+        "Ġchien",
+        "Ġpar",
+        "esse",
+        "ux",
+        ".",
+        "\n",
+        "\n",
+        "Cette",
+        "Ġphrase",
+        "Ġest",
+        "Ġsouvent",
+        "Ġutilisée",
+        "Ġcomme",
+        "Ġexemple",
+        "Ġde",
+        "Ġphrase",
+        "Ġcontenant",
+        "Ġtoutes",
+        "Ġles",
+        "Ġlettres",
+        "Ġde",
+        "Ġl",
+        "'",
+        "alphabet"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 96028, 1726, 6855, 33, 1896, 6629, 19883, 73388, 75436, 2515, 1690,
+        46189, 9507, 255001, 255000, 255007, 3857, 5418, 8487, 240906, 68500, 200776, 2023, 20,
+        53047, 1885, 109818, 2023, 6830, 3078, 21, 206, 206, 29883, 30997, 2072, 25728, 53079, 6898,
+        28258, 1715, 30997, 88422, 27763, 2620, 49618, 1715, 1711, 14, 121746
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": ".",
+            "token_id": 21,
+            "logprob": -0.543,
+            "prob": 0.5811
+          },
+          {
+            "token": ",",
+            "token_id": 19,
+            "logprob": -1.0586,
+            "prob": 0.3469
+          },
+          {
+            "token": "Ġet",
+            "token_id": 2113,
+            "logprob": -3.2461,
+            "prob": 0.0389
+          },
+          {
+            "token": "Ġanglais",
+            "token_id": 27307,
+            "logprob": -3.5742,
+            "prob": 0.028
+          },
+          {
+            "token": "Ġ(",
+            "token_id": 1737,
+            "logprob": -6.0977,
+            "prob": 0.0022
+          },
+          {
+            "token": "Ġen",
+            "token_id": 1819,
+            "logprob": -7.1758,
+            "prob": 0.0008
+          },
+          {
+            "token": "Ġlatin",
+            "token_id": 39934,
+            "logprob": -7.6445,
+            "prob": 0.0005
+          },
+          {
+            "token": "Ġ;",
+            "token_id": 4693,
+            "logprob": -7.9648,
+            "prob": 0.0003
+          },
+          {
+            "token": "Ġ:",
+            "token_id": 2168,
+            "logprob": -8.5156,
+            "prob": 0.0002
+          },
+          {
+            "token": "Ġau",
+            "token_id": 2470,
+            "logprob": -8.7031,
+            "prob": 0.0002
+          }
+        ]
+      },
+      "selected_token": {
+        "token": ".",
+        "token_id": 21,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 35,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Translate to French: The quick brown fox jumps over the lazy dog<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>La renarde brune rapide saute par-dessus le chien paresseux.\n\nCette phrase est souvent utilisée comme exemple de phrase contenant toutes les lettres de l'alphabet.",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Translate",
+        "Ġto",
+        "ĠFrench",
+        ":",
+        "ĠThe",
+        "Ġquick",
+        "Ġbrown",
+        "Ġfox",
+        "Ġjumps",
+        "Ġover",
+        "Ġthe",
+        "Ġlazy",
+        "Ġdog",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "La",
+        "Ġren",
+        "arde",
+        "Ġbrune",
+        "Ġrapide",
+        "Ġsaute",
+        "Ġpar",
+        "-",
+        "dessus",
+        "Ġle",
+        "Ġchien",
+        "Ġpar",
+        "esse",
+        "ux",
+        ".",
+        "\n",
+        "\n",
+        "Cette",
+        "Ġphrase",
+        "Ġest",
+        "Ġsouvent",
+        "Ġutilisée",
+        "Ġcomme",
+        "Ġexemple",
+        "Ġde",
+        "Ġphrase",
+        "Ġcontenant",
+        "Ġtoutes",
+        "Ġles",
+        "Ġlettres",
+        "Ġde",
+        "Ġl",
+        "'",
+        "alphabet",
+        "."
+      ],
+      "token_ids": [
+        5, 255000, 255006, 96028, 1726, 6855, 33, 1896, 6629, 19883, 73388, 75436, 2515, 1690,
+        46189, 9507, 255001, 255000, 255007, 3857, 5418, 8487, 240906, 68500, 200776, 2023, 20,
+        53047, 1885, 109818, 2023, 6830, 3078, 21, 206, 206, 29883, 30997, 2072, 25728, 53079, 6898,
+        28258, 1715, 30997, 88422, 27763, 2620, 49618, 1715, 1711, 14, 121746, 21
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "<|END_OF_TURN_TOKEN|>",
+            "token_id": 255001,
+            "logprob": -0.3748,
+            "prob": 0.6875
+          },
+          {
+            "token": "ĠElle",
+            "token_id": 9939,
+            "logprob": -1.4688,
+            "prob": 0.2302
+          },
+          {
+            "token": "ĠEn",
+            "token_id": 2888,
+            "logprob": -2.9375,
+            "prob": 0.053
+          },
+          {
+            "token": "ĠC",
+            "token_id": 1733,
+            "logprob": -3.9844,
+            "prob": 0.0186
+          },
+          {
+            "token": "ĠOn",
+            "token_id": 3504,
+            "logprob": -4.7188,
+            "prob": 0.0089
+          },
+          {
+            "token": "ĠIl",
+            "token_id": 3869,
+            "logprob": -6.6094,
+            "prob": 0.0013
+          },
+          {
+            "token": "ĠDans",
+            "token_id": 18008,
+            "logprob": -8.6562,
+            "prob": 0.0002
+          },
+          {
+            "token": "ĠLa",
+            "token_id": 2795,
+            "logprob": -10.5078,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġen",
+            "token_id": 1819,
+            "logprob": -10.5469,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠCela",
+            "token_id": 63313,
+            "logprob": -11.2266,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "ĠElle",
+        "token_id": 9939,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 36,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Translate to French: The quick brown fox jumps over the lazy dog<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>La renarde brune rapide saute par-dessus le chien paresseux.\n\nCette phrase est souvent utilisée comme exemple de phrase contenant toutes les lettres de l'alphabet. Elle",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Translate",
+        "Ġto",
+        "ĠFrench",
+        ":",
+        "ĠThe",
+        "Ġquick",
+        "Ġbrown",
+        "Ġfox",
+        "Ġjumps",
+        "Ġover",
+        "Ġthe",
+        "Ġlazy",
+        "Ġdog",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "La",
+        "Ġren",
+        "arde",
+        "Ġbrune",
+        "Ġrapide",
+        "Ġsaute",
+        "Ġpar",
+        "-",
+        "dessus",
+        "Ġle",
+        "Ġchien",
+        "Ġpar",
+        "esse",
+        "ux",
+        ".",
+        "\n",
+        "\n",
+        "Cette",
+        "Ġphrase",
+        "Ġest",
+        "Ġsouvent",
+        "Ġutilisée",
+        "Ġcomme",
+        "Ġexemple",
+        "Ġde",
+        "Ġphrase",
+        "Ġcontenant",
+        "Ġtoutes",
+        "Ġles",
+        "Ġlettres",
+        "Ġde",
+        "Ġl",
+        "'",
+        "alphabet",
+        ".",
+        "ĠElle"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 96028, 1726, 6855, 33, 1896, 6629, 19883, 73388, 75436, 2515, 1690,
+        46189, 9507, 255001, 255000, 255007, 3857, 5418, 8487, 240906, 68500, 200776, 2023, 20,
+        53047, 1885, 109818, 2023, 6830, 3078, 21, 206, 206, 29883, 30997, 2072, 25728, 53079, 6898,
+        28258, 1715, 30997, 88422, 27763, 2620, 49618, 1715, 1711, 14, 121746, 21, 9939
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġest",
+            "token_id": 2072,
+            "logprob": -0.004,
+            "prob": 0.9961
+          },
+          {
+            "token": "Ġpermet",
+            "token_id": 13472,
+            "logprob": -5.8945,
+            "prob": 0.0028
+          },
+          {
+            "token": "Ġs",
+            "token_id": 1679,
+            "logprob": -7.3789,
+            "prob": 0.0006
+          },
+          {
+            "token": "Ġfait",
+            "token_id": 8055,
+            "logprob": -9.0078,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġsert",
+            "token_id": 39431,
+            "logprob": -9.4688,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġillustre",
+            "token_id": 177369,
+            "logprob": -9.6562,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġmet",
+            "token_id": 2866,
+            "logprob": -9.6797,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġen",
+            "token_id": 1819,
+            "logprob": -10.3906,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġmontre",
+            "token_id": 57100,
+            "logprob": -10.4297,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġcorrespond",
+            "token_id": 9703,
+            "logprob": -10.5391,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġest",
+        "token_id": 2072,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 37,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Translate to French: The quick brown fox jumps over the lazy dog<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>La renarde brune rapide saute par-dessus le chien paresseux.\n\nCette phrase est souvent utilisée comme exemple de phrase contenant toutes les lettres de l'alphabet. Elle est",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Translate",
+        "Ġto",
+        "ĠFrench",
+        ":",
+        "ĠThe",
+        "Ġquick",
+        "Ġbrown",
+        "Ġfox",
+        "Ġjumps",
+        "Ġover",
+        "Ġthe",
+        "Ġlazy",
+        "Ġdog",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "La",
+        "Ġren",
+        "arde",
+        "Ġbrune",
+        "Ġrapide",
+        "Ġsaute",
+        "Ġpar",
+        "-",
+        "dessus",
+        "Ġle",
+        "Ġchien",
+        "Ġpar",
+        "esse",
+        "ux",
+        ".",
+        "\n",
+        "\n",
+        "Cette",
+        "Ġphrase",
+        "Ġest",
+        "Ġsouvent",
+        "Ġutilisée",
+        "Ġcomme",
+        "Ġexemple",
+        "Ġde",
+        "Ġphrase",
+        "Ġcontenant",
+        "Ġtoutes",
+        "Ġles",
+        "Ġlettres",
+        "Ġde",
+        "Ġl",
+        "'",
+        "alphabet",
+        ".",
+        "ĠElle",
+        "Ġest"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 96028, 1726, 6855, 33, 1896, 6629, 19883, 73388, 75436, 2515, 1690,
+        46189, 9507, 255001, 255000, 255007, 3857, 5418, 8487, 240906, 68500, 200776, 2023, 20,
+        53047, 1885, 109818, 2023, 6830, 3078, 21, 206, 206, 29883, 30997, 2072, 25728, 53079, 6898,
+        28258, 1715, 30997, 88422, 27763, 2620, 49618, 1715, 1711, 14, 121746, 21, 9939, 2072
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġégalement",
+            "token_id": 10403,
+            "logprob": -0.2457,
+            "prob": 0.7822
+          },
+          {
+            "token": "Ġconnue",
+            "token_id": 51317,
+            "logprob": -1.9492,
+            "prob": 0.1425
+          },
+          {
+            "token": "Ġappelée",
+            "token_id": 57342,
+            "logprob": -3.5898,
+            "prob": 0.0276
+          },
+          {
+            "token": "Ġaussi",
+            "token_id": 8042,
+            "logprob": -4.2305,
+            "prob": 0.0145
+          },
+          {
+            "token": "Ġparfois",
+            "token_id": 36325,
+            "logprob": -4.2305,
+            "prob": 0.0145
+          },
+          {
+            "token": "Ġparticulièrement",
+            "token_id": 47181,
+            "logprob": -4.7461,
+            "prob": 0.0087
+          },
+          {
+            "token": "Ġsouvent",
+            "token_id": 25728,
+            "logprob": -5.168,
+            "prob": 0.0057
+          },
+          {
+            "token": "Ġgénéralement",
+            "token_id": 42071,
+            "logprob": -6.9883,
+            "prob": 0.0009
+          },
+          {
+            "token": "Ġdonc",
+            "token_id": 21068,
+            "logprob": -7.4727,
+            "prob": 0.0006
+          },
+          {
+            "token": "Ġcouramment",
+            "token_id": 166494,
+            "logprob": -7.4883,
+            "prob": 0.0006
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġégalement",
+        "token_id": 10403,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 38,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Translate to French: The quick brown fox jumps over the lazy dog<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>La renarde brune rapide saute par-dessus le chien paresseux.\n\nCette phrase est souvent utilisée comme exemple de phrase contenant toutes les lettres de l'alphabet. Elle est également",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Translate",
+        "Ġto",
+        "ĠFrench",
+        ":",
+        "ĠThe",
+        "Ġquick",
+        "Ġbrown",
+        "Ġfox",
+        "Ġjumps",
+        "Ġover",
+        "Ġthe",
+        "Ġlazy",
+        "Ġdog",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "La",
+        "Ġren",
+        "arde",
+        "Ġbrune",
+        "Ġrapide",
+        "Ġsaute",
+        "Ġpar",
+        "-",
+        "dessus",
+        "Ġle",
+        "Ġchien",
+        "Ġpar",
+        "esse",
+        "ux",
+        ".",
+        "\n",
+        "\n",
+        "Cette",
+        "Ġphrase",
+        "Ġest",
+        "Ġsouvent",
+        "Ġutilisée",
+        "Ġcomme",
+        "Ġexemple",
+        "Ġde",
+        "Ġphrase",
+        "Ġcontenant",
+        "Ġtoutes",
+        "Ġles",
+        "Ġlettres",
+        "Ġde",
+        "Ġl",
+        "'",
+        "alphabet",
+        ".",
+        "ĠElle",
+        "Ġest",
+        "Ġégalement"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 96028, 1726, 6855, 33, 1896, 6629, 19883, 73388, 75436, 2515, 1690,
+        46189, 9507, 255001, 255000, 255007, 3857, 5418, 8487, 240906, 68500, 200776, 2023, 20,
+        53047, 1885, 109818, 2023, 6830, 3078, 21, 206, 206, 29883, 30997, 2072, 25728, 53079, 6898,
+        28258, 1715, 30997, 88422, 27763, 2620, 49618, 1715, 1711, 14, 121746, 21, 9939, 2072, 10403
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġconnue",
+            "token_id": 51317,
+            "logprob": -0.0117,
+            "prob": 0.9883
+          },
+          {
+            "token": "Ġappelée",
+            "token_id": 57342,
+            "logprob": -4.5742,
+            "prob": 0.0103
+          },
+          {
+            "token": "Ġpopulaire",
+            "token_id": 38964,
+            "logprob": -7.6211,
+            "prob": 0.0005
+          },
+          {
+            "token": "Ġappréci",
+            "token_id": 139404,
+            "logprob": -8.3516,
+            "prob": 0.0002
+          },
+          {
+            "token": "Ġun",
+            "token_id": 1880,
+            "logprob": -9.5078,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġutilisée",
+            "token_id": 53079,
+            "logprob": -9.5156,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġutile",
+            "token_id": 105492,
+            "logprob": -9.6797,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġconocida",
+            "token_id": 33810,
+            "logprob": -9.7031,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġcélèbre",
+            "token_id": 53118,
+            "logprob": -9.8984,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġconnu",
+            "token_id": 30588,
+            "logprob": -9.9375,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġconnue",
+        "token_id": 51317,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 39,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Translate to French: The quick brown fox jumps over the lazy dog<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>La renarde brune rapide saute par-dessus le chien paresseux.\n\nCette phrase est souvent utilisée comme exemple de phrase contenant toutes les lettres de l'alphabet. Elle est également connue",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Translate",
+        "Ġto",
+        "ĠFrench",
+        ":",
+        "ĠThe",
+        "Ġquick",
+        "Ġbrown",
+        "Ġfox",
+        "Ġjumps",
+        "Ġover",
+        "Ġthe",
+        "Ġlazy",
+        "Ġdog",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "La",
+        "Ġren",
+        "arde",
+        "Ġbrune",
+        "Ġrapide",
+        "Ġsaute",
+        "Ġpar",
+        "-",
+        "dessus",
+        "Ġle",
+        "Ġchien",
+        "Ġpar",
+        "esse",
+        "ux",
+        ".",
+        "\n",
+        "\n",
+        "Cette",
+        "Ġphrase",
+        "Ġest",
+        "Ġsouvent",
+        "Ġutilisée",
+        "Ġcomme",
+        "Ġexemple",
+        "Ġde",
+        "Ġphrase",
+        "Ġcontenant",
+        "Ġtoutes",
+        "Ġles",
+        "Ġlettres",
+        "Ġde",
+        "Ġl",
+        "'",
+        "alphabet",
+        ".",
+        "ĠElle",
+        "Ġest",
+        "Ġégalement",
+        "Ġconnue"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 96028, 1726, 6855, 33, 1896, 6629, 19883, 73388, 75436, 2515, 1690,
+        46189, 9507, 255001, 255000, 255007, 3857, 5418, 8487, 240906, 68500, 200776, 2023, 20,
+        53047, 1885, 109818, 2023, 6830, 3078, 21, 206, 206, 29883, 30997, 2072, 25728, 53079, 6898,
+        28258, 1715, 30997, 88422, 27763, 2620, 49618, 1715, 1711, 14, 121746, 21, 9939, 2072,
+        10403, 51317
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġsous",
+            "token_id": 8468,
+            "logprob": -0.0139,
+            "prob": 0.9863
+          },
+          {
+            "token": "Ġcomme",
+            "token_id": 6898,
+            "logprob": -4.3281,
+            "prob": 0.0132
+          },
+          {
+            "token": "Ġen",
+            "token_id": 1819,
+            "logprob": -8.0781,
+            "prob": 0.0003
+          },
+          {
+            "token": "Ġpour",
+            "token_id": 3346,
+            "logprob": -9.0312,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġdans",
+            "token_id": 3027,
+            "logprob": -9.0469,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġpar",
+            "token_id": 2023,
+            "logprob": -12.9609,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġà",
+            "token_id": 2243,
+            "logprob": -13.7031,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġavec",
+            "token_id": 4374,
+            "logprob": -14.3828,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġunder",
+            "token_id": 2944,
+            "logprob": -14.7266,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġcomo",
+            "token_id": 2790,
+            "logprob": -14.8047,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġsous",
+        "token_id": 8468,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 40,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Translate to French: The quick brown fox jumps over the lazy dog<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>La renarde brune rapide saute par-dessus le chien paresseux.\n\nCette phrase est souvent utilisée comme exemple de phrase contenant toutes les lettres de l'alphabet. Elle est également connue sous",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Translate",
+        "Ġto",
+        "ĠFrench",
+        ":",
+        "ĠThe",
+        "Ġquick",
+        "Ġbrown",
+        "Ġfox",
+        "Ġjumps",
+        "Ġover",
+        "Ġthe",
+        "Ġlazy",
+        "Ġdog",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "La",
+        "Ġren",
+        "arde",
+        "Ġbrune",
+        "Ġrapide",
+        "Ġsaute",
+        "Ġpar",
+        "-",
+        "dessus",
+        "Ġle",
+        "Ġchien",
+        "Ġpar",
+        "esse",
+        "ux",
+        ".",
+        "\n",
+        "\n",
+        "Cette",
+        "Ġphrase",
+        "Ġest",
+        "Ġsouvent",
+        "Ġutilisée",
+        "Ġcomme",
+        "Ġexemple",
+        "Ġde",
+        "Ġphrase",
+        "Ġcontenant",
+        "Ġtoutes",
+        "Ġles",
+        "Ġlettres",
+        "Ġde",
+        "Ġl",
+        "'",
+        "alphabet",
+        ".",
+        "ĠElle",
+        "Ġest",
+        "Ġégalement",
+        "Ġconnue",
+        "Ġsous"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 96028, 1726, 6855, 33, 1896, 6629, 19883, 73388, 75436, 2515, 1690,
+        46189, 9507, 255001, 255000, 255007, 3857, 5418, 8487, 240906, 68500, 200776, 2023, 20,
+        53047, 1885, 109818, 2023, 6830, 3078, 21, 206, 206, 29883, 30997, 2072, 25728, 53079, 6898,
+        28258, 1715, 30997, 88422, 27763, 2620, 49618, 1715, 1711, 14, 121746, 21, 9939, 2072,
+        10403, 51317, 8468
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġle",
+            "token_id": 1885,
+            "logprob": -0.0006,
+            "prob": 0.9995
+          },
+          {
+            "token": "Ġl",
+            "token_id": 1711,
+            "logprob": -7.9688,
+            "prob": 0.0003
+          },
+          {
+            "token": "Ġson",
+            "token_id": 2917,
+            "logprob": -8.375,
+            "prob": 0.0002
+          },
+          {
+            "token": "Ġdivers",
+            "token_id": 6618,
+            "logprob": -10.75,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġdifférents",
+            "token_id": 34725,
+            "logprob": -11.8203,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġles",
+            "token_id": 2620,
+            "logprob": -11.9297,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġdiverses",
+            "token_id": 56899,
+            "logprob": -11.9531,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġla",
+            "token_id": 1848,
+            "logprob": -12.1797,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġplusieurs",
+            "token_id": 13794,
+            "logprob": -12.2266,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġsa",
+            "token_id": 2642,
+            "logprob": -12.5859,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġle",
+        "token_id": 1885,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 41,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Translate to French: The quick brown fox jumps over the lazy dog<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>La renarde brune rapide saute par-dessus le chien paresseux.\n\nCette phrase est souvent utilisée comme exemple de phrase contenant toutes les lettres de l'alphabet. Elle est également connue sous le",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Translate",
+        "Ġto",
+        "ĠFrench",
+        ":",
+        "ĠThe",
+        "Ġquick",
+        "Ġbrown",
+        "Ġfox",
+        "Ġjumps",
+        "Ġover",
+        "Ġthe",
+        "Ġlazy",
+        "Ġdog",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "La",
+        "Ġren",
+        "arde",
+        "Ġbrune",
+        "Ġrapide",
+        "Ġsaute",
+        "Ġpar",
+        "-",
+        "dessus",
+        "Ġle",
+        "Ġchien",
+        "Ġpar",
+        "esse",
+        "ux",
+        ".",
+        "\n",
+        "\n",
+        "Cette",
+        "Ġphrase",
+        "Ġest",
+        "Ġsouvent",
+        "Ġutilisée",
+        "Ġcomme",
+        "Ġexemple",
+        "Ġde",
+        "Ġphrase",
+        "Ġcontenant",
+        "Ġtoutes",
+        "Ġles",
+        "Ġlettres",
+        "Ġde",
+        "Ġl",
+        "'",
+        "alphabet",
+        ".",
+        "ĠElle",
+        "Ġest",
+        "Ġégalement",
+        "Ġconnue",
+        "Ġsous",
+        "Ġle"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 96028, 1726, 6855, 33, 1896, 6629, 19883, 73388, 75436, 2515, 1690,
+        46189, 9507, 255001, 255000, 255007, 3857, 5418, 8487, 240906, 68500, 200776, 2023, 20,
+        53047, 1885, 109818, 2023, 6830, 3078, 21, 206, 206, 29883, 30997, 2072, 25728, 53079, 6898,
+        28258, 1715, 30997, 88422, 27763, 2620, 49618, 1715, 1711, 14, 121746, 21, 9939, 2072,
+        10403, 51317, 8468, 1885
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġnom",
+            "token_id": 5994,
+            "logprob": -0.0001,
+            "prob": 1.0
+          },
+          {
+            "token": "Ġterme",
+            "token_id": 34220,
+            "logprob": -9.1406,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġnoms",
+            "token_id": 58239,
+            "logprob": -13.7969,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġsurnom",
+            "token_id": 119822,
+            "logprob": -14.4375,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġtitre",
+            "token_id": 16669,
+            "logprob": -15.0312,
+            "prob": 0.0
+          },
+          {
+            "token": "nom",
+            "token_id": 19978,
+            "logprob": -16.2188,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġacron",
+            "token_id": 254540,
+            "logprob": -16.0625,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġmot",
+            "token_id": 4967,
+            "logprob": -15.9766,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġsigle",
+            "token_id": 204755,
+            "logprob": -15.8516,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġname",
+            "token_id": 2773,
+            "logprob": -16.9375,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġnom",
+        "token_id": 5994,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 42,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Translate to French: The quick brown fox jumps over the lazy dog<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>La renarde brune rapide saute par-dessus le chien paresseux.\n\nCette phrase est souvent utilisée comme exemple de phrase contenant toutes les lettres de l'alphabet. Elle est également connue sous le nom",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Translate",
+        "Ġto",
+        "ĠFrench",
+        ":",
+        "ĠThe",
+        "Ġquick",
+        "Ġbrown",
+        "Ġfox",
+        "Ġjumps",
+        "Ġover",
+        "Ġthe",
+        "Ġlazy",
+        "Ġdog",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "La",
+        "Ġren",
+        "arde",
+        "Ġbrune",
+        "Ġrapide",
+        "Ġsaute",
+        "Ġpar",
+        "-",
+        "dessus",
+        "Ġle",
+        "Ġchien",
+        "Ġpar",
+        "esse",
+        "ux",
+        ".",
+        "\n",
+        "\n",
+        "Cette",
+        "Ġphrase",
+        "Ġest",
+        "Ġsouvent",
+        "Ġutilisée",
+        "Ġcomme",
+        "Ġexemple",
+        "Ġde",
+        "Ġphrase",
+        "Ġcontenant",
+        "Ġtoutes",
+        "Ġles",
+        "Ġlettres",
+        "Ġde",
+        "Ġl",
+        "'",
+        "alphabet",
+        ".",
+        "ĠElle",
+        "Ġest",
+        "Ġégalement",
+        "Ġconnue",
+        "Ġsous",
+        "Ġle",
+        "Ġnom"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 96028, 1726, 6855, 33, 1896, 6629, 19883, 73388, 75436, 2515, 1690,
+        46189, 9507, 255001, 255000, 255007, 3857, 5418, 8487, 240906, 68500, 200776, 2023, 20,
+        53047, 1885, 109818, 2023, 6830, 3078, 21, 206, 206, 29883, 30997, 2072, 25728, 53079, 6898,
+        28258, 1715, 30997, 88422, 27763, 2620, 49618, 1715, 1711, 14, 121746, 21, 9939, 2072,
+        10403, 51317, 8468, 1885, 5994
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġde",
+            "token_id": 1715,
+            "logprob": -0.0016,
+            "prob": 0.9985
+          },
+          {
+            "token": "Ġd",
+            "token_id": 1676,
+            "logprob": -6.4531,
+            "prob": 0.0016
+          },
+          {
+            "token": "Ġdu",
+            "token_id": 2333,
+            "logprob": -14.1406,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġ«",
+            "token_id": 2364,
+            "logprob": -14.5938,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġ\"",
+            "token_id": 1789,
+            "logprob": -14.6406,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġanglais",
+            "token_id": 27307,
+            "logprob": -15.0625,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġdes",
+            "token_id": 2003,
+            "logprob": -15.875,
+            "prob": 0.0
+          },
+          {
+            "token": "<CLS>",
+            "token_id": 2,
+            "logprob": -30.2969,
+            "prob": 0.0
+          },
+          {
+            "token": "<UNK>",
+            "token_id": 1,
+            "logprob": -29.625,
+            "prob": 0.0
+          },
+          {
+            "token": "<PAD>",
+            "token_id": 0,
+            "logprob": -30.5781,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġde",
+        "token_id": 1715,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 43,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Translate to French: The quick brown fox jumps over the lazy dog<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>La renarde brune rapide saute par-dessus le chien paresseux.\n\nCette phrase est souvent utilisée comme exemple de phrase contenant toutes les lettres de l'alphabet. Elle est également connue sous le nom de",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Translate",
+        "Ġto",
+        "ĠFrench",
+        ":",
+        "ĠThe",
+        "Ġquick",
+        "Ġbrown",
+        "Ġfox",
+        "Ġjumps",
+        "Ġover",
+        "Ġthe",
+        "Ġlazy",
+        "Ġdog",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "La",
+        "Ġren",
+        "arde",
+        "Ġbrune",
+        "Ġrapide",
+        "Ġsaute",
+        "Ġpar",
+        "-",
+        "dessus",
+        "Ġle",
+        "Ġchien",
+        "Ġpar",
+        "esse",
+        "ux",
+        ".",
+        "\n",
+        "\n",
+        "Cette",
+        "Ġphrase",
+        "Ġest",
+        "Ġsouvent",
+        "Ġutilisée",
+        "Ġcomme",
+        "Ġexemple",
+        "Ġde",
+        "Ġphrase",
+        "Ġcontenant",
+        "Ġtoutes",
+        "Ġles",
+        "Ġlettres",
+        "Ġde",
+        "Ġl",
+        "'",
+        "alphabet",
+        ".",
+        "ĠElle",
+        "Ġest",
+        "Ġégalement",
+        "Ġconnue",
+        "Ġsous",
+        "Ġle",
+        "Ġnom",
+        "Ġde"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 96028, 1726, 6855, 33, 1896, 6629, 19883, 73388, 75436, 2515, 1690,
+        46189, 9507, 255001, 255000, 255007, 3857, 5418, 8487, 240906, 68500, 200776, 2023, 20,
+        53047, 1885, 109818, 2023, 6830, 3078, 21, 206, 206, 29883, 30997, 2072, 25728, 53079, 6898,
+        28258, 1715, 30997, 88422, 27763, 2620, 49618, 1715, 1711, 14, 121746, 21, 9939, 2072,
+        10403, 51317, 8468, 1885, 5994, 1715
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġ\"",
+            "token_id": 1789,
+            "logprob": -0.4077,
+            "prob": 0.665
+          },
+          {
+            "token": "Ġ«",
+            "token_id": 2364,
+            "logprob": -1.0947,
+            "prob": 0.3345
+          },
+          {
+            "token": "Ġpang",
+            "token_id": 118801,
+            "logprob": -8.5625,
+            "prob": 0.0002
+          },
+          {
+            "token": "Ġphrase",
+            "token_id": 30997,
+            "logprob": -9.5625,
+            "prob": 0.0001
+          },
+          {
+            "token": "ĠPang",
+            "token_id": 51488,
+            "logprob": -11.1328,
+            "prob": 0.0
+          },
+          {
+            "token": "pang",
+            "token_id": 144116,
+            "logprob": -12.1328,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġ**\"",
+            "token_id": 231002,
+            "logprob": -12.5,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġ``",
+            "token_id": 25783,
+            "logprob": -12.5469,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġ「",
+            "token_id": 19607,
+            "logprob": -13.2891,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġ\"**",
+            "token_id": 207257,
+            "logprob": -13.7344,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġ\"",
+        "token_id": 1789,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 44,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Translate to French: The quick brown fox jumps over the lazy dog<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>La renarde brune rapide saute par-dessus le chien paresseux.\n\nCette phrase est souvent utilisée comme exemple de phrase contenant toutes les lettres de l'alphabet. Elle est également connue sous le nom de \"",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Translate",
+        "Ġto",
+        "ĠFrench",
+        ":",
+        "ĠThe",
+        "Ġquick",
+        "Ġbrown",
+        "Ġfox",
+        "Ġjumps",
+        "Ġover",
+        "Ġthe",
+        "Ġlazy",
+        "Ġdog",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "La",
+        "Ġren",
+        "arde",
+        "Ġbrune",
+        "Ġrapide",
+        "Ġsaute",
+        "Ġpar",
+        "-",
+        "dessus",
+        "Ġle",
+        "Ġchien",
+        "Ġpar",
+        "esse",
+        "ux",
+        ".",
+        "\n",
+        "\n",
+        "Cette",
+        "Ġphrase",
+        "Ġest",
+        "Ġsouvent",
+        "Ġutilisée",
+        "Ġcomme",
+        "Ġexemple",
+        "Ġde",
+        "Ġphrase",
+        "Ġcontenant",
+        "Ġtoutes",
+        "Ġles",
+        "Ġlettres",
+        "Ġde",
+        "Ġl",
+        "'",
+        "alphabet",
+        ".",
+        "ĠElle",
+        "Ġest",
+        "Ġégalement",
+        "Ġconnue",
+        "Ġsous",
+        "Ġle",
+        "Ġnom",
+        "Ġde",
+        "Ġ\""
+      ],
+      "token_ids": [
+        5, 255000, 255006, 96028, 1726, 6855, 33, 1896, 6629, 19883, 73388, 75436, 2515, 1690,
+        46189, 9507, 255001, 255000, 255007, 3857, 5418, 8487, 240906, 68500, 200776, 2023, 20,
+        53047, 1885, 109818, 2023, 6830, 3078, 21, 206, 206, 29883, 30997, 2072, 25728, 53079, 6898,
+        28258, 1715, 30997, 88422, 27763, 2620, 49618, 1715, 1711, 14, 121746, 21, 9939, 2072,
+        10403, 51317, 8468, 1885, 5994, 1715, 1789
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "pang",
+            "token_id": 144116,
+            "logprob": -0.1791,
+            "prob": 0.8359
+          },
+          {
+            "token": "phrase",
+            "token_id": 68277,
+            "logprob": -2.3359,
+            "prob": 0.0968
+          },
+          {
+            "token": "p",
+            "token_id": 87,
+            "logprob": -3.3672,
+            "prob": 0.0345
+          },
+          {
+            "token": "sentence",
+            "token_id": 105003,
+            "logprob": -5.4844,
+            "prob": 0.0042
+          },
+          {
+            "token": "Pang",
+            "token_id": 204195,
+            "logprob": -5.7578,
+            "prob": 0.0032
+          },
+          {
+            "token": "pan",
+            "token_id": 6956,
+            "logprob": -5.8594,
+            "prob": 0.0029
+          },
+          {
+            "token": "fox",
+            "token_id": 38158,
+            "logprob": -6.7188,
+            "prob": 0.0012
+          },
+          {
+            "token": "van",
+            "token_id": 7525,
+            "logprob": -6.8906,
+            "prob": 0.001
+          },
+          {
+            "token": "Phrase",
+            "token_id": 133348,
+            "logprob": -6.8906,
+            "prob": 0.001
+          },
+          {
+            "token": "P",
+            "token_id": 55,
+            "logprob": -7.0469,
+            "prob": 0.0009
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "pang",
+        "token_id": 144116,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 45,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Translate to French: The quick brown fox jumps over the lazy dog<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>La renarde brune rapide saute par-dessus le chien paresseux.\n\nCette phrase est souvent utilisée comme exemple de phrase contenant toutes les lettres de l'alphabet. Elle est également connue sous le nom de \"pang",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Translate",
+        "Ġto",
+        "ĠFrench",
+        ":",
+        "ĠThe",
+        "Ġquick",
+        "Ġbrown",
+        "Ġfox",
+        "Ġjumps",
+        "Ġover",
+        "Ġthe",
+        "Ġlazy",
+        "Ġdog",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "La",
+        "Ġren",
+        "arde",
+        "Ġbrune",
+        "Ġrapide",
+        "Ġsaute",
+        "Ġpar",
+        "-",
+        "dessus",
+        "Ġle",
+        "Ġchien",
+        "Ġpar",
+        "esse",
+        "ux",
+        ".",
+        "\n",
+        "\n",
+        "Cette",
+        "Ġphrase",
+        "Ġest",
+        "Ġsouvent",
+        "Ġutilisée",
+        "Ġcomme",
+        "Ġexemple",
+        "Ġde",
+        "Ġphrase",
+        "Ġcontenant",
+        "Ġtoutes",
+        "Ġles",
+        "Ġlettres",
+        "Ġde",
+        "Ġl",
+        "'",
+        "alphabet",
+        ".",
+        "ĠElle",
+        "Ġest",
+        "Ġégalement",
+        "Ġconnue",
+        "Ġsous",
+        "Ġle",
+        "Ġnom",
+        "Ġde",
+        "Ġ\"",
+        "pang"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 96028, 1726, 6855, 33, 1896, 6629, 19883, 73388, 75436, 2515, 1690,
+        46189, 9507, 255001, 255000, 255007, 3857, 5418, 8487, 240906, 68500, 200776, 2023, 20,
+        53047, 1885, 109818, 2023, 6830, 3078, 21, 206, 206, 29883, 30997, 2072, 25728, 53079, 6898,
+        28258, 1715, 30997, 88422, 27763, 2620, 49618, 1715, 1711, 14, 121746, 21, 9939, 2072,
+        10403, 51317, 8468, 1885, 5994, 1715, 1789, 144116
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "ram",
+            "token_id": 5720,
+            "logprob": -0.0002,
+            "prob": 1.0
+          },
+          {
+            "token": "rame",
+            "token_id": 34366,
+            "logprob": -8.5312,
+            "prob": 0.0002
+          },
+          {
+            "token": "raphe",
+            "token_id": 119977,
+            "logprob": -11.5781,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġram",
+            "token_id": 19301,
+            "logprob": -12.2656,
+            "prob": 0.0
+          },
+          {
+            "token": "رام",
+            "token_id": 206261,
+            "logprob": -12.3281,
+            "prob": 0.0
+          },
+          {
+            "token": "Ram",
+            "token_id": 54419,
+            "logprob": -12.9375,
+            "prob": 0.0
+          },
+          {
+            "token": "rama",
+            "token_id": 67950,
+            "logprob": -12.9688,
+            "prob": 0.0
+          },
+          {
+            "token": "ラム",
+            "token_id": 83885,
+            "logprob": -13.0938,
+            "prob": 0.0
+          },
+          {
+            "token": "rams",
+            "token_id": 168331,
+            "logprob": -13.3438,
+            "prob": 0.0
+          },
+          {
+            "token": "рам",
+            "token_id": 24142,
+            "logprob": -13.4844,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "ram",
+        "token_id": 5720,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 46,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Translate to French: The quick brown fox jumps over the lazy dog<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>La renarde brune rapide saute par-dessus le chien paresseux.\n\nCette phrase est souvent utilisée comme exemple de phrase contenant toutes les lettres de l'alphabet. Elle est également connue sous le nom de \"pangram",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Translate",
+        "Ġto",
+        "ĠFrench",
+        ":",
+        "ĠThe",
+        "Ġquick",
+        "Ġbrown",
+        "Ġfox",
+        "Ġjumps",
+        "Ġover",
+        "Ġthe",
+        "Ġlazy",
+        "Ġdog",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "La",
+        "Ġren",
+        "arde",
+        "Ġbrune",
+        "Ġrapide",
+        "Ġsaute",
+        "Ġpar",
+        "-",
+        "dessus",
+        "Ġle",
+        "Ġchien",
+        "Ġpar",
+        "esse",
+        "ux",
+        ".",
+        "\n",
+        "\n",
+        "Cette",
+        "Ġphrase",
+        "Ġest",
+        "Ġsouvent",
+        "Ġutilisée",
+        "Ġcomme",
+        "Ġexemple",
+        "Ġde",
+        "Ġphrase",
+        "Ġcontenant",
+        "Ġtoutes",
+        "Ġles",
+        "Ġlettres",
+        "Ġde",
+        "Ġl",
+        "'",
+        "alphabet",
+        ".",
+        "ĠElle",
+        "Ġest",
+        "Ġégalement",
+        "Ġconnue",
+        "Ġsous",
+        "Ġle",
+        "Ġnom",
+        "Ġde",
+        "Ġ\"",
+        "pang",
+        "ram"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 96028, 1726, 6855, 33, 1896, 6629, 19883, 73388, 75436, 2515, 1690,
+        46189, 9507, 255001, 255000, 255007, 3857, 5418, 8487, 240906, 68500, 200776, 2023, 20,
+        53047, 1885, 109818, 2023, 6830, 3078, 21, 206, 206, 29883, 30997, 2072, 25728, 53079, 6898,
+        28258, 1715, 30997, 88422, 27763, 2620, 49618, 1715, 1711, 14, 121746, 21, 9939, 2072,
+        10403, 51317, 8468, 1885, 5994, 1715, 1789, 144116, 5720
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "me",
+            "token_id": 2352,
+            "logprob": -0.0,
+            "prob": 1.0
+          },
+          {
+            "token": "\".",
+            "token_id": 3193,
+            "logprob": -16.2969,
+            "prob": 0.0
+          },
+          {
+            "token": "\"",
+            "token_id": 9,
+            "logprob": -16.75,
+            "prob": 0.0
+          },
+          {
+            "token": "<PAD>",
+            "token_id": 0,
+            "logprob": -37.9688,
+            "prob": 0.0
+          },
+          {
+            "token": "<EOS_TOKEN>",
+            "token_id": 6,
+            "logprob": -32.0625,
+            "prob": 0.0
+          },
+          {
+            "token": "<SEP>",
+            "token_id": 3,
+            "logprob": -38.1875,
+            "prob": 0.0
+          },
+          {
+            "token": "<BOS_TOKEN>",
+            "token_id": 5,
+            "logprob": -37.8438,
+            "prob": 0.0
+          },
+          {
+            "token": "<MASK_TOKEN>",
+            "token_id": 4,
+            "logprob": -37.8125,
+            "prob": 0.0
+          },
+          {
+            "token": "<UNK>",
+            "token_id": 1,
+            "logprob": -37.1562,
+            "prob": 0.0
+          },
+          {
+            "token": "<CLS>",
+            "token_id": 2,
+            "logprob": -37.9062,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "me",
+        "token_id": 2352,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 47,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Translate to French: The quick brown fox jumps over the lazy dog<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>La renarde brune rapide saute par-dessus le chien paresseux.\n\nCette phrase est souvent utilisée comme exemple de phrase contenant toutes les lettres de l'alphabet. Elle est également connue sous le nom de \"pangramme",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Translate",
+        "Ġto",
+        "ĠFrench",
+        ":",
+        "ĠThe",
+        "Ġquick",
+        "Ġbrown",
+        "Ġfox",
+        "Ġjumps",
+        "Ġover",
+        "Ġthe",
+        "Ġlazy",
+        "Ġdog",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "La",
+        "Ġren",
+        "arde",
+        "Ġbrune",
+        "Ġrapide",
+        "Ġsaute",
+        "Ġpar",
+        "-",
+        "dessus",
+        "Ġle",
+        "Ġchien",
+        "Ġpar",
+        "esse",
+        "ux",
+        ".",
+        "\n",
+        "\n",
+        "Cette",
+        "Ġphrase",
+        "Ġest",
+        "Ġsouvent",
+        "Ġutilisée",
+        "Ġcomme",
+        "Ġexemple",
+        "Ġde",
+        "Ġphrase",
+        "Ġcontenant",
+        "Ġtoutes",
+        "Ġles",
+        "Ġlettres",
+        "Ġde",
+        "Ġl",
+        "'",
+        "alphabet",
+        ".",
+        "ĠElle",
+        "Ġest",
+        "Ġégalement",
+        "Ġconnue",
+        "Ġsous",
+        "Ġle",
+        "Ġnom",
+        "Ġde",
+        "Ġ\"",
+        "pang",
+        "ram",
+        "me"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 96028, 1726, 6855, 33, 1896, 6629, 19883, 73388, 75436, 2515, 1690,
+        46189, 9507, 255001, 255000, 255007, 3857, 5418, 8487, 240906, 68500, 200776, 2023, 20,
+        53047, 1885, 109818, 2023, 6830, 3078, 21, 206, 206, 29883, 30997, 2072, 25728, 53079, 6898,
+        28258, 1715, 30997, 88422, 27763, 2620, 49618, 1715, 1711, 14, 121746, 21, 9939, 2072,
+        10403, 51317, 8468, 1885, 5994, 1715, 1789, 144116, 5720, 2352
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "\".",
+            "token_id": 3193,
+            "logprob": -0.005,
+            "prob": 0.9951
+          },
+          {
+            "token": "\"",
+            "token_id": 9,
+            "logprob": -5.332,
+            "prob": 0.0048
+          },
+          {
+            "token": "\",",
+            "token_id": 2040,
+            "logprob": -9.1328,
+            "prob": 0.0001
+          },
+          {
+            "token": ".\"",
+            "token_id": 2875,
+            "logprob": -9.9922,
+            "prob": 0.0
+          },
+          {
+            "token": "\").",
+            "token_id": 9044,
+            "logprob": -13.3828,
+            "prob": 0.0
+          },
+          {
+            "token": "\"。",
+            "token_id": 188135,
+            "logprob": -13.8984,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġ\".",
+            "token_id": 24029,
+            "logprob": -14.1406,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġalphabet",
+            "token_id": 48063,
+            "logprob": -14.5234,
+            "prob": 0.0
+          },
+          {
+            "token": "'.",
+            "token_id": 9085,
+            "logprob": -15.0391,
+            "prob": 0.0
+          },
+          {
+            "token": "”.",
+            "token_id": 13094,
+            "logprob": -16.0781,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "\".",
+        "token_id": 3193,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 48,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Translate to French: The quick brown fox jumps over the lazy dog<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>La renarde brune rapide saute par-dessus le chien paresseux.\n\nCette phrase est souvent utilisée comme exemple de phrase contenant toutes les lettres de l'alphabet. Elle est également connue sous le nom de \"pangramme\".",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Translate",
+        "Ġto",
+        "ĠFrench",
+        ":",
+        "ĠThe",
+        "Ġquick",
+        "Ġbrown",
+        "Ġfox",
+        "Ġjumps",
+        "Ġover",
+        "Ġthe",
+        "Ġlazy",
+        "Ġdog",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "La",
+        "Ġren",
+        "arde",
+        "Ġbrune",
+        "Ġrapide",
+        "Ġsaute",
+        "Ġpar",
+        "-",
+        "dessus",
+        "Ġle",
+        "Ġchien",
+        "Ġpar",
+        "esse",
+        "ux",
+        ".",
+        "\n",
+        "\n",
+        "Cette",
+        "Ġphrase",
+        "Ġest",
+        "Ġsouvent",
+        "Ġutilisée",
+        "Ġcomme",
+        "Ġexemple",
+        "Ġde",
+        "Ġphrase",
+        "Ġcontenant",
+        "Ġtoutes",
+        "Ġles",
+        "Ġlettres",
+        "Ġde",
+        "Ġl",
+        "'",
+        "alphabet",
+        ".",
+        "ĠElle",
+        "Ġest",
+        "Ġégalement",
+        "Ġconnue",
+        "Ġsous",
+        "Ġle",
+        "Ġnom",
+        "Ġde",
+        "Ġ\"",
+        "pang",
+        "ram",
+        "me",
+        "\"."
+      ],
+      "token_ids": [
+        5, 255000, 255006, 96028, 1726, 6855, 33, 1896, 6629, 19883, 73388, 75436, 2515, 1690,
+        46189, 9507, 255001, 255000, 255007, 3857, 5418, 8487, 240906, 68500, 200776, 2023, 20,
+        53047, 1885, 109818, 2023, 6830, 3078, 21, 206, 206, 29883, 30997, 2072, 25728, 53079, 6898,
+        28258, 1715, 30997, 88422, 27763, 2620, 49618, 1715, 1711, 14, 121746, 21, 9939, 2072,
+        10403, 51317, 8468, 1885, 5994, 1715, 1789, 144116, 5720, 2352, 3193
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "<|END_OF_TURN_TOKEN|>",
+            "token_id": 255001,
+            "logprob": -0.0,
+            "prob": 1.0
+          },
+          {
+            "token": "ĠEn",
+            "token_id": 2888,
+            "logprob": -14.3594,
+            "prob": 0.0
+          },
+          {
+            "token": "\n",
+            "token_id": 206,
+            "logprob": -15.125,
+            "prob": 0.0
+          },
+          {
+            "token": "<PAD>",
+            "token_id": 0,
+            "logprob": -34.8438,
+            "prob": 0.0
+          },
+          {
+            "token": "<EOS_TOKEN>",
+            "token_id": 6,
+            "logprob": -21.8438,
+            "prob": 0.0
+          },
+          {
+            "token": "<SEP>",
+            "token_id": 3,
+            "logprob": -34.9375,
+            "prob": 0.0
+          },
+          {
+            "token": "<BOS_TOKEN>",
+            "token_id": 5,
+            "logprob": -27.7031,
+            "prob": 0.0
+          },
+          {
+            "token": "<MASK_TOKEN>",
+            "token_id": 4,
+            "logprob": -34.7812,
+            "prob": 0.0
+          },
+          {
+            "token": "<UNK>",
+            "token_id": 1,
+            "logprob": -33.2812,
+            "prob": 0.0
+          },
+          {
+            "token": "<CLS>",
+            "token_id": 2,
+            "logprob": -34.8125,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "<|END_OF_TURN_TOKEN|>",
+        "token_id": 255001,
+        "selection_method": "sampling"
+      }
+    }
+  ]
+}

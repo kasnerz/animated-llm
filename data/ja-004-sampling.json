@@ -1,0 +1,5951 @@
+{
+  "id": "generated_20251113_160122",
+  "prompt": "日本の首都はどこですか？",
+  "language": "ja",
+  "temperature": 1.0,
+  "top_k": 10,
+  "model_info": {
+    "name": "CohereLabs/aya-expanse-8b",
+    "num_layers": 32,
+    "hidden_size": 4096,
+    "num_attention_heads": 32,
+    "vocab_size": 256000
+  },
+  "generation_steps": [
+    {
+      "step": 0,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>日本の首都はどこですか？<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "日本の",
+        "首都",
+        "は",
+        "どこ",
+        "です",
+        "か",
+        "？",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 18007, 44398, 2775, 169103, 87506, 3966, 33176, 255001, 255000, 255007
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "日本の",
+            "token_id": 18007,
+            "logprob": -0.0002,
+            "prob": 1.0
+          },
+          {
+            "token": "日本",
+            "token_id": 5440,
+            "logprob": -8.625,
+            "prob": 0.0002
+          },
+          {
+            "token": "Ġ日本の",
+            "token_id": 115767,
+            "logprob": -11.2656,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġ일본의",
+            "token_id": 51230,
+            "logprob": -11.7188,
+            "prob": 0.0
+          },
+          {
+            "token": "日本では",
+            "token_id": 132525,
+            "logprob": -12.5625,
+            "prob": 0.0
+          },
+          {
+            "token": "日本語",
+            "token_id": 81367,
+            "logprob": -12.7969,
+            "prob": 0.0
+          },
+          {
+            "token": "日本で",
+            "token_id": 186667,
+            "logprob": -13.1406,
+            "prob": 0.0
+          },
+          {
+            "token": "日本的",
+            "token_id": 105842,
+            "logprob": -13.1875,
+            "prob": 0.0
+          },
+          {
+            "token": "東京",
+            "token_id": 15112,
+            "logprob": -13.4062,
+            "prob": 0.0
+          },
+          {
+            "token": "일본의",
+            "token_id": 56542,
+            "logprob": -13.5625,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "日本の",
+        "token_id": 18007,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 1,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>日本の首都はどこですか？<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>日本の",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "日本の",
+        "首都",
+        "は",
+        "どこ",
+        "です",
+        "か",
+        "？",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "日本の"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 18007, 44398, 2775, 169103, 87506, 3966, 33176, 255001, 255000, 255007,
+        18007
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "首都",
+            "token_id": 44398,
+            "logprob": -0.0,
+            "prob": 1.0
+          },
+          {
+            "token": "資本",
+            "token_id": 113603,
+            "logprob": -11.5234,
+            "prob": 0.0
+          },
+          {
+            "token": "首",
+            "token_id": 7578,
+            "logprob": -11.9141,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġ수도",
+            "token_id": 55364,
+            "logprob": -11.9922,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġcapitale",
+            "token_id": 35403,
+            "logprob": -13.3281,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġπρωτεύουσα",
+            "token_id": 95934,
+            "logprob": -13.4297,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġپایتخت",
+            "token_id": 240342,
+            "logprob": -13.6172,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġالعاصمة",
+            "token_id": 175115,
+            "logprob": -13.8359,
+            "prob": 0.0
+          },
+          {
+            "token": "capital",
+            "token_id": 71100,
+            "logprob": -14.1641,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠHauptstadt",
+            "token_id": 120009,
+            "logprob": -14.8438,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "首都",
+        "token_id": 44398,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 2,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>日本の首都はどこですか？<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>日本の首都",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "日本の",
+        "首都",
+        "は",
+        "どこ",
+        "です",
+        "か",
+        "？",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "日本の",
+        "首都"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 18007, 44398, 2775, 169103, 87506, 3966, 33176, 255001, 255000, 255007,
+        18007, 44398
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "は",
+            "token_id": 2775,
+            "logprob": -0.0,
+            "prob": 1.0
+          },
+          {
+            "token": "は大",
+            "token_id": 128397,
+            "logprob": -12.5781,
+            "prob": 0.0
+          },
+          {
+            "token": "は日本",
+            "token_id": 214136,
+            "logprob": -13.2656,
+            "prob": 0.0
+          },
+          {
+            "token": "은",
+            "token_id": 3767,
+            "logprob": -13.6016,
+            "prob": 0.0
+          },
+          {
+            "token": "は約",
+            "token_id": 182236,
+            "logprob": -14.0547,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġは",
+            "token_id": 56879,
+            "logprob": -14.1719,
+            "prob": 0.0
+          },
+          {
+            "token": "はア",
+            "token_id": 252141,
+            "logprob": -14.2109,
+            "prob": 0.0
+          },
+          {
+            "token": "は無",
+            "token_id": 125527,
+            "logprob": -14.3672,
+            "prob": 0.0
+          },
+          {
+            "token": "は一",
+            "token_id": 210421,
+            "logprob": -14.3359,
+            "prob": 0.0
+          },
+          {
+            "token": "はその",
+            "token_id": 101810,
+            "logprob": -14.4375,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "は",
+        "token_id": 2775,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 3,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>日本の首都はどこですか？<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>日本の首都は",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "日本の",
+        "首都",
+        "は",
+        "どこ",
+        "です",
+        "か",
+        "？",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "日本の",
+        "首都",
+        "は"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 18007, 44398, 2775, 169103, 87506, 3966, 33176, 255001, 255000, 255007,
+        18007, 44398, 2775
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "東京",
+            "token_id": 15112,
+            "logprob": -0.01,
+            "prob": 0.9902
+          },
+          {
+            "token": "**",
+            "token_id": 2093,
+            "logprob": -4.7305,
+            "prob": 0.0088
+          },
+          {
+            "token": "東京都",
+            "token_id": 41107,
+            "logprob": -7.5898,
+            "prob": 0.0005
+          },
+          {
+            "token": "Tokyo",
+            "token_id": 92054,
+            "logprob": -8.6797,
+            "prob": 0.0002
+          },
+          {
+            "token": "ĠTokyo",
+            "token_id": 16025,
+            "logprob": -8.9141,
+            "prob": 0.0001
+          },
+          {
+            "token": "东京",
+            "token_id": 46737,
+            "logprob": -9.4453,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġ東京",
+            "token_id": 74429,
+            "logprob": -9.6953,
+            "prob": 0.0001
+          },
+          {
+            "token": "ĠTokio",
+            "token_id": 55392,
+            "logprob": -9.9688,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġ도쿄",
+            "token_id": 69969,
+            "logprob": -10.125,
+            "prob": 0.0
+          },
+          {
+            "token": "「",
+            "token_id": 3379,
+            "logprob": -10.2578,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "東京",
+        "token_id": 15112,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 4,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>日本の首都はどこですか？<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>日本の首都は東京",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "日本の",
+        "首都",
+        "は",
+        "どこ",
+        "です",
+        "か",
+        "？",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "日本の",
+        "首都",
+        "は",
+        "東京"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 18007, 44398, 2775, 169103, 87506, 3966, 33176, 255001, 255000, 255007,
+        18007, 44398, 2775, 15112
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "です",
+            "token_id": 87506,
+            "logprob": -0.0003,
+            "prob": 0.9995
+          },
+          {
+            "token": "（",
+            "token_id": 2285,
+            "logprob": -8.1406,
+            "prob": 0.0003
+          },
+          {
+            "token": "입니다",
+            "token_id": 186559,
+            "logprob": -12.7188,
+            "prob": 0.0
+          },
+          {
+            "token": "で",
+            "token_id": 2920,
+            "logprob": -14.8438,
+            "prob": 0.0
+          },
+          {
+            "token": "であり",
+            "token_id": 24242,
+            "logprob": -14.8516,
+            "prob": 0.0
+          },
+          {
+            "token": "になり",
+            "token_id": 56326,
+            "logprob": -16.1719,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġ（",
+            "token_id": 12773,
+            "logprob": -17.1875,
+            "prob": 0.0
+          },
+          {
+            "token": "(",
+            "token_id": 15,
+            "logprob": -17.2344,
+            "prob": 0.0
+          },
+          {
+            "token": "となり",
+            "token_id": 38726,
+            "logprob": -16.7344,
+            "prob": 0.0
+          },
+          {
+            "token": "<PAD>",
+            "token_id": 0,
+            "logprob": -31.1719,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "です",
+        "token_id": 87506,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 5,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>日本の首都はどこですか？<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>日本の首都は東京です",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "日本の",
+        "首都",
+        "は",
+        "どこ",
+        "です",
+        "か",
+        "？",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "日本の",
+        "首都",
+        "は",
+        "東京",
+        "です"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 18007, 44398, 2775, 169103, 87506, 3966, 33176, 255001, 255000, 255007,
+        18007, 44398, 2775, 15112, 87506
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "。",
+            "token_id": 1967,
+            "logprob": -0.0,
+            "prob": 1.0
+          },
+          {
+            "token": "।",
+            "token_id": 4280,
+            "logprob": -14.75,
+            "prob": 0.0
+          },
+          {
+            "token": "。「",
+            "token_id": 43471,
+            "logprob": -15.5625,
+            "prob": 0.0
+          },
+          {
+            "token": "<PAD>",
+            "token_id": 0,
+            "logprob": -33.7188,
+            "prob": 0.0
+          },
+          {
+            "token": "<EOS_TOKEN>",
+            "token_id": 6,
+            "logprob": -26.3594,
+            "prob": 0.0
+          },
+          {
+            "token": "<SEP>",
+            "token_id": 3,
+            "logprob": -33.4688,
+            "prob": 0.0
+          },
+          {
+            "token": "<BOS_TOKEN>",
+            "token_id": 5,
+            "logprob": -30.1719,
+            "prob": 0.0
+          },
+          {
+            "token": "<MASK_TOKEN>",
+            "token_id": 4,
+            "logprob": -33.8438,
+            "prob": 0.0
+          },
+          {
+            "token": "<UNK>",
+            "token_id": 1,
+            "logprob": -32.0312,
+            "prob": 0.0
+          },
+          {
+            "token": "<CLS>",
+            "token_id": 2,
+            "logprob": -33.25,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "。",
+        "token_id": 1967,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 6,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>日本の首都はどこですか？<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>日本の首都は東京です。",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "日本の",
+        "首都",
+        "は",
+        "どこ",
+        "です",
+        "か",
+        "？",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "日本の",
+        "首都",
+        "は",
+        "東京",
+        "です",
+        "。"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 18007, 44398, 2775, 169103, 87506, 3966, 33176, 255001, 255000, 255007,
+        18007, 44398, 2775, 15112, 87506, 1967
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "東京",
+            "token_id": 15112,
+            "logprob": -0.0343,
+            "prob": 0.9663
+          },
+          {
+            "token": "\n",
+            "token_id": 206,
+            "logprob": -3.6914,
+            "prob": 0.025
+          },
+          {
+            "token": "<|END_OF_TURN_TOKEN|>",
+            "token_id": 255001,
+            "logprob": -4.832,
+            "prob": 0.008
+          },
+          {
+            "token": "ĠTokyo",
+            "token_id": 16025,
+            "logprob": -7.7539,
+            "prob": 0.0004
+          },
+          {
+            "token": "東京都",
+            "token_id": 41107,
+            "logprob": -9.0234,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġ東京",
+            "token_id": 74429,
+            "logprob": -9.3438,
+            "prob": 0.0001
+          },
+          {
+            "token": "Tokyo",
+            "token_id": 92054,
+            "logprob": -9.8359,
+            "prob": 0.0001
+          },
+          {
+            "token": "东京",
+            "token_id": 46737,
+            "logprob": -10.1094,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġ\n",
+            "token_id": 1973,
+            "logprob": -10.7578,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġ도쿄",
+            "token_id": 69969,
+            "logprob": -10.8359,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "東京",
+        "token_id": 15112,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 7,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>日本の首都はどこですか？<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>日本の首都は東京です。東京",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "日本の",
+        "首都",
+        "は",
+        "どこ",
+        "です",
+        "か",
+        "？",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "日本の",
+        "首都",
+        "は",
+        "東京",
+        "です",
+        "。",
+        "東京"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 18007, 44398, 2775, 169103, 87506, 3966, 33176, 255001, 255000, 255007,
+        18007, 44398, 2775, 15112, 87506, 1967, 15112
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "は",
+            "token_id": 2775,
+            "logprob": -0.0001,
+            "prob": 1.0
+          },
+          {
+            "token": "はその",
+            "token_id": 101810,
+            "logprob": -10.3125,
+            "prob": 0.0
+          },
+          {
+            "token": "は日本",
+            "token_id": 214136,
+            "logprob": -10.9375,
+            "prob": 0.0
+          },
+          {
+            "token": "は約",
+            "token_id": 182236,
+            "logprob": -11.7031,
+            "prob": 0.0
+          },
+          {
+            "token": "은",
+            "token_id": 3767,
+            "logprob": -11.9922,
+            "prob": 0.0
+          },
+          {
+            "token": "には",
+            "token_id": 9696,
+            "logprob": -12.2031,
+            "prob": 0.0
+          },
+          {
+            "token": "는",
+            "token_id": 2817,
+            "logprob": -12.2734,
+            "prob": 0.0
+          },
+          {
+            "token": "は大",
+            "token_id": 128397,
+            "logprob": -12.6094,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġは",
+            "token_id": 56879,
+            "logprob": -12.6562,
+            "prob": 0.0
+          },
+          {
+            "token": "は第",
+            "token_id": 226484,
+            "logprob": -12.6719,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "は",
+        "token_id": 2775,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 8,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>日本の首都はどこですか？<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>日本の首都は東京です。東京は",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "日本の",
+        "首都",
+        "は",
+        "どこ",
+        "です",
+        "か",
+        "？",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "日本の",
+        "首都",
+        "は",
+        "東京",
+        "です",
+        "。",
+        "東京",
+        "は"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 18007, 44398, 2775, 169103, 87506, 3966, 33176, 255001, 255000, 255007,
+        18007, 44398, 2775, 15112, 87506, 1967, 15112, 2775
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "日本の",
+            "token_id": 18007,
+            "logprob": -0.1019,
+            "prob": 0.9028
+          },
+          {
+            "token": "日本で",
+            "token_id": 186667,
+            "logprob": -3.3203,
+            "prob": 0.0361
+          },
+          {
+            "token": "日本国内",
+            "token_id": 187920,
+            "logprob": -3.4688,
+            "prob": 0.0311
+          },
+          {
+            "token": "日本",
+            "token_id": 5440,
+            "logprob": -4.5391,
+            "prob": 0.0107
+          },
+          {
+            "token": "東京都",
+            "token_id": 41107,
+            "logprob": -5.2734,
+            "prob": 0.0051
+          },
+          {
+            "token": "日本では",
+            "token_id": 132525,
+            "logprob": -5.8438,
+            "prob": 0.0029
+          },
+          {
+            "token": "、",
+            "token_id": 2066,
+            "logprob": -5.9219,
+            "prob": 0.0027
+          },
+          {
+            "token": "世界",
+            "token_id": 9065,
+            "logprob": -6.5078,
+            "prob": 0.0015
+          },
+          {
+            "token": "国内",
+            "token_id": 40796,
+            "logprob": -6.5938,
+            "prob": 0.0014
+          },
+          {
+            "token": "東京",
+            "token_id": 15112,
+            "logprob": -7.3828,
+            "prob": 0.0006
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "日本の",
+        "token_id": 18007,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 9,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>日本の首都はどこですか？<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>日本の首都は東京です。東京は日本の",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "日本の",
+        "首都",
+        "は",
+        "どこ",
+        "です",
+        "か",
+        "？",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "日本の",
+        "首都",
+        "は",
+        "東京",
+        "です",
+        "。",
+        "東京",
+        "は",
+        "日本の"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 18007, 44398, 2775, 169103, 87506, 3966, 33176, 255001, 255000, 255007,
+        18007, 44398, 2775, 15112, 87506, 1967, 15112, 2775, 18007
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "政治",
+            "token_id": 11565,
+            "logprob": -0.0186,
+            "prob": 0.9814
+          },
+          {
+            "token": "政治的",
+            "token_id": 233613,
+            "logprob": -4.582,
+            "prob": 0.0102
+          },
+          {
+            "token": "最大",
+            "token_id": 30375,
+            "logprob": -5.9336,
+            "prob": 0.0027
+          },
+          {
+            "token": "最も",
+            "token_id": 67159,
+            "logprob": -6.5508,
+            "prob": 0.0014
+          },
+          {
+            "token": "経済",
+            "token_id": 44141,
+            "logprob": -6.9023,
+            "prob": 0.001
+          },
+          {
+            "token": "人口",
+            "token_id": 9540,
+            "logprob": -7.3477,
+            "prob": 0.0006
+          },
+          {
+            "token": "最大の",
+            "token_id": 135377,
+            "logprob": -7.4023,
+            "prob": 0.0006
+          },
+          {
+            "token": "中",
+            "token_id": 2534,
+            "logprob": -7.9492,
+            "prob": 0.0004
+          },
+          {
+            "token": "中央政府",
+            "token_id": 195854,
+            "logprob": -9.0938,
+            "prob": 0.0001
+          },
+          {
+            "token": "的政治",
+            "token_id": 108641,
+            "logprob": -9.1719,
+            "prob": 0.0001
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "政治",
+        "token_id": 11565,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 10,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>日本の首都はどこですか？<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>日本の首都は東京です。東京は日本の政治",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "日本の",
+        "首都",
+        "は",
+        "どこ",
+        "です",
+        "か",
+        "？",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "日本の",
+        "首都",
+        "は",
+        "東京",
+        "です",
+        "。",
+        "東京",
+        "は",
+        "日本の",
+        "政治"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 18007, 44398, 2775, 169103, 87506, 3966, 33176, 255001, 255000, 255007,
+        18007, 44398, 2775, 15112, 87506, 1967, 15112, 2775, 18007, 11565
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "、",
+            "token_id": 2066,
+            "logprob": -0.0001,
+            "prob": 1.0
+          },
+          {
+            "token": "・",
+            "token_id": 3304,
+            "logprob": -9.1562,
+            "prob": 0.0001
+          },
+          {
+            "token": "の中心",
+            "token_id": 185330,
+            "logprob": -12.9531,
+            "prob": 0.0
+          },
+          {
+            "token": "的中心",
+            "token_id": 169331,
+            "logprob": -13.9453,
+            "prob": 0.0
+          },
+          {
+            "token": "や",
+            "token_id": 7964,
+            "logprob": -13.9141,
+            "prob": 0.0
+          },
+          {
+            "token": "の中",
+            "token_id": 32660,
+            "logprob": -14.0781,
+            "prob": 0.0
+          },
+          {
+            "token": "،",
+            "token_id": 3196,
+            "logprob": -14.5859,
+            "prob": 0.0
+          },
+          {
+            "token": "経済",
+            "token_id": 44141,
+            "logprob": -14.8359,
+            "prob": 0.0
+          },
+          {
+            "token": "中",
+            "token_id": 2534,
+            "logprob": -15.0859,
+            "prob": 0.0
+          },
+          {
+            "token": "，",
+            "token_id": 1918,
+            "logprob": -17.0938,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "、",
+        "token_id": 2066,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 11,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>日本の首都はどこですか？<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>日本の首都は東京です。東京は日本の政治、",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "日本の",
+        "首都",
+        "は",
+        "どこ",
+        "です",
+        "か",
+        "？",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "日本の",
+        "首都",
+        "は",
+        "東京",
+        "です",
+        "。",
+        "東京",
+        "は",
+        "日本の",
+        "政治",
+        "、"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 18007, 44398, 2775, 169103, 87506, 3966, 33176, 255001, 255000, 255007,
+        18007, 44398, 2775, 15112, 87506, 1967, 15112, 2775, 18007, 11565, 2066
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "経済",
+            "token_id": 44141,
+            "logprob": -0.0002,
+            "prob": 1.0
+          },
+          {
+            "token": "文化",
+            "token_id": 13121,
+            "logprob": -8.9688,
+            "prob": 0.0001
+          },
+          {
+            "token": "经济",
+            "token_id": 22981,
+            "logprob": -10.0469,
+            "prob": 0.0
+          },
+          {
+            "token": "經濟",
+            "token_id": 45321,
+            "logprob": -10.7812,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġ경제",
+            "token_id": 50660,
+            "logprob": -12.6094,
+            "prob": 0.0
+          },
+          {
+            "token": "経済学",
+            "token_id": 210536,
+            "logprob": -12.6719,
+            "prob": 0.0
+          },
+          {
+            "token": "金融",
+            "token_id": 50781,
+            "logprob": -13.0469,
+            "prob": 0.0
+          },
+          {
+            "token": "경제",
+            "token_id": 97284,
+            "logprob": -13.75,
+            "prob": 0.0
+          },
+          {
+            "token": "外交",
+            "token_id": 32849,
+            "logprob": -14.5547,
+            "prob": 0.0
+          },
+          {
+            "token": "行政",
+            "token_id": 13263,
+            "logprob": -14.6953,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "経済",
+        "token_id": 44141,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 12,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>日本の首都はどこですか？<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>日本の首都は東京です。東京は日本の政治、経済",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "日本の",
+        "首都",
+        "は",
+        "どこ",
+        "です",
+        "か",
+        "？",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "日本の",
+        "首都",
+        "は",
+        "東京",
+        "です",
+        "。",
+        "東京",
+        "は",
+        "日本の",
+        "政治",
+        "、",
+        "経済"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 18007, 44398, 2775, 169103, 87506, 3966, 33176, 255001, 255000, 255007,
+        18007, 44398, 2775, 15112, 87506, 1967, 15112, 2775, 18007, 11565, 2066, 44141
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "、",
+            "token_id": 2066,
+            "logprob": -0.0,
+            "prob": 1.0
+          },
+          {
+            "token": "の中心",
+            "token_id": 185330,
+            "logprob": -13.9062,
+            "prob": 0.0
+          },
+          {
+            "token": "،",
+            "token_id": 3196,
+            "logprob": -15.1719,
+            "prob": 0.0
+          },
+          {
+            "token": "の",
+            "token_id": 2176,
+            "logprob": -17.3281,
+            "prob": 0.0
+          },
+          {
+            "token": "<SEP>",
+            "token_id": 3,
+            "logprob": -33.8125,
+            "prob": 0.0
+          },
+          {
+            "token": "<CLS>",
+            "token_id": 2,
+            "logprob": -33.0,
+            "prob": 0.0
+          },
+          {
+            "token": "<MASK_TOKEN>",
+            "token_id": 4,
+            "logprob": -33.5312,
+            "prob": 0.0
+          },
+          {
+            "token": "<BOS_TOKEN>",
+            "token_id": 5,
+            "logprob": -29.4688,
+            "prob": 0.0
+          },
+          {
+            "token": "<PAD>",
+            "token_id": 0,
+            "logprob": -33.5312,
+            "prob": 0.0
+          },
+          {
+            "token": "<UNK>",
+            "token_id": 1,
+            "logprob": -32.75,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "、",
+        "token_id": 2066,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 13,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>日本の首都はどこですか？<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>日本の首都は東京です。東京は日本の政治、経済、",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "日本の",
+        "首都",
+        "は",
+        "どこ",
+        "です",
+        "か",
+        "？",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "日本の",
+        "首都",
+        "は",
+        "東京",
+        "です",
+        "。",
+        "東京",
+        "は",
+        "日本の",
+        "政治",
+        "、",
+        "経済",
+        "、"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 18007, 44398, 2775, 169103, 87506, 3966, 33176, 255001, 255000, 255007,
+        18007, 44398, 2775, 15112, 87506, 1967, 15112, 2775, 18007, 11565, 2066, 44141, 2066
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "文化",
+            "token_id": 13121,
+            "logprob": -0.0005,
+            "prob": 0.9995
+          },
+          {
+            "token": "文化和",
+            "token_id": 242340,
+            "logprob": -7.9688,
+            "prob": 0.0003
+          },
+          {
+            "token": "文化的",
+            "token_id": 148680,
+            "logprob": -9.5625,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġ문화",
+            "token_id": 43264,
+            "logprob": -11.7266,
+            "prob": 0.0
+          },
+          {
+            "token": "社会",
+            "token_id": 16941,
+            "logprob": -12.5312,
+            "prob": 0.0
+          },
+          {
+            "token": "文化中心",
+            "token_id": 219558,
+            "logprob": -12.9844,
+            "prob": 0.0
+          },
+          {
+            "token": "産業",
+            "token_id": 74300,
+            "logprob": -13.0859,
+            "prob": 0.0
+          },
+          {
+            "token": "문화",
+            "token_id": 47355,
+            "logprob": -13.7578,
+            "prob": 0.0
+          },
+          {
+            "token": "そして",
+            "token_id": 57412,
+            "logprob": -13.7188,
+            "prob": 0.0
+          },
+          {
+            "token": "教育",
+            "token_id": 13991,
+            "logprob": -13.7812,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "文化",
+        "token_id": 13121,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 14,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>日本の首都はどこですか？<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>日本の首都は東京です。東京は日本の政治、経済、文化",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "日本の",
+        "首都",
+        "は",
+        "どこ",
+        "です",
+        "か",
+        "？",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "日本の",
+        "首都",
+        "は",
+        "東京",
+        "です",
+        "。",
+        "東京",
+        "は",
+        "日本の",
+        "政治",
+        "、",
+        "経済",
+        "、",
+        "文化"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 18007, 44398, 2775, 169103, 87506, 3966, 33176, 255001, 255000, 255007,
+        18007, 44398, 2775, 15112, 87506, 1967, 15112, 2775, 18007, 11565, 2066, 44141, 2066, 13121
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "の中心",
+            "token_id": 185330,
+            "logprob": -0.0199,
+            "prob": 0.9805
+          },
+          {
+            "token": "の",
+            "token_id": 2176,
+            "logprob": -4.3945,
+            "prob": 0.0123
+          },
+          {
+            "token": "の中",
+            "token_id": 32660,
+            "logprob": -4.9727,
+            "prob": 0.0069
+          },
+          {
+            "token": "、",
+            "token_id": 2066,
+            "logprob": -8.4609,
+            "prob": 0.0002
+          },
+          {
+            "token": "などの",
+            "token_id": 32237,
+            "logprob": -9.0859,
+            "prob": 0.0001
+          },
+          {
+            "token": "的中心",
+            "token_id": 169331,
+            "logprob": -9.2578,
+            "prob": 0.0001
+          },
+          {
+            "token": "の最",
+            "token_id": 248639,
+            "logprob": -11.6484,
+            "prob": 0.0
+          },
+          {
+            "token": "的な",
+            "token_id": 24616,
+            "logprob": -12.7422,
+            "prob": 0.0
+          },
+          {
+            "token": "の発",
+            "token_id": 93788,
+            "logprob": -12.7812,
+            "prob": 0.0
+          },
+          {
+            "token": "の上",
+            "token_id": 80243,
+            "logprob": -13.1875,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "の中心",
+        "token_id": 185330,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 15,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>日本の首都はどこですか？<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>日本の首都は東京です。東京は日本の政治、経済、文化の中心",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "日本の",
+        "首都",
+        "は",
+        "どこ",
+        "です",
+        "か",
+        "？",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "日本の",
+        "首都",
+        "は",
+        "東京",
+        "です",
+        "。",
+        "東京",
+        "は",
+        "日本の",
+        "政治",
+        "、",
+        "経済",
+        "、",
+        "文化",
+        "の中心"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 18007, 44398, 2775, 169103, 87506, 3966, 33176, 255001, 255000, 255007,
+        18007, 44398, 2775, 15112, 87506, 1967, 15112, 2775, 18007, 11565, 2066, 44141, 2066, 13121,
+        185330
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "地",
+            "token_id": 3222,
+            "logprob": -0.0009,
+            "prob": 0.999
+          },
+          {
+            "token": "であり",
+            "token_id": 24242,
+            "logprob": -7.3125,
+            "prob": 0.0007
+          },
+          {
+            "token": "として",
+            "token_id": 8550,
+            "logprob": -9.6875,
+            "prob": 0.0001
+          },
+          {
+            "token": "지로",
+            "token_id": 81322,
+            "logprob": -9.9844,
+            "prob": 0.0
+          },
+          {
+            "token": "都市",
+            "token_id": 27970,
+            "logprob": -10.8047,
+            "prob": 0.0
+          },
+          {
+            "token": "地に",
+            "token_id": 99294,
+            "logprob": -11.0312,
+            "prob": 0.0
+          },
+          {
+            "token": "地を",
+            "token_id": 191888,
+            "logprob": -11.4922,
+            "prob": 0.0
+          },
+          {
+            "token": "地の",
+            "token_id": 94587,
+            "logprob": -11.5547,
+            "prob": 0.0
+          },
+          {
+            "token": "地上",
+            "token_id": 67192,
+            "logprob": -11.8203,
+            "prob": 0.0
+          },
+          {
+            "token": "の地",
+            "token_id": 246701,
+            "logprob": -12.0625,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "地",
+        "token_id": 3222,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 16,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>日本の首都はどこですか？<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>日本の首都は東京です。東京は日本の政治、経済、文化の中心地",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "日本の",
+        "首都",
+        "は",
+        "どこ",
+        "です",
+        "か",
+        "？",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "日本の",
+        "首都",
+        "は",
+        "東京",
+        "です",
+        "。",
+        "東京",
+        "は",
+        "日本の",
+        "政治",
+        "、",
+        "経済",
+        "、",
+        "文化",
+        "の中心",
+        "地"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 18007, 44398, 2775, 169103, 87506, 3966, 33176, 255001, 255000, 255007,
+        18007, 44398, 2775, 15112, 87506, 1967, 15112, 2775, 18007, 11565, 2066, 44141, 2066, 13121,
+        185330, 3222
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "であり",
+            "token_id": 24242,
+            "logprob": -0.1606,
+            "prob": 0.8516
+          },
+          {
+            "token": "として",
+            "token_id": 8550,
+            "logprob": -1.9111,
+            "prob": 0.1479
+          },
+          {
+            "token": "で",
+            "token_id": 2920,
+            "logprob": -8.9297,
+            "prob": 0.0001
+          },
+          {
+            "token": "としての",
+            "token_id": 58490,
+            "logprob": -9.4844,
+            "prob": 0.0001
+          },
+          {
+            "token": "として使用",
+            "token_id": 180198,
+            "logprob": -9.5703,
+            "prob": 0.0001
+          },
+          {
+            "token": "となっており",
+            "token_id": 163985,
+            "logprob": -9.7578,
+            "prob": 0.0001
+          },
+          {
+            "token": "でも",
+            "token_id": 22608,
+            "logprob": -11.0547,
+            "prob": 0.0
+          },
+          {
+            "token": "となり",
+            "token_id": 38726,
+            "logprob": -11.375,
+            "prob": 0.0
+          },
+          {
+            "token": "로서",
+            "token_id": 40907,
+            "logprob": -11.7578,
+            "prob": 0.0
+          },
+          {
+            "token": "である",
+            "token_id": 8478,
+            "logprob": -11.8672,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "であり",
+        "token_id": 24242,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 17,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>日本の首都はどこですか？<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>日本の首都は東京です。東京は日本の政治、経済、文化の中心地であり",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "日本の",
+        "首都",
+        "は",
+        "どこ",
+        "です",
+        "か",
+        "？",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "日本の",
+        "首都",
+        "は",
+        "東京",
+        "です",
+        "。",
+        "東京",
+        "は",
+        "日本の",
+        "政治",
+        "、",
+        "経済",
+        "、",
+        "文化",
+        "の中心",
+        "地",
+        "であり"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 18007, 44398, 2775, 169103, 87506, 3966, 33176, 255001, 255000, 255007,
+        18007, 44398, 2775, 15112, 87506, 1967, 15112, 2775, 18007, 11565, 2066, 44141, 2066, 13121,
+        185330, 3222, 24242
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "、",
+            "token_id": 2066,
+            "logprob": -0.0,
+            "prob": 1.0
+          },
+          {
+            "token": "、「",
+            "token_id": 16285,
+            "logprob": -13.5625,
+            "prob": 0.0
+          },
+          {
+            "token": "،",
+            "token_id": 3196,
+            "logprob": -14.5781,
+            "prob": 0.0
+          },
+          {
+            "token": "<PAD>",
+            "token_id": 0,
+            "logprob": -34.875,
+            "prob": 0.0
+          },
+          {
+            "token": "<EOS_TOKEN>",
+            "token_id": 6,
+            "logprob": -31.6562,
+            "prob": 0.0
+          },
+          {
+            "token": "<SEP>",
+            "token_id": 3,
+            "logprob": -34.5938,
+            "prob": 0.0
+          },
+          {
+            "token": "<BOS_TOKEN>",
+            "token_id": 5,
+            "logprob": -28.6719,
+            "prob": 0.0
+          },
+          {
+            "token": "<MASK_TOKEN>",
+            "token_id": 4,
+            "logprob": -34.9375,
+            "prob": 0.0
+          },
+          {
+            "token": "<UNK>",
+            "token_id": 1,
+            "logprob": -33.875,
+            "prob": 0.0
+          },
+          {
+            "token": "<CLS>",
+            "token_id": 2,
+            "logprob": -34.5938,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "、",
+        "token_id": 2066,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 18,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>日本の首都はどこですか？<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>日本の首都は東京です。東京は日本の政治、経済、文化の中心地であり、",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "日本の",
+        "首都",
+        "は",
+        "どこ",
+        "です",
+        "か",
+        "？",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "日本の",
+        "首都",
+        "は",
+        "東京",
+        "です",
+        "。",
+        "東京",
+        "は",
+        "日本の",
+        "政治",
+        "、",
+        "経済",
+        "、",
+        "文化",
+        "の中心",
+        "地",
+        "であり",
+        "、"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 18007, 44398, 2775, 169103, 87506, 3966, 33176, 255001, 255000, 255007,
+        18007, 44398, 2775, 15112, 87506, 1967, 15112, 2775, 18007, 11565, 2066, 44141, 2066, 13121,
+        185330, 3222, 24242, 2066
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "人口",
+            "token_id": 9540,
+            "logprob": -0.3838,
+            "prob": 0.6812
+          },
+          {
+            "token": "東京都",
+            "token_id": 41107,
+            "logprob": -2.3125,
+            "prob": 0.0989
+          },
+          {
+            "token": "日本の",
+            "token_id": 18007,
+            "logprob": -2.6406,
+            "prob": 0.0712
+          },
+          {
+            "token": "世界",
+            "token_id": 9065,
+            "logprob": -2.8438,
+            "prob": 0.0582
+          },
+          {
+            "token": "日本",
+            "token_id": 5440,
+            "logprob": -4.1797,
+            "prob": 0.0153
+          },
+          {
+            "token": "国内",
+            "token_id": 40796,
+            "logprob": -4.6094,
+            "prob": 0.0099
+          },
+          {
+            "token": "東京",
+            "token_id": 15112,
+            "logprob": -4.75,
+            "prob": 0.0086
+          },
+          {
+            "token": "日本で",
+            "token_id": 186667,
+            "logprob": -4.7891,
+            "prob": 0.0083
+          },
+          {
+            "token": "日本国内",
+            "token_id": 187920,
+            "logprob": -5.3203,
+            "prob": 0.0049
+          },
+          {
+            "token": "約",
+            "token_id": 11462,
+            "logprob": -5.4453,
+            "prob": 0.0043
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "東京都",
+        "token_id": 41107,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 19,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>日本の首都はどこですか？<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>日本の首都は東京です。東京は日本の政治、経済、文化の中心地であり、東京都",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "日本の",
+        "首都",
+        "は",
+        "どこ",
+        "です",
+        "か",
+        "？",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "日本の",
+        "首都",
+        "は",
+        "東京",
+        "です",
+        "。",
+        "東京",
+        "は",
+        "日本の",
+        "政治",
+        "、",
+        "経済",
+        "、",
+        "文化",
+        "の中心",
+        "地",
+        "であり",
+        "、",
+        "東京都"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 18007, 44398, 2775, 169103, 87506, 3966, 33176, 255001, 255000, 255007,
+        18007, 44398, 2775, 15112, 87506, 1967, 15112, 2775, 18007, 11565, 2066, 44141, 2066, 13121,
+        185330, 3222, 24242, 2066, 41107
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "の",
+            "token_id": 2176,
+            "logprob": -0.7021,
+            "prob": 0.4954
+          },
+          {
+            "token": "庁",
+            "token_id": 51999,
+            "logprob": -0.9521,
+            "prob": 0.3857
+          },
+          {
+            "token": "として",
+            "token_id": 8550,
+            "logprob": -3.0312,
+            "prob": 0.0483
+          },
+          {
+            "token": "区",
+            "token_id": 4480,
+            "logprob": -3.4219,
+            "prob": 0.0327
+          },
+          {
+            "token": "は",
+            "token_id": 2775,
+            "logprob": -4.9688,
+            "prob": 0.007
+          },
+          {
+            "token": "が",
+            "token_id": 2990,
+            "logprob": -5.7812,
+            "prob": 0.0031
+          },
+          {
+            "token": "を",
+            "token_id": 2784,
+            "logprob": -5.8672,
+            "prob": 0.0028
+          },
+          {
+            "token": "の総",
+            "token_id": 232637,
+            "logprob": -6.1016,
+            "prob": 0.0022
+          },
+          {
+            "token": "全体",
+            "token_id": 76446,
+            "logprob": -6.1172,
+            "prob": 0.0022
+          },
+          {
+            "token": "という",
+            "token_id": 14512,
+            "logprob": -6.5078,
+            "prob": 0.0015
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "区",
+        "token_id": 4480,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 20,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>日本の首都はどこですか？<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>日本の首都は東京です。東京は日本の政治、経済、文化の中心地であり、東京都区",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "日本の",
+        "首都",
+        "は",
+        "どこ",
+        "です",
+        "か",
+        "？",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "日本の",
+        "首都",
+        "は",
+        "東京",
+        "です",
+        "。",
+        "東京",
+        "は",
+        "日本の",
+        "政治",
+        "、",
+        "経済",
+        "、",
+        "文化",
+        "の中心",
+        "地",
+        "であり",
+        "、",
+        "東京都",
+        "区"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 18007, 44398, 2775, 169103, 87506, 3966, 33176, 255001, 255000, 255007,
+        18007, 44398, 2775, 15112, 87506, 1967, 15112, 2775, 18007, 11565, 2066, 44141, 2066, 13121,
+        185330, 3222, 24242, 2066, 41107, 4480
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "部",
+            "token_id": 3228,
+            "logprob": -0.0289,
+            "prob": 0.9717
+          },
+          {
+            "token": "部に",
+            "token_id": 106789,
+            "logprob": -4.0898,
+            "prob": 0.0167
+          },
+          {
+            "token": "部の",
+            "token_id": 79623,
+            "logprob": -5.0195,
+            "prob": 0.0066
+          },
+          {
+            "token": "部は",
+            "token_id": 169791,
+            "logprob": -6.3398,
+            "prob": 0.0018
+          },
+          {
+            "token": "部が",
+            "token_id": 210391,
+            "logprob": -6.5977,
+            "prob": 0.0014
+          },
+          {
+            "token": "部を",
+            "token_id": 223473,
+            "logprob": -6.5977,
+            "prob": 0.0014
+          },
+          {
+            "token": "Ġbộ",
+            "token_id": 11471,
+            "logprob": -8.8516,
+            "prob": 0.0001
+          },
+          {
+            "token": "府",
+            "token_id": 6747,
+            "logprob": -9.3438,
+            "prob": 0.0001
+          },
+          {
+            "token": "部的",
+            "token_id": 74134,
+            "logprob": -10.3828,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠBộ",
+            "token_id": 25531,
+            "logprob": -10.6562,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "部",
+        "token_id": 3228,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 21,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>日本の首都はどこですか？<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>日本の首都は東京です。東京は日本の政治、経済、文化の中心地であり、東京都区部",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "日本の",
+        "首都",
+        "は",
+        "どこ",
+        "です",
+        "か",
+        "？",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "日本の",
+        "首都",
+        "は",
+        "東京",
+        "です",
+        "。",
+        "東京",
+        "は",
+        "日本の",
+        "政治",
+        "、",
+        "経済",
+        "、",
+        "文化",
+        "の中心",
+        "地",
+        "であり",
+        "、",
+        "東京都",
+        "区",
+        "部"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 18007, 44398, 2775, 169103, 87506, 3966, 33176, 255001, 255000, 255007,
+        18007, 44398, 2775, 15112, 87506, 1967, 15112, 2775, 18007, 11565, 2066, 44141, 2066, 13121,
+        185330, 3222, 24242, 2066, 41107, 4480, 3228
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "（",
+            "token_id": 2285,
+            "logprob": -0.0079,
+            "prob": 0.9922
+          },
+          {
+            "token": "を含む",
+            "token_id": 78542,
+            "logprob": -6.0234,
+            "prob": 0.0024
+          },
+          {
+            "token": "とその",
+            "token_id": 113735,
+            "logprob": -6.5391,
+            "prob": 0.0014
+          },
+          {
+            "token": "を中心に",
+            "token_id": 108326,
+            "logprob": -6.5469,
+            "prob": 0.0014
+          },
+          {
+            "token": "と",
+            "token_id": 2745,
+            "logprob": -6.9062,
+            "prob": 0.001
+          },
+          {
+            "token": "人口",
+            "token_id": 9540,
+            "logprob": -8.1094,
+            "prob": 0.0003
+          },
+          {
+            "token": "Ġ(",
+            "token_id": 1737,
+            "logprob": -8.3047,
+            "prob": 0.0002
+          },
+          {
+            "token": "および",
+            "token_id": 35024,
+            "logprob": -9.1172,
+            "prob": 0.0001
+          },
+          {
+            "token": "として",
+            "token_id": 8550,
+            "logprob": -9.125,
+            "prob": 0.0001
+          },
+          {
+            "token": "を中心",
+            "token_id": 75838,
+            "logprob": -9.1484,
+            "prob": 0.0001
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "（",
+        "token_id": 2285,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 22,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>日本の首都はどこですか？<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>日本の首都は東京です。東京は日本の政治、経済、文化の中心地であり、東京都区部（",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "日本の",
+        "首都",
+        "は",
+        "どこ",
+        "です",
+        "か",
+        "？",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "日本の",
+        "首都",
+        "は",
+        "東京",
+        "です",
+        "。",
+        "東京",
+        "は",
+        "日本の",
+        "政治",
+        "、",
+        "経済",
+        "、",
+        "文化",
+        "の中心",
+        "地",
+        "であり",
+        "、",
+        "東京都",
+        "区",
+        "部",
+        "（"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 18007, 44398, 2775, 169103, 87506, 3966, 33176, 255001, 255000, 255007,
+        18007, 44398, 2775, 15112, 87506, 1967, 15112, 2775, 18007, 11565, 2066, 44141, 2066, 13121,
+        185330, 3222, 24242, 2066, 41107, 4480, 3228, 2285
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "2",
+            "token_id": 25,
+            "logprob": -0.6494,
+            "prob": 0.5225
+          },
+          {
+            "token": "東京",
+            "token_id": 15112,
+            "logprob": -1.3525,
+            "prob": 0.2585
+          },
+          {
+            "token": "都",
+            "token_id": 6026,
+            "logprob": -2.1094,
+            "prob": 0.1212
+          },
+          {
+            "token": "東京都",
+            "token_id": 41107,
+            "logprob": -3.3828,
+            "prob": 0.0339
+          },
+          {
+            "token": "通称",
+            "token_id": 96349,
+            "logprob": -4.5,
+            "prob": 0.0111
+          },
+          {
+            "token": "首都",
+            "token_id": 44398,
+            "logprob": -5.0391,
+            "prob": 0.0065
+          },
+          {
+            "token": "都会",
+            "token_id": 66959,
+            "logprob": -5.1875,
+            "prob": 0.0056
+          },
+          {
+            "token": "Tokyo",
+            "token_id": 92054,
+            "logprob": -6.1172,
+            "prob": 0.0022
+          },
+          {
+            "token": "大都会",
+            "token_id": 254590,
+            "logprob": -6.1875,
+            "prob": 0.0021
+          },
+          {
+            "token": "または",
+            "token_id": 58472,
+            "logprob": -6.6328,
+            "prob": 0.0013
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "2",
+        "token_id": 25,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 23,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>日本の首都はどこですか？<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>日本の首都は東京です。東京は日本の政治、経済、文化の中心地であり、東京都区部（2",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "日本の",
+        "首都",
+        "は",
+        "どこ",
+        "です",
+        "か",
+        "？",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "日本の",
+        "首都",
+        "は",
+        "東京",
+        "です",
+        "。",
+        "東京",
+        "は",
+        "日本の",
+        "政治",
+        "、",
+        "経済",
+        "、",
+        "文化",
+        "の中心",
+        "地",
+        "であり",
+        "、",
+        "東京都",
+        "区",
+        "部",
+        "（",
+        "2"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 18007, 44398, 2775, 169103, 87506, 3966, 33176, 255001, 255000, 255007,
+        18007, 44398, 2775, 15112, 87506, 1967, 15112, 2775, 18007, 11565, 2066, 44141, 2066, 13121,
+        185330, 3222, 24242, 2066, 41107, 4480, 3228, 2285, 25
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "3",
+            "token_id": 26,
+            "logprob": -0.0,
+            "prob": 1.0
+          },
+          {
+            "token": "３",
+            "token_id": 227391,
+            "logprob": -16.6562,
+            "prob": 0.0
+          },
+          {
+            "token": "0",
+            "token_id": 23,
+            "logprob": -16.5625,
+            "prob": 0.0
+          },
+          {
+            "token": "4",
+            "token_id": 27,
+            "logprob": -16.5312,
+            "prob": 0.0
+          },
+          {
+            "token": "<SEP>",
+            "token_id": 3,
+            "logprob": -35.5938,
+            "prob": 0.0
+          },
+          {
+            "token": "<CLS>",
+            "token_id": 2,
+            "logprob": -35.1562,
+            "prob": 0.0
+          },
+          {
+            "token": "<MASK_TOKEN>",
+            "token_id": 4,
+            "logprob": -34.9375,
+            "prob": 0.0
+          },
+          {
+            "token": "<BOS_TOKEN>",
+            "token_id": 5,
+            "logprob": -32.875,
+            "prob": 0.0
+          },
+          {
+            "token": "<PAD>",
+            "token_id": 0,
+            "logprob": -34.9688,
+            "prob": 0.0
+          },
+          {
+            "token": "<UNK>",
+            "token_id": 1,
+            "logprob": -34.1875,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "3",
+        "token_id": 26,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 24,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>日本の首都はどこですか？<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>日本の首都は東京です。東京は日本の政治、経済、文化の中心地であり、東京都区部（23",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "日本の",
+        "首都",
+        "は",
+        "どこ",
+        "です",
+        "か",
+        "？",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "日本の",
+        "首都",
+        "は",
+        "東京",
+        "です",
+        "。",
+        "東京",
+        "は",
+        "日本の",
+        "政治",
+        "、",
+        "経済",
+        "、",
+        "文化",
+        "の中心",
+        "地",
+        "であり",
+        "、",
+        "東京都",
+        "区",
+        "部",
+        "（",
+        "2",
+        "3"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 18007, 44398, 2775, 169103, 87506, 3966, 33176, 255001, 255000, 255007,
+        18007, 44398, 2775, 15112, 87506, 1967, 15112, 2775, 18007, 11565, 2066, 44141, 2066, 13121,
+        185330, 3222, 24242, 2066, 41107, 4480, 3228, 2285, 25, 26
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "区",
+            "token_id": 4480,
+            "logprob": -0.01,
+            "prob": 0.9902
+          },
+          {
+            "token": "特別",
+            "token_id": 30515,
+            "logprob": -5.1992,
+            "prob": 0.0055
+          },
+          {
+            "token": "区の",
+            "token_id": 91510,
+            "logprob": -6.082,
+            "prob": 0.0023
+          },
+          {
+            "token": "區",
+            "token_id": 7501,
+            "logprob": -7.7227,
+            "prob": 0.0004
+          },
+          {
+            "token": "区内",
+            "token_id": 124915,
+            "logprob": -8.2188,
+            "prob": 0.0003
+          },
+          {
+            "token": "区分",
+            "token_id": 107333,
+            "logprob": -8.4297,
+            "prob": 0.0002
+          },
+          {
+            "token": "行政区",
+            "token_id": 34003,
+            "logprob": -9.125,
+            "prob": 0.0001
+          },
+          {
+            "token": "の",
+            "token_id": 2176,
+            "logprob": -9.2031,
+            "prob": 0.0001
+          },
+          {
+            "token": "特",
+            "token_id": 4362,
+            "logprob": -9.2812,
+            "prob": 0.0001
+          },
+          {
+            "token": "区的",
+            "token_id": 47077,
+            "logprob": -9.5391,
+            "prob": 0.0001
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "区",
+        "token_id": 4480,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 25,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>日本の首都はどこですか？<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>日本の首都は東京です。東京は日本の政治、経済、文化の中心地であり、東京都区部（23区",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "日本の",
+        "首都",
+        "は",
+        "どこ",
+        "です",
+        "か",
+        "？",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "日本の",
+        "首都",
+        "は",
+        "東京",
+        "です",
+        "。",
+        "東京",
+        "は",
+        "日本の",
+        "政治",
+        "、",
+        "経済",
+        "、",
+        "文化",
+        "の中心",
+        "地",
+        "であり",
+        "、",
+        "東京都",
+        "区",
+        "部",
+        "（",
+        "2",
+        "3",
+        "区"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 18007, 44398, 2775, 169103, 87506, 3966, 33176, 255001, 255000, 255007,
+        18007, 44398, 2775, 15112, 87506, 1967, 15112, 2775, 18007, 11565, 2066, 44141, 2066, 13121,
+        185330, 3222, 24242, 2066, 41107, 4480, 3228, 2285, 25, 26, 4480
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "）",
+            "token_id": 2286,
+            "logprob": -0.0,
+            "prob": 1.0
+          },
+          {
+            "token": "）、",
+            "token_id": 10026,
+            "logprob": -12.2891,
+            "prob": 0.0
+          },
+          {
+            "token": "\")",
+            "token_id": 3348,
+            "logprob": -13.9766,
+            "prob": 0.0
+          },
+          {
+            "token": ")",
+            "token_id": 16,
+            "logprob": -14.0312,
+            "prob": 0.0
+          },
+          {
+            "token": "、",
+            "token_id": 2066,
+            "logprob": -15.5859,
+            "prob": 0.0
+          },
+          {
+            "token": "）・",
+            "token_id": 86801,
+            "logprob": -15.8594,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġ）",
+            "token_id": 33210,
+            "logprob": -16.1719,
+            "prob": 0.0
+          },
+          {
+            "token": "と呼ばれる",
+            "token_id": 63285,
+            "logprob": -16.2656,
+            "prob": 0.0
+          },
+          {
+            "token": "）。",
+            "token_id": 8151,
+            "logprob": -16.8281,
+            "prob": 0.0
+          },
+          {
+            "token": "：",
+            "token_id": 3168,
+            "logprob": -16.8594,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "）",
+        "token_id": 2286,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 26,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>日本の首都はどこですか？<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>日本の首都は東京です。東京は日本の政治、経済、文化の中心地であり、東京都区部（23区）",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "日本の",
+        "首都",
+        "は",
+        "どこ",
+        "です",
+        "か",
+        "？",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "日本の",
+        "首都",
+        "は",
+        "東京",
+        "です",
+        "。",
+        "東京",
+        "は",
+        "日本の",
+        "政治",
+        "、",
+        "経済",
+        "、",
+        "文化",
+        "の中心",
+        "地",
+        "であり",
+        "、",
+        "東京都",
+        "区",
+        "部",
+        "（",
+        "2",
+        "3",
+        "区",
+        "）"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 18007, 44398, 2775, 169103, 87506, 3966, 33176, 255001, 255000, 255007,
+        18007, 44398, 2775, 15112, 87506, 1967, 15112, 2775, 18007, 11565, 2066, 44141, 2066, 13121,
+        185330, 3222, 24242, 2066, 41107, 4480, 3228, 2285, 25, 26, 4480, 2286
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "と",
+            "token_id": 2745,
+            "logprob": -0.3074,
+            "prob": 0.7354
+          },
+          {
+            "token": "とその",
+            "token_id": 113735,
+            "logprob": -1.9482,
+            "prob": 0.1426
+          },
+          {
+            "token": "を含む",
+            "token_id": 78542,
+            "logprob": -3.041,
+            "prob": 0.0478
+          },
+          {
+            "token": "を中心に",
+            "token_id": 108326,
+            "logprob": -3.1973,
+            "prob": 0.0409
+          },
+          {
+            "token": "および",
+            "token_id": 35024,
+            "logprob": -4.8008,
+            "prob": 0.0082
+          },
+          {
+            "token": "の",
+            "token_id": 2176,
+            "logprob": -4.9883,
+            "prob": 0.0068
+          },
+          {
+            "token": "人口",
+            "token_id": 9540,
+            "logprob": -5.4648,
+            "prob": 0.0042
+          },
+          {
+            "token": "を",
+            "token_id": 2784,
+            "logprob": -5.6523,
+            "prob": 0.0035
+          },
+          {
+            "token": "を中心とした",
+            "token_id": 240121,
+            "logprob": -6.5039,
+            "prob": 0.0015
+          },
+          {
+            "token": "を中心",
+            "token_id": 75838,
+            "logprob": -6.7461,
+            "prob": 0.0012
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "と",
+        "token_id": 2745,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 27,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>日本の首都はどこですか？<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>日本の首都は東京です。東京は日本の政治、経済、文化の中心地であり、東京都区部（23区）と",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "日本の",
+        "首都",
+        "は",
+        "どこ",
+        "です",
+        "か",
+        "？",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "日本の",
+        "首都",
+        "は",
+        "東京",
+        "です",
+        "。",
+        "東京",
+        "は",
+        "日本の",
+        "政治",
+        "、",
+        "経済",
+        "、",
+        "文化",
+        "の中心",
+        "地",
+        "であり",
+        "、",
+        "東京都",
+        "区",
+        "部",
+        "（",
+        "2",
+        "3",
+        "区",
+        "）",
+        "と"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 18007, 44398, 2775, 169103, 87506, 3966, 33176, 255001, 255000, 255007,
+        18007, 44398, 2775, 15112, 87506, 1967, 15112, 2775, 18007, 11565, 2066, 44141, 2066, 13121,
+        185330, 3222, 24242, 2066, 41107, 4480, 3228, 2285, 25, 26, 4480, 2286, 2745
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "その",
+            "token_id": 10119,
+            "logprob": -0.0894,
+            "prob": 0.9146
+          },
+          {
+            "token": "周辺",
+            "token_id": 70576,
+            "logprob": -3.7617,
+            "prob": 0.0233
+          },
+          {
+            "token": "東京都",
+            "token_id": 41107,
+            "logprob": -3.9805,
+            "prob": 0.0187
+          },
+          {
+            "token": "それ",
+            "token_id": 21648,
+            "logprob": -4.207,
+            "prob": 0.0149
+          },
+          {
+            "token": "周辺の",
+            "token_id": 229081,
+            "logprob": -5.2383,
+            "prob": 0.0053
+          },
+          {
+            "token": "都",
+            "token_id": 6026,
+            "logprob": -6.0508,
+            "prob": 0.0024
+          },
+          {
+            "token": "それを",
+            "token_id": 98104,
+            "logprob": -6.3242,
+            "prob": 0.0018
+          },
+          {
+            "token": "近隣",
+            "token_id": 250060,
+            "logprob": -6.4414,
+            "prob": 0.0016
+          },
+          {
+            "token": "周囲",
+            "token_id": 133594,
+            "logprob": -6.6992,
+            "prob": 0.0012
+          },
+          {
+            "token": "2",
+            "token_id": 25,
+            "logprob": -6.8008,
+            "prob": 0.0011
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "その",
+        "token_id": 10119,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 28,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>日本の首都はどこですか？<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>日本の首都は東京です。東京は日本の政治、経済、文化の中心地であり、東京都区部（23区）とその",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "日本の",
+        "首都",
+        "は",
+        "どこ",
+        "です",
+        "か",
+        "？",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "日本の",
+        "首都",
+        "は",
+        "東京",
+        "です",
+        "。",
+        "東京",
+        "は",
+        "日本の",
+        "政治",
+        "、",
+        "経済",
+        "、",
+        "文化",
+        "の中心",
+        "地",
+        "であり",
+        "、",
+        "東京都",
+        "区",
+        "部",
+        "（",
+        "2",
+        "3",
+        "区",
+        "）",
+        "と",
+        "その"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 18007, 44398, 2775, 169103, 87506, 3966, 33176, 255001, 255000, 255007,
+        18007, 44398, 2775, 15112, 87506, 1967, 15112, 2775, 18007, 11565, 2066, 44141, 2066, 13121,
+        185330, 3222, 24242, 2066, 41107, 4480, 3228, 2285, 25, 26, 4480, 2286, 2745, 10119
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "周辺",
+            "token_id": 70576,
+            "logprob": -0.075,
+            "prob": 0.9277
+          },
+          {
+            "token": "周辺の",
+            "token_id": 229081,
+            "logprob": -3.6523,
+            "prob": 0.0259
+          },
+          {
+            "token": "郊外",
+            "token_id": 214594,
+            "logprob": -3.918,
+            "prob": 0.0199
+          },
+          {
+            "token": "周囲",
+            "token_id": 133594,
+            "logprob": -4.2461,
+            "prob": 0.0143
+          },
+          {
+            "token": "近郊",
+            "token_id": 180774,
+            "logprob": -5.0742,
+            "prob": 0.0063
+          },
+          {
+            "token": "Ġ주변",
+            "token_id": 76191,
+            "logprob": -7.0664,
+            "prob": 0.0009
+          },
+          {
+            "token": "近隣",
+            "token_id": 250060,
+            "logprob": -7.082,
+            "prob": 0.0008
+          },
+          {
+            "token": "周边",
+            "token_id": 75443,
+            "logprob": -7.3164,
+            "prob": 0.0007
+          },
+          {
+            "token": "隣接",
+            "token_id": 119347,
+            "logprob": -8.1406,
+            "prob": 0.0003
+          },
+          {
+            "token": "付近",
+            "token_id": 99658,
+            "logprob": -8.2891,
+            "prob": 0.0003
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "周辺",
+        "token_id": 70576,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 29,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>日本の首都はどこですか？<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>日本の首都は東京です。東京は日本の政治、経済、文化の中心地であり、東京都区部（23区）とその周辺",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "日本の",
+        "首都",
+        "は",
+        "どこ",
+        "です",
+        "か",
+        "？",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "日本の",
+        "首都",
+        "は",
+        "東京",
+        "です",
+        "。",
+        "東京",
+        "は",
+        "日本の",
+        "政治",
+        "、",
+        "経済",
+        "、",
+        "文化",
+        "の中心",
+        "地",
+        "であり",
+        "、",
+        "東京都",
+        "区",
+        "部",
+        "（",
+        "2",
+        "3",
+        "区",
+        "）",
+        "と",
+        "その",
+        "周辺"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 18007, 44398, 2775, 169103, 87506, 3966, 33176, 255001, 255000, 255007,
+        18007, 44398, 2775, 15112, 87506, 1967, 15112, 2775, 18007, 11565, 2066, 44141, 2066, 13121,
+        185330, 3222, 24242, 2066, 41107, 4480, 3228, 2285, 25, 26, 4480, 2286, 2745, 10119, 70576
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "地域",
+            "token_id": 32886,
+            "logprob": -0.4065,
+            "prob": 0.666
+          },
+          {
+            "token": "地域の",
+            "token_id": 159549,
+            "logprob": -2.8984,
+            "prob": 0.0551
+          },
+          {
+            "token": "部",
+            "token_id": 3228,
+            "logprob": -3.6328,
+            "prob": 0.0264
+          },
+          {
+            "token": "を結ぶ",
+            "token_id": 151914,
+            "logprob": -3.9141,
+            "prob": 0.02
+          },
+          {
+            "token": "自治体",
+            "token_id": 114225,
+            "logprob": -3.9453,
+            "prob": 0.0193
+          },
+          {
+            "token": "区域",
+            "token_id": 36796,
+            "logprob": -4.0781,
+            "prob": 0.0169
+          },
+          {
+            "token": "地方",
+            "token_id": 18095,
+            "logprob": -4.5391,
+            "prob": 0.0107
+          },
+          {
+            "token": "都市",
+            "token_id": 27970,
+            "logprob": -4.5625,
+            "prob": 0.0104
+          },
+          {
+            "token": "圏",
+            "token_id": 85384,
+            "logprob": -4.7422,
+            "prob": 0.0087
+          },
+          {
+            "token": "都",
+            "token_id": 6026,
+            "logprob": -4.8672,
+            "prob": 0.0077
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "を結ぶ",
+        "token_id": 151914,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 30,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>日本の首都はどこですか？<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>日本の首都は東京です。東京は日本の政治、経済、文化の中心地であり、東京都区部（23区）とその周辺を結ぶ",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "日本の",
+        "首都",
+        "は",
+        "どこ",
+        "です",
+        "か",
+        "？",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "日本の",
+        "首都",
+        "は",
+        "東京",
+        "です",
+        "。",
+        "東京",
+        "は",
+        "日本の",
+        "政治",
+        "、",
+        "経済",
+        "、",
+        "文化",
+        "の中心",
+        "地",
+        "であり",
+        "、",
+        "東京都",
+        "区",
+        "部",
+        "（",
+        "2",
+        "3",
+        "区",
+        "）",
+        "と",
+        "その",
+        "周辺",
+        "を結ぶ"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 18007, 44398, 2775, 169103, 87506, 3966, 33176, 255001, 255000, 255007,
+        18007, 44398, 2775, 15112, 87506, 1967, 15112, 2775, 18007, 11565, 2066, 44141, 2066, 13121,
+        185330, 3222, 24242, 2066, 41107, 4480, 3228, 2285, 25, 26, 4480, 2286, 2745, 10119, 70576,
+        151914
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "大",
+            "token_id": 2639,
+            "logprob": -1.5527,
+            "prob": 0.2117
+          },
+          {
+            "token": "広",
+            "token_id": 21353,
+            "logprob": -1.6387,
+            "prob": 0.1942
+          },
+          {
+            "token": "都市",
+            "token_id": 27970,
+            "logprob": -1.7246,
+            "prob": 0.1782
+          },
+          {
+            "token": "大規模な",
+            "token_id": 223870,
+            "logprob": -2.7715,
+            "prob": 0.0626
+          },
+          {
+            "token": "大きな",
+            "token_id": 73989,
+            "logprob": -2.9277,
+            "prob": 0.0535
+          },
+          {
+            "token": "首都",
+            "token_id": 44398,
+            "logprob": -3.0293,
+            "prob": 0.0484
+          },
+          {
+            "token": "ベ",
+            "token_id": 12112,
+            "logprob": -3.7168,
+            "prob": 0.0243
+          },
+          {
+            "token": "都会",
+            "token_id": 66959,
+            "logprob": -3.7793,
+            "prob": 0.0228
+          },
+          {
+            "token": "広域",
+            "token_id": 199330,
+            "logprob": -3.9668,
+            "prob": 0.0189
+          },
+          {
+            "token": "一",
+            "token_id": 2557,
+            "logprob": -4.0352,
+            "prob": 0.0177
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "一",
+        "token_id": 2557,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 31,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>日本の首都はどこですか？<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>日本の首都は東京です。東京は日本の政治、経済、文化の中心地であり、東京都区部（23区）とその周辺を結ぶ一",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "日本の",
+        "首都",
+        "は",
+        "どこ",
+        "です",
+        "か",
+        "？",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "日本の",
+        "首都",
+        "は",
+        "東京",
+        "です",
+        "。",
+        "東京",
+        "は",
+        "日本の",
+        "政治",
+        "、",
+        "経済",
+        "、",
+        "文化",
+        "の中心",
+        "地",
+        "であり",
+        "、",
+        "東京都",
+        "区",
+        "部",
+        "（",
+        "2",
+        "3",
+        "区",
+        "）",
+        "と",
+        "その",
+        "周辺",
+        "を結ぶ",
+        "一"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 18007, 44398, 2775, 169103, 87506, 3966, 33176, 255001, 255000, 255007,
+        18007, 44398, 2775, 15112, 87506, 1967, 15112, 2775, 18007, 11565, 2066, 44141, 2066, 13121,
+        185330, 3222, 24242, 2066, 41107, 4480, 3228, 2285, 25, 26, 4480, 2286, 2745, 10119, 70576,
+        151914, 2557
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "都",
+            "token_id": 6026,
+            "logprob": -0.6211,
+            "prob": 0.5376
+          },
+          {
+            "token": "大",
+            "token_id": 2639,
+            "logprob": -0.793,
+            "prob": 0.4526
+          },
+          {
+            "token": "帯",
+            "token_id": 39847,
+            "logprob": -6.2305,
+            "prob": 0.002
+          },
+          {
+            "token": "都会",
+            "token_id": 66959,
+            "logprob": -6.6055,
+            "prob": 0.0014
+          },
+          {
+            "token": "極",
+            "token_id": 23250,
+            "logprob": -7.1211,
+            "prob": 0.0008
+          },
+          {
+            "token": "都市",
+            "token_id": 27970,
+            "logprob": -7.3086,
+            "prob": 0.0007
+          },
+          {
+            "token": "巨大",
+            "token_id": 65059,
+            "logprob": -7.5117,
+            "prob": 0.0005
+          },
+          {
+            "token": "大きな",
+            "token_id": 73989,
+            "logprob": -7.6758,
+            "prob": 0.0005
+          },
+          {
+            "token": "大な",
+            "token_id": 119197,
+            "logprob": -7.8711,
+            "prob": 0.0004
+          },
+          {
+            "token": "巨",
+            "token_id": 22786,
+            "logprob": -7.8789,
+            "prob": 0.0004
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "都",
+        "token_id": 6026,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 32,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>日本の首都はどこですか？<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>日本の首都は東京です。東京は日本の政治、経済、文化の中心地であり、東京都区部（23区）とその周辺を結ぶ一都",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "日本の",
+        "首都",
+        "は",
+        "どこ",
+        "です",
+        "か",
+        "？",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "日本の",
+        "首都",
+        "は",
+        "東京",
+        "です",
+        "。",
+        "東京",
+        "は",
+        "日本の",
+        "政治",
+        "、",
+        "経済",
+        "、",
+        "文化",
+        "の中心",
+        "地",
+        "であり",
+        "、",
+        "東京都",
+        "区",
+        "部",
+        "（",
+        "2",
+        "3",
+        "区",
+        "）",
+        "と",
+        "その",
+        "周辺",
+        "を結ぶ",
+        "一",
+        "都"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 18007, 44398, 2775, 169103, 87506, 3966, 33176, 255001, 255000, 255007,
+        18007, 44398, 2775, 15112, 87506, 1967, 15112, 2775, 18007, 11565, 2066, 44141, 2066, 13121,
+        185330, 3222, 24242, 2066, 41107, 4480, 3228, 2285, 25, 26, 4480, 2286, 2745, 10119, 70576,
+        151914, 2557, 6026
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "三",
+            "token_id": 4729,
+            "logprob": -0.3733,
+            "prob": 0.6885
+          },
+          {
+            "token": "十三",
+            "token_id": 58738,
+            "logprob": -2.0293,
+            "prob": 0.1313
+          },
+          {
+            "token": "六",
+            "token_id": 10772,
+            "logprob": -2.6074,
+            "prob": 0.0737
+          },
+          {
+            "token": "三十",
+            "token_id": 40619,
+            "logprob": -3.1543,
+            "prob": 0.0427
+          },
+          {
+            "token": "３",
+            "token_id": 227391,
+            "logprob": -3.9668,
+            "prob": 0.0189
+          },
+          {
+            "token": "三重",
+            "token_id": 95197,
+            "logprob": -5.7344,
+            "prob": 0.0032
+          },
+          {
+            "token": "三百",
+            "token_id": 169936,
+            "logprob": -5.9922,
+            "prob": 0.0025
+          },
+          {
+            "token": "三日",
+            "token_id": 197750,
+            "logprob": -6.0,
+            "prob": 0.0025
+          },
+          {
+            "token": "（",
+            "token_id": 2285,
+            "logprob": -6.0391,
+            "prob": 0.0024
+          },
+          {
+            "token": "十二",
+            "token_id": 30763,
+            "logprob": -6.0469,
+            "prob": 0.0024
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "三",
+        "token_id": 4729,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 33,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>日本の首都はどこですか？<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>日本の首都は東京です。東京は日本の政治、経済、文化の中心地であり、東京都区部（23区）とその周辺を結ぶ一都三",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "日本の",
+        "首都",
+        "は",
+        "どこ",
+        "です",
+        "か",
+        "？",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "日本の",
+        "首都",
+        "は",
+        "東京",
+        "です",
+        "。",
+        "東京",
+        "は",
+        "日本の",
+        "政治",
+        "、",
+        "経済",
+        "、",
+        "文化",
+        "の中心",
+        "地",
+        "であり",
+        "、",
+        "東京都",
+        "区",
+        "部",
+        "（",
+        "2",
+        "3",
+        "区",
+        "）",
+        "と",
+        "その",
+        "周辺",
+        "を結ぶ",
+        "一",
+        "都",
+        "三"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 18007, 44398, 2775, 169103, 87506, 3966, 33176, 255001, 255000, 255007,
+        18007, 44398, 2775, 15112, 87506, 1967, 15112, 2775, 18007, 11565, 2066, 44141, 2066, 13121,
+        185330, 3222, 24242, 2066, 41107, 4480, 3228, 2285, 25, 26, 4480, 2286, 2745, 10119, 70576,
+        151914, 2557, 6026, 4729
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "県",
+            "token_id": 10274,
+            "logprob": -0.081,
+            "prob": 0.9224
+          },
+          {
+            "token": "府",
+            "token_id": 6747,
+            "logprob": -3.4863,
+            "prob": 0.0306
+          },
+          {
+            "token": "都",
+            "token_id": 6026,
+            "logprob": -4.6289,
+            "prob": 0.0098
+          },
+          {
+            "token": "県の",
+            "token_id": 51825,
+            "logprob": -5.0117,
+            "prob": 0.0067
+          },
+          {
+            "token": "圏",
+            "token_id": 85384,
+            "logprob": -6.0508,
+            "prob": 0.0024
+          },
+          {
+            "token": "方",
+            "token_id": 4161,
+            "logprob": -6.0977,
+            "prob": 0.0023
+          },
+          {
+            "token": "道",
+            "token_id": 4409,
+            "logprob": -6.7461,
+            "prob": 0.0012
+          },
+          {
+            "token": "郡",
+            "token_id": 12498,
+            "logprob": -6.8789,
+            "prob": 0.001
+          },
+          {
+            "token": "省",
+            "token_id": 5655,
+            "logprob": -7.2539,
+            "prob": 0.0007
+          },
+          {
+            "token": "市",
+            "token_id": 3697,
+            "logprob": -7.3477,
+            "prob": 0.0006
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "県",
+        "token_id": 10274,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 34,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>日本の首都はどこですか？<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>日本の首都は東京です。東京は日本の政治、経済、文化の中心地であり、東京都区部（23区）とその周辺を結ぶ一都三県",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "日本の",
+        "首都",
+        "は",
+        "どこ",
+        "です",
+        "か",
+        "？",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "日本の",
+        "首都",
+        "は",
+        "東京",
+        "です",
+        "。",
+        "東京",
+        "は",
+        "日本の",
+        "政治",
+        "、",
+        "経済",
+        "、",
+        "文化",
+        "の中心",
+        "地",
+        "であり",
+        "、",
+        "東京都",
+        "区",
+        "部",
+        "（",
+        "2",
+        "3",
+        "区",
+        "）",
+        "と",
+        "その",
+        "周辺",
+        "を結ぶ",
+        "一",
+        "都",
+        "三",
+        "県"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 18007, 44398, 2775, 169103, 87506, 3966, 33176, 255001, 255000, 255007,
+        18007, 44398, 2775, 15112, 87506, 1967, 15112, 2775, 18007, 11565, 2066, 44141, 2066, 13121,
+        185330, 3222, 24242, 2066, 41107, 4480, 3228, 2285, 25, 26, 4480, 2286, 2745, 10119, 70576,
+        151914, 2557, 6026, 4729, 10274
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "（",
+            "token_id": 2285,
+            "logprob": -0.0,
+            "prob": 1.0
+          },
+          {
+            "token": "Ġ（",
+            "token_id": 12773,
+            "logprob": -15.1172,
+            "prob": 0.0
+          },
+          {
+            "token": "（*",
+            "token_id": 100029,
+            "logprob": -15.2344,
+            "prob": 0.0
+          },
+          {
+            "token": "で構成",
+            "token_id": 171026,
+            "logprob": -16.0312,
+            "prob": 0.0
+          },
+          {
+            "token": "（「",
+            "token_id": 113466,
+            "logprob": -16.4062,
+            "prob": 0.0
+          },
+          {
+            "token": "と呼ばれる",
+            "token_id": 63285,
+            "logprob": -17.1719,
+            "prob": 0.0
+          },
+          {
+            "token": "からなる",
+            "token_id": 174877,
+            "logprob": -16.6406,
+            "prob": 0.0
+          },
+          {
+            "token": "<CLS>",
+            "token_id": 2,
+            "logprob": -31.5,
+            "prob": 0.0
+          },
+          {
+            "token": "<UNK>",
+            "token_id": 1,
+            "logprob": -29.2656,
+            "prob": 0.0
+          },
+          {
+            "token": "<PAD>",
+            "token_id": 0,
+            "logprob": -31.4219,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "（",
+        "token_id": 2285,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 35,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>日本の首都はどこですか？<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>日本の首都は東京です。東京は日本の政治、経済、文化の中心地であり、東京都区部（23区）とその周辺を結ぶ一都三県（",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "日本の",
+        "首都",
+        "は",
+        "どこ",
+        "です",
+        "か",
+        "？",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "日本の",
+        "首都",
+        "は",
+        "東京",
+        "です",
+        "。",
+        "東京",
+        "は",
+        "日本の",
+        "政治",
+        "、",
+        "経済",
+        "、",
+        "文化",
+        "の中心",
+        "地",
+        "であり",
+        "、",
+        "東京都",
+        "区",
+        "部",
+        "（",
+        "2",
+        "3",
+        "区",
+        "）",
+        "と",
+        "その",
+        "周辺",
+        "を結ぶ",
+        "一",
+        "都",
+        "三",
+        "県",
+        "（"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 18007, 44398, 2775, 169103, 87506, 3966, 33176, 255001, 255000, 255007,
+        18007, 44398, 2775, 15112, 87506, 1967, 15112, 2775, 18007, 11565, 2066, 44141, 2066, 13121,
+        185330, 3222, 24242, 2066, 41107, 4480, 3228, 2285, 25, 26, 4480, 2286, 2745, 10119, 70576,
+        151914, 2557, 6026, 4729, 10274, 2285
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "東京都",
+            "token_id": 41107,
+            "logprob": -0.0596,
+            "prob": 0.9419
+          },
+          {
+            "token": "東京",
+            "token_id": 15112,
+            "logprob": -2.9512,
+            "prob": 0.0523
+          },
+          {
+            "token": "Ġ東京都",
+            "token_id": 157526,
+            "logprob": -6.1523,
+            "prob": 0.0021
+          },
+          {
+            "token": "Tokyo",
+            "token_id": 92054,
+            "logprob": -7.2773,
+            "prob": 0.0007
+          },
+          {
+            "token": "神奈川県",
+            "token_id": 143696,
+            "logprob": -7.3164,
+            "prob": 0.0007
+          },
+          {
+            "token": "Ġ도쿄",
+            "token_id": 69969,
+            "logprob": -8.0391,
+            "prob": 0.0003
+          },
+          {
+            "token": "埼玉県",
+            "token_id": 138323,
+            "logprob": -8.2188,
+            "prob": 0.0003
+          },
+          {
+            "token": "千葉県",
+            "token_id": 140515,
+            "logprob": -8.5703,
+            "prob": 0.0002
+          },
+          {
+            "token": "関東",
+            "token_id": 90153,
+            "logprob": -8.6094,
+            "prob": 0.0002
+          },
+          {
+            "token": "首都",
+            "token_id": 44398,
+            "logprob": -8.7891,
+            "prob": 0.0002
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "東京都",
+        "token_id": 41107,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 36,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>日本の首都はどこですか？<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>日本の首都は東京です。東京は日本の政治、経済、文化の中心地であり、東京都区部（23区）とその周辺を結ぶ一都三県（東京都",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "日本の",
+        "首都",
+        "は",
+        "どこ",
+        "です",
+        "か",
+        "？",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "日本の",
+        "首都",
+        "は",
+        "東京",
+        "です",
+        "。",
+        "東京",
+        "は",
+        "日本の",
+        "政治",
+        "、",
+        "経済",
+        "、",
+        "文化",
+        "の中心",
+        "地",
+        "であり",
+        "、",
+        "東京都",
+        "区",
+        "部",
+        "（",
+        "2",
+        "3",
+        "区",
+        "）",
+        "と",
+        "その",
+        "周辺",
+        "を結ぶ",
+        "一",
+        "都",
+        "三",
+        "県",
+        "（",
+        "東京都"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 18007, 44398, 2775, 169103, 87506, 3966, 33176, 255001, 255000, 255007,
+        18007, 44398, 2775, 15112, 87506, 1967, 15112, 2775, 18007, 11565, 2066, 44141, 2066, 13121,
+        185330, 3222, 24242, 2066, 41107, 4480, 3228, 2285, 25, 26, 4480, 2286, 2745, 10119, 70576,
+        151914, 2557, 6026, 4729, 10274, 2285, 41107
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "、",
+            "token_id": 2066,
+            "logprob": -0.0,
+            "prob": 1.0
+          },
+          {
+            "token": "＋",
+            "token_id": 159219,
+            "logprob": -13.0156,
+            "prob": 0.0
+          },
+          {
+            "token": "・",
+            "token_id": 3304,
+            "logprob": -13.3906,
+            "prob": 0.0
+          },
+          {
+            "token": "と",
+            "token_id": 2745,
+            "logprob": -15.3594,
+            "prob": 0.0
+          },
+          {
+            "token": "（",
+            "token_id": 2285,
+            "logprob": -16.0156,
+            "prob": 0.0
+          },
+          {
+            "token": "،",
+            "token_id": 3196,
+            "logprob": -15.75,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġ+",
+            "token_id": 2743,
+            "logprob": -16.7656,
+            "prob": 0.0
+          },
+          {
+            "token": "+",
+            "token_id": 18,
+            "logprob": -16.2969,
+            "prob": 0.0
+          },
+          {
+            "token": "だけでなく",
+            "token_id": 155734,
+            "logprob": -17.1406,
+            "prob": 0.0
+          },
+          {
+            "token": "<PAD>",
+            "token_id": 0,
+            "logprob": -31.375,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "、",
+        "token_id": 2066,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 37,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>日本の首都はどこですか？<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>日本の首都は東京です。東京は日本の政治、経済、文化の中心地であり、東京都区部（23区）とその周辺を結ぶ一都三県（東京都、",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "日本の",
+        "首都",
+        "は",
+        "どこ",
+        "です",
+        "か",
+        "？",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "日本の",
+        "首都",
+        "は",
+        "東京",
+        "です",
+        "。",
+        "東京",
+        "は",
+        "日本の",
+        "政治",
+        "、",
+        "経済",
+        "、",
+        "文化",
+        "の中心",
+        "地",
+        "であり",
+        "、",
+        "東京都",
+        "区",
+        "部",
+        "（",
+        "2",
+        "3",
+        "区",
+        "）",
+        "と",
+        "その",
+        "周辺",
+        "を結ぶ",
+        "一",
+        "都",
+        "三",
+        "県",
+        "（",
+        "東京都",
+        "、"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 18007, 44398, 2775, 169103, 87506, 3966, 33176, 255001, 255000, 255007,
+        18007, 44398, 2775, 15112, 87506, 1967, 15112, 2775, 18007, 11565, 2066, 44141, 2066, 13121,
+        185330, 3222, 24242, 2066, 41107, 4480, 3228, 2285, 25, 26, 4480, 2286, 2745, 10119, 70576,
+        151914, 2557, 6026, 4729, 10274, 2285, 41107, 2066
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "神奈川県",
+            "token_id": 143696,
+            "logprob": -0.101,
+            "prob": 0.9038
+          },
+          {
+            "token": "埼玉県",
+            "token_id": 138323,
+            "logprob": -3.1328,
+            "prob": 0.0436
+          },
+          {
+            "token": "神奈川",
+            "token_id": 72715,
+            "logprob": -3.4609,
+            "prob": 0.0314
+          },
+          {
+            "token": "千葉県",
+            "token_id": 140515,
+            "logprob": -5.1953,
+            "prob": 0.0055
+          },
+          {
+            "token": "茨城県",
+            "token_id": 195661,
+            "logprob": -6.0312,
+            "prob": 0.0024
+          },
+          {
+            "token": "ĠKanagawa",
+            "token_id": 135126,
+            "logprob": -6.7422,
+            "prob": 0.0012
+          },
+          {
+            "token": "Ġ神奈川",
+            "token_id": 250758,
+            "logprob": -6.9609,
+            "prob": 0.0009
+          },
+          {
+            "token": "福島県",
+            "token_id": 199664,
+            "logprob": -7.0547,
+            "prob": 0.0009
+          },
+          {
+            "token": "関東",
+            "token_id": 90153,
+            "logprob": -7.5938,
+            "prob": 0.0005
+          },
+          {
+            "token": "埼玉",
+            "token_id": 65512,
+            "logprob": -7.6797,
+            "prob": 0.0005
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "神奈川県",
+        "token_id": 143696,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 38,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>日本の首都はどこですか？<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>日本の首都は東京です。東京は日本の政治、経済、文化の中心地であり、東京都区部（23区）とその周辺を結ぶ一都三県（東京都、神奈川県",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "日本の",
+        "首都",
+        "は",
+        "どこ",
+        "です",
+        "か",
+        "？",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "日本の",
+        "首都",
+        "は",
+        "東京",
+        "です",
+        "。",
+        "東京",
+        "は",
+        "日本の",
+        "政治",
+        "、",
+        "経済",
+        "、",
+        "文化",
+        "の中心",
+        "地",
+        "であり",
+        "、",
+        "東京都",
+        "区",
+        "部",
+        "（",
+        "2",
+        "3",
+        "区",
+        "）",
+        "と",
+        "その",
+        "周辺",
+        "を結ぶ",
+        "一",
+        "都",
+        "三",
+        "県",
+        "（",
+        "東京都",
+        "、",
+        "神奈川県"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 18007, 44398, 2775, 169103, 87506, 3966, 33176, 255001, 255000, 255007,
+        18007, 44398, 2775, 15112, 87506, 1967, 15112, 2775, 18007, 11565, 2066, 44141, 2066, 13121,
+        185330, 3222, 24242, 2066, 41107, 4480, 3228, 2285, 25, 26, 4480, 2286, 2745, 10119, 70576,
+        151914, 2557, 6026, 4729, 10274, 2285, 41107, 2066, 143696
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "、",
+            "token_id": 2066,
+            "logprob": -0.0,
+            "prob": 1.0
+          },
+          {
+            "token": "،",
+            "token_id": 3196,
+            "logprob": -14.3125,
+            "prob": 0.0
+          },
+          {
+            "token": "<PAD>",
+            "token_id": 0,
+            "logprob": -36.5938,
+            "prob": 0.0
+          },
+          {
+            "token": "<UNK>",
+            "token_id": 1,
+            "logprob": -35.9688,
+            "prob": 0.0
+          },
+          {
+            "token": "<EOS_TOKEN>",
+            "token_id": 6,
+            "logprob": -38.0625,
+            "prob": 0.0
+          },
+          {
+            "token": "<EOP_TOKEN>",
+            "token_id": 7,
+            "logprob": -36.6562,
+            "prob": 0.0
+          },
+          {
+            "token": "<BOS_TOKEN>",
+            "token_id": 5,
+            "logprob": -32.0312,
+            "prob": 0.0
+          },
+          {
+            "token": "<MASK_TOKEN>",
+            "token_id": 4,
+            "logprob": -36.625,
+            "prob": 0.0
+          },
+          {
+            "token": "<CLS>",
+            "token_id": 2,
+            "logprob": -37.6562,
+            "prob": 0.0
+          },
+          {
+            "token": "<SEP>",
+            "token_id": 3,
+            "logprob": -36.5312,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "、",
+        "token_id": 2066,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 39,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>日本の首都はどこですか？<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>日本の首都は東京です。東京は日本の政治、経済、文化の中心地であり、東京都区部（23区）とその周辺を結ぶ一都三県（東京都、神奈川県、",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "日本の",
+        "首都",
+        "は",
+        "どこ",
+        "です",
+        "か",
+        "？",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "日本の",
+        "首都",
+        "は",
+        "東京",
+        "です",
+        "。",
+        "東京",
+        "は",
+        "日本の",
+        "政治",
+        "、",
+        "経済",
+        "、",
+        "文化",
+        "の中心",
+        "地",
+        "であり",
+        "、",
+        "東京都",
+        "区",
+        "部",
+        "（",
+        "2",
+        "3",
+        "区",
+        "）",
+        "と",
+        "その",
+        "周辺",
+        "を結ぶ",
+        "一",
+        "都",
+        "三",
+        "県",
+        "（",
+        "東京都",
+        "、",
+        "神奈川県",
+        "、"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 18007, 44398, 2775, 169103, 87506, 3966, 33176, 255001, 255000, 255007,
+        18007, 44398, 2775, 15112, 87506, 1967, 15112, 2775, 18007, 11565, 2066, 44141, 2066, 13121,
+        185330, 3222, 24242, 2066, 41107, 4480, 3228, 2285, 25, 26, 4480, 2286, 2745, 10119, 70576,
+        151914, 2557, 6026, 4729, 10274, 2285, 41107, 2066, 143696, 2066
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "埼玉県",
+            "token_id": 138323,
+            "logprob": -0.0688,
+            "prob": 0.9336
+          },
+          {
+            "token": "埼玉",
+            "token_id": 65512,
+            "logprob": -3.084,
+            "prob": 0.0457
+          },
+          {
+            "token": "千葉県",
+            "token_id": 140515,
+            "logprob": -5.375,
+            "prob": 0.0046
+          },
+          {
+            "token": "静岡県",
+            "token_id": 169301,
+            "logprob": -6.1094,
+            "prob": 0.0022
+          },
+          {
+            "token": "神奈川県",
+            "token_id": 143696,
+            "logprob": -6.9922,
+            "prob": 0.0009
+          },
+          {
+            "token": "ĠSaitama",
+            "token_id": 109828,
+            "logprob": -7.0469,
+            "prob": 0.0009
+          },
+          {
+            "token": "山梨",
+            "token_id": 148754,
+            "logprob": -7.3281,
+            "prob": 0.0007
+          },
+          {
+            "token": "福島県",
+            "token_id": 199664,
+            "logprob": -7.3906,
+            "prob": 0.0006
+          },
+          {
+            "token": "茨城県",
+            "token_id": 195661,
+            "logprob": -7.7031,
+            "prob": 0.0005
+          },
+          {
+            "token": "さいたま",
+            "token_id": 252682,
+            "logprob": -7.9062,
+            "prob": 0.0004
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "埼玉県",
+        "token_id": 138323,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 40,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>日本の首都はどこですか？<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>日本の首都は東京です。東京は日本の政治、経済、文化の中心地であり、東京都区部（23区）とその周辺を結ぶ一都三県（東京都、神奈川県、埼玉県",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "日本の",
+        "首都",
+        "は",
+        "どこ",
+        "です",
+        "か",
+        "？",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "日本の",
+        "首都",
+        "は",
+        "東京",
+        "です",
+        "。",
+        "東京",
+        "は",
+        "日本の",
+        "政治",
+        "、",
+        "経済",
+        "、",
+        "文化",
+        "の中心",
+        "地",
+        "であり",
+        "、",
+        "東京都",
+        "区",
+        "部",
+        "（",
+        "2",
+        "3",
+        "区",
+        "）",
+        "と",
+        "その",
+        "周辺",
+        "を結ぶ",
+        "一",
+        "都",
+        "三",
+        "県",
+        "（",
+        "東京都",
+        "、",
+        "神奈川県",
+        "、",
+        "埼玉県"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 18007, 44398, 2775, 169103, 87506, 3966, 33176, 255001, 255000, 255007,
+        18007, 44398, 2775, 15112, 87506, 1967, 15112, 2775, 18007, 11565, 2066, 44141, 2066, 13121,
+        185330, 3222, 24242, 2066, 41107, 4480, 3228, 2285, 25, 26, 4480, 2286, 2745, 10119, 70576,
+        151914, 2557, 6026, 4729, 10274, 2285, 41107, 2066, 143696, 2066, 138323
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "、",
+            "token_id": 2066,
+            "logprob": -0.0,
+            "prob": 1.0
+          },
+          {
+            "token": "،",
+            "token_id": 3196,
+            "logprob": -13.3281,
+            "prob": 0.0
+          },
+          {
+            "token": "<PAD>",
+            "token_id": 0,
+            "logprob": -34.625,
+            "prob": 0.0
+          },
+          {
+            "token": "<UNK>",
+            "token_id": 1,
+            "logprob": -34.6562,
+            "prob": 0.0
+          },
+          {
+            "token": "<EOS_TOKEN>",
+            "token_id": 6,
+            "logprob": -36.375,
+            "prob": 0.0
+          },
+          {
+            "token": "<EOP_TOKEN>",
+            "token_id": 7,
+            "logprob": -34.7188,
+            "prob": 0.0
+          },
+          {
+            "token": "<BOS_TOKEN>",
+            "token_id": 5,
+            "logprob": -32.8125,
+            "prob": 0.0
+          },
+          {
+            "token": "<MASK_TOKEN>",
+            "token_id": 4,
+            "logprob": -34.6875,
+            "prob": 0.0
+          },
+          {
+            "token": "<CLS>",
+            "token_id": 2,
+            "logprob": -35.3438,
+            "prob": 0.0
+          },
+          {
+            "token": "<SEP>",
+            "token_id": 3,
+            "logprob": -34.4375,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "、",
+        "token_id": 2066,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 41,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>日本の首都はどこですか？<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>日本の首都は東京です。東京は日本の政治、経済、文化の中心地であり、東京都区部（23区）とその周辺を結ぶ一都三県（東京都、神奈川県、埼玉県、",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "日本の",
+        "首都",
+        "は",
+        "どこ",
+        "です",
+        "か",
+        "？",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "日本の",
+        "首都",
+        "は",
+        "東京",
+        "です",
+        "。",
+        "東京",
+        "は",
+        "日本の",
+        "政治",
+        "、",
+        "経済",
+        "、",
+        "文化",
+        "の中心",
+        "地",
+        "であり",
+        "、",
+        "東京都",
+        "区",
+        "部",
+        "（",
+        "2",
+        "3",
+        "区",
+        "）",
+        "と",
+        "その",
+        "周辺",
+        "を結ぶ",
+        "一",
+        "都",
+        "三",
+        "県",
+        "（",
+        "東京都",
+        "、",
+        "神奈川県",
+        "、",
+        "埼玉県",
+        "、"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 18007, 44398, 2775, 169103, 87506, 3966, 33176, 255001, 255000, 255007,
+        18007, 44398, 2775, 15112, 87506, 1967, 15112, 2775, 18007, 11565, 2066, 44141, 2066, 13121,
+        185330, 3222, 24242, 2066, 41107, 4480, 3228, 2285, 25, 26, 4480, 2286, 2745, 10119, 70576,
+        151914, 2557, 6026, 4729, 10274, 2285, 41107, 2066, 143696, 2066, 138323, 2066
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "千葉県",
+            "token_id": 140515,
+            "logprob": -0.0391,
+            "prob": 0.9619
+          },
+          {
+            "token": "千葉",
+            "token_id": 58198,
+            "logprob": -3.7266,
+            "prob": 0.0241
+          },
+          {
+            "token": "神奈川県",
+            "token_id": 143696,
+            "logprob": -5.6641,
+            "prob": 0.0035
+          },
+          {
+            "token": "埼玉県",
+            "token_id": 138323,
+            "logprob": -7.0391,
+            "prob": 0.0009
+          },
+          {
+            "token": "ĠCheshire",
+            "token_id": 69782,
+            "logprob": -7.2656,
+            "prob": 0.0007
+          },
+          {
+            "token": "福島県",
+            "token_id": 199664,
+            "logprob": -7.2734,
+            "prob": 0.0007
+          },
+          {
+            "token": "千叶",
+            "token_id": 205127,
+            "logprob": -7.3125,
+            "prob": 0.0007
+          },
+          {
+            "token": "東京都",
+            "token_id": 41107,
+            "logprob": -7.7578,
+            "prob": 0.0004
+          },
+          {
+            "token": "新潟県",
+            "token_id": 225248,
+            "logprob": -7.8594,
+            "prob": 0.0004
+          },
+          {
+            "token": "群馬県",
+            "token_id": 222926,
+            "logprob": -7.9453,
+            "prob": 0.0004
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "千葉県",
+        "token_id": 140515,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 42,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>日本の首都はどこですか？<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>日本の首都は東京です。東京は日本の政治、経済、文化の中心地であり、東京都区部（23区）とその周辺を結ぶ一都三県（東京都、神奈川県、埼玉県、千葉県",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "日本の",
+        "首都",
+        "は",
+        "どこ",
+        "です",
+        "か",
+        "？",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "日本の",
+        "首都",
+        "は",
+        "東京",
+        "です",
+        "。",
+        "東京",
+        "は",
+        "日本の",
+        "政治",
+        "、",
+        "経済",
+        "、",
+        "文化",
+        "の中心",
+        "地",
+        "であり",
+        "、",
+        "東京都",
+        "区",
+        "部",
+        "（",
+        "2",
+        "3",
+        "区",
+        "）",
+        "と",
+        "その",
+        "周辺",
+        "を結ぶ",
+        "一",
+        "都",
+        "三",
+        "県",
+        "（",
+        "東京都",
+        "、",
+        "神奈川県",
+        "、",
+        "埼玉県",
+        "、",
+        "千葉県"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 18007, 44398, 2775, 169103, 87506, 3966, 33176, 255001, 255000, 255007,
+        18007, 44398, 2775, 15112, 87506, 1967, 15112, 2775, 18007, 11565, 2066, 44141, 2066, 13121,
+        185330, 3222, 24242, 2066, 41107, 4480, 3228, 2285, 25, 26, 4480, 2286, 2745, 10119, 70576,
+        151914, 2557, 6026, 4729, 10274, 2285, 41107, 2066, 143696, 2066, 138323, 2066, 140515
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "）",
+            "token_id": 2286,
+            "logprob": -0.0,
+            "prob": 1.0
+          },
+          {
+            "token": "の一部",
+            "token_id": 61705,
+            "logprob": -12.0156,
+            "prob": 0.0
+          },
+          {
+            "token": ")",
+            "token_id": 16,
+            "logprob": -13.75,
+            "prob": 0.0
+          },
+          {
+            "token": "\")",
+            "token_id": 3348,
+            "logprob": -14.8438,
+            "prob": 0.0
+          },
+          {
+            "token": "）、",
+            "token_id": 10026,
+            "logprob": -16.125,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġ）",
+            "token_id": 33210,
+            "logprob": -16.6094,
+            "prob": 0.0
+          },
+          {
+            "token": "一部",
+            "token_id": 42887,
+            "logprob": -16.9844,
+            "prob": 0.0
+          },
+          {
+            "token": "）。",
+            "token_id": 8151,
+            "logprob": -16.7188,
+            "prob": 0.0
+          },
+          {
+            "token": "<PAD>",
+            "token_id": 0,
+            "logprob": -33.0938,
+            "prob": 0.0
+          },
+          {
+            "token": "<UNK>",
+            "token_id": 1,
+            "logprob": -32.5625,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "）",
+        "token_id": 2286,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 43,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>日本の首都はどこですか？<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>日本の首都は東京です。東京は日本の政治、経済、文化の中心地であり、東京都区部（23区）とその周辺を結ぶ一都三県（東京都、神奈川県、埼玉県、千葉県）",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "日本の",
+        "首都",
+        "は",
+        "どこ",
+        "です",
+        "か",
+        "？",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "日本の",
+        "首都",
+        "は",
+        "東京",
+        "です",
+        "。",
+        "東京",
+        "は",
+        "日本の",
+        "政治",
+        "、",
+        "経済",
+        "、",
+        "文化",
+        "の中心",
+        "地",
+        "であり",
+        "、",
+        "東京都",
+        "区",
+        "部",
+        "（",
+        "2",
+        "3",
+        "区",
+        "）",
+        "と",
+        "その",
+        "周辺",
+        "を結ぶ",
+        "一",
+        "都",
+        "三",
+        "県",
+        "（",
+        "東京都",
+        "、",
+        "神奈川県",
+        "、",
+        "埼玉県",
+        "、",
+        "千葉県",
+        "）"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 18007, 44398, 2775, 169103, 87506, 3966, 33176, 255001, 255000, 255007,
+        18007, 44398, 2775, 15112, 87506, 1967, 15112, 2775, 18007, 11565, 2066, 44141, 2066, 13121,
+        185330, 3222, 24242, 2066, 41107, 4480, 3228, 2285, 25, 26, 4480, 2286, 2745, 10119, 70576,
+        151914, 2557, 6026, 4729, 10274, 2285, 41107, 2066, 143696, 2066, 138323, 2066, 140515, 2286
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "で構成",
+            "token_id": 171026,
+            "logprob": -0.6299,
+            "prob": 0.5327
+          },
+          {
+            "token": "から",
+            "token_id": 6412,
+            "logprob": -0.8486,
+            "prob": 0.428
+          },
+          {
+            "token": "からなる",
+            "token_id": 174877,
+            "logprob": -3.5352,
+            "prob": 0.0291
+          },
+          {
+            "token": "を含む",
+            "token_id": 78542,
+            "logprob": -5.3008,
+            "prob": 0.005
+          },
+          {
+            "token": "によって",
+            "token_id": 22854,
+            "logprob": -6.418,
+            "prob": 0.0016
+          },
+          {
+            "token": "の",
+            "token_id": 2176,
+            "logprob": -6.9414,
+            "prob": 0.001
+          },
+          {
+            "token": "の総",
+            "token_id": 232637,
+            "logprob": -7.3711,
+            "prob": 0.0006
+          },
+          {
+            "token": "を構成",
+            "token_id": 252270,
+            "logprob": -7.7695,
+            "prob": 0.0004
+          },
+          {
+            "token": "により",
+            "token_id": 20396,
+            "logprob": -8.0703,
+            "prob": 0.0003
+          },
+          {
+            "token": "を",
+            "token_id": 2784,
+            "logprob": -8.5625,
+            "prob": 0.0002
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "からなる",
+        "token_id": 174877,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 44,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>日本の首都はどこですか？<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>日本の首都は東京です。東京は日本の政治、経済、文化の中心地であり、東京都区部（23区）とその周辺を結ぶ一都三県（東京都、神奈川県、埼玉県、千葉県）からなる",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "日本の",
+        "首都",
+        "は",
+        "どこ",
+        "です",
+        "か",
+        "？",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "日本の",
+        "首都",
+        "は",
+        "東京",
+        "です",
+        "。",
+        "東京",
+        "は",
+        "日本の",
+        "政治",
+        "、",
+        "経済",
+        "、",
+        "文化",
+        "の中心",
+        "地",
+        "であり",
+        "、",
+        "東京都",
+        "区",
+        "部",
+        "（",
+        "2",
+        "3",
+        "区",
+        "）",
+        "と",
+        "その",
+        "周辺",
+        "を結ぶ",
+        "一",
+        "都",
+        "三",
+        "県",
+        "（",
+        "東京都",
+        "、",
+        "神奈川県",
+        "、",
+        "埼玉県",
+        "、",
+        "千葉県",
+        "）",
+        "からなる"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 18007, 44398, 2775, 169103, 87506, 3966, 33176, 255001, 255000, 255007,
+        18007, 44398, 2775, 15112, 87506, 1967, 15112, 2775, 18007, 11565, 2066, 44141, 2066, 13121,
+        185330, 3222, 24242, 2066, 41107, 4480, 3228, 2285, 25, 26, 4480, 2286, 2745, 10119, 70576,
+        151914, 2557, 6026, 4729, 10274, 2285, 41107, 2066, 143696, 2066, 138323, 2066, 140515,
+        2286, 174877
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "大",
+            "token_id": 2639,
+            "logprob": -0.2317,
+            "prob": 0.793
+          },
+          {
+            "token": "都市",
+            "token_id": 27970,
+            "logprob": -2.5762,
+            "prob": 0.0761
+          },
+          {
+            "token": "首都",
+            "token_id": 44398,
+            "logprob": -3.7246,
+            "prob": 0.0241
+          },
+          {
+            "token": "大きな",
+            "token_id": 73989,
+            "logprob": -4.0664,
+            "prob": 0.0171
+          },
+          {
+            "token": "大都会",
+            "token_id": 254590,
+            "logprob": -4.082,
+            "prob": 0.0168
+          },
+          {
+            "token": "大規模な",
+            "token_id": 223870,
+            "logprob": -4.3242,
+            "prob": 0.0132
+          },
+          {
+            "token": "巨大",
+            "token_id": 65059,
+            "logprob": -4.7383,
+            "prob": 0.0087
+          },
+          {
+            "token": "広域",
+            "token_id": 199330,
+            "logprob": -4.9023,
+            "prob": 0.0074
+          },
+          {
+            "token": "都会",
+            "token_id": 66959,
+            "logprob": -5.0977,
+            "prob": 0.0061
+          },
+          {
+            "token": "広",
+            "token_id": 21353,
+            "logprob": -5.793,
+            "prob": 0.003
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "大",
+        "token_id": 2639,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 45,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>日本の首都はどこですか？<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>日本の首都は東京です。東京は日本の政治、経済、文化の中心地であり、東京都区部（23区）とその周辺を結ぶ一都三県（東京都、神奈川県、埼玉県、千葉県）からなる大",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "日本の",
+        "首都",
+        "は",
+        "どこ",
+        "です",
+        "か",
+        "？",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "日本の",
+        "首都",
+        "は",
+        "東京",
+        "です",
+        "。",
+        "東京",
+        "は",
+        "日本の",
+        "政治",
+        "、",
+        "経済",
+        "、",
+        "文化",
+        "の中心",
+        "地",
+        "であり",
+        "、",
+        "東京都",
+        "区",
+        "部",
+        "（",
+        "2",
+        "3",
+        "区",
+        "）",
+        "と",
+        "その",
+        "周辺",
+        "を結ぶ",
+        "一",
+        "都",
+        "三",
+        "県",
+        "（",
+        "東京都",
+        "、",
+        "神奈川県",
+        "、",
+        "埼玉県",
+        "、",
+        "千葉県",
+        "）",
+        "からなる",
+        "大"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 18007, 44398, 2775, 169103, 87506, 3966, 33176, 255001, 255000, 255007,
+        18007, 44398, 2775, 15112, 87506, 1967, 15112, 2775, 18007, 11565, 2066, 44141, 2066, 13121,
+        185330, 3222, 24242, 2066, 41107, 4480, 3228, 2285, 25, 26, 4480, 2286, 2745, 10119, 70576,
+        151914, 2557, 6026, 4729, 10274, 2285, 41107, 2066, 143696, 2066, 138323, 2066, 140515,
+        2286, 174877, 2639
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "都市",
+            "token_id": 27970,
+            "logprob": -0.002,
+            "prob": 0.998
+          },
+          {
+            "token": "都会",
+            "token_id": 66959,
+            "logprob": -6.3633,
+            "prob": 0.0017
+          },
+          {
+            "token": "メトロ",
+            "token_id": 217681,
+            "logprob": -9.7188,
+            "prob": 0.0001
+          },
+          {
+            "token": "首都",
+            "token_id": 44398,
+            "logprob": -9.9062,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġmetropolitan",
+            "token_id": 43910,
+            "logprob": -10.9766,
+            "prob": 0.0
+          },
+          {
+            "token": "都會",
+            "token_id": 97055,
+            "logprob": -11.0547,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġmetropol",
+            "token_id": 99114,
+            "logprob": -11.1406,
+            "prob": 0.0
+          },
+          {
+            "token": "都",
+            "token_id": 6026,
+            "logprob": -11.2109,
+            "prob": 0.0
+          },
+          {
+            "token": "東京",
+            "token_id": 15112,
+            "logprob": -11.3672,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠMetropolitan",
+            "token_id": 26170,
+            "logprob": -11.625,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "都市",
+        "token_id": 27970,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 46,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>日本の首都はどこですか？<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>日本の首都は東京です。東京は日本の政治、経済、文化の中心地であり、東京都区部（23区）とその周辺を結ぶ一都三県（東京都、神奈川県、埼玉県、千葉県）からなる大都市",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "日本の",
+        "首都",
+        "は",
+        "どこ",
+        "です",
+        "か",
+        "？",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "日本の",
+        "首都",
+        "は",
+        "東京",
+        "です",
+        "。",
+        "東京",
+        "は",
+        "日本の",
+        "政治",
+        "、",
+        "経済",
+        "、",
+        "文化",
+        "の中心",
+        "地",
+        "であり",
+        "、",
+        "東京都",
+        "区",
+        "部",
+        "（",
+        "2",
+        "3",
+        "区",
+        "）",
+        "と",
+        "その",
+        "周辺",
+        "を結ぶ",
+        "一",
+        "都",
+        "三",
+        "県",
+        "（",
+        "東京都",
+        "、",
+        "神奈川県",
+        "、",
+        "埼玉県",
+        "、",
+        "千葉県",
+        "）",
+        "からなる",
+        "大",
+        "都市"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 18007, 44398, 2775, 169103, 87506, 3966, 33176, 255001, 255000, 255007,
+        18007, 44398, 2775, 15112, 87506, 1967, 15112, 2775, 18007, 11565, 2066, 44141, 2066, 13121,
+        185330, 3222, 24242, 2066, 41107, 4480, 3228, 2285, 25, 26, 4480, 2286, 2745, 10119, 70576,
+        151914, 2557, 6026, 4729, 10274, 2285, 41107, 2066, 143696, 2066, 138323, 2066, 140515,
+        2286, 174877, 2639, 27970
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "圏",
+            "token_id": 85384,
+            "logprob": -0.0075,
+            "prob": 0.9927
+          },
+          {
+            "token": "地域",
+            "token_id": 32886,
+            "logprob": -5.2109,
+            "prob": 0.0055
+          },
+          {
+            "token": "です",
+            "token_id": 87506,
+            "logprob": -6.4922,
+            "prob": 0.0015
+          },
+          {
+            "token": "権",
+            "token_id": 22779,
+            "logprob": -8.3828,
+            "prob": 0.0002
+          },
+          {
+            "token": "領域",
+            "token_id": 80773,
+            "logprob": -9.4141,
+            "prob": 0.0001
+          },
+          {
+            "token": "エリア",
+            "token_id": 120751,
+            "logprob": -10.1719,
+            "prob": 0.0
+          },
+          {
+            "token": "区域",
+            "token_id": 36796,
+            "logprob": -10.2578,
+            "prob": 0.0
+          },
+          {
+            "token": "地帯",
+            "token_id": 174711,
+            "logprob": -11.6797,
+            "prob": 0.0
+          },
+          {
+            "token": "都市",
+            "token_id": 27970,
+            "logprob": -11.8594,
+            "prob": 0.0
+          },
+          {
+            "token": "권",
+            "token_id": 17686,
+            "logprob": -11.9531,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "圏",
+        "token_id": 85384,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 47,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>日本の首都はどこですか？<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>日本の首都は東京です。東京は日本の政治、経済、文化の中心地であり、東京都区部（23区）とその周辺を結ぶ一都三県（東京都、神奈川県、埼玉県、千葉県）からなる大都市圏",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "日本の",
+        "首都",
+        "は",
+        "どこ",
+        "です",
+        "か",
+        "？",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "日本の",
+        "首都",
+        "は",
+        "東京",
+        "です",
+        "。",
+        "東京",
+        "は",
+        "日本の",
+        "政治",
+        "、",
+        "経済",
+        "、",
+        "文化",
+        "の中心",
+        "地",
+        "であり",
+        "、",
+        "東京都",
+        "区",
+        "部",
+        "（",
+        "2",
+        "3",
+        "区",
+        "）",
+        "と",
+        "その",
+        "周辺",
+        "を結ぶ",
+        "一",
+        "都",
+        "三",
+        "県",
+        "（",
+        "東京都",
+        "、",
+        "神奈川県",
+        "、",
+        "埼玉県",
+        "、",
+        "千葉県",
+        "）",
+        "からなる",
+        "大",
+        "都市",
+        "圏"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 18007, 44398, 2775, 169103, 87506, 3966, 33176, 255001, 255000, 255007,
+        18007, 44398, 2775, 15112, 87506, 1967, 15112, 2775, 18007, 11565, 2066, 44141, 2066, 13121,
+        185330, 3222, 24242, 2066, 41107, 4480, 3228, 2285, 25, 26, 4480, 2286, 2745, 10119, 70576,
+        151914, 2557, 6026, 4729, 10274, 2285, 41107, 2066, 143696, 2066, 138323, 2066, 140515,
+        2286, 174877, 2639, 27970, 85384
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "です",
+            "token_id": 87506,
+            "logprob": -0.1727,
+            "prob": 0.8413
+          },
+          {
+            "token": "を形成",
+            "token_id": 203335,
+            "logprob": -2.0,
+            "prob": 0.1353
+          },
+          {
+            "token": "として",
+            "token_id": 8550,
+            "logprob": -4.75,
+            "prob": 0.0086
+          },
+          {
+            "token": "で",
+            "token_id": 2920,
+            "logprob": -5.3281,
+            "prob": 0.0048
+          },
+          {
+            "token": "であり",
+            "token_id": 24242,
+            "logprob": -6.0547,
+            "prob": 0.0023
+          },
+          {
+            "token": "を有",
+            "token_id": 114083,
+            "logprob": -6.7812,
+            "prob": 0.0011
+          },
+          {
+            "token": "で構成",
+            "token_id": 171026,
+            "logprob": -6.7812,
+            "prob": 0.0011
+          },
+          {
+            "token": "を",
+            "token_id": 2784,
+            "logprob": -7.2188,
+            "prob": 0.0007
+          },
+          {
+            "token": "を持って",
+            "token_id": 230300,
+            "logprob": -7.3359,
+            "prob": 0.0007
+          },
+          {
+            "token": "を持つ",
+            "token_id": 48929,
+            "logprob": -7.6875,
+            "prob": 0.0005
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "です",
+        "token_id": 87506,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 48,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>日本の首都はどこですか？<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>日本の首都は東京です。東京は日本の政治、経済、文化の中心地であり、東京都区部（23区）とその周辺を結ぶ一都三県（東京都、神奈川県、埼玉県、千葉県）からなる大都市圏です",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "日本の",
+        "首都",
+        "は",
+        "どこ",
+        "です",
+        "か",
+        "？",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "日本の",
+        "首都",
+        "は",
+        "東京",
+        "です",
+        "。",
+        "東京",
+        "は",
+        "日本の",
+        "政治",
+        "、",
+        "経済",
+        "、",
+        "文化",
+        "の中心",
+        "地",
+        "であり",
+        "、",
+        "東京都",
+        "区",
+        "部",
+        "（",
+        "2",
+        "3",
+        "区",
+        "）",
+        "と",
+        "その",
+        "周辺",
+        "を結ぶ",
+        "一",
+        "都",
+        "三",
+        "県",
+        "（",
+        "東京都",
+        "、",
+        "神奈川県",
+        "、",
+        "埼玉県",
+        "、",
+        "千葉県",
+        "）",
+        "からなる",
+        "大",
+        "都市",
+        "圏",
+        "です"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 18007, 44398, 2775, 169103, 87506, 3966, 33176, 255001, 255000, 255007,
+        18007, 44398, 2775, 15112, 87506, 1967, 15112, 2775, 18007, 11565, 2066, 44141, 2066, 13121,
+        185330, 3222, 24242, 2066, 41107, 4480, 3228, 2285, 25, 26, 4480, 2286, 2745, 10119, 70576,
+        151914, 2557, 6026, 4729, 10274, 2285, 41107, 2066, 143696, 2066, 138323, 2066, 140515,
+        2286, 174877, 2639, 27970, 85384, 87506
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "。",
+            "token_id": 1967,
+            "logprob": -0.0,
+            "prob": 1.0
+          },
+          {
+            "token": "।",
+            "token_id": 4280,
+            "logprob": -14.5703,
+            "prob": 0.0
+          },
+          {
+            "token": "。「",
+            "token_id": 43471,
+            "logprob": -15.4219,
+            "prob": 0.0
+          },
+          {
+            "token": "<PAD>",
+            "token_id": 0,
+            "logprob": -33.5938,
+            "prob": 0.0
+          },
+          {
+            "token": "<EOS_TOKEN>",
+            "token_id": 6,
+            "logprob": -25.2969,
+            "prob": 0.0
+          },
+          {
+            "token": "<SEP>",
+            "token_id": 3,
+            "logprob": -33.8438,
+            "prob": 0.0
+          },
+          {
+            "token": "<BOS_TOKEN>",
+            "token_id": 5,
+            "logprob": -30.0312,
+            "prob": 0.0
+          },
+          {
+            "token": "<MASK_TOKEN>",
+            "token_id": 4,
+            "logprob": -33.7812,
+            "prob": 0.0
+          },
+          {
+            "token": "<UNK>",
+            "token_id": 1,
+            "logprob": -32.0938,
+            "prob": 0.0
+          },
+          {
+            "token": "<CLS>",
+            "token_id": 2,
+            "logprob": -33.25,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "。",
+        "token_id": 1967,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 49,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>日本の首都はどこですか？<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>日本の首都は東京です。東京は日本の政治、経済、文化の中心地であり、東京都区部（23区）とその周辺を結ぶ一都三県（東京都、神奈川県、埼玉県、千葉県）からなる大都市圏です。",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "日本の",
+        "首都",
+        "は",
+        "どこ",
+        "です",
+        "か",
+        "？",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "日本の",
+        "首都",
+        "は",
+        "東京",
+        "です",
+        "。",
+        "東京",
+        "は",
+        "日本の",
+        "政治",
+        "、",
+        "経済",
+        "、",
+        "文化",
+        "の中心",
+        "地",
+        "であり",
+        "、",
+        "東京都",
+        "区",
+        "部",
+        "（",
+        "2",
+        "3",
+        "区",
+        "）",
+        "と",
+        "その",
+        "周辺",
+        "を結ぶ",
+        "一",
+        "都",
+        "三",
+        "県",
+        "（",
+        "東京都",
+        "、",
+        "神奈川県",
+        "、",
+        "埼玉県",
+        "、",
+        "千葉県",
+        "）",
+        "からなる",
+        "大",
+        "都市",
+        "圏",
+        "です",
+        "。"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 18007, 44398, 2775, 169103, 87506, 3966, 33176, 255001, 255000, 255007,
+        18007, 44398, 2775, 15112, 87506, 1967, 15112, 2775, 18007, 11565, 2066, 44141, 2066, 13121,
+        185330, 3222, 24242, 2066, 41107, 4480, 3228, 2285, 25, 26, 4480, 2286, 2745, 10119, 70576,
+        151914, 2557, 6026, 4729, 10274, 2285, 41107, 2066, 143696, 2066, 138323, 2066, 140515,
+        2286, 174877, 2639, 27970, 85384, 87506, 1967
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "<|END_OF_TURN_TOKEN|>",
+            "token_id": 255001,
+            "logprob": -0.1724,
+            "prob": 0.8418
+          },
+          {
+            "token": "人口",
+            "token_id": 9540,
+            "logprob": -2.4844,
+            "prob": 0.0833
+          },
+          {
+            "token": "\n",
+            "token_id": 206,
+            "logprob": -2.8281,
+            "prob": 0.0591
+          },
+          {
+            "token": "世界",
+            "token_id": 9065,
+            "logprob": -4.7656,
+            "prob": 0.0085
+          },
+          {
+            "token": "東京",
+            "token_id": 15112,
+            "logprob": -5.8672,
+            "prob": 0.0028
+          },
+          {
+            "token": "人口は",
+            "token_id": 223308,
+            "logprob": -6.0938,
+            "prob": 0.0023
+          },
+          {
+            "token": "日本の",
+            "token_id": 18007,
+            "logprob": -6.8125,
+            "prob": 0.0011
+          },
+          {
+            "token": "世界の",
+            "token_id": 138761,
+            "logprob": -8.3438,
+            "prob": 0.0002
+          },
+          {
+            "token": "日本",
+            "token_id": 5440,
+            "logprob": -8.4688,
+            "prob": 0.0002
+          },
+          {
+            "token": "約",
+            "token_id": 11462,
+            "logprob": -9.2891,
+            "prob": 0.0001
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "<|END_OF_TURN_TOKEN|>",
+        "token_id": 255001,
+        "selection_method": "sampling"
+      }
+    }
+  ]
+}
