@@ -178,7 +178,7 @@ function VisualizationCanvas() {
   useEffect(() => {
     const onKeyDown = (e) => {
       if (!e || e.target.matches('input, textarea')) return;
-      if (e.code === 'KeyE') {
+      if (e.key === 'e' || e.key === 'E') {
         e.preventDefault();
         if (state.isPlaying) {
           actions.setIsPlaying(false);
@@ -232,7 +232,7 @@ function VisualizationCanvas() {
     const labelsWidthDynamic = Math.round(
       maxLabelsWidth - (maxLabelsWidth - minLabelsWidth) * growthRatio
     );
-    const visualizationWidth = Math.max(320, width - labelsWidthDynamic); // Content area width
+    const visualizationWidth = Math.max(420, width - labelsWidthDynamic); // Content area width
     // const height = parseFloat(svg.attr('height')) || 900;
 
     // Determine if we need to collapse tokens
@@ -243,8 +243,8 @@ function VisualizationCanvas() {
     const layout = {
       // Make tokens appear ~10px below the top of the visualization area
       tokenY: 10,
-      // Move embeddings up accordingly but keep enough room for arrows
-      embeddingY: 140,
+      // Input embeddings positioned closer to tokens (moved up from 110)
+      embeddingY: 85,
       margin: 20,
       leftBias: -100, // shift overall layout ~200px to the left when space allows
       tokenSpacing: 140,
@@ -306,6 +306,8 @@ function VisualizationCanvas() {
       rightmostActualIndex:
         rightmostIdx >= 0 ? (tokensLayoutRef.current?.visibleIndices?.[rightmostIdx] ?? -1) : -1,
       rightmostMeta: rightmostIdx >= 0 ? ffnMetas[rightmostIdx] : null,
+      flowOffsetX: blockMeta.flowOffsetX || 0,
+      flowOffsetY: blockMeta.flowOffsetY || 0,
     };
 
     // 5. Output distribution below — use centralized offset
@@ -348,8 +350,17 @@ function VisualizationCanvas() {
     // Build shared stage positions for precise alignment
     layout.stageY = {
       stage_tokenization: layout.tokenY + 6,
-      stage_token_ids: layout.tokenY + 72,
+      // Input embeddings: centered on the outer embedding vectors
       stage_input_embeddings: layout.embeddingY + (outerMeta.maxOuterHeight || 0) / 2,
+      // Positional embeddings: centered on the arrow between outer embeddings and the first
+      // transformer layer (position is added AFTER token embeddings are computed)
+      stage_positional_embeddings: (() => {
+        const outerBottom = layout.embeddingY + (outerMeta.maxOuterHeight || 0);
+        const insideTopCenter =
+          (blockMeta.insideTopY ?? blockMeta.blockTopY + CONSTS.BLOCK_PADDING) +
+          (blockMeta.maxInsideTopHeight || 0) / 2;
+        return outerBottom + (insideTopCenter - outerBottom) * 0.5;
+      })(),
       stage_attention_layer: blockMeta.attentionCenterY ?? blockMeta.blockTopY + 40,
       // Center with the FFN projection box (same as attention layer approach)
       stage_feedforward_layer:
@@ -386,7 +397,8 @@ function VisualizationCanvas() {
     }
 
     // Render stage labels into the sticky right panel; anchor within the panel (x=0)
-    const showLabelsGradually = state.currentStep === 1 && currentLayer === 0;
+    // Always show labels gradually based on substep, regardless of token/layer
+    const showLabelsGradually = true;
     renderStageLabels(labelsGroup, layout, 0, subStep, t, showLabelsGradually);
     // Size the labels SVG to the panel width
     labelsSvg.attr('width', labelsWidthDynamic);
@@ -531,7 +543,7 @@ function VisualizationCanvas() {
           return (
             <button
               className={`collapse-toggle ${isExpanded ? 'state-expanded' : 'state-collapsed'}`}
-              style={{ left: `${clampedLeft}px`, top: '95px' }}
+              style={{ left: `${clampedLeft}px`, top: '80px' }}
               onClick={() => setIsExpanded((v) => !v)}
               aria-label={isExpanded ? 'Collapse tokens' : 'Expand tokens'}
               title={isExpanded ? 'Collapse tokens' : 'Expand tokens'}

@@ -1,0 +1,2507 @@
+{
+  "id": "generated_20251113_155850",
+  "prompt": "中国的首都是哪里？",
+  "language": "zh",
+  "temperature": 1.0,
+  "top_k": 10,
+  "model_info": {
+    "name": "CohereLabs/aya-expanse-8b",
+    "num_layers": 32,
+    "hidden_size": 4096,
+    "num_attention_heads": 32,
+    "vocab_size": 256000
+  },
+  "generation_steps": [
+    {
+      "step": 0,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>中国的首都是哪里？<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "中国",
+        "的首",
+        "都是",
+        "哪",
+        "里",
+        "？",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 6866, 60159, 33641, 96142, 5122, 33176, 255001, 255000, 255007
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "中国",
+            "token_id": 6866,
+            "logprob": -0.0033,
+            "prob": 0.9966
+          },
+          {
+            "token": "北京",
+            "token_id": 18034,
+            "logprob": -5.8633,
+            "prob": 0.0028
+          },
+          {
+            "token": "中国的",
+            "token_id": 115799,
+            "logprob": -8.0625,
+            "prob": 0.0003
+          },
+          {
+            "token": "中國",
+            "token_id": 15345,
+            "logprob": -10.1406,
+            "prob": 0.0
+          },
+          {
+            "token": "China",
+            "token_id": 38998,
+            "logprob": -11.5234,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġ中国",
+            "token_id": 73505,
+            "logprob": -11.5781,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġ중국",
+            "token_id": 40726,
+            "logprob": -12.2891,
+            "prob": 0.0
+          },
+          {
+            "token": "中国政府",
+            "token_id": 201096,
+            "logprob": -12.625,
+            "prob": 0.0
+          },
+          {
+            "token": "答案",
+            "token_id": 232018,
+            "logprob": -12.6875,
+            "prob": 0.0
+          },
+          {
+            "token": "中华人民共和国",
+            "token_id": 24510,
+            "logprob": -12.8438,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "中国",
+        "token_id": 6866,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 1,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>中国的首都是哪里？<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>中国",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "中国",
+        "的首",
+        "都是",
+        "哪",
+        "里",
+        "？",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "中国"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 6866, 60159, 33641, 96142, 5122, 33176, 255001, 255000, 255007, 6866
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "的首",
+            "token_id": 60159,
+            "logprob": -0.0001,
+            "prob": 1.0
+          },
+          {
+            "token": "首",
+            "token_id": 7578,
+            "logprob": -10.0625,
+            "prob": 0.0
+          },
+          {
+            "token": "的主要",
+            "token_id": 50209,
+            "logprob": -10.4219,
+            "prob": 0.0
+          },
+          {
+            "token": "首都",
+            "token_id": 44398,
+            "logprob": -11.2266,
+            "prob": 0.0
+          },
+          {
+            "token": "的国家",
+            "token_id": 99953,
+            "logprob": -12.8984,
+            "prob": 0.0
+          },
+          {
+            "token": "的第一",
+            "token_id": 61057,
+            "logprob": -13.1875,
+            "prob": 0.0
+          },
+          {
+            "token": "的主",
+            "token_id": 43256,
+            "logprob": -13.3125,
+            "prob": 0.0
+          },
+          {
+            "token": "的原",
+            "token_id": 67642,
+            "logprob": -13.3281,
+            "prob": 0.0
+          },
+          {
+            "token": "的前",
+            "token_id": 50549,
+            "logprob": -13.4844,
+            "prob": 0.0
+          },
+          {
+            "token": "的新",
+            "token_id": 42572,
+            "logprob": -14.3047,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "的首",
+        "token_id": 60159,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 2,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>中国的首都是哪里？<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>中国的首",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "中国",
+        "的首",
+        "都是",
+        "哪",
+        "里",
+        "？",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "中国",
+        "的首"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 6866, 60159, 33641, 96142, 5122, 33176, 255001, 255000, 255007, 6866,
+        60159
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "都是",
+            "token_id": 33641,
+            "logprob": -0.0002,
+            "prob": 1.0
+          },
+          {
+            "token": "都",
+            "token_id": 6026,
+            "logprob": -8.6094,
+            "prob": 0.0002
+          },
+          {
+            "token": "都有",
+            "token_id": 59200,
+            "logprob": -11.9375,
+            "prob": 0.0
+          },
+          {
+            "token": "都在",
+            "token_id": 103858,
+            "logprob": -12.1172,
+            "prob": 0.0
+          },
+          {
+            "token": "都会",
+            "token_id": 66959,
+            "logprob": -12.2656,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġsão",
+            "token_id": 8048,
+            "logprob": -13.1641,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġđô",
+            "token_id": 25521,
+            "logprob": -13.2109,
+            "prob": 0.0
+          },
+          {
+            "token": "都市",
+            "token_id": 27970,
+            "logprob": -13.2031,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġ都",
+            "token_id": 223133,
+            "logprob": -13.3281,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġsą",
+            "token_id": 17537,
+            "logprob": -13.4297,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "都是",
+        "token_id": 33641,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 3,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>中国的首都是哪里？<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>中国的首都是",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "中国",
+        "的首",
+        "都是",
+        "哪",
+        "里",
+        "？",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "中国",
+        "的首",
+        "都是"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 6866, 60159, 33641, 96142, 5122, 33176, 255001, 255000, 255007, 6866,
+        60159, 33641
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "北京",
+            "token_id": 18034,
+            "logprob": -0.0097,
+            "prob": 0.9902
+          },
+          {
+            "token": "北京市",
+            "token_id": 62581,
+            "logprob": -4.7578,
+            "prob": 0.0086
+          },
+          {
+            "token": "ĠBeijing",
+            "token_id": 27924,
+            "logprob": -8.3672,
+            "prob": 0.0002
+          },
+          {
+            "token": "Ġ베이징",
+            "token_id": 177074,
+            "logprob": -8.3828,
+            "prob": 0.0002
+          },
+          {
+            "token": "Beijing",
+            "token_id": 152873,
+            "logprob": -8.5391,
+            "prob": 0.0002
+          },
+          {
+            "token": "在北京",
+            "token_id": 115606,
+            "logprob": -8.8359,
+            "prob": 0.0001
+          },
+          {
+            "token": "北京大学",
+            "token_id": 158512,
+            "logprob": -9.4062,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġ北京",
+            "token_id": 190907,
+            "logprob": -10.2812,
+            "prob": 0.0
+          },
+          {
+            "token": "中华人民共和国",
+            "token_id": 24510,
+            "logprob": -11.0156,
+            "prob": 0.0
+          },
+          {
+            "token": "巴黎",
+            "token_id": 48919,
+            "logprob": -12.2891,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "北京",
+        "token_id": 18034,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 4,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>中国的首都是哪里？<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>中国的首都是北京",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "中国",
+        "的首",
+        "都是",
+        "哪",
+        "里",
+        "？",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "中国",
+        "的首",
+        "都是",
+        "北京"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 6866, 60159, 33641, 96142, 5122, 33176, 255001, 255000, 255007, 6866,
+        60159, 33641, 18034
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "。",
+            "token_id": 1967,
+            "logprob": -0.0,
+            "prob": 1.0
+          },
+          {
+            "token": "，",
+            "token_id": 1918,
+            "logprob": -12.4219,
+            "prob": 0.0
+          },
+          {
+            "token": "।",
+            "token_id": 4280,
+            "logprob": -13.1875,
+            "prob": 0.0
+          },
+          {
+            "token": "（",
+            "token_id": 2285,
+            "logprob": -15.2422,
+            "prob": 0.0
+          },
+          {
+            "token": "。《",
+            "token_id": 53615,
+            "logprob": -15.7188,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġ。",
+            "token_id": 43816,
+            "logprob": -16.1875,
+            "prob": 0.0
+          },
+          {
+            "token": "城市",
+            "token_id": 17789,
+            "logprob": -17.0312,
+            "prob": 0.0
+          },
+          {
+            "token": "！",
+            "token_id": 23911,
+            "logprob": -16.9844,
+            "prob": 0.0
+          },
+          {
+            "token": "市",
+            "token_id": 3697,
+            "logprob": -16.9219,
+            "prob": 0.0
+          },
+          {
+            "token": ".",
+            "token_id": 21,
+            "logprob": -16.9688,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "。",
+        "token_id": 1967,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 5,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>中国的首都是哪里？<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>中国的首都是北京。",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "中国",
+        "的首",
+        "都是",
+        "哪",
+        "里",
+        "？",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "中国",
+        "的首",
+        "都是",
+        "北京",
+        "。"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 6866, 60159, 33641, 96142, 5122, 33176, 255001, 255000, 255007, 6866,
+        60159, 33641, 18034, 1967
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "北京",
+            "token_id": 18034,
+            "logprob": -0.0071,
+            "prob": 0.9927
+          },
+          {
+            "token": "<|END_OF_TURN_TOKEN|>",
+            "token_id": 255001,
+            "logprob": -5.4922,
+            "prob": 0.0041
+          },
+          {
+            "token": "\n",
+            "token_id": 206,
+            "logprob": -5.9141,
+            "prob": 0.0027
+          },
+          {
+            "token": "它",
+            "token_id": 12394,
+            "logprob": -8.6797,
+            "prob": 0.0002
+          },
+          {
+            "token": "Ġ北京",
+            "token_id": 190907,
+            "logprob": -10.3203,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠBeijing",
+            "token_id": 27924,
+            "logprob": -11.0,
+            "prob": 0.0
+          },
+          {
+            "token": "Beijing",
+            "token_id": 152873,
+            "logprob": -11.2031,
+            "prob": 0.0
+          },
+          {
+            "token": "它是",
+            "token_id": 94121,
+            "logprob": -11.6406,
+            "prob": 0.0
+          },
+          {
+            "token": "中国",
+            "token_id": 6866,
+            "logprob": -11.8438,
+            "prob": 0.0
+          },
+          {
+            "token": "在北京",
+            "token_id": 115606,
+            "logprob": -11.8828,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "北京",
+        "token_id": 18034,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 6,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>中国的首都是哪里？<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>中国的首都是北京。北京",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "中国",
+        "的首",
+        "都是",
+        "哪",
+        "里",
+        "？",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "中国",
+        "的首",
+        "都是",
+        "北京",
+        "。",
+        "北京"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 6866, 60159, 33641, 96142, 5122, 33176, 255001, 255000, 255007, 6866,
+        60159, 33641, 18034, 1967, 18034
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "是中国",
+            "token_id": 70714,
+            "logprob": -0.1,
+            "prob": 0.9048
+          },
+          {
+            "token": "不仅",
+            "token_id": 105709,
+            "logprob": -2.9121,
+            "prob": 0.0544
+          },
+          {
+            "token": "是",
+            "token_id": 2927,
+            "logprob": -3.6465,
+            "prob": 0.0261
+          },
+          {
+            "token": "是中华人民共和国",
+            "token_id": 165847,
+            "logprob": -4.8047,
+            "prob": 0.0082
+          },
+          {
+            "token": "作为",
+            "token_id": 20468,
+            "logprob": -6.4219,
+            "prob": 0.0016
+          },
+          {
+            "token": "是一个",
+            "token_id": 39384,
+            "logprob": -6.5547,
+            "prob": 0.0014
+          },
+          {
+            "token": "位于中国",
+            "token_id": 131321,
+            "logprob": -7.1172,
+            "prob": 0.0008
+          },
+          {
+            "token": "是一座",
+            "token_id": 94584,
+            "logprob": -7.875,
+            "prob": 0.0004
+          },
+          {
+            "token": "是中國",
+            "token_id": 142461,
+            "logprob": -7.9453,
+            "prob": 0.0004
+          },
+          {
+            "token": "在中国",
+            "token_id": 85532,
+            "logprob": -8.6406,
+            "prob": 0.0002
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "是中国",
+        "token_id": 70714,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 7,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>中国的首都是哪里？<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>中国的首都是北京。北京是中国",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "中国",
+        "的首",
+        "都是",
+        "哪",
+        "里",
+        "？",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "中国",
+        "的首",
+        "都是",
+        "北京",
+        "。",
+        "北京",
+        "是中国"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 6866, 60159, 33641, 96142, 5122, 33176, 255001, 255000, 255007, 6866,
+        60159, 33641, 18034, 1967, 18034, 70714
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "的政治",
+            "token_id": 108641,
+            "logprob": -0.0203,
+            "prob": 0.98
+          },
+          {
+            "token": "的",
+            "token_id": 2034,
+            "logprob": -4.3789,
+            "prob": 0.0125
+          },
+          {
+            "token": "政治",
+            "token_id": 11565,
+            "logprob": -4.9102,
+            "prob": 0.0074
+          },
+          {
+            "token": "政治的",
+            "token_id": 233613,
+            "logprob": -10.1406,
+            "prob": 0.0
+          },
+          {
+            "token": "的历史",
+            "token_id": 99254,
+            "logprob": -10.7891,
+            "prob": 0.0
+          },
+          {
+            "token": "的文化",
+            "token_id": 230246,
+            "logprob": -10.8516,
+            "prob": 0.0
+          },
+          {
+            "token": "最大的",
+            "token_id": 50367,
+            "logprob": -11.1016,
+            "prob": 0.0
+          },
+          {
+            "token": "的经济",
+            "token_id": 205679,
+            "logprob": -12.0078,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġ정치",
+            "token_id": 34931,
+            "logprob": -12.0859,
+            "prob": 0.0
+          },
+          {
+            "token": "的最大",
+            "token_id": 193128,
+            "logprob": -12.1719,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "的政治",
+        "token_id": 108641,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 8,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>中国的首都是哪里？<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>中国的首都是北京。北京是中国的政治",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "中国",
+        "的首",
+        "都是",
+        "哪",
+        "里",
+        "？",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "中国",
+        "的首",
+        "都是",
+        "北京",
+        "。",
+        "北京",
+        "是中国",
+        "的政治"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 6866, 60159, 33641, 96142, 5122, 33176, 255001, 255000, 255007, 6866,
+        60159, 33641, 18034, 1967, 18034, 70714, 108641
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "、",
+            "token_id": 2066,
+            "logprob": -0.0006,
+            "prob": 0.9995
+          },
+          {
+            "token": "中心",
+            "token_id": 12613,
+            "logprob": -7.5156,
+            "prob": 0.0005
+          },
+          {
+            "token": "،",
+            "token_id": 3196,
+            "logprob": -12.2344,
+            "prob": 0.0
+          },
+          {
+            "token": "，",
+            "token_id": 1918,
+            "logprob": -14.4297,
+            "prob": 0.0
+          },
+          {
+            "token": "文化中心",
+            "token_id": 219558,
+            "logprob": -14.8438,
+            "prob": 0.0
+          },
+          {
+            "token": "和",
+            "token_id": 3106,
+            "logprob": -15.0234,
+            "prob": 0.0
+          },
+          {
+            "token": "中心的",
+            "token_id": 131980,
+            "logprob": -16.125,
+            "prob": 0.0
+          },
+          {
+            "token": "文化",
+            "token_id": 13121,
+            "logprob": -17.1406,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġcenter",
+            "token_id": 7524,
+            "logprob": -16.375,
+            "prob": 0.0
+          },
+          {
+            "token": "中",
+            "token_id": 2534,
+            "logprob": -17.2188,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "、",
+        "token_id": 2066,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 9,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>中国的首都是哪里？<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>中国的首都是北京。北京是中国的政治、",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "中国",
+        "的首",
+        "都是",
+        "哪",
+        "里",
+        "？",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "中国",
+        "的首",
+        "都是",
+        "北京",
+        "。",
+        "北京",
+        "是中国",
+        "的政治",
+        "、"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 6866, 60159, 33641, 96142, 5122, 33176, 255001, 255000, 255007, 6866,
+        60159, 33641, 18034, 1967, 18034, 70714, 108641, 2066
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "文化",
+            "token_id": 13121,
+            "logprob": -0.0395,
+            "prob": 0.9614
+          },
+          {
+            "token": "文化和",
+            "token_id": 242340,
+            "logprob": -3.2578,
+            "prob": 0.0385
+          },
+          {
+            "token": "文化中心",
+            "token_id": 219558,
+            "logprob": -8.8984,
+            "prob": 0.0001
+          },
+          {
+            "token": "文化的",
+            "token_id": 148680,
+            "logprob": -9.6641,
+            "prob": 0.0001
+          },
+          {
+            "token": "文化遗产",
+            "token_id": 197005,
+            "logprob": -10.4141,
+            "prob": 0.0
+          },
+          {
+            "token": "经济",
+            "token_id": 22981,
+            "logprob": -12.0078,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġкультур",
+            "token_id": 36135,
+            "logprob": -12.4766,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġ문화",
+            "token_id": 43264,
+            "logprob": -12.7266,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġπολιτ",
+            "token_id": 67158,
+            "logprob": -13.0625,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġculturelle",
+            "token_id": 98856,
+            "logprob": -13.0625,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "文化",
+        "token_id": 13121,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 10,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>中国的首都是哪里？<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>中国的首都是北京。北京是中国的政治、文化",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "中国",
+        "的首",
+        "都是",
+        "哪",
+        "里",
+        "？",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "中国",
+        "的首",
+        "都是",
+        "北京",
+        "。",
+        "北京",
+        "是中国",
+        "的政治",
+        "、",
+        "文化"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 6866, 60159, 33641, 96142, 5122, 33176, 255001, 255000, 255007, 6866,
+        60159, 33641, 18034, 1967, 18034, 70714, 108641, 2066, 13121
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "、",
+            "token_id": 2066,
+            "logprob": -0.0001,
+            "prob": 1.0
+          },
+          {
+            "token": "和",
+            "token_id": 3106,
+            "logprob": -8.9688,
+            "prob": 0.0001
+          },
+          {
+            "token": "和社会",
+            "token_id": 218099,
+            "logprob": -12.0547,
+            "prob": 0.0
+          },
+          {
+            "token": "،",
+            "token_id": 3196,
+            "logprob": -13.0391,
+            "prob": 0.0
+          },
+          {
+            "token": "与",
+            "token_id": 5029,
+            "logprob": -13.7656,
+            "prob": 0.0
+          },
+          {
+            "token": "以及",
+            "token_id": 12424,
+            "logprob": -15.2344,
+            "prob": 0.0
+          },
+          {
+            "token": "中心",
+            "token_id": 12613,
+            "logprob": -15.6797,
+            "prob": 0.0
+          },
+          {
+            "token": "和人口",
+            "token_id": 132807,
+            "logprob": -15.3828,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġ和",
+            "token_id": 57692,
+            "logprob": -16.3906,
+            "prob": 0.0
+          },
+          {
+            "token": "和新",
+            "token_id": 174657,
+            "logprob": -16.8125,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "、",
+        "token_id": 2066,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 11,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>中国的首都是哪里？<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>中国的首都是北京。北京是中国的政治、文化、",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "中国",
+        "的首",
+        "都是",
+        "哪",
+        "里",
+        "？",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "中国",
+        "的首",
+        "都是",
+        "北京",
+        "。",
+        "北京",
+        "是中国",
+        "的政治",
+        "、",
+        "文化",
+        "、"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 6866, 60159, 33641, 96142, 5122, 33176, 255001, 255000, 255007, 6866,
+        60159, 33641, 18034, 1967, 18034, 70714, 108641, 2066, 13121, 2066
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "教育",
+            "token_id": 13991,
+            "logprob": -0.001,
+            "prob": 0.999
+          },
+          {
+            "token": "科技",
+            "token_id": 37365,
+            "logprob": -7.0625,
+            "prob": 0.0009
+          },
+          {
+            "token": "和",
+            "token_id": 3106,
+            "logprob": -10.8594,
+            "prob": 0.0
+          },
+          {
+            "token": "经济",
+            "token_id": 22981,
+            "logprob": -11.2266,
+            "prob": 0.0
+          },
+          {
+            "token": "学术",
+            "token_id": 75284,
+            "logprob": -11.6562,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġ교육",
+            "token_id": 48348,
+            "logprob": -11.6875,
+            "prob": 0.0
+          },
+          {
+            "token": "军事",
+            "token_id": 33346,
+            "logprob": -11.7422,
+            "prob": 0.0
+          },
+          {
+            "token": "国际",
+            "token_id": 17729,
+            "logprob": -11.7578,
+            "prob": 0.0
+          },
+          {
+            "token": "交通",
+            "token_id": 17480,
+            "logprob": -11.9609,
+            "prob": 0.0
+          },
+          {
+            "token": "历史",
+            "token_id": 16089,
+            "logprob": -11.9922,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "教育",
+        "token_id": 13991,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 12,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>中国的首都是哪里？<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>中国的首都是北京。北京是中国的政治、文化、教育",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "中国",
+        "的首",
+        "都是",
+        "哪",
+        "里",
+        "？",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "中国",
+        "的首",
+        "都是",
+        "北京",
+        "。",
+        "北京",
+        "是中国",
+        "的政治",
+        "、",
+        "文化",
+        "、",
+        "教育"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 6866, 60159, 33641, 96142, 5122, 33176, 255001, 255000, 255007, 6866,
+        60159, 33641, 18034, 1967, 18034, 70714, 108641, 2066, 13121, 2066, 13991
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "和",
+            "token_id": 3106,
+            "logprob": -0.0078,
+            "prob": 0.9922
+          },
+          {
+            "token": "、",
+            "token_id": 2066,
+            "logprob": -4.8672,
+            "prob": 0.0077
+          },
+          {
+            "token": "中心",
+            "token_id": 12613,
+            "logprob": -10.4297,
+            "prob": 0.0
+          },
+          {
+            "token": "和社会",
+            "token_id": 218099,
+            "logprob": -10.7891,
+            "prob": 0.0
+          },
+          {
+            "token": "与",
+            "token_id": 5029,
+            "logprob": -11.2891,
+            "prob": 0.0
+          },
+          {
+            "token": "和高",
+            "token_id": 216960,
+            "logprob": -12.3984,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġ和",
+            "token_id": 57692,
+            "logprob": -12.4219,
+            "prob": 0.0
+          },
+          {
+            "token": "以及",
+            "token_id": 12424,
+            "logprob": -12.5938,
+            "prob": 0.0
+          },
+          {
+            "token": "和其他",
+            "token_id": 72386,
+            "logprob": -12.8984,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġи",
+            "token_id": 2071,
+            "logprob": -13.2109,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "和",
+        "token_id": 3106,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 13,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>中国的首都是哪里？<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>中国的首都是北京。北京是中国的政治、文化、教育和",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "中国",
+        "的首",
+        "都是",
+        "哪",
+        "里",
+        "？",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "中国",
+        "的首",
+        "都是",
+        "北京",
+        "。",
+        "北京",
+        "是中国",
+        "的政治",
+        "、",
+        "文化",
+        "、",
+        "教育",
+        "和"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 6866, 60159, 33641, 96142, 5122, 33176, 255001, 255000, 255007, 6866,
+        60159, 33641, 18034, 1967, 18034, 70714, 108641, 2066, 13121, 2066, 13991, 3106
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "国际",
+            "token_id": 17729,
+            "logprob": -0.0614,
+            "prob": 0.9404
+          },
+          {
+            "token": "交通",
+            "token_id": 17480,
+            "logprob": -2.873,
+            "prob": 0.0565
+          },
+          {
+            "token": "科技",
+            "token_id": 37365,
+            "logprob": -6.3594,
+            "prob": 0.0017
+          },
+          {
+            "token": "经济",
+            "token_id": 22981,
+            "logprob": -7.3984,
+            "prob": 0.0006
+          },
+          {
+            "token": "科学",
+            "token_id": 21609,
+            "logprob": -8.7188,
+            "prob": 0.0002
+          },
+          {
+            "token": "国際",
+            "token_id": 35860,
+            "logprob": -9.2812,
+            "prob": 0.0001
+          },
+          {
+            "token": "运输",
+            "token_id": 57970,
+            "logprob": -9.4688,
+            "prob": 0.0001
+          },
+          {
+            "token": "商业",
+            "token_id": 48352,
+            "logprob": -9.7031,
+            "prob": 0.0001
+          },
+          {
+            "token": "國際",
+            "token_id": 30537,
+            "logprob": -9.8125,
+            "prob": 0.0001
+          },
+          {
+            "token": "科研",
+            "token_id": 157197,
+            "logprob": -10.6172,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "国际",
+        "token_id": 17729,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 14,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>中国的首都是哪里？<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>中国的首都是北京。北京是中国的政治、文化、教育和国际",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "中国",
+        "的首",
+        "都是",
+        "哪",
+        "里",
+        "？",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "中国",
+        "的首",
+        "都是",
+        "北京",
+        "。",
+        "北京",
+        "是中国",
+        "的政治",
+        "、",
+        "文化",
+        "、",
+        "教育",
+        "和",
+        "国际"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 6866, 60159, 33641, 96142, 5122, 33176, 255001, 255000, 255007, 6866,
+        60159, 33641, 18034, 1967, 18034, 70714, 108641, 2066, 13121, 2066, 13991, 3106, 17729
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "交流",
+            "token_id": 40110,
+            "logprob": -0.2864,
+            "prob": 0.751
+          },
+          {
+            "token": "交往",
+            "token_id": 149852,
+            "logprob": -1.3955,
+            "prob": 0.2477
+          },
+          {
+            "token": "交换",
+            "token_id": 110930,
+            "logprob": -7.2852,
+            "prob": 0.0007
+          },
+          {
+            "token": "关系",
+            "token_id": 27066,
+            "logprob": -8.6953,
+            "prob": 0.0002
+          },
+          {
+            "token": "交通",
+            "token_id": 17480,
+            "logprob": -9.3672,
+            "prob": 0.0001
+          },
+          {
+            "token": "贸易",
+            "token_id": 61536,
+            "logprob": -9.7188,
+            "prob": 0.0001
+          },
+          {
+            "token": "交",
+            "token_id": 6841,
+            "logprob": -9.8516,
+            "prob": 0.0001
+          },
+          {
+            "token": "交易",
+            "token_id": 47126,
+            "logprob": -10.1328,
+            "prob": 0.0
+          },
+          {
+            "token": "往来",
+            "token_id": 152813,
+            "logprob": -10.3359,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġéchanges",
+            "token_id": 150335,
+            "logprob": -10.4609,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "交流",
+        "token_id": 40110,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 15,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>中国的首都是哪里？<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>中国的首都是北京。北京是中国的政治、文化、教育和国际交流",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "中国",
+        "的首",
+        "都是",
+        "哪",
+        "里",
+        "？",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "中国",
+        "的首",
+        "都是",
+        "北京",
+        "。",
+        "北京",
+        "是中国",
+        "的政治",
+        "、",
+        "文化",
+        "、",
+        "教育",
+        "和",
+        "国际",
+        "交流"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 6866, 60159, 33641, 96142, 5122, 33176, 255001, 255000, 255007, 6866,
+        60159, 33641, 18034, 1967, 18034, 70714, 108641, 2066, 13121, 2066, 13991, 3106, 17729,
+        40110
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "中心",
+            "token_id": 12613,
+            "logprob": -0.0027,
+            "prob": 0.9971
+          },
+          {
+            "token": "的中心",
+            "token_id": 169331,
+            "logprob": -5.9883,
+            "prob": 0.0025
+          },
+          {
+            "token": "中心的",
+            "token_id": 131980,
+            "logprob": -8.9688,
+            "prob": 0.0001
+          },
+          {
+            "token": "の中心",
+            "token_id": 185330,
+            "logprob": -10.2656,
+            "prob": 0.0
+          },
+          {
+            "token": "的重要",
+            "token_id": 76973,
+            "logprob": -11.5469,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġ중심",
+            "token_id": 49701,
+            "logprob": -11.9844,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġcenter",
+            "token_id": 7524,
+            "logprob": -12.2188,
+            "prob": 0.0
+          },
+          {
+            "token": "的",
+            "token_id": 2034,
+            "logprob": -12.3047,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġцентр",
+            "token_id": 28493,
+            "logprob": -12.3516,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġمركز",
+            "token_id": 71340,
+            "logprob": -12.3516,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "中心",
+        "token_id": 12613,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 16,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>中国的首都是哪里？<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>中国的首都是北京。北京是中国的政治、文化、教育和国际交流中心",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "中国",
+        "的首",
+        "都是",
+        "哪",
+        "里",
+        "？",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "中国",
+        "的首",
+        "都是",
+        "北京",
+        "。",
+        "北京",
+        "是中国",
+        "的政治",
+        "、",
+        "文化",
+        "、",
+        "教育",
+        "和",
+        "国际",
+        "交流",
+        "中心"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 6866, 60159, 33641, 96142, 5122, 33176, 255001, 255000, 255007, 6866,
+        60159, 33641, 18034, 1967, 18034, 70714, 108641, 2066, 13121, 2066, 13991, 3106, 17729,
+        40110, 12613
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "，",
+            "token_id": 1918,
+            "logprob": -0.0048,
+            "prob": 0.9951
+          },
+          {
+            "token": "。",
+            "token_id": 1967,
+            "logprob": -5.9883,
+            "prob": 0.0025
+          },
+          {
+            "token": "之一",
+            "token_id": 16953,
+            "logprob": -6.0664,
+            "prob": 0.0023
+          },
+          {
+            "token": ",",
+            "token_id": 19,
+            "logprob": -14.0547,
+            "prob": 0.0
+          },
+          {
+            "token": "；",
+            "token_id": 7029,
+            "logprob": -14.9062,
+            "prob": 0.0
+          },
+          {
+            "token": "，“",
+            "token_id": 47881,
+            "logprob": -15.6016,
+            "prob": 0.0
+          },
+          {
+            "token": "城市",
+            "token_id": 17789,
+            "logprob": -15.6562,
+            "prob": 0.0
+          },
+          {
+            "token": "！",
+            "token_id": 23911,
+            "logprob": -17.2031,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġamong",
+            "token_id": 6321,
+            "logprob": -16.4375,
+            "prob": 0.0
+          },
+          {
+            "token": "：",
+            "token_id": 3168,
+            "logprob": -16.5156,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "，",
+        "token_id": 1918,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 17,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>中国的首都是哪里？<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>中国的首都是北京。北京是中国的政治、文化、教育和国际交流中心，",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "中国",
+        "的首",
+        "都是",
+        "哪",
+        "里",
+        "？",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "中国",
+        "的首",
+        "都是",
+        "北京",
+        "。",
+        "北京",
+        "是中国",
+        "的政治",
+        "、",
+        "文化",
+        "、",
+        "教育",
+        "和",
+        "国际",
+        "交流",
+        "中心",
+        "，"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 6866, 60159, 33641, 96142, 5122, 33176, 255001, 255000, 255007, 6866,
+        60159, 33641, 18034, 1967, 18034, 70714, 108641, 2066, 13121, 2066, 13991, 3106, 17729,
+        40110, 12613, 1918
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "也是",
+            "token_id": 21344,
+            "logprob": -0.163,
+            "prob": 0.8496
+          },
+          {
+            "token": "拥有",
+            "token_id": 33540,
+            "logprob": -2.7715,
+            "prob": 0.0625
+          },
+          {
+            "token": "是",
+            "token_id": 2927,
+            "logprob": -3.2871,
+            "prob": 0.0373
+          },
+          {
+            "token": "是中国",
+            "token_id": 70714,
+            "logprob": -3.873,
+            "prob": 0.0208
+          },
+          {
+            "token": "具有",
+            "token_id": 30052,
+            "logprob": -4.2969,
+            "prob": 0.0136
+          },
+          {
+            "token": "有着",
+            "token_id": 132986,
+            "logprob": -5.5859,
+            "prob": 0.0038
+          },
+          {
+            "token": "是一座",
+            "token_id": 94584,
+            "logprob": -5.8125,
+            "prob": 0.003
+          },
+          {
+            "token": "是一个",
+            "token_id": 39384,
+            "logprob": -6.0859,
+            "prob": 0.0023
+          },
+          {
+            "token": "是中华人民共和国",
+            "token_id": 165847,
+            "logprob": -6.4141,
+            "prob": 0.0016
+          },
+          {
+            "token": "历史",
+            "token_id": 16089,
+            "logprob": -6.875,
+            "prob": 0.001
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "也是",
+        "token_id": 21344,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 18,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>中国的首都是哪里？<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>中国的首都是北京。北京是中国的政治、文化、教育和国际交流中心，也是",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "中国",
+        "的首",
+        "都是",
+        "哪",
+        "里",
+        "？",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "中国",
+        "的首",
+        "都是",
+        "北京",
+        "。",
+        "北京",
+        "是中国",
+        "的政治",
+        "、",
+        "文化",
+        "、",
+        "教育",
+        "和",
+        "国际",
+        "交流",
+        "中心",
+        "，",
+        "也是"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 6866, 60159, 33641, 96142, 5122, 33176, 255001, 255000, 255007, 6866,
+        60159, 33641, 18034, 1967, 18034, 70714, 108641, 2066, 13121, 2066, 13991, 3106, 17729,
+        40110, 12613, 1918, 21344
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "中国",
+            "token_id": 6866,
+            "logprob": -0.3076,
+            "prob": 0.7354
+          },
+          {
+            "token": "中华人民共和国",
+            "token_id": 24510,
+            "logprob": -1.5107,
+            "prob": 0.2207
+          },
+          {
+            "token": "中国的",
+            "token_id": 115799,
+            "logprob": -3.9023,
+            "prob": 0.0202
+          },
+          {
+            "token": "该国",
+            "token_id": 51861,
+            "logprob": -5.9648,
+            "prob": 0.0026
+          },
+          {
+            "token": "国家",
+            "token_id": 12371,
+            "logprob": -6.168,
+            "prob": 0.0021
+          },
+          {
+            "token": "中国国家",
+            "token_id": 159425,
+            "logprob": -6.332,
+            "prob": 0.0018
+          },
+          {
+            "token": "中国大陆",
+            "token_id": 42739,
+            "logprob": -6.4102,
+            "prob": 0.0016
+          },
+          {
+            "token": "全国",
+            "token_id": 17256,
+            "logprob": -6.4883,
+            "prob": 0.0015
+          },
+          {
+            "token": "中国共产党",
+            "token_id": 47865,
+            "logprob": -6.5742,
+            "prob": 0.0014
+          },
+          {
+            "token": "一个",
+            "token_id": 8266,
+            "logprob": -6.7305,
+            "prob": 0.0012
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "中华人民共和国",
+        "token_id": 24510,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 19,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>中国的首都是哪里？<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>中国的首都是北京。北京是中国的政治、文化、教育和国际交流中心，也是中华人民共和国",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "中国",
+        "的首",
+        "都是",
+        "哪",
+        "里",
+        "？",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "中国",
+        "的首",
+        "都是",
+        "北京",
+        "。",
+        "北京",
+        "是中国",
+        "的政治",
+        "、",
+        "文化",
+        "、",
+        "教育",
+        "和",
+        "国际",
+        "交流",
+        "中心",
+        "，",
+        "也是",
+        "中华人民共和国"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 6866, 60159, 33641, 96142, 5122, 33176, 255001, 255000, 255007, 6866,
+        60159, 33641, 18034, 1967, 18034, 70714, 108641, 2066, 13121, 2066, 13991, 3106, 17729,
+        40110, 12613, 1918, 21344, 24510
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "中央政府",
+            "token_id": 195854,
+            "logprob": -0.6567,
+            "prob": 0.5186
+          },
+          {
+            "token": "的",
+            "token_id": 2034,
+            "logprob": -1.125,
+            "prob": 0.3245
+          },
+          {
+            "token": "政府",
+            "token_id": 9596,
+            "logprob": -2.5156,
+            "prob": 0.0807
+          },
+          {
+            "token": "的核心",
+            "token_id": 215368,
+            "logprob": -3.4219,
+            "prob": 0.0326
+          },
+          {
+            "token": "中央",
+            "token_id": 13262,
+            "logprob": -4.25,
+            "prob": 0.0143
+          },
+          {
+            "token": "政府的",
+            "token_id": 82985,
+            "logprob": -4.6641,
+            "prob": 0.0094
+          },
+          {
+            "token": "中央人民政府",
+            "token_id": 237567,
+            "logprob": -5.0234,
+            "prob": 0.0066
+          },
+          {
+            "token": "的中心",
+            "token_id": 169331,
+            "logprob": -5.0469,
+            "prob": 0.0064
+          },
+          {
+            "token": "政府在",
+            "token_id": 159665,
+            "logprob": -7.2344,
+            "prob": 0.0007
+          },
+          {
+            "token": "中央委员会",
+            "token_id": 143342,
+            "logprob": -7.5312,
+            "prob": 0.0005
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "的",
+        "token_id": 2034,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 20,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>中国的首都是哪里？<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>中国的首都是北京。北京是中国的政治、文化、教育和国际交流中心，也是中华人民共和国的",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "中国",
+        "的首",
+        "都是",
+        "哪",
+        "里",
+        "？",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "中国",
+        "的首",
+        "都是",
+        "北京",
+        "。",
+        "北京",
+        "是中国",
+        "的政治",
+        "、",
+        "文化",
+        "、",
+        "教育",
+        "和",
+        "国际",
+        "交流",
+        "中心",
+        "，",
+        "也是",
+        "中华人民共和国",
+        "的"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 6866, 60159, 33641, 96142, 5122, 33176, 255001, 255000, 255007, 6866,
+        60159, 33641, 18034, 1967, 18034, 70714, 108641, 2066, 13121, 2066, 13991, 3106, 17729,
+        40110, 12613, 1918, 21344, 24510, 2034
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "中央政府",
+            "token_id": 195854,
+            "logprob": -0.0687,
+            "prob": 0.9336
+          },
+          {
+            "token": "首都",
+            "token_id": 44398,
+            "logprob": -2.9434,
+            "prob": 0.0527
+          },
+          {
+            "token": "政府",
+            "token_id": 9596,
+            "logprob": -5.2109,
+            "prob": 0.0055
+          },
+          {
+            "token": "中央",
+            "token_id": 13262,
+            "logprob": -5.5703,
+            "prob": 0.0038
+          },
+          {
+            "token": "行政中心",
+            "token_id": 148619,
+            "logprob": -6.8828,
+            "prob": 0.001
+          },
+          {
+            "token": "国务院",
+            "token_id": 68213,
+            "logprob": -7.9297,
+            "prob": 0.0004
+          },
+          {
+            "token": "总部",
+            "token_id": 70719,
+            "logprob": -8.8672,
+            "prob": 0.0001
+          },
+          {
+            "token": "联邦",
+            "token_id": 38662,
+            "logprob": -9.0391,
+            "prob": 0.0001
+          },
+          {
+            "token": "全国",
+            "token_id": 17256,
+            "logprob": -9.1797,
+            "prob": 0.0001
+          },
+          {
+            "token": "中央人民政府",
+            "token_id": 237567,
+            "logprob": -9.3203,
+            "prob": 0.0001
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "中央政府",
+        "token_id": 195854,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 21,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>中国的首都是哪里？<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>中国的首都是北京。北京是中国的政治、文化、教育和国际交流中心，也是中华人民共和国的中央政府",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "中国",
+        "的首",
+        "都是",
+        "哪",
+        "里",
+        "？",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "中国",
+        "的首",
+        "都是",
+        "北京",
+        "。",
+        "北京",
+        "是中国",
+        "的政治",
+        "、",
+        "文化",
+        "、",
+        "教育",
+        "和",
+        "国际",
+        "交流",
+        "中心",
+        "，",
+        "也是",
+        "中华人民共和国",
+        "的",
+        "中央政府"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 6866, 60159, 33641, 96142, 5122, 33176, 255001, 255000, 255007, 6866,
+        60159, 33641, 18034, 1967, 18034, 70714, 108641, 2066, 13121, 2066, 13991, 3106, 17729,
+        40110, 12613, 1918, 21344, 24510, 2034, 195854
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "所在地",
+            "token_id": 73866,
+            "logprob": -0.0042,
+            "prob": 0.9956
+          },
+          {
+            "token": "驻地",
+            "token_id": 207958,
+            "logprob": -6.1914,
+            "prob": 0.002
+          },
+          {
+            "token": "所在",
+            "token_id": 40055,
+            "logprob": -7.1836,
+            "prob": 0.0008
+          },
+          {
+            "token": "位于",
+            "token_id": 12427,
+            "logprob": -7.5352,
+            "prob": 0.0005
+          },
+          {
+            "token": "驻",
+            "token_id": 27685,
+            "logprob": -7.9727,
+            "prob": 0.0003
+          },
+          {
+            "token": "机关",
+            "token_id": 62931,
+            "logprob": -8.6406,
+            "prob": 0.0002
+          },
+          {
+            "token": "和",
+            "token_id": 3106,
+            "logprob": -9.6953,
+            "prob": 0.0001
+          },
+          {
+            "token": "所在的",
+            "token_id": 192131,
+            "logprob": -10.375,
+            "prob": 0.0
+          },
+          {
+            "token": "坐落",
+            "token_id": 147608,
+            "logprob": -10.7422,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġ소재",
+            "token_id": 61669,
+            "logprob": -10.7578,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "所在地",
+        "token_id": 73866,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 22,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>中国的首都是哪里？<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>中国的首都是北京。北京是中国的政治、文化、教育和国际交流中心，也是中华人民共和国的中央政府所在地",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "中国",
+        "的首",
+        "都是",
+        "哪",
+        "里",
+        "？",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "中国",
+        "的首",
+        "都是",
+        "北京",
+        "。",
+        "北京",
+        "是中国",
+        "的政治",
+        "、",
+        "文化",
+        "、",
+        "教育",
+        "和",
+        "国际",
+        "交流",
+        "中心",
+        "，",
+        "也是",
+        "中华人民共和国",
+        "的",
+        "中央政府",
+        "所在地"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 6866, 60159, 33641, 96142, 5122, 33176, 255001, 255000, 255007, 6866,
+        60159, 33641, 18034, 1967, 18034, 70714, 108641, 2066, 13121, 2066, 13991, 3106, 17729,
+        40110, 12613, 1918, 21344, 24510, 2034, 195854, 73866
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "。",
+            "token_id": 1967,
+            "logprob": -0.0,
+            "prob": 1.0
+          },
+          {
+            "token": "，",
+            "token_id": 1918,
+            "logprob": -10.125,
+            "prob": 0.0
+          },
+          {
+            "token": "।",
+            "token_id": 4280,
+            "logprob": -14.6328,
+            "prob": 0.0
+          },
+          {
+            "token": "。“",
+            "token_id": 112713,
+            "logprob": -14.9375,
+            "prob": 0.0
+          },
+          {
+            "token": "之一",
+            "token_id": 16953,
+            "logprob": -16.0938,
+            "prob": 0.0
+          },
+          {
+            "token": "。《",
+            "token_id": 53615,
+            "logprob": -16.2188,
+            "prob": 0.0
+          },
+          {
+            "token": "和",
+            "token_id": 3106,
+            "logprob": -17.2812,
+            "prob": 0.0
+          },
+          {
+            "token": "<CLS>",
+            "token_id": 2,
+            "logprob": -31.5,
+            "prob": 0.0
+          },
+          {
+            "token": "<UNK>",
+            "token_id": 1,
+            "logprob": -29.8594,
+            "prob": 0.0
+          },
+          {
+            "token": "<PAD>",
+            "token_id": 0,
+            "logprob": -31.9844,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "。",
+        "token_id": 1967,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 23,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>中国的首都是哪里？<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>中国的首都是北京。北京是中国的政治、文化、教育和国际交流中心，也是中华人民共和国的中央政府所在地。",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "中国",
+        "的首",
+        "都是",
+        "哪",
+        "里",
+        "？",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "中国",
+        "的首",
+        "都是",
+        "北京",
+        "。",
+        "北京",
+        "是中国",
+        "的政治",
+        "、",
+        "文化",
+        "、",
+        "教育",
+        "和",
+        "国际",
+        "交流",
+        "中心",
+        "，",
+        "也是",
+        "中华人民共和国",
+        "的",
+        "中央政府",
+        "所在地",
+        "。"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 6866, 60159, 33641, 96142, 5122, 33176, 255001, 255000, 255007, 6866,
+        60159, 33641, 18034, 1967, 18034, 70714, 108641, 2066, 13121, 2066, 13991, 3106, 17729,
+        40110, 12613, 1918, 21344, 24510, 2034, 195854, 73866, 1967
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "<|END_OF_TURN_TOKEN|>",
+            "token_id": 255001,
+            "logprob": -0.5527,
+            "prob": 0.5752
+          },
+          {
+            "token": "它",
+            "token_id": 12394,
+            "logprob": -0.9121,
+            "prob": 0.4016
+          },
+          {
+            "token": "北京",
+            "token_id": 18034,
+            "logprob": -3.9277,
+            "prob": 0.0197
+          },
+          {
+            "token": "拥有",
+            "token_id": 33540,
+            "logprob": -7.4648,
+            "prob": 0.0006
+          },
+          {
+            "token": "这座",
+            "token_id": 139227,
+            "logprob": -7.5273,
+            "prob": 0.0005
+          },
+          {
+            "token": "它的",
+            "token_id": 54263,
+            "logprob": -7.8164,
+            "prob": 0.0004
+          },
+          {
+            "token": "有着",
+            "token_id": 132986,
+            "logprob": -8.1797,
+            "prob": 0.0003
+          },
+          {
+            "token": "它是",
+            "token_id": 94121,
+            "logprob": -8.8281,
+            "prob": 0.0001
+          },
+          {
+            "token": "它在",
+            "token_id": 144677,
+            "logprob": -9.0156,
+            "prob": 0.0001
+          },
+          {
+            "token": "具有",
+            "token_id": 30052,
+            "logprob": -9.0312,
+            "prob": 0.0001
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "<|END_OF_TURN_TOKEN|>",
+        "token_id": 255001,
+        "selection_method": "sampling"
+      }
+    }
+  ]
+}

@@ -18,7 +18,7 @@ function KeyboardShortcutsModal({ isOpen, onClose }) {
     { key: 'R', description: t('shortcut_reset') },
     { key: 'T', description: t('shortcut_toggle_theme') },
     { key: 'L', description: t('shortcut_toggle_language') },
-    { key: 'H or ?', description: t('shortcut_show_shortcuts') },
+    { key: 'H', description: t('shortcut_show_shortcuts') },
   ];
 
   return (

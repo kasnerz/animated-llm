@@ -5,6 +5,7 @@ import InputSection from './components/InputSection';
 import GeneratedAnswer from './components/GeneratedAnswer';
 import VisualizationCanvas from './components/VisualizationCanvas';
 import KeyboardShortcutsModal from './components/KeyboardShortcutsModal';
+import LanguageSelector from './components/LanguageSelector';
 import Icon from '@mdi/react';
 import { mdiKeyboard } from '@mdi/js';
 import { config } from './config';
@@ -47,7 +48,7 @@ function AppContent() {
       }
 
       // ArrowRight: step forward; if playing, pause first then step
-      if (e.code === 'ArrowRight') {
+      if (e.key === 'ArrowRight') {
         e.preventDefault();
         if (!state.currentExample) return;
         if (state.currentStep === 0) {
@@ -81,7 +82,7 @@ function AppContent() {
       }
 
       // ArrowLeft: step backward; if playing, pause first then step
-      if (e.code === 'ArrowLeft') {
+      if (e.key === 'ArrowLeft') {
         e.preventDefault();
         if (!state.currentExample) return;
         // If playing, pause and then step backward
@@ -93,7 +94,7 @@ function AppContent() {
       }
 
       // N: finish current token and move to the next (repeatable)
-      if (e.code === 'KeyN') {
+      if (e.key === 'n' || e.key === 'N') {
         e.preventDefault();
         if (!state.currentExample) return;
         // If playing, pause first
@@ -120,7 +121,7 @@ function AppContent() {
       }
 
       // G: skip to end of generation (all tokens)
-      if (e.code === 'KeyG') {
+      if (e.key === 'g' || e.key === 'G') {
         e.preventDefault();
         if (!state.currentExample) return;
         // If playing, pause first
@@ -134,25 +135,25 @@ function AppContent() {
       }
 
       // R: reset
-      if (e.code === 'KeyR') {
+      if (e.key === 'r' || e.key === 'R') {
         e.preventDefault();
         actions.reset();
         return;
       }
       // T: toggle theme
-      if (e.code === 'KeyT') {
+      if (e.key === 't' || e.key === 'T') {
         e.preventDefault();
         actions.toggleTheme();
         return;
       }
       // L: toggle language
-      if (e.code === 'KeyL') {
+      if (e.key === 'l' || e.key === 'L') {
         e.preventDefault();
-        toggleLanguage();
+        toggleLanguage(); // Now cycles through all available languages
         return;
       }
       // H or ?: show keyboard shortcuts
-      if (e.code === 'KeyH' || (e.code === 'Slash' && e.shiftKey)) {
+      if (e.key === 'h' || e.key === 'H' || e.key === '?') {
         e.preventDefault();
         setIsKeyboardShortcutsOpen(true);
         return;
@@ -264,14 +265,7 @@ function AppContent() {
         >
           {state.theme === 'dark' ? '☀️' : '🌙'}
         </button>
-        <button
-          onClick={toggleLanguage}
-          className="icon-button-minimal"
-          title={t('toggle_language')}
-          aria-label={t('toggle_language')}
-        >
-          {language === 'en' ? '🇬🇧' : '🇨🇿'}
-        </button>
+        <LanguageSelector />
       </div>
 
       {/* Keyboard Shortcuts Modal */}

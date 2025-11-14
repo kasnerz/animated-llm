@@ -1,6 +1,6 @@
 /**
  * Translations for the application
- * Supports English (en) and Czech (cs)
+ * Supports multiple languages with automatic fallback to English for missing keys
  */
 
 const translations = {
@@ -10,7 +10,7 @@ const translations = {
     start_generation: 'Start Generation',
     next_token: 'Next Token',
     toggle_theme: 'Toggle Theme',
-    toggle_language: 'Toggle Language',
+    toggle_language: 'Cycle Language',
     loading: 'Loading...',
     error: 'Error',
     retry: 'Retry',
@@ -24,13 +24,13 @@ const translations = {
     shortcut_skip_to_end: 'Skip to end of generation',
     shortcut_reset: 'Reset animation',
     shortcut_toggle_theme: 'Toggle theme',
-    shortcut_toggle_language: 'Toggle language',
+    shortcut_toggle_language: 'Cycle language',
     shortcut_show_shortcuts: 'Show keyboard shortcuts',
     // Stage labels
     stage_tokenization: 'Tokenization',
     stage_tokenization_hint: 'Segmenting the text into smaller units',
-    stage_token_ids: 'Token ids',
-    stage_token_ids_hint: 'Retrieving a numerical identifier for each token',
+    stage_positional_embeddings: 'Positional embeddings',
+    stage_positional_embeddings_hint: 'Adding position information to each token',
     stage_input_embeddings: 'Input embeddings',
     stage_input_embeddings_hint: 'Retrieving a vector representation for each token',
     stage_attention_layer: 'Attention layer',
@@ -50,7 +50,7 @@ const translations = {
     start_generation: 'Začít generování',
     next_token: 'Další token',
     toggle_theme: 'Přepnout téma',
-    toggle_language: 'Přepnout jazyk',
+    toggle_language: 'Změnit jazyk',
     loading: 'Načítání...',
     error: 'Chyba',
     retry: 'Zkusit znovu',
@@ -68,11 +68,11 @@ const translations = {
     shortcut_show_shortcuts: 'Zobrazit klávesové zkratky',
     // Stage labels
     stage_tokenization: 'Tokenizace',
-    stage_tokenization_hint: 'Textu je rozdělen na menší části',
-    stage_token_ids: 'Id tokenů',
-    stage_token_ids_hint: 'Každý token má svůj číselný identifikátor',
+    stage_tokenization_hint: 'Text je rozdělen na menší části: tokeny.',
+    stage_positional_embeddings: 'Poziční embeddingy',
+    stage_positional_embeddings_hint: 'K reprezentaci se přidá informace o pozici tokenu',
     stage_input_embeddings: 'Vstupní embeddingy',
-    stage_input_embeddings_hint: 'Každý identifikátor má svou vektorovou reprezentaci',
+    stage_input_embeddings_hint: 'Každý token má svou vektorovou reprezentaci',
     stage_attention_layer: 'Attention vrstva',
     stage_attention_layer_hint: 'Tokeny sdílí informace mezi sebou',
     stage_feedforward_layer: 'Feed-forward vrstva',
@@ -83,6 +83,69 @@ const translations = {
     stage_output_probabilities_hint: 'Model určí pravděpodobnosti dalšího tokenu',
     stage_next_token: 'Další token',
     stage_next_token_hint: 'Výběr dalšího výstupního tokenu',
+  },
+  fr: {
+    // French translations - fallback to English for missing keys
+    play: 'Lecture',
+    pause: 'Pause',
+    loading: 'Chargement...',
+    error: 'Erreur',
+    retry: 'Réessayer',
+    model_answer: 'Réponse du modèle',
+  },
+  de: {
+    // German translations - fallback to English for missing keys
+    play: 'Abspielen',
+    pause: 'Pause',
+    loading: 'Laden...',
+    error: 'Fehler',
+    retry: 'Wiederholen',
+    model_answer: 'Modellantwort',
+  },
+  es: {
+    // Spanish translations - fallback to English for missing keys
+    play: 'Reproducir',
+    pause: 'Pausa',
+    loading: 'Cargando...',
+    error: 'Error',
+    retry: 'Reintentar',
+    model_answer: 'Respuesta del modelo',
+  },
+  zh: {
+    // Chinese translations - fallback to English for missing keys
+    play: '播放',
+    pause: '暂停',
+    loading: '加载中...',
+    error: '错误',
+    retry: '重试',
+    model_answer: '模型回答',
+  },
+  ar: {
+    // Arabic translations - fallback to English for missing keys
+    play: 'تشغيل',
+    pause: 'إيقاف مؤقت',
+    loading: 'جاري التحميل...',
+    error: 'خطأ',
+    retry: 'إعادة المحاولة',
+    model_answer: 'إجابة النموذج',
+  },
+  hi: {
+    // Hindi translations - fallback to English for missing keys
+    play: 'चलाएं',
+    pause: 'रोकें',
+    loading: 'लोड हो रहा है...',
+    error: 'त्रुटि',
+    retry: 'पुनः प्रयास करें',
+    model_answer: 'मॉडल उत्तर',
+  },
+  ja: {
+    // Japanese translations - fallback to English for missing keys
+    play: '再生',
+    pause: '一時停止',
+    loading: '読み込み中...',
+    error: 'エラー',
+    retry: '再試行',
+    model_answer: 'モデルの回答',
   },
 };
 

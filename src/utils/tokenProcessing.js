@@ -3,6 +3,26 @@
  */
 
 /**
+ * Check if a token is a special token that should be hidden from visualization
+ * Special tokens include:
+ * - <BOS_TOKEN>, <EOS_TOKEN>, etc.
+ * - Tokens in format <|TOKEN_NAME|>
+ * @param {string} token - The raw token string
+ * @returns {boolean} True if token is a special token
+ */
+export function isSpecialToken(token) {
+  if (!token || typeof token !== 'string') return false;
+
+  // Check for <TOKEN_NAME> format (e.g., <BOS_TOKEN>, <EOS_TOKEN>)
+  if (/^<[A-Z_]+>$/.test(token)) return true;
+
+  // Check for <|TOKEN_NAME|> format
+  if (/^<\|.*\|>$/.test(token)) return true;
+
+  return false;
+}
+
+/**
  * Process a token for display in the visualization canvas
  * Converts "Ġ" and "▁" to "▁" for visual representation
  * @param {string} token - The raw token string

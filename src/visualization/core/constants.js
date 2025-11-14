@@ -17,21 +17,21 @@ function getCSSVar(varName) {
  * Layout constants
  */
 export const LAYOUT = {
+  // Token layout (used in layout.js)
   TOKEN_SPACING: 140,
   MARGIN: 20,
-  BLOCK_PADDING: 30,
-  TOKEN_Y: 10,
-  EMBEDDING_Y: 140,
-  // Vertical spacing controls
+  GAP_WIDTH: 24,
+  // Transformer block (used via CONSTS in components)
+  BLOCK_PADDING: 100,
   OUTPUT_Y_OFFSET: 90, // distance from FFN bottom to output area
-  BOTTOM_PADDING: 80, // final padding under the lowest element (easy to tweak)
+  BOTTOM_PADDING: 80, // final padding under the lowest element
+  // Vector/embedding dimensions (used in draw.js)
   CELL_HEIGHT: 8,
   CELL_WIDTH: 8,
   EMBEDDING_WIDTH: 40,
   VECTOR_HEIGHT: 40,
   CORNER_RADIUS: 10,
-  GAP_WIDTH: 24,
-  // Output probabilities display limit
+  // Output distribution
   MAX_OUTPUT_TOKENS: 8, // Show at most this many tokens (+ ellipsis if more exist)
 };
 
@@ -78,7 +78,7 @@ export const STROKE = {
   WIDTH_THICK: 2,
   OPACITY_DEFAULT: 0.8,
   OPACITY_HOVER: 1.0,
-  MARKER_SIZE: 6,
+  MARKER_SIZE: 4,
 };
 
 /**

@@ -26,6 +26,9 @@ export const EMBEDDING_SELECTORS = {
   idToEmbArrow: '.id-to-emb-arrow',
   idToEmbArrowNew: '.id-to-emb-arrow.new-token',
   idToEmbArrowPrev: '.id-to-emb-arrow.prev-token',
+  positionalEmb: '.positional-emb',
+  positionalEmbNew: '.positional-emb.new-token',
+  positionalEmbPrev: '.positional-emb.prev-token',
 };
 
 // Transformer block selectors

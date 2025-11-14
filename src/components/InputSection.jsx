@@ -167,7 +167,9 @@ function InputSection() {
                           aria-label={`Model ${idx + 1}`}
                         >
                           <img
-                            src={`/src/assets/model-logos/${entry.logo}`}
+                            src={
+                              new URL(`../assets/model-logos/${entry.logo}`, import.meta.url).href
+                            }
                             alt=""
                             className="model-logo"
                           />

@@ -71,20 +71,6 @@ export function calculateTokenLayout(tokens, width, isExpanded, config = {}) {
 }
 
 /**
- * Get base layout configuration
- * @returns {Object} Layout constants
- */
-export function getBaseLayout() {
-  return {
-    tokenY: LAYOUT.TOKEN_Y,
-    embeddingY: LAYOUT.EMBEDDING_Y,
-    margin: LAYOUT.MARGIN,
-    tokenSpacing: LAYOUT.TOKEN_SPACING,
-    blockPadding: LAYOUT.BLOCK_PADDING,
-  };
-}
-
-/**
  * Calculate transformer block dimensions
  * @param {Object} outerMeta - Metadata from outer embeddings
  * @param {Object} layout - Base layout config

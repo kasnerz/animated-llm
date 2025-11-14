@@ -49,6 +49,11 @@ export function setInitialStates(svgElement, subStep, isInitialStep) {
     });
     setIfAny(svgElement, SEL.outerToBlockArrow, { opacity: prev >= 3 ? 1 : 0 });
     setIfAny(svgElement, SEL.shadowToBlockArrow, { opacity: prev >= 3 ? 1 : 0 });
+    {
+      const posVisible = prev >= 3 || curLayer > 0; // keep visible in second pass
+      setIfAny(svgElement, `${SEL.positionalEmb} circle`, { opacity: posVisible ? 0.9 : 0 });
+      setIfAny(svgElement, `${SEL.positionalEmb} text`, { opacity: posVisible ? 1 : 0 });
+    }
 
     setIfAny(svgElement, SEL.insideBottomEmbeddingsAll, {
       opacity: prev >= 4 ? 1 : 0,
@@ -145,6 +150,10 @@ export function setInitialStates(svgElement, subStep, isInitialStep) {
     setIfAny(svgElement, SEL.outerToBlockArrowNew, { opacity: prev >= 3 ? 1 : 0 });
     setIfAny(svgElement, SEL.shadowToBlockArrowPrev, { opacity: 1 });
     setIfAny(svgElement, SEL.shadowToBlockArrowNew, { opacity: prev >= 3 ? 1 : 0 });
+    setIfAny(svgElement, `${SEL.positionalEmbPrev} circle`, { opacity: 0.9 });
+    setIfAny(svgElement, `${SEL.positionalEmbPrev} text`, { opacity: 1 });
+    setIfAny(svgElement, `${SEL.positionalEmbNew} circle`, { opacity: prev >= 3 ? 0.9 : 0 });
+    setIfAny(svgElement, `${SEL.positionalEmbNew} text`, { opacity: prev >= 3 ? 1 : 0 });
 
     setIfAny(svgElement, SEL.insideBottomEmbeddingColPrev, { opacity: 1, y: 0 });
     setIfAny(svgElement, SEL.insideBottomEmbeddingColNew, {
@@ -281,10 +290,14 @@ export function buildTimeline(svgElement, subStep, isInitialStep, animDuration, 
         toIfAny(SEL.insideTopEmbeddingsAll, { opacity: 1, y: 0, duration: animDuration }, '<');
         toIfAny(SEL.outerToBlockArrow, { opacity: 1, duration: animDuration }, '<');
         toIfAny(SEL.shadowToBlockArrow, { opacity: 1, duration: animDuration }, '<');
+        toIfAny(`${SEL.positionalEmb} circle`, { opacity: 0.9, duration: animDuration }, '<');
+        toIfAny(`${SEL.positionalEmb} text`, { opacity: 1, duration: animDuration }, '<');
       } else {
         toIfAny(SEL.insideTopEmbeddingColNew, { opacity: 1, y: 0, duration: animDuration });
         toIfAny(SEL.outerToBlockArrowNew, { opacity: 1, duration: animDuration }, '<');
         toIfAny(SEL.shadowToBlockArrowNew, { opacity: 1, duration: animDuration }, '<');
+        toIfAny(`${SEL.positionalEmbNew} circle`, { opacity: 0.9, duration: animDuration }, '<');
+        toIfAny(`${SEL.positionalEmbNew} text`, { opacity: 1, duration: animDuration }, '<');
       }
       break;
     case 4:

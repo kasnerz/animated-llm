@@ -68,8 +68,10 @@ export function renderTokensLayer(
     cursor += w + gap;
   });
 
-  // Save for other renderers
+  // Save for other renderers, preserving any auxiliary fields (e.g., posMarkers)
+  const prevMeta = (tokensLayoutRef && tokensLayoutRef.current) || {};
   tokensLayoutRef.current = {
+    ...prevMeta,
     positions,
     widths,
     visibleIndices: tokenIndices,
@@ -130,34 +132,15 @@ export function renderTokensLayer(
       .style('stroke-width', 6)
       .style('stroke-linecap', 'round');
 
-    // Arrow from token to ID
-    const arrowG = tokenG
-      .append('g')
-      .attr('class', `token-id-arrow ${isNew ? 'new-token' : 'prev-token'}`);
-    arrowG
-      .append('line')
-      .attr('x1', 0)
-      .attr('y1', 26)
-      .attr('x2', 0)
-      .attr('y2', 52)
-      .style('stroke', '#ccc')
-      .style('stroke-width', 1.5)
-      .style('opacity', 0.7);
-
-    arrowG
-      .append('polygon')
-      .attr('points', `0,52 -4,46 4,46`)
-      .style('fill', '#ccc')
-      .style('opacity', 0.7);
-
-    // Token ID
+    // Inline Token ID (small, bold, same color as underline), placed just below the underline
     tokenG
       .append('text')
       .attr('text-anchor', 'middle')
-      .attr('y', 72)
-      .attr('class', `token-id ${isNew ? 'new-token' : 'prev-token'}`)
-      .style('font-size', '20px')
-      .style('fill', 'var(--text-secondary)')
+      .attr('y', 40)
+      .attr('class', `token-id-inline ${isNew ? 'new-token' : 'prev-token'}`)
+      .style('font-size', '13px')
+      .style('font-weight', '700')
+      .style('fill', tokenColor)
       .text(step.token_ids[actualIndex]);
   });
 
@@ -296,12 +279,12 @@ export function renderOuterEmbeddingsLayer(
       isDarkMode
     );
 
-    // Arrow from token ID to embedding
+    // Arrow from token (below underline) to embedding
     const arrowG = underlays
       .append('g')
       .attr('class', `id-to-emb-arrow ${isNew ? 'new-token' : 'prev-token'}`);
-    const y1 = layout.tokenY + 82;
-    const y2 = meta.topY + meta.height / 2; // connect to center of horizontal vector
+    const y1 = layout.tokenY + 45; // start a bit below the token underline and inline id
+    const y2 = meta.topY - 3; // connect to top of horizontal vector
     arrowG
       .append('line')
       .attr('x1', x)
@@ -316,6 +299,10 @@ export function renderOuterEmbeddingsLayer(
       .attr('points', `${x},${y2} ${x - 4},${y2 - 6} ${x + 4},${y2 - 6}`)
       .style('fill', '#ccc')
       .style('opacity', 0.7);
+
+    // Positional embedding indicator moved to the arrow between outer embeddings
+    // and the first transformer layer to reflect position being added AFTER
+    // token-to-embedding lookup. See renderTransformerBlockLayer().
 
     columnsMeta.push(meta);
     maxOuterHeight = Math.max(maxOuterHeight, meta.height);
@@ -367,7 +354,8 @@ export function renderTransformerBlockLayer(
   }
 
   const afterOuterBottom = layout.embeddingY + outerMeta.maxOuterHeight;
-  const blockTopY = afterOuterBottom + 40;
+  // Increase spacing between outer embeddings and transformer block to move the block downward
+  const blockTopY = afterOuterBottom + 76;
 
   // Card stack offset: each previous layer is offset to the top-right (behind the active card)
   const stackOffsetX = 8;
@@ -417,6 +405,16 @@ export function renderTransformerBlockLayer(
 
   // Underlays container inside transformer for arrows/lines to appear behind vectors
   const underlays = group.append('g').attr('class', 'transformer-underlays');
+  // Back underlays only for positional embedding guide lines that should disappear behind the box
+  const backUnderlays = group.append('g').attr('class', 'positional-underlays-back');
+  // Defer drawing of positional guide lines until blockBottomY is known
+  const positionalGuidesBack = [];
+  // Persist positional marker positions across passes to keep them stable
+  const storedMarkers = (tokensLayoutRef.current && tokensLayoutRef.current.posMarkers) || [];
+  const storedSignature = tokensLayoutRef.current && tokensLayoutRef.current.posMarkersSignature;
+  const newMarkers = [];
+  // Fingerprint of the current geometry that impacts marker positions; used to invalidate cache on resize
+  const markerSignature = `${(tokensLayoutRef.current?.positions || []).join(',')}|${layout.embeddingY}`;
 
   // Render the current active layer
   const insideTopGroup = group.append('g').attr('class', 'inside-top-embeddings');
@@ -447,16 +445,46 @@ export function renderTransformerBlockLayer(
     maxInsideTopHeight = Math.max(maxInsideTopHeight, meta.height);
 
     // Arrow from outer embedding or previous layer to inside top
-    if (currentLayer === 0) {
+    if (currentLayer === 0 || !storedMarkers.length || storedSignature !== markerSignature) {
       // First layer: arrow comes from outer embeddings
       const outerCol = columnsMeta[i];
       if (outerCol) {
         // Start the arrow just BELOW the outer vector to avoid covering it visually
         const startY = (outerCol.bottomY ?? outerCol.topY + outerCol.height) + 4;
-        const endY = meta.topY + meta.height / 2;
+        const endY = meta.topY + meta.height / 2 - 20;
         drawArrow(underlays, x, startY, x, endY, {
           className: `outer-to-block-arrow ${isNew ? 'new-token' : 'prev-token'}`,
         });
+
+        // Positional embedding indicator: small light-grey circle with index (1..N)
+        // on the arrow between outer embeddings and the first transformer layer,
+        // reflecting that position is added AFTER token embeddings are computed.
+        // Slightly bias the positional indicator upward for better visual separation
+        const midY = startY + (endY - startY) * 0.5 - 25;
+        const circleR = 10;
+        const peg = underlays
+          .append('g')
+          .attr('class', `positional-emb ${isNew ? 'new-token' : 'prev-token'}`);
+        peg
+          .append('circle')
+          .attr('cx', x)
+          .attr('cy', midY)
+          .attr('r', circleR)
+          .style('fill', '#eeeeee')
+          .style('stroke', '#bbbbbb')
+          .style('opacity', 0); // Start hidden, animate at subStep 3
+        peg
+          .append('text')
+          .attr('x', x)
+          .attr('y', midY + 3)
+          .attr('text-anchor', 'middle')
+          .style('font-size', '10px')
+          .style('font-weight', '600')
+          .style('fill', '#777777')
+          .style('opacity', 0) // Start hidden, animate at subStep 3
+          .text(String(actualIndex + 1));
+        // Store marker position for reuse in subsequent passes
+        newMarkers[i] = { x, y: midY, r: circleR };
       }
     } else {
       // Subsequent layers: draw a U-shaped feedback arrow that appears to emerge from the
@@ -483,6 +511,53 @@ export function renderTransformerBlockLayer(
 
       // Record arrowhead position to draw above the vectors
       feedbackArrowheads.push({ x: endX, y: endYTop, isNew });
+
+      // Keep positional embeddings visible in second pass using stored positions
+      const marker = storedMarkers[i];
+      // Recompute marker if cache missing or invalidated by resize/layout changes
+      let mx, my, mr;
+      if (!marker || storedSignature !== markerSignature) {
+        // Approximate a similar placement as first pass using current geometry
+        const outerCol = columnsMeta[i];
+        if (outerCol) {
+          const startY = (outerCol.bottomY ?? outerCol.topY + outerCol.height) + 4;
+          const endY = meta.topY + meta.height / 2;
+          const midY = startY + (endY - startY) * 0.5 - 35;
+          mx = x;
+          my = midY;
+          mr = 10;
+          newMarkers[i] = { x: mx, y: my, r: mr };
+        }
+      } else {
+        mx = marker.x;
+        my = marker.y;
+        mr = marker.r || 10;
+      }
+      if (typeof mx === 'number' && typeof my === 'number') {
+        const peg = underlays
+          .append('g')
+          .attr('class', `positional-emb ${isNew ? 'new-token' : 'prev-token'}`);
+        peg
+          .append('circle')
+          .attr('cx', mx)
+          .attr('cy', my)
+          .attr('r', mr)
+          .style('fill', '#eeeeee')
+          .style('stroke', '#bbbbbb')
+          .style('opacity', 0.9);
+        peg
+          .append('text')
+          .attr('x', mx)
+          .attr('y', my + 3)
+          .attr('text-anchor', 'middle')
+          .style('font-size', '10px')
+          .style('font-weight', '600')
+          .style('fill', '#777777')
+          .text(String(actualIndex + 1));
+
+        // Defer drawing the guide line from marker down to block bottom (hidden behind the box)
+        positionalGuidesBack.push({ x: mx, y1: my + mr, isNew, outerCol: columnsMeta[i], my });
+      }
     }
   });
 
@@ -531,18 +606,19 @@ export function renderTransformerBlockLayer(
   });
 
   // Render attention connections between top and bottom embeddings
-  // Rule: For the very first generation step (step.step === 0), show all-to-all.
+  // Rule: For the very first generation step (step.step === 0), show triangular/causal attention.
   // After that, show all-to-one (to the newest/last token's hidden state).
   const attentionGroup = underlays.append('g').attr('class', 'attention-mash');
   const centers = insideTopMeta.map((m) => (m ? { x: m.centerX } : null));
   const isFirstGenStep = Number(step?.step) === 0;
 
   if (isFirstGenStep) {
-    // Original all-to-all visualization (except self)
+    // Triangular/causal attention: each position can only attend to itself and earlier positions
     centers.forEach((a, i) => {
       if (!a || !insideTopMeta[i]) return;
       centers.forEach((b, j) => {
-        if (!b || !insideBottomMeta[j] || i === j) return;
+        // Only show connections where i <= j (causal mask: earlier positions attend to later positions)
+        if (!b || !insideBottomMeta[j] || i > j) return;
         const s = Math.abs(Math.sin((i * 37 + j * 17) * 12.9898)) % 1;
         const color = d3.interpolateRgb('#E5E7EB', '#797b7dff')(s);
         const width = 0.5;
@@ -715,6 +791,47 @@ export function renderTransformerBlockLayer(
 
   const blockBottomY = ffnY + maxFfnHeight + layout.blockPadding;
 
+  // Draw any deferred positional connectors
+  // Note: Front segment (marker to box top) and upward connector removed to avoid duplication
+  // with the arrow from input embedding layer. Only the hidden back segment remains for second pass.
+  // In second+ pass, draw a continuous arrow from outer embedding through positional marker to block bottom
+  const backEndY = blockBottomY - 2;
+  // In second+ pass (currentLayer > 0), draw the full arrow behind the transformer stack
+  if (currentLayer > 0) {
+    positionalGuidesBack.forEach(({ x, isNew, outerCol, my }) => {
+      if (outerCol) {
+        // Draw from the bottom of the outer embedding, through the positional marker, to the block bottom
+        const startY = (outerCol.bottomY ?? outerCol.topY + outerCol.height) + 4;
+
+        // Arrow from outer embedding to positional marker (top)
+        backUnderlays
+          .append('line')
+          .attr('x1', x)
+          .attr('y1', startY)
+          .attr('x2', x)
+          .attr('y2', my - 10) // to top of positional circle
+          .attr('class', `positional-through-arrow ${isNew ? 'new-token' : 'prev-token'}`)
+          .style('stroke', '#ccc')
+          .style('stroke-width', 1.5)
+          .style('opacity', 0.7);
+
+        // Arrow from positional marker (bottom) to block bottom
+        backUnderlays
+          .append('line')
+          .attr('x1', x)
+          .attr('y1', my + 10) // from bottom of positional circle
+          .attr('x2', x)
+          .attr('y2', backEndY)
+          .attr('class', `positional-through-arrow ${isNew ? 'new-token' : 'prev-token'}`)
+          .style('stroke', '#ccc')
+          .style('stroke-width', 1.5)
+          .style('opacity', 0.7);
+      }
+    });
+  }
+  // Note: Upward connector from positional marker to outer embedding removed
+  // to avoid duplication with the arrow from input embedding layer
+
   // Insert shadow layers now with the correct final height, behind the main box and inner content
   for (let s = totalShadows; s >= 1; s--) {
     const offsetX = s * stackOffsetX;
@@ -752,12 +869,30 @@ export function renderTransformerBlockLayer(
     .style('stroke', 'var(--viz-transformer-border)')
     .style('stroke-width', 2);
 
+  // Ensure positional guide lines sit behind the transformer box
+  try {
+    group.insert(() => backUnderlays.node(), '.transformer-box');
+  } catch {
+    // Ignore if insertion fails
+  }
+
   // Ensure underlays (arrows/lines) sit above the transformer box and shadows,
   // but still below the inside vectors by placing them just before inside-top group.
   try {
     group.insert(() => underlays.node(), '.inside-top-embeddings');
   } catch {
     // non-fatal: if insert fails, leave as-is
+  }
+
+  // Persist newly computed positional markers if this is the first layer render
+  if (tokensLayoutRef && tokensLayoutRef.current) {
+    if (newMarkers.length) {
+      tokensLayoutRef.current.posMarkers = newMarkers;
+      tokensLayoutRef.current.posMarkersSignature = markerSignature;
+    } else if (!tokensLayoutRef.current.posMarkersSignature) {
+      // Ensure signature exists to avoid stale cache
+      tokensLayoutRef.current.posMarkersSignature = markerSignature;
+    }
   }
 
   // Add stack size label (e.g., "Nx") at bottom right of the top block; hidden until reveal step.
@@ -1314,11 +1449,19 @@ export function renderStageLabels(group, layout, anchorX, subStep, t, showGradua
   const stageY = layout.stageY || {};
   const labels = [
     { key: 'stage_tokenization', y: stageY.stage_tokenization ?? layout.tokenY + 10, subStep: 0 },
-    { key: 'stage_token_ids', y: stageY.stage_token_ids ?? layout.tokenY + 70, subStep: 1 },
+    // Switch order: show input embeddings before positional embeddings
     {
       key: 'stage_input_embeddings',
       y: stageY.stage_input_embeddings ?? layout.embeddingY + 30,
       subStep: 2,
+    },
+    {
+      key: 'stage_positional_embeddings',
+      y:
+        stageY.stage_positional_embeddings ??
+        // Fallback midway between outer embeddings bottom and transformer top
+        (layout.embeddingY ?? 85) + 90,
+      subStep: 3,
     },
     {
       key: 'stage_attention_layer',

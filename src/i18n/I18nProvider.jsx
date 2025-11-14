@@ -6,41 +6,73 @@ const I18nContext = createContext();
 /**
  * I18n Provider
  * Manages language state and provides translation functions
+ *
+ * Translation fallback behavior:
+ * 1. Try requested language
+ * 2. If key not found, fallback to English
+ * 3. If still not found, return the key itself
  */
 export function I18nProvider({ children, initialLanguage = 'en' }) {
   const [language, setLanguage] = useState(initialLanguage);
 
+  // Get available languages from translations
+  const availableLanguages = Object.keys(translations);
+
   /**
-   * Toggle between English and Czech
+   * Cycle through available languages
    */
   const toggleLanguage = () => {
-    setLanguage((prev) => (prev === 'en' ? 'cs' : 'en'));
+    setLanguage((prev) => {
+      const currentIndex = availableLanguages.indexOf(prev);
+      const nextIndex = (currentIndex + 1) % availableLanguages.length;
+      return availableLanguages[nextIndex];
+    });
   };
 
   /**
    * Set language explicitly
-   * @param {string} lang - Language code ('en' or 'cs')
+   * @param {string} lang - Language code
    */
   const setLanguageExplicit = (lang) => {
-    if (lang === 'en' || lang === 'cs') {
+    if (availableLanguages.includes(lang)) {
       setLanguage(lang);
     }
   };
 
   /**
    * Translate a key to the current language
+   * Fallback chain: current language → English → key itself
    * @param {string} key - Translation key
    * @returns {string} Translated text
    */
   const t = (key) => {
-    const table = translations[language] || translations.en || {};
-    return table[key] || (translations.en ? translations.en[key] : key) || key;
+    // Try current language
+    const currentLangTable = translations[language];
+    if (currentLangTable && currentLangTable[key]) {
+      return currentLangTable[key];
+    }
+
+    // Fallback to English
+    const englishTable = translations.en;
+    if (englishTable && englishTable[key]) {
+      return englishTable[key];
+    }
+
+    // Last resort: return the key itself
+    return key;
   };
+
+  /**
+   * Get list of available languages
+   * @returns {string[]} Array of language codes
+   */
+  const getAvailableLanguages = () => availableLanguages;
 
   const value = {
     language,
     toggleLanguage,
     setLanguage: setLanguageExplicit,
+    getAvailableLanguages,
     t,
   };
 

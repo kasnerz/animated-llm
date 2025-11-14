@@ -79,7 +79,7 @@ export function getVectorBoxColors(
   tokenColor,
   {
     isDarkMode,
-    lighten = 0.85,
+    lighten = 0.75,
     darken = 0.5,
     strokeLighten = 0.6,
     strokeDarken = 0.3,
