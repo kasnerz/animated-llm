@@ -276,21 +276,37 @@ function AppContent() {
             <div className="header-controls-list">
               <button
                 onClick={() => setIsKeyboardShortcutsOpen(true)}
-                className="icon-button-minimal"
+                className="menu-item-with-label"
                 title={t('keyboard_shortcuts')}
                 aria-label={t('keyboard_shortcuts')}
               >
                 <Icon path={mdiKeyboard} size={1.4} color="#555" />
+                <span className="menu-label">{t('keyboard_shortcuts')}</span>
               </button>
               <button
                 onClick={actions.toggleTheme}
-                className="icon-button-minimal"
-                title={t('toggle_theme')}
-                aria-label={t('toggle_theme')}
+                className="menu-item-with-label"
+                title={t('toggle_dark_light_mode')}
+                aria-label={t('toggle_dark_light_mode')}
               >
-                {state.theme === 'dark' ? '☀️' : '🌙'}
+                <span className="theme-icon">{state.theme === 'dark' ? '☀️' : '🌙'}</span>
+                <span className="menu-label">{t('toggle_dark_light_mode')}</span>
               </button>
-              <LanguageSelector />
+              <div
+                className="language-menu-wrapper"
+                onClick={(e) => {
+                  // Only trigger if clicking the wrapper itself or the label, not the dropdown or its contents
+                  if (!e.target.closest('.language-selector')) {
+                    const button = e.currentTarget.querySelector('.language-button');
+                    if (button) {
+                      button.click();
+                    }
+                  }
+                }}
+              >
+                <LanguageSelector />
+                <span className="menu-label">{t('language')}</span>
+              </div>
             </div>
           </div>
         </div>

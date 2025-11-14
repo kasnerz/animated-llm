@@ -123,6 +123,65 @@
   opacity: 0.7;
 }
 
+/* Menu items with labels (for hamburger menu) */
+.menu-item-with-label {
+  background: transparent;
+  border: none;
+  padding: 0.5rem;
+  cursor: pointer;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  transition: opacity 0.2s ease;
+  text-align: left;
+}
+
+.menu-item-with-label:hover {
+  opacity: 0.7;
+}
+
+.menu-item-with-label .menu-label {
+  display: none;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.menu-item-with-label .theme-icon {
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.language-menu-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem;
+  background: transparent;
+  border: none;
+}
+
+.language-menu-wrapper .menu-label {
+  display: none;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.language-menu-wrapper .language-selector {
+  pointer-events: auto;
+}
+
 /* Main content */
 .app-main {
   width: 100%;
@@ -869,12 +928,55 @@
 
   .header-controls.open .header-controls-list > * {
     width: 100%;
-    justify-content: center;
+    justify-content: flex-start;
+  }
+
+  .header-controls.open .menu-item-with-label {
+    width: 100%;
+    justify-content: flex-start;
+    padding: 0.75rem;
+    border-radius: 6px;
+    transition:
+      background-color 0.15s ease,
+      opacity 0.2s ease;
+  }
+
+  .header-controls.open .menu-item-with-label:hover {
+    background: var(--bg-hover, rgba(0, 0, 0, 0.05));
+    opacity: 1;
+  }
+
+  .header-controls.open .menu-item-with-label .menu-label {
+    display: block;
+  }
+
+  .header-controls.open .language-menu-wrapper {
+    width: 100%;
+    justify-content: flex-start;
+    border-radius: 6px;
+    transition: background-color 0.15s ease;
+    cursor: pointer;
+  }
+
+  .header-controls.open .language-menu-wrapper:hover {
+    background: var(--bg-hover, rgba(0, 0, 0, 0.05));
+  }
+
+  .header-controls.open .language-menu-wrapper .menu-label {
+    display: block;
   }
 
   .header-controls.open .language-selector {
-    width: 100%;
-    justify-content: center;
+    width: auto;
+    pointer-events: auto;
+  }
+
+  .header-controls.open .language-selector .icon-button-minimal {
+    pointer-events: auto;
+  }
+
+  .header-controls.open .language-dropdown {
+    pointer-events: auto;
   }
 
   .hamburger-toggle {

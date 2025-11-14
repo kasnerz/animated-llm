@@ -16,6 +16,8 @@ const translations = {
     retry: 'Retry',
     model_answer: 'Model answer',
     keyboard_shortcuts: 'Keyboard Shortcuts',
+    language: 'Language',
+    toggle_dark_light_mode: 'Dark mode',
     // Keyboard shortcuts
     shortcut_play_pause: 'Play / Pause animation',
     shortcut_step_forward: 'Step forward',
@@ -56,6 +58,8 @@ const translations = {
     retry: 'Zkusit znovu',
     model_answer: 'Odpověď modelu',
     keyboard_shortcuts: 'Klávesové zkratky',
+    language: 'Jazyk',
+    toggle_dark_light_mode: 'Tmavý režim',
     // Keyboard shortcuts
     shortcut_play_pause: 'Přehrát / Pozastavit animaci',
     shortcut_step_forward: 'Krok vpřed',
@@ -92,6 +96,9 @@ const translations = {
     error: 'Erreur',
     retry: 'Réessayer',
     model_answer: 'Réponse du modèle',
+    keyboard_shortcuts: 'Raccourcis clavier',
+    language: 'Langue',
+    toggle_dark_light_mode: 'Mode sombre',
   },
   de: {
     // German translations - fallback to English for missing keys
@@ -101,6 +108,9 @@ const translations = {
     error: 'Fehler',
     retry: 'Wiederholen',
     model_answer: 'Modellantwort',
+    keyboard_shortcuts: 'Tastenkombinationen',
+    language: 'Sprache',
+    toggle_dark_light_mode: 'Dunkelmodus',
   },
   es: {
     // Spanish translations - fallback to English for missing keys
@@ -110,6 +120,9 @@ const translations = {
     error: 'Error',
     retry: 'Reintentar',
     model_answer: 'Respuesta del modelo',
+    keyboard_shortcuts: 'Atajos de teclado',
+    language: 'Idioma',
+    toggle_dark_light_mode: 'Modo oscuro',
   },
   zh: {
     // Chinese translations - fallback to English for missing keys
@@ -119,6 +132,9 @@ const translations = {
     error: '错误',
     retry: '重试',
     model_answer: '模型回答',
+    keyboard_shortcuts: '键盘快捷键',
+    language: '语言',
+    toggle_dark_light_mode: '深色模式',
   },
   ar: {
     // Arabic translations - fallback to English for missing keys
@@ -128,6 +144,9 @@ const translations = {
     error: 'خطأ',
     retry: 'إعادة المحاولة',
     model_answer: 'إجابة النموذج',
+    keyboard_shortcuts: 'اختصارات لوحة المفاتيح',
+    language: 'اللغة',
+    toggle_dark_light_mode: 'الوضع الداكن',
   },
   hi: {
     // Hindi translations - fallback to English for missing keys
@@ -137,6 +156,9 @@ const translations = {
     error: 'त्रुटि',
     retry: 'पुनः प्रयास करें',
     model_answer: 'मॉडल उत्तर',
+    keyboard_shortcuts: 'कीबोर्ड शॉर्टकट',
+    language: 'भाषा',
+    toggle_dark_light_mode: 'डार्क मोड',
   },
   ja: {
     // Japanese translations - fallback to English for missing keys
@@ -146,6 +168,9 @@ const translations = {
     error: 'エラー',
     retry: '再試行',
     model_answer: 'モデルの回答',
+    keyboard_shortcuts: 'キーボードショートカット',
+    language: '言語',
+    toggle_dark_light_mode: 'ダークモード',
   },
 };
 
