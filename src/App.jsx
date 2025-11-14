@@ -1,15 +1,19 @@
 import { useEffect, useRef, useState } from 'react';
 import { AppProvider, useApp } from './contexts/AppContext';
 import { I18nProvider, useI18n } from './i18n/I18nProvider';
+import { ViewProvider, useView, VIEW_TYPES } from './contexts/ViewContext';
+import TextGenerationView from './views/TextGenerationView';
+import TrainingView from './views/TrainingView';
+import DecodingView from './views/DecodingView';
 import InputSection from './components/InputSection';
-import GeneratedAnswer from './components/GeneratedAnswer';
-import VisualizationCanvas from './components/VisualizationCanvas';
 import KeyboardShortcutsModal from './components/KeyboardShortcutsModal';
 import LanguageSelector from './components/LanguageSelector';
+import ViewSelector from './components/ViewSelector';
 import Icon from '@mdi/react';
 import { mdiKeyboard } from '@mdi/js';
 import { config } from './config';
 import './index.css';
+import './styles/views.css';
 
 /**
  * Inner App component with access to context
@@ -17,6 +21,7 @@ import './index.css';
 function AppContent() {
   const { state, actions } = useApp();
   const { t, language, toggleLanguage } = useI18n();
+  const { currentView } = useView();
   const [isKeyboardShortcutsOpen, setIsKeyboardShortcutsOpen] = useState(false);
   // Guard to avoid invoking step completion multiple times while state is catching up
   const completionGuardRef = useRef({ step: -1, sub: -1 });
@@ -256,10 +261,8 @@ function AppContent() {
       {/* Floating top section */}
       <div className="floating-top-section">
         <div className="floating-top-content">
-          {/* Input section */}
-          <div className="top-panel-input">
-            <InputSection />
-          </div>
+          {/* View-specific content (input section or placeholder) */}
+          {renderViewTopContent()}
 
           {/* Header controls - minimal */}
           <div className="header-controls">
@@ -274,6 +277,10 @@ function AppContent() {
               ☰
             </button>
             <div className="header-controls-list">
+              <div className="view-menu-wrapper">
+                <ViewSelector />
+                <span className="menu-label">{t('view_label') || 'View'}</span>
+              </div>
               <button
                 onClick={() => setIsKeyboardShortcutsOpen(true)}
                 className="menu-item-with-label"
@@ -312,20 +319,55 @@ function AppContent() {
         </div>
       </div>
 
-      {/* Main content */}
-      <main className="app-main">
-        {/* Visualization canvas */}
-        {state.currentExample && <VisualizationCanvas />}
-      </main>
+      {/* Main content - render current view */}
+      <main className="app-main">{renderCurrentView()}</main>
 
-      {/* Floating bottom section - only after generation starts */}
-      {state.currentExample && state.currentStep > 0 && (
-        <div className="floating-bottom-section">
-          <GeneratedAnswer />
-        </div>
-      )}
+      {/* Bottom section is now handled by individual views */}
     </div>
   );
+
+  /**
+   * Render the top panel content based on current view
+   */
+  function renderViewTopContent() {
+    switch (currentView) {
+      case VIEW_TYPES.TEXT_GENERATION:
+      case VIEW_TYPES.DECODING:
+        // These views show the input section
+        return (
+          <div className="top-panel-input">
+            <InputSection />
+          </div>
+        );
+      case VIEW_TYPES.TRAINING:
+        // Training view has blank space (will be modified later)
+        return (
+          <div className="top-panel-input">
+            <div className="training-top-placeholder">
+              {/* Reserved for future training-specific controls */}
+            </div>
+          </div>
+        );
+      default:
+        return null;
+    }
+  }
+
+  /**
+   * Render the current view component
+   */
+  function renderCurrentView() {
+    switch (currentView) {
+      case VIEW_TYPES.TEXT_GENERATION:
+        return <TextGenerationView />;
+      case VIEW_TYPES.TRAINING:
+        return <TrainingView />;
+      case VIEW_TYPES.DECODING:
+        return <DecodingView />;
+      default:
+        return <TextGenerationView />;
+    }
+  }
 }
 
 /**
@@ -335,7 +377,9 @@ function App() {
   return (
     <AppProvider>
       <I18nProvider initialLanguage={config.defaults.language}>
-        <AppContent />
+        <ViewProvider initialView={VIEW_TYPES.TEXT_GENERATION}>
+          <AppContent />
+        </ViewProvider>
       </I18nProvider>
     </AppProvider>
   );

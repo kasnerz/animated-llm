@@ -18,6 +18,12 @@ const translations = {
     keyboard_shortcuts: 'Keyboard Shortcuts',
     language: 'Language',
     toggle_dark_light_mode: 'Dark mode',
+    view_label: 'View',
+    // View labels
+    view_text_generation: 'Text generation',
+    view_training: 'Training',
+    view_decoding: 'Decoding algorithms',
+    decoding_view_placeholder: 'Decoding algorithms visualization will be displayed here.',
     // Keyboard shortcuts
     shortcut_play_pause: 'Play / Pause animation',
     shortcut_step_forward: 'Step forward',
@@ -60,6 +66,12 @@ const translations = {
     keyboard_shortcuts: 'Klávesové zkratky',
     language: 'Jazyk',
     toggle_dark_light_mode: 'Tmavý režim',
+    view_label: 'Zobrazení',
+    // View labels
+    view_text_generation: 'Generování textu',
+    view_training: 'Trénování',
+    view_decoding: 'Dekódovací algoritmy',
+    decoding_view_placeholder: 'Vizualizace dekódovacích algoritmů bude zobrazena zde.',
     // Keyboard shortcuts
     shortcut_play_pause: 'Přehrát / Pozastavit animaci',
     shortcut_step_forward: 'Krok vpřed',

@@ -41,6 +41,8 @@
   min-width: 0;
   max-width: min(800px, calc(100vw - 200px));
   /* Maximum width on large screens, but shrink when screen narrows */
+  margin: 0 auto;
+  /* Center the input */
 }
 
 .top-panel-input .input-section-minimal {
@@ -179,6 +181,29 @@
 }
 
 .language-menu-wrapper .language-selector {
+  pointer-events: auto;
+}
+
+.view-menu-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem;
+  background: transparent;
+  border: none;
+}
+
+.view-menu-wrapper .menu-label {
+  display: none;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.view-menu-wrapper .view-selector {
   pointer-events: auto;
 }
 
@@ -972,6 +997,31 @@
   }
 
   .header-controls.open .language-selector .icon-button-minimal {
+    pointer-events: auto;
+  }
+
+  .header-controls.open .view-menu-wrapper {
+    width: 100%;
+    justify-content: flex-start;
+    border-radius: 6px;
+    transition: background-color 0.15s ease;
+    cursor: pointer;
+  }
+
+  .header-controls.open .view-menu-wrapper:hover {
+    background: var(--bg-hover, rgba(0, 0, 0, 0.05));
+  }
+
+  .header-controls.open .view-menu-wrapper .menu-label {
+    display: block;
+  }
+
+  .header-controls.open .view-menu-wrapper .menu-label {
+    display: none;
+  }
+
+  .header-controls.open .view-selector {
+    width: auto;
     pointer-events: auto;
   }
 

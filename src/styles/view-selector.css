@@ -1,0 +1,153 @@
+/* View Selector Styles */
+.view-selector {
+  position: relative;
+  display: inline-block;
+}
+
+.view-selector-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: transparent;
+  border: none;
+  border-radius: 0.5rem;
+  color: var(--text-primary);
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.view-selector-button:hover {
+  background: var(--bg-hover);
+}
+
+.view-selector-button:focus {
+  outline: none;
+}
+
+.view-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.view-label {
+  line-height: 1;
+}
+
+.view-chevron {
+  font-size: 0.7rem;
+  opacity: 0.6;
+  transition: transform 0.2s ease;
+}
+
+.view-selector-button[aria-expanded='true'] .view-chevron {
+  transform: rotate(180deg);
+}
+
+.view-dropdown {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  left: 0;
+  min-width: 100%;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  z-index: 1000;
+  animation: fadeIn 0.15s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.view-option {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: var(--bg-primary);
+  border: none;
+  color: var(--text-primary);
+  font-size: 0.95rem;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.15s ease;
+  white-space: nowrap;
+}
+
+.view-option:hover {
+  background: var(--bg-hover);
+}
+
+.view-option.active {
+  background: var(--bg-active);
+  font-weight: 500;
+}
+
+.view-option-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.view-option-label {
+  flex: 1;
+  line-height: 1;
+}
+
+.view-checkmark {
+  color: var(--accent-color);
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .view-selector-button {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+  }
+
+  .view-label {
+    display: none;
+  }
+
+  .view-icon {
+    font-size: 1.3rem;
+  }
+
+  .view-chevron {
+    display: none;
+  }
+
+  .view-dropdown {
+    min-width: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .view-selector-button {
+    padding: 0.35rem 0.7rem;
+  }
+
+  .view-icon {
+    font-size: 1.2rem;
+  }
+}
