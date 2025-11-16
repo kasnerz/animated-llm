@@ -8,7 +8,8 @@ import DecodingView from './views/DecodingView';
 import InputSection from './components/InputSection';
 import KeyboardShortcutsModal from './components/KeyboardShortcutsModal';
 import LanguageSelector from './components/LanguageSelector';
-import LeftPanel from './components/LeftPanel';
+import ViewSelectorPopup from './components/ViewSelectorPopup';
+import ViewSelectorMobile from './components/ViewSelectorMobile';
 import Icon from '@mdi/react';
 import { mdiKeyboard } from '@mdi/js';
 import { config } from './config';
@@ -24,7 +25,6 @@ function AppContent() {
   const { currentView } = useView();
   const [isKeyboardShortcutsOpen, setIsKeyboardShortcutsOpen] = useState(false);
   const [isHamburgerOpen, setIsHamburgerOpen] = useState(false);
-  const [isLeftPanelCollapsed, setIsLeftPanelCollapsed] = useState(true);
   // Guard to avoid invoking step completion multiple times while state is catching up
   const completionGuardRef = useRef({ step: -1, sub: -1 });
 
@@ -253,27 +253,23 @@ function AppContent() {
   }
 
   return (
-    <div
-      className={`app-container with-left-panel ${isLeftPanelCollapsed ? 'panel-collapsed' : ''} ${isHamburgerOpen ? 'hamburger-open' : ''}`}
-    >
+    <div className={`app-container ${isHamburgerOpen ? 'hamburger-open' : ''}`}>
       {/* Keyboard Shortcuts Modal */}
       <KeyboardShortcutsModal
         isOpen={isKeyboardShortcutsOpen}
         onClose={() => setIsKeyboardShortcutsOpen(false)}
       />
 
-      {/* Left Panel with view selector */}
-      <LeftPanel
-        isCollapsed={isLeftPanelCollapsed}
-        onToggleCollapse={() => setIsLeftPanelCollapsed(!isLeftPanelCollapsed)}
-      />
-
       {/* Floating top section */}
       <div className="floating-top-section">
         <div className="floating-top-content">
-          {/* Logo */}
+          {/* Logo on the very left */}
           <div className="app-logo">
-            <span className="logo-text">Animated LLM</span>
+            <div className="logo-icon">
+              {/* Small square placeholder for logo */}
+              <div className="logo-square"></div> <div className="logo-text">&nbsp;HelloLLM</div>
+            </div>
+            <ViewSelectorPopup showOnMobile={false} />
           </div>
 
           {/* View-specific content (input section or placeholder) */}
@@ -291,6 +287,7 @@ function AppContent() {
               ☰
             </button>
             <div className="header-controls-list">
+              <ViewSelectorMobile />
               <button
                 onClick={() => setIsKeyboardShortcutsOpen(true)}
                 className="menu-item-with-label"

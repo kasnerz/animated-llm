@@ -23,6 +23,10 @@ const translations = {
     view_text_generation: 'Text generation',
     view_training: 'Training',
     view_decoding: 'Decoding algorithms',
+    // View descriptions
+    view_text_generation_desc: 'Visualize how LLMs generate text token by token',
+    view_training_desc: 'Understand the training process of language models',
+    view_decoding_desc: 'Explore different decoding strategies and algorithms',
     decoding_view_placeholder: 'Decoding algorithms visualization will be displayed here.',
     // Keyboard shortcuts
     shortcut_play_pause: 'Play / Pause animation',
@@ -71,6 +75,10 @@ const translations = {
     view_text_generation: 'Generování textu',
     view_training: 'Trénování',
     view_decoding: 'Dekódovací algoritmy',
+    // View descriptions
+    view_text_generation_desc: 'Vizualizace postupného generování textu token po tokenu',
+    view_training_desc: 'Pochopení procesu trénování jazykových modelů',
+    view_decoding_desc: 'Prozkoumání různých dekódovacích strategií a algoritmů',
     decoding_view_placeholder: 'Vizualizace dekódovacích algoritmů bude zobrazena zde.',
     // Keyboard shortcuts
     shortcut_play_pause: 'Přehrát / Pozastavit animaci',
