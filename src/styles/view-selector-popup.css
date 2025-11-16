@@ -144,34 +144,3 @@
   color: var(--text-secondary);
   line-height: 1.4;
 }
-
-/* Mobile - hide the dropdown button */
-@media (max-width: 768px) {
-  .view-selector-popup.hide-on-mobile {
-    display: none;
-  }
-
-  .view-popup {
-    min-width: 320px;
-    max-width: calc(100vw - 2rem);
-  }
-}
-
-@media (max-width: 480px) {
-  .view-popup {
-    min-width: 280px;
-  }
-
-  .view-grid-item {
-    gap: 0.75rem;
-    padding: 0.75rem;
-  }
-
-  .view-grid-title {
-    font-size: 0.9rem;
-  }
-
-  .view-grid-description {
-    font-size: 0.8rem;
-  }
-}

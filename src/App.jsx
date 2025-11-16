@@ -260,10 +260,10 @@ function AppContent() {
         onClose={() => setIsKeyboardShortcutsOpen(false)}
       />
 
-      {/* Floating top section */}
+      {/* Floating top section - now compact with centered logo */}
       <div className="floating-top-section">
         <div className="floating-top-content">
-          {/* Logo on the very left */}
+          {/* Centered logo and title */}
           <div className="app-logo">
             <div className="logo-icon">
               {/* Small square placeholder for logo */}
@@ -271,9 +271,6 @@ function AppContent() {
             </div>
             <ViewSelectorPopup showOnMobile={false} />
           </div>
-
-          {/* View-specific content (input section or placeholder) */}
-          {renderViewTopContent()}
 
           {/* Header controls - minimal */}
           <div className={`header-controls ${isHamburgerOpen ? 'open' : ''}`}>
@@ -332,33 +329,6 @@ function AppContent() {
       {/* Bottom section is now handled by individual views */}
     </div>
   );
-
-  /**
-   * Render the top panel content based on current view
-   */
-  function renderViewTopContent() {
-    switch (currentView) {
-      case VIEW_TYPES.TEXT_GENERATION:
-      case VIEW_TYPES.DECODING:
-        // These views show the input section
-        return (
-          <div className="top-panel-input">
-            <InputSection />
-          </div>
-        );
-      case VIEW_TYPES.TRAINING:
-        // Training view has blank space (will be modified later)
-        return (
-          <div className="top-panel-input">
-            <div className="training-top-placeholder">
-              {/* Reserved for future training-specific controls */}
-            </div>
-          </div>
-        );
-      default:
-        return null;
-    }
-  }
 
   /**
    * Render the current view component

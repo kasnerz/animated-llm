@@ -15,10 +15,10 @@
   right: 0;
   z-index: 200;
   background: var(--bg-primary);
-  /* compact top/bottom padding to reduce vertical footprint */
-  padding: 0.5rem 10px 0.5rem 10px;
+  /* More compact top/bottom padding */
+  padding: 0.6rem 10px 0.6rem 10px;
   /* 10px gap from screen edges */
-  box-shadow: 0 2px 12px var(--shadow-color);
+  /* box-shadow: 0 2px 12px var(--shadow-color); */
   transition: box-shadow 0.3s ease;
 }
 
@@ -26,25 +26,28 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  /* center the input block */
+  /* center the logo */
   gap: 1.25rem;
   width: 100%;
-  /* span full width so input is centered relative to viewport */
   margin: 0;
   position: relative;
   /* allow absolute positioning of header controls */
 }
 
-/* App Logo */
+/* App Logo - now centered */
 .app-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  /* No absolute positioning - will be centered */
+}
+
+/* View selector popup stays on the left */
+.app-logo .view-selector-popup {
   position: absolute;
   left: 1rem;
   top: 50%;
   transform: translateY(-50%);
-  z-index: 10;
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
 }
 
 .logo-icon {
@@ -72,17 +75,15 @@
   cursor: default;
 }
 
-.top-panel-input {
-  flex: 1 1 auto;
-  /* Allow input to shrink more aggressively */
-  min-width: 0;
-  max-width: min(800px, calc(100vw - 200px));
-  /* Maximum width on large screens, but shrink when screen narrows */
-  margin: 0 auto;
-  /* Center the input */
+/* Canvas Input Section - prompt input moved to canvas area */
+.canvas-input-section {
+  max-width: min(800px, calc(100vw - 40px));
+  margin: 0 auto 2.5rem auto;
+  /* Tighter top margin, larger bottom margin for better separation */
+  margin-top: calc(var(--header-height) + 0.25rem);
 }
 
-.top-panel-input .input-section-minimal {
+.canvas-input-section .input-section-minimal {
   width: 100%;
 }
 
@@ -252,7 +253,7 @@
 .app-main {
   width: 100%;
   margin: 0 auto;
-  padding-top: 5rem;
+  padding-top: 0rem;
   padding-left: 2rem;
   padding-right: 2rem;
   padding-bottom: 120px;
@@ -942,14 +943,6 @@
     gap: 1rem;
   }
 
-  .top-panel-input {
-    max-width: min(700px, calc(100vw - 200px));
-  }
-
-  .app-logo {
-    left: 0.75rem;
-  }
-
   .logo-text {
     font-size: 1.3rem;
   }
@@ -961,26 +954,37 @@
   .prompt-text-chat {
     font-size: 0.95rem;
   }
+
+  .canvas-input-section {
+    max-width: min(700px, calc(100vw - 40px));
+  }
+
+  .app-logo .view-selector-popup {
+    left: 0.75rem;
+  }
 }
 
 @media (max-width: 900px) {
-  .top-panel-input {
-    max-width: min(600px, calc(100vw - 200px));
+  .canvas-input-section {
+    max-width: min(600px, calc(100vw - 40px));
+  }
+
+  .app-logo .view-selector-popup {
+    left: 0.5rem;
   }
 }
 
-/* When screen becomes too small for both input and header controls */
+/* When screen becomes too small for header controls */
 @media (max-width: 1150px) {
   .floating-top-content {
     gap: 0.5rem;
-    justify-content: space-between;
-    /* Push input and hamburger apart */
   }
 
   .header-controls {
-    position: static;
-    /* Put hamburger back in flex flow */
-    transform: none;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
   }
 
   .header-controls-list {
@@ -1090,228 +1094,10 @@
   .hamburger-toggle {
     display: inline-flex;
   }
-
-  .top-panel-input {
-    flex: 1 1 auto;
-    max-width: none;
-    /* Allow input to take available space */
-  }
-}
-
-/* Smaller tablets and large phones */
-@media (max-width: 768px) {
-  .floating-top-section {
-    padding: 0.5rem 1rem 0.75rem 1rem;
-  }
-
-  .floating-bottom-section {
-    padding: 0.75rem 1rem;
-  }
-
-  .app-logo {
-    left: 0.5rem;
-  }
-
-  .logo-text {
-    font-size: 1.1rem;
-  }
-
-  .app-main {
-    padding-top: 7rem;
-    padding-bottom: 100px;
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-
-  .prompt-text-large {
-    font-size: 1.5rem;
-  }
-
-  .action-buttons-minimal {
-    flex-direction: column;
-    gap: 1rem;
-  }
-
-  .prompt-container {
-    width: 100%;
-    padding: 0 0.25rem;
-  }
-
-  .prompt-text-chat {
-    font-size: 0.9rem;
-  }
-
-  .chat-input-box {
-    padding: 10px 8px;
-    gap: 6px;
-  }
-
-  .dropdown-menu {
-    min-width: 300px;
-    max-width: calc(100vw - 2rem);
-  }
-
-  /* Keep play button round with fixed size */
-  .btn-play {
-    --btn-play-size: 36px;
-    width: var(--btn-play-size) !important;
-    height: var(--btn-play-size) !important;
-    min-width: var(--btn-play-size) !important;
-    min-height: var(--btn-play-size) !important;
-    max-width: var(--btn-play-size) !important;
-    max-height: var(--btn-play-size) !important;
-  }
-
-  .btn-play svg {
-    width: 13px;
-    height: 13px;
-  }
-
-  /* Reduce settings button size */
-  .btn-settings {
-    width: 36px;
-    height: 36px;
-    font-size: 20px;
-  }
-}
-
-/* Mobile - progressive narrowing and hamburger menu */
-@media (max-width: 640px) {
-  .app-logo .logo-square {
-    display: flex;
-    /* Keep the square logo visible */
-  }
-
-  .app-logo .view-selector-popup {
-    display: none;
-    /* Hide the dropdown on small mobile screens */
-  }
-
-  .prompt-container {
-    max-width: 100%;
-    padding: 0 0.5rem;
-  }
-
-  .chat-input-box {
-    padding: 8px 6px;
-    gap: 4px;
-  }
-
-  .prompt-text-chat {
-    font-size: 0.85rem;
-    padding-right: 4px;
-  }
-
-  .btn-play {
-    --btn-play-size: 32px;
-    width: var(--btn-play-size) !important;
-    height: var(--btn-play-size) !important;
-    min-width: var(--btn-play-size) !important;
-    min-height: var(--btn-play-size) !important;
-    max-width: var(--btn-play-size) !important;
-    max-height: var(--btn-play-size) !important;
-  }
-
-  .btn-play svg {
-    width: 12px;
-    height: 12px;
-  }
-
-  .btn-settings {
-    width: 32px;
-    height: 32px;
-    margin-right: 2px;
-    font-size: 18px;
-  }
-
-  .dropdown-toggle {
-    width: 24px;
-    height: 24px;
-  }
-}
-
-/* Very small screens - hamburger menu for header controls */
-@media (max-width: 480px) {
-  .prompt-container {
-    padding: 0 0.25rem;
-  }
-
-  .prompt-text-chat {
-    font-size: 0.8rem;
-  }
-
-  .chat-input-box {
-    padding: 6px 4px;
-    gap: 3px;
-  }
-
-  .btn-play {
-    --btn-play-size: 28px;
-    width: var(--btn-play-size) !important;
-    height: var(--btn-play-size) !important;
-    min-width: var(--btn-play-size) !important;
-    min-height: var(--btn-play-size) !important;
-    max-width: var(--btn-play-size) !important;
-    max-height: var(--btn-play-size) !important;
-  }
-
-  .btn-play svg {
-    width: 10px;
-    height: 10px;
-  }
-
-  .btn-settings {
-    width: 28px;
-    height: 28px;
-    margin-right: 1px;
-    font-size: 16px;
-  }
-
-  .dropdown-toggle {
-    width: 20px;
-    height: 20px;
-  }
-
-  /* Ensure dropdown menu is full width on very small screens */
-  .dropdown-menu {
-    left: -6px;
-    right: -6px;
-    width: calc(100% + 12px);
-  }
-
-  /* Adjust settings popover position on small screens */
-  .settings-popover {
-    right: auto;
-    left: 50%;
-    transform: translateX(-50%);
-    min-width: 200px;
-  }
-}
-
-/* Compact actions for very small prompt widths */
-@media (max-width: 420px) {
-  .prompt-container {
-    padding: 0 0.25rem;
-  }
-
-  .btn-play {
-    --btn-play-size: 24px;
-    width: var(--btn-play-size) !important;
-    height: var(--btn-play-size) !important;
-    min-width: var(--btn-play-size) !important;
-    min-height: var(--btn-play-size) !important;
-    max-width: var(--btn-play-size) !important;
-    max-height: var(--btn-play-size) !important;
-  }
-
-  .btn-play svg {
-    width: 9px;
-    height: 9px;
-  }
 }
 
 /* Medium screens */
-@media (max-width: 1200px) and (min-width: 769px) {
+@media (max-width: 1200px) and (min-width: 1151px) {
   .floating-top-section,
   .floating-bottom-section {
     padding-left: 1.5rem;
@@ -1325,7 +1111,7 @@
 }
 
 /* Ensure visualization doesn't break layout */
-@media (max-width: 768px) {
+@media (max-width: 1150px) {
   .visualization-section {
     min-height: 600px;
   }
@@ -1333,5 +1119,14 @@
   .visualization-canvas {
     min-height: 600px;
     height: auto;
+  }
+
+  /* Hide the labels panel and make visualization full width */
+  .viz-labels {
+    display: none;
+  }
+
+  .viz-scroll {
+    width: 100%;
   }
 }

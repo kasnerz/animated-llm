@@ -133,41 +133,19 @@
   transform: translateX(-100%);
 }
 
-/* Responsive behavior */
-@media (max-width: 768px) {
+/* Responsive behavior - hide left panel completely when hamburger menu appears */
+@media (max-width: 1150px) {
   .left-panel {
-    /* On mobile, collapse by default or hide completely */
-    width: 60px;
-  }
-
-  .left-panel-view-label {
     display: none;
   }
 
-  .left-panel-view-button {
-    justify-content: center;
-    padding: 0.75rem 0.5rem;
-  }
-
   .app-container.with-left-panel .app-main {
-    margin-left: 60px;
-    width: calc(100% - 60px);
+    margin-left: 0;
+    width: 100%;
   }
 
   .app-container.with-left-panel.panel-collapsed .app-main {
-    margin-left: 60px;
-    width: calc(100% - 60px);
-  }
-}
-
-@media (max-width: 480px) {
-  /* On very small screens, hide completely when hamburger is open */
-  .left-panel {
-    width: 50px;
-  }
-
-  .app-container.with-left-panel .app-main {
-    margin-left: 50px;
-    width: calc(100% - 50px);
+    margin-left: 0;
+    width: 100%;
   }
 }

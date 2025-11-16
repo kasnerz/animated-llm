@@ -99,7 +99,8 @@
 
 /* Output Distribution */
 .distribution-bar {
-  fill: #bfbfbf; /* default grey, may be overridden inline */
+  fill: #bfbfbf;
+  /* default grey, may be overridden inline */
   transition: all 0.3s ease;
   /* subtle outline so low-saturation fills remain visible on light backgrounds */
   stroke: rgba(0, 0, 0, 0.06);
@@ -112,7 +113,8 @@
 }
 
 .distribution-bar.selected {
-  fill: #8b0000; /* dark red */
+  fill: #8b0000;
+  /* dark red */
 }
 
 .distribution-label {
@@ -234,4 +236,11 @@
   font-size: 12px;
   font-weight: 500;
   fill: var(--text-tertiary, #999);
+}
+
+/* Hide stage labels at mobile breakpoint */
+@media (max-width: 1150px) {
+  .stage-label {
+    display: none;
+  }
 }

@@ -267,34 +267,11 @@ h2 {
   }
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  body {
-    padding: 1rem;
-  }
-
-  .top-right-controls {
-    position: static;
-    margin-bottom: 2rem;
-    flex-wrap: wrap;
-  }
-
-  .input-controls {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .btn-play,
-  .btn-reset {
-    width: 100%;
-    border-radius: 12px;
-  }
-}
-
 /* Token underlines */
 .tokenized-text {
   display: inline;
-  word-break: break-word; /* Allow breaking long words on small screens */
+  word-break: break-word;
+  /* Allow breaking long words on small screens */
 }
 
 .token-with-underline {
@@ -305,19 +282,4 @@ h2 {
   border-radius: 2px;
   margin-right: 4px;
   line-height: 1.6;
-}
-
-/* Responsive adjustments for tokens */
-@media (max-width: 640px) {
-  .token-with-underline {
-    border-bottom-width: 4px;
-    margin-right: 2px;
-  }
-}
-
-@media (max-width: 480px) {
-  .token-with-underline {
-    border-bottom-width: 3px;
-    margin-right: 1px;
-  }
 }
