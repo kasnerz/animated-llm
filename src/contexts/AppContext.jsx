@@ -599,6 +599,29 @@ export function AppProvider({ children }) {
   useThemeEffect(state.theme);
 
   /**
+   * Load a specific example by ID
+   */
+  const loadExample = useCallback(
+    async (exampleId) => {
+      try {
+        dispatch({ type: ActionTypes.LOAD_EXAMPLE_START });
+        const data = await examplesApi.getExample(exampleId, state.viewType);
+        dispatch({
+          type: ActionTypes.LOAD_EXAMPLE_SUCCESS,
+          payload: { exampleId, example: data },
+        });
+      } catch (error) {
+        console.error('Error loading example:', error);
+        dispatch({
+          type: ActionTypes.LOAD_EXAMPLE_ERROR,
+          payload: { error: error.message },
+        });
+      }
+    },
+    [state.viewType]
+  );
+
+  /**
    * Load all examples from examples.json
    */
   const loadExamples = useCallback(
@@ -624,29 +647,6 @@ export function AppProvider({ children }) {
       }
     },
     [state.viewType, loadExample]
-  );
-
-  /**
-   * Load a specific example by ID
-   */
-  const loadExample = useCallback(
-    async (exampleId) => {
-      try {
-        dispatch({ type: ActionTypes.LOAD_EXAMPLE_START });
-        const data = await examplesApi.getExample(exampleId, state.viewType);
-        dispatch({
-          type: ActionTypes.LOAD_EXAMPLE_SUCCESS,
-          payload: { exampleId, example: data },
-        });
-      } catch (error) {
-        console.error('Error loading example:', error);
-        dispatch({
-          type: ActionTypes.LOAD_EXAMPLE_ERROR,
-          payload: { error: error.message },
-        });
-      }
-    },
-    [state.viewType]
   );
 
   /**
