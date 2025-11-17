@@ -29,6 +29,7 @@ const ActionTypes = {
   TOGGLE_LANGUAGE: 'TOGGLE_LANGUAGE',
   SET_LANGUAGE: 'SET_LANGUAGE',
   SET_ANIMATION_SPEED: 'SET_ANIMATION_SPEED',
+  SET_VIEW_TYPE: 'SET_VIEW_TYPE',
 
   // Playback state
   SET_IS_PLAYING: 'SET_IS_PLAYING',
@@ -57,6 +58,7 @@ const initialState = {
   theme: config.defaults.theme,
   language: config.defaults.language,
   animationSpeed: config.defaults.animationSpeed,
+  viewType: 'inference', // 'inference' or 'training'
 
   // Animation state
   isPlaying: false,
@@ -71,9 +73,9 @@ const initialState = {
   error: null,
 
   // Model and temperature configuration (decoupled from examples)
-  // Default to first model (index 0) and neutral temperature 🌡️
+  // Default to first model (index 0) and temperature 0.0 🧊
   selectedModelIndex: 0,
-  selectedTemperatureEmoji: '🌡️',
+  selectedTemperatureEmoji: '🧊',
 };
 
 // Reducer function
@@ -127,8 +129,12 @@ function appReducer(state, action) {
 
     case ActionTypes.NEXT_STEP: {
       if (!state.currentExample) return state;
-      const maxSteps = state.currentExample.generation_steps.length;
-      if (state.currentStep >= maxSteps - 1) return state;
+      const isTraining = state.viewType === 'training';
+      const maxSteps = isTraining
+        ? state.currentExample.training_steps?.length || 0
+        : state.currentExample.generation_steps?.length || 0;
+      if (maxSteps === 0) return state;
+      if (state.currentStep >= maxSteps) return state;
 
       return {
         ...state,
@@ -141,6 +147,16 @@ function appReducer(state, action) {
     }
 
     case ActionTypes.NEXT_ANIMATION_SUB_STEP: {
+      // Training view: animate sub-steps 0..9
+      if (state.viewType === 'training') {
+        const maxSubStepsTraining = 10; // 0..9
+        if (state.currentAnimationSubStep >= maxSubStepsTraining - 1) return state;
+        return {
+          ...state,
+          currentAnimationSubStep: state.currentAnimationSubStep + 1,
+          instantTransition: false,
+        };
+      }
       const numLayers = state.currentExample?.model_info?.num_layers || 1;
       const maxSubSteps = 13; // timeline now has 0..12
 
@@ -212,6 +228,32 @@ function appReducer(state, action) {
     }
 
     case ActionTypes.PREV_ANIMATION_SUB_STEP: {
+      if (state.viewType === 'training') {
+        // Simple backward stepping for training
+        const sub = state.currentAnimationSubStep;
+        if (sub > 0) {
+          return { ...state, currentAnimationSubStep: sub - 1, instantTransition: true };
+        }
+        // If at sub==0, move to previous step's last sub-step or reset to beginning
+        if (state.currentStep <= 1) {
+          return {
+            ...state,
+            currentStep: 0,
+            currentAnimationSubStep: 0,
+            currentTransformerLayer: 0,
+            instantTransition: true,
+          };
+        }
+        const prevStep = Math.max(1, state.currentStep - 1);
+        const lastVisibleSubTraining = 9;
+        return {
+          ...state,
+          currentStep: prevStep,
+          currentAnimationSubStep: lastVisibleSubTraining,
+          currentTransformerLayer: 0,
+          instantTransition: true,
+        };
+      }
       const numLayers = state.currentExample?.model_info?.num_layers || 1;
       const sub = state.currentAnimationSubStep;
       const currentLayer = state.currentTransformerLayer;
@@ -320,6 +362,9 @@ function appReducer(state, action) {
     }
 
     case ActionTypes.SKIP_TO_NEXT_TOKEN: {
+      if (state.viewType === 'training') {
+        return state;
+      }
       // Skip to the end of the current token generation (last sub-step)
       // This shows the selected token immediately without animating through all sub-steps
       if (!state.currentExample) return state;
@@ -336,9 +381,18 @@ function appReducer(state, action) {
     }
 
     case ActionTypes.SKIP_TO_END: {
-      // Skip to the very end of generation, showing all generated tokens
       if (!state.currentExample) return state;
+      if (state.viewType === 'training') {
+        const maxSteps = state.currentExample.training_steps?.length || 0;
+        return {
+          ...state,
+          currentStep: maxSteps,
+          isPlaying: false,
+          instantTransition: true,
+        };
+      }
 
+      // Inference: show all generated tokens
       const steps = state.currentExample.generation_steps || [];
       if (steps.length === 0) return state;
 
@@ -388,6 +442,29 @@ function appReducer(state, action) {
       const isAuto = !!(action.payload && action.payload.auto);
       const ex = state.currentExample;
       if (!ex) return { ...state, isPlaying: false };
+
+      if (state.viewType === 'training') {
+        const maxSteps = ex.training_steps?.length || 0;
+        const isLast = state.currentStep >= maxSteps;
+        if (isLast) {
+          return {
+            ...state,
+            currentStep: 0,
+            isPlaying: isAuto,
+            currentAnimationSubStep: 0,
+            currentTransformerLayer: 0,
+            instantTransition: false,
+          };
+        }
+        return {
+          ...state,
+          currentStep: state.currentStep + 1,
+          isPlaying: isAuto,
+          currentAnimationSubStep: 0,
+          currentTransformerLayer: 0,
+          instantTransition: false,
+        };
+      }
 
       const steps = ex.generation_steps || [];
       const idx = state.currentStep - 1;
@@ -463,6 +540,12 @@ function appReducer(state, action) {
         language: action.payload.language,
       };
 
+    case ActionTypes.SET_VIEW_TYPE:
+      return {
+        ...state,
+        viewType: action.payload.viewType,
+      };
+
     case ActionTypes.SET_ANIMATION_SPEED:
       return {
         ...state,
@@ -518,48 +601,54 @@ export function AppProvider({ children }) {
   /**
    * Load all examples from examples.json
    */
-  const loadExamples = useCallback(async (language = null) => {
-    try {
-      dispatch({ type: ActionTypes.LOAD_EXAMPLES_START });
-      const examples = await examplesApi.listExamples(language);
-      dispatch({
-        type: ActionTypes.LOAD_EXAMPLES_SUCCESS,
-        payload: { examples },
-      });
+  const loadExamples = useCallback(
+    async (language = null) => {
+      try {
+        dispatch({ type: ActionTypes.LOAD_EXAMPLES_START });
+        const examples = await examplesApi.listExamples(language, state.viewType);
+        dispatch({
+          type: ActionTypes.LOAD_EXAMPLES_SUCCESS,
+          payload: { examples },
+        });
 
-      // Load first example by default
-      if (examples.length > 0) {
-        loadExample(examples[0].id);
+        // Load first example by default
+        if (examples.length > 0) {
+          loadExample(examples[0].id);
+        }
+      } catch (error) {
+        console.error('Error loading examples:', error);
+        dispatch({
+          type: ActionTypes.LOAD_EXAMPLES_ERROR,
+          payload: { error: error.message },
+        });
       }
-    } catch (error) {
-      console.error('Error loading examples:', error);
-      dispatch({
-        type: ActionTypes.LOAD_EXAMPLES_ERROR,
-        payload: { error: error.message },
-      });
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+    },
+    [state.viewType]
+  );
 
   /**
    * Load a specific example by ID
    */
-  const loadExample = useCallback(async (exampleId) => {
-    try {
-      dispatch({ type: ActionTypes.LOAD_EXAMPLE_START });
-      const data = await examplesApi.getExample(exampleId);
-      dispatch({
-        type: ActionTypes.LOAD_EXAMPLE_SUCCESS,
-        payload: { exampleId, example: data },
-      });
-    } catch (error) {
-      console.error('Error loading example:', error);
-      dispatch({
-        type: ActionTypes.LOAD_EXAMPLE_ERROR,
-        payload: { error: error.message },
-      });
-    }
-  }, []);
+  const loadExample = useCallback(
+    async (exampleId) => {
+      try {
+        dispatch({ type: ActionTypes.LOAD_EXAMPLE_START });
+        const data = await examplesApi.getExample(exampleId, state.viewType);
+        dispatch({
+          type: ActionTypes.LOAD_EXAMPLE_SUCCESS,
+          payload: { exampleId, example: data },
+        });
+      } catch (error) {
+        console.error('Error loading example:', error);
+        dispatch({
+          type: ActionTypes.LOAD_EXAMPLE_ERROR,
+          payload: { error: error.message },
+        });
+      }
+    },
+    [state.viewType]
+  );
 
   /**
    * Advance to next step in current example
@@ -626,6 +715,16 @@ export function AppProvider({ children }) {
     dispatch({
       type: ActionTypes.SET_LANGUAGE,
       payload: { language: lang },
+    });
+  }, []);
+
+  /**
+   * Set view type (inference or training)
+   */
+  const setViewType = useCallback((viewType) => {
+    dispatch({
+      type: ActionTypes.SET_VIEW_TYPE,
+      payload: { viewType },
     });
   }, []);
 
@@ -708,6 +807,15 @@ export function AppProvider({ children }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [state.language]);
 
+  // Reload examples when view type changes
+  useEffect(() => {
+    if (isFirstRender.current) {
+      return;
+    }
+    loadExamples(state.language);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [state.viewType]);
+
   // Set initial theme on mount
   useEffect(() => {
     document.body.setAttribute('data-theme', state.theme);
@@ -728,6 +836,7 @@ export function AppProvider({ children }) {
       toggleTheme,
       toggleLanguage,
       setLanguage,
+      setViewType,
       setAnimationSpeed,
       setIsPlaying,
       setIsPaused,

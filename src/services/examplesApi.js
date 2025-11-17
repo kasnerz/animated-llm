@@ -7,8 +7,11 @@
  * - If example file is missing, error is thrown (no fallback at file level)
  */
 
-// Simple in-memory cache
-let cachedExamplesList = null;
+// Simple in-memory cache - separate caches for inference and training
+const cachedExamplesLists = {
+  inference: null,
+  training: null,
+};
 const cachedExamples = new Map();
 
 // Build a URL to a data file that works both in dev (base='/') and
@@ -94,35 +97,36 @@ function filterSpecialTokens(data) {
 /**
  * List all available examples
  * @param {string} language - Optional language filter ('en' or 'cs')
+ * @param {string} type - Type of examples to load ('inference' or 'training'), defaults to 'inference'
  * @returns {Promise<Array<{id: string, prompt: string}>>} Array of example metadata
  */
-export async function listExamples(language = null) {
+export async function listExamples(language = null, type = 'inference') {
   try {
     // Always fetch fresh data if we don't have it cached
-    if (!cachedExamplesList) {
-      const response = await fetch(buildDataUrl('data/examples.json'));
+    if (!cachedExamplesLists[type]) {
+      const response = await fetch(buildDataUrl(`data/${type}/examples.json`));
       if (!response.ok) {
         throw new Error(`Failed to load examples: ${response.statusText}`);
       }
 
       const data = await response.json();
-      cachedExamplesList = data.examples;
+      cachedExamplesLists[type] = data.examples;
     }
 
     // Filter by language if specified
     if (language) {
-      const filteredExamples = cachedExamplesList.filter((ex) => ex.language === language);
+      const filteredExamples = cachedExamplesLists[type].filter((ex) => ex.language === language);
 
       // If no examples found for the requested language, fallback to English
       if (filteredExamples.length === 0 && language !== 'en') {
         console.warn(`No examples found for language '${language}', falling back to English`);
-        return cachedExamplesList.filter((ex) => ex.language === 'en');
+        return cachedExamplesLists[type].filter((ex) => ex.language === 'en');
       }
 
       return filteredExamples;
     }
 
-    return cachedExamplesList;
+    return cachedExamplesLists[type];
   } catch (error) {
     console.error('Error loading examples list:', error);
     throw error;
@@ -132,17 +136,18 @@ export async function listExamples(language = null) {
 /**
  * Get a specific example by ID
  * @param {string} exampleId - The ID of the example to load
+ * @param {string} type - Type of example to load ('inference' or 'training'), defaults to 'inference'
  * @returns {Promise<Object>} The example data including generation steps
  */
-export async function getExample(exampleId) {
+export async function getExample(exampleId, type = 'inference') {
   // Return cached example if available
   if (cachedExamples.has(exampleId)) {
     return cachedExamples.get(exampleId);
   }
 
   try {
-    // First, get the examples list to find the correct filename
-    const examples = await listExamples();
+    // First, get the examples list to find the correct filename and language
+    const examples = await listExamples(null, type);
     const exampleMeta = examples.find((ex) => ex.id === exampleId);
 
     if (!exampleMeta) {
@@ -151,7 +156,10 @@ export async function getExample(exampleId) {
 
     // Use the filename from the examples list
     const filename = exampleMeta.file || `${exampleId}.json`;
-    const response = await fetch(buildDataUrl(`data/${filename}`));
+
+    // Construct the path: data/{type}/{filename}
+    // Note: The filename already includes the language subfolder (e.g., "cs/cs-001-full.json")
+    const response = await fetch(buildDataUrl(`data/${type}/${filename}`));
 
     if (!response.ok) {
       throw new Error(`Failed to load example ${exampleId}: ${response.statusText}`);
@@ -174,6 +182,7 @@ export async function getExample(exampleId) {
  * Clear the cache (useful for testing or forced refresh)
  */
 export function clearCache() {
-  cachedExamplesList = null;
+  cachedExamplesLists.inference = null;
+  cachedExamplesLists.training = null;
   cachedExamples.clear();
 }

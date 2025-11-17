@@ -40,9 +40,9 @@
 
 .view-current-label {
   line-height: 1;
-  font-variant: small-caps;
-  letter-spacing: 0.02em;
-  font-size: 1.2em;
+  /* font-variant: small-caps; */
+  /* letter-spacing: 0.02em; */
+  font-size: 1em;
   font-weight: bold;
 }
 
@@ -143,4 +143,11 @@
   font-size: 0.85rem;
   color: var(--text-secondary);
   line-height: 1.4;
+}
+
+/* Hide view selector popup on mobile when hamburger menu is displayed */
+@media (max-width: 1000px) {
+  .view-selector-popup.hide-on-mobile {
+    display: none;
+  }
 }

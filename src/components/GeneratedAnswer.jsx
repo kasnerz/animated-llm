@@ -5,6 +5,15 @@ import { processTokenForText } from '../utils/tokenProcessing';
 import { useI18n } from '../i18n/I18nProvider';
 import '../styles/generated-answer.css';
 
+/**
+ * GeneratedAnswer Component
+ *
+ * REUSABLE COMPONENT - Can be used across different views
+ * Displays the generated text with token highlighting
+ *
+ * This component can be reused in any view that needs to display
+ * generated tokens with color-coded underlines.
+ */
 function GeneratedAnswer() {
   const { state } = useApp();
   const { t } = useI18n();

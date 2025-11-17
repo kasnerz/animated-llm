@@ -55,6 +55,11 @@ const translations = {
     stage_output_probabilities_hint: 'Determining likelihood of the next token',
     stage_next_token: 'Next token',
     stage_next_token_hint: 'Selecting the next output token',
+    // Training view
+    training: {
+      selectDocument: 'Select document',
+      document: 'Document',
+    },
   },
   cs: {
     play: 'Přehrát',
@@ -107,6 +112,11 @@ const translations = {
     stage_output_probabilities_hint: 'Model určí pravděpodobnosti dalšího tokenu',
     stage_next_token: 'Další token',
     stage_next_token_hint: 'Výběr dalšího výstupního tokenu',
+    // Training view
+    training: {
+      selectDocument: 'Vybrat dokument',
+      document: 'Dokument',
+    },
   },
   fr: {
     // French translations - fallback to English for missing keys

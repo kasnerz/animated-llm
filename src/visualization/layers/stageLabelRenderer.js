@@ -39,17 +39,7 @@ export function renderStageLabels(
   const verticalLineX = anchorX + STAGE_LABEL.GAP_TO_LINE;
   const labelX = verticalLineX + STAGE_LABEL.GAP_LINE_TO_LABEL;
 
-  // Draw vertical delimiter line
-  group
-    .append('line')
-    .attr('x1', verticalLineX)
-    .attr('y1', labels[0].y - STAGE_LABEL.VERTICAL_PADDING)
-    .attr('x2', verticalLineX)
-    .attr('y2', labels[labels.length - 1].y + STAGE_LABEL.VERTICAL_PADDING)
-    .attr('class', 'stage-delimiter-line')
-    .style('stroke', 'var(--viz-stage-line, #999)')
-    .style('stroke-width', STAGE_LABEL.LINE_WIDTH)
-    .style('opacity', STAGE_LABEL_OPACITY.DELIMITER);
+  // Removed vertical delimiter line for cleaner floating panel
 
   labels.forEach((label) => {
     let isActive = subStep === label.subStep;

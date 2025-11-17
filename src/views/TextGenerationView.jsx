@@ -1,6 +1,6 @@
 import { useApp } from '../contexts/AppContext';
 import GeneratedAnswer from '../components/GeneratedAnswer';
-import VisualizationCanvas from '../components/VisualizationCanvas';
+import TextGenerationCanvas from '../components/TextGenerationCanvas';
 import InputSection from '../components/InputSection';
 
 /**
@@ -19,7 +19,7 @@ function TextGenerationView() {
           <div className="canvas-input-section">
             <InputSection />
           </div>
-          <VisualizationCanvas />
+          <TextGenerationCanvas />
         </>
       )}
 

@@ -1,5 +1,8 @@
 /**
  * Helper functions for drawing arrows and connectors
+ *
+ * REUSABLE UTILITIES - View-agnostic
+ * These helpers can be used across different views and visualization components
  */
 import * as d3 from 'd3';
 import { drawArrow } from '../../core/draw';

@@ -10,7 +10,12 @@ import { mdiPlay, mdiPause, mdiChevronDown, mdiTune, mdiDotsHorizontal } from '@
 
 /**
  * InputSection Component
- * Minimalistic example selector and prompt display
+ *
+ * REUSABLE COMPONENT - Can be used across different views
+ * Provides minimalistic example selector and prompt display
+ *
+ * While currently used in TextGenerationView, this component is designed
+ * to be reusable in other views that need prompt/example selection.
  */
 function InputSection() {
   const { state, actions } = useApp();

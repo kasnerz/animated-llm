@@ -5,7 +5,7 @@ import { useI18n } from '../i18n/I18nProvider';
 import * as d3 from 'd3';
 import { gsap } from 'gsap';
 import { getTokenColor, getEmbeddingColor, getPurpleByProb } from '../visualization/core/colors';
-import { setInitialStates, buildTimeline } from '../visualization/animation/timeline';
+import { setInitialStates, buildTimeline } from '../visualization/animation/textGenerationTimeline';
 import {
   renderTokensLayer,
   renderOuterEmbeddingsLayer,
@@ -18,13 +18,18 @@ import '../styles/visualization.css';
 import { processTokenForVisualization } from '../utils/tokenProcessing';
 import { LAYOUT as CONSTS, TOKEN } from '../visualization/core/constants';
 import Icon from '@mdi/react';
-import { mdiArrowExpandHorizontal, mdiArrowCollapseHorizontal } from '@mdi/js';
+import {
+  mdiArrowExpandHorizontal,
+  mdiArrowCollapseHorizontal,
+  mdiChevronLeft,
+  mdiChevronRight,
+} from '@mdi/js';
 
 /**
  * VisualizationCanvas Component
  * Main SVG container for all D3 visualizations
  */
-function VisualizationCanvas() {
+export default function VisualizationCanvas() {
   const { state, actions } = useApp();
   const { t } = useI18n();
   // Extract stable callbacks to avoid re-running effects when the provider re-renders
@@ -37,6 +42,7 @@ function VisualizationCanvas() {
   const [isExpanded, setIsExpanded] = useState(false);
   const [embeddingExpanded, setEmbeddingExpanded] = useState({});
   const [scrollLeft, setScrollLeft] = useState(0);
+  const [labelsVisible, setLabelsVisible] = useState(true);
   const tokensLayoutRef = useRef({
     positions: [],
     widths: [],
@@ -48,17 +54,18 @@ function VisualizationCanvas() {
 
   // Initialize SVG and get dimensions
   useEffect(() => {
-    if (!svgRef.current || !containerRef.current) return;
+    if (!svgRef.current || !scrollRef.current) return;
 
-    const container = containerRef.current;
+    const scrollContainer = scrollRef.current;
     const svg = d3.select(svgRef.current);
     const labelsSvg = d3.select(labelsSvgRef.current);
 
-    // Update SVG dimensions based on container
+    // Update SVG dimensions based on scroll container (the actual viewport)
     const updateDimensions = () => {
-      const rect = container.getBoundingClientRect();
-      setContainerWidth(rect.width || 800);
-      svg.attr('width', rect.width);
+      const rect = scrollContainer.getBoundingClientRect();
+      // Round to avoid subpixel differences
+      setContainerWidth(Math.round(rect.width) || 800);
+      svg.attr('width', Math.round(rect.width));
       // Height is now set dynamically in the render effect based on actual content
     };
 
@@ -216,29 +223,9 @@ function VisualizationCanvas() {
     const outputGroup = g.append('g').attr('class', 'output-group');
     const labelsGroup = labelsSvg.append('g').attr('class', 'stage-labels-group');
 
-    // Get SVG dimensions - use full container width for layout
+    // Get SVG dimensions - use full container width for layout (labels are now in a side panel)
     const width = containerWidth || CONSTS.DEFAULT_CONTAINER_WIDTH;
-    // Dynamically size the sticky labels panel based on estimated token content width
-    const estimateGap = TOKEN.GAP;
-    const estWidths = (step.tokens || []).map((tok) =>
-      Math.max(TOKEN.MIN_BOX_WIDTH, tok.length * TOKEN.CHAR_WIDTH + TOKEN.HORIZ_PADDING)
-    );
-    const estimatedContentWidth =
-      estWidths.reduce((a, b) => a + b, 0) +
-      ((step.tokens || []).length > 0 ? estimateGap * ((step.tokens || []).length - 1) : 0) +
-      CONSTS.CONTENT_PADDING;
-    const maxLabelsWidth = Math.max(
-      CONSTS.MAX_LABELS_WIDTH,
-      Math.round(width * CONSTS.MAX_LABELS_WIDTH_RATIO)
-    );
-    const minLabelsWidth = CONSTS.MIN_LABELS_WIDTH;
-    const denom = Math.max(1, width - minLabelsWidth);
-    const growthRatio = Math.max(0, Math.min(1, estimatedContentWidth / denom));
-    const labelsWidthDynamic = Math.round(
-      maxLabelsWidth - (maxLabelsWidth - minLabelsWidth) * growthRatio
-    );
-    const visualizationWidth = Math.max(CONSTS.MIN_VISUALIZATION_WIDTH, width - labelsWidthDynamic); // Content area width
-    // const height = parseFloat(svg.attr('height')) || 900;
+    const visualizationWidth = width; // Full width available for visualization
 
     // Determine if we need to collapse tokens
     const maxVisibleTokens = Math.floor(visualizationWidth / CONSTS.TOKEN_SPACING_ESTIMATE) - 1;
@@ -406,8 +393,10 @@ function VisualizationCanvas() {
       currentLayer: state.currentTransformerLayer,
       numLayers,
     });
-    // Size the labels SVG to the panel width
-    labelsSvg.attr('width', labelsWidthDynamic);
+    // Size the labels SVG to a fixed width for the floating panel
+    // Match CSS panel width (expanded)
+    const labelsWidth = 280;
+    labelsSvg.attr('width', labelsWidth);
 
     // Calculate dynamic SVG height from actual rendered content using bounding boxes.
     // Consider BOTH the main visualization and the stage labels so the scroll bottom
@@ -423,6 +412,24 @@ function VisualizationCanvas() {
     const dynamicHeight = Math.max(600, Math.ceil(contentBottom + CONSTS.BOTTOM_PADDING));
     svg.attr('height', dynamicHeight);
     labelsSvg.attr('height', dynamicHeight);
+
+    // Compute expanded width snapshot for render without accessing refs during render
+    if (isExpanded) {
+      const { positions = [], widths = [], visibleIndices = [] } = tokensLayoutRef.current || {};
+      let rightmostEdge = 0;
+      positions.forEach((centerX, i) => {
+        if (visibleIndices[i] >= 0) {
+          const w = widths[i] || 0;
+          rightmostEdge = Math.max(rightmostEdge, centerX + w / 2);
+        }
+      });
+      const extraPadding = 500;
+      const calculatedWidth = rightmostEdge + extraPadding;
+      const svgWidth = Math.max(containerWidth, calculatedWidth);
+      svg.style('width', `${svgWidth}px`);
+    } else {
+      svg.style('width', '100%');
+    }
 
     // Duration for transitions; when rewinding (ArrowLeft), disable animation
     const animDuration = state.instantTransition ? 0 : 0.6;
@@ -456,37 +463,8 @@ function VisualizationCanvas() {
     containerWidth,
   ]);
 
-  // Compute dynamic labels width again for layout styling
-  const currentStepDataForStyle = state.currentExample?.generation_steps?.[state.currentStep - 1];
-  const tokensForStyle = currentStepDataForStyle?.tokens || [];
-  const estWidthsForStyle = tokensForStyle.map((tok) =>
-    Math.max(TOKEN.MIN_BOX_WIDTH, tok.length * TOKEN.CHAR_WIDTH + TOKEN.HORIZ_PADDING)
-  );
-  const estimatedContentWidthForStyle =
-    estWidthsForStyle.reduce((a, b) => a + b, 0) +
-    (tokensForStyle.length > 0 ? TOKEN.GAP * (tokensForStyle.length - 1) : 0) +
-    CONSTS.CONTENT_PADDING;
-  const widthForStyle = containerWidth || CONSTS.DEFAULT_CONTAINER_WIDTH;
-  const maxLabelsWidthForStyle = Math.max(
-    CONSTS.MAX_LABELS_WIDTH,
-    Math.round(widthForStyle * CONSTS.MAX_LABELS_WIDTH_RATIO)
-  );
-  const minLabelsWidthForStyle = CONSTS.MIN_LABELS_WIDTH;
-  const denomForStyle = Math.max(1, widthForStyle - minLabelsWidthForStyle);
-  const growthRatioForStyle = Math.max(
-    0,
-    Math.min(1, estimatedContentWidthForStyle / denomForStyle)
-  );
-  const labelsWidthStyle = Math.round(
-    maxLabelsWidthForStyle - (maxLabelsWidthForStyle - minLabelsWidthForStyle) * growthRatioForStyle
-  );
-
   return (
-    <section
-      className={`visualization-section ${isExpanded ? 'expanded' : ''}`}
-      ref={containerRef}
-      style={{ ['--labels-width']: `${labelsWidthStyle}px` }}
-    >
+    <section className={`visualization-section ${isExpanded ? 'expanded' : ''}`} ref={containerRef}>
       {/* Scrollable visualization area with overlay controls */}
       <div className="viz-scroll" ref={scrollRef}>
         {/* Subtle collapse/expand toggle aligned with ellipsis axis */}
@@ -498,35 +476,10 @@ function VisualizationCanvas() {
           const tokens = step.tokens || [];
           const gap = TOKEN.GAP;
           const widthForCalc = containerWidth || CONSTS.DEFAULT_CONTAINER_WIDTH;
-          const maxLabelsWidthCalc = Math.max(
-            CONSTS.MAX_LABELS_WIDTH,
-            Math.round(widthForCalc * CONSTS.MAX_LABELS_WIDTH_RATIO)
-          );
-          const minLabelsWidthCalc = CONSTS.MIN_LABELS_WIDTH;
-          const denomCalc = Math.max(1, widthForCalc - minLabelsWidthCalc);
-          const estWidths = tokens.map((tok) =>
-            Math.max(
-              TOKEN.MIN_BOX_WIDTH,
-              processTokenForVisualization(tok).length * TOKEN.CHAR_WIDTH + TOKEN.HORIZ_PADDING
-            )
-          );
-          const estimatedContentWidth =
-            estWidths.reduce((a, b) => a + b, 0) +
-            (tokens.length > 0 ? gap * (tokens.length - 1) : 0) +
-            CONSTS.CONTENT_PADDING;
-          const labelsWidthCalc = Math.round(
-            maxLabelsWidthCalc -
-              (maxLabelsWidthCalc - minLabelsWidthCalc) *
-                Math.max(0, Math.min(1, estimatedContentWidth / denomCalc))
-          );
-          const scrollAreaWidth = Math.max(
-            CONSTS.MIN_SCROLL_AREA_WIDTH,
-            widthForCalc - labelsWidthCalc
-          );
+          const scrollAreaWidth = widthForCalc; // Full width now since labels are floating
 
           const maxVisibleTokens = Math.floor(scrollAreaWidth / CONSTS.TOKEN_SPACING_ESTIMATE) - 1;
           // Show button whenever there are enough tokens that collapsing would be beneficial
-          // This matches the logic used in the render effect (line ~173)
           const shouldShow = tokens.length > maxVisibleTokens;
           if (!shouldShow) return null;
 
@@ -583,67 +536,33 @@ function VisualizationCanvas() {
             </button>
           );
         })()}
-        {(() => {
-          // Estimate dynamic width based on token content (labels are in a separate sticky panel)
-          const currentStepData = state.currentExample?.generation_steps?.[state.currentStep - 1];
-          const tokens = currentStepData?.tokens || [];
-          const gap = TOKEN.GAP;
-          const estWidths = tokens.map((tok) =>
-            Math.max(TOKEN.MIN_BOX_WIDTH, tok.length * TOKEN.CHAR_WIDTH + TOKEN.HORIZ_PADDING)
-          );
-          const estimatedContentWidth =
-            estWidths.reduce((a, b) => a + b, 0) +
-            (tokens.length > 0 ? gap * (tokens.length - 1) : 0) +
-            CONSTS.CONTENT_PADDING;
-          // Use full scrollable width (container minus dynamic panel) or estimated width, whichever is larger
-          const widthForCalc = containerWidth || CONSTS.DEFAULT_CONTAINER_WIDTH;
-          const maxLabelsWidthCalc = Math.max(
-            CONSTS.MAX_LABELS_WIDTH,
-            Math.round(widthForCalc * CONSTS.MAX_LABELS_WIDTH_RATIO)
-          );
-          const minLabelsWidthCalc = CONSTS.MIN_LABELS_WIDTH;
-          const denomCalc = Math.max(1, widthForCalc - minLabelsWidthCalc);
-          const growthRatioCalc = Math.max(0, Math.min(1, estimatedContentWidth / denomCalc));
-          const labelsWidthCalc = Math.round(
-            maxLabelsWidthCalc - (maxLabelsWidthCalc - minLabelsWidthCalc) * growthRatioCalc
-          );
-          const scrollAreaWidth = Math.max(
-            CONSTS.MIN_SCROLL_AREA_WIDTH,
-            widthForCalc - labelsWidthCalc
-          );
-          // When expanded, calculate the actual required width including margins
-          // Match the layout calculation from tokenRenderer.js:
-          // startX = Math.max(minMargin, (width - contentWidth) / 2 - leftBias)
-          // Total width needed = startX + contentWidth + rightMargin
-          const minMargin = CONSTS.MARGIN;
-          const leftBias = CONSTS.LEFT_BIAS;
-          const extraPadding = CONSTS.EXPANDED_EXTRA_PADDING;
-          const startX = Math.max(
-            minMargin,
-            (scrollAreaWidth - estimatedContentWidth) / 2 - leftBias
-          );
-          const requiredWidth = startX + estimatedContentWidth + minMargin + extraPadding;
-          const svgWidth = isExpanded ? Math.max(scrollAreaWidth, requiredWidth) : scrollAreaWidth;
+        <svg
+          ref={svgRef}
+          className="visualization-canvas"
+          style={{
+            transition: 'width 0.3s ease',
+          }}
+        />
+      </div>
 
-          // Render SVG with computed width
-          return (
-            <svg
-              ref={svgRef}
-              className="visualization-canvas"
-              style={{
-                width: `${svgWidth}px`,
-                minWidth: '100%',
-                transition: 'width 0.3s ease',
-              }}
-            />
-          );
-        })()}
-      </div>
-      <div className="viz-labels">
-        <svg ref={labelsSvgRef} className="visualization-labels-canvas" />
-      </div>
+      {/* Stage labels panel - only after animation starts */}
+      {state.currentStep > 0 && (
+        <div className="viz-labels-panel">
+          <button
+            className="viz-labels-toggle"
+            onClick={() => setLabelsVisible((v) => !v)}
+            title={labelsVisible ? 'Hide stage labels' : 'Show stage labels'}
+            aria-label={labelsVisible ? 'Hide stage labels' : 'Show stage labels'}
+          >
+            <Icon path={labelsVisible ? mdiChevronRight : mdiChevronLeft} size={0.9} />
+          </button>
+          <div className={`viz-labels-container ${labelsVisible ? 'expanded' : ''}`}>
+            <div className="viz-labels-content">
+              <svg ref={labelsSvgRef} className="visualization-labels-canvas" />
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 }
-
-export default VisualizationCanvas;

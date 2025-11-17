@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
 import { AppProvider, useApp } from './contexts/AppContext';
 import { I18nProvider, useI18n } from './i18n/I18nProvider';
-import { ViewProvider, useView, VIEW_TYPES } from './contexts/ViewContext';
+import { ViewProvider, useView } from './contexts/ViewContext';
+import { VIEW_TYPES } from './contexts/viewTypes';
 import TextGenerationView from './views/TextGenerationView';
 import TrainingView from './views/TrainingView';
 import DecodingView from './views/DecodingView';
@@ -70,7 +71,7 @@ function AppContent() {
         if (state.isPlaying) {
           actions.setIsPlaying(false);
         }
-        const lastSubStep = 12; // keep in sync with timeline
+        const lastSubStep = state.viewType === 'training' ? 9 : 12; // keep in sync with timelines
         if (state.currentAnimationSubStep < lastSubStep) {
           actions.nextAnimationSubStep();
           // Moving sub-steps clears any pending completion guard
@@ -175,6 +176,7 @@ function AppContent() {
     state.currentExampleId,
     state.currentAnimationSubStep,
     state.isPlaying,
+    state.viewType,
     actions,
     toggleLanguage,
   ]);
@@ -193,7 +195,7 @@ function AppContent() {
     const totalSec = state.animationSpeed || 7.5; // fallback
     const perSubStepMs = Math.max(150, (totalSec / 13) * 1000);
 
-    const lastSubStep = 12; // keep in sync with timeline
+    const lastSubStep = state.viewType === 'training' ? 9 : 12; // keep in sync with timelines
 
     const tick = () => {
       // If generation hasn't started yet
@@ -228,6 +230,7 @@ function AppContent() {
     state.currentStep,
     state.currentAnimationSubStep,
     state.animationSpeed,
+    state.viewType,
     actions,
   ]);
 
@@ -266,8 +269,9 @@ function AppContent() {
           {/* Centered logo and title */}
           <div className="app-logo">
             <div className="logo-icon">
-              {/* Small square placeholder for logo */}
-              <div className="logo-square"></div> <div className="logo-text">&nbsp;HelloLLM</div>
+              <div className="logo-square"></div>
+              {/* <img src={logo} alt="HelloLLM Logo" width="30px" className="logo-image" /> */}
+              <div className="logo-text">&nbsp;HelloLLM</div>
             </div>
             <ViewSelectorPopup showOnMobile={false} />
           </div>

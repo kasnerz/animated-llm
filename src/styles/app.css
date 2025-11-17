@@ -1,5 +1,11 @@
 /* App-level styles - Minimal & Clean */
 
+/* Prevent unwanted page-level horizontal scrollbars; local containers handle overflow */
+html,
+body {
+  overflow-x: hidden;
+}
+
 .app-container {
   display: flex;
   flex-direction: column;
@@ -68,7 +74,7 @@
   /* font-family: cursive; */
   font-family: 'Mountains of Christmas', cursive;
   font-weight: bold;
-  font-size: 1.3rem;
+  font-size: 1.7rem;
   color: var(--accent-primary);
   white-space: nowrap;
   user-select: none;
@@ -820,62 +826,119 @@
 
 /* Visualization Section */
 .visualization-section {
-  --labels-width: 420px;
   background: transparent;
   padding: 0;
   min-height: auto;
   position: relative;
+  width: 100%;
   display: flex;
-  flex-direction: row;
   justify-content: flex-start;
   align-items: flex-start;
-  padding-top: 0rem;
-  width: 100%;
-  overflow-x: visible;
-  /* horizontal scroll is on .viz-scroll */
-  overflow-y: visible;
+  /* Allow content to overflow horizontally for scrolling */
+  overflow: visible;
 }
 
 .visualization-section.expanded {
   justify-content: flex-start;
 }
 
-/* Scrollable content area */
+/* Scrollable content area - centered */
 .viz-scroll {
-  width: calc(100% - var(--labels-width));
+  flex: 1;
+  max-width: 100%;
   overflow-x: auto;
   overflow-y: visible;
-  display: flex;
-  flex-direction: column-reverse;
-  /* puts scrollbar at top */
+  display: block;
+  /* Changed from flex to block to avoid centering issues */
   position: relative;
-  /* allow overlay controls aligned with content */
 }
 
 .viz-scroll > svg {
-  /* ensure svg is still rendered top-down */
   transform: scaleY(1);
+  display: block;
+  /* Center the SVG when it's smaller than the container */
+  margin: 0 auto;
+  /* SVG width is controlled by inline styles in the component */
 }
 
-/* Sticky labels panel on the right */
-.viz-labels {
-  position: sticky;
+/* Stage labels panel - expandable from right (overlay, doesn't affect centering) */
+.viz-labels-panel {
+  position: absolute;
   top: 0;
   right: 0;
-  flex: 0 0 var(--labels-width);
-  width: var(--labels-width);
-  height: 100%;
   display: flex;
   align-items: flex-start;
-  justify-content: flex-start;
+  z-index: 0;
+  /* stay below floating bottom answer panel */
   pointer-events: none;
-  /* pass through events to content */
-  background: var(--bg-primary, #ffffff);
+  /* keep canvas interactions; inner elements will re-enable */
+}
+
+.viz-labels-toggle {
+  position: sticky;
+  top: calc(50vh - 16px);
+  /* vertically center (button is 32px) */
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-tertiary);
+  transition: all 0.2s ease;
+  margin-left: 0;
+  margin-right: -16px;
+  /* center over delimiter (container left border) */
+  flex-shrink: 0;
+  box-shadow: 0 2px 4px var(--shadow-color);
+  pointer-events: auto;
+  /* allow clicking */
+  z-index: 2;
+  /* ensure the arrow sits above the delimiter line */
+}
+
+.viz-labels-toggle:hover {
+  background: var(--bg-hover);
+  color: var(--text-primary);
+  border-color: var(--accent-primary);
+}
+
+.viz-labels-container {
+  position: relative;
+  top: 0;
+  /* align with visualization top */
+  width: 0;
+  overflow: hidden;
+  transition: width 0.3s ease;
+  background: var(--bg-primary);
+  border-left: 1px solid var(--border-color);
+  /* delimiter line */
+  display: flex;
+  flex-direction: column;
+  pointer-events: auto;
+  /* enable scrolling inside if needed */
+  z-index: 1;
+  /* sits below the toggle button */
+}
+
+.viz-labels-container.expanded {
+  width: 280px;
+  padding-left: 12px;
+  margin-left: 8px;
+}
+
+.viz-labels-content {
+  flex: 1;
+  overflow: visible;
+  /* scroll with page/body, not independently */
+  padding-right: 12px;
 }
 
 .visualization-labels-canvas {
   width: 100%;
-  /* height is set dynamically in JS based on content */
   display: block;
 }
 
@@ -935,16 +998,41 @@
   display: block;
 }
 
+/* Ensure horizontal scrolling works even when content extends beyond viewport */
+.viz-scroll {
+  /* Explicitly set scroll behavior */
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  /* Smooth scrolling on iOS */
+}
+
 /* Responsive design */
 
-/* Large tablets and smaller - start making adjustments */
-@media (max-width: 1200px) {
+@media (max-width: 1000px) {
+  /* Layout adjustments */
   .floating-top-content {
-    gap: 1rem;
+    gap: 0.5rem;
   }
 
+  .floating-top-section,
+  .floating-bottom-section {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .app-main {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  /* Logo adjustments */
   .logo-text {
     font-size: 1.3rem;
+  }
+
+  /* Input section adjustments */
+  .canvas-input-section {
+    max-width: min(600px, calc(100vw - 40px));
   }
 
   .chat-input-box {
@@ -955,31 +1043,12 @@
     font-size: 0.95rem;
   }
 
-  .canvas-input-section {
-    max-width: min(700px, calc(100vw - 40px));
-  }
-
-  .app-logo .view-selector-popup {
-    left: 0.75rem;
-  }
-}
-
-@media (max-width: 900px) {
-  .canvas-input-section {
-    max-width: min(600px, calc(100vw - 40px));
-  }
-
+  /* View selector positioning */
   .app-logo .view-selector-popup {
     left: 0.5rem;
   }
-}
 
-/* When screen becomes too small for header controls */
-@media (max-width: 1150px) {
-  .floating-top-content {
-    gap: 0.5rem;
-  }
-
+  /* Header controls - hamburger menu */
   .header-controls {
     position: absolute;
     right: 10px;
@@ -1094,24 +1163,8 @@
   .hamburger-toggle {
     display: inline-flex;
   }
-}
 
-/* Medium screens */
-@media (max-width: 1200px) and (min-width: 1151px) {
-  .floating-top-section,
-  .floating-bottom-section {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
-
-  .app-main {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
-}
-
-/* Ensure visualization doesn't break layout */
-@media (max-width: 1150px) {
+  /* Visualization adjustments */
   .visualization-section {
     min-height: 600px;
   }
@@ -1121,12 +1174,13 @@
     height: auto;
   }
 
-  /* Hide the labels panel and make visualization full width */
-  .viz-labels {
+  /* Hide the stage labels panel on mobile */
+  .viz-labels-panel {
     display: none;
   }
 
-  .viz-scroll {
-    width: 100%;
+  /* No need to reserve space on small screens */
+  .visualization-section.expanded .viz-scroll {
+    padding-right: 0;
   }
 }

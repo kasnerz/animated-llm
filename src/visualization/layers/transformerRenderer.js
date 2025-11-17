@@ -1,5 +1,9 @@
 /**
  * Transformer block layer rendering
+ *
+ * REUSABLE COMPONENT - View-agnostic
+ * This renderer can be used across different views (text generation, training, decoding)
+ * It only depends on the data structure passed to it, not on any specific view logic
  */
 import * as d3 from 'd3';
 import { getTokenColor } from '../core/colors';

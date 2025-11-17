@@ -1,5 +1,8 @@
 /**
  * Helper functions for drawing vectors and embeddings
+ *
+ * REUSABLE UTILITIES - View-agnostic
+ * These helpers can be used across different views and visualization components
  */
 import { getVectorBoxColors, getVectorTextColor } from '../../core/colors';
 import { VECTOR } from '../../core/constants';

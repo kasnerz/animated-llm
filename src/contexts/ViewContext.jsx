@@ -1,47 +1,13 @@
 import { createContext, useContext, useState, useCallback } from 'react';
-import { mdiTextBoxEditOutline, mdiAbacus, mdiCogPlay } from '@mdi/js';
 import { useApp } from './AppContext';
+import { VIEW_TYPES, VIEW_INFO } from './viewTypes';
 
 const ViewContext = createContext();
 
 /**
  * Available view types
  */
-export const VIEW_TYPES = {
-  TEXT_GENERATION: 'text-generation',
-  TRAINING: 'training',
-  DECODING: 'decoding',
-};
-
-/**
- * View metadata
- */
-export const VIEW_INFO = {
-  [VIEW_TYPES.TEXT_GENERATION]: {
-    id: VIEW_TYPES.TEXT_GENERATION,
-    icon: mdiTextBoxEditOutline,
-    labelKey: 'view_text_generation',
-    defaultLabel: 'Text generation',
-    descriptionKey: 'view_text_generation_desc',
-    defaultDescription: 'Visualize how LLMs generate text token by token',
-  },
-  [VIEW_TYPES.TRAINING]: {
-    id: VIEW_TYPES.TRAINING,
-    icon: mdiAbacus,
-    labelKey: 'view_training',
-    defaultLabel: 'Training',
-    descriptionKey: 'view_training_desc',
-    defaultDescription: 'Understand the training process of language models',
-  },
-  [VIEW_TYPES.DECODING]: {
-    id: VIEW_TYPES.DECODING,
-    icon: mdiCogPlay,
-    labelKey: 'view_decoding',
-    defaultLabel: 'Decoding algorithms',
-    descriptionKey: 'view_decoding_desc',
-    defaultDescription: 'Explore different decoding strategies and algorithms',
-  },
-};
+// VIEW_TYPES and VIEW_INFO are imported from viewTypes.js to keep this file component-only
 
 /**
  * ViewProvider component
@@ -55,6 +21,11 @@ export function ViewProvider({ children, initialView = VIEW_TYPES.TEXT_GENERATIO
     (newView) => {
       if (newView !== currentView) {
         setCurrentViewState(newView);
+
+        // Determine the view type for data loading
+        const viewType = newView === VIEW_TYPES.TRAINING ? 'training' : 'inference';
+        actions.setViewType(viewType);
+
         // Reset animation state when changing views
         actions.reset();
       }
@@ -74,6 +45,7 @@ export function ViewProvider({ children, initialView = VIEW_TYPES.TEXT_GENERATIO
 /**
  * Hook to use view context
  */
+// eslint-disable-next-line react-refresh/only-export-components
 export function useView() {
   const context = useContext(ViewContext);
   if (!context) {

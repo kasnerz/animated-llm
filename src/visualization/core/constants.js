@@ -23,7 +23,7 @@ export const LAYOUT = {
   TOKEN_WIDTH_REDUCTION: 10, // Amount to reduce from tokenSpacing for token width
   MARGIN: 20,
   GAP_WIDTH: 24,
-  LEFT_BIAS: -150, // Shift overall layout to the left when space allows
+  LEFT_BIAS: 0, // No horizontal bias; keep visualization centered under input
   // Token positioning
   TOKEN_Y: 10,
   EMBEDDING_Y: 75,
@@ -160,8 +160,8 @@ export const OUTPUT = {
  * Stage label constants
  */
 export const STAGE_LABEL = {
-  GAP_TO_LINE: 30,
-  GAP_LINE_TO_LABEL: 20,
+  GAP_TO_LINE: 0,
+  GAP_LINE_TO_LABEL: 12,
   HIGHLIGHT_WIDTH: 300,
   HIGHLIGHT_HEIGHT: 50,
   HIGHLIGHT_RADIUS: 6,
