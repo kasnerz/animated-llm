@@ -622,9 +622,8 @@ export function AppProvider({ children }) {
           payload: { error: error.message },
         });
       }
-      // eslint-disable-next-line react-hooks/exhaustive-deps
     },
-    [state.viewType]
+    [state.viewType, loadExample]
   );
 
   /**
