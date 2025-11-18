@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useView, VIEW_TYPES } from '../contexts/ViewContext';
 import { useI18n } from '../i18n/I18nProvider';
 import Icon from '@mdi/react';
@@ -11,11 +12,19 @@ import '../styles/view-selector.css';
 function ViewSelector() {
   const { currentView, setCurrentView, viewInfo } = useView();
   const { t } = useI18n();
+  const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef(null);
 
   // Get all available views
   const availableViews = Object.values(VIEW_TYPES);
+
+  // View to path mapping
+  const viewToPath = {
+    [VIEW_TYPES.TRAINING]: '/pretraining',
+    [VIEW_TYPES.TEXT_GENERATION]: '/text-generation',
+    [VIEW_TYPES.DECODING]: '/decoding-algorithms',
+  };
 
   // Close dropdown when clicking outside
   useEffect(() => {
@@ -33,6 +42,10 @@ function ViewSelector() {
 
   const handleViewChange = (viewId) => {
     setCurrentView(viewId);
+    const path = viewToPath[viewId];
+    if (path) {
+      navigate(path);
+    }
     setIsOpen(false);
   };
 

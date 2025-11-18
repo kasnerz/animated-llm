@@ -19,6 +19,8 @@ const translations = {
     language: 'Language',
     toggle_dark_light_mode: 'Dark mode',
     view_label: 'View',
+    // Home page
+    home_subtitle: 'Interactive LLM Visualizations',
     // View labels
     view_text_generation: 'Text generation',
     view_training: 'Training',
@@ -76,6 +78,8 @@ const translations = {
     language: 'Jazyk',
     toggle_dark_light_mode: 'Tmavý režim',
     view_label: 'Zobrazení',
+    // Home page
+    home_subtitle: 'Interaktivní vizualizace velkých jazykových modelů',
     // View labels
     view_text_generation: 'Generování textu',
     view_training: 'Trénování',

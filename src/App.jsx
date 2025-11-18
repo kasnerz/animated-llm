@@ -1,8 +1,10 @@
 import { useEffect, useRef, useState } from 'react';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import { AppProvider, useApp } from './contexts/AppContext';
 import { I18nProvider, useI18n } from './i18n/I18nProvider';
 import { ViewProvider, useView } from './contexts/ViewContext';
 import { VIEW_TYPES } from './contexts/viewTypes';
+import HomePage from './views/HomePage';
 import TextGenerationView from './views/TextGenerationView';
 import TrainingView from './views/TrainingView';
 import DecodingView from './views/DecodingView';
@@ -23,11 +25,29 @@ import './styles/views.css';
 function AppContent() {
   const { state, actions } = useApp();
   const { t, language, toggleLanguage } = useI18n();
-  const { currentView } = useView();
+  const { currentView, setCurrentView } = useView();
+  const location = useLocation();
   const [isKeyboardShortcutsOpen, setIsKeyboardShortcutsOpen] = useState(false);
   const [isHamburgerOpen, setIsHamburgerOpen] = useState(false);
   // Guard to avoid invoking step completion multiple times while state is catching up
   const completionGuardRef = useRef({ step: -1, sub: -1 });
+
+  // Sync view from URL to context
+  useEffect(() => {
+    const pathToView = {
+      '/pretraining': VIEW_TYPES.TRAINING,
+      '/text-generation': VIEW_TYPES.TEXT_GENERATION,
+      '/decoding-algorithms': VIEW_TYPES.DECODING,
+    };
+
+    const viewFromPath = pathToView[location.pathname];
+    if (viewFromPath && viewFromPath !== currentView) {
+      setCurrentView(viewFromPath);
+    }
+  }, [location.pathname, currentView, setCurrentView]);
+
+  // Note: We intentionally avoid syncing context -> URL here to prevent race conditions
+  // when deep-linking. Navigation is handled explicitly in view selectors.
 
   // Sync language changes from i18n to app context
   useEffect(() => {
@@ -235,7 +255,7 @@ function AppContent() {
   ]);
 
   // Loading state
-  if (state.isLoading && !state.currentExample) {
+  if (state.isLoading && !state.currentExample && location.pathname !== '/') {
     return (
       <div className="loading-container">
         <div className="loading-spinner"></div>
@@ -245,7 +265,7 @@ function AppContent() {
   }
 
   // Error state
-  if (state.error) {
+  if (state.error && location.pathname !== '/') {
     return (
       <div className="error-container">
         <h2>{t('error')}</h2>
@@ -255,6 +275,9 @@ function AppContent() {
     );
   }
 
+  // Check if we're on the home page
+  const isHomePage = location.pathname === '/';
+
   return (
     <div className={`app-container ${isHamburgerOpen ? 'hamburger-open' : ''}`}>
       {/* Keyboard Shortcuts Modal */}
@@ -263,92 +286,85 @@ function AppContent() {
         onClose={() => setIsKeyboardShortcutsOpen(false)}
       />
 
-      {/* Floating top section - now compact with centered logo */}
-      <div className="floating-top-section">
-        <div className="floating-top-content">
-          {/* Centered logo and title */}
-          <div className="app-logo">
-            <div className="logo-icon">
-              <div className="logo-square"></div>
-              {/* <img src={logo} alt="HelloLLM Logo" width="30px" className="logo-image" /> */}
-              <div className="logo-text">&nbsp;HelloLLM</div>
+      {/* Floating top section - only show on non-home pages */}
+      {!isHomePage && (
+        <div className="floating-top-section">
+          <div className="floating-top-content">
+            {/* Centered logo and title */}
+            <div className="app-logo">
+              <div className="logo-icon">
+                <div className="logo-square"></div>
+                {/* <img src={logo} alt="HelloLLM Logo" width="30px" className="logo-image" /> */}
+                <div className="logo-text">&nbsp;HelloLLM</div>
+              </div>
+              <ViewSelectorPopup showOnMobile={false} />
             </div>
-            <ViewSelectorPopup showOnMobile={false} />
-          </div>
 
-          {/* Header controls - minimal */}
-          <div className={`header-controls ${isHamburgerOpen ? 'open' : ''}`}>
-            <button
-              className="hamburger-toggle"
-              onClick={() => {
-                setIsHamburgerOpen(!isHamburgerOpen);
-              }}
-              aria-label="Menu"
-            >
-              ☰
-            </button>
-            <div className="header-controls-list">
-              <ViewSelectorMobile />
+            {/* Header controls - minimal */}
+            <div className={`header-controls ${isHamburgerOpen ? 'open' : ''}`}>
               <button
-                onClick={() => setIsKeyboardShortcutsOpen(true)}
-                className="menu-item-with-label"
-                title={t('keyboard_shortcuts')}
-                aria-label={t('keyboard_shortcuts')}
-              >
-                <Icon path={mdiKeyboard} size={1.2} color="#555" />
-                <span className="menu-label">{t('keyboard_shortcuts')}</span>
-              </button>
-              <button
-                onClick={actions.toggleTheme}
-                className="menu-item-with-label"
-                title={t('toggle_dark_light_mode')}
-                aria-label={t('toggle_dark_light_mode')}
-              >
-                <span className="theme-icon">{state.theme === 'dark' ? '☀️' : '🌙'}</span>
-                <span className="menu-label">{t('toggle_dark_light_mode')}</span>
-              </button>
-              <div
-                className="language-menu-wrapper"
-                onClick={(e) => {
-                  // Only trigger if clicking the wrapper itself or the label, not the dropdown or its contents
-                  if (!e.target.closest('.language-selector')) {
-                    const button = e.currentTarget.querySelector('.language-button');
-                    if (button) {
-                      button.click();
-                    }
-                  }
+                className="hamburger-toggle"
+                onClick={() => {
+                  setIsHamburgerOpen(!isHamburgerOpen);
                 }}
+                aria-label="Menu"
               >
-                <LanguageSelector />
-                <span className="menu-label">{t('language')}</span>
+                ☰
+              </button>
+              <div className="header-controls-list">
+                <ViewSelectorMobile />
+                <button
+                  onClick={() => setIsKeyboardShortcutsOpen(true)}
+                  className="menu-item-with-label"
+                  title={t('keyboard_shortcuts')}
+                  aria-label={t('keyboard_shortcuts')}
+                >
+                  <Icon path={mdiKeyboard} size={1.2} color="#555" />
+                  <span className="menu-label">{t('keyboard_shortcuts')}</span>
+                </button>
+                <button
+                  onClick={actions.toggleTheme}
+                  className="menu-item-with-label"
+                  title={t('toggle_dark_light_mode')}
+                  aria-label={t('toggle_dark_light_mode')}
+                >
+                  <span className="theme-icon">{state.theme === 'dark' ? '☀️' : '🌙'}</span>
+                  <span className="menu-label">{t('toggle_dark_light_mode')}</span>
+                </button>
+                <div
+                  className="language-menu-wrapper"
+                  onClick={(e) => {
+                    // Only trigger if clicking the wrapper itself or the label, not the dropdown or its contents
+                    if (!e.target.closest('.language-selector')) {
+                      const button = e.currentTarget.querySelector('.language-button');
+                      if (button) {
+                        button.click();
+                      }
+                    }
+                  }}
+                >
+                  <LanguageSelector />
+                  <span className="menu-label">{t('language')}</span>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      )}
 
-      {/* Main content - render current view */}
-      <main className="app-main">{renderCurrentView()}</main>
+      {/* Main content - render routes */}
+      <main className="app-main">
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/text-generation" element={<TextGenerationView />} />
+          <Route path="/pretraining" element={<TrainingView />} />
+          <Route path="/decoding-algorithms" element={<DecodingView />} />
+        </Routes>
+      </main>
 
       {/* Bottom section is now handled by individual views */}
     </div>
   );
-
-  /**
-   * Render the current view component
-   */
-  function renderCurrentView() {
-    switch (currentView) {
-      case VIEW_TYPES.TEXT_GENERATION:
-        return <TextGenerationView />;
-      case VIEW_TYPES.TRAINING:
-        return <TrainingView />;
-      case VIEW_TYPES.DECODING:
-        return <DecodingView />;
-      default:
-        return <TextGenerationView />;
-    }
-  }
 }
 
 /**

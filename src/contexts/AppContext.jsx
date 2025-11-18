@@ -147,9 +147,9 @@ function appReducer(state, action) {
     }
 
     case ActionTypes.NEXT_ANIMATION_SUB_STEP: {
-      // Training view: animate sub-steps 0..9
+      // Training view: animate sub-steps 0..8
       if (state.viewType === 'training') {
-        const maxSubStepsTraining = 10; // 0..9
+        const maxSubStepsTraining = 9; // 0..8
         if (state.currentAnimationSubStep >= maxSubStepsTraining - 1) return state;
         return {
           ...state,

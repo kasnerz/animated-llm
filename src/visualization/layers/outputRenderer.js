@@ -78,7 +78,7 @@ export function renderOutputLayer(
   const logprobY = (hv1 ? hv1.bottomY : horizY + 36) + OUTPUT.HORIZ_TO_LOGPROB_GAP;
   const probs = candidates.map((c) => c.prob);
 
-  if (subStep >= 8) {
+  if (subStep >= 7) {
     hv2 = drawHorizontalVector(group, horizCenterX, logprobY, probs, {
       className: 'logprob-vector',
       tokenColor: '#16a34cff',
@@ -107,7 +107,7 @@ export function renderOutputLayer(
   }
 
   // Render distribution labels and selection
-  if (subStep >= 9 && hv2) {
+  if (subStep >= 8 && hv2) {
     renderDistributionLabels(group, candidates, hv2, selectedIdx, maxTokens);
   }
 

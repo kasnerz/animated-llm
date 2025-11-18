@@ -27,13 +27,13 @@ export function renderStageLabels(
   const { currentLayer = 0, numLayers = 1 } = options;
   const labels = [
     { key: 'stage_tokenization', y: STAGE_LABEL.Y_TOKENIZATION, subStep: 0 },
-    { key: 'stage_input_embeddings', y: STAGE_LABEL.Y_INPUT_EMBEDDINGS, subStep: 2 },
-    { key: 'stage_positional_embeddings', y: STAGE_LABEL.Y_POSITIONAL_EMBEDDINGS, subStep: 3 },
-    { key: 'stage_attention_layer', y: STAGE_LABEL.Y_ATTENTION_LAYER, subStep: 4 },
-    { key: 'stage_feedforward_layer', y: STAGE_LABEL.Y_FEEDFORWARD_LAYER, subStep: 5 },
-    { key: 'stage_last_embedding', y: STAGE_LABEL.Y_LAST_EMBEDDING, subStep: 7 },
-    { key: 'stage_output_probabilities', y: STAGE_LABEL.Y_OUTPUT_PROBABILITIES, subStep: 8 },
-    { key: 'stage_next_token', y: STAGE_LABEL.Y_NEXT_TOKEN, subStep: 10 },
+    { key: 'stage_input_embeddings', y: STAGE_LABEL.Y_INPUT_EMBEDDINGS, subStep: 1 },
+    { key: 'stage_positional_embeddings', y: STAGE_LABEL.Y_POSITIONAL_EMBEDDINGS, subStep: 2 },
+    { key: 'stage_attention_layer', y: STAGE_LABEL.Y_ATTENTION_LAYER, subStep: 3 },
+    { key: 'stage_feedforward_layer', y: STAGE_LABEL.Y_FEEDFORWARD_LAYER, subStep: 4 },
+    { key: 'stage_last_embedding', y: STAGE_LABEL.Y_LAST_EMBEDDING, subStep: 6 },
+    { key: 'stage_output_probabilities', y: STAGE_LABEL.Y_OUTPUT_PROBABILITIES, subStep: 7 },
+    { key: 'stage_next_token', y: STAGE_LABEL.Y_NEXT_TOKEN, subStep: 9 },
   ];
 
   const verticalLineX = anchorX + STAGE_LABEL.GAP_TO_LINE;
@@ -46,8 +46,8 @@ export function renderStageLabels(
 
     // Suppress highlight for positional embeddings during the second pass
     const isSecondPass =
-      numLayers > 1 && currentLayer >= Math.max(0, numLayers - 1) && subStep >= 3 && subStep <= 5;
-    if (label.key === 'stage_positional_embeddings' && subStep === 3 && isSecondPass) {
+      numLayers > 1 && currentLayer >= Math.max(0, numLayers - 1) && subStep >= 2 && subStep <= 4;
+    if (label.key === 'stage_positional_embeddings' && subStep === 2 && isSecondPass) {
       isActive = false;
     }
     // If showGradual is false (after first token), show all labels

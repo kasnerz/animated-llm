@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom';
 import { useView, VIEW_TYPES } from '../contexts/ViewContext';
 import { useI18n } from '../i18n/I18nProvider';
 import Icon from '@mdi/react';
@@ -11,12 +12,20 @@ import '../styles/left-panel.css';
 function LeftPanel({ isCollapsed = false, onToggleCollapse }) {
   const { currentView, setCurrentView, viewInfo } = useView();
   const { t } = useI18n();
+  const navigate = useNavigate();
 
   // Get all available views
   const availableViews = Object.values(VIEW_TYPES);
 
   const handleViewChange = (viewId) => {
     setCurrentView(viewId);
+    const viewToPath = {
+      [VIEW_TYPES.TRAINING]: '/pretraining',
+      [VIEW_TYPES.TEXT_GENERATION]: '/text-generation',
+      [VIEW_TYPES.DECODING]: '/decoding-algorithms',
+    };
+    const path = viewToPath[viewId];
+    if (path) navigate(path);
   };
 
   return (
