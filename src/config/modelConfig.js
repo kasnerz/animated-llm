@@ -26,6 +26,24 @@ export const MODEL_REGISTRY = [
     size: '1b',
     name: 'Llama3.2',
   },
+  {
+    pattern: /Llama-3\.3-70B-Instruct/i,
+    logo: 'meta.png',
+    size: '70b',
+    name: 'Llama3.3',
+  },
+  {
+    pattern: /gpt2/i,
+    logo: 'openai.png',
+    size: '0.1b',
+    name: 'GPT-2',
+  },
+  {
+    pattern: /gpt-oss-20b/i,
+    logo: 'openai.png',
+    size: '20b',
+    name: 'GPT-oss',
+  },
   // Add more model patterns here
 ];
 

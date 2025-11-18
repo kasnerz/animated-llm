@@ -22,10 +22,16 @@ const translations = {
     show_special_tokens: 'Show special tokens',
     // Home page
     home_subtitle: 'Interactive LLM Visualizations',
+    // Category labels
+    category_training: 'Training',
+    category_text_generation: 'Text generation',
+    // Category descriptions
+    category_training_desc: 'Understand the training process of language models',
+    category_text_generation_desc: 'Visualize how LLMs generate text token by token',
     // View labels
-    view_text_generation: 'Text generation',
-    view_training: 'Training',
-    view_decoding: 'Decoding algorithms',
+    view_text_generation: 'Model',
+    view_training: 'Model',
+    view_decoding: 'Algorithms',
     // View descriptions
     view_text_generation_desc: 'Visualize how LLMs generate text token by token',
     view_training_desc: 'Understand the training process of language models',
@@ -82,10 +88,16 @@ const translations = {
     show_special_tokens: 'Zobrazit speciální tokeny',
     // Home page
     home_subtitle: 'Interaktivní vizualizace velkých jazykových modelů',
+    // Category labels
+    category_training: 'Trénování',
+    category_text_generation: 'Generování textu',
+    // Category descriptions
+    category_training_desc: 'Pochopení procesu trénování jazykových modelů',
+    category_text_generation_desc: 'Vizualizace postupného generování textu token po tokenu',
     // View labels
-    view_text_generation: 'Generování textu',
-    view_training: 'Trénování',
-    view_decoding: 'Dekódovací algoritmy',
+    view_text_generation: 'Model',
+    view_training: 'Model',
+    view_decoding: 'Algoritmy',
     // View descriptions
     view_text_generation_desc: 'Vizualizace postupného generování textu token po tokenu',
     view_training_desc: 'Pochopení procesu trénování jazykových modelů',

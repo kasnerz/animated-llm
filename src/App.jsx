@@ -12,6 +12,7 @@ import InputSection from './components/InputSection';
 import KeyboardShortcutsModal from './components/KeyboardShortcutsModal';
 import LanguageSelector from './components/LanguageSelector';
 import ViewSelectorPopup from './components/ViewSelectorPopup';
+import Logo from './components/Logo';
 import Icon from '@mdi/react';
 import { mdiKeyboard } from '@mdi/js';
 import './index.css';
@@ -301,9 +302,7 @@ function AppContent() {
             {/* Centered logo and title */}
             <div className="app-logo">
               <Link to="/" className="logo-icon">
-                <div className="logo-square"></div>
-                {/* <img src={logo} alt="HelloLLM Logo" width="30px" className="logo-image" /> */}
-                <div className="logo-text">&nbsp;HelloLLM</div>
+                <Logo variant="header" />
               </Link>
               <ViewSelectorPopup />
             </div>

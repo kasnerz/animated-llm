@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useView } from '../contexts/ViewContext';
-import { VIEW_TYPES } from '../contexts/viewTypes';
+import { VIEW_TYPES, VIEW_CATEGORIES, CATEGORY_INFO } from '../contexts/viewTypes';
 import { useI18n } from '../i18n/I18nProvider';
 import Icon from '@mdi/react';
 import { mdiChevronDown } from '@mdi/js';
@@ -18,8 +18,11 @@ function ViewSelectorPopup() {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef(null);
 
-  // Get all available views
-  const availableViews = Object.values(VIEW_TYPES);
+  // Get all available views grouped by category
+  const viewsByCategory = {
+    [VIEW_CATEGORIES.TRAINING]: [VIEW_TYPES.TRAINING],
+    [VIEW_CATEGORIES.TEXT_GENERATION]: [VIEW_TYPES.TEXT_GENERATION, VIEW_TYPES.DECODING],
+  };
 
   // View to path mapping
   const viewToPath = {
@@ -52,6 +55,7 @@ function ViewSelectorPopup() {
   };
 
   const currentViewInfo = viewInfo[currentView];
+  const currentCategoryInfo = CATEGORY_INFO[currentViewInfo.category];
 
   return (
     <div className="view-selector-popup" ref={dropdownRef}>
@@ -64,6 +68,8 @@ function ViewSelectorPopup() {
       >
         <Icon path={currentViewInfo.icon} size={0.9} className="view-current-icon" />
         <span className="view-current-label">
+          {t(currentCategoryInfo.labelKey) || currentCategoryInfo.defaultLabel}
+          <span className="view-separator"> › </span>
           {t(currentViewInfo.labelKey) || currentViewInfo.defaultLabel}
         </span>
         <Icon path={mdiChevronDown} size={0.8} className={`view-chevron ${isOpen ? 'open' : ''}`} />
@@ -72,27 +78,42 @@ function ViewSelectorPopup() {
       {isOpen && (
         <div className="view-popup">
           <div className="view-popup-grid">
-            {availableViews.map((viewId) => {
-              const info = viewInfo[viewId];
-              const isActive = viewId === currentView;
+            {Object.entries(viewsByCategory).map(([categoryId, viewIds]) => {
+              const categoryInfo = CATEGORY_INFO[categoryId];
 
               return (
-                <button
-                  key={viewId}
-                  onClick={() => handleViewChange(viewId)}
-                  className={`view-grid-item ${isActive ? 'active' : ''}`}
-                  aria-current={isActive ? 'true' : 'false'}
-                >
-                  <div className="view-grid-icon">
-                    <Icon path={info.icon} size={1.5} />
+                <div key={categoryId} className="view-popup-category">
+                  <div className="view-popup-category-header">
+                    <Icon
+                      path={categoryInfo.icon}
+                      size={1.2}
+                      className="view-popup-category-icon"
+                    />
+                    <span className="view-popup-category-label">
+                      {t(categoryInfo.labelKey) || categoryInfo.defaultLabel}
+                    </span>
                   </div>
-                  <div className="view-grid-content">
-                    <div className="view-grid-title">{t(info.labelKey) || info.defaultLabel}</div>
-                    <div className="view-grid-description">
-                      {t(info.descriptionKey) || info.defaultDescription}
-                    </div>
+                  <div className="view-popup-category-items">
+                    {viewIds.map((viewId) => {
+                      const info = viewInfo[viewId];
+                      const isActive = viewId === currentView;
+
+                      return (
+                        <button
+                          key={viewId}
+                          onClick={() => handleViewChange(viewId)}
+                          className={`view-grid-item ${isActive ? 'active' : ''}`}
+                          aria-current={isActive ? 'true' : 'false'}
+                        >
+                          <Icon path={info.icon} size={1.2} className="view-grid-icon" />
+                          <span className="view-grid-title">
+                            {t(info.labelKey) || info.defaultLabel}
+                          </span>
+                        </button>
+                      );
+                    })}
                   </div>
-                </button>
+                </div>
               );
             })}
           </div>

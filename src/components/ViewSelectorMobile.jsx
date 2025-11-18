@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import { useView } from '../contexts/ViewContext';
-import { VIEW_TYPES } from '../contexts/viewTypes';
+import { VIEW_TYPES, VIEW_CATEGORIES, CATEGORY_INFO } from '../contexts/viewTypes';
 import { useI18n } from '../i18n/I18nProvider';
 import Icon from '@mdi/react';
 import '../styles/view-selector-mobile.css';
@@ -14,8 +14,11 @@ function ViewSelectorMobile() {
   const { t } = useI18n();
   const navigate = useNavigate();
 
-  // Get all available views
-  const availableViews = Object.values(VIEW_TYPES);
+  // Get all available views grouped by category
+  const viewsByCategory = {
+    [VIEW_CATEGORIES.TRAINING]: [VIEW_TYPES.TRAINING],
+    [VIEW_CATEGORIES.TEXT_GENERATION]: [VIEW_TYPES.TEXT_GENERATION, VIEW_TYPES.DECODING],
+  };
 
   // View to path mapping
   const viewToPath = {
@@ -36,21 +39,39 @@ function ViewSelectorMobile() {
     <div className="view-selector-mobile">
       <div className="view-selector-mobile-title">{t('view_label')}</div>
       <div className="view-selector-mobile-list">
-        {availableViews.map((viewId) => {
-          const info = viewInfo[viewId];
-          const isActive = viewId === currentView;
+        {Object.entries(viewsByCategory).map(([categoryId, viewIds]) => {
+          const categoryInfo = CATEGORY_INFO[categoryId];
 
           return (
-            <button
-              key={viewId}
-              onClick={() => handleViewChange(viewId)}
-              className={`view-mobile-item ${isActive ? 'active' : ''}`}
-              aria-current={isActive ? 'true' : 'false'}
-            >
-              <Icon path={info.icon} size={1.2} className="view-mobile-icon" />
-              <span className="view-mobile-label">{t(info.labelKey) || info.defaultLabel}</span>
-              {isActive && <span className="view-mobile-checkmark">✓</span>}
-            </button>
+            <div key={categoryId} className="view-mobile-category">
+              <div className="view-mobile-category-header">
+                <Icon path={categoryInfo.icon} size={1} className="view-mobile-category-icon" />
+                <span className="view-mobile-category-label">
+                  {t(categoryInfo.labelKey) || categoryInfo.defaultLabel}
+                </span>
+              </div>
+              <div className="view-mobile-category-items">
+                {viewIds.map((viewId) => {
+                  const info = viewInfo[viewId];
+                  const isActive = viewId === currentView;
+
+                  return (
+                    <button
+                      key={viewId}
+                      onClick={() => handleViewChange(viewId)}
+                      className={`view-mobile-item ${isActive ? 'active' : ''}`}
+                      aria-current={isActive ? 'true' : 'false'}
+                    >
+                      <Icon path={info.icon} size={1.2} className="view-mobile-icon" />
+                      <span className="view-mobile-label">
+                        {t(info.labelKey) || info.defaultLabel}
+                      </span>
+                      {isActive && <span className="view-mobile-checkmark">✓</span>}
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
           );
         })}
       </div>
