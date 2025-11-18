@@ -2,7 +2,7 @@ import { useApp } from '../contexts/AppContext';
 import { useI18n } from '../i18n/I18nProvider';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { getTokenColor } from '../visualization/core/colors';
-import { processTokenForText } from '../utils/tokenProcessing';
+import { processTokenForText, isSpecialToken } from '../utils/tokenProcessing';
 import { MODEL_REGISTRY, getModelInfo, getTemperatureEmoji } from '../config/modelConfig';
 import '../styles/main.css';
 import Icon from '@mdi/react';
@@ -132,7 +132,7 @@ function InputSection() {
                       {tokens.map((token, index) => (
                         <span
                           key={index}
-                          className="token-with-underline"
+                          className={`token-with-underline ${isSpecialToken(token) ? 'special-token' : ''}`}
                           style={{
                             borderBottom: `4px solid ${getTokenColor(index)}`,
                           }}
@@ -267,6 +267,21 @@ function InputSection() {
                           <span className="temp-value">{value}</span>
                         </button>
                       ))}
+                    </div>
+                  </div>
+                  <div className="settings-section">
+                    <div className="settings-toggle">
+                      <label className="toggle-label">
+                        <input
+                          type="checkbox"
+                          checked={state.showSpecialTokens}
+                          onChange={(e) => {
+                            actions.setShowSpecialTokens(e.target.checked);
+                          }}
+                          className="toggle-checkbox"
+                        />
+                        <span className="toggle-text">{t('show_special_tokens')}</span>
+                      </label>
                     </div>
                   </div>
                 </div>

@@ -19,6 +19,7 @@ const translations = {
     language: 'Language',
     toggle_dark_light_mode: 'Dark mode',
     view_label: 'View',
+    show_special_tokens: 'Show special tokens',
     // Home page
     home_subtitle: 'Interactive LLM Visualizations',
     // View labels
@@ -78,6 +79,7 @@ const translations = {
     language: 'Jazyk',
     toggle_dark_light_mode: 'Tmavý režim',
     view_label: 'Zobrazení',
+    show_special_tokens: 'Zobrazit speciální tokeny',
     // Home page
     home_subtitle: 'Interaktivní vizualizace velkých jazykových modelů',
     // View labels

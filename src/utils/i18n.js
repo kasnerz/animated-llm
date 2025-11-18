@@ -1,6 +1,30 @@
 // Internationalization utilities
 // Simple translation system for English and Czech
 
+/**
+ * Detect the user's preferred language from browser settings
+ * @param {string[]} supportedLanguages - Array of supported language codes
+ * @param {string} fallback - Fallback language code (default: 'en')
+ * @returns {string} Detected language code or fallback
+ */
+export function detectBrowserLanguage(supportedLanguages = [], fallback = 'en') {
+  // Get browser languages in order of preference
+  const browserLanguages = navigator.languages || [navigator.language || navigator.userLanguage];
+
+  for (const browserLang of browserLanguages) {
+    // Extract the language code (e.g., 'en' from 'en-US')
+    const langCode = browserLang.toLowerCase().split(/[-_]/)[0];
+
+    // Check if this language is supported
+    if (supportedLanguages.includes(langCode)) {
+      return langCode;
+    }
+  }
+
+  // Fallback to default language
+  return fallback;
+}
+
 const translations = {
   en: {
     app_title: 'Interactive Transformer Visualization',

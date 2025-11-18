@@ -1,5 +1,6 @@
 import { createContext, useContext, useState } from 'react';
 import translations from './translations';
+import { detectBrowserLanguage } from '../utils/i18n';
 
 const I18nContext = createContext();
 
@@ -12,11 +13,14 @@ const I18nContext = createContext();
  * 2. If key not found, fallback to English
  * 3. If still not found, return the key itself
  */
-export function I18nProvider({ children, initialLanguage = 'en' }) {
-  const [language, setLanguage] = useState(initialLanguage);
-
+export function I18nProvider({ children, initialLanguage = null }) {
   // Get available languages from translations
   const availableLanguages = Object.keys(translations);
+
+  // Detect browser language if no initial language is provided
+  const detectedLanguage = initialLanguage || detectBrowserLanguage(availableLanguages, 'en');
+
+  const [language, setLanguage] = useState(detectedLanguage);
 
   /**
    * Cycle through available languages

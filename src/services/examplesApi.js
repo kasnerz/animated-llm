@@ -137,12 +137,16 @@ export async function listExamples(language = null, type = 'inference') {
  * Get a specific example by ID
  * @param {string} exampleId - The ID of the example to load
  * @param {string} type - Type of example to load ('inference' or 'training'), defaults to 'inference'
+ * @param {boolean} showSpecialTokens - Whether to include special tokens in the data, defaults to false
  * @returns {Promise<Object>} The example data including generation steps
  */
-export async function getExample(exampleId, type = 'inference') {
+export async function getExample(exampleId, type = 'inference', showSpecialTokens = false) {
+  // Create a cache key that includes the showSpecialTokens flag
+  const cacheKey = `${exampleId}_${showSpecialTokens}`;
+
   // Return cached example if available
-  if (cachedExamples.has(exampleId)) {
-    return cachedExamples.get(exampleId);
+  if (cachedExamples.has(cacheKey)) {
+    return cachedExamples.get(cacheKey);
   }
 
   try {
@@ -167,11 +171,11 @@ export async function getExample(exampleId, type = 'inference') {
 
     const data = await response.json();
 
-    // Filter out special tokens before caching
-    const filteredData = filterSpecialTokens(data);
+    // Filter out special tokens before caching, unless showSpecialTokens is true
+    const processedData = showSpecialTokens ? data : filterSpecialTokens(data);
 
-    cachedExamples.set(exampleId, filteredData);
-    return filteredData;
+    cachedExamples.set(cacheKey, processedData);
+    return processedData;
   } catch (error) {
     console.error(`Error loading example ${exampleId}:`, error);
     throw error;

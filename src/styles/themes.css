@@ -82,6 +82,11 @@ body[data-theme='light'] {
   --text-tertiary: var(--light-text-tertiary);
   --border-color: var(--light-border);
   --shadow-color: var(--light-shadow);
+
+  /* Special token styling for light theme */
+  --bg-special-token: rgba(128, 128, 128, 0.08);
+  --viz-special-token-bg: rgba(128, 128, 128, 0.1);
+  --viz-special-token-text: #888888;
 }
 
 /* Dark theme */
@@ -93,6 +98,11 @@ body[data-theme='dark'] {
   --text-tertiary: var(--dark-text-tertiary);
   --border-color: var(--dark-border);
   --shadow-color: var(--dark-shadow);
+
+  /* Special token styling for dark theme */
+  --bg-special-token: rgba(128, 128, 128, 0.15);
+  --viz-special-token-bg: rgba(128, 128, 128, 0.2);
+  --viz-special-token-text: #aaaaaa;
 
   /* Dark mode visualization overrides */
   --viz-token-text: #f5f5f5;

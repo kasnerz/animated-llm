@@ -15,7 +15,7 @@ import {
 } from '../visualization/layers';
 import { computeEmbeddingsForStep } from '../visualization/core/embeddings';
 import '../styles/visualization.css';
-import { processTokenForVisualization } from '../utils/tokenProcessing';
+import { processTokenForVisualization, isSpecialToken } from '../utils/tokenProcessing';
 import { LAYOUT as CONSTS, TOKEN } from '../visualization/core/constants';
 import Icon from '@mdi/react';
 import {
@@ -500,14 +500,19 @@ export default function TextGenerationCanvas() {
           const leftTokens = tokens.slice(0, edgeCount);
           const rightTokens = tokens.slice(-edgeCount);
           const visibleCollapsed = [...leftTokens, '...', ...rightTokens];
-          const widthsCollapsed = visibleCollapsed.map((tok) =>
-            tok === '...'
-              ? TOKEN.ELLIPSIS_WIDTH
-              : Math.max(
-                  TOKEN.MIN_BOX_WIDTH,
-                  processTokenForVisualization(tok).length * TOKEN.CHAR_WIDTH + TOKEN.HORIZ_PADDING
-                )
-          );
+          // Match width calculation used by renderTokensLayer (special tokens are smaller and tighter)
+          const baseTextSize = parseFloat(TOKEN.TEXT_SIZE) || 18;
+          const widthsCollapsed = visibleCollapsed.map((tok) => {
+            if (tok === '...') return TOKEN.ELLIPSIS_WIDTH;
+            const special = isSpecialToken(tok);
+            const fontScale = special ? 0.6 : 1.0;
+            const padding = special ? Math.max(2, TOKEN.HORIZ_PADDING * 0.3) : TOKEN.HORIZ_PADDING;
+            const minWidth = special
+              ? Math.max(20, TOKEN.MIN_BOX_WIDTH * 0.5)
+              : TOKEN.MIN_BOX_WIDTH;
+            const contentChars = processTokenForVisualization(tok).length;
+            return Math.max(minWidth, contentChars * TOKEN.CHAR_WIDTH * fontScale + padding);
+          });
           const contentWidthCollapsed =
             widthsCollapsed.reduce((a, b) => a + b, 0) + gap * (visibleCollapsed.length - 1);
           const minMargin = CONSTS.MARGIN;

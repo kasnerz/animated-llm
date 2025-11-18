@@ -15,7 +15,6 @@ import ViewSelectorPopup from './components/ViewSelectorPopup';
 import ViewSelectorMobile from './components/ViewSelectorMobile';
 import Icon from '@mdi/react';
 import { mdiKeyboard } from '@mdi/js';
-import { config } from './config';
 import './index.css';
 import './styles/views.css';
 
@@ -206,6 +205,14 @@ function AppContent() {
     completionGuardRef.current = { step: -1, sub: -1 };
   }, [state.currentStep, state.currentAnimationSubStep]);
 
+  // When navigating to the home page, reset any running animation state
+  // so that returning to a view starts from the beginning.
+  useEffect(() => {
+    if (location.pathname === '/') {
+      actions.reset();
+    }
+  }, [location.pathname, actions]);
+
   // Autoplay: when isPlaying is true, advance at steady pace as if pressing Space repeatedly
   useEffect(() => {
     if (!state.isPlaying) return;
@@ -373,7 +380,7 @@ function AppContent() {
 function App() {
   return (
     <AppProvider>
-      <I18nProvider initialLanguage={config.defaults.language}>
+      <I18nProvider>
         <ViewProvider initialView={VIEW_TYPES.TEXT_GENERATION}>
           <AppContent />
         </ViewProvider>

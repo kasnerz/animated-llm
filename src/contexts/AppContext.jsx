@@ -39,6 +39,9 @@ const ActionTypes = {
   // Model/temperature selection
   SET_SELECTED_MODEL_INDEX: 'SET_SELECTED_MODEL_INDEX',
   SET_SELECTED_TEMPERATURE_EMOJI: 'SET_SELECTED_TEMPERATURE_EMOJI',
+
+  // Special tokens visibility
+  SET_SHOW_SPECIAL_TOKENS: 'SET_SHOW_SPECIAL_TOKENS',
 };
 
 // Initial state
@@ -76,6 +79,9 @@ const initialState = {
   // Default to first model (index 0) and temperature 0.0 🧊
   selectedModelIndex: 0,
   selectedTemperatureEmoji: '🧊',
+
+  // Special tokens visibility
+  showSpecialTokens: false,
 };
 
 // Reducer function
@@ -582,6 +588,12 @@ function appReducer(state, action) {
         selectedTemperatureEmoji: action.payload.emoji,
       };
 
+    case ActionTypes.SET_SHOW_SPECIAL_TOKENS:
+      return {
+        ...state,
+        showSpecialTokens: action.payload.showSpecialTokens,
+      };
+
     default:
       return state;
   }
@@ -605,7 +617,11 @@ export function AppProvider({ children }) {
     async (exampleId) => {
       try {
         dispatch({ type: ActionTypes.LOAD_EXAMPLE_START });
-        const data = await examplesApi.getExample(exampleId, state.viewType);
+        const data = await examplesApi.getExample(
+          exampleId,
+          state.viewType,
+          state.showSpecialTokens
+        );
         dispatch({
           type: ActionTypes.LOAD_EXAMPLE_SUCCESS,
           payload: { exampleId, example: data },
@@ -618,7 +634,7 @@ export function AppProvider({ children }) {
         });
       }
     },
-    [state.viewType]
+    [state.viewType, state.showSpecialTokens]
   );
 
   /**
@@ -781,6 +797,14 @@ export function AppProvider({ children }) {
     });
   }, []);
 
+  /** Set whether to show special tokens in visualization */
+  const setShowSpecialTokens = useCallback((showSpecialTokens) => {
+    dispatch({
+      type: ActionTypes.SET_SHOW_SPECIAL_TOKENS,
+      payload: { showSpecialTokens },
+    });
+  }, []);
+
   /**
    * Called when a step's visualization animation completes.
    * Appends the selected token to the generated answer, and
@@ -815,6 +839,17 @@ export function AppProvider({ children }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [state.viewType]);
 
+  // Reload current example when showSpecialTokens changes
+  useEffect(() => {
+    if (isFirstRender.current) {
+      return;
+    }
+    if (state.currentExampleId) {
+      loadExample(state.currentExampleId);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [state.showSpecialTokens]);
+
   // Set initial theme on mount
   useEffect(() => {
     document.body.setAttribute('data-theme', state.theme);
@@ -842,6 +877,7 @@ export function AppProvider({ children }) {
       setAutoGenerate,
       setSelectedModelIndex,
       setSelectedTemperatureEmoji,
+      setShowSpecialTokens,
       onStepAnimationComplete,
     },
   };

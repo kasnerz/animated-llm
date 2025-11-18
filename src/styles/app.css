@@ -546,6 +546,24 @@ body {
   white-space: normal;
 }
 
+.prompt-text-chat.has-tokens .token-with-underline {
+  display: inline-block;
+  padding-bottom: 2px;
+  border-bottom-width: 4px;
+  border-bottom-style: solid;
+  border-radius: 2px;
+  margin-right: 2px;
+}
+
+.prompt-text-chat.has-tokens .token-with-underline.special-token {
+  font-size: 0.75em;
+  color: var(--text-tertiary, #888);
+  background-color: var(--bg-special-token, rgba(128, 128, 128, 0.08));
+  padding: 1px 2px 3px 2px;
+  border-radius: 3px;
+  font-weight: normal;
+}
+
 .prompt-actions {
   display: flex;
   align-items: center;
@@ -788,6 +806,57 @@ body {
 .temp-value {
   font-family: 'Monaco', 'Menlo', 'Courier New', monospace;
   font-size: 0.9rem;
+}
+
+.settings-toggle {
+  padding: 4px 0;
+}
+
+.toggle-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.toggle-checkbox {
+  appearance: none;
+  width: 36px;
+  height: 20px;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  position: relative;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.toggle-checkbox::before {
+  content: '';
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--text-secondary);
+  top: 2px;
+  left: 2px;
+  transition: all 0.2s ease;
+}
+
+.toggle-checkbox:checked {
+  background: var(--accent-primary);
+  border-color: var(--accent-primary);
+}
+
+.toggle-checkbox:checked::before {
+  left: 18px;
+  background: white;
+}
+
+.toggle-text {
+  font-size: 0.85rem;
+  color: var(--text-primary);
 }
 
 .prompt-display-minimal {

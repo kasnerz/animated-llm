@@ -6,7 +6,7 @@
  * It only depends on the data structure passed to it, not on any specific view logic
  */
 import { getTokenColor } from '../core/colors';
-import { processTokenForVisualization } from '../../utils/tokenProcessing';
+import { processTokenForVisualization, isSpecialToken } from '../../utils/tokenProcessing';
 import { TOKEN, FONTS } from '../core/constants';
 
 /**
@@ -47,14 +47,15 @@ export function renderTokensLayer(
   }
 
   // Compute dynamic widths based on token length
-  const widths = visibleTokens.map((tok) =>
-    tok === '...'
-      ? TOKEN.ELLIPSIS_WIDTH
-      : Math.max(
-          TOKEN.MIN_BOX_WIDTH,
-          processTokenForVisualization(tok).length * TOKEN.CHAR_WIDTH + TOKEN.HORIZ_PADDING
-        )
-  );
+  const widths = visibleTokens.map((tok) => {
+    if (tok === '...') return TOKEN.ELLIPSIS_WIDTH;
+    const special = isSpecialToken(tok);
+    const fontScale = special ? 0.6 : 1.0; // make special token text smaller
+    const padding = special ? Math.max(2, TOKEN.HORIZ_PADDING * 0.3) : TOKEN.HORIZ_PADDING; // tighter LR padding
+    const minWidth = special ? Math.max(20, TOKEN.MIN_BOX_WIDTH * 0.5) : TOKEN.MIN_BOX_WIDTH;
+    const contentChars = processTokenForVisualization(tok).length;
+    return Math.max(minWidth, contentChars * TOKEN.CHAR_WIDTH * fontScale + padding);
+  });
 
   const contentWidth = widths.reduce((a, b) => a + b, 0) + TOKEN.GAP * (visibleTokens.length - 1);
   const minMargin = layout?.margin ?? 0;
@@ -80,6 +81,10 @@ export function renderTokensLayer(
     shouldCollapse,
   };
 
+  // Base font sizes (px) derived from constants (which are strings like '18px')
+  const baseTextSize = parseFloat(TOKEN.TEXT_SIZE) || 18;
+  const baseIdSize = parseFloat(TOKEN.ID_TEXT_SIZE) || 13;
+
   // Render tokens
   visibleTokens.forEach((token, i) => {
     const actualIndex = tokenIndices[i];
@@ -98,8 +103,9 @@ export function renderTokensLayer(
 
     const estimatedWidth = widths[i];
     const tokenColor = getTokenColor(actualIndex);
+    const isSpecial = isSpecialToken(token);
 
-    // Token box (transparent background)
+    // Token box (transparent background, or grey for special tokens)
     tokenG
       .append('rect')
       .attr('x', -estimatedWidth / 2)
@@ -107,8 +113,11 @@ export function renderTokensLayer(
       .attr('width', estimatedWidth)
       .attr('height', TOKEN.BOX_HEIGHT)
       .attr('rx', TOKEN.BOX_RADIUS)
-      .attr('class', 'token-box')
-      .style('fill', 'transparent')
+      .attr('class', `token-box ${isSpecial ? 'special-token-box' : ''}`)
+      .style(
+        'fill',
+        isSpecial ? 'var(--viz-special-token-bg, rgba(128, 128, 128, 0.1))' : 'transparent'
+      )
       .style('stroke', 'none');
 
     // Token text
@@ -116,34 +125,39 @@ export function renderTokensLayer(
       .append('text')
       .attr('text-anchor', 'middle')
       .attr('y', TOKEN.TEXT_Y_OFFSET)
-      .attr('class', 'token-text')
-      .style('font-size', TOKEN.TEXT_SIZE)
+      .attr('class', `token-text ${isSpecial ? 'special-token-text' : ''}`)
+      .style('font-size', isSpecial ? `${baseTextSize * 0.6}px` : TOKEN.TEXT_SIZE)
       .style('font-family', FONTS.FAMILY_UI)
-      .style('font-weight', FONTS.WEIGHT_MEDIUM)
-      .style('fill', 'var(--viz-token-text)')
+      .style('font-weight', isSpecial ? FONTS.WEIGHT_NORMAL : FONTS.WEIGHT_MEDIUM)
+      .style('fill', isSpecial ? 'var(--viz-special-token-text, #888)' : 'var(--viz-token-text)')
       .text(processTokenForVisualization(token));
 
-    // Colored heavy underline
+    // Colored heavy underline (more muted for special tokens)
     tokenG
       .append('line')
       .attr('x1', -estimatedWidth / 2 + TOKEN.UNDERLINE_INSET)
       .attr('y1', TOKEN.UNDERLINE_Y)
       .attr('x2', estimatedWidth / 2 - TOKEN.UNDERLINE_INSET)
       .attr('y2', TOKEN.UNDERLINE_Y)
-      .attr('class', 'token-underline')
+      .attr('class', `token-underline ${isSpecial ? 'special-token-underline' : ''}`)
       .style('stroke', tokenColor)
       .style('stroke-width', TOKEN.UNDERLINE_WIDTH)
-      .style('stroke-linecap', 'round');
+      .style('stroke-linecap', 'round')
+      .style('opacity', isSpecial ? 0.4 : 1);
 
-    // Inline Token ID
+    // Inline Token ID (smaller and muted for special tokens)
     tokenG
       .append('text')
       .attr('text-anchor', 'middle')
       .attr('y', TOKEN.ID_Y_OFFSET)
-      .attr('class', `token-id-inline ${isNew ? 'new-token' : 'prev-token'}`)
-      .style('font-size', TOKEN.ID_TEXT_SIZE)
+      .attr(
+        'class',
+        `token-id-inline ${isNew ? 'new-token' : 'prev-token'} ${isSpecial ? 'special-token-id' : ''}`
+      )
+      .style('font-size', isSpecial ? `${baseIdSize * 0.75}px` : TOKEN.ID_TEXT_SIZE)
       .style('font-weight', FONTS.WEIGHT_BOLD)
-      .style('fill', tokenColor)
+      .style('fill', isSpecial ? 'var(--viz-special-token-text, #888)' : tokenColor)
+      .style('opacity', isSpecial ? 0.6 : 1)
       .text(step.token_ids[actualIndex]);
   });
 
