@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { Routes, Route, useLocation } from 'react-router-dom';
+import { Routes, Route, useLocation, Link } from 'react-router-dom';
 import { AppProvider, useApp } from './contexts/AppContext';
 import { I18nProvider, useI18n } from './i18n/I18nProvider';
 import { ViewProvider, useView } from './contexts/ViewContext';
@@ -292,11 +292,11 @@ function AppContent() {
           <div className="floating-top-content">
             {/* Centered logo and title */}
             <div className="app-logo">
-              <div className="logo-icon">
+              <Link to="/" className="logo-icon">
                 <div className="logo-square"></div>
                 {/* <img src={logo} alt="HelloLLM Logo" width="30px" className="logo-image" /> */}
                 <div className="logo-text">&nbsp;HelloLLM</div>
-              </div>
+              </Link>
               <ViewSelectorPopup showOnMobile={false} />
             </div>
 

@@ -28,39 +28,6 @@ body {
   transition: box-shadow 0.3s ease;
 }
 
-/* Home page header - minimal style */
-.floating-top-section.home-header {
-  background: transparent;
-  box-shadow: none;
-}
-
-.floating-top-section.home-header .floating-top-content {
-  justify-content: flex-end;
-}
-
-.floating-top-section.home-header .header-controls {
-  position: static;
-  display: flex;
-  gap: 0.5rem;
-}
-
-.icon-button {
-  background: var(--bg-secondary);
-  border: 1px solid var(--border-color);
-  border-radius: 8px;
-  padding: 0.5rem;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.icon-button:hover {
-  background: var(--bg-tertiary);
-  border-color: var(--accent-color);
-}
-
 .floating-top-content {
   display: flex;
   align-items: center;
@@ -93,6 +60,14 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.logo-icon:hover {
+  opacity: 0.8;
+  transition: opacity 0.2s ease;
 }
 
 .logo-square {
@@ -111,7 +86,7 @@ body {
   color: var(--accent-primary);
   white-space: nowrap;
   user-select: none;
-  cursor: default;
+  cursor: pointer;
 }
 
 /* Canvas Input Section - prompt input moved to canvas area */

@@ -1,13 +1,12 @@
 import { useApp } from '../contexts/AppContext';
 import GeneratedAnswer from '../components/GeneratedAnswer';
 import TrainingCanvas from '../components/TrainingCanvas';
-import DocumentExcerpt from '../components/DocumentExcerpt';
+import TrainingDocumentCarousel from '../components/TrainingDocumentCarousel';
 
 /**
  * TrainingView Component
- * View for training animation with document excerpt input
- * Uses DocumentExcerpt component instead of chat-style input
- * TODO: Create dedicated TrainingCanvas when training-specific visualization is implemented
+ * View for training animation with document carousel
+ * Uses TrainingDocumentCarousel component to show multiple documents
  */
 function TrainingView() {
   const { state } = useApp();
@@ -17,9 +16,9 @@ function TrainingView() {
       {/* Main content */}
       {state.currentExample && (
         <>
-          {/* Document excerpt input section */}
-          <div className="canvas-input-section">
-            <DocumentExcerpt />
+          {/* Document carousel section */}
+          <div className="training-carousel-wrapper">
+            <TrainingDocumentCarousel />
           </div>
           {/* Training-specific animation */}
           <TrainingCanvas />

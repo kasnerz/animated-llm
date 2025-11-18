@@ -20,6 +20,12 @@ export const MODEL_REGISTRY = [
     size: '8b',
     name: 'Aya',
   },
+  {
+    pattern: /Llama-3\.2-1B-Instruct/i,
+    logo: 'meta.png',
+    size: '1b',
+    name: 'Llama3.2',
+  },
   // Add more model patterns here
 ];
 

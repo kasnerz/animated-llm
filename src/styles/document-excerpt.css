@@ -167,8 +167,20 @@
   text-align: left;
   word-spacing: 0.05em;
   white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  /* Allow programmatic horizontal scrolling to reveal later tokens */
+  overflow-x: auto;
+  overflow-y: hidden;
+  text-overflow: clip;
+  /* Hide scrollbars while keeping scrollLeft functional */
+  -ms-overflow-style: none;
+  /* IE/Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+.document-text-compact::-webkit-scrollbar {
+  display: none;
+  /* Chrome/Safari */
 }
 
 /* Tokenized text in document */
