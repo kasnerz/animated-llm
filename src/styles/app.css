@@ -1125,6 +1125,15 @@ body {
     left: 0.5rem;
   }
 
+  .app-logo {
+    gap: 0.5rem;
+  }
+
+  /* Ensure logo text doesn't overlap with view selector on very narrow screens */
+  .logo-icon {
+    margin-left: 2.5rem;
+  }
+
   /* Header controls - hamburger menu */
   .header-controls {
     position: absolute;
@@ -1157,10 +1166,6 @@ body {
   .header-controls.open .header-controls-list > * {
     width: 100%;
     justify-content: flex-start;
-  }
-
-  .header-controls.open .view-selector-mobile {
-    display: flex;
   }
 
   .header-controls.open .menu-item-with-label {

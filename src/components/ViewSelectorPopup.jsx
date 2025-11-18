@@ -11,7 +11,7 @@ import '../styles/view-selector-popup.css';
  * ViewSelectorPopup component
  * Dropdown button with popup grid showing available views
  */
-function ViewSelectorPopup({ showOnMobile = true }) {
+function ViewSelectorPopup() {
   const { currentView, setCurrentView, viewInfo } = useView();
   const { t } = useI18n();
   const navigate = useNavigate();
@@ -54,10 +54,7 @@ function ViewSelectorPopup({ showOnMobile = true }) {
   const currentViewInfo = viewInfo[currentView];
 
   return (
-    <div
-      className={`view-selector-popup ${showOnMobile ? '' : 'hide-on-mobile'}`}
-      ref={dropdownRef}
-    >
+    <div className="view-selector-popup" ref={dropdownRef}>
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="view-selector-button"

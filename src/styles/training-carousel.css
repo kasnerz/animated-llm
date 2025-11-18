@@ -337,11 +337,16 @@
   }
 
   .carousel-nav-arrow.left {
-    left: 10px;
+    /* Nudge arrows closer to the screen edge on mobile to avoid overlapping the document excerpt */
+    left: 2px;
+    /* fallback for browsers without env() support */
+    left: calc(env(safe-area-inset-left) - 40px);
   }
 
   .carousel-nav-arrow.right {
-    right: 10px;
+    right: 2px;
+    /* fallback for browsers without env() support */
+    right: calc(env(safe-area-inset-right) - 40px);
   }
 
   .carousel-document .document-content-compact {

@@ -12,7 +12,6 @@ import InputSection from './components/InputSection';
 import KeyboardShortcutsModal from './components/KeyboardShortcutsModal';
 import LanguageSelector from './components/LanguageSelector';
 import ViewSelectorPopup from './components/ViewSelectorPopup';
-import ViewSelectorMobile from './components/ViewSelectorMobile';
 import Icon from '@mdi/react';
 import { mdiKeyboard } from '@mdi/js';
 import './index.css';
@@ -43,7 +42,8 @@ function AppContent() {
     if (viewFromPath && viewFromPath !== currentView) {
       setCurrentView(viewFromPath);
     }
-  }, [location.pathname, currentView, setCurrentView]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [location.pathname, currentView]);
 
   // Note: We intentionally avoid syncing context -> URL here to prevent race conditions
   // when deep-linking. Navigation is handled explicitly in view selectors.
@@ -53,7 +53,8 @@ function AppContent() {
     if (state.language !== language) {
       actions.setLanguage(language);
     }
-  }, [language, state.language, actions]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [language, state.language]);
 
   // Handle keyboard shortcuts (Play/Pause and stepping)
   useEffect(() => {
@@ -304,7 +305,7 @@ function AppContent() {
                 {/* <img src={logo} alt="HelloLLM Logo" width="30px" className="logo-image" /> */}
                 <div className="logo-text">&nbsp;HelloLLM</div>
               </Link>
-              <ViewSelectorPopup showOnMobile={false} />
+              <ViewSelectorPopup />
             </div>
 
             {/* Header controls - minimal */}
@@ -319,7 +320,6 @@ function AppContent() {
                 ☰
               </button>
               <div className="header-controls-list">
-                <ViewSelectorMobile />
                 <button
                   onClick={() => setIsKeyboardShortcutsOpen(true)}
                   className="menu-item-with-label"

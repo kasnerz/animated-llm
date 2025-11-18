@@ -1,4 +1,12 @@
-import { createContext, useContext, useReducer, useEffect, useCallback, useRef } from 'react';
+import {
+  createContext,
+  useContext,
+  useReducer,
+  useEffect,
+  useCallback,
+  useRef,
+  useMemo,
+} from 'react';
 import config from '../config';
 import * as examplesApi from '../services/examplesApi';
 import { useThemeEffect } from '../hooks/useThemeEffect';
@@ -856,9 +864,8 @@ export function AppProvider({ children }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const value = {
-    state,
-    actions: {
+  const actions = useMemo(
+    () => ({
       loadExample,
       loadExamples,
       nextStep,
@@ -879,8 +886,38 @@ export function AppProvider({ children }) {
       setSelectedTemperatureEmoji,
       setShowSpecialTokens,
       onStepAnimationComplete,
-    },
-  };
+    }),
+    [
+      loadExample,
+      loadExamples,
+      nextStep,
+      nextAnimationSubStep,
+      prevAnimationSubStep,
+      skipToNextToken,
+      skipToEnd,
+      reset,
+      toggleTheme,
+      toggleLanguage,
+      setLanguage,
+      setViewType,
+      setAnimationSpeed,
+      setIsPlaying,
+      setIsPaused,
+      setAutoGenerate,
+      setSelectedModelIndex,
+      setSelectedTemperatureEmoji,
+      setShowSpecialTokens,
+      onStepAnimationComplete,
+    ]
+  );
+
+  const value = useMemo(
+    () => ({
+      state,
+      actions,
+    }),
+    [state, actions]
+  );
 
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>;
 }

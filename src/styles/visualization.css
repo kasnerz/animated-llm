@@ -240,8 +240,9 @@
 
 /* Hide stage labels at mobile breakpoint */
 @media (max-width: 1000px) {
-  .stage-label {
-    display: none;
+  .stage-label,
+  .viz-labels-panel {
+    display: none !important;
   }
 }
 
