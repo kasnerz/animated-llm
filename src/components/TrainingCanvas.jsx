@@ -254,7 +254,8 @@ export default function TrainingCanvas() {
       width,
       svgRef.current,
       ffnInfo,
-      Math.min(8, state.currentAnimationSubStep ?? 0),
+      // Allow training sub-steps up to 10 to render target vector and diffs
+      Math.min(10, state.currentAnimationSubStep ?? 0),
       computedEmbeddings,
       contentCenterX,
       isDarkMode
@@ -282,7 +283,7 @@ export default function TrainingCanvas() {
         ? outputsMeta.logprobCenterY + 70
         : ffnInfo.afterBottomY + 198,
     };
-    const animSubStep = Math.min(8, state.currentAnimationSubStep ?? 0);
+    const animSubStep = Math.min(10, state.currentAnimationSubStep ?? 0);
     const showLabelsGradually = state.currentStep === 1;
     renderStageLabels(labelsGroup, { ...layout, stageY }, 0, animSubStep, t, showLabelsGradually, {
       currentLayer,
@@ -321,12 +322,12 @@ export default function TrainingCanvas() {
       d3.select(svgRef.current).style('width', '100%');
     }
 
-    // Build and run training timeline for current sub-step (0..8)
+    // Build and run training timeline for current sub-step (0..10)
     const animDuration = state.instantTransition ? 0 : 0.6;
     const isInitialStep = state.currentStep === 1;
     trainingTimeline.setInitialStates(svgRef.current, animSubStep, isInitialStep);
     const stepCompleteCb =
-      animSubStep === 8 && !state.instantTransition
+      animSubStep === 10 && !state.instantTransition
         ? () => actions.onStepAnimationComplete(state.isPlaying)
         : null;
     gsapRef.current = trainingTimeline.buildTimeline(

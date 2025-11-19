@@ -100,7 +100,12 @@ export const OUTPUT_SELECTORS = {
   logprobVector: '.logprob-vector',
   // Training-specific additions
   targetVector: '.target-vector',
+  targetToProbArrow: '.target-to-prob-arrow, .target-to-prob-arrow-head',
+  targetDiffLabel: '.target-diff-label',
   targetDiffArrow: '.target-diff-arrow, .target-diff-arrow-head',
+  // Training-specific highlight rectangle around the target token column spanning
+  // from the output distribution vector to the target vector
+  trainingTargetHighlightRect: '.training-target-highlight-rect',
   distributionItem: '.distribution-item',
   distributionItemSelected: '.distribution-item.selected',
   distributionHighlightRect: '.distribution-highlight-rect',

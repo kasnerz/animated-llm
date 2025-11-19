@@ -73,7 +73,8 @@ export function renderOutputLayer(
       rightmostActualIndex,
       tokenColor,
       baseFill,
-      isDarkMode
+      isDarkMode,
+      bottomInfo.metas
     );
   }
 
@@ -82,6 +83,11 @@ export function renderOutputLayer(
   let selectionCenterY = null;
   const logprobY = (hv1 ? hv1.bottomY : horizY + 36) + OUTPUT.HORIZ_TO_LOGPROB_GAP;
   const probs = candidates.map((c) => c.prob);
+  // Ellipsis info for current candidate set
+  const ellipsisIdxForCandidates = candidates.findIndex(
+    (c) => c && (c.isEllipsis || c.token === '...')
+  );
+  const isEllipsisLast = ellipsisIdxForCandidates === candidates.length - 1;
 
   if (subStep >= 7) {
     hv2 = drawHorizontalVector(group, horizCenterX, logprobY, probs, {
@@ -89,7 +95,8 @@ export function renderOutputLayer(
       tokenColor: '#16a34cff',
       format: (v) => v.toFixed(3),
       isLogprob: true,
-      ellipsisLast: true,
+      // Only show ⋯ inside the last cell if ellipsis is indeed last
+      ellipsisLast: isEllipsisLast,
       isDarkMode,
     });
 
@@ -115,7 +122,7 @@ export function renderOutputLayer(
   if (subStep >= 8 && hv2) {
     renderDistributionLabels(group, candidates, hv2, selectedIdx);
 
-    // Training view: render target vector and replace percentage labels with diffs
+    // Training view: two-step rendering
     if (step.training_target_token) {
       try {
         const arrowStartY = hv2.bottomY + OUTPUT.ARROW_START_OFFSET;
@@ -140,66 +147,179 @@ export function renderOutputLayer(
         // Build target vector aligned with candidates (use logprob sizing for alignment)
         const targetValues = candidates.map((c, i) => (i === targetIdx ? 1 : 0));
 
-        // Move target vector a bit lower to fit upward arrows to diffs
-        const targetTopY = percentageY + 40;
-        const tv = drawHorizontalVector(group, horizCenterX, targetTopY, targetValues, {
-          className: 'target-vector',
-          tokenColor: '#dc2626ff', // red
-          format: (v) => (typeof v === 'number' ? v.toFixed(3) : ''),
-          isLogprob: true,
-          ellipsisLast: false,
-          isDarkMode,
-        });
-
-        // Replace percentage labels with differences (target - predicted)
-        const items = group.selectAll('.distribution-item');
-        items.each(function (_, i) {
-          const c = candidates[i];
-          if (!hv2.centers || typeof hv2.centers[i] !== 'number') return;
-          if (c && (c.isEllipsis || c.token === '...')) return; // skip ellipsis cell
-          const pred = typeof c?.prob === 'number' ? c.prob : 0;
-          const tval = i === targetIdx ? 1 : 0;
-          const deltaPct = (tval - pred) * 100;
-          const sign = deltaPct > 0 ? '+' : '';
-          const color = deltaPct >= 0 ? '#16a34aff' : '#dc2626ff';
-
-          const sel = d3.select(this).select('text.distribution-percentage-label');
-          sel
-            .style('font-weight', '700')
-            .style('fill', color)
-            .text(`${sign}${deltaPct.toFixed(1)}%`);
-        });
-
-        // Draw upward arrows from target vector to the difference labels
-        if (tv && hv2 && hv2.centers) {
-          const arrowEndYUp = percentageY - 4; // just below the diff text baseline
-          const arrowStartYUp = tv.topY - OUTPUT.ARROW_START_OFFSET;
-          candidates.forEach((c, i) => {
-            if (c && (c.isEllipsis || c.token === '...')) return; // skip ellipsis cell
-            const cx = hv2.centers[i];
-            if (typeof cx !== 'number') return;
-
-            group
-              .append('line')
-              .attr('x1', cx)
-              .attr('y1', arrowStartYUp)
-              .attr('x2', cx)
-              .attr('y2', arrowEndYUp)
-              .attr('class', 'target-diff-arrow')
-              .style('stroke', OUTPUT_ARROWS.DISTRIBUTION_STROKE)
-              .style('stroke-width', OUTPUT_ARROWS.DISTRIBUTION_WIDTH)
-              .style('opacity', OUTPUT_ARROWS.DISTRIBUTION_OPACITY);
-
-            group
-              .append('polygon')
-              .attr(
-                'points',
-                `${cx},${arrowEndYUp} ${cx - OUTPUT_ARROWS.DISTRIBUTION_HEAD_SIZE},${arrowEndYUp + 6} ${cx + OUTPUT_ARROWS.DISTRIBUTION_HEAD_SIZE},${arrowEndYUp + 6}`
-              )
-              .attr('class', 'target-diff-arrow-head')
-              .style('fill', OUTPUT_ARROWS.DISTRIBUTION_STROKE)
-              .style('opacity', OUTPUT_ARROWS.DISTRIBUTION_OPACITY);
+        // Step 9: Show target vector + arrow to target token probability
+        if (subStep >= 9) {
+          // Move target vector a bit lower to fit upward arrows
+          const targetTopY = percentageY + 40;
+          const tv = drawHorizontalVector(group, horizCenterX, targetTopY, targetValues, {
+            className: 'target-vector',
+            tokenColor: '#dc2626ff', // red
+            format: (v) => (typeof v === 'number' ? v.toFixed(3) : ''),
+            isLogprob: true,
+            // Mirror the logprob row when ellipsis is last; otherwise we'll overlay ⋯ manually
+            ellipsisLast: isEllipsisLast,
+            isDarkMode,
           });
+
+          // If ellipsis exists but is not last, overlay a centered ⋯ in the target vector too
+          if (
+            tv &&
+            ellipsisIdxForCandidates >= 0 &&
+            !isEllipsisLast &&
+            tv.centers &&
+            ellipsisIdxForCandidates < tv.centers.length
+          ) {
+            const ex = tv.centers[ellipsisIdxForCandidates];
+            const ey = (tv.topY + tv.bottomY) / 2;
+            group
+              .append('text')
+              .attr('x', ex)
+              .attr('y', ey + 6)
+              .attr('text-anchor', 'middle')
+              .attr('class', 'target-ellipsis-label')
+              .style('font-size', OUTPUT.ELLIPSIS_SIZE)
+              .style('font-weight', 'normal')
+              .style('fill', 'var(--viz-text-color)')
+              .text('⋯');
+          }
+
+          // Draw highlight rectangle around the TARGET token column spanning from
+          // the output distribution vector down to the target vector. This mirrors
+          // the rounded outline used for the selected token in text generation,
+          // but centers on the training target token instead.
+          if (
+            hv2 &&
+            tv &&
+            hv2.centers &&
+            tv.centers &&
+            targetIdx >= 0 &&
+            targetIdx < hv2.centers.length &&
+            targetIdx < tv.centers.length
+          ) {
+            const cxTop = hv2.centers[targetIdx];
+            const cxBottom = tv.centers[targetIdx];
+            const halfTop = (hv2.cellWidth || 26) / 2;
+            const halfBottom = (tv.cellWidth || hv2.cellWidth || 26) / 2;
+
+            const left =
+              Math.min(cxTop - halfTop, cxBottom - halfBottom) - OUTPUT.HIGHLIGHT_PADDING;
+            const right =
+              Math.max(cxTop + halfTop, cxBottom + halfBottom) + OUTPUT.HIGHLIGHT_PADDING;
+            const top = hv2.topY - OUTPUT.ARROW_START_OFFSET;
+            const bottom = tv.bottomY + OUTPUT.ARROW_START_OFFSET;
+
+            const rectW = Math.max(28, right - left);
+            const rectH = Math.max(28, bottom - top);
+
+            group
+              .append('rect')
+              .attr('class', 'training-target-highlight-rect')
+              .attr('x', left)
+              .attr('y', top)
+              .attr('width', rectW)
+              .attr('height', rectH)
+              .attr('rx', OUTPUT.HIGHLIGHT_RADIUS)
+              .style('fill', 'none')
+              .style('stroke', OUTPUT_ARROWS.HIGHLIGHT_STROKE_COLOR)
+              .style('stroke-width', OUTPUT.HIGHLIGHT_STROKE_WIDTH)
+              .style('opacity', 0)
+              .style('pointer-events', 'none');
+          }
+
+          // Draw single arrow from target cell to its probability label
+          if (tv && hv2 && hv2.centers && targetIdx >= 0 && targetIdx < hv2.centers.length) {
+            const cx = hv2.centers[targetIdx];
+            if (typeof cx === 'number') {
+              // Match down arrows style and fixed length but shift the up arrows slightly
+              // downward so they appear closer to the bottom (more visually balanced).
+              // We anchor the up-arrow tip a bit below the percentage label and keep
+              // the same arrow height as the down arrows.
+              const arrowEndYUp = percentageY + OUTPUT.ARROW_START_OFFSET;
+              const arrowStartYUp = arrowEndYUp + OUTPUT.ARROW_HEIGHT;
+
+              group
+                .append('line')
+                .attr('x1', cx)
+                .attr('y1', arrowStartYUp)
+                .attr('x2', cx)
+                .attr('y2', arrowEndYUp)
+                .attr('class', 'target-to-prob-arrow')
+                .style('stroke', OUTPUT_ARROWS.DISTRIBUTION_STROKE)
+                .style('stroke-width', OUTPUT_ARROWS.DISTRIBUTION_WIDTH)
+                .style('opacity', OUTPUT_ARROWS.DISTRIBUTION_OPACITY);
+
+              group
+                .append('polygon')
+                .attr(
+                  'points',
+                  `${cx},${arrowEndYUp} ${cx - OUTPUT_ARROWS.DISTRIBUTION_HEAD_SIZE},${arrowEndYUp + 6} ${cx + OUTPUT_ARROWS.DISTRIBUTION_HEAD_SIZE},${arrowEndYUp + 6}`
+                )
+                .attr('class', 'target-to-prob-arrow-head')
+                .style('fill', OUTPUT_ARROWS.DISTRIBUTION_STROKE)
+                .style('opacity', OUTPUT_ARROWS.DISTRIBUTION_OPACITY);
+            }
+          }
+        }
+
+        // Step 9+: Replace percentages with diffs + arrows from all target cells to diffs
+        if (subStep >= 9) {
+          // Replace percentage labels with differences (target - predicted)
+          const items = group.selectAll('.distribution-item');
+          items.each(function () {
+            const ci = Number(d3.select(this).attr('data-index'));
+            if (Number.isNaN(ci)) return;
+            const c = candidates[ci];
+            if (!hv2.centers || typeof hv2.centers[ci] !== 'number') return;
+            if (c && (c.isEllipsis || c.token === '...')) return; // skip ellipsis cell
+            const pred = typeof c?.prob === 'number' ? c.prob : 0;
+            const tval = ci === targetIdx ? 1 : 0;
+            const deltaPct = (tval - pred) * 100;
+            const sign = deltaPct > 0 ? '+' : '';
+            const color = deltaPct >= 0 ? '#16a34aff' : '#dc2626ff';
+
+            const sel = d3.select(this).select('text.distribution-percentage-label');
+            sel
+              .attr('class', 'distribution-percentage-label target-diff-label')
+              .style('font-weight', '700')
+              .style('fill', color)
+              .text(`${sign}${deltaPct.toFixed(1)}%`);
+          });
+
+          // Draw upward arrows from all target vector cells to difference labels
+          const tv = group.select('.target-vector');
+          if (tv && tv.node() && hv2 && hv2.centers) {
+            // Use the same length and offsets as the down arrows but shift them
+            // slightly downward so the up arrows sit closer to the bottom area.
+            const arrowEndYUp = percentageY + OUTPUT.ARROW_START_OFFSET;
+            const arrowStartYUp = arrowEndYUp + OUTPUT.ARROW_HEIGHT;
+
+            candidates.forEach((c, i) => {
+              if (c && (c.isEllipsis || c.token === '...')) return; // skip ellipsis cell
+              const cx = hv2.centers[i];
+              if (typeof cx !== 'number') return;
+
+              group
+                .append('line')
+                .attr('x1', cx)
+                .attr('y1', arrowStartYUp)
+                .attr('x2', cx)
+                .attr('y2', arrowEndYUp)
+                .attr('class', 'target-diff-arrow')
+                .style('stroke', OUTPUT_ARROWS.DISTRIBUTION_STROKE)
+                .style('stroke-width', OUTPUT_ARROWS.DISTRIBUTION_WIDTH)
+                .style('opacity', OUTPUT_ARROWS.DISTRIBUTION_OPACITY);
+
+              group
+                .append('polygon')
+                .attr(
+                  'points',
+                  `${cx},${arrowEndYUp} ${cx - OUTPUT_ARROWS.DISTRIBUTION_HEAD_SIZE},${arrowEndYUp + 6} ${cx + OUTPUT_ARROWS.DISTRIBUTION_HEAD_SIZE},${arrowEndYUp + 6}`
+                )
+                .attr('class', 'target-diff-arrow-head')
+                .style('fill', OUTPUT_ARROWS.DISTRIBUTION_STROKE)
+                .style('opacity', OUTPUT_ARROWS.DISTRIBUTION_OPACITY);
+            });
+          }
         }
       } catch {
         // Non-fatal; skip training-specific rendering if geometry is missing
@@ -259,7 +379,8 @@ function renderExtractedEmbedding(
   rightmostActualIndex,
   tokenColor,
   baseFill,
-  isDarkMode
+  isDarkMode,
+  metas
 ) {
   const extracted = extractionBg.append('g').attr('class', 'extracted-embedding');
 
@@ -294,7 +415,13 @@ function renderExtractedEmbedding(
     const startY = rm.topY + rm.height + 4;
     const hv1RightX = horizCenterX + hv1.width / 2;
     const hv1CenterY = horizY + 15;
-    const pathD = verticalThenHorizontalRoundedPath(startX, startY, hv1RightX, hv1CenterY, 20);
+
+    // Special case: when there's only a single token, use a straight vertical arrow
+    // instead of a curved one, as it looks weird with the curve
+    const isSingleToken = metas && metas.length === 1;
+    const pathD = isSingleToken
+      ? `M ${startX},${startY} L ${startX},${horizY - 6}`
+      : verticalThenHorizontalRoundedPath(startX, startY, hv1RightX, hv1CenterY, 20);
 
     extractionBg
       .append('path')

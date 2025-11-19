@@ -78,9 +78,17 @@ export function setInitialStates(svgElement, subStep, isInitialStep) {
   });
   setIfAny(svgElement, SEL.distributionLabels, { opacity: prev >= 8 ? 1 : 0 });
   setIfAny(svgElement, SEL.distributionItem, { opacity: prev >= 8 ? 1 : 0 });
-  // Training-specific: target vector and upward arrows to diffs
-  setIfAny(svgElement, SEL.targetVector, { opacity: prev >= 8 ? 1 : 0 });
-  setIfAny(svgElement, SEL.targetDiffArrow, { opacity: prev >= 8 ? 1 : 0 });
+
+  // Training-specific step 9: target vector and single arrow to target token
+  setIfAny(svgElement, SEL.targetVector, { opacity: prev >= 9 ? 1 : 0 });
+  setIfAny(svgElement, SEL.targetToProbArrow, { opacity: prev >= 9 ? 0.7 : 0 });
+  // Highlight rectangle around target column spanning from output vector to target vector
+  setIfAny(svgElement, SEL.trainingTargetHighlightRect, { opacity: 0 });
+
+  // Training-specific step 9+: difference labels and arrows to all tokens
+  setIfAny(svgElement, SEL.targetDiffLabel, { opacity: prev >= 9 ? 1 : 0 });
+  setIfAny(svgElement, SEL.targetDiffArrow, { opacity: prev >= 9 ? 0.7 : 0 });
+
   setIfAny(svgElement, SEL.distributionHighlightRect, { opacity: 0 });
   setIfAny(svgElement, SEL.appendPathArrow, { opacity: 0 });
   setIfAny(svgElement, SEL.previewTokenText, { opacity: 0 });
@@ -88,9 +96,10 @@ export function setInitialStates(svgElement, subStep, isInitialStep) {
 }
 
 /**
- * Build a compact GSAP timeline that plays through sub-steps 0..8 automatically.
- * Skips output highlight (9) and append preview (10..11) to reflect teacher forcing.
- * Note: Token IDs are now shown together with tokens at step 0.
+ * Build a GSAP timeline that plays through sub-steps 0..10 for training.
+ * Steps 0-8: same as text generation (but no highlight/append)
+ * Step 9: show target vector and arrow to target token probability
+ * Step 10: replace percentages with differences and show arrows from all target cells
  */
 export function buildTimeline(svgElement, subStep, isInitialStep, animDuration, onStepComplete) {
   const tl = gsap.timeline();
@@ -152,15 +161,29 @@ export function buildTimeline(svgElement, subStep, isInitialStep, animDuration, 
       toIfAny(SEL.distributionItem, { opacity: 1, duration: animDuration });
       toIfAny(SEL.distributionBar, { opacity: 1, scaleY: 1, duration: animDuration }, '<');
       toIfAny(SEL.distributionLabels, { opacity: 1, duration: animDuration }, '<');
-      // Training-specific elements fade-in
-      toIfAny(SEL.targetVector, { opacity: 1, duration: animDuration }, '<');
-      toIfAny(SEL.targetDiffArrow, { opacity: 1, duration: animDuration }, '<');
+      break;
+    case 9:
+      // Training-specific: show target vector, single up arrow, and differences + all up arrows
+      toIfAny(SEL.targetVector, { opacity: 1, duration: animDuration });
+      toIfAny(SEL.targetToProbArrow, { opacity: 0.7, duration: animDuration }, '<');
+      toIfAny(SEL.targetDiffLabel, { opacity: 1, duration: animDuration }, '<');
+      toIfAny(SEL.targetDiffArrow, { opacity: 0.7, duration: animDuration }, '<');
+      // Fade in the target highlight rectangle in the same step
+      toIfAny(
+        SEL.trainingTargetHighlightRect,
+        { opacity: 1, duration: animDuration * 0.45, ease: 'power1.out' },
+        '<'
+      );
+      break;
+    case 10:
+      // Small hold so user can view diffs before proceeding to next token
+      tl.to({}, { duration: Math.max(0.05, animDuration * 0.3) });
       break;
     default:
       break;
   }
 
-  if (subStep === 8 && typeof onStepComplete === 'function') {
+  if (subStep === 10 && typeof onStepComplete === 'function') {
     tl.eventCallback('onComplete', onStepComplete);
   }
   return tl;

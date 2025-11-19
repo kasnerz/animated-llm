@@ -155,6 +155,9 @@ export const OUTPUT = {
   APPEND_PATH_RADIUS: 10,
   MARKER_SIZE: 6,
   MAX_TOKEN_CHARS_APPROX: 7, // Approximate char width for 13px font
+  // Training-specific geometry
+  TARGET_VECTOR_EXTRA_GAP: 30, // extra gap under percentage labels before target vector
+  DIFF_ARROW_HEIGHT: 12, // shorter upward arrow height
 };
 
 /**
@@ -330,6 +333,11 @@ export const OUTPUT_ARROWS = {
   APPEND_OPACITY_INITIAL: 0,
   HIGHLIGHT_STROKE_COLOR: '#007E66',
   ELLIPSIS_COLOR: '#999999',
+  // Upward arrows from target vector to difference labels (lighter, shorter)
+  DIFF_UP_STROKE: '#bbbbbb',
+  DIFF_UP_WIDTH: 1.2,
+  DIFF_UP_OPACITY: 0.6,
+  DIFF_UP_HEAD_SIZE: 3.5,
 };
 
 /**
