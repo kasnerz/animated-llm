@@ -322,12 +322,22 @@
 
 /* Stage labels sticky side panel */
 .viz-labels-panel {
-  position: sticky;
+  position: absolute;
+  right: 0;
   top: 0;
-  align-self: flex-start;
   display: flex;
   gap: 8px;
   padding-left: 8px;
+  z-index: 10;
+  height: 100%;
+  pointer-events: none;
+  /* Allow clicks to pass through the wrapper */
+}
+
+.viz-labels-toggle,
+.viz-labels-container {
+  pointer-events: auto;
+  /* Re-enable clicks on interactive elements */
 }
 
 .viz-labels-toggle {
@@ -341,6 +351,8 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  margin-top: 10px;
+  /* Add some top margin to align with content */
 }
 
 .viz-labels-toggle:hover {

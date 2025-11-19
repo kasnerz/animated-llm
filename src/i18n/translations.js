@@ -75,6 +75,27 @@ const translations = {
       selectDocument: 'Select document',
       document: 'Document',
     },
+    // InfoBox
+    infobox: {
+      // Text generation - before animation
+      ready_to_generate_heading: 'LLM is ready to generate text.',
+      ready_to_generate_desc: 'Press the Play button to start generating text.',
+      // Text generation - predicting (steps 1-8)
+      predicting_next_token_heading: 'LLM predicts the next token',
+      predicting_user_input_desc: 'User input is passed through the model',
+      predicting_generated_desc: 'Text generated so far is passed through the model',
+      // Text generation - selection (steps 9-12)
+      selecting_token_desc: 'Selected token is appended to the generated text',
+      // Training - before animation
+      ready_to_train_heading: 'LLM is ready to be trained',
+      ready_to_train_desc: 'Press the Play button to train the model on the current document',
+      // Training - forward pass (steps 0-9)
+      forward_pass_heading: 'Forward training pass',
+      forward_pass_desc: 'LLM is predicting which token comes next',
+      // Training - backward pass (steps 10-15)
+      backward_pass_heading: 'Backward training pass',
+      backward_pass_desc: 'Model weights are updated',
+    },
   },
   cs: {
     play: 'Přehrát',
@@ -146,6 +167,27 @@ const translations = {
     training: {
       selectDocument: 'Vybrat dokument',
       document: 'Dokument',
+    },
+    // InfoBox
+    infobox: {
+      // Text generation - before animation
+      ready_to_generate_heading: 'Jazykový model je připraven generovat text.',
+      ready_to_generate_desc: 'Stiskněte tlačítko Přehrát pro začátek generování.',
+      // Text generation - predicting (steps 1-8)
+      predicting_next_token_heading: 'Model predikuje další token',
+      predicting_user_input_desc: 'Vstup od uživatele je předán modelem',
+      predicting_generated_desc: 'Dosud vygenerovaný text je předán modelem',
+      // Text generation - selection (steps 9-12)
+      selecting_token_desc: 'Vybraný token je přidán k vygenerovanému textu',
+      // Training - before animation
+      ready_to_train_heading: 'Model je připraven k trénování',
+      ready_to_train_desc: 'Stiskněte tlačítko Přehrát pro trénování modelu na aktuálním dokumentu',
+      // Training - forward pass (steps 0-9)
+      forward_pass_heading: 'Dopředný průchod',
+      forward_pass_desc: 'Model predikuje, který token následuje',
+      // Training - backward pass (steps 10-15)
+      backward_pass_heading: 'Zpětný průchod',
+      backward_pass_desc: 'Váhy modelu jsou aktualizovány',
     },
   },
   fr: {

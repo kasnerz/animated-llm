@@ -69,7 +69,6 @@ export default function TextGenerationCanvas() {
 
     const scrollContainer = scrollRef.current;
     const svg = d3.select(svgRef.current);
-    const labelsSvg = d3.select(labelsSvgRef.current);
 
     // Update SVG dimensions based on scroll container (the actual viewport)
     const updateDimensions = () => {
@@ -81,9 +80,14 @@ export default function TextGenerationCanvas() {
     };
 
     updateDimensions();
-    window.addEventListener('resize', updateDimensions);
 
-    return () => window.removeEventListener('resize', updateDimensions);
+    // Use ResizeObserver to handle all size changes (window resize, layout changes, etc.)
+    const resizeObserver = new ResizeObserver(() => {
+      updateDimensions();
+    });
+    resizeObserver.observe(scrollContainer);
+
+    return () => resizeObserver.disconnect();
   }, []);
 
   // Clear and reset visualization when prompt (example) or language changes
@@ -233,7 +237,12 @@ export default function TextGenerationCanvas() {
     // Use tighter spacing estimate on mobile for more aggressive collapse
     const isMobile = width <= 1000;
     const spacingEstimate = isMobile ? 120 : CONSTS.TOKEN_SPACING_ESTIMATE;
-    const maxVisibleTokens = Math.floor(visualizationWidth / spacingEstimate) - 1;
+
+    // Account for labels panel overlay to prevent overlap
+    const labelsPanelWidth = labelsVisible ? 300 : 50;
+    const availableWidth = visualizationWidth - labelsPanelWidth;
+
+    const maxVisibleTokens = Math.floor(availableWidth / spacingEstimate) - 1;
     const shouldCollapse = step.tokens.length > maxVisibleTokens && !isExpanded;
 
     // Layout configuration with proper spacing
@@ -467,6 +476,7 @@ export default function TextGenerationCanvas() {
     onStepAnimationComplete,
     t,
     containerWidth,
+    labelsVisible,
   ]);
 
   return (
@@ -484,7 +494,11 @@ export default function TextGenerationCanvas() {
         // Use tighter spacing estimate on mobile for more aggressive collapse
         const isMobile = widthForCalc <= 1000;
         const spacingEstimate = isMobile ? 120 : CONSTS.TOKEN_SPACING_ESTIMATE;
-        const maxVisibleTokens = Math.floor(scrollAreaWidth / spacingEstimate) - 1;
+
+        const labelsPanelWidth = labelsVisible ? 300 : 50;
+        const availableWidth = scrollAreaWidth - labelsPanelWidth;
+
+        const maxVisibleTokens = Math.floor(availableWidth / spacingEstimate) - 1;
         // Show button whenever there are enough tokens that collapsing would be beneficial
         const shouldShow = tokens.length > maxVisibleTokens;
         if (!shouldShow) return null;

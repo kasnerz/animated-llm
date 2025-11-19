@@ -2,6 +2,7 @@ import { useApp } from '../contexts/AppContext';
 import GeneratedAnswer from '../components/GeneratedAnswer';
 import TextGenerationCanvas from '../components/TextGenerationCanvas';
 import InputSection from '../components/InputSection';
+import InfoBox from '../components/InfoBox';
 
 /**
  * TextGenerationView Component
@@ -12,6 +13,9 @@ function TextGenerationView() {
 
   return (
     <>
+      {/* Info box with contextual guidance */}
+      <InfoBox />
+
       {/* Main content */}
       {state.currentExample && (
         <>

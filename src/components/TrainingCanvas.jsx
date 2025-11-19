@@ -46,16 +46,23 @@ export default function TrainingCanvas() {
     if (!scrollRef.current || !svgRef.current) return;
     const el = scrollRef.current;
     const svg = d3.select(svgRef.current);
-    const labelsSvg = d3.select(labelsSvgRef.current);
-    const onResize = () => {
+
+    const updateDimensions = () => {
       const rect = el.getBoundingClientRect();
       const w = Math.round(rect.width) || 800;
       setContainerWidth(w);
       svg.attr('width', w);
     };
-    onResize();
-    window.addEventListener('resize', onResize);
-    return () => window.removeEventListener('resize', onResize);
+
+    updateDimensions();
+
+    // Use ResizeObserver to handle all size changes (window resize, layout changes, etc.)
+    const resizeObserver = new ResizeObserver(() => {
+      updateDimensions();
+    });
+    resizeObserver.observe(el);
+
+    return () => resizeObserver.disconnect();
   }, []);
 
   // No scroll tracking needed for the collapse toggle; it's fixed via CSS
@@ -185,7 +192,12 @@ export default function TrainingCanvas() {
     // Collapse when too many input tokens
     // Use tighter spacing estimate on mobile for more aggressive collapse
     const spacingEstimate = isMobile ? 120 : CONSTS.TOKEN_SPACING_ESTIMATE;
-    const maxVisibleTokens = Math.floor(width / spacingEstimate) - 1;
+
+    // Account for labels panel overlay
+    const labelsPanelWidth = labelsVisible ? 300 : 50;
+    const availableWidth = width - labelsPanelWidth;
+
+    const maxVisibleTokens = Math.floor(availableWidth / spacingEstimate) - 1;
     const shouldCollapse = stepForRender.tokens.length > maxVisibleTokens && !isExpanded;
 
     // 1) Tokens
@@ -370,6 +382,7 @@ export default function TrainingCanvas() {
     state.currentAnimationSubStep,
     isExpanded,
     t,
+    labelsVisible,
   ]);
 
   return (
@@ -385,9 +398,13 @@ export default function TrainingCanvas() {
         // Use tighter spacing estimate on mobile for more aggressive collapse
         const isMobile = widthForCalc <= 1000;
         const spacingEstimate = isMobile ? 120 : CONSTS.TOKEN_SPACING_ESTIMATE;
-        const maxVisibleTokens = Math.floor(widthForCalc / spacingEstimate) - 1;
-        const shouldShow = tokens.length > maxVisibleTokens;
-        if (!shouldShow) return null;
+
+        const labelsPanelWidth = labelsVisible ? 300 : 50;
+        const availableWidth = widthForCalc - labelsPanelWidth;
+
+        const maxVisibleTokens = Math.floor(availableWidth / spacingEstimate) - 1;
+        const shouldCollapse = tokens.length > maxVisibleTokens;
+        if (!shouldCollapse) return null;
         return (
           <button
             className={`collapse-toggle ${isExpanded ? 'state-expanded' : 'state-collapsed'}`}
