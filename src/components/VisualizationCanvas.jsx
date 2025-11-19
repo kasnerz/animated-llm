@@ -41,7 +41,6 @@ export default function VisualizationCanvas() {
   const [containerWidth, setContainerWidth] = useState(800);
   const [isExpanded, setIsExpanded] = useState(false);
   const [embeddingExpanded, setEmbeddingExpanded] = useState({});
-  const [scrollLeft, setScrollLeft] = useState(0);
   const [labelsVisible, setLabelsVisible] = useState(true);
   const tokensLayoutRef = useRef({
     positions: [],
@@ -98,7 +97,6 @@ export default function VisualizationCanvas() {
     const deferReset = () => {
       setIsExpanded(false);
       setEmbeddingExpanded({});
-      setScrollLeft(0);
       tokensLayoutRef.current = {
         positions: [],
         widths: [],
@@ -150,7 +148,6 @@ export default function VisualizationCanvas() {
     // Reset local UI state (deferred to avoid setState-in-effect lint and cascading renders)
     const deferReset = () => {
       setEmbeddingExpanded({});
-      setScrollLeft(0);
       tokensLayoutRef.current = {
         positions: [],
         widths: [],
@@ -171,14 +168,7 @@ export default function VisualizationCanvas() {
     else setTimeout(deferReset, 0);
   }, [state.currentStep]);
 
-  // Track horizontal scroll to align the collapse toggle with the ellipsis axis
-  useEffect(() => {
-    const el = scrollRef.current;
-    if (!el) return;
-    const onScroll = () => setScrollLeft(el.scrollLeft || 0);
-    el.addEventListener('scroll', onScroll, { passive: true });
-    return () => el.removeEventListener('scroll', onScroll);
-  }, []);
+  // Removed scroll tracking for the collapse toggle; the button is fixed to the viewport.
 
   // Keyboard shortcut: 'e' toggles collapse/expand of the middle tokens section
   // Matches interruptive behavior: pause animation if playing, then toggle
@@ -465,77 +455,38 @@ export default function VisualizationCanvas() {
 
   return (
     <section className={`visualization-section ${isExpanded ? 'expanded' : ''}`} ref={containerRef}>
-      {/* Scrollable visualization area with overlay controls */}
+      {/* Subtle collapse/expand toggle aligned with ellipsis axis; placed outside of scroll container to stay horizontally centered during horizontal scrolling */}
+      {(() => {
+        const step = state.currentExample?.generation_steps?.[state.currentStep - 1];
+        if (!step) return null;
+
+        // Compute scrollable content width and token threshold similar to SVG render
+        const tokens = step.tokens || [];
+        const widthForCalc = containerWidth || CONSTS.DEFAULT_CONTAINER_WIDTH;
+        const scrollAreaWidth = widthForCalc; // Full width now since labels are floating
+
+        const maxVisibleTokens = Math.floor(scrollAreaWidth / CONSTS.TOKEN_SPACING_ESTIMATE) - 1;
+        // Show button whenever there are enough tokens that collapsing would be beneficial
+        const shouldShow = tokens.length > maxVisibleTokens;
+        if (!shouldShow) return null;
+
+        return (
+          <button
+            className={`collapse-toggle ${isExpanded ? 'state-expanded' : 'state-collapsed'}`}
+            onClick={() => setIsExpanded((v) => !v)}
+            aria-label={isExpanded ? 'Collapse tokens' : 'Expand tokens'}
+            title={isExpanded ? 'Collapse tokens' : 'Expand tokens'}
+          >
+            <Icon
+              path={isExpanded ? mdiArrowCollapseHorizontal : mdiArrowExpandHorizontal}
+              size={0.8}
+            />
+          </button>
+        );
+      })()}
+
+      {/* Scrollable visualization area */}
       <div className="viz-scroll" ref={scrollRef}>
-        {/* Subtle collapse/expand toggle aligned with ellipsis axis */}
-        {(() => {
-          const step = state.currentExample?.generation_steps?.[state.currentStep - 1];
-          if (!step) return null;
-
-          // Compute scrollable content width and token threshold similar to SVG render
-          const tokens = step.tokens || [];
-          const gap = TOKEN.GAP;
-          const widthForCalc = containerWidth || CONSTS.DEFAULT_CONTAINER_WIDTH;
-          const scrollAreaWidth = widthForCalc; // Full width now since labels are floating
-
-          const maxVisibleTokens = Math.floor(scrollAreaWidth / CONSTS.TOKEN_SPACING_ESTIMATE) - 1;
-          // Show button whenever there are enough tokens that collapsing would be beneficial
-          const shouldShow = tokens.length > maxVisibleTokens;
-          if (!shouldShow) return null;
-
-          // Compute would-be ellipsis center X for collapsed layout (in SVG coords)
-          const edgeCount = Math.max(1, Math.floor(maxVisibleTokens / 2));
-          const leftTokens = tokens.slice(0, edgeCount);
-          const rightTokens = tokens.slice(-edgeCount);
-          const visibleCollapsed = [...leftTokens, '...', ...rightTokens];
-          const widthsCollapsed = visibleCollapsed.map((tok) =>
-            tok === '...'
-              ? TOKEN.ELLIPSIS_WIDTH
-              : Math.max(
-                  TOKEN.MIN_BOX_WIDTH,
-                  processTokenForVisualization(tok).length * TOKEN.CHAR_WIDTH + TOKEN.HORIZ_PADDING
-                )
-          );
-          const contentWidthCollapsed =
-            widthsCollapsed.reduce((a, b) => a + b, 0) + gap * (visibleCollapsed.length - 1);
-          const minMargin = CONSTS.MARGIN;
-          const leftBias = CONSTS.LEFT_BIAS;
-          const startX = Math.max(
-            minMargin,
-            (scrollAreaWidth - contentWidthCollapsed) / 2 - leftBias
-          );
-          let cursor = startX;
-          const positionsCollapsed = widthsCollapsed.map((w) => {
-            const c = cursor + w / 2;
-            cursor += w + gap;
-            return c;
-          });
-          const ellipsisIndex = edgeCount; // where '...' sits
-          const ellipsisCenterX = positionsCollapsed[ellipsisIndex] ?? scrollAreaWidth / 2;
-
-          // Position the button between token IDs and embeddings, adjust for horizontal scroll
-          const buttonHalf = CONSTS.COLLAPSE_BUTTON_SIZE / 2;
-          const left = Math.round(ellipsisCenterX - scrollLeft - buttonHalf);
-          const clampedLeft = Math.max(
-            CONSTS.COLLAPSE_BUTTON_EDGE_MARGIN,
-            Math.min(left, scrollAreaWidth - buttonHalf * 2 - CONSTS.COLLAPSE_BUTTON_EDGE_MARGIN)
-          );
-
-          return (
-            <button
-              className={`collapse-toggle ${isExpanded ? 'state-expanded' : 'state-collapsed'}`}
-              style={{ left: `${clampedLeft}px`, top: `${CONSTS.COLLAPSE_BUTTON_TOP}px` }}
-              onClick={() => setIsExpanded((v) => !v)}
-              aria-label={isExpanded ? 'Collapse tokens' : 'Expand tokens'}
-              title={isExpanded ? 'Collapse tokens' : 'Expand tokens'}
-            >
-              <Icon
-                path={isExpanded ? mdiArrowCollapseHorizontal : mdiArrowExpandHorizontal}
-                size={0.8}
-              />
-            </button>
-          );
-        })()}
         <svg
           ref={svgRef}
           className="visualization-canvas"

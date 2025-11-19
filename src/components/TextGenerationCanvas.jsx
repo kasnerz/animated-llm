@@ -52,7 +52,7 @@ export default function TextGenerationCanvas() {
   const [containerWidth, setContainerWidth] = useState(800);
   const [isExpanded, setIsExpanded] = useState(false);
   const [embeddingExpanded, setEmbeddingExpanded] = useState({});
-  const [scrollLeft, setScrollLeft] = useState(0);
+  // Scroll tracking no longer needed for toggle positioning
   const [labelsVisible, setLabelsVisible] = useState(true);
   const tokensLayoutRef = useRef({
     positions: [],
@@ -109,7 +109,6 @@ export default function TextGenerationCanvas() {
     const deferReset = () => {
       setIsExpanded(false);
       setEmbeddingExpanded({});
-      setScrollLeft(0);
       tokensLayoutRef.current = {
         positions: [],
         widths: [],
@@ -161,7 +160,6 @@ export default function TextGenerationCanvas() {
     // Reset local UI state (deferred to avoid setState-in-effect lint and cascading renders)
     const deferReset = () => {
       setEmbeddingExpanded({});
-      setScrollLeft(0);
       tokensLayoutRef.current = {
         positions: [],
         widths: [],
@@ -182,14 +180,7 @@ export default function TextGenerationCanvas() {
     else setTimeout(deferReset, 0);
   }, [state.currentStep]);
 
-  // Track horizontal scroll to align the collapse toggle with the ellipsis axis
-  useEffect(() => {
-    const el = scrollRef.current;
-    if (!el) return;
-    const onScroll = () => setScrollLeft(el.scrollLeft || 0);
-    el.addEventListener('scroll', onScroll, { passive: true });
-    return () => el.removeEventListener('scroll', onScroll);
-  }, []);
+  // Removed scroll tracking for button; it is fixed to viewport center via CSS
 
   // Keyboard shortcut: 'e' toggles collapse/expand of the middle tokens section
   // Matches interruptive behavior: pause animation if playing, then toggle
@@ -239,14 +230,17 @@ export default function TextGenerationCanvas() {
     const visualizationWidth = width; // Full width available for visualization
 
     // Determine if we need to collapse tokens
-    const maxVisibleTokens = Math.floor(visualizationWidth / CONSTS.TOKEN_SPACING_ESTIMATE) - 1;
+    // Use tighter spacing estimate on mobile for more aggressive collapse
+    const isMobile = width <= 1000;
+    const spacingEstimate = isMobile ? 120 : CONSTS.TOKEN_SPACING_ESTIMATE;
+    const maxVisibleTokens = Math.floor(visualizationWidth / spacingEstimate) - 1;
     const shouldCollapse = step.tokens.length > maxVisibleTokens && !isExpanded;
 
     // Layout configuration with proper spacing
     const layout = {
       tokenY: CONSTS.TOKEN_Y,
       embeddingY: CONSTS.EMBEDDING_Y,
-      margin: CONSTS.MARGIN,
+      margin: isMobile ? CONSTS.MARGIN_MOBILE : CONSTS.MARGIN,
       leftBias: CONSTS.LEFT_BIAS,
       tokenSpacing: CONSTS.TOKEN_SPACING,
       blockPadding: CONSTS.BLOCK_PADDING,
@@ -435,7 +429,7 @@ export default function TextGenerationCanvas() {
           rightmostEdge = Math.max(rightmostEdge, centerX + w / 2);
         }
       });
-      const extraPadding = 500;
+      const extraPadding = 200;
       const calculatedWidth = rightmostEdge + extraPadding;
       const svgWidth = Math.max(containerWidth, calculatedWidth);
       svg.style('width', `${svgWidth}px`);
@@ -477,89 +471,49 @@ export default function TextGenerationCanvas() {
 
   return (
     <section className={`visualization-section ${isExpanded ? 'expanded' : ''}`} ref={containerRef}>
+      {/* Collapse/expand toggle fixed to viewport center; render outside scroll area */}
+      {(() => {
+        const step = state.currentExample?.generation_steps?.[state.currentStep - 1];
+        if (!step) return null;
+
+        // Compute scrollable content width and token threshold similar to SVG render
+        const tokens = step.tokens || [];
+        const widthForCalc = containerWidth || CONSTS.DEFAULT_CONTAINER_WIDTH;
+        const scrollAreaWidth = widthForCalc; // Full width now since labels are floating
+
+        // Use tighter spacing estimate on mobile for more aggressive collapse
+        const isMobile = widthForCalc <= 1000;
+        const spacingEstimate = isMobile ? 120 : CONSTS.TOKEN_SPACING_ESTIMATE;
+        const maxVisibleTokens = Math.floor(scrollAreaWidth / spacingEstimate) - 1;
+        // Show button whenever there are enough tokens that collapsing would be beneficial
+        const shouldShow = tokens.length > maxVisibleTokens;
+        if (!shouldShow) return null;
+        return (
+          <button
+            className={`collapse-toggle ${isExpanded ? 'state-expanded' : 'state-collapsed'}`}
+            onClick={() => setIsExpanded((v) => !v)}
+            aria-label={isExpanded ? 'Collapse tokens' : 'Expand tokens'}
+            title={isExpanded ? 'Collapse tokens' : 'Expand tokens'}
+          >
+            <Icon
+              path={isExpanded ? mdiArrowCollapseHorizontal : mdiArrowExpandHorizontal}
+              size={0.8}
+            />
+          </button>
+        );
+      })()}
+
       {/* Scrollable visualization area with overlay controls */}
       <div className="viz-scroll" ref={scrollRef}>
-        {/* Subtle collapse/expand toggle aligned with ellipsis axis */}
-        {(() => {
-          const step = state.currentExample?.generation_steps?.[state.currentStep - 1];
-          if (!step) return null;
-
-          // Compute scrollable content width and token threshold similar to SVG render
-          const tokens = step.tokens || [];
-          const gap = TOKEN.GAP;
-          const widthForCalc = containerWidth || CONSTS.DEFAULT_CONTAINER_WIDTH;
-          const scrollAreaWidth = widthForCalc; // Full width now since labels are floating
-
-          const maxVisibleTokens = Math.floor(scrollAreaWidth / CONSTS.TOKEN_SPACING_ESTIMATE) - 1;
-          // Show button whenever there are enough tokens that collapsing would be beneficial
-          const shouldShow = tokens.length > maxVisibleTokens;
-          if (!shouldShow) return null;
-
-          // Compute would-be ellipsis center X for collapsed layout (in SVG coords)
-          const edgeCount = Math.max(1, Math.floor(maxVisibleTokens / 2));
-          const leftTokens = tokens.slice(0, edgeCount);
-          const rightTokens = tokens.slice(-edgeCount);
-          const visibleCollapsed = [...leftTokens, '...', ...rightTokens];
-          // Match width calculation used by renderTokensLayer (special tokens are smaller and tighter)
-          const baseTextSize = parseFloat(TOKEN.TEXT_SIZE) || 18;
-          const widthsCollapsed = visibleCollapsed.map((tok) => {
-            if (tok === '...') return TOKEN.ELLIPSIS_WIDTH;
-            const special = isSpecialToken(tok);
-            const fontScale = special ? 0.6 : 1.0;
-            const padding = special ? Math.max(2, TOKEN.HORIZ_PADDING * 0.3) : TOKEN.HORIZ_PADDING;
-            const minWidth = special
-              ? Math.max(20, TOKEN.MIN_BOX_WIDTH * 0.5)
-              : TOKEN.MIN_BOX_WIDTH;
-            const contentChars = processTokenForVisualization(tok).length;
-            return Math.max(minWidth, contentChars * TOKEN.CHAR_WIDTH * fontScale + padding);
-          });
-          const contentWidthCollapsed =
-            widthsCollapsed.reduce((a, b) => a + b, 0) + gap * (visibleCollapsed.length - 1);
-          const minMargin = CONSTS.MARGIN;
-          const leftBias = CONSTS.LEFT_BIAS;
-          const startX = Math.max(
-            minMargin,
-            (scrollAreaWidth - contentWidthCollapsed) / 2 - leftBias
-          );
-          let cursor = startX;
-          const positionsCollapsed = widthsCollapsed.map((w) => {
-            const c = cursor + w / 2;
-            cursor += w + gap;
-            return c;
-          });
-          const ellipsisIndex = edgeCount; // where '...' sits
-          const ellipsisCenterX = positionsCollapsed[ellipsisIndex] ?? scrollAreaWidth / 2;
-
-          // Position the button between token IDs and embeddings, adjust for horizontal scroll
-          const buttonHalf = CONSTS.COLLAPSE_BUTTON_SIZE / 2;
-          const left = Math.round(ellipsisCenterX - scrollLeft - buttonHalf);
-          const clampedLeft = Math.max(
-            CONSTS.COLLAPSE_BUTTON_EDGE_MARGIN,
-            Math.min(left, scrollAreaWidth - buttonHalf * 2 - CONSTS.COLLAPSE_BUTTON_EDGE_MARGIN)
-          );
-
-          return (
-            <button
-              className={`collapse-toggle ${isExpanded ? 'state-expanded' : 'state-collapsed'}`}
-              style={{ left: `${clampedLeft}px`, top: `${CONSTS.COLLAPSE_BUTTON_TOP}px` }}
-              onClick={() => setIsExpanded((v) => !v)}
-              aria-label={isExpanded ? 'Collapse tokens' : 'Expand tokens'}
-              title={isExpanded ? 'Collapse tokens' : 'Expand tokens'}
-            >
-              <Icon
-                path={isExpanded ? mdiArrowCollapseHorizontal : mdiArrowExpandHorizontal}
-                size={0.8}
-              />
-            </button>
-          );
-        })()}
-        <svg
-          ref={svgRef}
-          className="visualization-canvas"
-          style={{
-            transition: 'width 0.3s ease',
-          }}
-        />
+        <div className="viz-scale">
+          <svg
+            ref={svgRef}
+            className="visualization-canvas"
+            style={{
+              transition: 'width 0.3s ease',
+            }}
+          />
+        </div>
       </div>
 
       {/* Stage labels panel - only after animation starts */}

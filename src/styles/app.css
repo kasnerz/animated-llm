@@ -1026,36 +1026,7 @@ body {
   display: block;
 }
 
-/* Subtle collapse/expand toggle aligned with ellipsis */
-.collapse-toggle {
-  position: absolute;
-  width: 32px;
-  height: 32px;
-  padding: 0;
-  background: #f6f5f5;
-  border: none;
-  /* no outline */
-  border-radius: 50%;
-  color: var(--text-tertiary);
-  cursor: pointer;
-  transition:
-    background 0.15s ease,
-    color 0.15s ease,
-    transform 0.1s ease;
-  z-index: 5;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.collapse-toggle:hover {
-  background: #d0d0d0;
-  color: var(--text-secondary);
-}
-
-.collapse-toggle:active {
-  transform: scale(0.96);
-}
+/* collapse-toggle styles are defined in visualization.css to avoid conflicts */
 
 /* Custom scrollbar for viz-scroll */
 .viz-scroll::-webkit-scrollbar {
@@ -1093,6 +1064,38 @@ body {
 /* Responsive design */
 
 @media (max-width: 1000px) {
+  /* Global zoom for visualization canvas on mobile */
+  :root {
+    --viz-zoom: 0.9;
+    --viz-token-spacing-mobile: 120;
+    /* Tighter spacing estimate for mobile collapse calc */
+  }
+
+  /* Scale the entire visualization content (SVG + overlay controls) together
+     so alignment is preserved while keeping scroll behavior intact. */
+  .viz-scale {
+    transform: scale(var(--viz-zoom));
+    transform-origin: top left;
+    /* Compensate layout width so the scaled content visually fills the scroll area */
+    width: calc(100% / var(--viz-zoom));
+  }
+
+  /* Edge-to-edge layout on mobile */
+  .app-main {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .viz-scroll {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .visualization-section {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
   /* Layout adjustments */
   .floating-top-content {
     gap: 0.5rem;
@@ -1100,11 +1103,6 @@ body {
 
   .floating-top-section,
   .floating-bottom-section {
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-
-  .app-main {
     padding-left: 1rem;
     padding-right: 1rem;
   }
@@ -1271,5 +1269,12 @@ body {
   /* No need to reserve space on small screens */
   .visualization-section.expanded .viz-scroll {
     padding-right: 0;
+  }
+}
+
+/* Slightly stronger zoom-out on very narrow screens */
+@media (max-width: 640px) {
+  :root {
+    --viz-zoom: 0.85;
   }
 }

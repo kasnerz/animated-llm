@@ -29,10 +29,15 @@ export function renderOutputLayer(
   isDarkMode
 ) {
   const allCandidates = step.output_distribution?.candidates || [];
-  const maxTokens = CONSTS.MAX_OUTPUT_TOKENS;
+  // Use mobile limit (3 tokens) on small screens, desktop limit (7) otherwise
+  const isMobile = width <= 1000;
+  const maxTokens = isMobile ? CONSTS.MAX_OUTPUT_TOKENS_MOBILE : CONSTS.MAX_OUTPUT_TOKENS;
+
+  // Check if ellipsis already exists in allCandidates (e.g., from training with target token)
+  const hasEllipsis = allCandidates.some((c) => c.isEllipsis || c.token === '...');
 
   const candidates =
-    allCandidates.length > maxTokens
+    allCandidates.length > maxTokens && !hasEllipsis
       ? [...allCandidates.slice(0, maxTokens), { token: '...', prob: 0 }]
       : allCandidates;
 
@@ -108,7 +113,98 @@ export function renderOutputLayer(
 
   // Render distribution labels and selection
   if (subStep >= 8 && hv2) {
-    renderDistributionLabels(group, candidates, hv2, selectedIdx, maxTokens);
+    renderDistributionLabels(group, candidates, hv2, selectedIdx);
+
+    // Training view: render target vector and replace percentage labels with diffs
+    if (step.training_target_token) {
+      try {
+        const arrowStartY = hv2.bottomY + OUTPUT.ARROW_START_OFFSET;
+        const arrowEndY = arrowStartY + OUTPUT.ARROW_HEIGHT;
+        const tokenY = arrowEndY + OUTPUT.LABEL_GAP + 10;
+        const percentageY = tokenY + OUTPUT.LABEL_SPACING;
+
+        // Determine target index by id or token string
+        const targetId = step.training_target_token.token_id;
+        const targetTok = step.training_target_token.token;
+        const targetIdx = (() => {
+          let idx = -1;
+          if (targetId != null) {
+            idx = candidates.findIndex((c) => c && c.token_id === targetId);
+          }
+          if (idx === -1 && targetTok != null) {
+            idx = candidates.findIndex((c) => c && c.token === targetTok);
+          }
+          return idx;
+        })();
+
+        // Build target vector aligned with candidates (use logprob sizing for alignment)
+        const targetValues = candidates.map((c, i) => (i === targetIdx ? 1 : 0));
+
+        // Move target vector a bit lower to fit upward arrows to diffs
+        const targetTopY = percentageY + 40;
+        const tv = drawHorizontalVector(group, horizCenterX, targetTopY, targetValues, {
+          className: 'target-vector',
+          tokenColor: '#dc2626ff', // red
+          format: (v) => (typeof v === 'number' ? v.toFixed(3) : ''),
+          isLogprob: true,
+          ellipsisLast: false,
+          isDarkMode,
+        });
+
+        // Replace percentage labels with differences (target - predicted)
+        const items = group.selectAll('.distribution-item');
+        items.each(function (_, i) {
+          const c = candidates[i];
+          if (!hv2.centers || typeof hv2.centers[i] !== 'number') return;
+          if (c && (c.isEllipsis || c.token === '...')) return; // skip ellipsis cell
+          const pred = typeof c?.prob === 'number' ? c.prob : 0;
+          const tval = i === targetIdx ? 1 : 0;
+          const deltaPct = (tval - pred) * 100;
+          const sign = deltaPct > 0 ? '+' : '';
+          const color = deltaPct >= 0 ? '#16a34aff' : '#dc2626ff';
+
+          const sel = d3.select(this).select('text.distribution-percentage-label');
+          sel
+            .style('font-weight', '700')
+            .style('fill', color)
+            .text(`${sign}${deltaPct.toFixed(1)}%`);
+        });
+
+        // Draw upward arrows from target vector to the difference labels
+        if (tv && hv2 && hv2.centers) {
+          const arrowEndYUp = percentageY - 4; // just below the diff text baseline
+          const arrowStartYUp = tv.topY - OUTPUT.ARROW_START_OFFSET;
+          candidates.forEach((c, i) => {
+            if (c && (c.isEllipsis || c.token === '...')) return; // skip ellipsis cell
+            const cx = hv2.centers[i];
+            if (typeof cx !== 'number') return;
+
+            group
+              .append('line')
+              .attr('x1', cx)
+              .attr('y1', arrowStartYUp)
+              .attr('x2', cx)
+              .attr('y2', arrowEndYUp)
+              .attr('class', 'target-diff-arrow')
+              .style('stroke', OUTPUT_ARROWS.DISTRIBUTION_STROKE)
+              .style('stroke-width', OUTPUT_ARROWS.DISTRIBUTION_WIDTH)
+              .style('opacity', OUTPUT_ARROWS.DISTRIBUTION_OPACITY);
+
+            group
+              .append('polygon')
+              .attr(
+                'points',
+                `${cx},${arrowEndYUp} ${cx - OUTPUT_ARROWS.DISTRIBUTION_HEAD_SIZE},${arrowEndYUp + 6} ${cx + OUTPUT_ARROWS.DISTRIBUTION_HEAD_SIZE},${arrowEndYUp + 6}`
+              )
+              .attr('class', 'target-diff-arrow-head')
+              .style('fill', OUTPUT_ARROWS.DISTRIBUTION_STROKE)
+              .style('opacity', OUTPUT_ARROWS.DISTRIBUTION_OPACITY);
+          });
+        }
+      } catch {
+        // Non-fatal; skip training-specific rendering if geometry is missing
+      }
+    }
   }
 
   // Render append arrow preview
@@ -216,14 +312,21 @@ function renderExtractedEmbedding(
 }
 
 // Helper: Render distribution labels
-function renderDistributionLabels(group, candidates, hv2, selectedIdx, maxTokens) {
+function renderDistributionLabels(group, candidates, hv2, selectedIdx) {
   const arrowStartY = hv2.bottomY + OUTPUT.ARROW_START_OFFSET;
   const arrowEndY = arrowStartY + OUTPUT.ARROW_HEIGHT;
   const labelGap = OUTPUT.LABEL_GAP;
   const labelSpacing = OUTPUT.LABEL_SPACING;
 
-  // Render arrows and labels for each candidate (except last ellipsis)
-  candidates.slice(0, -1).forEach((candidate, i) => {
+  // Find ellipsis index if it exists
+  const ellipsisIdx = candidates.findIndex((c) => c.isEllipsis || c.token === '...');
+  const hasEllipsis = ellipsisIdx >= 0;
+
+  // Render arrows and labels for each candidate (except ellipsis)
+  candidates.forEach((candidate, i) => {
+    // Skip ellipsis marker - it will be rendered separately
+    if (i === ellipsisIdx) return;
+
     const cx = hv2.centers[i];
     const token = candidate?.token ?? '';
     const prob = candidate?.prob ?? 0;
@@ -296,8 +399,7 @@ function renderDistributionLabels(group, candidates, hv2, selectedIdx, maxTokens
       const right = selCx + cellHalf + OUTPUT.HIGHLIGHT_PADDING;
       const top = hv2.topY - OUTPUT.ARROW_START_OFFSET;
 
-      const isEllipsisSelected =
-        selectedIdx === candidates.length - 1 && candidates.length > maxTokens;
+      const isEllipsisSelected = selectedIdx === ellipsisIdx;
       const bottom = isEllipsisSelected
         ? hv2.bottomY + OUTPUT.ARROW_START_OFFSET
         : arrowEndY + labelGap + 10 + labelSpacing + OUTPUT.ARROW_START_OFFSET;
@@ -321,16 +423,16 @@ function renderDistributionLabels(group, candidates, hv2, selectedIdx, maxTokens
     }
   }
 
-  // Ellipsis label
-  if (hv2.centers.length > 0) {
-    const lastCx = hv2.centers[hv2.centers.length - 1];
+  // Ellipsis label (render if found)
+  if (hasEllipsis && hv2.centers.length > ellipsisIdx) {
+    const ellipsisCx = hv2.centers[ellipsisIdx];
     const tokenY = arrowEndY + labelGap + 10;
     const percentageY = tokenY + labelSpacing;
     const ellipsisY = (tokenY + percentageY) / 2;
 
     group
       .append('text')
-      .attr('x', lastCx)
+      .attr('x', ellipsisCx)
       .attr('y', ellipsisY)
       .attr('text-anchor', 'middle')
       .attr('class', 'distribution-ellipsis-label')
@@ -342,16 +444,7 @@ function renderDistributionLabels(group, candidates, hv2, selectedIdx, maxTokens
 }
 
 // Helper: Render append arrow
-function renderAppendArrow(
-  mainRoot,
-  step,
-  layout,
-  svgRoot,
-  hv2,
-  selectedIdx,
-  candidates,
-  maxTokens
-) {
+function renderAppendArrow(mainRoot, step, layout, svgRoot, hv2, selectedIdx, candidates) {
   try {
     const sx = hv2.centers?.[selectedIdx];
     if (typeof sx !== 'number') return;
@@ -360,8 +453,11 @@ function renderAppendArrow(
     const arrowEndY = arrowStartY + OUTPUT.ARROW_HEIGHT;
     const labelGap = OUTPUT.LABEL_GAP;
     const labelSpacing = OUTPUT.LABEL_SPACING;
-    const isEllipsisSelected =
-      selectedIdx === candidates.length - 1 && candidates.length > maxTokens;
+
+    // Check if selected item is ellipsis
+    const ellipsisIdx = candidates.findIndex((c) => c.isEllipsis || c.token === '...');
+    const isEllipsisSelected = selectedIdx === ellipsisIdx;
+
     const rectBottom = isEllipsisSelected
       ? hv2.bottomY + OUTPUT.ARROW_START_OFFSET
       : arrowEndY + labelGap + 10 + labelSpacing + OUTPUT.ARROW_START_OFFSET;

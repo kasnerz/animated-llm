@@ -22,6 +22,7 @@ export const LAYOUT = {
   TOKEN_SPACING_ESTIMATE: 170, // Used for max visible tokens calculation
   TOKEN_WIDTH_REDUCTION: 10, // Amount to reduce from tokenSpacing for token width
   MARGIN: 20,
+  MARGIN_MOBILE: -50, // Tighter margins on mobile for edge-to-edge layout
   GAP_WIDTH: 24,
   LEFT_BIAS: 0, // No horizontal bias; keep visualization centered under input
   // Token positioning
@@ -45,6 +46,7 @@ export const LAYOUT = {
   CORNER_RADIUS: 10,
   // Output distribution
   MAX_OUTPUT_TOKENS: 7, // Show at most this many tokens (+ ellipsis if more exist)
+  MAX_OUTPUT_TOKENS_MOBILE: 3, // Limit to 3 tokens on mobile for tighter layout
   OUTPUT_MARGIN: 20, // Margin for output distribution
   OUTPUT_BAR_SPACING: 4, // Spacing between distribution bars
   OUTPUT_MAX_BAR_WIDTH: 80, // Maximum width of distribution bars
@@ -61,7 +63,6 @@ export const LAYOUT = {
   MAX_LABELS_WIDTH_RATIO: 0.5, // Max labels width as ratio of total width
   // Collapse button
   COLLAPSE_BUTTON_SIZE: 32, // Full size of collapse button (buttonHalf = 16)
-  COLLAPSE_BUTTON_TOP: 80, // Vertical position of collapse button
   COLLAPSE_BUTTON_EDGE_MARGIN: 4, // Minimum margin from edges
 };
 

@@ -36,7 +36,8 @@ export function renderTokensLayer(
 
   // Collapse logic: show only first few and last few tokens
   if (shouldCollapse) {
-    const edgeCount = Math.floor(maxVisibleTokens / 2);
+    const edgeCount = Math.max(1, Math.floor(maxVisibleTokens / 2));
+
     const leftTokens = tokens.slice(0, edgeCount);
     const rightTokens = tokens.slice(-edgeCount);
     const leftIndices = tokenIndices.slice(0, edgeCount);

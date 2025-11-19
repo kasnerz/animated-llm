@@ -86,12 +86,79 @@ function filterStepTokens(step) {
  * @returns {Object} Filtered example data
  */
 function filterSpecialTokens(data) {
-  if (!data || !data.generation_steps) return data;
+  if (!data) return data;
 
-  return {
-    ...data,
-    generation_steps: data.generation_steps.map(filterStepTokens),
-  };
+  const result = { ...data };
+
+  // Inference data: filter generation steps
+  if (Array.isArray(result.generation_steps)) {
+    result.generation_steps = result.generation_steps.map(filterStepTokens);
+  }
+
+  // Training data: filter top-level tokens and each training step
+  if (Array.isArray(result.tokens)) {
+    const topFilteredIdx = [];
+    const topTokens = [];
+    const topTokenIds = [];
+    result.tokens.forEach((tok, i) => {
+      if (!isSpecialToken(tok)) {
+        topFilteredIdx.push(i);
+        topTokens.push(tok);
+        if (Array.isArray(result.token_ids) && result.token_ids[i] !== undefined) {
+          topTokenIds.push(result.token_ids[i]);
+        }
+      }
+    });
+    result.tokens = topTokens;
+    if (Array.isArray(result.token_ids)) {
+      result.token_ids = topTokenIds;
+    }
+    if (typeof result.num_tokens === 'number') {
+      result.num_tokens = topTokens.length;
+    }
+  }
+
+  if (Array.isArray(result.training_steps)) {
+    // For each training step:
+    // - drop steps where target token is special
+    // - remove special tokens from input tokens
+    // - optionally remove special tokens from predictions (if any)
+    const filteredTrainingSteps = [];
+    for (const step of result.training_steps) {
+      const targetTok = step?.target_token;
+      if (isSpecialToken(targetTok)) {
+        continue; // skip this step entirely
+      }
+      const newStep = { ...step };
+      // Filter input tokens
+      if (Array.isArray(step.input_tokens)) {
+        const keepIdx = [];
+        const toks = [];
+        const ids = [];
+        step.input_tokens.forEach((tok, i) => {
+          if (!isSpecialToken(tok)) {
+            keepIdx.push(i);
+            toks.push(tok);
+            if (Array.isArray(step.input_token_ids) && step.input_token_ids[i] !== undefined) {
+              ids.push(step.input_token_ids[i]);
+            }
+          }
+        });
+        newStep.input_tokens = toks;
+        if (Array.isArray(step.input_token_ids)) {
+          newStep.input_token_ids = ids;
+        }
+      }
+      // Filter predictions (rarely contain specials, but safe to filter)
+      if (Array.isArray(step.predictions)) {
+        newStep.predictions = step.predictions.filter((p) => !isSpecialToken(p?.token));
+      }
+      filteredTrainingSteps.push(newStep);
+    }
+    result.training_steps = filteredTrainingSteps;
+  }
+
+  return result;
 }
 
 /**
@@ -142,7 +209,7 @@ export async function listExamples(language = null, type = 'inference') {
  */
 export async function getExample(exampleId, type = 'inference', showSpecialTokens = false) {
   // Create a cache key that includes the showSpecialTokens flag
-  const cacheKey = `${exampleId}_${showSpecialTokens}`;
+  const cacheKey = `${type}_${exampleId}_${showSpecialTokens}`;
 
   // Return cached example if available
   if (cachedExamples.has(cacheKey)) {
@@ -171,8 +238,10 @@ export async function getExample(exampleId, type = 'inference', showSpecialToken
 
     const data = await response.json();
 
-    // Filter out special tokens before caching, unless showSpecialTokens is true
-    const processedData = showSpecialTokens ? data : filterSpecialTokens(data);
+    // Filter out special tokens before caching.
+    // In training view, we ALWAYS filter to hide special tokens.
+    const shouldFilter = type === 'training' ? true : !showSpecialTokens;
+    const processedData = shouldFilter ? filterSpecialTokens(data) : data;
 
     cachedExamples.set(cacheKey, processedData);
     return processedData;

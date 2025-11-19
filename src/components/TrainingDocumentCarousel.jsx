@@ -1,6 +1,6 @@
 import { useApp } from '../contexts/AppContext';
 import { useI18n } from '../i18n/I18nProvider';
-import { useEffect, useMemo, useRef } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { processTokenForText } from '../utils/tokenProcessing';
 import { MODEL_REGISTRY, getTemperatureEmoji } from '../config/modelConfig';
 import translations from '../i18n/translations';
@@ -17,6 +17,14 @@ import { mdiPlay, mdiPause, mdiChevronLeft, mdiChevronRight } from '@mdi/js';
 function TrainingDocumentCarousel() {
   const { state, actions } = useApp();
   const { language } = useI18n();
+  const containerRef = useRef(null);
+  const trackRef = useRef(null);
+  const leftWrapRef = useRef(null);
+  const centerWrapRef = useRef(null);
+  const rightWrapRef = useRef(null);
+
+  // internal sliding state to animate between documents smoothly
+  const [isSliding, setIsSliding] = useState(false);
 
   // Helper to get nested translations
   const getTrainingTranslation = (key) => {
@@ -68,16 +76,55 @@ function TrainingDocumentCarousel() {
   const canGoPrev = currentIndex > 0;
   const canGoNext = currentIndex < filteredExamples.length - 1;
 
+  const animateTo = (targetEl, onDone) => {
+    if (!containerRef.current || !trackRef.current || !targetEl) return onDone?.();
+    const containerRect = containerRef.current.getBoundingClientRect();
+    const targetRect = targetEl.getBoundingClientRect();
+    const containerCenter = containerRect.left + containerRect.width / 2;
+    const targetCenter = targetRect.left + targetRect.width / 2;
+    const dx = containerCenter - targetCenter; // translate track so target centers
+
+    setIsSliding(true);
+    const track = trackRef.current;
+    // Ensure transition is enabled
+    track.style.transition = '';
+    // Trigger animation
+    requestAnimationFrame(() => {
+      track.style.transform = `translateX(${dx}px)`;
+    });
+
+    const handleEnd = (evt) => {
+      if (evt.propertyName !== 'transform') return;
+      track.removeEventListener('transitionend', handleEnd);
+      // Snap back to neutral without animating
+      track.style.transition = 'none';
+      track.style.transform = 'translateX(0px)';
+      // Force reflow to apply immediate reset
+      track.offsetHeight; // reflow
+      setIsSliding(false);
+      // Re-enable default transition for next time
+      track.style.transition = '';
+      onDone?.();
+    };
+    track.addEventListener('transitionend', handleEnd);
+  };
+
   const handlePrev = () => {
-    if (canGoPrev) {
-      actions.loadExample(filteredExamples[currentIndex - 1].id);
-    }
+    if (!canGoPrev || isSliding) return;
+    const target = leftWrapRef.current;
+    const nextId = filteredExamples[currentIndex - 1]?.id;
+    animateTo(target, () => {
+      if (nextId) actions.loadExample(nextId);
+    });
   };
 
   const handleNext = () => {
-    if (canGoNext) {
-      actions.loadExample(filteredExamples[currentIndex + 1].id);
-    }
+    if (!canGoNext || isSliding) return;
+    const target = rightWrapRef.current;
+    const nextId = filteredExamples[currentIndex + 1]?.id;
+    animateTo(target, () => {
+      if (nextId) actions.loadExample(nextId);
+    });
   };
 
   // Get documents for carousel: left, center, right
@@ -222,34 +269,34 @@ function TrainingDocumentCarousel() {
     <section className="training-carousel-section">
       {/* Navigation arrows */}
       <button
-        className={`carousel-nav-arrow left ${!canGoPrev ? 'disabled' : ''}`}
+        className={`carousel-nav-arrow left ${!canGoPrev || isSliding ? 'disabled' : ''}`}
         onClick={handlePrev}
-        disabled={!canGoPrev}
+        disabled={!canGoPrev || isSliding}
         aria-label="Previous document"
       >
         <Icon path={mdiChevronLeft} size={1.5} />
       </button>
 
       {/* Carousel container */}
-      <div className="carousel-container">
+      <div className="carousel-container" ref={containerRef}>
         {/* Documents */}
-        <div className="carousel-track">
-          <div className="carousel-document-wrapper left">
+        <div className="carousel-track" ref={trackRef}>
+          <div className="carousel-document-wrapper left" ref={leftWrapRef}>
             {renderDocument(leftDoc, 'left', false)}
           </div>
-          <div className="carousel-document-wrapper center">
+          <div className="carousel-document-wrapper center" ref={centerWrapRef}>
             {renderDocument(centerDoc, 'center', true)}
           </div>
-          <div className="carousel-document-wrapper right">
+          <div className="carousel-document-wrapper right" ref={rightWrapRef}>
             {renderDocument(rightDoc, 'right', false)}
           </div>
         </div>
       </div>
 
       <button
-        className={`carousel-nav-arrow right ${!canGoNext ? 'disabled' : ''}`}
+        className={`carousel-nav-arrow right ${!canGoNext || isSliding ? 'disabled' : ''}`}
         onClick={handleNext}
-        disabled={!canGoNext}
+        disabled={!canGoNext || isSliding}
         aria-label="Next document"
       >
         <Icon path={mdiChevronRight} size={1.5} />

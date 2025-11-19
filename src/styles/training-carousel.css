@@ -60,6 +60,8 @@
   max-width: 1400px;
   width: 100%;
   position: relative;
+  overflow: hidden;
+  /* hide sliding overflow */
 }
 
 /* Carousel track - holds all documents */
@@ -70,6 +72,8 @@
   gap: 30px;
   width: 100%;
   position: relative;
+  transition: transform 150ms ease;
+  will-change: transform;
 }
 
 /* Document wrapper */

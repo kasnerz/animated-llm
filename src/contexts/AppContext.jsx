@@ -625,11 +625,10 @@ export function AppProvider({ children }) {
     async (exampleId) => {
       try {
         dispatch({ type: ActionTypes.LOAD_EXAMPLE_START });
-        const data = await examplesApi.getExample(
-          exampleId,
-          state.viewType,
-          state.showSpecialTokens
-        );
+        // Only allow special tokens toggle to affect inference (text generation) view.
+        // Training view should never display special tokens.
+        const allowSpecial = state.viewType === 'inference' ? state.showSpecialTokens : false;
+        const data = await examplesApi.getExample(exampleId, state.viewType, allowSpecial);
         dispatch({
           type: ActionTypes.LOAD_EXAMPLE_SUCCESS,
           payload: { exampleId, example: data },

@@ -254,10 +254,13 @@
   width: 100%;
 }
 
-/* Collapse/expand toggle button aligned to ellipsis axis */
+/* Collapse/expand toggle button fixed at the horizontal center of the viewport */
 .collapse-toggle {
-  position: absolute;
-  z-index: 20;
+  position: fixed;
+  left: 50%;
+  top: 300px;
+  transform: translateX(-50%);
+  z-index: 1000;
   width: 32px;
   height: 32px;
   border-radius: 9999px;

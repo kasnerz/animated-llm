@@ -38,7 +38,6 @@ export default function TrainingCanvas() {
   const [containerWidth, setContainerWidth] = useState(800);
   const [isExpanded, setIsExpanded] = useState(false);
   const [labelsVisible, setLabelsVisible] = useState(true);
-  const [scrollLeft, setScrollLeft] = useState(0);
   const tokensLayoutRef = useRef({ positions: [], widths: [], visibleIndices: [], gap: 24 });
   const gsapRef = useRef(null);
 
@@ -59,14 +58,7 @@ export default function TrainingCanvas() {
     return () => window.removeEventListener('resize', onResize);
   }, []);
 
-  // Track horizontal scroll to align collapse toggle
-  useEffect(() => {
-    const el = scrollRef.current;
-    if (!el) return;
-    const onScroll = () => setScrollLeft(el.scrollLeft || 0);
-    el.addEventListener('scroll', onScroll, { passive: true });
-    return () => el.removeEventListener('scroll', onScroll);
-  }, []);
+  // No scroll tracking needed for the collapse toggle; it's fixed via CSS
 
   // 'e' key toggles collapse/expand like in text generation
   useEffect(() => {
@@ -114,14 +106,38 @@ export default function TrainingCanvas() {
     if (!tStep) return;
 
     // Build a step-like structure expected by reusable layers
+    const predictions = tStep.predictions || [];
+    const targetTokenPrediction = tStep.target_token_prediction;
+
+    // Build candidates array: if target token is not in predictions, add ellipsis and target
+    let candidates = predictions.map((p) => ({ token: p.token, prob: p.prob }));
+
+    if (targetTokenPrediction) {
+      // Check if target token is already in the predictions
+      const targetInPredictions = predictions.some(
+        (p) => p.token_id === targetTokenPrediction.token_id
+      );
+
+      if (!targetInPredictions) {
+        // Add ellipsis marker and target token
+        candidates = [
+          ...predictions.map((p) => ({ token: p.token, prob: p.prob })),
+          { token: '...', prob: 0, isEllipsis: true },
+          { token: targetTokenPrediction.token, prob: targetTokenPrediction.prob },
+        ];
+      }
+    }
+
     const stepForRender = {
       step: effectiveIdx,
       tokens: tStep.input_tokens || [],
       token_ids: tStep.input_token_ids || [],
       // Distribution built from predictions; no selected_token to avoid highlight/append
       output_distribution: {
-        candidates: (tStep.predictions || []).map((p) => ({ token: p.token, prob: p.prob })),
+        candidates,
       },
+      // Provide training target token for rendering target vector/differences
+      training_target_token: targetTokenPrediction || null,
       model_info: state.currentExample.model_info,
     };
 
@@ -141,17 +157,20 @@ export default function TrainingCanvas() {
     const labelsGroup = labelsSvg.append('g').attr('class', 'stage-labels-group');
 
     const width = containerWidth || CONSTS.DEFAULT_CONTAINER_WIDTH;
+    const isMobile = width <= 1000;
     const layout = {
       tokenY: CONSTS.TOKEN_Y,
       embeddingY: CONSTS.EMBEDDING_Y,
-      margin: CONSTS.MARGIN,
+      margin: isMobile ? CONSTS.MARGIN_MOBILE : CONSTS.MARGIN,
       leftBias: CONSTS.LEFT_BIAS,
       tokenSpacing: CONSTS.TOKEN_SPACING,
       blockPadding: CONSTS.BLOCK_PADDING,
     };
 
     // Collapse when too many input tokens
-    const maxVisibleTokens = Math.floor(width / CONSTS.TOKEN_SPACING_ESTIMATE) - 1;
+    // Use tighter spacing estimate on mobile for more aggressive collapse
+    const spacingEstimate = isMobile ? 120 : CONSTS.TOKEN_SPACING_ESTIMATE;
+    const maxVisibleTokens = Math.floor(width / spacingEstimate) - 1;
     const shouldCollapse = stepForRender.tokens.length > maxVisibleTokens && !isExpanded;
 
     // 1) Tokens
@@ -268,6 +287,7 @@ export default function TrainingCanvas() {
     renderStageLabels(labelsGroup, { ...layout, stageY }, 0, animSubStep, t, showLabelsGradually, {
       currentLayer,
       numLayers,
+      isTraining: true,
     });
 
     // Dynamic SVG height
@@ -332,74 +352,43 @@ export default function TrainingCanvas() {
 
   return (
     <section className={`visualization-section ${isExpanded ? 'expanded' : ''}`} ref={containerRef}>
+      {/* Collapse/Expand toggle fixed to viewport center; render before scroll area */}
+      {(() => {
+        const trainSteps = state.currentExample?.training_steps || [];
+        const effectiveIdx = Math.max(1, state.currentStep);
+        const tStep = trainSteps[effectiveIdx];
+        if (!tStep) return null;
+        const tokens = tStep.input_tokens || [];
+        const widthForCalc = containerWidth || CONSTS.DEFAULT_CONTAINER_WIDTH;
+        // Use tighter spacing estimate on mobile for more aggressive collapse
+        const isMobile = widthForCalc <= 1000;
+        const spacingEstimate = isMobile ? 120 : CONSTS.TOKEN_SPACING_ESTIMATE;
+        const maxVisibleTokens = Math.floor(widthForCalc / spacingEstimate) - 1;
+        const shouldShow = tokens.length > maxVisibleTokens;
+        if (!shouldShow) return null;
+        return (
+          <button
+            className={`collapse-toggle ${isExpanded ? 'state-expanded' : 'state-collapsed'}`}
+            onClick={() => setIsExpanded((v) => !v)}
+            aria-label={isExpanded ? 'Collapse tokens' : 'Expand tokens'}
+            title={isExpanded ? 'Collapse tokens' : 'Expand tokens'}
+          >
+            <Icon
+              path={isExpanded ? mdiArrowCollapseHorizontal : mdiArrowExpandHorizontal}
+              size={0.8}
+            />
+          </button>
+        );
+      })()}
+
       <div className="viz-scroll" ref={scrollRef}>
-        {/* Collapse/Expand toggle aligned with ellipsis axis */}
-        {(() => {
-          const trainSteps = state.currentExample?.training_steps || [];
-          const effectiveIdx = Math.max(1, state.currentStep);
-          const tStep = trainSteps[effectiveIdx];
-          if (!tStep) return null;
-          const tokens = tStep.input_tokens || [];
-          const widthForCalc = containerWidth || CONSTS.DEFAULT_CONTAINER_WIDTH;
-          const maxVisibleTokens = Math.floor(widthForCalc / CONSTS.TOKEN_SPACING_ESTIMATE) - 1;
-          const shouldShow = tokens.length > maxVisibleTokens;
-          if (!shouldShow) return null;
-
-          // Compute ellipsis center for collapsed layout
-          const edgeCount = Math.max(1, Math.floor(maxVisibleTokens / 2));
-          const leftTokens = tokens.slice(0, edgeCount);
-          const rightTokens = tokens.slice(-edgeCount);
-          const visibleCollapsed = [...leftTokens, '...', ...rightTokens];
-          const widthsCollapsed = visibleCollapsed.map((tok) =>
-            tok === '...'
-              ? TOKEN.ELLIPSIS_WIDTH
-              : Math.max(
-                  TOKEN.MIN_BOX_WIDTH,
-                  processTokenForVisualization(tok).length * TOKEN.CHAR_WIDTH + TOKEN.HORIZ_PADDING
-                )
-          );
-          const contentWidthCollapsed =
-            widthsCollapsed.reduce((a, b) => a + b, 0) + TOKEN.GAP * (visibleCollapsed.length - 1);
-          const startX = Math.max(
-            CONSTS.MARGIN,
-            (widthForCalc - contentWidthCollapsed) / 2 - CONSTS.LEFT_BIAS
-          );
-          let cursor = startX;
-          const positionsCollapsed = widthsCollapsed.map((w) => {
-            const c = cursor + w / 2;
-            cursor += w + TOKEN.GAP;
-            return c;
-          });
-          const ellipsisIndex = edgeCount;
-          const ellipsisCenterX = positionsCollapsed[ellipsisIndex] ?? widthForCalc / 2;
-          const buttonHalf = CONSTS.COLLAPSE_BUTTON_SIZE / 2;
-          const left = Math.round(ellipsisCenterX - scrollLeft - buttonHalf);
-          const clampedLeft = Math.max(
-            CONSTS.COLLAPSE_BUTTON_EDGE_MARGIN,
-            Math.min(left, widthForCalc - buttonHalf * 2 - CONSTS.COLLAPSE_BUTTON_EDGE_MARGIN)
-          );
-
-          return (
-            <button
-              className={`collapse-toggle ${isExpanded ? 'state-expanded' : 'state-collapsed'}`}
-              style={{ left: `${clampedLeft}px`, top: `${CONSTS.COLLAPSE_BUTTON_TOP}px` }}
-              onClick={() => setIsExpanded((v) => !v)}
-              aria-label={isExpanded ? 'Collapse tokens' : 'Expand tokens'}
-              title={isExpanded ? 'Collapse tokens' : 'Expand tokens'}
-            >
-              <Icon
-                path={isExpanded ? mdiArrowCollapseHorizontal : mdiArrowExpandHorizontal}
-                size={0.8}
-              />
-            </button>
-          );
-        })()}
-
-        <svg
-          ref={svgRef}
-          className="visualization-canvas"
-          style={{ transition: 'width 0.3s ease' }}
-        />
+        <div className="viz-scale">
+          <svg
+            ref={svgRef}
+            className="visualization-canvas"
+            style={{ transition: 'width 0.3s ease' }}
+          />
+        </div>
       </div>
 
       {/* Stage labels panel with toggle */}

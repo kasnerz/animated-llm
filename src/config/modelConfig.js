@@ -18,31 +18,31 @@ export const MODEL_REGISTRY = [
     pattern: /aya-expanse-8b/i,
     logo: 'aya.png',
     size: '8b',
-    name: 'Aya',
+    name: 'Aya Expanse 8B',
   },
   {
     pattern: /Llama-3\.2-1B-Instruct/i,
     logo: 'meta.png',
     size: '1b',
-    name: 'Llama3.2',
+    name: 'Llama3.2 1B',
   },
   {
     pattern: /Llama-3\.3-70B-Instruct/i,
     logo: 'meta.png',
     size: '70b',
-    name: 'Llama3.3',
+    name: 'Llama3.3 70B',
   },
   {
     pattern: /gpt2/i,
     logo: 'openai.png',
     size: '0.1b',
-    name: 'GPT-2',
+    name: 'GPT-2-small',
   },
   {
     pattern: /gpt-oss-20b/i,
     logo: 'openai.png',
     size: '20b',
-    name: 'GPT-oss',
+    name: 'GPT-OSS 20B',
   },
   // Add more model patterns here
 ];

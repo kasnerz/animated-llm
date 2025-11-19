@@ -19,7 +19,7 @@ const translations = {
     language: 'Language',
     toggle_dark_light_mode: 'Dark mode',
     view_label: 'View',
-    show_special_tokens: 'Show special tokens',
+    show_special_tokens: 'Special tokens',
     // Home page
     home_subtitle: 'Interactive LLM Visualizations',
     // Category labels
@@ -64,6 +64,9 @@ const translations = {
     stage_output_probabilities_hint: 'Determining likelihood of the next token',
     stage_next_token: 'Next token',
     stage_next_token_hint: 'Selecting the next output token',
+    // Training-specific stage label override
+    stage_compute_error: 'Computing error of model predictions',
+    stage_compute_error_hint: 'Compare predictions with the target and compute errors',
     // Training view
     training: {
       selectDocument: 'Select document',
@@ -85,7 +88,7 @@ const translations = {
     language: 'Jazyk',
     toggle_dark_light_mode: 'Tmavý režim',
     view_label: 'Zobrazení',
-    show_special_tokens: 'Zobrazit speciální tokeny',
+    show_special_tokens: 'Speciální tokeny',
     // Home page
     home_subtitle: 'Interaktivní vizualizace velkých jazykových modelů',
     // Category labels
@@ -130,6 +133,9 @@ const translations = {
     stage_output_probabilities_hint: 'Model určí pravděpodobnosti dalšího tokenu',
     stage_next_token: 'Další token',
     stage_next_token_hint: 'Výběr dalšího výstupního tokenu',
+    // Training-specific stage label override
+    stage_compute_error: 'Výpočet chyby modelových predikcí',
+    stage_compute_error_hint: 'Porovnání predikcí s cílem a výpočet chyb',
     // Training view
     training: {
       selectDocument: 'Vybrat dokument',

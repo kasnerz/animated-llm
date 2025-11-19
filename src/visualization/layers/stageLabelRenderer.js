@@ -24,7 +24,7 @@ export function renderStageLabels(
   showGradual = true,
   options = {}
 ) {
-  const { currentLayer = 0, numLayers = 1 } = options;
+  const { currentLayer = 0, numLayers = 1, isTraining = false } = options;
   const labels = [
     { key: 'stage_tokenization', y: STAGE_LABEL.Y_TOKENIZATION, subStep: 0 },
     { key: 'stage_input_embeddings', y: STAGE_LABEL.Y_INPUT_EMBEDDINGS, subStep: 1 },
@@ -33,7 +33,12 @@ export function renderStageLabels(
     { key: 'stage_feedforward_layer', y: STAGE_LABEL.Y_FEEDFORWARD_LAYER, subStep: 4 },
     { key: 'stage_last_embedding', y: STAGE_LABEL.Y_LAST_EMBEDDING, subStep: 6 },
     { key: 'stage_output_probabilities', y: STAGE_LABEL.Y_OUTPUT_PROBABILITIES, subStep: 7 },
-    { key: 'stage_next_token', y: STAGE_LABEL.Y_NEXT_TOKEN, subStep: 9 },
+    // In training view, replace "Next token" by an error computation label
+    {
+      key: isTraining ? 'stage_compute_error' : 'stage_next_token',
+      y: STAGE_LABEL.Y_NEXT_TOKEN,
+      subStep: 9,
+    },
   ];
 
   const verticalLineX = anchorX + STAGE_LABEL.GAP_TO_LINE;

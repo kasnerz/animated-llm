@@ -98,6 +98,9 @@ export const OUTPUT_SELECTORS = {
   extractedHorizontal: '.extracted-horizontal',
   logprobArrow: '.logprob-arrow',
   logprobVector: '.logprob-vector',
+  // Training-specific additions
+  targetVector: '.target-vector',
+  targetDiffArrow: '.target-diff-arrow, .target-diff-arrow-head',
   distributionItem: '.distribution-item',
   distributionItemSelected: '.distribution-item.selected',
   distributionHighlightRect: '.distribution-highlight-rect',

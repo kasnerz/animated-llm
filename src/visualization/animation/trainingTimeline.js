@@ -78,6 +78,9 @@ export function setInitialStates(svgElement, subStep, isInitialStep) {
   });
   setIfAny(svgElement, SEL.distributionLabels, { opacity: prev >= 8 ? 1 : 0 });
   setIfAny(svgElement, SEL.distributionItem, { opacity: prev >= 8 ? 1 : 0 });
+  // Training-specific: target vector and upward arrows to diffs
+  setIfAny(svgElement, SEL.targetVector, { opacity: prev >= 8 ? 1 : 0 });
+  setIfAny(svgElement, SEL.targetDiffArrow, { opacity: prev >= 8 ? 1 : 0 });
   setIfAny(svgElement, SEL.distributionHighlightRect, { opacity: 0 });
   setIfAny(svgElement, SEL.appendPathArrow, { opacity: 0 });
   setIfAny(svgElement, SEL.previewTokenText, { opacity: 0 });
@@ -149,6 +152,9 @@ export function buildTimeline(svgElement, subStep, isInitialStep, animDuration, 
       toIfAny(SEL.distributionItem, { opacity: 1, duration: animDuration });
       toIfAny(SEL.distributionBar, { opacity: 1, scaleY: 1, duration: animDuration }, '<');
       toIfAny(SEL.distributionLabels, { opacity: 1, duration: animDuration }, '<');
+      // Training-specific elements fade-in
+      toIfAny(SEL.targetVector, { opacity: 1, duration: animDuration }, '<');
+      toIfAny(SEL.targetDiffArrow, { opacity: 1, duration: animDuration }, '<');
       break;
     default:
       break;
