@@ -96,6 +96,9 @@ body[data-theme='light'] {
   --bg-special-token: rgba(128, 128, 128, 0.08);
   --viz-special-token-bg: rgba(128, 128, 128, 0.1);
   --viz-special-token-text: #888888;
+
+  /* GitHub icon filter for light theme (dark icon) */
+  --github-icon-filter: none;
 }
 
 /* Dark theme */
@@ -123,4 +126,7 @@ body[data-theme='dark'] {
   --viz-hidden-state-fill: #333333;
   --viz-hidden-state-stroke: #444444;
   --viz-hidden-state-text: #666666;
+
+  /* GitHub icon filter for dark theme (invert to white) */
+  --github-icon-filter: invert(1);
 }

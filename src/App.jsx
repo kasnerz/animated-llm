@@ -358,6 +358,19 @@ function AppContent() {
                   </div>
                   <span className="menu-label">{t('language')}</span>
                 </div>
+                <a
+                  href="https://github.com/kasnerz/animated-llm"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="menu-item-with-label"
+                  title="GitHub"
+                  aria-label="GitHub"
+                >
+                  <div className="menu-icon-container">
+                    <img src="/src/assets/github-mark.png" alt="GitHub" className="github-icon" />
+                  </div>
+                  <span className="menu-label">GitHub</span>
+                </a>
               </div>
             </div>
           </div>
