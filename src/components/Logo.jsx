@@ -12,7 +12,7 @@ function Logo({ variant = 'header', className = '' }) {
 
   return (
     <div className={`${isHome ? 'home-logo' : 'app-logo-content'} ${className}`.trim()}>
-      <div className={isHome ? 'home-logo-square' : 'logo-square'}></div>
+      {/* <div className={isHome ? 'home-logo-square' : 'logo-square'}></div> */}
       {isHome ? (
         <h1 className="home-logo-text">AnimatedLLM</h1>
       ) : (

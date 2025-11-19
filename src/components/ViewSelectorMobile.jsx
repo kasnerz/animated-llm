@@ -7,71 +7,57 @@ import '../styles/view-selector-mobile.css';
 
 /**
  * ViewSelectorMobile component
- * Simplified view selector for mobile hamburger menu
+ * Simplified view selector for mobile hamburger menu - shows only Training and Text Generation
  */
 function ViewSelectorMobile() {
   const { currentView, setCurrentView, viewInfo } = useView();
   const { t } = useI18n();
   const navigate = useNavigate();
 
-  // Get all available views grouped by category
-  const viewsByCategory = {
-    [VIEW_CATEGORIES.TRAINING]: [VIEW_TYPES.TRAINING],
-    [VIEW_CATEGORIES.TEXT_GENERATION]: [VIEW_TYPES.TEXT_GENERATION, VIEW_TYPES.DECODING],
-  };
+  // Get main categories only (Training and Text Generation)
+  const mainCategories = [
+    {
+      category: VIEW_CATEGORIES.TRAINING,
+      viewType: VIEW_TYPES.TRAINING,
+      path: '/pretraining',
+    },
+    {
+      category: VIEW_CATEGORIES.TEXT_GENERATION,
+      viewType: VIEW_TYPES.TEXT_GENERATION,
+      path: '/text-generation',
+    },
+  ];
 
-  // View to path mapping
-  const viewToPath = {
-    [VIEW_TYPES.TRAINING]: '/pretraining',
-    [VIEW_TYPES.TEXT_GENERATION]: '/text-generation',
-    [VIEW_TYPES.DECODING]: '/decoding-algorithms',
-  };
-
-  const handleViewChange = (viewId) => {
+  const handleViewChange = (viewId, path) => {
     setCurrentView(viewId);
-    const path = viewToPath[viewId];
     if (path) {
       navigate(path);
     }
   };
 
+  const currentViewInfo = viewInfo[currentView];
+
   return (
     <div className="view-selector-mobile">
       <div className="view-selector-mobile-title">{t('view_label')}</div>
       <div className="view-selector-mobile-list">
-        {Object.entries(viewsByCategory).map(([categoryId, viewIds]) => {
-          const categoryInfo = CATEGORY_INFO[categoryId];
+        {mainCategories.map(({ category, viewType, path }) => {
+          const categoryInfo = CATEGORY_INFO[category];
+          const isActive = currentViewInfo.category === category;
 
           return (
-            <div key={categoryId} className="view-mobile-category">
-              <div className="view-mobile-category-header">
-                <Icon path={categoryInfo.icon} size={1} className="view-mobile-category-icon" />
-                <span className="view-mobile-category-label">
-                  {t(categoryInfo.labelKey) || categoryInfo.defaultLabel}
-                </span>
-              </div>
-              <div className="view-mobile-category-items">
-                {viewIds.map((viewId) => {
-                  const info = viewInfo[viewId];
-                  const isActive = viewId === currentView;
-
-                  return (
-                    <button
-                      key={viewId}
-                      onClick={() => handleViewChange(viewId)}
-                      className={`view-mobile-item ${isActive ? 'active' : ''}`}
-                      aria-current={isActive ? 'true' : 'false'}
-                    >
-                      <Icon path={info.icon} size={1.2} className="view-mobile-icon" />
-                      <span className="view-mobile-label">
-                        {t(info.labelKey) || info.defaultLabel}
-                      </span>
-                      {isActive && <span className="view-mobile-checkmark">✓</span>}
-                    </button>
-                  );
-                })}
-              </div>
-            </div>
+            <button
+              key={category}
+              onClick={() => handleViewChange(viewType, path)}
+              className={`view-mobile-item ${isActive ? 'active' : ''}`}
+              aria-current={isActive ? 'true' : 'false'}
+            >
+              <Icon path={categoryInfo.icon} size={1.2} className="view-mobile-icon" />
+              <span className="view-mobile-label">
+                {t(categoryInfo.labelKey) || categoryInfo.defaultLabel}
+              </span>
+              {isActive && <span className="view-mobile-checkmark">✓</span>}
+            </button>
           );
         })}
       </div>

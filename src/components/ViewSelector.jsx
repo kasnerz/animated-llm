@@ -8,7 +8,7 @@ import '../styles/view-selector.css';
 
 /**
  * ViewSelector component
- * Dropdown for selecting the current view/visualization mode
+ * Dropdown for selecting between Training and Text Generation categories
  */
 function ViewSelector() {
   const { currentView, setCurrentView, viewInfo } = useView();
@@ -17,18 +17,19 @@ function ViewSelector() {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef(null);
 
-  // Get all available views grouped by category
-  const viewsByCategory = {
-    [VIEW_CATEGORIES.TRAINING]: [VIEW_TYPES.TRAINING],
-    [VIEW_CATEGORIES.TEXT_GENERATION]: [VIEW_TYPES.TEXT_GENERATION, VIEW_TYPES.DECODING],
-  };
-
-  // View to path mapping
-  const viewToPath = {
-    [VIEW_TYPES.TRAINING]: '/pretraining',
-    [VIEW_TYPES.TEXT_GENERATION]: '/text-generation',
-    [VIEW_TYPES.DECODING]: '/decoding-algorithms',
-  };
+  // Get main categories only (Training and Text Generation)
+  const mainCategories = [
+    {
+      category: VIEW_CATEGORIES.TRAINING,
+      viewType: VIEW_TYPES.TRAINING,
+      path: '/pretraining',
+    },
+    {
+      category: VIEW_CATEGORIES.TEXT_GENERATION,
+      viewType: VIEW_TYPES.TEXT_GENERATION,
+      path: '/text-generation',
+    },
+  ];
 
   // Close dropdown when clicking outside
   useEffect(() => {
@@ -44,9 +45,8 @@ function ViewSelector() {
     }
   }, [isOpen]);
 
-  const handleViewChange = (viewId) => {
+  const handleViewChange = (viewId, path) => {
     setCurrentView(viewId);
-    const path = viewToPath[viewId];
     if (path) {
       navigate(path);
     }
@@ -61,54 +61,36 @@ function ViewSelector() {
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="view-selector-button"
-        aria-label={`Select view (current: ${t(currentViewInfo.labelKey) || currentViewInfo.defaultLabel})`}
+        aria-label={`Select view (current: ${t(currentCategoryInfo.labelKey) || currentCategoryInfo.defaultLabel})`}
         aria-expanded={isOpen}
         aria-haspopup="true"
       >
-        <Icon path={currentViewInfo.icon} size={1} className="view-icon" />
+        <Icon path={currentCategoryInfo.icon} size={1} className="view-icon" />
         <span className="view-label">
           {t(currentCategoryInfo.labelKey) || currentCategoryInfo.defaultLabel}
-          <span className="view-separator"> › </span>
-          {t(currentViewInfo.labelKey) || currentViewInfo.defaultLabel}
         </span>
         <span className="view-chevron">▼</span>
       </button>
 
       {isOpen && (
         <div className="view-dropdown">
-          {Object.entries(viewsByCategory).map(([categoryId, viewIds]) => {
-            const categoryInfo = CATEGORY_INFO[categoryId];
+          {mainCategories.map(({ category, viewType, path }) => {
+            const categoryInfo = CATEGORY_INFO[category];
+            const isActive = currentViewInfo.category === category;
 
             return (
-              <div key={categoryId} className="view-category">
-                <div className="view-category-header">
-                  <Icon path={categoryInfo.icon} size={1} className="view-category-icon" />
-                  <span className="view-category-label">
-                    {t(categoryInfo.labelKey) || categoryInfo.defaultLabel}
-                  </span>
-                </div>
-                <div className="view-category-items">
-                  {viewIds.map((viewId) => {
-                    const info = viewInfo[viewId];
-                    const isActive = viewId === currentView;
-
-                    return (
-                      <button
-                        key={viewId}
-                        onClick={() => handleViewChange(viewId)}
-                        className={`view-option ${isActive ? 'active' : ''}`}
-                        aria-current={isActive ? 'true' : 'false'}
-                      >
-                        <Icon path={info.icon} size={0.9} className="view-option-icon" />
-                        <span className="view-option-label">
-                          {t(info.labelKey) || info.defaultLabel}
-                        </span>
-                        {isActive && <span className="view-checkmark">✓</span>}
-                      </button>
-                    );
-                  })}
-                </div>
-              </div>
+              <button
+                key={category}
+                onClick={() => handleViewChange(viewType, path)}
+                className={`view-option ${isActive ? 'active' : ''}`}
+                aria-current={isActive ? 'true' : 'false'}
+              >
+                <Icon path={categoryInfo.icon} size={0.9} className="view-option-icon" />
+                <span className="view-option-label">
+                  {t(categoryInfo.labelKey) || categoryInfo.defaultLabel}
+                </span>
+                {isActive && <span className="view-checkmark">✓</span>}
+              </button>
             );
           })}
         </div>

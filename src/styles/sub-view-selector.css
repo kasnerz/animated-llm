@@ -1,17 +1,14 @@
-/* View Selector Popup Styles */
+/**
+ * Sub-View Selector Styles
+ * Matches the main view selector style
+ */
 
-.view-selector-popup-container {
-  display: flex;
-  align-items: center;
-}
-
-.view-selector-popup {
+.sub-view-selector {
   position: relative;
-  display: flex;
-  align-items: center;
+  display: inline-block;
 }
 
-.view-selector-button {
+.sub-view-selector-button {
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -24,46 +21,48 @@
   font-weight: 500;
   cursor: pointer;
   white-space: nowrap;
+  transition: background 0.2s ease;
 }
 
-.view-selector-button:hover {
+.sub-view-selector-button:hover {
   background: var(--bg-secondary);
 }
 
-.view-selector-button:focus {
+.sub-view-selector-button:focus {
   outline: 2px solid var(--accent-primary);
   outline-offset: 2px;
 }
 
-.view-current-icon {
+.sub-view-icon {
+  flex-shrink: 0;
   color: var(--accent-primary);
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.view-current-label {
+.sub-view-label {
   line-height: 1;
   font-size: 1em;
   font-weight: bold;
+  color: var(--accent-primary);
 }
 
-.view-separator {
-  opacity: 0.5;
-  font-weight: 400;
-}
-
-.view-chevron {
+.sub-view-chevron {
   transition: transform 0.2s ease;
   color: var(--accent-primary);
 }
 
-.view-chevron.open {
+.sub-view-chevron.open {
   transform: rotate(180deg);
 }
 
-/* Popup Grid */
-.view-popup {
+.sub-view-selector-button[aria-expanded='true'] .sub-view-chevron {
+  transform: rotate(180deg);
+}
+
+/* Dropdown */
+.sub-view-dropdown {
   position: absolute;
   top: calc(100% + 0.5rem);
   left: 0;
@@ -73,11 +72,12 @@
   border-radius: 0.5rem;
   box-shadow: 0 4px 20px var(--shadow-color);
   padding: 0.5rem;
+  overflow: hidden;
   z-index: 1000;
-  animation: popupFadeIn 0.15s ease-out;
+  animation: dropdown-fade-in 0.15s ease-out;
 }
 
-@keyframes popupFadeIn {
+@keyframes dropdown-fade-in {
   from {
     opacity: 0;
     transform: translateY(-8px);
@@ -89,58 +89,38 @@
   }
 }
 
-.view-popup-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-}
-
-.view-popup-category {
-  display: none;
-  /* Hide category structure in new design */
-}
-
-.view-popup-category-header {
-  display: none;
-}
-
-.view-popup-category-icon {
-  opacity: 0.9;
-  color: var(--accent-primary);
-}
-
-.view-popup-category-label {
-  line-height: 1;
-}
-
-.view-grid-item {
+.sub-view-option {
   display: flex;
   align-items: center;
   gap: 0.75rem;
+  width: 100%;
   padding: 0.625rem 0.875rem;
   background: transparent;
   border: none;
   border-radius: 0.375rem;
-  cursor: pointer;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  font-weight: 500;
   text-align: left;
-  width: 100%;
+  cursor: pointer;
   transition: all 0.15s ease;
 }
 
-.view-grid-item:hover {
+.sub-view-option:hover {
   background: var(--bg-secondary);
+  color: var(--text-primary);
 }
 
-.view-grid-item:focus {
+.sub-view-option:focus {
   outline: 2px solid var(--accent-primary);
   outline-offset: -2px;
 }
 
-.view-grid-item.active {
+.sub-view-option.active {
   background: var(--bg-secondary);
 }
 
-.view-grid-icon {
+.sub-view-option-icon {
   flex-shrink: 0;
   color: var(--text-secondary);
   display: flex;
@@ -148,45 +128,59 @@
   justify-content: center;
 }
 
-.view-grid-item:hover .view-grid-icon {
+.sub-view-option:hover .sub-view-option-icon {
   color: var(--accent-primary);
 }
 
-.view-grid-item.active .view-grid-icon {
+.sub-view-option.active .sub-view-option-icon {
   color: var(--accent-primary);
 }
 
-.view-grid-title {
-  font-size: 0.9rem;
-  font-weight: 500;
-  color: var(--text-secondary);
+.sub-view-option-label {
+  flex: 1;
   line-height: 1.3;
 }
 
-.view-grid-item:hover .view-grid-title {
+.sub-view-option:hover .sub-view-option-label {
   color: var(--text-primary);
 }
 
-.view-grid-item.active .view-grid-title {
+.sub-view-option.active .sub-view-option-label {
   font-weight: 600;
   color: var(--text-primary);
 }
 
-/* Hide view selector popup on mobile when hamburger menu is displayed */
+.sub-view-checkmark {
+  margin-left: auto;
+  font-weight: bold;
+  color: var(--accent-primary);
+}
+
+/* Mobile styles */
 @media (max-width: 1000px) {
-  /* Show icon only on mobile, hide the label and chevron */
-  .view-current-label,
-  .view-chevron {
+  /* Show only icon on mobile, hide the label and chevron */
+  .sub-view-label,
+  .sub-view-chevron {
     display: none;
   }
 
-  .view-selector-button {
+  .sub-view-selector-button {
     padding: 0.5rem;
     min-width: auto;
   }
 
-  /* Adjust popup position for mobile */
-  .view-popup {
+  .sub-view-dropdown {
     min-width: 180px;
+  }
+}
+
+@media (min-width: 1001px) {
+  /* Hide icon on desktop, show label and chevron */
+  .sub-view-icon {
+    display: none;
+  }
+
+  .sub-view-label {
+    display: inline;
   }
 }
