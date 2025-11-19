@@ -127,7 +127,15 @@ export function drawPositionalIndicator(group, x, y, index, options = {}) {
  * @param {boolean} isTriangular - Use triangular/causal attention pattern
  * @param {number} targetIdx - For all-to-one pattern, the target index
  */
-export function drawAttentionConnections(group, topMeta, bottomMeta, isTriangular, targetIdx = -1) {
+export function drawAttentionConnections(
+  group,
+  topMeta,
+  bottomMeta,
+  isTriangular,
+  targetIdx = -1,
+  options = {}
+) {
+  const { classNameBase = null, colorClassifier = null } = options || {};
   const centers = topMeta.map((m) => (m ? { x: m.centerX } : null));
 
   if (isTriangular) {
@@ -143,7 +151,7 @@ export function drawAttentionConnections(group, topMeta, bottomMeta, isTriangula
         const opacity =
           TRANSFORMER.ATTENTION_BASE_OPACITY + s * TRANSFORMER.ATTENTION_OPACITY_RANGE;
 
-        group
+        const line = group
           .append('line')
           .attr('x1', a.x)
           .attr('y1', topMeta[i].topY + topMeta[i].height / 2)
@@ -152,6 +160,21 @@ export function drawAttentionConnections(group, topMeta, bottomMeta, isTriangula
           .style('stroke', color)
           .style('stroke-width', width)
           .style('opacity', opacity);
+
+        if (classNameBase) {
+          let colorClass = '';
+          try {
+            colorClass = colorClassifier
+              ? colorClassifier(i, j)
+              : (i + j) % 2 === 0
+                ? 'green'
+                : 'red';
+          } catch {
+            colorClass = (i + j) % 2 === 0 ? 'green' : 'red';
+          }
+
+          line.attr('class', `${classNameBase} ${colorClass}`);
+        }
       });
     });
   } else if (targetIdx >= 0 && bottomMeta[targetIdx]) {
@@ -167,7 +190,7 @@ export function drawAttentionConnections(group, topMeta, bottomMeta, isTriangula
       const width = TRANSFORMER.ATTENTION_LINE_WIDTH;
       const opacity = ATTENTION_LINES.ALL_TO_ONE_OPACITY;
 
-      group
+      const line = group
         .append('line')
         .attr('x1', a.x)
         .attr('y1', topMeta[i].topY + topMeta[i].height / 2)
@@ -176,6 +199,20 @@ export function drawAttentionConnections(group, topMeta, bottomMeta, isTriangula
         .style('stroke', color)
         .style('stroke-width', width)
         .style('opacity', opacity);
+
+      if (classNameBase) {
+        let colorClass = '';
+        try {
+          colorClass = colorClassifier
+            ? colorClassifier(i, targetIdx)
+            : (i + targetIdx) % 2 === 0
+              ? 'green'
+              : 'red';
+        } catch {
+          colorClass = (i + targetIdx) % 2 === 0 ? 'green' : 'red';
+        }
+        line.attr('class', `${classNameBase} ${colorClass}`);
+      }
     });
   }
 }

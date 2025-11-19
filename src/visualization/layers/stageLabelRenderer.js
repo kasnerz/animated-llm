@@ -59,6 +59,12 @@ export function renderStageLabels(
     // If showGradual is true (first token), show labels progressively
     const isVisible = showGradual ? subStep >= label.subStep : true;
 
+    // Fix for flickering: Do not render normal labels during backprop steps > 10
+    // They fade out in step 10, so from step 11 onwards they should be gone.
+    if (isTraining && subStep > 10) {
+      return;
+    }
+
     if (!isVisible) {
       return;
     }
@@ -123,4 +129,51 @@ export function renderStageLabels(
       .style('font-family', FONTS.FAMILY_UI)
       .text(t(`${label.key}_hint`));
   });
+
+  // Single backpropagation label used in training backprop steps
+  if (isTraining) {
+    // Position vertically in the middle of the stage label block
+    const backpropY = (STAGE_LABEL.Y_TOKENIZATION + STAGE_LABEL.Y_NEXT_TOKEN) / 2;
+    const isActive = subStep >= 10;
+    const backpropGroup = group
+      .append('g')
+      .attr('class', `stage-label stage-label-backprop ${isActive ? 'active' : ''}`)
+      .attr('transform', `translate(${labelX}, ${backpropY})`)
+      .style('opacity', isActive ? 1 : 0);
+
+    // Background highlight bar
+    backpropGroup
+      .append('rect')
+      .attr('x', -10)
+      .attr('y', -18)
+      .attr('width', STAGE_LABEL.HIGHLIGHT_WIDTH)
+      .attr('height', STAGE_LABEL.HIGHLIGHT_HEIGHT)
+      .attr('rx', STAGE_LABEL.HIGHLIGHT_RADIUS)
+      .style('fill', 'var(--viz-stage-highlight, rgba(0, 0, 0, 0.08))')
+      .style('opacity', STAGE_LABEL_OPACITY.HIGHLIGHT);
+
+    backpropGroup
+      .append('text')
+      .attr('x', 0)
+      .attr('y', 0)
+      .attr('class', 'stage-label-heading')
+      .style('font-size', STAGE_LABEL.HEADING_SIZE)
+      .style('font-weight', FONTS.WEIGHT_SEMIBOLD)
+      .style('fill', 'var(--text-primary, #333)')
+      .style('opacity', STAGE_LABEL_OPACITY.TEXT)
+      .style('font-family', FONTS.FAMILY_UI)
+      .text(t('stage_backpropagation'));
+
+    backpropGroup
+      .append('text')
+      .attr('x', 0)
+      .attr('y', STAGE_LABEL.HINT_Y_OFFSET)
+      .attr('class', 'stage-label-hint')
+      .style('font-size', STAGE_LABEL.HINT_SIZE)
+      .style('font-weight', FONTS.WEIGHT_NORMAL)
+      .style('fill', 'var(--text-tertiary, #999)')
+      .style('opacity', STAGE_LABEL_OPACITY.HINT)
+      .style('font-family', FONTS.FAMILY_UI)
+      .text(t('stage_backpropagation_hint'));
+  }
 }

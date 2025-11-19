@@ -139,6 +139,9 @@ export default function TrainingCanvas() {
       // Provide training target token for rendering target vector/differences
       training_target_token: targetTokenPrediction || null,
       model_info: state.currentExample.model_info,
+      // Training visualization mode flag to let renderers and timelines
+      // distinguish between forward-pass and backprop-focused styling.
+      viz_mode: state.currentAnimationSubStep >= 11 ? 'backprop' : 'feedforward',
     };
 
     const svg = d3.select(svgRef.current);
@@ -254,8 +257,8 @@ export default function TrainingCanvas() {
       width,
       svgRef.current,
       ffnInfo,
-      // Allow training sub-steps up to 10 to render target vector and diffs
-      Math.min(10, state.currentAnimationSubStep ?? 0),
+      // Allow full training sub-step range (including backprop skeleton 11-16)
+      state.currentAnimationSubStep ?? 0,
       computedEmbeddings,
       contentCenterX,
       isDarkMode
@@ -283,7 +286,7 @@ export default function TrainingCanvas() {
         ? outputsMeta.logprobCenterY + 70
         : ffnInfo.afterBottomY + 198,
     };
-    const animSubStep = Math.min(10, state.currentAnimationSubStep ?? 0);
+    const animSubStep = Math.min(16, state.currentAnimationSubStep ?? 0);
     const showLabelsGradually = state.currentStep === 1;
     renderStageLabels(labelsGroup, { ...layout, stageY }, 0, animSubStep, t, showLabelsGradually, {
       currentLayer,
@@ -325,9 +328,14 @@ export default function TrainingCanvas() {
     // Build and run training timeline for current sub-step (0..10)
     const animDuration = state.instantTransition ? 0 : 0.6;
     const isInitialStep = state.currentStep === 1;
-    trainingTimeline.setInitialStates(svgRef.current, animSubStep, isInitialStep);
+    trainingTimeline.setInitialStates(
+      svgRef.current,
+      animSubStep,
+      isInitialStep,
+      labelsSvgRef.current
+    );
     const stepCompleteCb =
-      animSubStep === 10 && !state.instantTransition
+      animSubStep === 15 && !state.instantTransition && state.isPlaying
         ? () => actions.onStepAnimationComplete(state.isPlaying)
         : null;
     gsapRef.current = trainingTimeline.buildTimeline(
@@ -335,7 +343,8 @@ export default function TrainingCanvas() {
       animSubStep,
       isInitialStep,
       animDuration,
-      stepCompleteCb
+      stepCompleteCb,
+      labelsSvgRef.current
     );
   }, [
     state.currentStep,

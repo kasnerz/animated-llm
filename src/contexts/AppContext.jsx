@@ -161,9 +161,9 @@ function appReducer(state, action) {
     }
 
     case ActionTypes.NEXT_ANIMATION_SUB_STEP: {
-      // Training view: animate sub-steps 0..10 (includes target vector and diffs)
+      // Training view: animate sub-steps 0..15 (0..10 forward + 11..15 backprop skeleton)
       if (state.viewType === 'training') {
-        const maxSubStepsTraining = 11; // 0..10
+        const maxSubStepsTraining = 16; // 0..15
         if (state.currentAnimationSubStep >= maxSubStepsTraining - 1) return state;
         return {
           ...state,
@@ -259,7 +259,7 @@ function appReducer(state, action) {
           };
         }
         const prevStep = Math.max(1, state.currentStep - 1);
-        const lastVisibleSubTraining = 10; // land on last training sub-step
+        const lastVisibleSubTraining = 16; // land on last training sub-step
         return {
           ...state,
           currentStep: prevStep,

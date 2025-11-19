@@ -67,6 +67,9 @@ const translations = {
     // Training-specific stage label override
     stage_compute_error: 'Computing error of model predictions',
     stage_compute_error_hint: 'Compare predictions with the target and compute errors',
+    // Backpropagation phase (training)
+    stage_backpropagation: 'Backpropagation',
+    stage_backpropagation_hint: 'Updating model weights to fix its prediction.',
     // Training view
     training: {
       selectDocument: 'Select document',
@@ -136,6 +139,9 @@ const translations = {
     // Training-specific stage label override
     stage_compute_error: 'Výpočet chyby modelových predikcí',
     stage_compute_error_hint: 'Porovnání predikcí s cílem a výpočet chyb',
+    // Backpropagation phase (training)
+    stage_backpropagation: 'Backpropagace',
+    stage_backpropagation_hint: 'Aktualizace vah modelu pro opravu předpovědi.',
     // Training view
     training: {
       selectDocument: 'Vybrat dokument',

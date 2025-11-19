@@ -74,7 +74,8 @@ export function renderOutputLayer(
       tokenColor,
       baseFill,
       isDarkMode,
-      bottomInfo.metas
+      bottomInfo.metas,
+      step && step.viz_mode === 'backprop'
     );
   }
 
@@ -380,7 +381,8 @@ function renderExtractedEmbedding(
   tokenColor,
   baseFill,
   isDarkMode,
-  metas
+  metas,
+  isBackprop
 ) {
   const extracted = extractionBg.append('g').attr('class', 'extracted-embedding');
 
@@ -423,16 +425,22 @@ function renderExtractedEmbedding(
       ? `M ${startX},${startY} L ${startX},${horizY - 6}`
       : verticalThenHorizontalRoundedPath(startX, startY, hv1RightX, hv1CenterY, 20);
 
+    const extraClass = isBackprop ? ' bp-last-embedding-connection' : '';
     extractionBg
       .append('path')
       .attr('d', pathD)
-      .attr('class', 'extracted-path-arrow')
+      .attr('class', `extracted-path-arrow${extraClass}`)
       .style('fill', 'none')
       .style('stroke', OUTPUT_ARROWS.EXTRACTED_STROKE)
       .style('stroke-width', OUTPUT_ARROWS.EXTRACTED_WIDTH)
       .style('stroke-linecap', 'round')
       .style('stroke-linejoin', 'round')
       .style('opacity', OUTPUT_ARROWS.EXTRACTED_OPACITY);
+  }
+
+  // Apply hidden-state-grey if needed (for backprop)
+  if (isBackprop) {
+    extracted.classed('hidden-state-grey', true);
   }
 
   return hv1;

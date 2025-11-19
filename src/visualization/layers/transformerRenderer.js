@@ -113,7 +113,9 @@ export function renderTransformerBlockLayer(
     ffnY,
     insideBottomMeta,
     computedEmbeddings,
-    isDarkMode
+    isDarkMode,
+    currentLayer,
+    numLayers
   );
 
   const blockBottomY = ffnY + maxFfnHeight + layout.blockPadding;
@@ -174,6 +176,7 @@ function renderInsideTopEmbeddings(
   const feedbackArrowheads = [];
 
   const embTop = computedEmbeddings?.insideTop || [];
+  const isTrainingBackprop = step && step.viz_mode === 'backprop';
   const storedMarkers = (tokensLayoutRef.current && tokensLayoutRef.current.posMarkers) || [];
   const storedSignature = tokensLayoutRef.current && tokensLayoutRef.current.posMarkersSignature;
   const newMarkers = [];
@@ -206,8 +209,17 @@ function renderInsideTopEmbeddings(
       if (outerCol) {
         const startY = (outerCol.bottomY ?? outerCol.topY + outerCol.height) + 4;
         const endY = meta.topY + meta.height / 2 - 20;
+        let extraClass = '';
+        if (isTrainingBackprop) {
+          // Do NOT tag outer-to-block arrow as last-embedding connection to avoid early purple highlight.
+          // Tag outer embedding connectors on first layer for backprop step 16 only.
+          if ((currentLayer ?? 0) === 0) {
+            const colorClass = actualIndex % 2 === 0 ? 'green' : 'red';
+            extraClass += ` bp-outer-embedding-connection ${colorClass}`;
+          }
+        }
         drawArrow(underlays, x, startY, x, endY, {
-          className: `outer-to-block-arrow ${isNew ? 'new-token' : 'prev-token'}`,
+          className: `outer-to-block-arrow ${isNew ? 'new-token' : 'prev-token'} ${extraClass}`,
         });
 
         // Positional embedding indicator
@@ -293,6 +305,14 @@ function renderInsideBottomEmbeddings(
       isDarkMode,
     });
 
+    // Tag last-token bottom embeddings group for backprop highlighting if needed
+    if (step && step.viz_mode === 'backprop' && actualIndex === (step.tokens || []).length - 1) {
+      insideBottomGroup
+        .selectAll('.embedding-col')
+        .filter((_, nodeIndex, nodes) => nodes[nodeIndex] === meta.groupNode)
+        .classed('bp-last-embedding-connection', true);
+    }
+
     insideBottomMeta.push(meta);
     maxInsideBottomHeight = Math.max(maxInsideBottomHeight, meta.height);
   });
@@ -304,10 +324,26 @@ function renderInsideBottomEmbeddings(
 function renderAttentionLayer(underlays, step, tokensLayoutRef, insideTopMeta, insideBottomMeta) {
   const attentionGroup = underlays.append('g').attr('class', 'attention-mash');
   const isFirstGenStep = Number(step?.step) === 0;
+  const isBackprop = step && step.viz_mode === 'backprop';
+  // During backprop, only tag attention lines for the first or last layer appropriately,
+  // not both at once. Intermediate layers remain untagged.
+  let backpropAttentionClassBase = null;
+  if (isBackprop) {
+    const classes = [];
+    // In backprop mode (training), we treat the single visible block as both first and last
+    // for animation purposes, so we tag it with both classes.
+    classes.push('bp-first-block-attention-connection');
+    classes.push('bp-last-block-attention-connection');
+    if (classes.length) {
+      backpropAttentionClassBase = classes.join(' ');
+    }
+  }
 
   if (isFirstGenStep) {
     // Triangular/causal attention
-    drawAttentionConnections(attentionGroup, insideTopMeta, insideBottomMeta, true);
+    drawAttentionConnections(attentionGroup, insideTopMeta, insideBottomMeta, true, -1, {
+      classNameBase: backpropAttentionClassBase,
+    });
   } else {
     // All-to-one attention
     const lastActualIndex = (step.tokens || []).length - 1;
@@ -324,7 +360,9 @@ function renderAttentionLayer(underlays, step, tokensLayoutRef, insideTopMeta, i
     }
 
     if (targetIdx >= 0) {
-      drawAttentionConnections(attentionGroup, insideTopMeta, insideBottomMeta, false, targetIdx);
+      drawAttentionConnections(attentionGroup, insideTopMeta, insideBottomMeta, false, targetIdx, {
+        classNameBase: backpropAttentionClassBase,
+      });
     }
   }
 }
@@ -339,7 +377,9 @@ function renderFFNLayer(
   ffnY,
   insideBottomMeta,
   computedEmbeddings,
-  isDarkMode
+  isDarkMode,
+  currentLayer,
+  numLayers
 ) {
   const ffnGroup = group.append('g').attr('class', 'inside-ffn-embeddings');
   const ffnMeta = [];
@@ -370,7 +410,15 @@ function renderFFNLayer(
     const shouldRenderFfnConnectors = isFirstGenStep || isNew;
 
     if (insideBottom && meta && shouldRenderFfnConnectors) {
-      renderFFNConnectors(underlays, x, insideBottom, meta, isNew, i);
+      const isBackprop = step && step.viz_mode === 'backprop';
+      const isFirstLayer = (currentLayer ?? 0) === 0;
+      const isLastLayer = (currentLayer ?? 0) >= Math.max(0, (numLayers || 1) - 1);
+      renderFFNConnectors(underlays, x, insideBottom, meta, isNew, i, {
+        tagBackprop: isBackprop,
+        // In training, we don't animate real layer switching, so tag both
+        tagFirst: isBackprop ? true : isFirstLayer,
+        tagLast: isBackprop ? true : isLastLayer,
+      });
 
       if (ffnMeta.length === 0 || isNew) {
         const midY = (insideBottom.innerBottomY + meta.innerTopY) / 2;
@@ -387,7 +435,8 @@ function renderFFNLayer(
 }
 
 // Helper: Render FFN connectors (lines + projection box)
-function renderFFNConnectors(underlays, x, insideBottom, meta, isNew, tokenIdx) {
+function renderFFNConnectors(underlays, x, insideBottom, meta, isNew, tokenIdx, tagOptions = {}) {
+  const { tagBackprop = false, tagFirst = false, tagLast = false } = tagOptions || {};
   const inCenters = insideBottom.cellCentersX?.length ? insideBottom.cellCentersX : [x];
   const outCenters = meta.cellCentersX?.length ? meta.cellCentersX : [x];
   const lineCount = Math.min(inCenters.length, outCenters.length);
@@ -406,7 +455,7 @@ function renderFFNConnectors(underlays, x, insideBottom, meta, isNew, tokenIdx) 
     const s = Math.abs(Math.sin((tokenIdx * 37 + k * 17) * 12.9898)) % 1;
     const color = d3.interpolateRgb('#E5E7EB', '#797b7dff')(s);
 
-    underlays
+    const inLine = underlays
       .append('line')
       .attr('class', `ffn-arrow-in ${isNew ? 'new-token' : 'prev-token'}`)
       .attr('x1', inCenters[k])
@@ -416,6 +465,12 @@ function renderFFNConnectors(underlays, x, insideBottom, meta, isNew, tokenIdx) 
       .style('stroke', color)
       .style('stroke-width', 0.5)
       .style('opacity', 0);
+
+    if (tagBackprop) {
+      const colorClass = (tokenIdx + k) % 2 === 0 ? 'green' : 'red';
+      if (tagLast) inLine.classed(`bp-last-block-ffn-connection ${colorClass}`, true);
+      if (tagFirst) inLine.classed(`bp-first-block-ffn-connection ${colorClass}`, true);
+    }
   }
 
   // Projection box
@@ -435,7 +490,7 @@ function renderFFNConnectors(underlays, x, insideBottom, meta, isNew, tokenIdx) 
     const s = Math.abs(Math.sin((tokenIdx * 41 + k * 23) * 12.9898)) % 1;
     const color = d3.interpolateRgb('#E5E7EB', '#797b7dff')(s);
 
-    underlays
+    const outLine = underlays
       .append('line')
       .attr('class', `ffn-arrow-out ${isNew ? 'new-token' : 'prev-token'}`)
       .attr('x1', x)
@@ -445,6 +500,12 @@ function renderFFNConnectors(underlays, x, insideBottom, meta, isNew, tokenIdx) 
       .style('stroke', color)
       .style('stroke-width', 0.5)
       .style('opacity', 0);
+
+    if (tagBackprop) {
+      const colorClass = (tokenIdx + k * 3) % 2 === 0 ? 'green' : 'red';
+      if (tagLast) outLine.classed(`bp-last-block-ffn-connection ${colorClass}`, true);
+      if (tagFirst) outLine.classed(`bp-first-block-ffn-connection ${colorClass}`, true);
+    }
   }
 }
 

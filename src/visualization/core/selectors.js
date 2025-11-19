@@ -77,6 +77,12 @@ export const TRANSFORMER_SELECTORS = {
   ffnProjectionBox: '.projection-box.ffn',
   ffnProjectionBoxNew: '.projection-box.ffn.new-token',
   ffnProjectionBoxPrev: '.projection-box.ffn.prev-token',
+  // Backpropagation highlighting & styling
+  backpropConnectionPurple: '.bp-connection-purple',
+  backpropConnectionGreen: '.bp-connection-green',
+  backpropConnectionRed: '.bp-connection-red',
+  backpropHiddenState: '.hidden-state-grey',
+  backpropStageLabel: '.stage-label-backprop',
 };
 
 // Bottom embeddings selectors

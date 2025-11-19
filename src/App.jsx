@@ -92,7 +92,7 @@ function AppContent() {
         if (state.isPlaying) {
           actions.setIsPlaying(false);
         }
-        const lastSubStep = state.viewType === 'training' ? 9 : 12; // keep in sync with timelines
+        const lastSubStep = state.viewType === 'training' ? 15 : 12; // keep in sync with timelines
         if (state.currentAnimationSubStep < lastSubStep) {
           actions.nextAnimationSubStep();
           // Moving sub-steps clears any pending completion guard
@@ -224,7 +224,7 @@ function AppContent() {
     const totalSec = state.animationSpeed || 7.5; // fallback
     const perSubStepMs = Math.max(150, (totalSec / 13) * 1000);
 
-    const lastSubStep = state.viewType === 'training' ? 9 : 12; // keep in sync with timelines
+    const lastSubStep = state.viewType === 'training' ? 16 : 12; // keep in sync with timelines
 
     const tick = () => {
       // If generation hasn't started yet
