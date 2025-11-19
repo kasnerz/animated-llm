@@ -4,6 +4,9 @@
  */
 
 :root {
+  /* Fonts */
+  --font-mono: 'Inconsolata', 'Monaco', 'Menlo', 'Courier New', monospace;
+
   /* Light theme colors */
   --light-bg-primary: #ffffff;
   --light-bg-secondary: #f8f9fa;
@@ -50,6 +53,7 @@
   --viz-transformer-border: #d9d9e3;
   --viz-stage-highlight: rgba(0, 0, 0, 0.08);
   --viz-stage-line: #999999;
+  --viz-text-color: #333333;
 
   /* Backprop hidden state colors (light theme defaults) */
   --viz-hidden-state-fill: #f2f2f2;
@@ -108,6 +112,12 @@ body[data-theme='dark'] {
   --bg-special-token: rgba(128, 128, 128, 0.15);
   --viz-special-token-bg: rgba(255, 255, 255, 0.1);
   --viz-special-token-text: #aaaaaa;
+
+  /* Token and transformer colors (dark theme) */
+  --viz-token-text: #e0e0e0;
+  --viz-transformer-bg: #3a3a3a;
+  --viz-transformer-border: #555555;
+  --viz-text-color: #d0d0d0;
 
   /* Backprop hidden state colors (dark theme) */
   --viz-hidden-state-fill: #333333;

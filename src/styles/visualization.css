@@ -34,7 +34,6 @@
 .embedding-square {
   stroke: var(--border-color);
   stroke-width: 1;
-  transition: all 0.3s ease;
 }
 
 .embedding-square:hover {
@@ -101,7 +100,6 @@
 .distribution-bar {
   fill: #bfbfbf;
   /* default grey, may be overridden inline */
-  transition: all 0.3s ease;
   /* subtle outline so low-saturation fills remain visible on light backgrounds */
   stroke: rgba(0, 0, 0, 0.06);
   stroke-width: 1px;
@@ -253,8 +251,14 @@
 }
 
 .bp-connection-purple {
-  stroke: #a855f7 !important;
+  stroke: url(#bp-gradient-green-red) !important;
   stroke-width: 3px !important;
+  opacity: 1 !important;
+}
+
+/* For rect elements that use fill instead of stroke */
+.bp-connection-purple rect {
+  fill: url(#bp-gradient-green-red) !important;
   opacity: 1 !important;
 }
 

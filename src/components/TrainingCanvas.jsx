@@ -151,6 +151,18 @@ export default function TrainingCanvas() {
     svg.selectAll('*').remove();
     labelsSvg.selectAll('*').remove();
 
+    // Add gradient definition for backprop bidirectional flow
+    const defs = svg.append('defs');
+    const gradient = defs
+      .append('linearGradient')
+      .attr('id', 'bp-gradient-green-red')
+      .attr('x1', '0%')
+      .attr('y1', '0%')
+      .attr('x2', '0%')
+      .attr('y2', '100%');
+    gradient.append('stop').attr('offset', '0%').attr('stop-color', '#22c55e'); // green
+    gradient.append('stop').attr('offset', '100%').attr('stop-color', '#ef4444'); // red
+
     // Main groups
     const g = svg.append('g').attr('class', 'visualization-main');
     const tokenGroup = g.append('g').attr('class', 'token-group');

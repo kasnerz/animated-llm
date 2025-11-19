@@ -112,7 +112,12 @@ export function renderOutputLayer(
 
     // Arrow from extracted embedding to logprob vector
     if (hv1 && hv2) {
-      drawArrow(underlays, horizCenterX, hv1.bottomY + 6, horizCenterX, hv2.topY - 8, {
+      // During backprop, reverse arrow direction to point upwards
+      const isTrainingBackprop = step && step.viz_mode === 'backprop';
+      const startY = isTrainingBackprop ? hv2.topY - 8 : hv1.bottomY + 6;
+      const endY = isTrainingBackprop ? hv1.bottomY + 6 : hv2.topY - 8;
+
+      drawArrow(underlays, horizCenterX, startY, horizCenterX, endY, {
         withBox: true,
         className: 'logprob-arrow',
       });

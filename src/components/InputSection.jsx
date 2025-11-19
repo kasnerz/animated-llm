@@ -24,6 +24,7 @@ function InputSection() {
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
   const [isActionMenuOpen, setIsActionMenuOpen] = useState(false);
   const actionMenuRef = useRef(null);
+  const settingsPopoverRef = useRef(null);
 
   const handleExampleChange = (exampleId) => {
     actions.loadExample(exampleId);
@@ -87,6 +88,20 @@ function InputSection() {
     window.addEventListener('pointerdown', handleClickOutside);
     return () => window.removeEventListener('pointerdown', handleClickOutside);
   }, [isActionMenuOpen]);
+
+  // Close the settings popover when clicking outside of it
+  useEffect(() => {
+    if (!isSettingsOpen) return;
+
+    const handleWindowClick = (event) => {
+      if (settingsPopoverRef.current && !settingsPopoverRef.current.contains(event.target)) {
+        setIsSettingsOpen(false);
+      }
+    };
+
+    window.addEventListener('pointerdown', handleWindowClick);
+    return () => window.removeEventListener('pointerdown', handleWindowClick);
+  }, [isSettingsOpen]);
 
   return (
     <section className="input-section-minimal">
@@ -216,7 +231,11 @@ function InputSection() {
               </div>
 
               {isSettingsOpen && (
-                <div className="settings-popover" onClick={(e) => e.stopPropagation()}>
+                <div
+                  className="settings-popover"
+                  ref={settingsPopoverRef}
+                  onClick={(e) => e.stopPropagation()}
+                >
                   <div className="settings-section">
                     <div className="settings-label">Model</div>
                     <div className="model-options">
@@ -238,7 +257,7 @@ function InputSection() {
                             alt=""
                             className="model-logo"
                           />
-                          <span className="model-size">{entry.size}</span>
+                          <span className="model-size">{entry.name || entry.size}</span>
                         </button>
                       ))}
                     </div>

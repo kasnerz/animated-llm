@@ -218,7 +218,11 @@ function renderInsideTopEmbeddings(
             extraClass += ` bp-outer-embedding-connection ${colorClass}`;
           }
         }
-        drawArrow(underlays, x, startY, x, endY, {
+        // During backprop, reverse arrow direction to point upwards
+        const arrowStartY = isTrainingBackprop ? endY : startY;
+        const arrowEndY = isTrainingBackprop ? startY : endY;
+
+        drawArrow(underlays, x, arrowStartY, x, arrowEndY, {
           className: `outer-to-block-arrow ${isNew ? 'new-token' : 'prev-token'} ${extraClass}`,
         });
 

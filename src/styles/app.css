@@ -323,7 +323,6 @@ body {
   border-radius: 8px;
   cursor: pointer;
   font-size: 1rem;
-  transition: all 0.2s ease;
 }
 
 .error-container button:hover {
@@ -389,7 +388,6 @@ body {
   align-items: center;
   justify-content: center;
   color: var(--text-tertiary);
-  transition: all 0.2s ease;
   padding: 0;
   opacity: 0.6;
 }
@@ -423,7 +421,6 @@ body {
   border: none;
   color: var(--text-primary);
   cursor: pointer;
-  transition: background 0.2s ease;
   font-size: 0.9rem;
   line-height: 1.3;
   border-bottom: 1px solid var(--border-color);
@@ -472,19 +469,19 @@ body {
 }
 
 .model-size {
-  font-family: 'Monaco', 'Menlo', 'Courier New', monospace;
+  font-family: var(--font-mono);
   font-size: 0.9rem;
 }
 
 /* Fallback for unknown models */
 .model-id {
-  font-family: 'Monaco', 'Menlo', 'Courier New', monospace;
+  font-family: var(--font-mono);
   font-size: 0.9rem;
 }
 
 /* Temperature display */
 .temperature-display {
-  font-family: 'Monaco', 'Menlo', 'Courier New', monospace;
+  font-family: var(--font-mono);
   font-size: 0.9rem;
 }
 
@@ -499,7 +496,7 @@ body {
   color: var(--text-secondary);
   opacity: 0.7;
   white-space: nowrap;
-  font-family: 'Monaco', 'Menlo', 'Courier New', monospace;
+  font-family: var(--font-mono);
 }
 
 .dropdown-item.active .dropdown-item-model {
@@ -618,7 +615,6 @@ body {
   align-items: center;
   justify-content: center;
   color: white;
-  transition: background 0.2s ease;
   padding: 0;
   flex: 0 0 auto;
   flex-shrink: 0;
@@ -719,7 +715,6 @@ body {
   cursor: pointer;
   padding: 6px 8px;
   border-radius: 8px;
-  transition: background 0.2s ease;
 }
 
 .prompt-actions-item:hover {
@@ -746,6 +741,7 @@ body {
   z-index: 1100;
   padding: 8px 10px;
   min-width: 220px;
+  max-width: 500px;
 }
 
 .settings-section + .settings-section {
@@ -765,6 +761,7 @@ body {
 .model-options {
   display: flex;
   gap: 6px;
+  flex-wrap: wrap;
 }
 
 .model-option {
@@ -811,7 +808,7 @@ body {
 }
 
 .temp-value {
-  font-family: 'Monaco', 'Menlo', 'Courier New', monospace;
+  font-family: var(--font-mono);
   font-size: 0.9rem;
 }
 
@@ -836,7 +833,6 @@ body {
   border-radius: 10px;
   position: relative;
   cursor: pointer;
-  transition: background-color 0.2s ease;
 }
 
 .toggle-checkbox::before {
@@ -848,7 +844,7 @@ body {
   background: var(--text-secondary);
   top: 2px;
   left: 2px;
-  transition: all 0.2s ease;
+  transition: left 0.2s ease;
 }
 
 .toggle-checkbox:checked {
@@ -972,7 +968,6 @@ body {
   align-items: center;
   justify-content: center;
   color: var(--text-tertiary);
-  transition: all 0.2s ease;
   margin-left: 0;
   margin-right: -16px;
   /* center over delimiter (container left border) */
@@ -1041,7 +1036,6 @@ body {
 .viz-scroll::-webkit-scrollbar-thumb {
   background: var(--border-color);
   border-radius: 4px;
-  transition: background 0.2s ease;
 }
 
 .viz-scroll::-webkit-scrollbar-thumb:hover {
@@ -1211,7 +1205,6 @@ body {
     justify-content: flex-start;
     padding: 0.75rem;
     border-radius: 6px;
-    transition: background-color 0.15s ease;
     cursor: pointer;
   }
 
@@ -1237,7 +1230,6 @@ body {
     width: 100%;
     justify-content: flex-start;
     border-radius: 6px;
-    transition: background-color 0.15s ease;
     cursor: pointer;
   }
 
