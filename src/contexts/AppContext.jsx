@@ -611,8 +611,14 @@ function appReducer(state, action) {
  * App Context Provider
  * Manages global application state including theme, language, examples, and animation
  */
-export function AppProvider({ children }) {
-  const [state, dispatch] = useReducer(appReducer, initialState);
+export function AppProvider({ children, initialViewType = 'inference' }) {
+  // Override initialState with the provided initialViewType
+  const initialStateWithViewType = {
+    ...initialState,
+    viewType: initialViewType,
+  };
+
+  const [state, dispatch] = useReducer(appReducer, initialStateWithViewType);
   const isFirstRender = useRef(true);
 
   // Apply theme side effect

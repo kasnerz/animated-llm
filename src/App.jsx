@@ -325,7 +325,9 @@ function AppContent() {
                   title={t('keyboard_shortcuts')}
                   aria-label={t('keyboard_shortcuts')}
                 >
-                  <Icon path={mdiKeyboard} size={1.2} color="#555" />
+                  <div className="menu-icon-container">
+                    <Icon path={mdiKeyboard} size={1.2} color="#555" />
+                  </div>
                   <span className="menu-label">{t('keyboard_shortcuts')}</span>
                 </button>
                 <button
@@ -334,7 +336,9 @@ function AppContent() {
                   title={t('toggle_dark_light_mode')}
                   aria-label={t('toggle_dark_light_mode')}
                 >
-                  <span className="theme-icon">{state.theme === 'dark' ? '☀️' : '🌙'}</span>
+                  <div className="menu-icon-container">
+                    <span className="theme-icon">{state.theme === 'dark' ? '☀️' : '🌙'}</span>
+                  </div>
                   <span className="menu-label">{t('toggle_dark_light_mode')}</span>
                 </button>
                 <div
@@ -349,7 +353,9 @@ function AppContent() {
                     }
                   }}
                 >
-                  <LanguageSelector />
+                  <div className="menu-icon-container">
+                    <LanguageSelector />
+                  </div>
                   <span className="menu-label">{t('language')}</span>
                 </div>
               </div>
@@ -377,10 +383,30 @@ function AppContent() {
  * Root App component wrapped with providers
  */
 function App() {
+  // Determine initial view from current URL path
+  const getInitialViewFromPath = () => {
+    const path = window.location.pathname;
+    // Remove basename if present
+    const basename = '/animated-llm';
+    const cleanPath = path.startsWith(basename) ? path.slice(basename.length) : path;
+
+    const pathToView = {
+      '/pretraining': VIEW_TYPES.TRAINING,
+      '/text-generation': VIEW_TYPES.TEXT_GENERATION,
+      '/decoding-algorithms': VIEW_TYPES.DECODING,
+    };
+
+    return pathToView[cleanPath] || VIEW_TYPES.TEXT_GENERATION;
+  };
+
+  const initialView = getInitialViewFromPath();
+  // Map view to viewType for AppProvider
+  const initialViewType = initialView === VIEW_TYPES.TRAINING ? 'training' : 'inference';
+
   return (
-    <AppProvider>
+    <AppProvider initialViewType={initialViewType}>
       <I18nProvider>
-        <ViewProvider initialView={VIEW_TYPES.TEXT_GENERATION}>
+        <ViewProvider initialView={initialView}>
           <AppContent />
         </ViewProvider>
       </I18nProvider>
