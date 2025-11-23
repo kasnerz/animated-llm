@@ -49,24 +49,34 @@ export function setInitialStates(svgElement, subStep, isInitialStep, labelsSvgEl
   // Reference to avoid lint unused-param error (reserved for future first-pass tweaks)
   void isInitialStep;
   const prev = Math.max(0, (typeof subStep === 'number' ? subStep : 0) - 1);
+
+  // Read transformer state flags from DOM (set by renderer)
+  const tg = svgElement ? svgElement.querySelector(SEL.transformerGroup) : null;
+  const curLayer = tg ? Number(tg.getAttribute('data-current-layer') || '0') : 0;
+  const totalLayers = tg ? Number(tg.getAttribute('data-num-layers') || '1') : 1;
+  const keepStackVisible = totalLayers > 1 && curLayer > 0; // second pass
+
   // Tokens and token IDs (shown together at step 0)
-  setIfAny(svgElement, SEL.token, { opacity: prev >= 0 ? 1 : 0 });
-  setIfAny(svgElement, SEL.tokenId, { opacity: prev >= 0 ? 1 : 0 });
-  setIfAny(svgElement, SEL.tokenIdArrow, { opacity: prev >= 0 ? 1 : 0 });
+  // Keep visible if we are in subsequent layers (curLayer > 0)
+  setIfAny(svgElement, SEL.token, { opacity: prev >= 0 || curLayer > 0 ? 1 : 0 });
+  setIfAny(svgElement, SEL.tokenId, { opacity: prev >= 0 || curLayer > 0 ? 1 : 0 });
+  setIfAny(svgElement, SEL.tokenIdArrow, { opacity: prev >= 0 || curLayer > 0 ? 1 : 0 });
 
   // Embeddings
   setIfAny(svgElement, SEL.embeddingGroupAll, {
-    opacity: prev >= 1 ? 1 : 0,
-    y: prev >= 1 ? 0 : -8,
+    opacity: prev >= 1 || curLayer > 0 ? 1 : 0,
+    y: prev >= 1 || curLayer > 0 ? 0 : -8,
   });
-  setIfAny(svgElement, SEL.idToEmbArrow, { opacity: prev >= 1 ? 1 : 0 });
+  setIfAny(svgElement, SEL.idToEmbArrow, { opacity: prev >= 1 || curLayer > 0 ? 1 : 0 });
 
   // Transformer block and internals
+  // Box stays visible in subsequent layers
   setIfAny(svgElement, SEL.transformerBox, {
-    opacity: prev >= 2 ? 1 : 0,
-    scaleY: prev >= 2 ? 1 : 0.95,
+    opacity: prev >= 2 || curLayer > 0 ? 1 : 0,
+    scaleY: prev >= 2 || curLayer > 0 ? 1 : 0.95,
     transformOrigin: '50% 0%',
   });
+  // Internals are re-animated for each layer, so they depend only on prev (subStep)
   setIfAny(svgElement, SEL.insideTopEmbeddingsAll, {
     opacity: prev >= 2 ? 1 : 0,
     y: prev >= 2 ? 0 : -8,
@@ -94,8 +104,21 @@ export function setInitialStates(svgElement, subStep, isInitialStep, labelsSvgEl
   // Stack reveal (optional)
   // Hide stack again in backprop step 13+ (unrolling to first block)
   const showStack = prev >= 5 && prev < 13;
-  setIfAny(svgElement, SEL.transformerShadowBox, { opacity: showStack ? 1 : 0 });
-  setIfAny(svgElement, SEL.transformerStackLabel, { opacity: showStack ? 1 : 0 });
+  // Keep stack visible if revealed or if we are in subsequent layers
+  {
+    const nodes = qsa(svgElement, SEL.transformerShadowBox);
+    if (nodes.length) {
+      const anyRevealed = nodes.some((n) => n.getAttribute('data-revealed') === '1');
+      gsap.set(nodes, { opacity: showStack || anyRevealed || keepStackVisible ? 1 : 0 });
+    }
+  }
+  {
+    const nodes = qsa(svgElement, SEL.transformerStackLabel);
+    if (nodes.length) {
+      const anyRevealed = nodes.some((n) => n.getAttribute('data-revealed') === '1');
+      gsap.set(nodes, { opacity: showStack || anyRevealed || keepStackVisible ? 1 : 0 });
+    }
+  }
 
   // Extraction to logprobs
   setIfAny(svgElement, SEL.extractedEmbedding, { opacity: prev >= 6 ? 1 : 0 });
@@ -250,6 +273,15 @@ export function buildTimeline(
         duration: animDuration * 0.4,
       });
       toIfAny(SEL.transformerStackLabel, { opacity: 1, duration: animDuration * 0.5 }, '<');
+      // Mark as revealed so subsequent sub-steps in the same generation keep them visible
+      {
+        const nodes = qsa(svgElement, SEL.transformerShadowBox);
+        if (nodes.length) tl.set(nodes, { attr: { 'data-revealed': '1' } }, '>-0.1');
+      }
+      {
+        const nodes = qsa(svgElement, SEL.transformerStackLabel);
+        if (nodes.length) tl.set(nodes, { attr: { 'data-revealed': '1' } }, '<');
+      }
       break;
     case 6:
       toIfAny(SEL.extractedEmbedding, { opacity: 1, duration: animDuration * 0.5 });

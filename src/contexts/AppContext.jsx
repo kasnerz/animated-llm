@@ -164,6 +164,30 @@ function appReducer(state, action) {
       // Training view: animate sub-steps 0..15 (0..10 forward + 11..15 backprop skeleton)
       if (state.viewType === 'training') {
         const maxSubStepsTraining = 16; // 0..15
+        const numLayers = state.currentExample?.model_info?.num_layers || 1;
+        const sub = state.currentAnimationSubStep;
+        const currentLayer = state.currentTransformerLayer;
+
+        // Loop logic for multi-layer models in training
+        // 1. After Stack Reveal (Step 5) on Layer 0, jump to Input (Step 2) on Last Layer
+        if (sub === 5 && currentLayer === 0 && numLayers > 1) {
+          return {
+            ...state,
+            currentTransformerLayer: Math.max(0, numLayers - 1),
+            currentAnimationSubStep: 2,
+            instantTransition: false,
+          };
+        }
+
+        // 2. After FFN (Step 4) on Last Layer, jump to Extraction (Step 6), skipping Stack Reveal
+        if (sub === 4 && currentLayer >= numLayers - 1 && numLayers > 1) {
+          return {
+            ...state,
+            currentAnimationSubStep: 6,
+            instantTransition: false,
+          };
+        }
+
         if (state.currentAnimationSubStep >= maxSubStepsTraining - 1) return state;
         return {
           ...state,
@@ -245,6 +269,29 @@ function appReducer(state, action) {
       if (state.viewType === 'training') {
         // Simple backward stepping for training
         const sub = state.currentAnimationSubStep;
+        const numLayers = state.currentExample?.model_info?.num_layers || 1;
+        const currentLayer = state.currentTransformerLayer;
+
+        // Reverse loop logic for multi-layer models in training
+        // 1. If at Input (Step 2) on Last Layer, jump back to Stack Reveal (Step 5) on Layer 0
+        if (sub === 2 && currentLayer >= numLayers - 1 && numLayers > 1) {
+          return {
+            ...state,
+            currentTransformerLayer: 0,
+            currentAnimationSubStep: 5,
+            instantTransition: true,
+          };
+        }
+
+        // 2. If at Extraction (Step 6) on Last Layer, jump back to FFN (Step 4) on Last Layer
+        if (sub === 6 && currentLayer >= numLayers - 1 && numLayers > 1) {
+          return {
+            ...state,
+            currentAnimationSubStep: 4,
+            instantTransition: true,
+          };
+        }
+
         if (sub > 0) {
           return { ...state, currentAnimationSubStep: sub - 1, instantTransition: true };
         }
