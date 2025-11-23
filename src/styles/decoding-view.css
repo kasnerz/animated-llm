@@ -1,0 +1,225 @@
+.decoding-view-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 0 60px;
+}
+
+.decoding-view-container .canvas-input-section {
+  width: 100%;
+  max-width: 800px;
+  display: flex;
+  justify-content: center;
+}
+
+.decoding-view-container .input-section-minimal {
+  width: 100%;
+}
+
+.decoding-io-box {
+  border: 1.5px solid var(--border-color, #d0d0d0);
+  border-radius: 14px;
+  padding: 14px 18px 12px;
+  background: transparent;
+  min-width: 60%;
+  max-width: 900px;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.decoding-io-box .io-box-label {
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--text-secondary, #666);
+  margin-bottom: 6px;
+}
+
+.io-box-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 6px;
+}
+
+.io-token {
+  padding: 2px 6px;
+  border-radius: 6px;
+  background: var(--token-bg, #f6f6f6);
+  font-family: var(--mono-font, monospace);
+  border: 1px solid transparent;
+}
+
+.io-token.special {
+  opacity: 0.75;
+  border-color: var(--border-color, #d0d0d0);
+}
+
+.io-token.appended {
+  background: var(--primary-bg, #e8f4ff);
+  border-color: var(--primary-color, #1677ff);
+}
+
+.arrow.arrow-down {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+
+.arrow .shaft {
+  width: 2px;
+  height: 16px;
+  background: var(--border-color, #ccc);
+  transition: background-color 0.3s ease;
+}
+
+.arrow .head {
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 8px solid var(--border-color, #ccc);
+  margin-top: -2px;
+}
+
+.transformer-box {
+  width: 90%;
+  max-width: 420px;
+  padding: 12px 36px;
+  background: var(--transformer-bg, #ececec);
+  border: 1.5px solid var(--border-color, #c8c8c8);
+  border-radius: 8px;
+  font-family: var(--font-ui, system-ui, sans-serif);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--text-secondary, #666);
+  font-variant: small-caps;
+  box-sizing: border-box;
+}
+
+.transformer-label {
+  text-align: center;
+}
+
+.probabilities-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  max-width: 600px;
+  justify-content: center;
+}
+
+.probabilities-label-side {
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--text-secondary, #666);
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  white-space: nowrap;
+  height: 100px;
+  /* Ensure it takes some vertical space */
+  text-align: center;
+}
+
+.probability-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  width: 100%;
+  /* Removed max-width constraint here, controlled by wrapper */
+  flex: 1;
+}
+
+.prob-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  position: relative;
+  padding: 2px 8px;
+  border-radius: 6px;
+}
+
+.prob-label {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  min-width: 140px;
+  font-size: 16px;
+  z-index: 2;
+  gap: 8px;
+}
+
+.prob-token {
+  font-family: var(--mono-font, monospace);
+  color: var(--text-primary, #222);
+}
+
+.prob-percent {
+  color: var(--text-secondary, #666);
+  font-size: 11px;
+}
+
+.prob-bar-wrapper {
+  flex: 1;
+  position: relative;
+  height: 14px;
+  background: #f2f2f2;
+  border-radius: 10px;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.prob-bar {
+  height: 100%;
+  border-radius: 10px;
+  transition: width 0.6s ease;
+}
+
+.row-selection-outline {
+  position: absolute;
+  inset: 0;
+  border: 3px solid var(--accent-primary, #007e66);
+  border-radius: 8px;
+  pointer-events: none;
+  z-index: 1;
+  background: transparent;
+}
+
+.append-arrow-container {
+  position: absolute;
+  right: -10px;
+  top: 50%;
+  width: 0;
+  height: 0;
+  overflow: visible;
+  z-index: 10;
+}
+
+.append-arrow-svg {
+  overflow: visible;
+  pointer-events: none;
+  width: 1px;
+  height: 1px;
+}
+
+@media (max-width: 760px) {
+  .decoding-io-box {
+    min-width: 92%;
+  }
+
+  .probabilities-wrapper {
+    max-width: 92%;
+    gap: 8px;
+  }
+
+  .transformer-box {
+    padding: 12px 16px;
+  }
+}

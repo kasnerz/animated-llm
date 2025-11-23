@@ -37,6 +37,8 @@ const translations = {
     view_training_desc: 'Understand the training process of language models',
     view_decoding_desc: 'Explore different decoding strategies and algorithms',
     decoding_view_placeholder: 'Decoding algorithms visualization will be displayed here.',
+    model_input: 'Model Input',
+    model_output: 'Model Output',
     // Keyboard shortcuts
     shortcut_play_pause: 'Play / Pause animation',
     shortcut_step_forward: 'Step forward',
@@ -130,6 +132,8 @@ const translations = {
     view_training_desc: 'Pochopení procesu trénování jazykových modelů',
     view_decoding_desc: 'Prozkoumání různých dekódovacích strategií a algoritmů',
     decoding_view_placeholder: 'Vizualizace dekódovacích algoritmů bude zobrazena zde.',
+    model_input: 'Vstup modelu',
+    model_output: 'Výstup modelu',
     // Keyboard shortcuts
     shortcut_play_pause: 'Přehrát / Pozastavit animaci',
     shortcut_step_forward: 'Krok vpřed',

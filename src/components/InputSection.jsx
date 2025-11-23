@@ -17,7 +17,7 @@ import { mdiPlay, mdiPause, mdiChevronDown, mdiTune, mdiDotsHorizontal } from '@
  * While currently used in TextGenerationView, this component is designed
  * to be reusable in other views that need prompt/example selection.
  */
-function InputSection() {
+function InputSection({ disableTokenization = false }) {
   const { state, actions } = useApp();
   const { t } = useI18n();
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -72,7 +72,7 @@ function InputSection() {
   }, [state.selectedModelIndex, state.selectedTemperatureEmoji, filteredExamples.length]);
 
   // Get tokens from the initial step if visualization has started
-  const shouldShowTokens = state.currentStep > 0 && state.currentExample;
+  const shouldShowTokens = !disableTokenization && state.currentStep > 0 && state.currentExample;
   const tokens = shouldShowTokens ? state.currentExample.generation_steps[0].tokens : [];
 
   // Close the compact action menu when clicking outside of it

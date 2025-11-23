@@ -70,6 +70,28 @@ export function getProbabilityColor(probability) {
 }
 
 /**
+ * Simple Viridis colormap implementation (discrete stops, fast & dependency-free)
+ * Source stop values approximated from matplotlib viridis.
+ * We keep it lightweight – no interpolation needed for this visualization.
+ * @param {number} value - Probability in [0,1]
+ * @returns {string} Hex color
+ */
+export function getViridisColor(value) {
+  const stops = [
+    '#440154', // dark purple
+    '#414487', // indigo
+    '#2A788E', // teal-ish
+    '#22A884', // green-teal
+    '#7AD151', // yellow-green
+    '#FDE725', // bright yellow
+  ];
+  if (isNaN(value) || value < 0) value = 0;
+  if (value > 1) value = 1;
+  const idx = Math.min(stops.length - 1, Math.floor(value * (stops.length - 1)));
+  return stops[idx];
+}
+
+/**
  * Get opacity for visualization elements based on state
  * @param {string} state - Element state ('active', 'inactive', 'hover')
  * @returns {number} Opacity value between 0 and 1
@@ -92,5 +114,6 @@ export default {
   getTokenColor,
   getEmbeddingColor,
   getProbabilityColor,
+  getViridisColor,
   getOpacity,
 };
