@@ -25,8 +25,12 @@ export function drawEmbeddingColumn(group, centerX, topY, values, options = {}) 
   const paddingX = VECTOR.PADDING_X;
   const paddingY = VECTOR.PADDING_Y;
 
-  const displayValues = (values || []).slice(0, 3);
-  const n = displayValues.length || 3;
+  // For hidden state (embedding) preview, show first value, ellipsis, last value
+  const hasValues = Array.isArray(values) && values.length > 0;
+  const firstVal = hasValues ? values[0] : undefined;
+  const lastVal = hasValues ? values[values.length - 1] : undefined;
+  const displayValues = [firstVal, 'ELLIPSIS', lastVal];
+  const n = 3; // always render three mini-cells
   const width = n * cellWidth + (n - 1) * gap + paddingX * 2;
   const height = cellHeight + paddingY * 2;
   const leftX = centerX - width / 2;
@@ -61,14 +65,17 @@ export function drawEmbeddingColumn(group, centerX, topY, values, options = {}) 
       .attr('rx', VECTOR.CELL_RADIUS)
       .style('fill', 'transparent');
 
+    const isEllipsis = v === 'ELLIPSIS';
     colG
       .append('text')
       .attr('x', cx)
-      .attr('y', cy + VECTOR.TEXT_Y_OFFSET)
+      .attr('y', isEllipsis ? cy : cy + VECTOR.TEXT_Y_OFFSET)
       .attr('text-anchor', 'middle')
-      .style('font-size', VECTOR.TEXT_SIZE)
+      .attr('dominant-baseline', isEllipsis ? 'central' : 'auto')
+      .style('font-size', isEllipsis ? '16px' : VECTOR.TEXT_SIZE)
+      .style('font-weight', 'normal')
       .style('fill', getVectorTextColor(isDarkMode))
-      .text(typeof v === 'number' ? v.toFixed(1) : '');
+      .text(isEllipsis ? '⋯' : typeof v === 'number' ? v.toFixed(1) : '');
   });
 
   const centerY = topY + height / 2;
@@ -147,10 +154,12 @@ export function drawHorizontalVector(group, centerX, topY, values, options = {})
       .style('fill', 'transparent');
 
     const isLastAndEllipsis = ellipsisLast && i === n - 1;
+    const cy = topY + 6 + cellHeight / 2;
     g.append('text')
       .attr('x', cx)
-      .attr('y', topY + 6 + cellHeight / 2 + (isLogprob ? 6 : VECTOR.TEXT_Y_OFFSET))
+      .attr('y', isLastAndEllipsis ? cy : cy + (isLogprob ? 6 : VECTOR.TEXT_Y_OFFSET))
       .attr('text-anchor', 'middle')
+      .attr('dominant-baseline', isLastAndEllipsis ? 'central' : 'auto')
       .style('font-size', isLastAndEllipsis ? '16px' : fontSize)
       .style('font-weight', 'normal')
       .style('fill', getVectorTextColor(isDarkMode))

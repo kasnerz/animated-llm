@@ -77,23 +77,11 @@ body {
   white-space: nowrap;
 }
 
-.logo-square {
-  width: 22px;
-  height: 22px;
-  background: var(--accent-primary);
-  border-radius: 0.375rem;
-  box-shadow: 0 2px 8px rgba(0, 109, 93, 0.2);
-  flex-shrink: 0;
-}
-
-.logo-text {
-  font-family: 'Mountains of Christmas', cursive;
-  font-weight: bold;
-  font-size: 1.7rem;
-  color: var(--accent-primary);
-  white-space: nowrap;
-  user-select: none;
+.logo-image {
+  height: 40px;
+  width: auto;
   cursor: pointer;
+  user-select: none;
 }
 
 /* Canvas Input Section - prompt input moved to canvas area */
@@ -1110,8 +1098,8 @@ body {
   }
 
   /* Logo adjustments */
-  .logo-text {
-    font-size: 1.3rem;
+  .logo-image {
+    height: 32px;
   }
 
   /* Input section adjustments */

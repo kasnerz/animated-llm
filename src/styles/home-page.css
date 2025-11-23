@@ -70,24 +70,14 @@
   margin-bottom: 1rem;
 }
 
-.home-logo-square {
-  width: 80px;
-  height: 80px;
-  background-color: var(--accent-primary);
-  border-radius: 8px;
+.home-logo-image {
+  height: 120px;
+  width: auto;
   transition: transform 0.3s ease;
 }
 
-.home-logo:hover .home-logo-square {
+.home-logo:hover .home-logo-image {
   transform: scale(1.05);
-}
-
-.home-logo-text {
-  font-family: 'Mountains of Christmas', cursive;
-  font-size: 5rem;
-  font-weight: 600;
-  color: var(--accent-primary);
-  margin: 0;
 }
 
 /* Subtitle */
@@ -102,7 +92,7 @@
   display: flex;
   gap: 2rem;
   justify-content: center;
-  margin-top: 3rem;
+  margin-top: 5rem;
   max-width: 900px;
   margin-left: auto;
   margin-right: auto;
@@ -114,7 +104,7 @@
   align-items: center;
   justify-content: center;
   gap: 1.5rem;
-  padding: 2rem 2rem;
+  padding: 1.5rem 1.5rem;
   background-color: var(--accent-primary);
   border: 2px solid var(--accent-primary);
   border-radius: 16px;
@@ -164,8 +154,8 @@
     height: 60px;
   }
 
-  .home-logo-text {
-    font-size: 4rem;
+  .home-logo-image {
+    height: 100px;
   }
 
   .home-subtitle {
@@ -195,8 +185,8 @@
     height: 50px;
   }
 
-  .home-logo-text {
-    font-size: 3rem;
+  .home-logo-image {
+    height: 80px;
   }
 
   .home-subtitle {

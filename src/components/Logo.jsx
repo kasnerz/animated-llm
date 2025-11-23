@@ -1,4 +1,6 @@
 import PropTypes from 'prop-types';
+import logoImage from '../assets/logo.png';
+import logoImageSmall from '../assets/logo-small.png';
 
 /**
  * Logo component - Reusable app logo with icon and text
@@ -12,12 +14,11 @@ function Logo({ variant = 'header', className = '' }) {
 
   return (
     <div className={`${isHome ? 'home-logo' : 'app-logo-content'} ${className}`.trim()}>
-      {/* <div className={isHome ? 'home-logo-square' : 'logo-square'}></div> */}
-      {isHome ? (
-        <h1 className="home-logo-text">AnimatedLLM</h1>
-      ) : (
-        <div className="logo-text">AnimatedLLM</div>
-      )}
+      <img
+        src={isHome ? logoImage : logoImageSmall}
+        alt="AnimatedLLM"
+        className={isHome ? 'home-logo-image' : 'logo-image'}
+      />
     </div>
   );
 }
