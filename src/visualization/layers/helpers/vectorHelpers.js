@@ -154,18 +154,18 @@ export function drawHorizontalVector(group, centerX, topY, values, options = {})
       .style('fill', 'transparent');
 
     const isLastAndEllipsis = ellipsisLast && i === n - 1;
+    const isEllipsisValue = v === 'ELLIPSIS';
+    const isEllipsis = isLastAndEllipsis || isEllipsisValue;
     const cy = topY + 6 + cellHeight / 2;
     g.append('text')
       .attr('x', cx)
-      .attr('y', isLastAndEllipsis ? cy : cy + (isLogprob ? 6 : VECTOR.TEXT_Y_OFFSET))
+      .attr('y', isEllipsis ? cy : cy + (isLogprob ? 6 : VECTOR.TEXT_Y_OFFSET))
       .attr('text-anchor', 'middle')
-      .attr('dominant-baseline', isLastAndEllipsis ? 'central' : 'auto')
-      .style('font-size', isLastAndEllipsis ? '16px' : fontSize)
+      .attr('dominant-baseline', isEllipsis ? 'central' : 'auto')
+      .style('font-size', isEllipsis ? '16px' : fontSize)
       .style('font-weight', 'normal')
       .style('fill', getVectorTextColor(isDarkMode))
-      .text(
-        isLastAndEllipsis ? '⋯' : format ? format(v) : typeof v === 'number' ? v.toFixed(1) : ''
-      );
+      .text(isEllipsis ? '⋯' : format ? format(v) : typeof v === 'number' ? v.toFixed(1) : '');
   });
 
   return { topY, bottomY: topY + cellHeight + 12, centers, width, cellWidth };

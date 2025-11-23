@@ -399,7 +399,7 @@ function renderExtractedEmbedding(
       .attr('width', rm.width)
       .attr('height', rm.height)
       .attr('rx', 4)
-      .style('fill', baseFill)
+      .style('fill', 'none')
       .style('stroke', getVectorBoxColors(tokenColor, { isDarkMode }).stroke);
 
     const targetHalfHeight = (18 + 12) / 2;
@@ -408,7 +408,13 @@ function renderExtractedEmbedding(
     extracted.attr('data-dx', dx).attr('data-dy', dy);
   }
 
-  const sampleValues = (computedEmbeddings?.ffn?.[rightmostActualIndex] || []).slice(0, 8);
+  const fullValues = computedEmbeddings?.ffn?.[rightmostActualIndex] || [];
+  // Show first 3 values, ellipsis, last 3 values (similar to hidden state pattern)
+  const firstVals = fullValues.slice(0, 3);
+  const lastVals = fullValues.slice(-3);
+  const sampleValues =
+    fullValues.length > 6 ? [...firstVals, 'ELLIPSIS', ...lastVals] : fullValues.slice(0, 7);
+
   const hv1 = drawHorizontalVector(group, horizCenterX, horizY, sampleValues, {
     className: 'extracted-horizontal',
     tokenColor,
