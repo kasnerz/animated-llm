@@ -7,6 +7,7 @@ import { LAYOUT } from '../visualization/core/constants';
 import { MODEL_REGISTRY, getModelInfo, getTemperatureEmoji } from '../config/modelConfig';
 import Icon from '@mdi/react';
 import { mdiPlay, mdiPause, mdiChevronDown, mdiCodeTags } from '@mdi/js';
+import InitialHint from '../components/InitialHint';
 import '../styles/visualization.css';
 import '../styles/main.css';
 import '../styles/decoding-view.css';
@@ -529,6 +530,9 @@ function DecodingView() {
           </div>
         </div>
       )}
+
+      {/* Initial hint - only shown before animation starts */}
+      {state.currentStep === 0 && subStep === 0 && !state.isPlaying && <InitialHint />}
 
       {/* Removed old append-arrow div */}
     </div>

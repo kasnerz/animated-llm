@@ -49,6 +49,9 @@ const translations = {
     shortcut_toggle_theme: 'Toggle theme',
     shortcut_toggle_language: 'Cycle language',
     shortcut_show_shortcuts: 'Show keyboard shortcuts',
+    // Initial hint
+    hint_press_play: 'Press the Play button to start animation',
+    hint_keyboard_shortcuts: 'Keyboard shortcuts',
     // Stage labels
     stage_tokenization: 'Tokenization',
     stage_tokenization_hint: 'Segmenting the text into smaller units',
@@ -144,6 +147,9 @@ const translations = {
     shortcut_toggle_theme: 'Přepnout téma',
     shortcut_toggle_language: 'Přepnout jazyk',
     shortcut_show_shortcuts: 'Zobrazit klávesové zkratky',
+    // Initial hint
+    hint_press_play: 'Stiskněte tlačítko Přehrát pro začátek animace',
+    hint_keyboard_shortcuts: 'Klávesové zkratky',
     // Stage labels
     stage_tokenization: 'Tokenizace',
     stage_tokenization_hint: 'Text je rozdělen na menší části: tokeny.',

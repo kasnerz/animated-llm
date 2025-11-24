@@ -728,7 +728,10 @@ function renderAppendTokenPreview(
     .attr('y', 6)
     .attr('class', 'preview-token-text')
     .style('font-size', '18px')
-    .style('font-family', '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif')
+    .style(
+      'font-family',
+      'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif'
+    )
     .style('font-weight', '500')
     .style('fill', 'var(--viz-token-text)')
     .style('opacity', 0)

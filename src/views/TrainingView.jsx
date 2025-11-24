@@ -3,6 +3,7 @@ import GeneratedAnswer from '../components/GeneratedAnswer';
 import TrainingCanvas from '../components/TrainingCanvas';
 import TrainingDocumentCarousel from '../components/TrainingDocumentCarousel';
 import InfoBox from '../components/InfoBox';
+import InitialHint from '../components/InitialHint';
 
 /**
  * TrainingView Component
@@ -26,6 +27,9 @@ function TrainingView() {
           </div>
           {/* Training-specific animation */}
           <TrainingCanvas />
+
+          {/* Initial hint - only shown before animation starts */}
+          {state.currentStep === 0 && !state.isPlaying && <InitialHint />}
         </>
       )}
 

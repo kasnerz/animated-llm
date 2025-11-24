@@ -3,6 +3,7 @@ import GeneratedAnswer from '../components/GeneratedAnswer';
 import TextGenerationCanvas from '../components/TextGenerationCanvas';
 import InputSection from '../components/InputSection';
 import InfoBox from '../components/InfoBox';
+import InitialHint from '../components/InitialHint';
 
 /**
  * TextGenerationView Component
@@ -24,6 +25,9 @@ function TextGenerationView() {
             <InputSection />
           </div>
           <TextGenerationCanvas />
+
+          {/* Initial hint - only shown before animation starts */}
+          {state.currentStep === 0 && !state.isPlaying && <InitialHint />}
         </>
       )}
 
