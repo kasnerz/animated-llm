@@ -390,7 +390,7 @@ export function buildTimeline(
       // Unroll stack to first block only (keep first fully visible, hide the rest)
       toIfAny('.transformer-shadow-box', { opacity: 0, duration: animDuration * 0.3 });
       toIfAny('.transformer-stack-label', { opacity: 0, duration: animDuration * 0.3 }, '<');
-      toIfAny('.transformer-box', { opacity: 1, duration: animDuration * 0.3 }, '<');
+      toIfAny('.viz-transformer-box', { opacity: 1, duration: animDuration * 0.3 }, '<');
       toIfAny('.bp-first-block-ffn-connection.green', {
         className: '+=bp-connection-green',
         duration: animDuration * 0.6,

@@ -34,7 +34,7 @@ export const EMBEDDING_SELECTORS = {
 // Transformer block selectors
 export const TRANSFORMER_SELECTORS = {
   transformerGroup: '.transformer-group',
-  transformerBox: '.transformer-group .transformer-box',
+  transformerBox: '.transformer-group .viz-transformer-box',
   transformerShadowBox: '.transformer-shadow-box',
   transformerStackLabel: '.transformer-stack-label',
   shadowToBlockArrow: '.shadow-to-block-arrow',

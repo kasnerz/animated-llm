@@ -124,7 +124,7 @@ export function renderTransformerBlockLayer(
   drawPositionalGuides(backUnderlays, currentLayer, tokensLayoutRef, columnsMeta);
 
   // Render shadow layers and main box
-  renderTransformerBox(group, validXs, blockTopY, blockBottomY, numLayers);
+  renderTransformerBox(group, validXs, blockTopY, blockBottomY, numLayers, columnsMeta);
 
   // Add stack size label
   const boxRightX = Math.max(...validXs) + 60;
@@ -543,9 +543,39 @@ function drawPositionalGuides(backUnderlays, currentLayer, tokensLayoutRef, colu
 }
 
 // Helper: Render transformer box with shadows
-function renderTransformerBox(group, validXs, blockTopY, blockBottomY, numLayers) {
-  const minX = Math.min(...validXs);
-  const maxX = Math.max(...validXs);
+function renderTransformerBox(
+  group,
+  validXs,
+  blockTopY,
+  blockBottomY,
+  numLayers,
+  columnsMeta = []
+) {
+  // Calculate proper bounds using column metadata (which includes token widths)
+  // If columnsMeta is available, use it to get the actual left and right edges
+  let minX, maxX;
+
+  if (columnsMeta && columnsMeta.length > 0) {
+    // Filter out gap columns (which have null values)
+    const validColumns = columnsMeta.filter((col) => col !== null && col.centerX !== undefined);
+    if (validColumns.length > 0) {
+      // Get leftmost and rightmost token edges
+      const leftmost = validColumns[0];
+      const rightmost = validColumns[validColumns.length - 1];
+
+      minX = leftmost.centerX - (leftmost.width || 0) / 2;
+      maxX = rightmost.centerX + (rightmost.width || 0) / 2;
+    } else {
+      // Fallback to validXs if columnsMeta doesn't have valid data
+      minX = Math.min(...validXs);
+      maxX = Math.max(...validXs);
+    }
+  } else {
+    // Fallback to validXs
+    minX = Math.min(...validXs);
+    maxX = Math.max(...validXs);
+  }
+
   const totalShadows = Math.min(TRANSFORMER.MAX_SHADOWS, Math.max(0, (numLayers || 1) - 1));
 
   // Shadow layers
@@ -579,7 +609,7 @@ function renderTransformerBox(group, validXs, blockTopY, blockBottomY, numLayers
     .attr('width', maxX + TRANSFORMER.SHADOW_PADDING - (minX - TRANSFORMER.SHADOW_PADDING))
     .attr('height', blockBottomY - blockTopY)
     .attr('rx', TRANSFORMER_BOX.BORDER_RADIUS)
-    .attr('class', 'transformer-box')
+    .attr('class', 'viz-transformer-box')
     .style('fill', 'var(--viz-transformer-bg)')
     .style('stroke', 'var(--viz-transformer-border)')
     .style('stroke-width', TRANSFORMER_BOX.STROKE_WIDTH);
@@ -588,7 +618,7 @@ function renderTransformerBox(group, validXs, blockTopY, blockBottomY, numLayers
   try {
     const backUnderlaysNode = group.select('.positional-underlays-back').node();
     if (backUnderlaysNode) {
-      group.insert(() => backUnderlaysNode, '.transformer-box');
+      group.insert(() => backUnderlaysNode, '.viz-transformer-box');
     }
   } catch {
     // Ignore if insertion fails
