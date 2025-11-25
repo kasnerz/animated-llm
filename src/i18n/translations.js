@@ -22,6 +22,21 @@ const translations = {
     show_special_tokens: 'Special tokens',
     // Home page
     home_subtitle: 'Interactive LLM Visualizations',
+    home_tagline: 'Interactive visualization of language models',
+    // Home page sections
+    home_training_title: 'Training',
+    home_training_desc: 'Understand how language models learn from data',
+    home_generation_title: 'Text Generation',
+    home_generation_desc: 'Explore how language models generate text',
+    // Home page items
+    home_pretraining_model_title: 'Model View',
+    home_pretraining_model_desc: 'See the full training process with detailed model internals',
+    home_pretraining_simple_title: 'Simple View',
+    home_pretraining_simple_desc: 'Learn the basics of pretraining with simplified visualization',
+    home_generation_model_title: 'Model View',
+    home_generation_model_desc: 'Visualize the complete Transformer architecture in action',
+    home_generation_simple_title: 'Simple View',
+    home_generation_simple_desc: 'Understand decoding algorithms with clear, step-by-step examples',
     // Category labels
     category_training: 'Training',
     category_text_generation: 'Text generation',
@@ -120,6 +135,21 @@ const translations = {
     show_special_tokens: 'Speciální tokeny',
     // Home page
     home_subtitle: 'Interaktivní vizualizace velkých jazykových modelů',
+    home_tagline: 'Podívejte se AI asistentům pod pokličku.',
+    // Home page sections
+    home_training_title: 'Trénování',
+    home_training_desc: 'Pochopte, jak se jazykové modely učí z trénovacích dat.',
+    home_generation_title: 'Generování textu',
+    home_generation_desc: 'Pochopte, jak jazykové modely generují text.',
+    // Home page items
+    home_pretraining_model_title: 'Trénování krok za krokem',
+    home_pretraining_model_desc: 'Jak se trénuje jazykový model architektury Transformer?',
+    home_pretraining_simple_title: 'Trénování 101',
+    home_pretraining_simple_desc: 'Co se děje při trénování modelu?',
+    home_generation_model_title: 'Generování krok za krokem',
+    home_generation_model_desc: 'Jak jazykový model architektury Transformer generuje text?',
+    home_generation_simple_title: 'Generování 101',
+    home_generation_simple_desc: 'Co se děje při generování textu?',
     // Category labels
     category_training: 'Trénování',
     category_text_generation: 'Generování textu',

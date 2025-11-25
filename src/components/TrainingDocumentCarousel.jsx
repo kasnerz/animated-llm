@@ -12,7 +12,7 @@ import { mdiPlay, mdiPause, mdiChevronLeft, mdiChevronRight } from '@mdi/js';
  * TrainingDocumentCarousel Component
  *
  * Displays a carousel of document excerpts with left/center/right positioning
- * Used in TrainingView to show multiple documents with the active one in the center
+ * Used in PretrainingModelView to show multiple documents with the active one in the center
  */
 function TrainingDocumentCarousel() {
   const { state, actions } = useApp();

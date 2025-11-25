@@ -19,18 +19,18 @@ function SubViewSelector() {
 
   // Determine current sub-view from URL
   const currentSubView =
-    location.pathname === '/decoding-algorithms' ? VIEW_TYPES.DECODING : VIEW_TYPES.TEXT_GENERATION;
+    location.pathname === '/generation-simple' ? VIEW_TYPES.DECODING : VIEW_TYPES.TEXT_GENERATION;
 
   // Available sub-views
   const subViews = [
     {
       id: VIEW_TYPES.TEXT_GENERATION,
-      path: '/text-generation',
+      path: '/generation-model',
       ...VIEW_INFO[VIEW_TYPES.TEXT_GENERATION],
     },
     {
       id: VIEW_TYPES.DECODING,
-      path: '/decoding-algorithms',
+      path: '/generation-simple',
       ...VIEW_INFO[VIEW_TYPES.DECODING],
     },
   ];

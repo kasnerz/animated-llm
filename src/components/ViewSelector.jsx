@@ -22,12 +22,12 @@ function ViewSelector() {
     {
       category: VIEW_CATEGORIES.TRAINING,
       viewType: VIEW_TYPES.TRAINING,
-      path: '/pretraining',
+      path: '/pretraining-model',
     },
     {
       category: VIEW_CATEGORIES.TEXT_GENERATION,
       viewType: VIEW_TYPES.TEXT_GENERATION,
-      path: '/text-generation',
+      path: '/generation-model',
     },
   ];
 

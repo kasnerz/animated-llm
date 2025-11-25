@@ -6,10 +6,10 @@ import InfoBox from '../components/InfoBox';
 import InitialHint from '../components/InitialHint';
 
 /**
- * TextGenerationView Component
+ * GenerationModelView Component
  * The main view showing text generation with Transformer internals animation
  */
-function TextGenerationView() {
+function GenerationModelView() {
   const { state } = useApp();
 
   return (
@@ -41,4 +41,4 @@ function TextGenerationView() {
   );
 }
 
-export default TextGenerationView;
+export default GenerationModelView;

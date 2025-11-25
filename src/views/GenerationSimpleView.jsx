@@ -13,7 +13,7 @@ import '../styles/main.css';
 import '../styles/decoding-view.css';
 
 /**
- * DecodingView Component
+ * GenerationSimpleView Component
  * Simplified decoding algorithms visualization
  * Steps:
  * 0: Tokenize prompt (show tokens with specials ON)
@@ -22,7 +22,7 @@ import '../styles/decoding-view.css';
  * 3: Highlight selected next token
  * 4: Append selected token to top sequence
  */
-function DecodingView() {
+function GenerationSimpleView() {
   const { state, actions } = useApp();
   const { t } = useI18n();
 
@@ -539,4 +539,4 @@ function DecodingView() {
   );
 }
 
-export default DecodingView;
+export default GenerationSimpleView;

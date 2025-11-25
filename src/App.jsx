@@ -5,9 +5,10 @@ import { I18nProvider, useI18n } from './i18n/I18nProvider';
 import { ViewProvider, useView } from './contexts/ViewContext';
 import { VIEW_TYPES } from './contexts/viewTypes';
 import HomePage from './views/HomePage';
-import TextGenerationView from './views/TextGenerationView';
-import TrainingView from './views/TrainingView';
-import DecodingView from './views/DecodingView';
+import GenerationModelView from './views/GenerationModelView';
+import PretrainingModelView from './views/PretrainingModelView';
+import GenerationSimpleView from './views/GenerationSimpleView';
+import PretrainingSimpleView from './views/PretrainingSimpleView';
 import InputSection from './components/InputSection';
 import KeyboardShortcutsModal from './components/KeyboardShortcutsModal';
 import LanguageSelector from './components/LanguageSelector';
@@ -34,9 +35,10 @@ function AppContent() {
   // Sync view from URL to context
   useEffect(() => {
     const pathToView = {
-      '/pretraining': VIEW_TYPES.TRAINING,
-      '/text-generation': VIEW_TYPES.TEXT_GENERATION,
-      '/decoding-algorithms': VIEW_TYPES.DECODING,
+      '/pretraining-model': VIEW_TYPES.TRAINING,
+      '/generation-model': VIEW_TYPES.TEXT_GENERATION,
+      '/generation-simple': VIEW_TYPES.DECODING,
+      '/pretraining-simple': VIEW_TYPES.PRETRAINING_SIMPLE,
     };
 
     const viewFromPath = pathToView[location.pathname];
@@ -299,12 +301,16 @@ function AppContent() {
       {!isHomePage && (
         <div className="floating-top-section">
           <div className="floating-top-content">
+            {/* View selector on the left */}
+            <div className="view-selector-popup-container">
+              <ViewSelectorPopup />
+            </div>
+
             {/* Centered logo and title */}
             <div className="app-logo">
               <Link to="/" className="logo-icon">
                 <Logo variant="header" />
               </Link>
-              <ViewSelectorPopup />
             </div>
 
             {/* Header controls - minimal */}
@@ -381,9 +387,10 @@ function AppContent() {
       <main className="app-main">
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/text-generation" element={<TextGenerationView />} />
-          <Route path="/pretraining" element={<TrainingView />} />
-          <Route path="/decoding-algorithms" element={<DecodingView />} />
+          <Route path="/generation-model" element={<GenerationModelView />} />
+          <Route path="/pretraining-model" element={<PretrainingModelView />} />
+          <Route path="/generation-simple" element={<GenerationSimpleView />} />
+          <Route path="/pretraining-simple" element={<PretrainingSimpleView />} />
         </Routes>
       </main>
 
@@ -404,9 +411,10 @@ function App() {
     const cleanPath = path.startsWith(basename) ? path.slice(basename.length) : path;
 
     const pathToView = {
-      '/pretraining': VIEW_TYPES.TRAINING,
-      '/text-generation': VIEW_TYPES.TEXT_GENERATION,
-      '/decoding-algorithms': VIEW_TYPES.DECODING,
+      '/pretraining-model': VIEW_TYPES.TRAINING,
+      '/generation-model': VIEW_TYPES.TEXT_GENERATION,
+      '/generation-simple': VIEW_TYPES.DECODING,
+      '/pretraining-simple': VIEW_TYPES.PRETRAINING_SIMPLE,
     };
 
     return pathToView[cleanPath] || VIEW_TYPES.TEXT_GENERATION;

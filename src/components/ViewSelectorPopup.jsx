@@ -1,37 +1,60 @@
 import { useState, useRef, useEffect } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useView } from '../contexts/ViewContext';
-import { VIEW_TYPES, VIEW_CATEGORIES, CATEGORY_INFO, VIEW_INFO } from '../contexts/viewTypes';
+import { VIEW_TYPES } from '../contexts/viewTypes';
 import { useI18n } from '../i18n/I18nProvider';
 import Icon from '@mdi/react';
-import { mdiChevronDown } from '@mdi/js';
-import SubViewSelector from './SubViewSelector';
+import { mdiChevronDown, mdiWeightLifter, mdiDumbbell, mdiForumOutline, mdiDrawPen } from '@mdi/js';
 import '../styles/view-selector-popup.css';
 
 /**
  * ViewSelectorPopup component
- * Dropdown button with popup grid showing available main categories
- * Plus SubViewSelector for text generation views
+ * Single dropdown button with popup showing all available views organized by category
  */
 function ViewSelectorPopup() {
-  const { currentView, setCurrentView, viewInfo } = useView();
+  const { currentView, setCurrentView } = useView();
   const { t } = useI18n();
   const navigate = useNavigate();
-  const location = useLocation();
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef(null);
 
-  // Get main categories only
-  const mainCategories = [
+  // Define all views organized by section
+  const sections = [
     {
-      category: VIEW_CATEGORIES.TRAINING,
-      viewType: VIEW_TYPES.TRAINING,
-      path: '/pretraining',
+      id: 'training',
+      titleKey: 'home_training_title',
+      views: [
+        {
+          id: VIEW_TYPES.TRAINING,
+          titleKey: 'home_pretraining_model_title',
+          path: '/pretraining-model',
+          icon: mdiWeightLifter,
+        },
+        {
+          id: VIEW_TYPES.PRETRAINING_SIMPLE,
+          titleKey: 'home_pretraining_simple_title',
+          path: '/pretraining-simple',
+          icon: mdiDumbbell,
+        },
+      ],
     },
     {
-      category: VIEW_CATEGORIES.TEXT_GENERATION,
-      viewType: VIEW_TYPES.TEXT_GENERATION,
-      path: '/text-generation',
+      id: 'generation',
+      titleKey: 'home_generation_title',
+      views: [
+        {
+          id: VIEW_TYPES.TEXT_GENERATION,
+          titleKey: 'home_generation_model_title',
+          path: '/generation-model',
+          icon: mdiForumOutline,
+        },
+        {
+          id: VIEW_TYPES.DECODING,
+          titleKey: 'home_generation_simple_title',
+          path: '/generation-simple',
+          icon: mdiDrawPen,
+        },
+      ],
     },
   ];
 
@@ -57,62 +80,60 @@ function ViewSelectorPopup() {
     setIsOpen(false);
   };
 
-  const currentViewInfo = viewInfo[currentView];
-  const currentCategoryInfo = CATEGORY_INFO[currentViewInfo.category];
+  // Get current view label and icon for the button
+  const getCurrentViewInfo = () => {
+    for (const section of sections) {
+      const view = section.views.find((v) => v.id === currentView);
+      if (view) {
+        return { label: t(view.titleKey), icon: view.icon };
+      }
+    }
+    return { label: 'View', icon: null };
+  };
 
-  // Check if we're in text generation views
-  const isTextGenerationView =
-    location.pathname === '/text-generation' || location.pathname === '/decoding-algorithms';
+  const currentViewInfo = getCurrentViewInfo();
 
   return (
-    <div className="view-selector-popup-container">
-      <div className="view-selector-popup" ref={dropdownRef}>
-        <button
-          onClick={() => setIsOpen(!isOpen)}
-          className="view-selector-button"
-          aria-label={`Select view (current: ${t(currentCategoryInfo.labelKey) || currentCategoryInfo.defaultLabel})`}
-          aria-expanded={isOpen}
-          aria-haspopup="true"
-        >
-          <Icon path={currentCategoryInfo.icon} size={0.9} className="view-current-icon" />
-          <span className="view-current-label">
-            {t(currentCategoryInfo.labelKey) || currentCategoryInfo.defaultLabel}
-          </span>
-          <Icon
-            path={mdiChevronDown}
-            size={0.8}
-            className={`view-chevron ${isOpen ? 'open' : ''}`}
-          />
-        </button>
-
-        {isOpen && (
-          <div className="view-popup">
-            <div className="view-popup-grid">
-              {mainCategories.map(({ category, viewType, path }) => {
-                const categoryInfo = CATEGORY_INFO[category];
-                const isActive = currentViewInfo.category === category;
-
-                return (
-                  <button
-                    key={category}
-                    onClick={() => handleViewChange(viewType, path)}
-                    className={`view-grid-item ${isActive ? 'active' : ''}`}
-                    aria-current={isActive ? 'true' : 'false'}
-                  >
-                    <Icon path={categoryInfo.icon} size={1.2} className="view-grid-icon" />
-                    <span className="view-grid-title">
-                      {t(categoryInfo.labelKey) || categoryInfo.defaultLabel}
-                    </span>
-                  </button>
-                );
-              })}
-            </div>
-          </div>
+    <div className="view-selector-popup" ref={dropdownRef}>
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="view-selector-button"
+        aria-label={`Select view (current: ${currentViewInfo.label})`}
+        aria-expanded={isOpen}
+        aria-haspopup="true"
+      >
+        {currentViewInfo.icon && (
+          <Icon path={currentViewInfo.icon} size={0.9} className="view-current-icon" />
         )}
-      </div>
+        <span className="view-current-label">{currentViewInfo.label}</span>
+        <Icon path={mdiChevronDown} size={0.8} className={`view-chevron ${isOpen ? 'open' : ''}`} />
+      </button>
 
-      {/* SubViewSelector for text generation views */}
-      {isTextGenerationView && <SubViewSelector />}
+      {isOpen && (
+        <div className="view-popup">
+          {sections.map((section) => (
+            <div key={section.id} className="view-section">
+              <h3 className="view-section-title">{t(section.titleKey)}</h3>
+              <div className="view-section-items">
+                {section.views.map((view) => {
+                  const isActive = view.id === currentView;
+                  return (
+                    <button
+                      key={view.id}
+                      onClick={() => handleViewChange(view.id, view.path)}
+                      className={`view-item ${isActive ? 'active' : ''}`}
+                      aria-current={isActive ? 'true' : 'false'}
+                    >
+                      <Icon path={view.icon} size={1} className="view-item-icon-svg" />
+                      <span className="view-item-label">{t(view.titleKey)}</span>
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 }

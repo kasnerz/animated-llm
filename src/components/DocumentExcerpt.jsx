@@ -13,7 +13,7 @@ import { mdiPlay, mdiPause, mdiChevronDown } from '@mdi/js';
  * DocumentExcerpt Component
  *
  * Displays a realistic document excerpt with a ragged/torn bottom edge
- * Used in TrainingView to show input text that appears cut from a document
+ * Used in PretrainingModelView to show input text that appears cut from a document
  */
 function DocumentExcerpt() {
   const { state, actions } = useApp();

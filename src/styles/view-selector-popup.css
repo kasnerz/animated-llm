@@ -1,10 +1,5 @@
 /* View Selector Popup Styles */
 
-.view-selector-popup-container {
-  display: flex;
-  align-items: center;
-}
-
 .view-selector-popup {
   position: relative;
   display: flex;
@@ -54,11 +49,6 @@
   font-weight: bold;
 }
 
-.view-separator {
-  opacity: 0.5;
-  font-weight: 400;
-}
-
 .view-chevron {
   transition: transform 0.2s ease;
   color: var(--accent-primary);
@@ -68,17 +58,17 @@
   transform: rotate(180deg);
 }
 
-/* Popup Grid */
+/* Popup container */
 .view-popup {
   position: absolute;
   top: calc(100% + 0.5rem);
   left: 0;
-  min-width: 200px;
+  min-width: 280px;
   background: var(--bg-primary);
   border: 1px solid var(--border-color);
   border-radius: 0.5rem;
   box-shadow: 0 4px 20px var(--shadow-color);
-  padding: 0.5rem;
+  padding: 1rem;
   z-index: 1000;
   animation: popupFadeIn 0.15s ease-out;
 }
@@ -95,87 +85,93 @@
   }
 }
 
-.view-popup-grid {
+/* Section container */
+.view-section {
+  margin-bottom: 1rem;
+}
+
+.view-section:last-child {
+  margin-bottom: 0;
+}
+
+.view-section-title {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-secondary);
+  margin: 0 0 0.5rem 0;
+  padding: 0 0.25rem;
+}
+
+/* Section items - list view */
+.view-section-items {
   display: flex;
   flex-direction: column;
-  gap: 0;
+  gap: 0.25rem;
 }
 
-.view-popup-category {
-  display: none;
-  /* Hide category structure in new design */
-}
-
-.view-popup-category-header {
-  display: none;
-}
-
-.view-popup-category-icon {
-  opacity: 0.9;
-  color: var(--accent-primary);
-}
-
-.view-popup-category-label {
-  line-height: 1;
-}
-
-.view-grid-item {
+/* Individual view item button - list item */
+.view-item {
   display: flex;
+  flex-direction: row;
   align-items: center;
   gap: 0.75rem;
-  padding: 0.625rem 0.875rem;
+  padding: 0.5rem 0.75rem;
   background: transparent;
-  border: none;
+  border: 1px solid transparent;
   border-radius: 0.375rem;
   cursor: pointer;
+  transition: all 0.2s ease;
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  font-weight: 400;
   text-align: left;
   width: 100%;
-  transition: all 0.15s ease;
 }
 
-.view-grid-item:hover {
+.view-item:hover {
   background: var(--bg-secondary);
+  border-color: var(--accent-primary);
 }
 
-.view-grid-item:focus {
+.view-item:focus {
   outline: 2px solid var(--accent-primary);
-  outline-offset: -2px;
+  outline-offset: 2px;
 }
 
-.view-grid-item.active {
+.view-item.active {
   background: var(--bg-secondary);
+  color: var(--text-primary);
+  border-color: var(--accent-primary);
+  font-weight: 500;
 }
 
-.view-grid-icon {
+/* Icon SVG - inline with text */
+.view-item-icon-svg {
   flex-shrink: 0;
   color: var(--text-secondary);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  transition: color 0.2s ease;
 }
 
-.view-grid-item:hover .view-grid-icon {
+.view-item:hover .view-item-icon-svg {
   color: var(--accent-primary);
 }
 
-.view-grid-item.active .view-grid-icon {
+.view-item.active .view-item-icon-svg {
   color: var(--accent-primary);
 }
 
-.view-grid-title {
-  font-size: 0.9rem;
-  font-weight: 500;
-  color: var(--text-secondary);
-  line-height: 1.3;
-}
-
-.view-grid-item:hover .view-grid-title {
-  color: var(--text-primary);
-}
-
-.view-grid-item.active .view-grid-title {
-  font-weight: 600;
-  color: var(--text-primary);
+.view-item-label {
+  text-align: left;
+  line-height: 1.2;
+  flex: 1;
+  font-family:
+    'Roboto',
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    sans-serif;
 }
 
 /* Hide view selector popup on mobile when hamburger menu is displayed */

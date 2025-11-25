@@ -6,11 +6,11 @@ import InfoBox from '../components/InfoBox';
 import InitialHint from '../components/InitialHint';
 
 /**
- * TrainingView Component
+ * PretrainingModelView Component
  * View for training animation with document carousel
  * Uses TrainingDocumentCarousel component to show multiple documents
  */
-function TrainingView() {
+function PretrainingModelView() {
   const { state } = useApp();
 
   return (
@@ -39,4 +39,4 @@ function TrainingView() {
   );
 }
 
-export default TrainingView;
+export default PretrainingModelView;

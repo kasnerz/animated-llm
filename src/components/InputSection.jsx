@@ -14,7 +14,7 @@ import { mdiPlay, mdiPause, mdiChevronDown, mdiTune, mdiDotsHorizontal } from '@
  * REUSABLE COMPONENT - Can be used across different views
  * Provides minimalistic example selector and prompt display
  *
- * While currently used in TextGenerationView, this component is designed
+ * While currently used in GenerationModelView, this component is designed
  * to be reusable in other views that need prompt/example selection.
  */
 function InputSection({ disableTokenization = false }) {

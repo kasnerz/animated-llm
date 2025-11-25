@@ -20,9 +20,10 @@ function LeftPanel({ isCollapsed = false, onToggleCollapse }) {
   const handleViewChange = (viewId) => {
     setCurrentView(viewId);
     const viewToPath = {
-      [VIEW_TYPES.TRAINING]: '/pretraining',
-      [VIEW_TYPES.TEXT_GENERATION]: '/text-generation',
-      [VIEW_TYPES.DECODING]: '/decoding-algorithms',
+      [VIEW_TYPES.TRAINING]: '/pretraining-model',
+      [VIEW_TYPES.TEXT_GENERATION]: '/generation-model',
+      [VIEW_TYPES.DECODING]: '/generation-simple',
+      [VIEW_TYPES.PRETRAINING_SIMPLE]: '/pretraining-simple',
     };
     const path = viewToPath[viewId];
     if (path) navigate(path);

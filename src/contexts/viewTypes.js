@@ -4,6 +4,7 @@ export const VIEW_TYPES = {
   TEXT_GENERATION: 'text-generation',
   TRAINING: 'training',
   DECODING: 'decoding',
+  PRETRAINING_SIMPLE: 'pretraining-simple',
 };
 
 export const VIEW_CATEGORIES = {
@@ -38,6 +39,15 @@ export const VIEW_INFO = {
     defaultLabel: 'Algorithms',
     descriptionKey: 'view_decoding_desc',
     defaultDescription: 'Explore different decoding strategies and algorithms',
+  },
+  [VIEW_TYPES.PRETRAINING_SIMPLE]: {
+    id: VIEW_TYPES.PRETRAINING_SIMPLE,
+    category: VIEW_CATEGORIES.TRAINING,
+    icon: mdiAbacus,
+    labelKey: 'view_pretraining_simple',
+    defaultLabel: 'Simple',
+    descriptionKey: 'view_pretraining_simple_desc',
+    defaultDescription: 'Simplified pretraining visualization',
   },
 };
 

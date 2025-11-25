@@ -904,6 +904,9 @@ export function AppProvider({ children, initialViewType = 'inference' }) {
     if (isFirstRender.current) {
       return;
     }
+    if (state.viewType !== 'inference') {
+      return;
+    }
     if (state.currentExampleId) {
       loadExample(state.currentExampleId);
     }
