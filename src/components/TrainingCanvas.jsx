@@ -4,7 +4,7 @@ import { useApp } from '../contexts/AppContext';
 import { useI18n } from '../i18n/I18nProvider';
 import * as d3 from 'd3';
 import { computeEmbeddingsForStep } from '../visualization/core/embeddings';
-import { LAYOUT as CONSTS, TOKEN } from '../visualization/core/constants';
+import { LAYOUT as CONSTS, TOKEN, TRAINING_STEPS } from '../visualization/core/constants';
 import { trainingTimeline } from '../visualization/animation';
 import {
   renderTokensLayer,
@@ -135,6 +135,17 @@ export default function TrainingCanvas() {
       }
     }
 
+    const numLayers = state.currentExample.model_info?.num_layers || 1;
+    const subStep = state.currentAnimationSubStep;
+
+    // Derive current layer and viz mode from linear timeline step
+    // For backprop steps 16-18 (first block), we must force currentLayer to 0
+    const currentLayer =
+      subStep < TRAINING_STEPS.STACK_REVEAL || subStep >= TRAINING_STEPS.BACKPROP_FFN_FIRST
+        ? 0
+        : Math.max(0, numLayers - 1);
+    const vizMode = subStep >= TRAINING_STEPS.BACKPROP_START ? 'backprop' : 'feedforward';
+
     const stepForRender = {
       step: effectiveIdx,
       tokens: tStep.input_tokens || [],
@@ -148,7 +159,7 @@ export default function TrainingCanvas() {
       model_info: state.currentExample.model_info,
       // Training visualization mode flag to let renderers and timelines
       // distinguish between forward-pass and backprop-focused styling.
-      viz_mode: state.currentAnimationSubStep >= 11 ? 'backprop' : 'feedforward',
+      viz_mode: vizMode,
     };
 
     const svg = d3.select(svgRef.current);
@@ -226,8 +237,7 @@ export default function TrainingCanvas() {
     );
 
     // 3) Transformer block (with layer stacking)
-    const numLayers = state.currentExample.model_info?.num_layers || 1;
-    const currentLayer = state.currentTransformerLayer || 0;
+    // numLayers and currentLayer are derived above
     const blockMeta = renderTransformerBlockLayer(
       transformerGroup,
       stepForRender,
@@ -310,13 +320,55 @@ export default function TrainingCanvas() {
         ? outputsMeta.logprobCenterY + 70
         : ffnInfo.afterBottomY + 198,
     };
-    const animSubStep = Math.min(16, state.currentAnimationSubStep ?? 0);
+
+    // Map linear steps to stage IDs
+    const stepsConfig = {
+      [TRAINING_STEPS.TOKEN]: 'tokenization',
+      [TRAINING_STEPS.EMBEDDING]: 'input_embedding',
+      [TRAINING_STEPS.BLOCK_INPUT_FIRST]: 'positional_embedding',
+      [TRAINING_STEPS.ATTENTION_FIRST]: 'attention',
+      [TRAINING_STEPS.FFN_FIRST]: 'feed_forward',
+      // Stack reveal doesn't map to a specific stage label change, keeps previous
+      [TRAINING_STEPS.BLOCK_INPUT_LAST]: 'positional_embedding',
+      [TRAINING_STEPS.ATTENTION_LAST]: 'attention',
+      [TRAINING_STEPS.FFN_LAST]: 'feed_forward',
+      [TRAINING_STEPS.EXTRACTION]: 'output_embedding',
+      [TRAINING_STEPS.LOGPROB]: 'output_probabilities',
+      [TRAINING_STEPS.DISTRIBUTION]: 'output',
+      [TRAINING_STEPS.TARGET]: 'output',
+      [TRAINING_STEPS.BACKPROP_START]: 'backpropagation',
+      [TRAINING_STEPS.BACKPROP_FFN_LAST]: 'backpropagation',
+      [TRAINING_STEPS.BACKPROP_ATTN_LAST]: 'backpropagation',
+      [TRAINING_STEPS.BACKPROP_FFN_FIRST]: 'backpropagation',
+      [TRAINING_STEPS.BACKPROP_ATTN_FIRST]: 'backpropagation',
+      [TRAINING_STEPS.BACKPROP_EMBEDDING]: 'backpropagation',
+    };
+
+    const animSubStep = Math.min(18, state.currentAnimationSubStep ?? 0);
     const showLabelsGradually = state.currentStep === 1;
-    renderStageLabels(labelsGroup, { ...layout, stageY }, 0, animSubStep, t, showLabelsGradually, {
-      currentLayer,
-      numLayers,
-      isTraining: true,
-    });
+
+    // Map stage keys to IDs for the renderer
+    const stageYPositions = {
+      tokenization: stageY.stage_tokenization,
+      input_embedding: stageY.stage_input_embeddings,
+      positional_embedding: stageY.stage_positional_embeddings,
+      attention: stageY.stage_attention_layer,
+      feed_forward: stageY.stage_feedforward_layer,
+      output_embedding: stageY.stage_last_embedding,
+      output_probabilities: stageY.stage_output_probabilities,
+      output: stageY.stage_next_token,
+      backpropagation: (stageY.stage_tokenization + stageY.stage_next_token) / 2,
+    };
+
+    renderStageLabels(
+      labelsGroup,
+      stageYPositions,
+      animSubStep,
+      stepsConfig,
+      isDarkMode,
+      showLabelsGradually,
+      t
+    );
 
     // Dynamic SVG height
     const mainG = svg.select('.visualization-main').node();
@@ -349,7 +401,7 @@ export default function TrainingCanvas() {
       d3.select(svgRef.current).style('width', '100%');
     }
 
-    // Build and run training timeline for current sub-step (0..10)
+    // Build and run training timeline for current sub-step (0..18)
     const animDuration = state.instantTransition ? 0 : 0.6;
     const isInitialStep = state.currentStep === 1;
     trainingTimeline.setInitialStates(
@@ -359,7 +411,7 @@ export default function TrainingCanvas() {
       labelsSvgRef.current
     );
     const stepCompleteCb =
-      animSubStep === 15 && !state.instantTransition && state.isPlaying
+      animSubStep === 18 && !state.instantTransition && state.isPlaying
         ? () => actions.onStepAnimationComplete(state.isPlaying)
         : null;
     gsapRef.current = trainingTimeline.buildTimeline(

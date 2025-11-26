@@ -16,7 +16,7 @@ import {
 import { computeEmbeddingsForStep } from '../visualization/core/embeddings';
 import '../styles/visualization.css';
 import { processTokenForVisualization } from '../utils/tokenProcessing';
-import { LAYOUT as CONSTS, TOKEN } from '../visualization/core/constants';
+import { LAYOUT as CONSTS, TOKEN, TEXT_GEN_STEPS } from '../visualization/core/constants';
 import Icon from '@mdi/react';
 import {
   mdiArrowExpandHorizontal,
@@ -379,10 +379,48 @@ export default function VisualizationCanvas() {
     // Render stage labels into the sticky right panel; anchor within the panel (x=0)
     // Show labels gradually only on first pass (step 1); after that show all labels
     const showLabelsGradually = state.currentStep === 1;
-    renderStageLabels(labelsGroup, layout, 0, subStep, t, showLabelsGradually, {
-      currentLayer: state.currentTransformerLayer,
-      numLayers,
-    });
+
+    // Map linear steps to stage IDs
+    const stepsConfig = {
+      [TEXT_GEN_STEPS.TOKEN]: 'tokenization',
+      [TEXT_GEN_STEPS.EMBEDDING]: 'input_embedding',
+      [TEXT_GEN_STEPS.BLOCK_INPUT_FIRST]: 'positional_embedding',
+      [TEXT_GEN_STEPS.ATTENTION_FIRST]: 'attention',
+      [TEXT_GEN_STEPS.FFN_FIRST]: 'feed_forward',
+      [TEXT_GEN_STEPS.BLOCK_INPUT_LAST]: 'positional_embedding',
+      [TEXT_GEN_STEPS.ATTENTION_LAST]: 'attention',
+      [TEXT_GEN_STEPS.FFN_LAST]: 'feed_forward',
+      [TEXT_GEN_STEPS.EXTRACTION]: 'output_embedding',
+      [TEXT_GEN_STEPS.LOGPROB]: 'output_probabilities',
+      [TEXT_GEN_STEPS.DISTRIBUTION]: 'output',
+      [TEXT_GEN_STEPS.SELECTION]: 'output',
+      [TEXT_GEN_STEPS.APPEND]: 'output',
+      [TEXT_GEN_STEPS.COMPLETE]: 'output',
+    };
+
+    // Map stage keys to IDs for the renderer
+    const stageYPositions = {
+      tokenization: layout.stageY.stage_tokenization,
+      input_embedding: layout.stageY.stage_input_embeddings,
+      positional_embedding: layout.stageY.stage_positional_embeddings,
+      attention: layout.stageY.stage_attention_layer,
+      feed_forward: layout.stageY.stage_feedforward_layer,
+      output_embedding: layout.stageY.stage_last_embedding,
+      output_probabilities: layout.stageY.stage_output_probabilities,
+      output: layout.stageY.stage_next_token,
+    };
+
+    const animSubStep = Math.min(15, subStep ?? 0);
+
+    renderStageLabels(
+      labelsGroup,
+      stageYPositions,
+      animSubStep,
+      stepsConfig,
+      state.theme === 'dark',
+      showLabelsGradually,
+      t
+    );
     // Size the labels SVG to a fixed width for the floating panel
     // Match CSS panel width (expanded)
     const labelsWidth = 280;

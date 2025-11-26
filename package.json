@@ -5,7 +5,7 @@
   "homepage": "https://kasnerz.github.io/animated-llm",
   "type": "module",
   "scripts": {
-    "predeploy": "npm run build",
+    "predeploy": "npm run build && cp -r public/data dist/data",
     "deploy": "gh-pages -d dist",
     "dev": "vite",
     "build": "vite build",

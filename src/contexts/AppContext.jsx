@@ -155,38 +155,15 @@ function appReducer(state, action) {
         currentStep: state.currentStep + 1,
         currentAnimationSubStep: 0,
         currentTransformerLayer: 0,
-        isPlaying: true,
+        isPlaying: state.isPlaying,
         instantTransition: false,
       };
     }
 
     case ActionTypes.NEXT_ANIMATION_SUB_STEP: {
-      // Training view: animate sub-steps 0..15 (0..10 forward + 11..15 backprop skeleton)
+      // Training view: animate sub-steps linearly
       if (state.viewType === 'training') {
-        const maxSubStepsTraining = 16; // 0..15
-        const numLayers = state.currentExample?.model_info?.num_layers || 1;
-        const sub = state.currentAnimationSubStep;
-        const currentLayer = state.currentTransformerLayer;
-
-        // Loop logic for multi-layer models in training
-        // 1. After Stack Reveal (Step 5) on Layer 0, jump to Input (Step 2) on Last Layer
-        if (sub === 5 && currentLayer === 0 && numLayers > 1) {
-          return {
-            ...state,
-            currentTransformerLayer: Math.max(0, numLayers - 1),
-            currentAnimationSubStep: 2,
-            instantTransition: false,
-          };
-        }
-
-        // 2. After FFN (Step 4) on Last Layer, jump to Extraction (Step 6), skipping Stack Reveal
-        if (sub === 4 && currentLayer >= numLayers - 1 && numLayers > 1) {
-          return {
-            ...state,
-            currentAnimationSubStep: 6,
-            instantTransition: false,
-          };
-        }
+        const maxSubStepsTraining = 19; // 0..18 (TRAINING_STEPS.BACKPROP_EMBEDDING)
 
         if (state.currentAnimationSubStep >= maxSubStepsTraining - 1) return state;
         return {
@@ -195,64 +172,9 @@ function appReducer(state, action) {
           instantTransition: false,
         };
       }
-      const numLayers = state.currentExample?.model_info?.num_layers || 1;
-      const maxSubSteps = 13; // timeline now has 0..12
 
-      // Two-stage transformer flow:
-      // - First pass (substeps 3..5) with currentTransformerLayer = 0
-      // - Reveal stack (substep 6) in one press
-      // - Second pass (substeps 3..5) with currentTransformerLayer = numLayers-1
-      // - Continue with the rest (substep 7..)
-
-      const sub = state.currentAnimationSubStep;
-      const currentLayer = state.currentTransformerLayer;
-
-      // Skip the no-op substep right after tokenization (sub 1)
-      // Jump directly from 0 -> 2 so the flow goes straight to input embeddings
-      if (sub === 0) {
-        return {
-          ...state,
-          currentAnimationSubStep: 2,
-          instantTransition: false,
-        };
-      }
-
-      // If numLayers <= 1, skip reveal and second pass
-      if (numLayers <= 1 && sub === 5) {
-        return {
-          ...state,
-          currentAnimationSubStep: 7, // skip reveal directly to outside embeddings
-          instantTransition: false,
-        };
-      }
-
-      // After finishing first pass at substep 5, go to reveal (6)
-      if (sub === 5 && currentLayer === 0 && numLayers > 1) {
-        return {
-          ...state,
-          currentAnimationSubStep: 6,
-          instantTransition: false,
-        };
-      }
-
-      // At reveal substep, switch to last layer and re-enter transformer at substep 3
-      if (sub === 6 && numLayers > 1) {
-        return {
-          ...state,
-          currentTransformerLayer: Math.max(0, numLayers - 1),
-          currentAnimationSubStep: 3,
-          instantTransition: false,
-        };
-      }
-
-      // After finishing the second pass at substep 5 on the last layer, skip reveal
-      if (sub === 5 && currentLayer >= numLayers - 1 && numLayers > 1) {
-        return {
-          ...state,
-          currentAnimationSubStep: 7,
-          instantTransition: false,
-        };
-      }
+      // Text Generation view: animate sub-steps linearly
+      const maxSubSteps = 16; // 0..15 (TEXT_GEN_STEPS.PREVIEW)
 
       if (state.currentAnimationSubStep >= maxSubSteps - 1) {
         return state;
@@ -267,30 +189,7 @@ function appReducer(state, action) {
 
     case ActionTypes.PREV_ANIMATION_SUB_STEP: {
       if (state.viewType === 'training') {
-        // Simple backward stepping for training
         const sub = state.currentAnimationSubStep;
-        const numLayers = state.currentExample?.model_info?.num_layers || 1;
-        const currentLayer = state.currentTransformerLayer;
-
-        // Reverse loop logic for multi-layer models in training
-        // 1. If at Input (Step 2) on Last Layer, jump back to Stack Reveal (Step 5) on Layer 0
-        if (sub === 2 && currentLayer >= numLayers - 1 && numLayers > 1) {
-          return {
-            ...state,
-            currentTransformerLayer: 0,
-            currentAnimationSubStep: 5,
-            instantTransition: true,
-          };
-        }
-
-        // 2. If at Extraction (Step 6) on Last Layer, jump back to FFN (Step 4) on Last Layer
-        if (sub === 6 && currentLayer >= numLayers - 1 && numLayers > 1) {
-          return {
-            ...state,
-            currentAnimationSubStep: 4,
-            instantTransition: true,
-          };
-        }
 
         if (sub > 0) {
           return { ...state, currentAnimationSubStep: sub - 1, instantTransition: true };
@@ -301,32 +200,20 @@ function appReducer(state, action) {
             ...state,
             currentStep: 0,
             currentAnimationSubStep: 0,
-            currentTransformerLayer: 0,
             instantTransition: true,
           };
         }
         const prevStep = Math.max(1, state.currentStep - 1);
-        const lastVisibleSubTraining = 16; // land on last training sub-step
+        const lastVisibleSubTraining = 18; // TRAINING_STEPS.BACKPROP_EMBEDDING
         return {
           ...state,
           currentStep: prevStep,
           currentAnimationSubStep: lastVisibleSubTraining,
-          currentTransformerLayer: 0,
           instantTransition: true,
         };
       }
-      const numLayers = state.currentExample?.model_info?.num_layers || 1;
-      const sub = state.currentAnimationSubStep;
-      const currentLayer = state.currentTransformerLayer;
 
-      // Symmetric skip: when going back from sub 2, jump to 0 (skip 1)
-      if (sub === 2) {
-        return {
-          ...state,
-          currentAnimationSubStep: 0,
-          instantTransition: true,
-        };
-      }
+      const sub = state.currentAnimationSubStep;
 
       // If at very beginning, nothing to do
       if (state.currentStep === 0 && sub <= 0) {
@@ -341,7 +228,6 @@ function appReducer(state, action) {
             ...state,
             currentStep: 0,
             currentAnimationSubStep: 0,
-            currentTransformerLayer: 0,
             // Rolling back to the very beginning clears any generated output
             generatedAnswer: '',
             generatedTokens: [],
@@ -351,7 +237,7 @@ function appReducer(state, action) {
 
         // Otherwise, go to the previous step and set to its last visible sub-step
         const prevStep = Math.max(1, state.currentStep - 1);
-        const lastVisibleSub = 11; // land on arrow (no step complete) when stepping back a step
+        const lastVisibleSub = 15; // TEXT_GEN_STEPS.PREVIEW
 
         // Undo the last generated token (if any)
         const gt = state.generatedTokens || [];
@@ -369,47 +255,8 @@ function appReducer(state, action) {
           ...state,
           currentStep: prevStep,
           currentAnimationSubStep: lastVisibleSub,
-          currentTransformerLayer: Math.max(0, numLayers - 1),
           generatedAnswer: newGeneratedAnswer,
           generatedTokens: newGeneratedTokens,
-          instantTransition: true,
-        };
-      }
-
-      // Reverse special jumps used in NEXT_ANIMATION_SUB_STEP
-      // If we skipped reveal due to single-layer model (went 5 -> 7), allow 7 -> 5
-      if (numLayers <= 1 && sub === 7) {
-        return {
-          ...state,
-          currentAnimationSubStep: 5,
-          instantTransition: true,
-        };
-      }
-
-      // If we are right after reveal jump for multi-layer second pass entry (layer switched to last and sub=3), go back to reveal (sub=6, layer=0)
-      if (numLayers > 1 && currentLayer >= Math.max(0, numLayers - 1) && sub === 3) {
-        return {
-          ...state,
-          currentTransformerLayer: 0,
-          currentAnimationSubStep: 6,
-          instantTransition: true,
-        };
-      }
-
-      // If we are at reveal (sub=6) during first pass, go back to end of first pass (sub=5)
-      if (numLayers > 1 && currentLayer === 0 && sub === 6) {
-        return {
-          ...state,
-          currentAnimationSubStep: 5,
-          instantTransition: true,
-        };
-      }
-
-      // If we jumped from second pass end (sub=5 on last layer) to 7, allow back to 5
-      if (numLayers > 1 && currentLayer >= numLayers - 1 && sub === 7) {
-        return {
-          ...state,
-          currentAnimationSubStep: 5,
           instantTransition: true,
         };
       }
@@ -430,8 +277,8 @@ function appReducer(state, action) {
       // This shows the selected token immediately without animating through all sub-steps
       if (!state.currentExample) return state;
 
-      // Pause if playing; jump to highlight of the next token in the row (sub-step 10)
-      const highlightSubStep = 10;
+      // Pause if playing; jump to highlight of the next token in the row
+      const highlightSubStep = 13; // TEXT_GEN_STEPS.HIGHLIGHT
 
       return {
         ...state,
@@ -473,7 +320,7 @@ function appReducer(state, action) {
       return {
         ...state,
         currentStep: steps.length,
-        currentAnimationSubStep: 12,
+        currentAnimationSubStep: 15, // TEXT_GEN_STEPS.PREVIEW
         currentTransformerLayer: Math.max(
           0,
           (state.currentExample?.model_info?.num_layers || 1) - 1

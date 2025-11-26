@@ -16,7 +16,7 @@ import {
 import { computeEmbeddingsForStep } from '../visualization/core/embeddings';
 import '../styles/visualization.css';
 import { processTokenForVisualization, isSpecialToken } from '../utils/tokenProcessing';
-import { LAYOUT as CONSTS, TOKEN } from '../visualization/core/constants';
+import { LAYOUT as CONSTS, TEXT_GEN_STEPS } from '../visualization/core/constants';
 import Icon from '@mdi/react';
 import {
   mdiArrowExpandHorizontal,
@@ -212,8 +212,10 @@ export default function TextGenerationCanvas() {
     const step = state.currentExample.generation_steps[state.currentStep - 1];
     const computedEmbeddings = computeEmbeddingsForStep(step, 3);
     const subStep = state.currentAnimationSubStep;
-    const currentLayer = state.currentTransformerLayer;
     const numLayers = state.currentExample.model_info?.num_layers || 1;
+
+    // Derive current layer from linear timeline step
+    const currentLayer = subStep < TEXT_GEN_STEPS.STACK_REVEAL ? 0 : Math.max(0, numLayers - 1);
 
     // Clear previous visualization
     svg.selectAll('*').remove();
@@ -383,38 +385,51 @@ export default function TextGenerationCanvas() {
     };
 
     // 7. Render stage labels on the right
-    // Determine the right edge of the content to anchor labels consistently
-    const { visibleIndices = [], positions = [], widths = [] } = tokensLayoutRef.current || {};
-    let rightmostContentX = 0;
-    if (ffnInfo?.rightmostMeta) {
-      rightmostContentX = ffnInfo.rightmostMeta.centerX + ffnInfo.rightmostMeta.width / 2;
-    } else if (positions.length) {
-      // Fallback to rightmost token box edge
-      let maxX = 0;
-      positions.forEach((cx, i) => {
-        if (visibleIndices[i] >= 0) {
-          const w = widths[i] || 0;
-          maxX = Math.max(maxX, cx + w / 2);
-        }
-      });
-      rightmostContentX = maxX;
-    }
+    // Map linear steps to stage IDs
+    const stepsConfig = {
+      [TEXT_GEN_STEPS.TOKEN]: 'tokenization',
+      [TEXT_GEN_STEPS.EMBEDDING]: 'input_embedding',
+      [TEXT_GEN_STEPS.BLOCK_INPUT_FIRST]: 'positional_embedding',
+      [TEXT_GEN_STEPS.ATTENTION_FIRST]: 'attention',
+      [TEXT_GEN_STEPS.FFN_FIRST]: 'feed_forward',
+      // Stack reveal doesn't map to a specific stage label change, keeps previous
+      [TEXT_GEN_STEPS.BLOCK_INPUT_LAST]: 'positional_embedding',
+      [TEXT_GEN_STEPS.ATTENTION_LAST]: 'attention',
+      [TEXT_GEN_STEPS.FFN_LAST]: 'feed_forward',
+      [TEXT_GEN_STEPS.EXTRACTION]: 'output_embedding',
+      [TEXT_GEN_STEPS.LOGPROB]: 'output_probabilities',
+      [TEXT_GEN_STEPS.DISTRIBUTION]: 'output',
+      [TEXT_GEN_STEPS.SELECTION]: 'output',
+      [TEXT_GEN_STEPS.APPEND]: 'output',
+      [TEXT_GEN_STEPS.COMPLETE]: 'output',
+    };
 
-    // Render stage labels into the sticky right panel; anchor within the panel (x=0)
-    // Show labels gradually only on first pass (step 1); after that show all labels
+    // Map stage keys to IDs for the renderer
+    const stageYPositions = {
+      tokenization: layout.stageY.stage_tokenization,
+      input_embedding: layout.stageY.stage_input_embeddings,
+      positional_embedding: layout.stageY.stage_positional_embeddings,
+      attention: layout.stageY.stage_attention_layer,
+      feed_forward: layout.stageY.stage_feedforward_layer,
+      output_embedding: layout.stageY.stage_last_embedding,
+      output_probabilities: layout.stageY.stage_output_probabilities,
+      output: layout.stageY.stage_next_token,
+    };
+
+    const animSubStep = Math.min(15, subStep ?? 0);
     const showLabelsGradually = state.currentStep === 1;
-    renderStageLabels(labelsGroup, layout, 0, subStep, t, showLabelsGradually, {
-      currentLayer: state.currentTransformerLayer,
-      numLayers,
-    });
-    // Size the labels SVG to a fixed width for the floating panel
-    // Match CSS panel width (expanded)
-    const labelsWidth = 280;
-    labelsSvg.attr('width', labelsWidth);
 
-    // Calculate dynamic SVG height from actual rendered content using bounding boxes.
-    // Consider BOTH the main visualization and the stage labels so the scroll bottom
-    // is always within CONSTS.BOTTOM_PADDING of the lowest element.
+    renderStageLabels(
+      labelsGroup,
+      stageYPositions,
+      animSubStep,
+      stepsConfig,
+      isDarkMode,
+      showLabelsGradually,
+      t
+    );
+
+    // Dynamic SVG height
     const mainG = svg.select('.visualization-main').node();
     const labelsGNode = labelsGroup && labelsGroup.node ? labelsGroup.node() : null;
     const getBottom = (node) => {
@@ -427,81 +442,64 @@ export default function TextGenerationCanvas() {
     svg.attr('height', dynamicHeight);
     labelsSvg.attr('height', dynamicHeight);
 
-    // Compute expanded width snapshot for render without accessing refs during render
-    // Update SVG width style directly to avoid reading refs in render and avoid setState in effect
-    if (isExpanded) {
-      const { positions = [], widths = [], visibleIndices = [] } = tokensLayoutRef.current || {};
-      let rightmostEdge = 0;
-      positions.forEach((centerX, i) => {
-        if (visibleIndices[i] >= 0) {
-          const w = widths[i] || 0;
-          rightmostEdge = Math.max(rightmostEdge, centerX + w / 2);
-        }
-      });
-      const extraPadding = 200;
-      const calculatedWidth = rightmostEdge + extraPadding;
-      const svgWidth = Math.max(containerWidth, calculatedWidth);
-      svg.style('width', `${svgWidth}px`);
-    } else {
-      svg.style('width', '100%');
+    // Animation
+    if (gsapRef.current) {
+      try {
+        gsapRef.current.kill();
+      } catch (e) {
+        console.debug('GSAP kill failed (safe to ignore):', e);
+      }
     }
 
-    // Duration for transitions; when rewinding (ArrowLeft), disable animation
-    const animDuration = state.instantTransition ? 0 : 0.6;
     const isInitialStep = state.currentStep === 1;
+    textGenerationTimeline.setInitialStates(svg.node(), animSubStep);
 
-    // Use text generation timeline (view-specific)
-    textGenerationTimeline.setInitialStates(svgRef.current, subStep, isInitialStep);
-    const stepCompleteCb = state.instantTransition
-      ? null
-      : () => onStepAnimationComplete(state.isPlaying);
+    const animDuration = state.instantTransition ? 0 : 0.6;
     gsapRef.current = textGenerationTimeline.buildTimeline(
-      svgRef.current,
-      subStep,
+      svg.node(),
+      animSubStep,
       isInitialStep,
       animDuration,
-      stepCompleteCb
+      () => {
+        if (state.isPlaying) {
+          actions.onStepAnimationComplete(state.isPlaying);
+        }
+      }
     );
   }, [
     state.currentStep,
-    state.currentExample,
     state.currentAnimationSubStep,
-    state.currentTransformerLayer,
-    // Re-render visualization immediately when theme changes so D3 colors update
+    state.currentExample,
+    state.isPlaying,
     state.theme,
     state.instantTransition,
-    state.isPlaying,
+    containerWidth,
     isExpanded,
     embeddingExpanded,
-    onStepAnimationComplete,
-    t,
-    containerWidth,
     labelsVisible,
+    actions,
+    state.animDuration,
+    t,
   ]);
 
   return (
-    <section className={`visualization-section ${isExpanded ? 'expanded' : ''}`} ref={containerRef}>
-      {/* Collapse/expand toggle fixed to viewport center; render outside scroll area */}
+    <section className="visualization-section" ref={containerRef}>
+      {/* Collapse toggle button */}
       {(() => {
-        const step = state.currentExample?.generation_steps?.[state.currentStep - 1];
+        if (!state.currentExample || state.currentStep === 0) return null;
+        const step = state.currentExample.generation_steps[state.currentStep - 1];
         if (!step) return null;
-
-        // Compute scrollable content width and token threshold similar to SVG render
         const tokens = step.tokens || [];
         const widthForCalc = containerWidth || CONSTS.DEFAULT_CONTAINER_WIDTH;
-        const scrollAreaWidth = widthForCalc; // Full width now since labels are floating
-
-        // Use tighter spacing estimate on mobile for more aggressive collapse
         const isMobile = widthForCalc <= 1000;
         const spacingEstimate = isMobile ? 120 : CONSTS.TOKEN_SPACING_ESTIMATE;
-
         const labelsPanelWidth = labelsVisible ? 300 : 50;
-        const availableWidth = scrollAreaWidth - labelsPanelWidth;
-
+        const availableWidth = widthForCalc - labelsPanelWidth;
         const maxVisibleTokens = Math.floor(availableWidth / spacingEstimate) - 1;
-        // Show button whenever there are enough tokens that collapsing would be beneficial
-        const shouldShow = tokens.length > maxVisibleTokens;
-        if (!shouldShow) return null;
+        const shouldCollapse = tokens.length > maxVisibleTokens;
+
+        if (!shouldCollapse) return null;
+
         return (
           <button
             className={`collapse-toggle ${isExpanded ? 'state-expanded' : 'state-collapsed'}`}
@@ -517,20 +515,17 @@ export default function TextGenerationCanvas() {
         );
       })()}
 
-      {/* Scrollable visualization area with overlay controls */}
       <div className="viz-scroll" ref={scrollRef}>
         <div className="viz-scale">
           <svg
             ref={svgRef}
             className="visualization-canvas"
-            style={{
-              transition: 'width 0.3s ease',
-            }}
+            style={{ transition: 'width 0.3s ease' }}
           />
         </div>
       </div>
 
-      {/* Stage labels panel - only after animation starts */}
+      {/* Stage labels panel with toggle */}
       {state.currentStep > 0 && (
         <div className="viz-labels-panel">
           <button

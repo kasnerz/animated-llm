@@ -1,78 +1,79 @@
 /**
  * Stage labels rendering
  */
-import { STAGE_LABEL, STAGE_LABEL_OPACITY, FONTS } from '../core/constants';
+import { STAGE_LABEL, STAGE_LABEL_OPACITY, FONTS, TRAINING_STEPS } from '../core/constants';
 
 /**
  * Render stage labels on the right side of the visualization
  * @param {d3.Selection} group - D3 group selection
- * @param {Object} layout - Layout configuration with Y positions for each stage
- * @param {number} anchorX - Right edge X position for alignment
- * @param {number} subStep - Current animation sub-step (0-11)
+ * @param {Object} stageYPositions - Map of stage keys to Y positions
+ * @param {number} subStep - Current animation sub-step
+ * @param {Object} stepsConfig - Configuration object mapping steps to stages
+ * @param {boolean} isDarkMode - Whether dark mode is active
+ * @param {boolean} isVisible - Whether the labels should be visible
  * @param {Function} t - Translation function
- * @param {boolean} showGradual - If true, labels appear progressively by subStep
- * @param {Object} [options] - Extra options
- * @param {number} [options.currentLayer] - Current transformer layer index
- * @param {number} [options.numLayers] - Total number of layers
  */
 export function renderStageLabels(
   group,
-  layout,
-  anchorX,
+  stageYPositions,
   subStep,
-  t,
-  showGradual = true,
-  options = {}
+  stepsConfig,
+  isDarkMode,
+  showGradually,
+  t
 ) {
-  const { currentLayer = 0, numLayers = 1, isTraining = false } = options;
-  const labels = [
-    { key: 'stage_tokenization', y: STAGE_LABEL.Y_TOKENIZATION, subStep: 0 },
-    { key: 'stage_input_embeddings', y: STAGE_LABEL.Y_INPUT_EMBEDDINGS, subStep: 1 },
-    { key: 'stage_positional_embeddings', y: STAGE_LABEL.Y_POSITIONAL_EMBEDDINGS, subStep: 2 },
-    { key: 'stage_attention_layer', y: STAGE_LABEL.Y_ATTENTION_LAYER, subStep: 3 },
-    { key: 'stage_feedforward_layer', y: STAGE_LABEL.Y_FEEDFORWARD_LAYER, subStep: 4 },
-    { key: 'stage_last_embedding', y: STAGE_LABEL.Y_LAST_EMBEDDING, subStep: 6 },
-    { key: 'stage_output_probabilities', y: STAGE_LABEL.Y_OUTPUT_PROBABILITIES, subStep: 7 },
-    // In training view, replace "Next token" by an error computation label
-    {
-      key: isTraining ? 'stage_compute_error' : 'stage_next_token',
-      y: STAGE_LABEL.Y_NEXT_TOKEN,
-      subStep: 9,
-    },
-  ];
+  // Define the stages we want to show labels for
+  // We filter out stages that don't have a defined Y position
+  const stages = [
+    { id: 'tokenization', key: 'stage_tokenization' },
+    { id: 'input_embedding', key: 'stage_input_embeddings' },
+    { id: 'positional_embedding', key: 'stage_positional_embeddings' },
+    { id: 'attention', key: 'stage_attention_layer' },
+    { id: 'feed_forward', key: 'stage_feedforward_layer' },
+    { id: 'output_embedding', key: 'stage_last_embedding' },
+    { id: 'output_probabilities', key: 'stage_output_probabilities' },
+    { id: 'output', key: 'stage_next_token' },
+    { id: 'backpropagation', key: 'stage_backpropagation' },
+  ].filter((stage) => stageYPositions[stage.id] !== undefined);
 
+  const anchorX = 20; // Offset from the right edge of the container
   const verticalLineX = anchorX + STAGE_LABEL.GAP_TO_LINE;
   const labelX = verticalLineX + STAGE_LABEL.GAP_LINE_TO_LABEL;
 
-  // Removed vertical delimiter line for cleaner floating panel
+  // Determine which stage is currently active based on the subStep
+  let activeStageId = null;
 
-  labels.forEach((label) => {
-    let isActive = subStep === label.subStep;
+  // Find the active stage from the steps configuration
+  // stepsConfig is an object where keys are step numbers and values are stage IDs
+  if (stepsConfig && stepsConfig[subStep]) {
+    activeStageId = stepsConfig[subStep];
+  }
 
-    // Suppress highlight for positional embeddings during the second pass
-    const isSecondPass =
-      numLayers > 1 && currentLayer >= Math.max(0, numLayers - 1) && subStep >= 2 && subStep <= 4;
-    if (label.key === 'stage_positional_embeddings' && subStep === 2 && isSecondPass) {
-      isActive = false;
-    }
-    // If showGradual is false (after first token), show all labels
-    // If showGradual is true (first token), show labels progressively
-    const isVisible = showGradual ? subStep >= label.subStep : true;
+  const isBackpropPhase = subStep > TRAINING_STEPS.BACKPROP_START;
 
-    // Fix for flickering: Do not render normal labels during backprop steps > 10
-    // They fade out in step 10, so from step 11 onwards they should be gone.
-    if (isTraining && subStep > 10) {
-      return;
-    }
+  stages.forEach((stage) => {
+    const yPos = stageYPositions[stage.id];
+    const isActive = stage.id === activeStageId;
 
-    if (!isVisible) {
-      return;
+    // Create a group for this label
+    const isBackpropLabel = stage.id === 'backpropagation';
+
+    // Determine initial opacity to prevent flicker
+    let initialOpacity = 1;
+    if (isBackpropPhase) {
+      initialOpacity = isBackpropLabel ? 1 : 0;
+    } else {
+      initialOpacity = isBackpropLabel ? 0 : 1;
     }
 
     const labelGroup = group
       .append('g')
-      .attr('class', `stage-label ${isActive ? 'active' : 'inactive'}`)
-      .attr('transform', `translate(${labelX}, ${label.y})`);
+      .attr(
+        'class',
+        `stage-label ${isActive ? 'active' : 'inactive'} ${isBackpropLabel ? 'stage-label-backprop' : ''}`
+      )
+      .attr('transform', `translate(${labelX}, ${yPos})`)
+      .style('opacity', initialOpacity);
 
     // Background highlight bar (only for active label)
     if (isActive) {
@@ -83,19 +84,19 @@ export function renderStageLabels(
         .attr('width', STAGE_LABEL.HIGHLIGHT_WIDTH)
         .attr('height', STAGE_LABEL.HIGHLIGHT_HEIGHT)
         .attr('rx', STAGE_LABEL.HIGHLIGHT_RADIUS)
-        .style('fill', 'var(--viz-stage-highlight, rgba(0, 0, 0, 0.08))')
+        .style('fill', isDarkMode ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.05)')
         .style('opacity', STAGE_LABEL_OPACITY.HIGHLIGHT);
     }
 
     // Horizontal dotted connector line
-    group
+    labelGroup
       .append('line')
-      .attr('x1', verticalLineX)
-      .attr('y1', label.y)
-      .attr('x2', labelX - 15)
-      .attr('y2', label.y)
+      .attr('x1', -STAGE_LABEL.GAP_LINE_TO_LABEL)
+      .attr('y1', 0)
+      .attr('x2', -15)
+      .attr('y2', 0)
       .attr('class', 'stage-connector-line')
-      .style('stroke', 'var(--viz-stage-line, #999)')
+      .style('stroke', isDarkMode ? '#666' : '#999')
       .style('stroke-width', 1)
       .style('stroke-dasharray', STAGE_LABEL.CONNECTOR_DASHARRAY)
       .style(
@@ -111,10 +112,10 @@ export function renderStageLabels(
       .attr('class', 'stage-label-heading')
       .style('font-size', STAGE_LABEL.HEADING_SIZE)
       .style('font-weight', FONTS.WEIGHT_SEMIBOLD)
-      .style('fill', isActive ? 'var(--text-primary, #333)' : 'var(--text-tertiary, #999)')
+      .style('fill', isActive ? (isDarkMode ? '#fff' : '#333') : isDarkMode ? '#888' : '#999')
       .style('opacity', STAGE_LABEL_OPACITY.TEXT)
       .style('font-family', FONTS.FAMILY_UI)
-      .text(t(label.key));
+      .text(t(stage.key));
 
     // Hint text below the label
     labelGroup
@@ -124,56 +125,9 @@ export function renderStageLabels(
       .attr('class', 'stage-label-hint')
       .style('font-size', STAGE_LABEL.HINT_SIZE)
       .style('font-weight', FONTS.WEIGHT_NORMAL)
-      .style('fill', 'var(--text-tertiary, #999)')
+      .style('fill', isDarkMode ? '#888' : '#999')
       .style('opacity', STAGE_LABEL_OPACITY.HINT)
       .style('font-family', FONTS.FAMILY_UI)
-      .text(t(`${label.key}_hint`));
+      .text(t(`${stage.key}_hint`));
   });
-
-  // Single backpropagation label used in training backprop steps
-  if (isTraining) {
-    // Position vertically in the middle of the stage label block
-    const backpropY = (STAGE_LABEL.Y_TOKENIZATION + STAGE_LABEL.Y_NEXT_TOKEN) / 2;
-    const isActive = subStep >= 10;
-    const backpropGroup = group
-      .append('g')
-      .attr('class', `stage-label stage-label-backprop ${isActive ? 'active' : ''}`)
-      .attr('transform', `translate(${labelX}, ${backpropY})`)
-      .style('opacity', isActive ? 1 : 0);
-
-    // Background highlight bar
-    backpropGroup
-      .append('rect')
-      .attr('x', -10)
-      .attr('y', -18)
-      .attr('width', STAGE_LABEL.HIGHLIGHT_WIDTH)
-      .attr('height', STAGE_LABEL.HIGHLIGHT_HEIGHT)
-      .attr('rx', STAGE_LABEL.HIGHLIGHT_RADIUS)
-      .style('fill', 'var(--viz-stage-highlight, rgba(0, 0, 0, 0.08))')
-      .style('opacity', STAGE_LABEL_OPACITY.HIGHLIGHT);
-
-    backpropGroup
-      .append('text')
-      .attr('x', 0)
-      .attr('y', 0)
-      .attr('class', 'stage-label-heading')
-      .style('font-size', STAGE_LABEL.HEADING_SIZE)
-      .style('font-weight', FONTS.WEIGHT_SEMIBOLD)
-      .style('fill', 'var(--text-primary, #333)')
-      .style('opacity', STAGE_LABEL_OPACITY.TEXT)
-      .style('font-family', FONTS.FAMILY_UI)
-      .text(t('stage_backpropagation'));
-
-    backpropGroup
-      .append('text')
-      .attr('x', 0)
-      .attr('y', STAGE_LABEL.HINT_Y_OFFSET)
-      .attr('class', 'stage-label-hint')
-      .style('font-size', STAGE_LABEL.HINT_SIZE)
-      .style('font-weight', FONTS.WEIGHT_NORMAL)
-      .style('fill', 'var(--text-tertiary, #999)')
-      .style('opacity', STAGE_LABEL_OPACITY.HINT)
-      .style('font-family', FONTS.FAMILY_UI)
-      .text(t('stage_backpropagation_hint'));
-  }
 }

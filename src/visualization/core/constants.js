@@ -67,6 +67,54 @@ export const LAYOUT = {
 };
 
 /**
+ * Training Animation Steps
+ * Linear sequence of animation steps for Training.
+ */
+export const TRAINING_STEPS = {
+  TOKEN: 0,
+  EMBEDDING: 1,
+  BLOCK_INPUT_FIRST: 2,
+  ATTENTION_FIRST: 3,
+  FFN_FIRST: 4,
+  STACK_REVEAL: 5,
+  BLOCK_INPUT_LAST: 6,
+  ATTENTION_LAST: 7,
+  FFN_LAST: 8,
+  EXTRACTION: 9,
+  LOGPROB: 10,
+  DISTRIBUTION: 11,
+  TARGET: 12,
+  BACKPROP_START: 13,
+  BACKPROP_FFN_LAST: 14,
+  BACKPROP_ATTN_LAST: 15,
+  BACKPROP_FFN_FIRST: 16,
+  BACKPROP_ATTN_FIRST: 17,
+  BACKPROP_EMBEDDING: 18,
+};
+
+/**
+ * Text Generation Animation Steps
+ * Linear sequence of animation steps for Text Generation.
+ */
+export const TEXT_GEN_STEPS = {
+  TOKEN: 0,
+  EMBEDDING: 1,
+  BLOCK_INPUT_FIRST: 2,
+  ATTENTION_FIRST: 3,
+  FFN_FIRST: 4,
+  STACK_REVEAL: 5,
+  BLOCK_INPUT_LAST: 6,
+  ATTENTION_LAST: 7,
+  FFN_LAST: 8,
+  EXTRACTION: 9,
+  LOGPROB: 10,
+  DISTRIBUTION: 11,
+  HIGHLIGHT: 12,
+  APPEND: 13,
+  PREVIEW: 14,
+};
+
+/**
  * Token rendering constants
  */
 export const TOKEN = {

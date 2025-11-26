@@ -2,6 +2,8 @@ import { createContext, useContext, useState, useCallback } from 'react';
 import { useApp } from './AppContext';
 import { VIEW_TYPES, VIEW_INFO } from './viewTypes';
 
+const TRAINING_VIEWS = new Set([VIEW_TYPES.TRAINING, VIEW_TYPES.PRETRAINING_SIMPLE]);
+
 const ViewContext = createContext();
 
 /**
@@ -23,7 +25,7 @@ export function ViewProvider({ children, initialView = VIEW_TYPES.TEXT_GENERATIO
         setCurrentViewState(newView);
 
         // Determine the view type for data loading
-        const viewType = newView === VIEW_TYPES.TRAINING ? 'training' : 'inference';
+        const viewType = TRAINING_VIEWS.has(newView) ? 'training' : 'inference';
         actions.setViewType(viewType);
 
         // Reset animation state when changing views

@@ -430,10 +430,12 @@ function renderExtractedEmbedding(
     const hv1CenterY = horizY + 15;
 
     // Special case: when there's only a single token, use a straight vertical arrow
-    // instead of a curved one, as it looks weird with the curve
+    // instead of a curved one, as it looks weird with the curve.
+    // We add a tiny horizontal offset (0.1px) to ensure the bounding box has non-zero width,
+    // which is required for SVG gradients (objectBoundingBox) to render correctly on the stroke.
     const isSingleToken = metas && metas.length === 1;
     const pathD = isSingleToken
-      ? `M ${startX},${startY} L ${startX},${horizY - 6}`
+      ? `M ${startX},${startY} L ${startX + 0.1},${horizY - 6}`
       : verticalThenHorizontalRoundedPath(startX, startY, hv1RightX, hv1CenterY, 20);
 
     const extraClass = isBackprop ? ' bp-last-embedding-connection' : '';

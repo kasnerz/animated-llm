@@ -31,8 +31,7 @@ body {
 .floating-top-content {
   display: flex;
   align-items: center;
-  justify-content: center;
-  /* center the logo */
+  justify-content: flex-start;
   gap: 1.25rem;
   width: 100%;
   margin: 0;
@@ -40,20 +39,20 @@ body {
   /* allow absolute positioning of header controls */
 }
 
-/* App Logo - now centered */
+/* App Logo */
 .app-logo {
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  /* No absolute positioning - will be centered */
+  margin-left: 1.5rem;
 }
 
-/* View selector popup container on the left */
+/* View selector popup container */
 .view-selector-popup-container {
-  position: absolute;
-  left: 1rem;
-  top: 50%;
-  transform: translateY(-50%);
+  position: relative;
+  left: auto;
+  top: auto;
+  transform: none;
 }
 
 .logo-icon {
@@ -78,7 +77,7 @@ body {
 }
 
 .logo-image {
-  height: 40px;
+  height: 32px;
   width: auto;
   cursor: pointer;
   user-select: none;
@@ -1117,13 +1116,9 @@ body {
     left: 0.5rem;
   }
 
-  .app-logo {
-    gap: 0.5rem;
-  }
-
   /* Ensure logo text doesn't overlap with view selector on very narrow screens */
   .logo-icon {
-    margin-left: 2.5rem;
+    margin-left: 0.5rem;
   }
 
   /* Header controls - hamburger menu */

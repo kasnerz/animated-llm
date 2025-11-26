@@ -94,7 +94,7 @@ function AppContent() {
         if (state.isPlaying) {
           actions.setIsPlaying(false);
         }
-        const lastSubStep = state.viewType === 'training' ? 15 : 12; // keep in sync with timelines
+        const lastSubStep = state.viewType === 'training' ? 18 : 14; // keep in sync with timelines
         if (state.currentAnimationSubStep < lastSubStep) {
           actions.nextAnimationSubStep();
           // Moving sub-steps clears any pending completion guard
@@ -301,16 +301,16 @@ function AppContent() {
       {!isHomePage && (
         <div className="floating-top-section">
           <div className="floating-top-content">
-            {/* View selector on the left */}
-            <div className="view-selector-popup-container">
-              <ViewSelectorPopup />
-            </div>
-
-            {/* Centered logo and title */}
+            {/* Logo on the left */}
             <div className="app-logo">
               <Link to="/" className="logo-icon">
                 <Logo variant="header" />
               </Link>
+            </div>
+
+            {/* View selector next to logo */}
+            <div className="view-selector-popup-container">
+              <ViewSelectorPopup />
             </div>
 
             {/* Header controls - minimal */}
@@ -422,7 +422,8 @@ function App() {
 
   const initialView = getInitialViewFromPath();
   // Map view to viewType for AppProvider
-  const initialViewType = initialView === VIEW_TYPES.TRAINING ? 'training' : 'inference';
+  const TRAINING_VIEWS = new Set([VIEW_TYPES.TRAINING, VIEW_TYPES.PRETRAINING_SIMPLE]);
+  const initialViewType = TRAINING_VIEWS.has(initialView) ? 'training' : 'inference';
 
   return (
     <AppProvider initialViewType={initialViewType}>

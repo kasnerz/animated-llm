@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import logoImage from '../assets/logo.png';
-import logoImageSmall from '../assets/logo-small.png';
+import iconImage from '../assets/icon.png';
 
 /**
  * Logo component - Reusable app logo with icon and text
@@ -15,7 +15,7 @@ function Logo({ variant = 'header', className = '' }) {
   return (
     <div className={`${isHome ? 'home-logo' : 'app-logo-content'} ${className}`.trim()}>
       <img
-        src={isHome ? logoImage : logoImageSmall}
+        src={isHome ? logoImage : iconImage}
         alt="AnimatedLLM"
         className={isHome ? 'home-logo-image' : 'logo-image'}
       />

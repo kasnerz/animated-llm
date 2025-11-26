@@ -14,7 +14,7 @@ import { mdiPlay, mdiPause, mdiChevronLeft, mdiChevronRight } from '@mdi/js';
  * Displays a carousel of document excerpts with left/center/right positioning
  * Used in PretrainingModelView to show multiple documents with the active one in the center
  */
-function TrainingDocumentCarousel() {
+function TrainingDocumentCarousel({ showPlayButton = true }) {
   const { state, actions } = useApp();
   const { language } = useI18n();
   const containerRef = useRef(null);
@@ -227,8 +227,8 @@ function TrainingDocumentCarousel() {
             </div>
           </div>
 
-          {/* Play button - only for active document */}
-          {isActive && (
+          {/* Play button - only for active document and when enabled */}
+          {isActive && showPlayButton && (
             <div className="document-play-button">
               <button
                 className="btn-play-document"
