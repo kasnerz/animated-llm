@@ -1,0 +1,8076 @@
+{
+  "id": "generated_20251117_180916",
+  "prompt": "What is the capital of France?",
+  "language": "en",
+  "temperature": 1.0,
+  "top_k": 10,
+  "model_info": {
+    "name": "CohereLabs/aya-expanse-8b",
+    "num_layers": 32,
+    "hidden_size": 4096,
+    "num_attention_heads": 32,
+    "vocab_size": 256000
+  },
+  "generation_steps": [
+    {
+      "step": 0,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>What is the capital of France?<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "What",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "Ġof",
+        "ĠFrance",
+        "?",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>"
+      ],
+      "token_ids": [
+        5,
+        255000,
+        255006,
+        11214,
+        1801,
+        1690,
+        7784,
+        1719,
+        5334,
+        38,
+        255001,
+        255000,
+        255007
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "The",
+            "token_id": 2162,
+            "logprob": -0.0003,
+            "prob": 0.9995
+          },
+          {
+            "token": "Paris",
+            "token_id": 38754,
+            "logprob": -8.0312,
+            "prob": 0.0003
+          },
+          {
+            "token": "巴黎",
+            "token_id": 48919,
+            "logprob": -14.9531,
+            "prob": 0.0
+          },
+          {
+            "token": "パリ",
+            "token_id": 103892,
+            "logprob": -15.5625,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠParis",
+            "token_id": 5641,
+            "logprob": -16.7969,
+            "prob": 0.0
+          },
+          {
+            "token": "Par",
+            "token_id": 4083,
+            "logprob": -17.3125,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠПариж",
+            "token_id": 60982,
+            "logprob": -16.5156,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġپاریس",
+            "token_id": 169194,
+            "logprob": -16.7344,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġ파리",
+            "token_id": 134408,
+            "logprob": -17.1094,
+            "prob": 0.0
+          },
+          {
+            "token": "<PAD>",
+            "token_id": 0,
+            "logprob": -31.9219,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "The",
+        "token_id": 2162,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 1,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>What is the capital of France?<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>The",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "What",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "Ġof",
+        "ĠFrance",
+        "?",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "The"
+      ],
+      "token_ids": [
+        5,
+        255000,
+        255006,
+        11214,
+        1801,
+        1690,
+        7784,
+        1719,
+        5334,
+        38,
+        255001,
+        255000,
+        255007,
+        2162
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġcapital",
+            "token_id": 7784,
+            "logprob": -0.0,
+            "prob": 1.0
+          },
+          {
+            "token": "Ġcurrent",
+            "token_id": 4157,
+            "logprob": -14.3438,
+            "prob": 0.0
+          },
+          {
+            "token": "<PAD>",
+            "token_id": 0,
+            "logprob": -38.5625,
+            "prob": 0.0
+          },
+          {
+            "token": "<UNK>",
+            "token_id": 1,
+            "logprob": -38.7812,
+            "prob": 0.0
+          },
+          {
+            "token": "<EOS_TOKEN>",
+            "token_id": 6,
+            "logprob": -38.4375,
+            "prob": 0.0
+          },
+          {
+            "token": "<EOP_TOKEN>",
+            "token_id": 7,
+            "logprob": -38.6875,
+            "prob": 0.0
+          },
+          {
+            "token": "<BOS_TOKEN>",
+            "token_id": 5,
+            "logprob": -42.7812,
+            "prob": 0.0
+          },
+          {
+            "token": "<MASK_TOKEN>",
+            "token_id": 4,
+            "logprob": -38.5938,
+            "prob": 0.0
+          },
+          {
+            "token": "<CLS>",
+            "token_id": 2,
+            "logprob": -38.3438,
+            "prob": 0.0
+          },
+          {
+            "token": "<SEP>",
+            "token_id": 3,
+            "logprob": -38.0938,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġcapital",
+        "token_id": 7784,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 2,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>What is the capital of France?<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>The capital",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "What",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "Ġof",
+        "ĠFrance",
+        "?",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "The",
+        "Ġcapital"
+      ],
+      "token_ids": [
+        5,
+        255000,
+        255006,
+        11214,
+        1801,
+        1690,
+        7784,
+        1719,
+        5334,
+        38,
+        255001,
+        255000,
+        255007,
+        2162,
+        7784
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġof",
+            "token_id": 1719,
+            "logprob": -0.0,
+            "prob": 1.0
+          },
+          {
+            "token": "Ġcity",
+            "token_id": 5079,
+            "logprob": -11.5781,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġand",
+            "token_id": 1728,
+            "logprob": -15.0156,
+            "prob": 0.0
+          },
+          {
+            "token": "<PAD>",
+            "token_id": 0,
+            "logprob": -37.625,
+            "prob": 0.0
+          },
+          {
+            "token": "<EOS_TOKEN>",
+            "token_id": 6,
+            "logprob": -29.375,
+            "prob": 0.0
+          },
+          {
+            "token": "<SEP>",
+            "token_id": 3,
+            "logprob": -36.6562,
+            "prob": 0.0
+          },
+          {
+            "token": "<BOS_TOKEN>",
+            "token_id": 5,
+            "logprob": -38.9688,
+            "prob": 0.0
+          },
+          {
+            "token": "<MASK_TOKEN>",
+            "token_id": 4,
+            "logprob": -37.5625,
+            "prob": 0.0
+          },
+          {
+            "token": "<UNK>",
+            "token_id": 1,
+            "logprob": -35.5938,
+            "prob": 0.0
+          },
+          {
+            "token": "<CLS>",
+            "token_id": 2,
+            "logprob": -37.2812,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġof",
+        "token_id": 1719,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 3,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>What is the capital of France?<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>The capital of",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "What",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "Ġof",
+        "ĠFrance",
+        "?",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "The",
+        "Ġcapital",
+        "Ġof"
+      ],
+      "token_ids": [
+        5,
+        255000,
+        255006,
+        11214,
+        1801,
+        1690,
+        7784,
+        1719,
+        5334,
+        38,
+        255001,
+        255000,
+        255007,
+        2162,
+        7784,
+        1719
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "ĠFrance",
+            "token_id": 5334,
+            "logprob": -0.0,
+            "prob": 1.0
+          },
+          {
+            "token": "Ġfrance",
+            "token_id": 48354,
+            "logprob": -15.6875,
+            "prob": 0.0
+          },
+          {
+            "token": "France",
+            "token_id": 23192,
+            "logprob": -15.6094,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠFrancia",
+            "token_id": 17237,
+            "logprob": -15.7969,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠFrench",
+            "token_id": 6855,
+            "logprob": -16.7969,
+            "prob": 0.0
+          },
+          {
+            "token": "<SEP>",
+            "token_id": 3,
+            "logprob": -37.9688,
+            "prob": 0.0
+          },
+          {
+            "token": "<MASK_TOKEN>",
+            "token_id": 4,
+            "logprob": -38.0938,
+            "prob": 0.0
+          },
+          {
+            "token": "<CLS>",
+            "token_id": 2,
+            "logprob": -38.25,
+            "prob": 0.0
+          },
+          {
+            "token": "<PAD>",
+            "token_id": 0,
+            "logprob": -38.0625,
+            "prob": 0.0
+          },
+          {
+            "token": "<UNK>",
+            "token_id": 1,
+            "logprob": -36.0938,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "ĠFrance",
+        "token_id": 5334,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 4,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>What is the capital of France?<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>The capital of France",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "What",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "Ġof",
+        "ĠFrance",
+        "?",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "The",
+        "Ġcapital",
+        "Ġof",
+        "ĠFrance"
+      ],
+      "token_ids": [
+        5,
+        255000,
+        255006,
+        11214,
+        1801,
+        1690,
+        7784,
+        1719,
+        5334,
+        38,
+        255001,
+        255000,
+        255007,
+        2162,
+        7784,
+        1719,
+        5334
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġis",
+            "token_id": 1801,
+            "logprob": 0.0,
+            "prob": 1.0
+          },
+          {
+            "token": "<UNK>",
+            "token_id": 1,
+            "logprob": -36.625,
+            "prob": 0.0
+          },
+          {
+            "token": "<SEP>",
+            "token_id": 3,
+            "logprob": -36.7188,
+            "prob": 0.0
+          },
+          {
+            "token": "<EOS_TOKEN>",
+            "token_id": 6,
+            "logprob": -29.1406,
+            "prob": 0.0
+          },
+          {
+            "token": "<EOP_TOKEN>",
+            "token_id": 7,
+            "logprob": -37.4062,
+            "prob": 0.0
+          },
+          {
+            "token": "<PAD>",
+            "token_id": 0,
+            "logprob": -37.4688,
+            "prob": 0.0
+          },
+          {
+            "token": "<CLS>",
+            "token_id": 2,
+            "logprob": -37.3438,
+            "prob": 0.0
+          },
+          {
+            "token": "<BOS_TOKEN>",
+            "token_id": 5,
+            "logprob": -38.1562,
+            "prob": 0.0
+          },
+          {
+            "token": "!",
+            "token_id": 8,
+            "logprob": -25.2812,
+            "prob": 0.0
+          },
+          {
+            "token": "<MASK_TOKEN>",
+            "token_id": 4,
+            "logprob": -37.2812,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġis",
+        "token_id": 1801,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 5,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>What is the capital of France?<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>The capital of France is",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "What",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "Ġof",
+        "ĠFrance",
+        "?",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "The",
+        "Ġcapital",
+        "Ġof",
+        "ĠFrance",
+        "Ġis"
+      ],
+      "token_ids": [
+        5,
+        255000,
+        255006,
+        11214,
+        1801,
+        1690,
+        7784,
+        1719,
+        5334,
+        38,
+        255001,
+        255000,
+        255007,
+        2162,
+        7784,
+        1719,
+        5334,
+        1801
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "ĠParis",
+            "token_id": 5641,
+            "logprob": -0.0,
+            "prob": 1.0
+          },
+          {
+            "token": "ĠParís",
+            "token_id": 31157,
+            "logprob": -13.625,
+            "prob": 0.0
+          },
+          {
+            "token": "Paris",
+            "token_id": 38754,
+            "logprob": -13.7812,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠParijs",
+            "token_id": 71722,
+            "logprob": -15.5938,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġ**",
+            "token_id": 4434,
+            "logprob": -15.4219,
+            "prob": 0.0
+          },
+          {
+            "token": "巴黎",
+            "token_id": 48919,
+            "logprob": -15.7188,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠParigi",
+            "token_id": 59455,
+            "logprob": -16.0156,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠTokyo",
+            "token_id": 16025,
+            "logprob": -16.9531,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠBerlin",
+            "token_id": 9351,
+            "logprob": -16.3125,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠLondon",
+            "token_id": 6109,
+            "logprob": -17.0469,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "ĠParis",
+        "token_id": 5641,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 6,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>What is the capital of France?<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>The capital of France is Paris",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "What",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "Ġof",
+        "ĠFrance",
+        "?",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "The",
+        "Ġcapital",
+        "Ġof",
+        "ĠFrance",
+        "Ġis",
+        "ĠParis"
+      ],
+      "token_ids": [
+        5,
+        255000,
+        255006,
+        11214,
+        1801,
+        1690,
+        7784,
+        1719,
+        5334,
+        38,
+        255001,
+        255000,
+        255007,
+        2162,
+        7784,
+        1719,
+        5334,
+        1801,
+        5641
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": ".",
+            "token_id": 21,
+            "logprob": -0.0,
+            "prob": 1.0
+          },
+          {
+            "token": ",",
+            "token_id": 19,
+            "logprob": -13.2188,
+            "prob": 0.0
+          },
+          {
+            "token": "<PAD>",
+            "token_id": 0,
+            "logprob": -36.875,
+            "prob": 0.0
+          },
+          {
+            "token": "<UNK>",
+            "token_id": 1,
+            "logprob": -35.4375,
+            "prob": 0.0
+          },
+          {
+            "token": "<EOS_TOKEN>",
+            "token_id": 6,
+            "logprob": -29.8281,
+            "prob": 0.0
+          },
+          {
+            "token": "<EOP_TOKEN>",
+            "token_id": 7,
+            "logprob": -36.9688,
+            "prob": 0.0
+          },
+          {
+            "token": "<BOS_TOKEN>",
+            "token_id": 5,
+            "logprob": -34.375,
+            "prob": 0.0
+          },
+          {
+            "token": "<MASK_TOKEN>",
+            "token_id": 4,
+            "logprob": -36.8438,
+            "prob": 0.0
+          },
+          {
+            "token": "<CLS>",
+            "token_id": 2,
+            "logprob": -36.6875,
+            "prob": 0.0
+          },
+          {
+            "token": "<SEP>",
+            "token_id": 3,
+            "logprob": -36.4688,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": ".",
+        "token_id": 21,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 7,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>What is the capital of France?<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>The capital of France is Paris.",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "What",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "Ġof",
+        "ĠFrance",
+        "?",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "The",
+        "Ġcapital",
+        "Ġof",
+        "ĠFrance",
+        "Ġis",
+        "ĠParis",
+        "."
+      ],
+      "token_ids": [
+        5,
+        255000,
+        255006,
+        11214,
+        1801,
+        1690,
+        7784,
+        1719,
+        5334,
+        38,
+        255001,
+        255000,
+        255007,
+        2162,
+        7784,
+        1719,
+        5334,
+        1801,
+        5641,
+        21
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "ĠKnown",
+            "token_id": 56699,
+            "logprob": -0.7065,
+            "prob": 0.4932
+          },
+          {
+            "token": "ĠParis",
+            "token_id": 5641,
+            "logprob": -1.2383,
+            "prob": 0.29
+          },
+          {
+            "token": "ĠIt",
+            "token_id": 2332,
+            "logprob": -2.2852,
+            "prob": 0.1018
+          },
+          {
+            "token": "<|END_OF_TURN_TOKEN|>",
+            "token_id": 255001,
+            "logprob": -2.4883,
+            "prob": 0.0831
+          },
+          {
+            "token": "ĠSituated",
+            "token_id": 185845,
+            "logprob": -4.0664,
+            "prob": 0.0171
+          },
+          {
+            "token": "ĠLocated",
+            "token_id": 55708,
+            "logprob": -4.8945,
+            "prob": 0.0075
+          },
+          {
+            "token": "\n",
+            "token_id": 206,
+            "logprob": -5.8164,
+            "prob": 0.003
+          },
+          {
+            "token": "ĠRen",
+            "token_id": 9288,
+            "logprob": -6.8867,
+            "prob": 0.001
+          },
+          {
+            "token": "ĠSitu",
+            "token_id": 44830,
+            "logprob": -7.1055,
+            "prob": 0.0008
+          },
+          {
+            "token": "ĠFamous",
+            "token_id": 70861,
+            "logprob": -8.0469,
+            "prob": 0.0003
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "ĠParis",
+        "token_id": 5641,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 8,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>What is the capital of France?<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>The capital of France is Paris. Paris",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "What",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "Ġof",
+        "ĠFrance",
+        "?",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "The",
+        "Ġcapital",
+        "Ġof",
+        "ĠFrance",
+        "Ġis",
+        "ĠParis",
+        ".",
+        "ĠParis"
+      ],
+      "token_ids": [
+        5,
+        255000,
+        255006,
+        11214,
+        1801,
+        1690,
+        7784,
+        1719,
+        5334,
+        38,
+        255001,
+        255000,
+        255007,
+        2162,
+        7784,
+        1719,
+        5334,
+        1801,
+        5641,
+        21,
+        5641
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġis",
+            "token_id": 1801,
+            "logprob": -0.0545,
+            "prob": 0.9468
+          },
+          {
+            "token": "Ġhas",
+            "token_id": 2222,
+            "logprob": -2.9453,
+            "prob": 0.0526
+          },
+          {
+            "token": ",",
+            "token_id": 19,
+            "logprob": -7.7891,
+            "prob": 0.0004
+          },
+          {
+            "token": "Ġwas",
+            "token_id": 1898,
+            "logprob": -12.4297,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġlies",
+            "token_id": 20141,
+            "logprob": -13.2891,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġholds",
+            "token_id": 17226,
+            "logprob": -13.9297,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġserves",
+            "token_id": 17018,
+            "logprob": -14.3594,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġbecame",
+            "token_id": 4911,
+            "logprob": -14.2969,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġ(",
+            "token_id": 1737,
+            "logprob": -14.5703,
+            "prob": 0.0
+          },
+          {
+            "token": "is",
+            "token_id": 1685,
+            "logprob": -15.8203,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġis",
+        "token_id": 1801,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 9,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>What is the capital of France?<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>The capital of France is Paris. Paris is",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "What",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "Ġof",
+        "ĠFrance",
+        "?",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "The",
+        "Ġcapital",
+        "Ġof",
+        "ĠFrance",
+        "Ġis",
+        "ĠParis",
+        ".",
+        "ĠParis",
+        "Ġis"
+      ],
+      "token_ids": [
+        5,
+        255000,
+        255006,
+        11214,
+        1801,
+        1690,
+        7784,
+        1719,
+        5334,
+        38,
+        255001,
+        255000,
+        255007,
+        2162,
+        7784,
+        1719,
+        5334,
+        1801,
+        5641,
+        21,
+        5641,
+        1801
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġnot",
+            "token_id": 2068,
+            "logprob": -0.5967,
+            "prob": 0.5508
+          },
+          {
+            "token": "Ġthe",
+            "token_id": 1690,
+            "logprob": -1.7842,
+            "prob": 0.168
+          },
+          {
+            "token": "Ġknown",
+            "token_id": 4376,
+            "logprob": -2.2539,
+            "prob": 0.1051
+          },
+          {
+            "token": "Ġone",
+            "token_id": 2371,
+            "logprob": -2.4727,
+            "prob": 0.0844
+          },
+          {
+            "token": "Ġrenowned",
+            "token_id": 37755,
+            "logprob": -3.5039,
+            "prob": 0.0301
+          },
+          {
+            "token": "Ġlocated",
+            "token_id": 6090,
+            "logprob": -3.8008,
+            "prob": 0.0224
+          },
+          {
+            "token": "Ġa",
+            "token_id": 1671,
+            "logprob": -3.8477,
+            "prob": 0.0213
+          },
+          {
+            "token": "Ġfamous",
+            "token_id": 13410,
+            "logprob": -4.8633,
+            "prob": 0.0077
+          },
+          {
+            "token": "Ġalso",
+            "token_id": 2328,
+            "logprob": -5.2695,
+            "prob": 0.0051
+          },
+          {
+            "token": "ĠFrance",
+            "token_id": 5334,
+            "logprob": -6.3477,
+            "prob": 0.0018
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġrenowned",
+        "token_id": 37755,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 10,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>What is the capital of France?<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>The capital of France is Paris. Paris is renowned",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "What",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "Ġof",
+        "ĠFrance",
+        "?",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "The",
+        "Ġcapital",
+        "Ġof",
+        "ĠFrance",
+        "Ġis",
+        "ĠParis",
+        ".",
+        "ĠParis",
+        "Ġis",
+        "Ġrenowned"
+      ],
+      "token_ids": [
+        5,
+        255000,
+        255006,
+        11214,
+        1801,
+        1690,
+        7784,
+        1719,
+        5334,
+        38,
+        255001,
+        255000,
+        255007,
+        2162,
+        7784,
+        1719,
+        5334,
+        1801,
+        5641,
+        21,
+        5641,
+        1801,
+        37755
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġfor",
+            "token_id": 1794,
+            "logprob": -0.0034,
+            "prob": 0.9966
+          },
+          {
+            "token": "Ġas",
+            "token_id": 1843,
+            "logprob": -6.3633,
+            "prob": 0.0017
+          },
+          {
+            "token": "Ġworldwide",
+            "token_id": 17843,
+            "logprob": -6.5508,
+            "prob": 0.0014
+          },
+          {
+            "token": "Ġnot",
+            "token_id": 2068,
+            "logprob": -8.9688,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġthroughout",
+            "token_id": 8014,
+            "logprob": -9.3438,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġglobally",
+            "token_id": 38013,
+            "logprob": -10.1562,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġaround",
+            "token_id": 4192,
+            "logprob": -10.9531,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġworld",
+            "token_id": 3845,
+            "logprob": -12.75,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġinternationally",
+            "token_id": 35143,
+            "logprob": -12.875,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġacross",
+            "token_id": 6094,
+            "logprob": -12.9375,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġfor",
+        "token_id": 1794,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 11,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>What is the capital of France?<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>The capital of France is Paris. Paris is renowned for",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "What",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "Ġof",
+        "ĠFrance",
+        "?",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "The",
+        "Ġcapital",
+        "Ġof",
+        "ĠFrance",
+        "Ġis",
+        "ĠParis",
+        ".",
+        "ĠParis",
+        "Ġis",
+        "Ġrenowned",
+        "Ġfor"
+      ],
+      "token_ids": [
+        5,
+        255000,
+        255006,
+        11214,
+        1801,
+        1690,
+        7784,
+        1719,
+        5334,
+        38,
+        255001,
+        255000,
+        255007,
+        2162,
+        7784,
+        1719,
+        5334,
+        1801,
+        5641,
+        21,
+        5641,
+        1801,
+        37755,
+        1794
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġits",
+            "token_id": 2517,
+            "logprob": -0.0001,
+            "prob": 1.0
+          },
+          {
+            "token": "Ġlandmarks",
+            "token_id": 87987,
+            "logprob": -10.5312,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġiconic",
+            "token_id": 39502,
+            "logprob": -10.625,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġvarious",
+            "token_id": 6102,
+            "logprob": -11.0,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġmany",
+            "token_id": 3246,
+            "logprob": -11.0312,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġnumerous",
+            "token_id": 11985,
+            "logprob": -11.8438,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġseveral",
+            "token_id": 4843,
+            "logprob": -12.7344,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġbeing",
+            "token_id": 3506,
+            "logprob": -12.9688,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġa",
+            "token_id": 1671,
+            "logprob": -14.0156,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġattractions",
+            "token_id": 41816,
+            "logprob": -14.4375,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġits",
+        "token_id": 2517,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 12,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>What is the capital of France?<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>The capital of France is Paris. Paris is renowned for its",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "What",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "Ġof",
+        "ĠFrance",
+        "?",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "The",
+        "Ġcapital",
+        "Ġof",
+        "ĠFrance",
+        "Ġis",
+        "ĠParis",
+        ".",
+        "ĠParis",
+        "Ġis",
+        "Ġrenowned",
+        "Ġfor",
+        "Ġits"
+      ],
+      "token_ids": [
+        5,
+        255000,
+        255006,
+        11214,
+        1801,
+        1690,
+        7784,
+        1719,
+        5334,
+        38,
+        255001,
+        255000,
+        255007,
+        2162,
+        7784,
+        1719,
+        5334,
+        1801,
+        5641,
+        21,
+        5641,
+        1801,
+        37755,
+        1794,
+        2517
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġrich",
+            "token_id": 12274,
+            "logprob": -0.1323,
+            "prob": 0.876
+          },
+          {
+            "token": "Ġcultural",
+            "token_id": 12080,
+            "logprob": -3.3047,
+            "prob": 0.0367
+          },
+          {
+            "token": "Ġart",
+            "token_id": 3015,
+            "logprob": -3.3672,
+            "prob": 0.0345
+          },
+          {
+            "token": "Ġiconic",
+            "token_id": 39502,
+            "logprob": -3.7891,
+            "prob": 0.0226
+          },
+          {
+            "token": "Ġhistorical",
+            "token_id": 14986,
+            "logprob": -4.1953,
+            "prob": 0.0151
+          },
+          {
+            "token": "Ġhistoric",
+            "token_id": 17943,
+            "logprob": -5.1172,
+            "prob": 0.006
+          },
+          {
+            "token": "Ġculture",
+            "token_id": 8678,
+            "logprob": -5.5078,
+            "prob": 0.0041
+          },
+          {
+            "token": "Ġhistory",
+            "token_id": 5824,
+            "logprob": -5.9141,
+            "prob": 0.0027
+          },
+          {
+            "token": "Ġbeautiful",
+            "token_id": 9737,
+            "logprob": -7.7109,
+            "prob": 0.0004
+          },
+          {
+            "token": "Ġartistic",
+            "token_id": 26107,
+            "logprob": -7.7891,
+            "prob": 0.0004
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġrich",
+        "token_id": 12274,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 13,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>What is the capital of France?<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>The capital of France is Paris. Paris is renowned for its rich",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "What",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "Ġof",
+        "ĠFrance",
+        "?",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "The",
+        "Ġcapital",
+        "Ġof",
+        "ĠFrance",
+        "Ġis",
+        "ĠParis",
+        ".",
+        "ĠParis",
+        "Ġis",
+        "Ġrenowned",
+        "Ġfor",
+        "Ġits",
+        "Ġrich"
+      ],
+      "token_ids": [
+        5,
+        255000,
+        255006,
+        11214,
+        1801,
+        1690,
+        7784,
+        1719,
+        5334,
+        38,
+        255001,
+        255000,
+        255007,
+        2162,
+        7784,
+        1719,
+        5334,
+        1801,
+        5641,
+        21,
+        5641,
+        1801,
+        37755,
+        1794,
+        2517,
+        12274
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġhistory",
+            "token_id": 5824,
+            "logprob": -0.0009,
+            "prob": 0.999
+          },
+          {
+            "token": "Ġcultural",
+            "token_id": 12080,
+            "logprob": -7.2812,
+            "prob": 0.0007
+          },
+          {
+            "token": "Ġhistorical",
+            "token_id": 14986,
+            "logprob": -8.7344,
+            "prob": 0.0002
+          },
+          {
+            "token": "Ġculture",
+            "token_id": 8678,
+            "logprob": -9.7656,
+            "prob": 0.0001
+          },
+          {
+            "token": "ĠHistory",
+            "token_id": 6662,
+            "logprob": -14.2344,
+            "prob": 0.0
+          },
+          {
+            "token": "history",
+            "token_id": 31184,
+            "logprob": -14.8906,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġhistoric",
+            "token_id": 17943,
+            "logprob": -15.5156,
+            "prob": 0.0
+          },
+          {
+            "token": "历史",
+            "token_id": 16089,
+            "logprob": -16.9219,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġhistoria",
+            "token_id": 17947,
+            "logprob": -16.875,
+            "prob": 0.0
+          },
+          {
+            "token": "<PAD>",
+            "token_id": 0,
+            "logprob": -34.5625,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġhistory",
+        "token_id": 5824,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 14,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>What is the capital of France?<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>The capital of France is Paris. Paris is renowned for its rich history",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "What",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "Ġof",
+        "ĠFrance",
+        "?",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "The",
+        "Ġcapital",
+        "Ġof",
+        "ĠFrance",
+        "Ġis",
+        "ĠParis",
+        ".",
+        "ĠParis",
+        "Ġis",
+        "Ġrenowned",
+        "Ġfor",
+        "Ġits",
+        "Ġrich",
+        "Ġhistory"
+      ],
+      "token_ids": [
+        5,
+        255000,
+        255006,
+        11214,
+        1801,
+        1690,
+        7784,
+        1719,
+        5334,
+        38,
+        255001,
+        255000,
+        255007,
+        2162,
+        7784,
+        1719,
+        5334,
+        1801,
+        5641,
+        21,
+        5641,
+        1801,
+        37755,
+        1794,
+        2517,
+        12274,
+        5824
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": ",",
+            "token_id": 19,
+            "logprob": -0.0,
+            "prob": 1.0
+          },
+          {
+            "token": "Ġand",
+            "token_id": 1728,
+            "logprob": -12.1562,
+            "prob": 0.0
+          },
+          {
+            "token": ";",
+            "token_id": 34,
+            "logprob": -14.3594,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġas",
+            "token_id": 1843,
+            "logprob": -15.5312,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġ(",
+            "token_id": 1737,
+            "logprob": -16.8594,
+            "prob": 0.0
+          },
+          {
+            "token": "<SEP>",
+            "token_id": 3,
+            "logprob": -33.9688,
+            "prob": 0.0
+          },
+          {
+            "token": "<MASK_TOKEN>",
+            "token_id": 4,
+            "logprob": -34.0312,
+            "prob": 0.0
+          },
+          {
+            "token": "<CLS>",
+            "token_id": 2,
+            "logprob": -34.2812,
+            "prob": 0.0
+          },
+          {
+            "token": "<PAD>",
+            "token_id": 0,
+            "logprob": -33.9375,
+            "prob": 0.0
+          },
+          {
+            "token": "<UNK>",
+            "token_id": 1,
+            "logprob": -33.6562,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": ",",
+        "token_id": 19,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 15,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>What is the capital of France?<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>The capital of France is Paris. Paris is renowned for its rich history,",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "What",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "Ġof",
+        "ĠFrance",
+        "?",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "The",
+        "Ġcapital",
+        "Ġof",
+        "ĠFrance",
+        "Ġis",
+        "ĠParis",
+        ".",
+        "ĠParis",
+        "Ġis",
+        "Ġrenowned",
+        "Ġfor",
+        "Ġits",
+        "Ġrich",
+        "Ġhistory",
+        ","
+      ],
+      "token_ids": [
+        5,
+        255000,
+        255006,
+        11214,
+        1801,
+        1690,
+        7784,
+        1719,
+        5334,
+        38,
+        255001,
+        255000,
+        255007,
+        2162,
+        7784,
+        1719,
+        5334,
+        1801,
+        5641,
+        21,
+        5641,
+        1801,
+        37755,
+        1794,
+        2517,
+        12274,
+        5824,
+        19
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġcultural",
+            "token_id": 12080,
+            "logprob": -0.5889,
+            "prob": 0.5552
+          },
+          {
+            "token": "Ġart",
+            "token_id": 3015,
+            "logprob": -1.4326,
+            "prob": 0.2386
+          },
+          {
+            "token": "Ġculture",
+            "token_id": 8678,
+            "logprob": -2.5254,
+            "prob": 0.08
+          },
+          {
+            "token": "Ġiconic",
+            "token_id": 39502,
+            "logprob": -3.0879,
+            "prob": 0.0456
+          },
+          {
+            "token": "Ġstunning",
+            "token_id": 31796,
+            "logprob": -3.6816,
+            "prob": 0.0252
+          },
+          {
+            "token": "Ġvibrant",
+            "token_id": 43361,
+            "logprob": -3.8691,
+            "prob": 0.0209
+          },
+          {
+            "token": "Ġrenowned",
+            "token_id": 37755,
+            "logprob": -4.9648,
+            "prob": 0.007
+          },
+          {
+            "token": "Ġartistic",
+            "token_id": 26107,
+            "logprob": -5.1367,
+            "prob": 0.0059
+          },
+          {
+            "token": "Ġdiverse",
+            "token_id": 15719,
+            "logprob": -5.2305,
+            "prob": 0.0054
+          },
+          {
+            "token": "Ġbeautiful",
+            "token_id": 9737,
+            "logprob": -5.5117,
+            "prob": 0.004
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġcultural",
+        "token_id": 12080,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 16,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>What is the capital of France?<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>The capital of France is Paris. Paris is renowned for its rich history, cultural",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "What",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "Ġof",
+        "ĠFrance",
+        "?",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "The",
+        "Ġcapital",
+        "Ġof",
+        "ĠFrance",
+        "Ġis",
+        "ĠParis",
+        ".",
+        "ĠParis",
+        "Ġis",
+        "Ġrenowned",
+        "Ġfor",
+        "Ġits",
+        "Ġrich",
+        "Ġhistory",
+        ",",
+        "Ġcultural"
+      ],
+      "token_ids": [
+        5,
+        255000,
+        255006,
+        11214,
+        1801,
+        1690,
+        7784,
+        1719,
+        5334,
+        38,
+        255001,
+        255000,
+        255007,
+        2162,
+        7784,
+        1719,
+        5334,
+        1801,
+        5641,
+        21,
+        5641,
+        1801,
+        37755,
+        1794,
+        2517,
+        12274,
+        5824,
+        19,
+        12080
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġlandmarks",
+            "token_id": 87987,
+            "logprob": -0.9844,
+            "prob": 0.3738
+          },
+          {
+            "token": "Ġsignificance",
+            "token_id": 33850,
+            "logprob": -1.1094,
+            "prob": 0.3298
+          },
+          {
+            "token": "Ġattractions",
+            "token_id": 41816,
+            "logprob": -1.6406,
+            "prob": 0.1938
+          },
+          {
+            "token": "Ġheritage",
+            "token_id": 27553,
+            "logprob": -2.3906,
+            "prob": 0.0916
+          },
+          {
+            "token": "Ġsites",
+            "token_id": 9549,
+            "logprob": -5.2969,
+            "prob": 0.005
+          },
+          {
+            "token": "Ġmonuments",
+            "token_id": 28816,
+            "logprob": -6.3906,
+            "prob": 0.0017
+          },
+          {
+            "token": "Ġofferings",
+            "token_id": 39945,
+            "logprob": -7.0156,
+            "prob": 0.0009
+          },
+          {
+            "token": "Ġcontributions",
+            "token_id": 21858,
+            "logprob": -8.0938,
+            "prob": 0.0003
+          },
+          {
+            "token": "Ġinstitutions",
+            "token_id": 16616,
+            "logprob": -8.2812,
+            "prob": 0.0003
+          },
+          {
+            "token": "Ġimportance",
+            "token_id": 15939,
+            "logprob": -8.2969,
+            "prob": 0.0002
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġsignificance",
+        "token_id": 33850,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 17,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>What is the capital of France?<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>The capital of France is Paris. Paris is renowned for its rich history, cultural significance",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "What",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "Ġof",
+        "ĠFrance",
+        "?",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "The",
+        "Ġcapital",
+        "Ġof",
+        "ĠFrance",
+        "Ġis",
+        "ĠParis",
+        ".",
+        "ĠParis",
+        "Ġis",
+        "Ġrenowned",
+        "Ġfor",
+        "Ġits",
+        "Ġrich",
+        "Ġhistory",
+        ",",
+        "Ġcultural",
+        "Ġsignificance"
+      ],
+      "token_ids": [
+        5,
+        255000,
+        255006,
+        11214,
+        1801,
+        1690,
+        7784,
+        1719,
+        5334,
+        38,
+        255001,
+        255000,
+        255007,
+        2162,
+        7784,
+        1719,
+        5334,
+        1801,
+        5641,
+        21,
+        5641,
+        1801,
+        37755,
+        1794,
+        2517,
+        12274,
+        5824,
+        19,
+        12080,
+        33850
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": ",",
+            "token_id": 19,
+            "logprob": -0.0,
+            "prob": 1.0
+          },
+          {
+            "token": "Ġand",
+            "token_id": 1728,
+            "logprob": -11.0469,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġ(",
+            "token_id": 1737,
+            "logprob": -14.4688,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġin",
+            "token_id": 1709,
+            "logprob": -15.2812,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġas",
+            "token_id": 1843,
+            "logprob": -16.0312,
+            "prob": 0.0
+          },
+          {
+            "token": ".",
+            "token_id": 21,
+            "logprob": -17.1719,
+            "prob": 0.0
+          },
+          {
+            "token": "<CLS>",
+            "token_id": 2,
+            "logprob": -35.0625,
+            "prob": 0.0
+          },
+          {
+            "token": "<SEP>",
+            "token_id": 3,
+            "logprob": -34.9375,
+            "prob": 0.0
+          },
+          {
+            "token": "<UNK>",
+            "token_id": 1,
+            "logprob": -35.125,
+            "prob": 0.0
+          },
+          {
+            "token": "<PAD>",
+            "token_id": 0,
+            "logprob": -35.0312,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": ",",
+        "token_id": 19,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 18,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>What is the capital of France?<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>The capital of France is Paris. Paris is renowned for its rich history, cultural significance,",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "What",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "Ġof",
+        "ĠFrance",
+        "?",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "The",
+        "Ġcapital",
+        "Ġof",
+        "ĠFrance",
+        "Ġis",
+        "ĠParis",
+        ".",
+        "ĠParis",
+        "Ġis",
+        "Ġrenowned",
+        "Ġfor",
+        "Ġits",
+        "Ġrich",
+        "Ġhistory",
+        ",",
+        "Ġcultural",
+        "Ġsignificance",
+        ","
+      ],
+      "token_ids": [
+        5,
+        255000,
+        255006,
+        11214,
+        1801,
+        1690,
+        7784,
+        1719,
+        5334,
+        38,
+        255001,
+        255000,
+        255007,
+        2162,
+        7784,
+        1719,
+        5334,
+        1801,
+        5641,
+        21,
+        5641,
+        1801,
+        37755,
+        1794,
+        2517,
+        12274,
+        5824,
+        19,
+        12080,
+        33850,
+        19
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġand",
+            "token_id": 1728,
+            "logprob": -0.0132,
+            "prob": 0.9868
+          },
+          {
+            "token": "Ġfashion",
+            "token_id": 15924,
+            "logprob": -4.9648,
+            "prob": 0.007
+          },
+          {
+            "token": "Ġarchitecture",
+            "token_id": 16717,
+            "logprob": -5.793,
+            "prob": 0.003
+          },
+          {
+            "token": "Ġart",
+            "token_id": 3015,
+            "logprob": -6.1367,
+            "prob": 0.0022
+          },
+          {
+            "token": "Ġartistic",
+            "token_id": 26107,
+            "logprob": -8.1875,
+            "prob": 0.0003
+          },
+          {
+            "token": "Ġworld",
+            "token_id": 3845,
+            "logprob": -8.7344,
+            "prob": 0.0002
+          },
+          {
+            "token": "Ġiconic",
+            "token_id": 39502,
+            "logprob": -9.2188,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġstunning",
+            "token_id": 31796,
+            "logprob": -9.2812,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġbeautiful",
+            "token_id": 9737,
+            "logprob": -9.5938,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġromantic",
+            "token_id": 30026,
+            "logprob": -10.2031,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġand",
+        "token_id": 1728,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 19,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>What is the capital of France?<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>The capital of France is Paris. Paris is renowned for its rich history, cultural significance, and",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "What",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "Ġof",
+        "ĠFrance",
+        "?",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "The",
+        "Ġcapital",
+        "Ġof",
+        "ĠFrance",
+        "Ġis",
+        "ĠParis",
+        ".",
+        "ĠParis",
+        "Ġis",
+        "Ġrenowned",
+        "Ġfor",
+        "Ġits",
+        "Ġrich",
+        "Ġhistory",
+        ",",
+        "Ġcultural",
+        "Ġsignificance",
+        ",",
+        "Ġand"
+      ],
+      "token_ids": [
+        5,
+        255000,
+        255006,
+        11214,
+        1801,
+        1690,
+        7784,
+        1719,
+        5334,
+        38,
+        255001,
+        255000,
+        255007,
+        2162,
+        7784,
+        1719,
+        5334,
+        1801,
+        5641,
+        21,
+        5641,
+        1801,
+        37755,
+        1794,
+        2517,
+        12274,
+        5824,
+        19,
+        12080,
+        33850,
+        19,
+        1728
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġiconic",
+            "token_id": 39502,
+            "logprob": -0.0075,
+            "prob": 0.9927
+          },
+          {
+            "token": "Ġnumerous",
+            "token_id": 11985,
+            "logprob": -5.9766,
+            "prob": 0.0025
+          },
+          {
+            "token": "Ġarchitectural",
+            "token_id": 31721,
+            "logprob": -6.7578,
+            "prob": 0.0012
+          },
+          {
+            "token": "Ġstunning",
+            "token_id": 31796,
+            "logprob": -7.1172,
+            "prob": 0.0008
+          },
+          {
+            "token": "Ġbeautiful",
+            "token_id": 9737,
+            "logprob": -7.5703,
+            "prob": 0.0005
+          },
+          {
+            "token": "Ġpicturesque",
+            "token_id": 96858,
+            "logprob": -7.7734,
+            "prob": 0.0004
+          },
+          {
+            "token": "Ġnotable",
+            "token_id": 17907,
+            "logprob": -7.7891,
+            "prob": 0.0004
+          },
+          {
+            "token": "Ġmany",
+            "token_id": 3246,
+            "logprob": -8.1016,
+            "prob": 0.0003
+          },
+          {
+            "token": "Ġdiverse",
+            "token_id": 15719,
+            "logprob": -8.3359,
+            "prob": 0.0002
+          },
+          {
+            "token": "Ġas",
+            "token_id": 1843,
+            "logprob": -8.4766,
+            "prob": 0.0002
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġiconic",
+        "token_id": 39502,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 20,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>What is the capital of France?<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>The capital of France is Paris. Paris is renowned for its rich history, cultural significance, and iconic",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "What",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "Ġof",
+        "ĠFrance",
+        "?",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "The",
+        "Ġcapital",
+        "Ġof",
+        "ĠFrance",
+        "Ġis",
+        "ĠParis",
+        ".",
+        "ĠParis",
+        "Ġis",
+        "Ġrenowned",
+        "Ġfor",
+        "Ġits",
+        "Ġrich",
+        "Ġhistory",
+        ",",
+        "Ġcultural",
+        "Ġsignificance",
+        ",",
+        "Ġand",
+        "Ġiconic"
+      ],
+      "token_ids": [
+        5,
+        255000,
+        255006,
+        11214,
+        1801,
+        1690,
+        7784,
+        1719,
+        5334,
+        38,
+        255001,
+        255000,
+        255007,
+        2162,
+        7784,
+        1719,
+        5334,
+        1801,
+        5641,
+        21,
+        5641,
+        1801,
+        37755,
+        1794,
+        2517,
+        12274,
+        5824,
+        19,
+        12080,
+        33850,
+        19,
+        1728,
+        39502
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġlandmarks",
+            "token_id": 87987,
+            "logprob": -0.0,
+            "prob": 1.0
+          },
+          {
+            "token": "Ġmonuments",
+            "token_id": 28816,
+            "logprob": -11.5156,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġlandmark",
+            "token_id": 54247,
+            "logprob": -12.4219,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġsites",
+            "token_id": 9549,
+            "logprob": -13.0156,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġattractions",
+            "token_id": 41816,
+            "logprob": -13.4688,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġarchitecture",
+            "token_id": 16717,
+            "logprob": -13.4375,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠLandmarks",
+            "token_id": 132112,
+            "logprob": -14.2969,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġsights",
+            "token_id": 65188,
+            "logprob": -15.0938,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġsymbols",
+            "token_id": 29807,
+            "logprob": -16.25,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġarchitectural",
+            "token_id": 31721,
+            "logprob": -16.3438,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġlandmarks",
+        "token_id": 87987,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 21,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>What is the capital of France?<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>The capital of France is Paris. Paris is renowned for its rich history, cultural significance, and iconic landmarks",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "What",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "Ġof",
+        "ĠFrance",
+        "?",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "The",
+        "Ġcapital",
+        "Ġof",
+        "ĠFrance",
+        "Ġis",
+        "ĠParis",
+        ".",
+        "ĠParis",
+        "Ġis",
+        "Ġrenowned",
+        "Ġfor",
+        "Ġits",
+        "Ġrich",
+        "Ġhistory",
+        ",",
+        "Ġcultural",
+        "Ġsignificance",
+        ",",
+        "Ġand",
+        "Ġiconic",
+        "Ġlandmarks"
+      ],
+      "token_ids": [
+        5,
+        255000,
+        255006,
+        11214,
+        1801,
+        1690,
+        7784,
+        1719,
+        5334,
+        38,
+        255001,
+        255000,
+        255007,
+        2162,
+        7784,
+        1719,
+        5334,
+        1801,
+        5641,
+        21,
+        5641,
+        1801,
+        37755,
+        1794,
+        2517,
+        12274,
+        5824,
+        19,
+        12080,
+        33850,
+        19,
+        1728,
+        39502,
+        87987
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġsuch",
+            "token_id": 3213,
+            "logprob": -0.436,
+            "prob": 0.6465
+          },
+          {
+            "token": ",",
+            "token_id": 19,
+            "logprob": -1.0605,
+            "prob": 0.3462
+          },
+          {
+            "token": "Ġlike",
+            "token_id": 3026,
+            "logprob": -5.1875,
+            "prob": 0.0056
+          },
+          {
+            "token": ".",
+            "token_id": 21,
+            "logprob": -6.4375,
+            "prob": 0.0016
+          },
+          {
+            "token": "Ġincluding",
+            "token_id": 3832,
+            "logprob": -9.2969,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġthat",
+            "token_id": 1875,
+            "logprob": -12.25,
+            "prob": 0.0
+          },
+          {
+            "token": "such",
+            "token_id": 24781,
+            "logprob": -12.3125,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġand",
+            "token_id": 1728,
+            "logprob": -12.8281,
+            "prob": 0.0
+          },
+          {
+            "token": ";",
+            "token_id": 34,
+            "logprob": -14.1875,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġ(",
+            "token_id": 1737,
+            "logprob": -14.4844,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġsuch",
+        "token_id": 3213,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 22,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>What is the capital of France?<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>The capital of France is Paris. Paris is renowned for its rich history, cultural significance, and iconic landmarks such",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "What",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "Ġof",
+        "ĠFrance",
+        "?",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "The",
+        "Ġcapital",
+        "Ġof",
+        "ĠFrance",
+        "Ġis",
+        "ĠParis",
+        ".",
+        "ĠParis",
+        "Ġis",
+        "Ġrenowned",
+        "Ġfor",
+        "Ġits",
+        "Ġrich",
+        "Ġhistory",
+        ",",
+        "Ġcultural",
+        "Ġsignificance",
+        ",",
+        "Ġand",
+        "Ġiconic",
+        "Ġlandmarks",
+        "Ġsuch"
+      ],
+      "token_ids": [
+        5,
+        255000,
+        255006,
+        11214,
+        1801,
+        1690,
+        7784,
+        1719,
+        5334,
+        38,
+        255001,
+        255000,
+        255007,
+        2162,
+        7784,
+        1719,
+        5334,
+        1801,
+        5641,
+        21,
+        5641,
+        1801,
+        37755,
+        1794,
+        2517,
+        12274,
+        5824,
+        19,
+        12080,
+        33850,
+        19,
+        1728,
+        39502,
+        87987,
+        3213
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġas",
+            "token_id": 1843,
+            "logprob": -0.0,
+            "prob": 1.0
+          },
+          {
+            "token": "Ġthe",
+            "token_id": 1690,
+            "logprob": -14.5938,
+            "prob": 0.0
+          },
+          {
+            "token": ",",
+            "token_id": 19,
+            "logprob": -15.4922,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġlike",
+            "token_id": 3026,
+            "logprob": -16.4531,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġand",
+            "token_id": 1728,
+            "logprob": -16.6562,
+            "prob": 0.0
+          },
+          {
+            "token": "as",
+            "token_id": 1694,
+            "logprob": -16.375,
+            "prob": 0.0
+          },
+          {
+            "token": ".",
+            "token_id": 21,
+            "logprob": -16.7969,
+            "prob": 0.0
+          },
+          {
+            "token": "<CLS>",
+            "token_id": 2,
+            "logprob": -30.3906,
+            "prob": 0.0
+          },
+          {
+            "token": "<UNK>",
+            "token_id": 1,
+            "logprob": -29.9375,
+            "prob": 0.0
+          },
+          {
+            "token": "<PAD>",
+            "token_id": 0,
+            "logprob": -30.8594,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġas",
+        "token_id": 1843,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 23,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>What is the capital of France?<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>The capital of France is Paris. Paris is renowned for its rich history, cultural significance, and iconic landmarks such as",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "What",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "Ġof",
+        "ĠFrance",
+        "?",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "The",
+        "Ġcapital",
+        "Ġof",
+        "ĠFrance",
+        "Ġis",
+        "ĠParis",
+        ".",
+        "ĠParis",
+        "Ġis",
+        "Ġrenowned",
+        "Ġfor",
+        "Ġits",
+        "Ġrich",
+        "Ġhistory",
+        ",",
+        "Ġcultural",
+        "Ġsignificance",
+        ",",
+        "Ġand",
+        "Ġiconic",
+        "Ġlandmarks",
+        "Ġsuch",
+        "Ġas"
+      ],
+      "token_ids": [
+        5,
+        255000,
+        255006,
+        11214,
+        1801,
+        1690,
+        7784,
+        1719,
+        5334,
+        38,
+        255001,
+        255000,
+        255007,
+        2162,
+        7784,
+        1719,
+        5334,
+        1801,
+        5641,
+        21,
+        5641,
+        1801,
+        37755,
+        1794,
+        2517,
+        12274,
+        5824,
+        19,
+        12080,
+        33850,
+        19,
+        1728,
+        39502,
+        87987,
+        3213,
+        1843
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġthe",
+            "token_id": 1690,
+            "logprob": -0.0,
+            "prob": 1.0
+          },
+          {
+            "token": "ĠNotre",
+            "token_id": 27687,
+            "logprob": -12.4688,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠThe",
+            "token_id": 1896,
+            "logprob": -13.7812,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠEiffel",
+            "token_id": 116920,
+            "logprob": -15.8672,
+            "prob": 0.0
+          },
+          {
+            "token": "the",
+            "token_id": 3798,
+            "logprob": -16.0469,
+            "prob": 0.0
+          },
+          {
+            "token": "<SEP>",
+            "token_id": 3,
+            "logprob": -30.5781,
+            "prob": 0.0
+          },
+          {
+            "token": "<MASK_TOKEN>",
+            "token_id": 4,
+            "logprob": -30.8281,
+            "prob": 0.0
+          },
+          {
+            "token": "<CLS>",
+            "token_id": 2,
+            "logprob": -30.2812,
+            "prob": 0.0
+          },
+          {
+            "token": "<PAD>",
+            "token_id": 0,
+            "logprob": -30.875,
+            "prob": 0.0
+          },
+          {
+            "token": "<UNK>",
+            "token_id": 1,
+            "logprob": -29.7188,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġthe",
+        "token_id": 1690,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 24,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>What is the capital of France?<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>The capital of France is Paris. Paris is renowned for its rich history, cultural significance, and iconic landmarks such as the",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "What",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "Ġof",
+        "ĠFrance",
+        "?",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "The",
+        "Ġcapital",
+        "Ġof",
+        "ĠFrance",
+        "Ġis",
+        "ĠParis",
+        ".",
+        "ĠParis",
+        "Ġis",
+        "Ġrenowned",
+        "Ġfor",
+        "Ġits",
+        "Ġrich",
+        "Ġhistory",
+        ",",
+        "Ġcultural",
+        "Ġsignificance",
+        ",",
+        "Ġand",
+        "Ġiconic",
+        "Ġlandmarks",
+        "Ġsuch",
+        "Ġas",
+        "Ġthe"
+      ],
+      "token_ids": [
+        5,
+        255000,
+        255006,
+        11214,
+        1801,
+        1690,
+        7784,
+        1719,
+        5334,
+        38,
+        255001,
+        255000,
+        255007,
+        2162,
+        7784,
+        1719,
+        5334,
+        1801,
+        5641,
+        21,
+        5641,
+        1801,
+        37755,
+        1794,
+        2517,
+        12274,
+        5824,
+        19,
+        12080,
+        33850,
+        19,
+        1728,
+        39502,
+        87987,
+        3213,
+        1843,
+        1690
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "ĠEiffel",
+            "token_id": 116920,
+            "logprob": -0.0,
+            "prob": 1.0
+          },
+          {
+            "token": "ĠLouvre",
+            "token_id": 65884,
+            "logprob": -10.2031,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠNotre",
+            "token_id": 27687,
+            "logprob": -14.0312,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠTower",
+            "token_id": 24274,
+            "logprob": -14.0547,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠÎle",
+            "token_id": 68865,
+            "logprob": -14.2422,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠЭй",
+            "token_id": 71921,
+            "logprob": -14.3672,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠStatue",
+            "token_id": 100057,
+            "logprob": -14.6094,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠEmpire",
+            "token_id": 13832,
+            "logprob": -14.7734,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠÉcole",
+            "token_id": 51350,
+            "logprob": -15.0391,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠÉ",
+            "token_id": 5648,
+            "logprob": -15.6719,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "ĠEiffel",
+        "token_id": 116920,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 25,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>What is the capital of France?<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>The capital of France is Paris. Paris is renowned for its rich history, cultural significance, and iconic landmarks such as the Eiffel",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "What",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "Ġof",
+        "ĠFrance",
+        "?",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "The",
+        "Ġcapital",
+        "Ġof",
+        "ĠFrance",
+        "Ġis",
+        "ĠParis",
+        ".",
+        "ĠParis",
+        "Ġis",
+        "Ġrenowned",
+        "Ġfor",
+        "Ġits",
+        "Ġrich",
+        "Ġhistory",
+        ",",
+        "Ġcultural",
+        "Ġsignificance",
+        ",",
+        "Ġand",
+        "Ġiconic",
+        "Ġlandmarks",
+        "Ġsuch",
+        "Ġas",
+        "Ġthe",
+        "ĠEiffel"
+      ],
+      "token_ids": [
+        5,
+        255000,
+        255006,
+        11214,
+        1801,
+        1690,
+        7784,
+        1719,
+        5334,
+        38,
+        255001,
+        255000,
+        255007,
+        2162,
+        7784,
+        1719,
+        5334,
+        1801,
+        5641,
+        21,
+        5641,
+        1801,
+        37755,
+        1794,
+        2517,
+        12274,
+        5824,
+        19,
+        12080,
+        33850,
+        19,
+        1728,
+        39502,
+        87987,
+        3213,
+        1843,
+        1690,
+        116920
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "ĠTower",
+            "token_id": 24274,
+            "logprob": -0.0,
+            "prob": 1.0
+          },
+          {
+            "token": "ĠTorre",
+            "token_id": 35647,
+            "logprob": -13.0781,
+            "prob": 0.0
+          },
+          {
+            "token": "Tower",
+            "token_id": 148876,
+            "logprob": -13.5,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġtower",
+            "token_id": 22804,
+            "logprob": -13.9688,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠTowers",
+            "token_id": 75855,
+            "logprob": -14.8125,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠTour",
+            "token_id": 7427,
+            "logprob": -15.1406,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠTow",
+            "token_id": 26067,
+            "logprob": -15.5938,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠTháp",
+            "token_id": 158554,
+            "logprob": -16.5625,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġبرج",
+            "token_id": 117938,
+            "logprob": -16.75,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠTurm",
+            "token_id": 102567,
+            "logprob": -16.4062,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "ĠTower",
+        "token_id": 24274,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 26,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>What is the capital of France?<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>The capital of France is Paris. Paris is renowned for its rich history, cultural significance, and iconic landmarks such as the Eiffel Tower",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "What",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "Ġof",
+        "ĠFrance",
+        "?",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "The",
+        "Ġcapital",
+        "Ġof",
+        "ĠFrance",
+        "Ġis",
+        "ĠParis",
+        ".",
+        "ĠParis",
+        "Ġis",
+        "Ġrenowned",
+        "Ġfor",
+        "Ġits",
+        "Ġrich",
+        "Ġhistory",
+        ",",
+        "Ġcultural",
+        "Ġsignificance",
+        ",",
+        "Ġand",
+        "Ġiconic",
+        "Ġlandmarks",
+        "Ġsuch",
+        "Ġas",
+        "Ġthe",
+        "ĠEiffel",
+        "ĠTower"
+      ],
+      "token_ids": [
+        5,
+        255000,
+        255006,
+        11214,
+        1801,
+        1690,
+        7784,
+        1719,
+        5334,
+        38,
+        255001,
+        255000,
+        255007,
+        2162,
+        7784,
+        1719,
+        5334,
+        1801,
+        5641,
+        21,
+        5641,
+        1801,
+        37755,
+        1794,
+        2517,
+        12274,
+        5824,
+        19,
+        12080,
+        33850,
+        19,
+        1728,
+        39502,
+        87987,
+        3213,
+        1843,
+        1690,
+        116920,
+        24274
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": ",",
+            "token_id": 19,
+            "logprob": -0.0,
+            "prob": 1.0
+          },
+          {
+            "token": "Ġand",
+            "token_id": 1728,
+            "logprob": -10.6875,
+            "prob": 0.0
+          },
+          {
+            "token": ".",
+            "token_id": 21,
+            "logprob": -11.0781,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġ(",
+            "token_id": 1737,
+            "logprob": -14.125,
+            "prob": 0.0
+          },
+          {
+            "token": "<SEP>",
+            "token_id": 3,
+            "logprob": -33.125,
+            "prob": 0.0
+          },
+          {
+            "token": "<CLS>",
+            "token_id": 2,
+            "logprob": -33.0938,
+            "prob": 0.0
+          },
+          {
+            "token": "<MASK_TOKEN>",
+            "token_id": 4,
+            "logprob": -33.375,
+            "prob": 0.0
+          },
+          {
+            "token": "<BOS_TOKEN>",
+            "token_id": 5,
+            "logprob": -33.2812,
+            "prob": 0.0
+          },
+          {
+            "token": "<PAD>",
+            "token_id": 0,
+            "logprob": -33.4062,
+            "prob": 0.0
+          },
+          {
+            "token": "<UNK>",
+            "token_id": 1,
+            "logprob": -32.7188,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": ",",
+        "token_id": 19,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 27,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>What is the capital of France?<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>The capital of France is Paris. Paris is renowned for its rich history, cultural significance, and iconic landmarks such as the Eiffel Tower,",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "What",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "Ġof",
+        "ĠFrance",
+        "?",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "The",
+        "Ġcapital",
+        "Ġof",
+        "ĠFrance",
+        "Ġis",
+        "ĠParis",
+        ".",
+        "ĠParis",
+        "Ġis",
+        "Ġrenowned",
+        "Ġfor",
+        "Ġits",
+        "Ġrich",
+        "Ġhistory",
+        ",",
+        "Ġcultural",
+        "Ġsignificance",
+        ",",
+        "Ġand",
+        "Ġiconic",
+        "Ġlandmarks",
+        "Ġsuch",
+        "Ġas",
+        "Ġthe",
+        "ĠEiffel",
+        "ĠTower",
+        ","
+      ],
+      "token_ids": [
+        5,
+        255000,
+        255006,
+        11214,
+        1801,
+        1690,
+        7784,
+        1719,
+        5334,
+        38,
+        255001,
+        255000,
+        255007,
+        2162,
+        7784,
+        1719,
+        5334,
+        1801,
+        5641,
+        21,
+        5641,
+        1801,
+        37755,
+        1794,
+        2517,
+        12274,
+        5824,
+        19,
+        12080,
+        33850,
+        19,
+        1728,
+        39502,
+        87987,
+        3213,
+        1843,
+        1690,
+        116920,
+        24274,
+        19
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "ĠLouvre",
+            "token_id": 65884,
+            "logprob": -0.1599,
+            "prob": 0.8521
+          },
+          {
+            "token": "Ġthe",
+            "token_id": 1690,
+            "logprob": -2.2227,
+            "prob": 0.1083
+          },
+          {
+            "token": "ĠNotre",
+            "token_id": 27687,
+            "logprob": -3.2383,
+            "prob": 0.0392
+          },
+          {
+            "token": "ĠMusée",
+            "token_id": 35956,
+            "logprob": -8.875,
+            "prob": 0.0001
+          },
+          {
+            "token": "ĠMuseum",
+            "token_id": 8311,
+            "logprob": -10.3906,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠThe",
+            "token_id": 1896,
+            "logprob": -11.3828,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠMuse",
+            "token_id": 17415,
+            "logprob": -11.875,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠНот",
+            "token_id": 245250,
+            "logprob": -11.9453,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠMuseo",
+            "token_id": 26577,
+            "logprob": -12.1719,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠMontmartre",
+            "token_id": 145802,
+            "logprob": -12.5234,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "ĠLouvre",
+        "token_id": 65884,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 28,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>What is the capital of France?<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>The capital of France is Paris. Paris is renowned for its rich history, cultural significance, and iconic landmarks such as the Eiffel Tower, Louvre",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "What",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "Ġof",
+        "ĠFrance",
+        "?",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "The",
+        "Ġcapital",
+        "Ġof",
+        "ĠFrance",
+        "Ġis",
+        "ĠParis",
+        ".",
+        "ĠParis",
+        "Ġis",
+        "Ġrenowned",
+        "Ġfor",
+        "Ġits",
+        "Ġrich",
+        "Ġhistory",
+        ",",
+        "Ġcultural",
+        "Ġsignificance",
+        ",",
+        "Ġand",
+        "Ġiconic",
+        "Ġlandmarks",
+        "Ġsuch",
+        "Ġas",
+        "Ġthe",
+        "ĠEiffel",
+        "ĠTower",
+        ",",
+        "ĠLouvre"
+      ],
+      "token_ids": [
+        5,
+        255000,
+        255006,
+        11214,
+        1801,
+        1690,
+        7784,
+        1719,
+        5334,
+        38,
+        255001,
+        255000,
+        255007,
+        2162,
+        7784,
+        1719,
+        5334,
+        1801,
+        5641,
+        21,
+        5641,
+        1801,
+        37755,
+        1794,
+        2517,
+        12274,
+        5824,
+        19,
+        12080,
+        33850,
+        19,
+        1728,
+        39502,
+        87987,
+        3213,
+        1843,
+        1690,
+        116920,
+        24274,
+        19,
+        65884
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "ĠMuseum",
+            "token_id": 8311,
+            "logprob": -0.0,
+            "prob": 1.0
+          },
+          {
+            "token": "Ġmuseum",
+            "token_id": 15292,
+            "logprob": -12.8906,
+            "prob": 0.0
+          },
+          {
+            "token": "Museum",
+            "token_id": 71262,
+            "logprob": -15.2812,
+            "prob": 0.0
+          },
+          {
+            "token": ",",
+            "token_id": 19,
+            "logprob": -15.3438,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠPalace",
+            "token_id": 23682,
+            "logprob": -15.3906,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠLibrary",
+            "token_id": 13422,
+            "logprob": -16.2188,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠMuseo",
+            "token_id": 26577,
+            "logprob": -16.6094,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠMusée",
+            "token_id": 35956,
+            "logprob": -16.8594,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠGallery",
+            "token_id": 17960,
+            "logprob": -16.875,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠMus",
+            "token_id": 4406,
+            "logprob": -17.3281,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "ĠMuseum",
+        "token_id": 8311,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 29,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>What is the capital of France?<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>The capital of France is Paris. Paris is renowned for its rich history, cultural significance, and iconic landmarks such as the Eiffel Tower, Louvre Museum",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "What",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "Ġof",
+        "ĠFrance",
+        "?",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "The",
+        "Ġcapital",
+        "Ġof",
+        "ĠFrance",
+        "Ġis",
+        "ĠParis",
+        ".",
+        "ĠParis",
+        "Ġis",
+        "Ġrenowned",
+        "Ġfor",
+        "Ġits",
+        "Ġrich",
+        "Ġhistory",
+        ",",
+        "Ġcultural",
+        "Ġsignificance",
+        ",",
+        "Ġand",
+        "Ġiconic",
+        "Ġlandmarks",
+        "Ġsuch",
+        "Ġas",
+        "Ġthe",
+        "ĠEiffel",
+        "ĠTower",
+        ",",
+        "ĠLouvre",
+        "ĠMuseum"
+      ],
+      "token_ids": [
+        5,
+        255000,
+        255006,
+        11214,
+        1801,
+        1690,
+        7784,
+        1719,
+        5334,
+        38,
+        255001,
+        255000,
+        255007,
+        2162,
+        7784,
+        1719,
+        5334,
+        1801,
+        5641,
+        21,
+        5641,
+        1801,
+        37755,
+        1794,
+        2517,
+        12274,
+        5824,
+        19,
+        12080,
+        33850,
+        19,
+        1728,
+        39502,
+        87987,
+        3213,
+        1843,
+        1690,
+        116920,
+        24274,
+        19,
+        65884,
+        8311
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": ",",
+            "token_id": 19,
+            "logprob": -0.0,
+            "prob": 1.0
+          },
+          {
+            "token": "Ġ(",
+            "token_id": 1737,
+            "logprob": -13.4844,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġand",
+            "token_id": 1728,
+            "logprob": -15.75,
+            "prob": 0.0
+          },
+          {
+            "token": ".",
+            "token_id": 21,
+            "logprob": -16.7188,
+            "prob": 0.0
+          },
+          {
+            "token": "<SEP>",
+            "token_id": 3,
+            "logprob": -35.1562,
+            "prob": 0.0
+          },
+          {
+            "token": "<CLS>",
+            "token_id": 2,
+            "logprob": -34.875,
+            "prob": 0.0
+          },
+          {
+            "token": "<MASK_TOKEN>",
+            "token_id": 4,
+            "logprob": -35.25,
+            "prob": 0.0
+          },
+          {
+            "token": "<BOS_TOKEN>",
+            "token_id": 5,
+            "logprob": -35.0938,
+            "prob": 0.0
+          },
+          {
+            "token": "<PAD>",
+            "token_id": 0,
+            "logprob": -35.1875,
+            "prob": 0.0
+          },
+          {
+            "token": "<UNK>",
+            "token_id": 1,
+            "logprob": -34.1562,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": ",",
+        "token_id": 19,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 30,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>What is the capital of France?<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>The capital of France is Paris. Paris is renowned for its rich history, cultural significance, and iconic landmarks such as the Eiffel Tower, Louvre Museum,",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "What",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "Ġof",
+        "ĠFrance",
+        "?",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "The",
+        "Ġcapital",
+        "Ġof",
+        "ĠFrance",
+        "Ġis",
+        "ĠParis",
+        ".",
+        "ĠParis",
+        "Ġis",
+        "Ġrenowned",
+        "Ġfor",
+        "Ġits",
+        "Ġrich",
+        "Ġhistory",
+        ",",
+        "Ġcultural",
+        "Ġsignificance",
+        ",",
+        "Ġand",
+        "Ġiconic",
+        "Ġlandmarks",
+        "Ġsuch",
+        "Ġas",
+        "Ġthe",
+        "ĠEiffel",
+        "ĠTower",
+        ",",
+        "ĠLouvre",
+        "ĠMuseum",
+        ","
+      ],
+      "token_ids": [
+        5,
+        255000,
+        255006,
+        11214,
+        1801,
+        1690,
+        7784,
+        1719,
+        5334,
+        38,
+        255001,
+        255000,
+        255007,
+        2162,
+        7784,
+        1719,
+        5334,
+        1801,
+        5641,
+        21,
+        5641,
+        1801,
+        37755,
+        1794,
+        2517,
+        12274,
+        5824,
+        19,
+        12080,
+        33850,
+        19,
+        1728,
+        39502,
+        87987,
+        3213,
+        1843,
+        1690,
+        116920,
+        24274,
+        19,
+        65884,
+        8311,
+        19
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "ĠNotre",
+            "token_id": 27687,
+            "logprob": -0.5049,
+            "prob": 0.6035
+          },
+          {
+            "token": "Ġand",
+            "token_id": 1728,
+            "logprob": -0.9268,
+            "prob": 0.3958
+          },
+          {
+            "token": "ĠCathédrale",
+            "token_id": 205645,
+            "logprob": -8.8047,
+            "prob": 0.0002
+          },
+          {
+            "token": "ĠCathedral",
+            "token_id": 31532,
+            "logprob": -9.3594,
+            "prob": 0.0001
+          },
+          {
+            "token": "Notre",
+            "token_id": 151034,
+            "logprob": -9.9531,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠMontmartre",
+            "token_id": 145802,
+            "logprob": -10.2422,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠVersailles",
+            "token_id": 55085,
+            "logprob": -10.3594,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠGothic",
+            "token_id": 47001,
+            "logprob": -10.5312,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠMusée",
+            "token_id": 35956,
+            "logprob": -11.1172,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠArc",
+            "token_id": 22372,
+            "logprob": -11.3906,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġand",
+        "token_id": 1728,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 31,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>What is the capital of France?<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>The capital of France is Paris. Paris is renowned for its rich history, cultural significance, and iconic landmarks such as the Eiffel Tower, Louvre Museum, and",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "What",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "Ġof",
+        "ĠFrance",
+        "?",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "The",
+        "Ġcapital",
+        "Ġof",
+        "ĠFrance",
+        "Ġis",
+        "ĠParis",
+        ".",
+        "ĠParis",
+        "Ġis",
+        "Ġrenowned",
+        "Ġfor",
+        "Ġits",
+        "Ġrich",
+        "Ġhistory",
+        ",",
+        "Ġcultural",
+        "Ġsignificance",
+        ",",
+        "Ġand",
+        "Ġiconic",
+        "Ġlandmarks",
+        "Ġsuch",
+        "Ġas",
+        "Ġthe",
+        "ĠEiffel",
+        "ĠTower",
+        ",",
+        "ĠLouvre",
+        "ĠMuseum",
+        ",",
+        "Ġand"
+      ],
+      "token_ids": [
+        5,
+        255000,
+        255006,
+        11214,
+        1801,
+        1690,
+        7784,
+        1719,
+        5334,
+        38,
+        255001,
+        255000,
+        255007,
+        2162,
+        7784,
+        1719,
+        5334,
+        1801,
+        5641,
+        21,
+        5641,
+        1801,
+        37755,
+        1794,
+        2517,
+        12274,
+        5824,
+        19,
+        12080,
+        33850,
+        19,
+        1728,
+        39502,
+        87987,
+        3213,
+        1843,
+        1690,
+        116920,
+        24274,
+        19,
+        65884,
+        8311,
+        19,
+        1728
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "ĠNotre",
+            "token_id": 27687,
+            "logprob": -0.0015,
+            "prob": 0.9985
+          },
+          {
+            "token": "ĠCathédrale",
+            "token_id": 205645,
+            "logprob": -7.4219,
+            "prob": 0.0006
+          },
+          {
+            "token": "Ġthe",
+            "token_id": 1690,
+            "logprob": -7.7344,
+            "prob": 0.0004
+          },
+          {
+            "token": "ĠCathedral",
+            "token_id": 31532,
+            "logprob": -8.75,
+            "prob": 0.0002
+          },
+          {
+            "token": "ĠArc",
+            "token_id": 22372,
+            "logprob": -9.3125,
+            "prob": 0.0001
+          },
+          {
+            "token": "ĠНот",
+            "token_id": 245250,
+            "logprob": -10.6094,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠGothic",
+            "token_id": 47001,
+            "logprob": -10.7734,
+            "prob": 0.0
+          },
+          {
+            "token": "Notre",
+            "token_id": 151034,
+            "logprob": -10.9922,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠCatedral",
+            "token_id": 57769,
+            "logprob": -11.0781,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠMontmartre",
+            "token_id": 145802,
+            "logprob": -11.0938,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "ĠNotre",
+        "token_id": 27687,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 32,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>What is the capital of France?<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>The capital of France is Paris. Paris is renowned for its rich history, cultural significance, and iconic landmarks such as the Eiffel Tower, Louvre Museum, and Notre",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "What",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "Ġof",
+        "ĠFrance",
+        "?",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "The",
+        "Ġcapital",
+        "Ġof",
+        "ĠFrance",
+        "Ġis",
+        "ĠParis",
+        ".",
+        "ĠParis",
+        "Ġis",
+        "Ġrenowned",
+        "Ġfor",
+        "Ġits",
+        "Ġrich",
+        "Ġhistory",
+        ",",
+        "Ġcultural",
+        "Ġsignificance",
+        ",",
+        "Ġand",
+        "Ġiconic",
+        "Ġlandmarks",
+        "Ġsuch",
+        "Ġas",
+        "Ġthe",
+        "ĠEiffel",
+        "ĠTower",
+        ",",
+        "ĠLouvre",
+        "ĠMuseum",
+        ",",
+        "Ġand",
+        "ĠNotre"
+      ],
+      "token_ids": [
+        5,
+        255000,
+        255006,
+        11214,
+        1801,
+        1690,
+        7784,
+        1719,
+        5334,
+        38,
+        255001,
+        255000,
+        255007,
+        2162,
+        7784,
+        1719,
+        5334,
+        1801,
+        5641,
+        21,
+        5641,
+        1801,
+        37755,
+        1794,
+        2517,
+        12274,
+        5824,
+        19,
+        12080,
+        33850,
+        19,
+        1728,
+        39502,
+        87987,
+        3213,
+        1843,
+        1690,
+        116920,
+        24274,
+        19,
+        65884,
+        8311,
+        19,
+        1728,
+        27687
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "-",
+            "token_id": 20,
+            "logprob": -0.0,
+            "prob": 1.0
+          },
+          {
+            "token": "ĠDame",
+            "token_id": 33215,
+            "logprob": -10.9922,
+            "prob": 0.0
+          },
+          {
+            "token": "–",
+            "token_id": 1909,
+            "logprob": -14.5312,
+            "prob": 0.0
+          },
+          {
+            "token": "‑",
+            "token_id": 92919,
+            "logprob": -15.2266,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠLady",
+            "token_id": 14598,
+            "logprob": -15.8516,
+            "prob": 0.0
+          },
+          {
+            "token": "Dame",
+            "token_id": 39816,
+            "logprob": -16.0938,
+            "prob": 0.0
+          },
+          {
+            "token": "-.",
+            "token_id": 50182,
+            "logprob": -16.8594,
+            "prob": 0.0
+          },
+          {
+            "token": "‐",
+            "token_id": 83274,
+            "logprob": -16.9062,
+            "prob": 0.0
+          },
+          {
+            "token": "−",
+            "token_id": 20550,
+            "logprob": -17.2031,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠSaint",
+            "token_id": 5934,
+            "logprob": -17.2031,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "-",
+        "token_id": 20,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 33,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>What is the capital of France?<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>The capital of France is Paris. Paris is renowned for its rich history, cultural significance, and iconic landmarks such as the Eiffel Tower, Louvre Museum, and Notre-",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "What",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "Ġof",
+        "ĠFrance",
+        "?",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "The",
+        "Ġcapital",
+        "Ġof",
+        "ĠFrance",
+        "Ġis",
+        "ĠParis",
+        ".",
+        "ĠParis",
+        "Ġis",
+        "Ġrenowned",
+        "Ġfor",
+        "Ġits",
+        "Ġrich",
+        "Ġhistory",
+        ",",
+        "Ġcultural",
+        "Ġsignificance",
+        ",",
+        "Ġand",
+        "Ġiconic",
+        "Ġlandmarks",
+        "Ġsuch",
+        "Ġas",
+        "Ġthe",
+        "ĠEiffel",
+        "ĠTower",
+        ",",
+        "ĠLouvre",
+        "ĠMuseum",
+        ",",
+        "Ġand",
+        "ĠNotre",
+        "-"
+      ],
+      "token_ids": [
+        5,
+        255000,
+        255006,
+        11214,
+        1801,
+        1690,
+        7784,
+        1719,
+        5334,
+        38,
+        255001,
+        255000,
+        255007,
+        2162,
+        7784,
+        1719,
+        5334,
+        1801,
+        5641,
+        21,
+        5641,
+        1801,
+        37755,
+        1794,
+        2517,
+        12274,
+        5824,
+        19,
+        12080,
+        33850,
+        19,
+        1728,
+        39502,
+        87987,
+        3213,
+        1843,
+        1690,
+        116920,
+        24274,
+        19,
+        65884,
+        8311,
+        19,
+        1728,
+        27687,
+        20
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Dame",
+            "token_id": 39816,
+            "logprob": -0.0,
+            "prob": 1.0
+          },
+          {
+            "token": "ĠDame",
+            "token_id": 33215,
+            "logprob": -12.0469,
+            "prob": 0.0
+          },
+          {
+            "token": "Lady",
+            "token_id": 73153,
+            "logprob": -13.7344,
+            "prob": 0.0
+          },
+          {
+            "token": "Madame",
+            "token_id": 186069,
+            "logprob": -14.2578,
+            "prob": 0.0
+          },
+          {
+            "token": "ダム",
+            "token_id": 83590,
+            "logprob": -14.2422,
+            "prob": 0.0
+          },
+          {
+            "token": "Dam",
+            "token_id": 49604,
+            "logprob": -14.3672,
+            "prob": 0.0
+          },
+          {
+            "token": "Dieu",
+            "token_id": 154817,
+            "logprob": -14.9062,
+            "prob": 0.0
+          },
+          {
+            "token": "Danse",
+            "token_id": 230731,
+            "logprob": -15.3516,
+            "prob": 0.0
+          },
+          {
+            "token": "Dale",
+            "token_id": 188597,
+            "logprob": -15.1641,
+            "prob": 0.0
+          },
+          {
+            "token": "دام",
+            "token_id": 34341,
+            "logprob": -15.2578,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Dame",
+        "token_id": 39816,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 34,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>What is the capital of France?<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>The capital of France is Paris. Paris is renowned for its rich history, cultural significance, and iconic landmarks such as the Eiffel Tower, Louvre Museum, and Notre-Dame",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "What",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "Ġof",
+        "ĠFrance",
+        "?",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "The",
+        "Ġcapital",
+        "Ġof",
+        "ĠFrance",
+        "Ġis",
+        "ĠParis",
+        ".",
+        "ĠParis",
+        "Ġis",
+        "Ġrenowned",
+        "Ġfor",
+        "Ġits",
+        "Ġrich",
+        "Ġhistory",
+        ",",
+        "Ġcultural",
+        "Ġsignificance",
+        ",",
+        "Ġand",
+        "Ġiconic",
+        "Ġlandmarks",
+        "Ġsuch",
+        "Ġas",
+        "Ġthe",
+        "ĠEiffel",
+        "ĠTower",
+        ",",
+        "ĠLouvre",
+        "ĠMuseum",
+        ",",
+        "Ġand",
+        "ĠNotre",
+        "-",
+        "Dame"
+      ],
+      "token_ids": [
+        5,
+        255000,
+        255006,
+        11214,
+        1801,
+        1690,
+        7784,
+        1719,
+        5334,
+        38,
+        255001,
+        255000,
+        255007,
+        2162,
+        7784,
+        1719,
+        5334,
+        1801,
+        5641,
+        21,
+        5641,
+        1801,
+        37755,
+        1794,
+        2517,
+        12274,
+        5824,
+        19,
+        12080,
+        33850,
+        19,
+        1728,
+        39502,
+        87987,
+        3213,
+        1843,
+        1690,
+        116920,
+        24274,
+        19,
+        65884,
+        8311,
+        19,
+        1728,
+        27687,
+        20,
+        39816
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "ĠCathedral",
+            "token_id": 31532,
+            "logprob": -0.0004,
+            "prob": 0.9995
+          },
+          {
+            "token": "Ġcathedral",
+            "token_id": 57496,
+            "logprob": -8.1562,
+            "prob": 0.0003
+          },
+          {
+            "token": "ĠCatedral",
+            "token_id": 57769,
+            "logprob": -9.5312,
+            "prob": 0.0001
+          },
+          {
+            "token": "ĠCathédrale",
+            "token_id": 205645,
+            "logprob": -11.5781,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠKatedral",
+            "token_id": 191982,
+            "logprob": -11.8594,
+            "prob": 0.0
+          },
+          {
+            "token": ".",
+            "token_id": 21,
+            "logprob": -11.9688,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġde",
+            "token_id": 1715,
+            "logprob": -12.9844,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠCattedrale",
+            "token_id": 237091,
+            "logprob": -13.875,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠBasilica",
+            "token_id": 81158,
+            "logprob": -14.2578,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġكات",
+            "token_id": 179735,
+            "logprob": -14.3516,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "ĠCathedral",
+        "token_id": 31532,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 35,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>What is the capital of France?<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>The capital of France is Paris. Paris is renowned for its rich history, cultural significance, and iconic landmarks such as the Eiffel Tower, Louvre Museum, and Notre-Dame Cathedral",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "What",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "Ġof",
+        "ĠFrance",
+        "?",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "The",
+        "Ġcapital",
+        "Ġof",
+        "ĠFrance",
+        "Ġis",
+        "ĠParis",
+        ".",
+        "ĠParis",
+        "Ġis",
+        "Ġrenowned",
+        "Ġfor",
+        "Ġits",
+        "Ġrich",
+        "Ġhistory",
+        ",",
+        "Ġcultural",
+        "Ġsignificance",
+        ",",
+        "Ġand",
+        "Ġiconic",
+        "Ġlandmarks",
+        "Ġsuch",
+        "Ġas",
+        "Ġthe",
+        "ĠEiffel",
+        "ĠTower",
+        ",",
+        "ĠLouvre",
+        "ĠMuseum",
+        ",",
+        "Ġand",
+        "ĠNotre",
+        "-",
+        "Dame",
+        "ĠCathedral"
+      ],
+      "token_ids": [
+        5,
+        255000,
+        255006,
+        11214,
+        1801,
+        1690,
+        7784,
+        1719,
+        5334,
+        38,
+        255001,
+        255000,
+        255007,
+        2162,
+        7784,
+        1719,
+        5334,
+        1801,
+        5641,
+        21,
+        5641,
+        1801,
+        37755,
+        1794,
+        2517,
+        12274,
+        5824,
+        19,
+        12080,
+        33850,
+        19,
+        1728,
+        39502,
+        87987,
+        3213,
+        1843,
+        1690,
+        116920,
+        24274,
+        19,
+        65884,
+        8311,
+        19,
+        1728,
+        27687,
+        20,
+        39816,
+        31532
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": ".",
+            "token_id": 21,
+            "logprob": -0.0007,
+            "prob": 0.9995
+          },
+          {
+            "token": ",",
+            "token_id": 19,
+            "logprob": -7.3594,
+            "prob": 0.0006
+          },
+          {
+            "token": "Ġ(",
+            "token_id": 1737,
+            "logprob": -10.7969,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġmaking",
+            "token_id": 5467,
+            "logprob": -16.5625,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġand",
+            "token_id": 1728,
+            "logprob": -16.7188,
+            "prob": 0.0
+          },
+          {
+            "token": "<SEP>",
+            "token_id": 3,
+            "logprob": -33.3125,
+            "prob": 0.0
+          },
+          {
+            "token": "<MASK_TOKEN>",
+            "token_id": 4,
+            "logprob": -33.1562,
+            "prob": 0.0
+          },
+          {
+            "token": "<CLS>",
+            "token_id": 2,
+            "logprob": -33.0625,
+            "prob": 0.0
+          },
+          {
+            "token": "<PAD>",
+            "token_id": 0,
+            "logprob": -33.0938,
+            "prob": 0.0
+          },
+          {
+            "token": "<UNK>",
+            "token_id": 1,
+            "logprob": -31.9844,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": ".",
+        "token_id": 21,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 36,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>What is the capital of France?<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>The capital of France is Paris. Paris is renowned for its rich history, cultural significance, and iconic landmarks such as the Eiffel Tower, Louvre Museum, and Notre-Dame Cathedral.",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "What",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "Ġof",
+        "ĠFrance",
+        "?",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "The",
+        "Ġcapital",
+        "Ġof",
+        "ĠFrance",
+        "Ġis",
+        "ĠParis",
+        ".",
+        "ĠParis",
+        "Ġis",
+        "Ġrenowned",
+        "Ġfor",
+        "Ġits",
+        "Ġrich",
+        "Ġhistory",
+        ",",
+        "Ġcultural",
+        "Ġsignificance",
+        ",",
+        "Ġand",
+        "Ġiconic",
+        "Ġlandmarks",
+        "Ġsuch",
+        "Ġas",
+        "Ġthe",
+        "ĠEiffel",
+        "ĠTower",
+        ",",
+        "ĠLouvre",
+        "ĠMuseum",
+        ",",
+        "Ġand",
+        "ĠNotre",
+        "-",
+        "Dame",
+        "ĠCathedral",
+        "."
+      ],
+      "token_ids": [
+        5,
+        255000,
+        255006,
+        11214,
+        1801,
+        1690,
+        7784,
+        1719,
+        5334,
+        38,
+        255001,
+        255000,
+        255007,
+        2162,
+        7784,
+        1719,
+        5334,
+        1801,
+        5641,
+        21,
+        5641,
+        1801,
+        37755,
+        1794,
+        2517,
+        12274,
+        5824,
+        19,
+        12080,
+        33850,
+        19,
+        1728,
+        39502,
+        87987,
+        3213,
+        1843,
+        1690,
+        116920,
+        24274,
+        19,
+        65884,
+        8311,
+        19,
+        1728,
+        27687,
+        20,
+        39816,
+        31532,
+        21
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "ĠIt",
+            "token_id": 2332,
+            "logprob": -0.0042,
+            "prob": 0.9956
+          },
+          {
+            "token": "<|END_OF_TURN_TOKEN|>",
+            "token_id": 255001,
+            "logprob": -5.5977,
+            "prob": 0.0037
+          },
+          {
+            "token": "ĠAs",
+            "token_id": 3143,
+            "logprob": -7.8945,
+            "prob": 0.0004
+          },
+          {
+            "token": "ĠNot",
+            "token_id": 5164,
+            "logprob": -9.9141,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠSituated",
+            "token_id": 185845,
+            "logprob": -10.2422,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġit",
+            "token_id": 1894,
+            "logprob": -11.1953,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠKnown",
+            "token_id": 56699,
+            "logprob": -11.5703,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠLocated",
+            "token_id": 55708,
+            "logprob": -12.2188,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠThe",
+            "token_id": 1896,
+            "logprob": -12.625,
+            "prob": 0.0
+          },
+          {
+            "token": "It",
+            "token_id": 3472,
+            "logprob": -13.0,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "ĠIt",
+        "token_id": 2332,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 37,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>What is the capital of France?<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>The capital of France is Paris. Paris is renowned for its rich history, cultural significance, and iconic landmarks such as the Eiffel Tower, Louvre Museum, and Notre-Dame Cathedral. It",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "What",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "Ġof",
+        "ĠFrance",
+        "?",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "The",
+        "Ġcapital",
+        "Ġof",
+        "ĠFrance",
+        "Ġis",
+        "ĠParis",
+        ".",
+        "ĠParis",
+        "Ġis",
+        "Ġrenowned",
+        "Ġfor",
+        "Ġits",
+        "Ġrich",
+        "Ġhistory",
+        ",",
+        "Ġcultural",
+        "Ġsignificance",
+        ",",
+        "Ġand",
+        "Ġiconic",
+        "Ġlandmarks",
+        "Ġsuch",
+        "Ġas",
+        "Ġthe",
+        "ĠEiffel",
+        "ĠTower",
+        ",",
+        "ĠLouvre",
+        "ĠMuseum",
+        ",",
+        "Ġand",
+        "ĠNotre",
+        "-",
+        "Dame",
+        "ĠCathedral",
+        ".",
+        "ĠIt"
+      ],
+      "token_ids": [
+        5,
+        255000,
+        255006,
+        11214,
+        1801,
+        1690,
+        7784,
+        1719,
+        5334,
+        38,
+        255001,
+        255000,
+        255007,
+        2162,
+        7784,
+        1719,
+        5334,
+        1801,
+        5641,
+        21,
+        5641,
+        1801,
+        37755,
+        1794,
+        2517,
+        12274,
+        5824,
+        19,
+        12080,
+        33850,
+        19,
+        1728,
+        39502,
+        87987,
+        3213,
+        1843,
+        1690,
+        116920,
+        24274,
+        19,
+        65884,
+        8311,
+        19,
+        1728,
+        27687,
+        20,
+        39816,
+        31532,
+        21,
+        2332
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġis",
+            "token_id": 1801,
+            "logprob": -0.4055,
+            "prob": 0.6665
+          },
+          {
+            "token": "Ġhas",
+            "token_id": 2222,
+            "logprob": -1.624,
+            "prob": 0.197
+          },
+          {
+            "token": "'s",
+            "token_id": 1914,
+            "logprob": -1.999,
+            "prob": 0.1354
+          },
+          {
+            "token": "Ġlies",
+            "token_id": 20141,
+            "logprob": -7.1562,
+            "prob": 0.0008
+          },
+          {
+            "token": "Ġserves",
+            "token_id": 17018,
+            "logprob": -9.8125,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġsits",
+            "token_id": 39659,
+            "logprob": -9.9062,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġremains",
+            "token_id": 12637,
+            "logprob": -11.4219,
+            "prob": 0.0
+          },
+          {
+            "token": "’",
+            "token_id": 2932,
+            "logprob": -11.7812,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġstands",
+            "token_id": 20560,
+            "logprob": -11.9062,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġholds",
+            "token_id": 17226,
+            "logprob": -11.9688,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "'s",
+        "token_id": 1914,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 38,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>What is the capital of France?<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>The capital of France is Paris. Paris is renowned for its rich history, cultural significance, and iconic landmarks such as the Eiffel Tower, Louvre Museum, and Notre-Dame Cathedral. It's",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "What",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "Ġof",
+        "ĠFrance",
+        "?",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "The",
+        "Ġcapital",
+        "Ġof",
+        "ĠFrance",
+        "Ġis",
+        "ĠParis",
+        ".",
+        "ĠParis",
+        "Ġis",
+        "Ġrenowned",
+        "Ġfor",
+        "Ġits",
+        "Ġrich",
+        "Ġhistory",
+        ",",
+        "Ġcultural",
+        "Ġsignificance",
+        ",",
+        "Ġand",
+        "Ġiconic",
+        "Ġlandmarks",
+        "Ġsuch",
+        "Ġas",
+        "Ġthe",
+        "ĠEiffel",
+        "ĠTower",
+        ",",
+        "ĠLouvre",
+        "ĠMuseum",
+        ",",
+        "Ġand",
+        "ĠNotre",
+        "-",
+        "Dame",
+        "ĠCathedral",
+        ".",
+        "ĠIt",
+        "'s"
+      ],
+      "token_ids": [
+        5,
+        255000,
+        255006,
+        11214,
+        1801,
+        1690,
+        7784,
+        1719,
+        5334,
+        38,
+        255001,
+        255000,
+        255007,
+        2162,
+        7784,
+        1719,
+        5334,
+        1801,
+        5641,
+        21,
+        5641,
+        1801,
+        37755,
+        1794,
+        2517,
+        12274,
+        5824,
+        19,
+        12080,
+        33850,
+        19,
+        1728,
+        39502,
+        87987,
+        3213,
+        1843,
+        1690,
+        116920,
+        24274,
+        19,
+        65884,
+        8311,
+        19,
+        1728,
+        27687,
+        20,
+        39816,
+        31532,
+        21,
+        2332,
+        1914
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġnot",
+            "token_id": 2068,
+            "logprob": -0.8735,
+            "prob": 0.4175
+          },
+          {
+            "token": "Ġalso",
+            "token_id": 2328,
+            "logprob": -1.2334,
+            "prob": 0.2913
+          },
+          {
+            "token": "Ġone",
+            "token_id": 2371,
+            "logprob": -1.9053,
+            "prob": 0.1488
+          },
+          {
+            "token": "Ġa",
+            "token_id": 1671,
+            "logprob": -2.6699,
+            "prob": 0.0692
+          },
+          {
+            "token": "Ġlocated",
+            "token_id": 6090,
+            "logprob": -3.3262,
+            "prob": 0.0359
+          },
+          {
+            "token": "Ġconsidered",
+            "token_id": 8030,
+            "logprob": -3.6387,
+            "prob": 0.0263
+          },
+          {
+            "token": "Ġsituated",
+            "token_id": 24520,
+            "logprob": -4.9688,
+            "prob": 0.007
+          },
+          {
+            "token": "Ġknown",
+            "token_id": 4376,
+            "logprob": -6.9219,
+            "prob": 0.001
+          },
+          {
+            "token": "Ġoften",
+            "token_id": 5350,
+            "logprob": -7.0312,
+            "prob": 0.0009
+          },
+          {
+            "token": "Ġthe",
+            "token_id": 1690,
+            "logprob": -7.125,
+            "prob": 0.0008
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġalso",
+        "token_id": 2328,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 39,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>What is the capital of France?<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>The capital of France is Paris. Paris is renowned for its rich history, cultural significance, and iconic landmarks such as the Eiffel Tower, Louvre Museum, and Notre-Dame Cathedral. It's also",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "What",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "Ġof",
+        "ĠFrance",
+        "?",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "The",
+        "Ġcapital",
+        "Ġof",
+        "ĠFrance",
+        "Ġis",
+        "ĠParis",
+        ".",
+        "ĠParis",
+        "Ġis",
+        "Ġrenowned",
+        "Ġfor",
+        "Ġits",
+        "Ġrich",
+        "Ġhistory",
+        ",",
+        "Ġcultural",
+        "Ġsignificance",
+        ",",
+        "Ġand",
+        "Ġiconic",
+        "Ġlandmarks",
+        "Ġsuch",
+        "Ġas",
+        "Ġthe",
+        "ĠEiffel",
+        "ĠTower",
+        ",",
+        "ĠLouvre",
+        "ĠMuseum",
+        ",",
+        "Ġand",
+        "ĠNotre",
+        "-",
+        "Dame",
+        "ĠCathedral",
+        ".",
+        "ĠIt",
+        "'s",
+        "Ġalso"
+      ],
+      "token_ids": [
+        5,
+        255000,
+        255006,
+        11214,
+        1801,
+        1690,
+        7784,
+        1719,
+        5334,
+        38,
+        255001,
+        255000,
+        255007,
+        2162,
+        7784,
+        1719,
+        5334,
+        1801,
+        5641,
+        21,
+        5641,
+        1801,
+        37755,
+        1794,
+        2517,
+        12274,
+        5824,
+        19,
+        12080,
+        33850,
+        19,
+        1728,
+        39502,
+        87987,
+        3213,
+        1843,
+        1690,
+        116920,
+        24274,
+        19,
+        65884,
+        8311,
+        19,
+        1728,
+        27687,
+        20,
+        39816,
+        31532,
+        21,
+        2332,
+        1914,
+        2328
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġknown",
+            "token_id": 4376,
+            "logprob": -0.041,
+            "prob": 0.96
+          },
+          {
+            "token": "Ġa",
+            "token_id": 1671,
+            "logprob": -3.9316,
+            "prob": 0.0196
+          },
+          {
+            "token": "Ġfamous",
+            "token_id": 13410,
+            "logprob": -4.6953,
+            "prob": 0.0091
+          },
+          {
+            "token": "Ġcelebrated",
+            "token_id": 29954,
+            "logprob": -5.0547,
+            "prob": 0.0064
+          },
+          {
+            "token": "Ġconsidered",
+            "token_id": 8030,
+            "logprob": -6.5391,
+            "prob": 0.0014
+          },
+          {
+            "token": "Ġrecognized",
+            "token_id": 16856,
+            "logprob": -6.7266,
+            "prob": 0.0012
+          },
+          {
+            "token": "Ġone",
+            "token_id": 2371,
+            "logprob": -6.8203,
+            "prob": 0.0011
+          },
+          {
+            "token": "Ġwell",
+            "token_id": 3086,
+            "logprob": -8.4766,
+            "prob": 0.0002
+          },
+          {
+            "token": "Ġwidely",
+            "token_id": 17709,
+            "logprob": -8.7734,
+            "prob": 0.0002
+          },
+          {
+            "token": "Ġthe",
+            "token_id": 1690,
+            "logprob": -8.8594,
+            "prob": 0.0001
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġknown",
+        "token_id": 4376,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 40,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>What is the capital of France?<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>The capital of France is Paris. Paris is renowned for its rich history, cultural significance, and iconic landmarks such as the Eiffel Tower, Louvre Museum, and Notre-Dame Cathedral. It's also known",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "What",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "Ġof",
+        "ĠFrance",
+        "?",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "The",
+        "Ġcapital",
+        "Ġof",
+        "ĠFrance",
+        "Ġis",
+        "ĠParis",
+        ".",
+        "ĠParis",
+        "Ġis",
+        "Ġrenowned",
+        "Ġfor",
+        "Ġits",
+        "Ġrich",
+        "Ġhistory",
+        ",",
+        "Ġcultural",
+        "Ġsignificance",
+        ",",
+        "Ġand",
+        "Ġiconic",
+        "Ġlandmarks",
+        "Ġsuch",
+        "Ġas",
+        "Ġthe",
+        "ĠEiffel",
+        "ĠTower",
+        ",",
+        "ĠLouvre",
+        "ĠMuseum",
+        ",",
+        "Ġand",
+        "ĠNotre",
+        "-",
+        "Dame",
+        "ĠCathedral",
+        ".",
+        "ĠIt",
+        "'s",
+        "Ġalso",
+        "Ġknown"
+      ],
+      "token_ids": [
+        5,
+        255000,
+        255006,
+        11214,
+        1801,
+        1690,
+        7784,
+        1719,
+        5334,
+        38,
+        255001,
+        255000,
+        255007,
+        2162,
+        7784,
+        1719,
+        5334,
+        1801,
+        5641,
+        21,
+        5641,
+        1801,
+        37755,
+        1794,
+        2517,
+        12274,
+        5824,
+        19,
+        12080,
+        33850,
+        19,
+        1728,
+        39502,
+        87987,
+        3213,
+        1843,
+        1690,
+        116920,
+        24274,
+        19,
+        65884,
+        8311,
+        19,
+        1728,
+        27687,
+        20,
+        39816,
+        31532,
+        21,
+        2332,
+        1914,
+        2328,
+        4376
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġfor",
+            "token_id": 1794,
+            "logprob": -0.0229,
+            "prob": 0.9775
+          },
+          {
+            "token": "Ġas",
+            "token_id": 1843,
+            "logprob": -3.7891,
+            "prob": 0.0226
+          },
+          {
+            "token": "Ġworldwide",
+            "token_id": 17843,
+            "logprob": -14.2734,
+            "prob": 0.0
+          },
+          {
+            "token": "for",
+            "token_id": 3693,
+            "logprob": -14.7891,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġfar",
+            "token_id": 6559,
+            "logprob": -15.4141,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġby",
+            "token_id": 1943,
+            "logprob": -15.6719,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġglobally",
+            "token_id": 38013,
+            "logprob": -15.5156,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġto",
+            "token_id": 1726,
+            "logprob": -16.0781,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġworld",
+            "token_id": 3845,
+            "logprob": -15.8906,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġin",
+            "token_id": 1709,
+            "logprob": -16.5625,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġfor",
+        "token_id": 1794,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 41,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>What is the capital of France?<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>The capital of France is Paris. Paris is renowned for its rich history, cultural significance, and iconic landmarks such as the Eiffel Tower, Louvre Museum, and Notre-Dame Cathedral. It's also known for",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "What",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "Ġof",
+        "ĠFrance",
+        "?",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "The",
+        "Ġcapital",
+        "Ġof",
+        "ĠFrance",
+        "Ġis",
+        "ĠParis",
+        ".",
+        "ĠParis",
+        "Ġis",
+        "Ġrenowned",
+        "Ġfor",
+        "Ġits",
+        "Ġrich",
+        "Ġhistory",
+        ",",
+        "Ġcultural",
+        "Ġsignificance",
+        ",",
+        "Ġand",
+        "Ġiconic",
+        "Ġlandmarks",
+        "Ġsuch",
+        "Ġas",
+        "Ġthe",
+        "ĠEiffel",
+        "ĠTower",
+        ",",
+        "ĠLouvre",
+        "ĠMuseum",
+        ",",
+        "Ġand",
+        "ĠNotre",
+        "-",
+        "Dame",
+        "ĠCathedral",
+        ".",
+        "ĠIt",
+        "'s",
+        "Ġalso",
+        "Ġknown",
+        "Ġfor"
+      ],
+      "token_ids": [
+        5,
+        255000,
+        255006,
+        11214,
+        1801,
+        1690,
+        7784,
+        1719,
+        5334,
+        38,
+        255001,
+        255000,
+        255007,
+        2162,
+        7784,
+        1719,
+        5334,
+        1801,
+        5641,
+        21,
+        5641,
+        1801,
+        37755,
+        1794,
+        2517,
+        12274,
+        5824,
+        19,
+        12080,
+        33850,
+        19,
+        1728,
+        39502,
+        87987,
+        3213,
+        1843,
+        1690,
+        116920,
+        24274,
+        19,
+        65884,
+        8311,
+        19,
+        1728,
+        27687,
+        20,
+        39816,
+        31532,
+        21,
+        2332,
+        1914,
+        2328,
+        4376,
+        1794
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġits",
+            "token_id": 2517,
+            "logprob": -0.0,
+            "prob": 1.0
+          },
+          {
+            "token": "Ġbeing",
+            "token_id": 3506,
+            "logprob": -10.6406,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġfashion",
+            "token_id": 15924,
+            "logprob": -13.0938,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġthe",
+            "token_id": 1690,
+            "logprob": -13.6719,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġtheir",
+            "token_id": 2313,
+            "logprob": -14.2188,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġgastr",
+            "token_id": 58751,
+            "logprob": -14.9375,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġsua",
+            "token_id": 4563,
+            "logprob": -15.6953,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġcuisine",
+            "token_id": 41290,
+            "logprob": -15.4688,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġhis",
+            "token_id": 2237,
+            "logprob": -15.4688,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġit",
+            "token_id": 1894,
+            "logprob": -15.6172,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġits",
+        "token_id": 2517,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 42,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>What is the capital of France?<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>The capital of France is Paris. Paris is renowned for its rich history, cultural significance, and iconic landmarks such as the Eiffel Tower, Louvre Museum, and Notre-Dame Cathedral. It's also known for its",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "What",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "Ġof",
+        "ĠFrance",
+        "?",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "The",
+        "Ġcapital",
+        "Ġof",
+        "ĠFrance",
+        "Ġis",
+        "ĠParis",
+        ".",
+        "ĠParis",
+        "Ġis",
+        "Ġrenowned",
+        "Ġfor",
+        "Ġits",
+        "Ġrich",
+        "Ġhistory",
+        ",",
+        "Ġcultural",
+        "Ġsignificance",
+        ",",
+        "Ġand",
+        "Ġiconic",
+        "Ġlandmarks",
+        "Ġsuch",
+        "Ġas",
+        "Ġthe",
+        "ĠEiffel",
+        "ĠTower",
+        ",",
+        "ĠLouvre",
+        "ĠMuseum",
+        ",",
+        "Ġand",
+        "ĠNotre",
+        "-",
+        "Dame",
+        "ĠCathedral",
+        ".",
+        "ĠIt",
+        "'s",
+        "Ġalso",
+        "Ġknown",
+        "Ġfor",
+        "Ġits"
+      ],
+      "token_ids": [
+        5,
+        255000,
+        255006,
+        11214,
+        1801,
+        1690,
+        7784,
+        1719,
+        5334,
+        38,
+        255001,
+        255000,
+        255007,
+        2162,
+        7784,
+        1719,
+        5334,
+        1801,
+        5641,
+        21,
+        5641,
+        1801,
+        37755,
+        1794,
+        2517,
+        12274,
+        5824,
+        19,
+        12080,
+        33850,
+        19,
+        1728,
+        39502,
+        87987,
+        3213,
+        1843,
+        1690,
+        116920,
+        24274,
+        19,
+        65884,
+        8311,
+        19,
+        1728,
+        27687,
+        20,
+        39816,
+        31532,
+        21,
+        2332,
+        1914,
+        2328,
+        4376,
+        1794,
+        2517
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġart",
+            "token_id": 3015,
+            "logprob": -0.582,
+            "prob": 0.5586
+          },
+          {
+            "token": "Ġcuisine",
+            "token_id": 41290,
+            "logprob": -1.8164,
+            "prob": 0.1626
+          },
+          {
+            "token": "Ġfashion",
+            "token_id": 15924,
+            "logprob": -2.3164,
+            "prob": 0.0986
+          },
+          {
+            "token": "Ġrole",
+            "token_id": 5950,
+            "logprob": -3.1914,
+            "prob": 0.0411
+          },
+          {
+            "token": "Ġcontributions",
+            "token_id": 21858,
+            "logprob": -3.4727,
+            "prob": 0.031
+          },
+          {
+            "token": "Ġromantic",
+            "token_id": 30026,
+            "logprob": -4.082,
+            "prob": 0.0169
+          },
+          {
+            "token": "Ġartistic",
+            "token_id": 26107,
+            "logprob": -4.082,
+            "prob": 0.0169
+          },
+          {
+            "token": "Ġculinary",
+            "token_id": 74302,
+            "logprob": -4.5195,
+            "prob": 0.0109
+          },
+          {
+            "token": "Ġgastr",
+            "token_id": 58751,
+            "logprob": -4.6602,
+            "prob": 0.0095
+          },
+          {
+            "token": "Ġvibrant",
+            "token_id": 43361,
+            "logprob": -4.8008,
+            "prob": 0.0082
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġfashion",
+        "token_id": 15924,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 43,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>What is the capital of France?<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>The capital of France is Paris. Paris is renowned for its rich history, cultural significance, and iconic landmarks such as the Eiffel Tower, Louvre Museum, and Notre-Dame Cathedral. It's also known for its fashion",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "What",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "Ġof",
+        "ĠFrance",
+        "?",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "The",
+        "Ġcapital",
+        "Ġof",
+        "ĠFrance",
+        "Ġis",
+        "ĠParis",
+        ".",
+        "ĠParis",
+        "Ġis",
+        "Ġrenowned",
+        "Ġfor",
+        "Ġits",
+        "Ġrich",
+        "Ġhistory",
+        ",",
+        "Ġcultural",
+        "Ġsignificance",
+        ",",
+        "Ġand",
+        "Ġiconic",
+        "Ġlandmarks",
+        "Ġsuch",
+        "Ġas",
+        "Ġthe",
+        "ĠEiffel",
+        "ĠTower",
+        ",",
+        "ĠLouvre",
+        "ĠMuseum",
+        ",",
+        "Ġand",
+        "ĠNotre",
+        "-",
+        "Dame",
+        "ĠCathedral",
+        ".",
+        "ĠIt",
+        "'s",
+        "Ġalso",
+        "Ġknown",
+        "Ġfor",
+        "Ġits",
+        "Ġfashion"
+      ],
+      "token_ids": [
+        5,
+        255000,
+        255006,
+        11214,
+        1801,
+        1690,
+        7784,
+        1719,
+        5334,
+        38,
+        255001,
+        255000,
+        255007,
+        2162,
+        7784,
+        1719,
+        5334,
+        1801,
+        5641,
+        21,
+        5641,
+        1801,
+        37755,
+        1794,
+        2517,
+        12274,
+        5824,
+        19,
+        12080,
+        33850,
+        19,
+        1728,
+        39502,
+        87987,
+        3213,
+        1843,
+        1690,
+        116920,
+        24274,
+        19,
+        65884,
+        8311,
+        19,
+        1728,
+        27687,
+        20,
+        39816,
+        31532,
+        21,
+        2332,
+        1914,
+        2328,
+        4376,
+        1794,
+        2517,
+        15924
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": ",",
+            "token_id": 19,
+            "logprob": -0.0004,
+            "prob": 0.9995
+          },
+          {
+            "token": "Ġindustry",
+            "token_id": 6772,
+            "logprob": -7.8438,
+            "prob": 0.0004
+          },
+          {
+            "token": "Ġhouses",
+            "token_id": 15451,
+            "logprob": -12.8125,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġindustries",
+            "token_id": 22704,
+            "logprob": -13.5312,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġand",
+            "token_id": 1728,
+            "logprob": -14.0,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġ(",
+            "token_id": 1737,
+            "logprob": -14.625,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġhouse",
+            "token_id": 5147,
+            "logprob": -15.1562,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġdistrict",
+            "token_id": 7853,
+            "logprob": -16.4375,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġcapital",
+            "token_id": 7784,
+            "logprob": -17.2031,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġdesign",
+            "token_id": 3449,
+            "logprob": -16.875,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": ",",
+        "token_id": 19,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 44,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>What is the capital of France?<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>The capital of France is Paris. Paris is renowned for its rich history, cultural significance, and iconic landmarks such as the Eiffel Tower, Louvre Museum, and Notre-Dame Cathedral. It's also known for its fashion,",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "What",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "Ġof",
+        "ĠFrance",
+        "?",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "The",
+        "Ġcapital",
+        "Ġof",
+        "ĠFrance",
+        "Ġis",
+        "ĠParis",
+        ".",
+        "ĠParis",
+        "Ġis",
+        "Ġrenowned",
+        "Ġfor",
+        "Ġits",
+        "Ġrich",
+        "Ġhistory",
+        ",",
+        "Ġcultural",
+        "Ġsignificance",
+        ",",
+        "Ġand",
+        "Ġiconic",
+        "Ġlandmarks",
+        "Ġsuch",
+        "Ġas",
+        "Ġthe",
+        "ĠEiffel",
+        "ĠTower",
+        ",",
+        "ĠLouvre",
+        "ĠMuseum",
+        ",",
+        "Ġand",
+        "ĠNotre",
+        "-",
+        "Dame",
+        "ĠCathedral",
+        ".",
+        "ĠIt",
+        "'s",
+        "Ġalso",
+        "Ġknown",
+        "Ġfor",
+        "Ġits",
+        "Ġfashion",
+        ","
+      ],
+      "token_ids": [
+        5,
+        255000,
+        255006,
+        11214,
+        1801,
+        1690,
+        7784,
+        1719,
+        5334,
+        38,
+        255001,
+        255000,
+        255007,
+        2162,
+        7784,
+        1719,
+        5334,
+        1801,
+        5641,
+        21,
+        5641,
+        1801,
+        37755,
+        1794,
+        2517,
+        12274,
+        5824,
+        19,
+        12080,
+        33850,
+        19,
+        1728,
+        39502,
+        87987,
+        3213,
+        1843,
+        1690,
+        116920,
+        24274,
+        19,
+        65884,
+        8311,
+        19,
+        1728,
+        27687,
+        20,
+        39816,
+        31532,
+        21,
+        2332,
+        1914,
+        2328,
+        4376,
+        1794,
+        2517,
+        15924,
+        19
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġcuisine",
+            "token_id": 41290,
+            "logprob": -0.4099,
+            "prob": 0.6636
+          },
+          {
+            "token": "Ġgastr",
+            "token_id": 58751,
+            "logprob": -1.207,
+            "prob": 0.2991
+          },
+          {
+            "token": "Ġart",
+            "token_id": 3015,
+            "logprob": -3.9258,
+            "prob": 0.0197
+          },
+          {
+            "token": "Ġfood",
+            "token_id": 6137,
+            "logprob": -4.4102,
+            "prob": 0.0122
+          },
+          {
+            "token": "Ġgourmet",
+            "token_id": 122615,
+            "logprob": -5.582,
+            "prob": 0.0038
+          },
+          {
+            "token": "Ġculinary",
+            "token_id": 74302,
+            "logprob": -7.0664,
+            "prob": 0.0009
+          },
+          {
+            "token": "Ġarts",
+            "token_id": 16405,
+            "logprob": -8.125,
+            "prob": 0.0003
+          },
+          {
+            "token": "美食",
+            "token_id": 152531,
+            "logprob": -9.625,
+            "prob": 0.0001
+          },
+          {
+            "token": "ĠGastr",
+            "token_id": 153690,
+            "logprob": -9.9219,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġgastronomía",
+            "token_id": 252215,
+            "logprob": -10.0,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġcuisine",
+        "token_id": 41290,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 45,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>What is the capital of France?<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>The capital of France is Paris. Paris is renowned for its rich history, cultural significance, and iconic landmarks such as the Eiffel Tower, Louvre Museum, and Notre-Dame Cathedral. It's also known for its fashion, cuisine",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "What",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "Ġof",
+        "ĠFrance",
+        "?",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "The",
+        "Ġcapital",
+        "Ġof",
+        "ĠFrance",
+        "Ġis",
+        "ĠParis",
+        ".",
+        "ĠParis",
+        "Ġis",
+        "Ġrenowned",
+        "Ġfor",
+        "Ġits",
+        "Ġrich",
+        "Ġhistory",
+        ",",
+        "Ġcultural",
+        "Ġsignificance",
+        ",",
+        "Ġand",
+        "Ġiconic",
+        "Ġlandmarks",
+        "Ġsuch",
+        "Ġas",
+        "Ġthe",
+        "ĠEiffel",
+        "ĠTower",
+        ",",
+        "ĠLouvre",
+        "ĠMuseum",
+        ",",
+        "Ġand",
+        "ĠNotre",
+        "-",
+        "Dame",
+        "ĠCathedral",
+        ".",
+        "ĠIt",
+        "'s",
+        "Ġalso",
+        "Ġknown",
+        "Ġfor",
+        "Ġits",
+        "Ġfashion",
+        ",",
+        "Ġcuisine"
+      ],
+      "token_ids": [
+        5,
+        255000,
+        255006,
+        11214,
+        1801,
+        1690,
+        7784,
+        1719,
+        5334,
+        38,
+        255001,
+        255000,
+        255007,
+        2162,
+        7784,
+        1719,
+        5334,
+        1801,
+        5641,
+        21,
+        5641,
+        1801,
+        37755,
+        1794,
+        2517,
+        12274,
+        5824,
+        19,
+        12080,
+        33850,
+        19,
+        1728,
+        39502,
+        87987,
+        3213,
+        1843,
+        1690,
+        116920,
+        24274,
+        19,
+        65884,
+        8311,
+        19,
+        1728,
+        27687,
+        20,
+        39816,
+        31532,
+        21,
+        2332,
+        1914,
+        2328,
+        4376,
+        1794,
+        2517,
+        15924,
+        19,
+        41290
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": ",",
+            "token_id": 19,
+            "logprob": -0.0,
+            "prob": 1.0
+          },
+          {
+            "token": "Ġand",
+            "token_id": 1728,
+            "logprob": -13.2188,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġ(",
+            "token_id": 1737,
+            "logprob": -14.2344,
+            "prob": 0.0
+          },
+          {
+            "token": "<PAD>",
+            "token_id": 0,
+            "logprob": -34.6562,
+            "prob": 0.0
+          },
+          {
+            "token": "<EOS_TOKEN>",
+            "token_id": 6,
+            "logprob": -26.1406,
+            "prob": 0.0
+          },
+          {
+            "token": "<SEP>",
+            "token_id": 3,
+            "logprob": -34.6562,
+            "prob": 0.0
+          },
+          {
+            "token": "<BOS_TOKEN>",
+            "token_id": 5,
+            "logprob": -35.0938,
+            "prob": 0.0
+          },
+          {
+            "token": "<MASK_TOKEN>",
+            "token_id": 4,
+            "logprob": -34.6562,
+            "prob": 0.0
+          },
+          {
+            "token": "<UNK>",
+            "token_id": 1,
+            "logprob": -34.5312,
+            "prob": 0.0
+          },
+          {
+            "token": "<CLS>",
+            "token_id": 2,
+            "logprob": -34.625,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": ",",
+        "token_id": 19,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 46,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>What is the capital of France?<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>The capital of France is Paris. Paris is renowned for its rich history, cultural significance, and iconic landmarks such as the Eiffel Tower, Louvre Museum, and Notre-Dame Cathedral. It's also known for its fashion, cuisine,",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "What",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "Ġof",
+        "ĠFrance",
+        "?",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "The",
+        "Ġcapital",
+        "Ġof",
+        "ĠFrance",
+        "Ġis",
+        "ĠParis",
+        ".",
+        "ĠParis",
+        "Ġis",
+        "Ġrenowned",
+        "Ġfor",
+        "Ġits",
+        "Ġrich",
+        "Ġhistory",
+        ",",
+        "Ġcultural",
+        "Ġsignificance",
+        ",",
+        "Ġand",
+        "Ġiconic",
+        "Ġlandmarks",
+        "Ġsuch",
+        "Ġas",
+        "Ġthe",
+        "ĠEiffel",
+        "ĠTower",
+        ",",
+        "ĠLouvre",
+        "ĠMuseum",
+        ",",
+        "Ġand",
+        "ĠNotre",
+        "-",
+        "Dame",
+        "ĠCathedral",
+        ".",
+        "ĠIt",
+        "'s",
+        "Ġalso",
+        "Ġknown",
+        "Ġfor",
+        "Ġits",
+        "Ġfashion",
+        ",",
+        "Ġcuisine",
+        ","
+      ],
+      "token_ids": [
+        5,
+        255000,
+        255006,
+        11214,
+        1801,
+        1690,
+        7784,
+        1719,
+        5334,
+        38,
+        255001,
+        255000,
+        255007,
+        2162,
+        7784,
+        1719,
+        5334,
+        1801,
+        5641,
+        21,
+        5641,
+        1801,
+        37755,
+        1794,
+        2517,
+        12274,
+        5824,
+        19,
+        12080,
+        33850,
+        19,
+        1728,
+        39502,
+        87987,
+        3213,
+        1843,
+        1690,
+        116920,
+        24274,
+        19,
+        65884,
+        8311,
+        19,
+        1728,
+        27687,
+        20,
+        39816,
+        31532,
+        21,
+        2332,
+        1914,
+        2328,
+        4376,
+        1794,
+        2517,
+        15924,
+        19,
+        41290,
+        19
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġand",
+            "token_id": 1728,
+            "logprob": -0.0032,
+            "prob": 0.9966
+          },
+          {
+            "token": "Ġart",
+            "token_id": 3015,
+            "logprob": -5.7539,
+            "prob": 0.0032
+          },
+          {
+            "token": "Ġarts",
+            "token_id": 16405,
+            "logprob": -11.0312,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġarchitecture",
+            "token_id": 16717,
+            "logprob": -13.9844,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġliterature",
+            "token_id": 19721,
+            "logprob": -14.5938,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġartistry",
+            "token_id": 177956,
+            "logprob": -16.0,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġmuseums",
+            "token_id": 47206,
+            "logprob": -16.2031,
+            "prob": 0.0
+          },
+          {
+            "token": "and",
+            "token_id": 1807,
+            "logprob": -15.9531,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġartistic",
+            "token_id": 26107,
+            "logprob": -16.3594,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġacademia",
+            "token_id": 68996,
+            "logprob": -16.9688,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġand",
+        "token_id": 1728,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 47,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>What is the capital of France?<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>The capital of France is Paris. Paris is renowned for its rich history, cultural significance, and iconic landmarks such as the Eiffel Tower, Louvre Museum, and Notre-Dame Cathedral. It's also known for its fashion, cuisine, and",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "What",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "Ġof",
+        "ĠFrance",
+        "?",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "The",
+        "Ġcapital",
+        "Ġof",
+        "ĠFrance",
+        "Ġis",
+        "ĠParis",
+        ".",
+        "ĠParis",
+        "Ġis",
+        "Ġrenowned",
+        "Ġfor",
+        "Ġits",
+        "Ġrich",
+        "Ġhistory",
+        ",",
+        "Ġcultural",
+        "Ġsignificance",
+        ",",
+        "Ġand",
+        "Ġiconic",
+        "Ġlandmarks",
+        "Ġsuch",
+        "Ġas",
+        "Ġthe",
+        "ĠEiffel",
+        "ĠTower",
+        ",",
+        "ĠLouvre",
+        "ĠMuseum",
+        ",",
+        "Ġand",
+        "ĠNotre",
+        "-",
+        "Dame",
+        "ĠCathedral",
+        ".",
+        "ĠIt",
+        "'s",
+        "Ġalso",
+        "Ġknown",
+        "Ġfor",
+        "Ġits",
+        "Ġfashion",
+        ",",
+        "Ġcuisine",
+        ",",
+        "Ġand"
+      ],
+      "token_ids": [
+        5,
+        255000,
+        255006,
+        11214,
+        1801,
+        1690,
+        7784,
+        1719,
+        5334,
+        38,
+        255001,
+        255000,
+        255007,
+        2162,
+        7784,
+        1719,
+        5334,
+        1801,
+        5641,
+        21,
+        5641,
+        1801,
+        37755,
+        1794,
+        2517,
+        12274,
+        5824,
+        19,
+        12080,
+        33850,
+        19,
+        1728,
+        39502,
+        87987,
+        3213,
+        1843,
+        1690,
+        116920,
+        24274,
+        19,
+        65884,
+        8311,
+        19,
+        1728,
+        27687,
+        20,
+        39816,
+        31532,
+        21,
+        2332,
+        1914,
+        2328,
+        4376,
+        1794,
+        2517,
+        15924,
+        19,
+        41290,
+        19,
+        1728
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġart",
+            "token_id": 3015,
+            "logprob": -0.437,
+            "prob": 0.646
+          },
+          {
+            "token": "Ġartistic",
+            "token_id": 26107,
+            "logprob": -1.3271,
+            "prob": 0.2651
+          },
+          {
+            "token": "Ġvibrant",
+            "token_id": 43361,
+            "logprob": -3.1875,
+            "prob": 0.0413
+          },
+          {
+            "token": "Ġarts",
+            "token_id": 16405,
+            "logprob": -4.125,
+            "prob": 0.0162
+          },
+          {
+            "token": "Ġoverall",
+            "token_id": 10461,
+            "logprob": -4.7812,
+            "prob": 0.0084
+          },
+          {
+            "token": "Ġunique",
+            "token_id": 7334,
+            "logprob": -5.3125,
+            "prob": 0.0049
+          },
+          {
+            "token": "Ġromantic",
+            "token_id": 30026,
+            "logprob": -5.8594,
+            "prob": 0.0029
+          },
+          {
+            "token": "Ġarchitecture",
+            "token_id": 16717,
+            "logprob": -5.9062,
+            "prob": 0.0027
+          },
+          {
+            "token": "Ġcontributions",
+            "token_id": 21858,
+            "logprob": -6.2344,
+            "prob": 0.002
+          },
+          {
+            "token": "Ġdiverse",
+            "token_id": 15719,
+            "logprob": -6.2812,
+            "prob": 0.0019
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġvibrant",
+        "token_id": 43361,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 48,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>What is the capital of France?<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>The capital of France is Paris. Paris is renowned for its rich history, cultural significance, and iconic landmarks such as the Eiffel Tower, Louvre Museum, and Notre-Dame Cathedral. It's also known for its fashion, cuisine, and vibrant",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "What",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "Ġof",
+        "ĠFrance",
+        "?",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "The",
+        "Ġcapital",
+        "Ġof",
+        "ĠFrance",
+        "Ġis",
+        "ĠParis",
+        ".",
+        "ĠParis",
+        "Ġis",
+        "Ġrenowned",
+        "Ġfor",
+        "Ġits",
+        "Ġrich",
+        "Ġhistory",
+        ",",
+        "Ġcultural",
+        "Ġsignificance",
+        ",",
+        "Ġand",
+        "Ġiconic",
+        "Ġlandmarks",
+        "Ġsuch",
+        "Ġas",
+        "Ġthe",
+        "ĠEiffel",
+        "ĠTower",
+        ",",
+        "ĠLouvre",
+        "ĠMuseum",
+        ",",
+        "Ġand",
+        "ĠNotre",
+        "-",
+        "Dame",
+        "ĠCathedral",
+        ".",
+        "ĠIt",
+        "'s",
+        "Ġalso",
+        "Ġknown",
+        "Ġfor",
+        "Ġits",
+        "Ġfashion",
+        ",",
+        "Ġcuisine",
+        ",",
+        "Ġand",
+        "Ġvibrant"
+      ],
+      "token_ids": [
+        5,
+        255000,
+        255006,
+        11214,
+        1801,
+        1690,
+        7784,
+        1719,
+        5334,
+        38,
+        255001,
+        255000,
+        255007,
+        2162,
+        7784,
+        1719,
+        5334,
+        1801,
+        5641,
+        21,
+        5641,
+        1801,
+        37755,
+        1794,
+        2517,
+        12274,
+        5824,
+        19,
+        12080,
+        33850,
+        19,
+        1728,
+        39502,
+        87987,
+        3213,
+        1843,
+        1690,
+        116920,
+        24274,
+        19,
+        65884,
+        8311,
+        19,
+        1728,
+        27687,
+        20,
+        39816,
+        31532,
+        21,
+        2332,
+        1914,
+        2328,
+        4376,
+        1794,
+        2517,
+        15924,
+        19,
+        41290,
+        19,
+        1728,
+        43361
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġnightlife",
+            "token_id": 146120,
+            "logprob": -0.8955,
+            "prob": 0.4084
+          },
+          {
+            "token": "Ġcity",
+            "token_id": 5079,
+            "logprob": -1.2393,
+            "prob": 0.2896
+          },
+          {
+            "token": "Ġurban",
+            "token_id": 14159,
+            "logprob": -1.9893,
+            "prob": 0.1368
+          },
+          {
+            "token": "Ġatmosphere",
+            "token_id": 26095,
+            "logprob": -2.0527,
+            "prob": 0.1285
+          },
+          {
+            "token": "Ġarts",
+            "token_id": 16405,
+            "logprob": -4.5195,
+            "prob": 0.0109
+          },
+          {
+            "token": "Ġartistic",
+            "token_id": 26107,
+            "logprob": -4.5352,
+            "prob": 0.0107
+          },
+          {
+            "token": "Ġstreet",
+            "token_id": 15262,
+            "logprob": -5.2539,
+            "prob": 0.0052
+          },
+          {
+            "token": "Ġart",
+            "token_id": 3015,
+            "logprob": -5.5977,
+            "prob": 0.0037
+          },
+          {
+            "token": "Ġnight",
+            "token_id": 7577,
+            "logprob": -6.4102,
+            "prob": 0.0016
+          },
+          {
+            "token": "Ġlifestyle",
+            "token_id": 24599,
+            "logprob": -7.0664,
+            "prob": 0.0009
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġurban",
+        "token_id": 14159,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 49,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>What is the capital of France?<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>The capital of France is Paris. Paris is renowned for its rich history, cultural significance, and iconic landmarks such as the Eiffel Tower, Louvre Museum, and Notre-Dame Cathedral. It's also known for its fashion, cuisine, and vibrant urban",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "What",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "Ġof",
+        "ĠFrance",
+        "?",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "The",
+        "Ġcapital",
+        "Ġof",
+        "ĠFrance",
+        "Ġis",
+        "ĠParis",
+        ".",
+        "ĠParis",
+        "Ġis",
+        "Ġrenowned",
+        "Ġfor",
+        "Ġits",
+        "Ġrich",
+        "Ġhistory",
+        ",",
+        "Ġcultural",
+        "Ġsignificance",
+        ",",
+        "Ġand",
+        "Ġiconic",
+        "Ġlandmarks",
+        "Ġsuch",
+        "Ġas",
+        "Ġthe",
+        "ĠEiffel",
+        "ĠTower",
+        ",",
+        "ĠLouvre",
+        "ĠMuseum",
+        ",",
+        "Ġand",
+        "ĠNotre",
+        "-",
+        "Dame",
+        "ĠCathedral",
+        ".",
+        "ĠIt",
+        "'s",
+        "Ġalso",
+        "Ġknown",
+        "Ġfor",
+        "Ġits",
+        "Ġfashion",
+        ",",
+        "Ġcuisine",
+        ",",
+        "Ġand",
+        "Ġvibrant",
+        "Ġurban"
+      ],
+      "token_ids": [
+        5,
+        255000,
+        255006,
+        11214,
+        1801,
+        1690,
+        7784,
+        1719,
+        5334,
+        38,
+        255001,
+        255000,
+        255007,
+        2162,
+        7784,
+        1719,
+        5334,
+        1801,
+        5641,
+        21,
+        5641,
+        1801,
+        37755,
+        1794,
+        2517,
+        12274,
+        5824,
+        19,
+        12080,
+        33850,
+        19,
+        1728,
+        39502,
+        87987,
+        3213,
+        1843,
+        1690,
+        116920,
+        24274,
+        19,
+        65884,
+        8311,
+        19,
+        1728,
+        27687,
+        20,
+        39816,
+        31532,
+        21,
+        2332,
+        1914,
+        2328,
+        4376,
+        1794,
+        2517,
+        15924,
+        19,
+        41290,
+        19,
+        1728,
+        43361,
+        14159
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġlife",
+            "token_id": 3826,
+            "logprob": -0.5591,
+            "prob": 0.5718
+          },
+          {
+            "token": "Ġatmosphere",
+            "token_id": 26095,
+            "logprob": -1.1367,
+            "prob": 0.3208
+          },
+          {
+            "token": "Ġlifestyle",
+            "token_id": 24599,
+            "logprob": -2.293,
+            "prob": 0.101
+          },
+          {
+            "token": "Ġenvironment",
+            "token_id": 6626,
+            "logprob": -5.543,
+            "prob": 0.0039
+          },
+          {
+            "token": "Ġculture",
+            "token_id": 8678,
+            "logprob": -6.668,
+            "prob": 0.0013
+          },
+          {
+            "token": "Ġlandscape",
+            "token_id": 21663,
+            "logprob": -7.5273,
+            "prob": 0.0005
+          },
+          {
+            "token": "Ġambiance",
+            "token_id": 132960,
+            "logprob": -7.9961,
+            "prob": 0.0003
+          },
+          {
+            "token": "Ġscene",
+            "token_id": 13438,
+            "logprob": -9.2812,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġvibe",
+            "token_id": 76708,
+            "logprob": -9.4844,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġliving",
+            "token_id": 7798,
+            "logprob": -10.0938,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġlife",
+        "token_id": 3826,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 50,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>What is the capital of France?<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>The capital of France is Paris. Paris is renowned for its rich history, cultural significance, and iconic landmarks such as the Eiffel Tower, Louvre Museum, and Notre-Dame Cathedral. It's also known for its fashion, cuisine, and vibrant urban life",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "What",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "Ġof",
+        "ĠFrance",
+        "?",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "The",
+        "Ġcapital",
+        "Ġof",
+        "ĠFrance",
+        "Ġis",
+        "ĠParis",
+        ".",
+        "ĠParis",
+        "Ġis",
+        "Ġrenowned",
+        "Ġfor",
+        "Ġits",
+        "Ġrich",
+        "Ġhistory",
+        ",",
+        "Ġcultural",
+        "Ġsignificance",
+        ",",
+        "Ġand",
+        "Ġiconic",
+        "Ġlandmarks",
+        "Ġsuch",
+        "Ġas",
+        "Ġthe",
+        "ĠEiffel",
+        "ĠTower",
+        ",",
+        "ĠLouvre",
+        "ĠMuseum",
+        ",",
+        "Ġand",
+        "ĠNotre",
+        "-",
+        "Dame",
+        "ĠCathedral",
+        ".",
+        "ĠIt",
+        "'s",
+        "Ġalso",
+        "Ġknown",
+        "Ġfor",
+        "Ġits",
+        "Ġfashion",
+        ",",
+        "Ġcuisine",
+        ",",
+        "Ġand",
+        "Ġvibrant",
+        "Ġurban",
+        "Ġlife"
+      ],
+      "token_ids": [
+        5,
+        255000,
+        255006,
+        11214,
+        1801,
+        1690,
+        7784,
+        1719,
+        5334,
+        38,
+        255001,
+        255000,
+        255007,
+        2162,
+        7784,
+        1719,
+        5334,
+        1801,
+        5641,
+        21,
+        5641,
+        1801,
+        37755,
+        1794,
+        2517,
+        12274,
+        5824,
+        19,
+        12080,
+        33850,
+        19,
+        1728,
+        39502,
+        87987,
+        3213,
+        1843,
+        1690,
+        116920,
+        24274,
+        19,
+        65884,
+        8311,
+        19,
+        1728,
+        27687,
+        20,
+        39816,
+        31532,
+        21,
+        2332,
+        1914,
+        2328,
+        4376,
+        1794,
+        2517,
+        15924,
+        19,
+        41290,
+        19,
+        1728,
+        43361,
+        14159,
+        3826
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": ".",
+            "token_id": 21,
+            "logprob": -0.0107,
+            "prob": 0.9893
+          },
+          {
+            "token": ",",
+            "token_id": 19,
+            "logprob": -4.543,
+            "prob": 0.0107
+          },
+          {
+            "token": "Ġand",
+            "token_id": 1728,
+            "logprob": -11.8828,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġalong",
+            "token_id": 4974,
+            "logprob": -12.1797,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġin",
+            "token_id": 1709,
+            "logprob": -13.7734,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġstyle",
+            "token_id": 3971,
+            "logprob": -14.0078,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġmaking",
+            "token_id": 5467,
+            "logprob": -14.7109,
+            "prob": 0.0
+          },
+          {
+            "token": "—",
+            "token_id": 2062,
+            "logprob": -15.2734,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġalongside",
+            "token_id": 16417,
+            "logprob": -15.6016,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġ(",
+            "token_id": 1737,
+            "logprob": -15.9609,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": ".",
+        "token_id": 21,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 51,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>What is the capital of France?<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>The capital of France is Paris. Paris is renowned for its rich history, cultural significance, and iconic landmarks such as the Eiffel Tower, Louvre Museum, and Notre-Dame Cathedral. It's also known for its fashion, cuisine, and vibrant urban life.",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "What",
+        "Ġis",
+        "Ġthe",
+        "Ġcapital",
+        "Ġof",
+        "ĠFrance",
+        "?",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "The",
+        "Ġcapital",
+        "Ġof",
+        "ĠFrance",
+        "Ġis",
+        "ĠParis",
+        ".",
+        "ĠParis",
+        "Ġis",
+        "Ġrenowned",
+        "Ġfor",
+        "Ġits",
+        "Ġrich",
+        "Ġhistory",
+        ",",
+        "Ġcultural",
+        "Ġsignificance",
+        ",",
+        "Ġand",
+        "Ġiconic",
+        "Ġlandmarks",
+        "Ġsuch",
+        "Ġas",
+        "Ġthe",
+        "ĠEiffel",
+        "ĠTower",
+        ",",
+        "ĠLouvre",
+        "ĠMuseum",
+        ",",
+        "Ġand",
+        "ĠNotre",
+        "-",
+        "Dame",
+        "ĠCathedral",
+        ".",
+        "ĠIt",
+        "'s",
+        "Ġalso",
+        "Ġknown",
+        "Ġfor",
+        "Ġits",
+        "Ġfashion",
+        ",",
+        "Ġcuisine",
+        ",",
+        "Ġand",
+        "Ġvibrant",
+        "Ġurban",
+        "Ġlife",
+        "."
+      ],
+      "token_ids": [
+        5,
+        255000,
+        255006,
+        11214,
+        1801,
+        1690,
+        7784,
+        1719,
+        5334,
+        38,
+        255001,
+        255000,
+        255007,
+        2162,
+        7784,
+        1719,
+        5334,
+        1801,
+        5641,
+        21,
+        5641,
+        1801,
+        37755,
+        1794,
+        2517,
+        12274,
+        5824,
+        19,
+        12080,
+        33850,
+        19,
+        1728,
+        39502,
+        87987,
+        3213,
+        1843,
+        1690,
+        116920,
+        24274,
+        19,
+        65884,
+        8311,
+        19,
+        1728,
+        27687,
+        20,
+        39816,
+        31532,
+        21,
+        2332,
+        1914,
+        2328,
+        4376,
+        1794,
+        2517,
+        15924,
+        19,
+        41290,
+        19,
+        1728,
+        43361,
+        14159,
+        3826,
+        21
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "<|END_OF_TURN_TOKEN|>",
+            "token_id": 255001,
+            "logprob": -0.2198,
+            "prob": 0.8027
+          },
+          {
+            "token": "ĠParis",
+            "token_id": 5641,
+            "logprob": -1.626,
+            "prob": 0.1967
+          },
+          {
+            "token": "ĠSituated",
+            "token_id": 185845,
+            "logprob": -8.2812,
+            "prob": 0.0003
+          },
+          {
+            "token": "ĠFrance",
+            "token_id": 5334,
+            "logprob": -9.7344,
+            "prob": 0.0001
+          },
+          {
+            "token": "\n",
+            "token_id": 206,
+            "logprob": -9.9375,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠThe",
+            "token_id": 1896,
+            "logprob": -10.0,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠAs",
+            "token_id": 3143,
+            "logprob": -10.2891,
+            "prob": 0.0
+          },
+          {
+            "token": "Paris",
+            "token_id": 38754,
+            "logprob": -10.5312,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠParís",
+            "token_id": 31157,
+            "logprob": -10.5625,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠLocated",
+            "token_id": 55708,
+            "logprob": -10.75,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "<|END_OF_TURN_TOKEN|>",
+        "token_id": 255001,
+        "selection_method": "sampling"
+      }
+    }
+  ]
+}

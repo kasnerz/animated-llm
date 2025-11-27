@@ -1,0 +1,5238 @@
+{
+  "id": "generated_20251117_172434",
+  "prompt": "Jaké je hlavní město Česka?",
+  "language": "cs",
+  "temperature": 0.0,
+  "top_k": 10,
+  "model_info": {
+    "name": "CohereLabs/aya-expanse-8b",
+    "num_layers": 32,
+    "hidden_size": 4096,
+    "num_attention_heads": 32,
+    "vocab_size": 256000
+  },
+  "generation_steps": [
+    {
+      "step": 0,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Jaké je hlavní město Česka?<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Jak",
+        "é",
+        "Ġje",
+        "Ġhlavní",
+        "Ġměsto",
+        "ĠČeska",
+        "?",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 93148, 1751, 3573, 48613, 48171, 218951, 38, 255001, 255000, 255007
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Hlavní",
+            "token_id": 174766,
+            "logprob": -0.1086,
+            "prob": 0.897
+          },
+          {
+            "token": "H",
+            "token_id": 47,
+            "logprob": -2.2812,
+            "prob": 0.1022
+          },
+          {
+            "token": "Praha",
+            "token_id": 172961,
+            "logprob": -8.6562,
+            "prob": 0.0002
+          },
+          {
+            "token": "Haupt",
+            "token_id": 130596,
+            "logprob": -8.9531,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġhlavním",
+            "token_id": 98015,
+            "logprob": -9.3125,
+            "prob": 0.0001
+          },
+          {
+            "token": "ĠHlav",
+            "token_id": 119742,
+            "logprob": -9.5625,
+            "prob": 0.0001
+          },
+          {
+            "token": "ĠHlavní",
+            "token_id": 141307,
+            "logprob": -9.6875,
+            "prob": 0.0001
+          },
+          {
+            "token": "hlav",
+            "token_id": 211884,
+            "logprob": -10.625,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġhlavní",
+            "token_id": 48613,
+            "logprob": -11.0781,
+            "prob": 0.0
+          },
+          {
+            "token": "Глав",
+            "token_id": 91520,
+            "logprob": -11.2578,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Hlavní",
+        "token_id": 174766,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 1,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Jaké je hlavní město Česka?<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>Hlavní",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Jak",
+        "é",
+        "Ġje",
+        "Ġhlavní",
+        "Ġměsto",
+        "ĠČeska",
+        "?",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "Hlavní"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 93148, 1751, 3573, 48613, 48171, 218951, 38, 255001, 255000, 255007,
+        174766
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġměsto",
+            "token_id": 48171,
+            "logprob": -0.0266,
+            "prob": 0.9736
+          },
+          {
+            "token": "Ġměstem",
+            "token_id": 123831,
+            "logprob": -3.6523,
+            "prob": 0.026
+          },
+          {
+            "token": "Ġměsta",
+            "token_id": 29541,
+            "logprob": -9.0547,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġměst",
+            "token_id": 29192,
+            "logprob": -9.5234,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġ도시로",
+            "token_id": 184312,
+            "logprob": -11.0391,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠMěsto",
+            "token_id": 118312,
+            "logprob": -11.1797,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġměstě",
+            "token_id": 66225,
+            "logprob": -11.4062,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġmiastem",
+            "token_id": 217850,
+            "logprob": -11.7266,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġмістом",
+            "token_id": 253584,
+            "logprob": -12.0703,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġмісто",
+            "token_id": 48890,
+            "logprob": -12.2031,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġměsto",
+        "token_id": 48171,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 2,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Jaké je hlavní město Česka?<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>Hlavní město",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Jak",
+        "é",
+        "Ġje",
+        "Ġhlavní",
+        "Ġměsto",
+        "ĠČeska",
+        "?",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "Hlavní",
+        "Ġměsto"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 93148, 1751, 3573, 48613, 48171, 218951, 38, 255001, 255000, 255007,
+        174766, 48171
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "ĠČeské",
+            "token_id": 38398,
+            "logprob": -0.1333,
+            "prob": 0.875
+          },
+          {
+            "token": "ĠČeska",
+            "token_id": 218951,
+            "logprob": -2.1641,
+            "prob": 0.1148
+          },
+          {
+            "token": "ĠČesku",
+            "token_id": 67925,
+            "logprob": -5.5078,
+            "prob": 0.0041
+          },
+          {
+            "token": "ĠČesk",
+            "token_id": 19224,
+            "logprob": -6.2266,
+            "prob": 0.002
+          },
+          {
+            "token": "ĠČesko",
+            "token_id": 198055,
+            "logprob": -6.6641,
+            "prob": 0.0013
+          },
+          {
+            "token": "ĠČeskoslovenska",
+            "token_id": 107086,
+            "logprob": -6.8672,
+            "prob": 0.001
+          },
+          {
+            "token": "ĠČR",
+            "token_id": 76683,
+            "logprob": -7.2891,
+            "prob": 0.0007
+          },
+          {
+            "token": "ĠViệt",
+            "token_id": 12584,
+            "logprob": -8.8984,
+            "prob": 0.0001
+          },
+          {
+            "token": "ĠČe",
+            "token_id": 160764,
+            "logprob": -9.0859,
+            "prob": 0.0001
+          },
+          {
+            "token": "ĠČeského",
+            "token_id": 145191,
+            "logprob": -9.5234,
+            "prob": 0.0001
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "ĠČeské",
+        "token_id": 38398,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 3,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Jaké je hlavní město Česka?<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>Hlavní město České",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Jak",
+        "é",
+        "Ġje",
+        "Ġhlavní",
+        "Ġměsto",
+        "ĠČeska",
+        "?",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "Hlavní",
+        "Ġměsto",
+        "ĠČeské"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 93148, 1751, 3573, 48613, 48171, 218951, 38, 255001, 255000, 255007,
+        174766, 48171, 38398
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġrepubliky",
+            "token_id": 50429,
+            "logprob": -0.0008,
+            "prob": 0.999
+          },
+          {
+            "token": "Ġrepublika",
+            "token_id": 131664,
+            "logprob": -7.4688,
+            "prob": 0.0006
+          },
+          {
+            "token": "Ġrepublice",
+            "token_id": 94913,
+            "logprob": -9.7031,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġrepo",
+            "token_id": 30972,
+            "logprob": -10.4844,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġrepubl",
+            "token_id": 62143,
+            "logprob": -10.5625,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġреспублики",
+            "token_id": 82101,
+            "logprob": -10.5781,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠRepublik",
+            "token_id": 34163,
+            "logprob": -10.6562,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġrepublik",
+            "token_id": 42294,
+            "logprob": -11.0781,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġrepublic",
+            "token_id": 29824,
+            "logprob": -11.5625,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġrep",
+            "token_id": 6450,
+            "logprob": -11.9922,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġrepubliky",
+        "token_id": 50429,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 4,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Jaké je hlavní město Česka?<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>Hlavní město České republiky",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Jak",
+        "é",
+        "Ġje",
+        "Ġhlavní",
+        "Ġměsto",
+        "ĠČeska",
+        "?",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "Hlavní",
+        "Ġměsto",
+        "ĠČeské",
+        "Ġrepubliky"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 93148, 1751, 3573, 48613, 48171, 218951, 38, 255001, 255000, 255007,
+        174766, 48171, 38398, 50429
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġje",
+            "token_id": 3573,
+            "logprob": -0.0001,
+            "prob": 1.0
+          },
+          {
+            "token": "Ġ(",
+            "token_id": 1737,
+            "logprob": -9.8594,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġjsou",
+            "token_id": 13815,
+            "logprob": -14.8906,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġjest",
+            "token_id": 9179,
+            "logprob": -15.5859,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠJe",
+            "token_id": 4260,
+            "logprob": -16.0156,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġείναι",
+            "token_id": 8148,
+            "logprob": -15.9844,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġbylo",
+            "token_id": 17808,
+            "logprob": -17.0469,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġnení",
+            "token_id": 48672,
+            "logprob": -17.2344,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġis",
+            "token_id": 1801,
+            "logprob": -16.9531,
+            "prob": 0.0
+          },
+          {
+            "token": ",",
+            "token_id": 19,
+            "logprob": -17.0781,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġje",
+        "token_id": 3573,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 5,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Jaké je hlavní město Česka?<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>Hlavní město České republiky je",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Jak",
+        "é",
+        "Ġje",
+        "Ġhlavní",
+        "Ġměsto",
+        "ĠČeska",
+        "?",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "Hlavní",
+        "Ġměsto",
+        "ĠČeské",
+        "Ġrepubliky",
+        "Ġje"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 93148, 1751, 3573, 48613, 48171, 218951, 38, 255001, 255000, 255007,
+        174766, 48171, 38398, 50429, 3573
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "ĠPraha",
+            "token_id": 23693,
+            "logprob": -0.0009,
+            "prob": 0.999
+          },
+          {
+            "token": "ĠPra",
+            "token_id": 10075,
+            "logprob": -7.6406,
+            "prob": 0.0005
+          },
+          {
+            "token": "Praha",
+            "token_id": 172961,
+            "logprob": -8.5156,
+            "prob": 0.0002
+          },
+          {
+            "token": "ĠPraga",
+            "token_id": 65299,
+            "logprob": -9.9219,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠPrahy",
+            "token_id": 86465,
+            "logprob": -10.3906,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠPraze",
+            "token_id": 39898,
+            "logprob": -10.5156,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠPaříž",
+            "token_id": 164139,
+            "logprob": -10.9375,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠPraž",
+            "token_id": 108480,
+            "logprob": -11.0312,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġpra",
+            "token_id": 9676,
+            "logprob": -11.2031,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠПра",
+            "token_id": 63923,
+            "logprob": -11.9219,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "ĠPraha",
+        "token_id": 23693,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 6,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Jaké je hlavní město Česka?<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>Hlavní město České republiky je Praha",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Jak",
+        "é",
+        "Ġje",
+        "Ġhlavní",
+        "Ġměsto",
+        "ĠČeska",
+        "?",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "Hlavní",
+        "Ġměsto",
+        "ĠČeské",
+        "Ġrepubliky",
+        "Ġje",
+        "ĠPraha"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 93148, 1751, 3573, 48613, 48171, 218951, 38, 255001, 255000, 255007,
+        174766, 48171, 38398, 50429, 3573, 23693
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": ".",
+            "token_id": 21,
+            "logprob": -0.0,
+            "prob": 1.0
+          },
+          {
+            "token": ",",
+            "token_id": 19,
+            "logprob": -16.3125,
+            "prob": 0.0
+          },
+          {
+            "token": "<PAD>",
+            "token_id": 0,
+            "logprob": -40.625,
+            "prob": 0.0
+          },
+          {
+            "token": "<UNK>",
+            "token_id": 1,
+            "logprob": -40.2188,
+            "prob": 0.0
+          },
+          {
+            "token": "<EOS_TOKEN>",
+            "token_id": 6,
+            "logprob": -31.2969,
+            "prob": 0.0
+          },
+          {
+            "token": "<EOP_TOKEN>",
+            "token_id": 7,
+            "logprob": -40.7812,
+            "prob": 0.0
+          },
+          {
+            "token": "<BOS_TOKEN>",
+            "token_id": 5,
+            "logprob": -36.4375,
+            "prob": 0.0
+          },
+          {
+            "token": "<MASK_TOKEN>",
+            "token_id": 4,
+            "logprob": -40.7188,
+            "prob": 0.0
+          },
+          {
+            "token": "<CLS>",
+            "token_id": 2,
+            "logprob": -40.6875,
+            "prob": 0.0
+          },
+          {
+            "token": "<SEP>",
+            "token_id": 3,
+            "logprob": -41.2188,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": ".",
+        "token_id": 21,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 7,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Jaké je hlavní město Česka?<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>Hlavní město České republiky je Praha.",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Jak",
+        "é",
+        "Ġje",
+        "Ġhlavní",
+        "Ġměsto",
+        "ĠČeska",
+        "?",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "Hlavní",
+        "Ġměsto",
+        "ĠČeské",
+        "Ġrepubliky",
+        "Ġje",
+        "ĠPraha",
+        "."
+      ],
+      "token_ids": [
+        5, 255000, 255006, 93148, 1751, 3573, 48613, 48171, 218951, 38, 255001, 255000, 255007,
+        174766, 48171, 38398, 50429, 3573, 23693, 21
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "ĠJe",
+            "token_id": 4260,
+            "logprob": -0.3379,
+            "prob": 0.7134
+          },
+          {
+            "token": "ĠPraha",
+            "token_id": 23693,
+            "logprob": -1.3223,
+            "prob": 0.2666
+          },
+          {
+            "token": "ĠNachází",
+            "token_id": 101697,
+            "logprob": -4.168,
+            "prob": 0.0155
+          },
+          {
+            "token": "ĠJedná",
+            "token_id": 113942,
+            "logprob": -7.043,
+            "prob": 0.0009
+          },
+          {
+            "token": "ĠTato",
+            "token_id": 73963,
+            "logprob": -7.793,
+            "prob": 0.0004
+          },
+          {
+            "token": "ĠPraga",
+            "token_id": 65299,
+            "logprob": -8.2891,
+            "prob": 0.0003
+          },
+          {
+            "token": "Ġje",
+            "token_id": 3573,
+            "logprob": -8.6094,
+            "prob": 0.0002
+          },
+          {
+            "token": "Praha",
+            "token_id": 172961,
+            "logprob": -8.6484,
+            "prob": 0.0002
+          },
+          {
+            "token": "ĠJako",
+            "token_id": 57371,
+            "logprob": -8.7812,
+            "prob": 0.0002
+          },
+          {
+            "token": "ĠLeží",
+            "token_id": 190799,
+            "logprob": -8.9219,
+            "prob": 0.0001
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "ĠJe",
+        "token_id": 4260,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 8,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Jaké je hlavní město Česka?<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>Hlavní město České republiky je Praha. Je",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Jak",
+        "é",
+        "Ġje",
+        "Ġhlavní",
+        "Ġměsto",
+        "ĠČeska",
+        "?",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "Hlavní",
+        "Ġměsto",
+        "ĠČeské",
+        "Ġrepubliky",
+        "Ġje",
+        "ĠPraha",
+        ".",
+        "ĠJe"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 93148, 1751, 3573, 48613, 48171, 218951, 38, 255001, 255000, 255007,
+        174766, 48171, 38398, 50429, 3573, 23693, 21, 4260
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġto",
+            "token_id": 1726,
+            "logprob": -0.0556,
+            "prob": 0.9458
+          },
+          {
+            "token": "Ġnejvětším",
+            "token_id": 181538,
+            "logprob": -3.2109,
+            "prob": 0.0403
+          },
+          {
+            "token": "Ġnejvětší",
+            "token_id": 79480,
+            "logprob": -4.8984,
+            "prob": 0.0075
+          },
+          {
+            "token": "Ġzároveň",
+            "token_id": 84476,
+            "logprob": -6.4375,
+            "prob": 0.0016
+          },
+          {
+            "token": "Ġnej",
+            "token_id": 13379,
+            "logprob": -6.6875,
+            "prob": 0.0012
+          },
+          {
+            "token": "Ġtaké",
+            "token_id": 16260,
+            "logprob": -7.0781,
+            "prob": 0.0008
+          },
+          {
+            "token": "Ġnajwiększym",
+            "token_id": 238079,
+            "logprob": -7.9141,
+            "prob": 0.0004
+          },
+          {
+            "token": "Ġsitu",
+            "token_id": 4736,
+            "logprob": -8.5703,
+            "prob": 0.0002
+          },
+          {
+            "token": "Ġhlavním",
+            "token_id": 98015,
+            "logprob": -8.7266,
+            "prob": 0.0002
+          },
+          {
+            "token": "Ġvýznamným",
+            "token_id": 228586,
+            "logprob": -8.9062,
+            "prob": 0.0001
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġto",
+        "token_id": 1726,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 9,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Jaké je hlavní město Česka?<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>Hlavní město České republiky je Praha. Je to",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Jak",
+        "é",
+        "Ġje",
+        "Ġhlavní",
+        "Ġměsto",
+        "ĠČeska",
+        "?",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "Hlavní",
+        "Ġměsto",
+        "ĠČeské",
+        "Ġrepubliky",
+        "Ġje",
+        "ĠPraha",
+        ".",
+        "ĠJe",
+        "Ġto"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 93148, 1751, 3573, 48613, 48171, 218951, 38, 255001, 255000, 255007,
+        174766, 48171, 38398, 50429, 3573, 23693, 21, 4260, 1726
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġnejvětší",
+            "token_id": 79480,
+            "logprob": -0.0004,
+            "prob": 0.9995
+          },
+          {
+            "token": "Ġnajwiększe",
+            "token_id": 247086,
+            "logprob": -9.2969,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġnej",
+            "token_id": 13379,
+            "logprob": -9.5938,
+            "prob": 0.0001
+          },
+          {
+            "token": "ĠNejvětší",
+            "token_id": 228619,
+            "logprob": -9.9531,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġnejvětším",
+            "token_id": 181538,
+            "logprob": -10.1875,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġnejvětších",
+            "token_id": 219232,
+            "logprob": -10.8594,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġnejstarší",
+            "token_id": 134165,
+            "logprob": -10.9531,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġnajwiększy",
+            "token_id": 251293,
+            "logprob": -11.6406,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġgrootste",
+            "token_id": 55641,
+            "logprob": -11.75,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġzároveň",
+            "token_id": 84476,
+            "logprob": -11.9531,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġnejvětší",
+        "token_id": 79480,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 10,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Jaké je hlavní město Česka?<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>Hlavní město České republiky je Praha. Je to největší",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Jak",
+        "é",
+        "Ġje",
+        "Ġhlavní",
+        "Ġměsto",
+        "ĠČeska",
+        "?",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "Hlavní",
+        "Ġměsto",
+        "ĠČeské",
+        "Ġrepubliky",
+        "Ġje",
+        "ĠPraha",
+        ".",
+        "ĠJe",
+        "Ġto",
+        "Ġnejvětší"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 93148, 1751, 3573, 48613, 48171, 218951, 38, 255001, 255000, 255007,
+        174766, 48171, 38398, 50429, 3573, 23693, 21, 4260, 1726, 79480
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġměsto",
+            "token_id": 48171,
+            "logprob": -0.0757,
+            "prob": 0.9272
+          },
+          {
+            "token": "Ġa",
+            "token_id": 1671,
+            "logprob": -2.6543,
+            "prob": 0.0704
+          },
+          {
+            "token": "Ġčeské",
+            "token_id": 65340,
+            "logprob": -6.9258,
+            "prob": 0.001
+          },
+          {
+            "token": "Ġmiasto",
+            "token_id": 57083,
+            "logprob": -8.2969,
+            "prob": 0.0002
+          },
+          {
+            "token": "Ġměstské",
+            "token_id": 123792,
+            "logprob": -8.375,
+            "prob": 0.0002
+          },
+          {
+            "token": "Ġměsta",
+            "token_id": 29541,
+            "logprob": -8.4219,
+            "prob": 0.0002
+          },
+          {
+            "token": "Ġмісто",
+            "token_id": 48890,
+            "logprob": -8.5938,
+            "prob": 0.0002
+          },
+          {
+            "token": "ĠMěsto",
+            "token_id": 118312,
+            "logprob": -9.25,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġměst",
+            "token_id": 29192,
+            "logprob": -9.2578,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġčeská",
+            "token_id": 86944,
+            "logprob": -10.1562,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġměsto",
+        "token_id": 48171,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 11,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Jaké je hlavní město Česka?<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>Hlavní město České republiky je Praha. Je to největší město",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Jak",
+        "é",
+        "Ġje",
+        "Ġhlavní",
+        "Ġměsto",
+        "ĠČeska",
+        "?",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "Hlavní",
+        "Ġměsto",
+        "ĠČeské",
+        "Ġrepubliky",
+        "Ġje",
+        "ĠPraha",
+        ".",
+        "ĠJe",
+        "Ġto",
+        "Ġnejvětší",
+        "Ġměsto"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 93148, 1751, 3573, 48613, 48171, 218951, 38, 255001, 255000, 255007,
+        174766, 48171, 38398, 50429, 3573, 23693, 21, 4260, 1726, 79480, 48171
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġv",
+            "token_id": 1745,
+            "logprob": -0.0106,
+            "prob": 0.9893
+          },
+          {
+            "token": "Ġzemě",
+            "token_id": 41440,
+            "logprob": -4.6211,
+            "prob": 0.0099
+          },
+          {
+            "token": "ĠČeské",
+            "token_id": 38398,
+            "logprob": -8.7109,
+            "prob": 0.0002
+          },
+          {
+            "token": "ĠČeska",
+            "token_id": 218951,
+            "logprob": -8.9453,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġa",
+            "token_id": 1671,
+            "logprob": -9.625,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġстраны",
+            "token_id": 34506,
+            "logprob": -10.1562,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠZemě",
+            "token_id": 141276,
+            "logprob": -10.3047,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠČR",
+            "token_id": 76683,
+            "logprob": -10.3203,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġstátu",
+            "token_id": 83898,
+            "logprob": -10.7422,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġkraju",
+            "token_id": 42106,
+            "logprob": -10.8125,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġv",
+        "token_id": 1745,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 12,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Jaké je hlavní město Česka?<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>Hlavní město České republiky je Praha. Je to největší město v",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Jak",
+        "é",
+        "Ġje",
+        "Ġhlavní",
+        "Ġměsto",
+        "ĠČeska",
+        "?",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "Hlavní",
+        "Ġměsto",
+        "ĠČeské",
+        "Ġrepubliky",
+        "Ġje",
+        "ĠPraha",
+        ".",
+        "ĠJe",
+        "Ġto",
+        "Ġnejvětší",
+        "Ġměsto",
+        "Ġv"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 93148, 1751, 3573, 48613, 48171, 218951, 38, 255001, 255000, 255007,
+        174766, 48171, 38398, 50429, 3573, 23693, 21, 4260, 1726, 79480, 48171, 1745
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġzemi",
+            "token_id": 99360,
+            "logprob": -0.0078,
+            "prob": 0.9922
+          },
+          {
+            "token": "ĠČesku",
+            "token_id": 67925,
+            "logprob": -5.2109,
+            "prob": 0.0055
+          },
+          {
+            "token": "ĠČeské",
+            "token_id": 38398,
+            "logprob": -6.7344,
+            "prob": 0.0012
+          },
+          {
+            "token": "ĠČR",
+            "token_id": 76683,
+            "logprob": -8.2891,
+            "prob": 0.0003
+          },
+          {
+            "token": "Ġzemích",
+            "token_id": 114101,
+            "logprob": -8.7969,
+            "prob": 0.0002
+          },
+          {
+            "token": "Ġстране",
+            "token_id": 65518,
+            "logprob": -9.75,
+            "prob": 0.0001
+          },
+          {
+            "token": "ĠČechách",
+            "token_id": 128934,
+            "logprob": -9.7656,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġzemě",
+            "token_id": 41440,
+            "logprob": -9.9531,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġкраїні",
+            "token_id": 137209,
+            "logprob": -9.9922,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġkraju",
+            "token_id": 42106,
+            "logprob": -10.0703,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġzemi",
+        "token_id": 99360,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 13,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Jaké je hlavní město Česka?<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>Hlavní město České republiky je Praha. Je to největší město v zemi",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Jak",
+        "é",
+        "Ġje",
+        "Ġhlavní",
+        "Ġměsto",
+        "ĠČeska",
+        "?",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "Hlavní",
+        "Ġměsto",
+        "ĠČeské",
+        "Ġrepubliky",
+        "Ġje",
+        "ĠPraha",
+        ".",
+        "ĠJe",
+        "Ġto",
+        "Ġnejvětší",
+        "Ġměsto",
+        "Ġv",
+        "Ġzemi"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 93148, 1751, 3573, 48613, 48171, 218951, 38, 255001, 255000, 255007,
+        174766, 48171, 38398, 50429, 3573, 23693, 21, 4260, 1726, 79480, 48171, 1745, 99360
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġa",
+            "token_id": 1671,
+            "logprob": -0.0278,
+            "prob": 0.9727
+          },
+          {
+            "token": ",",
+            "token_id": 19,
+            "logprob": -3.6836,
+            "prob": 0.0251
+          },
+          {
+            "token": "Ġs",
+            "token_id": 1679,
+            "logprob": -6.1055,
+            "prob": 0.0022
+          },
+          {
+            "token": "Ġz",
+            "token_id": 1977,
+            "logprob": -11.0781,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġboth",
+            "token_id": 3821,
+            "logprob": -12.3125,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġjak",
+            "token_id": 15356,
+            "logprob": -13.7969,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġtanto",
+            "token_id": 13834,
+            "logprob": -15.1953,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġpo",
+            "token_id": 2482,
+            "logprob": -17.1562,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġse",
+            "token_id": 1831,
+            "logprob": -16.375,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġ(",
+            "token_id": 1737,
+            "logprob": -16.2656,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġa",
+        "token_id": 1671,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 14,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Jaké je hlavní město Česka?<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>Hlavní město České republiky je Praha. Je to největší město v zemi a",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Jak",
+        "é",
+        "Ġje",
+        "Ġhlavní",
+        "Ġměsto",
+        "ĠČeska",
+        "?",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "Hlavní",
+        "Ġměsto",
+        "ĠČeské",
+        "Ġrepubliky",
+        "Ġje",
+        "ĠPraha",
+        ".",
+        "ĠJe",
+        "Ġto",
+        "Ġnejvětší",
+        "Ġměsto",
+        "Ġv",
+        "Ġzemi",
+        "Ġa"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 93148, 1751, 3573, 48613, 48171, 218951, 38, 255001, 255000, 255007,
+        174766, 48171, 38398, 50429, 3573, 23693, 21, 4260, 1726, 79480, 48171, 1745, 99360, 1671
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġzároveň",
+            "token_id": 84476,
+            "logprob": -0.9121,
+            "prob": 0.4019
+          },
+          {
+            "token": "Ġnachází",
+            "token_id": 40065,
+            "logprob": -1.5684,
+            "prob": 0.2084
+          },
+          {
+            "token": "Ġjedno",
+            "token_id": 67244,
+            "logprob": -2.2246,
+            "prob": 0.1082
+          },
+          {
+            "token": "Ġleží",
+            "token_id": 77063,
+            "logprob": -2.4199,
+            "prob": 0.0889
+          },
+          {
+            "token": "Ġkulturní",
+            "token_id": 84809,
+            "logprob": -2.8496,
+            "prob": 0.0579
+          },
+          {
+            "token": "Ġvýznamné",
+            "token_id": 155752,
+            "logprob": -2.9043,
+            "prob": 0.0548
+          },
+          {
+            "token": "Ġtaké",
+            "token_id": 16260,
+            "logprob": -3.3965,
+            "prob": 0.0335
+          },
+          {
+            "token": "Ġhraje",
+            "token_id": 131356,
+            "logprob": -5.1992,
+            "prob": 0.0055
+          },
+          {
+            "token": "Ġslouží",
+            "token_id": 115754,
+            "logprob": -5.2461,
+            "prob": 0.0053
+          },
+          {
+            "token": "Ġpůsobí",
+            "token_id": 125671,
+            "logprob": -6.043,
+            "prob": 0.0024
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġzároveň",
+        "token_id": 84476,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 15,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Jaké je hlavní město Česka?<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>Hlavní město České republiky je Praha. Je to největší město v zemi a zároveň",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Jak",
+        "é",
+        "Ġje",
+        "Ġhlavní",
+        "Ġměsto",
+        "ĠČeska",
+        "?",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "Hlavní",
+        "Ġměsto",
+        "ĠČeské",
+        "Ġrepubliky",
+        "Ġje",
+        "ĠPraha",
+        ".",
+        "ĠJe",
+        "Ġto",
+        "Ġnejvětší",
+        "Ġměsto",
+        "Ġv",
+        "Ġzemi",
+        "Ġa",
+        "Ġzároveň"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 93148, 1751, 3573, 48613, 48171, 218951, 38, 255001, 255000, 255007,
+        174766, 48171, 38398, 50429, 3573, 23693, 21, 4260, 1726, 79480, 48171, 1745, 99360, 1671,
+        84476
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġkulturní",
+            "token_id": 84809,
+            "logprob": -0.6704,
+            "prob": 0.5117
+          },
+          {
+            "token": "Ġpolitické",
+            "token_id": 134607,
+            "logprob": -1.2949,
+            "prob": 0.2737
+          },
+          {
+            "token": "Ġjejí",
+            "token_id": 30841,
+            "logprob": -1.8574,
+            "prob": 0.156
+          },
+          {
+            "token": "Ġvýznamné",
+            "token_id": 155752,
+            "logprob": -3.2793,
+            "prob": 0.0376
+          },
+          {
+            "token": "Ġpolit",
+            "token_id": 4117,
+            "logprob": -5.6094,
+            "prob": 0.0037
+          },
+          {
+            "token": "Ġpolitický",
+            "token_id": 179445,
+            "logprob": -6.1094,
+            "prob": 0.0022
+          },
+          {
+            "token": "Ġjedno",
+            "token_id": 67244,
+            "logprob": -6.2109,
+            "prob": 0.002
+          },
+          {
+            "token": "Ġcentrum",
+            "token_id": 48477,
+            "logprob": -6.2891,
+            "prob": 0.0019
+          },
+          {
+            "token": "Ġdůležité",
+            "token_id": 211110,
+            "logprob": -6.4141,
+            "prob": 0.0016
+          },
+          {
+            "token": "Ġhlavní",
+            "token_id": 48613,
+            "logprob": -6.8516,
+            "prob": 0.0011
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġkulturní",
+        "token_id": 84809,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 16,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Jaké je hlavní město Česka?<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>Hlavní město České republiky je Praha. Je to největší město v zemi a zároveň kulturní",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Jak",
+        "é",
+        "Ġje",
+        "Ġhlavní",
+        "Ġměsto",
+        "ĠČeska",
+        "?",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "Hlavní",
+        "Ġměsto",
+        "ĠČeské",
+        "Ġrepubliky",
+        "Ġje",
+        "ĠPraha",
+        ".",
+        "ĠJe",
+        "Ġto",
+        "Ġnejvětší",
+        "Ġměsto",
+        "Ġv",
+        "Ġzemi",
+        "Ġa",
+        "Ġzároveň",
+        "Ġkulturní"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 93148, 1751, 3573, 48613, 48171, 218951, 38, 255001, 255000, 255007,
+        174766, 48171, 38398, 50429, 3573, 23693, 21, 4260, 1726, 79480, 48171, 1745, 99360, 1671,
+        84476, 84809
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": ",",
+            "token_id": 19,
+            "logprob": -0.005,
+            "prob": 0.9951
+          },
+          {
+            "token": "Ġa",
+            "token_id": 1671,
+            "logprob": -5.3008,
+            "prob": 0.005
+          },
+          {
+            "token": "Ġcentrum",
+            "token_id": 48477,
+            "logprob": -12.1797,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġi",
+            "token_id": 2305,
+            "logprob": -13.4297,
+            "prob": 0.0
+          },
+          {
+            "token": "ho",
+            "token_id": 2566,
+            "logprob": -15.7578,
+            "prob": 0.0
+          },
+          {
+            "token": "،",
+            "token_id": 3196,
+            "logprob": -15.8984,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġstřed",
+            "token_id": 32723,
+            "logprob": -16.5625,
+            "prob": 0.0
+          },
+          {
+            "token": "<CLS>",
+            "token_id": 2,
+            "logprob": -31.1094,
+            "prob": 0.0
+          },
+          {
+            "token": "<UNK>",
+            "token_id": 1,
+            "logprob": -30.7344,
+            "prob": 0.0
+          },
+          {
+            "token": "<PAD>",
+            "token_id": 0,
+            "logprob": -31.0469,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": ",",
+        "token_id": 19,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 17,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Jaké je hlavní město Česka?<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>Hlavní město České republiky je Praha. Je to největší město v zemi a zároveň kulturní,",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Jak",
+        "é",
+        "Ġje",
+        "Ġhlavní",
+        "Ġměsto",
+        "ĠČeska",
+        "?",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "Hlavní",
+        "Ġměsto",
+        "ĠČeské",
+        "Ġrepubliky",
+        "Ġje",
+        "ĠPraha",
+        ".",
+        "ĠJe",
+        "Ġto",
+        "Ġnejvětší",
+        "Ġměsto",
+        "Ġv",
+        "Ġzemi",
+        "Ġa",
+        "Ġzároveň",
+        "Ġkulturní",
+        ","
+      ],
+      "token_ids": [
+        5, 255000, 255006, 93148, 1751, 3573, 48613, 48171, 218951, 38, 255001, 255000, 255007,
+        174766, 48171, 38398, 50429, 3573, 23693, 21, 4260, 1726, 79480, 48171, 1745, 99360, 1671,
+        84476, 84809, 19
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġpolitické",
+            "token_id": 134607,
+            "logprob": -0.1505,
+            "prob": 0.8604
+          },
+          {
+            "token": "Ġekonomické",
+            "token_id": 233370,
+            "logprob": -2.3066,
+            "prob": 0.0996
+          },
+          {
+            "token": "Ġpolitický",
+            "token_id": 179445,
+            "logprob": -3.5723,
+            "prob": 0.0281
+          },
+          {
+            "token": "Ġekonom",
+            "token_id": 26074,
+            "logprob": -5.6367,
+            "prob": 0.0036
+          },
+          {
+            "token": "Ġvědecké",
+            "token_id": 243805,
+            "logprob": -5.9961,
+            "prob": 0.0025
+          },
+          {
+            "token": "Ġhospodářské",
+            "token_id": 249692,
+            "logprob": -6.4336,
+            "prob": 0.0016
+          },
+          {
+            "token": "Ġhospodář",
+            "token_id": 91997,
+            "logprob": -6.6992,
+            "prob": 0.0012
+          },
+          {
+            "token": "Ġpolit",
+            "token_id": 4117,
+            "logprob": -7.1836,
+            "prob": 0.0008
+          },
+          {
+            "token": "Ġfinanční",
+            "token_id": 150593,
+            "logprob": -7.8477,
+            "prob": 0.0004
+          },
+          {
+            "token": "Ġvzděl",
+            "token_id": 82416,
+            "logprob": -8.5703,
+            "prob": 0.0002
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġpolitické",
+        "token_id": 134607,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 18,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Jaké je hlavní město Česka?<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>Hlavní město České republiky je Praha. Je to největší město v zemi a zároveň kulturní, politické",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Jak",
+        "é",
+        "Ġje",
+        "Ġhlavní",
+        "Ġměsto",
+        "ĠČeska",
+        "?",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "Hlavní",
+        "Ġměsto",
+        "ĠČeské",
+        "Ġrepubliky",
+        "Ġje",
+        "ĠPraha",
+        ".",
+        "ĠJe",
+        "Ġto",
+        "Ġnejvětší",
+        "Ġměsto",
+        "Ġv",
+        "Ġzemi",
+        "Ġa",
+        "Ġzároveň",
+        "Ġkulturní",
+        ",",
+        "Ġpolitické"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 93148, 1751, 3573, 48613, 48171, 218951, 38, 255001, 255000, 255007,
+        174766, 48171, 38398, 50429, 3573, 23693, 21, 4260, 1726, 79480, 48171, 1745, 99360, 1671,
+        84476, 84809, 19, 134607
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġa",
+            "token_id": 1671,
+            "logprob": -0.0011,
+            "prob": 0.999
+          },
+          {
+            "token": ",",
+            "token_id": 19,
+            "logprob": -6.8906,
+            "prob": 0.001
+          },
+          {
+            "token": "Ġi",
+            "token_id": 2305,
+            "logprob": -9.75,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġ(",
+            "token_id": 1737,
+            "logprob": -15.9453,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġnebo",
+            "token_id": 15522,
+            "logprob": -17.2031,
+            "prob": 0.0
+          },
+          {
+            "token": "<SEP>",
+            "token_id": 3,
+            "logprob": -32.1562,
+            "prob": 0.0
+          },
+          {
+            "token": "<MASK_TOKEN>",
+            "token_id": 4,
+            "logprob": -32.2812,
+            "prob": 0.0
+          },
+          {
+            "token": "<CLS>",
+            "token_id": 2,
+            "logprob": -32.1875,
+            "prob": 0.0
+          },
+          {
+            "token": "<PAD>",
+            "token_id": 0,
+            "logprob": -32.1875,
+            "prob": 0.0
+          },
+          {
+            "token": "<UNK>",
+            "token_id": 1,
+            "logprob": -30.9844,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġa",
+        "token_id": 1671,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 19,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Jaké je hlavní město Česka?<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>Hlavní město České republiky je Praha. Je to největší město v zemi a zároveň kulturní, politické a",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Jak",
+        "é",
+        "Ġje",
+        "Ġhlavní",
+        "Ġměsto",
+        "ĠČeska",
+        "?",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "Hlavní",
+        "Ġměsto",
+        "ĠČeské",
+        "Ġrepubliky",
+        "Ġje",
+        "ĠPraha",
+        ".",
+        "ĠJe",
+        "Ġto",
+        "Ġnejvětší",
+        "Ġměsto",
+        "Ġv",
+        "Ġzemi",
+        "Ġa",
+        "Ġzároveň",
+        "Ġkulturní",
+        ",",
+        "Ġpolitické",
+        "Ġa"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 93148, 1751, 3573, 48613, 48171, 218951, 38, 255001, 255000, 255007,
+        174766, 48171, 38398, 50429, 3573, 23693, 21, 4260, 1726, 79480, 48171, 1745, 99360, 1671,
+        84476, 84809, 19, 134607, 1671
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġekonomické",
+            "token_id": 233370,
+            "logprob": -0.006,
+            "prob": 0.9941
+          },
+          {
+            "token": "Ġhospodářské",
+            "token_id": 249692,
+            "logprob": -5.3359,
+            "prob": 0.0048
+          },
+          {
+            "token": "Ġekonom",
+            "token_id": 26074,
+            "logprob": -7.0391,
+            "prob": 0.0009
+          },
+          {
+            "token": "Ġеконом",
+            "token_id": 55608,
+            "logprob": -9.8672,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġekonomik",
+            "token_id": 97709,
+            "logprob": -10.1953,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġfinanční",
+            "token_id": 150593,
+            "logprob": -11.0391,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġhospodář",
+            "token_id": 91997,
+            "logprob": -11.1484,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġэкономической",
+            "token_id": 150164,
+            "logprob": -11.2891,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġwirtschaftliche",
+            "token_id": 239890,
+            "logprob": -11.4297,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġgospodarc",
+            "token_id": 127618,
+            "logprob": -11.4453,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġekonomické",
+        "token_id": 233370,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 20,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Jaké je hlavní město Česka?<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>Hlavní město České republiky je Praha. Je to největší město v zemi a zároveň kulturní, politické a ekonomické",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Jak",
+        "é",
+        "Ġje",
+        "Ġhlavní",
+        "Ġměsto",
+        "ĠČeska",
+        "?",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "Hlavní",
+        "Ġměsto",
+        "ĠČeské",
+        "Ġrepubliky",
+        "Ġje",
+        "ĠPraha",
+        ".",
+        "ĠJe",
+        "Ġto",
+        "Ġnejvětší",
+        "Ġměsto",
+        "Ġv",
+        "Ġzemi",
+        "Ġa",
+        "Ġzároveň",
+        "Ġkulturní",
+        ",",
+        "Ġpolitické",
+        "Ġa",
+        "Ġekonomické"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 93148, 1751, 3573, 48613, 48171, 218951, 38, 255001, 255000, 255007,
+        174766, 48171, 38398, 50429, 3573, 23693, 21, 4260, 1726, 79480, 48171, 1745, 99360, 1671,
+        84476, 84809, 19, 134607, 1671, 233370
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġcentrum",
+            "token_id": 48477,
+            "logprob": -0.0024,
+            "prob": 0.9976
+          },
+          {
+            "token": "Ġstřed",
+            "token_id": 32723,
+            "logprob": -6.3789,
+            "prob": 0.0017
+          },
+          {
+            "token": "Ġcentrem",
+            "token_id": 188648,
+            "logprob": -8.4062,
+            "prob": 0.0002
+          },
+          {
+            "token": "Ġcentru",
+            "token_id": 102666,
+            "logprob": -8.7031,
+            "prob": 0.0002
+          },
+          {
+            "token": "Ġcentro",
+            "token_id": 14306,
+            "logprob": -9.5625,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġκέντρο",
+            "token_id": 77563,
+            "logprob": -9.75,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġcentra",
+            "token_id": 60428,
+            "logprob": -10.8203,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġsrdce",
+            "token_id": 208864,
+            "logprob": -10.8984,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġsídlo",
+            "token_id": 143255,
+            "logprob": -10.9141,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġcenter",
+            "token_id": 7524,
+            "logprob": -10.9688,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġcentrum",
+        "token_id": 48477,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 21,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Jaké je hlavní město Česka?<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>Hlavní město České republiky je Praha. Je to největší město v zemi a zároveň kulturní, politické a ekonomické centrum",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Jak",
+        "é",
+        "Ġje",
+        "Ġhlavní",
+        "Ġměsto",
+        "ĠČeska",
+        "?",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "Hlavní",
+        "Ġměsto",
+        "ĠČeské",
+        "Ġrepubliky",
+        "Ġje",
+        "ĠPraha",
+        ".",
+        "ĠJe",
+        "Ġto",
+        "Ġnejvětší",
+        "Ġměsto",
+        "Ġv",
+        "Ġzemi",
+        "Ġa",
+        "Ġzároveň",
+        "Ġkulturní",
+        ",",
+        "Ġpolitické",
+        "Ġa",
+        "Ġekonomické",
+        "Ġcentrum"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 93148, 1751, 3573, 48613, 48171, 218951, 38, 255001, 255000, 255007,
+        174766, 48171, 38398, 50429, 3573, 23693, 21, 4260, 1726, 79480, 48171, 1745, 99360, 1671,
+        84476, 84809, 19, 134607, 1671, 233370, 48477
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": ".",
+            "token_id": 21,
+            "logprob": -0.102,
+            "prob": 0.9028
+          },
+          {
+            "token": "ĠČeské",
+            "token_id": 38398,
+            "logprob": -2.8828,
+            "prob": 0.056
+          },
+          {
+            "token": "ĠČeska",
+            "token_id": 218951,
+            "logprob": -3.4141,
+            "prob": 0.0329
+          },
+          {
+            "token": "ĠČR",
+            "token_id": 76683,
+            "logprob": -6.0,
+            "prob": 0.0025
+          },
+          {
+            "token": "ĠČeskoslovenska",
+            "token_id": 107086,
+            "logprob": -6.5391,
+            "prob": 0.0014
+          },
+          {
+            "token": "ĠČech",
+            "token_id": 60144,
+            "logprob": -6.5625,
+            "prob": 0.0014
+          },
+          {
+            "token": "ĠČe",
+            "token_id": 160764,
+            "logprob": -7.3984,
+            "prob": 0.0006
+          },
+          {
+            "token": "ĠČesku",
+            "token_id": 67925,
+            "logprob": -7.8516,
+            "prob": 0.0004
+          },
+          {
+            "token": "ĠČesko",
+            "token_id": 198055,
+            "logprob": -8.0703,
+            "prob": 0.0003
+          },
+          {
+            "token": "ĠČesk",
+            "token_id": 19224,
+            "logprob": -8.3984,
+            "prob": 0.0002
+          }
+        ]
+      },
+      "selected_token": {
+        "token": ".",
+        "token_id": 21,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 22,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Jaké je hlavní město Česka?<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>Hlavní město České republiky je Praha. Je to největší město v zemi a zároveň kulturní, politické a ekonomické centrum.",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Jak",
+        "é",
+        "Ġje",
+        "Ġhlavní",
+        "Ġměsto",
+        "ĠČeska",
+        "?",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "Hlavní",
+        "Ġměsto",
+        "ĠČeské",
+        "Ġrepubliky",
+        "Ġje",
+        "ĠPraha",
+        ".",
+        "ĠJe",
+        "Ġto",
+        "Ġnejvětší",
+        "Ġměsto",
+        "Ġv",
+        "Ġzemi",
+        "Ġa",
+        "Ġzároveň",
+        "Ġkulturní",
+        ",",
+        "Ġpolitické",
+        "Ġa",
+        "Ġekonomické",
+        "Ġcentrum",
+        "."
+      ],
+      "token_ids": [
+        5, 255000, 255006, 93148, 1751, 3573, 48613, 48171, 218951, 38, 255001, 255000, 255007,
+        174766, 48171, 38398, 50429, 3573, 23693, 21, 4260, 1726, 79480, 48171, 1745, 99360, 1671,
+        84476, 84809, 19, 134607, 1671, 233370, 48477, 21
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "ĠPraha",
+            "token_id": 23693,
+            "logprob": -0.023,
+            "prob": 0.9771
+          },
+          {
+            "token": "ĠNachází",
+            "token_id": 101697,
+            "logprob": -4.0547,
+            "prob": 0.0173
+          },
+          {
+            "token": "Praha",
+            "token_id": 172961,
+            "logprob": -7.1875,
+            "prob": 0.0008
+          },
+          {
+            "token": "ĠSitu",
+            "token_id": 44830,
+            "logprob": -7.2656,
+            "prob": 0.0007
+          },
+          {
+            "token": "ĠUm",
+            "token_id": 11054,
+            "logprob": -7.2812,
+            "prob": 0.0007
+          },
+          {
+            "token": "ĠPraga",
+            "token_id": 65299,
+            "logprob": -7.5547,
+            "prob": 0.0005
+          },
+          {
+            "token": "ĠPraze",
+            "token_id": 39898,
+            "logprob": -8.1953,
+            "prob": 0.0003
+          },
+          {
+            "token": "Ġnachází",
+            "token_id": 40065,
+            "logprob": -8.625,
+            "prob": 0.0002
+          },
+          {
+            "token": "ĠPra",
+            "token_id": 10075,
+            "logprob": -8.7422,
+            "prob": 0.0002
+          },
+          {
+            "token": "ĠLeží",
+            "token_id": 190799,
+            "logprob": -9.0547,
+            "prob": 0.0001
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "ĠPraha",
+        "token_id": 23693,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 23,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Jaké je hlavní město Česka?<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>Hlavní město České republiky je Praha. Je to největší město v zemi a zároveň kulturní, politické a ekonomické centrum. Praha",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Jak",
+        "é",
+        "Ġje",
+        "Ġhlavní",
+        "Ġměsto",
+        "ĠČeska",
+        "?",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "Hlavní",
+        "Ġměsto",
+        "ĠČeské",
+        "Ġrepubliky",
+        "Ġje",
+        "ĠPraha",
+        ".",
+        "ĠJe",
+        "Ġto",
+        "Ġnejvětší",
+        "Ġměsto",
+        "Ġv",
+        "Ġzemi",
+        "Ġa",
+        "Ġzároveň",
+        "Ġkulturní",
+        ",",
+        "Ġpolitické",
+        "Ġa",
+        "Ġekonomické",
+        "Ġcentrum",
+        ".",
+        "ĠPraha"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 93148, 1751, 3573, 48613, 48171, 218951, 38, 255001, 255000, 255007,
+        174766, 48171, 38398, 50429, 3573, 23693, 21, 4260, 1726, 79480, 48171, 1745, 99360, 1671,
+        84476, 84809, 19, 134607, 1671, 233370, 48477, 21, 23693
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġje",
+            "token_id": 3573,
+            "logprob": -0.2412,
+            "prob": 0.7856
+          },
+          {
+            "token": "Ġse",
+            "token_id": 1831,
+            "logprob": -1.96,
+            "prob": 0.1409
+          },
+          {
+            "token": "Ġleží",
+            "token_id": 77063,
+            "logprob": -2.6152,
+            "prob": 0.0731
+          },
+          {
+            "token": "Ġmá",
+            "token_id": 8707,
+            "logprob": -8.5859,
+            "prob": 0.0002
+          },
+          {
+            "token": "Ġlies",
+            "token_id": 20141,
+            "logprob": -9.6797,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġznámá",
+            "token_id": 166874,
+            "logprob": -10.9297,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġliegt",
+            "token_id": 30924,
+            "logprob": -11.3984,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġnachází",
+            "token_id": 40065,
+            "logprob": -11.625,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġleży",
+            "token_id": 144321,
+            "logprob": -11.6562,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġbyla",
+            "token_id": 12183,
+            "logprob": -11.8047,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġje",
+        "token_id": 3573,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 24,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Jaké je hlavní město Česka?<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>Hlavní město České republiky je Praha. Je to největší město v zemi a zároveň kulturní, politické a ekonomické centrum. Praha je",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Jak",
+        "é",
+        "Ġje",
+        "Ġhlavní",
+        "Ġměsto",
+        "ĠČeska",
+        "?",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "Hlavní",
+        "Ġměsto",
+        "ĠČeské",
+        "Ġrepubliky",
+        "Ġje",
+        "ĠPraha",
+        ".",
+        "ĠJe",
+        "Ġto",
+        "Ġnejvětší",
+        "Ġměsto",
+        "Ġv",
+        "Ġzemi",
+        "Ġa",
+        "Ġzároveň",
+        "Ġkulturní",
+        ",",
+        "Ġpolitické",
+        "Ġa",
+        "Ġekonomické",
+        "Ġcentrum",
+        ".",
+        "ĠPraha",
+        "Ġje"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 93148, 1751, 3573, 48613, 48171, 218951, 38, 255001, 255000, 255007,
+        174766, 48171, 38398, 50429, 3573, 23693, 21, 4260, 1726, 79480, 48171, 1745, 99360, 1671,
+        84476, 84809, 19, 134607, 1671, 233370, 48477, 21, 23693, 3573
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġznámá",
+            "token_id": 166874,
+            "logprob": -0.0005,
+            "prob": 0.9995
+          },
+          {
+            "token": "Ġznámý",
+            "token_id": 119764,
+            "logprob": -8.9219,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġznámé",
+            "token_id": 153818,
+            "logprob": -9.2031,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġprosl",
+            "token_id": 184586,
+            "logprob": -9.3125,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġvýznam",
+            "token_id": 38845,
+            "logprob": -10.1562,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġzná",
+            "token_id": 103442,
+            "logprob": -10.875,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġpovažována",
+            "token_id": 223930,
+            "logprob": -10.9375,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġkrás",
+            "token_id": 170562,
+            "logprob": -10.9844,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġznám",
+            "token_id": 42913,
+            "logprob": -11.3047,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġoblíben",
+            "token_id": 161554,
+            "logprob": -11.6406,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġznámá",
+        "token_id": 166874,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 25,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Jaké je hlavní město Česka?<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>Hlavní město České republiky je Praha. Je to největší město v zemi a zároveň kulturní, politické a ekonomické centrum. Praha je známá",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Jak",
+        "é",
+        "Ġje",
+        "Ġhlavní",
+        "Ġměsto",
+        "ĠČeska",
+        "?",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "Hlavní",
+        "Ġměsto",
+        "ĠČeské",
+        "Ġrepubliky",
+        "Ġje",
+        "ĠPraha",
+        ".",
+        "ĠJe",
+        "Ġto",
+        "Ġnejvětší",
+        "Ġměsto",
+        "Ġv",
+        "Ġzemi",
+        "Ġa",
+        "Ġzároveň",
+        "Ġkulturní",
+        ",",
+        "Ġpolitické",
+        "Ġa",
+        "Ġekonomické",
+        "Ġcentrum",
+        ".",
+        "ĠPraha",
+        "Ġje",
+        "Ġznámá"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 93148, 1751, 3573, 48613, 48171, 218951, 38, 255001, 255000, 255007,
+        174766, 48171, 38398, 50429, 3573, 23693, 21, 4260, 1726, 79480, 48171, 1745, 99360, 1671,
+        84476, 84809, 19, 134607, 1671, 233370, 48477, 21, 23693, 3573, 166874
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġpro",
+            "token_id": 1830,
+            "logprob": -0.7036,
+            "prob": 0.4949
+          },
+          {
+            "token": "Ġsvou",
+            "token_id": 48738,
+            "logprob": -0.7349,
+            "prob": 0.4795
+          },
+          {
+            "token": "Ġsvým",
+            "token_id": 70020,
+            "logprob": -4.0781,
+            "prob": 0.0169
+          },
+          {
+            "token": "Ġsvými",
+            "token_id": 121309,
+            "logprob": -4.9375,
+            "prob": 0.0072
+          },
+          {
+            "token": "Ġjako",
+            "token_id": 6664,
+            "logprob": -7.1875,
+            "prob": 0.0008
+          },
+          {
+            "token": "Ġpo",
+            "token_id": 2482,
+            "logprob": -7.7969,
+            "prob": 0.0004
+          },
+          {
+            "token": "Ġсвоєю",
+            "token_id": 158361,
+            "logprob": -9.1719,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġkrás",
+            "token_id": 170562,
+            "logprob": -9.9844,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġswoją",
+            "token_id": 69621,
+            "logprob": -10.2891,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġsvé",
+            "token_id": 27072,
+            "logprob": -10.7734,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġpro",
+        "token_id": 1830,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 26,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Jaké je hlavní město Česka?<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>Hlavní město České republiky je Praha. Je to největší město v zemi a zároveň kulturní, politické a ekonomické centrum. Praha je známá pro",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Jak",
+        "é",
+        "Ġje",
+        "Ġhlavní",
+        "Ġměsto",
+        "ĠČeska",
+        "?",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "Hlavní",
+        "Ġměsto",
+        "ĠČeské",
+        "Ġrepubliky",
+        "Ġje",
+        "ĠPraha",
+        ".",
+        "ĠJe",
+        "Ġto",
+        "Ġnejvětší",
+        "Ġměsto",
+        "Ġv",
+        "Ġzemi",
+        "Ġa",
+        "Ġzároveň",
+        "Ġkulturní",
+        ",",
+        "Ġpolitické",
+        "Ġa",
+        "Ġekonomické",
+        "Ġcentrum",
+        ".",
+        "ĠPraha",
+        "Ġje",
+        "Ġznámá",
+        "Ġpro"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 93148, 1751, 3573, 48613, 48171, 218951, 38, 255001, 255000, 255007,
+        174766, 48171, 38398, 50429, 3573, 23693, 21, 4260, 1726, 79480, 48171, 1745, 99360, 1671,
+        84476, 84809, 19, 134607, 1671, 233370, 48477, 21, 23693, 3573, 166874, 1830
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġsvou",
+            "token_id": 48738,
+            "logprob": -0.0098,
+            "prob": 0.9902
+          },
+          {
+            "token": "Ġsvé",
+            "token_id": 27072,
+            "logprob": -4.8398,
+            "prob": 0.0079
+          },
+          {
+            "token": "Ġsvoji",
+            "token_id": 153885,
+            "logprob": -6.418,
+            "prob": 0.0016
+          },
+          {
+            "token": "Ġsvůj",
+            "token_id": 65199,
+            "logprob": -9.2109,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġsv",
+            "token_id": 6396,
+            "logprob": -10.3359,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġswoją",
+            "token_id": 69621,
+            "logprob": -10.4766,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġсвою",
+            "token_id": 22621,
+            "logprob": -11.1172,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġs",
+            "token_id": 1679,
+            "logprob": -12.0078,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġbohat",
+            "token_id": 117386,
+            "logprob": -12.3828,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġsvého",
+            "token_id": 45785,
+            "logprob": -12.8594,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġsvou",
+        "token_id": 48738,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 27,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Jaké je hlavní město Česka?<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>Hlavní město České republiky je Praha. Je to největší město v zemi a zároveň kulturní, politické a ekonomické centrum. Praha je známá pro svou",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Jak",
+        "é",
+        "Ġje",
+        "Ġhlavní",
+        "Ġměsto",
+        "ĠČeska",
+        "?",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "Hlavní",
+        "Ġměsto",
+        "ĠČeské",
+        "Ġrepubliky",
+        "Ġje",
+        "ĠPraha",
+        ".",
+        "ĠJe",
+        "Ġto",
+        "Ġnejvětší",
+        "Ġměsto",
+        "Ġv",
+        "Ġzemi",
+        "Ġa",
+        "Ġzároveň",
+        "Ġkulturní",
+        ",",
+        "Ġpolitické",
+        "Ġa",
+        "Ġekonomické",
+        "Ġcentrum",
+        ".",
+        "ĠPraha",
+        "Ġje",
+        "Ġznámá",
+        "Ġpro",
+        "Ġsvou"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 93148, 1751, 3573, 48613, 48171, 218951, 38, 255001, 255000, 255007,
+        174766, 48171, 38398, 50429, 3573, 23693, 21, 4260, 1726, 79480, 48171, 1745, 99360, 1671,
+        84476, 84809, 19, 134607, 1671, 233370, 48477, 21, 23693, 3573, 166874, 1830, 48738
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġbohat",
+            "token_id": 117386,
+            "logprob": -0.0316,
+            "prob": 0.9688
+          },
+          {
+            "token": "Ġkrás",
+            "token_id": 170562,
+            "logprob": -3.5312,
+            "prob": 0.0293
+          },
+          {
+            "token": "Ġboh",
+            "token_id": 42205,
+            "logprob": -7.2188,
+            "prob": 0.0007
+          },
+          {
+            "token": "Ġhistor",
+            "token_id": 6226,
+            "logprob": -7.2969,
+            "prob": 0.0007
+          },
+          {
+            "token": "Ġhistorii",
+            "token_id": 45807,
+            "logprob": -8.6719,
+            "prob": 0.0002
+          },
+          {
+            "token": "Ġnád",
+            "token_id": 82857,
+            "logprob": -9.3516,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġπλούσια",
+            "token_id": 242045,
+            "logprob": -10.8281,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġrijke",
+            "token_id": 243317,
+            "logprob": -11.0625,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġhistorické",
+            "token_id": 167951,
+            "logprob": -11.1641,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġbog",
+            "token_id": 41883,
+            "logprob": -11.3672,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġbohat",
+        "token_id": 117386,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 28,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Jaké je hlavní město Česka?<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>Hlavní město České republiky je Praha. Je to největší město v zemi a zároveň kulturní, politické a ekonomické centrum. Praha je známá pro svou bohat",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Jak",
+        "é",
+        "Ġje",
+        "Ġhlavní",
+        "Ġměsto",
+        "ĠČeska",
+        "?",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "Hlavní",
+        "Ġměsto",
+        "ĠČeské",
+        "Ġrepubliky",
+        "Ġje",
+        "ĠPraha",
+        ".",
+        "ĠJe",
+        "Ġto",
+        "Ġnejvětší",
+        "Ġměsto",
+        "Ġv",
+        "Ġzemi",
+        "Ġa",
+        "Ġzároveň",
+        "Ġkulturní",
+        ",",
+        "Ġpolitické",
+        "Ġa",
+        "Ġekonomické",
+        "Ġcentrum",
+        ".",
+        "ĠPraha",
+        "Ġje",
+        "Ġznámá",
+        "Ġpro",
+        "Ġsvou",
+        "Ġbohat"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 93148, 1751, 3573, 48613, 48171, 218951, 38, 255001, 255000, 255007,
+        174766, 48171, 38398, 50429, 3573, 23693, 21, 4260, 1726, 79480, 48171, 1745, 99360, 1671,
+        84476, 84809, 19, 134607, 1671, 233370, 48477, 21, 23693, 3573, 166874, 1830, 48738, 117386
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "ou",
+            "token_id": 1701,
+            "logprob": -0.0,
+            "prob": 1.0
+          },
+          {
+            "token": "nou",
+            "token_id": 17301,
+            "logprob": -12.8281,
+            "prob": 0.0
+          },
+          {
+            "token": "skou",
+            "token_id": 30064,
+            "logprob": -14.0,
+            "prob": 0.0
+          },
+          {
+            "token": "ую",
+            "token_id": 4092,
+            "logprob": -15.3438,
+            "prob": 0.0
+          },
+          {
+            "token": "ą",
+            "token_id": 2584,
+            "logprob": -15.2969,
+            "prob": 0.0
+          },
+          {
+            "token": "ě",
+            "token_id": 2345,
+            "logprob": -15.6406,
+            "prob": 0.0
+          },
+          {
+            "token": "ý",
+            "token_id": 2533,
+            "logprob": -16.6094,
+            "prob": 0.0
+          },
+          {
+            "token": "шую",
+            "token_id": 46092,
+            "logprob": -16.5156,
+            "prob": 0.0
+          },
+          {
+            "token": "<PAD>",
+            "token_id": 0,
+            "logprob": -31.9688,
+            "prob": 0.0
+          },
+          {
+            "token": "<UNK>",
+            "token_id": 1,
+            "logprob": -31.4688,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "ou",
+        "token_id": 1701,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 29,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Jaké je hlavní město Česka?<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>Hlavní město České republiky je Praha. Je to největší město v zemi a zároveň kulturní, politické a ekonomické centrum. Praha je známá pro svou bohatou",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Jak",
+        "é",
+        "Ġje",
+        "Ġhlavní",
+        "Ġměsto",
+        "ĠČeska",
+        "?",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "Hlavní",
+        "Ġměsto",
+        "ĠČeské",
+        "Ġrepubliky",
+        "Ġje",
+        "ĠPraha",
+        ".",
+        "ĠJe",
+        "Ġto",
+        "Ġnejvětší",
+        "Ġměsto",
+        "Ġv",
+        "Ġzemi",
+        "Ġa",
+        "Ġzároveň",
+        "Ġkulturní",
+        ",",
+        "Ġpolitické",
+        "Ġa",
+        "Ġekonomické",
+        "Ġcentrum",
+        ".",
+        "ĠPraha",
+        "Ġje",
+        "Ġznámá",
+        "Ġpro",
+        "Ġsvou",
+        "Ġbohat",
+        "ou"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 93148, 1751, 3573, 48613, 48171, 218951, 38, 255001, 255000, 255007,
+        174766, 48171, 38398, 50429, 3573, 23693, 21, 4260, 1726, 79480, 48171, 1745, 99360, 1671,
+        84476, 84809, 19, 134607, 1671, 233370, 48477, 21, 23693, 3573, 166874, 1830, 48738, 117386,
+        1701
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġhistorii",
+            "token_id": 45807,
+            "logprob": -0.0001,
+            "prob": 1.0
+          },
+          {
+            "token": "Ġисторию",
+            "token_id": 78201,
+            "logprob": -10.3906,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġhistorię",
+            "token_id": 205392,
+            "logprob": -11.1094,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġhistor",
+            "token_id": 6226,
+            "logprob": -11.9531,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġhistorie",
+            "token_id": 104459,
+            "logprob": -11.9844,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġhistori",
+            "token_id": 15765,
+            "logprob": -12.4688,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġісторію",
+            "token_id": 154399,
+            "logprob": -13.6016,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġarchitekt",
+            "token_id": 56100,
+            "logprob": -13.7266,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġdějiny",
+            "token_id": 189009,
+            "logprob": -14.0156,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġhistoria",
+            "token_id": 17947,
+            "logprob": -14.0547,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġhistorii",
+        "token_id": 45807,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 30,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Jaké je hlavní město Česka?<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>Hlavní město České republiky je Praha. Je to největší město v zemi a zároveň kulturní, politické a ekonomické centrum. Praha je známá pro svou bohatou historii",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Jak",
+        "é",
+        "Ġje",
+        "Ġhlavní",
+        "Ġměsto",
+        "ĠČeska",
+        "?",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "Hlavní",
+        "Ġměsto",
+        "ĠČeské",
+        "Ġrepubliky",
+        "Ġje",
+        "ĠPraha",
+        ".",
+        "ĠJe",
+        "Ġto",
+        "Ġnejvětší",
+        "Ġměsto",
+        "Ġv",
+        "Ġzemi",
+        "Ġa",
+        "Ġzároveň",
+        "Ġkulturní",
+        ",",
+        "Ġpolitické",
+        "Ġa",
+        "Ġekonomické",
+        "Ġcentrum",
+        ".",
+        "ĠPraha",
+        "Ġje",
+        "Ġznámá",
+        "Ġpro",
+        "Ġsvou",
+        "Ġbohat",
+        "ou",
+        "Ġhistorii"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 93148, 1751, 3573, 48613, 48171, 218951, 38, 255001, 255000, 255007,
+        174766, 48171, 38398, 50429, 3573, 23693, 21, 4260, 1726, 79480, 48171, 1745, 99360, 1671,
+        84476, 84809, 19, 134607, 1671, 233370, 48477, 21, 23693, 3573, 166874, 1830, 48738, 117386,
+        1701, 45807
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": ",",
+            "token_id": 19,
+            "logprob": -0.0001,
+            "prob": 1.0
+          },
+          {
+            "token": "Ġa",
+            "token_id": 1671,
+            "logprob": -9.0625,
+            "prob": 0.0001
+          },
+          {
+            "token": "،",
+            "token_id": 3196,
+            "logprob": -17.0312,
+            "prob": 0.0
+          },
+          {
+            "token": "<PAD>",
+            "token_id": 0,
+            "logprob": -33.0312,
+            "prob": 0.0
+          },
+          {
+            "token": "<EOS_TOKEN>",
+            "token_id": 6,
+            "logprob": -27.2969,
+            "prob": 0.0
+          },
+          {
+            "token": "<SEP>",
+            "token_id": 3,
+            "logprob": -33.375,
+            "prob": 0.0
+          },
+          {
+            "token": "<BOS_TOKEN>",
+            "token_id": 5,
+            "logprob": -30.6562,
+            "prob": 0.0
+          },
+          {
+            "token": "<MASK_TOKEN>",
+            "token_id": 4,
+            "logprob": -33.1875,
+            "prob": 0.0
+          },
+          {
+            "token": "<UNK>",
+            "token_id": 1,
+            "logprob": -31.9219,
+            "prob": 0.0
+          },
+          {
+            "token": "<CLS>",
+            "token_id": 2,
+            "logprob": -33.1562,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": ",",
+        "token_id": 19,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 31,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Jaké je hlavní město Česka?<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>Hlavní město České republiky je Praha. Je to největší město v zemi a zároveň kulturní, politické a ekonomické centrum. Praha je známá pro svou bohatou historii,",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Jak",
+        "é",
+        "Ġje",
+        "Ġhlavní",
+        "Ġměsto",
+        "ĠČeska",
+        "?",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "Hlavní",
+        "Ġměsto",
+        "ĠČeské",
+        "Ġrepubliky",
+        "Ġje",
+        "ĠPraha",
+        ".",
+        "ĠJe",
+        "Ġto",
+        "Ġnejvětší",
+        "Ġměsto",
+        "Ġv",
+        "Ġzemi",
+        "Ġa",
+        "Ġzároveň",
+        "Ġkulturní",
+        ",",
+        "Ġpolitické",
+        "Ġa",
+        "Ġekonomické",
+        "Ġcentrum",
+        ".",
+        "ĠPraha",
+        "Ġje",
+        "Ġznámá",
+        "Ġpro",
+        "Ġsvou",
+        "Ġbohat",
+        "ou",
+        "Ġhistorii",
+        ","
+      ],
+      "token_ids": [
+        5, 255000, 255006, 93148, 1751, 3573, 48613, 48171, 218951, 38, 255001, 255000, 255007,
+        174766, 48171, 38398, 50429, 3573, 23693, 21, 4260, 1726, 79480, 48171, 1745, 99360, 1671,
+        84476, 84809, 19, 134607, 1671, 233370, 48477, 21, 23693, 3573, 166874, 1830, 48738, 117386,
+        1701, 45807, 19
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġkrás",
+            "token_id": 170562,
+            "logprob": -0.1243,
+            "prob": 0.8833
+          },
+          {
+            "token": "Ġarchitekton",
+            "token_id": 126873,
+            "logprob": -2.7188,
+            "prob": 0.066
+          },
+          {
+            "token": "Ġarchitekt",
+            "token_id": 56100,
+            "logprob": -3.0625,
+            "prob": 0.0468
+          },
+          {
+            "token": "Ġnád",
+            "token_id": 82857,
+            "logprob": -5.9844,
+            "prob": 0.0025
+          },
+          {
+            "token": "Ġarch",
+            "token_id": 5466,
+            "logprob": -8.2031,
+            "prob": 0.0003
+          },
+          {
+            "token": "Ġú",
+            "token_id": 4794,
+            "logprob": -8.4531,
+            "prob": 0.0002
+          },
+          {
+            "token": "Ġim",
+            "token_id": 2101,
+            "logprob": -8.6328,
+            "prob": 0.0002
+          },
+          {
+            "token": "Ġpůsob",
+            "token_id": 50820,
+            "logprob": -8.9531,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġarchitect",
+            "token_id": 8936,
+            "logprob": -9.7656,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġmal",
+            "token_id": 7241,
+            "logprob": -9.9062,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġkrás",
+        "token_id": 170562,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 32,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Jaké je hlavní město Česka?<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>Hlavní město České republiky je Praha. Je to největší město v zemi a zároveň kulturní, politické a ekonomické centrum. Praha je známá pro svou bohatou historii, krás",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Jak",
+        "é",
+        "Ġje",
+        "Ġhlavní",
+        "Ġměsto",
+        "ĠČeska",
+        "?",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "Hlavní",
+        "Ġměsto",
+        "ĠČeské",
+        "Ġrepubliky",
+        "Ġje",
+        "ĠPraha",
+        ".",
+        "ĠJe",
+        "Ġto",
+        "Ġnejvětší",
+        "Ġměsto",
+        "Ġv",
+        "Ġzemi",
+        "Ġa",
+        "Ġzároveň",
+        "Ġkulturní",
+        ",",
+        "Ġpolitické",
+        "Ġa",
+        "Ġekonomické",
+        "Ġcentrum",
+        ".",
+        "ĠPraha",
+        "Ġje",
+        "Ġznámá",
+        "Ġpro",
+        "Ġsvou",
+        "Ġbohat",
+        "ou",
+        "Ġhistorii",
+        ",",
+        "Ġkrás"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 93148, 1751, 3573, 48613, 48171, 218951, 38, 255001, 255000, 255007,
+        174766, 48171, 38398, 50429, 3573, 23693, 21, 4260, 1726, 79480, 48171, 1745, 99360, 1671,
+        84476, 84809, 19, 134607, 1671, 233370, 48477, 21, 23693, 3573, 166874, 1830, 48738, 117386,
+        1701, 45807, 19, 170562
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "nou",
+            "token_id": 17301,
+            "logprob": -0.0003,
+            "prob": 0.9995
+          },
+          {
+            "token": "né",
+            "token_id": 6425,
+            "logprob": -8.2812,
+            "prob": 0.0003
+          },
+          {
+            "token": "ná",
+            "token_id": 11280,
+            "logprob": -10.8438,
+            "prob": 0.0
+          },
+          {
+            "token": "ную",
+            "token_id": 8346,
+            "logprob": -10.8594,
+            "prob": 0.0
+          },
+          {
+            "token": "ovou",
+            "token_id": 25741,
+            "logprob": -11.3281,
+            "prob": 0.0
+          },
+          {
+            "token": "ou",
+            "token_id": 1701,
+            "logprob": -11.5312,
+            "prob": 0.0
+          },
+          {
+            "token": "ną",
+            "token_id": 14988,
+            "logprob": -12.6875,
+            "prob": 0.0
+          },
+          {
+            "token": "skou",
+            "token_id": 30064,
+            "logprob": -13.5312,
+            "prob": 0.0
+          },
+          {
+            "token": "ný",
+            "token_id": 12724,
+            "logprob": -13.625,
+            "prob": 0.0
+          },
+          {
+            "token": "čnou",
+            "token_id": 116823,
+            "logprob": -13.9688,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "nou",
+        "token_id": 17301,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 33,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Jaké je hlavní město Česka?<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>Hlavní město České republiky je Praha. Je to největší město v zemi a zároveň kulturní, politické a ekonomické centrum. Praha je známá pro svou bohatou historii, krásnou",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Jak",
+        "é",
+        "Ġje",
+        "Ġhlavní",
+        "Ġměsto",
+        "ĠČeska",
+        "?",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "Hlavní",
+        "Ġměsto",
+        "ĠČeské",
+        "Ġrepubliky",
+        "Ġje",
+        "ĠPraha",
+        ".",
+        "ĠJe",
+        "Ġto",
+        "Ġnejvětší",
+        "Ġměsto",
+        "Ġv",
+        "Ġzemi",
+        "Ġa",
+        "Ġzároveň",
+        "Ġkulturní",
+        ",",
+        "Ġpolitické",
+        "Ġa",
+        "Ġekonomické",
+        "Ġcentrum",
+        ".",
+        "ĠPraha",
+        "Ġje",
+        "Ġznámá",
+        "Ġpro",
+        "Ġsvou",
+        "Ġbohat",
+        "ou",
+        "Ġhistorii",
+        ",",
+        "Ġkrás",
+        "nou"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 93148, 1751, 3573, 48613, 48171, 218951, 38, 255001, 255000, 255007,
+        174766, 48171, 38398, 50429, 3573, 23693, 21, 4260, 1726, 79480, 48171, 1745, 99360, 1671,
+        84476, 84809, 19, 134607, 1671, 233370, 48477, 21, 23693, 3573, 166874, 1830, 48738, 117386,
+        1701, 45807, 19, 170562, 17301
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġarchitekt",
+            "token_id": 56100,
+            "logprob": -0.0088,
+            "prob": 0.9912
+          },
+          {
+            "token": "Ġarch",
+            "token_id": 5466,
+            "logprob": -4.8672,
+            "prob": 0.0077
+          },
+          {
+            "token": "Ġarchitekton",
+            "token_id": 126873,
+            "logprob": -8.4141,
+            "prob": 0.0002
+          },
+          {
+            "token": "Ġarchitektury",
+            "token_id": 133742,
+            "logprob": -8.6641,
+            "prob": 0.0002
+          },
+          {
+            "token": "Ġarchitektura",
+            "token_id": 254865,
+            "logprob": -9.1016,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġархитек",
+            "token_id": 205050,
+            "logprob": -9.3672,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġархітек",
+            "token_id": 144193,
+            "logprob": -9.3672,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġarchitek",
+            "token_id": 78644,
+            "logprob": -9.4453,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġarhitect",
+            "token_id": 97940,
+            "logprob": -10.2344,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġαρχιτεκτονική",
+            "token_id": 223255,
+            "logprob": -10.3672,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġarchitekt",
+        "token_id": 56100,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 34,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Jaké je hlavní město Česka?<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>Hlavní město České republiky je Praha. Je to největší město v zemi a zároveň kulturní, politické a ekonomické centrum. Praha je známá pro svou bohatou historii, krásnou architekt",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Jak",
+        "é",
+        "Ġje",
+        "Ġhlavní",
+        "Ġměsto",
+        "ĠČeska",
+        "?",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "Hlavní",
+        "Ġměsto",
+        "ĠČeské",
+        "Ġrepubliky",
+        "Ġje",
+        "ĠPraha",
+        ".",
+        "ĠJe",
+        "Ġto",
+        "Ġnejvětší",
+        "Ġměsto",
+        "Ġv",
+        "Ġzemi",
+        "Ġa",
+        "Ġzároveň",
+        "Ġkulturní",
+        ",",
+        "Ġpolitické",
+        "Ġa",
+        "Ġekonomické",
+        "Ġcentrum",
+        ".",
+        "ĠPraha",
+        "Ġje",
+        "Ġznámá",
+        "Ġpro",
+        "Ġsvou",
+        "Ġbohat",
+        "ou",
+        "Ġhistorii",
+        ",",
+        "Ġkrás",
+        "nou",
+        "Ġarchitekt"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 93148, 1751, 3573, 48613, 48171, 218951, 38, 255001, 255000, 255007,
+        174766, 48171, 38398, 50429, 3573, 23693, 21, 4260, 1726, 79480, 48171, 1745, 99360, 1671,
+        84476, 84809, 19, 134607, 1671, 233370, 48477, 21, 23693, 3573, 166874, 1830, 48738, 117386,
+        1701, 45807, 19, 170562, 17301, 56100
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "uru",
+            "token_id": 16162,
+            "logprob": -0.0,
+            "prob": 1.0
+          },
+          {
+            "token": "уру",
+            "token_id": 57811,
+            "logprob": -12.8125,
+            "prob": 0.0
+          },
+          {
+            "token": "u",
+            "token_id": 92,
+            "logprob": -13.4531,
+            "prob": 0.0
+          },
+          {
+            "token": "unu",
+            "token_id": 15593,
+            "logprob": -14.7812,
+            "prob": 0.0
+          },
+          {
+            "token": "udu",
+            "token_id": 54906,
+            "logprob": -15.2344,
+            "prob": 0.0
+          },
+          {
+            "token": "uro",
+            "token_id": 2853,
+            "logprob": -15.7031,
+            "prob": 0.0
+          },
+          {
+            "token": "utu",
+            "token_id": 31861,
+            "logprob": -15.5781,
+            "prob": 0.0
+          },
+          {
+            "token": "iru",
+            "token_id": 65189,
+            "logprob": -15.9375,
+            "prob": 0.0
+          },
+          {
+            "token": "ovu",
+            "token_id": 64312,
+            "logprob": -16.0781,
+            "prob": 0.0
+          },
+          {
+            "token": "ubu",
+            "token_id": 33339,
+            "logprob": -15.7656,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "uru",
+        "token_id": 16162,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 35,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Jaké je hlavní město Česka?<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>Hlavní město České republiky je Praha. Je to největší město v zemi a zároveň kulturní, politické a ekonomické centrum. Praha je známá pro svou bohatou historii, krásnou architekturu",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Jak",
+        "é",
+        "Ġje",
+        "Ġhlavní",
+        "Ġměsto",
+        "ĠČeska",
+        "?",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "Hlavní",
+        "Ġměsto",
+        "ĠČeské",
+        "Ġrepubliky",
+        "Ġje",
+        "ĠPraha",
+        ".",
+        "ĠJe",
+        "Ġto",
+        "Ġnejvětší",
+        "Ġměsto",
+        "Ġv",
+        "Ġzemi",
+        "Ġa",
+        "Ġzároveň",
+        "Ġkulturní",
+        ",",
+        "Ġpolitické",
+        "Ġa",
+        "Ġekonomické",
+        "Ġcentrum",
+        ".",
+        "ĠPraha",
+        "Ġje",
+        "Ġznámá",
+        "Ġpro",
+        "Ġsvou",
+        "Ġbohat",
+        "ou",
+        "Ġhistorii",
+        ",",
+        "Ġkrás",
+        "nou",
+        "Ġarchitekt",
+        "uru"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 93148, 1751, 3573, 48613, 48171, 218951, 38, 255001, 255000, 255007,
+        174766, 48171, 38398, 50429, 3573, 23693, 21, 4260, 1726, 79480, 48171, 1745, 99360, 1671,
+        84476, 84809, 19, 134607, 1671, 233370, 48477, 21, 23693, 3573, 166874, 1830, 48738, 117386,
+        1701, 45807, 19, 170562, 17301, 56100, 16162
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġa",
+            "token_id": 1671,
+            "logprob": -0.0801,
+            "prob": 0.9229
+          },
+          {
+            "token": ",",
+            "token_id": 19,
+            "logprob": -2.5645,
+            "prob": 0.077
+          },
+          {
+            "token": "Ġvčetně",
+            "token_id": 65362,
+            "logprob": -9.9531,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġ(",
+            "token_id": 1737,
+            "logprob": -10.7812,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġz",
+            "token_id": 1977,
+            "logprob": -13.2734,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġv",
+            "token_id": 1745,
+            "logprob": -13.3906,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġs",
+            "token_id": 1679,
+            "logprob": -14.0859,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġzahrn",
+            "token_id": 90677,
+            "logprob": -15.25,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġ-",
+            "token_id": 1945,
+            "logprob": -15.3047,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġve",
+            "token_id": 2636,
+            "logprob": -16.0469,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġa",
+        "token_id": 1671,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 36,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Jaké je hlavní město Česka?<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>Hlavní město České republiky je Praha. Je to největší město v zemi a zároveň kulturní, politické a ekonomické centrum. Praha je známá pro svou bohatou historii, krásnou architekturu a",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Jak",
+        "é",
+        "Ġje",
+        "Ġhlavní",
+        "Ġměsto",
+        "ĠČeska",
+        "?",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "Hlavní",
+        "Ġměsto",
+        "ĠČeské",
+        "Ġrepubliky",
+        "Ġje",
+        "ĠPraha",
+        ".",
+        "ĠJe",
+        "Ġto",
+        "Ġnejvětší",
+        "Ġměsto",
+        "Ġv",
+        "Ġzemi",
+        "Ġa",
+        "Ġzároveň",
+        "Ġkulturní",
+        ",",
+        "Ġpolitické",
+        "Ġa",
+        "Ġekonomické",
+        "Ġcentrum",
+        ".",
+        "ĠPraha",
+        "Ġje",
+        "Ġznámá",
+        "Ġpro",
+        "Ġsvou",
+        "Ġbohat",
+        "ou",
+        "Ġhistorii",
+        ",",
+        "Ġkrás",
+        "nou",
+        "Ġarchitekt",
+        "uru",
+        "Ġa"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 93148, 1751, 3573, 48613, 48171, 218951, 38, 255001, 255000, 255007,
+        174766, 48171, 38398, 50429, 3573, 23693, 21, 4260, 1726, 79480, 48171, 1745, 99360, 1671,
+        84476, 84809, 19, 134607, 1671, 233370, 48477, 21, 23693, 3573, 166874, 1830, 48738, 117386,
+        1701, 45807, 19, 170562, 17301, 56100, 16162, 1671
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġje",
+            "token_id": 3573,
+            "logprob": -0.9404,
+            "prob": 0.3904
+          },
+          {
+            "token": "Ġmnoho",
+            "token_id": 70736,
+            "logprob": -0.9717,
+            "prob": 0.3784
+          },
+          {
+            "token": "Ġřadu",
+            "token_id": 106438,
+            "logprob": -1.8154,
+            "prob": 0.1627
+          },
+          {
+            "token": "Ġpopulární",
+            "token_id": 195351,
+            "logprob": -4.2852,
+            "prob": 0.0138
+          },
+          {
+            "token": "Ġčet",
+            "token_id": 133317,
+            "logprob": -4.3086,
+            "prob": 0.0135
+          },
+          {
+            "token": "Ġživ",
+            "token_id": 45331,
+            "logprob": -5.1133,
+            "prob": 0.006
+          },
+          {
+            "token": "Ġmnožství",
+            "token_id": 82623,
+            "logprob": -5.293,
+            "prob": 0.005
+          },
+          {
+            "token": "Ġmnoha",
+            "token_id": 83151,
+            "logprob": -5.4336,
+            "prob": 0.0044
+          },
+          {
+            "token": "Ġoblíben",
+            "token_id": 161554,
+            "logprob": -5.6367,
+            "prob": 0.0036
+          },
+          {
+            "token": "Ġvýznamné",
+            "token_id": 155752,
+            "logprob": -5.9961,
+            "prob": 0.0025
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġje",
+        "token_id": 3573,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 37,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Jaké je hlavní město Česka?<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>Hlavní město České republiky je Praha. Je to největší město v zemi a zároveň kulturní, politické a ekonomické centrum. Praha je známá pro svou bohatou historii, krásnou architekturu a je",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Jak",
+        "é",
+        "Ġje",
+        "Ġhlavní",
+        "Ġměsto",
+        "ĠČeska",
+        "?",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "Hlavní",
+        "Ġměsto",
+        "ĠČeské",
+        "Ġrepubliky",
+        "Ġje",
+        "ĠPraha",
+        ".",
+        "ĠJe",
+        "Ġto",
+        "Ġnejvětší",
+        "Ġměsto",
+        "Ġv",
+        "Ġzemi",
+        "Ġa",
+        "Ġzároveň",
+        "Ġkulturní",
+        ",",
+        "Ġpolitické",
+        "Ġa",
+        "Ġekonomické",
+        "Ġcentrum",
+        ".",
+        "ĠPraha",
+        "Ġje",
+        "Ġznámá",
+        "Ġpro",
+        "Ġsvou",
+        "Ġbohat",
+        "ou",
+        "Ġhistorii",
+        ",",
+        "Ġkrás",
+        "nou",
+        "Ġarchitekt",
+        "uru",
+        "Ġa",
+        "Ġje"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 93148, 1751, 3573, 48613, 48171, 218951, 38, 255001, 255000, 255007,
+        174766, 48171, 38398, 50429, 3573, 23693, 21, 4260, 1726, 79480, 48171, 1745, 99360, 1671,
+        84476, 84809, 19, 134607, 1671, 233370, 48477, 21, 23693, 3573, 166874, 1830, 48738, 117386,
+        1701, 45807, 19, 170562, 17301, 56100, 16162, 1671, 3573
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġoblíben",
+            "token_id": 161554,
+            "logprob": -0.0154,
+            "prob": 0.9849
+          },
+          {
+            "token": "Ġpopulární",
+            "token_id": 195351,
+            "logprob": -5.1406,
+            "prob": 0.0059
+          },
+          {
+            "token": "Ġpovažována",
+            "token_id": 223930,
+            "logprob": -5.7969,
+            "prob": 0.003
+          },
+          {
+            "token": "Ġjednou",
+            "token_id": 95510,
+            "logprob": -6.1562,
+            "prob": 0.0021
+          },
+          {
+            "token": "Ġjedním",
+            "token_id": 84794,
+            "logprob": -6.8438,
+            "prob": 0.0011
+          },
+          {
+            "token": "Ġčasto",
+            "token_id": 53429,
+            "logprob": -6.9219,
+            "prob": 0.001
+          },
+          {
+            "token": "Ġturist",
+            "token_id": 115577,
+            "logprob": -7.5781,
+            "prob": 0.0005
+          },
+          {
+            "token": "Ġčast",
+            "token_id": 142608,
+            "logprob": -7.5781,
+            "prob": 0.0005
+          },
+          {
+            "token": "Ġvýznamnou",
+            "token_id": 236884,
+            "logprob": -8.5078,
+            "prob": 0.0002
+          },
+          {
+            "token": "Ġvyhled",
+            "token_id": 189695,
+            "logprob": -8.7188,
+            "prob": 0.0002
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġoblíben",
+        "token_id": 161554,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 38,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Jaké je hlavní město Česka?<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>Hlavní město České republiky je Praha. Je to největší město v zemi a zároveň kulturní, politické a ekonomické centrum. Praha je známá pro svou bohatou historii, krásnou architekturu a je oblíben",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Jak",
+        "é",
+        "Ġje",
+        "Ġhlavní",
+        "Ġměsto",
+        "ĠČeska",
+        "?",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "Hlavní",
+        "Ġměsto",
+        "ĠČeské",
+        "Ġrepubliky",
+        "Ġje",
+        "ĠPraha",
+        ".",
+        "ĠJe",
+        "Ġto",
+        "Ġnejvětší",
+        "Ġměsto",
+        "Ġv",
+        "Ġzemi",
+        "Ġa",
+        "Ġzároveň",
+        "Ġkulturní",
+        ",",
+        "Ġpolitické",
+        "Ġa",
+        "Ġekonomické",
+        "Ġcentrum",
+        ".",
+        "ĠPraha",
+        "Ġje",
+        "Ġznámá",
+        "Ġpro",
+        "Ġsvou",
+        "Ġbohat",
+        "ou",
+        "Ġhistorii",
+        ",",
+        "Ġkrás",
+        "nou",
+        "Ġarchitekt",
+        "uru",
+        "Ġa",
+        "Ġje",
+        "Ġoblíben"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 93148, 1751, 3573, 48613, 48171, 218951, 38, 255001, 255000, 255007,
+        174766, 48171, 38398, 50429, 3573, 23693, 21, 4260, 1726, 79480, 48171, 1745, 99360, 1671,
+        84476, 84809, 19, 134607, 1671, 233370, 48477, 21, 23693, 3573, 166874, 1830, 48738, 117386,
+        1701, 45807, 19, 170562, 17301, 56100, 16162, 1671, 3573, 161554
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "ou",
+            "token_id": 1701,
+            "logprob": -0.2935,
+            "prob": 0.7456
+          },
+          {
+            "token": "ým",
+            "token_id": 8325,
+            "logprob": -1.3711,
+            "prob": 0.2537
+          },
+          {
+            "token": "á",
+            "token_id": 1847,
+            "logprob": -7.4648,
+            "prob": 0.0006
+          },
+          {
+            "token": "ą",
+            "token_id": 2584,
+            "logprob": -13.2422,
+            "prob": 0.0
+          },
+          {
+            "token": "é",
+            "token_id": 1751,
+            "logprob": -13.2734,
+            "prob": 0.0
+          },
+          {
+            "token": "ím",
+            "token_id": 6121,
+            "logprob": -13.7812,
+            "prob": 0.0
+          },
+          {
+            "token": "ою",
+            "token_id": 6014,
+            "logprob": -14.0938,
+            "prob": 0.0
+          },
+          {
+            "token": "ými",
+            "token_id": 23196,
+            "logprob": -14.1797,
+            "prob": 0.0
+          },
+          {
+            "token": "ý",
+            "token_id": 2533,
+            "logprob": -14.6016,
+            "prob": 0.0
+          },
+          {
+            "token": "им",
+            "token_id": 3247,
+            "logprob": -15.3672,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "ou",
+        "token_id": 1701,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 39,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Jaké je hlavní město Česka?<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>Hlavní město České republiky je Praha. Je to největší město v zemi a zároveň kulturní, politické a ekonomické centrum. Praha je známá pro svou bohatou historii, krásnou architekturu a je oblíbenou",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Jak",
+        "é",
+        "Ġje",
+        "Ġhlavní",
+        "Ġměsto",
+        "ĠČeska",
+        "?",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "Hlavní",
+        "Ġměsto",
+        "ĠČeské",
+        "Ġrepubliky",
+        "Ġje",
+        "ĠPraha",
+        ".",
+        "ĠJe",
+        "Ġto",
+        "Ġnejvětší",
+        "Ġměsto",
+        "Ġv",
+        "Ġzemi",
+        "Ġa",
+        "Ġzároveň",
+        "Ġkulturní",
+        ",",
+        "Ġpolitické",
+        "Ġa",
+        "Ġekonomické",
+        "Ġcentrum",
+        ".",
+        "ĠPraha",
+        "Ġje",
+        "Ġznámá",
+        "Ġpro",
+        "Ġsvou",
+        "Ġbohat",
+        "ou",
+        "Ġhistorii",
+        ",",
+        "Ġkrás",
+        "nou",
+        "Ġarchitekt",
+        "uru",
+        "Ġa",
+        "Ġje",
+        "Ġoblíben",
+        "ou"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 93148, 1751, 3573, 48613, 48171, 218951, 38, 255001, 255000, 255007,
+        174766, 48171, 38398, 50429, 3573, 23693, 21, 4260, 1726, 79480, 48171, 1745, 99360, 1671,
+        84476, 84809, 19, 134607, 1671, 233370, 48477, 21, 23693, 3573, 166874, 1830, 48738, 117386,
+        1701, 45807, 19, 170562, 17301, 56100, 16162, 1671, 3573, 161554, 1701
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġturist",
+            "token_id": 115577,
+            "logprob": -0.0013,
+            "prob": 0.9985
+          },
+          {
+            "token": "Ġtur",
+            "token_id": 7952,
+            "logprob": -7.2188,
+            "prob": 0.0007
+          },
+          {
+            "token": "Ġdestin",
+            "token_id": 16516,
+            "logprob": -7.6562,
+            "prob": 0.0005
+          },
+          {
+            "token": "Ġтурист",
+            "token_id": 85701,
+            "logprob": -10.0781,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġcest",
+            "token_id": 42600,
+            "logprob": -10.9531,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġτουρισ",
+            "token_id": 243037,
+            "logprob": -11.4844,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġturystycz",
+            "token_id": 96175,
+            "logprob": -11.7969,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġtoer",
+            "token_id": 143916,
+            "logprob": -12.4062,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġtourist",
+            "token_id": 35521,
+            "logprob": -12.5,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġtou",
+            "token_id": 15773,
+            "logprob": -12.5703,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġturist",
+        "token_id": 115577,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 40,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Jaké je hlavní město Česka?<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>Hlavní město České republiky je Praha. Je to největší město v zemi a zároveň kulturní, politické a ekonomické centrum. Praha je známá pro svou bohatou historii, krásnou architekturu a je oblíbenou turist",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Jak",
+        "é",
+        "Ġje",
+        "Ġhlavní",
+        "Ġměsto",
+        "ĠČeska",
+        "?",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "Hlavní",
+        "Ġměsto",
+        "ĠČeské",
+        "Ġrepubliky",
+        "Ġje",
+        "ĠPraha",
+        ".",
+        "ĠJe",
+        "Ġto",
+        "Ġnejvětší",
+        "Ġměsto",
+        "Ġv",
+        "Ġzemi",
+        "Ġa",
+        "Ġzároveň",
+        "Ġkulturní",
+        ",",
+        "Ġpolitické",
+        "Ġa",
+        "Ġekonomické",
+        "Ġcentrum",
+        ".",
+        "ĠPraha",
+        "Ġje",
+        "Ġznámá",
+        "Ġpro",
+        "Ġsvou",
+        "Ġbohat",
+        "ou",
+        "Ġhistorii",
+        ",",
+        "Ġkrás",
+        "nou",
+        "Ġarchitekt",
+        "uru",
+        "Ġa",
+        "Ġje",
+        "Ġoblíben",
+        "ou",
+        "Ġturist"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 93148, 1751, 3573, 48613, 48171, 218951, 38, 255001, 255000, 255007,
+        174766, 48171, 38398, 50429, 3573, 23693, 21, 4260, 1726, 79480, 48171, 1745, 99360, 1671,
+        84476, 84809, 19, 134607, 1671, 233370, 48477, 21, 23693, 3573, 166874, 1830, 48738, 117386,
+        1701, 45807, 19, 170562, 17301, 56100, 16162, 1671, 3573, 161554, 1701, 115577
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "ickou",
+            "token_id": 40236,
+            "logprob": -0.0,
+            "prob": 1.0
+          },
+          {
+            "token": "ickými",
+            "token_id": 95261,
+            "logprob": -13.6562,
+            "prob": 0.0
+          },
+          {
+            "token": "ovou",
+            "token_id": 25741,
+            "logprob": -13.9062,
+            "prob": 0.0
+          },
+          {
+            "token": "skou",
+            "token_id": 30064,
+            "logprob": -14.4688,
+            "prob": 0.0
+          },
+          {
+            "token": "ická",
+            "token_id": 23708,
+            "logprob": -14.8906,
+            "prob": 0.0
+          },
+          {
+            "token": "ickým",
+            "token_id": 57337,
+            "logprob": -14.8125,
+            "prob": 0.0
+          },
+          {
+            "token": "ick",
+            "token_id": 2310,
+            "logprob": -15.0,
+            "prob": 0.0
+          },
+          {
+            "token": "icky",
+            "token_id": 14656,
+            "logprob": -15.2812,
+            "prob": 0.0
+          },
+          {
+            "token": "ическую",
+            "token_id": 47014,
+            "logprob": -15.4062,
+            "prob": 0.0
+          },
+          {
+            "token": "ikou",
+            "token_id": 124364,
+            "logprob": -15.6094,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "ickou",
+        "token_id": 40236,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 41,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Jaké je hlavní město Česka?<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>Hlavní město České republiky je Praha. Je to největší město v zemi a zároveň kulturní, politické a ekonomické centrum. Praha je známá pro svou bohatou historii, krásnou architekturu a je oblíbenou turistickou",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Jak",
+        "é",
+        "Ġje",
+        "Ġhlavní",
+        "Ġměsto",
+        "ĠČeska",
+        "?",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "Hlavní",
+        "Ġměsto",
+        "ĠČeské",
+        "Ġrepubliky",
+        "Ġje",
+        "ĠPraha",
+        ".",
+        "ĠJe",
+        "Ġto",
+        "Ġnejvětší",
+        "Ġměsto",
+        "Ġv",
+        "Ġzemi",
+        "Ġa",
+        "Ġzároveň",
+        "Ġkulturní",
+        ",",
+        "Ġpolitické",
+        "Ġa",
+        "Ġekonomické",
+        "Ġcentrum",
+        ".",
+        "ĠPraha",
+        "Ġje",
+        "Ġznámá",
+        "Ġpro",
+        "Ġsvou",
+        "Ġbohat",
+        "ou",
+        "Ġhistorii",
+        ",",
+        "Ġkrás",
+        "nou",
+        "Ġarchitekt",
+        "uru",
+        "Ġa",
+        "Ġje",
+        "Ġoblíben",
+        "ou",
+        "Ġturist",
+        "ickou"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 93148, 1751, 3573, 48613, 48171, 218951, 38, 255001, 255000, 255007,
+        174766, 48171, 38398, 50429, 3573, 23693, 21, 4260, 1726, 79480, 48171, 1745, 99360, 1671,
+        84476, 84809, 19, 134607, 1671, 233370, 48477, 21, 23693, 3573, 166874, 1830, 48738, 117386,
+        1701, 45807, 19, 170562, 17301, 56100, 16162, 1671, 3573, 161554, 1701, 115577, 40236
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġdestin",
+            "token_id": 16516,
+            "logprob": -0.0,
+            "prob": 1.0
+          },
+          {
+            "token": "Ġdest",
+            "token_id": 4286,
+            "logprob": -11.7656,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġdestina",
+            "token_id": 244910,
+            "logprob": -14.375,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġdestinos",
+            "token_id": 144098,
+            "logprob": -15.6797,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġdestination",
+            "token_id": 17246,
+            "logprob": -16.2969,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġdestinations",
+            "token_id": 39369,
+            "logprob": -16.5781,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġdestino",
+            "token_id": 49897,
+            "logprob": -16.2656,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġatrak",
+            "token_id": 198521,
+            "logprob": -16.3281,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġturist",
+            "token_id": 115577,
+            "logprob": -16.3281,
+            "prob": 0.0
+          },
+          {
+            "token": "<PAD>",
+            "token_id": 0,
+            "logprob": -30.3906,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġdestin",
+        "token_id": 16516,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 42,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Jaké je hlavní město Česka?<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>Hlavní město České republiky je Praha. Je to největší město v zemi a zároveň kulturní, politické a ekonomické centrum. Praha je známá pro svou bohatou historii, krásnou architekturu a je oblíbenou turistickou destin",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Jak",
+        "é",
+        "Ġje",
+        "Ġhlavní",
+        "Ġměsto",
+        "ĠČeska",
+        "?",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "Hlavní",
+        "Ġměsto",
+        "ĠČeské",
+        "Ġrepubliky",
+        "Ġje",
+        "ĠPraha",
+        ".",
+        "ĠJe",
+        "Ġto",
+        "Ġnejvětší",
+        "Ġměsto",
+        "Ġv",
+        "Ġzemi",
+        "Ġa",
+        "Ġzároveň",
+        "Ġkulturní",
+        ",",
+        "Ġpolitické",
+        "Ġa",
+        "Ġekonomické",
+        "Ġcentrum",
+        ".",
+        "ĠPraha",
+        "Ġje",
+        "Ġznámá",
+        "Ġpro",
+        "Ġsvou",
+        "Ġbohat",
+        "ou",
+        "Ġhistorii",
+        ",",
+        "Ġkrás",
+        "nou",
+        "Ġarchitekt",
+        "uru",
+        "Ġa",
+        "Ġje",
+        "Ġoblíben",
+        "ou",
+        "Ġturist",
+        "ickou",
+        "Ġdestin"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 93148, 1751, 3573, 48613, 48171, 218951, 38, 255001, 255000, 255007,
+        174766, 48171, 38398, 50429, 3573, 23693, 21, 4260, 1726, 79480, 48171, 1745, 99360, 1671,
+        84476, 84809, 19, 134607, 1671, 233370, 48477, 21, 23693, 3573, 166874, 1830, 48738, 117386,
+        1701, 45807, 19, 170562, 17301, 56100, 16162, 1671, 3573, 161554, 1701, 115577, 40236, 16516
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "ací",
+            "token_id": 22458,
+            "logprob": -0.0002,
+            "prob": 1.0
+          },
+          {
+            "token": "aci",
+            "token_id": 9922,
+            "logprob": -8.3906,
+            "prob": 0.0002
+          },
+          {
+            "token": "ace",
+            "token_id": 2098,
+            "logprob": -12.125,
+            "prob": 0.0
+          },
+          {
+            "token": "icí",
+            "token_id": 64240,
+            "logprob": -15.4688,
+            "prob": 0.0
+          },
+          {
+            "token": "áci",
+            "token_id": 78273,
+            "logprob": -15.5,
+            "prob": 0.0
+          },
+          {
+            "token": "acemi",
+            "token_id": 194860,
+            "logprob": -16.3281,
+            "prob": 0.0
+          },
+          {
+            "token": "encí",
+            "token_id": 150985,
+            "logprob": -16.6562,
+            "prob": 0.0
+          },
+          {
+            "token": "acją",
+            "token_id": 53961,
+            "logprob": -16.9688,
+            "prob": 0.0
+          },
+          {
+            "token": "<PAD>",
+            "token_id": 0,
+            "logprob": -32.4688,
+            "prob": 0.0
+          },
+          {
+            "token": "<UNK>",
+            "token_id": 1,
+            "logprob": -33.0938,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "ací",
+        "token_id": 22458,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 43,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Jaké je hlavní město Česka?<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>Hlavní město České republiky je Praha. Je to největší město v zemi a zároveň kulturní, politické a ekonomické centrum. Praha je známá pro svou bohatou historii, krásnou architekturu a je oblíbenou turistickou destinací",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Jak",
+        "é",
+        "Ġje",
+        "Ġhlavní",
+        "Ġměsto",
+        "ĠČeska",
+        "?",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "Hlavní",
+        "Ġměsto",
+        "ĠČeské",
+        "Ġrepubliky",
+        "Ġje",
+        "ĠPraha",
+        ".",
+        "ĠJe",
+        "Ġto",
+        "Ġnejvětší",
+        "Ġměsto",
+        "Ġv",
+        "Ġzemi",
+        "Ġa",
+        "Ġzároveň",
+        "Ġkulturní",
+        ",",
+        "Ġpolitické",
+        "Ġa",
+        "Ġekonomické",
+        "Ġcentrum",
+        ".",
+        "ĠPraha",
+        "Ġje",
+        "Ġznámá",
+        "Ġpro",
+        "Ġsvou",
+        "Ġbohat",
+        "ou",
+        "Ġhistorii",
+        ",",
+        "Ġkrás",
+        "nou",
+        "Ġarchitekt",
+        "uru",
+        "Ġa",
+        "Ġje",
+        "Ġoblíben",
+        "ou",
+        "Ġturist",
+        "ickou",
+        "Ġdestin",
+        "ací"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 93148, 1751, 3573, 48613, 48171, 218951, 38, 255001, 255000, 255007,
+        174766, 48171, 38398, 50429, 3573, 23693, 21, 4260, 1726, 79480, 48171, 1745, 99360, 1671,
+        84476, 84809, 19, 134607, 1671, 233370, 48477, 21, 23693, 3573, 166874, 1830, 48738, 117386,
+        1701, 45807, 19, 170562, 17301, 56100, 16162, 1671, 3573, 161554, 1701, 115577, 40236,
+        16516, 22458
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": ".",
+            "token_id": 21,
+            "logprob": -0.0088,
+            "prob": 0.9912
+          },
+          {
+            "token": "Ġpo",
+            "token_id": 2482,
+            "logprob": -4.8672,
+            "prob": 0.0077
+          },
+          {
+            "token": "Ġpro",
+            "token_id": 1830,
+            "logprob": -7.2578,
+            "prob": 0.0007
+          },
+          {
+            "token": ",",
+            "token_id": 19,
+            "logprob": -8.7891,
+            "prob": 0.0002
+          },
+          {
+            "token": "Ġdíky",
+            "token_id": 66584,
+            "logprob": -9.4766,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġjak",
+            "token_id": 15356,
+            "logprob": -9.5078,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġna",
+            "token_id": 2370,
+            "logprob": -10.0547,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġnejen",
+            "token_id": 109858,
+            "logprob": -11.0078,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġv",
+            "token_id": 1745,
+            "logprob": -11.875,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġs",
+            "token_id": 1679,
+            "logprob": -13.8047,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": ".",
+        "token_id": 21,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 44,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Jaké je hlavní město Česka?<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>Hlavní město České republiky je Praha. Je to největší město v zemi a zároveň kulturní, politické a ekonomické centrum. Praha je známá pro svou bohatou historii, krásnou architekturu a je oblíbenou turistickou destinací.",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Jak",
+        "é",
+        "Ġje",
+        "Ġhlavní",
+        "Ġměsto",
+        "ĠČeska",
+        "?",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "Hlavní",
+        "Ġměsto",
+        "ĠČeské",
+        "Ġrepubliky",
+        "Ġje",
+        "ĠPraha",
+        ".",
+        "ĠJe",
+        "Ġto",
+        "Ġnejvětší",
+        "Ġměsto",
+        "Ġv",
+        "Ġzemi",
+        "Ġa",
+        "Ġzároveň",
+        "Ġkulturní",
+        ",",
+        "Ġpolitické",
+        "Ġa",
+        "Ġekonomické",
+        "Ġcentrum",
+        ".",
+        "ĠPraha",
+        "Ġje",
+        "Ġznámá",
+        "Ġpro",
+        "Ġsvou",
+        "Ġbohat",
+        "ou",
+        "Ġhistorii",
+        ",",
+        "Ġkrás",
+        "nou",
+        "Ġarchitekt",
+        "uru",
+        "Ġa",
+        "Ġje",
+        "Ġoblíben",
+        "ou",
+        "Ġturist",
+        "ickou",
+        "Ġdestin",
+        "ací",
+        "."
+      ],
+      "token_ids": [
+        5, 255000, 255006, 93148, 1751, 3573, 48613, 48171, 218951, 38, 255001, 255000, 255007,
+        174766, 48171, 38398, 50429, 3573, 23693, 21, 4260, 1726, 79480, 48171, 1745, 99360, 1671,
+        84476, 84809, 19, 134607, 1671, 233370, 48477, 21, 23693, 3573, 166874, 1830, 48738, 117386,
+        1701, 45807, 19, 170562, 17301, 56100, 16162, 1671, 3573, 161554, 1701, 115577, 40236,
+        16516, 22458, 21
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "<|END_OF_TURN_TOKEN|>",
+            "token_id": 255001,
+            "logprob": -0.479,
+            "prob": 0.6191
+          },
+          {
+            "token": "ĠNachází",
+            "token_id": 101697,
+            "logprob": -1.5107,
+            "prob": 0.2208
+          },
+          {
+            "token": "ĠMezi",
+            "token_id": 70294,
+            "logprob": -2.2598,
+            "prob": 0.1043
+          },
+          {
+            "token": "\n",
+            "token_id": 206,
+            "logprob": -3.2441,
+            "prob": 0.039
+          },
+          {
+            "token": "ĠMěsto",
+            "token_id": 118312,
+            "logprob": -5.9961,
+            "prob": 0.0025
+          },
+          {
+            "token": "ĠUm",
+            "token_id": 11054,
+            "logprob": -6.1758,
+            "prob": 0.0021
+          },
+          {
+            "token": "ĠNaj",
+            "token_id": 27840,
+            "logprob": -6.8164,
+            "prob": 0.0011
+          },
+          {
+            "token": "ĠJe",
+            "token_id": 4260,
+            "logprob": -6.9883,
+            "prob": 0.0009
+          },
+          {
+            "token": "ĠMá",
+            "token_id": 35489,
+            "logprob": -7.0352,
+            "prob": 0.0009
+          },
+          {
+            "token": "Ġnachází",
+            "token_id": 40065,
+            "logprob": -7.1914,
+            "prob": 0.0008
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "<|END_OF_TURN_TOKEN|>",
+        "token_id": 255001,
+        "selection_method": "greedy"
+      }
+    }
+  ]
+}

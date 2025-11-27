@@ -1,0 +1,982 @@
+{
+  "id": "generated_20251117_181444",
+  "prompt": "你好世界！",
+  "language": "zh",
+  "temperature": 1.0,
+  "top_k": 10,
+  "model_info": {
+    "name": "meta-llama/Llama-3.2-1B-Instruct",
+    "num_layers": 16,
+    "hidden_size": 2048,
+    "num_attention_heads": 32,
+    "vocab_size": 128256
+  },
+  "generation_steps": [
+    {
+      "step": 0,
+      "input_text": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 17 Nov 2025\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\n你好世界！<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+      "tokens": [
+        "<|begin_of_text|>",
+        "<|start_header_id|>",
+        "system",
+        "<|end_header_id|>",
+        "\n\n",
+        "Cut",
+        "ting",
+        "ĠKnowledge",
+        "ĠDate",
+        ":",
+        "ĠDecember",
+        "Ġ",
+        "202",
+        "3",
+        "\n",
+        "Today",
+        "ĠDate",
+        ":",
+        "Ġ",
+        "17",
+        "ĠNov",
+        "Ġ",
+        "202",
+        "5",
+        "\n\n",
+        "<|eot_id|>",
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
+        "\n\n",
+        "你",
+        "好",
+        "世界",
+        "！",
+        "<|eot_id|>",
+        "<|start_header_id|>",
+        "assistant",
+        "<|end_header_id|>",
+        "\n\n"
+      ],
+      "token_ids": [
+        128000,
+        128006,
+        9125,
+        128007,
+        271,
+        38766,
+        1303,
+        33025,
+        2696,
+        25,
+        6790,
+        220,
+        2366,
+        18,
+        198,
+        15724,
+        2696,
+        25,
+        220,
+        1114,
+        4723,
+        220,
+        2366,
+        20,
+        271,
+        128009,
+        128006,
+        882,
+        128007,
+        271,
+        57668,
+        53901,
+        102616,
+        6447,
+        128009,
+        128006,
+        78191,
+        128007,
+        271
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "你",
+            "token_id": 57668,
+            "logprob": -0.9751,
+            "prob": 0.3772
+          },
+          {
+            "token": "สว",
+            "token_id": 106123,
+            "logprob": -3.3184,
+            "prob": 0.0362
+          },
+          {
+            "token": "太",
+            "token_id": 101402,
+            "logprob": -3.8887,
+            "prob": 0.0205
+          },
+          {
+            "token": "好",
+            "token_id": 53901,
+            "logprob": -3.9121,
+            "prob": 0.02
+          },
+          {
+            "token": "Hello",
+            "token_id": 9906,
+            "logprob": -4.1641,
+            "prob": 0.0156
+          },
+          {
+            "token": "是",
+            "token_id": 21043,
+            "logprob": -4.2344,
+            "prob": 0.0145
+          },
+          {
+            "token": "*h",
+            "token_id": 55386,
+            "logprob": -4.5859,
+            "prob": 0.0102
+          },
+          {
+            "token": "我",
+            "token_id": 37046,
+            "logprob": -4.5938,
+            "prob": 0.0101
+          },
+          {
+            "token": "大",
+            "token_id": 27384,
+            "logprob": -4.6094,
+            "prob": 0.01
+          },
+          {
+            "token": "hello",
+            "token_id": 15339,
+            "logprob": -4.6172,
+            "prob": 0.0099
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "你",
+        "token_id": 57668,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 1,
+      "input_text": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 17 Nov 2025\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\n你好世界！<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n你",
+      "tokens": [
+        "<|begin_of_text|>",
+        "<|start_header_id|>",
+        "system",
+        "<|end_header_id|>",
+        "\n\n",
+        "Cut",
+        "ting",
+        "ĠKnowledge",
+        "ĠDate",
+        ":",
+        "ĠDecember",
+        "Ġ",
+        "202",
+        "3",
+        "\n",
+        "Today",
+        "ĠDate",
+        ":",
+        "Ġ",
+        "17",
+        "ĠNov",
+        "Ġ",
+        "202",
+        "5",
+        "\n\n",
+        "<|eot_id|>",
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
+        "\n\n",
+        "你",
+        "好",
+        "世界",
+        "！",
+        "<|eot_id|>",
+        "<|start_header_id|>",
+        "assistant",
+        "<|end_header_id|>",
+        "\n\n",
+        "你"
+      ],
+      "token_ids": [
+        128000,
+        128006,
+        9125,
+        128007,
+        271,
+        38766,
+        1303,
+        33025,
+        2696,
+        25,
+        6790,
+        220,
+        2366,
+        18,
+        198,
+        15724,
+        2696,
+        25,
+        220,
+        1114,
+        4723,
+        220,
+        2366,
+        20,
+        271,
+        128009,
+        128006,
+        882,
+        128007,
+        271,
+        57668,
+        53901,
+        102616,
+        6447,
+        128009,
+        128006,
+        78191,
+        128007,
+        271,
+        57668
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "好",
+            "token_id": 53901,
+            "logprob": -0.4456,
+            "prob": 0.6406
+          },
+          {
+            "token": "也",
+            "token_id": 75863,
+            "logprob": -1.5234,
+            "prob": 0.2179
+          },
+          {
+            "token": "也是",
+            "token_id": 109614,
+            "logprob": -2.3906,
+            "prob": 0.0916
+          },
+          {
+            "token": "Ġtambém",
+            "token_id": 35701,
+            "logprob": -5.7422,
+            "prob": 0.0032
+          },
+          {
+            "token": "好的",
+            "token_id": 110085,
+            "logprob": -5.8984,
+            "prob": 0.0027
+          },
+          {
+            "token": "是",
+            "token_id": 21043,
+            "logprob": -6.0234,
+            "prob": 0.0024
+          },
+          {
+            "token": "Ġcũng",
+            "token_id": 101004,
+            "logprob": -6.0469,
+            "prob": 0.0024
+          },
+          {
+            "token": "也有",
+            "token_id": 123976,
+            "logprob": -6.1016,
+            "prob": 0.0022
+          },
+          {
+            "token": "Ġtambién",
+            "token_id": 29571,
+            "logprob": -6.1484,
+            "prob": 0.0021
+          },
+          {
+            "token": "Ġalso",
+            "token_id": 1101,
+            "logprob": -6.6016,
+            "prob": 0.0014
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "也是",
+        "token_id": 109614,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 2,
+      "input_text": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 17 Nov 2025\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\n你好世界！<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n你也是",
+      "tokens": [
+        "<|begin_of_text|>",
+        "<|start_header_id|>",
+        "system",
+        "<|end_header_id|>",
+        "\n\n",
+        "Cut",
+        "ting",
+        "ĠKnowledge",
+        "ĠDate",
+        ":",
+        "ĠDecember",
+        "Ġ",
+        "202",
+        "3",
+        "\n",
+        "Today",
+        "ĠDate",
+        ":",
+        "Ġ",
+        "17",
+        "ĠNov",
+        "Ġ",
+        "202",
+        "5",
+        "\n\n",
+        "<|eot_id|>",
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
+        "\n\n",
+        "你",
+        "好",
+        "世界",
+        "！",
+        "<|eot_id|>",
+        "<|start_header_id|>",
+        "assistant",
+        "<|end_header_id|>",
+        "\n\n",
+        "你",
+        "也是"
+      ],
+      "token_ids": [
+        128000,
+        128006,
+        9125,
+        128007,
+        271,
+        38766,
+        1303,
+        33025,
+        2696,
+        25,
+        6790,
+        220,
+        2366,
+        18,
+        198,
+        15724,
+        2696,
+        25,
+        220,
+        1114,
+        4723,
+        220,
+        2366,
+        20,
+        271,
+        128009,
+        128006,
+        882,
+        128007,
+        271,
+        57668,
+        53901,
+        102616,
+        6447,
+        128009,
+        128006,
+        78191,
+        128007,
+        271,
+        57668,
+        109614
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "好",
+            "token_id": 53901,
+            "logprob": -0.2383,
+            "prob": 0.7881
+          },
+          {
+            "token": "！",
+            "token_id": 6447,
+            "logprob": -2.5039,
+            "prob": 0.0818
+          },
+          {
+            "token": "世界",
+            "token_id": 102616,
+            "logprob": -4.1914,
+            "prob": 0.0151
+          },
+          {
+            "token": "好的",
+            "token_id": 110085,
+            "logprob": -4.6445,
+            "prob": 0.0096
+          },
+          {
+            "token": "你",
+            "token_id": 57668,
+            "logprob": -4.668,
+            "prob": 0.0094
+          },
+          {
+            "token": "!",
+            "token_id": 0,
+            "logprob": -5.0352,
+            "prob": 0.0065
+          },
+          {
+            "token": "很",
+            "token_id": 101600,
+            "logprob": -5.707,
+            "prob": 0.0033
+          },
+          {
+            "token": "吗",
+            "token_id": 103054,
+            "logprob": -5.9805,
+            "prob": 0.0025
+          },
+          {
+            "token": "。",
+            "token_id": 1811,
+            "logprob": -6.0352,
+            "prob": 0.0024
+          },
+          {
+            "token": "这样",
+            "token_id": 104390,
+            "logprob": -6.1992,
+            "prob": 0.002
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "好",
+        "token_id": 53901,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 3,
+      "input_text": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 17 Nov 2025\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\n你好世界！<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n你也是好",
+      "tokens": [
+        "<|begin_of_text|>",
+        "<|start_header_id|>",
+        "system",
+        "<|end_header_id|>",
+        "\n\n",
+        "Cut",
+        "ting",
+        "ĠKnowledge",
+        "ĠDate",
+        ":",
+        "ĠDecember",
+        "Ġ",
+        "202",
+        "3",
+        "\n",
+        "Today",
+        "ĠDate",
+        ":",
+        "Ġ",
+        "17",
+        "ĠNov",
+        "Ġ",
+        "202",
+        "5",
+        "\n\n",
+        "<|eot_id|>",
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
+        "\n\n",
+        "你",
+        "好",
+        "世界",
+        "！",
+        "<|eot_id|>",
+        "<|start_header_id|>",
+        "assistant",
+        "<|end_header_id|>",
+        "\n\n",
+        "你",
+        "也是",
+        "好"
+      ],
+      "token_ids": [
+        128000,
+        128006,
+        9125,
+        128007,
+        271,
+        38766,
+        1303,
+        33025,
+        2696,
+        25,
+        6790,
+        220,
+        2366,
+        18,
+        198,
+        15724,
+        2696,
+        25,
+        220,
+        1114,
+        4723,
+        220,
+        2366,
+        20,
+        271,
+        128009,
+        128006,
+        882,
+        128007,
+        271,
+        57668,
+        53901,
+        102616,
+        6447,
+        128009,
+        128006,
+        78191,
+        128007,
+        271,
+        57668,
+        109614,
+        53901
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "世界",
+            "token_id": 102616,
+            "logprob": -0.4763,
+            "prob": 0.6211
+          },
+          {
+            "token": "！",
+            "token_id": 6447,
+            "logprob": -1.7266,
+            "prob": 0.178
+          },
+          {
+            "token": "Ġmonde",
+            "token_id": 38900,
+            "logprob": -4.4062,
+            "prob": 0.0122
+          },
+          {
+            "token": "啊",
+            "token_id": 102856,
+            "logprob": -4.9609,
+            "prob": 0.007
+          },
+          {
+            "token": "Ġworld",
+            "token_id": 1917,
+            "logprob": -5.0,
+            "prob": 0.0067
+          },
+          {
+            "token": "日",
+            "token_id": 9080,
+            "logprob": -5.0469,
+            "prob": 0.0064
+          },
+          {
+            "token": "Ġthế",
+            "token_id": 101582,
+            "logprob": -5.0781,
+            "prob": 0.0062
+          },
+          {
+            "token": "吧",
+            "token_id": 102445,
+            "logprob": -5.0938,
+            "prob": 0.0061
+          },
+          {
+            "token": "Ġmundo",
+            "token_id": 29452,
+            "logprob": -5.1406,
+            "prob": 0.0059
+          },
+          {
+            "token": ".world",
+            "token_id": 23731,
+            "logprob": -5.2188,
+            "prob": 0.0054
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "世界",
+        "token_id": 102616,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 4,
+      "input_text": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 17 Nov 2025\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\n你好世界！<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n你也是好世界",
+      "tokens": [
+        "<|begin_of_text|>",
+        "<|start_header_id|>",
+        "system",
+        "<|end_header_id|>",
+        "\n\n",
+        "Cut",
+        "ting",
+        "ĠKnowledge",
+        "ĠDate",
+        ":",
+        "ĠDecember",
+        "Ġ",
+        "202",
+        "3",
+        "\n",
+        "Today",
+        "ĠDate",
+        ":",
+        "Ġ",
+        "17",
+        "ĠNov",
+        "Ġ",
+        "202",
+        "5",
+        "\n\n",
+        "<|eot_id|>",
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
+        "\n\n",
+        "你",
+        "好",
+        "世界",
+        "！",
+        "<|eot_id|>",
+        "<|start_header_id|>",
+        "assistant",
+        "<|end_header_id|>",
+        "\n\n",
+        "你",
+        "也是",
+        "好",
+        "世界"
+      ],
+      "token_ids": [
+        128000,
+        128006,
+        9125,
+        128007,
+        271,
+        38766,
+        1303,
+        33025,
+        2696,
+        25,
+        6790,
+        220,
+        2366,
+        18,
+        198,
+        15724,
+        2696,
+        25,
+        220,
+        1114,
+        4723,
+        220,
+        2366,
+        20,
+        271,
+        128009,
+        128006,
+        882,
+        128007,
+        271,
+        57668,
+        53901,
+        102616,
+        6447,
+        128009,
+        128006,
+        78191,
+        128007,
+        271,
+        57668,
+        109614,
+        53901,
+        102616
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "！",
+            "token_id": 6447,
+            "logprob": -0.0209,
+            "prob": 0.9795
+          },
+          {
+            "token": "。",
+            "token_id": 1811,
+            "logprob": -5.3867,
+            "prob": 0.0046
+          },
+          {
+            "token": "啊",
+            "token_id": 102856,
+            "logprob": -6.1445,
+            "prob": 0.0021
+          },
+          {
+            "token": "的",
+            "token_id": 9554,
+            "logprob": -6.4414,
+            "prob": 0.0016
+          },
+          {
+            "token": "Ġindeed",
+            "token_id": 13118,
+            "logprob": -6.7695,
+            "prob": 0.0011
+          },
+          {
+            "token": "了",
+            "token_id": 35287,
+            "logprob": -7.0742,
+            "prob": 0.0008
+          },
+          {
+            "token": "!",
+            "token_id": 0,
+            "logprob": -7.1289,
+            "prob": 0.0008
+          },
+          {
+            "token": "呢",
+            "token_id": 104586,
+            "logprob": -7.7461,
+            "prob": 0.0004
+          },
+          {
+            "token": "哦",
+            "token_id": 118670,
+            "logprob": -7.8789,
+            "prob": 0.0004
+          },
+          {
+            "token": "～",
+            "token_id": 21909,
+            "logprob": -7.9492,
+            "prob": 0.0004
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "！",
+        "token_id": 6447,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 5,
+      "input_text": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 17 Nov 2025\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\n你好世界！<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n你也是好世界！",
+      "tokens": [
+        "<|begin_of_text|>",
+        "<|start_header_id|>",
+        "system",
+        "<|end_header_id|>",
+        "\n\n",
+        "Cut",
+        "ting",
+        "ĠKnowledge",
+        "ĠDate",
+        ":",
+        "ĠDecember",
+        "Ġ",
+        "202",
+        "3",
+        "\n",
+        "Today",
+        "ĠDate",
+        ":",
+        "Ġ",
+        "17",
+        "ĠNov",
+        "Ġ",
+        "202",
+        "5",
+        "\n\n",
+        "<|eot_id|>",
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
+        "\n\n",
+        "你",
+        "好",
+        "世界",
+        "！",
+        "<|eot_id|>",
+        "<|start_header_id|>",
+        "assistant",
+        "<|end_header_id|>",
+        "\n\n",
+        "你",
+        "也是",
+        "好",
+        "世界",
+        "！"
+      ],
+      "token_ids": [
+        128000,
+        128006,
+        9125,
+        128007,
+        271,
+        38766,
+        1303,
+        33025,
+        2696,
+        25,
+        6790,
+        220,
+        2366,
+        18,
+        198,
+        15724,
+        2696,
+        25,
+        220,
+        1114,
+        4723,
+        220,
+        2366,
+        20,
+        271,
+        128009,
+        128006,
+        882,
+        128007,
+        271,
+        57668,
+        53901,
+        102616,
+        6447,
+        128009,
+        128006,
+        78191,
+        128007,
+        271,
+        57668,
+        109614,
+        53901,
+        102616,
+        6447
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "<|eot_id|>",
+            "token_id": 128009,
+            "logprob": -0.4795,
+            "prob": 0.6191
+          },
+          {
+            "token": "希望",
+            "token_id": 110526,
+            "logprob": -3.6426,
+            "prob": 0.0262
+          },
+          {
+            "token": "我",
+            "token_id": 37046,
+            "logprob": -3.7988,
+            "prob": 0.0224
+          },
+          {
+            "token": "（",
+            "token_id": 10110,
+            "logprob": -4.1602,
+            "prob": 0.0156
+          },
+          {
+            "token": "你",
+            "token_id": 57668,
+            "logprob": -4.1992,
+            "prob": 0.015
+          },
+          {
+            "token": "好",
+            "token_id": 53901,
+            "logprob": -5.0664,
+            "prob": 0.0063
+          },
+          {
+            "token": "ĠWelcome",
+            "token_id": 20776,
+            "logprob": -5.2852,
+            "prob": 0.0051
+          },
+          {
+            "token": "中文",
+            "token_id": 108891,
+            "logprob": -5.3242,
+            "prob": 0.0049
+          },
+          {
+            "token": "welcome",
+            "token_id": 35184,
+            "logprob": -5.3555,
+            "prob": 0.0047
+          },
+          {
+            "token": "你的",
+            "token_id": 110310,
+            "logprob": -5.4805,
+            "prob": 0.0042
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "<|eot_id|>",
+        "token_id": 128009,
+        "selection_method": "sampling"
+      }
+    }
+  ]
+}

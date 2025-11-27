@@ -1,0 +1,7163 @@
+{
+  "id": "generated_20251117_172052",
+  "prompt": "Bonjour le monde!",
+  "language": "fr",
+  "temperature": 1.0,
+  "top_k": 10,
+  "model_info": {
+    "name": "CohereLabs/aya-expanse-8b",
+    "num_layers": 32,
+    "hidden_size": 4096,
+    "num_attention_heads": 32,
+    "vocab_size": 256000
+  },
+  "generation_steps": [
+    {
+      "step": 0,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Bonjour le monde!<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Bon",
+        "jour",
+        "Ġle",
+        "Ġmonde",
+        "!",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>"
+      ],
+      "token_ids": [5, 255000, 255006, 42243, 56673, 1885, 13316, 8, 255001, 255000, 255007],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Bon",
+            "token_id": 42243,
+            "logprob": -0.0,
+            "prob": 1.0
+          },
+          {
+            "token": "ĠBon",
+            "token_id": 10312,
+            "logprob": -10.7188,
+            "prob": 0.0
+          },
+          {
+            "token": "Bien",
+            "token_id": 73089,
+            "logprob": -13.4062,
+            "prob": 0.0
+          },
+          {
+            "token": "bon",
+            "token_id": 7157,
+            "logprob": -14.5938,
+            "prob": 0.0
+          },
+          {
+            "token": "Sal",
+            "token_id": 23639,
+            "logprob": -15.0,
+            "prob": 0.0
+          },
+          {
+            "token": "**",
+            "token_id": 2093,
+            "logprob": -15.7031,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠБон",
+            "token_id": 95784,
+            "logprob": -15.8438,
+            "prob": 0.0
+          },
+          {
+            "token": "<CLS>",
+            "token_id": 2,
+            "logprob": -33.0,
+            "prob": 0.0
+          },
+          {
+            "token": "<UNK>",
+            "token_id": 1,
+            "logprob": -32.75,
+            "prob": 0.0
+          },
+          {
+            "token": "<PAD>",
+            "token_id": 0,
+            "logprob": -32.7188,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Bon",
+        "token_id": 42243,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 1,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Bonjour le monde!<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>Bon",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Bon",
+        "jour",
+        "Ġle",
+        "Ġmonde",
+        "!",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "Bon"
+      ],
+      "token_ids": [5, 255000, 255006, 42243, 56673, 1885, 13316, 8, 255001, 255000, 255007, 42243],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "jour",
+            "token_id": 56673,
+            "logprob": 0.0,
+            "prob": 1.0
+          },
+          {
+            "token": "jou",
+            "token_id": 38775,
+            "logprob": -17.0625,
+            "prob": 0.0
+          },
+          {
+            "token": "<PAD>",
+            "token_id": 0,
+            "logprob": -35.9062,
+            "prob": 0.0
+          },
+          {
+            "token": "<UNK>",
+            "token_id": 1,
+            "logprob": -34.5,
+            "prob": 0.0
+          },
+          {
+            "token": "<EOS_TOKEN>",
+            "token_id": 6,
+            "logprob": -36.25,
+            "prob": 0.0
+          },
+          {
+            "token": "<EOP_TOKEN>",
+            "token_id": 7,
+            "logprob": -35.625,
+            "prob": 0.0
+          },
+          {
+            "token": "<BOS_TOKEN>",
+            "token_id": 5,
+            "logprob": -33.125,
+            "prob": 0.0
+          },
+          {
+            "token": "<MASK_TOKEN>",
+            "token_id": 4,
+            "logprob": -35.6562,
+            "prob": 0.0
+          },
+          {
+            "token": "<CLS>",
+            "token_id": 2,
+            "logprob": -35.7812,
+            "prob": 0.0
+          },
+          {
+            "token": "<SEP>",
+            "token_id": 3,
+            "logprob": -35.5312,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "jour",
+        "token_id": 56673,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 2,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Bonjour le monde!<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>Bonjour",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Bon",
+        "jour",
+        "Ġle",
+        "Ġmonde",
+        "!",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "Bon",
+        "jour"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 42243, 56673, 1885, 13316, 8, 255001, 255000, 255007, 42243, 56673
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġ!",
+            "token_id": 3316,
+            "logprob": -0.001,
+            "prob": 0.999
+          },
+          {
+            "token": "!",
+            "token_id": 8,
+            "logprob": -6.9688,
+            "prob": 0.0009
+          },
+          {
+            "token": " ",
+            "token_id": 60543,
+            "logprob": -12.0156,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġà",
+            "token_id": 2243,
+            "logprob": -12.2344,
+            "prob": 0.0
+          },
+          {
+            "token": "！",
+            "token_id": 23911,
+            "logprob": -12.875,
+            "prob": 0.0
+          },
+          {
+            "token": " ",
+            "token_id": 2053,
+            "logprob": -14.5312,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġet",
+            "token_id": 2113,
+            "logprob": -14.9062,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġ!(",
+            "token_id": 78392,
+            "logprob": -15.4297,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġmonde",
+            "token_id": 13316,
+            "logprob": -15.5469,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġmondial",
+            "token_id": 34326,
+            "logprob": -16.1406,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġ!",
+        "token_id": 3316,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 3,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Bonjour le monde!<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>Bonjour !",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Bon",
+        "jour",
+        "Ġle",
+        "Ġmonde",
+        "!",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "Bon",
+        "jour",
+        "Ġ!"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 42243, 56673, 1885, 13316, 8, 255001, 255000, 255007, 42243, 56673, 3316
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "ĠComment",
+            "token_id": 39330,
+            "logprob": -0.0013,
+            "prob": 0.9985
+          },
+          {
+            "token": "ĠCela",
+            "token_id": 63313,
+            "logprob": -7.3125,
+            "prob": 0.0007
+          },
+          {
+            "token": "ĠBien",
+            "token_id": 36285,
+            "logprob": -8.3125,
+            "prob": 0.0002
+          },
+          {
+            "token": "\n",
+            "token_id": 206,
+            "logprob": -9.5234,
+            "prob": 0.0001
+          },
+          {
+            "token": "ĠC",
+            "token_id": 1733,
+            "logprob": -9.5234,
+            "prob": 0.0001
+          },
+          {
+            "token": "ĠÇa",
+            "token_id": 140387,
+            "logprob": -9.625,
+            "prob": 0.0001
+          },
+          {
+            "token": "ĠPuis",
+            "token_id": 69070,
+            "logprob": -9.6562,
+            "prob": 0.0001
+          },
+          {
+            "token": "Comment",
+            "token_id": 28034,
+            "logprob": -10.0781,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠIl",
+            "token_id": 3869,
+            "logprob": -10.75,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠSign",
+            "token_id": 14377,
+            "logprob": -10.9141,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "ĠComment",
+        "token_id": 39330,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 4,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Bonjour le monde!<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>Bonjour ! Comment",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Bon",
+        "jour",
+        "Ġle",
+        "Ġmonde",
+        "!",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "Bon",
+        "jour",
+        "Ġ!",
+        "ĠComment"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 42243, 56673, 1885, 13316, 8, 255001, 255000, 255007, 42243, 56673, 3316,
+        39330
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġpuis",
+            "token_id": 10556,
+            "logprob": -0.0,
+            "prob": 1.0
+          },
+          {
+            "token": "Ġalle",
+            "token_id": 10528,
+            "logprob": -12.4844,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġthen",
+            "token_id": 3118,
+            "logprob": -12.625,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġpouv",
+            "token_id": 39299,
+            "logprob": -12.9062,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġalors",
+            "token_id": 11291,
+            "logprob": -13.6484,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġpoi",
+            "token_id": 21194,
+            "logprob": -13.7578,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġça",
+            "token_id": 119050,
+            "logprob": -13.7188,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġpued",
+            "token_id": 9719,
+            "logprob": -13.7734,
+            "prob": 0.0
+          },
+          {
+            "token": "Puis",
+            "token_id": 200296,
+            "logprob": -14.2656,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġcela",
+            "token_id": 39732,
+            "logprob": -14.3672,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġpuis",
+        "token_id": 10556,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 5,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Bonjour le monde!<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>Bonjour ! Comment puis",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Bon",
+        "jour",
+        "Ġle",
+        "Ġmonde",
+        "!",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "Bon",
+        "jour",
+        "Ġ!",
+        "ĠComment",
+        "Ġpuis"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 42243, 56673, 1885, 13316, 8, 255001, 255000, 255007, 42243, 56673, 3316,
+        39330, 10556
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "-",
+            "token_id": 20,
+            "logprob": 0.0,
+            "prob": 1.0
+          },
+          {
+            "token": "<UNK>",
+            "token_id": 1,
+            "logprob": -41.9062,
+            "prob": 0.0
+          },
+          {
+            "token": "<SEP>",
+            "token_id": 3,
+            "logprob": -41.9062,
+            "prob": 0.0
+          },
+          {
+            "token": "<EOS_TOKEN>",
+            "token_id": 6,
+            "logprob": -36.2188,
+            "prob": 0.0
+          },
+          {
+            "token": "<EOP_TOKEN>",
+            "token_id": 7,
+            "logprob": -40.9688,
+            "prob": 0.0
+          },
+          {
+            "token": "<PAD>",
+            "token_id": 0,
+            "logprob": -41.125,
+            "prob": 0.0
+          },
+          {
+            "token": "<CLS>",
+            "token_id": 2,
+            "logprob": -41.375,
+            "prob": 0.0
+          },
+          {
+            "token": "<BOS_TOKEN>",
+            "token_id": 5,
+            "logprob": -41.9062,
+            "prob": 0.0
+          },
+          {
+            "token": "!",
+            "token_id": 8,
+            "logprob": -37.0625,
+            "prob": 0.0
+          },
+          {
+            "token": "<MASK_TOKEN>",
+            "token_id": 4,
+            "logprob": -41.0,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "-",
+        "token_id": 20,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 6,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Bonjour le monde!<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>Bonjour ! Comment puis-",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Bon",
+        "jour",
+        "Ġle",
+        "Ġmonde",
+        "!",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "Bon",
+        "jour",
+        "Ġ!",
+        "ĠComment",
+        "Ġpuis",
+        "-"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 42243, 56673, 1885, 13316, 8, 255001, 255000, 255007, 42243, 56673, 3316,
+        39330, 10556, 20
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "je",
+            "token_id": 3594,
+            "logprob": -0.0,
+            "prob": 1.0
+          },
+          {
+            "token": "Je",
+            "token_id": 12219,
+            "logprob": -15.1562,
+            "prob": 0.0
+          },
+          {
+            "token": "<PAD>",
+            "token_id": 0,
+            "logprob": -36.7812,
+            "prob": 0.0
+          },
+          {
+            "token": "<UNK>",
+            "token_id": 1,
+            "logprob": -37.1562,
+            "prob": 0.0
+          },
+          {
+            "token": "<EOS_TOKEN>",
+            "token_id": 6,
+            "logprob": -40.8438,
+            "prob": 0.0
+          },
+          {
+            "token": "<EOP_TOKEN>",
+            "token_id": 7,
+            "logprob": -36.6875,
+            "prob": 0.0
+          },
+          {
+            "token": "<BOS_TOKEN>",
+            "token_id": 5,
+            "logprob": -36.8125,
+            "prob": 0.0
+          },
+          {
+            "token": "<MASK_TOKEN>",
+            "token_id": 4,
+            "logprob": -36.7812,
+            "prob": 0.0
+          },
+          {
+            "token": "<CLS>",
+            "token_id": 2,
+            "logprob": -36.8125,
+            "prob": 0.0
+          },
+          {
+            "token": "<SEP>",
+            "token_id": 3,
+            "logprob": -36.75,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "je",
+        "token_id": 3594,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 7,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Bonjour le monde!<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>Bonjour ! Comment puis-je",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Bon",
+        "jour",
+        "Ġle",
+        "Ġmonde",
+        "!",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "Bon",
+        "jour",
+        "Ġ!",
+        "ĠComment",
+        "Ġpuis",
+        "-",
+        "je"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 42243, 56673, 1885, 13316, 8, 255001, 255000, 255007, 42243, 56673, 3316,
+        39330, 10556, 20, 3594
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġvous",
+            "token_id": 61096,
+            "logprob": -0.0,
+            "prob": 1.0
+          },
+          {
+            "token": "Ġt",
+            "token_id": 1668,
+            "logprob": -10.0312,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġaider",
+            "token_id": 120280,
+            "logprob": -15.6406,
+            "prob": 0.0
+          },
+          {
+            "token": "<PAD>",
+            "token_id": 0,
+            "logprob": -33.9688,
+            "prob": 0.0
+          },
+          {
+            "token": "<EOS_TOKEN>",
+            "token_id": 6,
+            "logprob": -32.625,
+            "prob": 0.0
+          },
+          {
+            "token": "<SEP>",
+            "token_id": 3,
+            "logprob": -33.6562,
+            "prob": 0.0
+          },
+          {
+            "token": "<BOS_TOKEN>",
+            "token_id": 5,
+            "logprob": -32.9375,
+            "prob": 0.0
+          },
+          {
+            "token": "<MASK_TOKEN>",
+            "token_id": 4,
+            "logprob": -34.0938,
+            "prob": 0.0
+          },
+          {
+            "token": "<UNK>",
+            "token_id": 1,
+            "logprob": -33.9375,
+            "prob": 0.0
+          },
+          {
+            "token": "<CLS>",
+            "token_id": 2,
+            "logprob": -34.0,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġvous",
+        "token_id": 61096,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 8,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Bonjour le monde!<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>Bonjour ! Comment puis-je vous",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Bon",
+        "jour",
+        "Ġle",
+        "Ġmonde",
+        "!",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "Bon",
+        "jour",
+        "Ġ!",
+        "ĠComment",
+        "Ġpuis",
+        "-",
+        "je",
+        "Ġvous"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 42243, 56673, 1885, 13316, 8, 255001, 255000, 255007, 42243, 56673, 3316,
+        39330, 10556, 20, 3594, 61096
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġaider",
+            "token_id": 120280,
+            "logprob": -0.0,
+            "prob": 1.0
+          },
+          {
+            "token": "Ġassister",
+            "token_id": 228763,
+            "logprob": -14.8906,
+            "prob": 0.0
+          },
+          {
+            "token": "aider",
+            "token_id": 155224,
+            "logprob": -17.3281,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġaide",
+            "token_id": 58830,
+            "logprob": -17.1719,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġayudar",
+            "token_id": 72932,
+            "logprob": -16.3438,
+            "prob": 0.0
+          },
+          {
+            "token": "<SEP>",
+            "token_id": 3,
+            "logprob": -37.4062,
+            "prob": 0.0
+          },
+          {
+            "token": "<MASK_TOKEN>",
+            "token_id": 4,
+            "logprob": -37.75,
+            "prob": 0.0
+          },
+          {
+            "token": "<CLS>",
+            "token_id": 2,
+            "logprob": -37.9062,
+            "prob": 0.0
+          },
+          {
+            "token": "<PAD>",
+            "token_id": 0,
+            "logprob": -37.625,
+            "prob": 0.0
+          },
+          {
+            "token": "<UNK>",
+            "token_id": 1,
+            "logprob": -37.1562,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġaider",
+        "token_id": 120280,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 9,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Bonjour le monde!<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>Bonjour ! Comment puis-je vous aider",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Bon",
+        "jour",
+        "Ġle",
+        "Ġmonde",
+        "!",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "Bon",
+        "jour",
+        "Ġ!",
+        "ĠComment",
+        "Ġpuis",
+        "-",
+        "je",
+        "Ġvous",
+        "Ġaider"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 42243, 56673, 1885, 13316, 8, 255001, 255000, 255007, 42243, 56673, 3316,
+        39330, 10556, 20, 3594, 61096, 120280
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġaujourd",
+            "token_id": 30986,
+            "logprob": -0.0,
+            "prob": 1.0
+          },
+          {
+            "token": "Ġou",
+            "token_id": 3841,
+            "logprob": -12.9219,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġ?",
+            "token_id": 5691,
+            "logprob": -13.1094,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġhoy",
+            "token_id": 40058,
+            "logprob": -14.375,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġtoday",
+            "token_id": 6683,
+            "logprob": -14.5,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠAujourd",
+            "token_id": 150079,
+            "logprob": -14.6562,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġсегодня",
+            "token_id": 89459,
+            "logprob": -15.3125,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġoggi",
+            "token_id": 54985,
+            "logprob": -15.6719,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġheute",
+            "token_id": 35513,
+            "logprob": -15.6562,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġhoje",
+            "token_id": 33983,
+            "logprob": -15.6875,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġaujourd",
+        "token_id": 30986,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 10,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Bonjour le monde!<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>Bonjour ! Comment puis-je vous aider aujourd",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Bon",
+        "jour",
+        "Ġle",
+        "Ġmonde",
+        "!",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "Bon",
+        "jour",
+        "Ġ!",
+        "ĠComment",
+        "Ġpuis",
+        "-",
+        "je",
+        "Ġvous",
+        "Ġaider",
+        "Ġaujourd"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 42243, 56673, 1885, 13316, 8, 255001, 255000, 255007, 42243, 56673, 3316,
+        39330, 10556, 20, 3594, 61096, 120280, 30986
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "'",
+            "token_id": 14,
+            "logprob": 0.0,
+            "prob": 1.0
+          },
+          {
+            "token": "<UNK>",
+            "token_id": 1,
+            "logprob": -39.3125,
+            "prob": 0.0
+          },
+          {
+            "token": "<SEP>",
+            "token_id": 3,
+            "logprob": -40.9062,
+            "prob": 0.0
+          },
+          {
+            "token": "<EOS_TOKEN>",
+            "token_id": 6,
+            "logprob": -38.375,
+            "prob": 0.0
+          },
+          {
+            "token": "<EOP_TOKEN>",
+            "token_id": 7,
+            "logprob": -41.2188,
+            "prob": 0.0
+          },
+          {
+            "token": "<PAD>",
+            "token_id": 0,
+            "logprob": -41.25,
+            "prob": 0.0
+          },
+          {
+            "token": "<CLS>",
+            "token_id": 2,
+            "logprob": -40.8125,
+            "prob": 0.0
+          },
+          {
+            "token": "<BOS_TOKEN>",
+            "token_id": 5,
+            "logprob": -42.125,
+            "prob": 0.0
+          },
+          {
+            "token": "!",
+            "token_id": 8,
+            "logprob": -38.9375,
+            "prob": 0.0
+          },
+          {
+            "token": "<MASK_TOKEN>",
+            "token_id": 4,
+            "logprob": -41.125,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "'",
+        "token_id": 14,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 11,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Bonjour le monde!<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>Bonjour ! Comment puis-je vous aider aujourd'",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Bon",
+        "jour",
+        "Ġle",
+        "Ġmonde",
+        "!",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "Bon",
+        "jour",
+        "Ġ!",
+        "ĠComment",
+        "Ġpuis",
+        "-",
+        "je",
+        "Ġvous",
+        "Ġaider",
+        "Ġaujourd",
+        "'"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 42243, 56673, 1885, 13316, 8, 255001, 255000, 255007, 42243, 56673, 3316,
+        39330, 10556, 20, 3594, 61096, 120280, 30986, 14
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "hui",
+            "token_id": 22652,
+            "logprob": -0.0,
+            "prob": 1.0
+          },
+          {
+            "token": "hi",
+            "token_id": 5649,
+            "logprob": -11.3125,
+            "prob": 0.0
+          },
+          {
+            "token": "ai",
+            "token_id": 2317,
+            "logprob": -13.1094,
+            "prob": 0.0
+          },
+          {
+            "token": "ui",
+            "token_id": 2634,
+            "logprob": -13.7891,
+            "prob": 0.0
+          },
+          {
+            "token": "ki",
+            "token_id": 3735,
+            "logprob": -13.9453,
+            "prob": 0.0
+          },
+          {
+            "token": "qui",
+            "token_id": 27090,
+            "logprob": -14.1641,
+            "prob": 0.0
+          },
+          {
+            "token": "xi",
+            "token_id": 25589,
+            "logprob": -14.6953,
+            "prob": 0.0
+          },
+          {
+            "token": "fi",
+            "token_id": 11275,
+            "logprob": -15.5234,
+            "prob": 0.0
+          },
+          {
+            "token": "h",
+            "token_id": 79,
+            "logprob": -17.1875,
+            "prob": 0.0
+          },
+          {
+            "token": "est",
+            "token_id": 1769,
+            "logprob": -17.0938,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "hui",
+        "token_id": 22652,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 12,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Bonjour le monde!<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>Bonjour ! Comment puis-je vous aider aujourd'hui",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Bon",
+        "jour",
+        "Ġle",
+        "Ġmonde",
+        "!",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "Bon",
+        "jour",
+        "Ġ!",
+        "ĠComment",
+        "Ġpuis",
+        "-",
+        "je",
+        "Ġvous",
+        "Ġaider",
+        "Ġaujourd",
+        "'",
+        "hui"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 42243, 56673, 1885, 13316, 8, 255001, 255000, 255007, 42243, 56673, 3316,
+        39330, 10556, 20, 3594, 61096, 120280, 30986, 14, 22652
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġ?",
+            "token_id": 5691,
+            "logprob": -0.0,
+            "prob": 1.0
+          },
+          {
+            "token": "?",
+            "token_id": 38,
+            "logprob": -11.1406,
+            "prob": 0.0
+          },
+          {
+            "token": "？",
+            "token_id": 33176,
+            "logprob": -14.9531,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġ(",
+            "token_id": 1737,
+            "logprob": -16.1406,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġen",
+            "token_id": 1819,
+            "logprob": -16.7656,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġ�",
+            "token_id": 1863,
+            "logprob": -16.625,
+            "prob": 0.0
+          },
+          {
+            "token": "<CLS>",
+            "token_id": 2,
+            "logprob": -33.875,
+            "prob": 0.0
+          },
+          {
+            "token": "<SEP>",
+            "token_id": 3,
+            "logprob": -33.875,
+            "prob": 0.0
+          },
+          {
+            "token": "<UNK>",
+            "token_id": 1,
+            "logprob": -32.4688,
+            "prob": 0.0
+          },
+          {
+            "token": "<PAD>",
+            "token_id": 0,
+            "logprob": -34.0938,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġ?",
+        "token_id": 5691,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 13,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Bonjour le monde!<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>Bonjour ! Comment puis-je vous aider aujourd'hui ?",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Bon",
+        "jour",
+        "Ġle",
+        "Ġmonde",
+        "!",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "Bon",
+        "jour",
+        "Ġ!",
+        "ĠComment",
+        "Ġpuis",
+        "-",
+        "je",
+        "Ġvous",
+        "Ġaider",
+        "Ġaujourd",
+        "'",
+        "hui",
+        "Ġ?"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 42243, 56673, 1885, 13316, 8, 255001, 255000, 255007, 42243, 56673, 3316,
+        39330, 10556, 20, 3594, 61096, 120280, 30986, 14, 22652, 5691
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "\n",
+            "token_id": 206,
+            "logprob": -0.0418,
+            "prob": 0.959
+          },
+          {
+            "token": "ĠJe",
+            "token_id": 4260,
+            "logprob": -3.2598,
+            "prob": 0.0384
+          },
+          {
+            "token": "<|END_OF_TURN_TOKEN|>",
+            "token_id": 255001,
+            "logprob": -5.9805,
+            "prob": 0.0025
+          },
+          {
+            "token": "ĠIl",
+            "token_id": 3869,
+            "logprob": -11.0625,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠPuis",
+            "token_id": 69070,
+            "logprob": -11.1172,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġ\n",
+            "token_id": 1973,
+            "logprob": -11.2344,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠSi",
+            "token_id": 12452,
+            "logprob": -11.6016,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠBien",
+            "token_id": 36285,
+            "logprob": -12.1328,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠEn",
+            "token_id": 2888,
+            "logprob": -12.7422,
+            "prob": 0.0
+          },
+          {
+            "token": "Je",
+            "token_id": 12219,
+            "logprob": -12.8906,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "\n",
+        "token_id": 206,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 14,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Bonjour le monde!<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>Bonjour ! Comment puis-je vous aider aujourd'hui ?\n",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Bon",
+        "jour",
+        "Ġle",
+        "Ġmonde",
+        "!",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "Bon",
+        "jour",
+        "Ġ!",
+        "ĠComment",
+        "Ġpuis",
+        "-",
+        "je",
+        "Ġvous",
+        "Ġaider",
+        "Ġaujourd",
+        "'",
+        "hui",
+        "Ġ?",
+        "\n"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 42243, 56673, 1885, 13316, 8, 255001, 255000, 255007, 42243, 56673, 3316,
+        39330, 10556, 20, 3594, 61096, 120280, 30986, 14, 22652, 5691, 206
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "\n",
+            "token_id": 206,
+            "logprob": 0.0,
+            "prob": 1.0
+          },
+          {
+            "token": "<UNK>",
+            "token_id": 1,
+            "logprob": -43.2812,
+            "prob": 0.0
+          },
+          {
+            "token": "<SEP>",
+            "token_id": 3,
+            "logprob": -44.0625,
+            "prob": 0.0
+          },
+          {
+            "token": "<EOS_TOKEN>",
+            "token_id": 6,
+            "logprob": -28.625,
+            "prob": 0.0
+          },
+          {
+            "token": "<EOP_TOKEN>",
+            "token_id": 7,
+            "logprob": -43.9375,
+            "prob": 0.0
+          },
+          {
+            "token": "<PAD>",
+            "token_id": 0,
+            "logprob": -44.0625,
+            "prob": 0.0
+          },
+          {
+            "token": "<CLS>",
+            "token_id": 2,
+            "logprob": -44.0,
+            "prob": 0.0
+          },
+          {
+            "token": "<BOS_TOKEN>",
+            "token_id": 5,
+            "logprob": -41.2812,
+            "prob": 0.0
+          },
+          {
+            "token": "!",
+            "token_id": 8,
+            "logprob": -36.6875,
+            "prob": 0.0
+          },
+          {
+            "token": "<MASK_TOKEN>",
+            "token_id": 4,
+            "logprob": -43.9375,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "\n",
+        "token_id": 206,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 15,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Bonjour le monde!<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>Bonjour ! Comment puis-je vous aider aujourd'hui ?\n\n",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Bon",
+        "jour",
+        "Ġle",
+        "Ġmonde",
+        "!",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "Bon",
+        "jour",
+        "Ġ!",
+        "ĠComment",
+        "Ġpuis",
+        "-",
+        "je",
+        "Ġvous",
+        "Ġaider",
+        "Ġaujourd",
+        "'",
+        "hui",
+        "Ġ?",
+        "\n",
+        "\n"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 42243, 56673, 1885, 13316, 8, 255001, 255000, 255007, 42243, 56673, 3316,
+        39330, 10556, 20, 3594, 61096, 120280, 30986, 14, 22652, 5691, 206, 206
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "\"",
+            "token_id": 9,
+            "logprob": -0.0194,
+            "prob": 0.981
+          },
+          {
+            "token": "V",
+            "token_id": 61,
+            "logprob": -4.0039,
+            "prob": 0.0182
+          },
+          {
+            "token": "Il",
+            "token_id": 6535,
+            "logprob": -7.7227,
+            "prob": 0.0004
+          },
+          {
+            "token": "La",
+            "token_id": 3857,
+            "logprob": -8.875,
+            "prob": 0.0001
+          },
+          {
+            "token": "Si",
+            "token_id": 22812,
+            "logprob": -9.25,
+            "prob": 0.0001
+          },
+          {
+            "token": "En",
+            "token_id": 3000,
+            "logprob": -10.2266,
+            "prob": 0.0
+          },
+          {
+            "token": "(",
+            "token_id": 15,
+            "logprob": -10.2656,
+            "prob": 0.0
+          },
+          {
+            "token": "Bien",
+            "token_id": 73089,
+            "logprob": -10.3594,
+            "prob": 0.0
+          },
+          {
+            "token": "Puis",
+            "token_id": 200296,
+            "logprob": -10.6172,
+            "prob": 0.0
+          },
+          {
+            "token": "Your",
+            "token_id": 17700,
+            "logprob": -10.6562,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "\"",
+        "token_id": 9,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 16,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Bonjour le monde!<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>Bonjour ! Comment puis-je vous aider aujourd'hui ?\n\n\"",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Bon",
+        "jour",
+        "Ġle",
+        "Ġmonde",
+        "!",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "Bon",
+        "jour",
+        "Ġ!",
+        "ĠComment",
+        "Ġpuis",
+        "-",
+        "je",
+        "Ġvous",
+        "Ġaider",
+        "Ġaujourd",
+        "'",
+        "hui",
+        "Ġ?",
+        "\n",
+        "\n",
+        "\""
+      ],
+      "token_ids": [
+        5, 255000, 255006, 42243, 56673, 1885, 13316, 8, 255001, 255000, 255007, 42243, 56673, 3316,
+        39330, 10556, 20, 3594, 61096, 120280, 30986, 14, 22652, 5691, 206, 206, 9
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Bon",
+            "token_id": 42243,
+            "logprob": -0.0,
+            "prob": 1.0
+          },
+          {
+            "token": "ĠBon",
+            "token_id": 10312,
+            "logprob": -12.0469,
+            "prob": 0.0
+          },
+          {
+            "token": "B",
+            "token_id": 41,
+            "logprob": -13.1094,
+            "prob": 0.0
+          },
+          {
+            "token": "bon",
+            "token_id": 7157,
+            "logprob": -15.125,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠБон",
+            "token_id": 95784,
+            "logprob": -15.25,
+            "prob": 0.0
+          },
+          {
+            "token": "Sal",
+            "token_id": 23639,
+            "logprob": -17.1719,
+            "prob": 0.0
+          },
+          {
+            "token": "Bien",
+            "token_id": 73089,
+            "logprob": -16.3281,
+            "prob": 0.0
+          },
+          {
+            "token": "<CLS>",
+            "token_id": 2,
+            "logprob": -32.8125,
+            "prob": 0.0
+          },
+          {
+            "token": "<UNK>",
+            "token_id": 1,
+            "logprob": -32.9375,
+            "prob": 0.0
+          },
+          {
+            "token": "<PAD>",
+            "token_id": 0,
+            "logprob": -33.0938,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Bon",
+        "token_id": 42243,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 17,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Bonjour le monde!<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>Bonjour ! Comment puis-je vous aider aujourd'hui ?\n\n\"Bon",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Bon",
+        "jour",
+        "Ġle",
+        "Ġmonde",
+        "!",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "Bon",
+        "jour",
+        "Ġ!",
+        "ĠComment",
+        "Ġpuis",
+        "-",
+        "je",
+        "Ġvous",
+        "Ġaider",
+        "Ġaujourd",
+        "'",
+        "hui",
+        "Ġ?",
+        "\n",
+        "\n",
+        "\"",
+        "Bon"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 42243, 56673, 1885, 13316, 8, 255001, 255000, 255007, 42243, 56673, 3316,
+        39330, 10556, 20, 3594, 61096, 120280, 30986, 14, 22652, 5691, 206, 206, 9, 42243
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "jour",
+            "token_id": 56673,
+            "logprob": -0.0,
+            "prob": 1.0
+          },
+          {
+            "token": "Ġjour",
+            "token_id": 10442,
+            "logprob": -14.4844,
+            "prob": 0.0
+          },
+          {
+            "token": "jur",
+            "token_id": 41879,
+            "logprob": -14.75,
+            "prob": 0.0
+          },
+          {
+            "token": "Jour",
+            "token_id": 116858,
+            "logprob": -16.25,
+            "prob": 0.0
+          },
+          {
+            "token": "jou",
+            "token_id": 38775,
+            "logprob": -16.4219,
+            "prob": 0.0
+          },
+          {
+            "token": "<SEP>",
+            "token_id": 3,
+            "logprob": -33.9375,
+            "prob": 0.0
+          },
+          {
+            "token": "<MASK_TOKEN>",
+            "token_id": 4,
+            "logprob": -33.9375,
+            "prob": 0.0
+          },
+          {
+            "token": "<CLS>",
+            "token_id": 2,
+            "logprob": -33.9062,
+            "prob": 0.0
+          },
+          {
+            "token": "<PAD>",
+            "token_id": 0,
+            "logprob": -34.1875,
+            "prob": 0.0
+          },
+          {
+            "token": "<UNK>",
+            "token_id": 1,
+            "logprob": -32.8125,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "jour",
+        "token_id": 56673,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 18,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Bonjour le monde!<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>Bonjour ! Comment puis-je vous aider aujourd'hui ?\n\n\"Bonjour",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Bon",
+        "jour",
+        "Ġle",
+        "Ġmonde",
+        "!",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "Bon",
+        "jour",
+        "Ġ!",
+        "ĠComment",
+        "Ġpuis",
+        "-",
+        "je",
+        "Ġvous",
+        "Ġaider",
+        "Ġaujourd",
+        "'",
+        "hui",
+        "Ġ?",
+        "\n",
+        "\n",
+        "\"",
+        "Bon",
+        "jour"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 42243, 56673, 1885, 13316, 8, 255001, 255000, 255007, 42243, 56673, 3316,
+        39330, 10556, 20, 3594, 61096, 120280, 30986, 14, 22652, 5691, 206, 206, 9, 42243, 56673
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġle",
+            "token_id": 1885,
+            "logprob": 0.0,
+            "prob": 1.0
+          },
+          {
+            "token": "<UNK>",
+            "token_id": 1,
+            "logprob": -43.1875,
+            "prob": 0.0
+          },
+          {
+            "token": "<SEP>",
+            "token_id": 3,
+            "logprob": -43.0625,
+            "prob": 0.0
+          },
+          {
+            "token": "<EOS_TOKEN>",
+            "token_id": 6,
+            "logprob": -41.1875,
+            "prob": 0.0
+          },
+          {
+            "token": "<EOP_TOKEN>",
+            "token_id": 7,
+            "logprob": -43.0,
+            "prob": 0.0
+          },
+          {
+            "token": "<PAD>",
+            "token_id": 0,
+            "logprob": -42.9688,
+            "prob": 0.0
+          },
+          {
+            "token": "<CLS>",
+            "token_id": 2,
+            "logprob": -43.375,
+            "prob": 0.0
+          },
+          {
+            "token": "<BOS_TOKEN>",
+            "token_id": 5,
+            "logprob": -41.6875,
+            "prob": 0.0
+          },
+          {
+            "token": "!",
+            "token_id": 8,
+            "logprob": -39.625,
+            "prob": 0.0
+          },
+          {
+            "token": "<MASK_TOKEN>",
+            "token_id": 4,
+            "logprob": -43.0625,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġle",
+        "token_id": 1885,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 19,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Bonjour le monde!<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>Bonjour ! Comment puis-je vous aider aujourd'hui ?\n\n\"Bonjour le",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Bon",
+        "jour",
+        "Ġle",
+        "Ġmonde",
+        "!",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "Bon",
+        "jour",
+        "Ġ!",
+        "ĠComment",
+        "Ġpuis",
+        "-",
+        "je",
+        "Ġvous",
+        "Ġaider",
+        "Ġaujourd",
+        "'",
+        "hui",
+        "Ġ?",
+        "\n",
+        "\n",
+        "\"",
+        "Bon",
+        "jour",
+        "Ġle"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 42243, 56673, 1885, 13316, 8, 255001, 255000, 255007, 42243, 56673, 3316,
+        39330, 10556, 20, 3594, 61096, 120280, 30986, 14, 22652, 5691, 206, 206, 9, 42243, 56673,
+        1885
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġmonde",
+            "token_id": 13316,
+            "logprob": -0.0,
+            "prob": 1.0
+          },
+          {
+            "token": "ĠMonde",
+            "token_id": 50295,
+            "logprob": -14.125,
+            "prob": 0.0
+          },
+          {
+            "token": "<PAD>",
+            "token_id": 0,
+            "logprob": -37.9062,
+            "prob": 0.0
+          },
+          {
+            "token": "<UNK>",
+            "token_id": 1,
+            "logprob": -35.9688,
+            "prob": 0.0
+          },
+          {
+            "token": "<EOS_TOKEN>",
+            "token_id": 6,
+            "logprob": -37.1562,
+            "prob": 0.0
+          },
+          {
+            "token": "<EOP_TOKEN>",
+            "token_id": 7,
+            "logprob": -37.75,
+            "prob": 0.0
+          },
+          {
+            "token": "<BOS_TOKEN>",
+            "token_id": 5,
+            "logprob": -38.25,
+            "prob": 0.0
+          },
+          {
+            "token": "<MASK_TOKEN>",
+            "token_id": 4,
+            "logprob": -37.75,
+            "prob": 0.0
+          },
+          {
+            "token": "<CLS>",
+            "token_id": 2,
+            "logprob": -37.4062,
+            "prob": 0.0
+          },
+          {
+            "token": "<SEP>",
+            "token_id": 3,
+            "logprob": -37.9688,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġmonde",
+        "token_id": 13316,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 20,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Bonjour le monde!<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>Bonjour ! Comment puis-je vous aider aujourd'hui ?\n\n\"Bonjour le monde",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Bon",
+        "jour",
+        "Ġle",
+        "Ġmonde",
+        "!",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "Bon",
+        "jour",
+        "Ġ!",
+        "ĠComment",
+        "Ġpuis",
+        "-",
+        "je",
+        "Ġvous",
+        "Ġaider",
+        "Ġaujourd",
+        "'",
+        "hui",
+        "Ġ?",
+        "\n",
+        "\n",
+        "\"",
+        "Bon",
+        "jour",
+        "Ġle",
+        "Ġmonde"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 42243, 56673, 1885, 13316, 8, 255001, 255000, 255007, 42243, 56673, 3316,
+        39330, 10556, 20, 3594, 61096, 120280, 30986, 14, 22652, 5691, 206, 206, 9, 42243, 56673,
+        1885, 13316
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "\"",
+            "token_id": 9,
+            "logprob": -0.0278,
+            "prob": 0.9727
+          },
+          {
+            "token": "Ġ!",
+            "token_id": 3316,
+            "logprob": -3.8086,
+            "prob": 0.0222
+          },
+          {
+            "token": "!\"",
+            "token_id": 14842,
+            "logprob": -5.2461,
+            "prob": 0.0053
+          },
+          {
+            "token": "\"!",
+            "token_id": 188622,
+            "logprob": -15.625,
+            "prob": 0.0
+          },
+          {
+            "token": "ी\"",
+            "token_id": 178537,
+            "logprob": -15.4062,
+            "prob": 0.0
+          },
+          {
+            "token": "ा\"",
+            "token_id": 155691,
+            "logprob": -16.125,
+            "prob": 0.0
+          },
+          {
+            "token": "！",
+            "token_id": 23911,
+            "logprob": -17.2031,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġ!(",
+            "token_id": 78392,
+            "logprob": -17.3125,
+            "prob": 0.0
+          },
+          {
+            "token": "<PAD>",
+            "token_id": 0,
+            "logprob": -35.5,
+            "prob": 0.0
+          },
+          {
+            "token": "<UNK>",
+            "token_id": 1,
+            "logprob": -35.4062,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "\"",
+        "token_id": 9,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 21,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Bonjour le monde!<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>Bonjour ! Comment puis-je vous aider aujourd'hui ?\n\n\"Bonjour le monde\"",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Bon",
+        "jour",
+        "Ġle",
+        "Ġmonde",
+        "!",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "Bon",
+        "jour",
+        "Ġ!",
+        "ĠComment",
+        "Ġpuis",
+        "-",
+        "je",
+        "Ġvous",
+        "Ġaider",
+        "Ġaujourd",
+        "'",
+        "hui",
+        "Ġ?",
+        "\n",
+        "\n",
+        "\"",
+        "Bon",
+        "jour",
+        "Ġle",
+        "Ġmonde",
+        "\""
+      ],
+      "token_ids": [
+        5, 255000, 255006, 42243, 56673, 1885, 13316, 8, 255001, 255000, 255007, 42243, 56673, 3316,
+        39330, 10556, 20, 3594, 61096, 120280, 30986, 14, 22652, 5691, 206, 206, 9, 42243, 56673,
+        1885, 13316, 9
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġest",
+            "token_id": 2072,
+            "logprob": -0.0144,
+            "prob": 0.9858
+          },
+          {
+            "token": "Ġsignifie",
+            "token_id": 65632,
+            "logprob": -4.25,
+            "prob": 0.0143
+          },
+          {
+            "token": "Ġsignifica",
+            "token_id": 29169,
+            "logprob": -13.6875,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġ(",
+            "token_id": 1737,
+            "logprob": -15.9922,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġbetekent",
+            "token_id": 102273,
+            "logprob": -17.1562,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġdésigne",
+            "token_id": 75013,
+            "logprob": -16.9219,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġσημαίνει",
+            "token_id": 107214,
+            "logprob": -16.3594,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġbedeutet",
+            "token_id": 147121,
+            "logprob": -17.0,
+            "prob": 0.0
+          },
+          {
+            "token": "est",
+            "token_id": 1769,
+            "logprob": -16.9219,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġmeans",
+            "token_id": 6161,
+            "logprob": -16.6094,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġest",
+        "token_id": 2072,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 22,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Bonjour le monde!<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>Bonjour ! Comment puis-je vous aider aujourd'hui ?\n\n\"Bonjour le monde\" est",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Bon",
+        "jour",
+        "Ġle",
+        "Ġmonde",
+        "!",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "Bon",
+        "jour",
+        "Ġ!",
+        "ĠComment",
+        "Ġpuis",
+        "-",
+        "je",
+        "Ġvous",
+        "Ġaider",
+        "Ġaujourd",
+        "'",
+        "hui",
+        "Ġ?",
+        "\n",
+        "\n",
+        "\"",
+        "Bon",
+        "jour",
+        "Ġle",
+        "Ġmonde",
+        "\"",
+        "Ġest"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 42243, 56673, 1885, 13316, 8, 255001, 255000, 255007, 42243, 56673, 3316,
+        39330, 10556, 20, 3594, 61096, 120280, 30986, 14, 22652, 5691, 206, 206, 9, 42243, 56673,
+        1885, 13316, 9, 2072
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġune",
+            "token_id": 3201,
+            "logprob": -0.0228,
+            "prob": 0.9775
+          },
+          {
+            "token": "Ġun",
+            "token_id": 1880,
+            "logprob": -3.8047,
+            "prob": 0.0223
+          },
+          {
+            "token": "Ġsouvent",
+            "token_id": 25728,
+            "logprob": -8.3203,
+            "prob": 0.0002
+          },
+          {
+            "token": "Ġuna",
+            "token_id": 2783,
+            "logprob": -12.1953,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġgénéralement",
+            "token_id": 42071,
+            "logprob": -12.2266,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġtraditionnellement",
+            "token_id": 172398,
+            "logprob": -13.7422,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġégalement",
+            "token_id": 10403,
+            "logprob": -14.4141,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠUne",
+            "token_id": 17366,
+            "logprob": -15.8828,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġla",
+            "token_id": 1848,
+            "logprob": -15.8125,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġen",
+            "token_id": 1819,
+            "logprob": -15.875,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġune",
+        "token_id": 3201,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 23,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Bonjour le monde!<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>Bonjour ! Comment puis-je vous aider aujourd'hui ?\n\n\"Bonjour le monde\" est une",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Bon",
+        "jour",
+        "Ġle",
+        "Ġmonde",
+        "!",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "Bon",
+        "jour",
+        "Ġ!",
+        "ĠComment",
+        "Ġpuis",
+        "-",
+        "je",
+        "Ġvous",
+        "Ġaider",
+        "Ġaujourd",
+        "'",
+        "hui",
+        "Ġ?",
+        "\n",
+        "\n",
+        "\"",
+        "Bon",
+        "jour",
+        "Ġle",
+        "Ġmonde",
+        "\"",
+        "Ġest",
+        "Ġune"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 42243, 56673, 1885, 13316, 8, 255001, 255000, 255007, 42243, 56673, 3316,
+        39330, 10556, 20, 3594, 61096, 120280, 30986, 14, 22652, 5691, 206, 206, 9, 42243, 56673,
+        1885, 13316, 9, 2072, 3201
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġexpression",
+            "token_id": 15063,
+            "logprob": -0.5,
+            "prob": 0.6064
+          },
+          {
+            "token": "Ġphrase",
+            "token_id": 30997,
+            "logprob": -0.9375,
+            "prob": 0.3916
+          },
+          {
+            "token": "Ġsal",
+            "token_id": 5804,
+            "logprob": -7.0781,
+            "prob": 0.0008
+          },
+          {
+            "token": "Ġformule",
+            "token_id": 83663,
+            "logprob": -8.125,
+            "prob": 0.0003
+          },
+          {
+            "token": "expression",
+            "token_id": 26932,
+            "logprob": -8.5,
+            "prob": 0.0002
+          },
+          {
+            "token": "Ġexpresión",
+            "token_id": 82142,
+            "logprob": -9.1328,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġcélèbre",
+            "token_id": 53118,
+            "logprob": -9.2031,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġsalut",
+            "token_id": 134951,
+            "logprob": -9.7188,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġfrase",
+            "token_id": 68331,
+            "logprob": -10.0312,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġphase",
+            "token_id": 15223,
+            "logprob": -10.0859,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġexpression",
+        "token_id": 15063,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 24,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Bonjour le monde!<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>Bonjour ! Comment puis-je vous aider aujourd'hui ?\n\n\"Bonjour le monde\" est une expression",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Bon",
+        "jour",
+        "Ġle",
+        "Ġmonde",
+        "!",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "Bon",
+        "jour",
+        "Ġ!",
+        "ĠComment",
+        "Ġpuis",
+        "-",
+        "je",
+        "Ġvous",
+        "Ġaider",
+        "Ġaujourd",
+        "'",
+        "hui",
+        "Ġ?",
+        "\n",
+        "\n",
+        "\"",
+        "Bon",
+        "jour",
+        "Ġle",
+        "Ġmonde",
+        "\"",
+        "Ġest",
+        "Ġune",
+        "Ġexpression"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 42243, 56673, 1885, 13316, 8, 255001, 255000, 255007, 42243, 56673, 3316,
+        39330, 10556, 20, 3594, 61096, 120280, 30986, 14, 22652, 5691, 206, 206, 9, 42243, 56673,
+        1885, 13316, 9, 2072, 3201, 15063
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġcourante",
+            "token_id": 192295,
+            "logprob": -0.3755,
+            "prob": 0.687
+          },
+          {
+            "token": "Ġcouramment",
+            "token_id": 166494,
+            "logprob": -1.4385,
+            "prob": 0.2374
+          },
+          {
+            "token": "Ġcommune",
+            "token_id": 9289,
+            "logprob": -3.75,
+            "prob": 0.0235
+          },
+          {
+            "token": "Ġutilisée",
+            "token_id": 53079,
+            "logprob": -4.0156,
+            "prob": 0.018
+          },
+          {
+            "token": "Ġfrançaise",
+            "token_id": 14488,
+            "logprob": -4.0625,
+            "prob": 0.0172
+          },
+          {
+            "token": "Ġsouvent",
+            "token_id": 25728,
+            "logprob": -5.3125,
+            "prob": 0.0049
+          },
+          {
+            "token": "Ġcour",
+            "token_id": 4224,
+            "logprob": -5.7578,
+            "prob": 0.0032
+          },
+          {
+            "token": "Ġcommonly",
+            "token_id": 17151,
+            "logprob": -6.5156,
+            "prob": 0.0015
+          },
+          {
+            "token": "Ġtraditionnelle",
+            "token_id": 105507,
+            "logprob": -6.5156,
+            "prob": 0.0015
+          },
+          {
+            "token": "Ġcommunément",
+            "token_id": 194361,
+            "logprob": -7.0312,
+            "prob": 0.0009
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġfrançaise",
+        "token_id": 14488,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 25,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Bonjour le monde!<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>Bonjour ! Comment puis-je vous aider aujourd'hui ?\n\n\"Bonjour le monde\" est une expression française",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Bon",
+        "jour",
+        "Ġle",
+        "Ġmonde",
+        "!",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "Bon",
+        "jour",
+        "Ġ!",
+        "ĠComment",
+        "Ġpuis",
+        "-",
+        "je",
+        "Ġvous",
+        "Ġaider",
+        "Ġaujourd",
+        "'",
+        "hui",
+        "Ġ?",
+        "\n",
+        "\n",
+        "\"",
+        "Bon",
+        "jour",
+        "Ġle",
+        "Ġmonde",
+        "\"",
+        "Ġest",
+        "Ġune",
+        "Ġexpression",
+        "Ġfrançaise"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 42243, 56673, 1885, 13316, 8, 255001, 255000, 255007, 42243, 56673, 3316,
+        39330, 10556, 20, 3594, 61096, 120280, 30986, 14, 22652, 5691, 206, 206, 9, 42243, 56673,
+        1885, 13316, 9, 2072, 3201, 15063, 14488
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġcourante",
+            "token_id": 192295,
+            "logprob": -0.1927,
+            "prob": 0.8247
+          },
+          {
+            "token": "Ġcour",
+            "token_id": 4224,
+            "logprob": -2.8965,
+            "prob": 0.0552
+          },
+          {
+            "token": "Ġcouramment",
+            "token_id": 166494,
+            "logprob": -2.9902,
+            "prob": 0.0503
+          },
+          {
+            "token": "Ġqui",
+            "token_id": 3805,
+            "logprob": -3.5215,
+            "prob": 0.0296
+          },
+          {
+            "token": "Ġcommune",
+            "token_id": 9289,
+            "logprob": -3.834,
+            "prob": 0.0216
+          },
+          {
+            "token": "Ġtraditionnelle",
+            "token_id": 105507,
+            "logprob": -4.9102,
+            "prob": 0.0074
+          },
+          {
+            "token": "Ġclassique",
+            "token_id": 50664,
+            "logprob": -5.3008,
+            "prob": 0.005
+          },
+          {
+            "token": "Ġcourant",
+            "token_id": 61902,
+            "logprob": -6.3867,
+            "prob": 0.0017
+          },
+          {
+            "token": "Ġutilisée",
+            "token_id": 53079,
+            "logprob": -6.8867,
+            "prob": 0.001
+          },
+          {
+            "token": "Ġcomune",
+            "token_id": 23941,
+            "logprob": -7.7695,
+            "prob": 0.0004
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġcourante",
+        "token_id": 192295,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 26,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Bonjour le monde!<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>Bonjour ! Comment puis-je vous aider aujourd'hui ?\n\n\"Bonjour le monde\" est une expression française courante",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Bon",
+        "jour",
+        "Ġle",
+        "Ġmonde",
+        "!",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "Bon",
+        "jour",
+        "Ġ!",
+        "ĠComment",
+        "Ġpuis",
+        "-",
+        "je",
+        "Ġvous",
+        "Ġaider",
+        "Ġaujourd",
+        "'",
+        "hui",
+        "Ġ?",
+        "\n",
+        "\n",
+        "\"",
+        "Bon",
+        "jour",
+        "Ġle",
+        "Ġmonde",
+        "\"",
+        "Ġest",
+        "Ġune",
+        "Ġexpression",
+        "Ġfrançaise",
+        "Ġcourante"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 42243, 56673, 1885, 13316, 8, 255001, 255000, 255007, 42243, 56673, 3316,
+        39330, 10556, 20, 3594, 61096, 120280, 30986, 14, 22652, 5691, 206, 206, 9, 42243, 56673,
+        1885, 13316, 9, 2072, 3201, 15063, 14488, 192295
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġutilisée",
+            "token_id": 53079,
+            "logprob": -0.0215,
+            "prob": 0.979
+          },
+          {
+            "token": "Ġqui",
+            "token_id": 3805,
+            "logprob": -4.6914,
+            "prob": 0.0092
+          },
+          {
+            "token": "Ġpour",
+            "token_id": 3346,
+            "logprob": -4.7227,
+            "prob": 0.0089
+          },
+          {
+            "token": "Ġsignifiant",
+            "token_id": 136174,
+            "logprob": -6.0039,
+            "prob": 0.0025
+          },
+          {
+            "token": "Ġutilisées",
+            "token_id": 91385,
+            "logprob": -8.1484,
+            "prob": 0.0003
+          },
+          {
+            "token": "Ġutilizada",
+            "token_id": 51330,
+            "logprob": -8.8516,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġutilisé",
+            "token_id": 34653,
+            "logprob": -9.1484,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġutilisés",
+            "token_id": 65874,
+            "logprob": -10.3594,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġusada",
+            "token_id": 46823,
+            "logprob": -10.7266,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġutilizzata",
+            "token_id": 121761,
+            "logprob": -10.7656,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġutilisée",
+        "token_id": 53079,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 27,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Bonjour le monde!<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>Bonjour ! Comment puis-je vous aider aujourd'hui ?\n\n\"Bonjour le monde\" est une expression française courante utilisée",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Bon",
+        "jour",
+        "Ġle",
+        "Ġmonde",
+        "!",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "Bon",
+        "jour",
+        "Ġ!",
+        "ĠComment",
+        "Ġpuis",
+        "-",
+        "je",
+        "Ġvous",
+        "Ġaider",
+        "Ġaujourd",
+        "'",
+        "hui",
+        "Ġ?",
+        "\n",
+        "\n",
+        "\"",
+        "Bon",
+        "jour",
+        "Ġle",
+        "Ġmonde",
+        "\"",
+        "Ġest",
+        "Ġune",
+        "Ġexpression",
+        "Ġfrançaise",
+        "Ġcourante",
+        "Ġutilisée"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 42243, 56673, 1885, 13316, 8, 255001, 255000, 255007, 42243, 56673, 3316,
+        39330, 10556, 20, 3594, 61096, 120280, 30986, 14, 22652, 5691, 206, 206, 9, 42243, 56673,
+        1885, 13316, 9, 2072, 3201, 15063, 14488, 192295, 53079
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġpour",
+            "token_id": 3346,
+            "logprob": -0.0,
+            "prob": 1.0
+          },
+          {
+            "token": "Ġдля",
+            "token_id": 5436,
+            "logprob": -15.1562,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġpentru",
+            "token_id": 8026,
+            "logprob": -15.5781,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠPour",
+            "token_id": 22948,
+            "logprob": -17.25,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġuntuk",
+            "token_id": 6230,
+            "logprob": -16.7188,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġγια",
+            "token_id": 6974,
+            "logprob": -16.5312,
+            "prob": 0.0
+          },
+          {
+            "token": "<CLS>",
+            "token_id": 2,
+            "logprob": -35.9062,
+            "prob": 0.0
+          },
+          {
+            "token": "<SEP>",
+            "token_id": 3,
+            "logprob": -35.5938,
+            "prob": 0.0
+          },
+          {
+            "token": "<UNK>",
+            "token_id": 1,
+            "logprob": -37.2188,
+            "prob": 0.0
+          },
+          {
+            "token": "<PAD>",
+            "token_id": 0,
+            "logprob": -35.5312,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġpour",
+        "token_id": 3346,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 28,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Bonjour le monde!<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>Bonjour ! Comment puis-je vous aider aujourd'hui ?\n\n\"Bonjour le monde\" est une expression française courante utilisée pour",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Bon",
+        "jour",
+        "Ġle",
+        "Ġmonde",
+        "!",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "Bon",
+        "jour",
+        "Ġ!",
+        "ĠComment",
+        "Ġpuis",
+        "-",
+        "je",
+        "Ġvous",
+        "Ġaider",
+        "Ġaujourd",
+        "'",
+        "hui",
+        "Ġ?",
+        "\n",
+        "\n",
+        "\"",
+        "Bon",
+        "jour",
+        "Ġle",
+        "Ġmonde",
+        "\"",
+        "Ġest",
+        "Ġune",
+        "Ġexpression",
+        "Ġfrançaise",
+        "Ġcourante",
+        "Ġutilisée",
+        "Ġpour"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 42243, 56673, 1885, 13316, 8, 255001, 255000, 255007, 42243, 56673, 3316,
+        39330, 10556, 20, 3594, 61096, 120280, 30986, 14, 22652, 5691, 206, 206, 9, 42243, 56673,
+        1885, 13316, 9, 2072, 3201, 15063, 14488, 192295, 53079, 3346
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġdire",
+            "token_id": 5245,
+            "logprob": -0.1272,
+            "prob": 0.8804
+          },
+          {
+            "token": "Ġsal",
+            "token_id": 5804,
+            "logprob": -2.127,
+            "prob": 0.1191
+          },
+          {
+            "token": "Ġsalut",
+            "token_id": 134951,
+            "logprob": -8.5156,
+            "prob": 0.0002
+          },
+          {
+            "token": "Ġsouha",
+            "token_id": 57605,
+            "logprob": -10.25,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġsay",
+            "token_id": 5088,
+            "logprob": -10.9062,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġaccueillir",
+            "token_id": 135014,
+            "logprob": -11.7969,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġdit",
+            "token_id": 9518,
+            "logprob": -12.0234,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġdites",
+            "token_id": 186741,
+            "logprob": -12.0312,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġdir",
+            "token_id": 6359,
+            "logprob": -12.0625,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠDire",
+            "token_id": 15009,
+            "logprob": -12.2266,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġdire",
+        "token_id": 5245,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 29,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Bonjour le monde!<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>Bonjour ! Comment puis-je vous aider aujourd'hui ?\n\n\"Bonjour le monde\" est une expression française courante utilisée pour dire",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Bon",
+        "jour",
+        "Ġle",
+        "Ġmonde",
+        "!",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "Bon",
+        "jour",
+        "Ġ!",
+        "ĠComment",
+        "Ġpuis",
+        "-",
+        "je",
+        "Ġvous",
+        "Ġaider",
+        "Ġaujourd",
+        "'",
+        "hui",
+        "Ġ?",
+        "\n",
+        "\n",
+        "\"",
+        "Bon",
+        "jour",
+        "Ġle",
+        "Ġmonde",
+        "\"",
+        "Ġest",
+        "Ġune",
+        "Ġexpression",
+        "Ġfrançaise",
+        "Ġcourante",
+        "Ġutilisée",
+        "Ġpour",
+        "Ġdire"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 42243, 56673, 1885, 13316, 8, 255001, 255000, 255007, 42243, 56673, 3316,
+        39330, 10556, 20, 3594, 61096, 120280, 30986, 14, 22652, 5691, 206, 206, 9, 42243, 56673,
+        1885, 13316, 9, 2072, 3201, 15063, 14488, 192295, 53079, 3346, 5245
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġbon",
+            "token_id": 10247,
+            "logprob": -0.5942,
+            "prob": 0.5522
+          },
+          {
+            "token": "Ġ\"",
+            "token_id": 1789,
+            "logprob": -0.813,
+            "prob": 0.4436
+          },
+          {
+            "token": "Ġsalut",
+            "token_id": 134951,
+            "logprob": -5.6562,
+            "prob": 0.0035
+          },
+          {
+            "token": "Ġhall",
+            "token_id": 16561,
+            "logprob": -8.1875,
+            "prob": 0.0003
+          },
+          {
+            "token": "Ġsimplement",
+            "token_id": 49189,
+            "logprob": -8.25,
+            "prob": 0.0003
+          },
+          {
+            "token": "Ġsal",
+            "token_id": 5804,
+            "logprob": -8.8281,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġhello",
+            "token_id": 65903,
+            "logprob": -9.4375,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġ«",
+            "token_id": 2364,
+            "logprob": -10.2656,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠBon",
+            "token_id": 10312,
+            "logprob": -10.8125,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġun",
+            "token_id": 1880,
+            "logprob": -11.2188,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġ\"",
+        "token_id": 1789,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 30,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Bonjour le monde!<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>Bonjour ! Comment puis-je vous aider aujourd'hui ?\n\n\"Bonjour le monde\" est une expression française courante utilisée pour dire \"",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Bon",
+        "jour",
+        "Ġle",
+        "Ġmonde",
+        "!",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "Bon",
+        "jour",
+        "Ġ!",
+        "ĠComment",
+        "Ġpuis",
+        "-",
+        "je",
+        "Ġvous",
+        "Ġaider",
+        "Ġaujourd",
+        "'",
+        "hui",
+        "Ġ?",
+        "\n",
+        "\n",
+        "\"",
+        "Bon",
+        "jour",
+        "Ġle",
+        "Ġmonde",
+        "\"",
+        "Ġest",
+        "Ġune",
+        "Ġexpression",
+        "Ġfrançaise",
+        "Ġcourante",
+        "Ġutilisée",
+        "Ġpour",
+        "Ġdire",
+        "Ġ\""
+      ],
+      "token_ids": [
+        5, 255000, 255006, 42243, 56673, 1885, 13316, 8, 255001, 255000, 255007, 42243, 56673, 3316,
+        39330, 10556, 20, 3594, 61096, 120280, 30986, 14, 22652, 5691, 206, 206, 9, 42243, 56673,
+        1885, 13316, 9, 2072, 3201, 15063, 14488, 192295, 53079, 3346, 5245, 1789
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "bon",
+            "token_id": 7157,
+            "logprob": -0.0998,
+            "prob": 0.9053
+          },
+          {
+            "token": "Bon",
+            "token_id": 42243,
+            "logprob": -2.9277,
+            "prob": 0.0535
+          },
+          {
+            "token": "sal",
+            "token_id": 24426,
+            "logprob": -3.2871,
+            "prob": 0.0374
+          },
+          {
+            "token": "Sal",
+            "token_id": 23639,
+            "logprob": -6.0547,
+            "prob": 0.0024
+          },
+          {
+            "token": "Hello",
+            "token_id": 28339,
+            "logprob": -6.8203,
+            "prob": 0.0011
+          },
+          {
+            "token": "hello",
+            "token_id": 34313,
+            "logprob": -7.6172,
+            "prob": 0.0005
+          },
+          {
+            "token": "ĠBon",
+            "token_id": 10312,
+            "logprob": -10.5391,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġbon",
+            "token_id": 10247,
+            "logprob": -10.6641,
+            "prob": 0.0
+          },
+          {
+            "token": "bons",
+            "token_id": 52688,
+            "logprob": -10.7734,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġsalut",
+            "token_id": 134951,
+            "logprob": -10.9922,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "bon",
+        "token_id": 7157,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 31,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Bonjour le monde!<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>Bonjour ! Comment puis-je vous aider aujourd'hui ?\n\n\"Bonjour le monde\" est une expression française courante utilisée pour dire \"bon",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Bon",
+        "jour",
+        "Ġle",
+        "Ġmonde",
+        "!",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "Bon",
+        "jour",
+        "Ġ!",
+        "ĠComment",
+        "Ġpuis",
+        "-",
+        "je",
+        "Ġvous",
+        "Ġaider",
+        "Ġaujourd",
+        "'",
+        "hui",
+        "Ġ?",
+        "\n",
+        "\n",
+        "\"",
+        "Bon",
+        "jour",
+        "Ġle",
+        "Ġmonde",
+        "\"",
+        "Ġest",
+        "Ġune",
+        "Ġexpression",
+        "Ġfrançaise",
+        "Ġcourante",
+        "Ġutilisée",
+        "Ġpour",
+        "Ġdire",
+        "Ġ\"",
+        "bon"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 42243, 56673, 1885, 13316, 8, 255001, 255000, 255007, 42243, 56673, 3316,
+        39330, 10556, 20, 3594, 61096, 120280, 30986, 14, 22652, 5691, 206, 206, 9, 42243, 56673,
+        1885, 13316, 9, 2072, 3201, 15063, 14488, 192295, 53079, 3346, 5245, 1789, 7157
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "jour",
+            "token_id": 56673,
+            "logprob": -0.0001,
+            "prob": 1.0
+          },
+          {
+            "token": "Ġjour",
+            "token_id": 10442,
+            "logprob": -9.4844,
+            "prob": 0.0001
+          },
+          {
+            "token": "Jour",
+            "token_id": 116858,
+            "logprob": -15.2578,
+            "prob": 0.0
+          },
+          {
+            "token": "jours",
+            "token_id": 25002,
+            "logprob": -16.1094,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġjournée",
+            "token_id": 65464,
+            "logprob": -16.5156,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠJour",
+            "token_id": 34557,
+            "logprob": -16.8125,
+            "prob": 0.0
+          },
+          {
+            "token": "heur",
+            "token_id": 84267,
+            "logprob": -16.75,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġsalut",
+            "token_id": 134951,
+            "logprob": -17.1719,
+            "prob": 0.0
+          },
+          {
+            "token": "nie",
+            "token_id": 4466,
+            "logprob": -16.4219,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġdía",
+            "token_id": 19493,
+            "logprob": -17.1719,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "jour",
+        "token_id": 56673,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 32,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Bonjour le monde!<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>Bonjour ! Comment puis-je vous aider aujourd'hui ?\n\n\"Bonjour le monde\" est une expression française courante utilisée pour dire \"bonjour",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Bon",
+        "jour",
+        "Ġle",
+        "Ġmonde",
+        "!",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "Bon",
+        "jour",
+        "Ġ!",
+        "ĠComment",
+        "Ġpuis",
+        "-",
+        "je",
+        "Ġvous",
+        "Ġaider",
+        "Ġaujourd",
+        "'",
+        "hui",
+        "Ġ?",
+        "\n",
+        "\n",
+        "\"",
+        "Bon",
+        "jour",
+        "Ġle",
+        "Ġmonde",
+        "\"",
+        "Ġest",
+        "Ġune",
+        "Ġexpression",
+        "Ġfrançaise",
+        "Ġcourante",
+        "Ġutilisée",
+        "Ġpour",
+        "Ġdire",
+        "Ġ\"",
+        "bon",
+        "jour"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 42243, 56673, 1885, 13316, 8, 255001, 255000, 255007, 42243, 56673, 3316,
+        39330, 10556, 20, 3594, 61096, 120280, 30986, 14, 22652, 5691, 206, 206, 9, 42243, 56673,
+        1885, 13316, 9, 2072, 3201, 15063, 14488, 192295, 53079, 3346, 5245, 1789, 7157, 56673
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġà",
+            "token_id": 2243,
+            "logprob": -0.1536,
+            "prob": 0.8579
+          },
+          {
+            "token": "\"",
+            "token_id": 9,
+            "logprob": -1.9502,
+            "prob": 0.1422
+          },
+          {
+            "token": "Ġau",
+            "token_id": 2470,
+            "logprob": -9.4375,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġaux",
+            "token_id": 5496,
+            "logprob": -12.4219,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġبه",
+            "token_id": 4909,
+            "logprob": -15.75,
+            "prob": 0.0
+          },
+          {
+            "token": "\",",
+            "token_id": 2040,
+            "logprob": -16.6875,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠÀ",
+            "token_id": 15527,
+            "logprob": -16.7812,
+            "prob": 0.0
+          },
+          {
+            "token": "à",
+            "token_id": 2037,
+            "logprob": -17.1406,
+            "prob": 0.0
+          },
+          {
+            "token": "<PAD>",
+            "token_id": 0,
+            "logprob": -34.9688,
+            "prob": 0.0
+          },
+          {
+            "token": "<UNK>",
+            "token_id": 1,
+            "logprob": -34.5312,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "\"",
+        "token_id": 9,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 33,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Bonjour le monde!<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>Bonjour ! Comment puis-je vous aider aujourd'hui ?\n\n\"Bonjour le monde\" est une expression française courante utilisée pour dire \"bonjour\"",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Bon",
+        "jour",
+        "Ġle",
+        "Ġmonde",
+        "!",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "Bon",
+        "jour",
+        "Ġ!",
+        "ĠComment",
+        "Ġpuis",
+        "-",
+        "je",
+        "Ġvous",
+        "Ġaider",
+        "Ġaujourd",
+        "'",
+        "hui",
+        "Ġ?",
+        "\n",
+        "\n",
+        "\"",
+        "Bon",
+        "jour",
+        "Ġle",
+        "Ġmonde",
+        "\"",
+        "Ġest",
+        "Ġune",
+        "Ġexpression",
+        "Ġfrançaise",
+        "Ġcourante",
+        "Ġutilisée",
+        "Ġpour",
+        "Ġdire",
+        "Ġ\"",
+        "bon",
+        "jour",
+        "\""
+      ],
+      "token_ids": [
+        5, 255000, 255006, 42243, 56673, 1885, 13316, 8, 255001, 255000, 255007, 42243, 56673, 3316,
+        39330, 10556, 20, 3594, 61096, 120280, 30986, 14, 22652, 5691, 206, 206, 9, 42243, 56673,
+        1885, 13316, 9, 2072, 3201, 15063, 14488, 192295, 53079, 3346, 5245, 1789, 7157, 56673, 9
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġà",
+            "token_id": 2243,
+            "logprob": -0.2423,
+            "prob": 0.7847
+          },
+          {
+            "token": "Ġde",
+            "token_id": 1715,
+            "logprob": -1.5391,
+            "prob": 0.2146
+          },
+          {
+            "token": "Ġet",
+            "token_id": 2113,
+            "logprob": -7.4297,
+            "prob": 0.0006
+          },
+          {
+            "token": "Ġdans",
+            "token_id": 3027,
+            "logprob": -10.6328,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġaux",
+            "token_id": 5496,
+            "logprob": -11.7578,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġou",
+            "token_id": 3841,
+            "logprob": -12.7734,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġen",
+            "token_id": 1819,
+            "logprob": -13.3828,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġavec",
+            "token_id": 4374,
+            "logprob": -13.7188,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġau",
+            "token_id": 2470,
+            "logprob": -13.8594,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġtout",
+            "token_id": 11539,
+            "logprob": -14.3984,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġà",
+        "token_id": 2243,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 34,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Bonjour le monde!<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>Bonjour ! Comment puis-je vous aider aujourd'hui ?\n\n\"Bonjour le monde\" est une expression française courante utilisée pour dire \"bonjour\" à",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Bon",
+        "jour",
+        "Ġle",
+        "Ġmonde",
+        "!",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "Bon",
+        "jour",
+        "Ġ!",
+        "ĠComment",
+        "Ġpuis",
+        "-",
+        "je",
+        "Ġvous",
+        "Ġaider",
+        "Ġaujourd",
+        "'",
+        "hui",
+        "Ġ?",
+        "\n",
+        "\n",
+        "\"",
+        "Bon",
+        "jour",
+        "Ġle",
+        "Ġmonde",
+        "\"",
+        "Ġest",
+        "Ġune",
+        "Ġexpression",
+        "Ġfrançaise",
+        "Ġcourante",
+        "Ġutilisée",
+        "Ġpour",
+        "Ġdire",
+        "Ġ\"",
+        "bon",
+        "jour",
+        "\"",
+        "Ġà"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 42243, 56673, 1885, 13316, 8, 255001, 255000, 255007, 42243, 56673, 3316,
+        39330, 10556, 20, 3594, 61096, 120280, 30986, 14, 22652, 5691, 206, 206, 9, 42243, 56673,
+        1885, 13316, 9, 2072, 3201, 15063, 14488, 192295, 53079, 3346, 5245, 1789, 7157, 56673, 9,
+        2243
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġtout",
+            "token_id": 11539,
+            "logprob": -0.2244,
+            "prob": 0.7988
+          },
+          {
+            "token": "Ġtous",
+            "token_id": 18067,
+            "logprob": -1.6152,
+            "prob": 0.1989
+          },
+          {
+            "token": "Ġplusieurs",
+            "token_id": 13794,
+            "logprob": -7.3945,
+            "prob": 0.0006
+          },
+          {
+            "token": "Ġl",
+            "token_id": 1711,
+            "logprob": -7.5508,
+            "prob": 0.0005
+          },
+          {
+            "token": "Ġquelqu",
+            "token_id": 197254,
+            "logprob": -8.1641,
+            "prob": 0.0003
+          },
+          {
+            "token": "Ġtoutes",
+            "token_id": 27763,
+            "logprob": -8.2109,
+            "prob": 0.0003
+          },
+          {
+            "token": "Ġun",
+            "token_id": 1880,
+            "logprob": -8.8203,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġtoute",
+            "token_id": 22189,
+            "logprob": -9.1484,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġchacun",
+            "token_id": 66954,
+            "logprob": -10.625,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġtodos",
+            "token_id": 10949,
+            "logprob": -10.7578,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġtout",
+        "token_id": 11539,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 35,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Bonjour le monde!<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>Bonjour ! Comment puis-je vous aider aujourd'hui ?\n\n\"Bonjour le monde\" est une expression française courante utilisée pour dire \"bonjour\" à tout",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Bon",
+        "jour",
+        "Ġle",
+        "Ġmonde",
+        "!",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "Bon",
+        "jour",
+        "Ġ!",
+        "ĠComment",
+        "Ġpuis",
+        "-",
+        "je",
+        "Ġvous",
+        "Ġaider",
+        "Ġaujourd",
+        "'",
+        "hui",
+        "Ġ?",
+        "\n",
+        "\n",
+        "\"",
+        "Bon",
+        "jour",
+        "Ġle",
+        "Ġmonde",
+        "\"",
+        "Ġest",
+        "Ġune",
+        "Ġexpression",
+        "Ġfrançaise",
+        "Ġcourante",
+        "Ġutilisée",
+        "Ġpour",
+        "Ġdire",
+        "Ġ\"",
+        "bon",
+        "jour",
+        "\"",
+        "Ġà",
+        "Ġtout"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 42243, 56673, 1885, 13316, 8, 255001, 255000, 255007, 42243, 56673, 3316,
+        39330, 10556, 20, 3594, 61096, 120280, 30986, 14, 22652, 5691, 206, 206, 9, 42243, 56673,
+        1885, 13316, 9, 2072, 3201, 15063, 14488, 192295, 53079, 3346, 5245, 1789, 7157, 56673, 9,
+        2243, 11539
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġle",
+            "token_id": 1885,
+            "logprob": -0.0,
+            "prob": 1.0
+          },
+          {
+            "token": "Ġun",
+            "token_id": 1880,
+            "logprob": -16.5938,
+            "prob": 0.0
+          },
+          {
+            "token": "<PAD>",
+            "token_id": 0,
+            "logprob": -31.5312,
+            "prob": 0.0
+          },
+          {
+            "token": "<UNK>",
+            "token_id": 1,
+            "logprob": -31.5312,
+            "prob": 0.0
+          },
+          {
+            "token": "<EOS_TOKEN>",
+            "token_id": 6,
+            "logprob": -30.75,
+            "prob": 0.0
+          },
+          {
+            "token": "<EOP_TOKEN>",
+            "token_id": 7,
+            "logprob": -31.3906,
+            "prob": 0.0
+          },
+          {
+            "token": "<BOS_TOKEN>",
+            "token_id": 5,
+            "logprob": -29.3906,
+            "prob": 0.0
+          },
+          {
+            "token": "<MASK_TOKEN>",
+            "token_id": 4,
+            "logprob": -31.3906,
+            "prob": 0.0
+          },
+          {
+            "token": "<CLS>",
+            "token_id": 2,
+            "logprob": -31.6406,
+            "prob": 0.0
+          },
+          {
+            "token": "<SEP>",
+            "token_id": 3,
+            "logprob": -31.9844,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġle",
+        "token_id": 1885,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 36,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Bonjour le monde!<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>Bonjour ! Comment puis-je vous aider aujourd'hui ?\n\n\"Bonjour le monde\" est une expression française courante utilisée pour dire \"bonjour\" à tout le",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Bon",
+        "jour",
+        "Ġle",
+        "Ġmonde",
+        "!",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "Bon",
+        "jour",
+        "Ġ!",
+        "ĠComment",
+        "Ġpuis",
+        "-",
+        "je",
+        "Ġvous",
+        "Ġaider",
+        "Ġaujourd",
+        "'",
+        "hui",
+        "Ġ?",
+        "\n",
+        "\n",
+        "\"",
+        "Bon",
+        "jour",
+        "Ġle",
+        "Ġmonde",
+        "\"",
+        "Ġest",
+        "Ġune",
+        "Ġexpression",
+        "Ġfrançaise",
+        "Ġcourante",
+        "Ġutilisée",
+        "Ġpour",
+        "Ġdire",
+        "Ġ\"",
+        "bon",
+        "jour",
+        "\"",
+        "Ġà",
+        "Ġtout",
+        "Ġle"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 42243, 56673, 1885, 13316, 8, 255001, 255000, 255007, 42243, 56673, 3316,
+        39330, 10556, 20, 3594, 61096, 120280, 30986, 14, 22652, 5691, 206, 206, 9, 42243, 56673,
+        1885, 13316, 9, 2072, 3201, 15063, 14488, 192295, 53079, 3346, 5245, 1789, 7157, 56673, 9,
+        2243, 11539, 1885
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġmonde",
+            "token_id": 13316,
+            "logprob": -0.0,
+            "prob": 1.0
+          },
+          {
+            "token": "Ġmundo",
+            "token_id": 12695,
+            "logprob": -13.8281,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġالعالم",
+            "token_id": 39245,
+            "logprob": -16.9375,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġmondo",
+            "token_id": 32591,
+            "logprob": -16.4688,
+            "prob": 0.0
+          },
+          {
+            "token": "monde",
+            "token_id": 132138,
+            "logprob": -16.7656,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠMonde",
+            "token_id": 50295,
+            "logprob": -16.7344,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġworld",
+            "token_id": 3845,
+            "logprob": -16.9375,
+            "prob": 0.0
+          },
+          {
+            "token": "<CLS>",
+            "token_id": 2,
+            "logprob": -33.8438,
+            "prob": 0.0
+          },
+          {
+            "token": "<UNK>",
+            "token_id": 1,
+            "logprob": -32.0,
+            "prob": 0.0
+          },
+          {
+            "token": "<PAD>",
+            "token_id": 0,
+            "logprob": -33.7188,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġmonde",
+        "token_id": 13316,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 37,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Bonjour le monde!<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>Bonjour ! Comment puis-je vous aider aujourd'hui ?\n\n\"Bonjour le monde\" est une expression française courante utilisée pour dire \"bonjour\" à tout le monde",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Bon",
+        "jour",
+        "Ġle",
+        "Ġmonde",
+        "!",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "Bon",
+        "jour",
+        "Ġ!",
+        "ĠComment",
+        "Ġpuis",
+        "-",
+        "je",
+        "Ġvous",
+        "Ġaider",
+        "Ġaujourd",
+        "'",
+        "hui",
+        "Ġ?",
+        "\n",
+        "\n",
+        "\"",
+        "Bon",
+        "jour",
+        "Ġle",
+        "Ġmonde",
+        "\"",
+        "Ġest",
+        "Ġune",
+        "Ġexpression",
+        "Ġfrançaise",
+        "Ġcourante",
+        "Ġutilisée",
+        "Ġpour",
+        "Ġdire",
+        "Ġ\"",
+        "bon",
+        "jour",
+        "\"",
+        "Ġà",
+        "Ġtout",
+        "Ġle",
+        "Ġmonde"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 42243, 56673, 1885, 13316, 8, 255001, 255000, 255007, 42243, 56673, 3316,
+        39330, 10556, 20, 3594, 61096, 120280, 30986, 14, 22652, 5691, 206, 206, 9, 42243, 56673,
+        1885, 13316, 9, 2072, 3201, 15063, 14488, 192295, 53079, 3346, 5245, 1789, 7157, 56673, 9,
+        2243, 11539, 1885, 13316
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġou",
+            "token_id": 3841,
+            "logprob": -0.1011,
+            "prob": 0.9038
+          },
+          {
+            "token": ".",
+            "token_id": 21,
+            "logprob": -2.8828,
+            "prob": 0.056
+          },
+          {
+            "token": ",",
+            "token_id": 19,
+            "logprob": -3.2578,
+            "prob": 0.0385
+          },
+          {
+            "token": "Ġautour",
+            "token_id": 36223,
+            "logprob": -7.1484,
+            "prob": 0.0008
+          },
+          {
+            "token": "Ġde",
+            "token_id": 1715,
+            "logprob": -7.2109,
+            "prob": 0.0007
+          },
+          {
+            "token": "Ġdans",
+            "token_id": 3027,
+            "logprob": -9.3047,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġen",
+            "token_id": 1819,
+            "logprob": -9.5859,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġet",
+            "token_id": 2113,
+            "logprob": -11.4922,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġoder",
+            "token_id": 13624,
+            "logprob": -12.1797,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġd",
+            "token_id": 1676,
+            "logprob": -13.3438,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": ".",
+        "token_id": 21,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 38,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Bonjour le monde!<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>Bonjour ! Comment puis-je vous aider aujourd'hui ?\n\n\"Bonjour le monde\" est une expression française courante utilisée pour dire \"bonjour\" à tout le monde.",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Bon",
+        "jour",
+        "Ġle",
+        "Ġmonde",
+        "!",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "Bon",
+        "jour",
+        "Ġ!",
+        "ĠComment",
+        "Ġpuis",
+        "-",
+        "je",
+        "Ġvous",
+        "Ġaider",
+        "Ġaujourd",
+        "'",
+        "hui",
+        "Ġ?",
+        "\n",
+        "\n",
+        "\"",
+        "Bon",
+        "jour",
+        "Ġle",
+        "Ġmonde",
+        "\"",
+        "Ġest",
+        "Ġune",
+        "Ġexpression",
+        "Ġfrançaise",
+        "Ġcourante",
+        "Ġutilisée",
+        "Ġpour",
+        "Ġdire",
+        "Ġ\"",
+        "bon",
+        "jour",
+        "\"",
+        "Ġà",
+        "Ġtout",
+        "Ġle",
+        "Ġmonde",
+        "."
+      ],
+      "token_ids": [
+        5, 255000, 255006, 42243, 56673, 1885, 13316, 8, 255001, 255000, 255007, 42243, 56673, 3316,
+        39330, 10556, 20, 3594, 61096, 120280, 30986, 14, 22652, 5691, 206, 206, 9, 42243, 56673,
+        1885, 13316, 9, 2072, 3201, 15063, 14488, 192295, 53079, 3346, 5245, 1789, 7157, 56673, 9,
+        2243, 11539, 1885, 13316, 21
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "ĠC",
+            "token_id": 1733,
+            "logprob": -0.0004,
+            "prob": 0.9995
+          },
+          {
+            "token": "ĠCela",
+            "token_id": 63313,
+            "logprob": -8.3906,
+            "prob": 0.0002
+          },
+          {
+            "token": "ĠSi",
+            "token_id": 12452,
+            "logprob": -9.9375,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠElle",
+            "token_id": 9939,
+            "logprob": -10.6875,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠLitt",
+            "token_id": 57224,
+            "logprob": -10.8594,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠComment",
+            "token_id": 39330,
+            "logprob": -10.9922,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠEst",
+            "token_id": 3499,
+            "logprob": -11.0391,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠPuis",
+            "token_id": 69070,
+            "logprob": -11.9766,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠIl",
+            "token_id": 3869,
+            "logprob": -11.9766,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠÇa",
+            "token_id": 140387,
+            "logprob": -12.8203,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "ĠC",
+        "token_id": 1733,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 39,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Bonjour le monde!<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>Bonjour ! Comment puis-je vous aider aujourd'hui ?\n\n\"Bonjour le monde\" est une expression française courante utilisée pour dire \"bonjour\" à tout le monde. C",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Bon",
+        "jour",
+        "Ġle",
+        "Ġmonde",
+        "!",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "Bon",
+        "jour",
+        "Ġ!",
+        "ĠComment",
+        "Ġpuis",
+        "-",
+        "je",
+        "Ġvous",
+        "Ġaider",
+        "Ġaujourd",
+        "'",
+        "hui",
+        "Ġ?",
+        "\n",
+        "\n",
+        "\"",
+        "Bon",
+        "jour",
+        "Ġle",
+        "Ġmonde",
+        "\"",
+        "Ġest",
+        "Ġune",
+        "Ġexpression",
+        "Ġfrançaise",
+        "Ġcourante",
+        "Ġutilisée",
+        "Ġpour",
+        "Ġdire",
+        "Ġ\"",
+        "bon",
+        "jour",
+        "\"",
+        "Ġà",
+        "Ġtout",
+        "Ġle",
+        "Ġmonde",
+        ".",
+        "ĠC"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 42243, 56673, 1885, 13316, 8, 255001, 255000, 255007, 42243, 56673, 3316,
+        39330, 10556, 20, 3594, 61096, 120280, 30986, 14, 22652, 5691, 206, 206, 9, 42243, 56673,
+        1885, 13316, 9, 2072, 3201, 15063, 14488, 192295, 53079, 3346, 5245, 1789, 7157, 56673, 9,
+        2243, 11539, 1885, 13316, 21, 1733
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "'",
+            "token_id": 14,
+            "logprob": 0.0,
+            "prob": 1.0
+          },
+          {
+            "token": "<UNK>",
+            "token_id": 1,
+            "logprob": -38.9375,
+            "prob": 0.0
+          },
+          {
+            "token": "<SEP>",
+            "token_id": 3,
+            "logprob": -39.2812,
+            "prob": 0.0
+          },
+          {
+            "token": "<EOS_TOKEN>",
+            "token_id": 6,
+            "logprob": -32.8125,
+            "prob": 0.0
+          },
+          {
+            "token": "<EOP_TOKEN>",
+            "token_id": 7,
+            "logprob": -38.7812,
+            "prob": 0.0
+          },
+          {
+            "token": "<PAD>",
+            "token_id": 0,
+            "logprob": -38.8125,
+            "prob": 0.0
+          },
+          {
+            "token": "<CLS>",
+            "token_id": 2,
+            "logprob": -39.125,
+            "prob": 0.0
+          },
+          {
+            "token": "<BOS_TOKEN>",
+            "token_id": 5,
+            "logprob": -37.625,
+            "prob": 0.0
+          },
+          {
+            "token": "!",
+            "token_id": 8,
+            "logprob": -32.625,
+            "prob": 0.0
+          },
+          {
+            "token": "<MASK_TOKEN>",
+            "token_id": 4,
+            "logprob": -38.7812,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "'",
+        "token_id": 14,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 40,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Bonjour le monde!<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>Bonjour ! Comment puis-je vous aider aujourd'hui ?\n\n\"Bonjour le monde\" est une expression française courante utilisée pour dire \"bonjour\" à tout le monde. C'",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Bon",
+        "jour",
+        "Ġle",
+        "Ġmonde",
+        "!",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "Bon",
+        "jour",
+        "Ġ!",
+        "ĠComment",
+        "Ġpuis",
+        "-",
+        "je",
+        "Ġvous",
+        "Ġaider",
+        "Ġaujourd",
+        "'",
+        "hui",
+        "Ġ?",
+        "\n",
+        "\n",
+        "\"",
+        "Bon",
+        "jour",
+        "Ġle",
+        "Ġmonde",
+        "\"",
+        "Ġest",
+        "Ġune",
+        "Ġexpression",
+        "Ġfrançaise",
+        "Ġcourante",
+        "Ġutilisée",
+        "Ġpour",
+        "Ġdire",
+        "Ġ\"",
+        "bon",
+        "jour",
+        "\"",
+        "Ġà",
+        "Ġtout",
+        "Ġle",
+        "Ġmonde",
+        ".",
+        "ĠC",
+        "'"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 42243, 56673, 1885, 13316, 8, 255001, 255000, 255007, 42243, 56673, 3316,
+        39330, 10556, 20, 3594, 61096, 120280, 30986, 14, 22652, 5691, 206, 206, 9, 42243, 56673,
+        1885, 13316, 9, 2072, 3201, 15063, 14488, 192295, 53079, 3346, 5245, 1789, 7157, 56673, 9,
+        2243, 11539, 1885, 13316, 21, 1733, 14
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "est",
+            "token_id": 1769,
+            "logprob": 0.0,
+            "prob": 1.0
+          },
+          {
+            "token": "<UNK>",
+            "token_id": 1,
+            "logprob": -40.4688,
+            "prob": 0.0
+          },
+          {
+            "token": "<SEP>",
+            "token_id": 3,
+            "logprob": -40.4062,
+            "prob": 0.0
+          },
+          {
+            "token": "<EOS_TOKEN>",
+            "token_id": 6,
+            "logprob": -40.25,
+            "prob": 0.0
+          },
+          {
+            "token": "<EOP_TOKEN>",
+            "token_id": 7,
+            "logprob": -39.5,
+            "prob": 0.0
+          },
+          {
+            "token": "<PAD>",
+            "token_id": 0,
+            "logprob": -39.5938,
+            "prob": 0.0
+          },
+          {
+            "token": "<CLS>",
+            "token_id": 2,
+            "logprob": -39.9375,
+            "prob": 0.0
+          },
+          {
+            "token": "<BOS_TOKEN>",
+            "token_id": 5,
+            "logprob": -37.375,
+            "prob": 0.0
+          },
+          {
+            "token": "!",
+            "token_id": 8,
+            "logprob": -39.0625,
+            "prob": 0.0
+          },
+          {
+            "token": "<MASK_TOKEN>",
+            "token_id": 4,
+            "logprob": -39.5625,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "est",
+        "token_id": 1769,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 41,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Bonjour le monde!<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>Bonjour ! Comment puis-je vous aider aujourd'hui ?\n\n\"Bonjour le monde\" est une expression française courante utilisée pour dire \"bonjour\" à tout le monde. C'est",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Bon",
+        "jour",
+        "Ġle",
+        "Ġmonde",
+        "!",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "Bon",
+        "jour",
+        "Ġ!",
+        "ĠComment",
+        "Ġpuis",
+        "-",
+        "je",
+        "Ġvous",
+        "Ġaider",
+        "Ġaujourd",
+        "'",
+        "hui",
+        "Ġ?",
+        "\n",
+        "\n",
+        "\"",
+        "Bon",
+        "jour",
+        "Ġle",
+        "Ġmonde",
+        "\"",
+        "Ġest",
+        "Ġune",
+        "Ġexpression",
+        "Ġfrançaise",
+        "Ġcourante",
+        "Ġutilisée",
+        "Ġpour",
+        "Ġdire",
+        "Ġ\"",
+        "bon",
+        "jour",
+        "\"",
+        "Ġà",
+        "Ġtout",
+        "Ġle",
+        "Ġmonde",
+        ".",
+        "ĠC",
+        "'",
+        "est"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 42243, 56673, 1885, 13316, 8, 255001, 255000, 255007, 42243, 56673, 3316,
+        39330, 10556, 20, 3594, 61096, 120280, 30986, 14, 22652, 5691, 206, 206, 9, 42243, 56673,
+        1885, 13316, 9, 2072, 3201, 15063, 14488, 192295, 53079, 3346, 5245, 1789, 7157, 56673, 9,
+        2243, 11539, 1885, 13316, 21, 1733, 14, 1769
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġune",
+            "token_id": 3201,
+            "logprob": -0.2108,
+            "prob": 0.8101
+          },
+          {
+            "token": "Ġun",
+            "token_id": 1880,
+            "logprob": -1.6641,
+            "prob": 0.1895
+          },
+          {
+            "token": "Ġaussi",
+            "token_id": 8042,
+            "logprob": -8.3516,
+            "prob": 0.0002
+          },
+          {
+            "token": "Ġsouvent",
+            "token_id": 25728,
+            "logprob": -8.4297,
+            "prob": 0.0002
+          },
+          {
+            "token": "Ġcomme",
+            "token_id": 6898,
+            "logprob": -8.8516,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġégalement",
+            "token_id": 10403,
+            "logprob": -10.1797,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġl",
+            "token_id": 1711,
+            "logprob": -11.4141,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġuna",
+            "token_id": 2783,
+            "logprob": -12.4375,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġsimilaire",
+            "token_id": 99620,
+            "logprob": -13.3359,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġparfois",
+            "token_id": 36325,
+            "logprob": -13.7188,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġune",
+        "token_id": 3201,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 42,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Bonjour le monde!<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>Bonjour ! Comment puis-je vous aider aujourd'hui ?\n\n\"Bonjour le monde\" est une expression française courante utilisée pour dire \"bonjour\" à tout le monde. C'est une",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Bon",
+        "jour",
+        "Ġle",
+        "Ġmonde",
+        "!",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "Bon",
+        "jour",
+        "Ġ!",
+        "ĠComment",
+        "Ġpuis",
+        "-",
+        "je",
+        "Ġvous",
+        "Ġaider",
+        "Ġaujourd",
+        "'",
+        "hui",
+        "Ġ?",
+        "\n",
+        "\n",
+        "\"",
+        "Bon",
+        "jour",
+        "Ġle",
+        "Ġmonde",
+        "\"",
+        "Ġest",
+        "Ġune",
+        "Ġexpression",
+        "Ġfrançaise",
+        "Ġcourante",
+        "Ġutilisée",
+        "Ġpour",
+        "Ġdire",
+        "Ġ\"",
+        "bon",
+        "jour",
+        "\"",
+        "Ġà",
+        "Ġtout",
+        "Ġle",
+        "Ġmonde",
+        ".",
+        "ĠC",
+        "'",
+        "est",
+        "Ġune"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 42243, 56673, 1885, 13316, 8, 255001, 255000, 255007, 42243, 56673, 3316,
+        39330, 10556, 20, 3594, 61096, 120280, 30986, 14, 22652, 5691, 206, 206, 9, 42243, 56673,
+        1885, 13316, 9, 2072, 3201, 15063, 14488, 192295, 53079, 3346, 5245, 1789, 7157, 56673, 9,
+        2243, 11539, 1885, 13316, 21, 1733, 14, 1769, 3201
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġfaçon",
+            "token_id": 47147,
+            "logprob": -0.0571,
+            "prob": 0.9443
+          },
+          {
+            "token": "Ġmanière",
+            "token_id": 38985,
+            "logprob": -3.3066,
+            "prob": 0.0366
+          },
+          {
+            "token": "Ġsal",
+            "token_id": 5804,
+            "logprob": -4.1992,
+            "prob": 0.015
+          },
+          {
+            "token": "Ġformule",
+            "token_id": 83663,
+            "logprob": -5.9023,
+            "prob": 0.0027
+          },
+          {
+            "token": "Ġforme",
+            "token_id": 16906,
+            "logprob": -7.7305,
+            "prob": 0.0004
+          },
+          {
+            "token": "Ġfaç",
+            "token_id": 43484,
+            "logprob": -8.4297,
+            "prob": 0.0002
+          },
+          {
+            "token": "Ġphrase",
+            "token_id": 30997,
+            "logprob": -8.9531,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġmanera",
+            "token_id": 26488,
+            "logprob": -9.7188,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġsalut",
+            "token_id": 134951,
+            "logprob": -10.0859,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġway",
+            "token_id": 3638,
+            "logprob": -10.5469,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġfaçon",
+        "token_id": 47147,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 43,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Bonjour le monde!<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>Bonjour ! Comment puis-je vous aider aujourd'hui ?\n\n\"Bonjour le monde\" est une expression française courante utilisée pour dire \"bonjour\" à tout le monde. C'est une façon",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Bon",
+        "jour",
+        "Ġle",
+        "Ġmonde",
+        "!",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "Bon",
+        "jour",
+        "Ġ!",
+        "ĠComment",
+        "Ġpuis",
+        "-",
+        "je",
+        "Ġvous",
+        "Ġaider",
+        "Ġaujourd",
+        "'",
+        "hui",
+        "Ġ?",
+        "\n",
+        "\n",
+        "\"",
+        "Bon",
+        "jour",
+        "Ġle",
+        "Ġmonde",
+        "\"",
+        "Ġest",
+        "Ġune",
+        "Ġexpression",
+        "Ġfrançaise",
+        "Ġcourante",
+        "Ġutilisée",
+        "Ġpour",
+        "Ġdire",
+        "Ġ\"",
+        "bon",
+        "jour",
+        "\"",
+        "Ġà",
+        "Ġtout",
+        "Ġle",
+        "Ġmonde",
+        ".",
+        "ĠC",
+        "'",
+        "est",
+        "Ġune",
+        "Ġfaçon"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 42243, 56673, 1885, 13316, 8, 255001, 255000, 255007, 42243, 56673, 3316,
+        39330, 10556, 20, 3594, 61096, 120280, 30986, 14, 22652, 5691, 206, 206, 9, 42243, 56673,
+        1885, 13316, 9, 2072, 3201, 15063, 14488, 192295, 53079, 3346, 5245, 1789, 7157, 56673, 9,
+        2243, 11539, 1885, 13316, 21, 1733, 14, 1769, 3201, 47147
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġam",
+            "token_id": 2437,
+            "logprob": -0.2031,
+            "prob": 0.8159
+          },
+          {
+            "token": "Ġpol",
+            "token_id": 2571,
+            "logprob": -2.0156,
+            "prob": 0.1332
+          },
+          {
+            "token": "Ġconviv",
+            "token_id": 167649,
+            "logprob": -3.9688,
+            "prob": 0.0189
+          },
+          {
+            "token": "Ġsimple",
+            "token_id": 7128,
+            "logprob": -5.0703,
+            "prob": 0.0063
+          },
+          {
+            "token": "Ġinform",
+            "token_id": 3188,
+            "logprob": -5.5469,
+            "prob": 0.0039
+          },
+          {
+            "token": "Ġchale",
+            "token_id": 121692,
+            "logprob": -5.5859,
+            "prob": 0.0037
+          },
+          {
+            "token": "Ġdé",
+            "token_id": 2965,
+            "logprob": -5.7656,
+            "prob": 0.0031
+          },
+          {
+            "token": "Ġsympath",
+            "token_id": 77820,
+            "logprob": -6.1562,
+            "prob": 0.0021
+          },
+          {
+            "token": "Ġaim",
+            "token_id": 13458,
+            "logprob": -6.2109,
+            "prob": 0.002
+          },
+          {
+            "token": "Ġde",
+            "token_id": 1715,
+            "logprob": -6.2812,
+            "prob": 0.0019
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġam",
+        "token_id": 2437,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 44,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Bonjour le monde!<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>Bonjour ! Comment puis-je vous aider aujourd'hui ?\n\n\"Bonjour le monde\" est une expression française courante utilisée pour dire \"bonjour\" à tout le monde. C'est une façon am",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Bon",
+        "jour",
+        "Ġle",
+        "Ġmonde",
+        "!",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "Bon",
+        "jour",
+        "Ġ!",
+        "ĠComment",
+        "Ġpuis",
+        "-",
+        "je",
+        "Ġvous",
+        "Ġaider",
+        "Ġaujourd",
+        "'",
+        "hui",
+        "Ġ?",
+        "\n",
+        "\n",
+        "\"",
+        "Bon",
+        "jour",
+        "Ġle",
+        "Ġmonde",
+        "\"",
+        "Ġest",
+        "Ġune",
+        "Ġexpression",
+        "Ġfrançaise",
+        "Ġcourante",
+        "Ġutilisée",
+        "Ġpour",
+        "Ġdire",
+        "Ġ\"",
+        "bon",
+        "jour",
+        "\"",
+        "Ġà",
+        "Ġtout",
+        "Ġle",
+        "Ġmonde",
+        ".",
+        "ĠC",
+        "'",
+        "est",
+        "Ġune",
+        "Ġfaçon",
+        "Ġam"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 42243, 56673, 1885, 13316, 8, 255001, 255000, 255007, 42243, 56673, 3316,
+        39330, 10556, 20, 3594, 61096, 120280, 30986, 14, 22652, 5691, 206, 206, 9, 42243, 56673,
+        1885, 13316, 9, 2072, 3201, 15063, 14488, 192295, 53079, 3346, 5245, 1789, 7157, 56673, 9,
+        2243, 11539, 1885, 13316, 21, 1733, 14, 1769, 3201, 47147, 2437
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "icale",
+            "token_id": 45559,
+            "logprob": -0.0001,
+            "prob": 1.0
+          },
+          {
+            "token": "iable",
+            "token_id": 10830,
+            "logprob": -10.3281,
+            "prob": 0.0
+          },
+          {
+            "token": "icales",
+            "token_id": 74673,
+            "logprob": -10.6719,
+            "prob": 0.0
+          },
+          {
+            "token": "ical",
+            "token_id": 2175,
+            "logprob": -10.7031,
+            "prob": 0.0
+          },
+          {
+            "token": "able",
+            "token_id": 2079,
+            "logprob": -12.7266,
+            "prob": 0.0
+          },
+          {
+            "token": "iale",
+            "token_id": 8283,
+            "logprob": -13.0547,
+            "prob": 0.0
+          },
+          {
+            "token": "ique",
+            "token_id": 2750,
+            "logprob": -13.9922,
+            "prob": 0.0
+          },
+          {
+            "token": "iche",
+            "token_id": 7299,
+            "logprob": -14.9219,
+            "prob": 0.0
+          },
+          {
+            "token": "ic",
+            "token_id": 1697,
+            "logprob": -15.2109,
+            "prob": 0.0
+          },
+          {
+            "token": "ielle",
+            "token_id": 25024,
+            "logprob": -15.7031,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "icale",
+        "token_id": 45559,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 45,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Bonjour le monde!<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>Bonjour ! Comment puis-je vous aider aujourd'hui ?\n\n\"Bonjour le monde\" est une expression française courante utilisée pour dire \"bonjour\" à tout le monde. C'est une façon amicale",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Bon",
+        "jour",
+        "Ġle",
+        "Ġmonde",
+        "!",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "Bon",
+        "jour",
+        "Ġ!",
+        "ĠComment",
+        "Ġpuis",
+        "-",
+        "je",
+        "Ġvous",
+        "Ġaider",
+        "Ġaujourd",
+        "'",
+        "hui",
+        "Ġ?",
+        "\n",
+        "\n",
+        "\"",
+        "Bon",
+        "jour",
+        "Ġle",
+        "Ġmonde",
+        "\"",
+        "Ġest",
+        "Ġune",
+        "Ġexpression",
+        "Ġfrançaise",
+        "Ġcourante",
+        "Ġutilisée",
+        "Ġpour",
+        "Ġdire",
+        "Ġ\"",
+        "bon",
+        "jour",
+        "\"",
+        "Ġà",
+        "Ġtout",
+        "Ġle",
+        "Ġmonde",
+        ".",
+        "ĠC",
+        "'",
+        "est",
+        "Ġune",
+        "Ġfaçon",
+        "Ġam",
+        "icale"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 42243, 56673, 1885, 13316, 8, 255001, 255000, 255007, 42243, 56673, 3316,
+        39330, 10556, 20, 3594, 61096, 120280, 30986, 14, 22652, 5691, 206, 206, 9, 42243, 56673,
+        1885, 13316, 9, 2072, 3201, 15063, 14488, 192295, 53079, 3346, 5245, 1789, 7157, 56673, 9,
+        2243, 11539, 1885, 13316, 21, 1733, 14, 1769, 3201, 47147, 2437, 45559
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġet",
+            "token_id": 2113,
+            "logprob": -0.0891,
+            "prob": 0.9146
+          },
+          {
+            "token": "Ġde",
+            "token_id": 1715,
+            "logprob": -2.4648,
+            "prob": 0.0851
+          },
+          {
+            "token": "Ġd",
+            "token_id": 1676,
+            "logprob": -8.5234,
+            "prob": 0.0002
+          },
+          {
+            "token": "Ġund",
+            "token_id": 2280,
+            "logprob": -15.9609,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġи",
+            "token_id": 2071,
+            "logprob": -15.9062,
+            "prob": 0.0
+          },
+          {
+            "token": "<SEP>",
+            "token_id": 3,
+            "logprob": -31.8125,
+            "prob": 0.0
+          },
+          {
+            "token": "<MASK_TOKEN>",
+            "token_id": 4,
+            "logprob": -32.2812,
+            "prob": 0.0
+          },
+          {
+            "token": "<CLS>",
+            "token_id": 2,
+            "logprob": -32.2812,
+            "prob": 0.0
+          },
+          {
+            "token": "<PAD>",
+            "token_id": 0,
+            "logprob": -32.3125,
+            "prob": 0.0
+          },
+          {
+            "token": "<UNK>",
+            "token_id": 1,
+            "logprob": -31.875,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġet",
+        "token_id": 2113,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 46,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Bonjour le monde!<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>Bonjour ! Comment puis-je vous aider aujourd'hui ?\n\n\"Bonjour le monde\" est une expression française courante utilisée pour dire \"bonjour\" à tout le monde. C'est une façon amicale et",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Bon",
+        "jour",
+        "Ġle",
+        "Ġmonde",
+        "!",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "Bon",
+        "jour",
+        "Ġ!",
+        "ĠComment",
+        "Ġpuis",
+        "-",
+        "je",
+        "Ġvous",
+        "Ġaider",
+        "Ġaujourd",
+        "'",
+        "hui",
+        "Ġ?",
+        "\n",
+        "\n",
+        "\"",
+        "Bon",
+        "jour",
+        "Ġle",
+        "Ġmonde",
+        "\"",
+        "Ġest",
+        "Ġune",
+        "Ġexpression",
+        "Ġfrançaise",
+        "Ġcourante",
+        "Ġutilisée",
+        "Ġpour",
+        "Ġdire",
+        "Ġ\"",
+        "bon",
+        "jour",
+        "\"",
+        "Ġà",
+        "Ġtout",
+        "Ġle",
+        "Ġmonde",
+        ".",
+        "ĠC",
+        "'",
+        "est",
+        "Ġune",
+        "Ġfaçon",
+        "Ġam",
+        "icale",
+        "Ġet"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 42243, 56673, 1885, 13316, 8, 255001, 255000, 255007, 42243, 56673, 3316,
+        39330, 10556, 20, 3594, 61096, 120280, 30986, 14, 22652, 5691, 206, 206, 9, 42243, 56673,
+        1885, 13316, 9, 2072, 3201, 15063, 14488, 192295, 53079, 3346, 5245, 1789, 7157, 56673, 9,
+        2243, 11539, 1885, 13316, 21, 1733, 14, 1769, 3201, 47147, 2437, 45559, 2113
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġpol",
+            "token_id": 2571,
+            "logprob": -0.8926,
+            "prob": 0.4097
+          },
+          {
+            "token": "Ġgénérale",
+            "token_id": 39333,
+            "logprob": -1.6582,
+            "prob": 0.1906
+          },
+          {
+            "token": "Ġinform",
+            "token_id": 3188,
+            "logprob": -2.4551,
+            "prob": 0.0859
+          },
+          {
+            "token": "Ġchale",
+            "token_id": 121692,
+            "logprob": -2.5332,
+            "prob": 0.0794
+          },
+          {
+            "token": "Ġinclusive",
+            "token_id": 32702,
+            "logprob": -2.7832,
+            "prob": 0.0619
+          },
+          {
+            "token": "Ġcourante",
+            "token_id": 192295,
+            "logprob": -2.9707,
+            "prob": 0.0513
+          },
+          {
+            "token": "Ġaccueill",
+            "token_id": 78413,
+            "logprob": -3.3145,
+            "prob": 0.0364
+          },
+          {
+            "token": "Ġcour",
+            "token_id": 4224,
+            "logprob": -3.6504,
+            "prob": 0.026
+          },
+          {
+            "token": "Ġform",
+            "token_id": 2645,
+            "logprob": -4.4297,
+            "prob": 0.0119
+          },
+          {
+            "token": "Ġsimple",
+            "token_id": 7128,
+            "logprob": -5.1016,
+            "prob": 0.0061
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġchale",
+        "token_id": 121692,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 47,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Bonjour le monde!<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>Bonjour ! Comment puis-je vous aider aujourd'hui ?\n\n\"Bonjour le monde\" est une expression française courante utilisée pour dire \"bonjour\" à tout le monde. C'est une façon amicale et chale",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Bon",
+        "jour",
+        "Ġle",
+        "Ġmonde",
+        "!",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "Bon",
+        "jour",
+        "Ġ!",
+        "ĠComment",
+        "Ġpuis",
+        "-",
+        "je",
+        "Ġvous",
+        "Ġaider",
+        "Ġaujourd",
+        "'",
+        "hui",
+        "Ġ?",
+        "\n",
+        "\n",
+        "\"",
+        "Bon",
+        "jour",
+        "Ġle",
+        "Ġmonde",
+        "\"",
+        "Ġest",
+        "Ġune",
+        "Ġexpression",
+        "Ġfrançaise",
+        "Ġcourante",
+        "Ġutilisée",
+        "Ġpour",
+        "Ġdire",
+        "Ġ\"",
+        "bon",
+        "jour",
+        "\"",
+        "Ġà",
+        "Ġtout",
+        "Ġle",
+        "Ġmonde",
+        ".",
+        "ĠC",
+        "'",
+        "est",
+        "Ġune",
+        "Ġfaçon",
+        "Ġam",
+        "icale",
+        "Ġet",
+        "Ġchale"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 42243, 56673, 1885, 13316, 8, 255001, 255000, 255007, 42243, 56673, 3316,
+        39330, 10556, 20, 3594, 61096, 120280, 30986, 14, 22652, 5691, 206, 206, 9, 42243, 56673,
+        1885, 13316, 9, 2072, 3201, 15063, 14488, 192295, 53079, 3346, 5245, 1789, 7157, 56673, 9,
+        2243, 11539, 1885, 13316, 21, 1733, 14, 1769, 3201, 47147, 2437, 45559, 2113, 121692
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "ure",
+            "token_id": 1984,
+            "logprob": -0.0,
+            "prob": 1.0
+          },
+          {
+            "token": "ureux",
+            "token_id": 247182,
+            "logprob": -12.4375,
+            "prob": 0.0
+          },
+          {
+            "token": "oureuse",
+            "token_id": 103373,
+            "logprob": -13.2344,
+            "prob": 0.0
+          },
+          {
+            "token": "urige",
+            "token_id": 228281,
+            "logprob": -13.9219,
+            "prob": 0.0
+          },
+          {
+            "token": "urre",
+            "token_id": 23507,
+            "logprob": -14.4688,
+            "prob": 0.0
+          },
+          {
+            "token": "urée",
+            "token_id": 149343,
+            "logprob": -14.8438,
+            "prob": 0.0
+          },
+          {
+            "token": "URE",
+            "token_id": 18139,
+            "logprob": -15.0,
+            "prob": 0.0
+          },
+          {
+            "token": "уре",
+            "token_id": 19560,
+            "logprob": -15.2969,
+            "prob": 0.0
+          },
+          {
+            "token": "uro",
+            "token_id": 2853,
+            "logprob": -15.5938,
+            "prob": 0.0
+          },
+          {
+            "token": "urea",
+            "token_id": 44789,
+            "logprob": -15.4844,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "ure",
+        "token_id": 1984,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 48,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Bonjour le monde!<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>Bonjour ! Comment puis-je vous aider aujourd'hui ?\n\n\"Bonjour le monde\" est une expression française courante utilisée pour dire \"bonjour\" à tout le monde. C'est une façon amicale et chaleure",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Bon",
+        "jour",
+        "Ġle",
+        "Ġmonde",
+        "!",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "Bon",
+        "jour",
+        "Ġ!",
+        "ĠComment",
+        "Ġpuis",
+        "-",
+        "je",
+        "Ġvous",
+        "Ġaider",
+        "Ġaujourd",
+        "'",
+        "hui",
+        "Ġ?",
+        "\n",
+        "\n",
+        "\"",
+        "Bon",
+        "jour",
+        "Ġle",
+        "Ġmonde",
+        "\"",
+        "Ġest",
+        "Ġune",
+        "Ġexpression",
+        "Ġfrançaise",
+        "Ġcourante",
+        "Ġutilisée",
+        "Ġpour",
+        "Ġdire",
+        "Ġ\"",
+        "bon",
+        "jour",
+        "\"",
+        "Ġà",
+        "Ġtout",
+        "Ġle",
+        "Ġmonde",
+        ".",
+        "ĠC",
+        "'",
+        "est",
+        "Ġune",
+        "Ġfaçon",
+        "Ġam",
+        "icale",
+        "Ġet",
+        "Ġchale",
+        "ure"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 42243, 56673, 1885, 13316, 8, 255001, 255000, 255007, 42243, 56673, 3316,
+        39330, 10556, 20, 3594, 61096, 120280, 30986, 14, 22652, 5691, 206, 206, 9, 42243, 56673,
+        1885, 13316, 9, 2072, 3201, 15063, 14488, 192295, 53079, 3346, 5245, 1789, 7157, 56673, 9,
+        2243, 11539, 1885, 13316, 21, 1733, 14, 1769, 3201, 47147, 2437, 45559, 2113, 121692, 1984
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "use",
+            "token_id": 2472,
+            "logprob": -0.0,
+            "prob": 1.0
+          },
+          {
+            "token": "uses",
+            "token_id": 8392,
+            "logprob": -15.25,
+            "prob": 0.0
+          },
+          {
+            "token": "USE",
+            "token_id": 30205,
+            "logprob": -15.75,
+            "prob": 0.0
+          },
+          {
+            "token": "uze",
+            "token_id": 67354,
+            "logprob": -15.7969,
+            "prob": 0.0
+          },
+          {
+            "token": "<SEP>",
+            "token_id": 3,
+            "logprob": -34.75,
+            "prob": 0.0
+          },
+          {
+            "token": "<CLS>",
+            "token_id": 2,
+            "logprob": -34.0625,
+            "prob": 0.0
+          },
+          {
+            "token": "<MASK_TOKEN>",
+            "token_id": 4,
+            "logprob": -33.7812,
+            "prob": 0.0
+          },
+          {
+            "token": "<BOS_TOKEN>",
+            "token_id": 5,
+            "logprob": -32.375,
+            "prob": 0.0
+          },
+          {
+            "token": "<PAD>",
+            "token_id": 0,
+            "logprob": -33.7812,
+            "prob": 0.0
+          },
+          {
+            "token": "<UNK>",
+            "token_id": 1,
+            "logprob": -33.4375,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "use",
+        "token_id": 2472,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 49,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Bonjour le monde!<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>Bonjour ! Comment puis-je vous aider aujourd'hui ?\n\n\"Bonjour le monde\" est une expression française courante utilisée pour dire \"bonjour\" à tout le monde. C'est une façon amicale et chaleureuse",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Bon",
+        "jour",
+        "Ġle",
+        "Ġmonde",
+        "!",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "Bon",
+        "jour",
+        "Ġ!",
+        "ĠComment",
+        "Ġpuis",
+        "-",
+        "je",
+        "Ġvous",
+        "Ġaider",
+        "Ġaujourd",
+        "'",
+        "hui",
+        "Ġ?",
+        "\n",
+        "\n",
+        "\"",
+        "Bon",
+        "jour",
+        "Ġle",
+        "Ġmonde",
+        "\"",
+        "Ġest",
+        "Ġune",
+        "Ġexpression",
+        "Ġfrançaise",
+        "Ġcourante",
+        "Ġutilisée",
+        "Ġpour",
+        "Ġdire",
+        "Ġ\"",
+        "bon",
+        "jour",
+        "\"",
+        "Ġà",
+        "Ġtout",
+        "Ġle",
+        "Ġmonde",
+        ".",
+        "ĠC",
+        "'",
+        "est",
+        "Ġune",
+        "Ġfaçon",
+        "Ġam",
+        "icale",
+        "Ġet",
+        "Ġchale",
+        "ure",
+        "use"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 42243, 56673, 1885, 13316, 8, 255001, 255000, 255007, 42243, 56673, 3316,
+        39330, 10556, 20, 3594, 61096, 120280, 30986, 14, 22652, 5691, 206, 206, 9, 42243, 56673,
+        1885, 13316, 9, 2072, 3201, 15063, 14488, 192295, 53079, 3346, 5245, 1789, 7157, 56673, 9,
+        2243, 11539, 1885, 13316, 21, 1733, 14, 1769, 3201, 47147, 2437, 45559, 2113, 121692, 1984,
+        2472
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġde",
+            "token_id": 1715,
+            "logprob": -0.0471,
+            "prob": 0.9541
+          },
+          {
+            "token": "Ġd",
+            "token_id": 1676,
+            "logprob": -3.0781,
+            "prob": 0.046
+          },
+          {
+            "token": "<PAD>",
+            "token_id": 0,
+            "logprob": -33.9688,
+            "prob": 0.0
+          },
+          {
+            "token": "<UNK>",
+            "token_id": 1,
+            "logprob": -33.7812,
+            "prob": 0.0
+          },
+          {
+            "token": "<EOS_TOKEN>",
+            "token_id": 6,
+            "logprob": -30.1562,
+            "prob": 0.0
+          },
+          {
+            "token": "<EOP_TOKEN>",
+            "token_id": 7,
+            "logprob": -33.8125,
+            "prob": 0.0
+          },
+          {
+            "token": "<BOS_TOKEN>",
+            "token_id": 5,
+            "logprob": -31.6406,
+            "prob": 0.0
+          },
+          {
+            "token": "<MASK_TOKEN>",
+            "token_id": 4,
+            "logprob": -33.875,
+            "prob": 0.0
+          },
+          {
+            "token": "<CLS>",
+            "token_id": 2,
+            "logprob": -33.9688,
+            "prob": 0.0
+          },
+          {
+            "token": "<SEP>",
+            "token_id": 3,
+            "logprob": -33.75,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġde",
+        "token_id": 1715,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 50,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Bonjour le monde!<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>Bonjour ! Comment puis-je vous aider aujourd'hui ?\n\n\"Bonjour le monde\" est une expression française courante utilisée pour dire \"bonjour\" à tout le monde. C'est une façon amicale et chaleureuse de",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Bon",
+        "jour",
+        "Ġle",
+        "Ġmonde",
+        "!",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "Bon",
+        "jour",
+        "Ġ!",
+        "ĠComment",
+        "Ġpuis",
+        "-",
+        "je",
+        "Ġvous",
+        "Ġaider",
+        "Ġaujourd",
+        "'",
+        "hui",
+        "Ġ?",
+        "\n",
+        "\n",
+        "\"",
+        "Bon",
+        "jour",
+        "Ġle",
+        "Ġmonde",
+        "\"",
+        "Ġest",
+        "Ġune",
+        "Ġexpression",
+        "Ġfrançaise",
+        "Ġcourante",
+        "Ġutilisée",
+        "Ġpour",
+        "Ġdire",
+        "Ġ\"",
+        "bon",
+        "jour",
+        "\"",
+        "Ġà",
+        "Ġtout",
+        "Ġle",
+        "Ġmonde",
+        ".",
+        "ĠC",
+        "'",
+        "est",
+        "Ġune",
+        "Ġfaçon",
+        "Ġam",
+        "icale",
+        "Ġet",
+        "Ġchale",
+        "ure",
+        "use",
+        "Ġde"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 42243, 56673, 1885, 13316, 8, 255001, 255000, 255007, 42243, 56673, 3316,
+        39330, 10556, 20, 3594, 61096, 120280, 30986, 14, 22652, 5691, 206, 206, 9, 42243, 56673,
+        1885, 13316, 9, 2072, 3201, 15063, 14488, 192295, 53079, 3346, 5245, 1789, 7157, 56673, 9,
+        2243, 11539, 1885, 13316, 21, 1733, 14, 1769, 3201, 47147, 2437, 45559, 2113, 121692, 1984,
+        2472, 1715
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġsal",
+            "token_id": 5804,
+            "logprob": -0.0091,
+            "prob": 0.9912
+          },
+          {
+            "token": "Ġcommencer",
+            "token_id": 148845,
+            "logprob": -5.3984,
+            "prob": 0.0045
+          },
+          {
+            "token": "Ġsouha",
+            "token_id": 57605,
+            "logprob": -5.8828,
+            "prob": 0.0028
+          },
+          {
+            "token": "Ġsalut",
+            "token_id": 134951,
+            "logprob": -6.9609,
+            "prob": 0.0009
+          },
+          {
+            "token": "Ġdébut",
+            "token_id": 15602,
+            "logprob": -7.5078,
+            "prob": 0.0005
+          },
+          {
+            "token": "ĠSal",
+            "token_id": 5362,
+            "logprob": -9.6953,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġlancer",
+            "token_id": 99615,
+            "logprob": -10.4062,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġdire",
+            "token_id": 5245,
+            "logprob": -10.9688,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġse",
+            "token_id": 1831,
+            "logprob": -11.2734,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġaccueillir",
+            "token_id": 135014,
+            "logprob": -11.5859,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġsal",
+        "token_id": 5804,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 51,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Bonjour le monde!<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>Bonjour ! Comment puis-je vous aider aujourd'hui ?\n\n\"Bonjour le monde\" est une expression française courante utilisée pour dire \"bonjour\" à tout le monde. C'est une façon amicale et chaleureuse de sal",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Bon",
+        "jour",
+        "Ġle",
+        "Ġmonde",
+        "!",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "Bon",
+        "jour",
+        "Ġ!",
+        "ĠComment",
+        "Ġpuis",
+        "-",
+        "je",
+        "Ġvous",
+        "Ġaider",
+        "Ġaujourd",
+        "'",
+        "hui",
+        "Ġ?",
+        "\n",
+        "\n",
+        "\"",
+        "Bon",
+        "jour",
+        "Ġle",
+        "Ġmonde",
+        "\"",
+        "Ġest",
+        "Ġune",
+        "Ġexpression",
+        "Ġfrançaise",
+        "Ġcourante",
+        "Ġutilisée",
+        "Ġpour",
+        "Ġdire",
+        "Ġ\"",
+        "bon",
+        "jour",
+        "\"",
+        "Ġà",
+        "Ġtout",
+        "Ġle",
+        "Ġmonde",
+        ".",
+        "ĠC",
+        "'",
+        "est",
+        "Ġune",
+        "Ġfaçon",
+        "Ġam",
+        "icale",
+        "Ġet",
+        "Ġchale",
+        "ure",
+        "use",
+        "Ġde",
+        "Ġsal"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 42243, 56673, 1885, 13316, 8, 255001, 255000, 255007, 42243, 56673, 3316,
+        39330, 10556, 20, 3594, 61096, 120280, 30986, 14, 22652, 5691, 206, 206, 9, 42243, 56673,
+        1885, 13316, 9, 2072, 3201, 15063, 14488, 192295, 53079, 3346, 5245, 1789, 7157, 56673, 9,
+        2243, 11539, 1885, 13316, 21, 1733, 14, 1769, 3201, 47147, 2437, 45559, 2113, 121692, 1984,
+        2472, 1715, 5804
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "uer",
+            "token_id": 4631,
+            "logprob": -0.0,
+            "prob": 1.0
+          },
+          {
+            "token": "u",
+            "token_id": 92,
+            "logprob": -13.2031,
+            "prob": 0.0
+          },
+          {
+            "token": "uir",
+            "token_id": 75475,
+            "logprob": -13.4688,
+            "prob": 0.0
+          },
+          {
+            "token": "uyer",
+            "token_id": 130320,
+            "logprob": -15.0781,
+            "prob": 0.0
+          },
+          {
+            "token": "ué",
+            "token_id": 43514,
+            "logprob": -15.375,
+            "prob": 0.0
+          },
+          {
+            "token": "uter",
+            "token_id": 22912,
+            "logprob": -16.0,
+            "prob": 0.0
+          },
+          {
+            "token": "ouer",
+            "token_id": 185287,
+            "logprob": -15.9219,
+            "prob": 0.0
+          },
+          {
+            "token": "uant",
+            "token_id": 40029,
+            "logprob": -16.5312,
+            "prob": 0.0
+          },
+          {
+            "token": "uen",
+            "token_id": 16781,
+            "logprob": -16.5312,
+            "prob": 0.0
+          },
+          {
+            "token": "uent",
+            "token_id": 10390,
+            "logprob": -16.625,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "uer",
+        "token_id": 4631,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 52,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Bonjour le monde!<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>Bonjour ! Comment puis-je vous aider aujourd'hui ?\n\n\"Bonjour le monde\" est une expression française courante utilisée pour dire \"bonjour\" à tout le monde. C'est une façon amicale et chaleureuse de saluer",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Bon",
+        "jour",
+        "Ġle",
+        "Ġmonde",
+        "!",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "Bon",
+        "jour",
+        "Ġ!",
+        "ĠComment",
+        "Ġpuis",
+        "-",
+        "je",
+        "Ġvous",
+        "Ġaider",
+        "Ġaujourd",
+        "'",
+        "hui",
+        "Ġ?",
+        "\n",
+        "\n",
+        "\"",
+        "Bon",
+        "jour",
+        "Ġle",
+        "Ġmonde",
+        "\"",
+        "Ġest",
+        "Ġune",
+        "Ġexpression",
+        "Ġfrançaise",
+        "Ġcourante",
+        "Ġutilisée",
+        "Ġpour",
+        "Ġdire",
+        "Ġ\"",
+        "bon",
+        "jour",
+        "\"",
+        "Ġà",
+        "Ġtout",
+        "Ġle",
+        "Ġmonde",
+        ".",
+        "ĠC",
+        "'",
+        "est",
+        "Ġune",
+        "Ġfaçon",
+        "Ġam",
+        "icale",
+        "Ġet",
+        "Ġchale",
+        "ure",
+        "use",
+        "Ġde",
+        "Ġsal",
+        "uer"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 42243, 56673, 1885, 13316, 8, 255001, 255000, 255007, 42243, 56673, 3316,
+        39330, 10556, 20, 3594, 61096, 120280, 30986, 14, 22652, 5691, 206, 206, 9, 42243, 56673,
+        1885, 13316, 9, 2072, 3201, 15063, 14488, 192295, 53079, 3346, 5245, 1789, 7157, 56673, 9,
+        2243, 11539, 1885, 13316, 21, 1733, 14, 1769, 3201, 47147, 2437, 45559, 2113, 121692, 1984,
+        2472, 1715, 5804, 4631
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġles",
+            "token_id": 2620,
+            "logprob": -0.0003,
+            "prob": 0.9995
+          },
+          {
+            "token": "Ġquelqu",
+            "token_id": 197254,
+            "logprob": -8.9844,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġun",
+            "token_id": 1880,
+            "logprob": -9.5625,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġdes",
+            "token_id": 2003,
+            "logprob": -9.9844,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġceux",
+            "token_id": 32460,
+            "logprob": -10.5156,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġplusieurs",
+            "token_id": 13794,
+            "logprob": -11.0312,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġses",
+            "token_id": 6123,
+            "logprob": -11.8125,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġune",
+            "token_id": 3201,
+            "logprob": -12.1094,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġaut",
+            "token_id": 2685,
+            "logprob": -12.3047,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġson",
+            "token_id": 2917,
+            "logprob": -13.125,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġles",
+        "token_id": 2620,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 53,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Bonjour le monde!<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>Bonjour ! Comment puis-je vous aider aujourd'hui ?\n\n\"Bonjour le monde\" est une expression française courante utilisée pour dire \"bonjour\" à tout le monde. C'est une façon amicale et chaleureuse de saluer les",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Bon",
+        "jour",
+        "Ġle",
+        "Ġmonde",
+        "!",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "Bon",
+        "jour",
+        "Ġ!",
+        "ĠComment",
+        "Ġpuis",
+        "-",
+        "je",
+        "Ġvous",
+        "Ġaider",
+        "Ġaujourd",
+        "'",
+        "hui",
+        "Ġ?",
+        "\n",
+        "\n",
+        "\"",
+        "Bon",
+        "jour",
+        "Ġle",
+        "Ġmonde",
+        "\"",
+        "Ġest",
+        "Ġune",
+        "Ġexpression",
+        "Ġfrançaise",
+        "Ġcourante",
+        "Ġutilisée",
+        "Ġpour",
+        "Ġdire",
+        "Ġ\"",
+        "bon",
+        "jour",
+        "\"",
+        "Ġà",
+        "Ġtout",
+        "Ġle",
+        "Ġmonde",
+        ".",
+        "ĠC",
+        "'",
+        "est",
+        "Ġune",
+        "Ġfaçon",
+        "Ġam",
+        "icale",
+        "Ġet",
+        "Ġchale",
+        "ure",
+        "use",
+        "Ġde",
+        "Ġsal",
+        "uer",
+        "Ġles"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 42243, 56673, 1885, 13316, 8, 255001, 255000, 255007, 42243, 56673, 3316,
+        39330, 10556, 20, 3594, 61096, 120280, 30986, 14, 22652, 5691, 206, 206, 9, 42243, 56673,
+        1885, 13316, 9, 2072, 3201, 15063, 14488, 192295, 53079, 3346, 5245, 1789, 7157, 56673, 9,
+        2243, 11539, 1885, 13316, 21, 1733, 14, 1769, 3201, 47147, 2437, 45559, 2113, 121692, 1984,
+        2472, 1715, 5804, 4631, 2620
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġpersonnes",
+            "token_id": 26918,
+            "logprob": -0.2047,
+            "prob": 0.8149
+          },
+          {
+            "token": "Ġautres",
+            "token_id": 15907,
+            "logprob": -1.752,
+            "prob": 0.1735
+          },
+          {
+            "token": "Ġgens",
+            "token_id": 61377,
+            "logprob": -4.4531,
+            "prob": 0.0116
+          },
+          {
+            "token": "Ġindividus",
+            "token_id": 116632,
+            "logprob": -10.8438,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġpersonas",
+            "token_id": 17625,
+            "logprob": -12.875,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġpeople",
+            "token_id": 3022,
+            "logprob": -13.5078,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġenvirons",
+            "token_id": 92437,
+            "logprob": -13.6016,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġpessoas",
+            "token_id": 19034,
+            "logprob": -13.7188,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġpersonne",
+            "token_id": 46352,
+            "logprob": -14.1406,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġdemás",
+            "token_id": 56904,
+            "logprob": -14.5625,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġpersonnes",
+        "token_id": 26918,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 54,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Bonjour le monde!<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>Bonjour ! Comment puis-je vous aider aujourd'hui ?\n\n\"Bonjour le monde\" est une expression française courante utilisée pour dire \"bonjour\" à tout le monde. C'est une façon amicale et chaleureuse de saluer les personnes",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Bon",
+        "jour",
+        "Ġle",
+        "Ġmonde",
+        "!",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "Bon",
+        "jour",
+        "Ġ!",
+        "ĠComment",
+        "Ġpuis",
+        "-",
+        "je",
+        "Ġvous",
+        "Ġaider",
+        "Ġaujourd",
+        "'",
+        "hui",
+        "Ġ?",
+        "\n",
+        "\n",
+        "\"",
+        "Bon",
+        "jour",
+        "Ġle",
+        "Ġmonde",
+        "\"",
+        "Ġest",
+        "Ġune",
+        "Ġexpression",
+        "Ġfrançaise",
+        "Ġcourante",
+        "Ġutilisée",
+        "Ġpour",
+        "Ġdire",
+        "Ġ\"",
+        "bon",
+        "jour",
+        "\"",
+        "Ġà",
+        "Ġtout",
+        "Ġle",
+        "Ġmonde",
+        ".",
+        "ĠC",
+        "'",
+        "est",
+        "Ġune",
+        "Ġfaçon",
+        "Ġam",
+        "icale",
+        "Ġet",
+        "Ġchale",
+        "ure",
+        "use",
+        "Ġde",
+        "Ġsal",
+        "uer",
+        "Ġles",
+        "Ġpersonnes"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 42243, 56673, 1885, 13316, 8, 255001, 255000, 255007, 42243, 56673, 3316,
+        39330, 10556, 20, 3594, 61096, 120280, 30986, 14, 22652, 5691, 206, 206, 9, 42243, 56673,
+        1885, 13316, 9, 2072, 3201, 15063, 14488, 192295, 53079, 3346, 5245, 1789, 7157, 56673, 9,
+        2243, 11539, 1885, 13316, 21, 1733, 14, 1769, 3201, 47147, 2437, 45559, 2113, 121692, 1984,
+        2472, 1715, 5804, 4631, 2620, 26918
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġautour",
+            "token_id": 36223,
+            "logprob": -0.835,
+            "prob": 0.4338
+          },
+          {
+            "token": "Ġenviron",
+            "token_id": 15420,
+            "logprob": -1.1162,
+            "prob": 0.3274
+          },
+          {
+            "token": "Ġqui",
+            "token_id": 3805,
+            "logprob": -1.6318,
+            "prob": 0.1956
+          },
+          {
+            "token": "Ġprésentes",
+            "token_id": 126247,
+            "logprob": -3.9297,
+            "prob": 0.0197
+          },
+          {
+            "token": "Ġalent",
+            "token_id": 112941,
+            "logprob": -4.0234,
+            "prob": 0.0179
+          },
+          {
+            "token": "Ġentour",
+            "token_id": 78019,
+            "logprob": -5.7734,
+            "prob": 0.0031
+          },
+          {
+            "token": "Ġou",
+            "token_id": 3841,
+            "logprob": -7.5078,
+            "prob": 0.0005
+          },
+          {
+            "token": "Ġdans",
+            "token_id": 3027,
+            "logprob": -7.5781,
+            "prob": 0.0005
+          },
+          {
+            "token": "Ġalentours",
+            "token_id": 160711,
+            "logprob": -8.2266,
+            "prob": 0.0003
+          },
+          {
+            "token": "Ġenvironnement",
+            "token_id": 76302,
+            "logprob": -9.125,
+            "prob": 0.0001
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġautour",
+        "token_id": 36223,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 55,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Bonjour le monde!<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>Bonjour ! Comment puis-je vous aider aujourd'hui ?\n\n\"Bonjour le monde\" est une expression française courante utilisée pour dire \"bonjour\" à tout le monde. C'est une façon amicale et chaleureuse de saluer les personnes autour",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Bon",
+        "jour",
+        "Ġle",
+        "Ġmonde",
+        "!",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "Bon",
+        "jour",
+        "Ġ!",
+        "ĠComment",
+        "Ġpuis",
+        "-",
+        "je",
+        "Ġvous",
+        "Ġaider",
+        "Ġaujourd",
+        "'",
+        "hui",
+        "Ġ?",
+        "\n",
+        "\n",
+        "\"",
+        "Bon",
+        "jour",
+        "Ġle",
+        "Ġmonde",
+        "\"",
+        "Ġest",
+        "Ġune",
+        "Ġexpression",
+        "Ġfrançaise",
+        "Ġcourante",
+        "Ġutilisée",
+        "Ġpour",
+        "Ġdire",
+        "Ġ\"",
+        "bon",
+        "jour",
+        "\"",
+        "Ġà",
+        "Ġtout",
+        "Ġle",
+        "Ġmonde",
+        ".",
+        "ĠC",
+        "'",
+        "est",
+        "Ġune",
+        "Ġfaçon",
+        "Ġam",
+        "icale",
+        "Ġet",
+        "Ġchale",
+        "ure",
+        "use",
+        "Ġde",
+        "Ġsal",
+        "uer",
+        "Ġles",
+        "Ġpersonnes",
+        "Ġautour"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 42243, 56673, 1885, 13316, 8, 255001, 255000, 255007, 42243, 56673, 3316,
+        39330, 10556, 20, 3594, 61096, 120280, 30986, 14, 22652, 5691, 206, 206, 9, 42243, 56673,
+        1885, 13316, 9, 2072, 3201, 15063, 14488, 192295, 53079, 3346, 5245, 1789, 7157, 56673, 9,
+        2243, 11539, 1885, 13316, 21, 1733, 14, 1769, 3201, 47147, 2437, 45559, 2113, 121692, 1984,
+        2472, 1715, 5804, 4631, 2620, 26918, 36223
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġde",
+            "token_id": 1715,
+            "logprob": 0.0,
+            "prob": 1.0
+          },
+          {
+            "token": "<UNK>",
+            "token_id": 1,
+            "logprob": -38.5312,
+            "prob": 0.0
+          },
+          {
+            "token": "<SEP>",
+            "token_id": 3,
+            "logprob": -37.8125,
+            "prob": 0.0
+          },
+          {
+            "token": "<EOS_TOKEN>",
+            "token_id": 6,
+            "logprob": -29.5625,
+            "prob": 0.0
+          },
+          {
+            "token": "<EOP_TOKEN>",
+            "token_id": 7,
+            "logprob": -37.9062,
+            "prob": 0.0
+          },
+          {
+            "token": "<PAD>",
+            "token_id": 0,
+            "logprob": -37.75,
+            "prob": 0.0
+          },
+          {
+            "token": "<CLS>",
+            "token_id": 2,
+            "logprob": -38.375,
+            "prob": 0.0
+          },
+          {
+            "token": "<BOS_TOKEN>",
+            "token_id": 5,
+            "logprob": -35.0625,
+            "prob": 0.0
+          },
+          {
+            "token": "!",
+            "token_id": 8,
+            "logprob": -30.6094,
+            "prob": 0.0
+          },
+          {
+            "token": "<MASK_TOKEN>",
+            "token_id": 4,
+            "logprob": -37.9688,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġde",
+        "token_id": 1715,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 56,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Bonjour le monde!<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>Bonjour ! Comment puis-je vous aider aujourd'hui ?\n\n\"Bonjour le monde\" est une expression française courante utilisée pour dire \"bonjour\" à tout le monde. C'est une façon amicale et chaleureuse de saluer les personnes autour de",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Bon",
+        "jour",
+        "Ġle",
+        "Ġmonde",
+        "!",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "Bon",
+        "jour",
+        "Ġ!",
+        "ĠComment",
+        "Ġpuis",
+        "-",
+        "je",
+        "Ġvous",
+        "Ġaider",
+        "Ġaujourd",
+        "'",
+        "hui",
+        "Ġ?",
+        "\n",
+        "\n",
+        "\"",
+        "Bon",
+        "jour",
+        "Ġle",
+        "Ġmonde",
+        "\"",
+        "Ġest",
+        "Ġune",
+        "Ġexpression",
+        "Ġfrançaise",
+        "Ġcourante",
+        "Ġutilisée",
+        "Ġpour",
+        "Ġdire",
+        "Ġ\"",
+        "bon",
+        "jour",
+        "\"",
+        "Ġà",
+        "Ġtout",
+        "Ġle",
+        "Ġmonde",
+        ".",
+        "ĠC",
+        "'",
+        "est",
+        "Ġune",
+        "Ġfaçon",
+        "Ġam",
+        "icale",
+        "Ġet",
+        "Ġchale",
+        "ure",
+        "use",
+        "Ġde",
+        "Ġsal",
+        "uer",
+        "Ġles",
+        "Ġpersonnes",
+        "Ġautour",
+        "Ġde"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 42243, 56673, 1885, 13316, 8, 255001, 255000, 255007, 42243, 56673, 3316,
+        39330, 10556, 20, 3594, 61096, 120280, 30986, 14, 22652, 5691, 206, 206, 9, 42243, 56673,
+        1885, 13316, 9, 2072, 3201, 15063, 14488, 192295, 53079, 3346, 5245, 1789, 7157, 56673, 9,
+        2243, 11539, 1885, 13316, 21, 1733, 14, 1769, 3201, 47147, 2437, 45559, 2113, 121692, 1984,
+        2472, 1715, 5804, 4631, 2620, 26918, 36223, 1715
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġvous",
+            "token_id": 61096,
+            "logprob": -0.0007,
+            "prob": 0.9995
+          },
+          {
+            "token": "Ġsoi",
+            "token_id": 107384,
+            "logprob": -7.25,
+            "prob": 0.0007
+          },
+          {
+            "token": "Ġtoi",
+            "token_id": 151564,
+            "logprob": -13.0469,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġvocê",
+            "token_id": 64378,
+            "logprob": -14.1406,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġвас",
+            "token_id": 148291,
+            "logprob": -14.2656,
+            "prob": 0.0
+          },
+          {
+            "token": "vous",
+            "token_id": 92233,
+            "logprob": -15.625,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġbạn",
+            "token_id": 45312,
+            "logprob": -15.7188,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠVous",
+            "token_id": 216094,
+            "logprob": -17.1094,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġyou",
+            "token_id": 1933,
+            "logprob": -16.8438,
+            "prob": 0.0
+          },
+          {
+            "token": "<PAD>",
+            "token_id": 0,
+            "logprob": -36.7188,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġvous",
+        "token_id": 61096,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 57,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Bonjour le monde!<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>Bonjour ! Comment puis-je vous aider aujourd'hui ?\n\n\"Bonjour le monde\" est une expression française courante utilisée pour dire \"bonjour\" à tout le monde. C'est une façon amicale et chaleureuse de saluer les personnes autour de vous",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Bon",
+        "jour",
+        "Ġle",
+        "Ġmonde",
+        "!",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "Bon",
+        "jour",
+        "Ġ!",
+        "ĠComment",
+        "Ġpuis",
+        "-",
+        "je",
+        "Ġvous",
+        "Ġaider",
+        "Ġaujourd",
+        "'",
+        "hui",
+        "Ġ?",
+        "\n",
+        "\n",
+        "\"",
+        "Bon",
+        "jour",
+        "Ġle",
+        "Ġmonde",
+        "\"",
+        "Ġest",
+        "Ġune",
+        "Ġexpression",
+        "Ġfrançaise",
+        "Ġcourante",
+        "Ġutilisée",
+        "Ġpour",
+        "Ġdire",
+        "Ġ\"",
+        "bon",
+        "jour",
+        "\"",
+        "Ġà",
+        "Ġtout",
+        "Ġle",
+        "Ġmonde",
+        ".",
+        "ĠC",
+        "'",
+        "est",
+        "Ġune",
+        "Ġfaçon",
+        "Ġam",
+        "icale",
+        "Ġet",
+        "Ġchale",
+        "ure",
+        "use",
+        "Ġde",
+        "Ġsal",
+        "uer",
+        "Ġles",
+        "Ġpersonnes",
+        "Ġautour",
+        "Ġde",
+        "Ġvous"
+      ],
+      "token_ids": [
+        5, 255000, 255006, 42243, 56673, 1885, 13316, 8, 255001, 255000, 255007, 42243, 56673, 3316,
+        39330, 10556, 20, 3594, 61096, 120280, 30986, 14, 22652, 5691, 206, 206, 9, 42243, 56673,
+        1885, 13316, 9, 2072, 3201, 15063, 14488, 192295, 53079, 3346, 5245, 1789, 7157, 56673, 9,
+        2243, 11539, 1885, 13316, 21, 1733, 14, 1769, 3201, 47147, 2437, 45559, 2113, 121692, 1984,
+        2472, 1715, 5804, 4631, 2620, 26918, 36223, 1715, 61096
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": ".",
+            "token_id": 21,
+            "logprob": -0.0001,
+            "prob": 1.0
+          },
+          {
+            "token": ",",
+            "token_id": 19,
+            "logprob": -10.0625,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġou",
+            "token_id": 3841,
+            "logprob": -11.8594,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġau",
+            "token_id": 2470,
+            "logprob": -13.8281,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġet",
+            "token_id": 2113,
+            "logprob": -17.0312,
+            "prob": 0.0
+          },
+          {
+            "token": "<SEP>",
+            "token_id": 3,
+            "logprob": -36.5938,
+            "prob": 0.0
+          },
+          {
+            "token": "<MASK_TOKEN>",
+            "token_id": 4,
+            "logprob": -36.1875,
+            "prob": 0.0
+          },
+          {
+            "token": "<CLS>",
+            "token_id": 2,
+            "logprob": -36.3438,
+            "prob": 0.0
+          },
+          {
+            "token": "<PAD>",
+            "token_id": 0,
+            "logprob": -36.125,
+            "prob": 0.0
+          },
+          {
+            "token": "<UNK>",
+            "token_id": 1,
+            "logprob": -36.625,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": ".",
+        "token_id": 21,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 58,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Bonjour le monde!<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>Bonjour ! Comment puis-je vous aider aujourd'hui ?\n\n\"Bonjour le monde\" est une expression française courante utilisée pour dire \"bonjour\" à tout le monde. C'est une façon amicale et chaleureuse de saluer les personnes autour de vous.",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "Bon",
+        "jour",
+        "Ġle",
+        "Ġmonde",
+        "!",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "Bon",
+        "jour",
+        "Ġ!",
+        "ĠComment",
+        "Ġpuis",
+        "-",
+        "je",
+        "Ġvous",
+        "Ġaider",
+        "Ġaujourd",
+        "'",
+        "hui",
+        "Ġ?",
+        "\n",
+        "\n",
+        "\"",
+        "Bon",
+        "jour",
+        "Ġle",
+        "Ġmonde",
+        "\"",
+        "Ġest",
+        "Ġune",
+        "Ġexpression",
+        "Ġfrançaise",
+        "Ġcourante",
+        "Ġutilisée",
+        "Ġpour",
+        "Ġdire",
+        "Ġ\"",
+        "bon",
+        "jour",
+        "\"",
+        "Ġà",
+        "Ġtout",
+        "Ġle",
+        "Ġmonde",
+        ".",
+        "ĠC",
+        "'",
+        "est",
+        "Ġune",
+        "Ġfaçon",
+        "Ġam",
+        "icale",
+        "Ġet",
+        "Ġchale",
+        "ure",
+        "use",
+        "Ġde",
+        "Ġsal",
+        "uer",
+        "Ġles",
+        "Ġpersonnes",
+        "Ġautour",
+        "Ġde",
+        "Ġvous",
+        "."
+      ],
+      "token_ids": [
+        5, 255000, 255006, 42243, 56673, 1885, 13316, 8, 255001, 255000, 255007, 42243, 56673, 3316,
+        39330, 10556, 20, 3594, 61096, 120280, 30986, 14, 22652, 5691, 206, 206, 9, 42243, 56673,
+        1885, 13316, 9, 2072, 3201, 15063, 14488, 192295, 53079, 3346, 5245, 1789, 7157, 56673, 9,
+        2243, 11539, 1885, 13316, 21, 1733, 14, 1769, 3201, 47147, 2437, 45559, 2113, 121692, 1984,
+        2472, 1715, 5804, 4631, 2620, 26918, 36223, 1715, 61096, 21
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "<|END_OF_TURN_TOKEN|>",
+            "token_id": 255001,
+            "logprob": -0.0011,
+            "prob": 0.999
+          },
+          {
+            "token": "\n",
+            "token_id": 206,
+            "logprob": -7.0938,
+            "prob": 0.0008
+          },
+          {
+            "token": "ĠSi",
+            "token_id": 12452,
+            "logprob": -8.6875,
+            "prob": 0.0002
+          },
+          {
+            "token": "ĠEn",
+            "token_id": 2888,
+            "logprob": -9.8906,
+            "prob": 0.0001
+          },
+          {
+            "token": "ĠPuis",
+            "token_id": 69070,
+            "logprob": -12.4375,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠLa",
+            "token_id": 2795,
+            "logprob": -12.6875,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠComment",
+            "token_id": 39330,
+            "logprob": -13.6328,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠA",
+            "token_id": 1736,
+            "logprob": -13.6562,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġ\n",
+            "token_id": 1973,
+            "logprob": -14.2891,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠCela",
+            "token_id": 63313,
+            "logprob": -14.9688,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "<|END_OF_TURN_TOKEN|>",
+        "token_id": 255001,
+        "selection_method": "sampling"
+      }
+    }
+  ]
+}

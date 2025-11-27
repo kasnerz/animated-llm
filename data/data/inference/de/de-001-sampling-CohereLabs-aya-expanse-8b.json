@@ -1,0 +1,4144 @@
+{
+  "id": "generated_20251117_180325",
+  "prompt": "Hallo Welt!",
+  "language": "de",
+  "temperature": 1.0,
+  "top_k": 10,
+  "model_info": {
+    "name": "CohereLabs/aya-expanse-8b",
+    "num_layers": 32,
+    "hidden_size": 4096,
+    "num_attention_heads": 32,
+    "vocab_size": 256000
+  },
+  "generation_steps": [
+    {
+      "step": 0,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Hallo Welt!<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "H",
+        "allo",
+        "ĠWelt",
+        "!",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>"
+      ],
+      "token_ids": [
+        5,
+        255000,
+        255006,
+        47,
+        24630,
+        20441,
+        8,
+        255001,
+        255000,
+        255007
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "H",
+            "token_id": 47,
+            "logprob": -0.0,
+            "prob": 1.0
+          },
+          {
+            "token": "Hall",
+            "token_id": 48089,
+            "logprob": -11.9219,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠHall",
+            "token_id": 7093,
+            "logprob": -11.9531,
+            "prob": 0.0
+          },
+          {
+            "token": "Hello",
+            "token_id": 28339,
+            "logprob": -13.0156,
+            "prob": 0.0
+          },
+          {
+            "token": "\"",
+            "token_id": 9,
+            "logprob": -14.375,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġhall",
+            "token_id": 16561,
+            "logprob": -15.0781,
+            "prob": 0.0
+          },
+          {
+            "token": "„",
+            "token_id": 27267,
+            "logprob": -17.0312,
+            "prob": 0.0
+          },
+          {
+            "token": "Hi",
+            "token_id": 37535,
+            "logprob": -16.5312,
+            "prob": 0.0
+          },
+          {
+            "token": "Das",
+            "token_id": 21930,
+            "logprob": -16.6875,
+            "prob": 0.0
+          },
+          {
+            "token": "Serv",
+            "token_id": 15289,
+            "logprob": -17.2969,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "H",
+        "token_id": 47,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 1,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Hallo Welt!<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>H",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "H",
+        "allo",
+        "ĠWelt",
+        "!",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "H"
+      ],
+      "token_ids": [
+        5,
+        255000,
+        255006,
+        47,
+        24630,
+        20441,
+        8,
+        255001,
+        255000,
+        255007,
+        47
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "allo",
+            "token_id": 24630,
+            "logprob": -0.0,
+            "prob": 1.0
+          },
+          {
+            "token": "allen",
+            "token_id": 25791,
+            "logprob": -16.1562,
+            "prob": 0.0
+          },
+          {
+            "token": "allow",
+            "token_id": 17859,
+            "logprob": -15.75,
+            "prob": 0.0
+          },
+          {
+            "token": "alli",
+            "token_id": 27616,
+            "logprob": -15.8281,
+            "prob": 0.0
+          },
+          {
+            "token": "alla",
+            "token_id": 7473,
+            "logprob": -16.2969,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġallo",
+            "token_id": 47386,
+            "logprob": -17.1562,
+            "prob": 0.0
+          },
+          {
+            "token": "<CLS>",
+            "token_id": 2,
+            "logprob": -31.4062,
+            "prob": 0.0
+          },
+          {
+            "token": "<SEP>",
+            "token_id": 3,
+            "logprob": -31.5312,
+            "prob": 0.0
+          },
+          {
+            "token": "<UNK>",
+            "token_id": 1,
+            "logprob": -32.9062,
+            "prob": 0.0
+          },
+          {
+            "token": "<PAD>",
+            "token_id": 0,
+            "logprob": -31.6562,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "allo",
+        "token_id": 24630,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 2,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Hallo Welt!<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>Hallo",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "H",
+        "allo",
+        "ĠWelt",
+        "!",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "H",
+        "allo"
+      ],
+      "token_ids": [
+        5,
+        255000,
+        255006,
+        47,
+        24630,
+        20441,
+        8,
+        255001,
+        255000,
+        255007,
+        47,
+        24630
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "!",
+            "token_id": 8,
+            "logprob": -0.0302,
+            "prob": 0.9702
+          },
+          {
+            "token": "ĠWelt",
+            "token_id": 20441,
+            "logprob": -3.5137,
+            "prob": 0.0298
+          },
+          {
+            "token": "Welt",
+            "token_id": 65416,
+            "logprob": -11.8438,
+            "prob": 0.0
+          },
+          {
+            "token": "!\\",
+            "token_id": 104731,
+            "logprob": -13.8281,
+            "prob": 0.0
+          },
+          {
+            "token": "!**",
+            "token_id": 238128,
+            "logprob": -14.3438,
+            "prob": 0.0
+          },
+          {
+            "token": ",",
+            "token_id": 19,
+            "logprob": -14.5,
+            "prob": 0.0
+          },
+          {
+            "token": "！",
+            "token_id": 23911,
+            "logprob": -14.6641,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġworld",
+            "token_id": 3845,
+            "logprob": -14.8203,
+            "prob": 0.0
+          },
+          {
+            "token": "!\"",
+            "token_id": 14842,
+            "logprob": -15.0625,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġzurück",
+            "token_id": 28368,
+            "logprob": -15.0703,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "!",
+        "token_id": 8,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 3,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Hallo Welt!<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>Hallo!",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "H",
+        "allo",
+        "ĠWelt",
+        "!",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "H",
+        "allo",
+        "!"
+      ],
+      "token_ids": [
+        5,
+        255000,
+        255006,
+        47,
+        24630,
+        20441,
+        8,
+        255001,
+        255000,
+        255007,
+        47,
+        24630,
+        8
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "ĠDas",
+            "token_id": 12241,
+            "logprob": -0.2318,
+            "prob": 0.793
+          },
+          {
+            "token": "ĠWie",
+            "token_id": 46901,
+            "logprob": -1.8408,
+            "prob": 0.1587
+          },
+          {
+            "token": "ĠIch",
+            "token_id": 31246,
+            "logprob": -3.1855,
+            "prob": 0.0414
+          },
+          {
+            "token": "ĠEs",
+            "token_id": 6154,
+            "logprob": -5.2461,
+            "prob": 0.0053
+          },
+          {
+            "token": "ĠDies",
+            "token_id": 19185,
+            "logprob": -7.6914,
+            "prob": 0.0005
+          },
+          {
+            "token": "ĠWas",
+            "token_id": 23607,
+            "logprob": -8.3594,
+            "prob": 0.0002
+          },
+          {
+            "token": "ĠKann",
+            "token_id": 46956,
+            "logprob": -9.1328,
+            "prob": 0.0001
+          },
+          {
+            "token": "ĠHall",
+            "token_id": 7093,
+            "logprob": -9.1406,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġ\"",
+            "token_id": 1789,
+            "logprob": -9.1562,
+            "prob": 0.0001
+          },
+          {
+            "token": "Wie",
+            "token_id": 93488,
+            "logprob": -9.4375,
+            "prob": 0.0001
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "ĠDas",
+        "token_id": 12241,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 4,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Hallo Welt!<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>Hallo! Das",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "H",
+        "allo",
+        "ĠWelt",
+        "!",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "H",
+        "allo",
+        "!",
+        "ĠDas"
+      ],
+      "token_ids": [
+        5,
+        255000,
+        255006,
+        47,
+        24630,
+        20441,
+        8,
+        255001,
+        255000,
+        255007,
+        47,
+        24630,
+        8,
+        12241
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġist",
+            "token_id": 5132,
+            "logprob": -0.0821,
+            "prob": 0.9214
+          },
+          {
+            "token": "Ġbedeutet",
+            "token_id": 147121,
+            "logprob": -2.5664,
+            "prob": 0.0768
+          },
+          {
+            "token": "Ġheißt",
+            "token_id": 121785,
+            "logprob": -6.3164,
+            "prob": 0.0018
+          },
+          {
+            "token": "Ġdeutsche",
+            "token_id": 41854,
+            "logprob": -9.8359,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġsind",
+            "token_id": 11382,
+            "logprob": -10.4922,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġlautet",
+            "token_id": 224845,
+            "logprob": -10.9453,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġscheint",
+            "token_id": 202619,
+            "logprob": -11.7266,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġentspricht",
+            "token_id": 153399,
+            "logprob": -11.75,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġsieht",
+            "token_id": 144153,
+            "logprob": -11.9062,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġsteht",
+            "token_id": 47096,
+            "logprob": -12.125,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġist",
+        "token_id": 5132,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 5,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Hallo Welt!<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>Hallo! Das ist",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "H",
+        "allo",
+        "ĠWelt",
+        "!",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "H",
+        "allo",
+        "!",
+        "ĠDas",
+        "Ġist"
+      ],
+      "token_ids": [
+        5,
+        255000,
+        255006,
+        47,
+        24630,
+        20441,
+        8,
+        255001,
+        255000,
+        255007,
+        47,
+        24630,
+        8,
+        12241,
+        5132
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġeine",
+            "token_id": 7147,
+            "logprob": -0.0227,
+            "prob": 0.9775
+          },
+          {
+            "token": "Ġein",
+            "token_id": 4001,
+            "logprob": -4.0078,
+            "prob": 0.0182
+          },
+          {
+            "token": "Ġauf",
+            "token_id": 5709,
+            "logprob": -5.5859,
+            "prob": 0.0038
+          },
+          {
+            "token": "Ġ\"",
+            "token_id": 1789,
+            "logprob": -8.5547,
+            "prob": 0.0002
+          },
+          {
+            "token": "ĠDeutsch",
+            "token_id": 15076,
+            "logprob": -9.3203,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġdie",
+            "token_id": 2915,
+            "logprob": -9.5391,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġder",
+            "token_id": 2479,
+            "logprob": -10.6094,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġgroß",
+            "token_id": 74912,
+            "logprob": -10.7969,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġja",
+            "token_id": 27752,
+            "logprob": -10.9375,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġtatsächlich",
+            "token_id": 214929,
+            "logprob": -11.5547,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġeine",
+        "token_id": 7147,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 6,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Hallo Welt!<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>Hallo! Das ist eine",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "H",
+        "allo",
+        "ĠWelt",
+        "!",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "H",
+        "allo",
+        "!",
+        "ĠDas",
+        "Ġist",
+        "Ġeine"
+      ],
+      "token_ids": [
+        5,
+        255000,
+        255006,
+        47,
+        24630,
+        20441,
+        8,
+        255001,
+        255000,
+        255007,
+        47,
+        24630,
+        8,
+        12241,
+        5132,
+        7147
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġeinf",
+            "token_id": 121384,
+            "logprob": -1.4756,
+            "prob": 0.2288
+          },
+          {
+            "token": "Ġklass",
+            "token_id": 50586,
+            "logprob": -1.4756,
+            "prob": 0.2288
+          },
+          {
+            "token": "ĠBeg",
+            "token_id": 16899,
+            "logprob": -1.6943,
+            "prob": 0.1838
+          },
+          {
+            "token": "Ġbekannte",
+            "token_id": 162453,
+            "logprob": -2.1777,
+            "prob": 0.1132
+          },
+          {
+            "token": "Ġfre",
+            "token_id": 5080,
+            "logprob": -2.4512,
+            "prob": 0.0861
+          },
+          {
+            "token": "Ġtypische",
+            "token_id": 215791,
+            "logprob": -3.2168,
+            "prob": 0.0401
+          },
+          {
+            "token": "Ġg",
+            "token_id": 1752,
+            "logprob": -3.7637,
+            "prob": 0.0232
+          },
+          {
+            "token": "Ġhäufig",
+            "token_id": 72092,
+            "logprob": -4.0625,
+            "prob": 0.0172
+          },
+          {
+            "token": "Ġberühm",
+            "token_id": 185642,
+            "logprob": -4.3984,
+            "prob": 0.0123
+          },
+          {
+            "token": "Ġdeutsche",
+            "token_id": 41854,
+            "logprob": -4.9141,
+            "prob": 0.0074
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġklass",
+        "token_id": 50586,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 7,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Hallo Welt!<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>Hallo! Das ist eine klass",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "H",
+        "allo",
+        "ĠWelt",
+        "!",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "H",
+        "allo",
+        "!",
+        "ĠDas",
+        "Ġist",
+        "Ġeine",
+        "Ġklass"
+      ],
+      "token_ids": [
+        5,
+        255000,
+        255006,
+        47,
+        24630,
+        20441,
+        8,
+        255001,
+        255000,
+        255007,
+        47,
+        24630,
+        8,
+        12241,
+        5132,
+        7147,
+        50586
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "ische",
+            "token_id": 5160,
+            "logprob": -0.0,
+            "prob": 1.0
+          },
+          {
+            "token": "ige",
+            "token_id": 5342,
+            "logprob": -13.8438,
+            "prob": 0.0
+          },
+          {
+            "token": "iche",
+            "token_id": 7299,
+            "logprob": -15.0938,
+            "prob": 0.0
+          },
+          {
+            "token": "liche",
+            "token_id": 13651,
+            "logprob": -15.6719,
+            "prob": 0.0
+          },
+          {
+            "token": "<SEP>",
+            "token_id": 3,
+            "logprob": -36.2812,
+            "prob": 0.0
+          },
+          {
+            "token": "<CLS>",
+            "token_id": 2,
+            "logprob": -35.6562,
+            "prob": 0.0
+          },
+          {
+            "token": "<MASK_TOKEN>",
+            "token_id": 4,
+            "logprob": -36.3438,
+            "prob": 0.0
+          },
+          {
+            "token": "<BOS_TOKEN>",
+            "token_id": 5,
+            "logprob": -35.2812,
+            "prob": 0.0
+          },
+          {
+            "token": "<PAD>",
+            "token_id": 0,
+            "logprob": -36.3438,
+            "prob": 0.0
+          },
+          {
+            "token": "<UNK>",
+            "token_id": 1,
+            "logprob": -35.9375,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "ische",
+        "token_id": 5160,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 8,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Hallo Welt!<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>Hallo! Das ist eine klassische",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "H",
+        "allo",
+        "ĠWelt",
+        "!",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "H",
+        "allo",
+        "!",
+        "ĠDas",
+        "Ġist",
+        "Ġeine",
+        "Ġklass",
+        "ische"
+      ],
+      "token_ids": [
+        5,
+        255000,
+        255006,
+        47,
+        24630,
+        20441,
+        8,
+        255001,
+        255000,
+        255007,
+        47,
+        24630,
+        8,
+        12241,
+        5132,
+        7147,
+        50586,
+        5160
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "ĠBeg",
+            "token_id": 16899,
+            "logprob": -0.0321,
+            "prob": 0.9683
+          },
+          {
+            "token": "ĠProgram",
+            "token_id": 10662,
+            "logprob": -4.2344,
+            "prob": 0.0145
+          },
+          {
+            "token": "ĠNachricht",
+            "token_id": 221272,
+            "logprob": -4.3438,
+            "prob": 0.013
+          },
+          {
+            "token": "ĠProgramm",
+            "token_id": 110145,
+            "logprob": -6.7109,
+            "prob": 0.0012
+          },
+          {
+            "token": "ĠBotschaft",
+            "token_id": 207821,
+            "logprob": -7.4375,
+            "prob": 0.0006
+          },
+          {
+            "token": "ĠMitte",
+            "token_id": 46773,
+            "logprob": -8.5234,
+            "prob": 0.0002
+          },
+          {
+            "token": "ĠGru",
+            "token_id": 49688,
+            "logprob": -8.6094,
+            "prob": 0.0002
+          },
+          {
+            "token": "ĠAussage",
+            "token_id": 233769,
+            "logprob": -8.9453,
+            "prob": 0.0001
+          },
+          {
+            "token": "ĠPhrase",
+            "token_id": 253493,
+            "logprob": -9.125,
+            "prob": 0.0001
+          },
+          {
+            "token": "ĠArt",
+            "token_id": 4964,
+            "logprob": -9.3203,
+            "prob": 0.0001
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "ĠBeg",
+        "token_id": 16899,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 9,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Hallo Welt!<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>Hallo! Das ist eine klassische Beg",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "H",
+        "allo",
+        "ĠWelt",
+        "!",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "H",
+        "allo",
+        "!",
+        "ĠDas",
+        "Ġist",
+        "Ġeine",
+        "Ġklass",
+        "ische",
+        "ĠBeg"
+      ],
+      "token_ids": [
+        5,
+        255000,
+        255006,
+        47,
+        24630,
+        20441,
+        8,
+        255001,
+        255000,
+        255007,
+        47,
+        24630,
+        8,
+        12241,
+        5132,
+        7147,
+        50586,
+        5160,
+        16899
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "rü",
+            "token_id": 120692,
+            "logprob": -0.0001,
+            "prob": 1.0
+          },
+          {
+            "token": "r",
+            "token_id": 89,
+            "logprob": -9.5469,
+            "prob": 0.0001
+          },
+          {
+            "token": "ru",
+            "token_id": 2134,
+            "logprob": -10.7969,
+            "prob": 0.0
+          },
+          {
+            "token": "rue",
+            "token_id": 60943,
+            "logprob": -14.0547,
+            "prob": 0.0
+          },
+          {
+            "token": "rut",
+            "token_id": 14313,
+            "logprob": -15.1016,
+            "prob": 0.0
+          },
+          {
+            "token": "rust",
+            "token_id": 22619,
+            "logprob": -15.0625,
+            "prob": 0.0
+          },
+          {
+            "token": "rud",
+            "token_id": 45471,
+            "logprob": -15.1641,
+            "prob": 0.0
+          },
+          {
+            "token": "riffe",
+            "token_id": 139601,
+            "logprob": -15.1328,
+            "prob": 0.0
+          },
+          {
+            "token": "рю",
+            "token_id": 28814,
+            "logprob": -15.4141,
+            "prob": 0.0
+          },
+          {
+            "token": "rul",
+            "token_id": 41200,
+            "logprob": -15.4297,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "rü",
+        "token_id": 120692,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 10,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Hallo Welt!<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>Hallo! Das ist eine klassische Begrü",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "H",
+        "allo",
+        "ĠWelt",
+        "!",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "H",
+        "allo",
+        "!",
+        "ĠDas",
+        "Ġist",
+        "Ġeine",
+        "Ġklass",
+        "ische",
+        "ĠBeg",
+        "rü"
+      ],
+      "token_ids": [
+        5,
+        255000,
+        255006,
+        47,
+        24630,
+        20441,
+        8,
+        255001,
+        255000,
+        255007,
+        47,
+        24630,
+        8,
+        12241,
+        5132,
+        7147,
+        50586,
+        5160,
+        16899,
+        120692
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "ß",
+            "token_id": 4750,
+            "logprob": -0.0001,
+            "prob": 1.0
+          },
+          {
+            "token": "ss",
+            "token_id": 2349,
+            "logprob": -9.8594,
+            "prob": 0.0001
+          },
+          {
+            "token": "ßer",
+            "token_id": 50041,
+            "logprob": -12.875,
+            "prob": 0.0
+          },
+          {
+            "token": "ße",
+            "token_id": 15039,
+            "logprob": -13.8047,
+            "prob": 0.0
+          },
+          {
+            "token": "ung",
+            "token_id": 2359,
+            "logprob": -14.3594,
+            "prob": 0.0
+          },
+          {
+            "token": "ßen",
+            "token_id": 18165,
+            "logprob": -14.3516,
+            "prob": 0.0
+          },
+          {
+            "token": "zung",
+            "token_id": 60525,
+            "logprob": -14.5234,
+            "prob": 0.0
+          },
+          {
+            "token": "bung",
+            "token_id": 128752,
+            "logprob": -14.7109,
+            "prob": 0.0
+          },
+          {
+            "token": "idung",
+            "token_id": 170199,
+            "logprob": -14.7812,
+            "prob": 0.0
+          },
+          {
+            "token": "β",
+            "token_id": 3689,
+            "logprob": -14.9688,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "ß",
+        "token_id": 4750,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 11,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Hallo Welt!<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>Hallo! Das ist eine klassische Begrüß",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "H",
+        "allo",
+        "ĠWelt",
+        "!",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "H",
+        "allo",
+        "!",
+        "ĠDas",
+        "Ġist",
+        "Ġeine",
+        "Ġklass",
+        "ische",
+        "ĠBeg",
+        "rü",
+        "ß"
+      ],
+      "token_ids": [
+        5,
+        255000,
+        255006,
+        47,
+        24630,
+        20441,
+        8,
+        255001,
+        255000,
+        255007,
+        47,
+        24630,
+        8,
+        12241,
+        5132,
+        7147,
+        50586,
+        5160,
+        16899,
+        120692,
+        4750
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "ung",
+            "token_id": 2359,
+            "logprob": -0.0,
+            "prob": 1.0
+          },
+          {
+            "token": "ungs",
+            "token_id": 10484,
+            "logprob": -10.875,
+            "prob": 0.0
+          },
+          {
+            "token": "ungen",
+            "token_id": 7868,
+            "logprob": -15.8906,
+            "prob": 0.0
+          },
+          {
+            "token": "<PAD>",
+            "token_id": 0,
+            "logprob": -37.2188,
+            "prob": 0.0
+          },
+          {
+            "token": "<EOS_TOKEN>",
+            "token_id": 6,
+            "logprob": -35.6562,
+            "prob": 0.0
+          },
+          {
+            "token": "<SEP>",
+            "token_id": 3,
+            "logprob": -37.3438,
+            "prob": 0.0
+          },
+          {
+            "token": "<BOS_TOKEN>",
+            "token_id": 5,
+            "logprob": -35.4062,
+            "prob": 0.0
+          },
+          {
+            "token": "<MASK_TOKEN>",
+            "token_id": 4,
+            "logprob": -37.25,
+            "prob": 0.0
+          },
+          {
+            "token": "<UNK>",
+            "token_id": 1,
+            "logprob": -33.5312,
+            "prob": 0.0
+          },
+          {
+            "token": "<CLS>",
+            "token_id": 2,
+            "logprob": -36.7812,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "ung",
+        "token_id": 2359,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 12,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Hallo Welt!<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>Hallo! Das ist eine klassische Begrüßung",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "H",
+        "allo",
+        "ĠWelt",
+        "!",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "H",
+        "allo",
+        "!",
+        "ĠDas",
+        "Ġist",
+        "Ġeine",
+        "Ġklass",
+        "ische",
+        "ĠBeg",
+        "rü",
+        "ß",
+        "ung"
+      ],
+      "token_ids": [
+        5,
+        255000,
+        255006,
+        47,
+        24630,
+        20441,
+        8,
+        255001,
+        255000,
+        255007,
+        47,
+        24630,
+        8,
+        12241,
+        5132,
+        7147,
+        50586,
+        5160,
+        16899,
+        120692,
+        4750,
+        2359
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": ",",
+            "token_id": 19,
+            "logprob": -0.323,
+            "prob": 0.7241
+          },
+          {
+            "token": "Ġauf",
+            "token_id": 5709,
+            "logprob": -1.3701,
+            "prob": 0.2542
+          },
+          {
+            "token": "Ġin",
+            "token_id": 1709,
+            "logprob": -3.8223,
+            "prob": 0.0219
+          },
+          {
+            "token": "Ġund",
+            "token_id": 2280,
+            "logprob": -10.5703,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġim",
+            "token_id": 2101,
+            "logprob": -11.9297,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġon",
+            "token_id": 1812,
+            "logprob": -12.4609,
+            "prob": 0.0
+          },
+          {
+            "token": ".",
+            "token_id": 21,
+            "logprob": -12.8984,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġна",
+            "token_id": 2196,
+            "logprob": -13.4297,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġaus",
+            "token_id": 6523,
+            "logprob": -14.4453,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġfür",
+            "token_id": 6081,
+            "logprob": -15.1172,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġauf",
+        "token_id": 5709,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 13,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Hallo Welt!<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>Hallo! Das ist eine klassische Begrüßung auf",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "H",
+        "allo",
+        "ĠWelt",
+        "!",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "H",
+        "allo",
+        "!",
+        "ĠDas",
+        "Ġist",
+        "Ġeine",
+        "Ġklass",
+        "ische",
+        "ĠBeg",
+        "rü",
+        "ß",
+        "ung",
+        "Ġauf"
+      ],
+      "token_ids": [
+        5,
+        255000,
+        255006,
+        47,
+        24630,
+        20441,
+        8,
+        255001,
+        255000,
+        255007,
+        47,
+        24630,
+        8,
+        12241,
+        5132,
+        7147,
+        50586,
+        5160,
+        16899,
+        120692,
+        4750,
+        2359,
+        5709
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "ĠDeutsch",
+            "token_id": 15076,
+            "logprob": -0.0002,
+            "prob": 1.0
+          },
+          {
+            "token": "ĠDeutschen",
+            "token_id": 39115,
+            "logprob": -9.5,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġdeutscher",
+            "token_id": 24196,
+            "logprob": -10.4219,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠDeutscher",
+            "token_id": 75817,
+            "logprob": -10.7188,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠDeutsche",
+            "token_id": 30960,
+            "logprob": -11.0938,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠGerman",
+            "token_id": 7240,
+            "logprob": -11.4375,
+            "prob": 0.0
+          },
+          {
+            "token": "Deutsch",
+            "token_id": 30154,
+            "logprob": -11.4531,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġdeutsch",
+            "token_id": 16041,
+            "logprob": -11.75,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠDeutschland",
+            "token_id": 27787,
+            "logprob": -12.3906,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠEnglisch",
+            "token_id": 191571,
+            "logprob": -12.5,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "ĠDeutsch",
+        "token_id": 15076,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 14,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Hallo Welt!<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>Hallo! Das ist eine klassische Begrüßung auf Deutsch",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "H",
+        "allo",
+        "ĠWelt",
+        "!",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "H",
+        "allo",
+        "!",
+        "ĠDas",
+        "Ġist",
+        "Ġeine",
+        "Ġklass",
+        "ische",
+        "ĠBeg",
+        "rü",
+        "ß",
+        "ung",
+        "Ġauf",
+        "ĠDeutsch"
+      ],
+      "token_ids": [
+        5,
+        255000,
+        255006,
+        47,
+        24630,
+        20441,
+        8,
+        255001,
+        255000,
+        255007,
+        47,
+        24630,
+        8,
+        12241,
+        5132,
+        7147,
+        50586,
+        5160,
+        16899,
+        120692,
+        4750,
+        2359,
+        5709,
+        15076
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": ",",
+            "token_id": 19,
+            "logprob": -0.0001,
+            "prob": 1.0
+          },
+          {
+            "token": "Ġund",
+            "token_id": 2280,
+            "logprob": -9.2344,
+            "prob": 0.0001
+          },
+          {
+            "token": ".",
+            "token_id": 21,
+            "logprob": -12.5625,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġoder",
+            "token_id": 13624,
+            "logprob": -17.0312,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġmit",
+            "token_id": 4665,
+            "logprob": -17.0156,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġ(",
+            "token_id": 1737,
+            "logprob": -17.2188,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġfür",
+            "token_id": 6081,
+            "logprob": -17.1562,
+            "prob": 0.0
+          },
+          {
+            "token": "<CLS>",
+            "token_id": 2,
+            "logprob": -36.0625,
+            "prob": 0.0
+          },
+          {
+            "token": "<UNK>",
+            "token_id": 1,
+            "logprob": -36.6875,
+            "prob": 0.0
+          },
+          {
+            "token": "<PAD>",
+            "token_id": 0,
+            "logprob": -35.5938,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": ",",
+        "token_id": 19,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 15,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Hallo Welt!<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>Hallo! Das ist eine klassische Begrüßung auf Deutsch,",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "H",
+        "allo",
+        "ĠWelt",
+        "!",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "H",
+        "allo",
+        "!",
+        "ĠDas",
+        "Ġist",
+        "Ġeine",
+        "Ġklass",
+        "ische",
+        "ĠBeg",
+        "rü",
+        "ß",
+        "ung",
+        "Ġauf",
+        "ĠDeutsch",
+        ","
+      ],
+      "token_ids": [
+        5,
+        255000,
+        255006,
+        47,
+        24630,
+        20441,
+        8,
+        255001,
+        255000,
+        255007,
+        47,
+        24630,
+        8,
+        12241,
+        5132,
+        7147,
+        50586,
+        5160,
+        16899,
+        120692,
+        4750,
+        2359,
+        5709,
+        15076,
+        19
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġdie",
+            "token_id": 2915,
+            "logprob": -0.0021,
+            "prob": 0.998
+          },
+          {
+            "token": "Ġwas",
+            "token_id": 1898,
+            "logprob": -6.207,
+            "prob": 0.002
+          },
+          {
+            "token": "Ġähnlich",
+            "token_id": 158192,
+            "logprob": -10.75,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġwelche",
+            "token_id": 64536,
+            "logprob": -10.9062,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġdas",
+            "token_id": 4031,
+            "logprob": -12.4922,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġund",
+            "token_id": 2280,
+            "logprob": -12.625,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġwelches",
+            "token_id": 99748,
+            "logprob": -13.5469,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġübersetzt",
+            "token_id": 178202,
+            "logprob": -13.7969,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġbedeutet",
+            "token_id": 147121,
+            "logprob": -14.0859,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġmit",
+            "token_id": 4665,
+            "logprob": -14.9062,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġdie",
+        "token_id": 2915,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 16,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Hallo Welt!<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>Hallo! Das ist eine klassische Begrüßung auf Deutsch, die",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "H",
+        "allo",
+        "ĠWelt",
+        "!",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "H",
+        "allo",
+        "!",
+        "ĠDas",
+        "Ġist",
+        "Ġeine",
+        "Ġklass",
+        "ische",
+        "ĠBeg",
+        "rü",
+        "ß",
+        "ung",
+        "Ġauf",
+        "ĠDeutsch",
+        ",",
+        "Ġdie"
+      ],
+      "token_ids": [
+        5,
+        255000,
+        255006,
+        47,
+        24630,
+        20441,
+        8,
+        255001,
+        255000,
+        255007,
+        47,
+        24630,
+        8,
+        12241,
+        5132,
+        7147,
+        50586,
+        5160,
+        16899,
+        120692,
+        4750,
+        2359,
+        5709,
+        15076,
+        19,
+        2915
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġ\"",
+            "token_id": 1789,
+            "logprob": -0.4531,
+            "prob": 0.6357
+          },
+          {
+            "token": "Ġübersetzt",
+            "token_id": 178202,
+            "logprob": -1.1406,
+            "prob": 0.3196
+          },
+          {
+            "token": "Ġw",
+            "token_id": 1695,
+            "logprob": -4.1875,
+            "prob": 0.0152
+          },
+          {
+            "token": "Ġoft",
+            "token_id": 65855,
+            "logprob": -4.375,
+            "prob": 0.0126
+          },
+          {
+            "token": "Ġauf",
+            "token_id": 5709,
+            "logprob": -4.9922,
+            "prob": 0.0068
+          },
+          {
+            "token": "Ġbedeutet",
+            "token_id": 147121,
+            "logprob": -5.9766,
+            "prob": 0.0025
+          },
+          {
+            "token": "Ġin",
+            "token_id": 1709,
+            "logprob": -6.4219,
+            "prob": 0.0016
+          },
+          {
+            "token": "Ġso",
+            "token_id": 2362,
+            "logprob": -6.4766,
+            "prob": 0.0015
+          },
+          {
+            "token": "Ġsov",
+            "token_id": 20976,
+            "logprob": -7.2031,
+            "prob": 0.0007
+          },
+          {
+            "token": "Ġ„",
+            "token_id": 4352,
+            "logprob": -7.4922,
+            "prob": 0.0006
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġ\"",
+        "token_id": 1789,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 17,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Hallo Welt!<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>Hallo! Das ist eine klassische Begrüßung auf Deutsch, die \"",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "H",
+        "allo",
+        "ĠWelt",
+        "!",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "H",
+        "allo",
+        "!",
+        "ĠDas",
+        "Ġist",
+        "Ġeine",
+        "Ġklass",
+        "ische",
+        "ĠBeg",
+        "rü",
+        "ß",
+        "ung",
+        "Ġauf",
+        "ĠDeutsch",
+        ",",
+        "Ġdie",
+        "Ġ\""
+      ],
+      "token_ids": [
+        5,
+        255000,
+        255006,
+        47,
+        24630,
+        20441,
+        8,
+        255001,
+        255000,
+        255007,
+        47,
+        24630,
+        8,
+        12241,
+        5132,
+        7147,
+        50586,
+        5160,
+        16899,
+        120692,
+        4750,
+        2359,
+        5709,
+        15076,
+        19,
+        2915,
+        1789
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "H",
+            "token_id": 47,
+            "logprob": -0.0001,
+            "prob": 1.0
+          },
+          {
+            "token": "Hall",
+            "token_id": 48089,
+            "logprob": -9.5,
+            "prob": 0.0001
+          },
+          {
+            "token": "Hello",
+            "token_id": 28339,
+            "logprob": -10.5625,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠHall",
+            "token_id": 7093,
+            "logprob": -14.0625,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġhall",
+            "token_id": 16561,
+            "logprob": -15.375,
+            "prob": 0.0
+          },
+          {
+            "token": "Halle",
+            "token_id": 145140,
+            "logprob": -15.4219,
+            "prob": 0.0
+          },
+          {
+            "token": "Hi",
+            "token_id": 37535,
+            "logprob": -15.8438,
+            "prob": 0.0
+          },
+          {
+            "token": "Halloween",
+            "token_id": 189961,
+            "logprob": -16.7656,
+            "prob": 0.0
+          },
+          {
+            "token": "Halo",
+            "token_id": 185362,
+            "logprob": -16.4688,
+            "prob": 0.0
+          },
+          {
+            "token": "Hey",
+            "token_id": 48261,
+            "logprob": -16.6094,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "H",
+        "token_id": 47,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 18,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Hallo Welt!<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>Hallo! Das ist eine klassische Begrüßung auf Deutsch, die \"H",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "H",
+        "allo",
+        "ĠWelt",
+        "!",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "H",
+        "allo",
+        "!",
+        "ĠDas",
+        "Ġist",
+        "Ġeine",
+        "Ġklass",
+        "ische",
+        "ĠBeg",
+        "rü",
+        "ß",
+        "ung",
+        "Ġauf",
+        "ĠDeutsch",
+        ",",
+        "Ġdie",
+        "Ġ\"",
+        "H"
+      ],
+      "token_ids": [
+        5,
+        255000,
+        255006,
+        47,
+        24630,
+        20441,
+        8,
+        255001,
+        255000,
+        255007,
+        47,
+        24630,
+        8,
+        12241,
+        5132,
+        7147,
+        50586,
+        5160,
+        16899,
+        120692,
+        4750,
+        2359,
+        5709,
+        15076,
+        19,
+        2915,
+        1789,
+        47
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "allo",
+            "token_id": 24630,
+            "logprob": -0.0,
+            "prob": 1.0
+          },
+          {
+            "token": "allen",
+            "token_id": 25791,
+            "logprob": -14.8281,
+            "prob": 0.0
+          },
+          {
+            "token": "allow",
+            "token_id": 17859,
+            "logprob": -15.0,
+            "prob": 0.0
+          },
+          {
+            "token": "alla",
+            "token_id": 7473,
+            "logprob": -15.2656,
+            "prob": 0.0
+          },
+          {
+            "token": "alli",
+            "token_id": 27616,
+            "logprob": -15.4531,
+            "prob": 0.0
+          },
+          {
+            "token": "all",
+            "token_id": 1954,
+            "logprob": -16.125,
+            "prob": 0.0
+          },
+          {
+            "token": "alle",
+            "token_id": 7041,
+            "logprob": -17.0938,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġallo",
+            "token_id": 47386,
+            "logprob": -17.2188,
+            "prob": 0.0
+          },
+          {
+            "token": "<PAD>",
+            "token_id": 0,
+            "logprob": -31.6719,
+            "prob": 0.0
+          },
+          {
+            "token": "<UNK>",
+            "token_id": 1,
+            "logprob": -32.625,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "allo",
+        "token_id": 24630,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 19,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Hallo Welt!<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>Hallo! Das ist eine klassische Begrüßung auf Deutsch, die \"Hallo",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "H",
+        "allo",
+        "ĠWelt",
+        "!",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "H",
+        "allo",
+        "!",
+        "ĠDas",
+        "Ġist",
+        "Ġeine",
+        "Ġklass",
+        "ische",
+        "ĠBeg",
+        "rü",
+        "ß",
+        "ung",
+        "Ġauf",
+        "ĠDeutsch",
+        ",",
+        "Ġdie",
+        "Ġ\"",
+        "H",
+        "allo"
+      ],
+      "token_ids": [
+        5,
+        255000,
+        255006,
+        47,
+        24630,
+        20441,
+        8,
+        255001,
+        255000,
+        255007,
+        47,
+        24630,
+        8,
+        12241,
+        5132,
+        7147,
+        50586,
+        5160,
+        16899,
+        120692,
+        4750,
+        2359,
+        5709,
+        15076,
+        19,
+        2915,
+        1789,
+        47,
+        24630
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "ĠWelt",
+            "token_id": 20441,
+            "logprob": -0.0,
+            "prob": 1.0
+          },
+          {
+            "token": "Welt",
+            "token_id": 65416,
+            "logprob": -11.3594,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠWel",
+            "token_id": 15488,
+            "logprob": -15.0391,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠWereld",
+            "token_id": 91785,
+            "logprob": -15.5547,
+            "prob": 0.0
+          },
+          {
+            "token": "世界",
+            "token_id": 9065,
+            "logprob": -15.4219,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġwereld",
+            "token_id": 33299,
+            "logprob": -15.7812,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠWorld",
+            "token_id": 3930,
+            "logprob": -17.1875,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġmundo",
+            "token_id": 12695,
+            "logprob": -16.9219,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġdie",
+            "token_id": 2915,
+            "logprob": -16.4688,
+            "prob": 0.0
+          },
+          {
+            "token": ",",
+            "token_id": 19,
+            "logprob": -16.4688,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "ĠWelt",
+        "token_id": 20441,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 20,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Hallo Welt!<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>Hallo! Das ist eine klassische Begrüßung auf Deutsch, die \"Hallo Welt",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "H",
+        "allo",
+        "ĠWelt",
+        "!",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "H",
+        "allo",
+        "!",
+        "ĠDas",
+        "Ġist",
+        "Ġeine",
+        "Ġklass",
+        "ische",
+        "ĠBeg",
+        "rü",
+        "ß",
+        "ung",
+        "Ġauf",
+        "ĠDeutsch",
+        ",",
+        "Ġdie",
+        "Ġ\"",
+        "H",
+        "allo",
+        "ĠWelt"
+      ],
+      "token_ids": [
+        5,
+        255000,
+        255006,
+        47,
+        24630,
+        20441,
+        8,
+        255001,
+        255000,
+        255007,
+        47,
+        24630,
+        8,
+        12241,
+        5132,
+        7147,
+        50586,
+        5160,
+        16899,
+        120692,
+        4750,
+        2359,
+        5709,
+        15076,
+        19,
+        2915,
+        1789,
+        47,
+        24630,
+        20441
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "\"",
+            "token_id": 9,
+            "logprob": -0.5488,
+            "prob": 0.5776
+          },
+          {
+            "token": "!\"",
+            "token_id": 14842,
+            "logprob": -0.8613,
+            "prob": 0.4226
+          },
+          {
+            "token": "\"!",
+            "token_id": 188622,
+            "logprob": -12.9844,
+            "prob": 0.0
+          },
+          {
+            "token": "ा\"",
+            "token_id": 155691,
+            "logprob": -14.6875,
+            "prob": 0.0
+          },
+          {
+            "token": "ी\"",
+            "token_id": 178537,
+            "logprob": -15.0938,
+            "prob": 0.0
+          },
+          {
+            "token": "!!\"",
+            "token_id": 228582,
+            "logprob": -15.2656,
+            "prob": 0.0
+          },
+          {
+            "token": "()\"",
+            "token_id": 55926,
+            "logprob": -15.5234,
+            "prob": 0.0
+          },
+          {
+            "token": "!\",",
+            "token_id": 58525,
+            "logprob": -16.2344,
+            "prob": 0.0
+          },
+          {
+            "token": ";\"",
+            "token_id": 10862,
+            "logprob": -16.875,
+            "prob": 0.0
+          },
+          {
+            "token": "%\"",
+            "token_id": 27405,
+            "logprob": -16.8281,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "\"",
+        "token_id": 9,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 21,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Hallo Welt!<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>Hallo! Das ist eine klassische Begrüßung auf Deutsch, die \"Hallo Welt\"",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "H",
+        "allo",
+        "ĠWelt",
+        "!",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "H",
+        "allo",
+        "!",
+        "ĠDas",
+        "Ġist",
+        "Ġeine",
+        "Ġklass",
+        "ische",
+        "ĠBeg",
+        "rü",
+        "ß",
+        "ung",
+        "Ġauf",
+        "ĠDeutsch",
+        ",",
+        "Ġdie",
+        "Ġ\"",
+        "H",
+        "allo",
+        "ĠWelt",
+        "\""
+      ],
+      "token_ids": [
+        5,
+        255000,
+        255006,
+        47,
+        24630,
+        20441,
+        8,
+        255001,
+        255000,
+        255007,
+        47,
+        24630,
+        8,
+        12241,
+        5132,
+        7147,
+        50586,
+        5160,
+        16899,
+        120692,
+        4750,
+        2359,
+        5709,
+        15076,
+        19,
+        2915,
+        1789,
+        47,
+        24630,
+        20441,
+        9
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġbedeutet",
+            "token_id": 147121,
+            "logprob": -0.0096,
+            "prob": 0.9907
+          },
+          {
+            "token": "Ġübersetzt",
+            "token_id": 178202,
+            "logprob": -4.6953,
+            "prob": 0.0091
+          },
+          {
+            "token": "Ġoder",
+            "token_id": 13624,
+            "logprob": -8.8047,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġsignifica",
+            "token_id": 29169,
+            "logprob": -10.3281,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġbedeut",
+            "token_id": 64021,
+            "logprob": -10.4453,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġübers",
+            "token_id": 82991,
+            "logprob": -10.625,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġbetekent",
+            "token_id": 102273,
+            "logprob": -10.7891,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġtranslates",
+            "token_id": 68700,
+            "logprob": -11.0469,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġznamená",
+            "token_id": 116276,
+            "logprob": -11.3516,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġsignifie",
+            "token_id": 65632,
+            "logprob": -11.5938,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġbedeutet",
+        "token_id": 147121,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 22,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Hallo Welt!<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>Hallo! Das ist eine klassische Begrüßung auf Deutsch, die \"Hallo Welt\" bedeutet",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "H",
+        "allo",
+        "ĠWelt",
+        "!",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "H",
+        "allo",
+        "!",
+        "ĠDas",
+        "Ġist",
+        "Ġeine",
+        "Ġklass",
+        "ische",
+        "ĠBeg",
+        "rü",
+        "ß",
+        "ung",
+        "Ġauf",
+        "ĠDeutsch",
+        ",",
+        "Ġdie",
+        "Ġ\"",
+        "H",
+        "allo",
+        "ĠWelt",
+        "\"",
+        "Ġbedeutet"
+      ],
+      "token_ids": [
+        5,
+        255000,
+        255006,
+        47,
+        24630,
+        20441,
+        8,
+        255001,
+        255000,
+        255007,
+        47,
+        24630,
+        8,
+        12241,
+        5132,
+        7147,
+        50586,
+        5160,
+        16899,
+        120692,
+        4750,
+        2359,
+        5709,
+        15076,
+        19,
+        2915,
+        1789,
+        47,
+        24630,
+        20441,
+        9,
+        147121
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": ".",
+            "token_id": 21,
+            "logprob": -0.0082,
+            "prob": 0.9917
+          },
+          {
+            "token": "Ġund",
+            "token_id": 2280,
+            "logprob": -4.8359,
+            "prob": 0.0079
+          },
+          {
+            "token": ",",
+            "token_id": 19,
+            "logprob": -8.2109,
+            "prob": 0.0003
+          },
+          {
+            "token": "Ġ–",
+            "token_id": 2129,
+            "logprob": -13.9141,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġoder",
+            "token_id": 13624,
+            "logprob": -15.1172,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġ(",
+            "token_id": 1737,
+            "logprob": -16.0312,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġ-",
+            "token_id": 1945,
+            "logprob": -15.8828,
+            "prob": 0.0
+          },
+          {
+            "token": "!",
+            "token_id": 8,
+            "logprob": -17.25,
+            "prob": 0.0
+          },
+          {
+            "token": "<PAD>",
+            "token_id": 0,
+            "logprob": -31.2656,
+            "prob": 0.0
+          },
+          {
+            "token": "<UNK>",
+            "token_id": 1,
+            "logprob": -31.7812,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": ".",
+        "token_id": 21,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 23,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Hallo Welt!<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>Hallo! Das ist eine klassische Begrüßung auf Deutsch, die \"Hallo Welt\" bedeutet.",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "H",
+        "allo",
+        "ĠWelt",
+        "!",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "H",
+        "allo",
+        "!",
+        "ĠDas",
+        "Ġist",
+        "Ġeine",
+        "Ġklass",
+        "ische",
+        "ĠBeg",
+        "rü",
+        "ß",
+        "ung",
+        "Ġauf",
+        "ĠDeutsch",
+        ",",
+        "Ġdie",
+        "Ġ\"",
+        "H",
+        "allo",
+        "ĠWelt",
+        "\"",
+        "Ġbedeutet",
+        "."
+      ],
+      "token_ids": [
+        5,
+        255000,
+        255006,
+        47,
+        24630,
+        20441,
+        8,
+        255001,
+        255000,
+        255007,
+        47,
+        24630,
+        8,
+        12241,
+        5132,
+        7147,
+        50586,
+        5160,
+        16899,
+        120692,
+        4750,
+        2359,
+        5709,
+        15076,
+        19,
+        2915,
+        1789,
+        47,
+        24630,
+        20441,
+        9,
+        147121,
+        21
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "ĠWie",
+            "token_id": 46901,
+            "logprob": -0.0537,
+            "prob": 0.9478
+          },
+          {
+            "token": "ĠEs",
+            "token_id": 6154,
+            "logprob": -3.1309,
+            "prob": 0.0436
+          },
+          {
+            "token": "ĠIch",
+            "token_id": 31246,
+            "logprob": -5.0391,
+            "prob": 0.0065
+          },
+          {
+            "token": "ĠKann",
+            "token_id": 46956,
+            "logprob": -7.3828,
+            "prob": 0.0006
+          },
+          {
+            "token": "ĠWas",
+            "token_id": 23607,
+            "logprob": -7.4453,
+            "prob": 0.0006
+          },
+          {
+            "token": "\n",
+            "token_id": 206,
+            "logprob": -8.1328,
+            "prob": 0.0003
+          },
+          {
+            "token": "ĠWill",
+            "token_id": 4195,
+            "logprob": -9.1562,
+            "prob": 0.0001
+          },
+          {
+            "token": "ĠSchön",
+            "token_id": 61727,
+            "logprob": -9.4141,
+            "prob": 0.0001
+          },
+          {
+            "token": "Wie",
+            "token_id": 93488,
+            "logprob": -9.4609,
+            "prob": 0.0001
+          },
+          {
+            "token": "ĠMö",
+            "token_id": 79915,
+            "logprob": -10.1797,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "ĠWie",
+        "token_id": 46901,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 24,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Hallo Welt!<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>Hallo! Das ist eine klassische Begrüßung auf Deutsch, die \"Hallo Welt\" bedeutet. Wie",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "H",
+        "allo",
+        "ĠWelt",
+        "!",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "H",
+        "allo",
+        "!",
+        "ĠDas",
+        "Ġist",
+        "Ġeine",
+        "Ġklass",
+        "ische",
+        "ĠBeg",
+        "rü",
+        "ß",
+        "ung",
+        "Ġauf",
+        "ĠDeutsch",
+        ",",
+        "Ġdie",
+        "Ġ\"",
+        "H",
+        "allo",
+        "ĠWelt",
+        "\"",
+        "Ġbedeutet",
+        ".",
+        "ĠWie"
+      ],
+      "token_ids": [
+        5,
+        255000,
+        255006,
+        47,
+        24630,
+        20441,
+        8,
+        255001,
+        255000,
+        255007,
+        47,
+        24630,
+        8,
+        12241,
+        5132,
+        7147,
+        50586,
+        5160,
+        16899,
+        120692,
+        4750,
+        2359,
+        5709,
+        15076,
+        19,
+        2915,
+        1789,
+        47,
+        24630,
+        20441,
+        9,
+        147121,
+        21,
+        46901
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġkann",
+            "token_id": 28963,
+            "logprob": -0.0,
+            "prob": 1.0
+          },
+          {
+            "token": "Ġgeht",
+            "token_id": 76330,
+            "logprob": -12.6797,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġkönnen",
+            "token_id": 37285,
+            "logprob": -12.6953,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġdarf",
+            "token_id": 187074,
+            "logprob": -13.4219,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġich",
+            "token_id": 23909,
+            "logprob": -14.0703,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġkan",
+            "token_id": 12291,
+            "logprob": -14.125,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġيمكن",
+            "token_id": 57310,
+            "logprob": -14.2109,
+            "prob": 0.0
+          },
+          {
+            "token": "Kann",
+            "token_id": 224446,
+            "logprob": -15.6875,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠKann",
+            "token_id": 46956,
+            "logprob": -15.5938,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġpued",
+            "token_id": 9719,
+            "logprob": -15.5469,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġkann",
+        "token_id": 28963,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 25,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Hallo Welt!<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>Hallo! Das ist eine klassische Begrüßung auf Deutsch, die \"Hallo Welt\" bedeutet. Wie kann",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "H",
+        "allo",
+        "ĠWelt",
+        "!",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "H",
+        "allo",
+        "!",
+        "ĠDas",
+        "Ġist",
+        "Ġeine",
+        "Ġklass",
+        "ische",
+        "ĠBeg",
+        "rü",
+        "ß",
+        "ung",
+        "Ġauf",
+        "ĠDeutsch",
+        ",",
+        "Ġdie",
+        "Ġ\"",
+        "H",
+        "allo",
+        "ĠWelt",
+        "\"",
+        "Ġbedeutet",
+        ".",
+        "ĠWie",
+        "Ġkann"
+      ],
+      "token_ids": [
+        5,
+        255000,
+        255006,
+        47,
+        24630,
+        20441,
+        8,
+        255001,
+        255000,
+        255007,
+        47,
+        24630,
+        8,
+        12241,
+        5132,
+        7147,
+        50586,
+        5160,
+        16899,
+        120692,
+        4750,
+        2359,
+        5709,
+        15076,
+        19,
+        2915,
+        1789,
+        47,
+        24630,
+        20441,
+        9,
+        147121,
+        21,
+        46901,
+        28963
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġich",
+            "token_id": 23909,
+            "logprob": -0.0,
+            "prob": 1.0
+          },
+          {
+            "token": "Ġik",
+            "token_id": 16502,
+            "logprob": -14.5625,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠIch",
+            "token_id": 31246,
+            "logprob": -15.4219,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġя",
+            "token_id": 3981,
+            "logprob": -16.25,
+            "prob": 0.0
+          },
+          {
+            "token": "<SEP>",
+            "token_id": 3,
+            "logprob": -36.5,
+            "prob": 0.0
+          },
+          {
+            "token": "<CLS>",
+            "token_id": 2,
+            "logprob": -36.5625,
+            "prob": 0.0
+          },
+          {
+            "token": "<MASK_TOKEN>",
+            "token_id": 4,
+            "logprob": -36.7812,
+            "prob": 0.0
+          },
+          {
+            "token": "<BOS_TOKEN>",
+            "token_id": 5,
+            "logprob": -38.375,
+            "prob": 0.0
+          },
+          {
+            "token": "<PAD>",
+            "token_id": 0,
+            "logprob": -36.75,
+            "prob": 0.0
+          },
+          {
+            "token": "<UNK>",
+            "token_id": 1,
+            "logprob": -37.125,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġich",
+        "token_id": 23909,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 26,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Hallo Welt!<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>Hallo! Das ist eine klassische Begrüßung auf Deutsch, die \"Hallo Welt\" bedeutet. Wie kann ich",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "H",
+        "allo",
+        "ĠWelt",
+        "!",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "H",
+        "allo",
+        "!",
+        "ĠDas",
+        "Ġist",
+        "Ġeine",
+        "Ġklass",
+        "ische",
+        "ĠBeg",
+        "rü",
+        "ß",
+        "ung",
+        "Ġauf",
+        "ĠDeutsch",
+        ",",
+        "Ġdie",
+        "Ġ\"",
+        "H",
+        "allo",
+        "ĠWelt",
+        "\"",
+        "Ġbedeutet",
+        ".",
+        "ĠWie",
+        "Ġkann",
+        "Ġich"
+      ],
+      "token_ids": [
+        5,
+        255000,
+        255006,
+        47,
+        24630,
+        20441,
+        8,
+        255001,
+        255000,
+        255007,
+        47,
+        24630,
+        8,
+        12241,
+        5132,
+        7147,
+        50586,
+        5160,
+        16899,
+        120692,
+        4750,
+        2359,
+        5709,
+        15076,
+        19,
+        2915,
+        1789,
+        47,
+        24630,
+        20441,
+        9,
+        147121,
+        21,
+        46901,
+        28963,
+        23909
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġdir",
+            "token_id": 6359,
+            "logprob": -0.5762,
+            "prob": 0.562
+          },
+          {
+            "token": "ĠI",
+            "token_id": 1767,
+            "logprob": -0.8262,
+            "prob": 0.4377
+          },
+          {
+            "token": "ĠDir",
+            "token_id": 31466,
+            "logprob": -11.8438,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġheute",
+            "token_id": 35513,
+            "logprob": -13.0625,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġhel",
+            "token_id": 2941,
+            "logprob": -13.125,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġdich",
+            "token_id": 23137,
+            "logprob": -14.5781,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġihnen",
+            "token_id": 83089,
+            "logprob": -14.5625,
+            "prob": 0.0
+          },
+          {
+            "token": "I",
+            "token_id": 48,
+            "logprob": -14.6797,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠIh",
+            "token_id": 250590,
+            "logprob": -15.2578,
+            "prob": 0.0
+          },
+          {
+            "token": "dir",
+            "token_id": 7573,
+            "logprob": -15.6719,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġdir",
+        "token_id": 6359,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 27,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Hallo Welt!<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>Hallo! Das ist eine klassische Begrüßung auf Deutsch, die \"Hallo Welt\" bedeutet. Wie kann ich dir",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "H",
+        "allo",
+        "ĠWelt",
+        "!",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "H",
+        "allo",
+        "!",
+        "ĠDas",
+        "Ġist",
+        "Ġeine",
+        "Ġklass",
+        "ische",
+        "ĠBeg",
+        "rü",
+        "ß",
+        "ung",
+        "Ġauf",
+        "ĠDeutsch",
+        ",",
+        "Ġdie",
+        "Ġ\"",
+        "H",
+        "allo",
+        "ĠWelt",
+        "\"",
+        "Ġbedeutet",
+        ".",
+        "ĠWie",
+        "Ġkann",
+        "Ġich",
+        "Ġdir"
+      ],
+      "token_ids": [
+        5,
+        255000,
+        255006,
+        47,
+        24630,
+        20441,
+        8,
+        255001,
+        255000,
+        255007,
+        47,
+        24630,
+        8,
+        12241,
+        5132,
+        7147,
+        50586,
+        5160,
+        16899,
+        120692,
+        4750,
+        2359,
+        5709,
+        15076,
+        19,
+        2915,
+        1789,
+        47,
+        24630,
+        20441,
+        9,
+        147121,
+        21,
+        46901,
+        28963,
+        23909,
+        6359
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġheute",
+            "token_id": 35513,
+            "logprob": -0.3398,
+            "prob": 0.7119
+          },
+          {
+            "token": "Ġhel",
+            "token_id": 2941,
+            "logprob": -1.2461,
+            "prob": 0.2876
+          },
+          {
+            "token": "Ġbeh",
+            "token_id": 5264,
+            "logprob": -9.3359,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġhoy",
+            "token_id": 40058,
+            "logprob": -10.3125,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġاليوم",
+            "token_id": 102928,
+            "logprob": -10.4062,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġtoday",
+            "token_id": 6683,
+            "logprob": -10.4375,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġсегодня",
+            "token_id": 89459,
+            "logprob": -10.7188,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġהיום",
+            "token_id": 110985,
+            "logprob": -10.9766,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġdnes",
+            "token_id": 85056,
+            "logprob": -10.9766,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġhoje",
+            "token_id": 33983,
+            "logprob": -11.0469,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġheute",
+        "token_id": 35513,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 28,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Hallo Welt!<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>Hallo! Das ist eine klassische Begrüßung auf Deutsch, die \"Hallo Welt\" bedeutet. Wie kann ich dir heute",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "H",
+        "allo",
+        "ĠWelt",
+        "!",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "H",
+        "allo",
+        "!",
+        "ĠDas",
+        "Ġist",
+        "Ġeine",
+        "Ġklass",
+        "ische",
+        "ĠBeg",
+        "rü",
+        "ß",
+        "ung",
+        "Ġauf",
+        "ĠDeutsch",
+        ",",
+        "Ġdie",
+        "Ġ\"",
+        "H",
+        "allo",
+        "ĠWelt",
+        "\"",
+        "Ġbedeutet",
+        ".",
+        "ĠWie",
+        "Ġkann",
+        "Ġich",
+        "Ġdir",
+        "Ġheute"
+      ],
+      "token_ids": [
+        5,
+        255000,
+        255006,
+        47,
+        24630,
+        20441,
+        8,
+        255001,
+        255000,
+        255007,
+        47,
+        24630,
+        8,
+        12241,
+        5132,
+        7147,
+        50586,
+        5160,
+        16899,
+        120692,
+        4750,
+        2359,
+        5709,
+        15076,
+        19,
+        2915,
+        1789,
+        47,
+        24630,
+        20441,
+        9,
+        147121,
+        21,
+        46901,
+        28963,
+        23909,
+        6359,
+        35513
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġhel",
+            "token_id": 2941,
+            "logprob": -0.158,
+            "prob": 0.854
+          },
+          {
+            "token": "Ġbeh",
+            "token_id": 5264,
+            "logprob": -1.9238,
+            "prob": 0.1461
+          },
+          {
+            "token": "Ġhelpen",
+            "token_id": 192798,
+            "logprob": -11.0859,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġhil",
+            "token_id": 57206,
+            "logprob": -11.3516,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġweiter",
+            "token_id": 26061,
+            "logprob": -11.4375,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġdabei",
+            "token_id": 48853,
+            "logprob": -11.6953,
+            "prob": 0.0
+          },
+          {
+            "token": "hel",
+            "token_id": 4684,
+            "logprob": -11.9531,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġunterstützen",
+            "token_id": 251428,
+            "logprob": -12.8047,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġпомочь",
+            "token_id": 147468,
+            "logprob": -13.3281,
+            "prob": 0.0
+          },
+          {
+            "token": "帮助",
+            "token_id": 55510,
+            "logprob": -13.6094,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġhel",
+        "token_id": 2941,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 29,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Hallo Welt!<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>Hallo! Das ist eine klassische Begrüßung auf Deutsch, die \"Hallo Welt\" bedeutet. Wie kann ich dir heute hel",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "H",
+        "allo",
+        "ĠWelt",
+        "!",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "H",
+        "allo",
+        "!",
+        "ĠDas",
+        "Ġist",
+        "Ġeine",
+        "Ġklass",
+        "ische",
+        "ĠBeg",
+        "rü",
+        "ß",
+        "ung",
+        "Ġauf",
+        "ĠDeutsch",
+        ",",
+        "Ġdie",
+        "Ġ\"",
+        "H",
+        "allo",
+        "ĠWelt",
+        "\"",
+        "Ġbedeutet",
+        ".",
+        "ĠWie",
+        "Ġkann",
+        "Ġich",
+        "Ġdir",
+        "Ġheute",
+        "Ġhel"
+      ],
+      "token_ids": [
+        5,
+        255000,
+        255006,
+        47,
+        24630,
+        20441,
+        8,
+        255001,
+        255000,
+        255007,
+        47,
+        24630,
+        8,
+        12241,
+        5132,
+        7147,
+        50586,
+        5160,
+        16899,
+        120692,
+        4750,
+        2359,
+        5709,
+        15076,
+        19,
+        2915,
+        1789,
+        47,
+        24630,
+        20441,
+        9,
+        147121,
+        21,
+        46901,
+        28963,
+        23909,
+        6359,
+        35513,
+        2941
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "fen",
+            "token_id": 20791,
+            "logprob": -0.0,
+            "prob": 1.0
+          },
+          {
+            "token": "ven",
+            "token_id": 3013,
+            "logprob": -15.1406,
+            "prob": 0.0
+          },
+          {
+            "token": "f",
+            "token_id": 77,
+            "logprob": -15.5781,
+            "prob": 0.0
+          },
+          {
+            "token": "ben",
+            "token_id": 5881,
+            "logprob": -16.1875,
+            "prob": 0.0
+          },
+          {
+            "token": "ffen",
+            "token_id": 32099,
+            "logprob": -17.2031,
+            "prob": 0.0
+          },
+          {
+            "token": "<SEP>",
+            "token_id": 3,
+            "logprob": -37.4375,
+            "prob": 0.0
+          },
+          {
+            "token": "<MASK_TOKEN>",
+            "token_id": 4,
+            "logprob": -37.3125,
+            "prob": 0.0
+          },
+          {
+            "token": "<CLS>",
+            "token_id": 2,
+            "logprob": -37.3438,
+            "prob": 0.0
+          },
+          {
+            "token": "<PAD>",
+            "token_id": 0,
+            "logprob": -37.2188,
+            "prob": 0.0
+          },
+          {
+            "token": "<UNK>",
+            "token_id": 1,
+            "logprob": -35.9688,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "fen",
+        "token_id": 20791,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 30,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Hallo Welt!<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>Hallo! Das ist eine klassische Begrüßung auf Deutsch, die \"Hallo Welt\" bedeutet. Wie kann ich dir heute helfen",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "H",
+        "allo",
+        "ĠWelt",
+        "!",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "H",
+        "allo",
+        "!",
+        "ĠDas",
+        "Ġist",
+        "Ġeine",
+        "Ġklass",
+        "ische",
+        "ĠBeg",
+        "rü",
+        "ß",
+        "ung",
+        "Ġauf",
+        "ĠDeutsch",
+        ",",
+        "Ġdie",
+        "Ġ\"",
+        "H",
+        "allo",
+        "ĠWelt",
+        "\"",
+        "Ġbedeutet",
+        ".",
+        "ĠWie",
+        "Ġkann",
+        "Ġich",
+        "Ġdir",
+        "Ġheute",
+        "Ġhel",
+        "fen"
+      ],
+      "token_ids": [
+        5,
+        255000,
+        255006,
+        47,
+        24630,
+        20441,
+        8,
+        255001,
+        255000,
+        255007,
+        47,
+        24630,
+        8,
+        12241,
+        5132,
+        7147,
+        50586,
+        5160,
+        16899,
+        120692,
+        4750,
+        2359,
+        5709,
+        15076,
+        19,
+        2915,
+        1789,
+        47,
+        24630,
+        20441,
+        9,
+        147121,
+        21,
+        46901,
+        28963,
+        23909,
+        6359,
+        35513,
+        2941,
+        20791
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "?",
+            "token_id": 38,
+            "logprob": -0.0004,
+            "prob": 0.9995
+          },
+          {
+            "token": "Ġoder",
+            "token_id": 13624,
+            "logprob": -7.7812,
+            "prob": 0.0004
+          },
+          {
+            "token": "؟",
+            "token_id": 120600,
+            "logprob": -14.2656,
+            "prob": 0.0
+          },
+          {
+            "token": "?\\",
+            "token_id": 137636,
+            "logprob": -15.8906,
+            "prob": 0.0
+          },
+          {
+            "token": "？",
+            "token_id": 33176,
+            "logprob": -15.9766,
+            "prob": 0.0
+          },
+          {
+            "token": "?\"",
+            "token_id": 13470,
+            "logprob": -16.0938,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġ?",
+            "token_id": 5691,
+            "logprob": -16.6406,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġbzw",
+            "token_id": 44508,
+            "logprob": -17.125,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġund",
+            "token_id": 2280,
+            "logprob": -16.4531,
+            "prob": 0.0
+          },
+          {
+            "token": ",",
+            "token_id": 19,
+            "logprob": -16.6406,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "?",
+        "token_id": 38,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 31,
+      "input_text": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Hallo Welt!<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>Hallo! Das ist eine klassische Begrüßung auf Deutsch, die \"Hallo Welt\" bedeutet. Wie kann ich dir heute helfen?",
+      "tokens": [
+        "<BOS_TOKEN>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|USER_TOKEN|>",
+        "H",
+        "allo",
+        "ĠWelt",
+        "!",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "H",
+        "allo",
+        "!",
+        "ĠDas",
+        "Ġist",
+        "Ġeine",
+        "Ġklass",
+        "ische",
+        "ĠBeg",
+        "rü",
+        "ß",
+        "ung",
+        "Ġauf",
+        "ĠDeutsch",
+        ",",
+        "Ġdie",
+        "Ġ\"",
+        "H",
+        "allo",
+        "ĠWelt",
+        "\"",
+        "Ġbedeutet",
+        ".",
+        "ĠWie",
+        "Ġkann",
+        "Ġich",
+        "Ġdir",
+        "Ġheute",
+        "Ġhel",
+        "fen",
+        "?"
+      ],
+      "token_ids": [
+        5,
+        255000,
+        255006,
+        47,
+        24630,
+        20441,
+        8,
+        255001,
+        255000,
+        255007,
+        47,
+        24630,
+        8,
+        12241,
+        5132,
+        7147,
+        50586,
+        5160,
+        16899,
+        120692,
+        4750,
+        2359,
+        5709,
+        15076,
+        19,
+        2915,
+        1789,
+        47,
+        24630,
+        20441,
+        9,
+        147121,
+        21,
+        46901,
+        28963,
+        23909,
+        6359,
+        35513,
+        2941,
+        20791,
+        38
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "<|END_OF_TURN_TOKEN|>",
+            "token_id": 255001,
+            "logprob": -0.0393,
+            "prob": 0.9614
+          },
+          {
+            "token": "ĠIch",
+            "token_id": 31246,
+            "logprob": -3.9297,
+            "prob": 0.0196
+          },
+          {
+            "token": "ĠWenn",
+            "token_id": 118201,
+            "logprob": -4.0547,
+            "prob": 0.0173
+          },
+          {
+            "token": "\n",
+            "token_id": 206,
+            "logprob": -6.9609,
+            "prob": 0.0009
+          },
+          {
+            "token": "ĠFalls",
+            "token_id": 26538,
+            "logprob": -8.125,
+            "prob": 0.0003
+          },
+          {
+            "token": "ĠBen",
+            "token_id": 5736,
+            "logprob": -9.5625,
+            "prob": 0.0001
+          },
+          {
+            "token": "ĠOb",
+            "token_id": 6193,
+            "logprob": -9.6328,
+            "prob": 0.0001
+          },
+          {
+            "token": "ĠMö",
+            "token_id": 79915,
+            "logprob": -9.9844,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠBin",
+            "token_id": 30384,
+            "logprob": -10.8125,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠHast",
+            "token_id": 44831,
+            "logprob": -11.0547,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "<|END_OF_TURN_TOKEN|>",
+        "token_id": 255001,
+        "selection_method": "sampling"
+      }
+    }
+  ]
+}
