@@ -21,7 +21,6 @@ const translations = {
     view_label: 'View',
     show_special_tokens: 'Special tokens',
     // Home page
-    home_subtitle: 'Interactive LLM Visualizations',
     home_tagline: 'Interactive visualization of language models',
     // Home page sections
     home_training_title: 'Training',
@@ -137,7 +136,6 @@ const translations = {
     view_label: 'Zobrazení',
     show_special_tokens: 'Speciální tokeny',
     // Home page
-    home_subtitle: 'Interaktivní vizualizace velkých jazykových modelů',
     home_tagline: 'Vizualizace velkých jazykových modelů',
     // Home page sections
     home_training_title: 'Trénování',
@@ -147,11 +145,11 @@ const translations = {
     // Home page items
     home_pretraining_model_title: 'Jak se trénuje Transformer?',
     home_pretraining_model_desc: 'Trénování krok za krokem.',
-    home_pretraining_simple_title: 'Jak funguje trénování?',
+    home_pretraining_simple_title: 'Trénování zjednodušeně',
     home_pretraining_simple_desc: 'Trénování zjednodušeně.',
     home_generation_model_title: 'Jak Transformer generuje text?',
     home_generation_model_desc: 'Generování textu krok za krokem.',
-    home_generation_simple_title: 'Jak funguje generování textu?',
+    home_generation_simple_title: 'Generování textu zjednodušeně',
     home_generation_simple_desc: 'Generování zjednodušeně.',
     // Category labels
     category_training: 'Trénování',

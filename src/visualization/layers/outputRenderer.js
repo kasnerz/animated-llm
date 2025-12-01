@@ -413,7 +413,9 @@ function renderExtractedEmbedding(
   const firstVals = fullValues.slice(0, 3);
   const lastVals = fullValues.slice(-3);
   const sampleValues =
-    fullValues.length > 6 ? [...firstVals, 'ELLIPSIS', ...lastVals] : fullValues.slice(0, 7);
+    fullValues.length > 6
+      ? [...firstVals, '...', ...lastVals]
+      : [fullValues[0], '...', fullValues[fullValues.length - 1]];
 
   const hv1 = drawHorizontalVector(group, horizCenterX, horizY, sampleValues, {
     className: 'extracted-horizontal',

@@ -38,17 +38,6 @@ function GenerationSimpleView() {
   const modelDropdownRef = useRef(null);
   const tempDropdownRef = useRef(null);
 
-  // Force special tokens ON for this view
-  useEffect(() => {
-    const prev = state.showSpecialTokens;
-    if (!prev) actions.setShowSpecialTokens(true);
-    return () => {
-      // Restore previous user preference on unmount
-      actions.setShowSpecialTokens(prev);
-    };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
   // Filter examples by selected model and temperature
   const filteredExamples = useMemo(() => {
     const modelEntry = MODEL_REGISTRY[state.selectedModelIndex];

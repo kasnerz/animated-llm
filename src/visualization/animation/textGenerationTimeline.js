@@ -196,6 +196,8 @@ export function buildTimeline(svgElement, subStep, isInitialStep, animDuration, 
     case TEXT_GEN_STEPS.STACK_REVEAL:
       add(SEL.transformerShadowBox, { opacity: 1, stagger: 0.03, duration: animDuration * 0.4 });
       add(SEL.transformerStackLabel, { opacity: 1, duration: animDuration * 0.5 }, '<');
+      // Ensure outer-to-block arrow is visible here too, as it persists until BLOCK_INPUT_LAST
+      add(SEL.outerToBlockArrow, { opacity: 1, duration: animDuration * 0.5 }, '<');
       break;
     case TEXT_GEN_STEPS.BLOCK_INPUT_LAST:
       add(SEL.insideTopEmbeddingsAll, { opacity: 1, y: 0, duration: animDuration });

@@ -230,8 +230,8 @@ export function setInitialStates(svgElement, subStep, isInitialStep, labelsSvgEl
 
   // Backprop Connections (Purple/Green/Red)
 
-  // Purple (Step 13+)
-  const showPurple = isVisible(TRAINING_STEPS.BACKPROP_START);
+  // Purple (Step 13 only)
+  const showPurple = isVisible(TRAINING_STEPS.BACKPROP_START, TRAINING_STEPS.BACKPROP_FFN_LAST);
   setIfAny(svgElement, '.extracted-path-arrow', {
     className: showPurple ? '+=bp-connection-purple' : '-=bp-connection-purple',
   });
@@ -402,10 +402,18 @@ export function buildTimeline(
       break;
     }
     case TRAINING_STEPS.BACKPROP_FFN_LAST:
-      add('.bp-last-block-ffn-connection.green', {
-        className: '+=bp-connection-green',
+      add(`.extracted-path-arrow, ${SEL.insideBottomEmbeddingColNew} rect`, {
+        className: '-=bp-connection-purple',
         duration: animDuration * 0.6,
       });
+      add(
+        '.bp-last-block-ffn-connection.green',
+        {
+          className: '+=bp-connection-green',
+          duration: animDuration * 0.6,
+        },
+        '<'
+      );
       add(
         '.bp-last-block-ffn-connection.red',
         { className: '+=bp-connection-red', duration: animDuration * 0.6 },

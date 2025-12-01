@@ -291,7 +291,8 @@ export default function TextGenerationCanvas() {
       currentLayer,
       computedEmbeddings,
       numLayers,
-      isDarkMode
+      isDarkMode,
+      subStep
     );
 
     // 4. Project directly from FFN inside the transformer block (no outside bottom embeddings)
@@ -455,16 +456,17 @@ export default function TextGenerationCanvas() {
     textGenerationTimeline.setInitialStates(svg.node(), animSubStep);
 
     const animDuration = state.instantTransition ? 0 : 0.6;
+    const stepCompleteCb =
+      animSubStep === TEXT_GEN_STEPS.PREVIEW && !state.instantTransition && state.isPlaying
+        ? () => actions.onStepAnimationComplete(state.isPlaying)
+        : null;
+
     gsapRef.current = textGenerationTimeline.buildTimeline(
       svg.node(),
       animSubStep,
       isInitialStep,
       animDuration,
-      () => {
-        if (state.isPlaying) {
-          actions.onStepAnimationComplete(state.isPlaying);
-        }
-      }
+      stepCompleteCb
     );
   }, [
     state.currentStep,

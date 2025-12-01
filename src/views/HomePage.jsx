@@ -5,6 +5,7 @@ import Icon from '@mdi/react';
 import { mdiWeightLifter, mdiDumbbell, mdiForumOutline, mdiDrawPen } from '@mdi/js';
 import Logo from '../components/Logo';
 import LanguageSelector from '../components/LanguageSelector';
+import githubMark from '../assets/github-mark.png';
 import '../styles/home-page.css';
 
 /**
@@ -82,7 +83,7 @@ function HomePage() {
           title="GitHub"
           aria-label="GitHub"
         >
-          <img src="/src/assets/github-mark.png" alt="GitHub" className="github-icon" />
+          <img src={githubMark} alt="GitHub" className="github-icon" />
         </a>
       </div>
 

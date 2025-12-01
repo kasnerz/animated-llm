@@ -16,6 +16,8 @@ import ViewSelectorPopup from './components/ViewSelectorPopup';
 import Logo from './components/Logo';
 import Icon from '@mdi/react';
 import { mdiKeyboard } from '@mdi/js';
+import { TRAINING_STEPS, TEXT_GEN_STEPS } from './visualization/core/constants';
+import githubMark from './assets/github-mark.png';
 import './index.css';
 import './styles/views.css';
 
@@ -94,7 +96,10 @@ function AppContent() {
         if (state.isPlaying) {
           actions.setIsPlaying(false);
         }
-        const lastSubStep = state.viewType === 'training' ? 18 : 14; // keep in sync with timelines
+        const lastSubStep =
+          state.viewType === 'training'
+            ? TRAINING_STEPS.BACKPROP_EMBEDDING
+            : TEXT_GEN_STEPS.PREVIEW;
         if (state.currentAnimationSubStep < lastSubStep) {
           actions.nextAnimationSubStep();
           // Moving sub-steps clears any pending completion guard
@@ -222,11 +227,11 @@ function AppContent() {
     if (!state.isPlaying) return;
     if (!state.currentExample) return;
 
-    // Derive per-substep interval: total step duration divided by 12 substeps
+    // Derive per-substep interval: total step duration divided by number of substeps
     const totalSec = state.animationSpeed || 7.5; // fallback
-    const perSubStepMs = Math.max(150, (totalSec / 13) * 1000);
-
-    const lastSubStep = state.viewType === 'training' ? 16 : 12; // keep in sync with timelines
+    const lastSubStep =
+      state.viewType === 'training' ? TRAINING_STEPS.BACKPROP_EMBEDDING : TEXT_GEN_STEPS.PREVIEW;
+    const perSubStepMs = Math.max(150, (totalSec / (lastSubStep + 1)) * 1000);
 
     const tick = () => {
       // If generation hasn't started yet
@@ -373,7 +378,7 @@ function AppContent() {
                   aria-label="GitHub"
                 >
                   <div className="menu-icon-container">
-                    <img src="/src/assets/github-mark.png" alt="GitHub" className="github-icon" />
+                    <img src={githubMark} alt="GitHub" className="github-icon" />
                   </div>
                   <span className="menu-label">GitHub</span>
                 </a>

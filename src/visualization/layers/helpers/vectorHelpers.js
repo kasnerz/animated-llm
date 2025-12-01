@@ -154,7 +154,7 @@ export function drawHorizontalVector(group, centerX, topY, values, options = {})
       .style('fill', 'transparent');
 
     const isLastAndEllipsis = ellipsisLast && i === n - 1;
-    const isEllipsisValue = v === 'ELLIPSIS';
+    const isEllipsisValue = v === 'ELLIPSIS' || v === '...';
     const isEllipsis = isLastAndEllipsis || isEllipsisValue;
     const cy = topY + 6 + cellHeight / 2;
     g.append('text')

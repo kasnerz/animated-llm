@@ -10,6 +10,7 @@ import {
 import config from '../config';
 import * as examplesApi from '../services/examplesApi';
 import { useThemeEffect } from '../hooks/useThemeEffect';
+import { TRAINING_STEPS, TEXT_GEN_STEPS } from '../visualization/core/constants';
 
 const AppContext = createContext();
 
@@ -163,7 +164,7 @@ function appReducer(state, action) {
     case ActionTypes.NEXT_ANIMATION_SUB_STEP: {
       // Training view: animate sub-steps linearly
       if (state.viewType === 'training') {
-        const maxSubStepsTraining = 19; // 0..18 (TRAINING_STEPS.BACKPROP_EMBEDDING)
+        const maxSubStepsTraining = TRAINING_STEPS.BACKPROP_EMBEDDING + 1;
 
         if (state.currentAnimationSubStep >= maxSubStepsTraining - 1) return state;
         return {
@@ -174,7 +175,7 @@ function appReducer(state, action) {
       }
 
       // Text Generation view: animate sub-steps linearly
-      const maxSubSteps = 16; // 0..15 (TEXT_GEN_STEPS.PREVIEW)
+      const maxSubSteps = TEXT_GEN_STEPS.PREVIEW + 1;
 
       if (state.currentAnimationSubStep >= maxSubSteps - 1) {
         return state;
@@ -204,7 +205,7 @@ function appReducer(state, action) {
           };
         }
         const prevStep = Math.max(1, state.currentStep - 1);
-        const lastVisibleSubTraining = 18; // TRAINING_STEPS.BACKPROP_EMBEDDING
+        const lastVisibleSubTraining = TRAINING_STEPS.BACKPROP_EMBEDDING;
         return {
           ...state,
           currentStep: prevStep,
@@ -237,7 +238,7 @@ function appReducer(state, action) {
 
         // Otherwise, go to the previous step and set to its last visible sub-step
         const prevStep = Math.max(1, state.currentStep - 1);
-        const lastVisibleSub = 15; // TEXT_GEN_STEPS.PREVIEW
+        const lastVisibleSub = TEXT_GEN_STEPS.PREVIEW;
 
         // Undo the last generated token (if any)
         const gt = state.generatedTokens || [];
@@ -278,7 +279,7 @@ function appReducer(state, action) {
       if (!state.currentExample) return state;
 
       // Pause if playing; jump to highlight of the next token in the row
-      const highlightSubStep = 13; // TEXT_GEN_STEPS.HIGHLIGHT
+      const highlightSubStep = TEXT_GEN_STEPS.HIGHLIGHT;
 
       return {
         ...state,
@@ -320,7 +321,7 @@ function appReducer(state, action) {
       return {
         ...state,
         currentStep: steps.length,
-        currentAnimationSubStep: 15, // TEXT_GEN_STEPS.PREVIEW
+        currentAnimationSubStep: TEXT_GEN_STEPS.PREVIEW,
         currentTransformerLayer: Math.max(
           0,
           (state.currentExample?.model_info?.num_layers || 1) - 1

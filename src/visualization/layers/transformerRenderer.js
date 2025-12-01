@@ -15,7 +15,13 @@ import {
   drawAttentionConnections,
 } from './helpers/arrowHelpers';
 import { drawArrow } from '../core/draw';
-import { TRANSFORMER, TRANSFORMER_ARROWS, TRANSFORMER_BOX, FFN_CONNECTOR } from '../core/constants';
+import {
+  TRANSFORMER,
+  TRANSFORMER_ARROWS,
+  TRANSFORMER_BOX,
+  FFN_CONNECTOR,
+  TEXT_GEN_STEPS,
+} from '../core/constants';
 
 /**
  * Render transformer block layer with stacked card-style visualization
@@ -29,7 +35,8 @@ export function renderTransformerBlockLayer(
   currentLayer,
   computedEmbeddings,
   numLayers,
-  isDarkMode = null
+  isDarkMode = null,
+  subStep = null
 ) {
   // Store layer info in DOM attributes
   try {
@@ -71,7 +78,8 @@ export function renderTransformerBlockLayer(
     currentLayer,
     blockTopY,
     tokensLayoutRef,
-    isDarkMode
+    isDarkMode,
+    subStep
   );
 
   // Draw feedback arrowheads on top of vectors
@@ -168,7 +176,8 @@ function renderInsideTopEmbeddings(
   currentLayer,
   blockTopY,
   tokensLayoutRef,
-  isDarkMode
+  isDarkMode,
+  subStep
 ) {
   const insideTopGroup = group.append('g').attr('class', 'inside-top-embeddings');
   const insideTopMeta = [];
@@ -203,7 +212,14 @@ function renderInsideTopEmbeddings(
     maxInsideTopHeight = Math.max(maxInsideTopHeight, meta.height);
 
     // Draw arrows based on layer
-    if (currentLayer === 0 || !storedMarkers.length || storedSignature !== markerSignature) {
+    // Show outer-to-block arrow on first layer OR during stack reveal (step 5)
+    const isStackReveal = subStep === TEXT_GEN_STEPS.STACK_REVEAL;
+    if (
+      currentLayer === 0 ||
+      isStackReveal ||
+      !storedMarkers.length ||
+      storedSignature !== markerSignature
+    ) {
       // First layer: arrow from outer embeddings
       const outerCol = columnsMeta[i];
       if (outerCol) {
