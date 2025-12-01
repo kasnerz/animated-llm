@@ -1,0 +1,41 @@
+# Core dependencies for LLM server and client
+
+# NumPy - required by transformers and its dependencies
+# Note: constrained to <=1.24.4 for compatibility with numba (used by librosa)
+numpy>=1.23.0,<=1.24.4
+
+# SciPy - required by transformers dependencies
+scipy>=1.10.0
+
+# Scikit-learn - required by transformers
+scikit-learn>=1.2.0
+
+# Deep learning framework
+torch>=2.0.0
+
+# Hugging Face transformers for LLM models
+# Note: Version 4.44+ required for Cohere Aya models
+transformers>=4.44.0
+
+# Accelerate - for efficient model loading and inference
+accelerate>=0.20.0
+
+# Optional/required helpers for various model/tokenizer backends
+einops>=0.6.0
+sentencepiece>=0.1.99
+safetensors>=0.4.0
+huggingface-hub>=0.23.0
+# Some modern tokenizers rely on tiktoken; safe to include
+tiktoken>=0.6.0
+
+# FastAPI web framework for the server
+fastapi>=0.100.0
+
+# ASGI server for running FastAPI
+uvicorn[standard]>=0.23.0
+
+# HTTP client for the client script
+requests>=2.31.0
+
+# Pydantic - required by FastAPI
+pydantic>=2.0.0
