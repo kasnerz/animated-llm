@@ -1,0 +1,222 @@
+{
+  "id": "generated_20251203_121007",
+  "prompt": "The capital of the United Kingdom is",
+  "language": "en",
+  "temperature": 5.0,
+  "top_k": 10,
+  "model_info": {
+    "name": "Qwen/Qwen3-4B-Instruct-2507",
+    "num_layers": 36,
+    "hidden_size": 2560,
+    "num_attention_heads": 32,
+    "vocab_size": 151936
+  },
+  "generation_steps": [
+    {
+      "step": 0,
+      "input_text": "The capital of the United Kingdom is<|im_end|>\n<|im_start|>assistant\n",
+      "tokens": [
+        "The",
+        "Ġcapital",
+        "Ġof",
+        "Ġthe",
+        "ĠUnited",
+        "ĠKingdom",
+        "Ġis",
+        "<|im_end|>",
+        "\n",
+        "<|im_start|>",
+        "assistant",
+        "\n"
+      ],
+      "token_ids": [
+        785,
+        6722,
+        315,
+        279,
+        3639,
+        15072,
+        374,
+        151645,
+        198,
+        151644,
+        77091,
+        198
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "The",
+            "token_id": 785,
+            "logprob": -0.0015,
+            "prob": 1.0
+          },
+          {
+            "token": "London",
+            "token_id": 39572,
+            "logprob": -6.5,
+            "prob": 0.0015
+          },
+          {
+            "token": "the",
+            "token_id": 1782,
+            "logprob": -12.0,
+            "prob": 0.0
+          },
+          {
+            "token": "伦敦",
+            "token_id": 107074,
+            "logprob": -13.875,
+            "prob": 0.0
+          },
+          {
+            "token": "England",
+            "token_id": 66208,
+            "logprob": -14.375,
+            "prob": 0.0
+          },
+          {
+            "token": "Scotland",
+            "token_id": 95825,
+            "logprob": -16.875,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠLondon",
+            "token_id": 7148,
+            "logprob": -17.25,
+            "prob": 0.0
+          },
+          {
+            "token": "Paris",
+            "token_id": 59604,
+            "logprob": -17.625,
+            "prob": 0.0
+          },
+          {
+            "token": "There",
+            "token_id": 3862,
+            "logprob": -17.75,
+            "prob": 0.0
+          },
+          {
+            "token": "Liverpool",
+            "token_id": 92605,
+            "logprob": -17.75,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "London",
+        "token_id": 39572,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 1,
+      "input_text": "The capital of the United Kingdom is<|im_end|>\n<|im_start|>assistant\nLondon",
+      "tokens": [
+        "The",
+        "Ġcapital",
+        "Ġof",
+        "Ġthe",
+        "ĠUnited",
+        "ĠKingdom",
+        "Ġis",
+        "<|im_end|>",
+        "\n",
+        "<|im_start|>",
+        "assistant",
+        "\n",
+        "London"
+      ],
+      "token_ids": [
+        785,
+        6722,
+        315,
+        279,
+        3639,
+        15072,
+        374,
+        151645,
+        198,
+        151644,
+        77091,
+        198,
+        39572
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "<|im_end|>",
+            "token_id": 151645,
+            "logprob": -0.063,
+            "prob": 0.9375
+          },
+          {
+            "token": ".",
+            "token_id": 13,
+            "logprob": -2.8125,
+            "prob": 0.0601
+          },
+          {
+            "token": "Ġis",
+            "token_id": 374,
+            "logprob": -7.1875,
+            "prob": 0.0008
+          },
+          {
+            "token": "Ġ�",
+            "token_id": 11162,
+            "logprob": -7.6875,
+            "prob": 0.0005
+          },
+          {
+            "token": "Ġ�",
+            "token_id": 25521,
+            "logprob": -11.9375,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġ�",
+            "token_id": 63039,
+            "logprob": -12.0625,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġ�",
+            "token_id": 26525,
+            "logprob": -13.5625,
+            "prob": 0.0
+          },
+          {
+            "token": "✅",
+            "token_id": 144247,
+            "logprob": -13.6875,
+            "prob": 0.0
+          },
+          {
+            "token": "。",
+            "token_id": 1773,
+            "logprob": -13.6875,
+            "prob": 0.0
+          },
+          {
+            "token": ",",
+            "token_id": 11,
+            "logprob": -13.6875,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "<|im_end|>",
+        "token_id": 151645,
+        "selection_method": "sampling"
+      }
+    }
+  ]
+}

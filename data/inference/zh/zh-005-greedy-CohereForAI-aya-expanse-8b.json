@@ -1,0 +1,6748 @@
+{
+  "id": "generated_20251203_120411",
+  "prompt": "“谢谢”里有多少个“谢”字？",
+  "language": "zh",
+  "temperature": 0.0,
+  "top_k": 10,
+  "model_info": {
+    "name": "CohereForAI/aya-expanse-8b",
+    "num_layers": 32,
+    "hidden_size": 4096,
+    "num_attention_heads": 32,
+    "vocab_size": 256000
+  },
+  "generation_steps": [
+    {
+      "step": 0,
+      "input_text": "“谢谢”里有多少个“谢”字？<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>",
+      "tokens": [
+        "“",
+        "谢",
+        "谢",
+        "”",
+        "里",
+        "有多",
+        "少",
+        "个",
+        "“",
+        "谢",
+        "”",
+        "字",
+        "？",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>"
+      ],
+      "token_ids": [
+        4171,
+        34915,
+        34915,
+        3495,
+        5122,
+        135546,
+        8390,
+        4856,
+        4171,
+        34915,
+        3495,
+        8374,
+        33176,
+        255001,
+        255000,
+        255007
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "“",
+            "token_id": 4171,
+            "logprob": -0.0115,
+            "prob": 0.9888
+          },
+          {
+            "token": "在",
+            "token_id": 2648,
+            "logprob": -5.1367,
+            "prob": 0.0059
+          },
+          {
+            "token": "答案",
+            "token_id": 232018,
+            "logprob": -5.418,
+            "prob": 0.0044
+          },
+          {
+            "token": "答",
+            "token_id": 36450,
+            "logprob": -7.4805,
+            "prob": 0.0006
+          },
+          {
+            "token": "回答",
+            "token_id": 104721,
+            "logprob": -7.8711,
+            "prob": 0.0004
+          },
+          {
+            "token": "\"",
+            "token_id": 9,
+            "logprob": -9.9219,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġ“",
+            "token_id": 7838,
+            "logprob": -10.0781,
+            "prob": 0.0
+          },
+          {
+            "token": "解答",
+            "token_id": 252897,
+            "logprob": -11.6953,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġanswer",
+            "token_id": 11205,
+            "logprob": -12.4297,
+            "prob": 0.0
+          },
+          {
+            "token": "在这个",
+            "token_id": 191676,
+            "logprob": -12.4688,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "“",
+        "token_id": 4171,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 1,
+      "input_text": "“谢谢”里有多少个“谢”字？<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>“",
+      "tokens": [
+        "“",
+        "谢",
+        "谢",
+        "”",
+        "里",
+        "有多",
+        "少",
+        "个",
+        "“",
+        "谢",
+        "”",
+        "字",
+        "？",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "“"
+      ],
+      "token_ids": [
+        4171,
+        34915,
+        34915,
+        3495,
+        5122,
+        135546,
+        8390,
+        4856,
+        4171,
+        34915,
+        3495,
+        8374,
+        33176,
+        255001,
+        255000,
+        255007,
+        4171
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "谢",
+            "token_id": 34915,
+            "logprob": -0.0001,
+            "prob": 1.0
+          },
+          {
+            "token": "謝",
+            "token_id": 45905,
+            "logprob": -9.9844,
+            "prob": 0.0
+          },
+          {
+            "token": "感谢",
+            "token_id": 235422,
+            "logprob": -11.5938,
+            "prob": 0.0
+          },
+          {
+            "token": "<PAD>",
+            "token_id": 0,
+            "logprob": -32.8125,
+            "prob": 0.0
+          },
+          {
+            "token": "<EOS_TOKEN>",
+            "token_id": 6,
+            "logprob": -33.1562,
+            "prob": 0.0
+          },
+          {
+            "token": "<SEP>",
+            "token_id": 3,
+            "logprob": -32.8438,
+            "prob": 0.0
+          },
+          {
+            "token": "<BOS_TOKEN>",
+            "token_id": 5,
+            "logprob": -29.3281,
+            "prob": 0.0
+          },
+          {
+            "token": "<MASK_TOKEN>",
+            "token_id": 4,
+            "logprob": -33.0,
+            "prob": 0.0
+          },
+          {
+            "token": "<UNK>",
+            "token_id": 1,
+            "logprob": -29.9688,
+            "prob": 0.0
+          },
+          {
+            "token": "<CLS>",
+            "token_id": 2,
+            "logprob": -33.25,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "谢",
+        "token_id": 34915,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 2,
+      "input_text": "“谢谢”里有多少个“谢”字？<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>“谢",
+      "tokens": [
+        "“",
+        "谢",
+        "谢",
+        "”",
+        "里",
+        "有多",
+        "少",
+        "个",
+        "“",
+        "谢",
+        "”",
+        "字",
+        "？",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "“",
+        "谢"
+      ],
+      "token_ids": [
+        4171,
+        34915,
+        34915,
+        3495,
+        5122,
+        135546,
+        8390,
+        4856,
+        4171,
+        34915,
+        3495,
+        8374,
+        33176,
+        255001,
+        255000,
+        255007,
+        4171,
+        34915
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "谢",
+            "token_id": 34915,
+            "logprob": -0.0003,
+            "prob": 0.9995
+          },
+          {
+            "token": "”",
+            "token_id": 3495,
+            "logprob": -8.5156,
+            "prob": 0.0002
+          },
+          {
+            "token": "謝",
+            "token_id": 45905,
+            "logprob": -9.9375,
+            "prob": 0.0
+          },
+          {
+            "token": "感谢",
+            "token_id": 235422,
+            "logprob": -11.5703,
+            "prob": 0.0
+          },
+          {
+            "token": "收",
+            "token_id": 11129,
+            "logprob": -16.125,
+            "prob": 0.0
+          },
+          {
+            "token": "见",
+            "token_id": 12934,
+            "logprob": -17.3125,
+            "prob": 0.0
+          },
+          {
+            "token": "节",
+            "token_id": 12948,
+            "logprob": -16.5312,
+            "prob": 0.0
+          },
+          {
+            "token": "份",
+            "token_id": 12808,
+            "logprob": -17.3281,
+            "prob": 0.0
+          },
+          {
+            "token": "\"",
+            "token_id": 9,
+            "logprob": -16.6875,
+            "prob": 0.0
+          },
+          {
+            "token": "报",
+            "token_id": 12338,
+            "logprob": -16.875,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "谢",
+        "token_id": 34915,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 3,
+      "input_text": "“谢谢”里有多少个“谢”字？<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>“谢谢",
+      "tokens": [
+        "“",
+        "谢",
+        "谢",
+        "”",
+        "里",
+        "有多",
+        "少",
+        "个",
+        "“",
+        "谢",
+        "”",
+        "字",
+        "？",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "“",
+        "谢",
+        "谢"
+      ],
+      "token_ids": [
+        4171,
+        34915,
+        34915,
+        3495,
+        5122,
+        135546,
+        8390,
+        4856,
+        4171,
+        34915,
+        3495,
+        8374,
+        33176,
+        255001,
+        255000,
+        255007,
+        4171,
+        34915,
+        34915
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "”",
+            "token_id": 3495,
+            "logprob": -0.0,
+            "prob": 1.0
+          },
+          {
+            "token": "\"",
+            "token_id": 9,
+            "logprob": -13.3906,
+            "prob": 0.0
+          },
+          {
+            "token": "”（",
+            "token_id": 49061,
+            "logprob": -15.0938,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġ”",
+            "token_id": 73060,
+            "logprob": -15.1875,
+            "prob": 0.0
+          },
+          {
+            "token": "”，",
+            "token_id": 20900,
+            "logprob": -15.7031,
+            "prob": 0.0
+          },
+          {
+            "token": "<SEP>",
+            "token_id": 3,
+            "logprob": -35.4375,
+            "prob": 0.0
+          },
+          {
+            "token": "<MASK_TOKEN>",
+            "token_id": 4,
+            "logprob": -35.8438,
+            "prob": 0.0
+          },
+          {
+            "token": "<CLS>",
+            "token_id": 2,
+            "logprob": -35.8125,
+            "prob": 0.0
+          },
+          {
+            "token": "<PAD>",
+            "token_id": 0,
+            "logprob": -35.6875,
+            "prob": 0.0
+          },
+          {
+            "token": "<UNK>",
+            "token_id": 1,
+            "logprob": -34.5938,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "”",
+        "token_id": 3495,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 4,
+      "input_text": "“谢谢”里有多少个“谢”字？<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>“谢谢”",
+      "tokens": [
+        "“",
+        "谢",
+        "谢",
+        "”",
+        "里",
+        "有多",
+        "少",
+        "个",
+        "“",
+        "谢",
+        "”",
+        "字",
+        "？",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "“",
+        "谢",
+        "谢",
+        "”"
+      ],
+      "token_ids": [
+        4171,
+        34915,
+        34915,
+        3495,
+        5122,
+        135546,
+        8390,
+        4856,
+        4171,
+        34915,
+        3495,
+        8374,
+        33176,
+        255001,
+        255000,
+        255007,
+        4171,
+        34915,
+        34915,
+        3495
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "里",
+            "token_id": 5122,
+            "logprob": -0.0025,
+            "prob": 0.9976
+          },
+          {
+            "token": "里面",
+            "token_id": 167998,
+            "logprob": -6.8242,
+            "prob": 0.0011
+          },
+          {
+            "token": "里的",
+            "token_id": 68425,
+            "logprob": -7.6758,
+            "prob": 0.0005
+          },
+          {
+            "token": "中",
+            "token_id": 2534,
+            "logprob": -8.2812,
+            "prob": 0.0003
+          },
+          {
+            "token": "中有",
+            "token_id": 71871,
+            "logprob": -8.3359,
+            "prob": 0.0002
+          },
+          {
+            "token": "裡",
+            "token_id": 42040,
+            "logprob": -8.9141,
+            "prob": 0.0001
+          },
+          {
+            "token": "这个",
+            "token_id": 25432,
+            "logprob": -9.4531,
+            "prob": 0.0001
+          },
+          {
+            "token": "其中",
+            "token_id": 12920,
+            "logprob": -10.2422,
+            "prob": 0.0
+          },
+          {
+            "token": "这",
+            "token_id": 6710,
+            "logprob": -10.5156,
+            "prob": 0.0
+          },
+          {
+            "token": "其实",
+            "token_id": 105721,
+            "logprob": -10.8047,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "里",
+        "token_id": 5122,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 5,
+      "input_text": "“谢谢”里有多少个“谢”字？<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>“谢谢”里",
+      "tokens": [
+        "“",
+        "谢",
+        "谢",
+        "”",
+        "里",
+        "有多",
+        "少",
+        "个",
+        "“",
+        "谢",
+        "”",
+        "字",
+        "？",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "“",
+        "谢",
+        "谢",
+        "”",
+        "里"
+      ],
+      "token_ids": [
+        4171,
+        34915,
+        34915,
+        3495,
+        5122,
+        135546,
+        8390,
+        4856,
+        4171,
+        34915,
+        3495,
+        8374,
+        33176,
+        255001,
+        255000,
+        255007,
+        4171,
+        34915,
+        34915,
+        3495,
+        5122
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "有一个",
+            "token_id": 96614,
+            "logprob": -1.2354,
+            "prob": 0.2908
+          },
+          {
+            "token": "有两个",
+            "token_id": 187933,
+            "logprob": -1.251,
+            "prob": 0.2861
+          },
+          {
+            "token": "有",
+            "token_id": 3096,
+            "logprob": -1.7666,
+            "prob": 0.1709
+          },
+          {
+            "token": "只有",
+            "token_id": 31427,
+            "logprob": -1.876,
+            "prob": 0.1532
+          },
+          {
+            "token": "包含",
+            "token_id": 34992,
+            "logprob": -2.8301,
+            "prob": 0.0591
+          },
+          {
+            "token": "只有一",
+            "token_id": 195415,
+            "logprob": -5.0234,
+            "prob": 0.0066
+          },
+          {
+            "token": "确实",
+            "token_id": 197364,
+            "logprob": -5.3047,
+            "prob": 0.005
+          },
+          {
+            "token": "只",
+            "token_id": 11253,
+            "logprob": -5.7031,
+            "prob": 0.0033
+          },
+          {
+            "token": "有一",
+            "token_id": 22802,
+            "logprob": -5.9375,
+            "prob": 0.0026
+          },
+          {
+            "token": "有两",
+            "token_id": 197830,
+            "logprob": -5.9844,
+            "prob": 0.0025
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "有一个",
+        "token_id": 96614,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 6,
+      "input_text": "“谢谢”里有多少个“谢”字？<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>“谢谢”里有一个",
+      "tokens": [
+        "“",
+        "谢",
+        "谢",
+        "”",
+        "里",
+        "有多",
+        "少",
+        "个",
+        "“",
+        "谢",
+        "”",
+        "字",
+        "？",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "“",
+        "谢",
+        "谢",
+        "”",
+        "里",
+        "有一个"
+      ],
+      "token_ids": [
+        4171,
+        34915,
+        34915,
+        3495,
+        5122,
+        135546,
+        8390,
+        4856,
+        4171,
+        34915,
+        3495,
+        8374,
+        33176,
+        255001,
+        255000,
+        255007,
+        4171,
+        34915,
+        34915,
+        3495,
+        5122,
+        96614
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "“",
+            "token_id": 4171,
+            "logprob": -0.0,
+            "prob": 1.0
+          },
+          {
+            "token": "Ġ“",
+            "token_id": 7838,
+            "logprob": -12.875,
+            "prob": 0.0
+          },
+          {
+            "token": "谢",
+            "token_id": 34915,
+            "logprob": -16.1719,
+            "prob": 0.0
+          },
+          {
+            "token": "\"",
+            "token_id": 9,
+            "logprob": -16.4062,
+            "prob": 0.0
+          },
+          {
+            "token": "「",
+            "token_id": 3379,
+            "logprob": -17.1562,
+            "prob": 0.0
+          },
+          {
+            "token": "<SEP>",
+            "token_id": 3,
+            "logprob": -32.6562,
+            "prob": 0.0
+          },
+          {
+            "token": "<MASK_TOKEN>",
+            "token_id": 4,
+            "logprob": -31.6719,
+            "prob": 0.0
+          },
+          {
+            "token": "<CLS>",
+            "token_id": 2,
+            "logprob": -32.0,
+            "prob": 0.0
+          },
+          {
+            "token": "<PAD>",
+            "token_id": 0,
+            "logprob": -31.6094,
+            "prob": 0.0
+          },
+          {
+            "token": "<UNK>",
+            "token_id": 1,
+            "logprob": -29.5469,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "“",
+        "token_id": 4171,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 7,
+      "input_text": "“谢谢”里有多少个“谢”字？<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>“谢谢”里有一个“",
+      "tokens": [
+        "“",
+        "谢",
+        "谢",
+        "”",
+        "里",
+        "有多",
+        "少",
+        "个",
+        "“",
+        "谢",
+        "”",
+        "字",
+        "？",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "“",
+        "谢",
+        "谢",
+        "”",
+        "里",
+        "有一个",
+        "“"
+      ],
+      "token_ids": [
+        4171,
+        34915,
+        34915,
+        3495,
+        5122,
+        135546,
+        8390,
+        4856,
+        4171,
+        34915,
+        3495,
+        8374,
+        33176,
+        255001,
+        255000,
+        255007,
+        4171,
+        34915,
+        34915,
+        3495,
+        5122,
+        96614,
+        4171
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "谢",
+            "token_id": 34915,
+            "logprob": -0.0001,
+            "prob": 1.0
+          },
+          {
+            "token": "謝",
+            "token_id": 45905,
+            "logprob": -9.5625,
+            "prob": 0.0001
+          },
+          {
+            "token": "感谢",
+            "token_id": 235422,
+            "logprob": -17.2656,
+            "prob": 0.0
+          },
+          {
+            "token": "<PAD>",
+            "token_id": 0,
+            "logprob": -34.6562,
+            "prob": 0.0
+          },
+          {
+            "token": "<EOS_TOKEN>",
+            "token_id": 6,
+            "logprob": -33.4375,
+            "prob": 0.0
+          },
+          {
+            "token": "<SEP>",
+            "token_id": 3,
+            "logprob": -34.5938,
+            "prob": 0.0
+          },
+          {
+            "token": "<BOS_TOKEN>",
+            "token_id": 5,
+            "logprob": -30.0156,
+            "prob": 0.0
+          },
+          {
+            "token": "<MASK_TOKEN>",
+            "token_id": 4,
+            "logprob": -34.875,
+            "prob": 0.0
+          },
+          {
+            "token": "<UNK>",
+            "token_id": 1,
+            "logprob": -31.7344,
+            "prob": 0.0
+          },
+          {
+            "token": "<CLS>",
+            "token_id": 2,
+            "logprob": -35.0,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "谢",
+        "token_id": 34915,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 8,
+      "input_text": "“谢谢”里有多少个“谢”字？<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>“谢谢”里有一个“谢",
+      "tokens": [
+        "“",
+        "谢",
+        "谢",
+        "”",
+        "里",
+        "有多",
+        "少",
+        "个",
+        "“",
+        "谢",
+        "”",
+        "字",
+        "？",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "“",
+        "谢",
+        "谢",
+        "”",
+        "里",
+        "有一个",
+        "“",
+        "谢"
+      ],
+      "token_ids": [
+        4171,
+        34915,
+        34915,
+        3495,
+        5122,
+        135546,
+        8390,
+        4856,
+        4171,
+        34915,
+        3495,
+        8374,
+        33176,
+        255001,
+        255000,
+        255007,
+        4171,
+        34915,
+        34915,
+        3495,
+        5122,
+        96614,
+        4171,
+        34915
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "”",
+            "token_id": 3495,
+            "logprob": -0.0,
+            "prob": 1.0
+          },
+          {
+            "token": "\"",
+            "token_id": 9,
+            "logprob": -14.3281,
+            "prob": 0.0
+          },
+          {
+            "token": "”，",
+            "token_id": 20900,
+            "logprob": -15.875,
+            "prob": 0.0
+          },
+          {
+            "token": "”（",
+            "token_id": 49061,
+            "logprob": -17.3125,
+            "prob": 0.0
+          },
+          {
+            "token": "“",
+            "token_id": 4171,
+            "logprob": -16.5312,
+            "prob": 0.0
+          },
+          {
+            "token": "”。",
+            "token_id": 18443,
+            "logprob": -16.3281,
+            "prob": 0.0
+          },
+          {
+            "token": "<CLS>",
+            "token_id": 2,
+            "logprob": -37.0625,
+            "prob": 0.0
+          },
+          {
+            "token": "<SEP>",
+            "token_id": 3,
+            "logprob": -38.1875,
+            "prob": 0.0
+          },
+          {
+            "token": "<UNK>",
+            "token_id": 1,
+            "logprob": -36.7812,
+            "prob": 0.0
+          },
+          {
+            "token": "<PAD>",
+            "token_id": 0,
+            "logprob": -37.1875,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "”",
+        "token_id": 3495,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 9,
+      "input_text": "“谢谢”里有多少个“谢”字？<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>“谢谢”里有一个“谢”",
+      "tokens": [
+        "“",
+        "谢",
+        "谢",
+        "”",
+        "里",
+        "有多",
+        "少",
+        "个",
+        "“",
+        "谢",
+        "”",
+        "字",
+        "？",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "“",
+        "谢",
+        "谢",
+        "”",
+        "里",
+        "有一个",
+        "“",
+        "谢",
+        "”"
+      ],
+      "token_ids": [
+        4171,
+        34915,
+        34915,
+        3495,
+        5122,
+        135546,
+        8390,
+        4856,
+        4171,
+        34915,
+        3495,
+        8374,
+        33176,
+        255001,
+        255000,
+        255007,
+        4171,
+        34915,
+        34915,
+        3495,
+        5122,
+        96614,
+        4171,
+        34915,
+        3495
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "字",
+            "token_id": 8374,
+            "logprob": 0.0,
+            "prob": 1.0
+          },
+          {
+            "token": "<UNK>",
+            "token_id": 1,
+            "logprob": -34.1562,
+            "prob": 0.0
+          },
+          {
+            "token": "<SEP>",
+            "token_id": 3,
+            "logprob": -38.4688,
+            "prob": 0.0
+          },
+          {
+            "token": "<EOS_TOKEN>",
+            "token_id": 6,
+            "logprob": -32.5,
+            "prob": 0.0
+          },
+          {
+            "token": "<EOP_TOKEN>",
+            "token_id": 7,
+            "logprob": -37.2812,
+            "prob": 0.0
+          },
+          {
+            "token": "<PAD>",
+            "token_id": 0,
+            "logprob": -37.0,
+            "prob": 0.0
+          },
+          {
+            "token": "<CLS>",
+            "token_id": 2,
+            "logprob": -37.125,
+            "prob": 0.0
+          },
+          {
+            "token": "<BOS_TOKEN>",
+            "token_id": 5,
+            "logprob": -32.1562,
+            "prob": 0.0
+          },
+          {
+            "token": "!",
+            "token_id": 8,
+            "logprob": -30.2031,
+            "prob": 0.0
+          },
+          {
+            "token": "<MASK_TOKEN>",
+            "token_id": 4,
+            "logprob": -37.3125,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "字",
+        "token_id": 8374,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 10,
+      "input_text": "“谢谢”里有多少个“谢”字？<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>“谢谢”里有一个“谢”字",
+      "tokens": [
+        "“",
+        "谢",
+        "谢",
+        "”",
+        "里",
+        "有多",
+        "少",
+        "个",
+        "“",
+        "谢",
+        "”",
+        "字",
+        "？",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "“",
+        "谢",
+        "谢",
+        "”",
+        "里",
+        "有一个",
+        "“",
+        "谢",
+        "”",
+        "字"
+      ],
+      "token_ids": [
+        4171,
+        34915,
+        34915,
+        3495,
+        5122,
+        135546,
+        8390,
+        4856,
+        4171,
+        34915,
+        3495,
+        8374,
+        33176,
+        255001,
+        255000,
+        255007,
+        4171,
+        34915,
+        34915,
+        3495,
+        5122,
+        96614,
+        4171,
+        34915,
+        3495,
+        8374
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "。",
+            "token_id": 1967,
+            "logprob": -0.0001,
+            "prob": 1.0
+          },
+          {
+            "token": "，",
+            "token_id": 1918,
+            "logprob": -10.1562,
+            "prob": 0.0
+          },
+          {
+            "token": "。“",
+            "token_id": 112713,
+            "logprob": -10.375,
+            "prob": 0.0
+          },
+          {
+            "token": "。（",
+            "token_id": 43241,
+            "logprob": -12.7812,
+            "prob": 0.0
+          },
+          {
+            "token": "।",
+            "token_id": 4280,
+            "logprob": -14.1094,
+            "prob": 0.0
+          },
+          {
+            "token": "，“",
+            "token_id": 47881,
+            "logprob": -15.3047,
+            "prob": 0.0
+          },
+          {
+            "token": "。《",
+            "token_id": 53615,
+            "logprob": -16.1719,
+            "prob": 0.0
+          },
+          {
+            "token": "。(",
+            "token_id": 136006,
+            "logprob": -16.1562,
+            "prob": 0.0
+          },
+          {
+            "token": "<PAD>",
+            "token_id": 0,
+            "logprob": -33.4062,
+            "prob": 0.0
+          },
+          {
+            "token": "<UNK>",
+            "token_id": 1,
+            "logprob": -32.0938,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "。",
+        "token_id": 1967,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 11,
+      "input_text": "“谢谢”里有多少个“谢”字？<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>“谢谢”里有一个“谢”字。",
+      "tokens": [
+        "“",
+        "谢",
+        "谢",
+        "”",
+        "里",
+        "有多",
+        "少",
+        "个",
+        "“",
+        "谢",
+        "”",
+        "字",
+        "？",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "“",
+        "谢",
+        "谢",
+        "”",
+        "里",
+        "有一个",
+        "“",
+        "谢",
+        "”",
+        "字",
+        "。"
+      ],
+      "token_ids": [
+        4171,
+        34915,
+        34915,
+        3495,
+        5122,
+        135546,
+        8390,
+        4856,
+        4171,
+        34915,
+        3495,
+        8374,
+        33176,
+        255001,
+        255000,
+        255007,
+        4171,
+        34915,
+        34915,
+        3495,
+        5122,
+        96614,
+        4171,
+        34915,
+        3495,
+        8374,
+        1967
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "完整的",
+            "token_id": 152305,
+            "logprob": -0.8662,
+            "prob": 0.4207
+          },
+          {
+            "token": "整个",
+            "token_id": 61295,
+            "logprob": -1.5537,
+            "prob": 0.2114
+          },
+          {
+            "token": "\n",
+            "token_id": 206,
+            "logprob": -1.7881,
+            "prob": 0.1672
+          },
+          {
+            "token": "全",
+            "token_id": 5142,
+            "logprob": -2.5215,
+            "prob": 0.0803
+          },
+          {
+            "token": "整",
+            "token_id": 13539,
+            "logprob": -3.0527,
+            "prob": 0.0472
+          },
+          {
+            "token": "具体",
+            "token_id": 92137,
+            "logprob": -3.8262,
+            "prob": 0.0218
+          },
+          {
+            "token": "完整",
+            "token_id": 69341,
+            "logprob": -4.4453,
+            "prob": 0.0117
+          },
+          {
+            "token": "具体的",
+            "token_id": 248614,
+            "logprob": -4.4453,
+            "prob": 0.0117
+          },
+          {
+            "token": "它",
+            "token_id": 12394,
+            "logprob": -4.5547,
+            "prob": 0.0105
+          },
+          {
+            "token": "它的",
+            "token_id": 54263,
+            "logprob": -5.0156,
+            "prob": 0.0066
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "完整的",
+        "token_id": 152305,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 12,
+      "input_text": "“谢谢”里有多少个“谢”字？<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>“谢谢”里有一个“谢”字。完整的",
+      "tokens": [
+        "“",
+        "谢",
+        "谢",
+        "”",
+        "里",
+        "有多",
+        "少",
+        "个",
+        "“",
+        "谢",
+        "”",
+        "字",
+        "？",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "“",
+        "谢",
+        "谢",
+        "”",
+        "里",
+        "有一个",
+        "“",
+        "谢",
+        "”",
+        "字",
+        "。",
+        "完整的"
+      ],
+      "token_ids": [
+        4171,
+        34915,
+        34915,
+        3495,
+        5122,
+        135546,
+        8390,
+        4856,
+        4171,
+        34915,
+        3495,
+        8374,
+        33176,
+        255001,
+        255000,
+        255007,
+        4171,
+        34915,
+        34915,
+        3495,
+        5122,
+        96614,
+        4171,
+        34915,
+        3495,
+        8374,
+        1967,
+        152305
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "表达",
+            "token_id": 77466,
+            "logprob": -0.2908,
+            "prob": 0.7476
+          },
+          {
+            "token": "词",
+            "token_id": 20808,
+            "logprob": -1.4785,
+            "prob": 0.228
+          },
+          {
+            "token": "短",
+            "token_id": 17655,
+            "logprob": -4.6484,
+            "prob": 0.0096
+          },
+          {
+            "token": "词汇",
+            "token_id": 173226,
+            "logprob": -5.3203,
+            "prob": 0.0049
+          },
+          {
+            "token": "表",
+            "token_id": 4828,
+            "logprob": -5.5859,
+            "prob": 0.0037
+          },
+          {
+            "token": "句",
+            "token_id": 39250,
+            "logprob": -5.9531,
+            "prob": 0.0026
+          },
+          {
+            "token": "语",
+            "token_id": 9761,
+            "logprob": -7.1094,
+            "prob": 0.0008
+          },
+          {
+            "token": "表现",
+            "token_id": 53088,
+            "logprob": -7.7891,
+            "prob": 0.0004
+          },
+          {
+            "token": "成",
+            "token_id": 3457,
+            "logprob": -8.5547,
+            "prob": 0.0002
+          },
+          {
+            "token": "Ġ표현",
+            "token_id": 72316,
+            "logprob": -8.6562,
+            "prob": 0.0002
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "表达",
+        "token_id": 77466,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 13,
+      "input_text": "“谢谢”里有多少个“谢”字？<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>“谢谢”里有一个“谢”字。完整的表达",
+      "tokens": [
+        "“",
+        "谢",
+        "谢",
+        "”",
+        "里",
+        "有多",
+        "少",
+        "个",
+        "“",
+        "谢",
+        "”",
+        "字",
+        "？",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "“",
+        "谢",
+        "谢",
+        "”",
+        "里",
+        "有一个",
+        "“",
+        "谢",
+        "”",
+        "字",
+        "。",
+        "完整的",
+        "表达"
+      ],
+      "token_ids": [
+        4171,
+        34915,
+        34915,
+        3495,
+        5122,
+        135546,
+        8390,
+        4856,
+        4171,
+        34915,
+        3495,
+        8374,
+        33176,
+        255001,
+        255000,
+        255007,
+        4171,
+        34915,
+        34915,
+        3495,
+        5122,
+        96614,
+        4171,
+        34915,
+        3495,
+        8374,
+        1967,
+        152305,
+        77466
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "是",
+            "token_id": 2927,
+            "logprob": -0.0083,
+            "prob": 0.9917
+          },
+          {
+            "token": "为",
+            "token_id": 3140,
+            "logprob": -4.9922,
+            "prob": 0.0068
+          },
+          {
+            "token": "是一个",
+            "token_id": 39384,
+            "logprob": -7.6172,
+            "prob": 0.0005
+          },
+          {
+            "token": "应该",
+            "token_id": 73123,
+            "logprob": -7.6641,
+            "prob": 0.0005
+          },
+          {
+            "token": "应",
+            "token_id": 12129,
+            "logprob": -9.0078,
+            "prob": 0.0001
+          },
+          {
+            "token": "就是",
+            "token_id": 28794,
+            "logprob": -9.1641,
+            "prob": 0.0001
+          },
+          {
+            "token": "是对",
+            "token_id": 179327,
+            "logprob": -9.3672,
+            "prob": 0.0001
+          },
+          {
+            "token": "是在",
+            "token_id": 27488,
+            "logprob": -10.2109,
+            "prob": 0.0
+          },
+          {
+            "token": "方式",
+            "token_id": 23609,
+            "logprob": -10.7266,
+            "prob": 0.0
+          },
+          {
+            "token": "是一",
+            "token_id": 13760,
+            "logprob": -10.8516,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "是",
+        "token_id": 2927,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 14,
+      "input_text": "“谢谢”里有多少个“谢”字？<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>“谢谢”里有一个“谢”字。完整的表达是",
+      "tokens": [
+        "“",
+        "谢",
+        "谢",
+        "”",
+        "里",
+        "有多",
+        "少",
+        "个",
+        "“",
+        "谢",
+        "”",
+        "字",
+        "？",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "“",
+        "谢",
+        "谢",
+        "”",
+        "里",
+        "有一个",
+        "“",
+        "谢",
+        "”",
+        "字",
+        "。",
+        "完整的",
+        "表达",
+        "是"
+      ],
+      "token_ids": [
+        4171,
+        34915,
+        34915,
+        3495,
+        5122,
+        135546,
+        8390,
+        4856,
+        4171,
+        34915,
+        3495,
+        8374,
+        33176,
+        255001,
+        255000,
+        255007,
+        4171,
+        34915,
+        34915,
+        3495,
+        5122,
+        96614,
+        4171,
+        34915,
+        3495,
+        8374,
+        1967,
+        152305,
+        77466,
+        2927
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "“",
+            "token_id": 4171,
+            "logprob": -0.0001,
+            "prob": 1.0
+          },
+          {
+            "token": "两个",
+            "token_id": 29845,
+            "logprob": -9.8125,
+            "prob": 0.0001
+          },
+          {
+            "token": "\"",
+            "token_id": 9,
+            "logprob": -10.4219,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġ“",
+            "token_id": 7838,
+            "logprob": -10.5156,
+            "prob": 0.0
+          },
+          {
+            "token": "「",
+            "token_id": 3379,
+            "logprob": -10.8047,
+            "prob": 0.0
+          },
+          {
+            "token": "：“",
+            "token_id": 32339,
+            "logprob": -12.5469,
+            "prob": 0.0
+          },
+          {
+            "token": "两",
+            "token_id": 9258,
+            "logprob": -13.1719,
+            "prob": 0.0
+          },
+          {
+            "token": "，“",
+            "token_id": 47881,
+            "logprob": -13.6953,
+            "prob": 0.0
+          },
+          {
+            "token": "„",
+            "token_id": 27267,
+            "logprob": -13.9844,
+            "prob": 0.0
+          },
+          {
+            "token": "：",
+            "token_id": 3168,
+            "logprob": -15.0391,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "“",
+        "token_id": 4171,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 15,
+      "input_text": "“谢谢”里有多少个“谢”字？<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>“谢谢”里有一个“谢”字。完整的表达是“",
+      "tokens": [
+        "“",
+        "谢",
+        "谢",
+        "”",
+        "里",
+        "有多",
+        "少",
+        "个",
+        "“",
+        "谢",
+        "”",
+        "字",
+        "？",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "“",
+        "谢",
+        "谢",
+        "”",
+        "里",
+        "有一个",
+        "“",
+        "谢",
+        "”",
+        "字",
+        "。",
+        "完整的",
+        "表达",
+        "是",
+        "“"
+      ],
+      "token_ids": [
+        4171,
+        34915,
+        34915,
+        3495,
+        5122,
+        135546,
+        8390,
+        4856,
+        4171,
+        34915,
+        3495,
+        8374,
+        33176,
+        255001,
+        255000,
+        255007,
+        4171,
+        34915,
+        34915,
+        3495,
+        5122,
+        96614,
+        4171,
+        34915,
+        3495,
+        8374,
+        1967,
+        152305,
+        77466,
+        2927,
+        4171
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "谢",
+            "token_id": 34915,
+            "logprob": -0.004,
+            "prob": 0.9961
+          },
+          {
+            "token": "感谢",
+            "token_id": 235422,
+            "logprob": -5.5508,
+            "prob": 0.0039
+          },
+          {
+            "token": "謝",
+            "token_id": 45905,
+            "logprob": -9.9297,
+            "prob": 0.0
+          },
+          {
+            "token": "感謝",
+            "token_id": 166498,
+            "logprob": -13.0156,
+            "prob": 0.0
+          },
+          {
+            "token": "非常",
+            "token_id": 26311,
+            "logprob": -13.2656,
+            "prob": 0.0
+          },
+          {
+            "token": "感",
+            "token_id": 12463,
+            "logprob": -14.0469,
+            "prob": 0.0
+          },
+          {
+            "token": "表示",
+            "token_id": 15628,
+            "logprob": -14.3125,
+            "prob": 0.0
+          },
+          {
+            "token": "多",
+            "token_id": 4773,
+            "logprob": -14.2891,
+            "prob": 0.0
+          },
+          {
+            "token": "致",
+            "token_id": 14327,
+            "logprob": -14.7344,
+            "prob": 0.0
+          },
+          {
+            "token": "Thank",
+            "token_id": 37244,
+            "logprob": -14.6641,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "谢",
+        "token_id": 34915,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 16,
+      "input_text": "“谢谢”里有多少个“谢”字？<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>“谢谢”里有一个“谢”字。完整的表达是“谢",
+      "tokens": [
+        "“",
+        "谢",
+        "谢",
+        "”",
+        "里",
+        "有多",
+        "少",
+        "个",
+        "“",
+        "谢",
+        "”",
+        "字",
+        "？",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "“",
+        "谢",
+        "谢",
+        "”",
+        "里",
+        "有一个",
+        "“",
+        "谢",
+        "”",
+        "字",
+        "。",
+        "完整的",
+        "表达",
+        "是",
+        "“",
+        "谢"
+      ],
+      "token_ids": [
+        4171,
+        34915,
+        34915,
+        3495,
+        5122,
+        135546,
+        8390,
+        4856,
+        4171,
+        34915,
+        3495,
+        8374,
+        33176,
+        255001,
+        255000,
+        255007,
+        4171,
+        34915,
+        34915,
+        3495,
+        5122,
+        96614,
+        4171,
+        34915,
+        3495,
+        8374,
+        1967,
+        152305,
+        77466,
+        2927,
+        4171,
+        34915
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "谢",
+            "token_id": 34915,
+            "logprob": -0.0,
+            "prob": 1.0
+          },
+          {
+            "token": "謝",
+            "token_id": 45905,
+            "logprob": -10.6562,
+            "prob": 0.0
+          },
+          {
+            "token": "感谢",
+            "token_id": 235422,
+            "logprob": -13.7891,
+            "prob": 0.0
+          },
+          {
+            "token": "申",
+            "token_id": 27508,
+            "logprob": -16.7969,
+            "prob": 0.0
+          },
+          {
+            "token": "”",
+            "token_id": 3495,
+            "logprob": -17.1562,
+            "prob": 0.0
+          },
+          {
+            "token": "（",
+            "token_id": 2285,
+            "logprob": -17.0156,
+            "prob": 0.0
+          },
+          {
+            "token": "<CLS>",
+            "token_id": 2,
+            "logprob": -31.0781,
+            "prob": 0.0
+          },
+          {
+            "token": "<SEP>",
+            "token_id": 3,
+            "logprob": -31.2656,
+            "prob": 0.0
+          },
+          {
+            "token": "<UNK>",
+            "token_id": 1,
+            "logprob": -28.3438,
+            "prob": 0.0
+          },
+          {
+            "token": "<PAD>",
+            "token_id": 0,
+            "logprob": -30.9688,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "谢",
+        "token_id": 34915,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 17,
+      "input_text": "“谢谢”里有多少个“谢”字？<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>“谢谢”里有一个“谢”字。完整的表达是“谢谢",
+      "tokens": [
+        "“",
+        "谢",
+        "谢",
+        "”",
+        "里",
+        "有多",
+        "少",
+        "个",
+        "“",
+        "谢",
+        "”",
+        "字",
+        "？",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "“",
+        "谢",
+        "谢",
+        "”",
+        "里",
+        "有一个",
+        "“",
+        "谢",
+        "”",
+        "字",
+        "。",
+        "完整的",
+        "表达",
+        "是",
+        "“",
+        "谢",
+        "谢"
+      ],
+      "token_ids": [
+        4171,
+        34915,
+        34915,
+        3495,
+        5122,
+        135546,
+        8390,
+        4856,
+        4171,
+        34915,
+        3495,
+        8374,
+        33176,
+        255001,
+        255000,
+        255007,
+        4171,
+        34915,
+        34915,
+        3495,
+        5122,
+        96614,
+        4171,
+        34915,
+        3495,
+        8374,
+        1967,
+        152305,
+        77466,
+        2927,
+        4171,
+        34915,
+        34915
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "”，",
+            "token_id": 20900,
+            "logprob": -0.0306,
+            "prob": 0.9697
+          },
+          {
+            "token": "”（",
+            "token_id": 49061,
+            "logprob": -3.7188,
+            "prob": 0.0243
+          },
+          {
+            "token": "”",
+            "token_id": 3495,
+            "logprob": -5.2812,
+            "prob": 0.0051
+          },
+          {
+            "token": "”。",
+            "token_id": 18443,
+            "logprob": -7.8906,
+            "prob": 0.0004
+          },
+          {
+            "token": "\"，",
+            "token_id": 195446,
+            "logprob": -9.2734,
+            "prob": 0.0001
+          },
+          {
+            "token": "你",
+            "token_id": 23972,
+            "logprob": -9.3594,
+            "prob": 0.0001
+          },
+          {
+            "token": "”(",
+            "token_id": 213392,
+            "logprob": -10.0938,
+            "prob": 0.0
+          },
+          {
+            "token": "”，“",
+            "token_id": 163432,
+            "logprob": -10.1875,
+            "prob": 0.0
+          },
+          {
+            "token": "您",
+            "token_id": 147723,
+            "logprob": -10.3438,
+            "prob": 0.0
+          },
+          {
+            "token": "”；",
+            "token_id": 166546,
+            "logprob": -11.2969,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "”，",
+        "token_id": 20900,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 18,
+      "input_text": "“谢谢”里有多少个“谢”字？<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>“谢谢”里有一个“谢”字。完整的表达是“谢谢”，",
+      "tokens": [
+        "“",
+        "谢",
+        "谢",
+        "”",
+        "里",
+        "有多",
+        "少",
+        "个",
+        "“",
+        "谢",
+        "”",
+        "字",
+        "？",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "“",
+        "谢",
+        "谢",
+        "”",
+        "里",
+        "有一个",
+        "“",
+        "谢",
+        "”",
+        "字",
+        "。",
+        "完整的",
+        "表达",
+        "是",
+        "“",
+        "谢",
+        "谢",
+        "”，"
+      ],
+      "token_ids": [
+        4171,
+        34915,
+        34915,
+        3495,
+        5122,
+        135546,
+        8390,
+        4856,
+        4171,
+        34915,
+        3495,
+        8374,
+        33176,
+        255001,
+        255000,
+        255007,
+        4171,
+        34915,
+        34915,
+        3495,
+        5122,
+        96614,
+        4171,
+        34915,
+        3495,
+        8374,
+        1967,
+        152305,
+        77466,
+        2927,
+        4171,
+        34915,
+        34915,
+        20900
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "由",
+            "token_id": 4737,
+            "logprob": -0.2847,
+            "prob": 0.7524
+          },
+          {
+            "token": "其中",
+            "token_id": 12920,
+            "logprob": -1.6201,
+            "prob": 0.1978
+          },
+          {
+            "token": "是由",
+            "token_id": 36128,
+            "logprob": -4.5586,
+            "prob": 0.0105
+          },
+          {
+            "token": "即",
+            "token_id": 11797,
+            "logprob": -4.9648,
+            "prob": 0.007
+          },
+          {
+            "token": "意思是",
+            "token_id": 196381,
+            "logprob": -5.7773,
+            "prob": 0.0031
+          },
+          {
+            "token": "意为",
+            "token_id": 94012,
+            "logprob": -6.4023,
+            "prob": 0.0017
+          },
+          {
+            "token": "意思",
+            "token_id": 88329,
+            "logprob": -6.5664,
+            "prob": 0.0014
+          },
+          {
+            "token": "两个",
+            "token_id": 29845,
+            "logprob": -6.6133,
+            "prob": 0.0013
+          },
+          {
+            "token": "主要由",
+            "token_id": 192669,
+            "logprob": -7.0273,
+            "prob": 0.0009
+          },
+          {
+            "token": "这",
+            "token_id": 6710,
+            "logprob": -7.043,
+            "prob": 0.0009
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "由",
+        "token_id": 4737,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 19,
+      "input_text": "“谢谢”里有多少个“谢”字？<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>“谢谢”里有一个“谢”字。完整的表达是“谢谢”，由",
+      "tokens": [
+        "“",
+        "谢",
+        "谢",
+        "”",
+        "里",
+        "有多",
+        "少",
+        "个",
+        "“",
+        "谢",
+        "”",
+        "字",
+        "？",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "“",
+        "谢",
+        "谢",
+        "”",
+        "里",
+        "有一个",
+        "“",
+        "谢",
+        "”",
+        "字",
+        "。",
+        "完整的",
+        "表达",
+        "是",
+        "“",
+        "谢",
+        "谢",
+        "”，",
+        "由"
+      ],
+      "token_ids": [
+        4171,
+        34915,
+        34915,
+        3495,
+        5122,
+        135546,
+        8390,
+        4856,
+        4171,
+        34915,
+        3495,
+        8374,
+        33176,
+        255001,
+        255000,
+        255007,
+        4171,
+        34915,
+        34915,
+        3495,
+        5122,
+        96614,
+        4171,
+        34915,
+        3495,
+        8374,
+        1967,
+        152305,
+        77466,
+        2927,
+        4171,
+        34915,
+        34915,
+        20900,
+        4737
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "两个",
+            "token_id": 29845,
+            "logprob": -0.0131,
+            "prob": 0.9868
+          },
+          {
+            "token": "两",
+            "token_id": 9258,
+            "logprob": -5.043,
+            "prob": 0.0064
+          },
+          {
+            "token": "“",
+            "token_id": 4171,
+            "logprob": -5.0742,
+            "prob": 0.0062
+          },
+          {
+            "token": "兩個",
+            "token_id": 58393,
+            "logprob": -9.3516,
+            "prob": 0.0001
+          },
+          {
+            "token": "三个",
+            "token_id": 52980,
+            "logprob": -10.2266,
+            "prob": 0.0
+          },
+          {
+            "token": "两种",
+            "token_id": 83145,
+            "logprob": -10.5625,
+            "prob": 0.0
+          },
+          {
+            "token": "这两个",
+            "token_id": 179814,
+            "logprob": -10.8125,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġдва",
+            "token_id": 18402,
+            "logprob": -11.0156,
+            "prob": 0.0
+          },
+          {
+            "token": "两位",
+            "token_id": 133235,
+            "logprob": -11.1172,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġ두",
+            "token_id": 19619,
+            "logprob": -11.1797,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "两个",
+        "token_id": 29845,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 20,
+      "input_text": "“谢谢”里有多少个“谢”字？<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>“谢谢”里有一个“谢”字。完整的表达是“谢谢”，由两个",
+      "tokens": [
+        "“",
+        "谢",
+        "谢",
+        "”",
+        "里",
+        "有多",
+        "少",
+        "个",
+        "“",
+        "谢",
+        "”",
+        "字",
+        "？",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "“",
+        "谢",
+        "谢",
+        "”",
+        "里",
+        "有一个",
+        "“",
+        "谢",
+        "”",
+        "字",
+        "。",
+        "完整的",
+        "表达",
+        "是",
+        "“",
+        "谢",
+        "谢",
+        "”，",
+        "由",
+        "两个"
+      ],
+      "token_ids": [
+        4171,
+        34915,
+        34915,
+        3495,
+        5122,
+        135546,
+        8390,
+        4856,
+        4171,
+        34915,
+        3495,
+        8374,
+        33176,
+        255001,
+        255000,
+        255007,
+        4171,
+        34915,
+        34915,
+        3495,
+        5122,
+        96614,
+        4171,
+        34915,
+        3495,
+        8374,
+        1967,
+        152305,
+        77466,
+        2927,
+        4171,
+        34915,
+        34915,
+        20900,
+        4737,
+        29845
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "字",
+            "token_id": 8374,
+            "logprob": -0.5474,
+            "prob": 0.5786
+          },
+          {
+            "token": "部分",
+            "token_id": 11906,
+            "logprob": -1.1885,
+            "prob": 0.3049
+          },
+          {
+            "token": "汉字",
+            "token_id": 146073,
+            "logprob": -2.2969,
+            "prob": 0.1005
+          },
+          {
+            "token": "词",
+            "token_id": 20808,
+            "logprob": -4.8906,
+            "prob": 0.0075
+          },
+          {
+            "token": "字符",
+            "token_id": 93555,
+            "logprob": -5.5469,
+            "prob": 0.0039
+          },
+          {
+            "token": "中文",
+            "token_id": 35669,
+            "logprob": -7.7812,
+            "prob": 0.0004
+          },
+          {
+            "token": "漢字",
+            "token_id": 134327,
+            "logprob": -8.0078,
+            "prob": 0.0003
+          },
+          {
+            "token": "拼音",
+            "token_id": 164072,
+            "logprob": -8.2031,
+            "prob": 0.0003
+          },
+          {
+            "token": "文字",
+            "token_id": 39188,
+            "logprob": -8.3125,
+            "prob": 0.0002
+          },
+          {
+            "token": "成",
+            "token_id": 3457,
+            "logprob": -8.3594,
+            "prob": 0.0002
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "字",
+        "token_id": 8374,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 21,
+      "input_text": "“谢谢”里有多少个“谢”字？<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>“谢谢”里有一个“谢”字。完整的表达是“谢谢”，由两个字",
+      "tokens": [
+        "“",
+        "谢",
+        "谢",
+        "”",
+        "里",
+        "有多",
+        "少",
+        "个",
+        "“",
+        "谢",
+        "”",
+        "字",
+        "？",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "“",
+        "谢",
+        "谢",
+        "”",
+        "里",
+        "有一个",
+        "“",
+        "谢",
+        "”",
+        "字",
+        "。",
+        "完整的",
+        "表达",
+        "是",
+        "“",
+        "谢",
+        "谢",
+        "”，",
+        "由",
+        "两个",
+        "字"
+      ],
+      "token_ids": [
+        4171,
+        34915,
+        34915,
+        3495,
+        5122,
+        135546,
+        8390,
+        4856,
+        4171,
+        34915,
+        3495,
+        8374,
+        33176,
+        255001,
+        255000,
+        255007,
+        4171,
+        34915,
+        34915,
+        3495,
+        5122,
+        96614,
+        4171,
+        34915,
+        3495,
+        8374,
+        1967,
+        152305,
+        77466,
+        2927,
+        4171,
+        34915,
+        34915,
+        20900,
+        4737,
+        29845,
+        8374
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "组成",
+            "token_id": 33785,
+            "logprob": -0.0038,
+            "prob": 0.9961
+          },
+          {
+            "token": "构成",
+            "token_id": 92999,
+            "logprob": -5.9258,
+            "prob": 0.0027
+          },
+          {
+            "token": "组成的",
+            "token_id": 104828,
+            "logprob": -7.8789,
+            "prob": 0.0004
+          },
+          {
+            "token": "組成",
+            "token_id": 66525,
+            "logprob": -8.3438,
+            "prob": 0.0002
+          },
+          {
+            "token": "构",
+            "token_id": 15312,
+            "logprob": -8.4062,
+            "prob": 0.0002
+          },
+          {
+            "token": "“",
+            "token_id": 4171,
+            "logprob": -8.6875,
+            "prob": 0.0002
+          },
+          {
+            "token": "構成",
+            "token_id": 48217,
+            "logprob": -10.5938,
+            "prob": 0.0
+          },
+          {
+            "token": "组合",
+            "token_id": 65149,
+            "logprob": -10.875,
+            "prob": 0.0
+          },
+          {
+            "token": "组",
+            "token_id": 8008,
+            "logprob": -11.3203,
+            "prob": 0.0
+          },
+          {
+            "token": "复合",
+            "token_id": 215218,
+            "logprob": -11.4922,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "组成",
+        "token_id": 33785,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 22,
+      "input_text": "“谢谢”里有多少个“谢”字？<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>“谢谢”里有一个“谢”字。完整的表达是“谢谢”，由两个字组成",
+      "tokens": [
+        "“",
+        "谢",
+        "谢",
+        "”",
+        "里",
+        "有多",
+        "少",
+        "个",
+        "“",
+        "谢",
+        "”",
+        "字",
+        "？",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "“",
+        "谢",
+        "谢",
+        "”",
+        "里",
+        "有一个",
+        "“",
+        "谢",
+        "”",
+        "字",
+        "。",
+        "完整的",
+        "表达",
+        "是",
+        "“",
+        "谢",
+        "谢",
+        "”，",
+        "由",
+        "两个",
+        "字",
+        "组成"
+      ],
+      "token_ids": [
+        4171,
+        34915,
+        34915,
+        3495,
+        5122,
+        135546,
+        8390,
+        4856,
+        4171,
+        34915,
+        3495,
+        8374,
+        33176,
+        255001,
+        255000,
+        255007,
+        4171,
+        34915,
+        34915,
+        3495,
+        5122,
+        96614,
+        4171,
+        34915,
+        3495,
+        8374,
+        1967,
+        152305,
+        77466,
+        2927,
+        4171,
+        34915,
+        34915,
+        20900,
+        4737,
+        29845,
+        8374,
+        33785
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "，",
+            "token_id": 1918,
+            "logprob": -0.5923,
+            "prob": 0.5532
+          },
+          {
+            "token": "：“",
+            "token_id": 32339,
+            "logprob": -1.1543,
+            "prob": 0.3152
+          },
+          {
+            "token": "，“",
+            "token_id": 47881,
+            "logprob": -2.5762,
+            "prob": 0.076
+          },
+          {
+            "token": "：",
+            "token_id": 3168,
+            "logprob": -2.8887,
+            "prob": 0.0556
+          },
+          {
+            "token": "。“",
+            "token_id": 112713,
+            "logprob": -9.7031,
+            "prob": 0.0001
+          },
+          {
+            "token": "——",
+            "token_id": 18283,
+            "logprob": -11.0156,
+            "prob": 0.0
+          },
+          {
+            "token": "：「",
+            "token_id": 32053,
+            "logprob": -11.4688,
+            "prob": 0.0
+          },
+          {
+            "token": "（“",
+            "token_id": 231735,
+            "logprob": -12.2656,
+            "prob": 0.0
+          },
+          {
+            "token": "，「",
+            "token_id": 51680,
+            "logprob": -13.7734,
+            "prob": 0.0
+          },
+          {
+            "token": "：《",
+            "token_id": 35732,
+            "logprob": -14.3828,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "，",
+        "token_id": 1918,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 23,
+      "input_text": "“谢谢”里有多少个“谢”字？<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>“谢谢”里有一个“谢”字。完整的表达是“谢谢”，由两个字组成，",
+      "tokens": [
+        "“",
+        "谢",
+        "谢",
+        "”",
+        "里",
+        "有多",
+        "少",
+        "个",
+        "“",
+        "谢",
+        "”",
+        "字",
+        "？",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "“",
+        "谢",
+        "谢",
+        "”",
+        "里",
+        "有一个",
+        "“",
+        "谢",
+        "”",
+        "字",
+        "。",
+        "完整的",
+        "表达",
+        "是",
+        "“",
+        "谢",
+        "谢",
+        "”，",
+        "由",
+        "两个",
+        "字",
+        "组成",
+        "，"
+      ],
+      "token_ids": [
+        4171,
+        34915,
+        34915,
+        3495,
+        5122,
+        135546,
+        8390,
+        4856,
+        4171,
+        34915,
+        3495,
+        8374,
+        33176,
+        255001,
+        255000,
+        255007,
+        4171,
+        34915,
+        34915,
+        3495,
+        5122,
+        96614,
+        4171,
+        34915,
+        3495,
+        8374,
+        1967,
+        152305,
+        77466,
+        2927,
+        4171,
+        34915,
+        34915,
+        20900,
+        4737,
+        29845,
+        8374,
+        33785,
+        1918
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "第一个",
+            "token_id": 71395,
+            "logprob": -0.4524,
+            "prob": 0.6362
+          },
+          {
+            "token": "分别是",
+            "token_id": 129121,
+            "logprob": -2.1172,
+            "prob": 0.1204
+          },
+          {
+            "token": "即",
+            "token_id": 11797,
+            "logprob": -2.6484,
+            "prob": 0.0708
+          },
+          {
+            "token": "其中",
+            "token_id": 12920,
+            "logprob": -2.9688,
+            "prob": 0.0514
+          },
+          {
+            "token": "首",
+            "token_id": 7578,
+            "logprob": -4.0234,
+            "prob": 0.0179
+          },
+          {
+            "token": "第一",
+            "token_id": 9695,
+            "logprob": -4.1172,
+            "prob": 0.0163
+          },
+          {
+            "token": "都是",
+            "token_id": 33641,
+            "logprob": -4.1484,
+            "prob": 0.0158
+          },
+          {
+            "token": "分别为",
+            "token_id": 118248,
+            "logprob": -4.4922,
+            "prob": 0.0112
+          },
+          {
+            "token": "分别",
+            "token_id": 33467,
+            "logprob": -4.5469,
+            "prob": 0.0106
+          },
+          {
+            "token": "一个",
+            "token_id": 8266,
+            "logprob": -4.6797,
+            "prob": 0.0093
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "第一个",
+        "token_id": 71395,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 24,
+      "input_text": "“谢谢”里有多少个“谢”字？<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>“谢谢”里有一个“谢”字。完整的表达是“谢谢”，由两个字组成，第一个",
+      "tokens": [
+        "“",
+        "谢",
+        "谢",
+        "”",
+        "里",
+        "有多",
+        "少",
+        "个",
+        "“",
+        "谢",
+        "”",
+        "字",
+        "？",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "“",
+        "谢",
+        "谢",
+        "”",
+        "里",
+        "有一个",
+        "“",
+        "谢",
+        "”",
+        "字",
+        "。",
+        "完整的",
+        "表达",
+        "是",
+        "“",
+        "谢",
+        "谢",
+        "”，",
+        "由",
+        "两个",
+        "字",
+        "组成",
+        "，",
+        "第一个"
+      ],
+      "token_ids": [
+        4171,
+        34915,
+        34915,
+        3495,
+        5122,
+        135546,
+        8390,
+        4856,
+        4171,
+        34915,
+        3495,
+        8374,
+        33176,
+        255001,
+        255000,
+        255007,
+        4171,
+        34915,
+        34915,
+        3495,
+        5122,
+        96614,
+        4171,
+        34915,
+        3495,
+        8374,
+        1967,
+        152305,
+        77466,
+        2927,
+        4171,
+        34915,
+        34915,
+        20900,
+        4737,
+        29845,
+        8374,
+        33785,
+        1918,
+        71395
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "字",
+            "token_id": 8374,
+            "logprob": -0.031,
+            "prob": 0.9697
+          },
+          {
+            "token": "是",
+            "token_id": 2927,
+            "logprob": -3.5,
+            "prob": 0.0302
+          },
+          {
+            "token": "词",
+            "token_id": 20808,
+            "logprob": -8.5,
+            "prob": 0.0002
+          },
+          {
+            "token": "“",
+            "token_id": 4171,
+            "logprob": -11.4297,
+            "prob": 0.0
+          },
+          {
+            "token": "字母",
+            "token_id": 62450,
+            "logprob": -11.9141,
+            "prob": 0.0
+          },
+          {
+            "token": "是一个",
+            "token_id": 39384,
+            "logprob": -12.2891,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġword",
+            "token_id": 5416,
+            "logprob": -12.4062,
+            "prob": 0.0
+          },
+          {
+            "token": "就是",
+            "token_id": 28794,
+            "logprob": -12.4609,
+            "prob": 0.0
+          },
+          {
+            "token": "为",
+            "token_id": 3140,
+            "logprob": -12.6797,
+            "prob": 0.0
+          },
+          {
+            "token": "字は",
+            "token_id": 189320,
+            "logprob": -12.8281,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "字",
+        "token_id": 8374,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 25,
+      "input_text": "“谢谢”里有多少个“谢”字？<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>“谢谢”里有一个“谢”字。完整的表达是“谢谢”，由两个字组成，第一个字",
+      "tokens": [
+        "“",
+        "谢",
+        "谢",
+        "”",
+        "里",
+        "有多",
+        "少",
+        "个",
+        "“",
+        "谢",
+        "”",
+        "字",
+        "？",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "“",
+        "谢",
+        "谢",
+        "”",
+        "里",
+        "有一个",
+        "“",
+        "谢",
+        "”",
+        "字",
+        "。",
+        "完整的",
+        "表达",
+        "是",
+        "“",
+        "谢",
+        "谢",
+        "”，",
+        "由",
+        "两个",
+        "字",
+        "组成",
+        "，",
+        "第一个",
+        "字"
+      ],
+      "token_ids": [
+        4171,
+        34915,
+        34915,
+        3495,
+        5122,
+        135546,
+        8390,
+        4856,
+        4171,
+        34915,
+        3495,
+        8374,
+        33176,
+        255001,
+        255000,
+        255007,
+        4171,
+        34915,
+        34915,
+        3495,
+        5122,
+        96614,
+        4171,
+        34915,
+        3495,
+        8374,
+        1967,
+        152305,
+        77466,
+        2927,
+        4171,
+        34915,
+        34915,
+        20900,
+        4737,
+        29845,
+        8374,
+        33785,
+        1918,
+        71395,
+        8374
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "是",
+            "token_id": 2927,
+            "logprob": -0.0014,
+            "prob": 0.9985
+          },
+          {
+            "token": "为",
+            "token_id": 3140,
+            "logprob": -7.6719,
+            "prob": 0.0005
+          },
+          {
+            "token": "和",
+            "token_id": 3106,
+            "logprob": -7.9844,
+            "prob": 0.0003
+          },
+          {
+            "token": "是一个",
+            "token_id": 39384,
+            "logprob": -8.7188,
+            "prob": 0.0002
+          },
+          {
+            "token": "“",
+            "token_id": 4171,
+            "logprob": -9.1328,
+            "prob": 0.0001
+          },
+          {
+            "token": "就是",
+            "token_id": 28794,
+            "logprob": -9.6953,
+            "prob": 0.0001
+          },
+          {
+            "token": "也是",
+            "token_id": 21344,
+            "logprob": -9.9531,
+            "prob": 0.0
+          },
+          {
+            "token": "是不",
+            "token_id": 131427,
+            "logprob": -10.0391,
+            "prob": 0.0
+          },
+          {
+            "token": "是个",
+            "token_id": 120553,
+            "logprob": -10.0625,
+            "prob": 0.0
+          },
+          {
+            "token": "是大",
+            "token_id": 160716,
+            "logprob": -10.9766,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "是",
+        "token_id": 2927,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 26,
+      "input_text": "“谢谢”里有多少个“谢”字？<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>“谢谢”里有一个“谢”字。完整的表达是“谢谢”，由两个字组成，第一个字是",
+      "tokens": [
+        "“",
+        "谢",
+        "谢",
+        "”",
+        "里",
+        "有多",
+        "少",
+        "个",
+        "“",
+        "谢",
+        "”",
+        "字",
+        "？",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "“",
+        "谢",
+        "谢",
+        "”",
+        "里",
+        "有一个",
+        "“",
+        "谢",
+        "”",
+        "字",
+        "。",
+        "完整的",
+        "表达",
+        "是",
+        "“",
+        "谢",
+        "谢",
+        "”，",
+        "由",
+        "两个",
+        "字",
+        "组成",
+        "，",
+        "第一个",
+        "字",
+        "是"
+      ],
+      "token_ids": [
+        4171,
+        34915,
+        34915,
+        3495,
+        5122,
+        135546,
+        8390,
+        4856,
+        4171,
+        34915,
+        3495,
+        8374,
+        33176,
+        255001,
+        255000,
+        255007,
+        4171,
+        34915,
+        34915,
+        3495,
+        5122,
+        96614,
+        4171,
+        34915,
+        3495,
+        8374,
+        1967,
+        152305,
+        77466,
+        2927,
+        4171,
+        34915,
+        34915,
+        20900,
+        4737,
+        29845,
+        8374,
+        33785,
+        1918,
+        71395,
+        8374,
+        2927
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "“",
+            "token_id": 4171,
+            "logprob": -0.0,
+            "prob": 1.0
+          },
+          {
+            "token": "Ġ“",
+            "token_id": 7838,
+            "logprob": -11.6094,
+            "prob": 0.0
+          },
+          {
+            "token": "「",
+            "token_id": 3379,
+            "logprob": -13.6484,
+            "prob": 0.0
+          },
+          {
+            "token": "谢",
+            "token_id": 34915,
+            "logprob": -14.5312,
+            "prob": 0.0
+          },
+          {
+            "token": "\"",
+            "token_id": 9,
+            "logprob": -15.2656,
+            "prob": 0.0
+          },
+          {
+            "token": "„",
+            "token_id": 27267,
+            "logprob": -17.2344,
+            "prob": 0.0
+          },
+          {
+            "token": "<CLS>",
+            "token_id": 2,
+            "logprob": -30.1875,
+            "prob": 0.0
+          },
+          {
+            "token": "<SEP>",
+            "token_id": 3,
+            "logprob": -30.4844,
+            "prob": 0.0
+          },
+          {
+            "token": "<UNK>",
+            "token_id": 1,
+            "logprob": -28.6094,
+            "prob": 0.0
+          },
+          {
+            "token": "<PAD>",
+            "token_id": 0,
+            "logprob": -31.1406,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "“",
+        "token_id": 4171,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 27,
+      "input_text": "“谢谢”里有多少个“谢”字？<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>“谢谢”里有一个“谢”字。完整的表达是“谢谢”，由两个字组成，第一个字是“",
+      "tokens": [
+        "“",
+        "谢",
+        "谢",
+        "”",
+        "里",
+        "有多",
+        "少",
+        "个",
+        "“",
+        "谢",
+        "”",
+        "字",
+        "？",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "“",
+        "谢",
+        "谢",
+        "”",
+        "里",
+        "有一个",
+        "“",
+        "谢",
+        "”",
+        "字",
+        "。",
+        "完整的",
+        "表达",
+        "是",
+        "“",
+        "谢",
+        "谢",
+        "”，",
+        "由",
+        "两个",
+        "字",
+        "组成",
+        "，",
+        "第一个",
+        "字",
+        "是",
+        "“"
+      ],
+      "token_ids": [
+        4171,
+        34915,
+        34915,
+        3495,
+        5122,
+        135546,
+        8390,
+        4856,
+        4171,
+        34915,
+        3495,
+        8374,
+        33176,
+        255001,
+        255000,
+        255007,
+        4171,
+        34915,
+        34915,
+        3495,
+        5122,
+        96614,
+        4171,
+        34915,
+        3495,
+        8374,
+        1967,
+        152305,
+        77466,
+        2927,
+        4171,
+        34915,
+        34915,
+        20900,
+        4737,
+        29845,
+        8374,
+        33785,
+        1918,
+        71395,
+        8374,
+        2927,
+        4171
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "谢",
+            "token_id": 34915,
+            "logprob": -0.0002,
+            "prob": 1.0
+          },
+          {
+            "token": "謝",
+            "token_id": 45905,
+            "logprob": -8.7031,
+            "prob": 0.0002
+          },
+          {
+            "token": "申",
+            "token_id": 27508,
+            "logprob": -16.1406,
+            "prob": 0.0
+          },
+          {
+            "token": "什",
+            "token_id": 23805,
+            "logprob": -16.0938,
+            "prob": 0.0
+          },
+          {
+            "token": "雪",
+            "token_id": 22637,
+            "logprob": -16.3438,
+            "prob": 0.0
+          },
+          {
+            "token": "舍",
+            "token_id": 35168,
+            "logprob": -16.7812,
+            "prob": 0.0
+          },
+          {
+            "token": "<CLS>",
+            "token_id": 2,
+            "logprob": -33.5,
+            "prob": 0.0
+          },
+          {
+            "token": "<SEP>",
+            "token_id": 3,
+            "logprob": -33.1875,
+            "prob": 0.0
+          },
+          {
+            "token": "<UNK>",
+            "token_id": 1,
+            "logprob": -30.1094,
+            "prob": 0.0
+          },
+          {
+            "token": "<PAD>",
+            "token_id": 0,
+            "logprob": -33.0938,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "谢",
+        "token_id": 34915,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 28,
+      "input_text": "“谢谢”里有多少个“谢”字？<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>“谢谢”里有一个“谢”字。完整的表达是“谢谢”，由两个字组成，第一个字是“谢",
+      "tokens": [
+        "“",
+        "谢",
+        "谢",
+        "”",
+        "里",
+        "有多",
+        "少",
+        "个",
+        "“",
+        "谢",
+        "”",
+        "字",
+        "？",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "“",
+        "谢",
+        "谢",
+        "”",
+        "里",
+        "有一个",
+        "“",
+        "谢",
+        "”",
+        "字",
+        "。",
+        "完整的",
+        "表达",
+        "是",
+        "“",
+        "谢",
+        "谢",
+        "”，",
+        "由",
+        "两个",
+        "字",
+        "组成",
+        "，",
+        "第一个",
+        "字",
+        "是",
+        "“",
+        "谢"
+      ],
+      "token_ids": [
+        4171,
+        34915,
+        34915,
+        3495,
+        5122,
+        135546,
+        8390,
+        4856,
+        4171,
+        34915,
+        3495,
+        8374,
+        33176,
+        255001,
+        255000,
+        255007,
+        4171,
+        34915,
+        34915,
+        3495,
+        5122,
+        96614,
+        4171,
+        34915,
+        3495,
+        8374,
+        1967,
+        152305,
+        77466,
+        2927,
+        4171,
+        34915,
+        34915,
+        20900,
+        4737,
+        29845,
+        8374,
+        33785,
+        1918,
+        71395,
+        8374,
+        2927,
+        4171,
+        34915
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "”，",
+            "token_id": 20900,
+            "logprob": -0.01,
+            "prob": 0.9902
+          },
+          {
+            "token": "”。",
+            "token_id": 18443,
+            "logprob": -4.7461,
+            "prob": 0.0087
+          },
+          {
+            "token": "”，“",
+            "token_id": 163432,
+            "logprob": -6.8086,
+            "prob": 0.0011
+          },
+          {
+            "token": "”",
+            "token_id": 3495,
+            "logprob": -10.0859,
+            "prob": 0.0
+          },
+          {
+            "token": "”、",
+            "token_id": 243335,
+            "logprob": -10.3984,
+            "prob": 0.0
+          },
+          {
+            "token": "”（",
+            "token_id": 49061,
+            "logprob": -10.6484,
+            "prob": 0.0
+          },
+          {
+            "token": "\"，",
+            "token_id": 195446,
+            "logprob": -11.1328,
+            "prob": 0.0
+          },
+          {
+            "token": "”、“",
+            "token_id": 64360,
+            "logprob": -12.9844,
+            "prob": 0.0
+          },
+          {
+            "token": "”；",
+            "token_id": 166546,
+            "logprob": -13.0547,
+            "prob": 0.0
+          },
+          {
+            "token": "”,",
+            "token_id": 11983,
+            "logprob": -13.7344,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "”，",
+        "token_id": 20900,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 29,
+      "input_text": "“谢谢”里有多少个“谢”字？<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>“谢谢”里有一个“谢”字。完整的表达是“谢谢”，由两个字组成，第一个字是“谢”，",
+      "tokens": [
+        "“",
+        "谢",
+        "谢",
+        "”",
+        "里",
+        "有多",
+        "少",
+        "个",
+        "“",
+        "谢",
+        "”",
+        "字",
+        "？",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "“",
+        "谢",
+        "谢",
+        "”",
+        "里",
+        "有一个",
+        "“",
+        "谢",
+        "”",
+        "字",
+        "。",
+        "完整的",
+        "表达",
+        "是",
+        "“",
+        "谢",
+        "谢",
+        "”，",
+        "由",
+        "两个",
+        "字",
+        "组成",
+        "，",
+        "第一个",
+        "字",
+        "是",
+        "“",
+        "谢",
+        "”，"
+      ],
+      "token_ids": [
+        4171,
+        34915,
+        34915,
+        3495,
+        5122,
+        135546,
+        8390,
+        4856,
+        4171,
+        34915,
+        3495,
+        8374,
+        33176,
+        255001,
+        255000,
+        255007,
+        4171,
+        34915,
+        34915,
+        3495,
+        5122,
+        96614,
+        4171,
+        34915,
+        3495,
+        8374,
+        1967,
+        152305,
+        77466,
+        2927,
+        4171,
+        34915,
+        34915,
+        20900,
+        4737,
+        29845,
+        8374,
+        33785,
+        1918,
+        71395,
+        8374,
+        2927,
+        4171,
+        34915,
+        20900
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "第二个",
+            "token_id": 176230,
+            "logprob": -0.0087,
+            "prob": 0.9912
+          },
+          {
+            "token": "第二",
+            "token_id": 11683,
+            "logprob": -5.5703,
+            "prob": 0.0038
+          },
+          {
+            "token": "表达",
+            "token_id": 77466,
+            "logprob": -6.3672,
+            "prob": 0.0017
+          },
+          {
+            "token": "表示",
+            "token_id": 15628,
+            "logprob": -7.3438,
+            "prob": 0.0006
+          },
+          {
+            "token": "后",
+            "token_id": 4410,
+            "logprob": -8.3359,
+            "prob": 0.0002
+          },
+          {
+            "token": "后面",
+            "token_id": 252197,
+            "logprob": -8.6797,
+            "prob": 0.0002
+          },
+          {
+            "token": "其次",
+            "token_id": 222471,
+            "logprob": -8.8125,
+            "prob": 0.0001
+          },
+          {
+            "token": "第二次",
+            "token_id": 37314,
+            "logprob": -9.1328,
+            "prob": 0.0001
+          },
+          {
+            "token": "这个",
+            "token_id": 25432,
+            "logprob": -9.2578,
+            "prob": 0.0001
+          },
+          {
+            "token": "第二天",
+            "token_id": 207103,
+            "logprob": -9.2734,
+            "prob": 0.0001
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "第二个",
+        "token_id": 176230,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 30,
+      "input_text": "“谢谢”里有多少个“谢”字？<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>“谢谢”里有一个“谢”字。完整的表达是“谢谢”，由两个字组成，第一个字是“谢”，第二个",
+      "tokens": [
+        "“",
+        "谢",
+        "谢",
+        "”",
+        "里",
+        "有多",
+        "少",
+        "个",
+        "“",
+        "谢",
+        "”",
+        "字",
+        "？",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "“",
+        "谢",
+        "谢",
+        "”",
+        "里",
+        "有一个",
+        "“",
+        "谢",
+        "”",
+        "字",
+        "。",
+        "完整的",
+        "表达",
+        "是",
+        "“",
+        "谢",
+        "谢",
+        "”，",
+        "由",
+        "两个",
+        "字",
+        "组成",
+        "，",
+        "第一个",
+        "字",
+        "是",
+        "“",
+        "谢",
+        "”，",
+        "第二个"
+      ],
+      "token_ids": [
+        4171,
+        34915,
+        34915,
+        3495,
+        5122,
+        135546,
+        8390,
+        4856,
+        4171,
+        34915,
+        3495,
+        8374,
+        33176,
+        255001,
+        255000,
+        255007,
+        4171,
+        34915,
+        34915,
+        3495,
+        5122,
+        96614,
+        4171,
+        34915,
+        3495,
+        8374,
+        1967,
+        152305,
+        77466,
+        2927,
+        4171,
+        34915,
+        34915,
+        20900,
+        4737,
+        29845,
+        8374,
+        33785,
+        1918,
+        71395,
+        8374,
+        2927,
+        4171,
+        34915,
+        20900,
+        176230
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "字",
+            "token_id": 8374,
+            "logprob": -0.0,
+            "prob": 1.0
+          },
+          {
+            "token": "是",
+            "token_id": 2927,
+            "logprob": -12.4062,
+            "prob": 0.0
+          },
+          {
+            "token": "字は",
+            "token_id": 189320,
+            "logprob": -13.0156,
+            "prob": 0.0
+          },
+          {
+            "token": "词",
+            "token_id": 20808,
+            "logprob": -13.375,
+            "prob": 0.0
+          },
+          {
+            "token": "字符",
+            "token_id": 93555,
+            "logprob": -15.8438,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġchữ",
+            "token_id": 38854,
+            "logprob": -16.9531,
+            "prob": 0.0
+          },
+          {
+            "token": "字母",
+            "token_id": 62450,
+            "logprob": -16.3125,
+            "prob": 0.0
+          },
+          {
+            "token": "<CLS>",
+            "token_id": 2,
+            "logprob": -32.2188,
+            "prob": 0.0
+          },
+          {
+            "token": "<UNK>",
+            "token_id": 1,
+            "logprob": -30.3438,
+            "prob": 0.0
+          },
+          {
+            "token": "<PAD>",
+            "token_id": 0,
+            "logprob": -32.2812,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "字",
+        "token_id": 8374,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 31,
+      "input_text": "“谢谢”里有多少个“谢”字？<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>“谢谢”里有一个“谢”字。完整的表达是“谢谢”，由两个字组成，第一个字是“谢”，第二个字",
+      "tokens": [
+        "“",
+        "谢",
+        "谢",
+        "”",
+        "里",
+        "有多",
+        "少",
+        "个",
+        "“",
+        "谢",
+        "”",
+        "字",
+        "？",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "“",
+        "谢",
+        "谢",
+        "”",
+        "里",
+        "有一个",
+        "“",
+        "谢",
+        "”",
+        "字",
+        "。",
+        "完整的",
+        "表达",
+        "是",
+        "“",
+        "谢",
+        "谢",
+        "”，",
+        "由",
+        "两个",
+        "字",
+        "组成",
+        "，",
+        "第一个",
+        "字",
+        "是",
+        "“",
+        "谢",
+        "”，",
+        "第二个",
+        "字"
+      ],
+      "token_ids": [
+        4171,
+        34915,
+        34915,
+        3495,
+        5122,
+        135546,
+        8390,
+        4856,
+        4171,
+        34915,
+        3495,
+        8374,
+        33176,
+        255001,
+        255000,
+        255007,
+        4171,
+        34915,
+        34915,
+        3495,
+        5122,
+        96614,
+        4171,
+        34915,
+        3495,
+        8374,
+        1967,
+        152305,
+        77466,
+        2927,
+        4171,
+        34915,
+        34915,
+        20900,
+        4737,
+        29845,
+        8374,
+        33785,
+        1918,
+        71395,
+        8374,
+        2927,
+        4171,
+        34915,
+        20900,
+        176230,
+        8374
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "是",
+            "token_id": 2927,
+            "logprob": -0.0001,
+            "prob": 1.0
+          },
+          {
+            "token": "是不",
+            "token_id": 131427,
+            "logprob": -10.6562,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġ是",
+            "token_id": 94220,
+            "logprob": -12.1875,
+            "prob": 0.0
+          },
+          {
+            "token": "是从",
+            "token_id": 166893,
+            "logprob": -12.3438,
+            "prob": 0.0
+          },
+          {
+            "token": "是对",
+            "token_id": 179327,
+            "logprob": -12.7344,
+            "prob": 0.0
+          },
+          {
+            "token": "是有",
+            "token_id": 144085,
+            "logprob": -12.875,
+            "prob": 0.0
+          },
+          {
+            "token": "是被",
+            "token_id": 177808,
+            "logprob": -13.3594,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġlà",
+            "token_id": 3357,
+            "logprob": -13.4531,
+            "prob": 0.0
+          },
+          {
+            "token": "也是",
+            "token_id": 21344,
+            "logprob": -13.5938,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġadalah",
+            "token_id": 6185,
+            "logprob": -13.7031,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "是",
+        "token_id": 2927,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 32,
+      "input_text": "“谢谢”里有多少个“谢”字？<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>“谢谢”里有一个“谢”字。完整的表达是“谢谢”，由两个字组成，第一个字是“谢”，第二个字是",
+      "tokens": [
+        "“",
+        "谢",
+        "谢",
+        "”",
+        "里",
+        "有多",
+        "少",
+        "个",
+        "“",
+        "谢",
+        "”",
+        "字",
+        "？",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "“",
+        "谢",
+        "谢",
+        "”",
+        "里",
+        "有一个",
+        "“",
+        "谢",
+        "”",
+        "字",
+        "。",
+        "完整的",
+        "表达",
+        "是",
+        "“",
+        "谢",
+        "谢",
+        "”，",
+        "由",
+        "两个",
+        "字",
+        "组成",
+        "，",
+        "第一个",
+        "字",
+        "是",
+        "“",
+        "谢",
+        "”，",
+        "第二个",
+        "字",
+        "是"
+      ],
+      "token_ids": [
+        4171,
+        34915,
+        34915,
+        3495,
+        5122,
+        135546,
+        8390,
+        4856,
+        4171,
+        34915,
+        3495,
+        8374,
+        33176,
+        255001,
+        255000,
+        255007,
+        4171,
+        34915,
+        34915,
+        3495,
+        5122,
+        96614,
+        4171,
+        34915,
+        3495,
+        8374,
+        1967,
+        152305,
+        77466,
+        2927,
+        4171,
+        34915,
+        34915,
+        20900,
+        4737,
+        29845,
+        8374,
+        33785,
+        1918,
+        71395,
+        8374,
+        2927,
+        4171,
+        34915,
+        20900,
+        176230,
+        8374,
+        2927
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "“",
+            "token_id": 4171,
+            "logprob": -0.0,
+            "prob": 1.0
+          },
+          {
+            "token": "Ġ“",
+            "token_id": 7838,
+            "logprob": -15.0781,
+            "prob": 0.0
+          },
+          {
+            "token": "<PAD>",
+            "token_id": 0,
+            "logprob": -34.875,
+            "prob": 0.0
+          },
+          {
+            "token": "<UNK>",
+            "token_id": 1,
+            "logprob": -33.4688,
+            "prob": 0.0
+          },
+          {
+            "token": "<EOS_TOKEN>",
+            "token_id": 6,
+            "logprob": -30.1562,
+            "prob": 0.0
+          },
+          {
+            "token": "<EOP_TOKEN>",
+            "token_id": 7,
+            "logprob": -34.9062,
+            "prob": 0.0
+          },
+          {
+            "token": "<BOS_TOKEN>",
+            "token_id": 5,
+            "logprob": -36.2812,
+            "prob": 0.0
+          },
+          {
+            "token": "<MASK_TOKEN>",
+            "token_id": 4,
+            "logprob": -34.9688,
+            "prob": 0.0
+          },
+          {
+            "token": "<CLS>",
+            "token_id": 2,
+            "logprob": -35.0938,
+            "prob": 0.0
+          },
+          {
+            "token": "<SEP>",
+            "token_id": 3,
+            "logprob": -35.2812,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "“",
+        "token_id": 4171,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 33,
+      "input_text": "“谢谢”里有多少个“谢”字？<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>“谢谢”里有一个“谢”字。完整的表达是“谢谢”，由两个字组成，第一个字是“谢”，第二个字是“",
+      "tokens": [
+        "“",
+        "谢",
+        "谢",
+        "”",
+        "里",
+        "有多",
+        "少",
+        "个",
+        "“",
+        "谢",
+        "”",
+        "字",
+        "？",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "“",
+        "谢",
+        "谢",
+        "”",
+        "里",
+        "有一个",
+        "“",
+        "谢",
+        "”",
+        "字",
+        "。",
+        "完整的",
+        "表达",
+        "是",
+        "“",
+        "谢",
+        "谢",
+        "”，",
+        "由",
+        "两个",
+        "字",
+        "组成",
+        "，",
+        "第一个",
+        "字",
+        "是",
+        "“",
+        "谢",
+        "”，",
+        "第二个",
+        "字",
+        "是",
+        "“"
+      ],
+      "token_ids": [
+        4171,
+        34915,
+        34915,
+        3495,
+        5122,
+        135546,
+        8390,
+        4856,
+        4171,
+        34915,
+        3495,
+        8374,
+        33176,
+        255001,
+        255000,
+        255007,
+        4171,
+        34915,
+        34915,
+        3495,
+        5122,
+        96614,
+        4171,
+        34915,
+        3495,
+        8374,
+        1967,
+        152305,
+        77466,
+        2927,
+        4171,
+        34915,
+        34915,
+        20900,
+        4737,
+        29845,
+        8374,
+        33785,
+        1918,
+        71395,
+        8374,
+        2927,
+        4171,
+        34915,
+        20900,
+        176230,
+        8374,
+        2927,
+        4171
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "谢",
+            "token_id": 34915,
+            "logprob": -0.0001,
+            "prob": 1.0
+          },
+          {
+            "token": "謝",
+            "token_id": 45905,
+            "logprob": -8.9844,
+            "prob": 0.0001
+          },
+          {
+            "token": "感谢",
+            "token_id": 235422,
+            "logprob": -14.5625,
+            "prob": 0.0
+          },
+          {
+            "token": "<PAD>",
+            "token_id": 0,
+            "logprob": -33.4062,
+            "prob": 0.0
+          },
+          {
+            "token": "<EOS_TOKEN>",
+            "token_id": 6,
+            "logprob": -31.4531,
+            "prob": 0.0
+          },
+          {
+            "token": "<SEP>",
+            "token_id": 3,
+            "logprob": -33.5312,
+            "prob": 0.0
+          },
+          {
+            "token": "<BOS_TOKEN>",
+            "token_id": 5,
+            "logprob": -29.6094,
+            "prob": 0.0
+          },
+          {
+            "token": "<MASK_TOKEN>",
+            "token_id": 4,
+            "logprob": -33.7188,
+            "prob": 0.0
+          },
+          {
+            "token": "<UNK>",
+            "token_id": 1,
+            "logprob": -31.5625,
+            "prob": 0.0
+          },
+          {
+            "token": "<CLS>",
+            "token_id": 2,
+            "logprob": -33.8438,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "谢",
+        "token_id": 34915,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 34,
+      "input_text": "“谢谢”里有多少个“谢”字？<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>“谢谢”里有一个“谢”字。完整的表达是“谢谢”，由两个字组成，第一个字是“谢”，第二个字是“谢",
+      "tokens": [
+        "“",
+        "谢",
+        "谢",
+        "”",
+        "里",
+        "有多",
+        "少",
+        "个",
+        "“",
+        "谢",
+        "”",
+        "字",
+        "？",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "“",
+        "谢",
+        "谢",
+        "”",
+        "里",
+        "有一个",
+        "“",
+        "谢",
+        "”",
+        "字",
+        "。",
+        "完整的",
+        "表达",
+        "是",
+        "“",
+        "谢",
+        "谢",
+        "”，",
+        "由",
+        "两个",
+        "字",
+        "组成",
+        "，",
+        "第一个",
+        "字",
+        "是",
+        "“",
+        "谢",
+        "”，",
+        "第二个",
+        "字",
+        "是",
+        "“",
+        "谢"
+      ],
+      "token_ids": [
+        4171,
+        34915,
+        34915,
+        3495,
+        5122,
+        135546,
+        8390,
+        4856,
+        4171,
+        34915,
+        3495,
+        8374,
+        33176,
+        255001,
+        255000,
+        255007,
+        4171,
+        34915,
+        34915,
+        3495,
+        5122,
+        96614,
+        4171,
+        34915,
+        3495,
+        8374,
+        1967,
+        152305,
+        77466,
+        2927,
+        4171,
+        34915,
+        34915,
+        20900,
+        4737,
+        29845,
+        8374,
+        33785,
+        1918,
+        71395,
+        8374,
+        2927,
+        4171,
+        34915,
+        20900,
+        176230,
+        8374,
+        2927,
+        4171,
+        34915
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "”。",
+            "token_id": 18443,
+            "logprob": -0.1251,
+            "prob": 0.8823
+          },
+          {
+            "token": "”",
+            "token_id": 3495,
+            "logprob": -2.1875,
+            "prob": 0.1122
+          },
+          {
+            "token": "”，",
+            "token_id": 20900,
+            "logprob": -5.2656,
+            "prob": 0.0052
+          },
+          {
+            "token": "”（",
+            "token_id": 49061,
+            "logprob": -8.7812,
+            "prob": 0.0002
+          },
+          {
+            "token": "\"。",
+            "token_id": 188135,
+            "logprob": -9.9844,
+            "prob": 0.0
+          },
+          {
+            "token": "”；",
+            "token_id": 166546,
+            "logprob": -11.9375,
+            "prob": 0.0
+          },
+          {
+            "token": "。”",
+            "token_id": 32684,
+            "logprob": -12.8203,
+            "prob": 0.0
+          },
+          {
+            "token": "”，“",
+            "token_id": 163432,
+            "logprob": -12.8828,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġ”",
+            "token_id": 73060,
+            "logprob": -12.9297,
+            "prob": 0.0
+          },
+          {
+            "token": "”.",
+            "token_id": 13094,
+            "logprob": -12.9609,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "”。",
+        "token_id": 18443,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 35,
+      "input_text": "“谢谢”里有多少个“谢”字？<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>“谢谢”里有一个“谢”字。完整的表达是“谢谢”，由两个字组成，第一个字是“谢”，第二个字是“谢”。",
+      "tokens": [
+        "“",
+        "谢",
+        "谢",
+        "”",
+        "里",
+        "有多",
+        "少",
+        "个",
+        "“",
+        "谢",
+        "”",
+        "字",
+        "？",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "“",
+        "谢",
+        "谢",
+        "”",
+        "里",
+        "有一个",
+        "“",
+        "谢",
+        "”",
+        "字",
+        "。",
+        "完整的",
+        "表达",
+        "是",
+        "“",
+        "谢",
+        "谢",
+        "”，",
+        "由",
+        "两个",
+        "字",
+        "组成",
+        "，",
+        "第一个",
+        "字",
+        "是",
+        "“",
+        "谢",
+        "”，",
+        "第二个",
+        "字",
+        "是",
+        "“",
+        "谢",
+        "”。"
+      ],
+      "token_ids": [
+        4171,
+        34915,
+        34915,
+        3495,
+        5122,
+        135546,
+        8390,
+        4856,
+        4171,
+        34915,
+        3495,
+        8374,
+        33176,
+        255001,
+        255000,
+        255007,
+        4171,
+        34915,
+        34915,
+        3495,
+        5122,
+        96614,
+        4171,
+        34915,
+        3495,
+        8374,
+        1967,
+        152305,
+        77466,
+        2927,
+        4171,
+        34915,
+        34915,
+        20900,
+        4737,
+        29845,
+        8374,
+        33785,
+        1918,
+        71395,
+        8374,
+        2927,
+        4171,
+        34915,
+        20900,
+        176230,
+        8374,
+        2927,
+        4171,
+        34915,
+        18443
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "这个",
+            "token_id": 25432,
+            "logprob": -1.0498,
+            "prob": 0.3501
+          },
+          {
+            "token": "这",
+            "token_id": 6710,
+            "logprob": -1.7842,
+            "prob": 0.168
+          },
+          {
+            "token": "这里",
+            "token_id": 100007,
+            "logprob": -2.127,
+            "prob": 0.1191
+          },
+          {
+            "token": "虽然",
+            "token_id": 35109,
+            "logprob": -2.7051,
+            "prob": 0.0668
+          },
+          {
+            "token": "\n",
+            "token_id": 206,
+            "logprob": -2.9316,
+            "prob": 0.0533
+          },
+          {
+            "token": "在",
+            "token_id": 2648,
+            "logprob": -3.0645,
+            "prob": 0.0466
+          },
+          {
+            "token": "“",
+            "token_id": 4171,
+            "logprob": -3.4316,
+            "prob": 0.0323
+          },
+          {
+            "token": "实际上",
+            "token_id": 85037,
+            "logprob": -3.7129,
+            "prob": 0.0244
+          },
+          {
+            "token": "尽管",
+            "token_id": 55032,
+            "logprob": -4.0195,
+            "prob": 0.018
+          },
+          {
+            "token": "在这个",
+            "token_id": 191676,
+            "logprob": -4.1992,
+            "prob": 0.015
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "这个",
+        "token_id": 25432,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 36,
+      "input_text": "“谢谢”里有多少个“谢”字？<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>“谢谢”里有一个“谢”字。完整的表达是“谢谢”，由两个字组成，第一个字是“谢”，第二个字是“谢”。这个",
+      "tokens": [
+        "“",
+        "谢",
+        "谢",
+        "”",
+        "里",
+        "有多",
+        "少",
+        "个",
+        "“",
+        "谢",
+        "”",
+        "字",
+        "？",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "“",
+        "谢",
+        "谢",
+        "”",
+        "里",
+        "有一个",
+        "“",
+        "谢",
+        "”",
+        "字",
+        "。",
+        "完整的",
+        "表达",
+        "是",
+        "“",
+        "谢",
+        "谢",
+        "”，",
+        "由",
+        "两个",
+        "字",
+        "组成",
+        "，",
+        "第一个",
+        "字",
+        "是",
+        "“",
+        "谢",
+        "”，",
+        "第二个",
+        "字",
+        "是",
+        "“",
+        "谢",
+        "”。",
+        "这个"
+      ],
+      "token_ids": [
+        4171,
+        34915,
+        34915,
+        3495,
+        5122,
+        135546,
+        8390,
+        4856,
+        4171,
+        34915,
+        3495,
+        8374,
+        33176,
+        255001,
+        255000,
+        255007,
+        4171,
+        34915,
+        34915,
+        3495,
+        5122,
+        96614,
+        4171,
+        34915,
+        3495,
+        8374,
+        1967,
+        152305,
+        77466,
+        2927,
+        4171,
+        34915,
+        34915,
+        20900,
+        4737,
+        29845,
+        8374,
+        33785,
+        1918,
+        71395,
+        8374,
+        2927,
+        4171,
+        34915,
+        20900,
+        176230,
+        8374,
+        2927,
+        4171,
+        34915,
+        18443,
+        25432
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "短",
+            "token_id": 17655,
+            "logprob": -0.5791,
+            "prob": 0.5605
+          },
+          {
+            "token": "词",
+            "token_id": 20808,
+            "logprob": -0.9229,
+            "prob": 0.3975
+          },
+          {
+            "token": "成",
+            "token_id": 3457,
+            "logprob": -3.4375,
+            "prob": 0.0321
+          },
+          {
+            "token": "表达",
+            "token_id": 77466,
+            "logprob": -4.7969,
+            "prob": 0.0082
+          },
+          {
+            "token": "词汇",
+            "token_id": 173226,
+            "logprob": -7.4453,
+            "prob": 0.0006
+          },
+          {
+            "token": "习",
+            "token_id": 25769,
+            "logprob": -8.3438,
+            "prob": 0.0002
+          },
+          {
+            "token": "句",
+            "token_id": 39250,
+            "logprob": -8.8359,
+            "prob": 0.0001
+          },
+          {
+            "token": "语",
+            "token_id": 9761,
+            "logprob": -9.1562,
+            "prob": 0.0001
+          },
+          {
+            "token": "�",
+            "token_id": 3599,
+            "logprob": -9.5781,
+            "prob": 0.0001
+          },
+          {
+            "token": "�",
+            "token_id": 6324,
+            "logprob": -9.5859,
+            "prob": 0.0001
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "短",
+        "token_id": 17655,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 37,
+      "input_text": "“谢谢”里有多少个“谢”字？<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>“谢谢”里有一个“谢”字。完整的表达是“谢谢”，由两个字组成，第一个字是“谢”，第二个字是“谢”。这个短",
+      "tokens": [
+        "“",
+        "谢",
+        "谢",
+        "”",
+        "里",
+        "有多",
+        "少",
+        "个",
+        "“",
+        "谢",
+        "”",
+        "字",
+        "？",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "“",
+        "谢",
+        "谢",
+        "”",
+        "里",
+        "有一个",
+        "“",
+        "谢",
+        "”",
+        "字",
+        "。",
+        "完整的",
+        "表达",
+        "是",
+        "“",
+        "谢",
+        "谢",
+        "”，",
+        "由",
+        "两个",
+        "字",
+        "组成",
+        "，",
+        "第一个",
+        "字",
+        "是",
+        "“",
+        "谢",
+        "”，",
+        "第二个",
+        "字",
+        "是",
+        "“",
+        "谢",
+        "”。",
+        "这个",
+        "短"
+      ],
+      "token_ids": [
+        4171,
+        34915,
+        34915,
+        3495,
+        5122,
+        135546,
+        8390,
+        4856,
+        4171,
+        34915,
+        3495,
+        8374,
+        33176,
+        255001,
+        255000,
+        255007,
+        4171,
+        34915,
+        34915,
+        3495,
+        5122,
+        96614,
+        4171,
+        34915,
+        3495,
+        8374,
+        1967,
+        152305,
+        77466,
+        2927,
+        4171,
+        34915,
+        34915,
+        20900,
+        4737,
+        29845,
+        8374,
+        33785,
+        1918,
+        71395,
+        8374,
+        2927,
+        4171,
+        34915,
+        20900,
+        176230,
+        8374,
+        2927,
+        4171,
+        34915,
+        18443,
+        25432,
+        17655
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "语",
+            "token_id": 9761,
+            "logprob": -0.0045,
+            "prob": 0.9956
+          },
+          {
+            "token": "语中",
+            "token_id": 239213,
+            "logprob": -5.8789,
+            "prob": 0.0028
+          },
+          {
+            "token": "语的",
+            "token_id": 117254,
+            "logprob": -7.2227,
+            "prob": 0.0007
+          },
+          {
+            "token": "语和",
+            "token_id": 238258,
+            "logprob": -7.2227,
+            "prob": 0.0007
+          },
+          {
+            "token": "語",
+            "token_id": 9553,
+            "logprob": -8.7266,
+            "prob": 0.0002
+          },
+          {
+            "token": "句",
+            "token_id": 39250,
+            "logprob": -9.9766,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġngữ",
+            "token_id": 30213,
+            "logprob": -12.0625,
+            "prob": 0.0
+          },
+          {
+            "token": "語で",
+            "token_id": 177923,
+            "logprob": -12.1406,
+            "prob": 0.0
+          },
+          {
+            "token": "語の",
+            "token_id": 117773,
+            "logprob": -13.3516,
+            "prob": 0.0
+          },
+          {
+            "token": "어를",
+            "token_id": 72866,
+            "logprob": -13.3672,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "语",
+        "token_id": 9761,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 38,
+      "input_text": "“谢谢”里有多少个“谢”字？<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>“谢谢”里有一个“谢”字。完整的表达是“谢谢”，由两个字组成，第一个字是“谢”，第二个字是“谢”。这个短语",
+      "tokens": [
+        "“",
+        "谢",
+        "谢",
+        "”",
+        "里",
+        "有多",
+        "少",
+        "个",
+        "“",
+        "谢",
+        "”",
+        "字",
+        "？",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "“",
+        "谢",
+        "谢",
+        "”",
+        "里",
+        "有一个",
+        "“",
+        "谢",
+        "”",
+        "字",
+        "。",
+        "完整的",
+        "表达",
+        "是",
+        "“",
+        "谢",
+        "谢",
+        "”，",
+        "由",
+        "两个",
+        "字",
+        "组成",
+        "，",
+        "第一个",
+        "字",
+        "是",
+        "“",
+        "谢",
+        "”，",
+        "第二个",
+        "字",
+        "是",
+        "“",
+        "谢",
+        "”。",
+        "这个",
+        "短",
+        "语"
+      ],
+      "token_ids": [
+        4171,
+        34915,
+        34915,
+        3495,
+        5122,
+        135546,
+        8390,
+        4856,
+        4171,
+        34915,
+        3495,
+        8374,
+        33176,
+        255001,
+        255000,
+        255007,
+        4171,
+        34915,
+        34915,
+        3495,
+        5122,
+        96614,
+        4171,
+        34915,
+        3495,
+        8374,
+        1967,
+        152305,
+        77466,
+        2927,
+        4171,
+        34915,
+        34915,
+        20900,
+        4737,
+        29845,
+        8374,
+        33785,
+        1918,
+        71395,
+        8374,
+        2927,
+        4171,
+        34915,
+        20900,
+        176230,
+        8374,
+        2927,
+        4171,
+        34915,
+        18443,
+        25432,
+        17655,
+        9761
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "通常",
+            "token_id": 23479,
+            "logprob": -0.7627,
+            "prob": 0.4666
+          },
+          {
+            "token": "表达",
+            "token_id": 77466,
+            "logprob": -1.3564,
+            "prob": 0.2576
+          },
+          {
+            "token": "表示",
+            "token_id": 15628,
+            "logprob": -1.8408,
+            "prob": 0.1587
+          },
+          {
+            "token": "用来",
+            "token_id": 74328,
+            "logprob": -3.2773,
+            "prob": 0.0377
+          },
+          {
+            "token": "是",
+            "token_id": 2927,
+            "logprob": -3.5273,
+            "prob": 0.0294
+          },
+          {
+            "token": "常",
+            "token_id": 7185,
+            "logprob": -4.457,
+            "prob": 0.0116
+          },
+          {
+            "token": "用于",
+            "token_id": 33117,
+            "logprob": -4.4648,
+            "prob": 0.0115
+          },
+          {
+            "token": "是一种",
+            "token_id": 54862,
+            "logprob": -5.3867,
+            "prob": 0.0046
+          },
+          {
+            "token": "一般",
+            "token_id": 20409,
+            "logprob": -5.4727,
+            "prob": 0.0042
+          },
+          {
+            "token": "通常是",
+            "token_id": 150185,
+            "logprob": -5.582,
+            "prob": 0.0038
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "通常",
+        "token_id": 23479,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 39,
+      "input_text": "“谢谢”里有多少个“谢”字？<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>“谢谢”里有一个“谢”字。完整的表达是“谢谢”，由两个字组成，第一个字是“谢”，第二个字是“谢”。这个短语通常",
+      "tokens": [
+        "“",
+        "谢",
+        "谢",
+        "”",
+        "里",
+        "有多",
+        "少",
+        "个",
+        "“",
+        "谢",
+        "”",
+        "字",
+        "？",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "“",
+        "谢",
+        "谢",
+        "”",
+        "里",
+        "有一个",
+        "“",
+        "谢",
+        "”",
+        "字",
+        "。",
+        "完整的",
+        "表达",
+        "是",
+        "“",
+        "谢",
+        "谢",
+        "”，",
+        "由",
+        "两个",
+        "字",
+        "组成",
+        "，",
+        "第一个",
+        "字",
+        "是",
+        "“",
+        "谢",
+        "”，",
+        "第二个",
+        "字",
+        "是",
+        "“",
+        "谢",
+        "”。",
+        "这个",
+        "短",
+        "语",
+        "通常"
+      ],
+      "token_ids": [
+        4171,
+        34915,
+        34915,
+        3495,
+        5122,
+        135546,
+        8390,
+        4856,
+        4171,
+        34915,
+        3495,
+        8374,
+        33176,
+        255001,
+        255000,
+        255007,
+        4171,
+        34915,
+        34915,
+        3495,
+        5122,
+        96614,
+        4171,
+        34915,
+        3495,
+        8374,
+        1967,
+        152305,
+        77466,
+        2927,
+        4171,
+        34915,
+        34915,
+        20900,
+        4737,
+        29845,
+        8374,
+        33785,
+        1918,
+        71395,
+        8374,
+        2927,
+        4171,
+        34915,
+        20900,
+        176230,
+        8374,
+        2927,
+        4171,
+        34915,
+        18443,
+        25432,
+        17655,
+        9761,
+        23479
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "用于",
+            "token_id": 33117,
+            "logprob": -0.73,
+            "prob": 0.4819
+          },
+          {
+            "token": "用来",
+            "token_id": 74328,
+            "logprob": -0.7456,
+            "prob": 0.4744
+          },
+          {
+            "token": "表示",
+            "token_id": 15628,
+            "logprob": -3.1992,
+            "prob": 0.0408
+          },
+          {
+            "token": "表达",
+            "token_id": 77466,
+            "logprob": -6.5898,
+            "prob": 0.0014
+          },
+          {
+            "token": "用作",
+            "token_id": 82631,
+            "logprob": -7.0117,
+            "prob": 0.0009
+          },
+          {
+            "token": "用以",
+            "token_id": 124883,
+            "logprob": -8.3281,
+            "prob": 0.0002
+          },
+          {
+            "token": "用來",
+            "token_id": 129779,
+            "logprob": -9.0938,
+            "prob": 0.0001
+          },
+          {
+            "token": "用於",
+            "token_id": 73417,
+            "logprob": -10.8203,
+            "prob": 0.0
+          },
+          {
+            "token": "用",
+            "token_id": 3886,
+            "logprob": -11.0312,
+            "prob": 0.0
+          },
+          {
+            "token": "用在",
+            "token_id": 208570,
+            "logprob": -11.0469,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "用于",
+        "token_id": 33117,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 40,
+      "input_text": "“谢谢”里有多少个“谢”字？<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>“谢谢”里有一个“谢”字。完整的表达是“谢谢”，由两个字组成，第一个字是“谢”，第二个字是“谢”。这个短语通常用于",
+      "tokens": [
+        "“",
+        "谢",
+        "谢",
+        "”",
+        "里",
+        "有多",
+        "少",
+        "个",
+        "“",
+        "谢",
+        "”",
+        "字",
+        "？",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "“",
+        "谢",
+        "谢",
+        "”",
+        "里",
+        "有一个",
+        "“",
+        "谢",
+        "”",
+        "字",
+        "。",
+        "完整的",
+        "表达",
+        "是",
+        "“",
+        "谢",
+        "谢",
+        "”，",
+        "由",
+        "两个",
+        "字",
+        "组成",
+        "，",
+        "第一个",
+        "字",
+        "是",
+        "“",
+        "谢",
+        "”，",
+        "第二个",
+        "字",
+        "是",
+        "“",
+        "谢",
+        "”。",
+        "这个",
+        "短",
+        "语",
+        "通常",
+        "用于"
+      ],
+      "token_ids": [
+        4171,
+        34915,
+        34915,
+        3495,
+        5122,
+        135546,
+        8390,
+        4856,
+        4171,
+        34915,
+        3495,
+        8374,
+        33176,
+        255001,
+        255000,
+        255007,
+        4171,
+        34915,
+        34915,
+        3495,
+        5122,
+        96614,
+        4171,
+        34915,
+        3495,
+        8374,
+        1967,
+        152305,
+        77466,
+        2927,
+        4171,
+        34915,
+        34915,
+        20900,
+        4737,
+        29845,
+        8374,
+        33785,
+        1918,
+        71395,
+        8374,
+        2927,
+        4171,
+        34915,
+        20900,
+        176230,
+        8374,
+        2927,
+        4171,
+        34915,
+        18443,
+        25432,
+        17655,
+        9761,
+        23479,
+        33117
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "表示",
+            "token_id": 15628,
+            "logprob": -0.3892,
+            "prob": 0.6777
+          },
+          {
+            "token": "表达",
+            "token_id": 77466,
+            "logprob": -1.1387,
+            "prob": 0.3201
+          },
+          {
+            "token": "感谢",
+            "token_id": 235422,
+            "logprob": -6.5625,
+            "prob": 0.0014
+          },
+          {
+            "token": "对",
+            "token_id": 6286,
+            "logprob": -7.875,
+            "prob": 0.0004
+          },
+          {
+            "token": "向",
+            "token_id": 7425,
+            "logprob": -8.9531,
+            "prob": 0.0001
+          },
+          {
+            "token": "表",
+            "token_id": 4828,
+            "logprob": -8.9844,
+            "prob": 0.0001
+          },
+          {
+            "token": "表明",
+            "token_id": 60833,
+            "logprob": -10.0469,
+            "prob": 0.0
+          },
+          {
+            "token": "感",
+            "token_id": 12463,
+            "logprob": -10.2031,
+            "prob": 0.0
+          },
+          {
+            "token": "表现",
+            "token_id": 53088,
+            "logprob": -10.4609,
+            "prob": 0.0
+          },
+          {
+            "token": "表達",
+            "token_id": 145134,
+            "logprob": -10.5391,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "表示",
+        "token_id": 15628,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 41,
+      "input_text": "“谢谢”里有多少个“谢”字？<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>“谢谢”里有一个“谢”字。完整的表达是“谢谢”，由两个字组成，第一个字是“谢”，第二个字是“谢”。这个短语通常用于表示",
+      "tokens": [
+        "“",
+        "谢",
+        "谢",
+        "”",
+        "里",
+        "有多",
+        "少",
+        "个",
+        "“",
+        "谢",
+        "”",
+        "字",
+        "？",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "“",
+        "谢",
+        "谢",
+        "”",
+        "里",
+        "有一个",
+        "“",
+        "谢",
+        "”",
+        "字",
+        "。",
+        "完整的",
+        "表达",
+        "是",
+        "“",
+        "谢",
+        "谢",
+        "”，",
+        "由",
+        "两个",
+        "字",
+        "组成",
+        "，",
+        "第一个",
+        "字",
+        "是",
+        "“",
+        "谢",
+        "”，",
+        "第二个",
+        "字",
+        "是",
+        "“",
+        "谢",
+        "”。",
+        "这个",
+        "短",
+        "语",
+        "通常",
+        "用于",
+        "表示"
+      ],
+      "token_ids": [
+        4171,
+        34915,
+        34915,
+        3495,
+        5122,
+        135546,
+        8390,
+        4856,
+        4171,
+        34915,
+        3495,
+        8374,
+        33176,
+        255001,
+        255000,
+        255007,
+        4171,
+        34915,
+        34915,
+        3495,
+        5122,
+        96614,
+        4171,
+        34915,
+        3495,
+        8374,
+        1967,
+        152305,
+        77466,
+        2927,
+        4171,
+        34915,
+        34915,
+        20900,
+        4737,
+        29845,
+        8374,
+        33785,
+        1918,
+        71395,
+        8374,
+        2927,
+        4171,
+        34915,
+        20900,
+        176230,
+        8374,
+        2927,
+        4171,
+        34915,
+        18443,
+        25432,
+        17655,
+        9761,
+        23479,
+        33117,
+        15628
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "感谢",
+            "token_id": 235422,
+            "logprob": -0.4404,
+            "prob": 0.6436
+          },
+          {
+            "token": "感",
+            "token_id": 12463,
+            "logprob": -1.0342,
+            "prob": 0.3555
+          },
+          {
+            "token": "对",
+            "token_id": 6286,
+            "logprob": -8.4844,
+            "prob": 0.0002
+          },
+          {
+            "token": "感謝",
+            "token_id": 166498,
+            "logprob": -8.7031,
+            "prob": 0.0002
+          },
+          {
+            "token": "谢",
+            "token_id": 34915,
+            "logprob": -8.9219,
+            "prob": 0.0001
+          },
+          {
+            "token": "감",
+            "token_id": 28970,
+            "logprob": -10.2578,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġagrad",
+            "token_id": 82933,
+            "logprob": -10.5391,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġ감사",
+            "token_id": 225632,
+            "logprob": -10.5625,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġ감",
+            "token_id": 19152,
+            "logprob": -11.1484,
+            "prob": 0.0
+          },
+          {
+            "token": "对他",
+            "token_id": 208443,
+            "logprob": -11.1484,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "感谢",
+        "token_id": 235422,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 42,
+      "input_text": "“谢谢”里有多少个“谢”字？<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>“谢谢”里有一个“谢”字。完整的表达是“谢谢”，由两个字组成，第一个字是“谢”，第二个字是“谢”。这个短语通常用于表示感谢",
+      "tokens": [
+        "“",
+        "谢",
+        "谢",
+        "”",
+        "里",
+        "有多",
+        "少",
+        "个",
+        "“",
+        "谢",
+        "”",
+        "字",
+        "？",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "“",
+        "谢",
+        "谢",
+        "”",
+        "里",
+        "有一个",
+        "“",
+        "谢",
+        "”",
+        "字",
+        "。",
+        "完整的",
+        "表达",
+        "是",
+        "“",
+        "谢",
+        "谢",
+        "”，",
+        "由",
+        "两个",
+        "字",
+        "组成",
+        "，",
+        "第一个",
+        "字",
+        "是",
+        "“",
+        "谢",
+        "”，",
+        "第二个",
+        "字",
+        "是",
+        "“",
+        "谢",
+        "”。",
+        "这个",
+        "短",
+        "语",
+        "通常",
+        "用于",
+        "表示",
+        "感谢"
+      ],
+      "token_ids": [
+        4171,
+        34915,
+        34915,
+        3495,
+        5122,
+        135546,
+        8390,
+        4856,
+        4171,
+        34915,
+        3495,
+        8374,
+        33176,
+        255001,
+        255000,
+        255007,
+        4171,
+        34915,
+        34915,
+        3495,
+        5122,
+        96614,
+        4171,
+        34915,
+        3495,
+        8374,
+        1967,
+        152305,
+        77466,
+        2927,
+        4171,
+        34915,
+        34915,
+        20900,
+        4737,
+        29845,
+        8374,
+        33785,
+        1918,
+        71395,
+        8374,
+        2927,
+        4171,
+        34915,
+        20900,
+        176230,
+        8374,
+        2927,
+        4171,
+        34915,
+        18443,
+        25432,
+        17655,
+        9761,
+        23479,
+        33117,
+        15628,
+        235422
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "。",
+            "token_id": 1967,
+            "logprob": -0.3911,
+            "prob": 0.6763
+          },
+          {
+            "token": "或",
+            "token_id": 7883,
+            "logprob": -1.1416,
+            "prob": 0.3193
+          },
+          {
+            "token": "和",
+            "token_id": 3106,
+            "logprob": -6.3438,
+            "prob": 0.0018
+          },
+          {
+            "token": "或者",
+            "token_id": 44810,
+            "logprob": -6.5938,
+            "prob": 0.0014
+          },
+          {
+            "token": "，",
+            "token_id": 1918,
+            "logprob": -7.2656,
+            "prob": 0.0007
+          },
+          {
+            "token": "、",
+            "token_id": 2066,
+            "logprob": -9.0312,
+            "prob": 0.0001
+          },
+          {
+            "token": "或是",
+            "token_id": 58787,
+            "logprob": -9.6641,
+            "prob": 0.0001
+          },
+          {
+            "token": "对方",
+            "token_id": 111418,
+            "logprob": -9.8516,
+            "prob": 0.0001
+          },
+          {
+            "token": "或其他",
+            "token_id": 158592,
+            "logprob": -9.9062,
+            "prob": 0.0
+          },
+          {
+            "token": "。“",
+            "token_id": 112713,
+            "logprob": -10.2578,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "。",
+        "token_id": 1967,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 43,
+      "input_text": "“谢谢”里有多少个“谢”字？<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>“谢谢”里有一个“谢”字。完整的表达是“谢谢”，由两个字组成，第一个字是“谢”，第二个字是“谢”。这个短语通常用于表示感谢。",
+      "tokens": [
+        "“",
+        "谢",
+        "谢",
+        "”",
+        "里",
+        "有多",
+        "少",
+        "个",
+        "“",
+        "谢",
+        "”",
+        "字",
+        "？",
+        "<|END_OF_TURN_TOKEN|>",
+        "<|START_OF_TURN_TOKEN|>",
+        "<|CHATBOT_TOKEN|>",
+        "“",
+        "谢",
+        "谢",
+        "”",
+        "里",
+        "有一个",
+        "“",
+        "谢",
+        "”",
+        "字",
+        "。",
+        "完整的",
+        "表达",
+        "是",
+        "“",
+        "谢",
+        "谢",
+        "”，",
+        "由",
+        "两个",
+        "字",
+        "组成",
+        "，",
+        "第一个",
+        "字",
+        "是",
+        "“",
+        "谢",
+        "”，",
+        "第二个",
+        "字",
+        "是",
+        "“",
+        "谢",
+        "”。",
+        "这个",
+        "短",
+        "语",
+        "通常",
+        "用于",
+        "表示",
+        "感谢",
+        "。"
+      ],
+      "token_ids": [
+        4171,
+        34915,
+        34915,
+        3495,
+        5122,
+        135546,
+        8390,
+        4856,
+        4171,
+        34915,
+        3495,
+        8374,
+        33176,
+        255001,
+        255000,
+        255007,
+        4171,
+        34915,
+        34915,
+        3495,
+        5122,
+        96614,
+        4171,
+        34915,
+        3495,
+        8374,
+        1967,
+        152305,
+        77466,
+        2927,
+        4171,
+        34915,
+        34915,
+        20900,
+        4737,
+        29845,
+        8374,
+        33785,
+        1918,
+        71395,
+        8374,
+        2927,
+        4171,
+        34915,
+        20900,
+        176230,
+        8374,
+        2927,
+        4171,
+        34915,
+        18443,
+        25432,
+        17655,
+        9761,
+        23479,
+        33117,
+        15628,
+        235422,
+        1967
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "<|END_OF_TURN_TOKEN|>",
+            "token_id": 255001,
+            "logprob": -0.0,
+            "prob": 1.0
+          },
+          {
+            "token": "\n",
+            "token_id": 206,
+            "logprob": -10.2812,
+            "prob": 0.0
+          },
+          {
+            "token": "所以",
+            "token_id": 28037,
+            "logprob": -12.1953,
+            "prob": 0.0
+          },
+          {
+            "token": "在",
+            "token_id": 2648,
+            "logprob": -13.1875,
+            "prob": 0.0
+          },
+          {
+            "token": "因此",
+            "token_id": 15464,
+            "logprob": -15.4297,
+            "prob": 0.0
+          },
+          {
+            "token": "虽然",
+            "token_id": 35109,
+            "logprob": -16.1562,
+            "prob": 0.0
+          },
+          {
+            "token": "如果",
+            "token_id": 28917,
+            "logprob": -16.0938,
+            "prob": 0.0
+          },
+          {
+            "token": "注意",
+            "token_id": 51756,
+            "logprob": -16.2656,
+            "prob": 0.0
+          },
+          {
+            "token": "例如",
+            "token_id": 26725,
+            "logprob": -16.5625,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġ\n",
+            "token_id": 1973,
+            "logprob": -17.0469,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "<|END_OF_TURN_TOKEN|>",
+        "token_id": 255001,
+        "selection_method": "greedy"
+      }
+    }
+  ]
+}
