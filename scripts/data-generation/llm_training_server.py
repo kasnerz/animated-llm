@@ -181,31 +181,32 @@ async def get_model_info():
 async def load_model_endpoint(request: LoadModelRequest):
     """Load a new model dynamically."""
     global tokenizer, model, display_model_name
-    
+
     logger.info(f"Loading new model: {request.model_id}")
     logger.info(f"Random weights: {request.random_weights}")
-    
+
     try:
         # Clear previous model from memory
         if model is not None:
             del model
             del tokenizer
             torch.cuda.empty_cache() if torch.cuda.is_available() else None
-        
+
         # Update config
         config_args.model = request.model_id
         config_args.random_weights = request.random_weights
-        
+
         # Load tokenizer
         tokenizer = AutoTokenizer.from_pretrained(
             request.model_id,
             use_fast=True,
             trust_remote_code=True,
         )
-        
+
         if request.random_weights:
             logger.info("Initializing random weights (Vanilla Transformer)...")
             from transformers import AutoConfig
+
             config = AutoConfig.from_pretrained(request.model_id)
             model = AutoModelForCausalLM.from_config(config)
             display_model_name = "Vanilla Transformer"
@@ -240,13 +241,13 @@ async def load_model_endpoint(request: LoadModelRequest):
 
         logger.info(f"Model loaded successfully: {display_model_name}")
         logger.info(f"Total parameters: {num_params:,}")
-        
+
         return {
             "status": "success",
             "model": display_model_name,
-            "message": f"Model loaded successfully"
+            "message": f"Model loaded successfully",
         }
-        
+
     except Exception as e:
         logger.error(f"Error loading model {request.model_id}: {e}")
         raise HTTPException(status_code=500, detail=f"Failed to load model: {str(e)}")
@@ -415,7 +416,7 @@ if __name__ == "__main__":
     parser.add_argument(
         "--port",
         type=int,
-        default=8666,
+        default=8712,
         help="Port to bind the server to",
     )
 
