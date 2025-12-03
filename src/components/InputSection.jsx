@@ -2,7 +2,7 @@ import { useApp } from '../contexts/AppContext';
 import { useI18n } from '../i18n/I18nProvider';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { getTokenColor } from '../visualization/core/colors';
-import { processTokenForText, isSpecialToken } from '../utils/tokenProcessing';
+import { processTokenForText, isSpecialTokenContextual } from '../utils/tokenProcessing';
 import { MODEL_REGISTRY, getModelInfo, getTemperatureEmoji } from '../config/modelConfig';
 import '../styles/main.css';
 import Icon from '@mdi/react';
@@ -147,7 +147,7 @@ function InputSection({ disableTokenization = false }) {
                       {tokens.map((token, index) => (
                         <span
                           key={index}
-                          className={`token-with-underline ${isSpecialToken(token) ? 'special-token' : ''}`}
+                          className={`token-with-underline ${isSpecialTokenContextual(token, index > 0 ? tokens[index - 1] : null) ? 'special-token' : ''}`}
                           style={{
                             borderBottom: `4px solid ${getTokenColor(index)}`,
                           }}

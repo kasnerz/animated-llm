@@ -1,7 +1,7 @@
 import { useEffect, useState, useRef, useMemo } from 'react';
 import { useApp } from '../contexts/AppContext';
 import { useI18n } from '../i18n/I18nProvider';
-import { processTokenForText, isSpecialToken } from '../utils/tokenProcessing';
+import { processTokenForText, isSpecialTokenContextual } from '../utils/tokenProcessing';
 import { getViridisColor } from '../utils/colorSchemes';
 import { LAYOUT } from '../visualization/core/constants';
 import { MODEL_REGISTRY, getModelInfo, getTemperatureEmoji } from '../config/modelConfig';
@@ -310,11 +310,12 @@ function GenerationSimpleView() {
                         : null;
                       const tokenId = tokenIds[i];
                       const style = getTokenStyle(isGenerated, genStep, tokenId);
+                      const prevTok = i > 0 ? tokens[i - 1] : null;
 
                       return (
                         <span
                           key={i}
-                          className={`io-token ${isSpecialToken(tok) ? 'special' : ''}`}
+                          className={`io-token ${isSpecialTokenContextual(tok, prevTok) ? 'special' : ''}`}
                           style={style}
                         >
                           {processTokenForText(tok)}

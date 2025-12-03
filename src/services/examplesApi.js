@@ -25,18 +25,12 @@ function buildDataUrl(path) {
   return normalizedBase + cleanPath;
 }
 
-/**
- * Check if a token is a special token that should be filtered out
- * Special tokens include: <BOS_TOKEN>, <EOS_TOKEN>, <|{TOKEN_NAME}|>
- * @param {string} token - Token to check
- * @returns {boolean} True if token should be filtered out
- */
-function isSpecialToken(token) {
-  if (!token || typeof token !== 'string') return false;
-
-  // Match <BOS_TOKEN>, <EOS_TOKEN>, or <|anything|>
-  return token === '<BOS_TOKEN>' || token === '<EOS_TOKEN>' || /^<\|.*\|>$/.test(token);
-}
+import {
+  isSpecialToken,
+  isChatStartMarker,
+  isChatEndMarker,
+  isChatRoleToken,
+} from '../utils/tokenProcessing.js';
 
 /**
  * Filter special tokens from a generation step
@@ -44,30 +38,53 @@ function isSpecialToken(token) {
  * @returns {Object} Filtered step
  */
 function filterStepTokens(step) {
-  if (!step || !step.tokens) return step;
+  if (!step || !Array.isArray(step.tokens)) return step;
 
-  const filteredIndices = [];
-  const filteredTokens = [];
-  const filteredTokenIds = [];
+  const keepIdx = [];
+  const tokens = step.tokens;
+  const ids = Array.isArray(step.token_ids) ? step.token_ids : null;
+  let i = 0;
+  while (i < tokens.length) {
+    const tok = tokens[i];
 
-  step.tokens.forEach((token, index) => {
-    if (!isSpecialToken(token)) {
-      filteredIndices.push(index);
-      filteredTokens.push(token);
-      if (step.token_ids && step.token_ids[index] !== undefined) {
-        filteredTokenIds.push(step.token_ids[index]);
+    // IMPORTANT: handle chat header sequences BEFORE generic special tokens,
+    // otherwise we'd skip only the start marker and leave the role visible.
+    // Drop chat header sequences such as:
+    //  - <|im_start|> user <|im_end|>
+    //  - <|start_header_id|> assistant <|end_header_id|>
+    if (isChatStartMarker(tok)) {
+      i += 1; // skip start marker
+      if (i < tokens.length && isChatRoleToken(tokens[i])) {
+        i += 1; // skip role token
       }
+      if (i < tokens.length && isChatEndMarker(tokens[i])) {
+        i += 1; // skip corresponding end marker
+      }
+      continue;
     }
-  });
+
+    // Drop standalone special tokens (markers like <|eot_id|>, <think>, etc.)
+    if (isSpecialToken(tok)) {
+      i += 1;
+      continue;
+    }
+
+    // Keep normal tokens
+    keepIdx.push(i);
+    i += 1;
+  }
+
+  const filteredTokens = keepIdx.map((k) => tokens[k]);
+  const filteredTokenIds = ids
+    ? keepIdx.map((k) => ids[k]).filter((v) => v !== undefined)
+    : step.token_ids;
 
   // Filter embeddings if they exist
   const filteredEmbeddings = {};
   if (step.embeddings) {
     for (const [key, embArray] of Object.entries(step.embeddings)) {
       if (Array.isArray(embArray)) {
-        filteredEmbeddings[key] = filteredIndices
-          .map((i) => embArray[i])
-          .filter((e) => e !== undefined);
+        filteredEmbeddings[key] = keepIdx.map((k) => embArray[k]).filter((e) => e !== undefined);
       }
     }
   }
@@ -78,6 +95,35 @@ function filterStepTokens(step) {
     token_ids: filteredTokenIds,
     embeddings: Object.keys(filteredEmbeddings).length > 0 ? filteredEmbeddings : step.embeddings,
   };
+}
+
+/**
+ * Filter an arbitrary token array (and optional ids) with the same chat-header logic.
+ */
+function filterTokenArray(tokens, tokenIds = null) {
+  if (!Array.isArray(tokens)) return { tokens, tokenIds };
+  const keepIdx = [];
+  let i = 0;
+  while (i < tokens.length) {
+    const tok = tokens[i];
+    if (isChatStartMarker(tok)) {
+      i += 1;
+      if (i < tokens.length && isChatRoleToken(tokens[i])) i += 1;
+      if (i < tokens.length && isChatEndMarker(tokens[i])) i += 1;
+      continue;
+    }
+    if (isSpecialToken(tok)) {
+      i += 1;
+      continue;
+    }
+    keepIdx.push(i);
+    i += 1;
+  }
+  const filteredTokens = keepIdx.map((k) => tokens[k]);
+  const filteredIds = Array.isArray(tokenIds)
+    ? keepIdx.map((k) => tokenIds[k]).filter((v) => v !== undefined)
+    : tokenIds;
+  return { tokens: filteredTokens, tokenIds: filteredIds };
 }
 
 /**
@@ -95,20 +141,12 @@ function filterSpecialTokens(data) {
     result.generation_steps = result.generation_steps.map(filterStepTokens);
   }
 
-  // Training data: filter top-level tokens and each training step
+  // Training data: filter top-level tokens and each training step (with chat-header logic)
   if (Array.isArray(result.tokens)) {
-    const topFilteredIdx = [];
-    const topTokens = [];
-    const topTokenIds = [];
-    result.tokens.forEach((tok, i) => {
-      if (!isSpecialToken(tok)) {
-        topFilteredIdx.push(i);
-        topTokens.push(tok);
-        if (Array.isArray(result.token_ids) && result.token_ids[i] !== undefined) {
-          topTokenIds.push(result.token_ids[i]);
-        }
-      }
-    });
+    const { tokens: topTokens, tokenIds: topTokenIds } = filterTokenArray(
+      result.tokens,
+      Array.isArray(result.token_ids) ? result.token_ids : null
+    );
     result.tokens = topTokens;
     if (Array.isArray(result.token_ids)) {
       result.token_ids = topTokenIds;
@@ -130,20 +168,12 @@ function filterSpecialTokens(data) {
         continue; // skip this step entirely
       }
       const newStep = { ...step };
-      // Filter input tokens
+      // Filter input tokens (with chat-header logic)
       if (Array.isArray(step.input_tokens)) {
-        const keepIdx = [];
-        const toks = [];
-        const ids = [];
-        step.input_tokens.forEach((tok, i) => {
-          if (!isSpecialToken(tok)) {
-            keepIdx.push(i);
-            toks.push(tok);
-            if (Array.isArray(step.input_token_ids) && step.input_token_ids[i] !== undefined) {
-              ids.push(step.input_token_ids[i]);
-            }
-          }
-        });
+        const { tokens: toks, tokenIds: ids } = filterTokenArray(
+          step.input_tokens,
+          Array.isArray(step.input_token_ids) ? step.input_token_ids : null
+        );
         newStep.input_tokens = toks;
         if (Array.isArray(step.input_token_ids)) {
           newStep.input_token_ids = ids;

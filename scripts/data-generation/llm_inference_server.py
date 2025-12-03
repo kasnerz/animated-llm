@@ -320,17 +320,28 @@ async def generate(request: GenerateRequest):
             prompt_token_count = prompt_only_ids.shape[1]
             chat_template_applied = True
 
-            # Find where the user message starts (to exclude system message from output)
-            # We'll tokenize with add_generation_prompt=False to get everything up to (but not including) assistant
+            # Find where the USER HEADER starts (to exclude only system, but keep user header markers)
+            # We'll tokenize with add_generation_prompt=False to get everything up to (but not including) assistant header.
             text_without_assistant = tokenizer.apply_chat_template(
                 messages, tokenize=False, add_generation_prompt=False
             )
-            # Find the user content in the formatted text
-            # The user content should appear after any system message
-            user_content_pos = text_without_assistant.find(request.prompt)
-            if user_content_pos > 0:
-                # Tokenize the portion before user content to find the index
-                prefix_text = text_without_assistant[:user_content_pos]
+            # Try to locate the user header start. Prefer explicit markers; fall back to content position.
+            header_start_pos = -1
+            # Common patterns for chat templates
+            possible_headers = [
+                "<|start_header_id|>user<|end_header_id|>",  # Llama 3.x style
+                "<|im_start|>user",  # ChatML style
+            ]
+            for pat in possible_headers:
+                idx = text_without_assistant.find(pat)
+                if idx != -1:
+                    header_start_pos = idx
+                    break
+            if header_start_pos == -1:
+                # Fallback: place start at the beginning of the user content so we at least include content
+                header_start_pos = text_without_assistant.find(request.prompt)
+            if header_start_pos > 0:
+                prefix_text = text_without_assistant[:header_start_pos]
                 prefix_ids = tokenizer(
                     prefix_text, return_tensors="pt", add_special_tokens=False
                 ).input_ids

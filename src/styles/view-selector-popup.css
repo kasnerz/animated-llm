@@ -43,6 +43,12 @@
   justify-content: center;
 }
 
+.view-current-icon-img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
 .view-current-label {
   line-height: 1;
   font-size: 1em;
@@ -154,8 +160,25 @@
   transition: color 0.2s ease;
 }
 
+.view-item-icon-img {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  opacity: 0.5;
+  transition: opacity 0.2s ease;
+}
+
 .view-item:hover .view-item-icon-svg {
   color: var(--accent-primary);
+}
+
+.view-item:hover .view-item-icon-img {
+  opacity: 1;
+}
+
+.view-item.active .view-item-icon-img {
+  opacity: 1;
 }
 
 .view-item.active .view-item-icon-svg {

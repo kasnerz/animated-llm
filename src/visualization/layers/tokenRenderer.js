@@ -6,7 +6,10 @@
  * It only depends on the data structure passed to it, not on any specific view logic
  */
 import { getTokenColor } from '../core/colors';
-import { processTokenForVisualization, isSpecialToken } from '../../utils/tokenProcessing';
+import {
+  processTokenForVisualization,
+  isSpecialTokenContextual,
+} from '../../utils/tokenProcessing';
 import { TOKEN, FONTS } from '../core/constants';
 
 /**
@@ -48,9 +51,10 @@ export function renderTokensLayer(
   }
 
   // Compute dynamic widths based on token length
-  const widths = visibleTokens.map((tok) => {
+  const widths = visibleTokens.map((tok, idx) => {
     if (tok === '...') return TOKEN.ELLIPSIS_WIDTH;
-    const special = isSpecialToken(tok);
+    const prevTok = idx > 0 ? visibleTokens[idx - 1] : null;
+    const special = isSpecialTokenContextual(tok, prevTok);
     const fontScale = special ? 0.6 : 1.0; // make special token text smaller
     const padding = special ? Math.max(2, TOKEN.HORIZ_PADDING * 0.3) : TOKEN.HORIZ_PADDING; // tighter LR padding
     const minWidth = special ? Math.max(20, TOKEN.MIN_BOX_WIDTH * 0.5) : TOKEN.MIN_BOX_WIDTH;
@@ -104,7 +108,8 @@ export function renderTokensLayer(
 
     const estimatedWidth = widths[i];
     const tokenColor = getTokenColor(actualIndex);
-    const isSpecial = isSpecialToken(token);
+    const prevToken = i > 0 ? visibleTokens[i - 1] : null;
+    const isSpecial = isSpecialTokenContextual(token, prevToken);
 
     // Token box (transparent background, or grey for special tokens)
     tokenG

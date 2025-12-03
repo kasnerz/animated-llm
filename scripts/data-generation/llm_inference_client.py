@@ -102,6 +102,65 @@ class LLMClient:
             apply_chat_template=True,
         )
 
+        # Post-process: remove any newline tokens/characters from generation steps
+        def _is_newline_token(tok: str) -> bool:
+            if tok is None:
+                return False
+            # Consider any token containing a newline as a newline token ("\n", "\n\n", "\r\n", etc.)
+            return "\n" in tok or "\r" in tok
+
+        def _strip_newlines(text: str) -> str:
+            if not isinstance(text, str):
+                return text
+            return text.replace("\r", "").replace("\n", "")
+
+        def _filter_step(step):
+            # Skip the entire step if the selected token is a newline
+            sel_tok = step.get("selected_token", {}).get("token")
+            if _is_newline_token(sel_tok):
+                return None
+
+            # Filter input tokens/token_ids by removing newline tokens
+            tokens = step.get("tokens") or []
+            token_ids = step.get("token_ids") or []
+            keep_idx = [i for i, t in enumerate(tokens) if not _is_newline_token(t)]
+            filtered_tokens = [tokens[i] for i in keep_idx]
+            filtered_token_ids = [token_ids[i] for i in keep_idx] if token_ids else token_ids
+
+            # Filter embeddings arrays if present
+            embeddings = step.get("embeddings")
+            filtered_embeddings = None
+            if isinstance(embeddings, dict):
+                filtered_embeddings = {}
+                for k, arr in embeddings.items():
+                    if isinstance(arr, list):
+                        filtered_embeddings[k] = [arr[i] for i in keep_idx if i < len(arr)]
+                    else:
+                        filtered_embeddings[k] = arr
+
+            # Strip newlines from input_text
+            input_text = _strip_newlines(step.get("input_text", ""))
+
+            new_step = dict(step)
+            new_step["tokens"] = filtered_tokens
+            if token_ids is not None:
+                new_step["token_ids"] = filtered_token_ids
+            new_step["input_text"] = input_text
+            if filtered_embeddings is not None:
+                new_step["embeddings"] = filtered_embeddings
+
+            return new_step
+
+        filtered_steps = []
+        for s in generation_data.get("generation_steps", []):
+            ns = _filter_step(s)
+            if ns is not None:
+                filtered_steps.append(ns)
+
+        # Re-index steps sequentially after filtering
+        for idx, s in enumerate(filtered_steps):
+            s["step"] = idx
+
         # Create the output structure
         if example_id is None:
             timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
@@ -114,7 +173,7 @@ class LLMClient:
             "temperature": temperature,
             "top_k": top_k,
             "model_info": model_info,
-            "generation_steps": generation_data["generation_steps"],
+            "generation_steps": filtered_steps,
         }
 
         return output

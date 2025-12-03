@@ -2,7 +2,7 @@
 
 # Configuration
 OUTPUT_DIR="../../public/data"
-SERVER_URL="http://localhost:8666"
+SERVER_URL="http://localhost:8712"
 
 # Model IDs from MODEL_REGISTRY
 # Prepend Vanilla Transformer option
@@ -10,8 +10,8 @@ MODELS=(
     "meta-llama/Llama-3.2-1B-Instruct:random"  # Vanilla Transformer with random weights
     "CohereForAI/aya-expanse-8b"
     "meta-llama/Llama-3.2-1B-Instruct"
-    "Qwen/Qwen2.5-3B-Instruct"
-    "allenai/OLMo-2-1124-7B-Instruct"
+    "Qwen/Qwen3-4B-Instruct-2507"
+    "allenai/Olmo-3-7B-Think"
     "openai-community/gpt2-xl"
 )
 

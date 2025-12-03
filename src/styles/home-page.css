@@ -154,9 +154,9 @@
 /* Icon wrapper - rounded circle */
 .item-icon-wrapper {
   flex-shrink: 0;
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  border-radius: 10%;
   background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
   display: flex;
   align-items: center;
@@ -167,6 +167,13 @@
 .item-icon-svg {
   color: white;
   filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.2));
+}
+
+.item-icon-img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  filter: brightness(0) invert(1) drop-shadow(0 1px 2px rgba(0, 0, 0, 0.2));
 }
 
 /* Item content */

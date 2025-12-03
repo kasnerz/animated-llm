@@ -4,7 +4,11 @@ import { useView } from '../contexts/ViewContext';
 import { VIEW_TYPES } from '../contexts/viewTypes';
 import { useI18n } from '../i18n/I18nProvider';
 import Icon from '@mdi/react';
-import { mdiChevronDown, mdiWeightLifter, mdiDumbbell, mdiForumOutline, mdiDrawPen } from '@mdi/js';
+import { mdiChevronDown } from '@mdi/js';
+import pretrainingSimpleIcon from '../assets/views/pretraining-simple-colored.png';
+import pretrainingModelIcon from '../assets/views/pretraining-model-colored.png';
+import decodingSimpleIcon from '../assets/views/decoding-simple-colored.png';
+import decodingModelIcon from '../assets/views/decoding-model-colored.png';
 import '../styles/view-selector-popup.css';
 
 /**
@@ -28,13 +32,13 @@ function ViewSelectorPopup() {
           id: VIEW_TYPES.TRAINING,
           titleKey: 'home_pretraining_model_title',
           path: '/pretraining-model',
-          icon: mdiWeightLifter,
+          icon: pretrainingModelIcon,
         },
         {
           id: VIEW_TYPES.PRETRAINING_SIMPLE,
           titleKey: 'home_pretraining_simple_title',
           path: '/pretraining-simple',
-          icon: mdiDumbbell,
+          icon: pretrainingSimpleIcon,
         },
       ],
     },
@@ -46,13 +50,13 @@ function ViewSelectorPopup() {
           id: VIEW_TYPES.TEXT_GENERATION,
           titleKey: 'home_generation_model_title',
           path: '/generation-model',
-          icon: mdiForumOutline,
+          icon: decodingModelIcon,
         },
         {
           id: VIEW_TYPES.DECODING,
           titleKey: 'home_generation_simple_title',
           path: '/generation-simple',
-          icon: mdiDrawPen,
+          icon: decodingSimpleIcon,
         },
       ],
     },
@@ -103,7 +107,7 @@ function ViewSelectorPopup() {
         aria-haspopup="true"
       >
         {currentViewInfo.icon && (
-          <Icon path={currentViewInfo.icon} size={0.9} className="view-current-icon" />
+          <img src={currentViewInfo.icon} alt="" className="view-current-icon-img" />
         )}
         <span className="view-current-label">{currentViewInfo.label}</span>
         <Icon path={mdiChevronDown} size={0.8} className={`view-chevron ${isOpen ? 'open' : ''}`} />
@@ -124,7 +128,7 @@ function ViewSelectorPopup() {
                       className={`view-item ${isActive ? 'active' : ''}`}
                       aria-current={isActive ? 'true' : 'false'}
                     >
-                      <Icon path={view.icon} size={1} className="view-item-icon-svg" />
+                      <img src={view.icon} alt="" className="view-item-icon-img" />
                       <span className="view-item-label">{t(view.titleKey)}</span>
                     </button>
                   );

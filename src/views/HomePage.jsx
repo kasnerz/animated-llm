@@ -1,11 +1,13 @@
 import { Link } from 'react-router-dom';
 import { useI18n } from '../i18n/I18nProvider';
 import { useApp } from '../contexts/AppContext';
-import Icon from '@mdi/react';
-import { mdiWeightLifter, mdiDumbbell, mdiForumOutline, mdiDrawPen } from '@mdi/js';
 import Logo from '../components/Logo';
 import LanguageSelector from '../components/LanguageSelector';
 import githubMark from '../assets/github-mark.png';
+import pretrainingSimpleIcon from '../assets/views/pretraining-simple.png';
+import pretrainingModelIcon from '../assets/views/pretraining-model.png';
+import decodingSimpleIcon from '../assets/views/decoding-simple.png';
+import decodingModelIcon from '../assets/views/decoding-model.png';
 import '../styles/home-page.css';
 
 /**
@@ -26,14 +28,14 @@ function HomePage() {
           titleKey: 'home_pretraining_simple_title',
           descriptionKey: 'home_pretraining_simple_desc',
           path: '/pretraining-simple',
-          icon: mdiDumbbell,
+          icon: pretrainingSimpleIcon,
         },
         {
           id: 'pretraining-model',
           titleKey: 'home_pretraining_model_title',
           descriptionKey: 'home_pretraining_model_desc',
           path: '/pretraining-model',
-          icon: mdiWeightLifter,
+          icon: pretrainingModelIcon,
         },
       ],
     },
@@ -47,14 +49,14 @@ function HomePage() {
           titleKey: 'home_generation_simple_title',
           descriptionKey: 'home_generation_simple_desc',
           path: '/generation-simple',
-          icon: mdiDrawPen,
+          icon: decodingSimpleIcon,
         },
         {
           id: 'generation-model',
           titleKey: 'home_generation_model_title',
           descriptionKey: 'home_generation_model_desc',
           path: '/generation-model',
-          icon: mdiForumOutline,
+          icon: decodingModelIcon,
         },
       ],
     },
@@ -106,7 +108,7 @@ function HomePage() {
                 {section.items.map((item) => (
                   <Link key={item.id} to={item.path} className="section-item">
                     <div className="item-icon-wrapper">
-                      <Icon path={item.icon} size={1.5} className="item-icon-svg" />
+                      <img src={item.icon} alt="" className="item-icon-img" />
                     </div>
                     <div className="item-content">
                       <h3 className="item-title">{t(item.titleKey)}</h3>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useApp } from '../contexts/AppContext';
 import { getTokenColor } from '../visualization/core/colors';
-import { processTokenForText, isSpecialToken } from '../utils/tokenProcessing';
+import { processTokenForText, isSpecialTokenContextual } from '../utils/tokenProcessing';
 import { useI18n } from '../i18n/I18nProvider';
 import '../styles/generated-answer.css';
 
@@ -30,7 +30,7 @@ function GeneratedAnswer() {
           {state.generatedTokens.map((tokenData, i) => (
             <span
               key={i}
-              className={`token-with-underline ${isSpecialToken(tokenData.token) ? 'special-token' : ''}`}
+              className={`token-with-underline ${isSpecialTokenContextual(tokenData.token, i > 0 ? state.generatedTokens[i - 1]?.token : null) ? 'special-token' : ''}`}
               style={{
                 borderBottom: `4px solid ${getTokenColor(tokenData.index)}`,
               }}
