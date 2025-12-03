@@ -25,6 +25,7 @@
   font-weight: 500;
   cursor: pointer;
   white-space: nowrap;
+  max-width: 100%;
 }
 
 .view-selector-button:hover {
@@ -199,8 +200,7 @@
 
 /* Hide view selector popup on mobile when hamburger menu is displayed */
 @media (max-width: 1000px) {
-  /* Show icon only on mobile, hide the label and chevron */
-  .view-current-label,
+  /* Show icon and label on mobile, hide only the chevron */
   .view-chevron {
     display: none;
   }
@@ -208,6 +208,15 @@
   .view-selector-button {
     padding: 0.5rem;
     min-width: auto;
+    max-width: calc(100vw - 170px);
+    /* Leave space for hamburger menu and margins */
+  }
+
+  .view-current-label {
+    font-size: 0.875rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 
   /* Adjust popup position for mobile */

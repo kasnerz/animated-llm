@@ -239,27 +239,29 @@ function InputSection({ disableTokenization = false }) {
                   <div className="settings-section">
                     <div className="settings-label">Model</div>
                     <div className="model-options">
-                      {MODEL_REGISTRY.map((entry, idx) => (
-                        <button
-                          key={idx}
-                          className={`model-option ${state.selectedModelIndex === idx ? 'selected' : ''}`}
-                          onClick={() => {
-                            actions.setSelectedModelIndex(idx);
-                            setIsSettingsOpen(false);
-                          }}
-                          title={getModelInfo(entry.pattern.toString())?.name || 'Model'}
-                          aria-label={`Model ${idx + 1}`}
-                        >
-                          <img
-                            src={
-                              new URL(`../assets/model-logos/${entry.logo}`, import.meta.url).href
-                            }
-                            alt=""
-                            className="model-logo"
-                          />
-                          <span className="model-size">{entry.name || entry.size}</span>
-                        </button>
-                      ))}
+                      {MODEL_REGISTRY.map((entry, idx) =>
+                        entry.decoding_view ? (
+                          <button
+                            key={idx}
+                            className={`model-option ${state.selectedModelIndex === idx ? 'selected' : ''}`}
+                            onClick={() => {
+                              actions.setSelectedModelIndex(idx);
+                              setIsSettingsOpen(false);
+                            }}
+                            title={getModelInfo(entry.pattern.toString())?.name || 'Model'}
+                            aria-label={`Model ${idx + 1}`}
+                          >
+                            <img
+                              src={
+                                new URL(`../assets/model-logos/${entry.logo}`, import.meta.url).href
+                              }
+                              alt=""
+                              className="model-logo"
+                            />
+                            <span className="model-size">{entry.name || entry.size}</span>
+                          </button>
+                        ) : null
+                      )}
                     </div>
                   </div>
                   <div className="settings-section">

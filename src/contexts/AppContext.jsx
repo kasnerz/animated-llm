@@ -9,6 +9,7 @@ import {
 } from 'react';
 import config from '../config';
 import * as examplesApi from '../services/examplesApi';
+import { MODEL_REGISTRY } from '../config/modelConfig';
 import { useThemeEffect } from '../hooks/useThemeEffect';
 import { TRAINING_STEPS, TEXT_GEN_STEPS } from '../visualization/core/constants';
 
@@ -557,10 +558,20 @@ export function AppProvider({ children, initialViewType = 'inference' }) {
           type: ActionTypes.LOAD_EXAMPLES_SUCCESS,
           payload: { examples },
         });
-
-        // Load first example by default
+        // Choose initial example depending on view and selected model
         if (examples.length > 0) {
-          loadExample(examples[0].id);
+          let initialId = examples[0].id;
+          if (state.viewType === 'training') {
+            const entry = MODEL_REGISTRY[state.selectedModelIndex];
+            const pattern = entry
+              ? typeof entry.pattern === 'string'
+                ? new RegExp(entry.pattern, 'i')
+                : entry.pattern
+              : null;
+            const match = examples.find((ex) => (pattern ? pattern.test(ex.model_id || '') : true));
+            if (match?.id) initialId = match.id;
+          }
+          loadExample(initialId);
         }
       } catch (error) {
         console.error('Error loading examples:', error);
@@ -570,7 +581,7 @@ export function AppProvider({ children, initialViewType = 'inference' }) {
         });
       }
     },
-    [state.viewType, loadExample]
+    [state.viewType, state.selectedModelIndex, loadExample]
   );
 
   /**

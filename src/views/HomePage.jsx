@@ -19,27 +19,6 @@ function HomePage() {
 
   const sections = [
     {
-      id: 'training',
-      titleKey: 'home_training_title',
-      descriptionKey: 'home_training_desc',
-      items: [
-        {
-          id: 'pretraining-simple',
-          titleKey: 'home_pretraining_simple_title',
-          descriptionKey: 'home_pretraining_simple_desc',
-          path: '/pretraining-simple',
-          icon: pretrainingSimpleIcon,
-        },
-        {
-          id: 'pretraining-model',
-          titleKey: 'home_pretraining_model_title',
-          descriptionKey: 'home_pretraining_model_desc',
-          path: '/pretraining-model',
-          icon: pretrainingModelIcon,
-        },
-      ],
-    },
-    {
       id: 'generation',
       titleKey: 'home_generation_title',
       descriptionKey: 'home_generation_desc',
@@ -57,6 +36,27 @@ function HomePage() {
           descriptionKey: 'home_generation_model_desc',
           path: '/generation-model',
           icon: decodingModelIcon,
+        },
+      ],
+    },
+    {
+      id: 'training',
+      titleKey: 'home_training_title',
+      descriptionKey: 'home_training_desc',
+      items: [
+        {
+          id: 'pretraining-simple',
+          titleKey: 'home_pretraining_simple_title',
+          descriptionKey: 'home_pretraining_simple_desc',
+          path: '/pretraining-simple',
+          icon: pretrainingSimpleIcon,
+        },
+        {
+          id: 'pretraining-model',
+          titleKey: 'home_pretraining_model_title',
+          descriptionKey: 'home_pretraining_model_desc',
+          path: '/pretraining-model',
+          icon: pretrainingModelIcon,
         },
       ],
     },

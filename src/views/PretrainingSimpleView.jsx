@@ -140,7 +140,11 @@ function PretrainingSimpleView() {
     return () => clearTimeout(timer);
   }, [state.isPlaying, subStep, state.currentExample, state.currentStep, actions]);
 
-  const currentModelEntry = MODEL_REGISTRY[state.selectedModelIndex];
+  // Get current model info for displaying in transformer box
+  // If the selected model doesn't have training_view enabled, fall back to the first valid model
+  const currentModelEntry = MODEL_REGISTRY[state.selectedModelIndex]?.training_view
+    ? MODEL_REGISTRY[state.selectedModelIndex]
+    : MODEL_REGISTRY.find((entry) => entry.training_view);
   const currentModelInfo = state.currentExample?.model_id
     ? getModelInfo(state.currentExample.model_id)
     : currentModelEntry
@@ -296,24 +300,45 @@ function PretrainingSimpleView() {
 
                 {isModelDropdownOpen && (
                   <div className="model-dropdown-menu">
-                    {MODEL_REGISTRY.map((entry, idx) => (
-                      <button
-                        key={idx}
-                        className={`model-dropdown-item ${state.selectedModelIndex === idx ? 'active' : ''}`}
-                        onClick={() => {
-                          actions.setSelectedModelIndex(idx);
-                          setIsModelDropdownOpen(false);
-                        }}
-                        title={entry.name || 'Model'}
-                      >
-                        <img
-                          src={new URL(`../assets/model-logos/${entry.logo}`, import.meta.url).href}
-                          alt=""
-                          className="model-logo-small"
-                        />
-                        <span className="model-info">{entry.name || entry.size}</span>
-                      </button>
-                    ))}
+                    {MODEL_REGISTRY.map((entry, idx) =>
+                      entry.training_view ? (
+                        <button
+                          key={idx}
+                          className={`model-dropdown-item ${state.selectedModelIndex === idx ? 'active' : ''}`}
+                          onClick={() => {
+                            actions.setSelectedModelIndex(idx);
+                            setIsModelDropdownOpen(false);
+                            // When switching models in training view, load the first matching example
+                            if (state.viewType === 'training') {
+                              try {
+                                const pattern =
+                                  typeof entry.pattern === 'string'
+                                    ? new RegExp(entry.pattern, 'i')
+                                    : entry.pattern;
+                                const match = (state.examples || []).find((ex) =>
+                                  pattern ? pattern.test(ex.model_id || '') : true
+                                );
+                                if (match?.id) {
+                                  actions.loadExample(match.id);
+                                }
+                              } catch {
+                                // no-op on pattern issues
+                              }
+                            }
+                          }}
+                          title={entry.name || 'Model'}
+                        >
+                          <img
+                            src={
+                              new URL(`../assets/model-logos/${entry.logo}`, import.meta.url).href
+                            }
+                            alt=""
+                            className="model-logo-small"
+                          />
+                          <span className="model-info">{entry.name || entry.size}</span>
+                        </button>
+                      ) : null
+                    )}
                   </div>
                 )}
               </div>

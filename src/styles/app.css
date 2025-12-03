@@ -69,6 +69,31 @@ body {
   transition: opacity 0.2s ease;
 }
 
+/* Centered logo button (desktop only) */
+.logo-center-button {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: none;
+  /* Hidden by default, shown on desktop */
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  cursor: pointer;
+  padding: 0.25rem;
+  border-radius: 8px;
+  transition: background-color 0.2s ease;
+}
+
+.logo-center-button:hover {
+  background-color: var(--bg-hover);
+}
+
+.logo-center-button img {
+  height: 32px;
+  display: block;
+}
+
 .app-logo-content {
   display: flex;
   align-items: center;
@@ -1003,15 +1028,12 @@ body {
 
 .viz-labels-container.expanded {
   width: 280px;
-  padding-left: 12px;
   margin-left: 8px;
 }
 
 .viz-labels-content {
   flex: 1;
   overflow: visible;
-  /* scroll with page/body, not independently */
-  padding-right: 12px;
 }
 
 .visualization-labels-canvas {
@@ -1054,6 +1076,19 @@ body {
 }
 
 /* Responsive design */
+
+/* Desktop styles (above mobile breakpoint) */
+@media (min-width: 1001px) {
+  /* Hide left logo on desktop */
+  .app-logo {
+    display: none;
+  }
+
+  /* Show centered logo button on desktop */
+  .logo-center-button {
+    display: flex;
+  }
+}
 
 @media (max-width: 1000px) {
   /* Global zoom for visualization canvas on mobile */

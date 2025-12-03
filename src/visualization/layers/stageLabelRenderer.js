@@ -1,6 +1,7 @@
 /**
  * Stage labels rendering
  */
+import * as d3 from 'd3';
 import { STAGE_LABEL, STAGE_LABEL_OPACITY, FONTS, TRAINING_STEPS } from '../core/constants';
 
 /**
@@ -128,6 +129,49 @@ export function renderStageLabels(
       .style('fill', isDarkMode ? '#888' : '#999')
       .style('opacity', STAGE_LABEL_OPACITY.HINT)
       .style('font-family', FONTS.FAMILY_UI)
-      .text(t(`${stage.key}_hint`));
+      .text(t(`${stage.key}_hint`))
+      .call(wrapStageLabelHint, STAGE_LABEL.HINT_MAX_WIDTH, STAGE_LABEL.HINT_LINE_HEIGHT);
+  });
+}
+
+function wrapStageLabelHint(selection, maxWidth, lineHeight = 1.2) {
+  if (!maxWidth) return;
+
+  selection.each(function () {
+    const text = d3.select(this);
+    const rawText = text.text();
+    if (!rawText) return;
+
+    const words = rawText.split(/\s+/).filter(Boolean).reverse();
+    if (!words.length) return;
+
+    let line = [];
+    let lineNumber = 0;
+    const lineHeightValue = lineHeight > 0 ? lineHeight : 1.2;
+    const x = text.attr('x') ?? 0;
+    const y = text.attr('y') ?? 0;
+    const dy = parseFloat(text.attr('dy')) || 0;
+
+    text.text(null);
+
+    let tspan = text.append('tspan').attr('x', x).attr('y', y).attr('dy', `${dy}em`);
+
+    let word;
+    while ((word = words.pop())) {
+      line.push(word);
+      tspan.text(line.join(' '));
+      if (tspan.node().getComputedTextLength() > maxWidth && line.length > 1) {
+        line.pop();
+        tspan.text(line.join(' '));
+        line = [word];
+        lineNumber += 1;
+        tspan = text
+          .append('tspan')
+          .attr('x', x)
+          .attr('y', y)
+          .attr('dy', `${lineNumber * lineHeightValue + dy}em`)
+          .text(word);
+      }
+    }
   });
 }

@@ -20,14 +20,14 @@ function ViewSelector() {
   // Get main categories only (Training and Text Generation)
   const mainCategories = [
     {
-      category: VIEW_CATEGORIES.TRAINING,
-      viewType: VIEW_TYPES.TRAINING,
-      path: '/pretraining-model',
-    },
-    {
       category: VIEW_CATEGORIES.TEXT_GENERATION,
       viewType: VIEW_TYPES.TEXT_GENERATION,
       path: '/generation-model',
+    },
+    {
+      category: VIEW_CATEGORIES.TRAINING,
+      viewType: VIEW_TYPES.TRAINING,
+      path: '/pretraining-model',
     },
   ];
 

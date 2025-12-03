@@ -25,38 +25,38 @@ function ViewSelectorPopup() {
   // Define all views organized by section
   const sections = [
     {
-      id: 'training',
-      titleKey: 'home_training_title',
-      views: [
-        {
-          id: VIEW_TYPES.TRAINING,
-          titleKey: 'home_pretraining_model_title',
-          path: '/pretraining-model',
-          icon: pretrainingModelIcon,
-        },
-        {
-          id: VIEW_TYPES.PRETRAINING_SIMPLE,
-          titleKey: 'home_pretraining_simple_title',
-          path: '/pretraining-simple',
-          icon: pretrainingSimpleIcon,
-        },
-      ],
-    },
-    {
       id: 'generation',
       titleKey: 'home_generation_title',
       views: [
+        {
+          id: VIEW_TYPES.DECODING,
+          titleKey: 'home_generation_simple_title',
+          path: '/generation-simple',
+          icon: decodingSimpleIcon,
+        },
         {
           id: VIEW_TYPES.TEXT_GENERATION,
           titleKey: 'home_generation_model_title',
           path: '/generation-model',
           icon: decodingModelIcon,
         },
+      ],
+    },
+    {
+      id: 'training',
+      titleKey: 'home_training_title',
+      views: [
         {
-          id: VIEW_TYPES.DECODING,
-          titleKey: 'home_generation_simple_title',
-          path: '/generation-simple',
-          icon: decodingSimpleIcon,
+          id: VIEW_TYPES.PRETRAINING_SIMPLE,
+          titleKey: 'home_pretraining_simple_title',
+          path: '/pretraining-simple',
+          icon: pretrainingSimpleIcon,
+        },
+        {
+          id: VIEW_TYPES.TRAINING,
+          titleKey: 'home_pretraining_model_title',
+          path: '/pretraining-model',
+          icon: pretrainingModelIcon,
         },
       ],
     },

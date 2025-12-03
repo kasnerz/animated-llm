@@ -306,7 +306,7 @@ function AppContent() {
       {!isHomePage && (
         <div className="floating-top-section">
           <div className="floating-top-content">
-            {/* Logo on the left */}
+            {/* Logo on the left (mobile only) */}
             <div className="app-logo">
               <Link to="/" className="logo-icon">
                 <Logo variant="header" />
@@ -317,6 +317,11 @@ function AppContent() {
             <div className="view-selector-popup-container">
               <ViewSelectorPopup />
             </div>
+
+            {/* Centered logo button (desktop only) */}
+            <Link to="/" className="logo-center-button">
+              <img src="/src/assets/logo-small.png" alt="AnimatedLLM" />
+            </Link>
 
             {/* Header controls - minimal */}
             <div className={`header-controls ${isHamburgerOpen ? 'open' : ''}`}>

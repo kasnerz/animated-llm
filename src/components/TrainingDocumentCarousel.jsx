@@ -44,13 +44,8 @@ function TrainingDocumentCarousel({ showPlayButton = true }) {
     actions.setIsPlaying(!state.isPlaying);
   };
 
-  // Filter examples by selected model and temperature (skip filters for training view)
+  // Filter examples by selected model and temperature
   const filteredExamples = useMemo(() => {
-    // In training view, show all loaded examples regardless of model/temperature
-    if (state.viewType === 'training') {
-      return state.examples;
-    }
-
     const modelEntry = MODEL_REGISTRY[state.selectedModelIndex];
     const modelPattern = modelEntry
       ? typeof modelEntry.pattern === 'string'
@@ -60,17 +55,29 @@ function TrainingDocumentCarousel({ showPlayButton = true }) {
 
     return state.examples.filter((ex) => {
       const byModel = modelPattern ? modelPattern.test(ex.model_id || '') : true;
-      // If temperature is missing, don't exclude the example
+      // If temperature is missing, don't exclude the example (relevant for inference view)
       const byTemp =
-        ex.temperature == null
-          ? true
-          : getTemperatureEmoji(ex.temperature) === state.selectedTemperatureEmoji;
+        state.viewType === 'inference'
+          ? ex.temperature == null
+            ? true
+            : getTemperatureEmoji(ex.temperature) === state.selectedTemperatureEmoji
+          : true;
       return byModel && byTemp;
     });
   }, [state.examples, state.selectedModelIndex, state.selectedTemperatureEmoji, state.viewType]);
 
   // Find current example index within filtered list
   const currentIndex = filteredExamples.findIndex((ex) => ex.id === state.currentExampleId);
+
+  // Auto-recover: if no active example but we have filtered ones, load the first
+  useEffect(() => {
+    if (state.viewType !== 'training') return;
+    if (currentIndex === -1 && filteredExamples.length > 0) {
+      const firstId = filteredExamples[0].id;
+      if (firstId) actions.loadExample(firstId);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [currentIndex, filteredExamples.length, state.viewType]);
 
   // Navigation functions
   const canGoPrev = currentIndex > 0;

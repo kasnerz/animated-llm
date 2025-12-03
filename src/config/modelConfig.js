@@ -15,11 +15,22 @@
 export const MODEL_REGISTRY = [
   // Example entries - populate with actual models
   {
+    pattern: /vanilla/i,
+    logo: 'transformer.png',
+    size: '1b',
+    id: 'meta-llama/Llama-3.2-1B-Instruct',
+    name: 'Transformer 1B',
+    training_view: true,
+    decoding_view: false,
+  },
+  {
     pattern: /aya-expanse-8b/i,
     logo: 'aya.png',
     size: '8b',
     id: 'CohereLabs/aya-expanse-8b',
     name: 'Aya-Expanse 8B',
+    training_view: true,
+    decoding_view: true,
   },
   {
     pattern: /Llama-3\.2-1B-Instruct/i,
@@ -27,6 +38,8 @@ export const MODEL_REGISTRY = [
     size: '1b',
     id: 'meta-llama/Llama-3.2-1B-Instruct',
     name: 'Llama3.2 1B',
+    training_view: true,
+    decoding_view: true,
   },
   {
     pattern: /Qwen3-4B-Instruct/i,
@@ -34,6 +47,8 @@ export const MODEL_REGISTRY = [
     size: '4b',
     id: 'Qwen/Qwen3-4B-Instruct-2507',
     name: 'Qwen3-4B',
+    training_view: true,
+    decoding_view: true,
   },
   {
     pattern: /olmo/i,
@@ -41,6 +56,8 @@ export const MODEL_REGISTRY = [
     size: '7b',
     id: 'allenai/Olmo-3-7B-Think',
     name: 'Olmo3-7B-Think',
+    training_view: true,
+    decoding_view: true,
   },
   {
     pattern: /gpt2-xl/i,
@@ -48,6 +65,8 @@ export const MODEL_REGISTRY = [
     size: '1.5b',
     id: 'openai-community/gpt2-xl',
     name: 'GPT-2-XL',
+    training_view: true,
+    decoding_view: true,
   },
   // Add more model patterns here
 ];

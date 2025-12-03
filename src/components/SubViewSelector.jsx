@@ -24,14 +24,14 @@ function SubViewSelector() {
   // Available sub-views
   const subViews = [
     {
-      id: VIEW_TYPES.TEXT_GENERATION,
-      path: '/generation-model',
-      ...VIEW_INFO[VIEW_TYPES.TEXT_GENERATION],
-    },
-    {
       id: VIEW_TYPES.DECODING,
       path: '/generation-simple',
       ...VIEW_INFO[VIEW_TYPES.DECODING],
+    },
+    {
+      id: VIEW_TYPES.TEXT_GENERATION,
+      path: '/generation-model',
+      ...VIEW_INFO[VIEW_TYPES.TEXT_GENERATION],
     },
   ];
 

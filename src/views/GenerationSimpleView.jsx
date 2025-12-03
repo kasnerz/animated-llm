@@ -195,7 +195,10 @@ function GenerationSimpleView() {
   const selectedTokenId = currentGen?.selected_token?.token_id;
 
   // Get current model info for displaying in transformer box
-  const currentModelEntry = MODEL_REGISTRY[state.selectedModelIndex];
+  // If the selected model doesn't have decoding_view enabled, fall back to the first valid model
+  const currentModelEntry = MODEL_REGISTRY[state.selectedModelIndex]?.decoding_view
+    ? MODEL_REGISTRY[state.selectedModelIndex]
+    : MODEL_REGISTRY.find((entry) => entry.decoding_view);
   const currentModelInfo = state.currentExample?.model_id
     ? getModelInfo(state.currentExample.model_id)
     : currentModelEntry
@@ -369,24 +372,26 @@ function GenerationSimpleView() {
 
           {isModelDropdownOpen && (
             <div className="model-dropdown-menu">
-              {MODEL_REGISTRY.map((entry, idx) => (
-                <button
-                  key={idx}
-                  className={`model-dropdown-item ${state.selectedModelIndex === idx ? 'active' : ''}`}
-                  onClick={() => {
-                    actions.setSelectedModelIndex(idx);
-                    setIsModelDropdownOpen(false);
-                  }}
-                  title={entry.name || 'Model'}
-                >
-                  <img
-                    src={new URL(`../assets/model-logos/${entry.logo}`, import.meta.url).href}
-                    alt=""
-                    className="model-logo-small"
-                  />
-                  <span className="model-info">{entry.name || entry.size}</span>
-                </button>
-              ))}
+              {MODEL_REGISTRY.map((entry, idx) =>
+                entry.decoding_view ? (
+                  <button
+                    key={idx}
+                    className={`model-dropdown-item ${state.selectedModelIndex === idx ? 'active' : ''}`}
+                    onClick={() => {
+                      actions.setSelectedModelIndex(idx);
+                      setIsModelDropdownOpen(false);
+                    }}
+                    title={entry.name || 'Model'}
+                  >
+                    <img
+                      src={new URL(`../assets/model-logos/${entry.logo}`, import.meta.url).href}
+                      alt=""
+                      className="model-logo-small"
+                    />
+                    <span className="model-info">{entry.name || entry.size}</span>
+                  </button>
+                ) : null
+              )}
             </div>
           )}
         </div>

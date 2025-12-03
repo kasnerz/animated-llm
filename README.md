@@ -9,9 +9,9 @@ This demo is designed for:
 - Students studying natural language processing
 - Anyone wanting to understand how transformers work
 
-The visualization simplifies complex concepts while maintaining accuracy:
-
 This is a client-only application that uses pre-computed generation data.
+
+More info TBA.
 
 ## Getting Started
 
