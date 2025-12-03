@@ -3,6 +3,19 @@
 # Configuration
 SERVER_URL="http://localhost:8712"
 
+# Get model name from server and create a sanitized identifier
+echo "Fetching model information from server..."
+MODEL_NAME=$(curl -s "${SERVER_URL}/model_info" | python3 -c "import sys, json; print(json.load(sys.stdin)['name'])" 2>/dev/null)
+
+if [ -z "$MODEL_NAME" ]; then
+    echo "Error: Could not fetch model name from server at $SERVER_URL"
+    echo "Please make sure the server is running."
+    exit 1
+fi
+
+# Sanitize model name for use in filenames (replace / with -, remove special chars)
+MODEL_ID=$(echo "$MODEL_NAME" | sed 's/\//-/g' | sed 's/[^a-zA-Z0-9._-]/_/g')
+echo "Using model: $MODEL_NAME (ID: $MODEL_ID)"
 
 # Function to process a training example
 process_training_example() {
@@ -63,7 +76,7 @@ process_language() {
         mkdir -p "$lang_dir"
         
         # Full example (all tokens)
-        local output_file_full="${lang_dir}/${lang}-${num}-full.json"
+        local output_file_full="${lang_dir}/${lang}-${num}-full-${MODEL_ID}.json"
         echo "Creating full training example $lang-$num..."
         process_training_example \
             "$text" \
@@ -71,7 +84,7 @@ process_language() {
             "$output_file_full"
         
         # # Limited example (first 30 tokens for quicker visualization)
-        # local output_file_limited="${lang_dir}/${lang}-${num}-limited.json"
+        # local output_file_limited="${lang_dir}/${lang}-${num}-limited-${MODEL_ID}.json"
         # echo "Creating limited training example $lang-$num (30 tokens)..."
         # process_training_example \
         #     "$text" \
