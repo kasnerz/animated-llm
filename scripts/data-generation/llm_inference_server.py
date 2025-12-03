@@ -3,6 +3,7 @@ FastAPI server for generating LLM visualization data.
 Provides endpoints for tokenization, token IDs, and token probability distributions.
 """
 
+import argparse
 import logging
 from typing import Dict, List, Optional
 
@@ -16,19 +17,14 @@ from transformers import AutoModelForCausalLM, AutoTokenizer
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-# Model configuration
-# MODEL_ID = "CohereLabs/aya-expanse-8b"  # Change this to your desired model
-# MODEL_ID = "openai/gpt-oss-20b"  # Change this to your desired model
-# MODEL_ID = "meta-llama/Llama-3.2-1B-Instruct"  # Change this to your desired model
-# MODEL_ID = "openai-community/gpt2"  # Change this to your desired model
-MODEL_ID = "meta-llama/Llama-3.3-70B-Instruct"  # Change this to your desired model
-DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
-
 app = FastAPI(title="LLM Visualization API")
 
 # Global variables for model and tokenizer
 tokenizer = None
 model = None
+
+# Global configuration
+config_args = None
 
 
 class TokenizeRequest(BaseModel):
@@ -105,27 +101,27 @@ async def load_model():
     """Load the model and tokenizer on startup."""
     global tokenizer, model
 
-    logger.info(f"Loading model: {MODEL_ID}")
-    logger.info(f"Device: {DEVICE}")
+    logger.info(f"Loading model: {config_args.model}")
+    logger.info(f"Device: {config_args.device}")
 
     try:
         # Enable remote code to support repositories that ship custom model/tokenizer code
         tokenizer = AutoTokenizer.from_pretrained(
-            MODEL_ID,
+            config_args.model,
             use_fast=True,
             trust_remote_code=True,
         )
         model = AutoModelForCausalLM.from_pretrained(
-            MODEL_ID,
-            torch_dtype="auto" if DEVICE == "cuda" else torch.float32,
-            device_map="auto" if DEVICE == "cuda" else None,
+            config_args.model,
+            torch_dtype="auto" if config_args.device == "cuda" else torch.float32,
+            device_map="auto" if config_args.device == "cuda" else None,
             low_cpu_mem_usage=True,
             use_safetensors=True,
             trust_remote_code=True,
         )
 
-        if DEVICE == "cpu":
-            model = model.to(DEVICE)
+        if config_args.device == "cpu":
+            model = model.to(config_args.device)
 
         model.eval()
         logger.info("Model loaded successfully")
@@ -139,7 +135,7 @@ async def load_model():
 
     except Exception as e:
         err_name = e.__class__.__name__
-        logger.error(f"Error loading model [{MODEL_ID}] ({err_name}): {e}")
+        logger.error(f"Error loading model [{config_args.model}] ({err_name}): {e}")
         # Provide a more actionable hint for common Cohere/Aya import issues
         hint = None
         msg = str(e)
@@ -158,8 +154,8 @@ async def root():
     """Root endpoint with API information."""
     return {
         "message": "LLM Visualization API",
-        "model": MODEL_ID,
-        "device": DEVICE,
+        "model": config_args.model,
+        "device": config_args.device,
         "endpoints": {
             "tokenize": "/tokenize",
             "token_ids": "/token_ids",
@@ -176,7 +172,7 @@ async def get_model_info():
 
     config = model.config
     return {
-        "name": MODEL_ID,
+        "name": config_args.model,
         "num_layers": config.num_hidden_layers,
         "hidden_size": config.hidden_size,
         "num_attention_heads": config.num_attention_heads,
@@ -293,7 +289,7 @@ async def generate(request: GenerateRequest):
             text,
             return_tensors="pt",
             add_special_tokens=not chat_template_applied,
-        ).input_ids.to(DEVICE)
+        ).input_ids.to(config_args.device)
 
         generation_steps = []
         current_ids = input_ids.clone()
@@ -414,7 +410,10 @@ async def generate(request: GenerateRequest):
 
                 # Append selected token to current_ids (for the actual model)
                 current_ids = torch.cat(
-                    [current_ids, torch.tensor([[selected_token_id]], device=DEVICE)],
+                    [
+                        current_ids,
+                        torch.tensor([[selected_token_id]], device=config_args.device),
+                    ],
                     dim=1,
                 )
 
@@ -438,4 +437,35 @@ async def generate(request: GenerateRequest):
 
 
 if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=8665)
+    parser = argparse.ArgumentParser(
+        description="FastAPI server for LLM inference visualization"
+    )
+    parser.add_argument(
+        "--model",
+        type=str,
+        default="meta-llama/Llama-3.3-70B-Instruct",
+        help="Model ID from Hugging Face Hub",
+    )
+    parser.add_argument(
+        "--device",
+        type=str,
+        default="cuda" if torch.cuda.is_available() else "cpu",
+        choices=["cuda", "cpu"],
+        help="Device to run the model on",
+    )
+    parser.add_argument(
+        "--host",
+        type=str,
+        default="0.0.0.0",
+        help="Host to bind the server to",
+    )
+    parser.add_argument(
+        "--port",
+        type=int,
+        default=8665,
+        help="Port to bind the server to",
+    )
+
+    config_args = parser.parse_args()
+
+    uvicorn.run(app, host=config_args.host, port=config_args.port)

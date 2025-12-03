@@ -3,6 +3,7 @@ FastAPI server for generating training visualization data.
 Uses pre-trained Meta-Llama/Llama-3.2-1B and collects predictions for training examples.
 """
 
+import argparse
 import logging
 from typing import Dict, List, Optional
 
@@ -11,22 +12,21 @@ import torch.nn.functional as F
 import uvicorn
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
-from transformers import AutoModelForCausalLM, AutoTokenizer
+from transformers import AutoConfig, AutoModelForCausalLM, AutoTokenizer
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
-
-# Model configuration
-MODEL_NAME = "meta-llama/Llama-3.2-1B"
-
-DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 
 app = FastAPI(title="LLM Training Visualization API")
 
 # Global variables for model and tokenizer
 tokenizer = None
 model = None
+display_model_name = None
+
+# Global configuration
+config_args = None
 
 
 class TrainingRequest(BaseModel):
@@ -85,32 +85,48 @@ def get_display_tokens(tokenizer, token_ids: List[int]) -> List[str]:
 @app.on_event("startup")
 async def load_model():
     """Load the model and tokenizer on startup."""
-    global tokenizer, model
+    global tokenizer, model, display_model_name
 
-    logger.info(f"Loading pre-trained model: {MODEL_NAME}")
-    logger.info(f"Device: {DEVICE}")
+    logger.info(f"Loading model configuration: {config_args.model}")
+    logger.info(f"Device: {config_args.device}")
+    logger.info(f"Use random weights: {config_args.random_weights}")
 
     try:
         # Load tokenizer
-        tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME)
+        tokenizer = AutoTokenizer.from_pretrained(config_args.model)
 
-        # Load pre-trained model
-        logger.info("Loading pre-trained Llama-3.2-1B model...")
-        model = AutoModelForCausalLM.from_pretrained(
-            MODEL_NAME,
-            torch_dtype=torch.float16 if DEVICE == "cuda" else torch.float32,
-            device_map="auto" if DEVICE == "cuda" else None,
-        )
+        if config_args.random_weights:
+            logger.info("Initializing random weights (Vanilla Transformer)...")
+            config = AutoConfig.from_pretrained(config_args.model)
+            model = AutoModelForCausalLM.from_config(config)
+            display_model_name = "Vanilla Transformer"
+        else:
+            # Load pre-trained model
+            logger.info(f"Loading pre-trained {config_args.model} model...")
+            model = AutoModelForCausalLM.from_pretrained(
+                config_args.model,
+                torch_dtype=(
+                    torch.float16 if config_args.device == "cuda" else torch.float32
+                ),
+                device_map="auto" if config_args.device == "cuda" else None,
+            )
+            display_model_name = config_args.model
 
-        if DEVICE == "cpu":
-            model = model.to(DEVICE)
+        if config_args.device == "cpu" or config_args.random_weights:
+            model = model.to(config_args.device)
+            if config_args.device == "cuda" and config_args.random_weights:
+                model = model.half()
 
         # Set to evaluation mode (no dropout)
         model.eval()
 
         # Log model size
         num_params = sum(p.numel() for p in model.parameters())
-        logger.info(f"Model loaded successfully")
+
+        if config_args.random_weights:
+            display_model_name = f"Vanilla Transformer ({num_params/1e9:.1f}B)"
+
+        logger.info(f"Model loaded successfully: {display_model_name}")
         logger.info(f"Total parameters: {num_params:,}")
         logger.info(f"Model size: ~{num_params * 2 / (1024**3):.2f} GB (float16)")
 
@@ -124,8 +140,8 @@ async def root():
     """Root endpoint with API information."""
     return {
         "message": "LLM Training Visualization API",
-        "model": MODEL_NAME,
-        "device": DEVICE,
+        "model": display_model_name,
+        "device": config_args.device,
         "endpoints": {
             "model_info": "/model_info",
             "process_training": "/process_training",
@@ -143,7 +159,7 @@ async def get_model_info():
     config = model.config
 
     return {
-        "name": MODEL_NAME,
+        "name": display_model_name,
         "architecture": config.model_type,
         "num_layers": config.num_hidden_layers,
         "hidden_size": config.hidden_size,
@@ -152,7 +168,7 @@ async def get_model_info():
         "max_position_embeddings": config.max_position_embeddings,
         "intermediate_size": config.intermediate_size,
         "total_parameters": num_params,
-        "pretrained": True,
+        "pretrained": not config_args.random_weights,
     }
 
 
@@ -188,7 +204,7 @@ async def process_training(request: TrainingRequest):
         training_steps = []
 
         # Move input to device
-        input_ids = torch.tensor([token_ids], device=DEVICE)
+        input_ids = torch.tensor([token_ids], device=config_args.device)
 
         with torch.no_grad():
             # Get model outputs for the full sequence
@@ -234,7 +250,7 @@ async def process_training(request: TrainingRequest):
                 target_logprob = log_probs[target_token_id].item()
                 loss = F.cross_entropy(
                     step_logits.unsqueeze(0),
-                    torch.tensor([target_token_id], device=DEVICE),
+                    torch.tensor([target_token_id], device=config_args.device),
                 ).item()
 
                 # Build predictions list
@@ -289,4 +305,40 @@ async def process_training(request: TrainingRequest):
 
 
 if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=8666)
+    parser = argparse.ArgumentParser(
+        description="FastAPI server for LLM training visualization"
+    )
+    parser.add_argument(
+        "--model",
+        type=str,
+        default="meta-llama/Llama-3.2-1B",
+        help="Model ID from Hugging Face Hub",
+    )
+    parser.add_argument(
+        "--device",
+        type=str,
+        default="cuda" if torch.cuda.is_available() else "cpu",
+        choices=["cuda", "cpu"],
+        help="Device to run the model on",
+    )
+    parser.add_argument(
+        "--random-weights",
+        action="store_true",
+        help="Use randomly initialized weights (Vanilla Transformer)",
+    )
+    parser.add_argument(
+        "--host",
+        type=str,
+        default="0.0.0.0",
+        help="Host to bind the server to",
+    )
+    parser.add_argument(
+        "--port",
+        type=int,
+        default=8666,
+        help="Port to bind the server to",
+    )
+
+    config_args = parser.parse_args()
+
+    uvicorn.run(app, host=config_args.host, port=config_args.port)
