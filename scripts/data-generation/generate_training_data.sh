@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # Configuration
+OUTPUT_DIR="../../public/data"
 SERVER_URL="http://localhost:8712"
 
 # Get model name from server and create a sanitized identifier
@@ -72,7 +73,7 @@ process_language() {
         local num=$(printf "%03d" $counter)
         
         # Create language-specific directory
-        local lang_dir="../../public/data/training/${lang}"
+        local lang_dir="${OUTPUT_DIR}/training/${lang}"
         mkdir -p "$lang_dir"
         
         # Full example (all tokens)
@@ -97,7 +98,7 @@ process_language() {
 }
 
 # Create data directory if it doesn't exist
-mkdir -p data/training
+mkdir -p "${OUTPUT_DIR}/training"
 
 # Define all languages
 declare -A LANGUAGES=(
@@ -129,7 +130,7 @@ done
 # Create examples.json index file
 echo ""
 echo "Creating examples index..."
-python create_examples_index.py data/training
+python create_examples_index.py "${OUTPUT_DIR}/training"
 
 echo ""
-echo "Done! Generated training examples in data/training/"
+echo "Done! Generated training examples in ${OUTPUT_DIR}/training/"
