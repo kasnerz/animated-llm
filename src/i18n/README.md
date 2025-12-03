@@ -4,9 +4,19 @@
 
 The application supports multiple languages with automatic fallback to English when translations or examples are missing.
 
+## Supported Languages
+
+Currently supported languages:
+
+- English (en) 🇬🇧
+- Czech (cs) 🇨🇿
+- French (fr) 🇫🇷
+- Chinese (zh) 🇨🇳
+- Ukrainian (uk) 🇺🇦
+
 ## Adding a New Language
 
-To add a new language (e.g., German 'de'), follow these steps:
+To add a new language (e.g., Portuguese 'pt'), follow these steps:
 
 ### 1. Add Translations
 
@@ -20,9 +30,9 @@ const translations = {
   cs: {
     /* ... */
   },
-  de: {
-    play: 'Abspielen',
-    pause: 'Pause',
+  pt: {
+    play: 'Reproduzir',
+    pause: 'Pausar',
     // ... add all translation keys
   },
 };
@@ -38,21 +48,21 @@ Edit `components/LanguageSelector.jsx` and add language info:
 const LANGUAGE_INFO = {
   en: { name: 'English', flag: '🇬🇧' },
   cs: { name: 'Čeština', flag: '🇨🇿' },
-  de: { name: 'Deutsch', flag: '🇩🇪' },
+  pt: { name: 'Português', flag: '🇵🇹' },
 };
 ```
 
 **Note:** If you skip this step, the language will still work but will display with:
 
-- name: Language code in uppercase (e.g., 'DE')
+- name: Language code in uppercase (e.g., 'PT')
 - flag: Generic globe emoji 🌐
 
 ### 3. Add Example Files
 
 Create example data files in `public/data/` with the language prefix:
 
-- `de-001-greedy.json`
-- `de-001-sampling.json`
+- `pt-001-greedy.json`
+- `pt-001-sampling.json`
 - etc.
 
 Update `public/data/examples.json` to include the new examples:
@@ -61,11 +71,11 @@ Update `public/data/examples.json` to include the new examples:
 {
   "examples": [
     {
-      "id": "de-001-greedy",
-      "prompt": "Hallo Welt!",
-      "language": "de",
-      "description": "Hallo Welt!",
-      "file": "de-001-greedy.json"
+      "id": "pt-001-greedy",
+      "prompt": "Olá Mundo!",
+      "language": "pt",
+      "description": "Olá Mundo!",
+      "file": "pt-001-greedy.json"
     }
   ]
 }
@@ -84,7 +94,7 @@ Update `public/data/examples.json` to include the new examples:
 Example:
 
 ```javascript
-// User selects German, but key 'new_feature' only exists in English
+// User selects French, but key 'new_feature' only exists in English
 t('new_feature'); // Returns English translation
 ```
 
@@ -97,8 +107,8 @@ t('new_feature'); // Returns English translation
 Example:
 
 ```javascript
-// User selects German, but no German examples exist
-listExamples('de'); // Returns English examples with console warning
+// User selects French, but no French examples exist
+listExamples('fr'); // Returns English examples with console warning
 ```
 
 ### UI Display Fallback
@@ -112,6 +122,9 @@ For languages without metadata in `LANGUAGE_INFO`:
 
 - **English (en)**: Full support (translations + examples)
 - **Czech (cs)**: Full support (translations + examples)
+- **French (fr)**: Basic support (partial translations)
+- **Chinese (zh)**: Basic support (partial translations)
+- **Ukrainian (uk)**: Basic support (partial translations)
 
 ## Best Practices
 
@@ -138,7 +151,10 @@ public/
 └── data/
     ├── examples.json        # Example metadata
     ├── en-*.json           # English examples
-    └── cs-*.json           # Czech examples
+    ├── cs-*.json           # Czech examples
+    ├── fr-*.json           # French examples
+    ├── zh-*.json           # Chinese examples
+    └── uk-*.json           # Ukrainian examples
 ```
 
 ## Testing Fallback
@@ -158,12 +174,12 @@ To test the fallback system:
 2. **Missing examples:**
 
    ```javascript
-   // Remove Czech examples from examples.json
-   // App will show English examples when Czech is selected
+   // Remove French examples from examples.json
+   // App will show English examples when French is selected
    ```
 
 3. **Missing language metadata:**
    ```javascript
-   // Add 'de' to translations.js but not LANGUAGE_INFO
-   // Selector will show 'DE' with 🌐 emoji
+   // Add 'pt' to translations.js but not LANGUAGE_INFO
+   // Selector will show 'PT' with 🌐 emoji
    ```

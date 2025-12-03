@@ -1,7 +1,8 @@
 #!/bin/bash
 
 # Configuration
-SERVER_URL="http://tdll-8gpu2:8666"
+SERVER_URL="http://localhost:8712"
+
 
 # Function to process a training example
 process_training_example() {
@@ -58,7 +59,7 @@ process_language() {
         local num=$(printf "%03d" $counter)
         
         # Create language-specific directory
-        local lang_dir="data/training/${lang}"
+        local lang_dir="../../public/data/training/${lang}"
         mkdir -p "$lang_dir"
         
         # Full example (all tokens)
@@ -90,12 +91,8 @@ declare -A LANGUAGES=(
     ["en"]="prompts/training/training_en.jsonl"
     ["cs"]="prompts/training/training_cs.jsonl"
     ["fr"]="prompts/training/training_fr.jsonl"
-    ["de"]="prompts/training/training_de.jsonl"
-    ["es"]="prompts/training/training_es.jsonl"
     ["zh"]="prompts/training/training_zh.jsonl"
-    ["ar"]="prompts/training/training_ar.jsonl"
-    ["hi"]="prompts/training/training_hi.jsonl"
-    ["ja"]="prompts/training/training_ja.jsonl"
+    ["uk"]="prompts/training/training_uk.jsonl"
 )
 
 # Process training examples for each language
@@ -106,12 +103,8 @@ for lang in "${!LANGUAGES[@]}"; do
             en) lang_name="English" ;;
             cs) lang_name="Czech" ;;
             fr) lang_name="French" ;;
-            de) lang_name="German" ;;
-            es) lang_name="Spanish" ;;
             zh) lang_name="Chinese" ;;
-            ar) lang_name="Arabic" ;;
-            hi) lang_name="Hindi" ;;
-            ja) lang_name="Japanese" ;;
+            uk) lang_name="Ukrainian" ;;
             *) lang_name="Unknown" ;;
         esac
         echo ""

@@ -246,29 +246,17 @@ const translations = {
     language: 'Langue',
     toggle_dark_light_mode: 'Mode sombre',
   },
-  de: {
-    // German translations - fallback to English for missing keys
-    play: 'Abspielen',
-    pause: 'Pause',
-    loading: 'Laden...',
-    error: 'Fehler',
-    retry: 'Wiederholen',
-    model_answer: 'Modellantwort',
-    keyboard_shortcuts: 'Tastenkombinationen',
-    language: 'Sprache',
-    toggle_dark_light_mode: 'Dunkelmodus',
-  },
-  es: {
-    // Spanish translations - fallback to English for missing keys
-    play: 'Reproducir',
-    pause: 'Pausa',
-    loading: 'Cargando...',
-    error: 'Error',
-    retry: 'Reintentar',
-    model_answer: 'Respuesta del modelo',
-    keyboard_shortcuts: 'Atajos de teclado',
-    language: 'Idioma',
-    toggle_dark_light_mode: 'Modo oscuro',
+  uk: {
+    // Ukrainian translations - fallback to English for missing keys
+    play: 'Відтворити',
+    pause: 'Пауза',
+    loading: 'Завантаження...',
+    error: 'Помилка',
+    retry: 'Повторити',
+    model_answer: 'Відповідь моделі',
+    keyboard_shortcuts: 'Гарячі клавіші',
+    language: 'Мова',
+    toggle_dark_light_mode: 'Темний режим',
   },
   zh: {
     // Chinese translations - fallback to English for missing keys
@@ -281,42 +269,6 @@ const translations = {
     keyboard_shortcuts: '键盘快捷键',
     language: '语言',
     toggle_dark_light_mode: '深色模式',
-  },
-  ar: {
-    // Arabic translations - fallback to English for missing keys
-    play: 'تشغيل',
-    pause: 'إيقاف مؤقت',
-    loading: 'جاري التحميل...',
-    error: 'خطأ',
-    retry: 'إعادة المحاولة',
-    model_answer: 'إجابة النموذج',
-    keyboard_shortcuts: 'اختصارات لوحة المفاتيح',
-    language: 'اللغة',
-    toggle_dark_light_mode: 'الوضع الداكن',
-  },
-  hi: {
-    // Hindi translations - fallback to English for missing keys
-    play: 'चलाएं',
-    pause: 'रोकें',
-    loading: 'लोड हो रहा है...',
-    error: 'त्रुटि',
-    retry: 'पुनः प्रयास करें',
-    model_answer: 'मॉडल उत्तर',
-    keyboard_shortcuts: 'कीबोर्ड शॉर्टकट',
-    language: 'भाषा',
-    toggle_dark_light_mode: 'डार्क मोड',
-  },
-  ja: {
-    // Japanese translations - fallback to English for missing keys
-    play: '再生',
-    pause: '一時停止',
-    loading: '読み込み中...',
-    error: 'エラー',
-    retry: '再試行',
-    model_answer: 'モデルの回答',
-    keyboard_shortcuts: 'キーボードショートカット',
-    language: '言語',
-    toggle_dark_light_mode: 'ダークモード',
   },
 };
 

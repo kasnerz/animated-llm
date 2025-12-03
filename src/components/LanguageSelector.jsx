@@ -6,19 +6,15 @@ import '../styles/language-selector.css';
 /**
  * Language metadata including display names and flags
  * If a language is not listed here, it will fallback to:
- * - name: language code in uppercase (e.g., 'DE' for German)
+ * - name: language code in uppercase (e.g., 'UK' for Ukrainian)
  * - flag: generic globe emoji 🌐
  */
 const LANGUAGE_INFO = {
   en: { name: 'English', flag: '🇬🇧' },
   cs: { name: 'Čeština', flag: '🇨🇿' },
   fr: { name: 'Français', flag: '🇫🇷' },
-  de: { name: 'Deutsch', flag: '🇩🇪' },
-  es: { name: 'Español', flag: '🇪🇸' },
+  uk: { name: 'Українська', flag: '🇺🇦' },
   zh: { name: '中文', flag: '🇨🇳' },
-  ar: { name: 'العربية', flag: '🇸🇦' },
-  hi: { name: 'हिन्दी', flag: '🇮🇳' },
-  ja: { name: '日本語', flag: '🇯🇵' },
 };
 
 /**

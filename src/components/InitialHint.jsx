@@ -33,9 +33,6 @@ function InitialHint() {
   return (
     <div className="initial-hint">
       <div className="initial-hint-content">
-        <p className="initial-hint-main">
-          {isMobile ? t('hint_press_play') : t('hint_keyboard_shortcuts')}
-        </p>
         {!isMobile && (
           <div className="initial-hint-shortcuts">
             {shortcuts.map((shortcut, index) => (

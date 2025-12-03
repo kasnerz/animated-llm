@@ -90,12 +90,8 @@ declare -A LANGUAGES=(
     ["en"]="prompts/inference/prompts_en.txt"
     ["cs"]="prompts/inference/prompts_cs.txt"
     ["fr"]="prompts/inference/prompts_fr.txt"
-    ["de"]="prompts/inference/prompts_de.txt"
-    ["es"]="prompts/inference/prompts_es.txt"
     ["zh"]="prompts/inference/prompts_zh.txt"
-    ["ar"]="prompts/inference/prompts_ar.txt"
-    ["hi"]="prompts/inference/prompts_hi.txt"
-    ["ja"]="prompts/inference/prompts_ja.txt"
+    ["uk"]="prompts/inference/prompts_uk.txt"
 )
 
 # Process prompts for each language
@@ -106,12 +102,8 @@ for lang in "${!LANGUAGES[@]}"; do
             en) lang_name="English" ;;
             cs) lang_name="Czech" ;;
             fr) lang_name="French" ;;
-            de) lang_name="German" ;;
-            es) lang_name="Spanish" ;;
             zh) lang_name="Chinese" ;;
-            ar) lang_name="Arabic" ;;
-            hi) lang_name="Hindi" ;;
-            ja) lang_name="Japanese" ;;
+            uk) lang_name="Ukrainian" ;;
             *) lang_name="Unknown" ;;
         esac
         echo ""
