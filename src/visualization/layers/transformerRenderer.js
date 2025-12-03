@@ -5,7 +5,6 @@
  * This renderer can be used across different views (text generation, training, decoding)
  * It only depends on the data structure passed to it, not on any specific view logic
  */
-import * as d3 from 'd3';
 import { getTokenColor } from '../core/colors';
 import { drawEmbeddingColumn } from './helpers/vectorHelpers';
 import {
@@ -472,8 +471,7 @@ function renderFFNConnectors(underlays, x, insideBottom, meta, isNew, tokenIdx, 
 
   // Incoming lines
   for (let k = 0; k < lineCount; k++) {
-    const s = Math.abs(Math.sin((tokenIdx * 37 + k * 17) * 12.9898)) % 1;
-    const color = d3.interpolateRgb('#E5E7EB', '#797b7dff')(s);
+    const color = '#797b7dff';
 
     const inLine = underlays
       .append('line')
@@ -507,8 +505,7 @@ function renderFFNConnectors(underlays, x, insideBottom, meta, isNew, tokenIdx, 
 
   // Outgoing lines
   for (let k = 0; k < lineCount; k++) {
-    const s = Math.abs(Math.sin((tokenIdx * 41 + k * 23) * 12.9898)) % 1;
-    const color = d3.interpolateRgb('#E5E7EB', '#797b7dff')(s);
+    const color = '#797b7dff';
 
     const outLine = underlays
       .append('line')

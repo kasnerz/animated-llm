@@ -45,6 +45,10 @@ class GenerateRequest(BaseModel):
     apply_chat_template: bool = True
 
 
+class LoadModelRequest(BaseModel):
+    model_id: str
+
+
 class TokenCandidate(BaseModel):
     token: str
     token_id: int
@@ -178,6 +182,55 @@ async def get_model_info():
         "num_attention_heads": config.num_attention_heads,
         "vocab_size": config.vocab_size,
     }
+
+
+@app.post("/load_model")
+async def load_model_endpoint(request: LoadModelRequest):
+    """Load a new model dynamically."""
+    global tokenizer, model
+    
+    logger.info(f"Loading new model: {request.model_id}")
+    
+    try:
+        # Clear previous model from memory
+        if model is not None:
+            del model
+            del tokenizer
+            torch.cuda.empty_cache() if torch.cuda.is_available() else None
+        
+        # Update config
+        config_args.model = request.model_id
+        
+        # Load new model
+        tokenizer = AutoTokenizer.from_pretrained(
+            request.model_id,
+            use_fast=True,
+            trust_remote_code=True,
+        )
+        model = AutoModelForCausalLM.from_pretrained(
+            request.model_id,
+            torch_dtype="auto" if config_args.device == "cuda" else torch.float32,
+            device_map="auto" if config_args.device == "cuda" else None,
+            low_cpu_mem_usage=True,
+            use_safetensors=True,
+            trust_remote_code=True,
+        )
+
+        if config_args.device == "cpu":
+            model = model.to(config_args.device)
+
+        model.eval()
+        logger.info(f"Model {request.model_id} loaded successfully")
+        
+        return {
+            "status": "success",
+            "model": request.model_id,
+            "message": f"Model {request.model_id} loaded successfully"
+        }
+        
+    except Exception as e:
+        logger.error(f"Error loading model {request.model_id}: {e}")
+        raise HTTPException(status_code=500, detail=f"Failed to load model: {str(e)}")
 
 
 @app.post("/tokenize")
@@ -443,7 +496,7 @@ if __name__ == "__main__":
     parser.add_argument(
         "--model",
         type=str,
-        default="meta-llama/Llama-3.3-70B-Instruct",
+        default="meta-llama/Llama-3.2-1B",
         help="Model ID from Hugging Face Hub",
     )
     parser.add_argument(

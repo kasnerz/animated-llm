@@ -11,7 +11,7 @@ import { drawHorizontalVector } from './helpers/vectorHelpers';
 import { drawArrow } from '../core/draw';
 import { verticalThenHorizontalRoundedPath } from '../core/draw';
 import { processTokenForVisualization } from '../../utils/tokenProcessing';
-import { OUTPUT, LAYOUT as CONSTS, OUTPUT_ARROWS } from '../core/constants';
+import { OUTPUT, LAYOUT as CONSTS, OUTPUT_ARROWS, TOKEN, FONTS } from '../core/constants';
 
 /**
  * Render output distribution layer below bottom embeddings
@@ -731,12 +731,9 @@ function renderAppendTokenPreview(
     .attr('text-anchor', 'middle')
     .attr('y', 6)
     .attr('class', 'preview-token-text')
-    .style('font-size', '18px')
-    .style(
-      'font-family',
-      'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif'
-    )
-    .style('font-weight', '500')
+    .style('font-size', TOKEN.TEXT_SIZE)
+    .style('font-family', FONTS.FAMILY_UI)
+    .style('font-weight', FONTS.WEIGHT_MEDIUM)
     .style('fill', 'var(--viz-token-text)')
     .style('opacity', 0)
     .text(nextTokenDisplay);

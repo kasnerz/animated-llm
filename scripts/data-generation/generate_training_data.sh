@@ -2,21 +2,61 @@
 
 # Configuration
 OUTPUT_DIR="../../public/data"
-SERVER_URL="http://localhost:8712"
+SERVER_URL="http://localhost:8666"
 
-# Get model name from server and create a sanitized identifier
-echo "Fetching model information from server..."
-MODEL_NAME=$(curl -s "${SERVER_URL}/model_info" | python3 -c "import sys, json; print(json.load(sys.stdin)['name'])" 2>/dev/null)
+# Model IDs from MODEL_REGISTRY
+# Prepend Vanilla Transformer option
+MODELS=(
+    "meta-llama/Llama-3.2-1B-Instruct:random"  # Vanilla Transformer with random weights
+    "CohereForAI/aya-expanse-8b"
+    "meta-llama/Llama-3.2-1B-Instruct"
+    "Qwen/Qwen2.5-3B-Instruct"
+    "allenai/OLMo-2-1124-7B-Instruct"
+    "openai-community/gpt2-xl"
+)
 
-if [ -z "$MODEL_NAME" ]; then
-    echo "Error: Could not fetch model name from server at $SERVER_URL"
-    echo "Please make sure the server is running."
-    exit 1
-fi
+# Function to load model on server
+load_model() {
+    local model_spec=$1
+    local model_id="${model_spec%%:*}"
+    local random_weights="false"
+    
+    # Check if this is the random weights variant
+    if [[ "$model_spec" == *":random" ]]; then
+        random_weights="true"
+        echo "Loading Vanilla Transformer (random weights) based on: $model_id"
+    else
+        echo "Loading model: $model_id"
+    fi
+    
+    # Call the load_model endpoint
+    response=$(curl -s -X POST "${SERVER_URL}/load_model" \
+        -H "Content-Type: application/json" \
+        -d "{\"model_id\": \"$model_id\", \"random_weights\": $random_weights}")
+    
+    if echo "$response" | grep -q "success"; then
+        echo "Model loaded successfully"
+        return 0
+    else
+        echo "Error loading model: $response"
+        return 1
+    fi
+}
 
-# Sanitize model name for use in filenames (replace / with -, remove special chars)
-MODEL_ID=$(echo "$MODEL_NAME" | sed 's/\//-/g' | sed 's/[^a-zA-Z0-9._-]/_/g')
-echo "Using model: $MODEL_NAME (ID: $MODEL_ID)"
+# Function to get model name from server
+get_model_name() {
+    MODEL_NAME=$(curl -s "${SERVER_URL}/model_info" | python3 -c "import sys, json; print(json.load(sys.stdin)['name'])" 2>/dev/null)
+    
+    if [ -z "$MODEL_NAME" ]; then
+        echo "Error: Could not fetch model name from server"
+        return 1
+    fi
+    
+    # Sanitize model name for use in filenames (replace / with -, remove special chars)
+    MODEL_ID=$(echo "$MODEL_NAME" | sed 's/\//-/g' | sed 's/[^a-zA-Z0-9._-]/_/g')
+    echo "Current model: $MODEL_NAME (ID: $MODEL_ID)"
+    return 0
+}
 
 # Function to process a training example
 process_training_example() {
@@ -106,25 +146,51 @@ declare -A LANGUAGES=(
     ["cs"]="prompts/training/training_cs.jsonl"
     ["fr"]="prompts/training/training_fr.jsonl"
     ["zh"]="prompts/training/training_zh.jsonl"
-    ["uk"]="prompts/training/training_uk.jsonl"
 )
 
-# Process training examples for each language
-for lang in "${!LANGUAGES[@]}"; do
-    jsonl_file="${LANGUAGES[$lang]}"
-    if [ -f "$jsonl_file" ]; then
-        case $lang in
-            en) lang_name="English" ;;
-            cs) lang_name="Czech" ;;
-            fr) lang_name="French" ;;
-            zh) lang_name="Chinese" ;;
-            uk) lang_name="Ukrainian" ;;
-            *) lang_name="Unknown" ;;
-        esac
-        echo ""
-        echo "Processing $lang_name training examples..."
-        process_language "$lang" "$jsonl_file"
+# Check if server is running
+echo "Checking if server is running at $SERVER_URL..."
+if ! curl -s "${SERVER_URL}/" > /dev/null; then
+    echo "Error: Server is not running at $SERVER_URL"
+    echo "Please start the server first using: python llm_training_server.py"
+    exit 1
+fi
+
+# Loop through all models
+for model_spec in "${MODELS[@]}"; do
+    echo ""
+    echo "========================================="
+    echo "Processing model: $model_spec"
+    echo "========================================="
+    
+    # Load the model on the server
+    if ! load_model "$model_spec"; then
+        echo "Skipping model $model_spec due to loading error"
+        continue
     fi
+    
+    # Get the sanitized model name
+    if ! get_model_name; then
+        echo "Skipping model $model_spec due to name fetch error"
+        continue
+    fi
+    
+    # Process training examples for each language
+    for lang in "${!LANGUAGES[@]}"; do
+        jsonl_file="${LANGUAGES[$lang]}"
+        if [ -f "$jsonl_file" ]; then
+            case $lang in
+                en) lang_name="English" ;;
+                cs) lang_name="Czech" ;;
+                fr) lang_name="French" ;;
+                zh) lang_name="Chinese" ;;
+                *) lang_name="Unknown" ;;
+            esac
+            echo ""
+            echo "Processing $lang_name training examples..."
+            process_language "$lang" "$jsonl_file"
+        fi
+    done
 done
 
 # Create examples.json index file
@@ -133,4 +199,4 @@ echo "Creating examples index..."
 python create_examples_index.py "${OUTPUT_DIR}/training"
 
 echo ""
-echo "Done! Generated training examples in ${OUTPUT_DIR}/training/"
+echo "Done! Generated training examples for all models in ${OUTPUT_DIR}/training/"

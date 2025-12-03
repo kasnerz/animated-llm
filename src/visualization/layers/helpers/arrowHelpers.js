@@ -4,7 +4,6 @@
  * REUSABLE UTILITIES - View-agnostic
  * These helpers can be used across different views and visualization components
  */
-import * as d3 from 'd3';
 import { drawArrow } from '../../core/draw';
 import {
   TRANSFORMER,
@@ -145,11 +144,9 @@ export function drawAttentionConnections(
       centers.forEach((b, j) => {
         if (!b || !bottomMeta[j] || i > j) return;
 
-        const s = Math.abs(Math.sin((i * 37 + j * 17) * 12.9898)) % 1;
-        const color = d3.interpolateRgb(ATTENTION_LINES.COLOR_START, ATTENTION_LINES.COLOR_END)(s);
+        const color = ATTENTION_LINES.COLOR_END;
         const width = TRANSFORMER.ATTENTION_LINE_WIDTH;
-        const opacity =
-          TRANSFORMER.ATTENTION_BASE_OPACITY + s * TRANSFORMER.ATTENTION_OPACITY_RANGE;
+        const opacity = TRANSFORMER.ATTENTION_BASE_OPACITY + TRANSFORMER.ATTENTION_OPACITY_RANGE;
 
         const line = group
           .append('line')
@@ -185,8 +182,7 @@ export function drawAttentionConnections(
     centers.forEach((a, i) => {
       if (!a || !topMeta[i]) return;
 
-      const s = Math.abs(Math.sin((i * 37 + targetIdx * 17) * 12.9898)) % 1;
-      const color = d3.interpolateRgb(ATTENTION_LINES.COLOR_START, ATTENTION_LINES.COLOR_END)(s);
+      const color = ATTENTION_LINES.COLOR_END;
       const width = TRANSFORMER.ATTENTION_LINE_WIDTH;
       const opacity = ATTENTION_LINES.ALL_TO_ONE_OPACITY;
 

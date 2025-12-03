@@ -22,18 +22,18 @@ function HomePage() {
       descriptionKey: 'home_training_desc',
       items: [
         {
-          id: 'pretraining-model',
-          titleKey: 'home_pretraining_model_title',
-          descriptionKey: 'home_pretraining_model_desc',
-          path: '/pretraining-model',
-          icon: mdiWeightLifter,
-        },
-        {
           id: 'pretraining-simple',
           titleKey: 'home_pretraining_simple_title',
           descriptionKey: 'home_pretraining_simple_desc',
           path: '/pretraining-simple',
           icon: mdiDumbbell,
+        },
+        {
+          id: 'pretraining-model',
+          titleKey: 'home_pretraining_model_title',
+          descriptionKey: 'home_pretraining_model_desc',
+          path: '/pretraining-model',
+          icon: mdiWeightLifter,
         },
       ],
     },
@@ -43,18 +43,18 @@ function HomePage() {
       descriptionKey: 'home_generation_desc',
       items: [
         {
-          id: 'generation-model',
-          titleKey: 'home_generation_model_title',
-          descriptionKey: 'home_generation_model_desc',
-          path: '/generation-model',
-          icon: mdiForumOutline,
-        },
-        {
           id: 'generation-simple',
           titleKey: 'home_generation_simple_title',
           descriptionKey: 'home_generation_simple_desc',
           path: '/generation-simple',
           icon: mdiDrawPen,
+        },
+        {
+          id: 'generation-model',
+          titleKey: 'home_generation_model_title',
+          descriptionKey: 'home_generation_model_desc',
+          path: '/generation-model',
+          icon: mdiForumOutline,
         },
       ],
     },

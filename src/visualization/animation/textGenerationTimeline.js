@@ -202,6 +202,7 @@ export function buildTimeline(svgElement, subStep, isInitialStep, animDuration, 
     case TEXT_GEN_STEPS.BLOCK_INPUT_LAST:
       add(SEL.insideTopEmbeddingsAll, { opacity: 1, y: 0, duration: animDuration });
       add(SEL.shadowToBlockArrow, { opacity: 1, duration: animDuration }, '<');
+      add('.positional-through-arrow', { opacity: 1, duration: animDuration }, '<');
       break;
     case TEXT_GEN_STEPS.ATTENTION_LAST:
       add(SEL.insideBottomEmbeddingsAll, { opacity: 1, y: 0, duration: animDuration });

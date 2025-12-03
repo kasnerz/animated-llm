@@ -101,7 +101,7 @@ body {
   bottom: 0;
   left: 0;
   right: 0;
-  z-index: 0;
+  z-index: 10;
   background: var(--bg-primary);
   padding: 1rem 1rem;
   box-shadow: 0 -2px 5px var(--shadow-color);
@@ -190,6 +190,12 @@ body {
 
 .menu-item-with-label:hover {
   opacity: 0.7;
+}
+
+.menu-item-with-label .menu-icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .menu-item-with-label .menu-label {
@@ -1062,8 +1068,9 @@ body {
   .viz-scale {
     transform: scale(var(--viz-zoom));
     transform-origin: top left;
-    /* Compensate layout width so the scaled content visually fills the scroll area */
-    width: calc(100% / var(--viz-zoom));
+    /* Use fit-content to avoid unnecessary scrollbar when content is smaller than the scaled width */
+    width: fit-content;
+    min-width: 100%;
   }
 
   /* Edge-to-edge layout on mobile */
