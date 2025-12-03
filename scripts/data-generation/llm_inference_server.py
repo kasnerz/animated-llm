@@ -188,19 +188,19 @@ async def get_model_info():
 async def load_model_endpoint(request: LoadModelRequest):
     """Load a new model dynamically."""
     global tokenizer, model
-    
+
     logger.info(f"Loading new model: {request.model_id}")
-    
+
     try:
         # Clear previous model from memory
         if model is not None:
             del model
             del tokenizer
             torch.cuda.empty_cache() if torch.cuda.is_available() else None
-        
+
         # Update config
         config_args.model = request.model_id
-        
+
         # Load new model
         tokenizer = AutoTokenizer.from_pretrained(
             request.model_id,
@@ -221,13 +221,13 @@ async def load_model_endpoint(request: LoadModelRequest):
 
         model.eval()
         logger.info(f"Model {request.model_id} loaded successfully")
-        
+
         return {
             "status": "success",
             "model": request.model_id,
-            "message": f"Model {request.model_id} loaded successfully"
+            "message": f"Model {request.model_id} loaded successfully",
         }
-        
+
     except Exception as e:
         logger.error(f"Error loading model {request.model_id}: {e}")
         raise HTTPException(status_code=500, detail=f"Failed to load model: {str(e)}")
@@ -515,7 +515,7 @@ if __name__ == "__main__":
     parser.add_argument(
         "--port",
         type=int,
-        default=8665,
+        default=8712,
         help="Port to bind the server to",
     )
 
