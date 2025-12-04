@@ -309,6 +309,7 @@ async def generate(request: GenerateRequest):
         prompt_token_count = 0
         chat_template_applied = False
         user_message_start_idx = 0  # Index where user message starts in token list
+        assistant_header_start_idx = -1  # Index where assistant header starts
 
         if request.apply_chat_template and has_chat_template(tokenizer):
             messages = [{"role": "user", "content": request.prompt}]
@@ -325,6 +326,13 @@ async def generate(request: GenerateRequest):
             text_without_assistant = tokenizer.apply_chat_template(
                 messages, tokenize=False, add_generation_prompt=False
             )
+
+            # Calculate assistant header start index
+            ids_without_assistant = tokenizer(
+                text_without_assistant, return_tensors="pt", add_special_tokens=False
+            ).input_ids
+            assistant_header_start_idx = ids_without_assistant.shape[1]
+
             # Try to locate the user header start. Prefer explicit markers; fall back to content position.
             header_start_pos = -1
             # Common patterns for chat templates
@@ -412,6 +420,19 @@ async def generate(request: GenerateRequest):
                     prompt_token_ids_no_system = prompt_token_ids[
                         user_message_start_idx:
                     ]
+
+                    # Determine end of user input (start of assistant header)
+                    end_idx = len(prompt_token_ids)
+                    if (
+                        assistant_header_start_idx != -1
+                        and assistant_header_start_idx > user_message_start_idx
+                    ):
+                        end_idx = assistant_header_start_idx
+
+                    user_input_token_ids = prompt_token_ids[
+                        user_message_start_idx:end_idx
+                    ]
+
                     prompt_tokens = get_display_tokens(
                         tokenizer, prompt_token_ids_no_system
                     )
@@ -421,8 +442,9 @@ async def generate(request: GenerateRequest):
                     display_token_ids = prompt_token_ids_no_system + generated_token_ids
 
                     # Decode all tokens including special tokens, excluding system message
+                    # Use user_input_token_ids for text to hide assistant header/think tokens from input text
                     display_text = tokenizer.decode(
-                        prompt_token_ids_no_system + generated_token_ids,
+                        user_input_token_ids + generated_token_ids,
                         skip_special_tokens=False,
                     )
                 else:

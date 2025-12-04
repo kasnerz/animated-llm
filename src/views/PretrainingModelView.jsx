@@ -2,7 +2,6 @@ import { useApp } from '../contexts/AppContext';
 import GeneratedAnswer from '../components/GeneratedAnswer';
 import TrainingCanvas from '../components/TrainingCanvas';
 import TrainingDocumentCarousel from '../components/TrainingDocumentCarousel';
-import InfoBox from '../components/InfoBox';
 import InitialHint from '../components/InitialHint';
 
 /**
@@ -15,9 +14,6 @@ function PretrainingModelView() {
 
   return (
     <>
-      {/* Info box with contextual guidance */}
-      <InfoBox />
-
       {/* Main content */}
       {state.currentExample && (
         <>

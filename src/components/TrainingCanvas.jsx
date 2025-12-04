@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 import { useApp } from '../contexts/AppContext';
 import { useI18n } from '../i18n/I18nProvider';
 import * as d3 from 'd3';
+import { Tooltip } from 'react-tooltip';
 import { computeEmbeddingsForStep } from '../visualization/core/embeddings';
 import { LAYOUT as CONSTS, TOKEN, TRAINING_STEPS } from '../visualization/core/constants';
 import { trainingTimeline } from '../visualization/animation';
@@ -500,6 +501,31 @@ export default function TrainingCanvas() {
           </div>
         </div>
       )}
+
+      {/* Tooltips */}
+      <Tooltip id="viz-token-tooltip" place="top" content={t('tooltip_token')} />
+      <Tooltip id="viz-token-id-tooltip" place="top" content={t('tooltip_token_id')} />
+      <Tooltip id="viz-embedding-tooltip" place="top" content={t('tooltip_embedding')} />
+      <Tooltip id="viz-attention-tooltip" place="top" content={t('tooltip_attention')} />
+      <Tooltip id="viz-feedforward-tooltip" place="top" content={t('tooltip_feedforward')} />
+      <Tooltip id="viz-last-vector-tooltip" place="top" content={t('tooltip_last_vector')} />
+      <Tooltip id="viz-probabilities-tooltip" place="top" content={t('tooltip_probabilities')} />
+      <Tooltip
+        id="viz-transformer-box-tooltip"
+        place="top"
+        content={t('tooltip_transformer_box')}
+      />
+      <Tooltip
+        id="viz-transformer-shadow-tooltip"
+        place="top"
+        content={t('tooltip_transformer_shadow')}
+      />
+      <Tooltip
+        id="viz-positional-embedding-tooltip"
+        place="top"
+        content={t('tooltip_positional_embedding')}
+      />
+      <Tooltip id="viz-projection-tooltip" place="top" content={t('tooltip_projection')} />
     </section>
   );
 }

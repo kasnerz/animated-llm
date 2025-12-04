@@ -265,7 +265,7 @@ function InputSection({ disableTokenization = false }) {
                     </div>
                   </div>
                   <div className="settings-section">
-                    <div className="settings-label">Temp</div>
+                    <div className="settings-label">Temperature</div>
                     <div className="temp-options">
                       {[
                         { emoji: '🧊', value: '0.0' },

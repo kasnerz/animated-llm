@@ -8,12 +8,32 @@ const qsa = (root, selector) => (root ? Array.from(root.querySelectorAll(selecto
 const setIfAny = (root, selector, vars) => {
   const nodes = qsa(root, selector);
   if (!nodes.length) return;
+
+  // Automatically manage pointer-events for tooltip elements based on opacity
+  // This prevents tooltips from appearing on invisible elements
+  if (vars.opacity !== undefined) {
+    const hasTooltip = nodes.some((node) => node.hasAttribute('data-tooltip-id'));
+    if (hasTooltip && vars.pointerEvents === undefined) {
+      vars = { ...vars, pointerEvents: vars.opacity > 0 ? 'all' : 'none' };
+    }
+  }
+
   gsap.set(nodes, vars);
 };
 
 const toIfAny = (tl, root, selector, vars, pos) => {
   const nodes = qsa(root, selector);
   if (!nodes.length) return;
+
+  // Automatically manage pointer-events for tooltip elements based on opacity
+  // This prevents tooltips from appearing on invisible elements
+  if (vars.opacity !== undefined) {
+    const hasTooltip = nodes.some((node) => node.hasAttribute('data-tooltip-id'));
+    if (hasTooltip && vars.pointerEvents === undefined) {
+      vars = { ...vars, pointerEvents: vars.opacity > 0 ? 'all' : 'none' };
+    }
+  }
+
   tl.to(nodes, vars, pos);
 };
 

@@ -4,9 +4,42 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { processTokenForText } from '../utils/tokenProcessing';
 import { MODEL_REGISTRY, getTemperatureEmoji } from '../config/modelConfig';
 import translations from '../i18n/translations';
+import { Tooltip } from 'react-tooltip';
 import '../styles/training-carousel.css';
 import Icon from '@mdi/react';
 import { mdiPlay, mdiPause, mdiChevronLeft, mdiChevronRight } from '@mdi/js';
+
+// Import document source icons
+import wikipediaIcon from '../assets/docs/wikipedia.png';
+import bookIcon from '../assets/docs/book.png';
+import pythonIcon from '../assets/docs/python.png';
+
+/**
+ * Helper function to determine the document source icon based on the source string
+ * @param {string} source - The source field from the example data
+ * @returns {string|null} - The icon URL or null if no icon matches
+ */
+const getSourceIcon = (source) => {
+  if (!source) return null;
+  const lowerSource = source.toLowerCase();
+
+  // Check for Wikipedia URLs
+  if (lowerSource.includes('wikipedia.org')) {
+    return wikipediaIcon;
+  }
+
+  // Check for Python code
+  if (lowerSource.includes('python') || lowerSource.includes('.py')) {
+    return pythonIcon;
+  }
+
+  // Check for book sources (if it's not a URL and not Python, assume it's a book)
+  if (!lowerSource.startsWith('http')) {
+    return bookIcon;
+  }
+
+  return null;
+};
 
 /**
  * TrainingDocumentCarousel Component
@@ -16,7 +49,7 @@ import { mdiPlay, mdiPause, mdiChevronLeft, mdiChevronRight } from '@mdi/js';
  */
 function TrainingDocumentCarousel({ showPlayButton = true }) {
   const { state, actions } = useApp();
-  const { language } = useI18n();
+  const { language, t } = useI18n();
   const containerRef = useRef(null);
   const trackRef = useRef(null);
   const leftWrapRef = useRef(null);
@@ -192,6 +225,7 @@ function TrainingDocumentCarousel({ showPlayButton = true }) {
     const displayText = example.prompt || example.text || '';
     const sourceLabel =
       example.source || `${getTrainingTranslation('document')} ${exampleIndex + 1}`;
+    const sourceIcon = getSourceIcon(example.source);
 
     return (
       <div
@@ -199,12 +233,16 @@ function TrainingDocumentCarousel({ showPlayButton = true }) {
         className={`carousel-document ${position} ${isActive ? 'active' : 'inactive'}`}
       >
         {/* Document paper */}
-        <div className="document-paper">
+        <div
+          className="document-paper"
+          data-tooltip-id={isActive ? 'training-document-tooltip' : undefined}
+        >
           {/* Paper texture overlay */}
           <div className="paper-texture"></div>
 
           {/* Document header with source label */}
           <div className="document-header">
+            {sourceIcon && <img src={sourceIcon} alt="" className="document-source-icon" />}
             <div className="document-source-label">{sourceLabel}</div>
           </div>
 
@@ -308,6 +346,13 @@ function TrainingDocumentCarousel({ showPlayButton = true }) {
       >
         <Icon path={mdiChevronRight} size={1.5} />
       </button>
+
+      {/* Tooltip */}
+      <Tooltip
+        id="training-document-tooltip"
+        place="top"
+        content={t('tooltip_training_document')}
+      />
     </section>
   );
 }

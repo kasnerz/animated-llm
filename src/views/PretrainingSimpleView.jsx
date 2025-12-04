@@ -3,12 +3,12 @@ import Icon from '@mdi/react';
 import { mdiChevronDown, mdiPause, mdiPlay } from '@mdi/js';
 import { useApp } from '../contexts/AppContext';
 import { useI18n } from '../i18n/I18nProvider';
-import InfoBox from '../components/InfoBox';
 import InitialHint from '../components/InitialHint';
 import TrainingDocumentCarousel from '../components/TrainingDocumentCarousel';
 import { MODEL_REGISTRY, getModelInfo } from '../config/modelConfig';
 import { processTokenForText } from '../utils/tokenProcessing';
 import { getViridisColor } from '../utils/colorSchemes';
+import { Tooltip } from 'react-tooltip';
 import '../styles/pretraining-simple.css';
 
 const MAX_DISTRIBUTION_ROWS = 10;
@@ -255,8 +255,6 @@ function PretrainingSimpleView() {
 
   return (
     <div className="pretraining-simple-container">
-      <InfoBox />
-
       {!state.currentExample && placeholderMessage}
 
       {state.currentExample && (
@@ -284,6 +282,8 @@ function PretrainingSimpleView() {
                   className="model-selector-btn"
                   onClick={() => setIsModelDropdownOpen(!isModelDropdownOpen)}
                   aria-label="Select model"
+                  data-tooltip-id="model-selector-tooltip"
+                  data-tooltip-content={t('tooltip_select_model')}
                 >
                   {transformerLogo && (
                     <img
@@ -348,7 +348,8 @@ function PretrainingSimpleView() {
                   onClick={handlePlayPause}
                   className="btn-play-transformer"
                   aria-label={state.isPlaying ? t('pause') : t('play')}
-                  title={state.isPlaying ? t('pause') : t('play')}
+                  data-tooltip-id="play-pause-tooltip"
+                  data-tooltip-content={t('tooltip_start_animation')}
                 >
                   <Icon path={state.isPlaying ? mdiPause : mdiPlay} size={0.85} />
                 </button>
@@ -423,7 +424,13 @@ function PretrainingSimpleView() {
                           key={`diff-${row.id}`}
                           className={`distribution-row diff-row ${trendClass}`}
                         >
-                          <div className="value-label">{diffLabel}</div>
+                          <div
+                            className="value-label"
+                            data-tooltip-id="difference-tooltip"
+                            data-tooltip-content={t('tooltip_difference')}
+                          >
+                            {diffLabel}
+                          </div>
                         </div>
                       );
                     })}
@@ -464,6 +471,11 @@ function PretrainingSimpleView() {
           {state.currentStep === 0 && subStep === 0 && !state.isPlaying && <InitialHint />}
         </div>
       )}
+
+      {/* Tooltips */}
+      <Tooltip id="model-selector-tooltip" place="bottom" />
+      <Tooltip id="play-pause-tooltip" place="bottom" />
+      <Tooltip id="difference-tooltip" place="top" />
     </div>
   );
 }

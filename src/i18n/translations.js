@@ -20,13 +20,30 @@ const translations = {
     toggle_dark_light_mode: 'Dark mode',
     view_label: 'View',
     show_special_tokens: 'Special tokens',
+    // Tooltips
+    tooltip_select_model: 'Model type',
+    tooltip_temperature: 'Temperature',
+    tooltip_show_special_tokens: 'Show special tokens',
+    tooltip_start_animation: 'Start',
+    tooltip_probability: 'Probability',
+    tooltip_difference: 'Difference between model predictions and target distribution',
+    tooltip_training_document: 'Input document',
+    tooltip_token: 'Token',
+    tooltip_token_id: 'Token id',
+    tooltip_embedding: 'Token representation',
+    tooltip_attention: 'Attention layer operations',
+    tooltip_feedforward: 'Feed-forward layer operations',
+    tooltip_last_vector: 'Last token representation',
+    tooltip_probabilities: 'Output probabilities (sum to 1)',
+    tooltip_transformer_box: 'Transformer block',
+    tooltip_positional_embedding: 'Positional embedding',
+    tooltip_projection: 'Projecting token representation to probabilities',
+    tooltip_transformer_shadow: 'Previous Transformer block',
     // Home page
     home_tagline: 'Interactive visualization of language models',
     // Home page sections
     home_training_title: 'Training',
-    home_training_desc: 'Understand how language models learn from data.',
     home_generation_title: 'Text Generation',
-    home_generation_desc: 'Understand how language models generate text.',
     // Home page items
     home_pretraining_model_title: 'How is Transformer trained?',
     home_pretraining_model_desc: 'Training step by step',
@@ -97,27 +114,6 @@ const translations = {
       selectDocument: 'Select document',
       document: 'Document',
     },
-    // InfoBox
-    infobox: {
-      // Text generation - before animation
-      ready_to_generate_heading: 'LLM is ready to generate text.',
-      ready_to_generate_desc: 'Press the Play button to start generating text.',
-      // Text generation - predicting (steps 1-8)
-      predicting_next_token_heading: 'LLM predicts the next token',
-      predicting_user_input_desc: 'User input is passed through the model',
-      predicting_generated_desc: 'Text generated so far is passed through the model',
-      // Text generation - selection (steps 9-12)
-      selecting_token_desc: 'Selected token is appended to the generated text',
-      // Training - before animation
-      ready_to_train_heading: 'LLM is ready to be trained',
-      ready_to_train_desc: 'Press the Play button to train the model on the current document',
-      // Training - forward pass (steps 0-9)
-      forward_pass_heading: 'Forward training pass',
-      forward_pass_desc: 'LLM is predicting which token comes next',
-      // Training - backward pass (steps 10-15)
-      backward_pass_heading: 'Backward training pass',
-      backward_pass_desc: 'Model weights are updated',
-    },
   },
   cs: {
     play: 'Přehrát',
@@ -135,13 +131,30 @@ const translations = {
     toggle_dark_light_mode: 'Tmavý režim',
     view_label: 'Zobrazení',
     show_special_tokens: 'Speciální tokeny',
+    // Tooltips
+    tooltip_select_model: 'Typ modelu',
+    tooltip_temperature: 'Teplota',
+    tooltip_show_special_tokens: 'Zobrazovat speciální tokeny',
+    tooltip_start_animation: 'Spustit',
+    tooltip_probability: 'Pravděpodobnost',
+    tooltip_difference: 'Rozdíl mezi predikcemi modelu a cílovou distribucí',
+    tooltip_training_document: 'Vstupní dokument',
+    tooltip_token: 'Token',
+    tooltip_token_id: 'ID tokenu',
+    tooltip_embedding: 'Reprezentace tokenu',
+    tooltip_attention: 'Operace attention vrstvy',
+    tooltip_feedforward: 'Operace feed-forward vrstvy',
+    tooltip_last_vector: 'Reprezentace posledního tokenu',
+    tooltip_probabilities: 'Pravděpodobnosti (součet = 1)',
+    tooltip_transformer_box: 'Transformer blok',
+    tooltip_positional_embedding: 'Poziční embedding',
+    tooltip_projection: 'Projekce reprezentace tokenu na pravděpodobnosti',
+    tooltip_transformer_shadow: 'Předchozí Transformer blok',
     // Home page
-    home_tagline: 'Vizualizace velkých jazykových modelů',
+    home_tagline: 'Interaktivní vizualizace velkých jazykových modelů',
     // Home page sections
     home_training_title: 'Trénování',
-    home_training_desc: 'Pochopte, jak se jazykové modely učí z trénovacích dat.',
     home_generation_title: 'Generování textu',
-    home_generation_desc: 'Pochopte, jak jazykové modely generují text.',
     // Home page items
     home_pretraining_model_title: 'Jak se trénuje Transformer?',
     home_pretraining_model_desc: 'Trénování krok za krokem.',
@@ -203,27 +216,6 @@ const translations = {
     training: {
       selectDocument: 'Vybrat dokument',
       document: 'Dokument',
-    },
-    // InfoBox
-    infobox: {
-      // Text generation - before animation
-      ready_to_generate_heading: 'Jazykový model je připraven generovat text.',
-      ready_to_generate_desc: 'Stiskněte tlačítko Přehrát pro začátek generování.',
-      // Text generation - predicting (steps 1-8)
-      predicting_next_token_heading: 'Model predikuje další token',
-      predicting_user_input_desc: 'Vstup od uživatele je předán modelem',
-      predicting_generated_desc: 'Dosud vygenerovaný text je předán modelem',
-      // Text generation - selection (steps 9-12)
-      selecting_token_desc: 'Vybraný token je přidán k vygenerovanému textu',
-      // Training - before animation
-      ready_to_train_heading: 'Model je připraven k trénování',
-      ready_to_train_desc: 'Stiskněte tlačítko Přehrát pro trénování modelu na aktuálním dokumentu',
-      // Training - forward pass (steps 0-9)
-      forward_pass_heading: 'Dopředný průchod',
-      forward_pass_desc: 'Model predikuje, který token následuje',
-      // Training - backward pass (steps 10-15)
-      backward_pass_heading: 'Zpětný průchod',
-      backward_pass_desc: 'Váhy modelu jsou aktualizovány',
     },
   },
   fr: {

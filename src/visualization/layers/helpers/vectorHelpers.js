@@ -46,8 +46,10 @@ export function drawEmbeddingColumn(group, centerX, topY, values, options = {}) 
     .attr('width', width)
     .attr('height', height)
     .attr('rx', VECTOR.BOX_RADIUS)
+    .attr('data-tooltip-id', 'viz-embedding-tooltip')
     .style('fill', outerFill)
-    .style('stroke', outerStroke);
+    .style('stroke', outerStroke)
+    .style('cursor', 'help');
 
   const cellCentersX = [];
   displayValues.forEach((v, i) => {
@@ -63,7 +65,9 @@ export function drawEmbeddingColumn(group, centerX, topY, values, options = {}) 
       .attr('width', cellWidth)
       .attr('height', cellHeight)
       .attr('rx', VECTOR.CELL_RADIUS)
-      .style('fill', 'transparent');
+      .attr('data-tooltip-id', 'viz-embedding-tooltip')
+      .style('fill', 'transparent')
+      .style('cursor', 'help');
 
     const isEllipsis = v === 'ELLIPSIS';
     colG
@@ -72,9 +76,12 @@ export function drawEmbeddingColumn(group, centerX, topY, values, options = {}) 
       .attr('y', isEllipsis ? cy : cy + VECTOR.TEXT_Y_OFFSET)
       .attr('text-anchor', 'middle')
       .attr('dominant-baseline', isEllipsis ? 'central' : 'auto')
+      .attr('data-tooltip-id', 'viz-embedding-tooltip')
       .style('font-size', isEllipsis ? '16px' : VECTOR.TEXT_SIZE)
       .style('font-weight', 'normal')
       .style('fill', getVectorTextColor(isDarkMode))
+      .style('cursor', 'help')
+      .style('pointer-events', 'none')
       .text(isEllipsis ? '⋯' : typeof v === 'number' ? v.toFixed(1) : '');
   });
 
@@ -131,14 +138,23 @@ export function drawHorizontalVector(group, centerX, topY, values, options = {})
     ? { fill: bgFill, stroke: getVectorBoxColors(tokenColor, { isDarkMode }).stroke }
     : getVectorBoxColors(tokenColor, { isDarkMode });
 
+  const tooltipId =
+    className === 'extracted-horizontal'
+      ? 'viz-last-vector-tooltip'
+      : isLogprob
+        ? 'viz-probabilities-tooltip'
+        : undefined;
+
   g.append('rect')
     .attr('x', leftX - 6)
     .attr('y', topY)
     .attr('width', width)
     .attr('height', cellHeight + 12)
     .attr('rx', isLogprob ? VECTOR.LOGPROB_BOX_RADIUS : VECTOR.BOX_RADIUS)
+    .attr('data-tooltip-id', tooltipId)
     .style('fill', colors.fill)
-    .style('stroke', colors.stroke);
+    .style('stroke', colors.stroke)
+    .style('cursor', tooltipId ? 'help' : 'default');
 
   values.forEach((v, i) => {
     const x = leftX + i * (cellWidth + gap);
@@ -151,7 +167,9 @@ export function drawHorizontalVector(group, centerX, topY, values, options = {})
       .attr('width', cellWidth)
       .attr('height', cellHeight)
       .attr('rx', VECTOR.CELL_RADIUS)
-      .style('fill', 'transparent');
+      .attr('data-tooltip-id', tooltipId)
+      .style('fill', 'transparent')
+      .style('cursor', tooltipId ? 'help' : 'default');
 
     const isLastAndEllipsis = ellipsisLast && i === n - 1;
     const isEllipsisValue = v === 'ELLIPSIS' || v === '...';
@@ -162,9 +180,12 @@ export function drawHorizontalVector(group, centerX, topY, values, options = {})
       .attr('y', isEllipsis ? cy : cy + (isLogprob ? 6 : VECTOR.TEXT_Y_OFFSET))
       .attr('text-anchor', 'middle')
       .attr('dominant-baseline', isEllipsis ? 'central' : 'auto')
+      .attr('data-tooltip-id', tooltipId)
       .style('font-size', isEllipsis ? '16px' : fontSize)
       .style('font-weight', 'normal')
       .style('fill', getVectorTextColor(isDarkMode))
+      .style('cursor', tooltipId ? 'help' : 'default')
+      .style('pointer-events', 'none')
       .text(isEllipsis ? '⋯' : format ? format(v) : typeof v === 'number' ? v.toFixed(1) : '');
   });
 

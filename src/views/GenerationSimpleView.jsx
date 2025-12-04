@@ -8,6 +8,7 @@ import { MODEL_REGISTRY, getModelInfo, getTemperatureEmoji } from '../config/mod
 import Icon from '@mdi/react';
 import { mdiPlay, mdiPause, mdiChevronDown, mdiCodeTags } from '@mdi/js';
 import InitialHint from '../components/InitialHint';
+import { Tooltip } from 'react-tooltip';
 import '../styles/visualization.css';
 import '../styles/main.css';
 import '../styles/decoding-view.css';
@@ -315,11 +316,31 @@ function GenerationSimpleView() {
                       const style = getTokenStyle(isGenerated, genStep, tokenId);
                       const prevTok = i > 0 ? tokens[i - 1] : null;
 
+                      // Get probability for tooltip
+                      let probability = null;
+                      if (isGenerated && genStep) {
+                        const candidate = genStep.output_distribution?.candidates?.find(
+                          (c) => c.token_id === tokenId
+                        );
+                        if (candidate) {
+                          probability = (candidate.prob * 100).toFixed(2);
+                          if (probability === '0.00' && candidate.prob > 0) {
+                            probability = (candidate.prob * 100).toPrecision(2);
+                          }
+                        }
+                      }
+
                       return (
                         <span
                           key={i}
                           className={`io-token ${isSpecialTokenContextual(tok, prevTok) ? 'special' : ''}`}
                           style={style}
+                          data-tooltip-id={
+                            isGenerated && probability ? 'token-probability-tooltip' : undefined
+                          }
+                          data-tooltip-content={
+                            probability ? `${t('tooltip_probability')}: ${probability}%` : undefined
+                          }
                         >
                           {processTokenForText(tok)}
                         </span>
@@ -330,6 +351,20 @@ function GenerationSimpleView() {
                       <span
                         className="io-token appended"
                         style={getTokenStyle(true, currentGen, selectedTokenId)}
+                        data-tooltip-id="token-probability-tooltip"
+                        data-tooltip-content={(() => {
+                          const candidate = currentGen?.output_distribution?.candidates?.find(
+                            (c) => c.token_id === selectedTokenId
+                          );
+                          if (candidate) {
+                            let prob = (candidate.prob * 100).toFixed(2);
+                            if (prob === '0.00' && candidate.prob > 0) {
+                              prob = (candidate.prob * 100).toPrecision(2);
+                            }
+                            return `${t('tooltip_probability')}: ${prob}%`;
+                          }
+                          return undefined;
+                        })()}
                       >
                         {processTokenForText(selectedToken)}
                       </span>
@@ -358,6 +393,8 @@ function GenerationSimpleView() {
             className="model-selector-btn"
             onClick={() => setIsModelDropdownOpen(!isModelDropdownOpen)}
             aria-label="Select model"
+            data-tooltip-id="model-selector-tooltip"
+            data-tooltip-content={t('tooltip_select_model')}
           >
             <img
               src={
@@ -402,7 +439,8 @@ function GenerationSimpleView() {
             className="temp-selector-btn"
             onClick={() => setIsTempDropdownOpen(!isTempDropdownOpen)}
             aria-label="Select temperature"
-            title="Temperature"
+            data-tooltip-id="temperature-tooltip"
+            data-tooltip-content={t('tooltip_temperature')}
           >
             <span className="temp-emoji-btn" aria-hidden>
               {currentTempEmoji}
@@ -440,7 +478,8 @@ function GenerationSimpleView() {
             onClick={() => actions.setShowSpecialTokens(!state.showSpecialTokens)}
             className={`btn-special-tokens ${state.showSpecialTokens ? 'active' : ''}`}
             aria-label={t('show_special_tokens') || 'Toggle special tokens'}
-            title={t('show_special_tokens') || 'Toggle special tokens'}
+            data-tooltip-id="special-tokens-tooltip"
+            data-tooltip-content={t('tooltip_show_special_tokens')}
           >
             <Icon path={mdiCodeTags} size={1} />
           </button>
@@ -450,7 +489,8 @@ function GenerationSimpleView() {
             onClick={handlePlayPause}
             className="btn-play-transformer"
             aria-label={state.isPlaying ? t('pause') : t('play')}
-            title={state.isPlaying ? t('pause') : t('play')}
+            data-tooltip-id="play-pause-tooltip"
+            data-tooltip-content={t('tooltip_start_animation')}
           >
             <Icon path={state.isPlaying ? mdiPause : mdiPlay} size={0.85} />
           </button>
@@ -530,6 +570,13 @@ function GenerationSimpleView() {
       {state.currentStep === 0 && subStep === 0 && !state.isPlaying && <InitialHint />}
 
       {/* Removed old append-arrow div */}
+
+      {/* Tooltips */}
+      <Tooltip id="model-selector-tooltip" place="bottom" />
+      <Tooltip id="temperature-tooltip" place="bottom" />
+      <Tooltip id="special-tokens-tooltip" place="bottom" />
+      <Tooltip id="play-pause-tooltip" place="bottom" />
+      <Tooltip id="token-probability-tooltip" place="top" clickable />
     </div>
   );
 }

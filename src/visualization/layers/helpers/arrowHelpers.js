@@ -100,19 +100,25 @@ export function drawPositionalIndicator(group, x, y, index, options = {}) {
     .attr('cx', x)
     .attr('cy', y)
     .attr('r', radius)
+    .attr('data-tooltip-id', 'viz-positional-embedding-tooltip')
     .style('fill', POSITIONAL_INDICATOR.CIRCLE_FILL)
     .style('stroke', POSITIONAL_INDICATOR.CIRCLE_STROKE)
-    .style('opacity', opacity);
+    .style('opacity', opacity)
+    .style('cursor', 'help')
+    .style('pointer-events', 'none');
 
   peg
     .append('text')
     .attr('x', x)
     .attr('y', y + POSITIONAL_INDICATOR.TEXT_Y_OFFSET)
     .attr('text-anchor', 'middle')
+    .attr('data-tooltip-id', 'viz-positional-embedding-tooltip')
     .style('font-size', TRANSFORMER.POSITIONAL_TEXT_SIZE)
     .style('font-weight', '600')
     .style('fill', POSITIONAL_INDICATOR.TEXT_FILL)
     .style('opacity', opacity)
+    .style('cursor', 'help')
+    .style('pointer-events', 'none')
     .text(String(index));
 
   return { x, y, r: radius };

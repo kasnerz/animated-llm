@@ -450,11 +450,32 @@ function appReducer(state, action) {
         language: action.payload.language,
       };
 
-    case ActionTypes.SET_VIEW_TYPE:
+    case ActionTypes.SET_VIEW_TYPE: {
+      const newViewType = action.payload.viewType;
+      const currentModel = MODEL_REGISTRY[state.selectedModelIndex];
+      const isTraining = newViewType === 'training';
+
+      // Check if current model is valid for new view
+      const isValid =
+        currentModel && (isTraining ? currentModel.training_view : currentModel.decoding_view);
+
+      let newModelIndex = state.selectedModelIndex;
+      if (!isValid) {
+        // Find first valid model
+        const validIndex = MODEL_REGISTRY.findIndex((m) =>
+          isTraining ? m.training_view : m.decoding_view
+        );
+        if (validIndex !== -1) {
+          newModelIndex = validIndex;
+        }
+      }
+
       return {
         ...state,
-        viewType: action.payload.viewType,
+        viewType: newViewType,
+        selectedModelIndex: newModelIndex,
       };
+    }
 
     case ActionTypes.SET_ANIMATION_SPEED:
       return {
@@ -509,9 +530,16 @@ function appReducer(state, action) {
  */
 export function AppProvider({ children, initialViewType = 'inference' }) {
   // Override initialState with the provided initialViewType
+  // AND ensure selected model is valid for the initial view
+  const isTraining = initialViewType === 'training';
+  const initialModelIndex = MODEL_REGISTRY.findIndex((m) =>
+    isTraining ? m.training_view : m.decoding_view
+  );
+
   const initialStateWithViewType = {
     ...initialState,
     viewType: initialViewType,
+    selectedModelIndex: initialModelIndex !== -1 ? initialModelIndex : 0,
   };
 
   const [state, dispatch] = useReducer(appReducer, initialStateWithViewType);
@@ -561,16 +589,15 @@ export function AppProvider({ children, initialViewType = 'inference' }) {
         // Choose initial example depending on view and selected model
         if (examples.length > 0) {
           let initialId = examples[0].id;
-          if (state.viewType === 'training') {
-            const entry = MODEL_REGISTRY[state.selectedModelIndex];
-            const pattern = entry
-              ? typeof entry.pattern === 'string'
-                ? new RegExp(entry.pattern, 'i')
-                : entry.pattern
-              : null;
-            const match = examples.find((ex) => (pattern ? pattern.test(ex.model_id || '') : true));
-            if (match?.id) initialId = match.id;
-          }
+          const entry = MODEL_REGISTRY[state.selectedModelIndex];
+          const pattern = entry
+            ? typeof entry.pattern === 'string'
+              ? new RegExp(entry.pattern, 'i')
+              : entry.pattern
+            : null;
+          const match = examples.find((ex) => (pattern ? pattern.test(ex.model_id || '') : true));
+          if (match?.id) initialId = match.id;
+
           loadExample(initialId);
         }
       } catch (error) {

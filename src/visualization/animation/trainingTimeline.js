@@ -28,10 +28,27 @@ const setIfAny = (root, selector, vars) => {
       }
     });
     const { className: _className, ...rest } = vars;
+
+    // Automatically manage pointer-events for tooltip elements based on opacity
+    if (rest.opacity !== undefined) {
+      const hasTooltip = nodes.some((node) => node.hasAttribute('data-tooltip-id'));
+      if (hasTooltip && rest.pointerEvents === undefined) {
+        rest.pointerEvents = rest.opacity > 0 ? 'all' : 'none';
+      }
+    }
+
     if (Object.keys(rest).length) {
       gsap.set(nodes, rest);
     }
     return;
+  }
+
+  // Automatically manage pointer-events for tooltip elements based on opacity
+  if (vars.opacity !== undefined) {
+    const hasTooltip = nodes.some((node) => node.hasAttribute('data-tooltip-id'));
+    if (hasTooltip && vars.pointerEvents === undefined) {
+      vars = { ...vars, pointerEvents: vars.opacity > 0 ? 'all' : 'none' };
+    }
   }
 
   gsap.set(nodes, vars);
@@ -66,11 +83,29 @@ const toIfAny = (tl, root, selector, vars, pos) => {
       pos
     );
     const { className: _className, ...rest } = vars;
+
+    // Automatically manage pointer-events for tooltip elements based on opacity
+    if (rest.opacity !== undefined) {
+      const hasTooltip = nodes.some((node) => node.hasAttribute('data-tooltip-id'));
+      if (hasTooltip && rest.pointerEvents === undefined) {
+        rest.pointerEvents = rest.opacity > 0 ? 'all' : 'none';
+      }
+    }
+
     if (Object.keys(rest).length) {
       tl.to(nodes, rest, pos);
     }
     return;
   }
+
+  // Automatically manage pointer-events for tooltip elements based on opacity
+  if (vars.opacity !== undefined) {
+    const hasTooltip = nodes.some((node) => node.hasAttribute('data-tooltip-id'));
+    if (hasTooltip && vars.pointerEvents === undefined) {
+      vars = { ...vars, pointerEvents: vars.opacity > 0 ? 'all' : 'none' };
+    }
+  }
+
   tl.to(nodes, vars, pos);
 };
 

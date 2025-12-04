@@ -378,3 +378,11 @@
   display: block;
   width: 100%;
 }
+
+/* Disable tooltips for invisible elements (opacity: 0) */
+/* This prevents tooltips from appearing on elements that are not yet visible in the animation */
+[data-tooltip-id][opacity='0'],
+[data-tooltip-id][style*='opacity: 0'],
+[data-tooltip-id][style*='opacity:0'] {
+  pointer-events: none !important;
+}

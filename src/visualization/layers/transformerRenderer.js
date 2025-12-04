@@ -342,6 +342,27 @@ function renderInsideBottomEmbeddings(
 // Helper: Render attention layer
 function renderAttentionLayer(underlays, step, tokensLayoutRef, insideTopMeta, insideBottomMeta) {
   const attentionGroup = underlays.append('g').attr('class', 'attention-mash');
+
+  // Add tooltip to the attention group (only if positions are available)
+  if (insideTopMeta?.positions?.length > 0 && insideBottomMeta?.baseY && insideTopMeta?.baseY) {
+    attentionGroup
+      .append('rect')
+      .attr('class', 'attention-mash-tooltip-area')
+      .attr('x', insideTopMeta.positions[0] - 50)
+      .attr('y', insideTopMeta.baseY - 30)
+      .attr(
+        'width',
+        insideTopMeta.positions[insideTopMeta.positions.length - 1] -
+          insideTopMeta.positions[0] +
+          100
+      )
+      .attr('height', insideBottomMeta.baseY - insideTopMeta.baseY + 60)
+      .attr('data-tooltip-id', 'viz-attention-tooltip')
+      .style('fill', 'transparent')
+      .style('pointer-events', 'none')
+      .style('cursor', 'help');
+  }
+
   const isFirstGenStep = Number(step?.step) === 0;
   const isBackprop = step && step.viz_mode === 'backprop';
   // During backprop, only tag attention lines for the first or last layer appropriately,
@@ -476,13 +497,15 @@ function renderFFNConnectors(underlays, x, insideBottom, meta, isNew, tokenIdx, 
     const inLine = underlays
       .append('line')
       .attr('class', `ffn-arrow-in ${isNew ? 'new-token' : 'prev-token'}`)
+      .attr('data-tooltip-id', 'viz-feedforward-tooltip')
       .attr('x1', inCenters[k])
       .attr('y1', startY)
       .attr('x2', x)
       .attr('y2', boxTopY - 4)
       .style('stroke', color)
       .style('stroke-width', 0.5)
-      .style('opacity', 0);
+      .style('opacity', 0)
+      .style('cursor', 'help');
 
     if (tagBackprop) {
       const colorClass = (tokenIdx + k) % 2 === 0 ? 'green' : 'red';
@@ -495,13 +518,15 @@ function renderFFNConnectors(underlays, x, insideBottom, meta, isNew, tokenIdx, 
   underlays
     .append('rect')
     .attr('class', `projection-box ffn ${isNew ? 'new-token' : 'prev-token'}`)
+    .attr('data-tooltip-id', 'viz-feedforward-tooltip')
     .attr('x', x - boxSize / 2)
     .attr('y', boxTopY)
     .attr('width', boxSize)
     .attr('height', boxSize)
     .attr('rx', boxRadius)
     .style('fill', '#cad0ceff')
-    .style('opacity', 0);
+    .style('opacity', 0)
+    .style('cursor', 'help');
 
   // Outgoing lines
   for (let k = 0; k < lineCount; k++) {
@@ -510,13 +535,15 @@ function renderFFNConnectors(underlays, x, insideBottom, meta, isNew, tokenIdx, 
     const outLine = underlays
       .append('line')
       .attr('class', `ffn-arrow-out ${isNew ? 'new-token' : 'prev-token'}`)
+      .attr('data-tooltip-id', 'viz-feedforward-tooltip')
       .attr('x1', x)
       .attr('y1', boxBottomY + 4)
       .attr('x2', outCenters[k])
       .attr('y2', endY)
       .style('stroke', color)
       .style('stroke-width', 0.5)
-      .style('opacity', 0);
+      .style('opacity', 0)
+      .style('cursor', 'help');
 
     if (tagBackprop) {
       const colorClass = (tokenIdx + k * 3) % 2 === 0 ? 'green' : 'red';
@@ -609,9 +636,12 @@ function renderTransformerBox(
       .attr('height', blockBottomY - blockTopY)
       .attr('rx', TRANSFORMER_BOX.BORDER_RADIUS)
       .attr('class', 'transformer-shadow-box')
+      .attr('data-tooltip-id', 'viz-transformer-shadow-tooltip')
       .style('fill', 'var(--viz-transformer-bg)')
       .style('stroke', 'var(--viz-transformer-border)')
-      .style('stroke-width', TRANSFORMER_BOX.STROKE_WIDTH);
+      .style('stroke-width', TRANSFORMER_BOX.STROKE_WIDTH)
+      .style('cursor', 'help')
+      .style('pointer-events', 'none');
   }
 
   // Main transformer box
@@ -623,9 +653,12 @@ function renderTransformerBox(
     .attr('height', blockBottomY - blockTopY)
     .attr('rx', TRANSFORMER_BOX.BORDER_RADIUS)
     .attr('class', 'viz-transformer-box')
+    .attr('data-tooltip-id', 'viz-transformer-box-tooltip')
     .style('fill', 'var(--viz-transformer-bg)')
     .style('stroke', 'var(--viz-transformer-border)')
-    .style('stroke-width', TRANSFORMER_BOX.STROKE_WIDTH);
+    .style('stroke-width', TRANSFORMER_BOX.STROKE_WIDTH)
+    .style('cursor', 'help')
+    .style('pointer-events', 'none');
 
   // Ensure positional guide lines sit behind the transformer box
   try {

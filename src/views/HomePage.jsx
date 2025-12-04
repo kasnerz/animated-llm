@@ -21,7 +21,6 @@ function HomePage() {
     {
       id: 'generation',
       titleKey: 'home_generation_title',
-      descriptionKey: 'home_generation_desc',
       items: [
         {
           id: 'generation-simple',
@@ -42,7 +41,6 @@ function HomePage() {
     {
       id: 'training',
       titleKey: 'home_training_title',
-      descriptionKey: 'home_training_desc',
       items: [
         {
           id: 'pretraining-simple',
@@ -102,7 +100,6 @@ function HomePage() {
             <div key={section.id} className="home-section">
               <div className="section-header">
                 <h2 className="section-title">{t(section.titleKey)}</h2>
-                <p className="section-description">{t(section.descriptionKey)}</p>
               </div>
               <div className="section-items">
                 {section.items.map((item) => (

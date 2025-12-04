@@ -67,8 +67,11 @@ export function drawArrow(group, x1, y1, x2, y2, opts = {}) {
       .attr('height', boxSize)
       .attr('rx', boxRadius)
       .attr('ry', boxRadius)
+      .attr('data-tooltip-id', 'viz-projection-tooltip')
       .style('fill', color)
-      .style('opacity', opacity);
+      .style('opacity', opacity)
+      .style('cursor', 'help')
+      .style('pointer-events', 'none');
 
     // Draw second segment (from box to end with arrowhead)
     group

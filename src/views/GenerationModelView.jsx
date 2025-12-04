@@ -2,7 +2,6 @@ import { useApp } from '../contexts/AppContext';
 import GeneratedAnswer from '../components/GeneratedAnswer';
 import TextGenerationCanvas from '../components/TextGenerationCanvas';
 import InputSection from '../components/InputSection';
-import InfoBox from '../components/InfoBox';
 import InitialHint from '../components/InitialHint';
 
 /**
@@ -14,9 +13,6 @@ function GenerationModelView() {
 
   return (
     <>
-      {/* Info box with contextual guidance */}
-      <InfoBox />
-
       {/* Main content */}
       {state.currentExample && (
         <>

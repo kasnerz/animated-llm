@@ -85,14 +85,14 @@
 .home-tagline {
   font-size: 1.125rem;
   color: var(--text-secondary);
-  margin: 0;
+  margin-top: 10px;
   font-weight: 400;
 }
 
 /* Learning sections container */
 .home-sections {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  flex-direction: column;
   gap: 3rem;
   margin-top: 2rem;
 }
@@ -101,7 +101,7 @@
 .home-section {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1rem;
 }
 
 .section-header {
@@ -114,21 +114,14 @@
   font-size: 1.75rem;
   font-weight: 700;
   color: var(--text-primary);
-  margin: 0 0 0.5rem 0;
-  letter-spacing: -0.02em;
-}
-
-.section-description {
-  font-size: 1rem;
-  color: var(--text-secondary);
   margin: 0;
-  font-weight: 400;
+  letter-spacing: -0.02em;
 }
 
 /* Section items container */
 .section-items {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
 }
 
@@ -139,8 +132,9 @@
   gap: 1.25rem;
   padding: 1.5rem;
   min-height: 120px;
-  background-color: var(--bg-secondary);
-  border: 1px solid var(--border-primary);
+  /* background-color: var(--bg-secondary); */
+  border: 1px solid var(--accent-primary);
+  box-shadow: 0 2px 6px var(--shadow-color);
   border-radius: 12px;
   text-decoration: none;
   cursor: pointer;
@@ -231,16 +225,15 @@
   }
 
   .home-sections {
-    grid-template-columns: 1fr;
     gap: 2.5rem;
+  }
+
+  .section-items {
+    grid-template-columns: 1fr;
   }
 
   .section-title {
     font-size: 1.5rem;
-  }
-
-  .section-description {
-    font-size: 0.9375rem;
   }
 
   .section-item {

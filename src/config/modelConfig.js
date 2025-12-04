@@ -19,7 +19,7 @@ export const MODEL_REGISTRY = [
     logo: 'transformer.png',
     size: '1b',
     id: 'meta-llama/Llama-3.2-1B-Instruct',
-    name: 'Transformer 1B',
+    name: 'Transformer 1B (random)',
     training_view: true,
     decoding_view: false,
   },
