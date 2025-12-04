@@ -18,6 +18,7 @@ import Icon from '@mdi/react';
 import { mdiKeyboard } from '@mdi/js';
 import { TRAINING_STEPS, TEXT_GEN_STEPS } from './visualization/core/constants';
 import githubMark from './assets/github-mark.png';
+import logoSmall from './assets/logo-small.png';
 import './index.css';
 import './styles/views.css';
 
@@ -320,7 +321,7 @@ function AppContent() {
 
             {/* Centered logo button (desktop only) */}
             <Link to="/" className="logo-center-button">
-              <img src="/src/assets/logo-small.png" alt="AnimatedLLM" />
+              <img src={logoSmall} alt="AnimatedLLM" />
             </Link>
 
             {/* Header controls - minimal */}
