@@ -1,5 +1,5 @@
 {
-  "id": "generated_20251203_121000",
+  "id": "generated_20251204_095748",
   "prompt": "Tell me a joke",
   "language": "en",
   "temperature": 1.0,
@@ -14,28 +14,28 @@
   "generation_steps": [
     {
       "step": 0,
-      "input_text": "Tell me a joke<|im_end|>\n<|im_start|>assistant\n",
+      "input_text": "<|im_start|>userTell me a joke<|im_end|><|im_start|>assistant",
       "tokens": [
+        "<|im_start|>",
+        "user",
         "Tell",
         "Ġme",
         "Ġa",
         "Ġjoke",
         "<|im_end|>",
-        "\n",
         "<|im_start|>",
-        "assistant",
-        "\n"
+        "assistant"
       ],
       "token_ids": [
+        151644,
+        872,
         40451,
         752,
         264,
         21646,
         151645,
-        198,
         151644,
-        77091,
-        198
+        77091
       ],
       "output_distribution": {
         "top_k": 10,
@@ -110,29 +110,29 @@
     },
     {
       "step": 1,
-      "input_text": "Tell me a joke<|im_end|>\n<|im_start|>assistant\nSure",
+      "input_text": "<|im_start|>userTell me a joke<|im_end|><|im_start|>assistantSure",
       "tokens": [
+        "<|im_start|>",
+        "user",
         "Tell",
         "Ġme",
         "Ġa",
         "Ġjoke",
         "<|im_end|>",
-        "\n",
         "<|im_start|>",
         "assistant",
-        "\n",
         "Sure"
       ],
       "token_ids": [
+        151644,
+        872,
         40451,
         752,
         264,
         21646,
         151645,
-        198,
         151644,
         77091,
-        198,
         39814
       ],
       "output_distribution": {
@@ -208,30 +208,30 @@
     },
     {
       "step": 2,
-      "input_text": "Tell me a joke<|im_end|>\n<|im_start|>assistant\nSure!",
+      "input_text": "<|im_start|>userTell me a joke<|im_end|><|im_start|>assistantSure!",
       "tokens": [
+        "<|im_start|>",
+        "user",
         "Tell",
         "Ġme",
         "Ġa",
         "Ġjoke",
         "<|im_end|>",
-        "\n",
         "<|im_start|>",
         "assistant",
-        "\n",
         "Sure",
         "!"
       ],
       "token_ids": [
+        151644,
+        872,
         40451,
         752,
         264,
         21646,
         151645,
-        198,
         151644,
         77091,
-        198,
         39814,
         0
       ],
@@ -308,31 +308,31 @@
     },
     {
       "step": 3,
-      "input_text": "Tell me a joke<|im_end|>\n<|im_start|>assistant\nSure! Here",
+      "input_text": "<|im_start|>userTell me a joke<|im_end|><|im_start|>assistantSure! Here",
       "tokens": [
+        "<|im_start|>",
+        "user",
         "Tell",
         "Ġme",
         "Ġa",
         "Ġjoke",
         "<|im_end|>",
-        "\n",
         "<|im_start|>",
         "assistant",
-        "\n",
         "Sure",
         "!",
         "ĠHere"
       ],
       "token_ids": [
+        151644,
+        872,
         40451,
         752,
         264,
         21646,
         151645,
-        198,
         151644,
         77091,
-        198,
         39814,
         0,
         5692
@@ -410,32 +410,32 @@
     },
     {
       "step": 4,
-      "input_text": "Tell me a joke<|im_end|>\n<|im_start|>assistant\nSure! Here's",
+      "input_text": "<|im_start|>userTell me a joke<|im_end|><|im_start|>assistantSure! Here's",
       "tokens": [
+        "<|im_start|>",
+        "user",
         "Tell",
         "Ġme",
         "Ġa",
         "Ġjoke",
         "<|im_end|>",
-        "\n",
         "<|im_start|>",
         "assistant",
-        "\n",
         "Sure",
         "!",
         "ĠHere",
         "'s"
       ],
       "token_ids": [
+        151644,
+        872,
         40451,
         752,
         264,
         21646,
         151645,
-        198,
         151644,
         77091,
-        198,
         39814,
         0,
         5692,
@@ -514,17 +514,17 @@
     },
     {
       "step": 5,
-      "input_text": "Tell me a joke<|im_end|>\n<|im_start|>assistant\nSure! Here's a",
+      "input_text": "<|im_start|>userTell me a joke<|im_end|><|im_start|>assistantSure! Here's a",
       "tokens": [
+        "<|im_start|>",
+        "user",
         "Tell",
         "Ġme",
         "Ġa",
         "Ġjoke",
         "<|im_end|>",
-        "\n",
         "<|im_start|>",
         "assistant",
-        "\n",
         "Sure",
         "!",
         "ĠHere",
@@ -532,15 +532,15 @@
         "Ġa"
       ],
       "token_ids": [
+        151644,
+        872,
         40451,
         752,
         264,
         21646,
         151645,
-        198,
         151644,
         77091,
-        198,
         39814,
         0,
         5692,
@@ -613,157 +613,499 @@
         ]
       },
       "selected_token": {
-        "token": "Ġlight",
-        "token_id": 3100,
+        "token": "Ġl",
+        "token_id": 326,
         "selection_method": "sampling"
       }
     },
     {
       "step": 6,
-      "input_text": "Tell me a joke<|im_end|>\n<|im_start|>assistant\nSure! Here's a light",
+      "input_text": "<|im_start|>userTell me a joke<|im_end|><|im_start|>assistantSure! Here's a l",
       "tokens": [
+        "<|im_start|>",
+        "user",
         "Tell",
         "Ġme",
         "Ġa",
         "Ġjoke",
         "<|im_end|>",
-        "\n",
         "<|im_start|>",
         "assistant",
-        "\n",
         "Sure",
         "!",
         "ĠHere",
         "'s",
         "Ġa",
-        "Ġlight"
+        "Ġl"
       ],
       "token_ids": [
+        151644,
+        872,
         40451,
         752,
         264,
         21646,
         151645,
-        198,
         151644,
         77091,
-        198,
         39814,
         0,
         5692,
         594,
         264,
-        3100
+        326
       ],
       "output_distribution": {
         "top_k": 10,
         "candidates": [
           {
-            "token": "Ġone",
-            "token_id": 825,
-            "logprob": -0.4746,
-            "prob": 0.6211
+            "token": "igh",
+            "token_id": 1090,
+            "logprob": -0.0,
+            "prob": 1.0
           },
           {
-            "token": "-hearted",
-            "token_id": 69295,
-            "logprob": -0.9727,
-            "prob": 0.377
-          },
-          {
-            "token": "one",
-            "token_id": 603,
-            "logprob": -9.75,
-            "prob": 0.0001
-          },
-          {
-            "token": "Ġuno",
-            "token_id": 23895,
-            "logprob": -11.75,
+            "token": "ight",
+            "token_id": 491,
+            "logprob": -11.5,
             "prob": 0.0
           },
           {
-            "token": "-one",
-            "token_id": 18589,
-            "logprob": -12.5,
-            "prob": 0.0
-          },
-          {
-            "token": "ĠOne",
-            "token_id": 3776,
-            "logprob": -12.625,
-            "prob": 0.0
-          },
-          {
-            "token": "Ġones",
-            "token_id": 6174,
-            "logprob": -13.0,
-            "prob": 0.0
-          },
-          {
-            "token": "Ġand",
-            "token_id": 323,
+            "token": "ighthouse",
+            "token_id": 57909,
             "logprob": -13.125,
             "prob": 0.0
           },
           {
-            "token": ",",
-            "token_id": 11,
-            "logprob": -13.375,
+            "token": "轻松",
+            "token_id": 104261,
+            "logprob": -14.25,
             "prob": 0.0
           },
           {
-            "token": "Ġlittle",
-            "token_id": 2632,
-            "logprob": -14.125,
+            "token": "Ġlight",
+            "token_id": 3100,
+            "logprob": -14.375,
+            "prob": 0.0
+          },
+          {
+            "token": "iger",
+            "token_id": 7272,
+            "logprob": -15.25,
+            "prob": 0.0
+          },
+          {
+            "token": "-light",
+            "token_id": 17709,
+            "logprob": -15.3125,
+            "prob": 0.0
+          },
+          {
+            "token": "IGH",
+            "token_id": 16768,
+            "logprob": -15.4375,
+            "prob": 0.0
+          },
+          {
+            "token": "ousy",
+            "token_id": 93523,
+            "logprob": -15.875,
+            "prob": 0.0
+          },
+          {
+            "token": "ark",
+            "token_id": 838,
+            "logprob": -16.125,
             "prob": 0.0
           }
         ]
       },
       "selected_token": {
-        "token": "-hearted",
-        "token_id": 69295,
+        "token": "igh",
+        "token_id": 1090,
         "selection_method": "sampling"
       }
     },
     {
       "step": 7,
-      "input_text": "Tell me a joke<|im_end|>\n<|im_start|>assistant\nSure! Here's a light-hearted",
+      "input_text": "<|im_start|>userTell me a joke<|im_end|><|im_start|>assistantSure! Here's a ligh",
       "tokens": [
+        "<|im_start|>",
+        "user",
         "Tell",
         "Ġme",
         "Ġa",
         "Ġjoke",
         "<|im_end|>",
-        "\n",
         "<|im_start|>",
         "assistant",
-        "\n",
         "Sure",
         "!",
         "ĠHere",
         "'s",
         "Ġa",
-        "Ġlight",
-        "-hearted"
+        "Ġl",
+        "igh"
       ],
       "token_ids": [
+        151644,
+        872,
         40451,
         752,
         264,
         21646,
         151645,
-        198,
         151644,
         77091,
-        198,
         39814,
         0,
         5692,
         594,
         264,
-        3100,
-        69295
+        326,
+        1090
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "the",
+            "token_id": 1782,
+            "logprob": -0.0,
+            "prob": 1.0
+          },
+          {
+            "token": "thead",
+            "token_id": 11417,
+            "logprob": -11.375,
+            "prob": 0.0
+          },
+          {
+            "token": "-the",
+            "token_id": 10603,
+            "logprob": -13.625,
+            "prob": 0.0
+          },
+          {
+            "token": "thes",
+            "token_id": 6375,
+            "logprob": -13.75,
+            "prob": 0.0
+          },
+          {
+            "token": "The",
+            "token_id": 785,
+            "logprob": -15.75,
+            "prob": 0.0
+          },
+          {
+            "token": "theid",
+            "token_id": 68355,
+            "logprob": -15.875,
+            "prob": 0.0
+          },
+          {
+            "token": "thing",
+            "token_id": 1596,
+            "logprob": -16.125,
+            "prob": 0.0
+          },
+          {
+            "token": "there",
+            "token_id": 18532,
+            "logprob": -16.5,
+            "prob": 0.0
+          },
+          {
+            "token": "then",
+            "token_id": 3391,
+            "logprob": -16.625,
+            "prob": 0.0
+          },
+          {
+            "token": "this",
+            "token_id": 574,
+            "logprob": -17.375,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "the",
+        "token_id": 1782,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 8,
+      "input_text": "<|im_start|>userTell me a joke<|im_end|><|im_start|>assistantSure! Here's a lighthe",
+      "tokens": [
+        "<|im_start|>",
+        "user",
+        "Tell",
+        "Ġme",
+        "Ġa",
+        "Ġjoke",
+        "<|im_end|>",
+        "<|im_start|>",
+        "assistant",
+        "Sure",
+        "!",
+        "ĠHere",
+        "'s",
+        "Ġa",
+        "Ġl",
+        "igh",
+        "the"
+      ],
+      "token_ids": [
+        151644,
+        872,
+        40451,
+        752,
+        264,
+        21646,
+        151645,
+        151644,
+        77091,
+        39814,
+        0,
+        5692,
+        594,
+        264,
+        326,
+        1090,
+        1782
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "art",
+            "token_id": 471,
+            "logprob": -0.0,
+            "prob": 1.0
+          },
+          {
+            "token": "arts",
+            "token_id": 7038,
+            "logprob": -14.875,
+            "prob": 0.0
+          },
+          {
+            "token": "ART",
+            "token_id": 2992,
+            "logprob": -15.25,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġart",
+            "token_id": 1947,
+            "logprob": -16.75,
+            "prob": 0.0
+          },
+          {
+            "token": "艺术",
+            "token_id": 100377,
+            "logprob": -17.125,
+            "prob": 0.0
+          },
+          {
+            "token": "arty",
+            "token_id": 6720,
+            "logprob": -17.5,
+            "prob": 0.0
+          },
+          {
+            "token": "-art",
+            "token_id": 37821,
+            "logprob": -18.25,
+            "prob": 0.0
+          },
+          {
+            "token": "арт",
+            "token_id": 59388,
+            "logprob": -19.0,
+            "prob": 0.0
+          },
+          {
+            "token": "Art",
+            "token_id": 9286,
+            "logprob": -19.0,
+            "prob": 0.0
+          },
+          {
+            "token": "ader",
+            "token_id": 998,
+            "logprob": -19.0,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "art",
+        "token_id": 471,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 9,
+      "input_text": "<|im_start|>userTell me a joke<|im_end|><|im_start|>assistantSure! Here's a lightheart",
+      "tokens": [
+        "<|im_start|>",
+        "user",
+        "Tell",
+        "Ġme",
+        "Ġa",
+        "Ġjoke",
+        "<|im_end|>",
+        "<|im_start|>",
+        "assistant",
+        "Sure",
+        "!",
+        "ĠHere",
+        "'s",
+        "Ġa",
+        "Ġl",
+        "igh",
+        "the",
+        "art"
+      ],
+      "token_ids": [
+        151644,
+        872,
+        40451,
+        752,
+        264,
+        21646,
+        151645,
+        151644,
+        77091,
+        39814,
+        0,
+        5692,
+        594,
+        264,
+        326,
+        1090,
+        1782,
+        471
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "ed",
+            "token_id": 291,
+            "logprob": 0.0,
+            "prob": 1.0
+          },
+          {
+            "token": "edly",
+            "token_id": 52323,
+            "logprob": -19.75,
+            "prob": 0.0
+          },
+          {
+            "token": "ened",
+            "token_id": 6758,
+            "logprob": -21.0,
+            "prob": 0.0
+          },
+          {
+            "token": "ED",
+            "token_id": 1479,
+            "logprob": -23.375,
+            "prob": 0.0
+          },
+          {
+            "token": "ing",
+            "token_id": 287,
+            "logprob": -23.375,
+            "prob": 0.0
+          },
+          {
+            "token": "ful",
+            "token_id": 1262,
+            "logprob": -24.875,
+            "prob": 0.0
+          },
+          {
+            "token": "ted",
+            "token_id": 6565,
+            "logprob": -25.375,
+            "prob": 0.0
+          },
+          {
+            "token": "ly",
+            "token_id": 398,
+            "logprob": -27.875,
+            "prob": 0.0
+          },
+          {
+            "token": "edd",
+            "token_id": 53537,
+            "logprob": -28.5,
+            "prob": 0.0
+          },
+          {
+            "token": "eds",
+            "token_id": 6767,
+            "logprob": -28.75,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "ed",
+        "token_id": 291,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 10,
+      "input_text": "<|im_start|>userTell me a joke<|im_end|><|im_start|>assistantSure! Here's a lighthearted",
+      "tokens": [
+        "<|im_start|>",
+        "user",
+        "Tell",
+        "Ġme",
+        "Ġa",
+        "Ġjoke",
+        "<|im_end|>",
+        "<|im_start|>",
+        "assistant",
+        "Sure",
+        "!",
+        "ĠHere",
+        "'s",
+        "Ġa",
+        "Ġl",
+        "igh",
+        "the",
+        "art",
+        "ed"
+      ],
+      "token_ids": [
+        151644,
+        872,
+        40451,
+        752,
+        264,
+        21646,
+        151645,
+        151644,
+        77091,
+        39814,
+        0,
+        5692,
+        594,
+        264,
+        326,
+        1090,
+        1782,
+        471,
+        291
       ],
       "output_distribution": {
         "top_k": 10,
@@ -775,57 +1117,57 @@
             "prob": 1.0
           },
           {
-            "token": "Ġjoke",
-            "token_id": 21646,
-            "logprob": -13.25,
-            "prob": 0.0
-          },
-          {
-            "token": "one",
-            "token_id": 603,
-            "logprob": -14.0,
+            "token": "ĠOne",
+            "token_id": 3776,
+            "logprob": -14.125,
             "prob": 0.0
           },
           {
             "token": "Ġuno",
             "token_id": 23895,
-            "logprob": -14.0,
+            "logprob": -14.25,
             "prob": 0.0
           },
           {
-            "token": "ĠOne",
-            "token_id": 3776,
-            "logprob": -14.5,
+            "token": "one",
+            "token_id": 603,
+            "logprob": -14.625,
             "prob": 0.0
           },
           {
-            "token": "Ġpun",
-            "token_id": 8310,
-            "logprob": -15.25,
+            "token": "Ġjoke",
+            "token_id": 21646,
+            "logprob": -16.25,
             "prob": 0.0
           },
           {
             "token": "Ġones",
             "token_id": 6174,
-            "logprob": -15.875,
-            "prob": 0.0
-          },
-          {
-            "token": "Ġpunch",
-            "token_id": 20380,
-            "logprob": -16.375,
-            "prob": 0.0
-          },
-          {
-            "token": "One",
-            "token_id": 3966,
             "logprob": -16.5,
             "prob": 0.0
           },
           {
             "token": "_one",
             "token_id": 11667,
+            "logprob": -16.5,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġpun",
+            "token_id": 8310,
+            "logprob": -16.625,
+            "prob": 0.0
+          },
+          {
+            "token": "One",
+            "token_id": 3966,
             "logprob": -16.75,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġpunch",
+            "token_id": 20380,
+            "logprob": -17.375,
             "prob": 0.0
           }
         ]
@@ -837,44 +1179,50 @@
       }
     },
     {
-      "step": 8,
-      "input_text": "Tell me a joke<|im_end|>\n<|im_start|>assistant\nSure! Here's a light-hearted one",
+      "step": 11,
+      "input_text": "<|im_start|>userTell me a joke<|im_end|><|im_start|>assistantSure! Here's a lighthearted one",
       "tokens": [
+        "<|im_start|>",
+        "user",
         "Tell",
         "Ġme",
         "Ġa",
         "Ġjoke",
         "<|im_end|>",
-        "\n",
         "<|im_start|>",
         "assistant",
-        "\n",
         "Sure",
         "!",
         "ĠHere",
         "'s",
         "Ġa",
-        "Ġlight",
-        "-hearted",
+        "Ġl",
+        "igh",
+        "the",
+        "art",
+        "ed",
         "Ġone"
       ],
       "token_ids": [
+        151644,
+        872,
         40451,
         752,
         264,
         21646,
         151645,
-        198,
         151644,
         77091,
-        198,
         39814,
         0,
         5692,
         594,
         264,
-        3100,
-        69295,
+        326,
+        1090,
+        1782,
+        471,
+        291,
         825
       ],
       "output_distribution": {
@@ -883,25 +1231,25 @@
           {
             "token": "Ġfor",
             "token_id": 369,
-            "logprob": -0.0028,
-            "prob": 0.9961
+            "logprob": -0.0009,
+            "prob": 1.0
           },
           {
             "token": ":\n\n",
             "token_id": 1447,
-            "logprob": -5.875,
-            "prob": 0.0028
+            "logprob": -7.0,
+            "prob": 0.0009
           },
           {
             "token": ":",
             "token_id": 25,
-            "logprob": -15.875,
+            "logprob": -16.5,
             "prob": 0.0
           },
           {
             "token": ":\r\n\r\n",
             "token_id": 31980,
-            "logprob": -16.75,
+            "logprob": -17.75,
             "prob": 0.0
           },
           {
@@ -917,27 +1265,27 @@
             "prob": 0.0
           },
           {
-            "token": "for",
-            "token_id": 1958,
+            "token": "Ġto",
+            "token_id": 311,
             "logprob": -18.75,
             "prob": 0.0
           },
           {
-            "token": "Ġto",
-            "token_id": 311,
+            "token": "for",
+            "token_id": 1958,
             "logprob": -19.0,
             "prob": 0.0
           },
           {
             "token": "Ġfür",
             "token_id": 7180,
-            "logprob": -19.0,
+            "logprob": -19.25,
             "prob": 0.0
           },
           {
-            "token": "：\n\n",
-            "token_id": 48443,
-            "logprob": -20.375,
+            "token": "Ġjust",
+            "token_id": 1101,
+            "logprob": -21.0,
             "prob": 0.0
           }
         ]
@@ -949,45 +1297,51 @@
       }
     },
     {
-      "step": 9,
-      "input_text": "Tell me a joke<|im_end|>\n<|im_start|>assistant\nSure! Here's a light-hearted one for",
+      "step": 12,
+      "input_text": "<|im_start|>userTell me a joke<|im_end|><|im_start|>assistantSure! Here's a lighthearted one for",
       "tokens": [
+        "<|im_start|>",
+        "user",
         "Tell",
         "Ġme",
         "Ġa",
         "Ġjoke",
         "<|im_end|>",
-        "\n",
         "<|im_start|>",
         "assistant",
-        "\n",
         "Sure",
         "!",
         "ĠHere",
         "'s",
         "Ġa",
-        "Ġlight",
-        "-hearted",
+        "Ġl",
+        "igh",
+        "the",
+        "art",
+        "ed",
         "Ġone",
         "Ġfor"
       ],
       "token_ids": [
+        151644,
+        872,
         40451,
         752,
         264,
         21646,
         151645,
-        198,
         151644,
         77091,
-        198,
         39814,
         0,
         5692,
         594,
         264,
-        3100,
-        69295,
+        326,
+        1090,
+        1782,
+        471,
+        291,
         825,
         369
       ],
@@ -1001,21 +1355,21 @@
             "prob": 1.0
           },
           {
+            "token": "you",
+            "token_id": 9330,
+            "logprob": -18.625,
+            "prob": 0.0
+          },
+          {
             "token": "你",
             "token_id": 56568,
             "logprob": -18.75,
             "prob": 0.0
           },
           {
-            "token": "you",
-            "token_id": 9330,
-            "logprob": -18.75,
-            "prob": 0.0
-          },
-          {
             "token": "ĠYOU",
             "token_id": 14985,
-            "logprob": -19.75,
+            "logprob": -19.5,
             "prob": 0.0
           },
           {
@@ -1033,7 +1387,7 @@
           {
             "token": "您",
             "token_id": 87026,
-            "logprob": -21.5,
+            "logprob": -21.625,
             "prob": 0.0
           },
           {
@@ -1045,13 +1399,13 @@
           {
             "token": "Ġvous",
             "token_id": 9012,
-            "logprob": -23.625,
+            "logprob": -23.5,
             "prob": 0.0
           },
           {
             "token": "ĠYou",
             "token_id": 1446,
-            "logprob": -24.125,
+            "logprob": -24.0,
             "prob": 0.0
           }
         ]
@@ -1063,167 +1417,55 @@
       }
     },
     {
-      "step": 10,
-      "input_text": "Tell me a joke<|im_end|>\n<|im_start|>assistant\nSure! Here's a light-hearted one for you",
+      "step": 13,
+      "input_text": "<|im_start|>userTell me a joke<|im_end|><|im_start|>assistantSure! Here's a lighthearted one for you:",
       "tokens": [
+        "<|im_start|>",
+        "user",
         "Tell",
         "Ġme",
         "Ġa",
         "Ġjoke",
         "<|im_end|>",
-        "\n",
         "<|im_start|>",
         "assistant",
-        "\n",
         "Sure",
         "!",
         "ĠHere",
         "'s",
         "Ġa",
-        "Ġlight",
-        "-hearted",
+        "Ġl",
+        "igh",
+        "the",
+        "art",
+        "ed",
         "Ġone",
         "Ġfor",
         "Ġyou"
       ],
       "token_ids": [
+        151644,
+        872,
         40451,
         752,
         264,
         21646,
         151645,
-        198,
         151644,
         77091,
-        198,
         39814,
         0,
         5692,
         594,
         264,
-        3100,
-        69295,
+        326,
+        1090,
+        1782,
+        471,
+        291,
         825,
         369,
         498
-      ],
-      "output_distribution": {
-        "top_k": 10,
-        "candidates": [
-          {
-            "token": ":\n\n",
-            "token_id": 1447,
-            "logprob": -0.0,
-            "prob": 1.0
-          },
-          {
-            "token": ":",
-            "token_id": 25,
-            "logprob": -12.75,
-            "prob": 0.0
-          },
-          {
-            "token": ":\r\n\r\n",
-            "token_id": 31980,
-            "logprob": -14.375,
-            "prob": 0.0
-          },
-          {
-            "token": "：\n\n",
-            "token_id": 48443,
-            "logprob": -17.375,
-            "prob": 0.0
-          },
-          {
-            "token": ":]\n\n",
-            "token_id": 64631,
-            "logprob": -19.125,
-            "prob": 0.0
-          },
-          {
-            "token": ":\n",
-            "token_id": 510,
-            "logprob": -20.25,
-            "prob": 0.0
-          },
-          {
-            "token": ":\n\n\n",
-            "token_id": 24391,
-            "logprob": -20.375,
-            "prob": 0.0
-          },
-          {
-            "token": "Ġ�",
-            "token_id": 26525,
-            "logprob": -20.625,
-            "prob": 0.0
-          },
-          {
-            "token": "Ġ�",
-            "token_id": 11162,
-            "logprob": -21.25,
-            "prob": 0.0
-          },
-          {
-            "token": "():\n\n",
-            "token_id": 39974,
-            "logprob": -21.875,
-            "prob": 0.0
-          }
-        ]
-      },
-      "selected_token": {
-        "token": ":\n\n",
-        "token_id": 1447,
-        "selection_method": "sampling"
-      }
-    },
-    {
-      "step": 11,
-      "input_text": "Tell me a joke<|im_end|>\n<|im_start|>assistant\nSure! Here's a light-hearted one for you:\n\n",
-      "tokens": [
-        "Tell",
-        "Ġme",
-        "Ġa",
-        "Ġjoke",
-        "<|im_end|>",
-        "\n",
-        "<|im_start|>",
-        "assistant",
-        "\n",
-        "Sure",
-        "!",
-        "ĠHere",
-        "'s",
-        "Ġa",
-        "Ġlight",
-        "-hearted",
-        "Ġone",
-        "Ġfor",
-        "Ġyou",
-        ":\n\n"
-      ],
-      "token_ids": [
-        40451,
-        752,
-        264,
-        21646,
-        151645,
-        198,
-        151644,
-        77091,
-        198,
-        39814,
-        0,
-        5692,
-        594,
-        264,
-        3100,
-        69295,
-        825,
-        369,
-        498,
-        1447
       ],
       "output_distribution": {
         "top_k": 10,
@@ -1255,13 +1497,13 @@
           {
             "token": "Ġwhy",
             "token_id": 3170,
-            "logprob": -9.625,
+            "logprob": -9.75,
             "prob": 0.0001
           },
           {
             "token": "为什么要",
             "token_id": 107781,
-            "logprob": -11.375,
+            "logprob": -11.125,
             "prob": 0.0
           },
           {
@@ -1273,13 +1515,13 @@
           {
             "token": "Ġпочему",
             "token_id": 137324,
-            "logprob": -12.125,
+            "logprob": -12.25,
             "prob": 0.0
           },
           {
             "token": "为何",
             "token_id": 104499,
-            "logprob": -12.25,
+            "logprob": -12.5,
             "prob": 0.0
           },
           {
@@ -1297,52 +1539,56 @@
       }
     },
     {
-      "step": 12,
-      "input_text": "Tell me a joke<|im_end|>\n<|im_start|>assistant\nSure! Here's a light-hearted one for you:\n\nWhy",
+      "step": 14,
+      "input_text": "<|im_start|>userTell me a joke<|im_end|><|im_start|>assistantSure! Here's a lighthearted one for you:Why",
       "tokens": [
+        "<|im_start|>",
+        "user",
         "Tell",
         "Ġme",
         "Ġa",
         "Ġjoke",
         "<|im_end|>",
-        "\n",
         "<|im_start|>",
         "assistant",
-        "\n",
         "Sure",
         "!",
         "ĠHere",
         "'s",
         "Ġa",
-        "Ġlight",
-        "-hearted",
+        "Ġl",
+        "igh",
+        "the",
+        "art",
+        "ed",
         "Ġone",
         "Ġfor",
         "Ġyou",
-        ":\n\n",
         "Why"
       ],
       "token_ids": [
+        151644,
+        872,
         40451,
         752,
         264,
         21646,
         151645,
-        198,
         151644,
         77091,
-        198,
         39814,
         0,
         5692,
         594,
         264,
-        3100,
-        69295,
+        326,
+        1090,
+        1782,
+        471,
+        291,
         825,
         369,
         498,
-        1447,
         10234
       ],
       "output_distribution": {
@@ -1351,61 +1597,61 @@
           {
             "token": "Ġdid",
             "token_id": 1521,
-            "logprob": -0.2559,
-            "prob": 0.7734
+            "logprob": -0.0645,
+            "prob": 0.9375
           },
           {
             "token": "Ġdon",
             "token_id": 1513,
-            "logprob": -1.5078,
-            "prob": 0.2217
+            "logprob": -2.8125,
+            "prob": 0.0601
           },
           {
             "token": "Ġdidn",
             "token_id": 3207,
-            "logprob": -5.75,
-            "prob": 0.0032
+            "logprob": -6.4375,
+            "prob": 0.0016
           },
           {
             "token": "Ġwas",
             "token_id": 572,
-            "logprob": -7.75,
-            "prob": 0.0004
+            "logprob": -7.1875,
+            "prob": 0.0008
           },
           {
             "token": "Ġcouldn",
             "token_id": 7691,
-            "logprob": -9.0,
+            "logprob": -9.3125,
             "prob": 0.0001
           },
           {
-            "token": "Ġdont",
-            "token_id": 15522,
-            "logprob": -11.0,
+            "token": "Ġwasn",
+            "token_id": 5710,
+            "logprob": -11.4375,
             "prob": 0.0
           },
           {
             "token": "Ġdoes",
             "token_id": 1558,
-            "logprob": -11.125,
-            "prob": 0.0
-          },
-          {
-            "token": "Ġwasn",
-            "token_id": 5710,
-            "logprob": -11.25,
+            "logprob": -11.5625,
             "prob": 0.0
           },
           {
             "token": "Ġdo",
             "token_id": 653,
-            "logprob": -11.5,
+            "logprob": -12.0625,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġdont",
+            "token_id": 15522,
+            "logprob": -12.1875,
             "prob": 0.0
           },
           {
             "token": "did",
             "token_id": 22920,
-            "logprob": -12.125,
+            "logprob": -12.3125,
             "prob": 0.0
           }
         ]
@@ -1417,53 +1663,57 @@
       }
     },
     {
-      "step": 13,
-      "input_text": "Tell me a joke<|im_end|>\n<|im_start|>assistant\nSure! Here's a light-hearted one for you:\n\nWhy did",
+      "step": 15,
+      "input_text": "<|im_start|>userTell me a joke<|im_end|><|im_start|>assistantSure! Here's a lighthearted one for you:Why did",
       "tokens": [
+        "<|im_start|>",
+        "user",
         "Tell",
         "Ġme",
         "Ġa",
         "Ġjoke",
         "<|im_end|>",
-        "\n",
         "<|im_start|>",
         "assistant",
-        "\n",
         "Sure",
         "!",
         "ĠHere",
         "'s",
         "Ġa",
-        "Ġlight",
-        "-hearted",
+        "Ġl",
+        "igh",
+        "the",
+        "art",
+        "ed",
         "Ġone",
         "Ġfor",
         "Ġyou",
-        ":\n\n",
         "Why",
         "Ġdid"
       ],
       "token_ids": [
+        151644,
+        872,
         40451,
         752,
         264,
         21646,
         151645,
-        198,
         151644,
         77091,
-        198,
         39814,
         0,
         5692,
         594,
         264,
-        3100,
-        69295,
+        326,
+        1090,
+        1782,
+        471,
+        291,
         825,
         369,
         498,
-        1447,
         10234,
         1521
       ],
@@ -1479,7 +1729,7 @@
           {
             "token": "the",
             "token_id": 1782,
-            "logprob": -16.125,
+            "logprob": -16.25,
             "prob": 0.0
           },
           {
@@ -1491,13 +1741,13 @@
           {
             "token": "\tthe",
             "token_id": 32088,
-            "logprob": -21.25,
+            "logprob": -21.375,
             "prob": 0.0
           },
           {
             "token": "_the",
             "token_id": 16068,
-            "logprob": -22.875,
+            "logprob": -23.0,
             "prob": 0.0
           },
           {
@@ -1509,7 +1759,7 @@
           {
             "token": "ĠThe",
             "token_id": 576,
-            "logprob": -24.0,
+            "logprob": -24.125,
             "prob": 0.0
           },
           {
@@ -1527,7 +1777,7 @@
           {
             "token": "ĠTHE",
             "token_id": 3168,
-            "logprob": -25.75,
+            "logprob": -25.875,
             "prob": 0.0
           }
         ]
@@ -1539,54 +1789,58 @@
       }
     },
     {
-      "step": 14,
-      "input_text": "Tell me a joke<|im_end|>\n<|im_start|>assistant\nSure! Here's a light-hearted one for you:\n\nWhy did the",
+      "step": 16,
+      "input_text": "<|im_start|>userTell me a joke<|im_end|><|im_start|>assistantSure! Here's a lighthearted one for you:Why did the",
       "tokens": [
+        "<|im_start|>",
+        "user",
         "Tell",
         "Ġme",
         "Ġa",
         "Ġjoke",
         "<|im_end|>",
-        "\n",
         "<|im_start|>",
         "assistant",
-        "\n",
         "Sure",
         "!",
         "ĠHere",
         "'s",
         "Ġa",
-        "Ġlight",
-        "-hearted",
+        "Ġl",
+        "igh",
+        "the",
+        "art",
+        "ed",
         "Ġone",
         "Ġfor",
         "Ġyou",
-        ":\n\n",
         "Why",
         "Ġdid",
         "Ġthe"
       ],
       "token_ids": [
+        151644,
+        872,
         40451,
         752,
         264,
         21646,
         151645,
-        198,
         151644,
         77091,
-        198,
         39814,
         0,
         5692,
         594,
         264,
-        3100,
-        69295,
+        326,
+        1090,
+        1782,
+        471,
+        291,
         825,
         369,
         498,
-        1447,
         10234,
         1521,
         279
@@ -1597,62 +1851,62 @@
           {
             "token": "Ġcoffee",
             "token_id": 10799,
-            "logprob": -0.1484,
-            "prob": 0.8633
+            "logprob": -0.2031,
+            "prob": 0.8164
           },
           {
             "token": "Ġtomato",
             "token_id": 41020,
-            "logprob": -3.2812,
-            "prob": 0.0378
+            "logprob": -2.8281,
+            "prob": 0.0591
           },
           {
             "token": "Ġchicken",
             "token_id": 16158,
-            "logprob": -3.6562,
-            "prob": 0.026
+            "logprob": -3.3281,
+            "prob": 0.0359
           },
           {
             "token": "Ġscare",
             "token_id": 42930,
-            "logprob": -3.6562,
-            "prob": 0.026
+            "logprob": -3.3281,
+            "prob": 0.0359
           },
           {
             "token": "Ġcomputer",
             "token_id": 6366,
-            "logprob": -4.0312,
-            "prob": 0.0179
+            "logprob": -3.9531,
+            "prob": 0.0192
           },
           {
             "token": "Ġmath",
             "token_id": 6888,
-            "logprob": -4.4062,
-            "prob": 0.0123
+            "logprob": -4.3125,
+            "prob": 0.0132
           },
           {
             "token": "Ġbicycle",
             "token_id": 34986,
-            "logprob": -5.6562,
-            "prob": 0.0035
+            "logprob": -5.3125,
+            "prob": 0.0049
           },
           {
             "token": "Ġbanana",
             "token_id": 43096,
-            "logprob": -5.9062,
-            "prob": 0.0027
+            "logprob": -5.8125,
+            "prob": 0.0029
           },
           {
             "token": "Ġmathematic",
             "token_id": 20976,
-            "logprob": -6.2812,
-            "prob": 0.0019
+            "logprob": -6.3125,
+            "prob": 0.0018
           },
           {
-            "token": "Ġprogrammer",
-            "token_id": 47788,
-            "logprob": -6.6562,
-            "prob": 0.0013
+            "token": "Ġcow",
+            "token_id": 19362,
+            "logprob": -6.6875,
+            "prob": 0.0012
           }
         ]
       },
@@ -1663,55 +1917,59 @@
       }
     },
     {
-      "step": 15,
-      "input_text": "Tell me a joke<|im_end|>\n<|im_start|>assistant\nSure! Here's a light-hearted one for you:\n\nWhy did the coffee",
+      "step": 17,
+      "input_text": "<|im_start|>userTell me a joke<|im_end|><|im_start|>assistantSure! Here's a lighthearted one for you:Why did the coffee",
       "tokens": [
+        "<|im_start|>",
+        "user",
         "Tell",
         "Ġme",
         "Ġa",
         "Ġjoke",
         "<|im_end|>",
-        "\n",
         "<|im_start|>",
         "assistant",
-        "\n",
         "Sure",
         "!",
         "ĠHere",
         "'s",
         "Ġa",
-        "Ġlight",
-        "-hearted",
+        "Ġl",
+        "igh",
+        "the",
+        "art",
+        "ed",
         "Ġone",
         "Ġfor",
         "Ġyou",
-        ":\n\n",
         "Why",
         "Ġdid",
         "Ġthe",
         "Ġcoffee"
       ],
       "token_ids": [
+        151644,
+        872,
         40451,
         752,
         264,
         21646,
         151645,
-        198,
         151644,
         77091,
-        198,
         39814,
         0,
         5692,
         594,
         264,
-        3100,
-        69295,
+        326,
+        1090,
+        1782,
+        471,
+        291,
         825,
         369,
         498,
-        1447,
         10234,
         1521,
         279,
@@ -1735,49 +1993,49 @@
           {
             "token": "file",
             "token_id": 1192,
-            "logprob": -12.625,
-            "prob": 0.0
-          },
-          {
-            "token": "(file",
-            "token_id": 4866,
-            "logprob": -14.875,
+            "logprob": -12.875,
             "prob": 0.0
           },
           {
             "token": "Ġfiles",
             "token_id": 3542,
-            "logprob": -14.875,
+            "logprob": -15.0,
             "prob": 0.0
           },
           {
-            "token": "Ġgo",
-            "token_id": 728,
+            "token": "(file",
+            "token_id": 4866,
             "logprob": -15.125,
             "prob": 0.0
           },
           {
             "token": "File",
             "token_id": 1703,
-            "logprob": -15.25,
+            "logprob": -15.375,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġgo",
+            "token_id": 728,
+            "logprob": -15.375,
             "prob": 0.0
           },
           {
             "token": "_file",
             "token_id": 2458,
-            "logprob": -15.875,
+            "logprob": -16.0,
             "prob": 0.0
           },
           {
             "token": "ĠFile",
             "token_id": 2887,
-            "logprob": -17.25,
+            "logprob": -17.375,
             "prob": 0.0
           },
           {
-            "token": "Ġfiling",
-            "token_id": 25480,
-            "logprob": -18.0,
+            "token": "Ġjoin",
+            "token_id": 5138,
+            "logprob": -18.125,
             "prob": 0.0
           }
         ]
@@ -1789,29 +2047,31 @@
       }
     },
     {
-      "step": 16,
-      "input_text": "Tell me a joke<|im_end|>\n<|im_start|>assistant\nSure! Here's a light-hearted one for you:\n\nWhy did the coffee file",
+      "step": 18,
+      "input_text": "<|im_start|>userTell me a joke<|im_end|><|im_start|>assistantSure! Here's a lighthearted one for you:Why did the coffee file",
       "tokens": [
+        "<|im_start|>",
+        "user",
         "Tell",
         "Ġme",
         "Ġa",
         "Ġjoke",
         "<|im_end|>",
-        "\n",
         "<|im_start|>",
         "assistant",
-        "\n",
         "Sure",
         "!",
         "ĠHere",
         "'s",
         "Ġa",
-        "Ġlight",
-        "-hearted",
+        "Ġl",
+        "igh",
+        "the",
+        "art",
+        "ed",
         "Ġone",
         "Ġfor",
         "Ġyou",
-        ":\n\n",
         "Why",
         "Ġdid",
         "Ġthe",
@@ -1819,26 +2079,28 @@
         "Ġfile"
       ],
       "token_ids": [
+        151644,
+        872,
         40451,
         752,
         264,
         21646,
         151645,
-        198,
         151644,
         77091,
-        198,
         39814,
         0,
         5692,
         594,
         264,
-        3100,
-        69295,
+        326,
+        1090,
+        1782,
+        471,
+        291,
         825,
         369,
         498,
-        1447,
         10234,
         1521,
         279,
@@ -1855,57 +2117,57 @@
             "prob": 1.0
           },
           {
-            "token": "a",
-            "token_id": 64,
-            "logprob": -20.0,
-            "prob": 0.0
-          },
-          {
             "token": "Ġfor",
             "token_id": 369,
-            "logprob": -20.875,
+            "logprob": -20.125,
             "prob": 0.0
           },
           {
-            "token": "\ta",
-            "token_id": 11323,
-            "logprob": -22.125,
+            "token": "a",
+            "token_id": 64,
+            "logprob": -20.125,
             "prob": 0.0
           },
           {
             "token": "Ġan",
             "token_id": 458,
-            "logprob": -22.5,
+            "logprob": -22.125,
+            "prob": 0.0
+          },
+          {
+            "token": "\ta",
+            "token_id": 11323,
+            "logprob": -22.375,
             "prob": 0.0
           },
           {
             "token": "Ġpolice",
             "token_id": 4282,
-            "logprob": -23.125,
-            "prob": 0.0
-          },
-          {
-            "token": "ĠA",
-            "token_id": 362,
-            "logprob": -23.5,
-            "prob": 0.0
-          },
-          {
-            "token": "-a",
-            "token_id": 7409,
-            "logprob": -23.625,
+            "logprob": -22.75,
             "prob": 0.0
           },
           {
             "token": "Ġanother",
             "token_id": 2441,
+            "logprob": -23.75,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠA",
+            "token_id": 362,
+            "logprob": -23.75,
+            "prob": 0.0
+          },
+          {
+            "token": "-a",
+            "token_id": 7409,
             "logprob": -23.875,
             "prob": 0.0
           },
           {
             "token": "Ġа",
             "token_id": 20396,
-            "logprob": -23.875,
+            "logprob": -24.0,
             "prob": 0.0
           }
         ]
@@ -1917,29 +2179,31 @@
       }
     },
     {
-      "step": 17,
-      "input_text": "Tell me a joke<|im_end|>\n<|im_start|>assistant\nSure! Here's a light-hearted one for you:\n\nWhy did the coffee file a",
+      "step": 19,
+      "input_text": "<|im_start|>userTell me a joke<|im_end|><|im_start|>assistantSure! Here's a lighthearted one for you:Why did the coffee file a",
       "tokens": [
+        "<|im_start|>",
+        "user",
         "Tell",
         "Ġme",
         "Ġa",
         "Ġjoke",
         "<|im_end|>",
-        "\n",
         "<|im_start|>",
         "assistant",
-        "\n",
         "Sure",
         "!",
         "ĠHere",
         "'s",
         "Ġa",
-        "Ġlight",
-        "-hearted",
+        "Ġl",
+        "igh",
+        "the",
+        "art",
+        "ed",
         "Ġone",
         "Ġfor",
         "Ġyou",
-        ":\n\n",
         "Why",
         "Ġdid",
         "Ġthe",
@@ -1948,26 +2212,28 @@
         "Ġa"
       ],
       "token_ids": [
+        151644,
+        872,
         40451,
         752,
         264,
         21646,
         151645,
-        198,
         151644,
         77091,
-        198,
         39814,
         0,
         5692,
         594,
         264,
-        3100,
-        69295,
+        326,
+        1090,
+        1782,
+        471,
+        291,
         825,
         369,
         498,
-        1447,
         10234,
         1521,
         279,
@@ -1981,25 +2247,25 @@
           {
             "token": "Ġpolice",
             "token_id": 4282,
-            "logprob": -0.0183,
-            "prob": 0.9805
+            "logprob": -0.0143,
+            "prob": 0.9844
           },
           {
             "token": "Ġcomplaint",
             "token_id": 12181,
-            "logprob": -4.0312,
-            "prob": 0.0179
+            "logprob": -4.25,
+            "prob": 0.014
           },
           {
             "token": "Ġlawsuit",
             "token_id": 19275,
-            "logprob": -9.75,
-            "prob": 0.0001
+            "logprob": -10.125,
+            "prob": 0.0
           },
           {
             "token": "投诉",
             "token_id": 104943,
-            "logprob": -10.125,
+            "logprob": -10.5,
             "prob": 0.0
           },
           {
@@ -2017,25 +2283,25 @@
           {
             "token": "Ġcomplaints",
             "token_id": 21171,
-            "logprob": -12.375,
-            "prob": 0.0
-          },
-          {
-            "token": "Ġsuicide",
-            "token_id": 18144,
-            "logprob": -12.5,
+            "logprob": -12.625,
             "prob": 0.0
           },
           {
             "token": "Ġpatent",
             "token_id": 24571,
-            "logprob": -12.5,
+            "logprob": -12.75,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġsuicide",
+            "token_id": 18144,
+            "logprob": -12.875,
             "prob": 0.0
           },
           {
             "token": "Ġmurder",
             "token_id": 9901,
-            "logprob": -13.0,
+            "logprob": -13.125,
             "prob": 0.0
           }
         ]
@@ -2047,29 +2313,31 @@
       }
     },
     {
-      "step": 18,
-      "input_text": "Tell me a joke<|im_end|>\n<|im_start|>assistant\nSure! Here's a light-hearted one for you:\n\nWhy did the coffee file a police",
+      "step": 20,
+      "input_text": "<|im_start|>userTell me a joke<|im_end|><|im_start|>assistantSure! Here's a lighthearted one for you:Why did the coffee file a police",
       "tokens": [
+        "<|im_start|>",
+        "user",
         "Tell",
         "Ġme",
         "Ġa",
         "Ġjoke",
         "<|im_end|>",
-        "\n",
         "<|im_start|>",
         "assistant",
-        "\n",
         "Sure",
         "!",
         "ĠHere",
         "'s",
         "Ġa",
-        "Ġlight",
-        "-hearted",
+        "Ġl",
+        "igh",
+        "the",
+        "art",
+        "ed",
         "Ġone",
         "Ġfor",
         "Ġyou",
-        ":\n\n",
         "Why",
         "Ġdid",
         "Ġthe",
@@ -2079,26 +2347,28 @@
         "Ġpolice"
       ],
       "token_ids": [
+        151644,
+        872,
         40451,
         752,
         264,
         21646,
         151645,
-        198,
         151644,
         77091,
-        198,
         39814,
         0,
         5692,
         594,
         264,
-        3100,
-        69295,
+        326,
+        1090,
+        1782,
+        471,
+        291,
         825,
         369,
         498,
-        1447,
         10234,
         1521,
         279,
@@ -2119,7 +2389,7 @@
           {
             "token": "Ġcomplaint",
             "token_id": 12181,
-            "logprob": -9.625,
+            "logprob": -9.5,
             "prob": 0.0001
           },
           {
@@ -2131,7 +2401,7 @@
           {
             "token": "报告",
             "token_id": 100370,
-            "logprob": -13.25,
+            "logprob": -13.125,
             "prob": 0.0
           },
           {
@@ -2149,7 +2419,7 @@
           {
             "token": "report",
             "token_id": 11736,
-            "logprob": -15.875,
+            "logprob": -15.75,
             "prob": 0.0
           },
           {
@@ -2159,15 +2429,15 @@
             "prob": 0.0
           },
           {
-            "token": "(report",
-            "token_id": 45175,
+            "token": "Ġreports",
+            "token_id": 6682,
             "logprob": -16.375,
             "prob": 0.0
           },
           {
-            "token": "Ġreports",
-            "token_id": 6682,
-            "logprob": -16.5,
+            "token": "(report",
+            "token_id": 45175,
+            "logprob": -16.375,
             "prob": 0.0
           }
         ]
@@ -2179,29 +2449,31 @@
       }
     },
     {
-      "step": 19,
-      "input_text": "Tell me a joke<|im_end|>\n<|im_start|>assistant\nSure! Here's a light-hearted one for you:\n\nWhy did the coffee file a police report",
+      "step": 21,
+      "input_text": "<|im_start|>userTell me a joke<|im_end|><|im_start|>assistantSure! Here's a lighthearted one for you:Why did the coffee file a police report?",
       "tokens": [
+        "<|im_start|>",
+        "user",
         "Tell",
         "Ġme",
         "Ġa",
         "Ġjoke",
         "<|im_end|>",
-        "\n",
         "<|im_start|>",
         "assistant",
-        "\n",
         "Sure",
         "!",
         "ĠHere",
         "'s",
         "Ġa",
-        "Ġlight",
-        "-hearted",
+        "Ġl",
+        "igh",
+        "the",
+        "art",
+        "ed",
         "Ġone",
         "Ġfor",
         "Ġyou",
-        ":\n\n",
         "Why",
         "Ġdid",
         "Ġthe",
@@ -2212,26 +2484,28 @@
         "Ġreport"
       ],
       "token_ids": [
+        151644,
+        872,
         40451,
         752,
         264,
         21646,
         151645,
-        198,
         151644,
         77091,
-        198,
         39814,
         0,
         5692,
         594,
         264,
-        3100,
-        69295,
+        326,
+        1090,
+        1782,
+        471,
+        291,
         825,
         369,
         498,
-        1447,
         10234,
         1521,
         279,
@@ -2245,169 +2519,33 @@
         "top_k": 10,
         "candidates": [
           {
-            "token": "?\n\n",
-            "token_id": 1939,
-            "logprob": -0.0003,
-            "prob": 1.0
-          },
-          {
-            "token": "?",
-            "token_id": 30,
-            "logprob": -8.25,
-            "prob": 0.0003
-          },
-          {
-            "token": "？\n\n",
-            "token_id": 26850,
-            "logprob": -13.625,
-            "prob": 0.0
-          },
-          {
-            "token": "?\"\n\n",
-            "token_id": 11974,
-            "logprob": -16.75,
-            "prob": 0.0
-          },
-          {
-            "token": "?!\n\n",
-            "token_id": 68013,
-            "logprob": -17.125,
-            "prob": 0.0
-          },
-          {
-            "token": "?”\n\n",
-            "token_id": 16218,
-            "logprob": -19.25,
-            "prob": 0.0
-          },
-          {
-            "token": "?)\n\n",
-            "token_id": 57777,
-            "logprob": -19.375,
-            "prob": 0.0
-          },
-          {
-            "token": "?\n",
-            "token_id": 5267,
-            "logprob": -19.5,
-            "prob": 0.0
-          },
-          {
-            "token": "？",
-            "token_id": 11319,
-            "logprob": -20.125,
-            "prob": 0.0
-          },
-          {
-            "token": "؟",
-            "token_id": 128332,
-            "logprob": -20.125,
-            "prob": 0.0
-          }
-        ]
-      },
-      "selected_token": {
-        "token": "?\n\n",
-        "token_id": 1939,
-        "selection_method": "sampling"
-      }
-    },
-    {
-      "step": 20,
-      "input_text": "Tell me a joke<|im_end|>\n<|im_start|>assistant\nSure! Here's a light-hearted one for you:\n\nWhy did the coffee file a police report?\n\n",
-      "tokens": [
-        "Tell",
-        "Ġme",
-        "Ġa",
-        "Ġjoke",
-        "<|im_end|>",
-        "\n",
-        "<|im_start|>",
-        "assistant",
-        "\n",
-        "Sure",
-        "!",
-        "ĠHere",
-        "'s",
-        "Ġa",
-        "Ġlight",
-        "-hearted",
-        "Ġone",
-        "Ġfor",
-        "Ġyou",
-        ":\n\n",
-        "Why",
-        "Ġdid",
-        "Ġthe",
-        "Ġcoffee",
-        "Ġfile",
-        "Ġa",
-        "Ġpolice",
-        "Ġreport",
-        "?\n\n"
-      ],
-      "token_ids": [
-        40451,
-        752,
-        264,
-        21646,
-        151645,
-        198,
-        151644,
-        77091,
-        198,
-        39814,
-        0,
-        5692,
-        594,
-        264,
-        3100,
-        69295,
-        825,
-        369,
-        498,
-        1447,
-        10234,
-        1521,
-        279,
-        10799,
-        1034,
-        264,
-        4282,
-        1895,
-        1939
-      ],
-      "output_distribution": {
-        "top_k": 10,
-        "candidates": [
-          {
             "token": "Because",
             "token_id": 17949,
-            "logprob": -0.001,
+            "logprob": -0.0014,
             "prob": 1.0
           },
           {
             "token": "因为它",
             "token_id": 108884,
-            "logprob": -7.375,
-            "prob": 0.0006
+            "logprob": -7.25,
+            "prob": 0.0007
           },
           {
             "token": "It",
             "token_id": 2132,
-            "logprob": -8.125,
-            "prob": 0.0003
+            "logprob": -7.375,
+            "prob": 0.0006
           },
           {
             "token": "because",
             "token_id": 27653,
-            "logprob": -11.25,
+            "logprob": -11.125,
             "prob": 0.0
           },
           {
             "token": "*",
             "token_id": 9,
-            "logprob": -11.375,
+            "logprob": -11.125,
             "prob": 0.0
           },
           {
@@ -2419,25 +2557,25 @@
           {
             "token": "因为他",
             "token_id": 106773,
-            "logprob": -12.625,
+            "logprob": -12.375,
             "prob": 0.0
           },
           {
             "token": "Ġпотому",
             "token_id": 132903,
-            "logprob": -12.75,
+            "logprob": -12.5,
             "prob": 0.0
           },
           {
             "token": "ĠBecause",
             "token_id": 9211,
-            "logprob": -12.875,
+            "logprob": -12.75,
             "prob": 0.0
           },
           {
             "token": "—",
             "token_id": 2293,
-            "logprob": -13.25,
+            "logprob": -12.875,
             "prob": 0.0
           }
         ]
@@ -2449,29 +2587,31 @@
       }
     },
     {
-      "step": 21,
-      "input_text": "Tell me a joke<|im_end|>\n<|im_start|>assistant\nSure! Here's a light-hearted one for you:\n\nWhy did the coffee file a police report?\n\nBecause",
+      "step": 22,
+      "input_text": "<|im_start|>userTell me a joke<|im_end|><|im_start|>assistantSure! Here's a lighthearted one for you:Why did the coffee file a police report?Because",
       "tokens": [
+        "<|im_start|>",
+        "user",
         "Tell",
         "Ġme",
         "Ġa",
         "Ġjoke",
         "<|im_end|>",
-        "\n",
         "<|im_start|>",
         "assistant",
-        "\n",
         "Sure",
         "!",
         "ĠHere",
         "'s",
         "Ġa",
-        "Ġlight",
-        "-hearted",
+        "Ġl",
+        "igh",
+        "the",
+        "art",
+        "ed",
         "Ġone",
         "Ġfor",
         "Ġyou",
-        ":\n\n",
         "Why",
         "Ġdid",
         "Ġthe",
@@ -2480,30 +2620,31 @@
         "Ġa",
         "Ġpolice",
         "Ġreport",
-        "?\n\n",
         "Because"
       ],
       "token_ids": [
+        151644,
+        872,
         40451,
         752,
         264,
         21646,
         151645,
-        198,
         151644,
         77091,
-        198,
         39814,
         0,
         5692,
         594,
         264,
-        3100,
-        69295,
+        326,
+        1090,
+        1782,
+        471,
+        291,
         825,
         369,
         498,
-        1447,
         10234,
         1521,
         279,
@@ -2512,7 +2653,6 @@
         264,
         4282,
         1895,
-        1939,
         17949
       ],
       "output_distribution": {
@@ -2527,25 +2667,25 @@
           {
             "token": "它",
             "token_id": 99652,
-            "logprob": -18.25,
+            "logprob": -18.625,
             "prob": 0.0
           },
           {
             "token": "ĠIt",
             "token_id": 1084,
-            "logprob": -21.0,
+            "logprob": -21.25,
             "prob": 0.0
           },
           {
             "token": "\tit",
             "token_id": 23374,
-            "logprob": -21.375,
+            "logprob": -21.75,
             "prob": 0.0
           },
           {
             "token": "it",
             "token_id": 275,
-            "logprob": -23.5,
+            "logprob": -24.0,
             "prob": 0.0
           },
           {
@@ -2555,27 +2695,27 @@
             "prob": 0.0
           },
           {
-            "token": "-it",
-            "token_id": 37511,
+            "token": "Ġhe",
+            "token_id": 566,
             "logprob": -24.5,
             "prob": 0.0
           },
           {
-            "token": "Ġhe",
-            "token_id": 566,
-            "logprob": -24.625,
+            "token": "-it",
+            "token_id": 37511,
+            "logprob": -24.75,
             "prob": 0.0
           },
           {
             "token": "(it",
             "token_id": 13338,
-            "logprob": -25.125,
+            "logprob": -25.625,
             "prob": 0.0
           },
           {
             "token": "_it",
             "token_id": 14631,
-            "logprob": -25.5,
+            "logprob": -25.75,
             "prob": 0.0
           }
         ]
@@ -2587,29 +2727,31 @@
       }
     },
     {
-      "step": 22,
-      "input_text": "Tell me a joke<|im_end|>\n<|im_start|>assistant\nSure! Here's a light-hearted one for you:\n\nWhy did the coffee file a police report?\n\nBecause it",
+      "step": 23,
+      "input_text": "<|im_start|>userTell me a joke<|im_end|><|im_start|>assistantSure! Here's a lighthearted one for you:Why did the coffee file a police report?Because it",
       "tokens": [
+        "<|im_start|>",
+        "user",
         "Tell",
         "Ġme",
         "Ġa",
         "Ġjoke",
         "<|im_end|>",
-        "\n",
         "<|im_start|>",
         "assistant",
-        "\n",
         "Sure",
         "!",
         "ĠHere",
         "'s",
         "Ġa",
-        "Ġlight",
-        "-hearted",
+        "Ġl",
+        "igh",
+        "the",
+        "art",
+        "ed",
         "Ġone",
         "Ġfor",
         "Ġyou",
-        ":\n\n",
         "Why",
         "Ġdid",
         "Ġthe",
@@ -2618,31 +2760,32 @@
         "Ġa",
         "Ġpolice",
         "Ġreport",
-        "?\n\n",
         "Because",
         "Ġit"
       ],
       "token_ids": [
+        151644,
+        872,
         40451,
         752,
         264,
         21646,
         151645,
-        198,
         151644,
         77091,
-        198,
         39814,
         0,
         5692,
         594,
         264,
-        3100,
-        69295,
+        326,
+        1090,
+        1782,
+        471,
+        291,
         825,
         369,
         498,
-        1447,
         10234,
         1521,
         279,
@@ -2651,7 +2794,6 @@
         264,
         4282,
         1895,
-        1939,
         17949,
         432
       ],
@@ -2679,13 +2821,13 @@
           {
             "token": "Ġgotten",
             "token_id": 17019,
-            "logprob": -16.75,
+            "logprob": -16.625,
             "prob": 0.0
           },
           {
             "token": "得到了",
             "token_id": 104513,
-            "logprob": -17.25,
+            "logprob": -16.875,
             "prob": 0.0
           },
           {
@@ -2727,29 +2869,31 @@
       }
     },
     {
-      "step": 23,
-      "input_text": "Tell me a joke<|im_end|>\n<|im_start|>assistant\nSure! Here's a light-hearted one for you:\n\nWhy did the coffee file a police report?\n\nBecause it got",
+      "step": 24,
+      "input_text": "<|im_start|>userTell me a joke<|im_end|><|im_start|>assistantSure! Here's a lighthearted one for you:Why did the coffee file a police report?Because it got",
       "tokens": [
+        "<|im_start|>",
+        "user",
         "Tell",
         "Ġme",
         "Ġa",
         "Ġjoke",
         "<|im_end|>",
-        "\n",
         "<|im_start|>",
         "assistant",
-        "\n",
         "Sure",
         "!",
         "ĠHere",
         "'s",
         "Ġa",
-        "Ġlight",
-        "-hearted",
+        "Ġl",
+        "igh",
+        "the",
+        "art",
+        "ed",
         "Ġone",
         "Ġfor",
         "Ġyou",
-        ":\n\n",
         "Why",
         "Ġdid",
         "Ġthe",
@@ -2758,32 +2902,33 @@
         "Ġa",
         "Ġpolice",
         "Ġreport",
-        "?\n\n",
         "Because",
         "Ġit",
         "Ġgot"
       ],
       "token_ids": [
+        151644,
+        872,
         40451,
         752,
         264,
         21646,
         151645,
-        198,
         151644,
         77091,
-        198,
         39814,
         0,
         5692,
         594,
         264,
-        3100,
-        69295,
+        326,
+        1090,
+        1782,
+        471,
+        291,
         825,
         369,
         498,
-        1447,
         10234,
         1521,
         279,
@@ -2792,7 +2937,6 @@
         264,
         4282,
         1895,
-        1939,
         17949,
         432,
         2684
@@ -2803,14 +2947,14 @@
           {
             "token": "Ġm",
             "token_id": 296,
-            "logprob": -0.0005,
+            "logprob": -0.0007,
             "prob": 1.0
           },
           {
             "token": "Ġstolen",
             "token_id": 22329,
-            "logprob": -8.625,
-            "prob": 0.0002
+            "logprob": -8.0,
+            "prob": 0.0003
           },
           {
             "token": "Ġmug",
@@ -2827,24 +2971,24 @@
           {
             "token": "Ġrobbed",
             "token_id": 62254,
-            "logprob": -10.5,
+            "logprob": -10.375,
             "prob": 0.0
           },
           {
             "token": "Ġspilled",
             "token_id": 73025,
-            "logprob": -10.625,
-            "prob": 0.0
-          },
-          {
-            "token": ".m",
-            "token_id": 744,
-            "logprob": -10.75,
+            "logprob": -10.5,
             "prob": 0.0
           },
           {
             "token": "Ġmist",
             "token_id": 8600,
+            "logprob": -10.875,
+            "prob": 0.0
+          },
+          {
+            "token": ".m",
+            "token_id": 744,
             "logprob": -10.875,
             "prob": 0.0
           },
@@ -2857,7 +3001,7 @@
           {
             "token": "Ġpoured",
             "token_id": 42933,
-            "logprob": -11.625,
+            "logprob": -11.5,
             "prob": 0.0
           }
         ]
@@ -2869,29 +3013,31 @@
       }
     },
     {
-      "step": 24,
-      "input_text": "Tell me a joke<|im_end|>\n<|im_start|>assistant\nSure! Here's a light-hearted one for you:\n\nWhy did the coffee file a police report?\n\nBecause it got m",
+      "step": 25,
+      "input_text": "<|im_start|>userTell me a joke<|im_end|><|im_start|>assistantSure! Here's a lighthearted one for you:Why did the coffee file a police report?Because it got m",
       "tokens": [
+        "<|im_start|>",
+        "user",
         "Tell",
         "Ġme",
         "Ġa",
         "Ġjoke",
         "<|im_end|>",
-        "\n",
         "<|im_start|>",
         "assistant",
-        "\n",
         "Sure",
         "!",
         "ĠHere",
         "'s",
         "Ġa",
-        "Ġlight",
-        "-hearted",
+        "Ġl",
+        "igh",
+        "the",
+        "art",
+        "ed",
         "Ġone",
         "Ġfor",
         "Ġyou",
-        ":\n\n",
         "Why",
         "Ġdid",
         "Ġthe",
@@ -2900,33 +3046,34 @@
         "Ġa",
         "Ġpolice",
         "Ġreport",
-        "?\n\n",
         "Because",
         "Ġit",
         "Ġgot",
         "Ġm"
       ],
       "token_ids": [
+        151644,
+        872,
         40451,
         752,
         264,
         21646,
         151645,
-        198,
         151644,
         77091,
-        198,
         39814,
         0,
         5692,
         594,
         264,
-        3100,
-        69295,
+        326,
+        1090,
+        1782,
+        471,
+        291,
         825,
         369,
         498,
-        1447,
         10234,
         1521,
         279,
@@ -2935,7 +3082,6 @@
         264,
         4282,
         1895,
-        1939,
         17949,
         432,
         2684,
@@ -2959,7 +3105,7 @@
           {
             "token": "ug",
             "token_id": 768,
-            "logprob": -9.0,
+            "logprob": -9.125,
             "prob": 0.0001
           },
           {
@@ -2971,25 +3117,25 @@
           {
             "token": "iscal",
             "token_id": 15787,
-            "logprob": -10.375,
+            "logprob": -10.125,
             "prob": 0.0
           },
           {
             "token": "uggy",
             "token_id": 60232,
-            "logprob": -11.5,
+            "logprob": -11.375,
             "prob": 0.0
           },
           {
             "token": "udd",
             "token_id": 8347,
-            "logprob": -12.0,
+            "logprob": -11.75,
             "prob": 0.0
           },
           {
             "token": "aced",
             "token_id": 4435,
-            "logprob": -12.125,
+            "logprob": -12.0,
             "prob": 0.0
           },
           {
@@ -3013,29 +3159,31 @@
       }
     },
     {
-      "step": 25,
-      "input_text": "Tell me a joke<|im_end|>\n<|im_start|>assistant\nSure! Here's a light-hearted one for you:\n\nWhy did the coffee file a police report?\n\nBecause it got mugged",
+      "step": 26,
+      "input_text": "<|im_start|>userTell me a joke<|im_end|><|im_start|>assistantSure! Here's a lighthearted one for you:Why did the coffee file a police report?Because it got mugged",
       "tokens": [
+        "<|im_start|>",
+        "user",
         "Tell",
         "Ġme",
         "Ġa",
         "Ġjoke",
         "<|im_end|>",
-        "\n",
         "<|im_start|>",
         "assistant",
-        "\n",
         "Sure",
         "!",
         "ĠHere",
         "'s",
         "Ġa",
-        "Ġlight",
-        "-hearted",
+        "Ġl",
+        "igh",
+        "the",
+        "art",
+        "ed",
         "Ġone",
         "Ġfor",
         "Ġyou",
-        ":\n\n",
         "Why",
         "Ġdid",
         "Ġthe",
@@ -3044,7 +3192,6 @@
         "Ġa",
         "Ġpolice",
         "Ġreport",
-        "?\n\n",
         "Because",
         "Ġit",
         "Ġgot",
@@ -3052,26 +3199,28 @@
         "ugged"
       ],
       "token_ids": [
+        151644,
+        872,
         40451,
         752,
         264,
         21646,
         151645,
-        198,
         151644,
         77091,
-        198,
         39814,
         0,
         5692,
         594,
         264,
-        3100,
-        69295,
+        326,
+        1090,
+        1782,
+        471,
+        291,
         825,
         369,
         498,
-        1447,
         10234,
         1521,
         279,
@@ -3080,7 +3229,6 @@
         264,
         4282,
         1895,
-        1939,
         17949,
         432,
         2684,
@@ -3097,21 +3245,21 @@
             "prob": 1.0
           },
           {
-            "token": "！",
-            "token_id": 6313,
-            "logprob": -11.0,
-            "prob": 0.0
-          },
-          {
             "token": "!*",
             "token_id": 68222,
-            "logprob": -11.125,
+            "logprob": -10.875,
             "prob": 0.0
           },
           {
             "token": "!!",
             "token_id": 2928,
-            "logprob": -11.125,
+            "logprob": -10.875,
+            "prob": 0.0
+          },
+          {
+            "token": "！",
+            "token_id": 6313,
+            "logprob": -11.0,
             "prob": 0.0
           },
           {
@@ -3123,13 +3271,13 @@
           {
             "token": "!\n\n",
             "token_id": 2219,
-            "logprob": -13.875,
+            "logprob": -13.5,
             "prob": 0.0
           },
           {
             "token": "!!!",
             "token_id": 12069,
-            "logprob": -14.125,
+            "logprob": -13.75,
             "prob": 0.0
           },
           {
@@ -3145,9 +3293,9 @@
             "prob": 0.0
           },
           {
-            "token": "!(:",
-            "token_id": 49116,
-            "logprob": -15.5,
+            "token": "!\n",
+            "token_id": 4894,
+            "logprob": -15.75,
             "prob": 0.0
           }
         ]
@@ -3159,29 +3307,31 @@
       }
     },
     {
-      "step": 26,
-      "input_text": "Tell me a joke<|im_end|>\n<|im_start|>assistant\nSure! Here's a light-hearted one for you:\n\nWhy did the coffee file a police report?\n\nBecause it got mugged!",
+      "step": 27,
+      "input_text": "<|im_start|>userTell me a joke<|im_end|><|im_start|>assistantSure! Here's a lighthearted one for you:Why did the coffee file a police report?Because it got mugged!",
       "tokens": [
+        "<|im_start|>",
+        "user",
         "Tell",
         "Ġme",
         "Ġa",
         "Ġjoke",
         "<|im_end|>",
-        "\n",
         "<|im_start|>",
         "assistant",
-        "\n",
         "Sure",
         "!",
         "ĠHere",
         "'s",
         "Ġa",
-        "Ġlight",
-        "-hearted",
+        "Ġl",
+        "igh",
+        "the",
+        "art",
+        "ed",
         "Ġone",
         "Ġfor",
         "Ġyou",
-        ":\n\n",
         "Why",
         "Ġdid",
         "Ġthe",
@@ -3190,7 +3340,6 @@
         "Ġa",
         "Ġpolice",
         "Ġreport",
-        "?\n\n",
         "Because",
         "Ġit",
         "Ġgot",
@@ -3199,26 +3348,28 @@
         "!"
       ],
       "token_ids": [
+        151644,
+        872,
         40451,
         752,
         264,
         21646,
         151645,
-        198,
         151644,
         77091,
-        198,
         39814,
         0,
         5692,
         594,
         264,
-        3100,
-        69295,
+        326,
+        1090,
+        1782,
+        471,
+        291,
         825,
         369,
         498,
-        1447,
         10234,
         1521,
         279,
@@ -3227,7 +3378,6 @@
         264,
         4282,
         1895,
-        1939,
         17949,
         432,
         2684,
@@ -3241,61 +3391,61 @@
           {
             "token": "Ġ�",
             "token_id": 25125,
-            "logprob": -0.3398,
-            "prob": 0.7109
+            "logprob": -0.4629,
+            "prob": 0.6289
           },
           {
             "token": "Ġ�",
             "token_id": 11162,
-            "logprob": -1.4688,
-            "prob": 0.2305
+            "logprob": -1.2109,
+            "prob": 0.2969
           },
           {
             "token": "Ġ�",
             "token_id": 26525,
-            "logprob": -3.0938,
-            "prob": 0.0454
+            "logprob": -2.8438,
+            "prob": 0.0586
           },
           {
             "token": "Ġ�",
             "token_id": 63039,
-            "logprob": -4.5938,
-            "prob": 0.0101
+            "logprob": -4.4688,
+            "prob": 0.0115
           },
           {
             "token": "Ġ�",
             "token_id": 61804,
-            "logprob": -6.4688,
-            "prob": 0.0016
-          },
-          {
-            "token": "Ġ�",
-            "token_id": 95069,
-            "logprob": -8.4375,
-            "prob": 0.0002
+            "logprob": -5.9688,
+            "prob": 0.0026
           },
           {
             "token": "Ġ�",
             "token_id": 25521,
-            "logprob": -8.4375,
+            "logprob": -8.3125,
+            "prob": 0.0002
+          },
+          {
+            "token": "Ġ�",
+            "token_id": 95069,
+            "logprob": -8.5625,
             "prob": 0.0002
           },
           {
             "token": "Ġ�",
             "token_id": 51414,
-            "logprob": -9.0625,
+            "logprob": -8.9375,
             "prob": 0.0001
           },
           {
             "token": "Ġ�",
             "token_id": 2858,
-            "logprob": -9.3125,
+            "logprob": -9.0625,
             "prob": 0.0001
           },
           {
             "token": "Ġ😉",
             "token_id": 55937,
-            "logprob": -9.4375,
+            "logprob": -9.5625,
             "prob": 0.0001
           }
         ]
@@ -3307,29 +3457,31 @@
       }
     },
     {
-      "step": 27,
-      "input_text": "Tell me a joke<|im_end|>\n<|im_start|>assistant\nSure! Here's a light-hearted one for you:\n\nWhy did the coffee file a police report?\n\nBecause it got mugged! �",
+      "step": 28,
+      "input_text": "<|im_start|>userTell me a joke<|im_end|><|im_start|>assistantSure! Here's a lighthearted one for you:Why did the coffee file a police report?Because it got mugged! �",
       "tokens": [
+        "<|im_start|>",
+        "user",
         "Tell",
         "Ġme",
         "Ġa",
         "Ġjoke",
         "<|im_end|>",
-        "\n",
         "<|im_start|>",
         "assistant",
-        "\n",
         "Sure",
         "!",
         "ĠHere",
         "'s",
         "Ġa",
-        "Ġlight",
-        "-hearted",
+        "Ġl",
+        "igh",
+        "the",
+        "art",
+        "ed",
         "Ġone",
         "Ġfor",
         "Ġyou",
-        ":\n\n",
         "Why",
         "Ġdid",
         "Ġthe",
@@ -3338,7 +3490,6 @@
         "Ġa",
         "Ġpolice",
         "Ġreport",
-        "?\n\n",
         "Because",
         "Ġit",
         "Ġgot",
@@ -3348,26 +3499,28 @@
         "Ġ�"
       ],
       "token_ids": [
+        151644,
+        872,
         40451,
         752,
         264,
         21646,
         151645,
-        198,
         151644,
         77091,
-        198,
         39814,
         0,
         5692,
         594,
         264,
-        3100,
-        69295,
+        326,
+        1090,
+        1782,
+        471,
+        291,
         825,
         369,
         498,
-        1447,
         10234,
         1521,
         279,
@@ -3376,7 +3529,6 @@
         264,
         4282,
         1895,
-        1939,
         17949,
         432,
         2684,
@@ -3391,60 +3543,60 @@
           {
             "token": "�",
             "token_id": 248,
-            "logprob": -0.7305,
-            "prob": 0.4824
+            "logprob": -0.7109,
+            "prob": 0.4922
           },
           {
             "token": "�",
             "token_id": 104,
-            "logprob": -1.4766,
-            "prob": 0.2275
+            "logprob": -1.4609,
+            "prob": 0.2324
           },
           {
             "token": "�",
             "token_id": 235,
-            "logprob": -1.8516,
-            "prob": 0.1562
+            "logprob": -1.8359,
+            "prob": 0.1602
           },
           {
             "token": "�",
             "token_id": 236,
-            "logprob": -2.9844,
-            "prob": 0.0508
+            "logprob": -3.2031,
+            "prob": 0.0403
           },
           {
             "token": "�",
             "token_id": 98,
-            "logprob": -3.4844,
-            "prob": 0.0309
+            "logprob": -3.5781,
+            "prob": 0.0277
           },
           {
             "token": "�",
             "token_id": 234,
             "logprob": -4.3438,
-            "prob": 0.0129
+            "prob": 0.0131
           },
           {
             "token": "�",
             "token_id": 241,
-            "logprob": -4.3438,
-            "prob": 0.0129
+            "logprob": -4.4688,
+            "prob": 0.0116
           },
           {
             "token": "�",
             "token_id": 243,
-            "logprob": -4.4688,
-            "prob": 0.0114
+            "logprob": -4.5938,
+            "prob": 0.0102
           },
           {
             "token": "�",
             "token_id": 253,
-            "logprob": -5.4688,
-            "prob": 0.0042
+            "logprob": -5.5938,
+            "prob": 0.0038
           },
           {
             "token": "�",
-            "token_id": 97,
+            "token_id": 229,
             "logprob": -6.2188,
             "prob": 0.002
           }
@@ -3452,34 +3604,36 @@
       },
       "selected_token": {
         "token": "�",
-        "token_id": 104,
+        "token_id": 248,
         "selection_method": "sampling"
       }
     },
     {
-      "step": 28,
-      "input_text": "Tell me a joke<|im_end|>\n<|im_start|>assistant\nSure! Here's a light-hearted one for you:\n\nWhy did the coffee file a police report?\n\nBecause it got mugged! �",
+      "step": 29,
+      "input_text": "<|im_start|>userTell me a joke<|im_end|><|im_start|>assistantSure! Here's a lighthearted one for you:Why did the coffee file a police report?Because it got mugged! �",
       "tokens": [
+        "<|im_start|>",
+        "user",
         "Tell",
         "Ġme",
         "Ġa",
         "Ġjoke",
         "<|im_end|>",
-        "\n",
         "<|im_start|>",
         "assistant",
-        "\n",
         "Sure",
         "!",
         "ĠHere",
         "'s",
         "Ġa",
-        "Ġlight",
-        "-hearted",
+        "Ġl",
+        "igh",
+        "the",
+        "art",
+        "ed",
         "Ġone",
         "Ġfor",
         "Ġyou",
-        ":\n\n",
         "Why",
         "Ġdid",
         "Ġthe",
@@ -3488,7 +3642,6 @@
         "Ġa",
         "Ġpolice",
         "Ġreport",
-        "?\n\n",
         "Because",
         "Ġit",
         "Ġgot",
@@ -3499,26 +3652,28 @@
         "�"
       ],
       "token_ids": [
+        151644,
+        872,
         40451,
         752,
         264,
         21646,
         151645,
-        198,
         151644,
         77091,
-        198,
         39814,
         0,
         5692,
         594,
         264,
-        3100,
-        69295,
+        326,
+        1090,
+        1782,
+        471,
+        291,
         825,
         369,
         498,
-        1447,
         10234,
         1521,
         279,
@@ -3527,7 +3682,6 @@
         264,
         4282,
         1895,
-        1939,
         17949,
         432,
         2684,
@@ -3535,103 +3689,105 @@
         20146,
         0,
         11162,
-        104
+        248
       ],
       "output_distribution": {
         "top_k": 10,
         "candidates": [
           {
             "token": "�",
-            "token_id": 244,
-            "logprob": -0.6484,
-            "prob": 0.5234
+            "token_id": 101,
+            "logprob": -0.7148,
+            "prob": 0.4883
           },
           {
             "token": "�",
-            "token_id": 96,
-            "logprob": -1.5234,
-            "prob": 0.2178
-          },
-          {
-            "token": "�",
-            "token_id": 254,
-            "logprob": -1.6484,
-            "prob": 0.1924
-          },
-          {
-            "token": "�",
-            "token_id": 94,
-            "logprob": -3.2812,
-            "prob": 0.0378
-          },
-          {
-            "token": "�",
-            "token_id": 97,
-            "logprob": -4.7812,
-            "prob": 0.0084
-          },
-          {
-            "token": "�",
-            "token_id": 114,
-            "logprob": -5.5312,
-            "prob": 0.004
-          },
-          {
-            "token": "�",
-            "token_id": 98,
-            "logprob": -5.6562,
-            "prob": 0.0035
-          },
-          {
-            "token": "�",
-            "token_id": 240,
-            "logprob": -5.7812,
-            "prob": 0.0031
+            "token_id": 242,
+            "logprob": -1.0938,
+            "prob": 0.3359
           },
           {
             "token": "�",
             "token_id": 239,
-            "logprob": -6.4062,
-            "prob": 0.0017
+            "logprob": -2.2188,
+            "prob": 0.1089
           },
           {
             "token": "�",
-            "token_id": 111,
-            "logprob": -6.7812,
+            "token_id": 240,
+            "logprob": -3.0938,
+            "prob": 0.0454
+          },
+          {
+            "token": "�",
+            "token_id": 222,
+            "logprob": -4.4688,
+            "prob": 0.0115
+          },
+          {
+            "token": "�",
+            "token_id": 241,
+            "logprob": -5.5938,
+            "prob": 0.0037
+          },
+          {
+            "token": "�",
+            "token_id": 102,
+            "logprob": -6.5938,
+            "prob": 0.0014
+          },
+          {
+            "token": "�",
+            "token_id": 103,
+            "logprob": -6.8438,
             "prob": 0.0011
+          },
+          {
+            "token": "�",
+            "token_id": 238,
+            "logprob": -7.3438,
+            "prob": 0.0006
+          },
+          {
+            "token": "�",
+            "token_id": 224,
+            "logprob": -7.7188,
+            "prob": 0.0004
           }
         ]
       },
       "selected_token": {
         "token": "�",
-        "token_id": 244,
+        "token_id": 101,
         "selection_method": "sampling"
       }
     },
     {
-      "step": 29,
-      "input_text": "Tell me a joke<|im_end|>\n<|im_start|>assistant\nSure! Here's a light-hearted one for you:\n\nWhy did the coffee file a police report?\n\nBecause it got mugged! 🫖",
+      "step": 30,
+      "input_text": "<|im_start|>userTell me a joke<|im_end|><|im_start|>assistantSure! Here's a lighthearted one for you:Why did the coffee file a police report?Because it got mugged! 🚨",
       "tokens": [
+        "<|im_start|>",
+        "user",
         "Tell",
         "Ġme",
         "Ġa",
         "Ġjoke",
         "<|im_end|>",
-        "\n",
         "<|im_start|>",
         "assistant",
-        "\n",
         "Sure",
         "!",
         "ĠHere",
         "'s",
         "Ġa",
-        "Ġlight",
-        "-hearted",
+        "Ġl",
+        "igh",
+        "the",
+        "art",
+        "ed",
         "Ġone",
         "Ġfor",
         "Ġyou",
-        ":\n\n",
         "Why",
         "Ġdid",
         "Ġthe",
@@ -3640,7 +3796,6 @@
         "Ġa",
         "Ġpolice",
         "Ġreport",
-        "?\n\n",
         "Because",
         "Ġit",
         "Ġgot",
@@ -3652,26 +3807,28 @@
         "�"
       ],
       "token_ids": [
+        151644,
+        872,
         40451,
         752,
         264,
         21646,
         151645,
-        198,
         151644,
         77091,
-        198,
         39814,
         0,
         5692,
         594,
         264,
-        3100,
-        69295,
+        326,
+        1090,
+        1782,
+        471,
+        291,
         825,
         369,
         498,
-        1447,
         10234,
         1521,
         279,
@@ -3680,7 +3837,6 @@
         264,
         4282,
         1895,
-        1939,
         17949,
         432,
         2684,
@@ -3688,8 +3844,166 @@
         20146,
         0,
         11162,
-        104,
-        244
+        248,
+        101
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "☕",
+            "token_id": 145314,
+            "logprob": -0.0063,
+            "prob": 0.9922
+          },
+          {
+            "token": "Ġ�",
+            "token_id": 25125,
+            "logprob": -6.375,
+            "prob": 0.0017
+          },
+          {
+            "token": "�",
+            "token_id": 123908,
+            "logprob": -7.0,
+            "prob": 0.0009
+          },
+          {
+            "token": "😄",
+            "token_id": 144741,
+            "logprob": -7.25,
+            "prob": 0.0007
+          },
+          {
+            "token": "💪",
+            "token_id": 144817,
+            "logprob": -8.0,
+            "prob": 0.0003
+          },
+          {
+            "token": "🥛",
+            "token_id": 147739,
+            "logprob": -8.125,
+            "prob": 0.0003
+          },
+          {
+            "token": "🔥",
+            "token_id": 144670,
+            "logprob": -8.875,
+            "prob": 0.0001
+          },
+          {
+            "token": "💼",
+            "token_id": 146960,
+            "logprob": -9.0,
+            "prob": 0.0001
+          },
+          {
+            "token": "🍵",
+            "token_id": 146357,
+            "logprob": -9.0,
+            "prob": 0.0001
+          },
+          {
+            "token": "🥤",
+            "token_id": 147195,
+            "logprob": -9.375,
+            "prob": 0.0001
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "☕",
+        "token_id": 145314,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 31,
+      "input_text": "<|im_start|>userTell me a joke<|im_end|><|im_start|>assistantSure! Here's a lighthearted one for you:Why did the coffee file a police report?Because it got mugged! 🚨☕",
+      "tokens": [
+        "<|im_start|>",
+        "user",
+        "Tell",
+        "Ġme",
+        "Ġa",
+        "Ġjoke",
+        "<|im_end|>",
+        "<|im_start|>",
+        "assistant",
+        "Sure",
+        "!",
+        "ĠHere",
+        "'s",
+        "Ġa",
+        "Ġl",
+        "igh",
+        "the",
+        "art",
+        "ed",
+        "Ġone",
+        "Ġfor",
+        "Ġyou",
+        "Why",
+        "Ġdid",
+        "Ġthe",
+        "Ġcoffee",
+        "Ġfile",
+        "Ġa",
+        "Ġpolice",
+        "Ġreport",
+        "Because",
+        "Ġit",
+        "Ġgot",
+        "Ġm",
+        "ugged",
+        "!",
+        "Ġ�",
+        "�",
+        "�",
+        "☕"
+      ],
+      "token_ids": [
+        151644,
+        872,
+        40451,
+        752,
+        264,
+        21646,
+        151645,
+        151644,
+        77091,
+        39814,
+        0,
+        5692,
+        594,
+        264,
+        326,
+        1090,
+        1782,
+        471,
+        291,
+        825,
+        369,
+        498,
+        10234,
+        1521,
+        279,
+        10799,
+        1034,
+        264,
+        4282,
+        1895,
+        17949,
+        432,
+        2684,
+        296,
+        20146,
+        0,
+        11162,
+        248,
+        101,
+        145314
       ],
       "output_distribution": {
         "top_k": 10,
@@ -3697,95 +4011,97 @@
           {
             "token": "😄",
             "token_id": 144741,
-            "logprob": -0.0923,
-            "prob": 0.9102
+            "logprob": -0.5195,
+            "prob": 0.5938
+          },
+          {
+            "token": "Want",
+            "token_id": 28823,
+            "logprob": -1.6406,
+            "prob": 0.1934
+          },
+          {
+            "token": "Hope",
+            "token_id": 38015,
+            "logprob": -2.5156,
+            "prob": 0.0806
+          },
+          {
+            "token": "(",
+            "token_id": 7,
+            "logprob": -2.6406,
+            "prob": 0.0713
+          },
+          {
+            "token": "Got",
+            "token_id": 32462,
+            "logprob": -4.7812,
+            "prob": 0.0085
           },
           {
             "token": "😊",
             "token_id": 144236,
-            "logprob": -3.7188,
-            "prob": 0.0243
+            "logprob": -5.0312,
+            "prob": 0.0066
           },
           {
-            "token": "☕",
-            "token_id": 145314,
-            "logprob": -4.8438,
-            "prob": 0.0079
+            "token": "*(",
+            "token_id": 6599,
+            "logprob": -5.1562,
+            "prob": 0.0058
           },
           {
-            "token": "😅",
-            "token_id": 144713,
-            "logprob": -4.9688,
-            "prob": 0.007
-          },
-          {
-            "token": "💼",
-            "token_id": 146960,
-            "logprob": -5.3438,
-            "prob": 0.0048
-          },
-          {
-            "token": "💥",
-            "token_id": 145027,
-            "logprob": -5.4688,
-            "prob": 0.0042
-          },
-          {
-            "token": "🚨",
-            "token_id": 146040,
-            "logprob": -5.4688,
-            "prob": 0.0042
-          },
-          {
-            "token": "😂",
-            "token_id": 144185,
-            "logprob": -5.5938,
-            "prob": 0.0037
+            "token": "🙂",
+            "token_id": 145080,
+            "logprob": -5.1562,
+            "prob": 0.0058
           },
           {
             "token": "😉",
             "token_id": 136879,
-            "logprob": -5.5938,
-            "prob": 0.0037
+            "logprob": -5.1562,
+            "prob": 0.0058
           },
           {
-            "token": "🔍",
-            "token_id": 146663,
-            "logprob": -5.7188,
-            "prob": 0.0033
+            "token": "(S",
+            "token_id": 3759,
+            "logprob": -5.2812,
+            "prob": 0.0052
           }
         ]
       },
       "selected_token": {
-        "token": "😄",
-        "token_id": 144741,
+        "token": "Hope",
+        "token_id": 38015,
         "selection_method": "sampling"
       }
     },
     {
-      "step": 30,
-      "input_text": "Tell me a joke<|im_end|>\n<|im_start|>assistant\nSure! Here's a light-hearted one for you:\n\nWhy did the coffee file a police report?\n\nBecause it got mugged! 🫖😄",
+      "step": 32,
+      "input_text": "<|im_start|>userTell me a joke<|im_end|><|im_start|>assistantSure! Here's a lighthearted one for you:Why did the coffee file a police report?Because it got mugged! 🚨☕Hope",
       "tokens": [
+        "<|im_start|>",
+        "user",
         "Tell",
         "Ġme",
         "Ġa",
         "Ġjoke",
         "<|im_end|>",
-        "\n",
         "<|im_start|>",
         "assistant",
-        "\n",
         "Sure",
         "!",
         "ĠHere",
         "'s",
         "Ġa",
-        "Ġlight",
-        "-hearted",
+        "Ġl",
+        "igh",
+        "the",
+        "art",
+        "ed",
         "Ġone",
         "Ġfor",
         "Ġyou",
-        ":\n\n",
         "Why",
         "Ġdid",
         "Ġthe",
@@ -3794,7 +4110,6 @@
         "Ġa",
         "Ġpolice",
         "Ġreport",
-        "?\n\n",
         "Because",
         "Ġit",
         "Ġgot",
@@ -3804,29 +4119,32 @@
         "Ġ�",
         "�",
         "�",
-        "😄"
+        "☕",
+        "Hope"
       ],
       "token_ids": [
+        151644,
+        872,
         40451,
         752,
         264,
         21646,
         151645,
-        198,
         151644,
         77091,
-        198,
         39814,
         0,
         5692,
         594,
         264,
-        3100,
-        69295,
+        326,
+        1090,
+        1782,
+        471,
+        291,
         825,
         369,
         498,
-        1447,
         10234,
         1521,
         279,
@@ -3835,7 +4153,6 @@
         264,
         4282,
         1895,
-        1939,
         17949,
         432,
         2684,
@@ -3843,9 +4160,1362 @@
         20146,
         0,
         11162,
-        104,
-        244,
-        144741
+        248,
+        101,
+        145314,
+        38015
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġthat",
+            "token_id": 429,
+            "logprob": -0.0,
+            "prob": 1.0
+          },
+          {
+            "token": "Ġit",
+            "token_id": 432,
+            "logprob": -13.75,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠTHAT",
+            "token_id": 25269,
+            "logprob": -15.25,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġyou",
+            "token_id": 498,
+            "logprob": -16.5,
+            "prob": 0.0
+          },
+          {
+            "token": "that",
+            "token_id": 9033,
+            "logprob": -17.625,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠThat",
+            "token_id": 2938,
+            "logprob": -19.125,
+            "prob": 0.0
+          },
+          {
+            "token": "\tthat",
+            "token_id": 63342,
+            "logprob": -19.75,
+            "prob": 0.0
+          },
+          {
+            "token": "That",
+            "token_id": 4792,
+            "logprob": -20.125,
+            "prob": 0.0
+          },
+          {
+            "token": "_that",
+            "token_id": 70197,
+            "logprob": -22.0,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġthats",
+            "token_id": 40036,
+            "logprob": -23.375,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġthat",
+        "token_id": 429,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 33,
+      "input_text": "<|im_start|>userTell me a joke<|im_end|><|im_start|>assistantSure! Here's a lighthearted one for you:Why did the coffee file a police report?Because it got mugged! 🚨☕Hope that",
+      "tokens": [
+        "<|im_start|>",
+        "user",
+        "Tell",
+        "Ġme",
+        "Ġa",
+        "Ġjoke",
+        "<|im_end|>",
+        "<|im_start|>",
+        "assistant",
+        "Sure",
+        "!",
+        "ĠHere",
+        "'s",
+        "Ġa",
+        "Ġl",
+        "igh",
+        "the",
+        "art",
+        "ed",
+        "Ġone",
+        "Ġfor",
+        "Ġyou",
+        "Why",
+        "Ġdid",
+        "Ġthe",
+        "Ġcoffee",
+        "Ġfile",
+        "Ġa",
+        "Ġpolice",
+        "Ġreport",
+        "Because",
+        "Ġit",
+        "Ġgot",
+        "Ġm",
+        "ugged",
+        "!",
+        "Ġ�",
+        "�",
+        "�",
+        "☕",
+        "Hope",
+        "Ġthat"
+      ],
+      "token_ids": [
+        151644,
+        872,
+        40451,
+        752,
+        264,
+        21646,
+        151645,
+        151644,
+        77091,
+        39814,
+        0,
+        5692,
+        594,
+        264,
+        326,
+        1090,
+        1782,
+        471,
+        291,
+        825,
+        369,
+        498,
+        10234,
+        1521,
+        279,
+        10799,
+        1034,
+        264,
+        4282,
+        1895,
+        17949,
+        432,
+        2684,
+        296,
+        20146,
+        0,
+        11162,
+        248,
+        101,
+        145314,
+        38015,
+        429
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġgave",
+            "token_id": 6551,
+            "logprob": -0.0029,
+            "prob": 0.9961
+          },
+          {
+            "token": "Ġbrought",
+            "token_id": 7117,
+            "logprob": -5.875,
+            "prob": 0.0028
+          },
+          {
+            "token": "Ġwarmed",
+            "token_id": 81730,
+            "logprob": -9.875,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġmade",
+            "token_id": 1865,
+            "logprob": -10.5,
+            "prob": 0.0
+          },
+          {
+            "token": "给了",
+            "token_id": 102558,
+            "logprob": -11.0,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġgives",
+            "token_id": 6696,
+            "logprob": -12.125,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġsparked",
+            "token_id": 40444,
+            "logprob": -12.75,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġbright",
+            "token_id": 9906,
+            "logprob": -13.125,
+            "prob": 0.0
+          },
+          {
+            "token": "给",
+            "token_id": 89012,
+            "logprob": -13.75,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġgot",
+            "token_id": 2684,
+            "logprob": -14.0,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġgave",
+        "token_id": 6551,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 34,
+      "input_text": "<|im_start|>userTell me a joke<|im_end|><|im_start|>assistantSure! Here's a lighthearted one for you:Why did the coffee file a police report?Because it got mugged! 🚨☕Hope that gave",
+      "tokens": [
+        "<|im_start|>",
+        "user",
+        "Tell",
+        "Ġme",
+        "Ġa",
+        "Ġjoke",
+        "<|im_end|>",
+        "<|im_start|>",
+        "assistant",
+        "Sure",
+        "!",
+        "ĠHere",
+        "'s",
+        "Ġa",
+        "Ġl",
+        "igh",
+        "the",
+        "art",
+        "ed",
+        "Ġone",
+        "Ġfor",
+        "Ġyou",
+        "Why",
+        "Ġdid",
+        "Ġthe",
+        "Ġcoffee",
+        "Ġfile",
+        "Ġa",
+        "Ġpolice",
+        "Ġreport",
+        "Because",
+        "Ġit",
+        "Ġgot",
+        "Ġm",
+        "ugged",
+        "!",
+        "Ġ�",
+        "�",
+        "�",
+        "☕",
+        "Hope",
+        "Ġthat",
+        "Ġgave"
+      ],
+      "token_ids": [
+        151644,
+        872,
+        40451,
+        752,
+        264,
+        21646,
+        151645,
+        151644,
+        77091,
+        39814,
+        0,
+        5692,
+        594,
+        264,
+        326,
+        1090,
+        1782,
+        471,
+        291,
+        825,
+        369,
+        498,
+        10234,
+        1521,
+        279,
+        10799,
+        1034,
+        264,
+        4282,
+        1895,
+        17949,
+        432,
+        2684,
+        296,
+        20146,
+        0,
+        11162,
+        248,
+        101,
+        145314,
+        38015,
+        429,
+        6551
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġyou",
+            "token_id": 498,
+            "logprob": -0.0,
+            "prob": 1.0
+          },
+          {
+            "token": "Ġa",
+            "token_id": 264,
+            "logprob": -10.75,
+            "prob": 0.0
+          },
+          {
+            "token": "你",
+            "token_id": 56568,
+            "logprob": -13.0,
+            "prob": 0.0
+          },
+          {
+            "token": "您",
+            "token_id": 87026,
+            "logprob": -15.875,
+            "prob": 0.0
+          },
+          {
+            "token": "you",
+            "token_id": 9330,
+            "logprob": -16.5,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġyour",
+            "token_id": 697,
+            "logprob": -17.125,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠYOU",
+            "token_id": 14985,
+            "logprob": -17.875,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġbạn",
+            "token_id": 89437,
+            "logprob": -18.25,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠYou",
+            "token_id": 1446,
+            "logprob": -20.875,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġvous",
+            "token_id": 9012,
+            "logprob": -21.125,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġyou",
+        "token_id": 498,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 35,
+      "input_text": "<|im_start|>userTell me a joke<|im_end|><|im_start|>assistantSure! Here's a lighthearted one for you:Why did the coffee file a police report?Because it got mugged! 🚨☕Hope that gave you",
+      "tokens": [
+        "<|im_start|>",
+        "user",
+        "Tell",
+        "Ġme",
+        "Ġa",
+        "Ġjoke",
+        "<|im_end|>",
+        "<|im_start|>",
+        "assistant",
+        "Sure",
+        "!",
+        "ĠHere",
+        "'s",
+        "Ġa",
+        "Ġl",
+        "igh",
+        "the",
+        "art",
+        "ed",
+        "Ġone",
+        "Ġfor",
+        "Ġyou",
+        "Why",
+        "Ġdid",
+        "Ġthe",
+        "Ġcoffee",
+        "Ġfile",
+        "Ġa",
+        "Ġpolice",
+        "Ġreport",
+        "Because",
+        "Ġit",
+        "Ġgot",
+        "Ġm",
+        "ugged",
+        "!",
+        "Ġ�",
+        "�",
+        "�",
+        "☕",
+        "Hope",
+        "Ġthat",
+        "Ġgave",
+        "Ġyou"
+      ],
+      "token_ids": [
+        151644,
+        872,
+        40451,
+        752,
+        264,
+        21646,
+        151645,
+        151644,
+        77091,
+        39814,
+        0,
+        5692,
+        594,
+        264,
+        326,
+        1090,
+        1782,
+        471,
+        291,
+        825,
+        369,
+        498,
+        10234,
+        1521,
+        279,
+        10799,
+        1034,
+        264,
+        4282,
+        1895,
+        17949,
+        432,
+        2684,
+        296,
+        20146,
+        0,
+        11162,
+        248,
+        101,
+        145314,
+        38015,
+        429,
+        6551,
+        498
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġa",
+            "token_id": 264,
+            "logprob": -0.0,
+            "prob": 1.0
+          },
+          {
+            "token": "a",
+            "token_id": 64,
+            "logprob": -16.625,
+            "prob": 0.0
+          },
+          {
+            "token": "\ta",
+            "token_id": 11323,
+            "logprob": -19.0,
+            "prob": 0.0
+          },
+          {
+            "token": ".a",
+            "token_id": 5849,
+            "logprob": -21.0,
+            "prob": 0.0
+          },
+          {
+            "token": "_a",
+            "token_id": 4306,
+            "logprob": -21.125,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠA",
+            "token_id": 362,
+            "logprob": -22.125,
+            "prob": 0.0
+          },
+          {
+            "token": "-a",
+            "token_id": 7409,
+            "logprob": -22.375,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġа",
+            "token_id": 20396,
+            "logprob": -25.75,
+            "prob": 0.0
+          },
+          {
+            "token": "’a",
+            "token_id": 39653,
+            "logprob": -26.25,
+            "prob": 0.0
+          },
+          {
+            "token": ",a",
+            "token_id": 15012,
+            "logprob": -27.0,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġa",
+        "token_id": 264,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 36,
+      "input_text": "<|im_start|>userTell me a joke<|im_end|><|im_start|>assistantSure! Here's a lighthearted one for you:Why did the coffee file a police report?Because it got mugged! 🚨☕Hope that gave you a",
+      "tokens": [
+        "<|im_start|>",
+        "user",
+        "Tell",
+        "Ġme",
+        "Ġa",
+        "Ġjoke",
+        "<|im_end|>",
+        "<|im_start|>",
+        "assistant",
+        "Sure",
+        "!",
+        "ĠHere",
+        "'s",
+        "Ġa",
+        "Ġl",
+        "igh",
+        "the",
+        "art",
+        "ed",
+        "Ġone",
+        "Ġfor",
+        "Ġyou",
+        "Why",
+        "Ġdid",
+        "Ġthe",
+        "Ġcoffee",
+        "Ġfile",
+        "Ġa",
+        "Ġpolice",
+        "Ġreport",
+        "Because",
+        "Ġit",
+        "Ġgot",
+        "Ġm",
+        "ugged",
+        "!",
+        "Ġ�",
+        "�",
+        "�",
+        "☕",
+        "Hope",
+        "Ġthat",
+        "Ġgave",
+        "Ġyou",
+        "Ġa"
+      ],
+      "token_ids": [
+        151644,
+        872,
+        40451,
+        752,
+        264,
+        21646,
+        151645,
+        151644,
+        77091,
+        39814,
+        0,
+        5692,
+        594,
+        264,
+        326,
+        1090,
+        1782,
+        471,
+        291,
+        825,
+        369,
+        498,
+        10234,
+        1521,
+        279,
+        10799,
+        1034,
+        264,
+        4282,
+        1895,
+        17949,
+        432,
+        2684,
+        296,
+        20146,
+        0,
+        11162,
+        248,
+        101,
+        145314,
+        38015,
+        429,
+        6551,
+        498,
+        264
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġsmile",
+            "token_id": 15289,
+            "logprob": -0.2158,
+            "prob": 0.8047
+          },
+          {
+            "token": "Ġchuck",
+            "token_id": 42460,
+            "logprob": -1.7188,
+            "prob": 0.1797
+          },
+          {
+            "token": "Ġlittle",
+            "token_id": 2632,
+            "logprob": -4.5938,
+            "prob": 0.0101
+          },
+          {
+            "token": "Ġwarm",
+            "token_id": 8205,
+            "logprob": -6.5938,
+            "prob": 0.0014
+          },
+          {
+            "token": "Ġgood",
+            "token_id": 1661,
+            "logprob": -7.3438,
+            "prob": 0.0006
+          },
+          {
+            "token": "Ġlaugh",
+            "token_id": 12550,
+            "logprob": -7.4688,
+            "prob": 0.0006
+          },
+          {
+            "token": "Ġgrin",
+            "token_id": 58280,
+            "logprob": -8.0625,
+            "prob": 0.0003
+          },
+          {
+            "token": "Ġsmall",
+            "token_id": 2613,
+            "logprob": -8.4375,
+            "prob": 0.0002
+          },
+          {
+            "token": "Ġsmiles",
+            "token_id": 42532,
+            "logprob": -8.5625,
+            "prob": 0.0002
+          },
+          {
+            "token": "Ġnice",
+            "token_id": 6419,
+            "logprob": -8.8125,
+            "prob": 0.0001
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġsmile",
+        "token_id": 15289,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 37,
+      "input_text": "<|im_start|>userTell me a joke<|im_end|><|im_start|>assistantSure! Here's a lighthearted one for you:Why did the coffee file a police report?Because it got mugged! 🚨☕Hope that gave you a smile",
+      "tokens": [
+        "<|im_start|>",
+        "user",
+        "Tell",
+        "Ġme",
+        "Ġa",
+        "Ġjoke",
+        "<|im_end|>",
+        "<|im_start|>",
+        "assistant",
+        "Sure",
+        "!",
+        "ĠHere",
+        "'s",
+        "Ġa",
+        "Ġl",
+        "igh",
+        "the",
+        "art",
+        "ed",
+        "Ġone",
+        "Ġfor",
+        "Ġyou",
+        "Why",
+        "Ġdid",
+        "Ġthe",
+        "Ġcoffee",
+        "Ġfile",
+        "Ġa",
+        "Ġpolice",
+        "Ġreport",
+        "Because",
+        "Ġit",
+        "Ġgot",
+        "Ġm",
+        "ugged",
+        "!",
+        "Ġ�",
+        "�",
+        "�",
+        "☕",
+        "Hope",
+        "Ġthat",
+        "Ġgave",
+        "Ġyou",
+        "Ġa",
+        "Ġsmile"
+      ],
+      "token_ids": [
+        151644,
+        872,
+        40451,
+        752,
+        264,
+        21646,
+        151645,
+        151644,
+        77091,
+        39814,
+        0,
+        5692,
+        594,
+        264,
+        326,
+        1090,
+        1782,
+        471,
+        291,
+        825,
+        369,
+        498,
+        10234,
+        1521,
+        279,
+        10799,
+        1034,
+        264,
+        4282,
+        1895,
+        17949,
+        432,
+        2684,
+        296,
+        20146,
+        0,
+        11162,
+        248,
+        101,
+        145314,
+        38015,
+        429,
+        6551,
+        498,
+        264,
+        15289
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "!",
+            "token_id": 0,
+            "logprob": -0.0002,
+            "prob": 1.0
+          },
+          {
+            "token": "Ġ—",
+            "token_id": 1959,
+            "logprob": -8.75,
+            "prob": 0.0002
+          },
+          {
+            "token": "Ġ�",
+            "token_id": 26525,
+            "logprob": -11.25,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġ–",
+            "token_id": 1365,
+            "logprob": -12.125,
+            "prob": 0.0
+          },
+          {
+            "token": "—",
+            "token_id": 2293,
+            "logprob": -12.5,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġ😉",
+            "token_id": 55937,
+            "logprob": -12.875,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġ:)",
+            "token_id": 25956,
+            "logprob": -14.125,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġ🙂",
+            "token_id": 27484,
+            "logprob": -14.625,
+            "prob": 0.0
+          },
+          {
+            "token": "—even",
+            "token_id": 78978,
+            "logprob": -15.125,
+            "prob": 0.0
+          },
+          {
+            "token": "！",
+            "token_id": 6313,
+            "logprob": -15.625,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "!",
+        "token_id": 0,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 38,
+      "input_text": "<|im_start|>userTell me a joke<|im_end|><|im_start|>assistantSure! Here's a lighthearted one for you:Why did the coffee file a police report?Because it got mugged! 🚨☕Hope that gave you a smile!",
+      "tokens": [
+        "<|im_start|>",
+        "user",
+        "Tell",
+        "Ġme",
+        "Ġa",
+        "Ġjoke",
+        "<|im_end|>",
+        "<|im_start|>",
+        "assistant",
+        "Sure",
+        "!",
+        "ĠHere",
+        "'s",
+        "Ġa",
+        "Ġl",
+        "igh",
+        "the",
+        "art",
+        "ed",
+        "Ġone",
+        "Ġfor",
+        "Ġyou",
+        "Why",
+        "Ġdid",
+        "Ġthe",
+        "Ġcoffee",
+        "Ġfile",
+        "Ġa",
+        "Ġpolice",
+        "Ġreport",
+        "Because",
+        "Ġit",
+        "Ġgot",
+        "Ġm",
+        "ugged",
+        "!",
+        "Ġ�",
+        "�",
+        "�",
+        "☕",
+        "Hope",
+        "Ġthat",
+        "Ġgave",
+        "Ġyou",
+        "Ġa",
+        "Ġsmile",
+        "!"
+      ],
+      "token_ids": [
+        151644,
+        872,
+        40451,
+        752,
+        264,
+        21646,
+        151645,
+        151644,
+        77091,
+        39814,
+        0,
+        5692,
+        594,
+        264,
+        326,
+        1090,
+        1782,
+        471,
+        291,
+        825,
+        369,
+        498,
+        10234,
+        1521,
+        279,
+        10799,
+        1034,
+        264,
+        4282,
+        1895,
+        17949,
+        432,
+        2684,
+        296,
+        20146,
+        0,
+        11162,
+        248,
+        101,
+        145314,
+        38015,
+        429,
+        6551,
+        498,
+        264,
+        15289,
+        0
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġ�",
+            "token_id": 26525,
+            "logprob": -0.0005,
+            "prob": 1.0
+          },
+          {
+            "token": "Ġ�",
+            "token_id": 11162,
+            "logprob": -8.625,
+            "prob": 0.0002
+          },
+          {
+            "token": "Ġ😉",
+            "token_id": 55937,
+            "logprob": -9.0,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġ�",
+            "token_id": 63039,
+            "logprob": -9.625,
+            "prob": 0.0001
+          },
+          {
+            "token": "😄",
+            "token_id": 144741,
+            "logprob": -10.125,
+            "prob": 0.0
+          },
+          {
+            "token": "<|im_end|>",
+            "token_id": 151645,
+            "logprob": -11.375,
+            "prob": 0.0
+          },
+          {
+            "token": "😊",
+            "token_id": 144236,
+            "logprob": -11.5,
+            "prob": 0.0
+          },
+          {
+            "token": "🙂",
+            "token_id": 145080,
+            "logprob": -11.875,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġ�",
+            "token_id": 25125,
+            "logprob": -12.5,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġ�",
+            "token_id": 25521,
+            "logprob": -12.75,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġ�",
+        "token_id": 26525,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 39,
+      "input_text": "<|im_start|>userTell me a joke<|im_end|><|im_start|>assistantSure! Here's a lighthearted one for you:Why did the coffee file a police report?Because it got mugged! 🚨☕Hope that gave you a smile! �",
+      "tokens": [
+        "<|im_start|>",
+        "user",
+        "Tell",
+        "Ġme",
+        "Ġa",
+        "Ġjoke",
+        "<|im_end|>",
+        "<|im_start|>",
+        "assistant",
+        "Sure",
+        "!",
+        "ĠHere",
+        "'s",
+        "Ġa",
+        "Ġl",
+        "igh",
+        "the",
+        "art",
+        "ed",
+        "Ġone",
+        "Ġfor",
+        "Ġyou",
+        "Why",
+        "Ġdid",
+        "Ġthe",
+        "Ġcoffee",
+        "Ġfile",
+        "Ġa",
+        "Ġpolice",
+        "Ġreport",
+        "Because",
+        "Ġit",
+        "Ġgot",
+        "Ġm",
+        "ugged",
+        "!",
+        "Ġ�",
+        "�",
+        "�",
+        "☕",
+        "Hope",
+        "Ġthat",
+        "Ġgave",
+        "Ġyou",
+        "Ġa",
+        "Ġsmile",
+        "!",
+        "Ġ�"
+      ],
+      "token_ids": [
+        151644,
+        872,
+        40451,
+        752,
+        264,
+        21646,
+        151645,
+        151644,
+        77091,
+        39814,
+        0,
+        5692,
+        594,
+        264,
+        326,
+        1090,
+        1782,
+        471,
+        291,
+        825,
+        369,
+        498,
+        10234,
+        1521,
+        279,
+        10799,
+        1034,
+        264,
+        4282,
+        1895,
+        17949,
+        432,
+        2684,
+        296,
+        20146,
+        0,
+        11162,
+        248,
+        101,
+        145314,
+        38015,
+        429,
+        6551,
+        498,
+        264,
+        15289,
+        0,
+        26525
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "�",
+            "token_id": 232,
+            "logprob": -0.1001,
+            "prob": 0.9062
+          },
+          {
+            "token": "�",
+            "token_id": 226,
+            "logprob": -2.3438,
+            "prob": 0.0952
+          },
+          {
+            "token": "�",
+            "token_id": 224,
+            "logprob": -10.625,
+            "prob": 0.0
+          },
+          {
+            "token": "�",
+            "token_id": 237,
+            "logprob": -11.75,
+            "prob": 0.0
+          },
+          {
+            "token": "�",
+            "token_id": 236,
+            "logprob": -11.875,
+            "prob": 0.0
+          },
+          {
+            "token": "�",
+            "token_id": 223,
+            "logprob": -12.75,
+            "prob": 0.0
+          },
+          {
+            "token": "�",
+            "token_id": 250,
+            "logprob": -13.375,
+            "prob": 0.0
+          },
+          {
+            "token": "�",
+            "token_id": 230,
+            "logprob": -13.625,
+            "prob": 0.0
+          },
+          {
+            "token": "�",
+            "token_id": 225,
+            "logprob": -14.0,
+            "prob": 0.0
+          },
+          {
+            "token": "�",
+            "token_id": 228,
+            "logprob": -14.0,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "�",
+        "token_id": 232,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 40,
+      "input_text": "<|im_start|>userTell me a joke<|im_end|><|im_start|>assistantSure! Here's a lighthearted one for you:Why did the coffee file a police report?Because it got mugged! 🚨☕Hope that gave you a smile! 😊",
+      "tokens": [
+        "<|im_start|>",
+        "user",
+        "Tell",
+        "Ġme",
+        "Ġa",
+        "Ġjoke",
+        "<|im_end|>",
+        "<|im_start|>",
+        "assistant",
+        "Sure",
+        "!",
+        "ĠHere",
+        "'s",
+        "Ġa",
+        "Ġl",
+        "igh",
+        "the",
+        "art",
+        "ed",
+        "Ġone",
+        "Ġfor",
+        "Ġyou",
+        "Why",
+        "Ġdid",
+        "Ġthe",
+        "Ġcoffee",
+        "Ġfile",
+        "Ġa",
+        "Ġpolice",
+        "Ġreport",
+        "Because",
+        "Ġit",
+        "Ġgot",
+        "Ġm",
+        "ugged",
+        "!",
+        "Ġ�",
+        "�",
+        "�",
+        "☕",
+        "Hope",
+        "Ġthat",
+        "Ġgave",
+        "Ġyou",
+        "Ġa",
+        "Ġsmile",
+        "!",
+        "Ġ�",
+        "�"
+      ],
+      "token_ids": [
+        151644,
+        872,
+        40451,
+        752,
+        264,
+        21646,
+        151645,
+        151644,
+        77091,
+        39814,
+        0,
+        5692,
+        594,
+        264,
+        326,
+        1090,
+        1782,
+        471,
+        291,
+        825,
+        369,
+        498,
+        10234,
+        1521,
+        279,
+        10799,
+        1034,
+        264,
+        4282,
+        1895,
+        17949,
+        432,
+        2684,
+        296,
+        20146,
+        0,
+        11162,
+        248,
+        101,
+        145314,
+        38015,
+        429,
+        6551,
+        498,
+        264,
+        15289,
+        0,
+        26525,
+        232
       ],
       "output_distribution": {
         "top_k": 10,
@@ -3853,61 +5523,61 @@
           {
             "token": "<|im_end|>",
             "token_id": 151645,
-            "logprob": -0.0703,
-            "prob": 0.9336
+            "logprob": -0.0006,
+            "prob": 1.0
           },
           {
-            "token": "\n\n",
-            "token_id": 271,
-            "logprob": -2.6875,
-            "prob": 0.0674
+            "token": "😄",
+            "token_id": 144741,
+            "logprob": -7.75,
+            "prob": 0.0004
           },
           {
-            "token": "Ġ \n\n",
-            "token_id": 18611,
-            "logprob": -9.3125,
-            "prob": 0.0001
+            "token": "Ġ�",
+            "token_id": 26525,
+            "logprob": -10.375,
+            "prob": 0.0
           },
           {
-            "token": "☕",
-            "token_id": 145314,
-            "logprob": -9.9375,
+            "token": "😊",
+            "token_id": 144236,
+            "logprob": -11.25,
+            "prob": 0.0
+          },
+          {
+            "token": "👍",
+            "token_id": 144349,
+            "logprob": -11.5,
             "prob": 0.0
           },
           {
             "token": "✨",
             "token_id": 144232,
-            "logprob": -12.1875,
+            "logprob": -11.5,
             "prob": 0.0
           },
           {
-            "token": "\n\n\n",
-            "token_id": 1406,
-            "logprob": -12.3125,
+            "token": "💬",
+            "token_id": 145653,
+            "logprob": -11.5,
             "prob": 0.0
           },
           {
-            "token": "️",
-            "token_id": 30543,
-            "logprob": -12.5625,
+            "token": "🙂",
+            "token_id": 145080,
+            "logprob": -11.625,
             "prob": 0.0
           },
           {
-            "token": "Ġ\n\n",
-            "token_id": 4710,
-            "logprob": -12.8125,
+            "token": "☕",
+            "token_id": 145314,
+            "logprob": -11.75,
             "prob": 0.0
           },
           {
-            "token": "✅",
-            "token_id": 144247,
-            "logprob": -13.6875,
-            "prob": 0.0
-          },
-          {
-            "token": "Ġ�",
-            "token_id": 26525,
-            "logprob": -14.1875,
+            "token": "😉",
+            "token_id": 136879,
+            "logprob": -12.0,
             "prob": 0.0
           }
         ]

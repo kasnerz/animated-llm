@@ -1,5 +1,5 @@
 {
-  "id": "generated_20251203_120932",
+  "id": "generated_20251204_095719",
   "prompt": "Přelož do angličtiny: Žluťoučký kůň úpěl ďábelské ódy",
   "language": "cs",
   "temperature": 5.0,
@@ -14,8 +14,10 @@
   "generation_steps": [
     {
       "step": 0,
-      "input_text": "Přelož do angličtiny: Žluťoučký kůň úpěl ďábelské ódy<|im_end|>\n<|im_start|>assistant\n",
+      "input_text": "<|im_start|>userPřelož do angličtiny: Žluťoučký kůň úpěl ďábelské ódy<|im_end|><|im_start|>assistant",
       "tokens": [
+        "<|im_start|>",
+        "user",
         "P",
         "ř",
         "elo",
@@ -50,12 +52,12 @@
         "Ġó",
         "dy",
         "<|im_end|>",
-        "\n",
         "<|im_start|>",
-        "assistant",
-        "\n"
+        "assistant"
       ],
       "token_ids": [
+        151644,
+        872,
         47,
         28332,
         20172,
@@ -90,10 +92,8 @@
         40867,
         10258,
         151645,
-        198,
         151644,
-        77091,
-        198
+        77091
       ],
       "output_distribution": {
         "top_k": 10,
@@ -161,15 +161,17 @@
         ]
       },
       "selected_token": {
-        "token": "The",
-        "token_id": 785,
+        "token": "A",
+        "token_id": 32,
         "selection_method": "sampling"
       }
     },
     {
       "step": 1,
-      "input_text": "Přelož do angličtiny: Žluťoučký kůň úpěl ďábelské ódy<|im_end|>\n<|im_start|>assistant\nThe",
+      "input_text": "<|im_start|>userPřelož do angličtiny: Žluťoučký kůň úpěl ďábelské ódy<|im_end|><|im_start|>assistantA",
       "tokens": [
+        "<|im_start|>",
+        "user",
         "P",
         "ř",
         "elo",
@@ -204,13 +206,13 @@
         "Ġó",
         "dy",
         "<|im_end|>",
-        "\n",
         "<|im_start|>",
         "assistant",
-        "\n",
-        "The"
+        "A"
       ],
       "token_ids": [
+        151644,
+        872,
         47,
         28332,
         20172,
@@ -245,87 +247,87 @@
         40867,
         10258,
         151645,
-        198,
         151644,
         77091,
-        198,
-        785
+        32
       ],
       "output_distribution": {
         "top_k": 10,
         "candidates": [
           {
-            "token": "Ġbrown",
-            "token_id": 13876,
-            "logprob": -0.1299,
-            "prob": 0.8789
+            "token": "Ġyellow",
+            "token_id": 13753,
+            "logprob": -0.0659,
+            "prob": 0.9375
           },
           {
             "token": "Ġgolden",
             "token_id": 20748,
-            "logprob": -3.0,
-            "prob": 0.0496
+            "logprob": -2.8125,
+            "prob": 0.0598
           },
           {
-            "token": "ĠBrown",
-            "token_id": 10471,
-            "logprob": -3.5,
-            "prob": 0.03
+            "token": "Ġbrown",
+            "token_id": 13876,
+            "logprob": -6.9375,
+            "prob": 0.001
           },
           {
-            "token": "Ġred",
-            "token_id": 2518,
-            "logprob": -5.0,
-            "prob": 0.0067
+            "token": "Ġgray",
+            "token_id": 17545,
+            "logprob": -7.4375,
+            "prob": 0.0006
           },
           {
-            "token": "ĠCleveland",
-            "token_id": 23475,
-            "logprob": -5.375,
-            "prob": 0.0046
+            "token": "Ġgrey",
+            "token_id": 19780,
+            "logprob": -7.5625,
+            "prob": 0.0005
           },
           {
-            "token": "ĠCzech",
-            "token_id": 33150,
-            "logprob": -5.75,
-            "prob": 0.0032
+            "token": "ĠYellow",
+            "token_id": 25462,
+            "logprob": -8.0625,
+            "prob": 0.0003
           },
           {
-            "token": "Ġyellow",
-            "token_id": 13753,
-            "logprob": -5.875,
-            "prob": 0.0028
-          },
-          {
-            "token": "Ġcuck",
-            "token_id": 62179,
-            "logprob": -5.875,
-            "prob": 0.0028
+            "token": "Ġz",
+            "token_id": 1147,
+            "logprob": -8.0625,
+            "prob": 0.0003
           },
           {
             "token": "Ġblack",
             "token_id": 3691,
-            "logprob": -6.25,
-            "prob": 0.0019
+            "logprob": -8.9375,
+            "prob": 0.0001
           },
           {
-            "token": "Ġcz",
-            "token_id": 17988,
-            "logprob": -6.25,
-            "prob": 0.0019
+            "token": "Ġred",
+            "token_id": 2518,
+            "logprob": -8.9375,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġblond",
+            "token_id": 44369,
+            "logprob": -9.1875,
+            "prob": 0.0001
           }
         ]
       },
       "selected_token": {
-        "token": "Ġcz",
-        "token_id": 17988,
+        "token": "Ġbrown",
+        "token_id": 13876,
         "selection_method": "sampling"
       }
     },
     {
       "step": 2,
-      "input_text": "Přelož do angličtiny: Žluťoučký kůň úpěl ďábelské ódy<|im_end|>\n<|im_start|>assistant\nThe cz",
+      "input_text": "<|im_start|>userPřelož do angličtiny: Žluťoučký kůň úpěl ďábelské ódy<|im_end|><|im_start|>assistantA brown",
       "tokens": [
+        "<|im_start|>",
+        "user",
         "P",
         "ř",
         "elo",
@@ -360,14 +362,14 @@
         "Ġó",
         "dy",
         "<|im_end|>",
-        "\n",
         "<|im_start|>",
         "assistant",
-        "\n",
-        "The",
-        "Ġcz"
+        "A",
+        "Ġbrown"
       ],
       "token_ids": [
+        151644,
+        872,
         47,
         28332,
         20172,
@@ -402,88 +404,88 @@
         40867,
         10258,
         151645,
-        198,
         151644,
         77091,
-        198,
-        785,
-        17988
+        32,
+        13876
       ],
       "output_distribution": {
         "top_k": 10,
         "candidates": [
           {
-            "token": "ar",
-            "token_id": 277,
-            "logprob": -0.2441,
-            "prob": 0.7812
+            "token": "Ġhorse",
+            "token_id": 15223,
+            "logprob": -0.0014,
+            "prob": 1.0
           },
           {
-            "token": "yn",
-            "token_id": 1872,
-            "logprob": -3.0,
-            "prob": 0.05
+            "token": "Ġcow",
+            "token_id": 19362,
+            "logprob": -6.75,
+            "prob": 0.0012
           },
           {
-            "token": "ard",
-            "token_id": 567,
-            "logprob": -3.375,
-            "prob": 0.0344
+            "token": "Ġpony",
+            "token_id": 52636,
+            "logprob": -9.25,
+            "prob": 0.0001
           },
           {
-            "token": "ary",
-            "token_id": 658,
-            "logprob": -3.375,
-            "prob": 0.0344
+            "token": "Ġox",
+            "token_id": 18952,
+            "logprob": -10.5,
+            "prob": 0.0
           },
           {
-            "token": "arn",
-            "token_id": 1885,
-            "logprob": -3.5,
-            "prob": 0.0304
+            "token": "Ġmare",
+            "token_id": 54218,
+            "logprob": -10.875,
+            "prob": 0.0
           },
           {
-            "token": "ek",
-            "token_id": 1225,
-            "logprob": -3.75,
-            "prob": 0.0237
+            "token": "马",
+            "token_id": 99313,
+            "logprob": -11.0,
+            "prob": 0.0
           },
           {
-            "token": "ern",
-            "token_id": 932,
-            "logprob": -4.25,
-            "prob": 0.0143
+            "token": "horse",
+            "token_id": 59675,
+            "logprob": -11.875,
+            "prob": 0.0
           },
           {
-            "token": "ak",
-            "token_id": 585,
-            "logprob": -5.5625,
-            "prob": 0.0039
+            "token": "Ġhorses",
+            "token_id": 26830,
+            "logprob": -12.625,
+            "prob": 0.0
           },
           {
-            "token": "are",
-            "token_id": 546,
-            "logprob": -5.5625,
-            "prob": 0.0039
+            "token": "-colored",
+            "token_id": 57722,
+            "logprob": -12.625,
+            "prob": 0.0
           },
           {
-            "token": "ark",
-            "token_id": 838,
-            "logprob": -5.8125,
-            "prob": 0.003
+            "token": "Ġdon",
+            "token_id": 1513,
+            "logprob": -13.0,
+            "prob": 0.0
           }
         ]
       },
       "selected_token": {
-        "token": "ek",
-        "token_id": 1225,
+        "token": "Ġhorse",
+        "token_id": 15223,
         "selection_method": "sampling"
       }
     },
     {
       "step": 3,
-      "input_text": "Přelož do angličtiny: Žluťoučký kůň úpěl ďábelské ódy<|im_end|>\n<|im_start|>assistant\nThe czek",
+      "input_text": "<|im_start|>userPřelož do angličtiny: Žluťoučký kůň úpěl ďábelské ódy<|im_end|><|im_start|>assistantA brown horse",
       "tokens": [
+        "<|im_start|>",
+        "user",
         "P",
         "ř",
         "elo",
@@ -518,15 +520,15 @@
         "Ġó",
         "dy",
         "<|im_end|>",
-        "\n",
         "<|im_start|>",
         "assistant",
-        "\n",
-        "The",
-        "Ġcz",
-        "ek"
+        "A",
+        "Ġbrown",
+        "Ġhorse"
       ],
       "token_ids": [
+        151644,
+        872,
         47,
         28332,
         20172,
@@ -561,673 +563,11 @@
         40867,
         10258,
         151645,
-        198,
         151644,
         77091,
-        198,
-        785,
-        17988,
-        1225
-      ],
-      "output_distribution": {
-        "top_k": 10,
-        "candidates": [
-          {
-            "token": "in",
-            "token_id": 258,
-            "logprob": -0.4121,
-            "prob": 0.6641
-          },
-          {
-            "token": "ine",
-            "token_id": 482,
-            "logprob": -1.5391,
-            "prob": 0.2148
-          },
-          {
-            "token": "ined",
-            "token_id": 1589,
-            "logprob": -3.5938,
-            "prob": 0.0273
-          },
-          {
-            "token": "č",
-            "token_id": 13152,
-            "logprob": -4.5312,
-            "prob": 0.0107
-          },
-          {
-            "token": "rown",
-            "token_id": 4830,
-            "logprob": -5.0938,
-            "prob": 0.0061
-          },
-          {
-            "token": "Ġ(",
-            "token_id": 320,
-            "logprob": -5.2812,
-            "prob": 0.0051
-          },
-          {
-            "token": "an",
-            "token_id": 276,
-            "logprob": -5.3438,
-            "prob": 0.0048
-          },
-          {
-            "token": "Ġstroke",
-            "token_id": 12654,
-            "logprob": -5.3438,
-            "prob": 0.0048
-          },
-          {
-            "token": "ý",
-            "token_id": 19622,
-            "logprob": -5.4062,
-            "prob": 0.0045
-          },
-          {
-            "token": "on",
-            "token_id": 263,
-            "logprob": -5.5312,
-            "prob": 0.0039
-          }
-        ]
-      },
-      "selected_token": {
-        "token": "on",
-        "token_id": 263,
-        "selection_method": "sampling"
-      }
-    },
-    {
-      "step": 4,
-      "input_text": "Přelož do angličtiny: Žluťoučký kůň úpěl ďábelské ódy<|im_end|>\n<|im_start|>assistant\nThe czekon",
-      "tokens": [
-        "P",
-        "ř",
-        "elo",
-        "ž",
-        "Ġdo",
-        "Ġang",
-        "li",
-        "č",
-        "tiny",
-        ":",
-        "Ġ�",
-        "�",
-        "lu",
-        "ť",
-        "ou",
-        "č",
-        "k",
-        "ý",
-        "Ġk",
-        "ů",
-        "ň",
-        "Ġú",
-        "p",
-        "ě",
-        "l",
-        "Ġ�",
-        "�",
-        "áb",
-        "els",
-        "k",
-        "é",
-        "Ġó",
-        "dy",
-        "<|im_end|>",
-        "\n",
-        "<|im_start|>",
-        "assistant",
-        "\n",
-        "The",
-        "Ġcz",
-        "ek",
-        "on"
-      ],
-      "token_ids": [
-        47,
-        28332,
-        20172,
-        12176,
-        653,
-        6454,
-        742,
-        13152,
-        46116,
-        25,
-        25917,
-        121,
-        9835,
-        74801,
-        283,
-        13152,
-        74,
-        19622,
-        595,
-        51253,
-        145082,
-        17964,
-        79,
-        21444,
-        75,
-        9843,
-        237,
-        58560,
-        2010,
-        74,
-        963,
-        40867,
-        10258,
-        151645,
-        198,
-        151644,
-        77091,
-        198,
-        785,
-        17988,
-        1225,
-        263
-      ],
-      "output_distribution": {
-        "top_k": 10,
-        "candidates": [
-          {
-            "token": "ian",
-            "token_id": 1103,
-            "logprob": -1.2344,
-            "prob": 0.291
-          },
-          {
-            "token": "Ġis",
-            "token_id": 374,
-            "logprob": -1.8594,
-            "prob": 0.1553
-          },
-          {
-            "token": "Ġ(",
-            "token_id": 320,
-            "logprob": -2.2344,
-            "prob": 0.1069
-          },
-          {
-            "token": "Ġblue",
-            "token_id": 6303,
-            "logprob": -2.4844,
-            "prob": 0.083
-          },
-          {
-            "token": "Ġhorse",
-            "token_id": 15223,
-            "logprob": -2.8594,
-            "prob": 0.0571
-          },
-          {
-            "token": "ess",
-            "token_id": 433,
-            "logprob": -3.4844,
-            "prob": 0.0305
-          },
-          {
-            "token": "Ġwith",
-            "token_id": 448,
-            "logprob": -3.7344,
-            "prob": 0.0238
-          },
-          {
-            "token": "'s",
-            "token_id": 594,
-            "logprob": -3.9219,
-            "prob": 0.0198
-          },
-          {
-            "token": "Ġhas",
-            "token_id": 702,
-            "logprob": -4.125,
-            "prob": 0.0164
-          },
-          {
-            "token": ",",
-            "token_id": 11,
-            "logprob": -4.3125,
-            "prob": 0.0135
-          }
-        ]
-      },
-      "selected_token": {
-        "token": "Ġwith",
-        "token_id": 448,
-        "selection_method": "sampling"
-      }
-    },
-    {
-      "step": 5,
-      "input_text": "Přelož do angličtiny: Žluťoučký kůň úpěl ďábelské ódy<|im_end|>\n<|im_start|>assistant\nThe czekon with",
-      "tokens": [
-        "P",
-        "ř",
-        "elo",
-        "ž",
-        "Ġdo",
-        "Ġang",
-        "li",
-        "č",
-        "tiny",
-        ":",
-        "Ġ�",
-        "�",
-        "lu",
-        "ť",
-        "ou",
-        "č",
-        "k",
-        "ý",
-        "Ġk",
-        "ů",
-        "ň",
-        "Ġú",
-        "p",
-        "ě",
-        "l",
-        "Ġ�",
-        "�",
-        "áb",
-        "els",
-        "k",
-        "é",
-        "Ġó",
-        "dy",
-        "<|im_end|>",
-        "\n",
-        "<|im_start|>",
-        "assistant",
-        "\n",
-        "The",
-        "Ġcz",
-        "ek",
-        "on",
-        "Ġwith"
-      ],
-      "token_ids": [
-        47,
-        28332,
-        20172,
-        12176,
-        653,
-        6454,
-        742,
-        13152,
-        46116,
-        25,
-        25917,
-        121,
-        9835,
-        74801,
-        283,
-        13152,
-        74,
-        19622,
-        595,
-        51253,
-        145082,
-        17964,
-        79,
-        21444,
-        75,
-        9843,
-        237,
-        58560,
-        2010,
-        74,
-        963,
-        40867,
-        10258,
-        151645,
-        198,
-        151644,
-        77091,
-        198,
-        785,
-        17988,
-        1225,
-        263,
-        448
-      ],
-      "output_distribution": {
-        "top_k": 10,
-        "candidates": [
-          {
-            "token": "Ġgolden",
-            "token_id": 20748,
-            "logprob": -0.418,
-            "prob": 0.6562
-          },
-          {
-            "token": "Ġa",
-            "token_id": 264,
-            "logprob": -1.7969,
-            "prob": 0.166
-          },
-          {
-            "token": "Ġthe",
-            "token_id": 279,
-            "logprob": -1.7969,
-            "prob": 0.166
-          },
-          {
-            "token": "Ġgold",
-            "token_id": 6623,
-            "logprob": -5.0312,
-            "prob": 0.0064
-          },
-          {
-            "token": "Ġyellow",
-            "token_id": 13753,
-            "logprob": -6.1562,
-            "prob": 0.0021
-          },
-          {
-            "token": "Ġred",
-            "token_id": 2518,
-            "logprob": -7.2812,
-            "prob": 0.0007
-          },
-          {
-            "token": "Ġsilver",
-            "token_id": 14961,
-            "logprob": -9.0625,
-            "prob": 0.0001
-          },
-          {
-            "token": "Ġcopper",
-            "token_id": 23285,
-            "logprob": -10.4375,
-            "prob": 0.0
-          },
-          {
-            "token": "Ġan",
-            "token_id": 458,
-            "logprob": -10.8125,
-            "prob": 0.0
-          },
-          {
-            "token": "Ġblack",
-            "token_id": 3691,
-            "logprob": -10.8125,
-            "prob": 0.0
-          }
-        ]
-      },
-      "selected_token": {
-        "token": "Ġgolden",
-        "token_id": 20748,
-        "selection_method": "sampling"
-      }
-    },
-    {
-      "step": 6,
-      "input_text": "Přelož do angličtiny: Žluťoučký kůň úpěl ďábelské ódy<|im_end|>\n<|im_start|>assistant\nThe czekon with golden",
-      "tokens": [
-        "P",
-        "ř",
-        "elo",
-        "ž",
-        "Ġdo",
-        "Ġang",
-        "li",
-        "č",
-        "tiny",
-        ":",
-        "Ġ�",
-        "�",
-        "lu",
-        "ť",
-        "ou",
-        "č",
-        "k",
-        "ý",
-        "Ġk",
-        "ů",
-        "ň",
-        "Ġú",
-        "p",
-        "ě",
-        "l",
-        "Ġ�",
-        "�",
-        "áb",
-        "els",
-        "k",
-        "é",
-        "Ġó",
-        "dy",
-        "<|im_end|>",
-        "\n",
-        "<|im_start|>",
-        "assistant",
-        "\n",
-        "The",
-        "Ġcz",
-        "ek",
-        "on",
-        "Ġwith",
-        "Ġgolden"
-      ],
-      "token_ids": [
-        47,
-        28332,
-        20172,
-        12176,
-        653,
-        6454,
-        742,
-        13152,
-        46116,
-        25,
-        25917,
-        121,
-        9835,
-        74801,
-        283,
-        13152,
-        74,
-        19622,
-        595,
-        51253,
-        145082,
-        17964,
-        79,
-        21444,
-        75,
-        9843,
-        237,
-        58560,
-        2010,
-        74,
-        963,
-        40867,
-        10258,
-        151645,
-        198,
-        151644,
-        77091,
-        198,
-        785,
-        17988,
-        1225,
-        263,
-        448,
-        20748
-      ],
-      "output_distribution": {
-        "top_k": 10,
-        "candidates": [
-          {
-            "token": "Ġcoat",
-            "token_id": 22875,
-            "logprob": -0.7383,
-            "prob": 0.4785
-          },
-          {
-            "token": "Ġfur",
-            "token_id": 18241,
-            "logprob": -1.3672,
-            "prob": 0.2559
-          },
-          {
-            "token": "Ġhair",
-            "token_id": 6869,
-            "logprob": -2.3594,
-            "prob": 0.0942
-          },
-          {
-            "token": "Ġho",
-            "token_id": 11386,
-            "logprob": -2.6094,
-            "prob": 0.0732
-          },
-          {
-            "token": "Ġhoof",
-            "token_id": 84730,
-            "logprob": -3.7344,
-            "prob": 0.0238
-          },
-          {
-            "token": "Ġhairs",
-            "token_id": 64960,
-            "logprob": -4.125,
-            "prob": 0.0164
-          },
-          {
-            "token": "Ġfleece",
-            "token_id": 91990,
-            "logprob": -4.875,
-            "prob": 0.0077
-          },
-          {
-            "token": "-h",
-            "token_id": 2832,
-            "logprob": -5.125,
-            "prob": 0.006
-          },
-          {
-            "token": "Ġbr",
-            "token_id": 1411,
-            "logprob": -5.125,
-            "prob": 0.006
-          },
-          {
-            "token": "Ġnose",
-            "token_id": 19142,
-            "logprob": -5.375,
-            "prob": 0.0047
-          }
-        ]
-      },
-      "selected_token": {
-        "token": "Ġcoat",
-        "token_id": 22875,
-        "selection_method": "sampling"
-      }
-    },
-    {
-      "step": 7,
-      "input_text": "Přelož do angličtiny: Žluťoučký kůň úpěl ďábelské ódy<|im_end|>\n<|im_start|>assistant\nThe czekon with golden coat",
-      "tokens": [
-        "P",
-        "ř",
-        "elo",
-        "ž",
-        "Ġdo",
-        "Ġang",
-        "li",
-        "č",
-        "tiny",
-        ":",
-        "Ġ�",
-        "�",
-        "lu",
-        "ť",
-        "ou",
-        "č",
-        "k",
-        "ý",
-        "Ġk",
-        "ů",
-        "ň",
-        "Ġú",
-        "p",
-        "ě",
-        "l",
-        "Ġ�",
-        "�",
-        "áb",
-        "els",
-        "k",
-        "é",
-        "Ġó",
-        "dy",
-        "<|im_end|>",
-        "\n",
-        "<|im_start|>",
-        "assistant",
-        "\n",
-        "The",
-        "Ġcz",
-        "ek",
-        "on",
-        "Ġwith",
-        "Ġgolden",
-        "Ġcoat"
-      ],
-      "token_ids": [
-        47,
-        28332,
-        20172,
-        12176,
-        653,
-        6454,
-        742,
-        13152,
-        46116,
-        25,
-        25917,
-        121,
-        9835,
-        74801,
-        283,
-        13152,
-        74,
-        19622,
-        595,
-        51253,
-        145082,
-        17964,
-        79,
-        21444,
-        75,
-        9843,
-        237,
-        58560,
-        2010,
-        74,
-        963,
-        40867,
-        10258,
-        151645,
-        198,
-        151644,
-        77091,
-        198,
-        785,
-        17988,
-        1225,
-        263,
-        448,
-        20748,
-        22875
+        32,
+        13876,
+        15223
       ],
       "output_distribution": {
         "top_k": 10,
@@ -1235,75 +575,77 @@
           {
             "token": "Ġsang",
             "token_id": 28240,
-            "logprob": -0.0021,
-            "prob": 0.9961
+            "logprob": -0.0006,
+            "prob": 1.0
           },
           {
             "token": "Ġsung",
             "token_id": 39339,
-            "logprob": -6.75,
-            "prob": 0.0012
+            "logprob": -7.75,
+            "prob": 0.0004
           },
           {
             "token": "Ġsings",
             "token_id": 67241,
-            "logprob": -7.25,
-            "prob": 0.0007
-          },
-          {
-            "token": "Ġwas",
-            "token_id": 572,
             "logprob": -8.75,
             "prob": 0.0002
           },
           {
             "token": "Ġsing",
             "token_id": 7780,
-            "logprob": -10.125,
+            "logprob": -10.5,
             "prob": 0.0
           },
           {
             "token": "Ġsinging",
             "token_id": 25083,
-            "logprob": -12.375,
-            "prob": 0.0
-          },
-          {
-            "token": "Ġsongs",
-            "token_id": 11674,
-            "logprob": -12.6875,
+            "logprob": -12.625,
             "prob": 0.0
           },
           {
             "token": "Ġhum",
             "token_id": 2784,
-            "logprob": -12.8125,
+            "logprob": -12.75,
             "prob": 0.0
           },
           {
-            "token": "Ġsong",
-            "token_id": 5492,
+            "token": "Ġsinger",
+            "token_id": 22757,
+            "logprob": -12.75,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġwas",
+            "token_id": 572,
             "logprob": -13.0,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġsongs",
+            "token_id": 11674,
+            "logprob": -13.5,
             "prob": 0.0
           },
           {
             "token": "Ġsighed",
             "token_id": 52814,
-            "logprob": -13.0,
+            "logprob": -13.75,
             "prob": 0.0
           }
         ]
       },
       "selected_token": {
-        "token": "Ġsang",
-        "token_id": 28240,
+        "token": "Ġwas",
+        "token_id": 572,
         "selection_method": "sampling"
       }
     },
     {
-      "step": 8,
-      "input_text": "Přelož do angličtiny: Žluťoučký kůň úpěl ďábelské ódy<|im_end|>\n<|im_start|>assistant\nThe czekon with golden coat sang",
+      "step": 4,
+      "input_text": "<|im_start|>userPřelož do angličtiny: Žluťoučký kůň úpěl ďábelské ódy<|im_end|><|im_start|>assistantA brown horse was",
       "tokens": [
+        "<|im_start|>",
+        "user",
         "P",
         "ř",
         "elo",
@@ -1338,20 +680,16 @@
         "Ġó",
         "dy",
         "<|im_end|>",
-        "\n",
         "<|im_start|>",
         "assistant",
-        "\n",
-        "The",
-        "Ġcz",
-        "ek",
-        "on",
-        "Ġwith",
-        "Ġgolden",
-        "Ġcoat",
-        "Ġsang"
+        "A",
+        "Ġbrown",
+        "Ġhorse",
+        "Ġwas"
       ],
       "token_ids": [
+        151644,
+        872,
         47,
         28332,
         20172,
@@ -1386,18 +724,176 @@
         40867,
         10258,
         151645,
-        198,
         151644,
         77091,
-        198,
-        785,
-        17988,
-        1225,
-        263,
-        448,
-        20748,
-        22875,
-        28240
+        32,
+        13876,
+        15223,
+        572
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġsinging",
+            "token_id": 25083,
+            "logprob": -0.0002,
+            "prob": 1.0
+          },
+          {
+            "token": "Ġchanting",
+            "token_id": 76574,
+            "logprob": -9.25,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġrec",
+            "token_id": 1395,
+            "logprob": -9.625,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġsing",
+            "token_id": 7780,
+            "logprob": -10.25,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġsings",
+            "token_id": 67241,
+            "logprob": -11.5,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġhumming",
+            "token_id": 86327,
+            "logprob": -12.25,
+            "prob": 0.0
+          },
+          {
+            "token": "唱歌",
+            "token_id": 109283,
+            "logprob": -12.5,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġsongs",
+            "token_id": 11674,
+            "logprob": -13.75,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġsang",
+            "token_id": 28240,
+            "logprob": -13.75,
+            "prob": 0.0
+          },
+          {
+            "token": "歌唱",
+            "token_id": 113375,
+            "logprob": -14.5,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġhumming",
+        "token_id": 86327,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 5,
+      "input_text": "<|im_start|>userPřelož do angličtiny: Žluťoučký kůň úpěl ďábelské ódy<|im_end|><|im_start|>assistantA brown horse was humming",
+      "tokens": [
+        "<|im_start|>",
+        "user",
+        "P",
+        "ř",
+        "elo",
+        "ž",
+        "Ġdo",
+        "Ġang",
+        "li",
+        "č",
+        "tiny",
+        ":",
+        "Ġ�",
+        "�",
+        "lu",
+        "ť",
+        "ou",
+        "č",
+        "k",
+        "ý",
+        "Ġk",
+        "ů",
+        "ň",
+        "Ġú",
+        "p",
+        "ě",
+        "l",
+        "Ġ�",
+        "�",
+        "áb",
+        "els",
+        "k",
+        "é",
+        "Ġó",
+        "dy",
+        "<|im_end|>",
+        "<|im_start|>",
+        "assistant",
+        "A",
+        "Ġbrown",
+        "Ġhorse",
+        "Ġwas",
+        "Ġhumming"
+      ],
+      "token_ids": [
+        151644,
+        872,
+        47,
+        28332,
+        20172,
+        12176,
+        653,
+        6454,
+        742,
+        13152,
+        46116,
+        25,
+        25917,
+        121,
+        9835,
+        74801,
+        283,
+        13152,
+        74,
+        19622,
+        595,
+        51253,
+        145082,
+        17964,
+        79,
+        21444,
+        75,
+        9843,
+        237,
+        58560,
+        2010,
+        74,
+        963,
+        40867,
+        10258,
+        151645,
+        151644,
+        77091,
+        32,
+        13876,
+        15223,
+        572,
+        86327
       ],
       "output_distribution": {
         "top_k": 10,
@@ -1405,75 +901,77 @@
           {
             "token": "Ġdevil",
             "token_id": 37636,
-            "logprob": -0.3555,
-            "prob": 0.6992
+            "logprob": -0.4863,
+            "prob": 0.6133
           },
           {
             "token": "Ġdemonic",
             "token_id": 85124,
-            "logprob": -2.1094,
-            "prob": 0.1216
-          },
-          {
-            "token": "Ġdemon",
-            "token_id": 6952,
-            "logprob": -2.1094,
-            "prob": 0.1216
-          },
-          {
-            "token": "Ġdev",
-            "token_id": 3483,
-            "logprob": -3.7344,
-            "prob": 0.0239
+            "logprob": -1.4844,
+            "prob": 0.2266
           },
           {
             "token": "Ġevil",
             "token_id": 13962,
-            "logprob": -4.5938,
-            "prob": 0.01
+            "logprob": -2.6094,
+            "prob": 0.0732
           },
           {
-            "token": "Ġdamned",
-            "token_id": 67365,
-            "logprob": -4.9688,
-            "prob": 0.0069
+            "token": "Ġdemon",
+            "token_id": 6952,
+            "logprob": -3.2344,
+            "prob": 0.0393
+          },
+          {
+            "token": "Ġdev",
+            "token_id": 3483,
+            "logprob": -3.9844,
+            "prob": 0.0186
           },
           {
             "token": "Ġinfer",
             "token_id": 23583,
-            "logprob": -5.3438,
-            "prob": 0.0047
+            "logprob": -4.375,
+            "prob": 0.0128
           },
           {
             "token": "Ġdi",
             "token_id": 1853,
-            "logprob": -5.5938,
+            "logprob": -5.625,
             "prob": 0.0037
+          },
+          {
+            "token": "Ġdamned",
+            "token_id": 67365,
+            "logprob": -6.0,
+            "prob": 0.0025
           },
           {
             "token": "Ġdemons",
             "token_id": 43975,
-            "logprob": -5.8438,
-            "prob": 0.0029
+            "logprob": -6.5,
+            "prob": 0.0015
           },
           {
-            "token": "Ġhell",
-            "token_id": 14780,
-            "logprob": -6.7188,
-            "prob": 0.0012
+            "token": "Ġdark",
+            "token_id": 6319,
+            "logprob": -6.875,
+            "prob": 0.001
           }
         ]
       },
       "selected_token": {
-        "token": "Ġevil",
-        "token_id": 13962,
+        "token": "Ġdev",
+        "token_id": 3483,
         "selection_method": "sampling"
       }
     },
     {
-      "step": 9,
-      "input_text": "Přelož do angličtiny: Žluťoučký kůň úpěl ďábelské ódy<|im_end|>\n<|im_start|>assistant\nThe czekon with golden coat sang evil",
+      "step": 6,
+      "input_text": "<|im_start|>userPřelož do angličtiny: Žluťoučký kůň úpěl ďábelské ódy<|im_end|><|im_start|>assistantA brown horse was humming dev",
       "tokens": [
+        "<|im_start|>",
+        "user",
         "P",
         "ř",
         "elo",
@@ -1508,21 +1006,18 @@
         "Ġó",
         "dy",
         "<|im_end|>",
-        "\n",
         "<|im_start|>",
         "assistant",
-        "\n",
-        "The",
-        "Ġcz",
-        "ek",
-        "on",
-        "Ġwith",
-        "Ġgolden",
-        "Ġcoat",
-        "Ġsang",
-        "Ġevil"
+        "A",
+        "Ġbrown",
+        "Ġhorse",
+        "Ġwas",
+        "Ġhumming",
+        "Ġdev"
       ],
       "token_ids": [
+        151644,
+        872,
         47,
         28332,
         20172,
@@ -1557,19 +1052,182 @@
         40867,
         10258,
         151645,
-        198,
         151644,
         77091,
-        198,
-        785,
-        17988,
-        1225,
-        263,
-        448,
-        20748,
-        22875,
-        28240,
-        13962
+        32,
+        13876,
+        15223,
+        572,
+        86327,
+        3483
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "ils",
+            "token_id": 8669,
+            "logprob": -0.0003,
+            "prob": 1.0
+          },
+          {
+            "token": "otional",
+            "token_id": 40864,
+            "logprob": -9.0,
+            "prob": 0.0001
+          },
+          {
+            "token": "iled",
+            "token_id": 2181,
+            "logprob": -9.375,
+            "prob": 0.0001
+          },
+          {
+            "token": "illed",
+            "token_id": 4374,
+            "logprob": -10.375,
+            "prob": 0.0
+          },
+          {
+            "token": "ilst",
+            "token_id": 19282,
+            "logprob": -10.5,
+            "prob": 0.0
+          },
+          {
+            "token": "ilm",
+            "token_id": 9484,
+            "logprob": -11.125,
+            "prob": 0.0
+          },
+          {
+            "token": "lish",
+            "token_id": 1672,
+            "logprob": -11.75,
+            "prob": 0.0
+          },
+          {
+            "token": "i",
+            "token_id": 72,
+            "logprob": -12.125,
+            "prob": 0.0
+          },
+          {
+            "token": "iant",
+            "token_id": 5372,
+            "logprob": -12.125,
+            "prob": 0.0
+          },
+          {
+            "token": "iler",
+            "token_id": 5769,
+            "logprob": -12.5,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "illed",
+        "token_id": 4374,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 7,
+      "input_text": "<|im_start|>userPřelož do angličtiny: Žluťoučký kůň úpěl ďábelské ódy<|im_end|><|im_start|>assistantA brown horse was humming devilled",
+      "tokens": [
+        "<|im_start|>",
+        "user",
+        "P",
+        "ř",
+        "elo",
+        "ž",
+        "Ġdo",
+        "Ġang",
+        "li",
+        "č",
+        "tiny",
+        ":",
+        "Ġ�",
+        "�",
+        "lu",
+        "ť",
+        "ou",
+        "č",
+        "k",
+        "ý",
+        "Ġk",
+        "ů",
+        "ň",
+        "Ġú",
+        "p",
+        "ě",
+        "l",
+        "Ġ�",
+        "�",
+        "áb",
+        "els",
+        "k",
+        "é",
+        "Ġó",
+        "dy",
+        "<|im_end|>",
+        "<|im_start|>",
+        "assistant",
+        "A",
+        "Ġbrown",
+        "Ġhorse",
+        "Ġwas",
+        "Ġhumming",
+        "Ġdev",
+        "illed"
+      ],
+      "token_ids": [
+        151644,
+        872,
+        47,
+        28332,
+        20172,
+        12176,
+        653,
+        6454,
+        742,
+        13152,
+        46116,
+        25,
+        25917,
+        121,
+        9835,
+        74801,
+        283,
+        13152,
+        74,
+        19622,
+        595,
+        51253,
+        145082,
+        17964,
+        79,
+        21444,
+        75,
+        9843,
+        237,
+        58560,
+        2010,
+        74,
+        963,
+        40867,
+        10258,
+        151645,
+        151644,
+        77091,
+        32,
+        13876,
+        15223,
+        572,
+        86327,
+        3483,
+        4374
       ],
       "output_distribution": {
         "top_k": 10,
@@ -1577,75 +1235,77 @@
           {
             "token": "Ġo",
             "token_id": 297,
-            "logprob": -0.085,
-            "prob": 0.918
+            "logprob": -0.5391,
+            "prob": 0.582
           },
           {
             "token": "Ġsongs",
             "token_id": 11674,
-            "logprob": -2.8281,
-            "prob": 0.0586
-          },
-          {
-            "token": "Ġode",
-            "token_id": 72894,
-            "logprob": -4.7188,
-            "prob": 0.009
+            "logprob": -1.2891,
+            "prob": 0.2754
           },
           {
             "token": "Ġverses",
             "token_id": 49299,
-            "logprob": -5.2188,
-            "prob": 0.0055
+            "logprob": -2.1719,
+            "prob": 0.1147
+          },
+          {
+            "token": "Ġode",
+            "token_id": 72894,
+            "logprob": -4.6562,
+            "prob": 0.0094
+          },
+          {
+            "token": "Ġtunes",
+            "token_id": 53990,
+            "logprob": -4.9062,
+            "prob": 0.0073
           },
           {
             "token": "Ġlyrics",
             "token_id": 23261,
-            "logprob": -5.5938,
-            "prob": 0.0038
+            "logprob": -5.0312,
+            "prob": 0.0065
           },
           {
             "token": "Ġpoems",
             "token_id": 44219,
-            "logprob": -5.8438,
-            "prob": 0.0029
+            "logprob": -6.4062,
+            "prob": 0.0016
           },
           {
             "token": "Ġhym",
             "token_id": 66643,
-            "logprob": -7.0938,
-            "prob": 0.0008
-          },
-          {
-            "token": "Ġball",
-            "token_id": 4935,
-            "logprob": -7.7188,
-            "prob": 0.0004
+            "logprob": -6.5312,
+            "prob": 0.0014
           },
           {
             "token": "Ġmelodies",
             "token_id": 89013,
-            "logprob": -9.5625,
-            "prob": 0.0001
+            "logprob": -6.7812,
+            "prob": 0.0011
           },
           {
-            "token": "Ġanth",
-            "token_id": 22268,
-            "logprob": -9.6875,
-            "prob": 0.0001
+            "token": "Ġchants",
+            "token_id": 87487,
+            "logprob": -8.6875,
+            "prob": 0.0002
           }
         ]
       },
       "selected_token": {
-        "token": "Ġlyrics",
-        "token_id": 23261,
+        "token": "Ġo",
+        "token_id": 297,
         "selection_method": "sampling"
       }
     },
     {
-      "step": 10,
-      "input_text": "Přelož do angličtiny: Žluťoučký kůň úpěl ďábelské ódy<|im_end|>\n<|im_start|>assistant\nThe czekon with golden coat sang evil lyrics",
+      "step": 8,
+      "input_text": "<|im_start|>userPřelož do angličtiny: Žluťoučký kůň úpěl ďábelské ódy<|im_end|><|im_start|>assistantA brown horse was humming devilled o",
       "tokens": [
+        "<|im_start|>",
+        "user",
         "P",
         "ř",
         "elo",
@@ -1680,22 +1340,20 @@
         "Ġó",
         "dy",
         "<|im_end|>",
-        "\n",
         "<|im_start|>",
         "assistant",
-        "\n",
-        "The",
-        "Ġcz",
-        "ek",
-        "on",
-        "Ġwith",
-        "Ġgolden",
-        "Ġcoat",
-        "Ġsang",
-        "Ġevil",
-        "Ġlyrics"
+        "A",
+        "Ġbrown",
+        "Ġhorse",
+        "Ġwas",
+        "Ġhumming",
+        "Ġdev",
+        "illed",
+        "Ġo"
       ],
       "token_ids": [
+        151644,
+        872,
         47,
         28332,
         20172,
@@ -1730,20 +1388,188 @@
         40867,
         10258,
         151645,
-        198,
         151644,
         77091,
-        198,
-        785,
-        17988,
-        1225,
-        263,
-        448,
-        20748,
-        22875,
-        28240,
-        13962,
-        23261
+        32,
+        13876,
+        15223,
+        572,
+        86327,
+        3483,
+        4374,
+        297
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "des",
+            "token_id": 5799,
+            "logprob": -0.0,
+            "prob": 1.0
+          },
+          {
+            "token": "ds",
+            "token_id": 5356,
+            "logprob": -11.75,
+            "prob": 0.0
+          },
+          {
+            "token": "dy",
+            "token_id": 10258,
+            "logprob": -13.625,
+            "prob": 0.0
+          },
+          {
+            "token": "da",
+            "token_id": 3235,
+            "logprob": -16.875,
+            "prob": 0.0
+          },
+          {
+            "token": "de",
+            "token_id": 450,
+            "logprob": -16.875,
+            "prob": 0.0
+          },
+          {
+            "token": "aths",
+            "token_id": 26286,
+            "logprob": -17.375,
+            "prob": 0.0
+          },
+          {
+            "token": "dest",
+            "token_id": 4979,
+            "logprob": -17.5,
+            "prob": 0.0
+          },
+          {
+            "token": "odes",
+            "token_id": 2539,
+            "logprob": -18.0,
+            "prob": 0.0
+          },
+          {
+            "token": "eds",
+            "token_id": 6767,
+            "logprob": -18.25,
+            "prob": 0.0
+          },
+          {
+            "token": "dis",
+            "token_id": 4243,
+            "logprob": -18.625,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "des",
+        "token_id": 5799,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 9,
+      "input_text": "<|im_start|>userPřelož do angličtiny: Žluťoučký kůň úpěl ďábelské ódy<|im_end|><|im_start|>assistantA brown horse was humming devilled odes",
+      "tokens": [
+        "<|im_start|>",
+        "user",
+        "P",
+        "ř",
+        "elo",
+        "ž",
+        "Ġdo",
+        "Ġang",
+        "li",
+        "č",
+        "tiny",
+        ":",
+        "Ġ�",
+        "�",
+        "lu",
+        "ť",
+        "ou",
+        "č",
+        "k",
+        "ý",
+        "Ġk",
+        "ů",
+        "ň",
+        "Ġú",
+        "p",
+        "ě",
+        "l",
+        "Ġ�",
+        "�",
+        "áb",
+        "els",
+        "k",
+        "é",
+        "Ġó",
+        "dy",
+        "<|im_end|>",
+        "<|im_start|>",
+        "assistant",
+        "A",
+        "Ġbrown",
+        "Ġhorse",
+        "Ġwas",
+        "Ġhumming",
+        "Ġdev",
+        "illed",
+        "Ġo",
+        "des"
+      ],
+      "token_ids": [
+        151644,
+        872,
+        47,
+        28332,
+        20172,
+        12176,
+        653,
+        6454,
+        742,
+        13152,
+        46116,
+        25,
+        25917,
+        121,
+        9835,
+        74801,
+        283,
+        13152,
+        74,
+        19622,
+        595,
+        51253,
+        145082,
+        17964,
+        79,
+        21444,
+        75,
+        9843,
+        237,
+        58560,
+        2010,
+        74,
+        963,
+        40867,
+        10258,
+        151645,
+        151644,
+        77091,
+        32,
+        13876,
+        15223,
+        572,
+        86327,
+        3483,
+        4374,
+        297,
+        5799
       ],
       "output_distribution": {
         "top_k": 10,
@@ -1751,61 +1577,61 @@
           {
             "token": "<|im_end|>",
             "token_id": 151645,
-            "logprob": -0.0486,
-            "prob": 0.9531
+            "logprob": -0.0337,
+            "prob": 0.9688
           },
           {
             "token": ".",
             "token_id": 13,
-            "logprob": -3.0469,
-            "prob": 0.0474
-          },
-          {
-            "token": "Ġ(",
-            "token_id": 320,
-            "logprob": -10.9375,
-            "prob": 0.0
+            "logprob": -3.4062,
+            "prob": 0.0332
           },
           {
             "token": "Ġ�",
             "token_id": 11162,
-            "logprob": -12.9375,
+            "logprob": -13.8125,
             "prob": 0.0
           },
           {
             "token": ",",
             "token_id": 11,
-            "logprob": -12.9375,
+            "logprob": -14.5625,
             "prob": 0.0
           },
           {
-            "token": "Ġor",
-            "token_id": 476,
-            "logprob": -14.6875,
-            "prob": 0.0
-          },
-          {
-            "token": "*",
-            "token_id": 9,
-            "logprob": -14.8125,
-            "prob": 0.0
-          },
-          {
-            "token": "//",
-            "token_id": 322,
-            "logprob": -15.0625,
+            "token": "Ġ(",
+            "token_id": 320,
+            "logprob": -15.3125,
             "prob": 0.0
           },
           {
             "token": ".*",
             "token_id": 4908,
-            "logprob": -15.0625,
+            "logprob": -15.3125,
             "prob": 0.0
           },
           {
-            "token": "/",
-            "token_id": 14,
-            "logprob": -15.1875,
+            "token": "Ġ�",
+            "token_id": 25521,
+            "logprob": -16.125,
+            "prob": 0.0
+          },
+          {
+            "token": "//",
+            "token_id": 322,
+            "logprob": -16.25,
+            "prob": 0.0
+          },
+          {
+            "token": "*",
+            "token_id": 9,
+            "logprob": -16.75,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġ�",
+            "token_id": 63039,
+            "logprob": -17.0,
             "prob": 0.0
           }
         ]

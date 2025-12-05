@@ -1,5 +1,5 @@
 {
-  "id": "generated_20251203_120552",
+  "id": "generated_20251204_095003",
   "prompt": "中国的首都是",
   "language": "zh",
   "temperature": 0.0,
@@ -14,8 +14,11 @@
   "generation_steps": [
     {
       "step": 0,
-      "input_text": "中国的首都是<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+      "input_text": "<|start_header_id|>user<|end_header_id|>中国的首都是<|eot_id|><|start_header_id|>assistant<|end_header_id|>",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "中国",
         "的",
         "首",
@@ -23,10 +26,12 @@
         "<|eot_id|>",
         "<|start_header_id|>",
         "assistant",
-        "<|end_header_id|>",
-        "\n\n"
+        "<|end_header_id|>"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         59795,
         9554,
         61075,
@@ -34,8 +39,7 @@
         128009,
         128006,
         78191,
-        128007,
-        271
+        128007
       ],
       "output_distribution": {
         "top_k": 10,
@@ -43,62 +47,62 @@
           {
             "token": "中国",
             "token_id": 59795,
-            "logprob": -0.2227,
-            "prob": 0.8008
+            "logprob": -0.2539,
+            "prob": 0.7773
           },
           {
             "token": "答案",
             "token_id": 126427,
-            "logprob": -3.2812,
-            "prob": 0.0374
+            "logprob": -3.25,
+            "prob": 0.0386
           },
           {
             "token": "答",
             "token_id": 103899,
-            "logprob": -3.8438,
-            "prob": 0.0214
+            "logprob": -3.6875,
+            "prob": 0.0249
           },
           {
             "token": "我",
             "token_id": 37046,
-            "logprob": -4.4062,
-            "prob": 0.0121
+            "logprob": -4.375,
+            "prob": 0.0125
           },
           {
             "token": "ĠBeijing",
             "token_id": 27647,
-            "logprob": -5.0938,
-            "prob": 0.0061
+            "logprob": -4.875,
+            "prob": 0.0076
           },
           {
             "token": "北京",
             "token_id": 70090,
-            "logprob": -5.3438,
-            "prob": 0.0048
+            "logprob": -5.125,
+            "prob": 0.0059
           },
           {
             "token": "大",
             "token_id": 27384,
-            "logprob": -5.4062,
-            "prob": 0.0045
+            "logprob": -5.3125,
+            "prob": 0.0049
           },
           {
             "token": "Ġrépond",
             "token_id": 75871,
-            "logprob": -5.6562,
-            "prob": 0.0035
+            "logprob": -5.5,
+            "prob": 0.0041
           },
           {
             "token": "在",
             "token_id": 19000,
-            "logprob": -5.7188,
-            "prob": 0.0033
+            "logprob": -5.625,
+            "prob": 0.0036
           },
           {
             "token": "上海",
             "token_id": 110666,
-            "logprob": -5.8438,
-            "prob": 0.0029
+            "logprob": -5.625,
+            "prob": 0.0036
           }
         ]
       },
@@ -110,8 +114,11 @@
     },
     {
       "step": 1,
-      "input_text": "中国的首都是<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n中国",
+      "input_text": "<|start_header_id|>user<|end_header_id|>中国的首都是<|eot_id|><|start_header_id|>assistant<|end_header_id|>中国",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "中国",
         "的",
         "首",
@@ -120,10 +127,12 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "中国"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         59795,
         9554,
         61075,
@@ -132,7 +141,6 @@
         128006,
         78191,
         128007,
-        271,
         59795
       ],
       "output_distribution": {
@@ -141,61 +149,61 @@
           {
             "token": "的",
             "token_id": 9554,
-            "logprob": -0.0461,
-            "prob": 0.9531
+            "logprob": -0.0527,
+            "prob": 0.9492
           },
           {
             "token": "首",
             "token_id": 61075,
-            "logprob": -3.7969,
-            "prob": 0.0225
+            "logprob": -3.6094,
+            "prob": 0.0269
           },
           {
             "token": "最",
             "token_id": 32335,
-            "logprob": -5.4688,
-            "prob": 0.0042
+            "logprob": -5.4375,
+            "prob": 0.0044
           },
           {
             "token": "是",
             "token_id": 21043,
-            "logprob": -6.2188,
-            "prob": 0.002
+            "logprob": -6.1875,
+            "prob": 0.0021
           },
           {
             "token": "大",
             "token_id": 27384,
-            "logprob": -6.9688,
-            "prob": 0.0009
+            "logprob": -6.9375,
+            "prob": 0.001
           },
           {
             "token": "实际",
             "token_id": 115827,
-            "logprob": -7.0938,
-            "prob": 0.0008
+            "logprob": -7.0,
+            "prob": 0.0009
           },
           {
             "token": "主要",
             "token_id": 105572,
-            "logprob": -7.2188,
-            "prob": 0.0007
+            "logprob": -7.1875,
+            "prob": 0.0008
           },
           {
             "token": "自",
             "token_id": 37026,
-            "logprob": -7.3438,
-            "prob": 0.0006
+            "logprob": -7.25,
+            "prob": 0.0007
           },
           {
             "token": "历史",
             "token_id": 113691,
-            "logprob": -7.4062,
-            "prob": 0.0006
+            "logprob": -7.3125,
+            "prob": 0.0007
           },
           {
             "token": "'s",
             "token_id": 596,
-            "logprob": -7.5312,
+            "logprob": -7.5625,
             "prob": 0.0005
           }
         ]
@@ -208,8 +216,11 @@
     },
     {
       "step": 2,
-      "input_text": "中国的首都是<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n中国的",
+      "input_text": "<|start_header_id|>user<|end_header_id|>中国的首都是<|eot_id|><|start_header_id|>assistant<|end_header_id|>中国的",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "中国",
         "的",
         "首",
@@ -218,11 +229,13 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "中国",
         "的"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         59795,
         9554,
         61075,
@@ -231,7 +244,6 @@
         128006,
         78191,
         128007,
-        271,
         59795,
         9554
       ],
@@ -241,7 +253,7 @@
           {
             "token": "首",
             "token_id": 61075,
-            "logprob": -0.0131,
+            "logprob": -0.0127,
             "prob": 0.9883
           },
           {
@@ -253,19 +265,19 @@
           {
             "token": "政治",
             "token_id": 110886,
-            "logprob": -6.8125,
-            "prob": 0.0011
+            "logprob": -6.875,
+            "prob": 0.001
           },
           {
             "token": "主要",
             "token_id": 105572,
-            "logprob": -6.875,
+            "logprob": -6.9375,
             "prob": 0.001
           },
           {
             "token": "第一",
             "token_id": 103983,
-            "logprob": -7.375,
+            "logprob": -7.4375,
             "prob": 0.0006
           },
           {
@@ -287,14 +299,14 @@
             "prob": 0.0002
           },
           {
-            "token": "实际",
-            "token_id": 115827,
-            "logprob": -8.5,
+            "token": "最",
+            "token_id": 32335,
+            "logprob": -8.625,
             "prob": 0.0002
           },
           {
-            "token": "最",
-            "token_id": 32335,
+            "token": "实际",
+            "token_id": 115827,
             "logprob": -8.625,
             "prob": 0.0002
           }
@@ -308,8 +320,11 @@
     },
     {
       "step": 3,
-      "input_text": "中国的首都是<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n中国的首",
+      "input_text": "<|start_header_id|>user<|end_header_id|>中国的首都是<|eot_id|><|start_header_id|>assistant<|end_header_id|>中国的首",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "中国",
         "的",
         "首",
@@ -318,12 +333,14 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "中国",
         "的",
         "首"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         59795,
         9554,
         61075,
@@ -332,7 +349,6 @@
         128006,
         78191,
         128007,
-        271,
         59795,
         9554,
         61075
@@ -361,20 +377,20 @@
           {
             "token": "都会",
             "token_id": 127579,
-            "logprob": -6.9375,
+            "logprob": -6.875,
             "prob": 0.001
+          },
+          {
+            "token": "Ġcities",
+            "token_id": 9919,
+            "logprob": -7.0,
+            "prob": 0.0009
           },
           {
             "token": "座",
             "token_id": 103605,
             "logprob": -7.0,
             "prob": 0.0009
-          },
-          {
-            "token": "Ġcities",
-            "token_id": 9919,
-            "logprob": -7.0625,
-            "prob": 0.0008
           },
           {
             "token": "城",
@@ -385,19 +401,19 @@
           {
             "token": "ĠCities",
             "token_id": 38373,
-            "logprob": -7.6875,
+            "logprob": -7.625,
             "prob": 0.0005
           },
           {
             "token": "是",
             "token_id": 21043,
-            "logprob": -7.6875,
-            "prob": 0.0005
+            "logprob": -7.8125,
+            "prob": 0.0004
           },
           {
             "token": "都市",
             "token_id": 113949,
-            "logprob": -7.9375,
+            "logprob": -7.875,
             "prob": 0.0004
           }
         ]
@@ -410,8 +426,11 @@
     },
     {
       "step": 4,
-      "input_text": "中国的首都是<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n中国的首都是",
+      "input_text": "<|start_header_id|>user<|end_header_id|>中国的首都是<|eot_id|><|start_header_id|>assistant<|end_header_id|>中国的首都是",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "中国",
         "的",
         "首",
@@ -420,13 +439,15 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "中国",
         "的",
         "首",
         "都是"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         59795,
         9554,
         61075,
@@ -435,7 +456,6 @@
         128006,
         78191,
         128007,
-        271,
         59795,
         9554,
         61075,
@@ -447,61 +467,61 @@
           {
             "token": "北京",
             "token_id": 70090,
-            "logprob": -0.7695,
-            "prob": 0.4629
+            "logprob": -0.7656,
+            "prob": 0.4648
           },
           {
             "token": "ĠBeijing",
             "token_id": 27647,
-            "logprob": -1.4609,
+            "logprob": -1.4531,
             "prob": 0.2334
           },
           {
             "token": "上海",
             "token_id": 110666,
-            "logprob": -2.7656,
-            "prob": 0.0625
+            "logprob": -2.7031,
+            "prob": 0.0669
           },
           {
             "token": "广",
             "token_id": 82042,
-            "logprob": -4.0938,
-            "prob": 0.0168
-          },
-          {
-            "token": "长",
-            "token_id": 46961,
-            "logprob": -4.7188,
-            "prob": 0.009
+            "logprob": -4.1875,
+            "prob": 0.015
           },
           {
             "token": "�",
             "token_id": 14276,
-            "logprob": -4.7188,
-            "prob": 0.009
+            "logprob": -4.625,
+            "prob": 0.0096
+          },
+          {
+            "token": "长",
+            "token_id": 46961,
+            "logprob": -4.75,
+            "prob": 0.0085
           },
           {
             "token": "ĠPek",
             "token_id": 127146,
-            "logprob": -4.9062,
-            "prob": 0.0075
-          },
-          {
-            "token": "天",
-            "token_id": 36827,
-            "logprob": -5.3438,
-            "prob": 0.0048
+            "logprob": -4.9375,
+            "prob": 0.007
           },
           {
             "token": "《",
             "token_id": 28038,
-            "logprob": -5.4062,
+            "logprob": -5.3125,
+            "prob": 0.0049
+          },
+          {
+            "token": "天",
+            "token_id": 36827,
+            "logprob": -5.375,
             "prob": 0.0045
           },
           {
             "token": "ĠShanghai",
             "token_id": 38147,
-            "logprob": -5.4062,
+            "logprob": -5.375,
             "prob": 0.0045
           }
         ]
@@ -514,8 +534,11 @@
     },
     {
       "step": 5,
-      "input_text": "中国的首都是<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n中国的首都是北京",
+      "input_text": "<|start_header_id|>user<|end_header_id|>中国的首都是<|eot_id|><|start_header_id|>assistant<|end_header_id|>中国的首都是北京",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "中国",
         "的",
         "首",
@@ -524,7 +547,6 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "中国",
         "的",
         "首",
@@ -532,6 +554,9 @@
         "北京"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         59795,
         9554,
         61075,
@@ -540,7 +565,6 @@
         128006,
         78191,
         128007,
-        271,
         59795,
         9554,
         61075,
@@ -553,62 +577,62 @@
           {
             "token": "。",
             "token_id": 1811,
-            "logprob": -0.2832,
-            "prob": 0.7539
+            "logprob": -0.3203,
+            "prob": 0.7266
           },
           {
             "token": "<|eot_id|>",
             "token_id": 128009,
-            "logprob": -2.2812,
-            "prob": 0.1021
+            "logprob": -2.1875,
+            "prob": 0.1113
           },
           {
             "token": "市",
             "token_id": 23530,
-            "logprob": -3.0938,
-            "prob": 0.0452
+            "logprob": -3.0,
+            "prob": 0.0493
           },
           {
             "token": "。\n\n",
             "token_id": 3490,
-            "logprob": -3.8438,
-            "prob": 0.0214
+            "logprob": -3.625,
+            "prob": 0.0265
           },
           {
             "token": "（",
             "token_id": 10110,
-            "logprob": -4.0312,
-            "prob": 0.0177
+            "logprob": -3.875,
+            "prob": 0.0206
           },
           {
             "token": "，",
             "token_id": 3922,
-            "logprob": -4.1562,
-            "prob": 0.0156
+            "logprob": -4.0,
+            "prob": 0.0182
           },
           {
             "token": "。这",
             "token_id": 110477,
-            "logprob": -5.0312,
-            "prob": 0.0065
+            "logprob": -5.0,
+            "prob": 0.0067
           },
           {
             "token": "。在",
             "token_id": 107644,
-            "logprob": -6.1562,
-            "prob": 0.0021
+            "logprob": -6.125,
+            "prob": 0.0022
           },
           {
             "token": "，因为",
             "token_id": 115286,
-            "logprob": -6.2188,
+            "logprob": -6.1875,
             "prob": 0.002
           },
           {
             "token": "，这",
             "token_id": 103138,
-            "logprob": -6.2812,
-            "prob": 0.0019
+            "logprob": -6.3125,
+            "prob": 0.0018
           }
         ]
       },
@@ -620,8 +644,11 @@
     },
     {
       "step": 6,
-      "input_text": "中国的首都是<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n中国的首都是北京。",
+      "input_text": "<|start_header_id|>user<|end_header_id|>中国的首都是<|eot_id|><|start_header_id|>assistant<|end_header_id|>中国的首都是北京。",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "中国",
         "的",
         "首",
@@ -630,7 +657,6 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "中国",
         "的",
         "首",
@@ -639,6 +665,9 @@
         "。"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         59795,
         9554,
         61075,
@@ -647,7 +676,6 @@
         128006,
         78191,
         128007,
-        271,
         59795,
         9554,
         61075,
@@ -661,20 +689,20 @@
           {
             "token": "<|eot_id|>",
             "token_id": 128009,
-            "logprob": -0.1177,
-            "prob": 0.8906
+            "logprob": -0.1206,
+            "prob": 0.8867
           },
           {
             "token": "ĠBeijing",
             "token_id": 27647,
             "logprob": -3.5,
-            "prob": 0.0304
+            "prob": 0.0303
           },
           {
             "token": "北京",
             "token_id": 70090,
-            "logprob": -4.0625,
-            "prob": 0.0173
+            "logprob": -4.0,
+            "prob": 0.0184
           },
           {
             "token": "中国",
@@ -691,8 +719,8 @@
           {
             "token": "Ġ\n\n",
             "token_id": 4815,
-            "logprob": -5.375,
-            "prob": 0.0047
+            "logprob": -5.25,
+            "prob": 0.0053
           },
           {
             "token": "虽然",
@@ -703,20 +731,20 @@
           {
             "token": "作为",
             "token_id": 111358,
-            "logprob": -6.0625,
-            "prob": 0.0023
+            "logprob": -6.0,
+            "prob": 0.0025
           },
           {
             "token": "根据",
             "token_id": 110747,
-            "logprob": -6.0625,
-            "prob": 0.0023
+            "logprob": -6.0,
+            "prob": 0.0025
           },
           {
             "token": "然而",
             "token_id": 116764,
-            "logprob": -6.5,
-            "prob": 0.0015
+            "logprob": -6.625,
+            "prob": 0.0013
           }
         ]
       },

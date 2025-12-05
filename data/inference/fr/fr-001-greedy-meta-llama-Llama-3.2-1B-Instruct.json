@@ -1,5 +1,5 @@
 {
-  "id": "generated_20251203_120526",
+  "id": "generated_20251204_094937",
   "prompt": "Qui es-tu?",
   "language": "fr",
   "temperature": 0.0,
@@ -14,8 +14,11 @@
   "generation_steps": [
     {
       "step": 0,
-      "input_text": "Qui es-tu?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+      "input_text": "<|start_header_id|>user<|end_header_id|>Qui es-tu?<|eot_id|><|start_header_id|>assistant<|end_header_id|>",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "Qui",
         "Ġes",
         "-t",
@@ -24,10 +27,12 @@
         "<|eot_id|>",
         "<|start_header_id|>",
         "assistant",
-        "<|end_header_id|>",
-        "\n\n"
+        "<|end_header_id|>"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         62545,
         1560,
         2442,
@@ -36,8 +41,7 @@
         128009,
         128006,
         78191,
-        128007,
-        271
+        128007
       ],
       "output_distribution": {
         "top_k": 10,
@@ -45,14 +49,14 @@
           {
             "token": "Je",
             "token_id": 30854,
-            "logprob": -0.0374,
-            "prob": 0.9648
+            "logprob": -0.0454,
+            "prob": 0.957
           },
           {
             "token": "Bonjour",
             "token_id": 82681,
-            "logprob": -3.6562,
-            "prob": 0.0256
+            "logprob": -3.4219,
+            "prob": 0.0327
           },
           {
             "token": "J",
@@ -63,8 +67,8 @@
           {
             "token": "Bien",
             "token_id": 82606,
-            "logprob": -7.1562,
-            "prob": 0.0008
+            "logprob": -7.0312,
+            "prob": 0.0009
           },
           {
             "token": "ĠJe",
@@ -75,31 +79,31 @@
           {
             "token": "D",
             "token_id": 35,
-            "logprob": -7.3438,
-            "prob": 0.0006
+            "logprob": -7.2812,
+            "prob": 0.0007
           },
           {
             "token": "Hello",
             "token_id": 9906,
-            "logprob": -7.8438,
+            "logprob": -7.7188,
             "prob": 0.0004
           },
           {
             "token": "Sal",
             "token_id": 17691,
-            "logprob": -7.9688,
-            "prob": 0.0003
+            "logprob": -7.8438,
+            "prob": 0.0004
           },
           {
             "token": "Vous",
             "token_id": 43273,
-            "logprob": -8.0625,
-            "prob": 0.0003
+            "logprob": -7.9062,
+            "prob": 0.0004
           },
           {
-            "token": "Ġje",
-            "token_id": 4864,
-            "logprob": -8.25,
+            "token": "Merc",
+            "token_id": 63230,
+            "logprob": -8.125,
             "prob": 0.0003
           }
         ]
@@ -112,8 +116,11 @@
     },
     {
       "step": 1,
-      "input_text": "Qui es-tu?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nJe",
+      "input_text": "<|start_header_id|>user<|end_header_id|>Qui es-tu?<|eot_id|><|start_header_id|>assistant<|end_header_id|>Je",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "Qui",
         "Ġes",
         "-t",
@@ -123,10 +130,12 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "Je"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         62545,
         1560,
         2442,
@@ -136,7 +145,6 @@
         128006,
         78191,
         128007,
-        271,
         30854
       ],
       "output_distribution": {
@@ -145,61 +153,61 @@
           {
             "token": "Ġsuis",
             "token_id": 36731,
-            "logprob": -0.0035,
+            "logprob": -0.0041,
             "prob": 0.9961
           },
           {
             "token": "Ġm",
             "token_id": 296,
-            "logprob": -6.125,
-            "prob": 0.0022
+            "logprob": -6.0,
+            "prob": 0.0025
           },
           {
             "token": "Ġpeux",
             "token_id": 94297,
-            "logprob": -8.25,
+            "logprob": -8.0625,
             "prob": 0.0003
           },
           {
             "token": "Ġme",
             "token_id": 757,
-            "logprob": -8.4375,
-            "prob": 0.0002
+            "logprob": -8.25,
+            "prob": 0.0003
           },
           {
             "token": "Ġser",
             "token_id": 1446,
-            "logprob": -8.6875,
+            "logprob": -8.5625,
             "prob": 0.0002
           },
           {
             "token": "Ġne",
             "token_id": 841,
-            "logprob": -9.1875,
+            "logprob": -8.8125,
             "prob": 0.0001
           },
           {
             "token": "Ġdois",
             "token_id": 51441,
-            "logprob": -9.3125,
+            "logprob": -9.125,
             "prob": 0.0001
           },
           {
             "token": "Ġvais",
             "token_id": 91507,
-            "logprob": -10.0,
-            "prob": 0.0
+            "logprob": -9.875,
+            "prob": 0.0001
           },
           {
             "token": "Ġs",
             "token_id": 274,
-            "logprob": -10.125,
+            "logprob": -9.9375,
             "prob": 0.0
           },
           {
             "token": "Ġvous",
             "token_id": 9189,
-            "logprob": -10.375,
+            "logprob": -10.125,
             "prob": 0.0
           }
         ]
@@ -212,8 +220,11 @@
     },
     {
       "step": 2,
-      "input_text": "Qui es-tu?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nJe suis",
+      "input_text": "<|start_header_id|>user<|end_header_id|>Qui es-tu?<|eot_id|><|start_header_id|>assistant<|end_header_id|>Je suis",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "Qui",
         "Ġes",
         "-t",
@@ -223,11 +234,13 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "Je",
         "Ġsuis"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         62545,
         1560,
         2442,
@@ -237,7 +250,6 @@
         128006,
         78191,
         128007,
-        271,
         30854,
         36731
       ],
@@ -247,7 +259,7 @@
           {
             "token": "Ġun",
             "token_id": 653,
-            "logprob": -0.0703,
+            "logprob": -0.0693,
             "prob": 0.9336
           },
           {
@@ -259,25 +271,25 @@
           {
             "token": "ĠUn",
             "token_id": 1252,
-            "logprob": -6.25,
-            "prob": 0.0019
+            "logprob": -6.375,
+            "prob": 0.0017
           },
           {
             "token": "Ġlà",
             "token_id": 39015,
-            "logprob": -6.625,
-            "prob": 0.0013
+            "logprob": -6.6875,
+            "prob": 0.0012
           },
           {
             "token": "Ġle",
             "token_id": 514,
-            "logprob": -7.4375,
-            "prob": 0.0006
+            "logprob": -7.6875,
+            "prob": 0.0005
           },
           {
             "token": "Ġdu",
             "token_id": 3930,
-            "logprob": -8.125,
+            "logprob": -8.0625,
             "prob": 0.0003
           },
           {
@@ -289,19 +301,19 @@
           {
             "token": "Ġdés",
             "token_id": 46838,
-            "logprob": -8.5625,
+            "logprob": -8.625,
             "prob": 0.0002
           },
           {
             "token": "'un",
             "token_id": 22827,
-            "logprob": -8.875,
+            "logprob": -8.9375,
             "prob": 0.0001
           },
           {
             "token": "Ġd",
             "token_id": 294,
-            "logprob": -9.3125,
+            "logprob": -9.375,
             "prob": 0.0001
           }
         ]
@@ -314,8 +326,11 @@
     },
     {
       "step": 3,
-      "input_text": "Qui es-tu?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nJe suis un",
+      "input_text": "<|start_header_id|>user<|end_header_id|>Qui es-tu?<|eot_id|><|start_header_id|>assistant<|end_header_id|>Je suis un",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "Qui",
         "Ġes",
         "-t",
@@ -325,12 +340,14 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "Je",
         "Ġsuis",
         "Ġun"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         62545,
         1560,
         2442,
@@ -340,7 +357,6 @@
         128006,
         78191,
         128007,
-        271,
         30854,
         36731,
         653
@@ -351,14 +367,14 @@
           {
             "token": "Ġmodèle",
             "token_id": 83597,
-            "logprob": -0.0913,
+            "logprob": -0.0894,
             "prob": 0.9141
           },
           {
             "token": "Ġgrand",
             "token_id": 6800,
-            "logprob": -3.6562,
-            "prob": 0.0259
+            "logprob": -3.7188,
+            "prob": 0.0244
           },
           {
             "token": "Ġchat",
@@ -387,14 +403,8 @@
           {
             "token": "Ġprogramme",
             "token_id": 18629,
-            "logprob": -5.5938,
-            "prob": 0.0037
-          },
-          {
-            "token": "Ġmodele",
-            "token_id": 97825,
-            "logprob": -5.8438,
-            "prob": 0.0029
+            "logprob": -5.6562,
+            "prob": 0.0035
           },
           {
             "token": "ĠAI",
@@ -403,10 +413,16 @@
             "prob": 0.0029
           },
           {
+            "token": "Ġmodele",
+            "token_id": 97825,
+            "logprob": -5.9062,
+            "prob": 0.0027
+          },
+          {
             "token": "Assistant",
             "token_id": 72803,
-            "logprob": -6.3438,
-            "prob": 0.0018
+            "logprob": -6.2812,
+            "prob": 0.0019
           }
         ]
       },
@@ -418,8 +434,11 @@
     },
     {
       "step": 4,
-      "input_text": "Qui es-tu?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nJe suis un modèle",
+      "input_text": "<|start_header_id|>user<|end_header_id|>Qui es-tu?<|eot_id|><|start_header_id|>assistant<|end_header_id|>Je suis un modèle",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "Qui",
         "Ġes",
         "-t",
@@ -429,13 +448,15 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "Je",
         "Ġsuis",
         "Ġun",
         "Ġmodèle"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         62545,
         1560,
         2442,
@@ -445,7 +466,6 @@
         128006,
         78191,
         128007,
-        271,
         30854,
         36731,
         653,
@@ -469,49 +489,49 @@
           {
             "token": "Ġlingu",
             "token_id": 39603,
-            "logprob": -10.3125,
+            "logprob": -10.25,
             "prob": 0.0
           },
           {
             "token": "Ġtext",
             "token_id": 1495,
-            "logprob": -10.8125,
+            "logprob": -10.6875,
             "prob": 0.0
           },
           {
             "token": "Ġinteract",
             "token_id": 16681,
-            "logprob": -11.125,
+            "logprob": -10.9375,
             "prob": 0.0
           },
           {
             "token": "Ġautomat",
             "token_id": 61852,
-            "logprob": -11.1875,
+            "logprob": -11.125,
             "prob": 0.0
           },
           {
             "token": "Ġtexte",
             "token_id": 69067,
-            "logprob": -11.25,
+            "logprob": -11.1875,
             "prob": 0.0
           },
           {
             "token": "Ġlang",
             "token_id": 8859,
-            "logprob": -11.4375,
+            "logprob": -11.375,
             "prob": 0.0
           },
           {
             "token": "Ġinformat",
             "token_id": 51307,
-            "logprob": -11.5625,
+            "logprob": -11.375,
             "prob": 0.0
           },
           {
             "token": "ĠD",
             "token_id": 423,
-            "logprob": -11.625,
+            "logprob": -11.5,
             "prob": 0.0
           }
         ]
@@ -524,8 +544,11 @@
     },
     {
       "step": 5,
-      "input_text": "Qui es-tu?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nJe suis un modèle d",
+      "input_text": "<|start_header_id|>user<|end_header_id|>Qui es-tu?<|eot_id|><|start_header_id|>assistant<|end_header_id|>Je suis un modèle d",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "Qui",
         "Ġes",
         "-t",
@@ -535,7 +558,6 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "Je",
         "Ġsuis",
         "Ġun",
@@ -543,6 +565,9 @@
         "Ġd"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         62545,
         1560,
         2442,
@@ -552,7 +577,6 @@
         128006,
         78191,
         128007,
-        271,
         30854,
         36731,
         653,
@@ -565,61 +589,61 @@
           {
             "token": "'int",
             "token_id": 55624,
-            "logprob": -0.0295,
-            "prob": 0.9727
+            "logprob": -0.0337,
+            "prob": 0.9688
           },
           {
             "token": "'",
             "token_id": 6,
-            "logprob": -3.6562,
-            "prob": 0.0259
+            "logprob": -3.5312,
+            "prob": 0.0292
           },
           {
             "token": "'app",
             "token_id": 53149,
-            "logprob": -6.0312,
-            "prob": 0.0024
+            "logprob": -5.7812,
+            "prob": 0.0031
           },
           {
             "token": "’int",
             "token_id": 60656,
-            "logprob": -7.7812,
-            "prob": 0.0004
+            "logprob": -7.6562,
+            "prob": 0.0005
           },
           {
             "token": "'a",
             "token_id": 26248,
-            "logprob": -9.75,
+            "logprob": -9.6875,
             "prob": 0.0001
           },
           {
             "token": "’",
             "token_id": 529,
-            "logprob": -9.75,
+            "logprob": -9.6875,
             "prob": 0.0001
           },
           {
             "token": "'é",
             "token_id": 31769,
-            "logprob": -10.25,
+            "logprob": -10.3125,
             "prob": 0.0
           },
           {
             "token": "'in",
             "token_id": 52152,
-            "logprob": -10.625,
+            "logprob": -10.6875,
             "prob": 0.0
           },
           {
             "token": "'all",
             "token_id": 65948,
-            "logprob": -10.875,
+            "logprob": -10.9375,
             "prob": 0.0
           },
           {
             "token": "'es",
             "token_id": 77025,
-            "logprob": -11.125,
+            "logprob": -11.0625,
             "prob": 0.0
           }
         ]
@@ -632,8 +656,11 @@
     },
     {
       "step": 6,
-      "input_text": "Qui es-tu?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nJe suis un modèle d'int",
+      "input_text": "<|start_header_id|>user<|end_header_id|>Qui es-tu?<|eot_id|><|start_header_id|>assistant<|end_header_id|>Je suis un modèle d'int",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "Qui",
         "Ġes",
         "-t",
@@ -643,7 +670,6 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "Je",
         "Ġsuis",
         "Ġun",
@@ -652,6 +678,9 @@
         "'int"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         62545,
         1560,
         2442,
@@ -661,7 +690,6 @@
         128006,
         78191,
         128007,
-        271,
         30854,
         36731,
         653,
@@ -675,7 +703,7 @@
           {
             "token": "elligence",
             "token_id": 8677,
-            "logprob": -0.0063,
+            "logprob": -0.0064,
             "prob": 0.9922
           },
           {
@@ -691,45 +719,45 @@
             "prob": 0.0008
           },
           {
-            "token": "é",
-            "token_id": 978,
-            "logprob": -7.375,
+            "token": "ernet",
+            "token_id": 14166,
+            "logprob": -7.4375,
             "prob": 0.0006
           },
           {
-            "token": "ernet",
-            "token_id": 14166,
+            "token": "é",
+            "token_id": 978,
             "logprob": -7.5,
             "prob": 0.0005
           },
           {
             "token": "el",
             "token_id": 301,
-            "logprob": -7.625,
+            "logprob": -7.6875,
             "prob": 0.0005
           },
           {
             "token": "ervention",
             "token_id": 47698,
-            "logprob": -7.8125,
+            "logprob": -7.75,
             "prob": 0.0004
           },
           {
             "token": "elligent",
             "token_id": 21149,
-            "logprob": -7.9375,
+            "logprob": -7.875,
             "prob": 0.0004
           },
           {
             "token": "uition",
             "token_id": 38161,
-            "logprob": -8.0,
-            "prob": 0.0003
+            "logprob": -7.9375,
+            "prob": 0.0004
           },
           {
             "token": "ention",
             "token_id": 3012,
-            "logprob": -8.1875,
+            "logprob": -8.125,
             "prob": 0.0003
           }
         ]
@@ -742,8 +770,11 @@
     },
     {
       "step": 7,
-      "input_text": "Qui es-tu?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nJe suis un modèle d'intelligence",
+      "input_text": "<|start_header_id|>user<|end_header_id|>Qui es-tu?<|eot_id|><|start_header_id|>assistant<|end_header_id|>Je suis un modèle d'intelligence",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "Qui",
         "Ġes",
         "-t",
@@ -753,7 +784,6 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "Je",
         "Ġsuis",
         "Ġun",
@@ -763,6 +793,9 @@
         "elligence"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         62545,
         1560,
         2442,
@@ -772,7 +805,6 @@
         128006,
         78191,
         128007,
-        271,
         30854,
         36731,
         653,
@@ -787,14 +819,14 @@
           {
             "token": "Ġart",
             "token_id": 1989,
-            "logprob": -0.0039,
+            "logprob": -0.0042,
             "prob": 0.9961
           },
           {
             "token": "ĠArt",
             "token_id": 5277,
-            "logprob": -7.25,
-            "prob": 0.0007
+            "logprob": -7.1875,
+            "prob": 0.0008
           },
           {
             "token": "Art",
@@ -805,19 +837,19 @@
           {
             "token": "-art",
             "token_id": 38921,
-            "logprob": -7.625,
+            "logprob": -7.5,
             "prob": 0.0005
           },
           {
             "token": "Ġvirt",
             "token_id": 13053,
-            "logprob": -8.0625,
-            "prob": 0.0003
+            "logprob": -7.9375,
+            "prob": 0.0004
           },
           {
             "token": "art",
             "token_id": 472,
-            "logprob": -8.625,
+            "logprob": -8.6875,
             "prob": 0.0002
           },
           {
@@ -829,19 +861,19 @@
           {
             "token": "Ġartificial",
             "token_id": 21075,
-            "logprob": -8.875,
+            "logprob": -8.8125,
             "prob": 0.0001
           },
           {
             "token": "Ġde",
             "token_id": 409,
-            "logprob": -9.125,
+            "logprob": -8.9375,
             "prob": 0.0001
           },
           {
             "token": "ĠART",
             "token_id": 34979,
-            "logprob": -9.25,
+            "logprob": -9.1875,
             "prob": 0.0001
           }
         ]
@@ -854,8 +886,11 @@
     },
     {
       "step": 8,
-      "input_text": "Qui es-tu?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nJe suis un modèle d'intelligence art",
+      "input_text": "<|start_header_id|>user<|end_header_id|>Qui es-tu?<|eot_id|><|start_header_id|>assistant<|end_header_id|>Je suis un modèle d'intelligence art",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "Qui",
         "Ġes",
         "-t",
@@ -865,7 +900,6 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "Je",
         "Ġsuis",
         "Ġun",
@@ -876,6 +910,9 @@
         "Ġart"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         62545,
         1560,
         2442,
@@ -885,7 +922,6 @@
         128006,
         78191,
         128007,
-        271,
         30854,
         36731,
         653,
@@ -907,55 +943,55 @@
           {
             "token": "if",
             "token_id": 333,
-            "logprob": -9.0625,
+            "logprob": -9.25,
             "prob": 0.0001
           },
           {
             "token": "ifice",
             "token_id": 22660,
-            "logprob": -9.375,
+            "logprob": -9.5,
             "prob": 0.0001
           },
           {
             "token": "ifique",
             "token_id": 52760,
-            "logprob": -9.375,
+            "logprob": -9.5625,
             "prob": 0.0001
           },
           {
             "token": "IFIC",
             "token_id": 34735,
-            "logprob": -10.0625,
+            "logprob": -10.1875,
             "prob": 0.0
           },
           {
             "token": "ifi",
             "token_id": 13215,
-            "logprob": -10.5,
+            "logprob": -10.625,
             "prob": 0.0
           },
           {
             "token": "imon",
             "token_id": 26490,
-            "logprob": -12.4375,
+            "logprob": -12.5625,
             "prob": 0.0
           },
           {
             "token": "icol",
             "token_id": 27561,
-            "logprob": -12.75,
+            "logprob": -12.8125,
+            "prob": 0.0
+          },
+          {
+            "token": "ifie",
+            "token_id": 57609,
+            "logprob": -13.25,
             "prob": 0.0
           },
           {
             "token": "i",
             "token_id": 72,
-            "logprob": -13.125,
-            "prob": 0.0
-          },
-          {
-            "token": "ificial",
-            "token_id": 16895,
-            "logprob": -13.1875,
+            "logprob": -13.3125,
             "prob": 0.0
           }
         ]
@@ -968,8 +1004,11 @@
     },
     {
       "step": 9,
-      "input_text": "Qui es-tu?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nJe suis un modèle d'intelligence artific",
+      "input_text": "<|start_header_id|>user<|end_header_id|>Qui es-tu?<|eot_id|><|start_header_id|>assistant<|end_header_id|>Je suis un modèle d'intelligence artific",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "Qui",
         "Ġes",
         "-t",
@@ -979,7 +1018,6 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "Je",
         "Ġsuis",
         "Ġun",
@@ -991,6 +1029,9 @@
         "ific"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         62545,
         1560,
         2442,
@@ -1000,7 +1041,6 @@
         128006,
         78191,
         128007,
-        271,
         30854,
         36731,
         653,
@@ -1017,14 +1057,14 @@
           {
             "token": "i",
             "token_id": 72,
-            "logprob": -0.0012,
+            "logprob": -0.0013,
             "prob": 1.0
           },
           {
             "token": "iale",
             "token_id": 20487,
-            "logprob": -7.375,
-            "prob": 0.0006
+            "logprob": -7.25,
+            "prob": 0.0007
           },
           {
             "token": "iel",
@@ -1035,7 +1075,7 @@
           {
             "token": "ie",
             "token_id": 648,
-            "logprob": -11.75,
+            "logprob": -11.875,
             "prob": 0.0
           },
           {
@@ -1059,19 +1099,19 @@
           {
             "token": "Ġi",
             "token_id": 602,
-            "logprob": -12.8125,
+            "logprob": -12.9375,
             "prob": 0.0
           },
           {
             "token": "nelle",
             "token_id": 64829,
-            "logprob": -13.0625,
+            "logprob": -13.0,
             "prob": 0.0
           },
           {
             "token": "и",
             "token_id": 1840,
-            "logprob": -13.1875,
+            "logprob": -13.25,
             "prob": 0.0
           }
         ]
@@ -1084,8 +1124,11 @@
     },
     {
       "step": 10,
-      "input_text": "Qui es-tu?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nJe suis un modèle d'intelligence artifici",
+      "input_text": "<|start_header_id|>user<|end_header_id|>Qui es-tu?<|eot_id|><|start_header_id|>assistant<|end_header_id|>Je suis un modèle d'intelligence artifici",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "Qui",
         "Ġes",
         "-t",
@@ -1095,7 +1138,6 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "Je",
         "Ġsuis",
         "Ġun",
@@ -1108,6 +1150,9 @@
         "i"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         62545,
         1560,
         2442,
@@ -1117,7 +1162,6 @@
         128006,
         78191,
         128007,
-        271,
         30854,
         36731,
         653,
@@ -1163,21 +1207,21 @@
             "prob": 0.0
           },
           {
-            "token": "ellen",
-            "token_id": 16046,
-            "logprob": -13.125,
-            "prob": 0.0
-          },
-          {
             "token": "nelle",
             "token_id": 64829,
             "logprob": -13.125,
             "prob": 0.0
           },
           {
+            "token": "ellen",
+            "token_id": 16046,
+            "logprob": -13.25,
+            "prob": 0.0
+          },
+          {
             "token": "elled",
             "token_id": 15556,
-            "logprob": -13.875,
+            "logprob": -14.0,
             "prob": 0.0
           },
           {
@@ -1189,7 +1233,7 @@
           {
             "token": "elt",
             "token_id": 3903,
-            "logprob": -14.125,
+            "logprob": -14.25,
             "prob": 0.0
           }
         ]
@@ -1202,8 +1246,11 @@
     },
     {
       "step": 11,
-      "input_text": "Qui es-tu?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nJe suis un modèle d'intelligence artificielle",
+      "input_text": "<|start_header_id|>user<|end_header_id|>Qui es-tu?<|eot_id|><|start_header_id|>assistant<|end_header_id|>Je suis un modèle d'intelligence artificielle",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "Qui",
         "Ġes",
         "-t",
@@ -1213,7 +1260,6 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "Je",
         "Ġsuis",
         "Ġun",
@@ -1227,6 +1273,9 @@
         "elle"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         62545,
         1560,
         2442,
@@ -1236,7 +1285,6 @@
         128006,
         78191,
         128007,
-        271,
         30854,
         36731,
         653,
@@ -1255,62 +1303,62 @@
           {
             "token": "Ġconn",
             "token_id": 4635,
-            "logprob": -0.2539,
-            "prob": 0.7773
+            "logprob": -0.2217,
+            "prob": 0.8008
           },
           {
             "token": "Ġcon",
             "token_id": 390,
-            "logprob": -2.0,
-            "prob": 0.1348
+            "logprob": -2.1562,
+            "prob": 0.1152
           },
           {
             "token": "Ġappel",
             "token_id": 76190,
-            "logprob": -3.625,
-            "prob": 0.0265
+            "logprob": -3.7188,
+            "prob": 0.0242
           },
           {
             "token": "Ġnom",
             "token_id": 9859,
-            "logprob": -3.9375,
-            "prob": 0.0194
+            "logprob": -4.0312,
+            "prob": 0.0177
           },
           {
             "token": "Ġnot",
             "token_id": 539,
-            "logprob": -5.0625,
-            "prob": 0.0063
+            "logprob": -5.2812,
+            "prob": 0.0051
           },
           {
             "token": "conn",
             "token_id": 5259,
-            "logprob": -5.875,
-            "prob": 0.0028
-          },
-          {
-            "token": "Ġcapable",
-            "token_id": 13171,
-            "logprob": -6.0,
+            "logprob": -5.9688,
             "prob": 0.0025
           },
           {
             "token": ",",
             "token_id": 11,
-            "logprob": -6.0,
+            "logprob": -5.9688,
             "prob": 0.0025
+          },
+          {
+            "token": "Ġcapable",
+            "token_id": 13171,
+            "logprob": -6.0312,
+            "prob": 0.0024
           },
           {
             "token": ".",
             "token_id": 13,
-            "logprob": -6.1875,
-            "prob": 0.002
+            "logprob": -6.4062,
+            "prob": 0.0016
           },
           {
             "token": "Ġdévelopp",
             "token_id": 68866,
-            "logprob": -6.375,
-            "prob": 0.0017
+            "logprob": -6.4688,
+            "prob": 0.0015
           }
         ]
       },
@@ -1322,8 +1370,11 @@
     },
     {
       "step": 12,
-      "input_text": "Qui es-tu?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nJe suis un modèle d'intelligence artificielle conn",
+      "input_text": "<|start_header_id|>user<|end_header_id|>Qui es-tu?<|eot_id|><|start_header_id|>assistant<|end_header_id|>Je suis un modèle d'intelligence artificielle conn",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "Qui",
         "Ġes",
         "-t",
@@ -1333,7 +1384,6 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "Je",
         "Ġsuis",
         "Ġun",
@@ -1348,6 +1398,9 @@
         "Ġconn"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         62545,
         1560,
         2442,
@@ -1357,7 +1410,6 @@
         128006,
         78191,
         128007,
-        271,
         30854,
         36731,
         653,
@@ -1389,7 +1441,7 @@
           {
             "token": "us",
             "token_id": 355,
-            "logprob": -9.5,
+            "logprob": -9.4375,
             "prob": 0.0001
           },
           {
@@ -1401,7 +1453,13 @@
           {
             "token": "ais",
             "token_id": 2852,
-            "logprob": -10.5,
+            "logprob": -10.3125,
+            "prob": 0.0
+          },
+          {
+            "token": "û",
+            "token_id": 30872,
+            "logprob": -10.75,
             "prob": 0.0
           },
           {
@@ -1411,27 +1469,21 @@
             "prob": 0.0
           },
           {
-            "token": "û",
-            "token_id": 30872,
-            "logprob": -10.875,
-            "prob": 0.0
-          },
-          {
             "token": "ut",
             "token_id": 332,
-            "logprob": -11.1875,
+            "logprob": -11.25,
             "prob": 0.0
           },
           {
             "token": "U",
             "token_id": 52,
-            "logprob": -11.625,
+            "logprob": -11.6875,
             "prob": 0.0
           },
           {
             "token": "uet",
             "token_id": 14127,
-            "logprob": -12.125,
+            "logprob": -12.1875,
             "prob": 0.0
           }
         ]
@@ -1444,8 +1496,11 @@
     },
     {
       "step": 13,
-      "input_text": "Qui es-tu?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nJe suis un modèle d'intelligence artificielle connu",
+      "input_text": "<|start_header_id|>user<|end_header_id|>Qui es-tu?<|eot_id|><|start_header_id|>assistant<|end_header_id|>Je suis un modèle d'intelligence artificielle connu",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "Qui",
         "Ġes",
         "-t",
@@ -1455,7 +1510,6 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "Je",
         "Ġsuis",
         "Ġun",
@@ -1471,6 +1525,9 @@
         "u"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         62545,
         1560,
         2442,
@@ -1480,7 +1537,6 @@
         128006,
         78191,
         128007,
-        271,
         30854,
         36731,
         653,
@@ -1501,19 +1557,19 @@
           {
             "token": "Ġsous",
             "token_id": 32592,
-            "logprob": -0.0017,
+            "logprob": -0.0015,
             "prob": 1.0
           },
           {
             "token": "Ġcomme",
             "token_id": 22299,
-            "logprob": -7.125,
-            "prob": 0.0008
+            "logprob": -7.25,
+            "prob": 0.0007
           },
           {
             "token": "Ġen",
             "token_id": 665,
-            "logprob": -7.8125,
+            "logprob": -7.9375,
             "prob": 0.0004
           },
           {
@@ -1525,7 +1581,7 @@
           {
             "token": "Ġà",
             "token_id": 3869,
-            "logprob": -9.1875,
+            "logprob": -9.25,
             "prob": 0.0001
           },
           {
@@ -1535,27 +1591,27 @@
             "prob": 0.0
           },
           {
+            "token": "Ġdans",
+            "token_id": 7010,
+            "logprob": -10.8125,
+            "prob": 0.0
+          },
+          {
             "token": "Ġau",
             "token_id": 8065,
             "logprob": -10.875,
             "prob": 0.0
           },
           {
-            "token": "Ġdans",
-            "token_id": 7010,
-            "logprob": -10.9375,
+            "token": "Ġpar",
+            "token_id": 1370,
+            "logprob": -12.25,
             "prob": 0.0
           },
           {
             "token": "Ġdu",
             "token_id": 3930,
             "logprob": -12.25,
-            "prob": 0.0
-          },
-          {
-            "token": "Ġpar",
-            "token_id": 1370,
-            "logprob": -12.5,
             "prob": 0.0
           }
         ]
@@ -1568,8 +1624,11 @@
     },
     {
       "step": 14,
-      "input_text": "Qui es-tu?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nJe suis un modèle d'intelligence artificielle connu sous",
+      "input_text": "<|start_header_id|>user<|end_header_id|>Qui es-tu?<|eot_id|><|start_header_id|>assistant<|end_header_id|>Je suis un modèle d'intelligence artificielle connu sous",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "Qui",
         "Ġes",
         "-t",
@@ -1579,7 +1638,6 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "Je",
         "Ġsuis",
         "Ġun",
@@ -1596,6 +1654,9 @@
         "Ġsous"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         62545,
         1560,
         2442,
@@ -1605,7 +1666,6 @@
         128006,
         78191,
         128007,
-        271,
         30854,
         36731,
         653,
@@ -1627,19 +1687,19 @@
           {
             "token": "Ġle",
             "token_id": 514,
-            "logprob": -0.0014,
+            "logprob": -0.0015,
             "prob": 1.0
           },
           {
             "token": "Ġla",
             "token_id": 1208,
-            "logprob": -6.875,
-            "prob": 0.001
+            "logprob": -6.75,
+            "prob": 0.0012
           },
           {
             "token": "Ġles",
             "token_id": 3625,
-            "logprob": -8.625,
+            "logprob": -8.5,
             "prob": 0.0002
           },
           {
@@ -1651,37 +1711,37 @@
           {
             "token": "Ġun",
             "token_id": 653,
-            "logprob": -10.8125,
+            "logprob": -10.6875,
             "prob": 0.0
           },
           {
             "token": "Ġune",
             "token_id": 6316,
-            "logprob": -11.9375,
+            "logprob": -11.8125,
             "prob": 0.0
           },
           {
             "token": "Ġson",
             "token_id": 4538,
-            "logprob": -12.0625,
+            "logprob": -11.875,
             "prob": 0.0
           },
           {
             "token": "Ġforme",
             "token_id": 57128,
-            "logprob": -12.0625,
+            "logprob": -11.9375,
             "prob": 0.0
           },
           {
             "token": "Ġplusieurs",
             "token_id": 51854,
-            "logprob": -12.5,
+            "logprob": -12.3125,
             "prob": 0.0
           },
           {
             "token": "Ġdifférents",
             "token_id": 85114,
-            "logprob": -13.125,
+            "logprob": -13.0,
             "prob": 0.0
           }
         ]
@@ -1694,8 +1754,11 @@
     },
     {
       "step": 15,
-      "input_text": "Qui es-tu?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nJe suis un modèle d'intelligence artificielle connu sous le",
+      "input_text": "<|start_header_id|>user<|end_header_id|>Qui es-tu?<|eot_id|><|start_header_id|>assistant<|end_header_id|>Je suis un modèle d'intelligence artificielle connu sous le",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "Qui",
         "Ġes",
         "-t",
@@ -1705,7 +1768,6 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "Je",
         "Ġsuis",
         "Ġun",
@@ -1723,6 +1785,9 @@
         "Ġle"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         62545,
         1560,
         2442,
@@ -1732,7 +1797,6 @@
         128006,
         78191,
         128007,
-        271,
         30854,
         36731,
         653,
@@ -1755,14 +1819,14 @@
           {
             "token": "Ġnom",
             "token_id": 9859,
-            "logprob": -0.0032,
+            "logprob": -0.0035,
             "prob": 0.9961
           },
           {
             "token": "Ġn",
             "token_id": 308,
-            "logprob": -7.25,
-            "prob": 0.0007
+            "logprob": -7.0625,
+            "prob": 0.0009
           },
           {
             "token": "nom",
@@ -1773,8 +1837,8 @@
           {
             "token": "Ġs",
             "token_id": 274,
-            "logprob": -7.8125,
-            "prob": 0.0004
+            "logprob": -7.6875,
+            "prob": 0.0005
           },
           {
             "token": "Nom",
@@ -1791,26 +1855,26 @@
           {
             "token": "Ġnum",
             "token_id": 1661,
-            "logprob": -9.3125,
+            "logprob": -9.25,
             "prob": 0.0001
           },
           {
             "token": "Ġterme",
             "token_id": 98020,
-            "logprob": -9.5625,
+            "logprob": -9.4375,
             "prob": 0.0001
           },
           {
             "token": "Ġdé",
             "token_id": 7591,
-            "logprob": -9.8125,
+            "logprob": -9.75,
             "prob": 0.0001
           },
           {
             "token": "Ġtitre",
             "token_id": 64160,
-            "logprob": -9.9375,
-            "prob": 0.0
+            "logprob": -9.8125,
+            "prob": 0.0001
           }
         ]
       },
@@ -1822,8 +1886,11 @@
     },
     {
       "step": 16,
-      "input_text": "Qui es-tu?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nJe suis un modèle d'intelligence artificielle connu sous le nom",
+      "input_text": "<|start_header_id|>user<|end_header_id|>Qui es-tu?<|eot_id|><|start_header_id|>assistant<|end_header_id|>Je suis un modèle d'intelligence artificielle connu sous le nom",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "Qui",
         "Ġes",
         "-t",
@@ -1833,7 +1900,6 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "Je",
         "Ġsuis",
         "Ġun",
@@ -1852,6 +1918,9 @@
         "Ġnom"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         62545,
         1560,
         2442,
@@ -1861,7 +1930,6 @@
         128006,
         78191,
         128007,
-        271,
         30854,
         36731,
         653,
@@ -1897,49 +1965,49 @@
           {
             "token": "ĠD",
             "token_id": 423,
-            "logprob": -7.0938,
+            "logprob": -7.1562,
             "prob": 0.0008
           },
           {
             "token": "Ġ\"",
             "token_id": 330,
-            "logprob": -9.25,
+            "logprob": -9.125,
             "prob": 0.0001
           },
           {
             "token": "Ġdu",
             "token_id": 3930,
-            "logprob": -9.5,
+            "logprob": -9.625,
             "prob": 0.0001
           },
           {
             "token": "Ġ'",
             "token_id": 364,
-            "logprob": -9.8125,
+            "logprob": -9.6875,
             "prob": 0.0001
           },
           {
             "token": "ĠDe",
             "token_id": 1611,
-            "logprob": -9.9375,
-            "prob": 0.0
+            "logprob": -9.875,
+            "prob": 0.0001
           },
           {
             "token": "Ġ«",
             "token_id": 12769,
-            "logprob": -10.3125,
+            "logprob": -10.1875,
             "prob": 0.0
           },
           {
             "token": "ĠA",
             "token_id": 362,
-            "logprob": -10.4375,
+            "logprob": -10.1875,
             "prob": 0.0
           },
           {
             "token": "ĠDE",
             "token_id": 3467,
-            "logprob": -10.75,
+            "logprob": -10.8125,
             "prob": 0.0
           }
         ]
@@ -1952,8 +2020,11 @@
     },
     {
       "step": 17,
-      "input_text": "Qui es-tu?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nJe suis un modèle d'intelligence artificielle connu sous le nom de",
+      "input_text": "<|start_header_id|>user<|end_header_id|>Qui es-tu?<|eot_id|><|start_header_id|>assistant<|end_header_id|>Je suis un modèle d'intelligence artificielle connu sous le nom de",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "Qui",
         "Ġes",
         "-t",
@@ -1963,7 +2034,6 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "Je",
         "Ġsuis",
         "Ġun",
@@ -1983,6 +2053,9 @@
         "Ġde"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         62545,
         1560,
         2442,
@@ -1992,7 +2065,6 @@
         128006,
         78191,
         128007,
-        271,
         30854,
         36731,
         653,
@@ -2017,62 +2089,62 @@
           {
             "token": "ĠL",
             "token_id": 445,
-            "logprob": -0.0415,
-            "prob": 0.9609
+            "logprob": -0.0557,
+            "prob": 0.9453
           },
           {
             "token": "ĠLarge",
             "token_id": 20902,
-            "logprob": -4.6562,
-            "prob": 0.0094
+            "logprob": -4.4375,
+            "prob": 0.0119
           },
           {
             "token": "ĠT",
             "token_id": 350,
-            "logprob": -5.5938,
-            "prob": 0.0037
+            "logprob": -5.0,
+            "prob": 0.0068
           },
           {
             "token": "Ġlarge",
             "token_id": 3544,
-            "logprob": -5.6562,
-            "prob": 0.0035
+            "logprob": -5.375,
+            "prob": 0.0047
           },
           {
             "token": "ĠLI",
             "token_id": 7708,
-            "logprob": -6.1562,
-            "prob": 0.0021
+            "logprob": -6.0625,
+            "prob": 0.0023
           },
           {
             "token": "Ġ\"",
             "token_id": 330,
-            "logprob": -6.3438,
-            "prob": 0.0017
+            "logprob": -6.1875,
+            "prob": 0.0021
           },
           {
             "token": "ĠMeta",
             "token_id": 16197,
-            "logprob": -6.9688,
-            "prob": 0.0009
+            "logprob": -6.6875,
+            "prob": 0.0013
           },
           {
-            "token": "ĠLanguage",
-            "token_id": 11688,
-            "logprob": -7.3438,
-            "prob": 0.0006
+            "token": "Ġtransformer",
+            "token_id": 43678,
+            "logprob": -7.1875,
+            "prob": 0.0008
+          },
+          {
+            "token": "ĠTA",
+            "token_id": 39991,
+            "logprob": -7.1875,
+            "prob": 0.0008
           },
           {
             "token": "ĠGL",
             "token_id": 5705,
-            "logprob": -7.4688,
-            "prob": 0.0006
-          },
-          {
-            "token": "Ġchat",
-            "token_id": 6369,
-            "logprob": -7.5312,
-            "prob": 0.0005
+            "logprob": -7.1875,
+            "prob": 0.0008
           }
         ]
       },
@@ -2084,8 +2156,11 @@
     },
     {
       "step": 18,
-      "input_text": "Qui es-tu?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nJe suis un modèle d'intelligence artificielle connu sous le nom de L",
+      "input_text": "<|start_header_id|>user<|end_header_id|>Qui es-tu?<|eot_id|><|start_header_id|>assistant<|end_header_id|>Je suis un modèle d'intelligence artificielle connu sous le nom de L",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "Qui",
         "Ġes",
         "-t",
@@ -2095,7 +2170,6 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "Je",
         "Ġsuis",
         "Ġun",
@@ -2116,6 +2190,9 @@
         "ĠL"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         62545,
         1560,
         2442,
@@ -2125,7 +2202,6 @@
         128006,
         78191,
         128007,
-        271,
         30854,
         36731,
         653,
@@ -2151,60 +2227,60 @@
           {
             "token": "lama",
             "token_id": 81101,
-            "logprob": -0.0481,
-            "prob": 0.9531
-          },
-          {
-            "token": "LM",
-            "token_id": 11237,
-            "logprob": -3.7969,
-            "prob": 0.0225
+            "logprob": -0.0503,
+            "prob": 0.9492
           },
           {
             "token": "La",
             "token_id": 8921,
-            "logprob": -4.0625,
-            "prob": 0.0175
+            "logprob": -3.7969,
+            "prob": 0.0223
+          },
+          {
+            "token": "LM",
+            "token_id": 11237,
+            "logprob": -3.9219,
+            "prob": 0.0198
           },
           {
             "token": "AM",
             "token_id": 1428,
-            "logprob": -5.6875,
-            "prob": 0.0034
+            "logprob": -5.8125,
+            "prob": 0.003
           },
           {
             "token": "lam",
             "token_id": 24705,
-            "logprob": -6.4375,
-            "prob": 0.0016
+            "logprob": -6.375,
+            "prob": 0.0017
           },
           {
             "token": "LA",
             "token_id": 18326,
-            "logprob": -7.4375,
-            "prob": 0.0006
-          },
-          {
-            "token": "AMA",
-            "token_id": 39200,
-            "logprob": -8.9375,
-            "prob": 0.0001
+            "logprob": -7.3125,
+            "prob": 0.0007
           },
           {
             "token": "AMP",
             "token_id": 16407,
-            "logprob": -9.0,
+            "logprob": -8.8125,
+            "prob": 0.0002
+          },
+          {
+            "token": "ĠLa",
+            "token_id": 5034,
+            "logprob": -8.9375,
+            "prob": 0.0001
+          },
+          {
+            "token": "AMA",
+            "token_id": 39200,
+            "logprob": -9.0625,
             "prob": 0.0001
           },
           {
             "token": "L",
             "token_id": 43,
-            "logprob": -9.25,
-            "prob": 0.0001
-          },
-          {
-            "token": "ĠLa",
-            "token_id": 5034,
             "logprob": -9.25,
             "prob": 0.0001
           }
@@ -2218,8 +2294,11 @@
     },
     {
       "step": 19,
-      "input_text": "Qui es-tu?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nJe suis un modèle d'intelligence artificielle connu sous le nom de Llama",
+      "input_text": "<|start_header_id|>user<|end_header_id|>Qui es-tu?<|eot_id|><|start_header_id|>assistant<|end_header_id|>Je suis un modèle d'intelligence artificielle connu sous le nom de Llama",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "Qui",
         "Ġes",
         "-t",
@@ -2229,7 +2308,6 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "Je",
         "Ġsuis",
         "Ġun",
@@ -2251,6 +2329,9 @@
         "lama"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         62545,
         1560,
         2442,
@@ -2260,7 +2341,6 @@
         128006,
         78191,
         128007,
-        271,
         30854,
         36731,
         653,
@@ -2287,31 +2367,31 @@
           {
             "token": ".",
             "token_id": 13,
-            "logprob": -0.0001,
+            "logprob": -0.0002,
             "prob": 1.0
           },
           {
             "token": "Ġ(",
             "token_id": 320,
-            "logprob": -8.875,
-            "prob": 0.0001
+            "logprob": -8.375,
+            "prob": 0.0002
           },
           {
             "token": "Ġ.",
             "token_id": 662,
-            "logprob": -14.5625,
+            "logprob": -14.25,
             "prob": 0.0
           },
           {
             "token": ").",
             "token_id": 570,
-            "logprob": -15.4375,
+            "logprob": -15.375,
             "prob": 0.0
           },
           {
             "token": ".\"",
             "token_id": 1210,
-            "logprob": -15.6875,
+            "logprob": -15.5625,
             "prob": 0.0
           },
           {
@@ -2321,27 +2401,27 @@
             "prob": 0.0
           },
           {
-            "token": "।",
-            "token_id": 100278,
-            "logprob": -16.5,
+            "token": ",",
+            "token_id": 11,
+            "logprob": -16.375,
             "prob": 0.0
           },
           {
-            "token": ",",
-            "token_id": 11,
-            "logprob": -16.5,
+            "token": "।",
+            "token_id": 100278,
+            "logprob": -16.375,
             "prob": 0.0
           },
           {
             "token": ".(",
             "token_id": 13127,
-            "logprob": -16.75,
+            "logprob": -16.5,
             "prob": 0.0
           },
           {
             "token": "Ġ।",
             "token_id": 102414,
-            "logprob": -16.875,
+            "logprob": -16.75,
             "prob": 0.0
           }
         ]
@@ -2354,8 +2434,11 @@
     },
     {
       "step": 20,
-      "input_text": "Qui es-tu?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nJe suis un modèle d'intelligence artificielle connu sous le nom de Llama.",
+      "input_text": "<|start_header_id|>user<|end_header_id|>Qui es-tu?<|eot_id|><|start_header_id|>assistant<|end_header_id|>Je suis un modèle d'intelligence artificielle connu sous le nom de Llama.",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "Qui",
         "Ġes",
         "-t",
@@ -2365,7 +2448,6 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "Je",
         "Ġsuis",
         "Ġun",
@@ -2388,6 +2470,9 @@
         "."
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         62545,
         1560,
         2442,
@@ -2397,7 +2482,6 @@
         128006,
         78191,
         128007,
-        271,
         30854,
         36731,
         653,
@@ -2431,55 +2515,55 @@
           {
             "token": "L",
             "token_id": 43,
-            "logprob": -11.0,
+            "logprob": -10.875,
             "prob": 0.0
           },
           {
             "token": "<|eot_id|>",
             "token_id": 128009,
-            "logprob": -11.5625,
+            "logprob": -11.4375,
             "prob": 0.0
           },
           {
             "token": "ĠLM",
             "token_id": 47514,
-            "logprob": -11.8125,
+            "logprob": -11.625,
             "prob": 0.0
           },
           {
             "token": "ĠLe",
             "token_id": 2009,
-            "logprob": -12.3125,
-            "prob": 0.0
-          },
-          {
-            "token": "Ġllama",
-            "token_id": 94776,
-            "logprob": -12.5,
+            "logprob": -12.125,
             "prob": 0.0
           },
           {
             "token": "ĠMLM",
             "token_id": 91282,
-            "logprob": -12.5625,
+            "logprob": -12.1875,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġllama",
+            "token_id": 94776,
+            "logprob": -12.1875,
             "prob": 0.0
           },
           {
             "token": "ĠLLC",
             "token_id": 15620,
-            "logprob": -12.625,
-            "prob": 0.0
-          },
-          {
-            "token": "ĠLama",
-            "token_id": 83659,
-            "logprob": -12.6875,
+            "logprob": -12.375,
             "prob": 0.0
           },
           {
             "token": "lama",
             "token_id": 81101,
-            "logprob": -12.75,
+            "logprob": -12.4375,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠLama",
+            "token_id": 83659,
+            "logprob": -12.5,
             "prob": 0.0
           }
         ]
@@ -2492,8 +2576,11 @@
     },
     {
       "step": 21,
-      "input_text": "Qui es-tu?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nJe suis un modèle d'intelligence artificielle connu sous le nom de Llama. L",
+      "input_text": "<|start_header_id|>user<|end_header_id|>Qui es-tu?<|eot_id|><|start_header_id|>assistant<|end_header_id|>Je suis un modèle d'intelligence artificielle connu sous le nom de Llama. L",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "Qui",
         "Ġes",
         "-t",
@@ -2503,7 +2590,6 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "Je",
         "Ġsuis",
         "Ġun",
@@ -2527,6 +2613,9 @@
         "ĠL"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         62545,
         1560,
         2442,
@@ -2536,7 +2625,6 @@
         128006,
         78191,
         128007,
-        271,
         30854,
         36731,
         653,
@@ -2565,26 +2653,26 @@
           {
             "token": "lama",
             "token_id": 81101,
-            "logprob": -0.0121,
+            "logprob": -0.0131,
             "prob": 0.9883
-          },
-          {
-            "token": "Ġllama",
-            "token_id": 94776,
-            "logprob": -6.375,
-            "prob": 0.0017
           },
           {
             "token": "LM",
             "token_id": 11237,
-            "logprob": -6.375,
-            "prob": 0.0017
+            "logprob": -6.25,
+            "prob": 0.0019
+          },
+          {
+            "token": "Ġllama",
+            "token_id": 94776,
+            "logprob": -6.5,
+            "prob": 0.0015
           },
           {
             "token": "lla",
             "token_id": 36882,
-            "logprob": -6.5625,
-            "prob": 0.0014
+            "logprob": -6.6875,
+            "prob": 0.0012
           },
           {
             "token": "mma",
@@ -2595,31 +2683,31 @@
           {
             "token": "ĠLama",
             "token_id": 83659,
-            "logprob": -7.125,
+            "logprob": -7.0625,
             "prob": 0.0008
           },
           {
             "token": "ĠAAA",
             "token_id": 48197,
-            "logprob": -8.0,
-            "prob": 0.0003
+            "logprob": -7.8125,
+            "prob": 0.0004
           },
           {
             "token": "AMA",
             "token_id": 39200,
-            "logprob": -8.0,
-            "prob": 0.0003
-          },
-          {
-            "token": "lam",
-            "token_id": 24705,
-            "logprob": -8.1875,
-            "prob": 0.0003
+            "logprob": -7.875,
+            "prob": 0.0004
           },
           {
             "token": "illa",
             "token_id": 6374,
-            "logprob": -8.375,
+            "logprob": -8.1875,
+            "prob": 0.0003
+          },
+          {
+            "token": "'",
+            "token_id": 6,
+            "logprob": -8.3125,
             "prob": 0.0002
           }
         ]
@@ -2632,8 +2720,11 @@
     },
     {
       "step": 22,
-      "input_text": "Qui es-tu?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nJe suis un modèle d'intelligence artificielle connu sous le nom de Llama. Llama",
+      "input_text": "<|start_header_id|>user<|end_header_id|>Qui es-tu?<|eot_id|><|start_header_id|>assistant<|end_header_id|>Je suis un modèle d'intelligence artificielle connu sous le nom de Llama. Llama",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "Qui",
         "Ġes",
         "-t",
@@ -2643,7 +2734,6 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "Je",
         "Ġsuis",
         "Ġun",
@@ -2668,6 +2758,9 @@
         "lama"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         62545,
         1560,
         2442,
@@ -2677,7 +2770,6 @@
         128006,
         78191,
         128007,
-        271,
         30854,
         36731,
         653,
@@ -2707,61 +2799,61 @@
           {
             "token": "Ġest",
             "token_id": 1826,
-            "logprob": -0.0069,
-            "prob": 0.9922
+            "logprob": -0.0098,
+            "prob": 0.9883
           },
           {
             "token": "Ġét",
             "token_id": 14240,
-            "logprob": -6.125,
-            "prob": 0.0022
+            "logprob": -5.8125,
+            "prob": 0.003
           },
           {
             "token": "Ġstand",
             "token_id": 2559,
-            "logprob": -6.6875,
-            "prob": 0.0012
+            "logprob": -6.375,
+            "prob": 0.0017
           },
           {
             "token": "Ġstanding",
             "token_id": 11509,
-            "logprob": -6.9375,
-            "prob": 0.001
+            "logprob": -6.625,
+            "prob": 0.0013
           },
           {
             "token": "Ġstands",
             "token_id": 13656,
-            "logprob": -7.6875,
-            "prob": 0.0005
+            "logprob": -7.375,
+            "prob": 0.0006
           },
           {
             "token": "Ġreprés",
             "token_id": 71925,
-            "logprob": -8.3125,
-            "prob": 0.0002
+            "logprob": -7.875,
+            "prob": 0.0004
           },
           {
             "token": "Ġvous",
             "token_id": 9189,
-            "logprob": -8.8125,
-            "prob": 0.0001
+            "logprob": -8.3125,
+            "prob": 0.0002
           },
           {
             "token": "Ġs",
             "token_id": 274,
-            "logprob": -8.875,
-            "prob": 0.0001
+            "logprob": -8.5,
+            "prob": 0.0002
           },
           {
             "token": "Ġvient",
             "token_id": 86100,
-            "logprob": -9.125,
-            "prob": 0.0001
+            "logprob": -8.5625,
+            "prob": 0.0002
           },
           {
-            "token": "Ġé",
-            "token_id": 4046,
-            "logprob": -9.625,
+            "token": "Ġentra",
+            "token_id": 83786,
+            "logprob": -9.0,
             "prob": 0.0001
           }
         ]
@@ -2774,8 +2866,11 @@
     },
     {
       "step": 23,
-      "input_text": "Qui es-tu?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nJe suis un modèle d'intelligence artificielle connu sous le nom de Llama. Llama est",
+      "input_text": "<|start_header_id|>user<|end_header_id|>Qui es-tu?<|eot_id|><|start_header_id|>assistant<|end_header_id|>Je suis un modèle d'intelligence artificielle connu sous le nom de Llama. Llama est",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "Qui",
         "Ġes",
         "-t",
@@ -2785,7 +2880,6 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "Je",
         "Ġsuis",
         "Ġun",
@@ -2811,6 +2905,9 @@
         "Ġest"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         62545,
         1560,
         2442,
@@ -2820,7 +2917,6 @@
         128006,
         78191,
         128007,
-        271,
         30854,
         36731,
         653,
@@ -2863,49 +2959,49 @@
           {
             "token": "Ġun",
             "token_id": 653,
-            "logprob": -8.5,
+            "logprob": -8.625,
             "prob": 0.0002
-          },
-          {
-            "token": "Ġla",
-            "token_id": 1208,
-            "logprob": -10.5625,
-            "prob": 0.0
           },
           {
             "token": "Ġà",
             "token_id": 3869,
+            "logprob": -10.375,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġla",
+            "token_id": 1208,
             "logprob": -10.625,
             "prob": 0.0
           },
           {
             "token": "Ġles",
             "token_id": 3625,
-            "logprob": -10.875,
+            "logprob": -10.8125,
             "prob": 0.0
           },
           {
             "token": "Ġune",
             "token_id": 6316,
-            "logprob": -11.1875,
+            "logprob": -11.25,
             "prob": 0.0
           },
           {
             "token": "l",
             "token_id": 75,
-            "logprob": -13.3125,
+            "logprob": -13.1875,
             "prob": 0.0
           },
           {
             "token": "Ġlui",
             "token_id": 25400,
-            "logprob": -13.625,
+            "logprob": -13.6875,
             "prob": 0.0
           },
           {
-            "token": "Ġc",
-            "token_id": 272,
-            "logprob": -14.1875,
+            "token": "ĠL",
+            "token_id": 445,
+            "logprob": -14.125,
             "prob": 0.0
           }
         ]
@@ -2918,8 +3014,11 @@
     },
     {
       "step": 24,
-      "input_text": "Qui es-tu?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nJe suis un modèle d'intelligence artificielle connu sous le nom de Llama. Llama est l",
+      "input_text": "<|start_header_id|>user<|end_header_id|>Qui es-tu?<|eot_id|><|start_header_id|>assistant<|end_header_id|>Je suis un modèle d'intelligence artificielle connu sous le nom de Llama. Llama est l",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "Qui",
         "Ġes",
         "-t",
@@ -2929,7 +3028,6 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "Je",
         "Ġsuis",
         "Ġun",
@@ -2956,6 +3054,9 @@
         "Ġl"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         62545,
         1560,
         2442,
@@ -2965,7 +3066,6 @@
         128006,
         78191,
         128007,
-        271,
         30854,
         36731,
         653,
@@ -2997,25 +3097,25 @@
           {
             "token": "'",
             "token_id": 6,
-            "logprob": -0.0019,
-            "prob": 1.0
+            "logprob": -0.0021,
+            "prob": 0.9961
           },
           {
             "token": "'A",
             "token_id": 52374,
-            "logprob": -7.75,
+            "logprob": -7.625,
+            "prob": 0.0005
+          },
+          {
+            "token": "’",
+            "token_id": 529,
+            "logprob": -7.875,
             "prob": 0.0004
           },
           {
             "token": "'é",
             "token_id": 31769,
             "logprob": -8.0,
-            "prob": 0.0003
-          },
-          {
-            "token": "’",
-            "token_id": 529,
-            "logprob": -8.125,
             "prob": 0.0003
           },
           {
@@ -3033,7 +3133,7 @@
           {
             "token": "'av",
             "token_id": 49152,
-            "logprob": -9.25,
+            "logprob": -9.375,
             "prob": 0.0001
           },
           {
@@ -3045,7 +3145,7 @@
           {
             "token": "'acc",
             "token_id": 69537,
-            "logprob": -9.75,
+            "logprob": -9.625,
             "prob": 0.0001
           },
           {
@@ -3064,8 +3164,11 @@
     },
     {
       "step": 25,
-      "input_text": "Qui es-tu?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nJe suis un modèle d'intelligence artificielle connu sous le nom de Llama. Llama est l'",
+      "input_text": "<|start_header_id|>user<|end_header_id|>Qui es-tu?<|eot_id|><|start_header_id|>assistant<|end_header_id|>Je suis un modèle d'intelligence artificielle connu sous le nom de Llama. Llama est l'",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "Qui",
         "Ġes",
         "-t",
@@ -3075,7 +3178,6 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "Je",
         "Ġsuis",
         "Ġun",
@@ -3103,6 +3205,9 @@
         "'"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         62545,
         1560,
         2442,
@@ -3112,7 +3217,6 @@
         128006,
         78191,
         128007,
-        271,
         30854,
         36731,
         653,
@@ -3145,7 +3249,7 @@
           {
             "token": "ab",
             "token_id": 370,
-            "logprob": -0.0408,
+            "logprob": -0.0388,
             "prob": 0.9609
           },
           {
@@ -3157,14 +3261,14 @@
           {
             "token": "abr",
             "token_id": 78671,
-            "logprob": -4.9062,
-            "prob": 0.0073
+            "logprob": -5.0312,
+            "prob": 0.0065
           },
           {
             "token": "abb",
             "token_id": 12806,
-            "logprob": -5.6562,
-            "prob": 0.0035
+            "logprob": -5.7812,
+            "prob": 0.0031
           },
           {
             "token": "abstract",
@@ -3181,14 +3285,8 @@
           {
             "token": "abs",
             "token_id": 3518,
-            "logprob": -6.5312,
-            "prob": 0.0014
-          },
-          {
-            "token": "abra",
-            "token_id": 45032,
-            "logprob": -6.7812,
-            "prob": 0.0011
+            "logprob": -6.6562,
+            "prob": 0.0013
           },
           {
             "token": "acad",
@@ -3197,10 +3295,16 @@
             "prob": 0.0011
           },
           {
+            "token": "abra",
+            "token_id": 45032,
+            "logprob": -6.9062,
+            "prob": 0.001
+          },
+          {
             "token": "Ġabstraction",
             "token_id": 59851,
-            "logprob": -7.0312,
-            "prob": 0.0009
+            "logprob": -7.1562,
+            "prob": 0.0008
           }
         ]
       },
@@ -3212,8 +3316,11 @@
     },
     {
       "step": 26,
-      "input_text": "Qui es-tu?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nJe suis un modèle d'intelligence artificielle connu sous le nom de Llama. Llama est l'ab",
+      "input_text": "<|start_header_id|>user<|end_header_id|>Qui es-tu?<|eot_id|><|start_header_id|>assistant<|end_header_id|>Je suis un modèle d'intelligence artificielle connu sous le nom de Llama. Llama est l'ab",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "Qui",
         "Ġes",
         "-t",
@@ -3223,7 +3330,6 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "Je",
         "Ġsuis",
         "Ġun",
@@ -3252,6 +3358,9 @@
         "ab"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         62545,
         1560,
         2442,
@@ -3261,7 +3370,6 @@
         128006,
         78191,
         128007,
-        271,
         30854,
         36731,
         653,
@@ -3295,20 +3403,20 @@
           {
             "token": "ré",
             "token_id": 43711,
-            "logprob": -0.0194,
+            "logprob": -0.0182,
             "prob": 0.9805
           },
           {
             "token": "rev",
             "token_id": 7430,
             "logprob": -4.4062,
-            "prob": 0.0123
+            "prob": 0.0124
           },
           {
             "token": "r",
             "token_id": 81,
-            "logprob": -5.2812,
-            "prob": 0.0052
+            "logprob": -5.5312,
+            "prob": 0.004
           },
           {
             "token": "riv",
@@ -3337,13 +3445,13 @@
           {
             "token": "én",
             "token_id": 10610,
-            "logprob": -10.0625,
+            "logprob": -10.0,
             "prob": 0.0
           },
           {
             "token": "él",
             "token_id": 19010,
-            "logprob": -10.3125,
+            "logprob": -10.25,
             "prob": 0.0
           },
           {
@@ -3362,8 +3470,11 @@
     },
     {
       "step": 27,
-      "input_text": "Qui es-tu?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nJe suis un modèle d'intelligence artificielle connu sous le nom de Llama. Llama est l'abré",
+      "input_text": "<|start_header_id|>user<|end_header_id|>Qui es-tu?<|eot_id|><|start_header_id|>assistant<|end_header_id|>Je suis un modèle d'intelligence artificielle connu sous le nom de Llama. Llama est l'abré",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "Qui",
         "Ġes",
         "-t",
@@ -3373,7 +3484,6 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "Je",
         "Ġsuis",
         "Ġun",
@@ -3403,6 +3513,9 @@
         "ré"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         62545,
         1560,
         2442,
@@ -3412,7 +3525,6 @@
         128006,
         78191,
         128007,
-        271,
         30854,
         36731,
         653,
@@ -3447,26 +3559,26 @@
           {
             "token": "v",
             "token_id": 85,
-            "logprob": -0.0064,
-            "prob": 0.9922
+            "logprob": -0.0057,
+            "prob": 0.9961
           },
           {
             "token": "vie",
             "token_id": 64519,
-            "logprob": -6.625,
-            "prob": 0.0013
+            "logprob": -6.875,
+            "prob": 0.001
           },
           {
             "token": "vit",
             "token_id": 55911,
-            "logprob": -6.75,
-            "prob": 0.0012
+            "logprob": -6.875,
+            "prob": 0.001
           },
           {
             "token": "vier",
             "token_id": 47816,
-            "logprob": -6.875,
-            "prob": 0.001
+            "logprob": -7.0,
+            "prob": 0.0009
           },
           {
             "token": "vi",
@@ -3477,7 +3589,7 @@
           {
             "token": "van",
             "token_id": 16023,
-            "logprob": -8.5,
+            "logprob": -8.5625,
             "prob": 0.0002
           },
           {
@@ -3489,20 +3601,20 @@
           {
             "token": "vé",
             "token_id": 52274,
-            "logprob": -8.75,
-            "prob": 0.0002
-          },
-          {
-            "token": "vik",
-            "token_id": 44181,
-            "logprob": -8.75,
-            "prob": 0.0002
+            "logprob": -8.8125,
+            "prob": 0.0001
           },
           {
             "token": "vis",
             "token_id": 2749,
-            "logprob": -8.75,
-            "prob": 0.0002
+            "logprob": -8.875,
+            "prob": 0.0001
+          },
+          {
+            "token": "vik",
+            "token_id": 44181,
+            "logprob": -8.875,
+            "prob": 0.0001
           }
         ]
       },
@@ -3514,8 +3626,11 @@
     },
     {
       "step": 28,
-      "input_text": "Qui es-tu?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nJe suis un modèle d'intelligence artificielle connu sous le nom de Llama. Llama est l'abrév",
+      "input_text": "<|start_header_id|>user<|end_header_id|>Qui es-tu?<|eot_id|><|start_header_id|>assistant<|end_header_id|>Je suis un modèle d'intelligence artificielle connu sous le nom de Llama. Llama est l'abrév",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "Qui",
         "Ġes",
         "-t",
@@ -3525,7 +3640,6 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "Je",
         "Ġsuis",
         "Ġun",
@@ -3556,6 +3670,9 @@
         "v"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         62545,
         1560,
         2442,
@@ -3565,7 +3682,6 @@
         128006,
         78191,
         128007,
-        271,
         30854,
         36731,
         653,
@@ -3601,7 +3717,7 @@
           {
             "token": "iation",
             "token_id": 7246,
-            "logprob": -0.0013,
+            "logprob": -0.0014,
             "prob": 1.0
           },
           {
@@ -3613,48 +3729,48 @@
           {
             "token": "iat",
             "token_id": 10574,
-            "logprob": -8.375,
-            "prob": 0.0002
+            "logprob": -8.25,
+            "prob": 0.0003
           },
           {
             "token": "ium",
             "token_id": 2411,
-            "logprob": -10.25,
+            "logprob": -10.1875,
             "prob": 0.0
           },
           {
             "token": "iant",
             "token_id": 5485,
+            "logprob": -10.3125,
+            "prob": 0.0
+          },
+          {
+            "token": "ation",
+            "token_id": 367,
             "logprob": -10.375,
             "prob": 0.0
           },
           {
             "token": "iated",
             "token_id": 10234,
-            "logprob": -10.5,
-            "prob": 0.0
-          },
-          {
-            "token": "ation",
-            "token_id": 367,
-            "logprob": -10.6875,
+            "logprob": -10.4375,
             "prob": 0.0
           },
           {
             "token": "ien",
             "token_id": 3675,
-            "logprob": -10.8125,
+            "logprob": -10.875,
             "prob": 0.0
           },
           {
             "token": "iative",
             "token_id": 54679,
-            "logprob": -10.875,
+            "logprob": -11.0,
             "prob": 0.0
           },
           {
-            "token": "iale",
-            "token_id": 20487,
+            "token": "iations",
+            "token_id": 17583,
             "logprob": -11.125,
             "prob": 0.0
           }
@@ -3668,8 +3784,11 @@
     },
     {
       "step": 29,
-      "input_text": "Qui es-tu?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nJe suis un modèle d'intelligence artificielle connu sous le nom de Llama. Llama est l'abréviation",
+      "input_text": "<|start_header_id|>user<|end_header_id|>Qui es-tu?<|eot_id|><|start_header_id|>assistant<|end_header_id|>Je suis un modèle d'intelligence artificielle connu sous le nom de Llama. Llama est l'abréviation",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "Qui",
         "Ġes",
         "-t",
@@ -3679,7 +3798,6 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "Je",
         "Ġsuis",
         "Ġun",
@@ -3711,6 +3829,9 @@
         "iation"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         62545,
         1560,
         2442,
@@ -3720,7 +3841,6 @@
         128006,
         78191,
         128007,
-        271,
         30854,
         36731,
         653,
@@ -3757,26 +3877,26 @@
           {
             "token": "Ġde",
             "token_id": 409,
-            "logprob": -0.0068,
+            "logprob": -0.0078,
             "prob": 0.9922
           },
           {
             "token": "Ġd",
             "token_id": 294,
-            "logprob": -5.5,
-            "prob": 0.0041
+            "logprob": -5.375,
+            "prob": 0.0046
           },
           {
             "token": "Ġdu",
             "token_id": 3930,
-            "logprob": -6.125,
-            "prob": 0.0022
+            "logprob": -6.0,
+            "prob": 0.0025
           },
           {
             "token": "Ġpour",
             "token_id": 5019,
-            "logprob": -7.8125,
-            "prob": 0.0004
+            "logprob": -7.625,
+            "prob": 0.0005
           },
           {
             "token": "de",
@@ -3787,31 +3907,31 @@
           {
             "token": "Ġdé",
             "token_id": 7591,
-            "logprob": -10.4375,
+            "logprob": -10.3125,
             "prob": 0.0
           },
           {
             "token": "Ġdes",
             "token_id": 951,
-            "logprob": -11.125,
+            "logprob": -10.9375,
             "prob": 0.0
           },
           {
             "token": "Ġdés",
             "token_id": 46838,
-            "logprob": -12.9375,
-            "prob": 0.0
-          },
-          {
-            "token": "ĠD",
-            "token_id": 423,
-            "logprob": -13.125,
+            "logprob": -12.6875,
             "prob": 0.0
           },
           {
             "token": "Ġlitt",
             "token_id": 60642,
-            "logprob": -13.125,
+            "logprob": -12.9375,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġqui",
+            "token_id": 7930,
+            "logprob": -13.0,
             "prob": 0.0
           }
         ]
@@ -3824,8 +3944,11 @@
     },
     {
       "step": 30,
-      "input_text": "Qui es-tu?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nJe suis un modèle d'intelligence artificielle connu sous le nom de Llama. Llama est l'abréviation de",
+      "input_text": "<|start_header_id|>user<|end_header_id|>Qui es-tu?<|eot_id|><|start_header_id|>assistant<|end_header_id|>Je suis un modèle d'intelligence artificielle connu sous le nom de Llama. Llama est l'abréviation de",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "Qui",
         "Ġes",
         "-t",
@@ -3835,7 +3958,6 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "Je",
         "Ġsuis",
         "Ġun",
@@ -3868,6 +3990,9 @@
         "Ġde"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         62545,
         1560,
         2442,
@@ -3877,7 +4002,6 @@
         128006,
         78191,
         128007,
-        271,
         30854,
         36731,
         653,
@@ -3915,61 +4039,61 @@
           {
             "token": "Ġ\"",
             "token_id": 330,
-            "logprob": -0.0005,
+            "logprob": -0.0006,
             "prob": 1.0
           },
           {
             "token": "Ġ«",
             "token_id": 12769,
-            "logprob": -7.875,
+            "logprob": -7.75,
             "prob": 0.0004
           },
           {
             "token": "Ġ**",
             "token_id": 3146,
-            "logprob": -9.625,
+            "logprob": -9.375,
             "prob": 0.0001
           },
           {
             "token": "Ġ\"**",
             "token_id": 69061,
-            "logprob": -11.5,
+            "logprob": -11.375,
             "prob": 0.0
           },
           {
             "token": "Ġ`",
             "token_id": 1595,
-            "logprob": -12.375,
+            "logprob": -12.25,
             "prob": 0.0
           },
           {
             "token": "Ġ„",
             "token_id": 15179,
-            "logprob": -12.875,
+            "logprob": -12.5,
             "prob": 0.0
           },
           {
             "token": "「",
             "token_id": 13177,
-            "logprob": -13.25,
+            "logprob": -13.0,
             "prob": 0.0
           },
           {
             "token": "Ġ“",
             "token_id": 1054,
-            "logprob": -13.5,
+            "logprob": -13.125,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠL",
+            "token_id": 445,
+            "logprob": -13.3125,
             "prob": 0.0
           },
           {
             "token": "\"",
             "token_id": 1,
-            "logprob": -13.5,
-            "prob": 0.0
-          },
-          {
-            "token": "Ġ'",
-            "token_id": 364,
-            "logprob": -13.5625,
+            "logprob": -13.375,
             "prob": 0.0
           }
         ]
@@ -3982,8 +4106,11 @@
     },
     {
       "step": 31,
-      "input_text": "Qui es-tu?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nJe suis un modèle d'intelligence artificielle connu sous le nom de Llama. Llama est l'abréviation de \"",
+      "input_text": "<|start_header_id|>user<|end_header_id|>Qui es-tu?<|eot_id|><|start_header_id|>assistant<|end_header_id|>Je suis un modèle d'intelligence artificielle connu sous le nom de Llama. Llama est l'abréviation de \"",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "Qui",
         "Ġes",
         "-t",
@@ -3993,7 +4120,6 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "Je",
         "Ġsuis",
         "Ġun",
@@ -4027,6 +4153,9 @@
         "Ġ\""
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         62545,
         1560,
         2442,
@@ -4036,7 +4165,6 @@
         128006,
         78191,
         128007,
-        271,
         30854,
         36731,
         653,
@@ -4075,20 +4203,20 @@
           {
             "token": "Large",
             "token_id": 35353,
-            "logprob": -0.0059,
-            "prob": 0.9961
+            "logprob": -0.0064,
+            "prob": 0.9922
           },
           {
             "token": "ĠLarge",
             "token_id": 20902,
-            "logprob": -6.0,
-            "prob": 0.0025
+            "logprob": -5.875,
+            "prob": 0.0028
           },
           {
             "token": "Lang",
             "token_id": 27317,
-            "logprob": -6.375,
-            "prob": 0.0017
+            "logprob": -6.25,
+            "prob": 0.0019
           },
           {
             "token": "ĠLARGE",
@@ -4097,14 +4225,14 @@
             "prob": 0.0007
           },
           {
-            "token": "Ġlarge",
-            "token_id": 3544,
-            "logprob": -8.5,
+            "token": "Big",
+            "token_id": 16010,
+            "logprob": -8.375,
             "prob": 0.0002
           },
           {
-            "token": "Big",
-            "token_id": 16010,
+            "token": "Ġlarge",
+            "token_id": 3544,
             "logprob": -8.5,
             "prob": 0.0002
           },
@@ -4142,8 +4270,11 @@
     },
     {
       "step": 32,
-      "input_text": "Qui es-tu?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nJe suis un modèle d'intelligence artificielle connu sous le nom de Llama. Llama est l'abréviation de \"Large",
+      "input_text": "<|start_header_id|>user<|end_header_id|>Qui es-tu?<|eot_id|><|start_header_id|>assistant<|end_header_id|>Je suis un modèle d'intelligence artificielle connu sous le nom de Llama. Llama est l'abréviation de \"Large",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "Qui",
         "Ġes",
         "-t",
@@ -4153,7 +4284,6 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "Je",
         "Ġsuis",
         "Ġun",
@@ -4188,6 +4318,9 @@
         "Large"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         62545,
         1560,
         2442,
@@ -4197,7 +4330,6 @@
         128006,
         78191,
         128007,
-        271,
         30854,
         36731,
         653,
@@ -4237,14 +4369,14 @@
           {
             "token": "ĠLanguage",
             "token_id": 11688,
-            "logprob": -0.0027,
+            "logprob": -0.003,
             "prob": 0.9961
           },
           {
             "token": "ĠLang",
             "token_id": 23272,
-            "logprob": -6.25,
-            "prob": 0.0019
+            "logprob": -6.125,
+            "prob": 0.0022
           },
           {
             "token": "Ġlanguage",
@@ -4253,21 +4385,21 @@
             "prob": 0.0004
           },
           {
+            "token": "Language",
+            "token_id": 14126,
+            "logprob": -8.75,
+            "prob": 0.0002
+          },
+          {
             "token": "ĠLANGUAGE",
             "token_id": 35900,
             "logprob": -8.875,
             "prob": 0.0001
           },
           {
-            "token": "Language",
-            "token_id": 14126,
-            "logprob": -8.875,
-            "prob": 0.0001
-          },
-          {
             "token": "-Language",
             "token_id": 91865,
-            "logprob": -9.625,
+            "logprob": -9.5,
             "prob": 0.0001
           },
           {
@@ -4279,7 +4411,7 @@
           {
             "token": "_language",
             "token_id": 30121,
-            "logprob": -12.0,
+            "logprob": -11.875,
             "prob": 0.0
           },
           {
@@ -4291,7 +4423,7 @@
           {
             "token": "ĠModel",
             "token_id": 5008,
-            "logprob": -12.5625,
+            "logprob": -12.5,
             "prob": 0.0
           }
         ]
@@ -4304,8 +4436,11 @@
     },
     {
       "step": 33,
-      "input_text": "Qui es-tu?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nJe suis un modèle d'intelligence artificielle connu sous le nom de Llama. Llama est l'abréviation de \"Large Language",
+      "input_text": "<|start_header_id|>user<|end_header_id|>Qui es-tu?<|eot_id|><|start_header_id|>assistant<|end_header_id|>Je suis un modèle d'intelligence artificielle connu sous le nom de Llama. Llama est l'abréviation de \"Large Language",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "Qui",
         "Ġes",
         "-t",
@@ -4315,7 +4450,6 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "Je",
         "Ġsuis",
         "Ġun",
@@ -4351,6 +4485,9 @@
         "ĠLanguage"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         62545,
         1560,
         2442,
@@ -4360,7 +4497,6 @@
         128006,
         78191,
         128007,
-        271,
         30854,
         36731,
         653,
@@ -4407,7 +4543,7 @@
           {
             "token": "ĠModels",
             "token_id": 27972,
-            "logprob": -9.625,
+            "logprob": -9.5,
             "prob": 0.0001
           },
           {
@@ -4425,7 +4561,7 @@
           {
             "token": "ĠMod",
             "token_id": 5768,
-            "logprob": -11.5,
+            "logprob": -11.375,
             "prob": 0.0
           },
           {
@@ -4437,7 +4573,7 @@
           {
             "token": "ĠModeling",
             "token_id": 77349,
-            "logprob": -11.875,
+            "logprob": -11.75,
             "prob": 0.0
           },
           {
@@ -4468,8 +4604,11 @@
     },
     {
       "step": 34,
-      "input_text": "Qui es-tu?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nJe suis un modèle d'intelligence artificielle connu sous le nom de Llama. Llama est l'abréviation de \"Large Language Model",
+      "input_text": "<|start_header_id|>user<|end_header_id|>Qui es-tu?<|eot_id|><|start_header_id|>assistant<|end_header_id|>Je suis un modèle d'intelligence artificielle connu sous le nom de Llama. Llama est l'abréviation de \"Large Language Model",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "Qui",
         "Ġes",
         "-t",
@@ -4479,7 +4618,6 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "Je",
         "Ġsuis",
         "Ġun",
@@ -4516,6 +4654,9 @@
         "ĠModel"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         62545,
         1560,
         2442,
@@ -4525,7 +4666,6 @@
         128006,
         78191,
         128007,
-        271,
         30854,
         36731,
         653,
@@ -4597,7 +4737,13 @@
           {
             "token": "Ġmeta",
             "token_id": 8999,
-            "logprob": -11.0,
+            "logprob": -10.875,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠMETA",
+            "token_id": 80441,
+            "logprob": -12.5,
             "prob": 0.0
           },
           {
@@ -4607,15 +4753,9 @@
             "prob": 0.0
           },
           {
-            "token": "ĠMETA",
-            "token_id": 80441,
-            "logprob": -12.625,
-            "prob": 0.0
-          },
-          {
             "token": "ĠMetro",
             "token_id": 21631,
-            "logprob": -13.0,
+            "logprob": -12.875,
             "prob": 0.0
           },
           {
@@ -4634,8 +4774,11 @@
     },
     {
       "step": 35,
-      "input_text": "Qui es-tu?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nJe suis un modèle d'intelligence artificielle connu sous le nom de Llama. Llama est l'abréviation de \"Large Language Model Meta",
+      "input_text": "<|start_header_id|>user<|end_header_id|>Qui es-tu?<|eot_id|><|start_header_id|>assistant<|end_header_id|>Je suis un modèle d'intelligence artificielle connu sous le nom de Llama. Llama est l'abréviation de \"Large Language Model Meta",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "Qui",
         "Ġes",
         "-t",
@@ -4645,7 +4788,6 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "Je",
         "Ġsuis",
         "Ġun",
@@ -4683,6 +4825,9 @@
         "ĠMeta"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         62545,
         1560,
         2442,
@@ -4692,7 +4837,6 @@
         128006,
         78191,
         128007,
-        271,
         30854,
         36731,
         653,
@@ -4735,14 +4879,14 @@
           {
             "token": "ĠAI",
             "token_id": 15592,
-            "logprob": -0.0018,
+            "logprob": -0.0019,
             "prob": 1.0
           },
           {
             "token": "AI",
             "token_id": 15836,
-            "logprob": -6.625,
-            "prob": 0.0013
+            "logprob": -6.5,
+            "prob": 0.0015
           },
           {
             "token": "ĠArtificial",
@@ -4759,7 +4903,7 @@
           {
             "token": "Ġai",
             "token_id": 16796,
-            "logprob": -10.25,
+            "logprob": -10.375,
             "prob": 0.0
           },
           {
@@ -4769,15 +4913,15 @@
             "prob": 0.0
           },
           {
-            "token": "Ai",
-            "token_id": 70767,
-            "logprob": -12.9375,
+            "token": "ĠAlgorithm",
+            "token_id": 41425,
+            "logprob": -12.875,
             "prob": 0.0
           },
           {
-            "token": "ĠAlgorithm",
-            "token_id": 41425,
-            "logprob": -13.1875,
+            "token": "Ai",
+            "token_id": 70767,
+            "logprob": -13.0,
             "prob": 0.0
           },
           {
@@ -4789,7 +4933,7 @@
           {
             "token": "ĠAy",
             "token_id": 24852,
-            "logprob": -13.6875,
+            "logprob": -13.8125,
             "prob": 0.0
           }
         ]
@@ -4802,8 +4946,11 @@
     },
     {
       "step": 36,
-      "input_text": "Qui es-tu?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nJe suis un modèle d'intelligence artificielle connu sous le nom de Llama. Llama est l'abréviation de \"Large Language Model Meta AI",
+      "input_text": "<|start_header_id|>user<|end_header_id|>Qui es-tu?<|eot_id|><|start_header_id|>assistant<|end_header_id|>Je suis un modèle d'intelligence artificielle connu sous le nom de Llama. Llama est l'abréviation de \"Large Language Model Meta AI",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "Qui",
         "Ġes",
         "-t",
@@ -4813,7 +4960,6 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "Je",
         "Ġsuis",
         "Ġun",
@@ -4852,6 +4998,9 @@
         "ĠAI"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         62545,
         1560,
         2442,
@@ -4861,7 +5010,6 @@
         128006,
         78191,
         128007,
-        271,
         30854,
         36731,
         653,
@@ -4905,42 +5053,42 @@
           {
             "token": "\".",
             "token_id": 3343,
-            "logprob": -0.0017,
+            "logprob": -0.0015,
             "prob": 1.0
           },
           {
             "token": ".\"",
             "token_id": 1210,
-            "logprob": -6.375,
-            "prob": 0.0017
+            "logprob": -6.5,
+            "prob": 0.0015
           },
           {
             "token": "\").",
             "token_id": 1865,
-            "logprob": -11.125,
-            "prob": 0.0
-          },
-          {
-            "token": "Ġ\".",
-            "token_id": 6058,
-            "logprob": -11.625,
+            "logprob": -11.25,
             "prob": 0.0
           },
           {
             "token": "\",",
             "token_id": 498,
+            "logprob": -11.375,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġ\".",
+            "token_id": 6058,
             "logprob": -11.75,
+            "prob": 0.0
+          },
+          {
+            "token": ",\"",
+            "token_id": 1359,
+            "logprob": -13.125,
             "prob": 0.0
           },
           {
             "token": "\"].",
             "token_id": 5638,
-            "logprob": -13.125,
-            "prob": 0.0
-          },
-          {
-            "token": ").\"",
-            "token_id": 41418,
             "logprob": -13.25,
             "prob": 0.0
           },
@@ -4951,15 +5099,15 @@
             "prob": 0.0
           },
           {
-            "token": ",\"",
-            "token_id": 1359,
-            "logprob": -13.375,
+            "token": ").\"",
+            "token_id": 41418,
+            "logprob": -13.5,
             "prob": 0.0
           },
           {
             "token": ").",
             "token_id": 570,
-            "logprob": -13.5,
+            "logprob": -13.625,
             "prob": 0.0
           }
         ]
@@ -4972,8 +5120,11 @@
     },
     {
       "step": 37,
-      "input_text": "Qui es-tu?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nJe suis un modèle d'intelligence artificielle connu sous le nom de Llama. Llama est l'abréviation de \"Large Language Model Meta AI\".",
+      "input_text": "<|start_header_id|>user<|end_header_id|>Qui es-tu?<|eot_id|><|start_header_id|>assistant<|end_header_id|>Je suis un modèle d'intelligence artificielle connu sous le nom de Llama. Llama est l'abréviation de \"Large Language Model Meta AI\".",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "Qui",
         "Ġes",
         "-t",
@@ -4983,7 +5134,6 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "Je",
         "Ġsuis",
         "Ġun",
@@ -5023,6 +5173,9 @@
         "\"."
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         62545,
         1560,
         2442,
@@ -5032,7 +5185,6 @@
         128006,
         78191,
         128007,
-        271,
         30854,
         36731,
         653,
@@ -5077,61 +5229,61 @@
           {
             "token": "<|eot_id|>",
             "token_id": 128009,
-            "logprob": -0.0039,
+            "logprob": -0.0047,
             "prob": 0.9961
           },
           {
             "token": "ĠC",
             "token_id": 356,
-            "logprob": -6.3125,
-            "prob": 0.0018
+            "logprob": -6.125,
+            "prob": 0.0022
           },
           {
             "token": "Ġ\n\n",
             "token_id": 4815,
-            "logprob": -7.625,
-            "prob": 0.0005
+            "logprob": -7.4375,
+            "prob": 0.0006
           },
           {
             "token": "ĠJe",
             "token_id": 14465,
-            "logprob": -8.1875,
+            "logprob": -8.0625,
             "prob": 0.0003
-          },
-          {
-            "token": "ĠIl",
-            "token_id": 7695,
-            "logprob": -9.25,
-            "prob": 0.0001
           },
           {
             "token": "ĠCe",
             "token_id": 24703,
-            "logprob": -9.3125,
+            "logprob": -9.0625,
             "prob": 0.0001
           },
           {
             "token": "Ġ\n",
             "token_id": 720,
-            "logprob": -9.5,
+            "logprob": -9.1875,
+            "prob": 0.0001
+          },
+          {
+            "token": "ĠIl",
+            "token_id": 7695,
+            "logprob": -9.1875,
             "prob": 0.0001
           },
           {
             "token": "ĠLe",
             "token_id": 2009,
-            "logprob": -9.5625,
+            "logprob": -9.3125,
             "prob": 0.0001
           },
           {
             "token": "ĠMe",
             "token_id": 2206,
-            "logprob": -9.875,
+            "logprob": -9.6875,
             "prob": 0.0001
           },
           {
             "token": "ĠMon",
             "token_id": 3206,
-            "logprob": -10.4375,
+            "logprob": -10.3125,
             "prob": 0.0
           }
         ]

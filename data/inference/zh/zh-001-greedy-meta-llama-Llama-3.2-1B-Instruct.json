@@ -1,5 +1,5 @@
 {
-  "id": "generated_20251203_120543",
+  "id": "generated_20251204_094953",
   "prompt": "你是谁？",
   "language": "zh",
   "temperature": 0.0,
@@ -14,8 +14,11 @@
   "generation_steps": [
     {
       "step": 0,
-      "input_text": "你是谁？<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+      "input_text": "<|start_header_id|>user<|end_header_id|>你是谁？<|eot_id|><|start_header_id|>assistant<|end_header_id|>",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "你",
         "是",
         "谁",
@@ -23,10 +26,12 @@
         "<|eot_id|>",
         "<|start_header_id|>",
         "assistant",
-        "<|end_header_id|>",
-        "\n\n"
+        "<|end_header_id|>"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         57668,
         21043,
         112471,
@@ -34,8 +39,7 @@
         128009,
         128006,
         78191,
-        128007,
-        271
+        128007
       ],
       "output_distribution": {
         "top_k": 10,
@@ -43,32 +47,38 @@
           {
             "token": "我",
             "token_id": 37046,
-            "logprob": -0.0991,
-            "prob": 0.9062
+            "logprob": -0.1045,
+            "prob": 0.9023
           },
           {
             "token": "Meta",
             "token_id": 12452,
-            "logprob": -3.7812,
-            "prob": 0.0227
+            "logprob": -3.7969,
+            "prob": 0.0226
           },
           {
             "token": "Ġtôi",
             "token_id": 102598,
-            "logprob": -5.0312,
-            "prob": 0.0065
+            "logprob": -4.9688,
+            "prob": 0.0069
           },
           {
             "token": "是",
             "token_id": 21043,
-            "logprob": -5.2188,
-            "prob": 0.0054
+            "logprob": -5.1562,
+            "prob": 0.0057
           },
           {
             "token": "ĠMeta",
             "token_id": 16197,
-            "logprob": -5.3438,
-            "prob": 0.0048
+            "logprob": -5.2812,
+            "prob": 0.005
+          },
+          {
+            "token": "这是",
+            "token_id": 114880,
+            "logprob": -5.7812,
+            "prob": 0.0031
           },
           {
             "token": "私は",
@@ -77,28 +87,22 @@
             "prob": 0.0027
           },
           {
-            "token": "这是",
-            "token_id": 114880,
-            "logprob": -5.9062,
-            "prob": 0.0027
-          },
-          {
             "token": "meta",
             "token_id": 5607,
-            "logprob": -6.1562,
-            "prob": 0.0021
-          },
-          {
-            "token": "这",
-            "token_id": 44388,
-            "logprob": -6.4688,
-            "prob": 0.0015
+            "logprob": -6.0938,
+            "prob": 0.0022
           },
           {
             "token": "me",
             "token_id": 2727,
-            "logprob": -6.5312,
-            "prob": 0.0014
+            "logprob": -6.3438,
+            "prob": 0.0017
+          },
+          {
+            "token": "这",
+            "token_id": 44388,
+            "logprob": -6.3438,
+            "prob": 0.0017
           }
         ]
       },
@@ -110,8 +114,11 @@
     },
     {
       "step": 1,
-      "input_text": "你是谁？<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n我",
+      "input_text": "<|start_header_id|>user<|end_header_id|>你是谁？<|eot_id|><|start_header_id|>assistant<|end_header_id|>我",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "你",
         "是",
         "谁",
@@ -120,10 +127,12 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "我"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         57668,
         21043,
         112471,
@@ -132,7 +141,6 @@
         128006,
         78191,
         128007,
-        271,
         37046
       ],
       "output_distribution": {
@@ -141,62 +149,62 @@
           {
             "token": "是",
             "token_id": 21043,
-            "logprob": -0.2734,
-            "prob": 0.7617
+            "logprob": -0.248,
+            "prob": 0.7812
           },
           {
             "token": "是一",
             "token_id": 107226,
-            "logprob": -1.6484,
-            "prob": 0.1924
+            "logprob": -1.75,
+            "prob": 0.1738
           },
           {
             "token": "Ġlà",
             "token_id": 39015,
-            "logprob": -4.2188,
-            "prob": 0.0148
+            "logprob": -4.25,
+            "prob": 0.0143
           },
           {
             "token": "是一个",
             "token_id": 122503,
-            "logprob": -5.0312,
-            "prob": 0.0066
-          },
-          {
-            "token": "是在",
-            "token_id": 112213,
-            "logprob": -6.5312,
-            "prob": 0.0015
+            "logprob": -5.0625,
+            "prob": 0.0063
           },
           {
             "token": "Ġtên",
             "token_id": 105197,
-            "logprob": -6.5312,
+            "logprob": -6.5,
             "prob": 0.0015
+          },
+          {
+            "token": "是在",
+            "token_id": 112213,
+            "logprob": -6.5625,
+            "prob": 0.0014
           },
           {
             "token": "就是",
             "token_id": 103179,
-            "logprob": -6.5938,
-            "prob": 0.0014
-          },
-          {
-            "token": "主要",
-            "token_id": 105572,
-            "logprob": -6.6562,
+            "logprob": -6.625,
             "prob": 0.0013
           },
           {
             "token": "Ġ是",
             "token_id": 55951,
-            "logprob": -6.6562,
+            "logprob": -6.6875,
             "prob": 0.0013
+          },
+          {
+            "token": "主要",
+            "token_id": 105572,
+            "logprob": -6.75,
+            "prob": 0.0012
           },
           {
             "token": "为",
             "token_id": 18184,
-            "logprob": -6.6562,
-            "prob": 0.0013
+            "logprob": -6.8125,
+            "prob": 0.0011
           }
         ]
       },
@@ -208,8 +216,11 @@
     },
     {
       "step": 2,
-      "input_text": "你是谁？<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n我是",
+      "input_text": "<|start_header_id|>user<|end_header_id|>你是谁？<|eot_id|><|start_header_id|>assistant<|end_header_id|>我是",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "你",
         "是",
         "谁",
@@ -218,11 +229,13 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "我",
         "是"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         57668,
         21043,
         112471,
@@ -231,7 +244,6 @@
         128006,
         78191,
         128007,
-        271,
         37046,
         21043
       ],
@@ -241,62 +253,62 @@
           {
             "token": "Chat",
             "token_id": 16047,
-            "logprob": -2.75,
-            "prob": 0.064
+            "logprob": -2.8438,
+            "prob": 0.0581
           },
           {
             "token": "AI",
             "token_id": 15836,
-            "logprob": -2.9375,
-            "prob": 0.053
+            "logprob": -2.9688,
+            "prob": 0.0513
           },
           {
             "token": "Meta",
             "token_id": 12452,
-            "logprob": -2.9375,
-            "prob": 0.053
+            "logprob": -2.9688,
+            "prob": 0.0513
           },
           {
             "token": "ĠMeta",
             "token_id": 16197,
-            "logprob": -2.9375,
-            "prob": 0.053
+            "logprob": -2.9688,
+            "prob": 0.0513
           },
           {
             "token": "一个",
             "token_id": 48044,
-            "logprob": -3.375,
-            "prob": 0.0342
+            "logprob": -3.5312,
+            "prob": 0.0292
           },
           {
             "token": "Google",
             "token_id": 14783,
-            "logprob": -3.5,
-            "prob": 0.0303
+            "logprob": -3.5938,
+            "prob": 0.0275
           },
           {
             "token": "Ġartificial",
             "token_id": 21075,
-            "logprob": -3.875,
-            "prob": 0.0208
+            "logprob": -3.7812,
+            "prob": 0.0227
           },
           {
             "token": "对",
             "token_id": 33764,
-            "logprob": -3.875,
-            "prob": 0.0208
+            "logprob": -3.7812,
+            "prob": 0.0227
           },
           {
             "token": "由",
             "token_id": 68171,
-            "logprob": -4.25,
-            "prob": 0.0143
+            "logprob": -4.0938,
+            "prob": 0.0166
           },
           {
             "token": "基",
             "token_id": 75146,
-            "logprob": -4.375,
-            "prob": 0.0126
+            "logprob": -4.1562,
+            "prob": 0.0156
           }
         ]
       },
@@ -308,8 +320,11 @@
     },
     {
       "step": 3,
-      "input_text": "你是谁？<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n我是Chat",
+      "input_text": "<|start_header_id|>user<|end_header_id|>你是谁？<|eot_id|><|start_header_id|>assistant<|end_header_id|>我是Chat",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "你",
         "是",
         "谁",
@@ -318,12 +333,14 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "我",
         "是",
         "Chat"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         57668,
         21043,
         112471,
@@ -332,7 +349,6 @@
         128006,
         78191,
         128007,
-        271,
         37046,
         21043,
         16047
@@ -343,61 +359,61 @@
           {
             "token": "G",
             "token_id": 38,
-            "logprob": -0.1328,
-            "prob": 0.875
+            "logprob": -0.1553,
+            "prob": 0.8555
           },
           {
             "token": "bots",
             "token_id": 63005,
-            "logprob": -2.9531,
-            "prob": 0.0525
+            "logprob": -2.7812,
+            "prob": 0.062
           },
           {
             "token": "bot",
             "token_id": 6465,
-            "logprob": -3.1406,
-            "prob": 0.0437
+            "logprob": -2.9688,
+            "prob": 0.0515
           },
           {
             "token": "GAN",
             "token_id": 59587,
-            "logprob": -6.1875,
-            "prob": 0.002
+            "logprob": -6.0938,
+            "prob": 0.0023
           },
           {
             "token": "GM",
             "token_id": 21287,
-            "logprob": -7.375,
+            "logprob": -7.3438,
+            "prob": 0.0006
+          },
+          {
+            "token": "GI",
+            "token_id": 29134,
+            "logprob": -7.4688,
             "prob": 0.0006
           },
           {
             "token": "GT",
             "token_id": 26460,
-            "logprob": -7.625,
+            "logprob": -7.5938,
             "prob": 0.0005
           },
           {
-            "token": "books",
-            "token_id": 12383,
-            "logprob": -7.75,
-            "prob": 0.0004
+            "token": "ford",
+            "token_id": 8350,
+            "logprob": -7.6562,
+            "prob": 0.0005
           },
           {
-            "token": "GI",
-            "token_id": 29134,
-            "logprob": -7.75,
+            "token": "book",
+            "token_id": 2239,
+            "logprob": -7.7188,
             "prob": 0.0004
           },
           {
             "token": "Gen",
             "token_id": 10172,
-            "logprob": -7.75,
-            "prob": 0.0004
-          },
-          {
-            "token": "ford",
-            "token_id": 8350,
-            "logprob": -7.75,
+            "logprob": -7.7188,
             "prob": 0.0004
           }
         ]
@@ -410,8 +426,11 @@
     },
     {
       "step": 4,
-      "input_text": "你是谁？<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n我是ChatG",
+      "input_text": "<|start_header_id|>user<|end_header_id|>你是谁？<|eot_id|><|start_header_id|>assistant<|end_header_id|>我是ChatG",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "你",
         "是",
         "谁",
@@ -420,13 +439,15 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "我",
         "是",
         "Chat",
         "G"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         57668,
         21043,
         112471,
@@ -435,7 +456,6 @@
         128006,
         78191,
         128007,
-        271,
         37046,
         21043,
         16047,
@@ -447,61 +467,61 @@
           {
             "token": "PT",
             "token_id": 2898,
-            "logprob": -0.0728,
-            "prob": 0.9297
+            "logprob": -0.0952,
+            "prob": 0.9102
           },
           {
             "token": "pt",
             "token_id": 418,
-            "logprob": -3.2031,
-            "prob": 0.0408
+            "logprob": -2.9688,
+            "prob": 0.0513
           },
           {
             "token": "TP",
             "token_id": 4334,
-            "logprob": -4.1875,
-            "prob": 0.015
+            "logprob": -3.9688,
+            "prob": 0.0189
           },
           {
             "token": "PA",
             "token_id": 8201,
-            "logprob": -5.8125,
-            "prob": 0.003
+            "logprob": -5.4688,
+            "prob": 0.0042
           },
           {
             "token": "ym",
             "token_id": 1631,
-            "logprob": -6.25,
-            "prob": 0.0019
+            "logprob": -5.9688,
+            "prob": 0.0025
           },
           {
             "token": "ĠPT",
             "token_id": 19932,
-            "logprob": -6.375,
-            "prob": 0.0017
+            "logprob": -6.2188,
+            "prob": 0.002
           },
           {
             "token": "IP",
             "token_id": 3378,
-            "logprob": -7.125,
-            "prob": 0.0008
+            "logprob": -6.5312,
+            "prob": 0.0015
           },
           {
             "token": "TA",
             "token_id": 15559,
-            "logprob": -7.375,
-            "prob": 0.0006
+            "logprob": -6.9688,
+            "prob": 0.0009
           },
           {
             "token": "ĠTP",
             "token_id": 30170,
-            "logprob": -7.875,
-            "prob": 0.0004
+            "logprob": -7.5312,
+            "prob": 0.0005
           },
           {
-            "token": "olds",
-            "token_id": 18938,
-            "logprob": -7.9375,
+            "token": "PP",
+            "token_id": 4505,
+            "logprob": -7.7188,
             "prob": 0.0004
           }
         ]
@@ -514,8 +534,11 @@
     },
     {
       "step": 5,
-      "input_text": "你是谁？<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n我是ChatGPT",
+      "input_text": "<|start_header_id|>user<|end_header_id|>你是谁？<|eot_id|><|start_header_id|>assistant<|end_header_id|>我是ChatGPT",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "你",
         "是",
         "谁",
@@ -524,7 +547,6 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "我",
         "是",
         "Chat",
@@ -532,6 +554,9 @@
         "PT"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         57668,
         21043,
         112471,
@@ -540,7 +565,6 @@
         128006,
         78191,
         128007,
-        271,
         37046,
         21043,
         16047,
@@ -553,62 +577,62 @@
           {
             "token": "，",
             "token_id": 3922,
-            "logprob": -0.918,
-            "prob": 0.4004
+            "logprob": -0.9492,
+            "prob": 0.3867
           },
           {
             "token": "，是",
             "token_id": 105187,
-            "logprob": -1.1641,
-            "prob": 0.3105
+            "logprob": -1.2031,
+            "prob": 0.3008
           },
           {
             "token": "。",
             "token_id": 1811,
-            "logprob": -1.9141,
-            "prob": 0.1475
+            "logprob": -1.8281,
+            "prob": 0.1611
           },
           {
             "token": "是一",
             "token_id": 107226,
-            "logprob": -3.0469,
-            "prob": 0.0479
+            "logprob": -2.9531,
+            "prob": 0.0525
           },
           {
             "token": "，一",
             "token_id": 104295,
-            "logprob": -3.6094,
-            "prob": 0.0272
+            "logprob": -3.5781,
+            "prob": 0.0281
           },
           {
             "token": "，我",
             "token_id": 101602,
-            "logprob": -4.6562,
-            "prob": 0.0094
+            "logprob": -4.5,
+            "prob": 0.011
           },
           {
             "token": "，这",
             "token_id": 103138,
-            "logprob": -4.9688,
-            "prob": 0.0069
+            "logprob": -4.9375,
+            "prob": 0.0071
           },
           {
             "token": "Ġlà",
             "token_id": 39015,
-            "logprob": -5.2812,
-            "prob": 0.005
+            "logprob": -5.25,
+            "prob": 0.0052
           },
           {
             "token": "是一个",
             "token_id": 122503,
-            "logprob": -5.3438,
-            "prob": 0.0047
+            "logprob": -5.375,
+            "prob": 0.0046
           },
           {
             "token": "是",
             "token_id": 21043,
-            "logprob": -5.9688,
-            "prob": 0.0025
+            "logprob": -5.875,
+            "prob": 0.0028
           }
         ]
       },
@@ -620,8 +644,11 @@
     },
     {
       "step": 6,
-      "input_text": "你是谁？<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n我是ChatGPT，",
+      "input_text": "<|start_header_id|>user<|end_header_id|>你是谁？<|eot_id|><|start_header_id|>assistant<|end_header_id|>我是ChatGPT，",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "你",
         "是",
         "谁",
@@ -630,7 +657,6 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "我",
         "是",
         "Chat",
@@ -639,6 +665,9 @@
         "，"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         57668,
         21043,
         112471,
@@ -647,7 +676,6 @@
         128006,
         78191,
         128007,
-        271,
         37046,
         21043,
         16047,
@@ -661,62 +689,62 @@
           {
             "token": "一个",
             "token_id": 48044,
-            "logprob": -1.4375,
-            "prob": 0.2383
+            "logprob": -1.3516,
+            "prob": 0.2598
           },
           {
             "token": "后",
             "token_id": 34547,
-            "logprob": -3.0,
-            "prob": 0.0498
+            "logprob": -2.9688,
+            "prob": 0.051
           },
           {
             "token": "位于",
             "token_id": 121245,
-            "logprob": -3.6875,
-            "prob": 0.0251
-          },
-          {
-            "token": "Ġartificial",
-            "token_id": 21075,
-            "logprob": -3.9375,
-            "prob": 0.0195
-          },
-          {
-            "token": "个",
-            "token_id": 19483,
-            "logprob": -4.0,
-            "prob": 0.0183
+            "logprob": -3.6562,
+            "prob": 0.0256
           },
           {
             "token": "是一",
             "token_id": 107226,
-            "logprob": -4.0,
-            "prob": 0.0183
+            "logprob": -3.7188,
+            "prob": 0.0242
+          },
+          {
+            "token": "个",
+            "token_id": 19483,
+            "logprob": -3.9688,
+            "prob": 0.0188
           },
           {
             "token": "的一个",
             "token_id": 124434,
-            "logprob": -4.1875,
-            "prob": 0.0152
+            "logprob": -4.0312,
+            "prob": 0.0176
           },
           {
-            "token": "属于",
-            "token_id": 122294,
-            "logprob": -4.375,
-            "prob": 0.0126
+            "token": "Ġartificial",
+            "token_id": 21075,
+            "logprob": -4.0938,
+            "prob": 0.0166
           },
           {
             "token": "另一",
             "token_id": 122980,
-            "logprob": -4.4375,
-            "prob": 0.0118
+            "logprob": -4.3438,
+            "prob": 0.0129
+          },
+          {
+            "token": "属于",
+            "token_id": 122294,
+            "logprob": -4.4062,
+            "prob": 0.0121
           },
           {
             "token": "Ġeen",
             "token_id": 8517,
-            "logprob": -4.6875,
-            "prob": 0.0092
+            "logprob": -4.5938,
+            "prob": 0.0101
           }
         ]
       },
@@ -728,8 +756,11 @@
     },
     {
       "step": 7,
-      "input_text": "你是谁？<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n我是ChatGPT，一个",
+      "input_text": "<|start_header_id|>user<|end_header_id|>你是谁？<|eot_id|><|start_header_id|>assistant<|end_header_id|>我是ChatGPT，一个",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "你",
         "是",
         "谁",
@@ -738,7 +769,6 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "我",
         "是",
         "Chat",
@@ -748,6 +778,9 @@
         "一个"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         57668,
         21043,
         112471,
@@ -756,7 +789,6 @@
         128006,
         78191,
         128007,
-        271,
         37046,
         21043,
         16047,
@@ -771,62 +803,62 @@
           {
             "token": "AI",
             "token_id": 15836,
-            "logprob": -2.6406,
-            "prob": 0.0713
+            "logprob": -2.5938,
+            "prob": 0.0742
           },
           {
             "token": "由",
             "token_id": 68171,
-            "logprob": -2.7656,
-            "prob": 0.0625
+            "logprob": -2.8438,
+            "prob": 0.0579
           },
           {
             "token": "Ġartificial",
             "token_id": 21075,
-            "logprob": -2.9531,
-            "prob": 0.052
+            "logprob": -2.9062,
+            "prob": 0.0542
           },
           {
             "token": "人",
             "token_id": 17792,
-            "logprob": -3.1406,
-            "prob": 0.0432
+            "logprob": -3.0938,
+            "prob": 0.0449
           },
           {
             "token": "Art",
             "token_id": 9470,
-            "logprob": -3.2656,
-            "prob": 0.0381
-          },
-          {
-            "token": "合",
-            "token_id": 40862,
-            "logprob": -3.7031,
-            "prob": 0.0245
-          },
-          {
-            "token": "对",
-            "token_id": 33764,
-            "logprob": -3.7031,
-            "prob": 0.0245
+            "logprob": -3.2812,
+            "prob": 0.0374
           },
           {
             "token": "基于",
             "token_id": 125510,
-            "logprob": -3.7656,
-            "prob": 0.0231
+            "logprob": -3.7188,
+            "prob": 0.024
           },
           {
             "token": "强",
             "token_id": 103229,
-            "logprob": -3.7656,
-            "prob": 0.0231
+            "logprob": -3.7188,
+            "prob": 0.024
           },
           {
-            "token": "Chat",
-            "token_id": 16047,
-            "logprob": -4.0312,
-            "prob": 0.0179
+            "token": "对",
+            "token_id": 33764,
+            "logprob": -3.7812,
+            "prob": 0.0226
+          },
+          {
+            "token": "合",
+            "token_id": 40862,
+            "logprob": -3.7812,
+            "prob": 0.0226
+          },
+          {
+            "token": "高",
+            "token_id": 45736,
+            "logprob": -3.9688,
+            "prob": 0.0188
           }
         ]
       },
@@ -838,8 +870,11 @@
     },
     {
       "step": 8,
-      "input_text": "你是谁？<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n我是ChatGPT，一个AI",
+      "input_text": "<|start_header_id|>user<|end_header_id|>你是谁？<|eot_id|><|start_header_id|>assistant<|end_header_id|>我是ChatGPT，一个AI",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "你",
         "是",
         "谁",
@@ -848,7 +883,6 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "我",
         "是",
         "Chat",
@@ -859,6 +893,9 @@
         "AI"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         57668,
         21043,
         112471,
@@ -867,7 +904,6 @@
         128006,
         78191,
         128007,
-        271,
         37046,
         21043,
         16047,
@@ -883,62 +919,62 @@
           {
             "token": "-powered",
             "token_id": 41503,
-            "logprob": -1.7734,
-            "prob": 0.1689
+            "logprob": -1.6641,
+            "prob": 0.1904
           },
           {
             "token": "助",
             "token_id": 103129,
-            "logprob": -2.4062,
-            "prob": 0.0903
+            "logprob": -2.4688,
+            "prob": 0.0845
           },
           {
             "token": "Ġassistant",
             "token_id": 18328,
-            "logprob": -2.8438,
-            "prob": 0.0583
-          },
-          {
-            "token": "Chat",
-            "token_id": 16047,
-            "logprob": -3.4062,
-            "prob": 0.0332
+            "logprob": -2.7812,
+            "prob": 0.0618
           },
           {
             "token": "Assistant",
             "token_id": 72803,
             "logprob": -3.5312,
-            "prob": 0.0294
+            "prob": 0.0292
+          },
+          {
+            "token": "Chat",
+            "token_id": 16047,
+            "logprob": -3.5312,
+            "prob": 0.0292
           },
           {
             "token": "Ġassistants",
             "token_id": 57619,
             "logprob": -4.0312,
-            "prob": 0.0178
+            "prob": 0.0177
           },
           {
             "token": "assistant",
             "token_id": 78191,
             "logprob": -4.1562,
-            "prob": 0.0157
+            "prob": 0.0156
           },
           {
-            "token": "技术",
-            "token_id": 104696,
+            "token": "Ġpowered",
+            "token_id": 23134,
             "logprob": -4.4062,
-            "prob": 0.0123
-          },
-          {
-            "token": "chat",
-            "token_id": 9884,
-            "logprob": -4.4062,
-            "prob": 0.0123
+            "prob": 0.0121
           },
           {
             "token": "Ġchat",
             "token_id": 6369,
-            "logprob": -4.4688,
-            "prob": 0.0115
+            "logprob": -4.5312,
+            "prob": 0.0107
+          },
+          {
+            "token": "chat",
+            "token_id": 9884,
+            "logprob": -4.5312,
+            "prob": 0.0107
           }
         ]
       },
@@ -950,8 +986,11 @@
     },
     {
       "step": 9,
-      "input_text": "你是谁？<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n我是ChatGPT，一个AI-powered",
+      "input_text": "<|start_header_id|>user<|end_header_id|>你是谁？<|eot_id|><|start_header_id|>assistant<|end_header_id|>我是ChatGPT，一个AI-powered",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "你",
         "是",
         "谁",
@@ -960,7 +999,6 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "我",
         "是",
         "Chat",
@@ -972,6 +1010,9 @@
         "-powered"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         57668,
         21043,
         112471,
@@ -980,7 +1021,6 @@
         128006,
         78191,
         128007,
-        271,
         37046,
         21043,
         16047,
@@ -1003,26 +1043,26 @@
           {
             "token": "助",
             "token_id": 103129,
-            "logprob": -2.5781,
-            "prob": 0.0762
+            "logprob": -2.6406,
+            "prob": 0.0718
           },
           {
             "token": "chat",
             "token_id": 9884,
-            "logprob": -3.0156,
-            "prob": 0.0491
+            "logprob": -2.9531,
+            "prob": 0.0525
           },
           {
             "token": "模",
             "token_id": 54872,
-            "logprob": -3.5156,
-            "prob": 0.0298
+            "logprob": -3.4531,
+            "prob": 0.0317
           },
           {
             "token": "小",
             "token_id": 31809,
             "logprob": -3.6406,
-            "prob": 0.0262
+            "prob": 0.0264
           },
           {
             "token": "Chat",
@@ -1033,20 +1073,20 @@
           {
             "token": "智能",
             "token_id": 118034,
-            "logprob": -4.0625,
-            "prob": 0.017
-          },
-          {
-            "token": "的",
-            "token_id": 9554,
-            "logprob": -4.25,
-            "prob": 0.014
+            "logprob": -4.0,
+            "prob": 0.0181
           },
           {
             "token": "合",
             "token_id": 40862,
             "logprob": -4.25,
-            "prob": 0.014
+            "prob": 0.0141
+          },
+          {
+            "token": "综合",
+            "token_id": 106775,
+            "logprob": -4.3125,
+            "prob": 0.0132
           },
           {
             "token": "虚",
@@ -1064,8 +1104,11 @@
     },
     {
       "step": 10,
-      "input_text": "你是谁？<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n我是ChatGPT，一个AI-powered convers",
+      "input_text": "<|start_header_id|>user<|end_header_id|>你是谁？<|eot_id|><|start_header_id|>assistant<|end_header_id|>我是ChatGPT，一个AI-powered convers",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "你",
         "是",
         "谁",
@@ -1074,7 +1117,6 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "我",
         "是",
         "Chat",
@@ -1087,6 +1129,9 @@
         "Ġconvers"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         57668,
         21043,
         112471,
@@ -1095,7 +1140,6 @@
         128006,
         78191,
         128007,
-        271,
         37046,
         21043,
         16047,
@@ -1113,61 +1157,61 @@
           {
             "token": "ational",
             "token_id": 1697,
-            "logprob": -0.0007,
+            "logprob": -0.0005,
             "prob": 1.0
           },
           {
             "token": "ATIONAL",
             "token_id": 40685,
-            "logprob": -9.5625,
+            "logprob": -9.6875,
             "prob": 0.0001
           },
           {
             "token": "acion",
             "token_id": 5928,
-            "logprob": -9.625,
-            "prob": 0.0001
+            "logprob": -9.9375,
+            "prob": 0.0
           },
           {
             "token": "acional",
             "token_id": 22326,
-            "logprob": -10.5625,
+            "logprob": -10.75,
             "prob": 0.0
           },
           {
             "token": "aton",
             "token_id": 24444,
-            "logprob": -10.625,
-            "prob": 0.0
-          },
-          {
-            "token": "atie",
-            "token_id": 26937,
             "logprob": -10.8125,
             "prob": 0.0
           },
           {
             "token": "atio",
             "token_id": 6400,
-            "logprob": -10.9375,
+            "logprob": -11.25,
+            "prob": 0.0
+          },
+          {
+            "token": "atie",
+            "token_id": 26937,
+            "logprob": -11.25,
             "prob": 0.0
           },
           {
             "token": "ant",
             "token_id": 519,
-            "logprob": -11.0625,
+            "logprob": -11.3125,
             "prob": 0.0
           },
           {
-            "token": "at",
-            "token_id": 266,
-            "logprob": -11.0625,
+            "token": "ator",
+            "token_id": 859,
+            "logprob": -11.375,
             "prob": 0.0
           },
           {
             "token": "ative",
             "token_id": 1413,
-            "logprob": -11.125,
+            "logprob": -11.4375,
             "prob": 0.0
           }
         ]
@@ -1180,8 +1224,11 @@
     },
     {
       "step": 11,
-      "input_text": "你是谁？<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n我是ChatGPT，一个AI-powered conversational",
+      "input_text": "<|start_header_id|>user<|end_header_id|>你是谁？<|eot_id|><|start_header_id|>assistant<|end_header_id|>我是ChatGPT，一个AI-powered conversational",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "你",
         "是",
         "谁",
@@ -1190,7 +1237,6 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "我",
         "是",
         "Chat",
@@ -1204,6 +1250,9 @@
         "ational"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         57668,
         21043,
         112471,
@@ -1212,7 +1261,6 @@
         128006,
         78191,
         128007,
-        271,
         37046,
         21043,
         16047,
@@ -1231,62 +1279,62 @@
           {
             "token": "助",
             "token_id": 103129,
-            "logprob": -2.2656,
-            "prob": 0.1045
+            "logprob": -2.25,
+            "prob": 0.106
           },
           {
             "token": "解",
             "token_id": 50338,
-            "logprob": -3.5156,
-            "prob": 0.0299
+            "logprob": -3.625,
+            "prob": 0.0267
           },
           {
             "token": "机",
             "token_id": 33748,
-            "logprob": -3.6406,
-            "prob": 0.0264
-          },
-          {
-            "token": "推",
-            "token_id": 84851,
-            "logprob": -3.7656,
-            "prob": 0.0233
+            "logprob": -3.625,
+            "prob": 0.0267
           },
           {
             "token": "assistant",
             "token_id": 78191,
-            "logprob": -3.7656,
-            "prob": 0.0233
+            "logprob": -3.75,
+            "prob": 0.0237
           },
           {
-            "token": "合",
-            "token_id": 40862,
-            "logprob": -3.9531,
-            "prob": 0.0193
+            "token": "推",
+            "token_id": 84851,
+            "logprob": -3.8125,
+            "prob": 0.0222
           },
           {
             "token": "对",
             "token_id": 33764,
             "logprob": -4.0,
-            "prob": 0.0182
+            "prob": 0.0184
+          },
+          {
+            "token": "合",
+            "token_id": 40862,
+            "logprob": -4.0,
+            "prob": 0.0184
+          },
+          {
+            "token": "模",
+            "token_id": 54872,
+            "logprob": -4.0625,
+            "prob": 0.0173
           },
           {
             "token": "智能",
             "token_id": 118034,
             "logprob": -4.125,
-            "prob": 0.016
-          },
-          {
-            "token": "模",
-            "token_id": 54872,
-            "logprob": -4.125,
-            "prob": 0.016
+            "prob": 0.0162
           },
           {
             "token": "型",
             "token_id": 25287,
-            "logprob": -4.25,
-            "prob": 0.0141
+            "logprob": -4.3125,
+            "prob": 0.0135
           }
         ]
       },
@@ -1298,8 +1346,11 @@
     },
     {
       "step": 12,
-      "input_text": "你是谁？<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n我是ChatGPT，一个AI-powered conversational助",
+      "input_text": "<|start_header_id|>user<|end_header_id|>你是谁？<|eot_id|><|start_header_id|>assistant<|end_header_id|>我是ChatGPT，一个AI-powered conversational助",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "你",
         "是",
         "谁",
@@ -1308,7 +1359,6 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "我",
         "是",
         "Chat",
@@ -1323,6 +1373,9 @@
         "助"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         57668,
         21043,
         112471,
@@ -1331,7 +1384,6 @@
         128006,
         78191,
         128007,
-        271,
         37046,
         21043,
         16047,
@@ -1351,38 +1403,38 @@
           {
             "token": "手",
             "token_id": 46034,
-            "logprob": -0.1377,
-            "prob": 0.8711
+            "logprob": -0.1318,
+            "prob": 0.875
           },
           {
             "token": "理",
             "token_id": 22649,
-            "logprob": -3.9531,
-            "prob": 0.0193
+            "logprob": -3.9375,
+            "prob": 0.0194
           },
           {
             "token": "眠",
             "token_id": 120379,
-            "logprob": -4.125,
-            "prob": 0.016
+            "logprob": -4.25,
+            "prob": 0.0142
           },
           {
             "token": "产",
             "token_id": 52332,
-            "logprob": -5.0625,
-            "prob": 0.0063
-          },
-          {
-            "token": "力",
-            "token_id": 48634,
-            "logprob": -5.5,
-            "prob": 0.004
+            "logprob": -5.125,
+            "prob": 0.0059
           },
           {
             "token": "机",
             "token_id": 33748,
             "logprob": -5.5,
-            "prob": 0.004
+            "prob": 0.0041
+          },
+          {
+            "token": "力",
+            "token_id": 48634,
+            "logprob": -5.5,
+            "prob": 0.0041
           },
           {
             "token": "Ġlý",
@@ -1393,19 +1445,19 @@
           {
             "token": "人",
             "token_id": 17792,
-            "logprob": -6.3125,
-            "prob": 0.0018
-          },
-          {
-            "token": "言",
-            "token_id": 78244,
-            "logprob": -7.0,
-            "prob": 0.0009
+            "logprob": -6.4375,
+            "prob": 0.0016
           },
           {
             "token": "士",
             "token_id": 101559,
             "logprob": -7.0,
+            "prob": 0.0009
+          },
+          {
+            "token": "言",
+            "token_id": 78244,
+            "logprob": -7.0625,
             "prob": 0.0009
           }
         ]
@@ -1418,8 +1470,11 @@
     },
     {
       "step": 13,
-      "input_text": "你是谁？<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n我是ChatGPT，一个AI-powered conversational助手",
+      "input_text": "<|start_header_id|>user<|end_header_id|>你是谁？<|eot_id|><|start_header_id|>assistant<|end_header_id|>我是ChatGPT，一个AI-powered conversational助手",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "你",
         "是",
         "谁",
@@ -1428,7 +1483,6 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "我",
         "是",
         "Chat",
@@ -1444,6 +1498,9 @@
         "手"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         57668,
         21043,
         112471,
@@ -1452,7 +1509,6 @@
         128006,
         78191,
         128007,
-        271,
         37046,
         21043,
         16047,
@@ -1473,62 +1529,62 @@
           {
             "token": "。",
             "token_id": 1811,
-            "logprob": -0.0297,
+            "logprob": -0.0264,
             "prob": 0.9727
           },
           {
             "token": "。他",
             "token_id": 107751,
-            "logprob": -5.0312,
-            "prob": 0.0065
+            "logprob": -5.1562,
+            "prob": 0.0058
           },
           {
             "token": "）。",
             "token_id": 75376,
-            "logprob": -5.7812,
-            "prob": 0.0031
-          },
-          {
-            "token": "。这",
-            "token_id": 110477,
             "logprob": -5.9062,
             "prob": 0.0027
           },
           {
-            "token": "。我",
-            "token_id": 107030,
-            "logprob": -6.4062,
-            "prob": 0.0017
+            "token": "。这",
+            "token_id": 110477,
+            "logprob": -6.0312,
+            "prob": 0.0024
           },
           {
-            "token": "।",
-            "token_id": 100278,
-            "logprob": -6.7188,
-            "prob": 0.0012
+            "token": "。我",
+            "token_id": 107030,
+            "logprob": -6.5312,
+            "prob": 0.0015
           },
           {
             "token": "。如果",
             "token_id": 119464,
-            "logprob": -6.7812,
+            "logprob": -6.8438,
             "prob": 0.0011
+          },
+          {
+            "token": "।",
+            "token_id": 100278,
+            "logprob": -6.9062,
+            "prob": 0.001
           },
           {
             "token": "。在",
             "token_id": 107644,
-            "logprob": -6.9688,
-            "prob": 0.0009
+            "logprob": -7.0938,
+            "prob": 0.0008
           },
           {
             "token": "，",
             "token_id": 3922,
-            "logprob": -7.2188,
-            "prob": 0.0007
+            "logprob": -7.3438,
+            "prob": 0.0006
           },
           {
             "token": "，可以",
             "token_id": 114831,
-            "logprob": -7.2812,
-            "prob": 0.0007
+            "logprob": -7.4062,
+            "prob": 0.0006
           }
         ]
       },
@@ -1540,8 +1596,11 @@
     },
     {
       "step": 14,
-      "input_text": "你是谁？<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n我是ChatGPT，一个AI-powered conversational助手。",
+      "input_text": "<|start_header_id|>user<|end_header_id|>你是谁？<|eot_id|><|start_header_id|>assistant<|end_header_id|>我是ChatGPT，一个AI-powered conversational助手。",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "你",
         "是",
         "谁",
@@ -1550,7 +1609,6 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "我",
         "是",
         "Chat",
@@ -1567,6 +1625,9 @@
         "。"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         57668,
         21043,
         112471,
@@ -1575,7 +1636,6 @@
         128006,
         78191,
         128007,
-        271,
         37046,
         21043,
         16047,
@@ -1597,62 +1657,62 @@
           {
             "token": "我们",
             "token_id": 98739,
-            "logprob": -0.6758,
-            "prob": 0.5078
+            "logprob": -0.6172,
+            "prob": 0.5391
           },
           {
             "token": "<|eot_id|>",
             "token_id": 128009,
-            "logprob": -0.8008,
-            "prob": 0.4492
+            "logprob": -0.8672,
+            "prob": 0.4199
           },
           {
             "token": "它",
             "token_id": 103282,
-            "logprob": -5.0,
-            "prob": 0.0068
+            "logprob": -5.25,
+            "prob": 0.0053
           },
           {
             "token": "Ġ我",
             "token_id": 106026,
-            "logprob": -5.5,
-            "prob": 0.0041
+            "logprob": -5.4375,
+            "prob": 0.0044
           },
           {
             "token": "我",
             "token_id": 37046,
-            "logprob": -5.75,
-            "prob": 0.0032
+            "logprob": -5.8125,
+            "prob": 0.003
           },
           {
             "token": "您",
             "token_id": 88126,
-            "logprob": -6.875,
-            "prob": 0.001
+            "logprob": -7.0,
+            "prob": 0.0009
           },
           {
             "token": "Ġtôi",
             "token_id": 102598,
-            "logprob": -6.9375,
-            "prob": 0.001
+            "logprob": -7.0,
+            "prob": 0.0009
           },
           {
             "token": "他",
             "token_id": 43511,
-            "logprob": -7.0625,
+            "logprob": -7.0,
             "prob": 0.0009
           },
           {
             "token": "虽然",
             "token_id": 108855,
-            "logprob": -7.625,
+            "logprob": -7.5625,
             "prob": 0.0005
           },
           {
             "token": "我们的",
             "token_id": 125383,
-            "logprob": -7.75,
-            "prob": 0.0004
+            "logprob": -7.5625,
+            "prob": 0.0005
           }
         ]
       },
@@ -1664,8 +1724,11 @@
     },
     {
       "step": 15,
-      "input_text": "你是谁？<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n我是ChatGPT，一个AI-powered conversational助手。我们",
+      "input_text": "<|start_header_id|>user<|end_header_id|>你是谁？<|eot_id|><|start_header_id|>assistant<|end_header_id|>我是ChatGPT，一个AI-powered conversational助手。我们",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "你",
         "是",
         "谁",
@@ -1674,7 +1737,6 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "我",
         "是",
         "Chat",
@@ -1692,6 +1754,9 @@
         "我们"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         57668,
         21043,
         112471,
@@ -1700,7 +1765,6 @@
         128006,
         78191,
         128007,
-        271,
         37046,
         21043,
         16047,
@@ -1723,62 +1787,62 @@
           {
             "token": "都",
             "token_id": 72368,
-            "logprob": -0.9375,
-            "prob": 0.3926
+            "logprob": -0.9062,
+            "prob": 0.4043
           },
           {
             "token": "都是",
             "token_id": 108619,
-            "logprob": -1.4375,
-            "prob": 0.2373
+            "logprob": -1.5312,
+            "prob": 0.2158
           },
           {
             "token": "两个",
             "token_id": 110835,
-            "logprob": -2.1875,
-            "prob": 0.1123
+            "logprob": -2.1562,
+            "prob": 0.1157
           },
           {
             "token": "两",
             "token_id": 78640,
-            "logprob": -2.9375,
-            "prob": 0.053
+            "logprob": -2.8438,
+            "prob": 0.0581
           },
           {
             "token": "two",
             "token_id": 20375,
-            "logprob": -3.875,
-            "prob": 0.0208
-          },
-          {
-            "token": "是",
-            "token_id": 21043,
-            "logprob": -3.875,
-            "prob": 0.0208
-          },
-          {
-            "token": "可以",
-            "token_id": 74770,
-            "logprob": -4.0,
-            "prob": 0.0183
+            "logprob": -3.8438,
+            "prob": 0.0214
           },
           {
             "token": "Two",
             "token_id": 11874,
-            "logprob": -4.0625,
-            "prob": 0.0172
+            "logprob": -3.9688,
+            "prob": 0.0189
+          },
+          {
+            "token": "可以",
+            "token_id": 74770,
+            "logprob": -4.0312,
+            "prob": 0.0177
+          },
+          {
+            "token": "是",
+            "token_id": 21043,
+            "logprob": -4.0312,
+            "prob": 0.0177
           },
           {
             "token": "Ġtwo",
             "token_id": 1403,
-            "logprob": -4.5625,
-            "prob": 0.0104
+            "logprob": -4.5312,
+            "prob": 0.0107
           },
           {
             "token": "Both",
             "token_id": 21279,
-            "logprob": -4.625,
-            "prob": 0.0098
+            "logprob": -4.5938,
+            "prob": 0.0101
           }
         ]
       },
@@ -1790,8 +1854,11 @@
     },
     {
       "step": 16,
-      "input_text": "你是谁？<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n我是ChatGPT，一个AI-powered conversational助手。我们都",
+      "input_text": "<|start_header_id|>user<|end_header_id|>你是谁？<|eot_id|><|start_header_id|>assistant<|end_header_id|>我是ChatGPT，一个AI-powered conversational助手。我们都",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "你",
         "是",
         "谁",
@@ -1800,7 +1867,6 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "我",
         "是",
         "Chat",
@@ -1819,6 +1885,9 @@
         "都"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         57668,
         21043,
         112471,
@@ -1827,7 +1896,6 @@
         128006,
         78191,
         128007,
-        271,
         37046,
         21043,
         16047,
@@ -1852,19 +1920,19 @@
             "token": "是一",
             "token_id": 107226,
             "logprob": -1.5703,
-            "prob": 0.208
+            "prob": 0.209
           },
           {
             "token": "在",
             "token_id": 19000,
-            "logprob": -1.6328,
-            "prob": 0.1953
+            "logprob": -1.5703,
+            "prob": 0.209
           },
           {
             "token": "可以",
             "token_id": 74770,
-            "logprob": -2.8125,
-            "prob": 0.0596
+            "logprob": -2.875,
+            "prob": 0.0562
           },
           {
             "token": "属于",
@@ -1873,28 +1941,28 @@
             "prob": 0.0496
           },
           {
-            "token": "是",
-            "token_id": 21043,
-            "logprob": -3.125,
-            "prob": 0.0437
-          },
-          {
             "token": "存在",
             "token_id": 48706,
+            "logprob": -3.1875,
+            "prob": 0.041
+          },
+          {
+            "token": "是",
+            "token_id": 21043,
             "logprob": -3.25,
             "prob": 0.0386
           },
           {
             "token": "有",
             "token_id": 19361,
-            "logprob": -3.5,
-            "prob": 0.03
+            "logprob": -3.5625,
+            "prob": 0.0282
           },
           {
             "token": "来自",
             "token_id": 124714,
-            "logprob": -3.75,
-            "prob": 0.0233
+            "logprob": -3.8125,
+            "prob": 0.022
           },
           {
             "token": "能",
@@ -1903,10 +1971,10 @@
             "prob": 0.0182
           },
           {
-            "token": "Ġsống",
-            "token_id": 103978,
-            "logprob": -4.5625,
-            "prob": 0.0104
+            "token": "处",
+            "token_id": 45390,
+            "logprob": -4.5,
+            "prob": 0.011
           }
         ]
       },
@@ -1918,8 +1986,11 @@
     },
     {
       "step": 17,
-      "input_text": "你是谁？<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n我是ChatGPT，一个AI-powered conversational助手。我们都是一",
+      "input_text": "<|start_header_id|>user<|end_header_id|>你是谁？<|eot_id|><|start_header_id|>assistant<|end_header_id|>我是ChatGPT，一个AI-powered conversational助手。我们都是一",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "你",
         "是",
         "谁",
@@ -1928,7 +1999,6 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "我",
         "是",
         "Chat",
@@ -1948,6 +2018,9 @@
         "是一"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         57668,
         21043,
         112471,
@@ -1956,7 +2029,6 @@
         128006,
         78191,
         128007,
-        271,
         37046,
         21043,
         16047,
@@ -1981,62 +2053,62 @@
           {
             "token": "款",
             "token_id": 69253,
-            "logprob": -1.2031,
-            "prob": 0.3008
+            "logprob": -1.1641,
+            "prob": 0.3125
           },
           {
             "token": "家",
             "token_id": 46729,
-            "logprob": -1.3281,
-            "prob": 0.2656
+            "logprob": -1.4141,
+            "prob": 0.2432
           },
           {
             "token": "种",
             "token_id": 87502,
-            "logprob": -1.9531,
-            "prob": 0.1416
+            "logprob": -1.9141,
+            "prob": 0.1475
           },
           {
             "token": "支",
             "token_id": 46456,
-            "logprob": -3.8906,
-            "prob": 0.0204
+            "logprob": -3.9688,
+            "prob": 0.0188
           },
           {
             "token": "些",
             "token_id": 98184,
-            "logprob": -4.125,
-            "prob": 0.0159
+            "logprob": -4.0312,
+            "prob": 0.0176
           },
           {
             "token": "台",
             "token_id": 55038,
-            "logprob": -4.5,
-            "prob": 0.0109
+            "logprob": -4.4688,
+            "prob": 0.0114
           },
           {
             "token": "套",
             "token_id": 106557,
-            "logprob": -4.5625,
-            "prob": 0.0103
+            "logprob": -4.5312,
+            "prob": 0.0107
           },
           {
             "token": "线",
             "token_id": 44368,
-            "logprob": -4.75,
-            "prob": 0.0085
+            "logprob": -4.5938,
+            "prob": 0.0101
           },
           {
             "token": "份",
             "token_id": 70542,
-            "logprob": -4.75,
-            "prob": 0.0085
+            "logprob": -4.7812,
+            "prob": 0.0083
           },
           {
             "token": "个",
             "token_id": 19483,
-            "logprob": -4.875,
-            "prob": 0.0075
+            "logprob": -4.9062,
+            "prob": 0.0074
           }
         ]
       },
@@ -2048,8 +2120,11 @@
     },
     {
       "step": 18,
-      "input_text": "你是谁？<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n我是ChatGPT，一个AI-powered conversational助手。我们都是一款",
+      "input_text": "<|start_header_id|>user<|end_header_id|>你是谁？<|eot_id|><|start_header_id|>assistant<|end_header_id|>我是ChatGPT，一个AI-powered conversational助手。我们都是一款",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "你",
         "是",
         "谁",
@@ -2058,7 +2133,6 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "我",
         "是",
         "Chat",
@@ -2079,6 +2153,9 @@
         "款"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         57668,
         21043,
         112471,
@@ -2087,7 +2164,6 @@
         128006,
         78191,
         128007,
-        271,
         37046,
         21043,
         16047,
@@ -2111,77 +2187,80 @@
         "top_k": 10,
         "candidates": [
           {
-            "token": "强",
-            "token_id": 103229,
-            "logprob": -2.625,
-            "prob": 0.0723
-          },
-          {
             "token": "能",
             "token_id": 27327,
-            "logprob": -2.6875,
-            "prob": 0.0679
+            "logprob": -2.6094,
+            "prob": 0.0732
+          },
+          {
+            "token": "强",
+            "token_id": 103229,
+            "logprob": -2.6719,
+            "prob": 0.0688
           },
           {
             "token": "Chat",
             "token_id": 16047,
-            "logprob": -3.0,
-            "prob": 0.0496
+            "logprob": -2.9844,
+            "prob": 0.0503
           },
           {
             "token": "基于",
             "token_id": 125510,
-            "logprob": -3.0625,
-            "prob": 0.0466
+            "logprob": -3.0469,
+            "prob": 0.0471
           },
           {
             "token": "人",
             "token_id": 17792,
-            "logprob": -3.3125,
-            "prob": 0.0361
+            "logprob": -3.3594,
+            "prob": 0.0344
           },
           {
             "token": "名",
             "token_id": 13372,
-            "logprob": -4.0,
-            "prob": 0.0182
+            "logprob": -4.125,
+            "prob": 0.0164
           },
           {
             "token": "推",
             "token_id": 84851,
-            "logprob": -4.0625,
-            "prob": 0.0171
+            "logprob": -4.125,
+            "prob": 0.0164
           },
           {
             "token": "大",
             "token_id": 27384,
             "logprob": -4.25,
-            "prob": 0.0142
+            "prob": 0.0144
           },
           {
             "token": "自",
             "token_id": 37026,
             "logprob": -4.5,
-            "prob": 0.011
+            "prob": 0.0112
           },
           {
-            "token": "Ġartificial",
-            "token_id": 21075,
+            "token": "使用",
+            "token_id": 38129,
             "logprob": -4.625,
-            "prob": 0.0098
+            "prob": 0.0099
           }
         ]
       },
       "selected_token": {
-        "token": "强",
-        "token_id": 103229,
+        "token": "能",
+        "token_id": 27327,
         "selection_method": "greedy"
       }
     },
     {
       "step": 19,
-      "input_text": "你是谁？<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n我是ChatGPT，一个AI-powered conversational助手。我们都是一款强",
+      "input_text": "<|start_header_id|>user<|end_header_id|>你是谁？<|eot_id|><|start_header_id|>assistant<|end_header_id|>我是ChatGPT，一个AI-powered conversational助手。我们都是一款能",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "你",
         "是",
         "谁",
@@ -2190,7 +2269,6 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "我",
         "是",
         "Chat",
@@ -2209,9 +2287,12 @@
         "都",
         "是一",
         "款",
-        "强"
+        "能"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         57668,
         21043,
         112471,
@@ -2220,7 +2301,6 @@
         128006,
         78191,
         128007,
-        271,
         37046,
         21043,
         16047,
@@ -2239,83 +2319,86 @@
         72368,
         107226,
         69253,
-        103229
+        27327
       ],
       "output_distribution": {
         "top_k": 10,
         "candidates": [
           {
-            "token": "大",
-            "token_id": 27384,
-            "logprob": -0.6406,
-            "prob": 0.5273
+            "token": "理解",
+            "token_id": 113954,
+            "logprob": -1.8125,
+            "prob": 0.1631
           },
           {
-            "token": "大的",
-            "token_id": 108199,
-            "logprob": -0.7656,
-            "prob": 0.4648
+            "token": "对",
+            "token_id": 33764,
+            "logprob": -2.125,
+            "prob": 0.1191
           },
           {
-            "token": "力",
-            "token_id": 48634,
-            "logprob": -6.625,
-            "prob": 0.0013
+            "token": "与",
+            "token_id": 58318,
+            "logprob": -2.4375,
+            "prob": 0.0874
           },
           {
-            "token": "力的",
-            "token_id": 126235,
-            "logprob": -7.4375,
-            "prob": 0.0006
+            "token": "处理",
+            "token_id": 55642,
+            "logprob": -3.125,
+            "prob": 0.0439
           },
           {
-            "token": "效",
-            "token_id": 60455,
-            "logprob": -7.875,
-            "prob": 0.0004
+            "token": "进行",
+            "token_id": 72917,
+            "logprob": -3.25,
+            "prob": 0.0386
           },
           {
-            "token": "项",
-            "token_id": 48982,
-            "logprob": -7.875,
-            "prob": 0.0004
+            "token": "让",
+            "token_id": 102654,
+            "logprob": -3.375,
+            "prob": 0.0342
           },
           {
-            "token": "有",
-            "token_id": 19361,
-            "logprob": -7.9375,
-            "prob": 0.0004
+            "token": "根据",
+            "token_id": 110747,
+            "logprob": -3.4375,
+            "prob": 0.032
           },
           {
-            "token": "化",
-            "token_id": 33208,
-            "logprob": -7.9375,
-            "prob": 0.0004
+            "token": "量",
+            "token_id": 33857,
+            "logprob": -3.5,
+            "prob": 0.0302
           },
           {
-            "token": "人",
-            "token_id": 17792,
-            "logprob": -8.0625,
-            "prob": 0.0003
+            "token": "在",
+            "token_id": 19000,
+            "logprob": -3.625,
+            "prob": 0.0266
           },
           {
-            "token": "调",
-            "token_id": 48972,
-            "logprob": -8.6875,
-            "prob": 0.0002
+            "token": "识",
+            "token_id": 105388,
+            "logprob": -4.1875,
+            "prob": 0.0151
           }
         ]
       },
       "selected_token": {
-        "token": "大",
-        "token_id": 27384,
+        "token": "理解",
+        "token_id": 113954,
         "selection_method": "greedy"
       }
     },
     {
       "step": 20,
-      "input_text": "你是谁？<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n我是ChatGPT，一个AI-powered conversational助手。我们都是一款强大",
+      "input_text": "<|start_header_id|>user<|end_header_id|>你是谁？<|eot_id|><|start_header_id|>assistant<|end_header_id|>我是ChatGPT，一个AI-powered conversational助手。我们都是一款能理解",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "你",
         "是",
         "谁",
@@ -2324,7 +2407,6 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "我",
         "是",
         "Chat",
@@ -2343,10 +2425,13 @@
         "都",
         "是一",
         "款",
-        "强",
-        "大"
+        "能",
+        "理解"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         57668,
         21043,
         112471,
@@ -2355,7 +2440,6 @@
         128006,
         78191,
         128007,
-        271,
         37046,
         21043,
         16047,
@@ -2374,1168 +2458,8 @@
         72368,
         107226,
         69253,
-        103229,
-        27384
-      ],
-      "output_distribution": {
-        "top_k": 10,
-        "candidates": [
-          {
-            "token": "型",
-            "token_id": 25287,
-            "logprob": -1.0703,
-            "prob": 0.3438
-          },
-          {
-            "token": "且",
-            "token_id": 103786,
-            "logprob": -2.125,
-            "prob": 0.1187
-          },
-          {
-            "token": "的人",
-            "token_id": 104123,
-            "logprob": -2.5,
-            "prob": 0.0815
-          },
-          {
-            "token": "、",
-            "token_id": 5486,
-            "logprob": -3.0625,
-            "prob": 0.0464
-          },
-          {
-            "token": "能力",
-            "token_id": 106556,
-            "logprob": -4.125,
-            "prob": 0.0161
-          },
-          {
-            "token": "并",
-            "token_id": 64026,
-            "logprob": -4.3125,
-            "prob": 0.0133
-          },
-          {
-            "token": "，",
-            "token_id": 3922,
-            "logprob": -4.625,
-            "prob": 0.0098
-          },
-          {
-            "token": "功能",
-            "token_id": 99480,
-            "logprob": -4.8125,
-            "prob": 0.0081
-          },
-          {
-            "token": "于",
-            "token_id": 35304,
-            "logprob": -4.875,
-            "prob": 0.0076
-          },
-          {
-            "token": "而",
-            "token_id": 69636,
-            "logprob": -4.875,
-            "prob": 0.0076
-          }
-        ]
-      },
-      "selected_token": {
-        "token": "型",
-        "token_id": 25287,
-        "selection_method": "greedy"
-      }
-    },
-    {
-      "step": 21,
-      "input_text": "你是谁？<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n我是ChatGPT，一个AI-powered conversational助手。我们都是一款强大型",
-      "tokens": [
-        "你",
-        "是",
-        "谁",
-        "？",
-        "<|eot_id|>",
-        "<|start_header_id|>",
-        "assistant",
-        "<|end_header_id|>",
-        "\n\n",
-        "我",
-        "是",
-        "Chat",
-        "G",
-        "PT",
-        "，",
-        "一个",
-        "AI",
-        "-powered",
-        "Ġconvers",
-        "ational",
-        "助",
-        "手",
-        "。",
-        "我们",
-        "都",
-        "是一",
-        "款",
-        "强",
-        "大",
-        "型"
-      ],
-      "token_ids": [
-        57668,
-        21043,
-        112471,
-        11571,
-        128009,
-        128006,
-        78191,
-        128007,
-        271,
-        37046,
-        21043,
-        16047,
-        38,
-        2898,
-        3922,
-        48044,
-        15836,
-        41503,
-        7669,
-        1697,
-        103129,
-        46034,
-        1811,
-        98739,
-        72368,
-        107226,
-        69253,
-        103229,
-        27384,
-        25287
-      ],
-      "output_distribution": {
-        "top_k": 10,
-        "candidates": [
-          {
-            "token": "语言",
-            "token_id": 120074,
-            "logprob": -1.3281,
-            "prob": 0.2637
-          },
-          {
-            "token": "自然",
-            "token_id": 109683,
-            "logprob": -1.3906,
-            "prob": 0.248
-          },
-          {
-            "token": "的",
-            "token_id": 9554,
-            "logprob": -2.8906,
-            "prob": 0.0554
-          },
-          {
-            "token": "模",
-            "token_id": 54872,
-            "logprob": -3.3906,
-            "prob": 0.0334
-          },
-          {
-            "token": "计算",
-            "token_id": 112352,
-            "logprob": -3.7656,
-            "prob": 0.0231
-          },
-          {
-            "token": "语",
-            "token_id": 73981,
-            "logprob": -3.8906,
-            "prob": 0.0204
-          },
-          {
-            "token": "神",
-            "token_id": 101365,
-            "logprob": -3.9531,
-            "prob": 0.0192
-          },
-          {
-            "token": "机",
-            "token_id": 33748,
-            "logprob": -4.2188,
-            "prob": 0.0149
-          },
-          {
-            "token": "Ġartificial",
-            "token_id": 21075,
-            "logprob": -4.4062,
-            "prob": 0.0123
-          },
-          {
-            "token": "智能",
-            "token_id": 118034,
-            "logprob": -4.5312,
-            "prob": 0.0109
-          }
-        ]
-      },
-      "selected_token": {
-        "token": "语言",
-        "token_id": 120074,
-        "selection_method": "greedy"
-      }
-    },
-    {
-      "step": 22,
-      "input_text": "你是谁？<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n我是ChatGPT，一个AI-powered conversational助手。我们都是一款强大型语言",
-      "tokens": [
-        "你",
-        "是",
-        "谁",
-        "？",
-        "<|eot_id|>",
-        "<|start_header_id|>",
-        "assistant",
-        "<|end_header_id|>",
-        "\n\n",
-        "我",
-        "是",
-        "Chat",
-        "G",
-        "PT",
-        "，",
-        "一个",
-        "AI",
-        "-powered",
-        "Ġconvers",
-        "ational",
-        "助",
-        "手",
-        "。",
-        "我们",
-        "都",
-        "是一",
-        "款",
-        "强",
-        "大",
-        "型",
-        "语言"
-      ],
-      "token_ids": [
-        57668,
-        21043,
-        112471,
-        11571,
-        128009,
-        128006,
-        78191,
-        128007,
-        271,
-        37046,
-        21043,
-        16047,
-        38,
-        2898,
-        3922,
-        48044,
-        15836,
-        41503,
-        7669,
-        1697,
-        103129,
-        46034,
-        1811,
-        98739,
-        72368,
-        107226,
-        69253,
-        103229,
-        27384,
-        25287,
-        120074
-      ],
-      "output_distribution": {
-        "top_k": 10,
-        "candidates": [
-          {
-            "token": "模型",
-            "token_id": 123123,
-            "logprob": -0.3613,
-            "prob": 0.6992
-          },
-          {
-            "token": "处理",
-            "token_id": 55642,
-            "logprob": -3.0469,
-            "prob": 0.0474
-          },
-          {
-            "token": "模",
-            "token_id": 54872,
-            "logprob": -3.6719,
-            "prob": 0.0254
-          },
-          {
-            "token": "计算",
-            "token_id": 112352,
-            "logprob": -3.7344,
-            "prob": 0.0238
-          },
-          {
-            "token": "model",
-            "token_id": 2590,
-            "logprob": -4.3125,
-            "prob": 0.0136
-          },
-          {
-            "token": "Ġmodeled",
-            "token_id": 62653,
-            "logprob": -4.4375,
-            "prob": 0.012
-          },
-          {
-            "token": "Ġmodeling",
-            "token_id": 34579,
-            "logprob": -4.625,
-            "prob": 0.0099
-          },
-          {
-            "token": "Ġmodelo",
-            "token_id": 37042,
-            "logprob": -4.625,
-            "prob": 0.0099
-          },
-          {
-            "token": "Ġmodels",
-            "token_id": 4211,
-            "logprob": -4.75,
-            "prob": 0.0088
-          },
-          {
-            "token": "Ġmodèle",
-            "token_id": 83597,
-            "logprob": -4.8125,
-            "prob": 0.0082
-          }
-        ]
-      },
-      "selected_token": {
-        "token": "模型",
-        "token_id": 123123,
-        "selection_method": "greedy"
-      }
-    },
-    {
-      "step": 23,
-      "input_text": "你是谁？<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n我是ChatGPT，一个AI-powered conversational助手。我们都是一款强大型语言模型",
-      "tokens": [
-        "你",
-        "是",
-        "谁",
-        "？",
-        "<|eot_id|>",
-        "<|start_header_id|>",
-        "assistant",
-        "<|end_header_id|>",
-        "\n\n",
-        "我",
-        "是",
-        "Chat",
-        "G",
-        "PT",
-        "，",
-        "一个",
-        "AI",
-        "-powered",
-        "Ġconvers",
-        "ational",
-        "助",
-        "手",
-        "。",
-        "我们",
-        "都",
-        "是一",
-        "款",
-        "强",
-        "大",
-        "型",
-        "语言",
-        "模型"
-      ],
-      "token_ids": [
-        57668,
-        21043,
-        112471,
-        11571,
-        128009,
-        128006,
-        78191,
-        128007,
-        271,
-        37046,
-        21043,
-        16047,
-        38,
-        2898,
-        3922,
-        48044,
-        15836,
-        41503,
-        7669,
-        1697,
-        103129,
-        46034,
-        1811,
-        98739,
-        72368,
-        107226,
-        69253,
-        103229,
-        27384,
-        25287,
-        120074,
-        123123
-      ],
-      "output_distribution": {
-        "top_k": 10,
-        "candidates": [
-          {
-            "token": "，",
-            "token_id": 3922,
-            "logprob": -0.7031,
-            "prob": 0.4961
-          },
-          {
-            "token": "，是",
-            "token_id": 105187,
-            "logprob": -1.9531,
-            "prob": 0.1416
-          },
-          {
-            "token": "，可以",
-            "token_id": 114831,
-            "logprob": -2.4531,
-            "prob": 0.0859
-          },
-          {
-            "token": "，由",
-            "token_id": 112182,
-            "logprob": -3.2031,
-            "prob": 0.0408
-          },
-          {
-            "token": "。",
-            "token_id": 1811,
-            "logprob": -3.3281,
-            "prob": 0.0359
-          },
-          {
-            "token": "，被",
-            "token_id": 122996,
-            "logprob": -3.7656,
-            "prob": 0.0232
-          },
-          {
-            "token": "，它",
-            "token_id": 115973,
-            "logprob": -4.0,
-            "prob": 0.0181
-          },
-          {
-            "token": "，在",
-            "token_id": 97150,
-            "logprob": -4.4375,
-            "prob": 0.0117
-          },
-          {
-            "token": "，可",
-            "token_id": 108779,
-            "logprob": -4.4375,
-            "prob": 0.0117
-          },
-          {
-            "token": "，但",
-            "token_id": 102378,
-            "logprob": -4.6875,
-            "prob": 0.0091
-          }
-        ]
-      },
-      "selected_token": {
-        "token": "，",
-        "token_id": 3922,
-        "selection_method": "greedy"
-      }
-    },
-    {
-      "step": 24,
-      "input_text": "你是谁？<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n我是ChatGPT，一个AI-powered conversational助手。我们都是一款强大型语言模型，",
-      "tokens": [
-        "你",
-        "是",
-        "谁",
-        "？",
-        "<|eot_id|>",
-        "<|start_header_id|>",
-        "assistant",
-        "<|end_header_id|>",
-        "\n\n",
-        "我",
-        "是",
-        "Chat",
-        "G",
-        "PT",
-        "，",
-        "一个",
-        "AI",
-        "-powered",
-        "Ġconvers",
-        "ational",
-        "助",
-        "手",
-        "。",
-        "我们",
-        "都",
-        "是一",
-        "款",
-        "强",
-        "大",
-        "型",
-        "语言",
-        "模型",
-        "，"
-      ],
-      "token_ids": [
-        57668,
-        21043,
-        112471,
-        11571,
-        128009,
-        128006,
-        78191,
-        128007,
-        271,
-        37046,
-        21043,
-        16047,
-        38,
-        2898,
-        3922,
-        48044,
-        15836,
-        41503,
-        7669,
-        1697,
-        103129,
-        46034,
-        1811,
-        98739,
-        72368,
-        107226,
-        69253,
-        103229,
-        27384,
-        25287,
-        120074,
-        123123,
-        3922
-      ],
-      "output_distribution": {
-        "top_k": 10,
-        "candidates": [
-          {
-            "token": "能够",
-            "token_id": 113961,
-            "logprob": -0.9648,
-            "prob": 0.3809
-          },
-          {
-            "token": "能",
-            "token_id": 27327,
-            "logprob": -1.4688,
-            "prob": 0.2305
-          },
-          {
-            "token": "สามารถ",
-            "token_id": 104204,
-            "logprob": -2.7188,
-            "prob": 0.0659
-          },
-          {
-            "token": "可以",
-            "token_id": 74770,
-            "logprob": -3.2188,
-            "prob": 0.04
-          },
-          {
-            "token": "具有",
-            "token_id": 110667,
-            "logprob": -4.0938,
-            "prob": 0.0167
-          },
-          {
-            "token": "通过",
-            "token_id": 68438,
-            "logprob": -4.1562,
-            "prob": 0.0157
-          },
-          {
-            "token": "可能",
-            "token_id": 88367,
-            "logprob": -4.2188,
-            "prob": 0.0148
-          },
-          {
-            "token": "�",
-            "token_id": 6079,
-            "logprob": -4.2812,
-            "prob": 0.0139
-          },
-          {
-            "token": "Ġdesigned",
-            "token_id": 6319,
-            "logprob": -4.5312,
-            "prob": 0.0108
-          },
-          {
-            "token": "允",
-            "token_id": 120162,
-            "logprob": -4.5938,
-            "prob": 0.0101
-          }
-        ]
-      },
-      "selected_token": {
-        "token": "能够",
-        "token_id": 113961,
-        "selection_method": "greedy"
-      }
-    },
-    {
-      "step": 25,
-      "input_text": "你是谁？<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n我是ChatGPT，一个AI-powered conversational助手。我们都是一款强大型语言模型，能够",
-      "tokens": [
-        "你",
-        "是",
-        "谁",
-        "？",
-        "<|eot_id|>",
-        "<|start_header_id|>",
-        "assistant",
-        "<|end_header_id|>",
-        "\n\n",
-        "我",
-        "是",
-        "Chat",
-        "G",
-        "PT",
-        "，",
-        "一个",
-        "AI",
-        "-powered",
-        "Ġconvers",
-        "ational",
-        "助",
-        "手",
-        "。",
-        "我们",
-        "都",
-        "是一",
-        "款",
-        "强",
-        "大",
-        "型",
-        "语言",
-        "模型",
-        "，",
-        "能够"
-      ],
-      "token_ids": [
-        57668,
-        21043,
-        112471,
-        11571,
-        128009,
-        128006,
-        78191,
-        128007,
-        271,
-        37046,
-        21043,
-        16047,
-        38,
-        2898,
-        3922,
-        48044,
-        15836,
-        41503,
-        7669,
-        1697,
-        103129,
-        46034,
-        1811,
-        98739,
-        72368,
-        107226,
-        69253,
-        103229,
-        27384,
-        25287,
-        120074,
-        123123,
-        3922,
-        113961
-      ],
-      "output_distribution": {
-        "top_k": 10,
-        "candidates": [
-          {
-            "token": "进行",
-            "token_id": 72917,
-            "logprob": -1.2266,
-            "prob": 0.293
-          },
-          {
-            "token": "在",
-            "token_id": 19000,
-            "logprob": -1.6016,
-            "prob": 0.2012
-          },
-          {
-            "token": "对",
-            "token_id": 33764,
-            "logprob": -2.1094,
-            "prob": 0.1221
-          },
-          {
-            "token": "理解",
-            "token_id": 113954,
-            "logprob": -2.6094,
-            "prob": 0.0737
-          },
-          {
-            "token": "处理",
-            "token_id": 55642,
-            "logprob": -3.7344,
-            "prob": 0.024
-          },
-          {
-            "token": "通过",
-            "token_id": 68438,
-            "logprob": -4.3438,
-            "prob": 0.0129
-          },
-          {
-            "token": "运",
-            "token_id": 91940,
-            "logprob": -4.4062,
-            "prob": 0.0121
-          },
-          {
-            "token": "为",
-            "token_id": 18184,
-            "logprob": -4.4062,
-            "prob": 0.0121
-          },
-          {
-            "token": "提供",
-            "token_id": 104908,
-            "logprob": -4.6562,
-            "prob": 0.0094
-          },
-          {
-            "token": "以",
-            "token_id": 23897,
-            "logprob": -4.7812,
-            "prob": 0.0083
-          }
-        ]
-      },
-      "selected_token": {
-        "token": "进行",
-        "token_id": 72917,
-        "selection_method": "greedy"
-      }
-    },
-    {
-      "step": 26,
-      "input_text": "你是谁？<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n我是ChatGPT，一个AI-powered conversational助手。我们都是一款强大型语言模型，能够进行",
-      "tokens": [
-        "你",
-        "是",
-        "谁",
-        "？",
-        "<|eot_id|>",
-        "<|start_header_id|>",
-        "assistant",
-        "<|end_header_id|>",
-        "\n\n",
-        "我",
-        "是",
-        "Chat",
-        "G",
-        "PT",
-        "，",
-        "一个",
-        "AI",
-        "-powered",
-        "Ġconvers",
-        "ational",
-        "助",
-        "手",
-        "。",
-        "我们",
-        "都",
-        "是一",
-        "款",
-        "强",
-        "大",
-        "型",
-        "语言",
-        "模型",
-        "，",
-        "能够",
-        "进行"
-      ],
-      "token_ids": [
-        57668,
-        21043,
-        112471,
-        11571,
-        128009,
-        128006,
-        78191,
-        128007,
-        271,
-        37046,
-        21043,
-        16047,
-        38,
-        2898,
-        3922,
-        48044,
-        15836,
-        41503,
-        7669,
-        1697,
-        103129,
-        46034,
-        1811,
-        98739,
-        72368,
-        107226,
-        69253,
-        103229,
-        27384,
-        25287,
-        120074,
-        123123,
-        3922,
-        113961,
-        72917
-      ],
-      "output_distribution": {
-        "top_k": 10,
-        "candidates": [
-          {
-            "token": "对",
-            "token_id": 33764,
-            "logprob": -1.6797,
-            "prob": 0.1865
-          },
-          {
-            "token": "各种",
-            "token_id": 120288,
-            "logprob": -2.7969,
-            "prob": 0.0608
-          },
-          {
-            "token": "有",
-            "token_id": 19361,
-            "logprob": -3.1719,
-            "prob": 0.0417
-          },
-          {
-            "token": "Ġconversations",
-            "token_id": 21633,
-            "logprob": -3.2344,
-            "prob": 0.0391
-          },
-          {
-            "token": "话",
-            "token_id": 58543,
-            "logprob": -3.3594,
-            "prob": 0.0347
-          },
-          {
-            "token": "多",
-            "token_id": 43240,
-            "logprob": -3.4844,
-            "prob": 0.0305
-          },
-          {
-            "token": "ĠConvers",
-            "token_id": 56496,
-            "logprob": -3.4844,
-            "prob": 0.0305
-          },
-          {
-            "token": "自然",
-            "token_id": 109683,
-            "logprob": -3.6719,
-            "prob": 0.0253
-          },
-          {
-            "token": "广",
-            "token_id": 82042,
-            "logprob": -3.8594,
-            "prob": 0.021
-          },
-          {
-            "token": "文",
-            "token_id": 17161,
-            "logprob": -3.9219,
-            "prob": 0.0197
-          }
-        ]
-      },
-      "selected_token": {
-        "token": "对",
-        "token_id": 33764,
-        "selection_method": "greedy"
-      }
-    },
-    {
-      "step": 27,
-      "input_text": "你是谁？<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n我是ChatGPT，一个AI-powered conversational助手。我们都是一款强大型语言模型，能够进行对",
-      "tokens": [
-        "你",
-        "是",
-        "谁",
-        "？",
-        "<|eot_id|>",
-        "<|start_header_id|>",
-        "assistant",
-        "<|end_header_id|>",
-        "\n\n",
-        "我",
-        "是",
-        "Chat",
-        "G",
-        "PT",
-        "，",
-        "一个",
-        "AI",
-        "-powered",
-        "Ġconvers",
-        "ational",
-        "助",
-        "手",
-        "。",
-        "我们",
-        "都",
-        "是一",
-        "款",
-        "强",
-        "大",
-        "型",
-        "语言",
-        "模型",
-        "，",
-        "能够",
-        "进行",
-        "对"
-      ],
-      "token_ids": [
-        57668,
-        21043,
-        112471,
-        11571,
-        128009,
-        128006,
-        78191,
-        128007,
-        271,
-        37046,
-        21043,
-        16047,
-        38,
-        2898,
-        3922,
-        48044,
-        15836,
-        41503,
-        7669,
-        1697,
-        103129,
-        46034,
-        1811,
-        98739,
-        72368,
-        107226,
-        69253,
-        103229,
-        27384,
-        25287,
-        120074,
-        123123,
-        3922,
-        113961,
-        72917,
-        33764
-      ],
-      "output_distribution": {
-        "top_k": 10,
-        "candidates": [
-          {
-            "token": "话",
-            "token_id": 58543,
-            "logprob": -0.0082,
-            "prob": 0.9922
-          },
-          {
-            "token": "Talk",
-            "token_id": 37310,
-            "logprob": -6.625,
-            "prob": 0.0013
-          },
-          {
-            "token": "Ġtalk",
-            "token_id": 3137,
-            "logprob": -6.875,
-            "prob": 0.001
-          },
-          {
-            "token": "Ġtalks",
-            "token_id": 13739,
-            "logprob": -6.875,
-            "prob": 0.001
-          },
-          {
-            "token": "話",
-            "token_id": 87177,
-            "logprob": -7.125,
-            "prob": 0.0008
-          },
-          {
-            "token": "talk",
-            "token_id": 36341,
-            "logprob": -7.5,
-            "prob": 0.0005
-          },
-          {
-            "token": "ĠTalk",
-            "token_id": 19513,
-            "logprob": -7.875,
-            "prob": 0.0004
-          },
-          {
-            "token": "Ġspeak",
-            "token_id": 6604,
-            "logprob": -8.125,
-            "prob": 0.0003
-          },
-          {
-            "token": "-talk",
-            "token_id": 93780,
-            "logprob": -8.3125,
-            "prob": 0.0002
-          },
-          {
-            "token": "Ġconversations",
-            "token_id": 21633,
-            "logprob": -8.5625,
-            "prob": 0.0002
-          }
-        ]
-      },
-      "selected_token": {
-        "token": "话",
-        "token_id": 58543,
-        "selection_method": "greedy"
-      }
-    },
-    {
-      "step": 28,
-      "input_text": "你是谁？<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n我是ChatGPT，一个AI-powered conversational助手。我们都是一款强大型语言模型，能够进行对话",
-      "tokens": [
-        "你",
-        "是",
-        "谁",
-        "？",
-        "<|eot_id|>",
-        "<|start_header_id|>",
-        "assistant",
-        "<|end_header_id|>",
-        "\n\n",
-        "我",
-        "是",
-        "Chat",
-        "G",
-        "PT",
-        "，",
-        "一个",
-        "AI",
-        "-powered",
-        "Ġconvers",
-        "ational",
-        "助",
-        "手",
-        "。",
-        "我们",
-        "都",
-        "是一",
-        "款",
-        "强",
-        "大",
-        "型",
-        "语言",
-        "模型",
-        "，",
-        "能够",
-        "进行",
-        "对",
-        "话"
-      ],
-      "token_ids": [
-        57668,
-        21043,
-        112471,
-        11571,
-        128009,
-        128006,
-        78191,
-        128007,
-        271,
-        37046,
-        21043,
-        16047,
-        38,
-        2898,
-        3922,
-        48044,
-        15836,
-        41503,
-        7669,
-        1697,
-        103129,
-        46034,
-        1811,
-        98739,
-        72368,
-        107226,
-        69253,
-        103229,
-        27384,
-        25287,
-        120074,
-        123123,
-        3922,
-        113961,
-        72917,
-        33764,
-        58543
+        27327,
+        113954
       ],
       "output_distribution": {
         "top_k": 10,
@@ -3543,62 +2467,62 @@
           {
             "token": "和",
             "token_id": 34208,
-            "logprob": -0.2412,
-            "prob": 0.7852
-          },
-          {
-            "token": "、",
-            "token_id": 5486,
-            "logprob": -1.6172,
-            "prob": 0.1982
+            "logprob": -0.0148,
+            "prob": 0.9844
           },
           {
             "token": "并",
             "token_id": 64026,
-            "logprob": -5.4375,
-            "prob": 0.0044
-          },
-          {
-            "token": "，",
-            "token_id": 3922,
-            "logprob": -6.25,
-            "prob": 0.0019
-          },
-          {
-            "token": "และ",
-            "token_id": 100488,
-            "logprob": -6.5625,
-            "prob": 0.0014
-          },
-          {
-            "token": "，并",
-            "token_id": 91495,
-            "logprob": -6.9375,
-            "prob": 0.001
-          },
-          {
-            "token": "。",
-            "token_id": 1811,
-            "logprob": -7.0,
-            "prob": 0.0009
-          },
-          {
-            "token": "以及",
-            "token_id": 109717,
-            "logprob": -7.0625,
-            "prob": 0.0009
+            "logprob": -5.5,
+            "prob": 0.004
           },
           {
             "token": "Ġvà",
             "token_id": 48842,
-            "logprob": -7.4375,
-            "prob": 0.0006
+            "logprob": -6.5625,
+            "prob": 0.0014
+          },
+          {
+            "token": "及",
+            "token_id": 82317,
+            "logprob": -6.625,
+            "prob": 0.0013
+          },
+          {
+            "token": "人类",
+            "token_id": 124785,
+            "logprob": -6.8125,
+            "prob": 0.0011
+          },
+          {
+            "token": "与",
+            "token_id": 58318,
+            "logprob": -7.1875,
+            "prob": 0.0007
           },
           {
             "token": "Ġ和",
             "token_id": 59243,
-            "logprob": -7.6875,
+            "logprob": -7.4375,
+            "prob": 0.0006
+          },
+          {
+            "token": "และ",
+            "token_id": 100488,
+            "logprob": -7.5625,
             "prob": 0.0005
+          },
+          {
+            "token": "人",
+            "token_id": 17792,
+            "logprob": -7.875,
+            "prob": 0.0004
+          },
+          {
+            "token": "自然",
+            "token_id": 109683,
+            "logprob": -7.875,
+            "prob": 0.0004
           }
         ]
       },
@@ -3609,9 +2533,12 @@
       }
     },
     {
-      "step": 29,
-      "input_text": "你是谁？<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n我是ChatGPT，一个AI-powered conversational助手。我们都是一款强大型语言模型，能够进行对话和",
+      "step": 21,
+      "input_text": "<|start_header_id|>user<|end_header_id|>你是谁？<|eot_id|><|start_header_id|>assistant<|end_header_id|>我是ChatGPT，一个AI-powered conversational助手。我们都是一款能理解和",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "你",
         "是",
         "谁",
@@ -3620,7 +2547,6 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "我",
         "是",
         "Chat",
@@ -3639,19 +2565,14 @@
         "都",
         "是一",
         "款",
-        "强",
-        "大",
-        "型",
-        "语言",
-        "模型",
-        "，",
-        "能够",
-        "进行",
-        "对",
-        "话",
+        "能",
+        "理解",
         "和"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         57668,
         21043,
         112471,
@@ -3660,7 +2581,6 @@
         128006,
         78191,
         128007,
-        271,
         37046,
         21043,
         16047,
@@ -3679,93 +2599,88 @@
         72368,
         107226,
         69253,
-        103229,
-        27384,
-        25287,
-        120074,
-        123123,
-        3922,
-        113961,
-        72917,
-        33764,
-        58543,
+        27327,
+        113954,
         34208
       ],
       "output_distribution": {
         "top_k": 10,
         "candidates": [
           {
-            "token": "有",
-            "token_id": 19361,
-            "logprob": -2.4219,
-            "prob": 0.0889
+            "token": "生成",
+            "token_id": 45059,
+            "logprob": -1.6172,
+            "prob": 0.1982
           },
           {
-            "token": "讨",
-            "token_id": 112962,
-            "logprob": -2.6094,
-            "prob": 0.0737
+            "token": "Ġresponds",
+            "token_id": 31680,
+            "logprob": -2.4844,
+            "prob": 0.083
           },
           {
-            "token": "交流",
-            "token_id": 113841,
+            "token": "Ġresponded",
+            "token_id": 16846,
+            "logprob": -2.8594,
+            "prob": 0.0569
+          },
+          {
+            "token": "产生",
+            "token_id": 116498,
+            "logprob": -2.8594,
+            "prob": 0.0569
+          },
+          {
+            "token": "应",
+            "token_id": 51611,
+            "logprob": -3.1094,
+            "prob": 0.0442
+          },
+          {
+            "token": "Ġtrả",
+            "token_id": 106595,
             "logprob": -3.1719,
-            "prob": 0.042
+            "prob": 0.0415
           },
           {
-            "token": "交",
-            "token_id": 39209,
-            "logprob": -3.2344,
-            "prob": 0.0396
+            "token": "respond",
+            "token_id": 6961,
+            "logprob": -3.4844,
+            "prob": 0.0304
           },
           {
-            "token": "回答",
-            "token_id": 113925,
-            "logprob": -3.4219,
-            "prob": 0.0327
+            "token": "Ġrespond",
+            "token_id": 6013,
+            "logprob": -3.6094,
+            "prob": 0.0269
           },
           {
-            "token": "Ġconversations",
-            "token_id": 21633,
-            "logprob": -3.5469,
-            "prob": 0.0288
+            "token": "ĠRespond",
+            "token_id": 40633,
+            "logprob": -3.7969,
+            "prob": 0.0223
           },
           {
-            "token": "互",
-            "token_id": 106483,
-            "logprob": -3.7344,
-            "prob": 0.0239
-          },
-          {
-            "token": "问",
-            "token_id": 57107,
-            "logprob": -4.0938,
-            "prob": 0.0165
-          },
-          {
-            "token": "Conversation",
-            "token_id": 61413,
-            "logprob": -4.1562,
-            "prob": 0.0154
-          },
-          {
-            "token": "Ġconversation",
-            "token_id": 10652,
-            "logprob": -4.2188,
-            "prob": 0.0145
+            "token": "Respond",
+            "token_id": 66454,
+            "logprob": -4.0625,
+            "prob": 0.0173
           }
         ]
       },
       "selected_token": {
-        "token": "有",
-        "token_id": 19361,
+        "token": "生成",
+        "token_id": 45059,
         "selection_method": "greedy"
       }
     },
     {
-      "step": 30,
-      "input_text": "你是谁？<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n我是ChatGPT，一个AI-powered conversational助手。我们都是一款强大型语言模型，能够进行对话和有",
+      "step": 22,
+      "input_text": "<|start_header_id|>user<|end_header_id|>你是谁？<|eot_id|><|start_header_id|>assistant<|end_header_id|>我是ChatGPT，一个AI-powered conversational助手。我们都是一款能理解和生成",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "你",
         "是",
         "谁",
@@ -3774,7 +2689,6 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "我",
         "是",
         "Chat",
@@ -3793,20 +2707,15 @@
         "都",
         "是一",
         "款",
-        "强",
-        "大",
-        "型",
-        "语言",
-        "模型",
-        "，",
-        "能够",
-        "进行",
-        "对",
-        "话",
+        "能",
+        "理解",
         "和",
-        "有"
+        "生成"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         57668,
         21043,
         112471,
@@ -3815,7 +2724,6 @@
         128006,
         78191,
         128007,
-        271,
         37046,
         21043,
         16047,
@@ -3834,94 +2742,89 @@
         72368,
         107226,
         69253,
-        103229,
-        27384,
-        25287,
-        120074,
-        123123,
-        3922,
-        113961,
-        72917,
-        33764,
-        58543,
+        27327,
+        113954,
         34208,
-        19361
+        45059
       ],
       "output_distribution": {
         "top_k": 10,
         "candidates": [
           {
-            "token": "意义",
-            "token_id": 126189,
-            "logprob": -1.2188,
-            "prob": 0.2969
+            "token": "人类",
+            "token_id": 124785,
+            "logprob": -1.3516,
+            "prob": 0.2578
           },
           {
-            "token": "机",
-            "token_id": 33748,
-            "logprob": -3.0938,
-            "prob": 0.0454
+            "token": "自然",
+            "token_id": 109683,
+            "logprob": -1.8516,
+            "prob": 0.1572
           },
           {
-            "token": "用",
-            "token_id": 11883,
-            "logprob": -3.4062,
-            "prob": 0.0332
+            "token": "中文",
+            "token_id": 108891,
+            "logprob": -1.8516,
+            "prob": 0.1572
           },
           {
-            "token": "趣",
-            "token_id": 110999,
-            "logprob": -3.8438,
-            "prob": 0.0215
+            "token": "文",
+            "token_id": 17161,
+            "logprob": -2.1094,
+            "prob": 0.1221
           },
           {
-            "token": "感",
-            "token_id": 99750,
-            "logprob": -3.8438,
-            "prob": 0.0215
+            "token": "Ġhuman",
+            "token_id": 3823,
+            "logprob": -3.2969,
+            "prob": 0.0374
           },
           {
-            "token": "事",
-            "token_id": 30926,
-            "logprob": -3.9688,
-            "prob": 0.0189
+            "token": "语言",
+            "token_id": 120074,
+            "logprob": -3.2969,
+            "prob": 0.0374
           },
           {
-            "token": "针",
-            "token_id": 115392,
-            "logprob": -4.0312,
-            "prob": 0.0178
+            "token": "Ġhumano",
+            "token_id": 97557,
+            "logprob": -3.5469,
+            "prob": 0.0291
           },
           {
-            "token": "根据",
-            "token_id": 110747,
-            "logprob": -4.0938,
-            "prob": 0.0167
+            "token": "人",
+            "token_id": 17792,
+            "logprob": -4.5938,
+            "prob": 0.01
           },
           {
-            "token": "Ġconversations",
-            "token_id": 21633,
-            "logprob": -4.2188,
-            "prob": 0.0147
+            "token": "human",
+            "token_id": 26380,
+            "logprob": -4.7812,
+            "prob": 0.0083
           },
           {
-            "token": "问",
-            "token_id": 57107,
-            "logprob": -4.4062,
-            "prob": 0.0122
+            "token": "Ġhumans",
+            "token_id": 12966,
+            "logprob": -4.9688,
+            "prob": 0.0069
           }
         ]
       },
       "selected_token": {
-        "token": "意义",
-        "token_id": 126189,
+        "token": "人类",
+        "token_id": 124785,
         "selection_method": "greedy"
       }
     },
     {
-      "step": 31,
-      "input_text": "你是谁？<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n我是ChatGPT，一个AI-powered conversational助手。我们都是一款强大型语言模型，能够进行对话和有意义",
+      "step": 23,
+      "input_text": "<|start_header_id|>user<|end_header_id|>你是谁？<|eot_id|><|start_header_id|>assistant<|end_header_id|>我是ChatGPT，一个AI-powered conversational助手。我们都是一款能理解和生成人类",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "你",
         "是",
         "谁",
@@ -3930,7 +2833,6 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "我",
         "是",
         "Chat",
@@ -3949,21 +2851,16 @@
         "都",
         "是一",
         "款",
-        "强",
-        "大",
-        "型",
-        "语言",
-        "模型",
-        "，",
-        "能够",
-        "进行",
-        "对",
-        "话",
+        "能",
+        "理解",
         "和",
-        "有",
-        "意义"
+        "生成",
+        "人类"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         57668,
         21043,
         112471,
@@ -3972,7 +2869,6 @@
         128006,
         78191,
         128007,
-        271,
         37046,
         21043,
         16047,
@@ -3991,19 +2887,159 @@
         72368,
         107226,
         69253,
-        103229,
-        27384,
-        25287,
-        120074,
-        123123,
-        3922,
-        113961,
-        72917,
-        33764,
-        58543,
+        27327,
+        113954,
         34208,
-        19361,
-        126189
+        45059,
+        124785
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "语言",
+            "token_id": 120074,
+            "logprob": -1.1328,
+            "prob": 0.3223
+          },
+          {
+            "token": "语",
+            "token_id": 73981,
+            "logprob": -1.6953,
+            "prob": 0.1836
+          },
+          {
+            "token": "-like",
+            "token_id": 12970,
+            "logprob": -1.9453,
+            "prob": 0.1436
+          },
+          {
+            "token": "话",
+            "token_id": 58543,
+            "logprob": -3.375,
+            "prob": 0.0339
+          },
+          {
+            "token": "般",
+            "token_id": 104322,
+            "logprob": -3.875,
+            "prob": 0.0206
+          },
+          {
+            "token": "型",
+            "token_id": 25287,
+            "logprob": -4.0,
+            "prob": 0.0182
+          },
+          {
+            "token": "类",
+            "token_id": 22238,
+            "logprob": -4.3125,
+            "prob": 0.0133
+          },
+          {
+            "token": "Ġspeak",
+            "token_id": 6604,
+            "logprob": -4.4375,
+            "prob": 0.0118
+          },
+          {
+            "token": "like",
+            "token_id": 4908,
+            "logprob": -4.75,
+            "prob": 0.0086
+          },
+          {
+            "token": "样",
+            "token_id": 91985,
+            "logprob": -4.75,
+            "prob": 0.0086
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "语言",
+        "token_id": 120074,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 24,
+      "input_text": "<|start_header_id|>user<|end_header_id|>你是谁？<|eot_id|><|start_header_id|>assistant<|end_header_id|>我是ChatGPT，一个AI-powered conversational助手。我们都是一款能理解和生成人类语言",
+      "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
+        "你",
+        "是",
+        "谁",
+        "？",
+        "<|eot_id|>",
+        "<|start_header_id|>",
+        "assistant",
+        "<|end_header_id|>",
+        "我",
+        "是",
+        "Chat",
+        "G",
+        "PT",
+        "，",
+        "一个",
+        "AI",
+        "-powered",
+        "Ġconvers",
+        "ational",
+        "助",
+        "手",
+        "。",
+        "我们",
+        "都",
+        "是一",
+        "款",
+        "能",
+        "理解",
+        "和",
+        "生成",
+        "人类",
+        "语言"
+      ],
+      "token_ids": [
+        128006,
+        882,
+        128007,
+        57668,
+        21043,
+        112471,
+        11571,
+        128009,
+        128006,
+        78191,
+        128007,
+        37046,
+        21043,
+        16047,
+        38,
+        2898,
+        3922,
+        48044,
+        15836,
+        41503,
+        7669,
+        1697,
+        103129,
+        46034,
+        1811,
+        98739,
+        72368,
+        107226,
+        69253,
+        27327,
+        113954,
+        34208,
+        45059,
+        124785,
+        120074
       ],
       "output_distribution": {
         "top_k": 10,
@@ -4011,62 +3047,62 @@
           {
             "token": "的",
             "token_id": 9554,
-            "logprob": -0.1689,
-            "prob": 0.8438
+            "logprob": -0.0211,
+            "prob": 0.9805
           },
           {
-            "token": "Ġconversations",
-            "token_id": 21633,
-            "logprob": -3.9219,
-            "prob": 0.0199
+            "token": "，但",
+            "token_id": 102378,
+            "logprob": -6.9688,
+            "prob": 0.0009
           },
           {
-            "token": "讨",
-            "token_id": 112962,
-            "logprob": -4.1562,
-            "prob": 0.0154
+            "token": "，",
+            "token_id": 3922,
+            "logprob": -7.2188,
+            "prob": 0.0007
           },
           {
-            "token": "Ġconversation",
-            "token_id": 10652,
-            "logprob": -4.4688,
-            "prob": 0.0113
+            "token": "的地方",
+            "token_id": 121311,
+            "logprob": -7.2812,
+            "prob": 0.0007
           },
           {
-            "token": "Ġdiscussions",
-            "token_id": 20954,
-            "logprob": -4.6562,
-            "prob": 0.0094
+            "token": "来",
+            "token_id": 37507,
+            "logprob": -7.2812,
+            "prob": 0.0007
           },
           {
-            "token": "Ġtalking",
-            "token_id": 7556,
-            "logprob": -5.1562,
-            "prob": 0.0057
+            "token": "Ġ的",
+            "token_id": 44689,
+            "logprob": -7.2812,
+            "prob": 0.0007
           },
           {
-            "token": "交",
-            "token_id": 39209,
-            "logprob": -5.1562,
-            "prob": 0.0057
+            "token": "、",
+            "token_id": 5486,
+            "logprob": -7.3438,
+            "prob": 0.0007
           },
           {
-            "token": "对",
-            "token_id": 33764,
-            "logprob": -5.2188,
-            "prob": 0.0053
+            "token": "。",
+            "token_id": 1811,
+            "logprob": -7.6562,
+            "prob": 0.0005
           },
           {
-            "token": "Ġdiscussion",
-            "token_id": 10430,
-            "logprob": -5.5312,
-            "prob": 0.0039
+            "token": "文",
+            "token_id": 17161,
+            "logprob": -7.6562,
+            "prob": 0.0005
           },
           {
-            "token": "ĠConvers",
-            "token_id": 56496,
-            "logprob": -5.5312,
-            "prob": 0.0039
+            "token": "所",
+            "token_id": 32938,
+            "logprob": -7.8438,
+            "prob": 0.0004
           }
         ]
       },
@@ -4077,9 +3113,12 @@
       }
     },
     {
-      "step": 32,
-      "input_text": "你是谁？<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n我是ChatGPT，一个AI-powered conversational助手。我们都是一款强大型语言模型，能够进行对话和有意义的",
+      "step": 25,
+      "input_text": "<|start_header_id|>user<|end_header_id|>你是谁？<|eot_id|><|start_header_id|>assistant<|end_header_id|>我是ChatGPT，一个AI-powered conversational助手。我们都是一款能理解和生成人类语言的",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "你",
         "是",
         "谁",
@@ -4088,7 +3127,6 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "我",
         "是",
         "Chat",
@@ -4107,22 +3145,18 @@
         "都",
         "是一",
         "款",
-        "强",
-        "大",
-        "型",
-        "语言",
-        "模型",
-        "，",
-        "能够",
-        "进行",
-        "对",
-        "话",
+        "能",
+        "理解",
         "和",
-        "有",
-        "意义",
+        "生成",
+        "人类",
+        "语言",
         "的"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         57668,
         21043,
         112471,
@@ -4131,7 +3165,6 @@
         128006,
         78191,
         128007,
-        271,
         37046,
         21043,
         16047,
@@ -4150,96 +3183,92 @@
         72368,
         107226,
         69253,
-        103229,
-        27384,
-        25287,
-        120074,
-        123123,
-        3922,
-        113961,
-        72917,
-        33764,
-        58543,
+        27327,
+        113954,
         34208,
-        19361,
-        126189,
+        45059,
+        124785,
+        120074,
         9554
       ],
       "output_distribution": {
         "top_k": 10,
         "candidates": [
           {
-            "token": "讨",
-            "token_id": 112962,
-            "logprob": -2.0469,
-            "prob": 0.1289
+            "token": "智能",
+            "token_id": 118034,
+            "logprob": -2.3594,
+            "prob": 0.0942
           },
           {
-            "token": "Ġconversations",
-            "token_id": 21633,
-            "logprob": -2.2969,
-            "prob": 0.1006
+            "token": "神",
+            "token_id": 101365,
+            "logprob": -2.5469,
+            "prob": 0.0781
           },
           {
-            "token": "Ġconversation",
-            "token_id": 10652,
+            "token": "Ġintelligent",
+            "token_id": 25530,
             "logprob": -2.7344,
             "prob": 0.0649
           },
           {
-            "token": "对",
-            "token_id": 33764,
+            "token": "机",
+            "token_id": 33748,
             "logprob": -3.0469,
-            "prob": 0.0476
+            "prob": 0.0474
           },
           {
-            "token": "交",
-            "token_id": 39209,
-            "logprob": -3.1719,
-            "prob": 0.042
+            "token": "强",
+            "token_id": 103229,
+            "logprob": -3.0469,
+            "prob": 0.0474
           },
           {
-            "token": "交流",
-            "token_id": 113841,
-            "logprob": -3.2969,
-            "prob": 0.0371
-          },
-          {
-            "token": "ĠConversation",
-            "token_id": 51930,
-            "logprob": -3.4219,
-            "prob": 0.0327
-          },
-          {
-            "token": "ĠConvers",
-            "token_id": 56496,
-            "logprob": -3.4844,
-            "prob": 0.0306
-          },
-          {
-            "token": "表",
-            "token_id": 21405,
+            "token": "算",
+            "token_id": 70203,
             "logprob": -3.7344,
-            "prob": 0.0239
+            "prob": 0.0238
           },
           {
-            "token": "互",
-            "token_id": 106483,
-            "logprob": -3.7344,
-            "prob": 0.0239
+            "token": "技术",
+            "token_id": 104696,
+            "logprob": -3.8594,
+            "prob": 0.021
+          },
+          {
+            "token": "Chat",
+            "token_id": 16047,
+            "logprob": -3.8594,
+            "prob": 0.021
+          },
+          {
+            "token": "计算",
+            "token_id": 112352,
+            "logprob": -3.9844,
+            "prob": 0.0186
+          },
+          {
+            "token": "chat",
+            "token_id": 9884,
+            "logprob": -4.125,
+            "prob": 0.0164
           }
         ]
       },
       "selected_token": {
-        "token": "讨",
-        "token_id": 112962,
+        "token": "智能",
+        "token_id": 118034,
         "selection_method": "greedy"
       }
     },
     {
-      "step": 33,
-      "input_text": "你是谁？<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n我是ChatGPT，一个AI-powered conversational助手。我们都是一款强大型语言模型，能够进行对话和有意义的讨",
+      "step": 26,
+      "input_text": "<|start_header_id|>user<|end_header_id|>你是谁？<|eot_id|><|start_header_id|>assistant<|end_header_id|>我是ChatGPT，一个AI-powered conversational助手。我们都是一款能理解和生成人类语言的智能",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "你",
         "是",
         "谁",
@@ -4248,7 +3277,6 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "我",
         "是",
         "Chat",
@@ -4267,23 +3295,19 @@
         "都",
         "是一",
         "款",
-        "强",
-        "大",
-        "型",
-        "语言",
-        "模型",
-        "，",
-        "能够",
-        "进行",
-        "对",
-        "话",
+        "能",
+        "理解",
         "和",
-        "有",
-        "意义",
+        "生成",
+        "人类",
+        "语言",
         "的",
-        "讨"
+        "智能"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         57668,
         21043,
         112471,
@@ -4292,7 +3316,6 @@
         128006,
         78191,
         128007,
-        271,
         37046,
         21043,
         16047,
@@ -4311,97 +3334,93 @@
         72368,
         107226,
         69253,
-        103229,
-        27384,
-        25287,
-        120074,
-        123123,
-        3922,
-        113961,
-        72917,
-        33764,
-        58543,
+        27327,
+        113954,
         34208,
-        19361,
-        126189,
+        45059,
+        124785,
+        120074,
         9554,
-        112962
+        118034
       ],
       "output_distribution": {
         "top_k": 10,
         "candidates": [
           {
-            "token": "论",
-            "token_id": 68931,
-            "logprob": -0.0173,
-            "prob": 0.9844
+            "token": "助",
+            "token_id": 103129,
+            "logprob": -1.5938,
+            "prob": 0.2031
           },
           {
-            "token": "题",
-            "token_id": 34972,
-            "logprob": -5.9062,
-            "prob": 0.0028
+            "token": "机",
+            "token_id": 33748,
+            "logprob": -2.5312,
+            "prob": 0.0796
           },
           {
-            "token": "Ġluận",
-            "token_id": 108283,
-            "logprob": -6.0312,
-            "prob": 0.0024
+            "token": "assistant",
+            "token_id": 78191,
+            "logprob": -3.2188,
+            "prob": 0.04
           },
           {
-            "token": "論",
-            "token_id": 105242,
-            "logprob": -6.1562,
-            "prob": 0.0022
+            "token": "Ġassistant",
+            "token_id": 18328,
+            "logprob": -3.3438,
+            "prob": 0.0354
           },
           {
-            "token": "事",
-            "token_id": 30926,
-            "logprob": -7.8438,
-            "prob": 0.0004
+            "token": "系统",
+            "token_id": 73548,
+            "logprob": -3.5312,
+            "prob": 0.0293
           },
           {
-            "token": "谈",
-            "token_id": 110695,
-            "logprob": -7.9062,
-            "prob": 0.0004
+            "token": "工具",
+            "token_id": 114722,
+            "logprob": -3.7812,
+            "prob": 0.0228
           },
           {
-            "token": "程",
-            "token_id": 39607,
-            "logprob": -8.3125,
-            "prob": 0.0002
+            "token": "计算",
+            "token_id": 112352,
+            "logprob": -3.8438,
+            "prob": 0.0214
           },
           {
-            "token": "Ġconversation",
-            "token_id": 10652,
-            "logprob": -8.5625,
-            "prob": 0.0002
+            "token": "assist",
+            "token_id": 52066,
+            "logprob": -3.9062,
+            "prob": 0.0201
           },
           {
-            "token": "价",
-            "token_id": 51392,
-            "logprob": -8.625,
-            "prob": 0.0002
+            "token": "词",
+            "token_id": 106015,
+            "logprob": -3.9062,
+            "prob": 0.0201
           },
           {
-            "token": "务",
-            "token_id": 33052,
-            "logprob": -9.0625,
-            "prob": 0.0001
+            "token": "Assistant",
+            "token_id": 72803,
+            "logprob": -3.9688,
+            "prob": 0.0189
           }
         ]
       },
       "selected_token": {
-        "token": "论",
-        "token_id": 68931,
+        "token": "助",
+        "token_id": 103129,
         "selection_method": "greedy"
       }
     },
     {
-      "step": 34,
-      "input_text": "你是谁？<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n我是ChatGPT，一个AI-powered conversational助手。我们都是一款强大型语言模型，能够进行对话和有意义的讨论",
+      "step": 27,
+      "input_text": "<|start_header_id|>user<|end_header_id|>你是谁？<|eot_id|><|start_header_id|>assistant<|end_header_id|>我是ChatGPT，一个AI-powered conversational助手。我们都是一款能理解和生成人类语言的智能助",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "你",
         "是",
         "谁",
@@ -4410,7 +3429,6 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "我",
         "是",
         "Chat",
@@ -4429,24 +3447,20 @@
         "都",
         "是一",
         "款",
-        "强",
-        "大",
-        "型",
-        "语言",
-        "模型",
-        "，",
-        "能够",
-        "进行",
-        "对",
-        "话",
+        "能",
+        "理解",
         "和",
-        "有",
-        "意义",
+        "生成",
+        "人类",
+        "语言",
         "的",
-        "讨",
-        "论"
+        "智能",
+        "助"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         57668,
         21043,
         112471,
@@ -4455,7 +3469,6 @@
         128006,
         78191,
         128007,
-        271,
         37046,
         21043,
         16047,
@@ -4474,22 +3487,171 @@
         72368,
         107226,
         69253,
-        103229,
-        27384,
-        25287,
-        120074,
-        123123,
-        3922,
-        113961,
-        72917,
-        33764,
-        58543,
+        27327,
+        113954,
         34208,
-        19361,
-        126189,
+        45059,
+        124785,
+        120074,
         9554,
-        112962,
-        68931
+        118034,
+        103129
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "手",
+            "token_id": 46034,
+            "logprob": -0.0413,
+            "prob": 0.9609
+          },
+          {
+            "token": "理",
+            "token_id": 22649,
+            "logprob": -5.2188,
+            "prob": 0.0054
+          },
+          {
+            "token": "力",
+            "token_id": 48634,
+            "logprob": -6.1562,
+            "prob": 0.0021
+          },
+          {
+            "token": "动",
+            "token_id": 28833,
+            "logprob": -6.6562,
+            "prob": 0.0013
+          },
+          {
+            "token": "Ġlý",
+            "token_id": 101226,
+            "logprob": -7.2812,
+            "prob": 0.0007
+          },
+          {
+            "token": "Ġ手",
+            "token_id": 109006,
+            "logprob": -7.3438,
+            "prob": 0.0006
+          },
+          {
+            "token": "力的",
+            "token_id": 126235,
+            "logprob": -7.6562,
+            "prob": 0.0005
+          },
+          {
+            "token": "眠",
+            "token_id": 120379,
+            "logprob": -7.7188,
+            "prob": 0.0004
+          },
+          {
+            "token": "言",
+            "token_id": 78244,
+            "logprob": -7.7812,
+            "prob": 0.0004
+          },
+          {
+            "token": "ม",
+            "token_id": 27379,
+            "logprob": -7.8438,
+            "prob": 0.0004
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "手",
+        "token_id": 46034,
+        "selection_method": "greedy"
+      }
+    },
+    {
+      "step": 28,
+      "input_text": "<|start_header_id|>user<|end_header_id|>你是谁？<|eot_id|><|start_header_id|>assistant<|end_header_id|>我是ChatGPT，一个AI-powered conversational助手。我们都是一款能理解和生成人类语言的智能助手",
+      "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
+        "你",
+        "是",
+        "谁",
+        "？",
+        "<|eot_id|>",
+        "<|start_header_id|>",
+        "assistant",
+        "<|end_header_id|>",
+        "我",
+        "是",
+        "Chat",
+        "G",
+        "PT",
+        "，",
+        "一个",
+        "AI",
+        "-powered",
+        "Ġconvers",
+        "ational",
+        "助",
+        "手",
+        "。",
+        "我们",
+        "都",
+        "是一",
+        "款",
+        "能",
+        "理解",
+        "和",
+        "生成",
+        "人类",
+        "语言",
+        "的",
+        "智能",
+        "助",
+        "手"
+      ],
+      "token_ids": [
+        128006,
+        882,
+        128007,
+        57668,
+        21043,
+        112471,
+        11571,
+        128009,
+        128006,
+        78191,
+        128007,
+        37046,
+        21043,
+        16047,
+        38,
+        2898,
+        3922,
+        48044,
+        15836,
+        41503,
+        7669,
+        1697,
+        103129,
+        46034,
+        1811,
+        98739,
+        72368,
+        107226,
+        69253,
+        27327,
+        113954,
+        34208,
+        45059,
+        124785,
+        120074,
+        9554,
+        118034,
+        103129,
+        46034
       ],
       "output_distribution": {
         "top_k": 10,
@@ -4497,62 +3659,62 @@
           {
             "token": "。",
             "token_id": 1811,
-            "logprob": -0.016,
-            "prob": 0.9844
-          },
-          {
-            "token": "。但",
-            "token_id": 111825,
-            "logprob": -6.0938,
-            "prob": 0.0023
-          },
-          {
-            "token": "。在",
-            "token_id": 107644,
-            "logprob": -6.2812,
-            "prob": 0.0019
-          },
-          {
-            "token": "。\n",
-            "token_id": 9174,
-            "logprob": -6.4688,
-            "prob": 0.0016
-          },
-          {
-            "token": "。如果",
-            "token_id": 119464,
-            "logprob": -6.5938,
-            "prob": 0.0014
-          },
-          {
-            "token": "。我",
-            "token_id": 107030,
-            "logprob": -6.6562,
-            "prob": 0.0013
-          },
-          {
-            "token": "。这",
-            "token_id": 110477,
-            "logprob": -7.0312,
-            "prob": 0.0009
-          },
-          {
-            "token": "。此",
-            "token_id": 122471,
-            "logprob": -7.2188,
-            "prob": 0.0007
+            "logprob": -0.1484,
+            "prob": 0.8633
           },
           {
             "token": "，",
             "token_id": 3922,
-            "logprob": -7.2188,
-            "prob": 0.0007
+            "logprob": -2.5156,
+            "prob": 0.0801
+          },
+          {
+            "token": "，而",
+            "token_id": 104122,
+            "logprob": -4.7812,
+            "prob": 0.0085
+          },
+          {
+            "token": "，可以",
+            "token_id": 114831,
+            "logprob": -5.0312,
+            "prob": 0.0066
           },
           {
             "token": "，但",
             "token_id": 102378,
-            "logprob": -7.6562,
-            "prob": 0.0005
+            "logprob": -5.4062,
+            "prob": 0.0045
+          },
+          {
+            "token": "，我",
+            "token_id": 101602,
+            "logprob": -6.0312,
+            "prob": 0.0024
+          },
+          {
+            "token": "，可",
+            "token_id": 108779,
+            "logprob": -6.2812,
+            "prob": 0.0019
+          },
+          {
+            "token": "。在",
+            "token_id": 107644,
+            "logprob": -6.3438,
+            "prob": 0.0018
+          },
+          {
+            "token": "，每",
+            "token_id": 116255,
+            "logprob": -6.4688,
+            "prob": 0.0016
+          },
+          {
+            "token": "。这",
+            "token_id": 110477,
+            "logprob": -6.7188,
+            "prob": 0.0012
           }
         ]
       },
@@ -4563,9 +3725,12 @@
       }
     },
     {
-      "step": 35,
-      "input_text": "你是谁？<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n我是ChatGPT，一个AI-powered conversational助手。我们都是一款强大型语言模型，能够进行对话和有意义的讨论。",
+      "step": 29,
+      "input_text": "<|start_header_id|>user<|end_header_id|>你是谁？<|eot_id|><|start_header_id|>assistant<|end_header_id|>我是ChatGPT，一个AI-powered conversational助手。我们都是一款能理解和生成人类语言的智能助手。",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "你",
         "是",
         "谁",
@@ -4574,7 +3739,6 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "我",
         "是",
         "Chat",
@@ -4593,25 +3757,22 @@
         "都",
         "是一",
         "款",
-        "强",
-        "大",
-        "型",
-        "语言",
-        "模型",
-        "，",
-        "能够",
-        "进行",
-        "对",
-        "话",
+        "能",
+        "理解",
         "和",
-        "有",
-        "意义",
+        "生成",
+        "人类",
+        "语言",
         "的",
-        "讨",
-        "论",
+        "智能",
+        "助",
+        "手",
         "。"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         57668,
         21043,
         112471,
@@ -4620,7 +3781,6 @@
         128006,
         78191,
         128007,
-        271,
         37046,
         21043,
         16047,
@@ -4639,22 +3799,16 @@
         72368,
         107226,
         69253,
-        103229,
-        27384,
-        25287,
-        120074,
-        123123,
-        3922,
-        113961,
-        72917,
-        33764,
-        58543,
+        27327,
+        113954,
         34208,
-        19361,
-        126189,
+        45059,
+        124785,
+        120074,
         9554,
-        112962,
-        68931,
+        118034,
+        103129,
+        46034,
         1811
       ],
       "output_distribution": {
@@ -4663,62 +3817,62 @@
           {
             "token": "<|eot_id|>",
             "token_id": 128009,
-            "logprob": -0.1973,
-            "prob": 0.8203
+            "logprob": -0.4297,
+            "prob": 0.6484
           },
           {
             "token": "我们",
             "token_id": 98739,
-            "logprob": -1.9453,
-            "prob": 0.1426
+            "logprob": -1.3047,
+            "prob": 0.2715
           },
           {
             "token": "我们的",
             "token_id": 125383,
-            "logprob": -4.5625,
-            "prob": 0.0103
-          },
-          {
-            "token": "然而",
-            "token_id": 116764,
-            "logprob": -5.6875,
-            "prob": 0.0034
-          },
-          {
-            "token": "Ġ我",
-            "token_id": 106026,
-            "logprob": -5.75,
-            "prob": 0.0032
+            "logprob": -3.3125,
+            "prob": 0.0366
           },
           {
             "token": "虽然",
             "token_id": 108855,
+            "logprob": -4.5625,
+            "prob": 0.0105
+          },
+          {
+            "token": "Ġ我",
+            "token_id": 106026,
             "logprob": -5.875,
             "prob": 0.0028
           },
           {
+            "token": "然而",
+            "token_id": 116764,
+            "logprob": -6.375,
+            "prob": 0.0017
+          },
+          {
             "token": "我的",
             "token_id": 98711,
-            "logprob": -7.125,
-            "prob": 0.0008
+            "logprob": -6.75,
+            "prob": 0.0012
           },
           {
             "token": "您",
             "token_id": 88126,
-            "logprob": -7.4375,
-            "prob": 0.0006
+            "logprob": -6.75,
+            "prob": 0.0012
           },
           {
-            "token": "我",
-            "token_id": 37046,
-            "logprob": -7.4375,
-            "prob": 0.0006
+            "token": "目前",
+            "token_id": 113230,
+            "logprob": -6.75,
+            "prob": 0.0012
           },
           {
-            "token": "有",
-            "token_id": 19361,
-            "logprob": -7.5625,
-            "prob": 0.0005
+            "token": "每",
+            "token_id": 74257,
+            "logprob": -6.9375,
+            "prob": 0.001
           }
         ]
       },

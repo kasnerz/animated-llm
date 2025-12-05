@@ -1,5 +1,5 @@
 {
-  "id": "generated_20251203_120556",
+  "id": "generated_20251204_095008",
   "prompt": "“谢谢”里有多少个“谢”字？",
   "language": "zh",
   "temperature": 0.0,
@@ -14,8 +14,11 @@
   "generation_steps": [
     {
       "step": 0,
-      "input_text": "“谢谢”里有多少个“谢”字？<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+      "input_text": "<|start_header_id|>user<|end_header_id|>“谢谢”里有多少个“谢”字？<|eot_id|><|start_header_id|>assistant<|end_header_id|>",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "“",
         "谢",
         "谢",
@@ -32,10 +35,12 @@
         "<|eot_id|>",
         "<|start_header_id|>",
         "assistant",
-        "<|end_header_id|>",
-        "\n\n"
+        "<|end_header_id|>"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         2118,
         109122,
         109122,
@@ -52,8 +57,7 @@
         128009,
         128006,
         78191,
-        128007,
-        271
+        128007
       ],
       "output_distribution": {
         "top_k": 10,
@@ -61,56 +65,56 @@
           {
             "token": "“",
             "token_id": 2118,
-            "logprob": -1.0234,
-            "prob": 0.3594
+            "logprob": -1.0156,
+            "prob": 0.3613
           },
           {
             "token": "在",
             "token_id": 19000,
-            "logprob": -1.3984,
-            "prob": 0.2471
+            "logprob": -1.5156,
+            "prob": 0.2188
           },
           {
             "token": "\"",
             "token_id": 1,
-            "logprob": -1.6484,
-            "prob": 0.1924
+            "logprob": -1.5781,
+            "prob": 0.2061
           },
           {
             "token": "一个",
             "token_id": 48044,
-            "logprob": -3.2812,
-            "prob": 0.0378
+            "logprob": -3.2031,
+            "prob": 0.0405
           },
           {
             "token": "一",
             "token_id": 15120,
-            "logprob": -3.8438,
-            "prob": 0.0216
+            "logprob": -3.7656,
+            "prob": 0.0231
           },
           {
             "token": "我",
             "token_id": 37046,
-            "logprob": -4.2188,
-            "prob": 0.0148
+            "logprob": -4.0938,
+            "prob": 0.0168
           },
           {
             "token": "有",
             "token_id": 19361,
-            "logprob": -4.7812,
-            "prob": 0.0084
+            "logprob": -4.8438,
+            "prob": 0.008
           },
           {
             "token": "根据",
             "token_id": 110747,
-            "logprob": -5.4062,
-            "prob": 0.0045
+            "logprob": -5.2812,
+            "prob": 0.0052
           },
           {
             "token": "中文",
             "token_id": 108891,
-            "logprob": -5.6562,
-            "prob": 0.0035
+            "logprob": -5.7188,
+            "prob": 0.0033
           },
           {
             "token": "最",
@@ -128,8 +132,11 @@
     },
     {
       "step": 1,
-      "input_text": "“谢谢”里有多少个“谢”字？<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n“",
+      "input_text": "<|start_header_id|>user<|end_header_id|>“谢谢”里有多少个“谢”字？<|eot_id|><|start_header_id|>assistant<|end_header_id|>“",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "“",
         "谢",
         "谢",
@@ -147,10 +154,12 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "“"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         2118,
         109122,
         109122,
@@ -168,7 +177,6 @@
         128006,
         78191,
         128007,
-        271,
         2118
       ],
       "output_distribution": {
@@ -183,13 +191,13 @@
           {
             "token": "謝",
             "token_id": 118835,
-            "logprob": -8.8125,
+            "logprob": -8.875,
             "prob": 0.0001
           },
           {
             "token": "Thank",
             "token_id": 13359,
-            "logprob": -9.25,
+            "logprob": -9.3125,
             "prob": 0.0001
           },
           {
@@ -225,12 +233,12 @@
           {
             "token": "�",
             "token_id": 13647,
-            "logprob": -11.5625,
+            "logprob": -11.625,
             "prob": 0.0
           },
           {
-            "token": "thank",
-            "token_id": 58517,
+            "token": "Ġ�",
+            "token_id": 111370,
             "logprob": -11.875,
             "prob": 0.0
           }
@@ -244,8 +252,11 @@
     },
     {
       "step": 2,
-      "input_text": "“谢谢”里有多少个“谢”字？<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n“谢",
+      "input_text": "<|start_header_id|>user<|end_header_id|>“谢谢”里有多少个“谢”字？<|eot_id|><|start_header_id|>assistant<|end_header_id|>“谢",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "“",
         "谢",
         "谢",
@@ -263,11 +274,13 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "“",
         "谢"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         2118,
         109122,
         109122,
@@ -285,7 +298,6 @@
         128006,
         78191,
         128007,
-        271,
         2118,
         109122
       ],
@@ -295,43 +307,43 @@
           {
             "token": "”",
             "token_id": 863,
-            "logprob": -0.4062,
-            "prob": 0.6641
+            "logprob": -0.4492,
+            "prob": 0.6367
           },
           {
             "token": "谢",
             "token_id": 109122,
-            "logprob": -1.1562,
-            "prob": 0.3145
+            "logprob": -1.0703,
+            "prob": 0.3418
           },
           {
             "token": "”的",
             "token_id": 99007,
-            "logprob": -5.9688,
+            "logprob": -6.0,
             "prob": 0.0025
           },
           {
             "token": "\"",
             "token_id": 1,
-            "logprob": -6.4688,
-            "prob": 0.0015
+            "logprob": -6.625,
+            "prob": 0.0013
           },
           {
             "token": "发",
             "token_id": 29391,
-            "logprob": -7.9062,
+            "logprob": -7.875,
             "prob": 0.0004
           },
           {
             "token": "“",
             "token_id": 2118,
-            "logprob": -7.9688,
+            "logprob": -8.0,
             "prob": 0.0003
           },
           {
             "token": "天",
             "token_id": 36827,
-            "logprob": -8.125,
+            "logprob": -8.0625,
             "prob": 0.0003
           },
           {
@@ -341,15 +353,15 @@
             "prob": 0.0002
           },
           {
-            "token": "尔",
-            "token_id": 100179,
-            "logprob": -8.4375,
+            "token": "了",
+            "token_id": 35287,
+            "logprob": -8.375,
             "prob": 0.0002
           },
           {
-            "token": "了",
-            "token_id": 35287,
-            "logprob": -8.5,
+            "token": "尔",
+            "token_id": 100179,
+            "logprob": -8.4375,
             "prob": 0.0002
           }
         ]
@@ -362,8 +374,11 @@
     },
     {
       "step": 3,
-      "input_text": "“谢谢”里有多少个“谢”字？<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n“谢”",
+      "input_text": "<|start_header_id|>user<|end_header_id|>“谢谢”里有多少个“谢”字？<|eot_id|><|start_header_id|>assistant<|end_header_id|>“谢”",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "“",
         "谢",
         "谢",
@@ -381,12 +396,14 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "“",
         "谢",
         "”"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         2118,
         109122,
         109122,
@@ -404,7 +421,6 @@
         128006,
         78191,
         128007,
-        271,
         2118,
         109122,
         863
@@ -415,62 +431,62 @@
           {
             "token": "字",
             "token_id": 19113,
-            "logprob": -0.9492,
-            "prob": 0.3867
+            "logprob": -0.9297,
+            "prob": 0.3945
           },
           {
             "token": "是",
             "token_id": 21043,
-            "logprob": -1.8828,
-            "prob": 0.1514
+            "logprob": -1.8047,
+            "prob": 0.165
           },
           {
             "token": "里",
             "token_id": 70349,
-            "logprob": -2.0156,
-            "prob": 0.1338
+            "logprob": -2.2344,
+            "prob": 0.1064
           },
           {
             "token": "有",
             "token_id": 19361,
-            "logprob": -2.7656,
-            "prob": 0.0635
+            "logprob": -2.7969,
+            "prob": 0.0605
           },
           {
             "token": "是一",
             "token_id": 107226,
-            "logprob": -3.1406,
-            "prob": 0.0435
+            "logprob": -3.0469,
+            "prob": 0.0471
           },
           {
             "token": "这个",
             "token_id": 103624,
-            "logprob": -3.5781,
-            "prob": 0.0281
-          },
-          {
-            "token": "在",
-            "token_id": 19000,
-            "logprob": -3.6406,
-            "prob": 0.0264
+            "logprob": -3.4844,
+            "prob": 0.0305
           },
           {
             "token": "是一个",
             "token_id": 122503,
-            "logprob": -3.7031,
-            "prob": 0.0248
+            "logprob": -3.5469,
+            "prob": 0.0286
+          },
+          {
+            "token": "在",
+            "token_id": 19000,
+            "logprob": -3.6094,
+            "prob": 0.0269
           },
           {
             "token": "这",
             "token_id": 44388,
-            "logprob": -3.9531,
-            "prob": 0.0193
+            "logprob": -3.9219,
+            "prob": 0.0197
           },
           {
             "token": "里的",
             "token_id": 117834,
-            "logprob": -4.0,
-            "prob": 0.0181
+            "logprob": -4.125,
+            "prob": 0.0164
           }
         ]
       },
@@ -482,8 +498,11 @@
     },
     {
       "step": 4,
-      "input_text": "“谢谢”里有多少个“谢”字？<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n“谢”字",
+      "input_text": "<|start_header_id|>user<|end_header_id|>“谢谢”里有多少个“谢”字？<|eot_id|><|start_header_id|>assistant<|end_header_id|>“谢”字",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "“",
         "谢",
         "谢",
@@ -501,13 +520,15 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "“",
         "谢",
         "”",
         "字"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         2118,
         109122,
         109122,
@@ -525,7 +546,6 @@
         128006,
         78191,
         128007,
-        271,
         2118,
         109122,
         863,
@@ -537,62 +557,62 @@
           {
             "token": "有",
             "token_id": 19361,
-            "logprob": -1.4609,
-            "prob": 0.2314
+            "logprob": -1.4531,
+            "prob": 0.2344
           },
           {
             "token": "在",
             "token_id": 19000,
-            "logprob": -1.5859,
-            "prob": 0.2041
+            "logprob": -1.5781,
+            "prob": 0.207
           },
           {
             "token": "的",
             "token_id": 9554,
-            "logprob": -1.7109,
-            "prob": 0.1797
+            "logprob": -1.7656,
+            "prob": 0.1719
           },
           {
             "token": "共",
             "token_id": 55999,
-            "logprob": -2.5312,
-            "prob": 0.0801
+            "logprob": -2.6406,
+            "prob": 0.0713
           },
           {
             "token": "数量",
             "token_id": 82900,
-            "logprob": -3.2188,
-            "prob": 0.0403
+            "logprob": -3.2031,
+            "prob": 0.0408
           },
           {
             "token": "出",
             "token_id": 20834,
-            "logprob": -3.5938,
-            "prob": 0.0276
+            "logprob": -3.5156,
+            "prob": 0.0298
           },
           {
             "token": "是",
             "token_id": 21043,
-            "logprob": -3.6562,
-            "prob": 0.026
+            "logprob": -3.5156,
+            "prob": 0.0298
           },
           {
             "token": "出现",
             "token_id": 111935,
-            "logprob": -3.7188,
-            "prob": 0.0244
+            "logprob": -3.7656,
+            "prob": 0.0232
           },
           {
             "token": "总",
             "token_id": 60843,
-            "logprob": -3.8438,
-            "prob": 0.0215
+            "logprob": -3.8906,
+            "prob": 0.0205
           },
           {
             "token": "中",
             "token_id": 16325,
-            "logprob": -4.2188,
-            "prob": 0.0148
+            "logprob": -4.25,
+            "prob": 0.014
           }
         ]
       },
@@ -604,8 +624,11 @@
     },
     {
       "step": 5,
-      "input_text": "“谢谢”里有多少个“谢”字？<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n“谢”字有",
+      "input_text": "<|start_header_id|>user<|end_header_id|>“谢谢”里有多少个“谢”字？<|eot_id|><|start_header_id|>assistant<|end_header_id|>“谢”字有",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "“",
         "谢",
         "谢",
@@ -623,7 +646,6 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "“",
         "谢",
         "”",
@@ -631,6 +653,9 @@
         "有"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         2118,
         109122,
         109122,
@@ -648,7 +673,6 @@
         128006,
         78191,
         128007,
-        271,
         2118,
         109122,
         863,
@@ -661,62 +685,62 @@
           {
             "token": "Ġ",
             "token_id": 220,
-            "logprob": -1.3594,
-            "prob": 0.2578
+            "logprob": -1.375,
+            "prob": 0.252
           },
           {
             "token": "两个",
             "token_id": 110835,
-            "logprob": -1.8594,
-            "prob": 0.1562
+            "logprob": -1.75,
+            "prob": 0.1738
           },
           {
             "token": "两",
             "token_id": 78640,
-            "logprob": -1.8594,
-            "prob": 0.1562
+            "logprob": -1.875,
+            "prob": 0.1533
           },
           {
             "token": "4",
             "token_id": 19,
-            "logprob": -2.4844,
-            "prob": 0.0835
+            "logprob": -2.5,
+            "prob": 0.082
           },
           {
             "token": "3",
             "token_id": 18,
-            "logprob": -2.9844,
-            "prob": 0.0505
+            "logprob": -3.0,
+            "prob": 0.0498
           },
           {
             "token": "2",
             "token_id": 17,
-            "logprob": -2.9844,
-            "prob": 0.0505
+            "logprob": -3.0,
+            "prob": 0.0498
           },
           {
             "token": "三个",
             "token_id": 126524,
-            "logprob": -3.1094,
-            "prob": 0.0447
+            "logprob": -3.125,
+            "prob": 0.0439
           },
           {
             "token": "三",
             "token_id": 46091,
-            "logprob": -3.2344,
-            "prob": 0.0393
+            "logprob": -3.25,
+            "prob": 0.0388
           },
           {
             "token": "四",
             "token_id": 64803,
-            "logprob": -3.2344,
-            "prob": 0.0393
+            "logprob": -3.25,
+            "prob": 0.0388
           },
           {
-            "token": "5",
-            "token_id": 20,
-            "logprob": -4.1562,
-            "prob": 0.0154
+            "token": "多",
+            "token_id": 43240,
+            "logprob": -4.1875,
+            "prob": 0.0152
           }
         ]
       },
@@ -728,8 +752,11 @@
     },
     {
       "step": 6,
-      "input_text": "“谢谢”里有多少个“谢”字？<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n“谢”字有 ",
+      "input_text": "<|start_header_id|>user<|end_header_id|>“谢谢”里有多少个“谢”字？<|eot_id|><|start_header_id|>assistant<|end_header_id|>“谢”字有 ",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "“",
         "谢",
         "谢",
@@ -747,7 +774,6 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "“",
         "谢",
         "”",
@@ -756,6 +782,9 @@
         "Ġ"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         2118,
         109122,
         109122,
@@ -773,7 +802,6 @@
         128006,
         78191,
         128007,
-        271,
         2118,
         109122,
         863,
@@ -787,62 +815,62 @@
           {
             "token": "2",
             "token_id": 17,
-            "logprob": -0.5664,
-            "prob": 0.5664
+            "logprob": -0.6016,
+            "prob": 0.5469
           },
           {
             "token": "3",
             "token_id": 18,
-            "logprob": -1.4375,
-            "prob": 0.2363
+            "logprob": -1.3516,
+            "prob": 0.2598
           },
           {
             "token": "4",
             "token_id": 19,
-            "logprob": -2.3125,
-            "prob": 0.0986
+            "logprob": -2.3594,
+            "prob": 0.0952
           },
           {
             "token": "5",
             "token_id": 20,
-            "logprob": -3.3125,
-            "prob": 0.0364
+            "logprob": -3.3594,
+            "prob": 0.0349
           },
           {
             "token": "1",
             "token_id": 16,
-            "logprob": -3.9375,
-            "prob": 0.0194
+            "logprob": -3.9844,
+            "prob": 0.0188
           },
           {
             "token": "6",
             "token_id": 21,
-            "logprob": -4.0625,
-            "prob": 0.0172
+            "logprob": -3.9844,
+            "prob": 0.0188
           },
           {
             "token": "7",
             "token_id": 22,
-            "logprob": -4.9375,
-            "prob": 0.0071
+            "logprob": -4.8438,
+            "prob": 0.0078
           },
           {
             "token": "8",
             "token_id": 23,
-            "logprob": -5.4375,
-            "prob": 0.0043
+            "logprob": -5.3438,
+            "prob": 0.0047
           },
           {
             "token": "9",
             "token_id": 24,
-            "logprob": -5.8125,
-            "prob": 0.003
+            "logprob": -5.7188,
+            "prob": 0.0033
           },
           {
             "token": "10",
             "token_id": 605,
-            "logprob": -6.3125,
-            "prob": 0.0018
+            "logprob": -6.2188,
+            "prob": 0.002
           }
         ]
       },
@@ -854,8 +882,11 @@
     },
     {
       "step": 7,
-      "input_text": "“谢谢”里有多少个“谢”字？<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n“谢”字有 2",
+      "input_text": "<|start_header_id|>user<|end_header_id|>“谢谢”里有多少个“谢”字？<|eot_id|><|start_header_id|>assistant<|end_header_id|>“谢”字有 2",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "“",
         "谢",
         "谢",
@@ -873,7 +904,6 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "“",
         "谢",
         "”",
@@ -883,6 +913,9 @@
         "2"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         2118,
         109122,
         109122,
@@ -900,7 +933,6 @@
         128006,
         78191,
         128007,
-        271,
         2118,
         109122,
         863,
@@ -915,14 +947,14 @@
           {
             "token": "Ġ个",
             "token_id": 109820,
-            "logprob": -0.0623,
-            "prob": 0.9414
+            "logprob": -0.0581,
+            "prob": 0.9453
           },
           {
             "token": "个",
             "token_id": 19483,
-            "logprob": -3.8125,
-            "prob": 0.0221
+            "logprob": -3.875,
+            "prob": 0.0209
           },
           {
             "token": "Ġ�",
@@ -933,44 +965,44 @@
           {
             "token": "Ġ次",
             "token_id": 115338,
-            "logprob": -6.1875,
-            "prob": 0.0021
+            "logprob": -6.3125,
+            "prob": 0.0018
           },
           {
             "token": "Ġ位",
             "token_id": 117602,
-            "logprob": -6.5625,
-            "prob": 0.0014
+            "logprob": -6.625,
+            "prob": 0.0013
           },
           {
             "token": "Ġ条",
             "token_id": 125263,
-            "logprob": -6.6875,
-            "prob": 0.0012
-          },
-          {
-            "token": "Ġ�",
-            "token_id": 45154,
-            "logprob": -7.5,
-            "prob": 0.0006
-          },
-          {
-            "token": "Ġ個",
-            "token_id": 121503,
-            "logprob": -7.625,
-            "prob": 0.0005
-          },
-          {
-            "token": "Ġ�",
-            "token_id": 41766,
-            "logprob": -7.625,
-            "prob": 0.0005
+            "logprob": -6.8125,
+            "prob": 0.0011
           },
           {
             "token": "Ġ",
             "token_id": 220,
             "logprob": -7.625,
             "prob": 0.0005
+          },
+          {
+            "token": "Ġ�",
+            "token_id": 45154,
+            "logprob": -7.6875,
+            "prob": 0.0005
+          },
+          {
+            "token": "种",
+            "token_id": 87502,
+            "logprob": -7.6875,
+            "prob": 0.0005
+          },
+          {
+            "token": "Ġ�",
+            "token_id": 41766,
+            "logprob": -7.75,
+            "prob": 0.0004
           }
         ]
       },
@@ -982,8 +1014,11 @@
     },
     {
       "step": 8,
-      "input_text": "“谢谢”里有多少个“谢”字？<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n“谢”字有 2 个",
+      "input_text": "<|start_header_id|>user<|end_header_id|>“谢谢”里有多少个“谢”字？<|eot_id|><|start_header_id|>assistant<|end_header_id|>“谢”字有 2 个",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "“",
         "谢",
         "谢",
@@ -1001,7 +1036,6 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "“",
         "谢",
         "”",
@@ -1012,6 +1046,9 @@
         "Ġ个"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         2118,
         109122,
         109122,
@@ -1029,7 +1066,6 @@
         128006,
         78191,
         128007,
-        271,
         2118,
         109122,
         863,
@@ -1045,62 +1081,62 @@
           {
             "token": "。",
             "token_id": 1811,
-            "logprob": -1.2656,
-            "prob": 0.2832
+            "logprob": -1.25,
+            "prob": 0.2852
           },
           {
             "token": "，",
             "token_id": 3922,
-            "logprob": -2.5781,
-            "prob": 0.0762
+            "logprob": -2.625,
+            "prob": 0.0723
           },
           {
             "token": "。\n\n",
             "token_id": 3490,
-            "logprob": -2.7031,
-            "prob": 0.0669
+            "logprob": -2.6875,
+            "prob": 0.0679
           },
           {
             "token": "：",
             "token_id": 5232,
-            "logprob": -3.2656,
-            "prob": 0.0383
+            "logprob": -3.3125,
+            "prob": 0.0364
           },
           {
             "token": "字",
             "token_id": 19113,
-            "logprob": -3.4531,
-            "prob": 0.0317
-          },
-          {
-            "token": "不同的",
-            "token_id": 126644,
-            "logprob": -3.8281,
-            "prob": 0.0217
+            "logprob": -3.375,
+            "prob": 0.0342
           },
           {
             "token": "单",
             "token_id": 24946,
-            "logprob": -3.8281,
-            "prob": 0.0217
+            "logprob": -3.6875,
+            "prob": 0.025
+          },
+          {
+            "token": "不同的",
+            "token_id": 126644,
+            "logprob": -3.8125,
+            "prob": 0.022
           },
           {
             "token": "“",
             "token_id": 2118,
-            "logprob": -4.125,
-            "prob": 0.016
+            "logprob": -4.0625,
+            "prob": 0.0172
           },
           {
             "token": "音",
             "token_id": 79785,
-            "logprob": -4.375,
-            "prob": 0.0124
+            "logprob": -4.4375,
+            "prob": 0.0118
           },
           {
-            "token": "中文",
-            "token_id": 108891,
-            "logprob": -4.4375,
-            "prob": 0.0117
+            "token": "主要",
+            "token_id": 105572,
+            "logprob": -4.5,
+            "prob": 0.0111
           }
         ]
       },
@@ -1112,8 +1148,11 @@
     },
     {
       "step": 9,
-      "input_text": "“谢谢”里有多少个“谢”字？<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n“谢”字有 2 个。",
+      "input_text": "<|start_header_id|>user<|end_header_id|>“谢谢”里有多少个“谢”字？<|eot_id|><|start_header_id|>assistant<|end_header_id|>“谢”字有 2 个。",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "“",
         "谢",
         "谢",
@@ -1131,7 +1170,6 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "“",
         "谢",
         "”",
@@ -1143,6 +1181,9 @@
         "。"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         2118,
         109122,
         109122,
@@ -1160,7 +1201,6 @@
         128006,
         78191,
         128007,
-        271,
         2118,
         109122,
         863,
@@ -1177,62 +1217,62 @@
           {
             "token": "<|eot_id|>",
             "token_id": 128009,
-            "logprob": -0.1914,
-            "prob": 0.8242
+            "logprob": -0.21,
+            "prob": 0.8125
           },
           {
             "token": "Ġ\n\n",
             "token_id": 4815,
-            "logprob": -2.9375,
-            "prob": 0.0527
+            "logprob": -2.8281,
+            "prob": 0.0588
           },
           {
             "token": "它",
             "token_id": 103282,
-            "logprob": -4.0,
-            "prob": 0.0182
+            "logprob": -3.9531,
+            "prob": 0.019
           },
           {
             "token": "它们",
             "token_id": 127150,
-            "logprob": -4.5625,
-            "prob": 0.0104
+            "logprob": -4.5312,
+            "prob": 0.0109
           },
           {
             "token": "首",
             "token_id": 61075,
-            "logprob": -4.75,
-            "prob": 0.0086
+            "logprob": -4.6562,
+            "prob": 0.0096
           },
           {
             "token": "一个",
             "token_id": 48044,
-            "logprob": -5.125,
-            "prob": 0.0059
+            "logprob": -5.0312,
+            "prob": 0.0066
           },
           {
             "token": "其中",
             "token_id": 92019,
-            "logprob": -5.4375,
-            "prob": 0.0043
-          },
-          {
-            "token": "第一",
-            "token_id": 103983,
-            "logprob": -5.4375,
-            "prob": 0.0043
+            "logprob": -5.3438,
+            "prob": 0.0048
           },
           {
             "token": "第",
             "token_id": 30537,
-            "logprob": -5.4375,
-            "prob": 0.0043
+            "logprob": -5.3438,
+            "prob": 0.0048
+          },
+          {
+            "token": "第一",
+            "token_id": 103983,
+            "logprob": -5.3438,
+            "prob": 0.0048
           },
           {
             "token": "Ġ\n",
             "token_id": 720,
-            "logprob": -5.4375,
-            "prob": 0.0043
+            "logprob": -5.4062,
+            "prob": 0.0045
           }
         ]
       },

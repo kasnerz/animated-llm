@@ -1,5 +1,5 @@
 {
-  "id": "generated_20251203_120603",
+  "id": "generated_20251204_095018",
   "prompt": "Řekni mi vtip",
   "language": "cs",
   "temperature": 1.0,
@@ -14,8 +14,11 @@
   "generation_steps": [
     {
       "step": 0,
-      "input_text": "Řekni mi vtip<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+      "input_text": "<|start_header_id|>user<|end_header_id|>Řekni mi vtip<|eot_id|><|start_header_id|>assistant<|end_header_id|>",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "Ř",
         "ek",
         "ni",
@@ -25,10 +28,12 @@
         "<|eot_id|>",
         "<|start_header_id|>",
         "assistant",
-        "<|end_header_id|>",
-        "\n\n"
+        "<|end_header_id|>"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         106540,
         1247,
         7907,
@@ -38,8 +43,7 @@
         128009,
         128006,
         78191,
-        128007,
-        271
+        128007
       ],
       "output_distribution": {
         "top_k": 10,
@@ -47,75 +51,78 @@
           {
             "token": "V",
             "token_id": 53,
-            "logprob": -1.8281,
-            "prob": 0.1611
+            "logprob": -1.9141,
+            "prob": 0.1475
           },
           {
             "token": "\"",
             "token_id": 1,
-            "logprob": -1.8906,
-            "prob": 0.1514
+            "logprob": -2.0938,
+            "prob": 0.1226
           },
           {
             "token": "M",
             "token_id": 44,
-            "logprob": -2.3906,
-            "prob": 0.0918
+            "logprob": -2.2812,
+            "prob": 0.1016
           },
           {
             "token": "K",
             "token_id": 42,
-            "logprob": -3.3281,
-            "prob": 0.0359
-          },
-          {
-            "token": "J",
-            "token_id": 41,
-            "logprob": -3.4531,
-            "prob": 0.0317
-          },
-          {
-            "token": "\"M",
-            "token_id": 74627,
-            "logprob": -3.5156,
-            "prob": 0.0298
+            "logprob": -3.2188,
+            "prob": 0.0398
           },
           {
             "token": "O",
             "token_id": 46,
-            "logprob": -3.5156,
-            "prob": 0.0298
+            "logprob": -3.3438,
+            "prob": 0.0352
+          },
+          {
+            "token": "J",
+            "token_id": 41,
+            "logprob": -3.3438,
+            "prob": 0.0352
           },
           {
             "token": "D",
             "token_id": 35,
-            "logprob": -3.6406,
-            "prob": 0.0262
+            "logprob": -3.5312,
+            "prob": 0.0292
           },
           {
             "token": "Je",
             "token_id": 30854,
-            "logprob": -3.6406,
-            "prob": 0.0262
+            "logprob": -3.5312,
+            "prob": 0.0292
+          },
+          {
+            "token": "\"M",
+            "token_id": 74627,
+            "logprob": -3.5938,
+            "prob": 0.0273
           },
           {
             "token": "Co",
             "token_id": 7489,
-            "logprob": -4.125,
-            "prob": 0.0159
+            "logprob": -4.1562,
+            "prob": 0.0156
           }
         ]
       },
       "selected_token": {
-        "token": "V",
-        "token_id": 53,
+        "token": "M",
+        "token_id": 44,
         "selection_method": "sampling"
       }
     },
     {
       "step": 1,
-      "input_text": "Řekni mi vtip<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nV",
+      "input_text": "<|start_header_id|>user<|end_header_id|>Řekni mi vtip<|eot_id|><|start_header_id|>assistant<|end_header_id|>M",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "Ř",
         "ek",
         "ni",
@@ -126,10 +133,12 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
-        "V"
+        "M"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         106540,
         1247,
         7907,
@@ -140,84 +149,86 @@
         128006,
         78191,
         128007,
-        271,
-        53
+        44
       ],
       "output_distribution": {
         "top_k": 10,
         "candidates": [
           {
-            "token": "tip",
-            "token_id": 13446,
-            "logprob": -0.0116,
-            "prob": 0.9883
-          },
-          {
-            "token": "Ġtip",
-            "token_id": 11813,
-            "logprob": -6.625,
-            "prob": 0.0013
-          },
-          {
-            "token": "tom",
-            "token_id": 38501,
-            "logprob": -7.125,
-            "prob": 0.0008
-          },
-          {
-            "token": "_tip",
-            "token_id": 49114,
-            "logprob": -7.1875,
-            "prob": 0.0007
+            "token": "ám",
+            "token_id": 36334,
+            "logprob": -1.9844,
+            "prob": 0.1377
           },
           {
             "token": "í",
             "token_id": 2483,
-            "logprob": -7.1875,
-            "prob": 0.0007
+            "logprob": -2.7969,
+            "prob": 0.061
           },
           {
-            "token": "ás",
-            "token_id": 7206,
-            "logprob": -8.125,
-            "prob": 0.0003
+            "token": "á",
+            "token_id": 1995,
+            "logprob": -3.1094,
+            "prob": 0.0447
           },
           {
-            "token": "ito",
-            "token_id": 6491,
-            "logprob": -8.375,
-            "prob": 0.0002
+            "token": "áte",
+            "token_id": 108082,
+            "logprob": -3.2969,
+            "prob": 0.0369
           },
           {
             "token": "ít",
             "token_id": 16485,
-            "logprob": -8.4375,
-            "prob": 0.0002
+            "logprob": -3.5469,
+            "prob": 0.0288
           },
           {
-            "token": "tips",
-            "token_id": 46554,
-            "logprob": -8.5,
-            "prob": 0.0002
+            "token": "l",
+            "token_id": 75,
+            "logprob": -3.7344,
+            "prob": 0.0239
           },
           {
-            "token": "stup",
-            "token_id": 102289,
-            "logprob": -8.5625,
-            "prob": 0.0002
+            "token": "lé",
+            "token_id": 69328,
+            "logprob": -3.9219,
+            "prob": 0.0198
+          },
+          {
+            "token": "lu",
+            "token_id": 10036,
+            "logprob": -4.125,
+            "prob": 0.0164
+          },
+          {
+            "token": "ilion",
+            "token_id": 50012,
+            "logprob": -4.1875,
+            "prob": 0.0154
+          },
+          {
+            "token": "lý",
+            "token_id": 112689,
+            "logprob": -4.25,
+            "prob": 0.0145
           }
         ]
       },
       "selected_token": {
-        "token": "tip",
-        "token_id": 13446,
+        "token": "í",
+        "token_id": 2483,
         "selection_method": "sampling"
       }
     },
     {
       "step": 2,
-      "input_text": "Řekni mi vtip<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nVtip",
+      "input_text": "<|start_header_id|>user<|end_header_id|>Řekni mi vtip<|eot_id|><|start_header_id|>assistant<|end_header_id|>Mí",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "Ř",
         "ek",
         "ni",
@@ -228,11 +239,13 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
-        "V",
-        "tip"
+        "M",
+        "í"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         106540,
         1247,
         7907,
@@ -243,85 +256,87 @@
         128006,
         78191,
         128007,
-        271,
-        53,
-        13446
+        44,
+        2483
       ],
       "output_distribution": {
         "top_k": 10,
         "candidates": [
           {
-            "token": ":",
-            "token_id": 25,
-            "logprob": -0.1016,
-            "prob": 0.9023
+            "token": "val",
+            "token_id": 838,
+            "logprob": -2.9688,
+            "prob": 0.0515
           },
           {
-            "token": "Ġje",
-            "token_id": 4864,
-            "logprob": -3.7969,
-            "prob": 0.0226
+            "token": "rov",
+            "token_id": 40494,
+            "logprob": -3.1562,
+            "prob": 0.0427
           },
           {
-            "token": ":\n",
-            "token_id": 512,
-            "logprob": -5.8438,
-            "prob": 0.0029
+            "token": "sta",
+            "token_id": 21127,
+            "logprob": -3.2812,
+            "prob": 0.0378
           },
           {
-            "token": "Ġse",
-            "token_id": 513,
-            "logprob": -6.0938,
-            "prob": 0.0022
+            "token": "ste",
+            "token_id": 5455,
+            "logprob": -3.9062,
+            "prob": 0.0203
           },
           {
-            "token": "Ġpro",
-            "token_id": 463,
-            "logprob": -6.2188,
-            "prob": 0.002
+            "token": "rn",
+            "token_id": 36722,
+            "logprob": -4.1562,
+            "prob": 0.0157
           },
           {
-            "token": ":\n\n",
-            "token_id": 1473,
-            "logprob": -6.3438,
-            "prob": 0.0017
+            "token": "che",
+            "token_id": 1557,
+            "logprob": -4.4375,
+            "prob": 0.0119
           },
           {
-            "token": "Ġ:",
-            "token_id": 551,
-            "logprob": -6.4062,
-            "prob": 0.0016
+            "token": "ni",
+            "token_id": 7907,
+            "logprob": -4.4688,
+            "prob": 0.0115
           },
           {
-            "token": "Ġze",
-            "token_id": 14017,
-            "logprob": -6.5625,
-            "prob": 0.0014
+            "token": "rové",
+            "token_id": 122054,
+            "logprob": -4.4688,
+            "prob": 0.0115
           },
           {
-            "token": "ní",
-            "token_id": 55122,
-            "logprob": -6.75,
-            "prob": 0.0012
+            "token": "del",
+            "token_id": 9783,
+            "logprob": -4.5,
+            "prob": 0.0112
           },
           {
-            "token": "ová",
-            "token_id": 100779,
-            "logprob": -6.75,
-            "prob": 0.0012
+            "token": "rně",
+            "token_id": 124914,
+            "logprob": -4.5938,
+            "prob": 0.0101
           }
         ]
       },
       "selected_token": {
-        "token": ":",
-        "token_id": 25,
+        "token": "del",
+        "token_id": 9783,
         "selection_method": "sampling"
       }
     },
     {
       "step": 3,
-      "input_text": "Řekni mi vtip<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nVtip:",
+      "input_text": "<|start_header_id|>user<|end_header_id|>Řekni mi vtip<|eot_id|><|start_header_id|>assistant<|end_header_id|>Mídel",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "Ř",
         "ek",
         "ni",
@@ -332,12 +347,14 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
-        "V",
-        "tip",
-        ":"
+        "M",
+        "í",
+        "del"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         106540,
         1247,
         7907,
@@ -348,86 +365,88 @@
         128006,
         78191,
         128007,
-        271,
-        53,
-        13446,
-        25
+        44,
+        2483,
+        9783
       ],
       "output_distribution": {
         "top_k": 10,
         "candidates": [
           {
-            "token": "ĠM",
-            "token_id": 386,
-            "logprob": -2.2812,
-            "prob": 0.1025
+            "token": "a",
+            "token_id": 64,
+            "logprob": -2.5938,
+            "prob": 0.0752
           },
           {
-            "token": "ĠK",
-            "token_id": 735,
-            "logprob": -2.3438,
-            "prob": 0.0962
-          },
-          {
-            "token": "ĠJak",
-            "token_id": 35934,
-            "logprob": -2.4688,
-            "prob": 0.085
-          },
-          {
-            "token": "Ġ\"",
-            "token_id": 330,
-            "logprob": -3.0938,
-            "prob": 0.0454
-          },
-          {
-            "token": "ĠO",
-            "token_id": 507,
-            "logprob": -3.2812,
-            "prob": 0.0376
-          },
-          {
-            "token": "ĠJ",
-            "token_id": 622,
+            "token": ",",
+            "token_id": 11,
             "logprob": -3.3438,
             "prob": 0.0354
           },
           {
-            "token": "ĠD",
-            "token_id": 423,
-            "logprob": -3.5312,
-            "prob": 0.0293
+            "token": "Ġje",
+            "token_id": 4864,
+            "logprob": -3.4062,
+            "prob": 0.0332
           },
           {
-            "token": "ĠV",
-            "token_id": 650,
-            "logprob": -3.6562,
-            "prob": 0.0259
+            "token": "ka",
+            "token_id": 4657,
+            "logprob": -3.4688,
+            "prob": 0.0312
           },
           {
-            "token": "ĠJe",
-            "token_id": 14465,
+            "token": "o",
+            "token_id": 78,
             "logprob": -3.7812,
             "prob": 0.0228
           },
           {
-            "token": "ĠU",
-            "token_id": 549,
-            "logprob": -4.2812,
-            "prob": 0.0139
+            "token": "Ġsi",
+            "token_id": 4502,
+            "logprob": -3.9062,
+            "prob": 0.0201
+          },
+          {
+            "token": "Ġa",
+            "token_id": 264,
+            "logprob": -4.0625,
+            "prob": 0.0172
+          },
+          {
+            "token": "i",
+            "token_id": 72,
+            "logprob": -4.0938,
+            "prob": 0.0167
+          },
+          {
+            "token": "í",
+            "token_id": 2483,
+            "logprob": -4.3438,
+            "prob": 0.0131
+          },
+          {
+            "token": "ík",
+            "token_id": 111086,
+            "logprob": -4.4062,
+            "prob": 0.0123
           }
         ]
       },
       "selected_token": {
-        "token": "ĠM",
-        "token_id": 386,
+        "token": "Ġsi",
+        "token_id": 4502,
         "selection_method": "sampling"
       }
     },
     {
       "step": 4,
-      "input_text": "Řekni mi vtip<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nVtip: M",
+      "input_text": "<|start_header_id|>user<|end_header_id|>Řekni mi vtip<|eot_id|><|start_header_id|>assistant<|end_header_id|>Mídel si",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "Ř",
         "ek",
         "ni",
@@ -438,13 +457,15 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
-        "V",
-        "tip",
-        ":",
-        "ĠM"
+        "M",
+        "í",
+        "del",
+        "Ġsi"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         106540,
         1247,
         7907,
@@ -455,184 +476,73 @@
         128006,
         78191,
         128007,
-        271,
-        53,
-        13446,
-        25,
-        386
+        44,
+        2483,
+        9783,
+        4502
       ],
       "output_distribution": {
         "top_k": 10,
         "candidates": [
-          {
-            "token": "á",
-            "token_id": 1995,
-            "logprob": -2.1562,
-            "prob": 0.1162
-          },
-          {
-            "token": "ám",
-            "token_id": 36334,
-            "logprob": -2.5312,
-            "prob": 0.0796
-          },
-          {
-            "token": "l",
-            "token_id": 75,
-            "logprob": -2.7812,
-            "prob": 0.0623
-          },
-          {
-            "token": "lé",
-            "token_id": 69328,
-            "logprob": -2.9062,
-            "prob": 0.0549
-          },
-          {
-            "token": "í",
-            "token_id": 2483,
-            "logprob": -3.2188,
-            "prob": 0.04
-          },
-          {
-            "token": "lý",
-            "token_id": 112689,
-            "logprob": -3.4062,
-            "prob": 0.0332
-          },
-          {
-            "token": "lu",
-            "token_id": 10036,
-            "logprob": -3.5312,
-            "prob": 0.0293
-          },
-          {
-            "token": "ária",
-            "token_id": 59042,
-            "logprob": -3.5938,
-            "prob": 0.0276
-          },
-          {
-            "token": "lad",
-            "token_id": 18599,
-            "logprob": -3.8438,
-            "prob": 0.0215
-          },
-          {
-            "token": "sta",
-            "token_id": 21127,
-            "logprob": -4.0312,
-            "prob": 0.0178
-          }
-        ]
-      },
-      "selected_token": {
-        "token": "ám",
-        "token_id": 36334,
-        "selection_method": "sampling"
-      }
-    },
-    {
-      "step": 5,
-      "input_text": "Řekni mi vtip<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nVtip: Mám",
-      "tokens": [
-        "Ř",
-        "ek",
-        "ni",
-        "Ġmi",
-        "Ġv",
-        "tip",
-        "<|eot_id|>",
-        "<|start_header_id|>",
-        "assistant",
-        "<|end_header_id|>",
-        "\n\n",
-        "V",
-        "tip",
-        ":",
-        "ĠM",
-        "ám"
-      ],
-      "token_ids": [
-        106540,
-        1247,
-        7907,
-        9686,
-        348,
-        13446,
-        128009,
-        128006,
-        78191,
-        128007,
-        271,
-        53,
-        13446,
-        25,
-        386,
-        36334
-      ],
-      "output_distribution": {
-        "top_k": 10,
-        "candidates": [
-          {
-            "token": "Ġna",
-            "token_id": 4415,
-            "logprob": -2.5469,
-            "prob": 0.0781
-          },
           {
             "token": "Ġv",
             "token_id": 348,
-            "logprob": -3.3281,
-            "prob": 0.0356
+            "logprob": -3.7812,
+            "prob": 0.0228
           },
           {
-            "token": "Ġjeden",
-            "token_id": 54265,
-            "logprob": -3.6406,
-            "prob": 0.0261
+            "token": "Ġmá",
+            "token_id": 29830,
+            "logprob": -4.125,
+            "prob": 0.0162
           },
           {
-            "token": "Ġrá",
-            "token_id": 49769,
-            "logprob": -3.8594,
-            "prob": 0.021
+            "token": "Ġu",
+            "token_id": 577,
+            "logprob": -4.1875,
+            "prob": 0.0152
           },
           {
-            "token": "Ġo",
-            "token_id": 297,
-            "logprob": -4.4375,
-            "prob": 0.012
+            "token": "Ġst",
+            "token_id": 357,
+            "logprob": -4.4062,
+            "prob": 0.0122
           },
           {
-            "token": "Ġko",
-            "token_id": 15593,
-            "logprob": -4.4375,
-            "prob": 0.012
+            "token": "Ġna",
+            "token_id": 4415,
+            "logprob": -4.5,
+            "prob": 0.0111
           },
           {
-            "token": "Ġsi",
-            "token_id": 4502,
-            "logprob": -4.4375,
-            "prob": 0.012
+            "token": ",",
+            "token_id": 11,
+            "logprob": -4.5312,
+            "prob": 0.0108
           },
           {
-            "token": "Ġco",
-            "token_id": 1080,
-            "logprob": -4.6875,
-            "prob": 0.0093
-          },
-          {
-            "token": "Ġtwo",
-            "token_id": 1403,
+            "token": "Ġjed",
+            "token_id": 18806,
             "logprob": -4.75,
             "prob": 0.0087
           },
           {
-            "token": "Ġrád",
-            "token_id": 122125,
-            "logprob": -5.0938,
-            "prob": 0.0062
+            "token": "je",
+            "token_id": 3841,
+            "logprob": -5.0,
+            "prob": 0.0067
+          },
+          {
+            "token": "Ġve",
+            "token_id": 5320,
+            "logprob": -5.125,
+            "prob": 0.006
+          },
+          {
+            "token": "Ġže",
+            "token_id": 85874,
+            "logprob": -5.1562,
+            "prob": 0.0058
           }
         ]
       },
@@ -643,9 +553,12 @@
       }
     },
     {
-      "step": 6,
-      "input_text": "Řekni mi vtip<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nVtip: Mám v",
+      "step": 5,
+      "input_text": "<|start_header_id|>user<|end_header_id|>Řekni mi vtip<|eot_id|><|start_header_id|>assistant<|end_header_id|>Mídel si v",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "Ř",
         "ek",
         "ni",
@@ -656,15 +569,16 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
-        "V",
-        "tip",
-        ":",
-        "ĠM",
-        "ám",
+        "M",
+        "í",
+        "del",
+        "Ġsi",
         "Ġv"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         106540,
         1247,
         7907,
@@ -675,12 +589,10 @@
         128006,
         78191,
         128007,
-        271,
-        53,
-        13446,
-        25,
-        386,
-        36334,
+        44,
+        2483,
+        9783,
+        4502,
         348
       ],
       "output_distribution": {
@@ -689,75 +601,194 @@
           {
             "token": "tip",
             "token_id": 13446,
-            "logprob": -2.4531,
-            "prob": 0.0859
+            "logprob": -1.4453,
+            "prob": 0.2363
+          },
+          {
+            "token": "zd",
+            "token_id": 49755,
+            "logprob": -3.375,
+            "prob": 0.0342
+          },
+          {
+            "token": "tr",
+            "token_id": 376,
+            "logprob": -3.75,
+            "prob": 0.0234
+          },
+          {
+            "token": "kl",
+            "token_id": 10784,
+            "logprob": -3.8125,
+            "prob": 0.022
           },
           {
             "token": "č",
             "token_id": 13453,
-            "logprob": -2.5781,
-            "prob": 0.0757
-          },
-          {
-            "token": "lo",
-            "token_id": 385,
-            "logprob": -3.2031,
-            "prob": 0.0405
-          },
-          {
-            "token": "ep",
-            "token_id": 752,
-            "logprob": -3.2031,
-            "prob": 0.0405
-          },
-          {
-            "token": "se",
-            "token_id": 325,
-            "logprob": -3.6406,
-            "prob": 0.0261
-          },
-          {
-            "token": "aj",
-            "token_id": 1662,
-            "logprob": -3.8281,
-            "prob": 0.0217
-          },
-          {
-            "token": "odu",
-            "token_id": 77055,
-            "logprob": -3.8281,
-            "prob": 0.0217
-          },
-          {
-            "token": "lt",
-            "token_id": 4937,
-            "logprob": -4.0312,
-            "prob": 0.0179
-          },
-          {
-            "token": "ik",
-            "token_id": 1609,
-            "logprob": -4.2188,
-            "prob": 0.0149
+            "logprob": -3.875,
+            "prob": 0.0206
           },
           {
             "token": "la",
             "token_id": 4355,
-            "logprob": -4.2188,
-            "prob": 0.0149
+            "logprob": -4.0625,
+            "prob": 0.0171
+          },
+          {
+            "token": "ep",
+            "token_id": 752,
+            "logprob": -4.1875,
+            "prob": 0.0151
+          },
+          {
+            "token": "rt",
+            "token_id": 3423,
+            "logprob": -4.3125,
+            "prob": 0.0134
+          },
+          {
+            "token": "rat",
+            "token_id": 18071,
+            "logprob": -4.375,
+            "prob": 0.0125
+          },
+          {
+            "token": "tom",
+            "token_id": 38501,
+            "logprob": -4.375,
+            "prob": 0.0125
           }
         ]
       },
       "selected_token": {
-        "token": "ep",
-        "token_id": 752,
+        "token": "tip",
+        "token_id": 13446,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 6,
+      "input_text": "<|start_header_id|>user<|end_header_id|>Řekni mi vtip<|eot_id|><|start_header_id|>assistant<|end_header_id|>Mídel si vtip",
+      "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
+        "Ř",
+        "ek",
+        "ni",
+        "Ġmi",
+        "Ġv",
+        "tip",
+        "<|eot_id|>",
+        "<|start_header_id|>",
+        "assistant",
+        "<|end_header_id|>",
+        "M",
+        "í",
+        "del",
+        "Ġsi",
+        "Ġv",
+        "tip"
+      ],
+      "token_ids": [
+        128006,
+        882,
+        128007,
+        106540,
+        1247,
+        7907,
+        9686,
+        348,
+        13446,
+        128009,
+        128006,
+        78191,
+        128007,
+        44,
+        2483,
+        9783,
+        4502,
+        348,
+        13446
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": ":",
+            "token_id": 25,
+            "logprob": -0.9922,
+            "prob": 0.3711
+          },
+          {
+            "token": ",",
+            "token_id": 11,
+            "logprob": -2.5,
+            "prob": 0.0825
+          },
+          {
+            "token": ":\n",
+            "token_id": 512,
+            "logprob": -4.0,
+            "prob": 0.0184
+          },
+          {
+            "token": ".",
+            "token_id": 13,
+            "logprob": -4.125,
+            "prob": 0.0162
+          },
+          {
+            "token": ":\n\n",
+            "token_id": 1473,
+            "logprob": -4.1562,
+            "prob": 0.0157
+          },
+          {
+            "token": "Ġo",
+            "token_id": 297,
+            "logprob": -4.2812,
+            "prob": 0.0139
+          },
+          {
+            "token": "Ġří",
+            "token_id": 101819,
+            "logprob": -4.375,
+            "prob": 0.0127
+          },
+          {
+            "token": "Ġže",
+            "token_id": 85874,
+            "logprob": -4.4688,
+            "prob": 0.0115
+          },
+          {
+            "token": "ík",
+            "token_id": 111086,
+            "logprob": -4.9062,
+            "prob": 0.0074
+          },
+          {
+            "token": "Ġna",
+            "token_id": 4415,
+            "logprob": -4.9375,
+            "prob": 0.0072
+          }
+        ]
+      },
+      "selected_token": {
+        "token": ":",
+        "token_id": 25,
         "selection_method": "sampling"
       }
     },
     {
       "step": 7,
-      "input_text": "Řekni mi vtip<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nVtip: Mám vep",
+      "input_text": "<|start_header_id|>user<|end_header_id|>Řekni mi vtip<|eot_id|><|start_header_id|>assistant<|end_header_id|>Mídel si vtip:",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "Ř",
         "ek",
         "ni",
@@ -768,16 +799,18 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
-        "V",
-        "tip",
-        ":",
-        "ĠM",
-        "ám",
+        "M",
+        "í",
+        "del",
+        "Ġsi",
         "Ġv",
-        "ep"
+        "tip",
+        ":"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         106540,
         1247,
         7907,
@@ -788,90 +821,92 @@
         128006,
         78191,
         128007,
-        271,
-        53,
-        13446,
-        25,
-        386,
-        36334,
+        44,
+        2483,
+        9783,
+        4502,
         348,
-        752
+        13446,
+        25
       ],
       "output_distribution": {
         "top_k": 10,
         "candidates": [
           {
-            "token": "ř",
-            "token_id": 29432,
-            "logprob": -0.5742,
-            "prob": 0.5625
+            "token": "ĠM",
+            "token_id": 386,
+            "logprob": -2.2188,
+            "prob": 0.1089
           },
           {
-            "token": "el",
-            "token_id": 301,
-            "logprob": -1.3828,
-            "prob": 0.25
+            "token": "Ġ\"",
+            "token_id": 330,
+            "logprob": -2.2188,
+            "prob": 0.1089
           },
           {
-            "token": "ark",
-            "token_id": 847,
-            "logprob": -4.5625,
-            "prob": 0.0103
+            "token": "ĠK",
+            "token_id": 735,
+            "logprob": -2.3438,
+            "prob": 0.0957
           },
           {
-            "token": "ře",
-            "token_id": 100871,
-            "logprob": -4.8125,
-            "prob": 0.0081
+            "token": "ĠJak",
+            "token_id": 35934,
+            "logprob": -2.9688,
+            "prob": 0.0513
           },
           {
-            "token": "ce",
-            "token_id": 346,
-            "logprob": -4.8125,
-            "prob": 0.0081
+            "token": "Ġ\n\n",
+            "token_id": 4815,
+            "logprob": -3.4688,
+            "prob": 0.0311
           },
           {
-            "token": "eln",
-            "token_id": 17912,
-            "logprob": -5.3125,
-            "prob": 0.0049
+            "token": "Ġ\n",
+            "token_id": 720,
+            "logprob": -3.7188,
+            "prob": 0.0243
           },
           {
-            "token": "ela",
-            "token_id": 8458,
-            "logprob": -5.375,
-            "prob": 0.0046
+            "token": "ĠJ",
+            "token_id": 622,
+            "logprob": -3.7812,
+            "prob": 0.0228
           },
           {
-            "token": "ár",
-            "token_id": 42354,
-            "logprob": -5.375,
-            "prob": 0.0046
+            "token": "ĠV",
+            "token_id": 650,
+            "logprob": -3.9062,
+            "prob": 0.0201
           },
           {
-            "token": "ína",
-            "token_id": 117518,
-            "logprob": -5.7188,
-            "prob": 0.0033
+            "token": "ĠD",
+            "token_id": 423,
+            "logprob": -4.0,
+            "prob": 0.0183
           },
           {
-            "token": "elu",
-            "token_id": 79378,
-            "logprob": -5.875,
-            "prob": 0.0028
+            "token": "ĠJe",
+            "token_id": 14465,
+            "logprob": -4.2812,
+            "prob": 0.0138
           }
         ]
       },
       "selected_token": {
-        "token": "ř",
-        "token_id": 29432,
+        "token": "ĠM",
+        "token_id": 386,
         "selection_method": "sampling"
       }
     },
     {
       "step": 8,
-      "input_text": "Řekni mi vtip<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nVtip: Mám vepř",
+      "input_text": "<|start_header_id|>user<|end_header_id|>Řekni mi vtip<|eot_id|><|start_header_id|>assistant<|end_header_id|>Mídel si vtip: M",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "Ř",
         "ek",
         "ni",
@@ -882,17 +917,19 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
-        "V",
+        "M",
+        "í",
+        "del",
+        "Ġsi",
+        "Ġv",
         "tip",
         ":",
-        "ĠM",
-        "ám",
-        "Ġv",
-        "ep",
-        "ř"
+        "ĠM"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         106540,
         1247,
         7907,
@@ -903,91 +940,93 @@
         128006,
         78191,
         128007,
-        271,
-        53,
+        44,
+        2483,
+        9783,
+        4502,
+        348,
         13446,
         25,
-        386,
-        36334,
-        348,
-        752,
-        29432
+        386
       ],
       "output_distribution": {
         "top_k": 10,
         "candidates": [
           {
-            "token": "o",
-            "token_id": 78,
-            "logprob": -2.2969,
-            "prob": 0.1001
+            "token": "í",
+            "token_id": 2483,
+            "logprob": -1.7734,
+            "prob": 0.1699
           },
           {
-            "token": "ec",
-            "token_id": 762,
-            "logprob": -2.8594,
-            "prob": 0.0571
+            "token": "ám",
+            "token_id": 36334,
+            "logprob": -2.0781,
+            "prob": 0.124
           },
           {
-            "token": "olu",
-            "token_id": 44906,
-            "logprob": -3.2969,
-            "prob": 0.0369
-          },
-          {
-            "token": "ák",
-            "token_id": 72542,
-            "logprob": -3.5469,
-            "prob": 0.0287
-          },
-          {
-            "token": "eko",
-            "token_id": 98764,
-            "logprob": -3.6719,
-            "prob": 0.0254
+            "token": "lé",
+            "token_id": 69328,
+            "logprob": -2.7031,
+            "prob": 0.0664
           },
           {
             "token": "á",
             "token_id": 1995,
-            "logprob": -3.8594,
-            "prob": 0.021
+            "logprob": -3.0156,
+            "prob": 0.0486
           },
           {
-            "token": "ové",
-            "token_id": 100601,
-            "logprob": -3.9844,
-            "prob": 0.0186
+            "token": "ůž",
+            "token_id": 108352,
+            "logprob": -3.4531,
+            "prob": 0.0315
           },
           {
-            "token": "ový",
-            "token_id": 102028,
-            "logprob": -4.1875,
-            "prob": 0.0154
+            "token": "ária",
+            "token_id": 59042,
+            "logprob": -3.6406,
+            "prob": 0.026
           },
           {
-            "token": "át",
-            "token_id": 17099,
-            "logprob": -4.25,
-            "prob": 0.0145
+            "token": "ě",
+            "token_id": 22161,
+            "logprob": -3.8281,
+            "prob": 0.0216
           },
           {
-            "token": "áky",
-            "token_id": 118178,
-            "logprob": -4.25,
-            "prob": 0.0145
+            "token": "ít",
+            "token_id": 16485,
+            "logprob": -3.8281,
+            "prob": 0.0216
+          },
+          {
+            "token": "l",
+            "token_id": 75,
+            "logprob": -4.0312,
+            "prob": 0.0179
+          },
+          {
+            "token": "ír",
+            "token_id": 103343,
+            "logprob": -4.2812,
+            "prob": 0.0139
           }
         ]
       },
       "selected_token": {
-        "token": "o",
-        "token_id": 78,
+        "token": "ě",
+        "token_id": 22161,
         "selection_method": "sampling"
       }
     },
     {
       "step": 9,
-      "input_text": "Řekni mi vtip<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nVtip: Mám vepřo",
+      "input_text": "<|start_header_id|>user<|end_header_id|>Řekni mi vtip<|eot_id|><|start_header_id|>assistant<|end_header_id|>Mídel si vtip: Mě",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "Ř",
         "ek",
         "ni",
@@ -998,18 +1037,20 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
-        "V",
+        "M",
+        "í",
+        "del",
+        "Ġsi",
+        "Ġv",
         "tip",
         ":",
         "ĠM",
-        "ám",
-        "Ġv",
-        "ep",
-        "ř",
-        "o"
+        "ě"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         106540,
         1247,
         7907,
@@ -1020,79 +1061,1408 @@
         128006,
         78191,
         128007,
-        271,
-        53,
+        44,
+        2483,
+        9783,
+        4502,
+        348,
         13446,
         25,
         386,
-        36334,
-        348,
-        752,
-        29432,
-        78
+        22161
       ],
       "output_distribution": {
         "top_k": 10,
         "candidates": [
           {
-            "token": "Ġna",
-            "token_id": 4415,
-            "logprob": -1.8203,
-            "prob": 0.1611
+            "token": "lo",
+            "token_id": 385,
+            "logprob": -1.6172,
+            "prob": 0.1982
           },
           {
-            "token": ",",
-            "token_id": 11,
-            "logprob": -2.2031,
-            "prob": 0.1108
+            "token": "sí",
+            "token_id": 104598,
+            "logprob": -2.0625,
+            "prob": 0.1279
           },
           {
-            "token": "Ġv",
-            "token_id": 348,
-            "logprob": -3.3594,
-            "prob": 0.0349
+            "token": "sto",
+            "token_id": 34152,
+            "logprob": -2.0625,
+            "prob": 0.1279
           },
           {
-            "token": "Ġ",
-            "token_id": 220,
-            "logprob": -3.4219,
-            "prob": 0.0327
+            "token": "sta",
+            "token_id": 21127,
+            "logprob": -3.1875,
+            "prob": 0.0415
           },
           {
-            "token": ".",
-            "token_id": 13,
+            "token": "s",
+            "token_id": 82,
+            "logprob": -3.25,
+            "prob": 0.0391
+          },
+          {
+            "token": "ří",
+            "token_id": 100355,
+            "logprob": -3.5,
+            "prob": 0.0304
+          },
+          {
+            "token": "ste",
+            "token_id": 5455,
+            "logprob": -3.8125,
+            "prob": 0.0222
+          },
+          {
+            "token": "lk",
+            "token_id": 42848,
+            "logprob": -3.875,
+            "prob": 0.0209
+          },
+          {
+            "token": "ň",
+            "token_id": 100761,
+            "logprob": -3.9375,
+            "prob": 0.0197
+          },
+          {
+            "token": "ly",
+            "token_id": 398,
+            "logprob": -4.5625,
+            "prob": 0.0105
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "lo",
+        "token_id": 385,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 10,
+      "input_text": "<|start_header_id|>user<|end_header_id|>Řekni mi vtip<|eot_id|><|start_header_id|>assistant<|end_header_id|>Mídel si vtip: Mělo",
+      "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
+        "Ř",
+        "ek",
+        "ni",
+        "Ġmi",
+        "Ġv",
+        "tip",
+        "<|eot_id|>",
+        "<|start_header_id|>",
+        "assistant",
+        "<|end_header_id|>",
+        "M",
+        "í",
+        "del",
+        "Ġsi",
+        "Ġv",
+        "tip",
+        ":",
+        "ĠM",
+        "ě",
+        "lo"
+      ],
+      "token_ids": [
+        128006,
+        882,
+        128007,
+        106540,
+        1247,
+        7907,
+        9686,
+        348,
+        13446,
+        128009,
+        128006,
+        78191,
+        128007,
+        44,
+        2483,
+        9783,
+        4502,
+        348,
+        13446,
+        25,
+        386,
+        22161,
+        385
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġsi",
+            "token_id": 4502,
+            "logprob": -2.0781,
+            "prob": 0.126
+          },
+          {
+            "token": "Ġse",
+            "token_id": 513,
+            "logprob": -2.5156,
+            "prob": 0.0815
+          },
+          {
+            "token": "Ġby",
+            "token_id": 555,
+            "logprob": -2.5781,
+            "prob": 0.0767
+          },
+          {
+            "token": "Ġje",
+            "token_id": 4864,
+            "logprob": -3.3281,
+            "prob": 0.0361
+          },
+          {
+            "token": "si",
+            "token_id": 6455,
             "logprob": -3.6094,
             "prob": 0.0272
           },
           {
-            "token": "Ġmás",
-            "token_id": 11158,
-            "logprob": -3.7031,
-            "prob": 0.0248
+            "token": "va",
+            "token_id": 6723,
+            "logprob": -4.1875,
+            "prob": 0.0151
           },
           {
-            "token": "Ġrá",
-            "token_id": 49769,
-            "logprob": -4.125,
-            "prob": 0.016
+            "token": "Ġjsem",
+            "token_id": 101180,
+            "logprob": -4.2188,
+            "prob": 0.0146
           },
           {
-            "token": "Ġa",
-            "token_id": 264,
-            "logprob": -4.75,
-            "prob": 0.0085
+            "token": "Ġna",
+            "token_id": 4415,
+            "logprob": -4.4062,
+            "prob": 0.0121
+          },
+          {
+            "token": "š",
+            "token_id": 11906,
+            "logprob": -4.5312,
+            "prob": 0.0107
+          },
+          {
+            "token": "SI",
+            "token_id": 14137,
+            "logprob": -4.7188,
+            "prob": 0.0089
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġsi",
+        "token_id": 4502,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 11,
+      "input_text": "<|start_header_id|>user<|end_header_id|>Řekni mi vtip<|eot_id|><|start_header_id|>assistant<|end_header_id|>Mídel si vtip: Mělo si",
+      "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
+        "Ř",
+        "ek",
+        "ni",
+        "Ġmi",
+        "Ġv",
+        "tip",
+        "<|eot_id|>",
+        "<|start_header_id|>",
+        "assistant",
+        "<|end_header_id|>",
+        "M",
+        "í",
+        "del",
+        "Ġsi",
+        "Ġv",
+        "tip",
+        ":",
+        "ĠM",
+        "ě",
+        "lo",
+        "Ġsi"
+      ],
+      "token_ids": [
+        128006,
+        882,
+        128007,
+        106540,
+        1247,
+        7907,
+        9686,
+        348,
+        13446,
+        128009,
+        128006,
+        78191,
+        128007,
+        44,
+        2483,
+        9783,
+        4502,
+        348,
+        13446,
+        25,
+        386,
+        22161,
+        385,
+        4502
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġv",
+            "token_id": 348,
+            "logprob": -4.0625,
+            "prob": 0.017
           },
           {
             "token": "Ġjeden",
             "token_id": 54265,
+            "logprob": -4.1562,
+            "prob": 0.0155
+          },
+          {
+            "token": "Ġna",
+            "token_id": 4415,
+            "logprob": -4.3438,
+            "prob": 0.0129
+          },
+          {
+            "token": "Ġm",
+            "token_id": 296,
+            "logprob": -4.6562,
+            "prob": 0.0094
+          },
+          {
+            "token": "Ġl",
+            "token_id": 326,
             "logprob": -4.9062,
             "prob": 0.0073
           },
           {
-            "token": "Ġve",
-            "token_id": 5320,
+            "token": ",",
+            "token_id": 11,
+            "logprob": -4.9062,
+            "prob": 0.0073
+          },
+          {
+            "token": "ĠM",
+            "token_id": 386,
+            "logprob": -5.0,
+            "prob": 0.0067
+          },
+          {
+            "token": "Ġdc",
+            "token_id": 19966,
+            "logprob": -5.0,
+            "prob": 0.0067
+          },
+          {
+            "token": "Ġmé",
+            "token_id": 32118,
+            "logprob": -5.0625,
+            "prob": 0.0063
+          },
+          {
+            "token": "Ġmal",
+            "token_id": 8811,
+            "logprob": -5.2812,
+            "prob": 0.005
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġna",
+        "token_id": 4415,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 12,
+      "input_text": "<|start_header_id|>user<|end_header_id|>Řekni mi vtip<|eot_id|><|start_header_id|>assistant<|end_header_id|>Mídel si vtip: Mělo si na",
+      "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
+        "Ř",
+        "ek",
+        "ni",
+        "Ġmi",
+        "Ġv",
+        "tip",
+        "<|eot_id|>",
+        "<|start_header_id|>",
+        "assistant",
+        "<|end_header_id|>",
+        "M",
+        "í",
+        "del",
+        "Ġsi",
+        "Ġv",
+        "tip",
+        ":",
+        "ĠM",
+        "ě",
+        "lo",
+        "Ġsi",
+        "Ġna"
+      ],
+      "token_ids": [
+        128006,
+        882,
+        128007,
+        106540,
+        1247,
+        7907,
+        9686,
+        348,
+        13446,
+        128009,
+        128006,
+        78191,
+        128007,
+        44,
+        2483,
+        9783,
+        4502,
+        348,
+        13446,
+        25,
+        386,
+        22161,
+        385,
+        4502,
+        4415
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġto",
+            "token_id": 311,
+            "logprob": -3.7344,
+            "prob": 0.024
+          },
+          {
+            "token": "Ġstar",
+            "token_id": 6917,
+            "logprob": -4.25,
+            "prob": 0.0142
+          },
+          {
+            "token": "Ġl",
+            "token_id": 326,
+            "logprob": -4.625,
+            "prob": 0.0097
+          },
+          {
+            "token": "Ġp",
+            "token_id": 281,
+            "logprob": -4.7812,
+            "prob": 0.0083
+          },
+          {
+            "token": "č",
+            "token_id": 13453,
+            "logprob": -4.9062,
+            "prob": 0.0074
+          },
+          {
+            "token": "Ġob",
+            "token_id": 1536,
+            "logprob": -5.0312,
+            "prob": 0.0065
+          },
+          {
+            "token": "Ġmě",
+            "token_id": 100729,
+            "logprob": -5.2812,
+            "prob": 0.005
+          },
+          {
+            "token": "Ġvl",
+            "token_id": 42236,
+            "logprob": -5.4375,
+            "prob": 0.0043
+          },
+          {
+            "token": "Ġbr",
+            "token_id": 1437,
+            "logprob": -5.5938,
+            "prob": 0.0037
+          },
+          {
+            "token": "Ġz",
+            "token_id": 1167,
+            "logprob": -5.6562,
+            "prob": 0.0035
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġp",
+        "token_id": 281,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 13,
+      "input_text": "<|start_header_id|>user<|end_header_id|>Řekni mi vtip<|eot_id|><|start_header_id|>assistant<|end_header_id|>Mídel si vtip: Mělo si na p",
+      "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
+        "Ř",
+        "ek",
+        "ni",
+        "Ġmi",
+        "Ġv",
+        "tip",
+        "<|eot_id|>",
+        "<|start_header_id|>",
+        "assistant",
+        "<|end_header_id|>",
+        "M",
+        "í",
+        "del",
+        "Ġsi",
+        "Ġv",
+        "tip",
+        ":",
+        "ĠM",
+        "ě",
+        "lo",
+        "Ġsi",
+        "Ġna",
+        "Ġp"
+      ],
+      "token_ids": [
+        128006,
+        882,
+        128007,
+        106540,
+        1247,
+        7907,
+        9686,
+        348,
+        13446,
+        128009,
+        128006,
+        78191,
+        128007,
+        44,
+        2483,
+        9783,
+        4502,
+        348,
+        13446,
+        25,
+        386,
+        22161,
+        385,
+        4502,
+        4415,
+        281
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "ivo",
+            "token_id": 6632,
+            "logprob": -3.0469,
+            "prob": 0.0474
+          },
+          {
+            "token": "estr",
+            "token_id": 15462,
+            "logprob": -3.1094,
+            "prob": 0.0447
+          },
+          {
+            "token": "oku",
+            "token_id": 16900,
+            "logprob": -3.1719,
+            "prob": 0.0417
+          },
+          {
+            "token": "ono",
+            "token_id": 10358,
+            "logprob": -3.2969,
+            "prob": 0.0369
+          },
+          {
+            "token": "oko",
+            "token_id": 28342,
+            "logprob": -3.4844,
+            "prob": 0.0306
+          },
+          {
+            "token": "ades",
+            "token_id": 3536,
+            "logprob": -3.7344,
+            "prob": 0.0238
+          },
+          {
+            "token": "ank",
+            "token_id": 1201,
+            "logprob": -4.0625,
+            "prob": 0.0175
+          },
+          {
+            "token": "stru",
+            "token_id": 103452,
+            "logprob": -4.0625,
+            "prob": 0.0175
+          },
+          {
+            "token": "lic",
+            "token_id": 416,
+            "logprob": -4.0625,
+            "prob": 0.0175
+          },
+          {
+            "token": "í",
+            "token_id": 2483,
+            "logprob": -4.1875,
+            "prob": 0.0154
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "oku",
+        "token_id": 16900,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 14,
+      "input_text": "<|start_header_id|>user<|end_header_id|>Řekni mi vtip<|eot_id|><|start_header_id|>assistant<|end_header_id|>Mídel si vtip: Mělo si na poku",
+      "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
+        "Ř",
+        "ek",
+        "ni",
+        "Ġmi",
+        "Ġv",
+        "tip",
+        "<|eot_id|>",
+        "<|start_header_id|>",
+        "assistant",
+        "<|end_header_id|>",
+        "M",
+        "í",
+        "del",
+        "Ġsi",
+        "Ġv",
+        "tip",
+        ":",
+        "ĠM",
+        "ě",
+        "lo",
+        "Ġsi",
+        "Ġna",
+        "Ġp",
+        "oku"
+      ],
+      "token_ids": [
+        128006,
+        882,
+        128007,
+        106540,
+        1247,
+        7907,
+        9686,
+        348,
+        13446,
+        128009,
+        128006,
+        78191,
+        128007,
+        44,
+        2483,
+        9783,
+        4502,
+        348,
+        13446,
+        25,
+        386,
+        22161,
+        385,
+        4502,
+        4415,
+        281,
+        16900
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "č",
+            "token_id": 13453,
+            "logprob": -1.7031,
+            "prob": 0.1816
+          },
+          {
+            "token": "ž",
+            "token_id": 12453,
+            "logprob": -1.9531,
+            "prob": 0.1416
+          },
+          {
+            "token": "čení",
+            "token_id": 103172,
+            "logprob": -2.2656,
+            "prob": 0.1035
+          },
+          {
+            "token": "ď",
+            "token_id": 102093,
+            "logprob": -3.5781,
+            "prob": 0.0278
+          },
+          {
+            "token": "š",
+            "token_id": 11906,
+            "logprob": -3.5781,
+            "prob": 0.0278
+          },
+          {
+            "token": "ř",
+            "token_id": 29432,
+            "logprob": -4.2188,
+            "prob": 0.0149
+          },
+          {
+            "token": "ád",
+            "token_id": 100564,
+            "logprob": -4.7188,
+            "prob": 0.009
+          },
+          {
+            "token": "či",
+            "token_id": 103853,
+            "logprob": -4.7188,
+            "prob": 0.009
+          },
+          {
+            "token": "šení",
+            "token_id": 102749,
+            "logprob": -4.7188,
+            "prob": 0.009
+          },
+          {
+            "token": "co",
+            "token_id": 1030,
+            "logprob": -4.7812,
+            "prob": 0.0085
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "čení",
+        "token_id": 103172,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 15,
+      "input_text": "<|start_header_id|>user<|end_header_id|>Řekni mi vtip<|eot_id|><|start_header_id|>assistant<|end_header_id|>Mídel si vtip: Mělo si na pokučení",
+      "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
+        "Ř",
+        "ek",
+        "ni",
+        "Ġmi",
+        "Ġv",
+        "tip",
+        "<|eot_id|>",
+        "<|start_header_id|>",
+        "assistant",
+        "<|end_header_id|>",
+        "M",
+        "í",
+        "del",
+        "Ġsi",
+        "Ġv",
+        "tip",
+        ":",
+        "ĠM",
+        "ě",
+        "lo",
+        "Ġsi",
+        "Ġna",
+        "Ġp",
+        "oku",
+        "čení"
+      ],
+      "token_ids": [
+        128006,
+        882,
+        128007,
+        106540,
+        1247,
+        7907,
+        9686,
+        348,
+        13446,
+        128009,
+        128006,
+        78191,
+        128007,
+        44,
+        2483,
+        9783,
+        4502,
+        348,
+        13446,
+        25,
+        386,
+        22161,
+        385,
+        4502,
+        4415,
+        281,
+        16900,
+        103172
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": ",",
+            "token_id": 11,
+            "logprob": -2.4844,
+            "prob": 0.083
+          },
+          {
+            "token": "Ġří",
+            "token_id": 101819,
+            "logprob": -4.1875,
+            "prob": 0.0154
+          },
+          {
+            "token": ".",
+            "token_id": 13,
+            "logprob": -4.2812,
+            "prob": 0.014
+          },
+          {
+            "token": "Ġo",
+            "token_id": 297,
+            "logprob": -4.5938,
+            "prob": 0.0103
+          },
+          {
+            "token": "Ġv",
+            "token_id": 348,
+            "logprob": -4.625,
+            "prob": 0.0099
+          },
+          {
+            "token": "Ġjed",
+            "token_id": 18806,
+            "logprob": -5.0625,
+            "prob": 0.0064
+          },
+          {
+            "token": "Ġp",
+            "token_id": 281,
             "logprob": -5.0938,
-            "prob": 0.0061
+            "prob": 0.0062
+          },
+          {
+            "token": "Ġa",
+            "token_id": 264,
+            "logprob": -5.1562,
+            "prob": 0.0058
+          },
+          {
+            "token": "Ġtwo",
+            "token_id": 1403,
+            "logprob": -5.2812,
+            "prob": 0.0051
+          },
+          {
+            "token": "Ġna",
+            "token_id": 4415,
+            "logprob": -5.3438,
+            "prob": 0.0048
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġtwo",
+        "token_id": 1403,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 16,
+      "input_text": "<|start_header_id|>user<|end_header_id|>Řekni mi vtip<|eot_id|><|start_header_id|>assistant<|end_header_id|>Mídel si vtip: Mělo si na pokučení two",
+      "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
+        "Ř",
+        "ek",
+        "ni",
+        "Ġmi",
+        "Ġv",
+        "tip",
+        "<|eot_id|>",
+        "<|start_header_id|>",
+        "assistant",
+        "<|end_header_id|>",
+        "M",
+        "í",
+        "del",
+        "Ġsi",
+        "Ġv",
+        "tip",
+        ":",
+        "ĠM",
+        "ě",
+        "lo",
+        "Ġsi",
+        "Ġna",
+        "Ġp",
+        "oku",
+        "čení",
+        "Ġtwo"
+      ],
+      "token_ids": [
+        128006,
+        882,
+        128007,
+        106540,
+        1247,
+        7907,
+        9686,
+        348,
+        13446,
+        128009,
+        128006,
+        78191,
+        128007,
+        44,
+        2483,
+        9783,
+        4502,
+        348,
+        13446,
+        25,
+        386,
+        22161,
+        385,
+        4502,
+        4415,
+        281,
+        16900,
+        103172,
+        1403
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "h",
+            "token_id": 71,
+            "logprob": -3.4531,
+            "prob": 0.0317
+          },
+          {
+            "token": "adv",
+            "token_id": 14625,
+            "logprob": -3.9219,
+            "prob": 0.0199
+          },
+          {
+            "token": "Ġděti",
+            "token_id": 110411,
+            "logprob": -4.2188,
+            "prob": 0.0145
+          },
+          {
+            "token": "ho",
+            "token_id": 6292,
+            "logprob": -4.2812,
+            "prob": 0.0137
+          },
+          {
+            "token": "let",
+            "token_id": 1169,
+            "logprob": -4.375,
+            "prob": 0.0125
+          },
+          {
+            "token": "hle",
+            "token_id": 108962,
+            "logprob": -4.6875,
+            "prob": 0.0091
+          },
+          {
+            "token": "ha",
+            "token_id": 4317,
+            "logprob": -4.7812,
+            "prob": 0.0083
+          },
+          {
+            "token": "young",
+            "token_id": 82279,
+            "logprob": -5.0,
+            "prob": 0.0067
+          },
+          {
+            "token": "hod",
+            "token_id": 100830,
+            "logprob": -5.0312,
+            "prob": 0.0064
+          },
+          {
+            "token": "je",
+            "token_id": 3841,
+            "logprob": -5.125,
+            "prob": 0.0059
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "je",
+        "token_id": 3841,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 17,
+      "input_text": "<|start_header_id|>user<|end_header_id|>Řekni mi vtip<|eot_id|><|start_header_id|>assistant<|end_header_id|>Mídel si vtip: Mělo si na pokučení twoje",
+      "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
+        "Ř",
+        "ek",
+        "ni",
+        "Ġmi",
+        "Ġv",
+        "tip",
+        "<|eot_id|>",
+        "<|start_header_id|>",
+        "assistant",
+        "<|end_header_id|>",
+        "M",
+        "í",
+        "del",
+        "Ġsi",
+        "Ġv",
+        "tip",
+        ":",
+        "ĠM",
+        "ě",
+        "lo",
+        "Ġsi",
+        "Ġna",
+        "Ġp",
+        "oku",
+        "čení",
+        "Ġtwo",
+        "je"
+      ],
+      "token_ids": [
+        128006,
+        882,
+        128007,
+        106540,
+        1247,
+        7907,
+        9686,
+        348,
+        13446,
+        128009,
+        128006,
+        78191,
+        128007,
+        44,
+        2483,
+        9783,
+        4502,
+        348,
+        13446,
+        25,
+        386,
+        22161,
+        385,
+        4502,
+        4415,
+        281,
+        16900,
+        103172,
+        1403,
+        3841
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġbr",
+            "token_id": 1437,
+            "logprob": -4.375,
+            "prob": 0.0125
+          },
+          {
+            "token": "Ġvl",
+            "token_id": 42236,
+            "logprob": -4.4688,
+            "prob": 0.0114
+          },
+          {
+            "token": "Ġp",
+            "token_id": 281,
+            "logprob": -4.5625,
+            "prob": 0.0103
+          },
+          {
+            "token": "Ġob",
+            "token_id": 1536,
+            "logprob": -4.625,
+            "prob": 0.0097
+          },
+          {
+            "token": "Ġv",
+            "token_id": 348,
+            "logprob": -4.9375,
+            "prob": 0.0071
+          },
+          {
+            "token": "Ġvej",
+            "token_id": 93560,
+            "logprob": -5.0625,
+            "prob": 0.0063
+          },
+          {
+            "token": "Ġlá",
+            "token_id": 54738,
+            "logprob": -5.125,
+            "prob": 0.0059
+          },
+          {
+            "token": "Ġo",
+            "token_id": 297,
+            "logprob": -5.2188,
+            "prob": 0.0054
+          },
+          {
+            "token": "Ġk",
+            "token_id": 597,
+            "logprob": -5.25,
+            "prob": 0.0052
+          },
+          {
+            "token": "Ġps",
+            "token_id": 4831,
+            "logprob": -5.3438,
+            "prob": 0.0047
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġp",
+        "token_id": 281,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 18,
+      "input_text": "<|start_header_id|>user<|end_header_id|>Řekni mi vtip<|eot_id|><|start_header_id|>assistant<|end_header_id|>Mídel si vtip: Mělo si na pokučení twoje p",
+      "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
+        "Ř",
+        "ek",
+        "ni",
+        "Ġmi",
+        "Ġv",
+        "tip",
+        "<|eot_id|>",
+        "<|start_header_id|>",
+        "assistant",
+        "<|end_header_id|>",
+        "M",
+        "í",
+        "del",
+        "Ġsi",
+        "Ġv",
+        "tip",
+        ":",
+        "ĠM",
+        "ě",
+        "lo",
+        "Ġsi",
+        "Ġna",
+        "Ġp",
+        "oku",
+        "čení",
+        "Ġtwo",
+        "je",
+        "Ġp"
+      ],
+      "token_ids": [
+        128006,
+        882,
+        128007,
+        106540,
+        1247,
+        7907,
+        9686,
+        348,
+        13446,
+        128009,
+        128006,
+        78191,
+        128007,
+        44,
+        2483,
+        9783,
+        4502,
+        348,
+        13446,
+        25,
+        386,
+        22161,
+        385,
+        4502,
+        4415,
+        281,
+        16900,
+        103172,
+        1403,
+        3841,
+        281
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "ivo",
+            "token_id": 6632,
+            "logprob": -1.8438,
+            "prob": 0.1582
+          },
+          {
+            "token": "oko",
+            "token_id": 28342,
+            "logprob": -2.6562,
+            "prob": 0.0703
+          },
+          {
+            "token": "ono",
+            "token_id": 10358,
+            "logprob": -2.9688,
+            "prob": 0.0513
+          },
+          {
+            "token": "í",
+            "token_id": 2483,
+            "logprob": -3.4688,
+            "prob": 0.0311
+          },
+          {
+            "token": "estr",
+            "token_id": 15462,
+            "logprob": -3.9062,
+            "prob": 0.0201
+          },
+          {
+            "token": "oku",
+            "token_id": 16900,
+            "logprob": -3.9688,
+            "prob": 0.0189
+          },
+          {
+            "token": "out",
+            "token_id": 412,
+            "logprob": -4.5312,
+            "prob": 0.0107
+          },
+          {
+            "token": "ova",
+            "token_id": 12949,
+            "logprob": -4.5938,
+            "prob": 0.0101
+          },
+          {
+            "token": "ory",
+            "token_id": 683,
+            "logprob": -4.5938,
+            "prob": 0.0101
+          },
+          {
+            "token": "str",
+            "token_id": 496,
+            "logprob": -4.5938,
+            "prob": 0.0101
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "ivo",
+        "token_id": 6632,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 19,
+      "input_text": "<|start_header_id|>user<|end_header_id|>Řekni mi vtip<|eot_id|><|start_header_id|>assistant<|end_header_id|>Mídel si vtip: Mělo si na pokučení twoje pivo",
+      "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
+        "Ř",
+        "ek",
+        "ni",
+        "Ġmi",
+        "Ġv",
+        "tip",
+        "<|eot_id|>",
+        "<|start_header_id|>",
+        "assistant",
+        "<|end_header_id|>",
+        "M",
+        "í",
+        "del",
+        "Ġsi",
+        "Ġv",
+        "tip",
+        ":",
+        "ĠM",
+        "ě",
+        "lo",
+        "Ġsi",
+        "Ġna",
+        "Ġp",
+        "oku",
+        "čení",
+        "Ġtwo",
+        "je",
+        "Ġp",
+        "ivo"
+      ],
+      "token_ids": [
+        128006,
+        882,
+        128007,
+        106540,
+        1247,
+        7907,
+        9686,
+        348,
+        13446,
+        128009,
+        128006,
+        78191,
+        128007,
+        44,
+        2483,
+        9783,
+        4502,
+        348,
+        13446,
+        25,
+        386,
+        22161,
+        385,
+        4502,
+        4415,
+        281,
+        16900,
+        103172,
+        1403,
+        3841,
+        281,
+        6632
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": ",",
+            "token_id": 11,
+            "logprob": -1.5938,
+            "prob": 0.2041
+          },
+          {
+            "token": ".",
+            "token_id": 13,
+            "logprob": -1.8438,
+            "prob": 0.1582
+          },
+          {
+            "token": "Ġa",
+            "token_id": 264,
+            "logprob": -2.0938,
+            "prob": 0.1235
+          },
+          {
+            "token": "Ġna",
+            "token_id": 4415,
+            "logprob": -2.9688,
+            "prob": 0.0515
+          },
+          {
+            "token": "Ġv",
+            "token_id": 348,
+            "logprob": -3.5625,
+            "prob": 0.0284
+          },
+          {
+            "token": "?",
+            "token_id": 30,
+            "logprob": -3.75,
+            "prob": 0.0236
+          },
+          {
+            "token": "...",
+            "token_id": 1131,
+            "logprob": -4.5,
+            "prob": 0.0111
+          },
+          {
+            "token": "Ġu",
+            "token_id": 577,
+            "logprob": -4.6875,
+            "prob": 0.0092
+          },
+          {
+            "token": "Ġs",
+            "token_id": 274,
+            "logprob": -4.9688,
+            "prob": 0.007
+          },
+          {
+            "token": "Ġdo",
+            "token_id": 656,
+            "logprob": -5.0938,
+            "prob": 0.0062
           }
         ]
       },
@@ -1103,9 +2473,12 @@
       }
     },
     {
-      "step": 10,
-      "input_text": "Řekni mi vtip<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nVtip: Mám vepřo.",
+      "step": 20,
+      "input_text": "<|start_header_id|>user<|end_header_id|>Řekni mi vtip<|eot_id|><|start_header_id|>assistant<|end_header_id|>Mídel si vtip: Mělo si na pokučení twoje pivo.",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "Ř",
         "ek",
         "ni",
@@ -1116,19 +2489,31 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
-        "V",
+        "M",
+        "í",
+        "del",
+        "Ġsi",
+        "Ġv",
         "tip",
         ":",
         "ĠM",
-        "ám",
-        "Ġv",
-        "ep",
-        "ř",
-        "o",
+        "ě",
+        "lo",
+        "Ġsi",
+        "Ġna",
+        "Ġp",
+        "oku",
+        "čení",
+        "Ġtwo",
+        "je",
+        "Ġp",
+        "ivo",
         "."
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         106540,
         1247,
         7907,
@@ -1139,16 +2524,25 @@
         128006,
         78191,
         128007,
-        271,
-        53,
+        44,
+        2483,
+        9783,
+        4502,
+        348,
         13446,
         25,
         386,
-        36334,
-        348,
-        752,
-        29432,
-        78,
+        22161,
+        385,
+        4502,
+        4415,
+        281,
+        16900,
+        103172,
+        1403,
+        3841,
+        281,
+        6632,
         13
       ],
       "output_distribution": {
@@ -1157,62 +2551,62 @@
           {
             "token": "<|eot_id|>",
             "token_id": 128009,
-            "logprob": -0.1963,
-            "prob": 0.8203
-          },
-          {
-            "token": "ĠJak",
-            "token_id": 35934,
-            "logprob": -4.3125,
-            "prob": 0.0133
-          },
-          {
-            "token": "ĠM",
-            "token_id": 386,
-            "logprob": -4.5,
-            "prob": 0.011
-          },
-          {
-            "token": "Ġ(",
-            "token_id": 320,
-            "logprob": -4.625,
-            "prob": 0.0097
+            "logprob": -0.6797,
+            "prob": 0.5078
           },
           {
             "token": "ĠTak",
             "token_id": 34390,
-            "logprob": -4.6875,
-            "prob": 0.0092
+            "logprob": -3.4375,
+            "prob": 0.0325
           },
           {
-            "token": "ĠV",
-            "token_id": 650,
-            "logprob": -4.8125,
-            "prob": 0.0081
+            "token": "ĠM",
+            "token_id": 386,
+            "logprob": -3.625,
+            "prob": 0.0269
+          },
+          {
+            "token": "ĠZ",
+            "token_id": 1901,
+            "logprob": -3.8125,
+            "prob": 0.0222
           },
           {
             "token": "ĠA",
             "token_id": 362,
-            "logprob": -4.875,
-            "prob": 0.0076
+            "logprob": -3.875,
+            "prob": 0.0209
           },
           {
-            "token": "ĠAle",
-            "token_id": 19623,
-            "logprob": -5.0625,
-            "prob": 0.0063
+            "token": "ĠO",
+            "token_id": 507,
+            "logprob": -4.25,
+            "prob": 0.0143
+          },
+          {
+            "token": "ĠPot",
+            "token_id": 14020,
+            "logprob": -4.3125,
+            "prob": 0.0135
+          },
+          {
+            "token": "ĠNa",
+            "token_id": 13106,
+            "logprob": -4.375,
+            "prob": 0.0127
+          },
+          {
+            "token": "ĠV",
+            "token_id": 650,
+            "logprob": -4.5625,
+            "prob": 0.0105
           },
           {
             "token": "ĠK",
             "token_id": 735,
-            "logprob": -5.25,
-            "prob": 0.0052
-          },
-          {
-            "token": "ĠTo",
-            "token_id": 2057,
-            "logprob": -5.5625,
-            "prob": 0.0038
+            "logprob": -4.5625,
+            "prob": 0.0105
           }
         ]
       },

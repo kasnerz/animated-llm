@@ -1,5 +1,5 @@
 {
-  "id": "generated_20251203_120621",
+  "id": "generated_20251204_095032",
   "prompt": "The capital of the United Kingdom is",
   "language": "en",
   "temperature": 0.0,
@@ -14,8 +14,11 @@
   "generation_steps": [
     {
       "step": 0,
-      "input_text": "The capital of the United Kingdom is<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+      "input_text": "<|start_header_id|>user<|end_header_id|>The capital of the United Kingdom is<|eot_id|><|start_header_id|>assistant<|end_header_id|>",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "The",
         "Ġcapital",
         "Ġof",
@@ -26,10 +29,12 @@
         "<|eot_id|>",
         "<|start_header_id|>",
         "assistant",
-        "<|end_header_id|>",
-        "\n\n"
+        "<|end_header_id|>"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         791,
         6864,
         315,
@@ -40,8 +45,7 @@
         128009,
         128006,
         78191,
-        128007,
-        271
+        128007
       ],
       "output_distribution": {
         "top_k": 10,
@@ -49,62 +53,62 @@
           {
             "token": "The",
             "token_id": 791,
-            "logprob": -0.3457,
+            "logprob": -0.3496,
             "prob": 0.707
           },
           {
             "token": "London",
             "token_id": 40672,
-            "logprob": -1.3438,
+            "logprob": -1.3516,
             "prob": 0.2598
-          },
-          {
-            "token": "B",
-            "token_id": 33,
-            "logprob": -4.4688,
-            "prob": 0.0114
           },
           {
             "token": "That",
             "token_id": 4897,
-            "logprob": -4.8438,
-            "prob": 0.0079
+            "logprob": -4.5938,
+            "prob": 0.0101
+          },
+          {
+            "token": "B",
+            "token_id": 33,
+            "logprob": -4.5938,
+            "prob": 0.0101
           },
           {
             "token": "L",
             "token_id": 43,
-            "logprob": -5.3438,
-            "prob": 0.0048
+            "logprob": -5.2188,
+            "prob": 0.0054
           },
           {
             "token": "A",
             "token_id": 32,
-            "logprob": -6.9688,
-            "prob": 0.0009
+            "logprob": -6.7812,
+            "prob": 0.0011
           },
           {
             "token": "I",
             "token_id": 40,
-            "logprob": -7.2812,
-            "prob": 0.0007
+            "logprob": -6.9688,
+            "prob": 0.0009
           },
           {
             "token": "England",
             "token_id": 67308,
-            "logprob": -7.4688,
+            "logprob": -7.4062,
             "prob": 0.0006
           },
           {
             "token": "There",
             "token_id": 3947,
-            "logprob": -7.7188,
-            "prob": 0.0004
+            "logprob": -7.4062,
+            "prob": 0.0006
           },
           {
-            "token": "Ed",
-            "token_id": 2782,
-            "logprob": -7.7812,
-            "prob": 0.0004
+            "token": "ĠBuckingham",
+            "token_id": 96011,
+            "logprob": -7.6562,
+            "prob": 0.0005
           }
         ]
       },
@@ -116,8 +120,11 @@
     },
     {
       "step": 1,
-      "input_text": "The capital of the United Kingdom is<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nThe",
+      "input_text": "<|start_header_id|>user<|end_header_id|>The capital of the United Kingdom is<|eot_id|><|start_header_id|>assistant<|end_header_id|>The",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "The",
         "Ġcapital",
         "Ġof",
@@ -129,10 +136,12 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "The"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         791,
         6864,
         315,
@@ -144,7 +153,6 @@
         128006,
         78191,
         128007,
-        271,
         791
       ],
       "output_distribution": {
@@ -153,25 +161,25 @@
           {
             "token": "Ġcapital",
             "token_id": 6864,
-            "logprob": -0.0013,
+            "logprob": -0.0017,
             "prob": 1.0
           },
           {
             "token": "ĠUnited",
             "token_id": 3723,
-            "logprob": -7.375,
-            "prob": 0.0006
+            "logprob": -7.0,
+            "prob": 0.0009
           },
           {
             "token": "ĠBritish",
             "token_id": 8013,
-            "logprob": -8.375,
-            "prob": 0.0002
+            "logprob": -8.25,
+            "prob": 0.0003
           },
           {
             "token": "Ġcorrect",
             "token_id": 4495,
-            "logprob": -8.75,
+            "logprob": -8.375,
             "prob": 0.0002
           },
           {
@@ -181,15 +189,15 @@
             "prob": 0.0001
           },
           {
-            "token": "Ġcity",
-            "token_id": 3363,
-            "logprob": -10.25,
+            "token": "ĠUK",
+            "token_id": 6560,
+            "logprob": -10.125,
             "prob": 0.0
           },
           {
-            "token": "ĠUK",
-            "token_id": 6560,
-            "logprob": -10.375,
+            "token": "Ġcity",
+            "token_id": 3363,
+            "logprob": -10.125,
             "prob": 0.0
           },
           {
@@ -201,13 +209,13 @@
           {
             "token": "Ġcountry",
             "token_id": 3224,
-            "logprob": -11.625,
+            "logprob": -11.375,
             "prob": 0.0
           },
           {
             "token": "ĠCapital",
             "token_id": 18880,
-            "logprob": -11.875,
+            "logprob": -11.625,
             "prob": 0.0
           }
         ]
@@ -220,8 +228,11 @@
     },
     {
       "step": 2,
-      "input_text": "The capital of the United Kingdom is<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nThe capital",
+      "input_text": "<|start_header_id|>user<|end_header_id|>The capital of the United Kingdom is<|eot_id|><|start_header_id|>assistant<|end_header_id|>The capital",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "The",
         "Ġcapital",
         "Ġof",
@@ -233,11 +244,13 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "The",
         "Ġcapital"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         791,
         6864,
         315,
@@ -249,7 +262,6 @@
         128006,
         78191,
         128007,
-        271,
         791,
         6864
       ],
@@ -259,37 +271,37 @@
           {
             "token": "Ġof",
             "token_id": 315,
-            "logprob": -0.0012,
+            "logprob": -0.0014,
             "prob": 1.0
           },
           {
             "token": "Ġcity",
             "token_id": 3363,
-            "logprob": -6.75,
-            "prob": 0.0012
+            "logprob": -6.625,
+            "prob": 0.0013
           },
           {
             "token": "Ġand",
             "token_id": 323,
-            "logprob": -10.375,
+            "logprob": -10.25,
             "prob": 0.0
           },
           {
             "token": "Ġ(",
             "token_id": 320,
-            "logprob": -11.125,
-            "prob": 0.0
-          },
-          {
-            "token": ",",
-            "token_id": 11,
-            "logprob": -13.125,
+            "logprob": -11.0,
             "prob": 0.0
           },
           {
             "token": "Ġcities",
             "token_id": 9919,
-            "logprob": -13.25,
+            "logprob": -13.0,
+            "prob": 0.0
+          },
+          {
+            "token": ",",
+            "token_id": 11,
+            "logprob": -13.0,
             "prob": 0.0
           },
           {
@@ -301,19 +313,19 @@
           {
             "token": "Ġis",
             "token_id": 374,
-            "logprob": -13.375,
+            "logprob": -13.25,
             "prob": 0.0
           },
           {
             "token": "Ġor",
             "token_id": 477,
-            "logprob": -15.4375,
+            "logprob": -15.375,
             "prob": 0.0
           },
           {
             "token": "Ġofficial",
             "token_id": 4033,
-            "logprob": -15.5625,
+            "logprob": -15.375,
             "prob": 0.0
           }
         ]
@@ -326,8 +338,11 @@
     },
     {
       "step": 3,
-      "input_text": "The capital of the United Kingdom is<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nThe capital of",
+      "input_text": "<|start_header_id|>user<|end_header_id|>The capital of the United Kingdom is<|eot_id|><|start_header_id|>assistant<|end_header_id|>The capital of",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "The",
         "Ġcapital",
         "Ġof",
@@ -339,12 +354,14 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "The",
         "Ġcapital",
         "Ġof"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         791,
         6864,
         315,
@@ -356,7 +373,6 @@
         128006,
         78191,
         128007,
-        271,
         791,
         6864,
         315
@@ -379,19 +395,25 @@
           {
             "token": "ĠEngland",
             "token_id": 9635,
-            "logprob": -10.75,
+            "logprob": -10.5,
             "prob": 0.0
           },
           {
             "token": "ĠUnited",
             "token_id": 3723,
-            "logprob": -12.375,
+            "logprob": -12.25,
             "prob": 0.0
           },
           {
             "token": "ĠThe",
             "token_id": 578,
-            "logprob": -12.625,
+            "logprob": -12.5,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠBritain",
+            "token_id": 13527,
+            "logprob": -12.75,
             "prob": 0.0
           },
           {
@@ -401,27 +423,21 @@
             "prob": 0.0
           },
           {
-            "token": "ĠBritain",
-            "token_id": 13527,
-            "logprob": -12.875,
-            "prob": 0.0
-          },
-          {
             "token": "ĠScotland",
             "token_id": 19627,
-            "logprob": -13.125,
+            "logprob": -12.875,
             "prob": 0.0
           },
           {
             "token": "ĠIreland",
             "token_id": 14990,
-            "logprob": -13.625,
+            "logprob": -13.5,
             "prob": 0.0
           },
           {
-            "token": "ĠAustralia",
-            "token_id": 8494,
-            "logprob": -14.0,
+            "token": "ĠCanada",
+            "token_id": 7008,
+            "logprob": -13.875,
             "prob": 0.0
           }
         ]
@@ -434,8 +450,11 @@
     },
     {
       "step": 4,
-      "input_text": "The capital of the United Kingdom is<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nThe capital of the",
+      "input_text": "<|start_header_id|>user<|end_header_id|>The capital of the United Kingdom is<|eot_id|><|start_header_id|>assistant<|end_header_id|>The capital of the",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "The",
         "Ġcapital",
         "Ġof",
@@ -447,13 +466,15 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "The",
         "Ġcapital",
         "Ġof",
         "Ġthe"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         791,
         6864,
         315,
@@ -465,7 +486,6 @@
         128006,
         78191,
         128007,
-        271,
         791,
         6864,
         315,
@@ -477,19 +497,19 @@
           {
             "token": "ĠUnited",
             "token_id": 3723,
-            "logprob": -0.0002,
+            "logprob": -0.0003,
             "prob": 1.0
           },
           {
             "token": "Ġunited",
             "token_id": 29292,
-            "logprob": -9.375,
+            "logprob": -9.25,
             "prob": 0.0001
           },
           {
             "token": "ĠUK",
             "token_id": 6560,
-            "logprob": -9.5,
+            "logprob": -9.375,
             "prob": 0.0001
           },
           {
@@ -501,37 +521,37 @@
           {
             "token": "ĠKingdom",
             "token_id": 15422,
-            "logprob": -11.625,
+            "logprob": -11.5,
             "prob": 0.0
           },
           {
             "token": "Ġunified",
             "token_id": 43790,
-            "logprob": -12.25,
+            "logprob": -12.0,
             "prob": 0.0
           },
           {
             "token": "ĠBritish",
             "token_id": 8013,
-            "logprob": -12.75,
+            "logprob": -12.5,
             "prob": 0.0
           },
           {
             "token": "ĠUnit",
             "token_id": 8113,
-            "logprob": -12.75,
-            "prob": 0.0
-          },
-          {
-            "token": "ĠUNITED",
-            "token_id": 85610,
-            "logprob": -13.0,
+            "logprob": -12.625,
             "prob": 0.0
           },
           {
             "token": "Ġcountry",
             "token_id": 3224,
-            "logprob": -13.125,
+            "logprob": -12.75,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġunit",
+            "token_id": 5089,
+            "logprob": -13.0,
             "prob": 0.0
           }
         ]
@@ -544,8 +564,11 @@
     },
     {
       "step": 5,
-      "input_text": "The capital of the United Kingdom is<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nThe capital of the United",
+      "input_text": "<|start_header_id|>user<|end_header_id|>The capital of the United Kingdom is<|eot_id|><|start_header_id|>assistant<|end_header_id|>The capital of the United",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "The",
         "Ġcapital",
         "Ġof",
@@ -557,7 +580,6 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "The",
         "Ġcapital",
         "Ġof",
@@ -565,6 +587,9 @@
         "ĠUnited"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         791,
         6864,
         315,
@@ -576,7 +601,6 @@
         128006,
         78191,
         128007,
-        271,
         791,
         6864,
         315,
@@ -595,55 +619,55 @@
           {
             "token": "ĠStates",
             "token_id": 4273,
-            "logprob": -12.625,
+            "logprob": -12.5,
             "prob": 0.0
           },
           {
             "token": "ĠKind",
             "token_id": 17262,
-            "logprob": -12.875,
+            "logprob": -12.625,
             "prob": 0.0
           },
           {
             "token": "ĠUK",
             "token_id": 6560,
-            "logprob": -13.125,
+            "logprob": -13.0,
             "prob": 0.0
           },
           {
             "token": "ĠKing",
             "token_id": 6342,
-            "logprob": -13.5,
+            "logprob": -13.375,
             "prob": 0.0
           },
           {
             "token": "Ġkingdom",
             "token_id": 26135,
-            "logprob": -13.625,
+            "logprob": -13.5,
             "prob": 0.0
           },
           {
             "token": "ĠUnited",
             "token_id": 3723,
-            "logprob": -14.625,
+            "logprob": -14.25,
             "prob": 0.0
           },
           {
             "token": "Ġkingdoms",
             "token_id": 96506,
+            "logprob": -15.875,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠNations",
+            "token_id": 19687,
             "logprob": -16.125,
             "prob": 0.0
           },
           {
             "token": "King",
             "token_id": 34655,
-            "logprob": -16.25,
-            "prob": 0.0
-          },
-          {
-            "token": "ĠNations",
-            "token_id": 19687,
-            "logprob": -16.375,
+            "logprob": -16.125,
             "prob": 0.0
           }
         ]
@@ -656,8 +680,11 @@
     },
     {
       "step": 6,
-      "input_text": "The capital of the United Kingdom is<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nThe capital of the United Kingdom",
+      "input_text": "<|start_header_id|>user<|end_header_id|>The capital of the United Kingdom is<|eot_id|><|start_header_id|>assistant<|end_header_id|>The capital of the United Kingdom",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "The",
         "Ġcapital",
         "Ġof",
@@ -669,7 +696,6 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "The",
         "Ġcapital",
         "Ġof",
@@ -678,6 +704,9 @@
         "ĠKingdom"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         791,
         6864,
         315,
@@ -689,7 +718,6 @@
         128006,
         78191,
         128007,
-        271,
         791,
         6864,
         315,
@@ -703,61 +731,61 @@
           {
             "token": "Ġis",
             "token_id": 374,
-            "logprob": -0.0037,
+            "logprob": -0.0048,
             "prob": 0.9961
           },
           {
             "token": "Ġ(",
             "token_id": 320,
-            "logprob": -5.875,
-            "prob": 0.0028
+            "logprob": -5.625,
+            "prob": 0.0036
           },
           {
             "token": ",",
             "token_id": 11,
-            "logprob": -7.25,
-            "prob": 0.0007
+            "logprob": -7.0,
+            "prob": 0.0009
           },
           {
             "token": "Ġof",
             "token_id": 315,
-            "logprob": -8.75,
+            "logprob": -8.5,
             "prob": 0.0002
           },
           {
             "token": "Ġand",
             "token_id": 323,
-            "logprob": -10.5,
+            "logprob": -10.375,
             "prob": 0.0
           },
           {
             "token": "Ġ",
             "token_id": 220,
-            "logprob": -11.875,
+            "logprob": -11.625,
             "prob": 0.0
           },
           {
             "token": ".",
             "token_id": 13,
-            "logprob": -12.75,
+            "logprob": -12.375,
             "prob": 0.0
           },
           {
             "token": "Ġin",
             "token_id": 304,
-            "logprob": -14.0,
-            "prob": 0.0
-          },
-          {
-            "token": "Ġproper",
-            "token_id": 6300,
-            "logprob": -14.3125,
+            "logprob": -13.8125,
             "prob": 0.0
           },
           {
             "token": "Ġrefers",
             "token_id": 19813,
-            "logprob": -14.375,
+            "logprob": -14.0625,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġproper",
+            "token_id": 6300,
+            "logprob": -14.125,
             "prob": 0.0
           }
         ]
@@ -770,8 +798,11 @@
     },
     {
       "step": 7,
-      "input_text": "The capital of the United Kingdom is<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nThe capital of the United Kingdom is",
+      "input_text": "<|start_header_id|>user<|end_header_id|>The capital of the United Kingdom is<|eot_id|><|start_header_id|>assistant<|end_header_id|>The capital of the United Kingdom is",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "The",
         "Ġcapital",
         "Ġof",
@@ -783,7 +814,6 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "The",
         "Ġcapital",
         "Ġof",
@@ -793,6 +823,9 @@
         "Ġis"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         791,
         6864,
         315,
@@ -804,7 +837,6 @@
         128006,
         78191,
         128007,
-        271,
         791,
         6864,
         315,
@@ -819,61 +851,61 @@
           {
             "token": "ĠLondon",
             "token_id": 7295,
-            "logprob": -0.0067,
+            "logprob": -0.0095,
             "prob": 0.9922
           },
           {
             "token": "ĠWestminster",
             "token_id": 48043,
-            "logprob": -6.0,
-            "prob": 0.0025
+            "logprob": -5.75,
+            "prob": 0.0032
           },
           {
             "token": "Ġactually",
             "token_id": 3604,
-            "logprob": -6.375,
-            "prob": 0.0017
+            "logprob": -5.875,
+            "prob": 0.0028
           },
           {
             "token": "ĠLond",
             "token_id": 80693,
-            "logprob": -7.125,
-            "prob": 0.0008
+            "logprob": -6.875,
+            "prob": 0.001
           },
           {
             "token": ":\n\n",
             "token_id": 1473,
-            "logprob": -8.0,
+            "logprob": -7.625,
+            "prob": 0.0005
+          },
+          {
+            "token": "ĠBuckingham",
+            "token_id": 96011,
+            "logprob": -8.0625,
             "prob": 0.0003
           },
           {
             "token": "London",
             "token_id": 40672,
-            "logprob": -8.1875,
+            "logprob": -8.125,
             "prob": 0.0003
-          },
-          {
-            "token": "ĠBuckingham",
-            "token_id": 96011,
-            "logprob": -8.3125,
-            "prob": 0.0002
-          },
-          {
-            "token": "Ġthe",
-            "token_id": 279,
-            "logprob": -9.3125,
-            "prob": 0.0001
           },
           {
             "token": "Ġlocated",
             "token_id": 7559,
-            "logprob": -9.4375,
+            "logprob": -8.9375,
             "prob": 0.0001
           },
           {
-            "token": "ĠEngland",
-            "token_id": 9635,
-            "logprob": -9.4375,
+            "token": ",",
+            "token_id": 11,
+            "logprob": -9.0,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġthe",
+            "token_id": 279,
+            "logprob": -9.0,
             "prob": 0.0001
           }
         ]
@@ -886,8 +918,11 @@
     },
     {
       "step": 8,
-      "input_text": "The capital of the United Kingdom is<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nThe capital of the United Kingdom is London",
+      "input_text": "<|start_header_id|>user<|end_header_id|>The capital of the United Kingdom is<|eot_id|><|start_header_id|>assistant<|end_header_id|>The capital of the United Kingdom is London",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "The",
         "Ġcapital",
         "Ġof",
@@ -899,7 +934,6 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "The",
         "Ġcapital",
         "Ġof",
@@ -910,6 +944,9 @@
         "ĠLondon"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         791,
         6864,
         315,
@@ -921,7 +958,6 @@
         128006,
         78191,
         128007,
-        271,
         791,
         6864,
         315,
@@ -937,60 +973,60 @@
           {
             "token": ".",
             "token_id": 13,
-            "logprob": -0.0121,
-            "prob": 0.9883
+            "logprob": -0.0139,
+            "prob": 0.9844
           },
           {
             "token": "Ġ(",
             "token_id": 320,
-            "logprob": -5.125,
-            "prob": 0.0059
+            "logprob": -5.0,
+            "prob": 0.0067
           },
           {
             "token": ",",
             "token_id": 11,
-            "logprob": -5.375,
-            "prob": 0.0046
+            "logprob": -5.25,
+            "prob": 0.0052
           },
           {
             "token": "<|eot_id|>",
             "token_id": 128009,
-            "logprob": -7.0,
-            "prob": 0.0009
+            "logprob": -6.875,
+            "prob": 0.001
           },
           {
             "token": ".\n\n",
             "token_id": 382,
-            "logprob": -7.5,
-            "prob": 0.0005
+            "logprob": -7.25,
+            "prob": 0.0007
           },
           {
             "token": "Ġand",
             "token_id": 323,
-            "logprob": -9.875,
+            "logprob": -9.75,
             "prob": 0.0001
           },
           {
             "token": "Ġis",
             "token_id": 374,
-            "logprob": -10.125,
+            "logprob": -10.0,
             "prob": 0.0
           },
           {
             "token": "!",
             "token_id": 0,
-            "logprob": -11.0,
-            "prob": 0.0
-          },
-          {
-            "token": ".\"",
-            "token_id": 1210,
-            "logprob": -11.875,
+            "logprob": -10.5,
             "prob": 0.0
           },
           {
             "token": ";",
             "token_id": 26,
+            "logprob": -11.875,
+            "prob": 0.0
+          },
+          {
+            "token": ".\"",
+            "token_id": 1210,
             "logprob": -12.0,
             "prob": 0.0
           }
@@ -1004,8 +1040,11 @@
     },
     {
       "step": 9,
-      "input_text": "The capital of the United Kingdom is<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nThe capital of the United Kingdom is London.",
+      "input_text": "<|start_header_id|>user<|end_header_id|>The capital of the United Kingdom is<|eot_id|><|start_header_id|>assistant<|end_header_id|>The capital of the United Kingdom is London.",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "The",
         "Ġcapital",
         "Ġof",
@@ -1017,7 +1056,6 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "The",
         "Ġcapital",
         "Ġof",
@@ -1029,6 +1067,9 @@
         "."
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         791,
         6864,
         315,
@@ -1040,7 +1081,6 @@
         128006,
         78191,
         128007,
-        271,
         791,
         6864,
         315,
@@ -1057,61 +1097,61 @@
           {
             "token": "<|eot_id|>",
             "token_id": 128009,
-            "logprob": -0.0107,
+            "logprob": -0.0118,
             "prob": 0.9883
           },
           {
             "token": "ĠIt",
             "token_id": 1102,
-            "logprob": -5.375,
-            "prob": 0.0046
+            "logprob": -5.25,
+            "prob": 0.0052
           },
           {
             "token": "ĠHowever",
             "token_id": 4452,
-            "logprob": -6.125,
-            "prob": 0.0022
+            "logprob": -6.25,
+            "prob": 0.0019
           },
           {
             "token": "ĠSpecifically",
             "token_id": 45863,
-            "logprob": -6.375,
-            "prob": 0.0017
+            "logprob": -6.25,
+            "prob": 0.0019
           },
           {
             "token": "ĠLondon",
             "token_id": 7295,
-            "logprob": -6.75,
-            "prob": 0.0012
+            "logprob": -6.5,
+            "prob": 0.0015
           },
           {
             "token": "ĠThis",
             "token_id": 1115,
-            "logprob": -8.25,
+            "logprob": -8.125,
             "prob": 0.0003
           },
           {
             "token": "Ġ\n\n",
             "token_id": 4815,
-            "logprob": -8.625,
+            "logprob": -8.375,
             "prob": 0.0002
           },
           {
             "token": "ĠThe",
             "token_id": 578,
-            "logprob": -9.0,
+            "logprob": -8.875,
             "prob": 0.0001
+          },
+          {
+            "token": "Ġ(",
+            "token_id": 320,
+            "logprob": -10.0,
+            "prob": 0.0
           },
           {
             "token": "ĠPrior",
             "token_id": 32499,
             "logprob": -10.0,
-            "prob": 0.0
-          },
-          {
-            "token": "Ġ(",
-            "token_id": 320,
-            "logprob": -10.125,
             "prob": 0.0
           }
         ]

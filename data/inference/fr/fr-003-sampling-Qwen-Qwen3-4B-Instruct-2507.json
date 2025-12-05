@@ -1,5 +1,5 @@
 {
-  "id": "generated_20251203_120750",
+  "id": "generated_20251204_095548",
   "prompt": "La capitale de la France est",
   "language": "fr",
   "temperature": 1.0,
@@ -14,8 +14,10 @@
   "generation_steps": [
     {
       "step": 0,
-      "input_text": "La capitale de la France est<|im_end|>\n<|im_start|>assistant\n",
+      "input_text": "<|im_start|>userLa capitale de la France est<|im_end|><|im_start|>assistant",
       "tokens": [
+        "<|im_start|>",
+        "user",
         "La",
         "Ġcapit",
         "ale",
@@ -24,12 +26,12 @@
         "ĠFrance",
         "Ġest",
         "<|im_end|>",
-        "\n",
         "<|im_start|>",
-        "assistant",
-        "\n"
+        "assistant"
       ],
       "token_ids": [
+        151644,
+        872,
         8747,
         60410,
         1574,
@@ -38,10 +40,8 @@
         9625,
         1788,
         151645,
-        198,
         151644,
-        77091,
-        198
+        77091
       ],
       "output_distribution": {
         "top_k": 10,
@@ -116,8 +116,10 @@
     },
     {
       "step": 1,
-      "input_text": "La capitale de la France est<|im_end|>\n<|im_start|>assistant\nLa",
+      "input_text": "<|im_start|>userLa capitale de la France est<|im_end|><|im_start|>assistantLa",
       "tokens": [
+        "<|im_start|>",
+        "user",
         "La",
         "Ġcapit",
         "ale",
@@ -126,13 +128,13 @@
         "ĠFrance",
         "Ġest",
         "<|im_end|>",
-        "\n",
         "<|im_start|>",
         "assistant",
-        "\n",
         "La"
       ],
       "token_ids": [
+        151644,
+        872,
         8747,
         60410,
         1574,
@@ -141,10 +143,8 @@
         9625,
         1788,
         151645,
-        198,
         151644,
         77091,
-        198,
         8747
       ],
       "output_distribution": {
@@ -220,8 +220,10 @@
     },
     {
       "step": 2,
-      "input_text": "La capitale de la France est<|im_end|>\n<|im_start|>assistant\nLa capit",
+      "input_text": "<|im_start|>userLa capitale de la France est<|im_end|><|im_start|>assistantLa capit",
       "tokens": [
+        "<|im_start|>",
+        "user",
         "La",
         "Ġcapit",
         "ale",
@@ -230,14 +232,14 @@
         "ĠFrance",
         "Ġest",
         "<|im_end|>",
-        "\n",
         "<|im_start|>",
         "assistant",
-        "\n",
         "La",
         "Ġcapit"
       ],
       "token_ids": [
+        151644,
+        872,
         8747,
         60410,
         1574,
@@ -246,10 +248,8 @@
         9625,
         1788,
         151645,
-        198,
         151644,
         77091,
-        198,
         8747,
         60410
       ],
@@ -326,8 +326,10 @@
     },
     {
       "step": 3,
-      "input_text": "La capitale de la France est<|im_end|>\n<|im_start|>assistant\nLa capitale",
+      "input_text": "<|im_start|>userLa capitale de la France est<|im_end|><|im_start|>assistantLa capitale",
       "tokens": [
+        "<|im_start|>",
+        "user",
         "La",
         "Ġcapit",
         "ale",
@@ -336,15 +338,15 @@
         "ĠFrance",
         "Ġest",
         "<|im_end|>",
-        "\n",
         "<|im_start|>",
         "assistant",
-        "\n",
         "La",
         "Ġcapit",
         "ale"
       ],
       "token_ids": [
+        151644,
+        872,
         8747,
         60410,
         1574,
@@ -353,10 +355,8 @@
         9625,
         1788,
         151645,
-        198,
         151644,
         77091,
-        198,
         8747,
         60410,
         1574
@@ -434,8 +434,10 @@
     },
     {
       "step": 4,
-      "input_text": "La capitale de la France est<|im_end|>\n<|im_start|>assistant\nLa capitale de",
+      "input_text": "<|im_start|>userLa capitale de la France est<|im_end|><|im_start|>assistantLa capitale de",
       "tokens": [
+        "<|im_start|>",
+        "user",
         "La",
         "Ġcapit",
         "ale",
@@ -444,16 +446,16 @@
         "ĠFrance",
         "Ġest",
         "<|im_end|>",
-        "\n",
         "<|im_start|>",
         "assistant",
-        "\n",
         "La",
         "Ġcapit",
         "ale",
         "Ġde"
       ],
       "token_ids": [
+        151644,
+        872,
         8747,
         60410,
         1574,
@@ -462,10 +464,8 @@
         9625,
         1788,
         151645,
-        198,
         151644,
         77091,
-        198,
         8747,
         60410,
         1574,
@@ -544,8 +544,10 @@
     },
     {
       "step": 5,
-      "input_text": "La capitale de la France est<|im_end|>\n<|im_start|>assistant\nLa capitale de la",
+      "input_text": "<|im_start|>userLa capitale de la France est<|im_end|><|im_start|>assistantLa capitale de la",
       "tokens": [
+        "<|im_start|>",
+        "user",
         "La",
         "Ġcapit",
         "ale",
@@ -554,10 +556,8 @@
         "ĠFrance",
         "Ġest",
         "<|im_end|>",
-        "\n",
         "<|im_start|>",
         "assistant",
-        "\n",
         "La",
         "Ġcapit",
         "ale",
@@ -565,6 +565,8 @@
         "Ġla"
       ],
       "token_ids": [
+        151644,
+        872,
         8747,
         60410,
         1574,
@@ -573,10 +575,8 @@
         9625,
         1788,
         151645,
-        198,
         151644,
         77091,
-        198,
         8747,
         60410,
         1574,
@@ -656,8 +656,10 @@
     },
     {
       "step": 6,
-      "input_text": "La capitale de la France est<|im_end|>\n<|im_start|>assistant\nLa capitale de la France",
+      "input_text": "<|im_start|>userLa capitale de la France est<|im_end|><|im_start|>assistantLa capitale de la France",
       "tokens": [
+        "<|im_start|>",
+        "user",
         "La",
         "Ġcapit",
         "ale",
@@ -666,10 +668,8 @@
         "ĠFrance",
         "Ġest",
         "<|im_end|>",
-        "\n",
         "<|im_start|>",
         "assistant",
-        "\n",
         "La",
         "Ġcapit",
         "ale",
@@ -678,6 +678,8 @@
         "ĠFrance"
       ],
       "token_ids": [
+        151644,
+        872,
         8747,
         60410,
         1574,
@@ -686,10 +688,8 @@
         9625,
         1788,
         151645,
-        198,
         151644,
         77091,
-        198,
         8747,
         60410,
         1574,
@@ -770,8 +770,10 @@
     },
     {
       "step": 7,
-      "input_text": "La capitale de la France est<|im_end|>\n<|im_start|>assistant\nLa capitale de la France est",
+      "input_text": "<|im_start|>userLa capitale de la France est<|im_end|><|im_start|>assistantLa capitale de la France est",
       "tokens": [
+        "<|im_start|>",
+        "user",
         "La",
         "Ġcapit",
         "ale",
@@ -780,10 +782,8 @@
         "ĠFrance",
         "Ġest",
         "<|im_end|>",
-        "\n",
         "<|im_start|>",
         "assistant",
-        "\n",
         "La",
         "Ġcapit",
         "ale",
@@ -793,6 +793,8 @@
         "Ġest"
       ],
       "token_ids": [
+        151644,
+        872,
         8747,
         60410,
         1574,
@@ -801,10 +803,8 @@
         9625,
         1788,
         151645,
-        198,
         151644,
         77091,
-        198,
         8747,
         60410,
         1574,
@@ -886,8 +886,10 @@
     },
     {
       "step": 8,
-      "input_text": "La capitale de la France est<|im_end|>\n<|im_start|>assistant\nLa capitale de la France est **",
+      "input_text": "<|im_start|>userLa capitale de la France est<|im_end|><|im_start|>assistantLa capitale de la France est **",
       "tokens": [
+        "<|im_start|>",
+        "user",
         "La",
         "Ġcapit",
         "ale",
@@ -896,10 +898,8 @@
         "ĠFrance",
         "Ġest",
         "<|im_end|>",
-        "\n",
         "<|im_start|>",
         "assistant",
-        "\n",
         "La",
         "Ġcapit",
         "ale",
@@ -910,6 +910,8 @@
         "Ġ**"
       ],
       "token_ids": [
+        151644,
+        872,
         8747,
         60410,
         1574,
@@ -918,10 +920,8 @@
         9625,
         1788,
         151645,
-        198,
         151644,
         77091,
-        198,
         8747,
         60410,
         1574,
@@ -1004,8 +1004,10 @@
     },
     {
       "step": 9,
-      "input_text": "La capitale de la France est<|im_end|>\n<|im_start|>assistant\nLa capitale de la France est **Paris",
+      "input_text": "<|im_start|>userLa capitale de la France est<|im_end|><|im_start|>assistantLa capitale de la France est **Paris",
       "tokens": [
+        "<|im_start|>",
+        "user",
         "La",
         "Ġcapit",
         "ale",
@@ -1014,10 +1016,8 @@
         "ĠFrance",
         "Ġest",
         "<|im_end|>",
-        "\n",
         "<|im_start|>",
         "assistant",
-        "\n",
         "La",
         "Ġcapit",
         "ale",
@@ -1029,6 +1029,8 @@
         "Paris"
       ],
       "token_ids": [
+        151644,
+        872,
         8747,
         60410,
         1574,
@@ -1037,10 +1039,8 @@
         9625,
         1788,
         151645,
-        198,
         151644,
         77091,
-        198,
         8747,
         60410,
         1574,
@@ -1124,8 +1124,10 @@
     },
     {
       "step": 10,
-      "input_text": "La capitale de la France est<|im_end|>\n<|im_start|>assistant\nLa capitale de la France est **Paris**",
+      "input_text": "<|im_start|>userLa capitale de la France est<|im_end|><|im_start|>assistantLa capitale de la France est **Paris**",
       "tokens": [
+        "<|im_start|>",
+        "user",
         "La",
         "Ġcapit",
         "ale",
@@ -1134,10 +1136,8 @@
         "ĠFrance",
         "Ġest",
         "<|im_end|>",
-        "\n",
         "<|im_start|>",
         "assistant",
-        "\n",
         "La",
         "Ġcapit",
         "ale",
@@ -1150,6 +1150,8 @@
         "**"
       ],
       "token_ids": [
+        151644,
+        872,
         8747,
         60410,
         1574,
@@ -1158,10 +1160,8 @@
         9625,
         1788,
         151645,
-        198,
         151644,
         77091,
-        198,
         8747,
         60410,
         1574,
@@ -1246,8 +1246,10 @@
     },
     {
       "step": 11,
-      "input_text": "La capitale de la France est<|im_end|>\n<|im_start|>assistant\nLa capitale de la France est **Paris**.",
+      "input_text": "<|im_start|>userLa capitale de la France est<|im_end|><|im_start|>assistantLa capitale de la France est **Paris**.",
       "tokens": [
+        "<|im_start|>",
+        "user",
         "La",
         "Ġcapit",
         "ale",
@@ -1256,10 +1258,8 @@
         "ĠFrance",
         "Ġest",
         "<|im_end|>",
-        "\n",
         "<|im_start|>",
         "assistant",
-        "\n",
         "La",
         "Ġcapit",
         "ale",
@@ -1273,6 +1273,8 @@
         "."
       ],
       "token_ids": [
+        151644,
+        872,
         8747,
         60410,
         1574,
@@ -1281,10 +1283,8 @@
         9625,
         1788,
         151645,
-        198,
         151644,
         77091,
-        198,
         8747,
         60410,
         1574,

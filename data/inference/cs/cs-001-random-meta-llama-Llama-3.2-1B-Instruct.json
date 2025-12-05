@@ -1,5 +1,5 @@
 {
-  "id": "generated_20251203_120602",
+  "id": "generated_20251204_095015",
   "prompt": "Kdo jsi?",
   "language": "cs",
   "temperature": 5.0,
@@ -14,8 +14,11 @@
   "generation_steps": [
     {
       "step": 0,
-      "input_text": "Kdo jsi?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+      "input_text": "<|start_header_id|>user<|end_header_id|>Kdo jsi?<|eot_id|><|start_header_id|>assistant<|end_header_id|>",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "K",
         "do",
         "Ġjsi",
@@ -23,10 +26,12 @@
         "<|eot_id|>",
         "<|start_header_id|>",
         "assistant",
-        "<|end_header_id|>",
-        "\n\n"
+        "<|end_header_id|>"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         42,
         3055,
         115366,
@@ -34,8 +39,7 @@
         128009,
         128006,
         78191,
-        128007,
-        271
+        128007
       ],
       "output_distribution": {
         "top_k": 10,
@@ -43,75 +47,78 @@
           {
             "token": "M",
             "token_id": 44,
-            "logprob": -1.2109,
-            "prob": 0.2969
+            "logprob": -1.2344,
+            "prob": 0.291
           },
           {
             "token": "S",
             "token_id": 50,
-            "logprob": -2.0312,
-            "prob": 0.1318
+            "logprob": -1.9844,
+            "prob": 0.1377
           },
           {
             "token": "Je",
             "token_id": 30854,
-            "logprob": -3.3438,
-            "prob": 0.0354
+            "logprob": -3.4219,
+            "prob": 0.0327
           },
           {
             "token": "Se",
             "token_id": 1542,
-            "logprob": -3.7812,
-            "prob": 0.0229
-          },
-          {
-            "token": "Ch",
-            "token_id": 1163,
-            "logprob": -3.9688,
-            "prob": 0.019
+            "logprob": -3.7969,
+            "prob": 0.0225
           },
           {
             "token": "D",
             "token_id": 35,
-            "logprob": -4.0938,
-            "prob": 0.0167
+            "logprob": -3.9844,
+            "prob": 0.0186
+          },
+          {
+            "token": "Ch",
+            "token_id": 1163,
+            "logprob": -4.125,
+            "prob": 0.0164
           },
           {
             "token": "Na",
             "token_id": 16589,
-            "logprob": -4.2812,
-            "prob": 0.0139
+            "logprob": -4.25,
+            "prob": 0.0145
           },
           {
             "token": "J",
             "token_id": 41,
-            "logprob": -4.3438,
-            "prob": 0.0131
+            "logprob": -4.4375,
+            "prob": 0.012
           },
           {
             "token": "Z",
             "token_id": 57,
-            "logprob": -4.4688,
-            "prob": 0.0115
+            "logprob": -4.5,
+            "prob": 0.0113
           },
           {
-            "token": "V",
-            "token_id": 53,
-            "logprob": -4.5312,
-            "prob": 0.0108
+            "token": "O",
+            "token_id": 46,
+            "logprob": -4.625,
+            "prob": 0.0099
           }
         ]
       },
       "selected_token": {
-        "token": "Na",
-        "token_id": 16589,
+        "token": "Je",
+        "token_id": 30854,
         "selection_method": "sampling"
       }
     },
     {
       "step": 1,
-      "input_text": "Kdo jsi?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nNa",
+      "input_text": "<|start_header_id|>user<|end_header_id|>Kdo jsi?<|eot_id|><|start_header_id|>assistant<|end_header_id|>Je",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "K",
         "do",
         "Ġjsi",
@@ -120,10 +127,12 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
-        "Na"
+        "Je"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         42,
         3055,
         115366,
@@ -132,84 +141,86 @@
         128006,
         78191,
         128007,
-        271,
-        16589
+        30854
       ],
       "output_distribution": {
         "top_k": 10,
         "candidates": [
           {
-            "token": "š",
-            "token_id": 11906,
-            "logprob": -1.4688,
-            "prob": 0.2305
+            "token": "Ġjsem",
+            "token_id": 101180,
+            "logprob": -3.1406,
+            "prob": 0.0435
           },
           {
-            "token": "še",
-            "token_id": 58067,
-            "logprob": -3.0938,
-            "prob": 0.0454
+            "token": "Ġexist",
+            "token_id": 3073,
+            "logprob": -4.0625,
+            "prob": 0.017
           },
           {
-            "token": "Ġsh",
-            "token_id": 559,
-            "logprob": -3.1562,
-            "prob": 0.0427
+            "token": "Ġmoh",
+            "token_id": 101888,
+            "logprob": -4.4375,
+            "prob": 0.0117
           },
           {
-            "token": "ši",
-            "token_id": 105112,
-            "logprob": -3.4062,
-            "prob": 0.0332
+            "token": "Ġje",
+            "token_id": 4864,
+            "logprob": -4.5625,
+            "prob": 0.0103
           },
           {
-            "token": "ší",
-            "token_id": 89950,
-            "logprob": -3.5312,
-            "prob": 0.0293
+            "token": "Ġmám",
+            "token_id": 117997,
+            "logprob": -4.625,
+            "prob": 0.0097
           },
           {
-            "token": "ím",
-            "token_id": 56094,
-            "logprob": -3.6562,
-            "prob": 0.0259
+            "token": "Ġsuis",
+            "token_id": 36731,
+            "logprob": -4.625,
+            "prob": 0.0097
           },
           {
-            "token": "šem",
-            "token_id": 107788,
-            "logprob": -3.8438,
-            "prob": 0.0215
+            "token": "Ġsom",
+            "token_id": 1794,
+            "logprob": -4.625,
+            "prob": 0.0097
           },
           {
-            "token": "ush",
-            "token_id": 1136,
-            "logprob": -4.2188,
-            "prob": 0.0148
+            "token": "Ġna",
+            "token_id": 4415,
+            "logprob": -4.75,
+            "prob": 0.0085
           },
           {
-            "token": "ším",
-            "token_id": 104021,
-            "logprob": -4.2812,
-            "prob": 0.0139
+            "token": "Ġмогу",
+            "token_id": 127572,
+            "logprob": -4.8125,
+            "prob": 0.0081
           },
           {
-            "token": "Ġmo",
-            "token_id": 4647,
-            "logprob": -4.4688,
-            "prob": 0.0115
+            "token": "Ġpuedo",
+            "token_id": 81915,
+            "logprob": -5.0625,
+            "prob": 0.0063
           }
         ]
       },
       "selected_token": {
-        "token": "še",
-        "token_id": 58067,
+        "token": "Ġsuis",
+        "token_id": 36731,
         "selection_method": "sampling"
       }
     },
     {
       "step": 2,
-      "input_text": "Kdo jsi?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nNaše",
+      "input_text": "<|start_header_id|>user<|end_header_id|>Kdo jsi?<|eot_id|><|start_header_id|>assistant<|end_header_id|>Je suis",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "K",
         "do",
         "Ġjsi",
@@ -218,11 +229,13 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
-        "Na",
-        "še"
+        "Je",
+        "Ġsuis"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         42,
         3055,
         115366,
@@ -231,85 +244,87 @@
         128006,
         78191,
         128007,
-        271,
-        16589,
-        58067
+        30854,
+        36731
       ],
       "output_distribution": {
         "top_k": 10,
         "candidates": [
           {
-            "token": "Ġconversation",
-            "token_id": 10652,
-            "logprob": -2.8438,
-            "prob": 0.0581
+            "token": "Ġun",
+            "token_id": 653,
+            "logprob": -0.0557,
+            "prob": 0.9453
           },
           {
-            "token": "Ġconvers",
-            "token_id": 7669,
-            "logprob": -3.5312,
-            "prob": 0.0293
+            "token": "Ġune",
+            "token_id": 6316,
+            "logprob": -3.1875,
+            "prob": 0.0415
           },
           {
-            "token": "Ġté",
-            "token_id": 47289,
-            "logprob": -4.4375,
-            "prob": 0.0118
+            "token": "Ġici",
+            "token_id": 49733,
+            "logprob": -5.8125,
+            "prob": 0.003
           },
           {
-            "token": "Ġkon",
-            "token_id": 16947,
-            "logprob": -4.625,
-            "prob": 0.0098
+            "token": "Ġcapable",
+            "token_id": 13171,
+            "logprob": -6.375,
+            "prob": 0.0017
           },
           {
-            "token": "Ġpř",
-            "token_id": 59406,
-            "logprob": -4.7188,
-            "prob": 0.0089
+            "token": "Ġlà",
+            "token_id": 39015,
+            "logprob": -6.8125,
+            "prob": 0.0011
           },
           {
-            "token": "Ġodpově",
-            "token_id": 108614,
-            "logprob": -5.125,
-            "prob": 0.006
+            "token": "Ġdes",
+            "token_id": 951,
+            "logprob": -7.5625,
+            "prob": 0.0005
           },
           {
-            "token": "Ġdialog",
-            "token_id": 7402,
-            "logprob": -5.125,
-            "prob": 0.006
+            "token": "ĠUn",
+            "token_id": 1252,
+            "logprob": -7.9375,
+            "prob": 0.0004
           },
           {
-            "token": "Ġdí",
-            "token_id": 102503,
-            "logprob": -5.3125,
-            "prob": 0.0049
+            "token": "Ġdans",
+            "token_id": 7010,
+            "logprob": -8.5625,
+            "prob": 0.0002
           },
           {
-            "token": "Ġdis",
-            "token_id": 834,
-            "logprob": -5.3438,
-            "prob": 0.0048
+            "token": "Ġcon",
+            "token_id": 390,
+            "logprob": -8.8125,
+            "prob": 0.0001
           },
           {
-            "token": "Ġroz",
-            "token_id": 39852,
-            "logprob": -5.4375,
-            "prob": 0.0043
+            "token": "Ġhere",
+            "token_id": 1618,
+            "logprob": -8.875,
+            "prob": 0.0001
           }
         ]
       },
       "selected_token": {
-        "token": "Ġconversation",
-        "token_id": 10652,
+        "token": "Ġcapable",
+        "token_id": 13171,
         "selection_method": "sampling"
       }
     },
     {
       "step": 3,
-      "input_text": "Kdo jsi?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nNaše conversation",
+      "input_text": "<|start_header_id|>user<|end_header_id|>Kdo jsi?<|eot_id|><|start_header_id|>assistant<|end_header_id|>Je suis capable",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "K",
         "do",
         "Ġjsi",
@@ -318,12 +333,14 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
-        "Na",
-        "še",
-        "Ġconversation"
+        "Je",
+        "Ġsuis",
+        "Ġcapable"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         42,
         3055,
         115366,
@@ -332,86 +349,88 @@
         128006,
         78191,
         128007,
-        271,
-        16589,
-        58067,
-        10652
+        30854,
+        36731,
+        13171
       ],
       "output_distribution": {
         "top_k": 10,
         "candidates": [
           {
-            "token": "Ġse",
-            "token_id": 513,
-            "logprob": -1.4609,
-            "prob": 0.2334
+            "token": "Ġde",
+            "token_id": 409,
+            "logprob": -0.2285,
+            "prob": 0.7969
           },
           {
-            "token": "Ġje",
-            "token_id": 4864,
-            "logprob": -2.4531,
-            "prob": 0.0854
+            "token": "Ġd",
+            "token_id": 294,
+            "logprob": -1.6016,
+            "prob": 0.2012
           },
           {
-            "token": "e",
-            "token_id": 68,
-            "logprob": -2.9531,
-            "prob": 0.052
+            "token": "Ġaider",
+            "token_id": 91878,
+            "logprob": -9.1875,
+            "prob": 0.0001
           },
           {
-            "token": "o",
-            "token_id": 78,
-            "logprob": -3.5156,
-            "prob": 0.0297
+            "token": "Ġmaintenant",
+            "token_id": 74699,
+            "logprob": -9.5,
+            "prob": 0.0001
           },
           {
-            "token": "u",
-            "token_id": 84,
-            "logprob": -3.8281,
-            "prob": 0.0216
+            "token": "Ġdés",
+            "token_id": 46838,
+            "logprob": -10.1875,
+            "prob": 0.0
           },
           {
-            "token": "ní",
-            "token_id": 55122,
-            "logprob": -3.8906,
-            "prob": 0.0204
+            "token": "Ġdét",
+            "token_id": 85877,
+            "logprob": -10.25,
+            "prob": 0.0
           },
           {
-            "token": "a",
-            "token_id": 64,
-            "logprob": -4.6562,
-            "prob": 0.0096
+            "token": "Ġdes",
+            "token_id": 951,
+            "logprob": -10.25,
+            "prob": 0.0
           },
           {
-            "token": "Ġbyla",
-            "token_id": 102035,
-            "logprob": -4.8438,
-            "prob": 0.008
+            "token": "Ġdeze",
+            "token_id": 35323,
+            "logprob": -10.5625,
+            "prob": 0.0
           },
           {
-            "token": "Ġmůžete",
-            "token_id": 108074,
-            "logprob": -4.9688,
-            "prob": 0.007
+            "token": "Ġhet",
+            "token_id": 9194,
+            "logprob": -10.6875,
+            "prob": 0.0
           },
           {
-            "token": "ová",
-            "token_id": 100779,
-            "logprob": -5.0625,
-            "prob": 0.0064
+            "token": "Ġdé",
+            "token_id": 7591,
+            "logprob": -10.75,
+            "prob": 0.0
           }
         ]
       },
       "selected_token": {
-        "token": "Ġse",
-        "token_id": 513,
+        "token": "Ġaider",
+        "token_id": 91878,
         "selection_method": "sampling"
       }
     },
     {
       "step": 4,
-      "input_text": "Kdo jsi?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nNaše conversation se",
+      "input_text": "<|start_header_id|>user<|end_header_id|>Kdo jsi?<|eot_id|><|start_header_id|>assistant<|end_header_id|>Je suis capable aider",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "K",
         "do",
         "Ġjsi",
@@ -420,13 +439,15 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
-        "Na",
-        "še",
-        "Ġconversation",
-        "Ġse"
+        "Je",
+        "Ġsuis",
+        "Ġcapable",
+        "Ġaider"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         42,
         3055,
         115366,
@@ -435,87 +456,89 @@
         128006,
         78191,
         128007,
-        271,
-        16589,
-        58067,
-        10652,
-        513
+        30854,
+        36731,
+        13171,
+        91878
       ],
       "output_distribution": {
         "top_k": 10,
         "candidates": [
           {
-            "token": "Ġkon",
-            "token_id": 16947,
-            "logprob": -2.125,
-            "prob": 0.1187
+            "token": ",",
+            "token_id": 11,
+            "logprob": -2.0469,
+            "prob": 0.1299
           },
           {
-            "token": "Ġz",
-            "token_id": 1167,
-            "logprob": -4.125,
-            "prob": 0.0161
+            "token": "Ġve",
+            "token_id": 5320,
+            "logprob": -2.5469,
+            "prob": 0.0791
           },
           {
-            "token": "Ġpuede",
-            "token_id": 21329,
-            "logprob": -4.3125,
-            "prob": 0.0133
+            "token": "Ġde",
+            "token_id": 409,
+            "logprob": -2.6719,
+            "prob": 0.0698
           },
           {
-            "token": "Ġnachází",
-            "token_id": 113525,
-            "logprob": -4.5625,
-            "prob": 0.0104
+            "token": ".",
+            "token_id": 13,
+            "logprob": -3.0469,
+            "prob": 0.0479
           },
           {
-            "token": "Ġmůže",
-            "token_id": 103100,
-            "logprob": -4.8125,
-            "prob": 0.0081
+            "token": "te",
+            "token_id": 668,
+            "logprob": -3.3594,
+            "prob": 0.0349
           },
           {
-            "token": "Ġzak",
-            "token_id": 51415,
-            "logprob": -4.8438,
-            "prob": 0.0078
+            "token": "Ġvá",
+            "token_id": 58397,
+            "logprob": -3.5781,
+            "prob": 0.0281
           },
           {
-            "token": "Ġod",
-            "token_id": 11018,
-            "logprob": -5.0,
-            "prob": 0.0067
+            "token": "Ġ",
+            "token_id": 220,
+            "logprob": -3.8281,
+            "prob": 0.0219
           },
           {
-            "token": "Ġst",
-            "token_id": 357,
-            "logprob": -5.0312,
-            "prob": 0.0065
+            "token": "Ġà",
+            "token_id": 3869,
+            "logprob": -4.1875,
+            "prob": 0.0151
           },
           {
-            "token": "Ġsou",
-            "token_id": 5945,
-            "logprob": -5.0938,
-            "prob": 0.0061
+            "token": "Ġte",
+            "token_id": 1028,
+            "logprob": -4.375,
+            "prob": 0.0125
           },
           {
-            "token": "Ġcentered",
-            "token_id": 31288,
-            "logprob": -5.2188,
-            "prob": 0.0054
+            "token": "Ġna",
+            "token_id": 4415,
+            "logprob": -4.5312,
+            "prob": 0.0107
           }
         ]
       },
       "selected_token": {
-        "token": "Ġcentered",
-        "token_id": 31288,
+        "token": "Ġna",
+        "token_id": 4415,
         "selection_method": "sampling"
       }
     },
     {
       "step": 5,
-      "input_text": "Kdo jsi?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nNaše conversation se centered",
+      "input_text": "<|start_header_id|>user<|end_header_id|>Kdo jsi?<|eot_id|><|start_header_id|>assistant<|end_header_id|>Je suis capable aider na",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "K",
         "do",
         "Ġjsi",
@@ -524,14 +547,16 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
-        "Na",
-        "še",
-        "Ġconversation",
-        "Ġse",
-        "Ġcentered"
+        "Je",
+        "Ġsuis",
+        "Ġcapable",
+        "Ġaider",
+        "Ġna"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         42,
         3055,
         115366,
@@ -540,88 +565,90 @@
         128006,
         78191,
         128007,
-        271,
-        16589,
-        58067,
-        10652,
-        513,
-        31288
+        30854,
+        36731,
+        13171,
+        91878,
+        4415
       ],
       "output_distribution": {
         "top_k": 10,
         "candidates": [
           {
-            "token": "Ġna",
-            "token_id": 4415,
-            "logprob": -0.875,
-            "prob": 0.418
+            "token": "š",
+            "token_id": 11906,
+            "logprob": -2.4375,
+            "prob": 0.0874
           },
           {
-            "token": "Ġkolem",
-            "token_id": 108708,
-            "logprob": -2.8125,
-            "prob": 0.0601
+            "token": "Ġté",
+            "token_id": 47289,
+            "logprob": -3.6875,
+            "prob": 0.025
           },
           {
-            "token": "Ġpouze",
-            "token_id": 105393,
-            "logprob": -4.4688,
-            "prob": 0.0115
+            "token": "Ġvá",
+            "token_id": 58397,
+            "logprob": -4.1875,
+            "prob": 0.0152
           },
           {
-            "token": "í",
-            "token_id": 2483,
-            "logprob": -4.9375,
-            "prob": 0.0072
+            "token": "č",
+            "token_id": 13453,
+            "logprob": -4.3438,
+            "prob": 0.013
           },
           {
-            "token": "uje",
-            "token_id": 34967,
+            "token": "šem",
+            "token_id": 107788,
+            "logprob": -4.375,
+            "prob": 0.0126
+          },
+          {
+            "token": "Ġstar",
+            "token_id": 6917,
+            "logprob": -4.875,
+            "prob": 0.0076
+          },
+          {
+            "token": "Ġvás",
+            "token_id": 107869,
             "logprob": -5.0,
             "prob": 0.0067
           },
           {
-            "token": "Ġвокруг",
-            "token_id": 123907,
-            "logprob": -5.2812,
-            "prob": 0.0051
+            "token": "iv",
+            "token_id": 344,
+            "logprob": -5.0312,
+            "prob": 0.0065
           },
           {
-            "token": "Ġaround",
-            "token_id": 2212,
-            "logprob": -5.2812,
-            "prob": 0.0051
+            "token": "št",
+            "token_id": 85578,
+            "logprob": -5.1562,
+            "prob": 0.0058
           },
           {
-            "token": "Ġmostly",
-            "token_id": 10213,
-            "logprob": -5.625,
-            "prob": 0.0036
-          },
-          {
-            "token": "ává",
-            "token_id": 103833,
-            "logprob": -5.6562,
-            "prob": 0.0035
-          },
-          {
-            "token": "eck",
-            "token_id": 101458,
-            "logprob": -5.7188,
-            "prob": 0.0033
+            "token": "Ġprincip",
+            "token_id": 7546,
+            "logprob": -5.3438,
+            "prob": 0.0048
           }
         ]
       },
       "selected_token": {
-        "token": "Ġaround",
-        "token_id": 2212,
+        "token": "č",
+        "token_id": 13453,
         "selection_method": "sampling"
       }
     },
     {
       "step": 6,
-      "input_text": "Kdo jsi?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nNaše conversation se centered around",
+      "input_text": "<|start_header_id|>user<|end_header_id|>Kdo jsi?<|eot_id|><|start_header_id|>assistant<|end_header_id|>Je suis capable aider nač",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "K",
         "do",
         "Ġjsi",
@@ -630,15 +657,17 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
-        "Na",
-        "še",
-        "Ġconversation",
-        "Ġse",
-        "Ġcentered",
-        "Ġaround"
+        "Je",
+        "Ġsuis",
+        "Ġcapable",
+        "Ġaider",
+        "Ġna",
+        "č"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         42,
         3055,
         115366,
@@ -647,1025 +676,91 @@
         128006,
         78191,
         128007,
-        271,
-        16589,
-        58067,
-        10652,
-        513,
-        31288,
-        2212
+        30854,
+        36731,
+        13171,
+        91878,
+        4415,
+        13453
       ],
       "output_distribution": {
         "top_k": 10,
         "candidates": [
           {
-            "token": "Ġdefin",
-            "token_id": 36222,
+            "token": "rt",
+            "token_id": 3423,
+            "logprob": -1.3516,
+            "prob": 0.2598
+          },
+          {
+            "token": "eln",
+            "token_id": 17912,
+            "logprob": -1.7891,
+            "prob": 0.167
+          },
+          {
+            "token": "ted",
+            "token_id": 6702,
             "logprob": -3.7344,
-            "prob": 0.0238
+            "prob": 0.024
           },
           {
-            "token": "Ġz",
-            "token_id": 1167,
-            "logprob": -4.4688,
-            "prob": 0.0116
-          },
-          {
-            "token": "Ġo",
-            "token_id": 297,
-            "logprob": -4.4688,
-            "prob": 0.0116
-          },
-          {
-            "token": "Ġdan",
-            "token_id": 9279,
-            "logprob": -4.5938,
-            "prob": 0.0103
-          },
-          {
-            "token": "Ġod",
-            "token_id": 11018,
-            "logprob": -4.625,
-            "prob": 0.0099
-          },
-          {
-            "token": "Ġk",
-            "token_id": 597,
-            "logprob": -4.9062,
-            "prob": 0.0075
-          },
-          {
-            "token": "Ġva",
-            "token_id": 11412,
-            "logprob": -5.0,
-            "prob": 0.0068
-          },
-          {
-            "token": "Ġvy",
-            "token_id": 46359,
-            "logprob": -5.0625,
-            "prob": 0.0064
-          },
-          {
-            "token": "Ġzn",
-            "token_id": 30974,
-            "logprob": -5.0938,
-            "prob": 0.0062
-          },
-          {
-            "token": "Ġknown",
-            "token_id": 3967,
-            "logprob": -5.125,
-            "prob": 0.006
-          }
-        ]
-      },
-      "selected_token": {
-        "token": "Ġo",
-        "token_id": 297,
-        "selection_method": "sampling"
-      }
-    },
-    {
-      "step": 7,
-      "input_text": "Kdo jsi?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nNaše conversation se centered around o",
-      "tokens": [
-        "K",
-        "do",
-        "Ġjsi",
-        "?",
-        "<|eot_id|>",
-        "<|start_header_id|>",
-        "assistant",
-        "<|end_header_id|>",
-        "\n\n",
-        "Na",
-        "še",
-        "Ġconversation",
-        "Ġse",
-        "Ġcentered",
-        "Ġaround",
-        "Ġo"
-      ],
-      "token_ids": [
-        42,
-        3055,
-        115366,
-        30,
-        128009,
-        128006,
-        78191,
-        128007,
-        271,
-        16589,
-        58067,
-        10652,
-        513,
-        31288,
-        2212,
-        297
-      ],
-      "output_distribution": {
-        "top_k": 10,
-        "candidates": [
-          {
-            "token": "te",
-            "token_id": 668,
-            "logprob": -0.9141,
-            "prob": 0.4023
-          },
-          {
-            "token": "dk",
-            "token_id": 7737,
-            "logprob": -2.2188,
-            "prob": 0.1079
-          },
-          {
-            "token": "db",
-            "token_id": 2042,
-            "logprob": -2.7188,
-            "prob": 0.0654
-          },
-          {
-            "token": "tec",
-            "token_id": 55300,
-            "logprob": -2.8438,
-            "prob": 0.0579
-          },
-          {
-            "token": "ds",
-            "token_id": 5469,
-            "logprob": -3.2188,
-            "prob": 0.0398
-          },
-          {
-            "token": "ce",
-            "token_id": 346,
-            "logprob": -3.4062,
-            "prob": 0.033
-          },
-          {
-            "token": "zn",
-            "token_id": 20926,
-            "logprob": -3.6562,
-            "prob": 0.0256
-          },
-          {
-            "token": "vl",
-            "token_id": 14878,
-            "logprob": -4.1562,
-            "prob": 0.0156
-          },
-          {
-            "token": "me",
-            "token_id": 2727,
-            "logprob": -4.2188,
-            "prob": 0.0146
-          },
-          {
-            "token": "ml",
-            "token_id": 1029,
-            "logprob": -4.2812,
-            "prob": 0.0137
-          }
-        ]
-      },
-      "selected_token": {
-        "token": "tec",
-        "token_id": 55300,
-        "selection_method": "sampling"
-      }
-    },
-    {
-      "step": 8,
-      "input_text": "Kdo jsi?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nNaše conversation se centered around otec",
-      "tokens": [
-        "K",
-        "do",
-        "Ġjsi",
-        "?",
-        "<|eot_id|>",
-        "<|start_header_id|>",
-        "assistant",
-        "<|end_header_id|>",
-        "\n\n",
-        "Na",
-        "še",
-        "Ġconversation",
-        "Ġse",
-        "Ġcentered",
-        "Ġaround",
-        "Ġo",
-        "tec"
-      ],
-      "token_ids": [
-        42,
-        3055,
-        115366,
-        30,
-        128009,
-        128006,
-        78191,
-        128007,
-        271,
-        16589,
-        58067,
-        10652,
-        513,
-        31288,
-        2212,
-        297,
-        55300
-      ],
-      "output_distribution": {
-        "top_k": 10,
-        "candidates": [
-          {
-            "token": ",",
-            "token_id": 11,
-            "logprob": -1.6484,
-            "prob": 0.1924
-          },
-          {
-            "token": ".",
-            "token_id": 13,
-            "logprob": -1.8984,
-            "prob": 0.1494
-          },
-          {
-            "token": "ň",
-            "token_id": 100761,
-            "logprob": -3.875,
-            "prob": 0.0209
-          },
-          {
-            "token": "š",
-            "token_id": 11906,
-            "logprob": -4.3438,
-            "prob": 0.0131
-          },
-          {
-            "token": "Ġ(",
-            "token_id": 320,
-            "logprob": -4.4688,
-            "prob": 0.0115
-          },
-          {
-            "token": "Ġa",
-            "token_id": 264,
-            "logprob": -4.75,
-            "prob": 0.0087
-          },
-          {
-            "token": "Ġnebo",
-            "token_id": 100872,
-            "logprob": -4.875,
-            "prob": 0.0077
-          },
-          {
-            "token": "ňování",
-            "token_id": 127342,
-            "logprob": -5.0938,
-            "prob": 0.0062
-          },
-          {
-            "token": "Ġna",
-            "token_id": 4415,
-            "logprob": -5.2188,
-            "prob": 0.0055
-          },
-          {
-            "token": "nosti",
-            "token_id": 74952,
-            "logprob": -5.2812,
-            "prob": 0.0051
-          }
-        ]
-      },
-      "selected_token": {
-        "token": "Ġnebo",
-        "token_id": 100872,
-        "selection_method": "sampling"
-      }
-    },
-    {
-      "step": 9,
-      "input_text": "Kdo jsi?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nNaše conversation se centered around otec nebo",
-      "tokens": [
-        "K",
-        "do",
-        "Ġjsi",
-        "?",
-        "<|eot_id|>",
-        "<|start_header_id|>",
-        "assistant",
-        "<|end_header_id|>",
-        "\n\n",
-        "Na",
-        "še",
-        "Ġconversation",
-        "Ġse",
-        "Ġcentered",
-        "Ġaround",
-        "Ġo",
-        "tec",
-        "Ġnebo"
-      ],
-      "token_ids": [
-        42,
-        3055,
-        115366,
-        30,
-        128009,
-        128006,
-        78191,
-        128007,
-        271,
-        16589,
-        58067,
-        10652,
-        513,
-        31288,
-        2212,
-        297,
-        55300,
-        100872
-      ],
-      "output_distribution": {
-        "top_k": 10,
-        "candidates": [
-          {
-            "token": "Ġdc",
-            "token_id": 19966,
-            "logprob": -3.6719,
-            "prob": 0.0255
-          },
-          {
-            "token": "Ġmat",
-            "token_id": 5634,
-            "logprob": -3.6719,
-            "prob": 0.0255
-          },
-          {
-            "token": "Ġna",
-            "token_id": 4415,
-            "logprob": -3.8594,
-            "prob": 0.0211
-          },
-          {
-            "token": "Ġp",
-            "token_id": 281,
-            "logprob": -4.125,
-            "prob": 0.016
-          },
-          {
-            "token": "Ġv",
-            "token_id": 348,
-            "logprob": -4.1875,
-            "prob": 0.015
-          },
-          {
-            "token": "Ġrod",
-            "token_id": 21236,
-            "logprob": -4.3125,
-            "prob": 0.0132
-          },
-          {
-            "token": ".",
-            "token_id": 13,
-            "logprob": -4.5,
-            "prob": 0.011
-          },
-          {
-            "token": "Ġo",
-            "token_id": 297,
-            "logprob": -4.6875,
-            "prob": 0.0091
-          },
-          {
-            "token": "Ġjeho",
-            "token_id": 101503,
-            "logprob": -4.875,
-            "prob": 0.0075
-          },
-          {
-            "token": ",",
-            "token_id": 11,
-            "logprob": -4.9375,
-            "prob": 0.0071
-          }
-        ]
-      },
-      "selected_token": {
-        "token": "Ġjeho",
-        "token_id": 101503,
-        "selection_method": "sampling"
-      }
-    },
-    {
-      "step": 10,
-      "input_text": "Kdo jsi?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nNaše conversation se centered around otec nebo jeho",
-      "tokens": [
-        "K",
-        "do",
-        "Ġjsi",
-        "?",
-        "<|eot_id|>",
-        "<|start_header_id|>",
-        "assistant",
-        "<|end_header_id|>",
-        "\n\n",
-        "Na",
-        "še",
-        "Ġconversation",
-        "Ġse",
-        "Ġcentered",
-        "Ġaround",
-        "Ġo",
-        "tec",
-        "Ġnebo",
-        "Ġjeho"
-      ],
-      "token_ids": [
-        42,
-        3055,
-        115366,
-        30,
-        128009,
-        128006,
-        78191,
-        128007,
-        271,
-        16589,
-        58067,
-        10652,
-        513,
-        31288,
-        2212,
-        297,
-        55300,
-        100872,
-        101503
-      ],
-      "output_distribution": {
-        "top_k": 10,
-        "candidates": [
-          {
-            "token": "Ġrod",
-            "token_id": 21236,
-            "logprob": -3.0469,
-            "prob": 0.0476
-          },
-          {
-            "token": "Ġrodiny",
-            "token_id": 125794,
+            "token": "rtl",
+            "token_id": 49568,
             "logprob": -3.9219,
             "prob": 0.0199
           },
           {
-            "token": "Ġo",
-            "token_id": 297,
-            "logprob": -4.0312,
-            "prob": 0.0176
+            "token": "ink",
+            "token_id": 771,
+            "logprob": -3.9844,
+            "prob": 0.0188
           },
           {
-            "token": "Ġfamilia",
-            "token_id": 52047,
-            "logprob": -4.125,
-            "prob": 0.016
+            "token": "ert",
+            "token_id": 531,
+            "logprob": -3.9844,
+            "prob": 0.0188
           },
           {
-            "token": "Ġpří",
-            "token_id": 100578,
-            "logprob": -4.4688,
-            "prob": 0.0113
+            "token": "ase",
+            "token_id": 521,
+            "logprob": -4.0938,
+            "prob": 0.0166
           },
           {
-            "token": "Ġspouse",
-            "token_id": 32080,
-            "logprob": -4.7812,
-            "prob": 0.0083
+            "token": "ít",
+            "token_id": 16485,
+            "logprob": -4.5312,
+            "prob": 0.0107
           },
           {
-            "token": "Ġdc",
-            "token_id": 19966,
-            "logprob": -5.0625,
-            "prob": 0.0063
+            "token": "pan",
+            "token_id": 857,
+            "logprob": -4.9062,
+            "prob": 0.0074
           },
           {
-            "token": "Ġrodi",
-            "token_id": 116932,
-            "logprob": -5.1562,
-            "prob": 0.0057
-          },
-          {
-            "token": "Ġz",
-            "token_id": 1167,
-            "logprob": -5.1875,
-            "prob": 0.0055
-          },
-          {
-            "token": "Ġro",
-            "token_id": 938,
-            "logprob": -5.3438,
-            "prob": 0.0047
-          }
-        ]
-      },
-      "selected_token": {
-        "token": "Ġz",
-        "token_id": 1167,
-        "selection_method": "sampling"
-      }
-    },
-    {
-      "step": 11,
-      "input_text": "Kdo jsi?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nNaše conversation se centered around otec nebo jeho z",
-      "tokens": [
-        "K",
-        "do",
-        "Ġjsi",
-        "?",
-        "<|eot_id|>",
-        "<|start_header_id|>",
-        "assistant",
-        "<|end_header_id|>",
-        "\n\n",
-        "Na",
-        "še",
-        "Ġconversation",
-        "Ġse",
-        "Ġcentered",
-        "Ġaround",
-        "Ġo",
-        "tec",
-        "Ġnebo",
-        "Ġjeho",
-        "Ġz"
-      ],
-      "token_ids": [
-        42,
-        3055,
-        115366,
-        30,
-        128009,
-        128006,
-        78191,
-        128007,
-        271,
-        16589,
-        58067,
-        10652,
-        513,
-        31288,
-        2212,
-        297,
-        55300,
-        100872,
-        101503,
-        1167
-      ],
-      "output_distribution": {
-        "top_k": 10,
-        "candidates": [
-          {
-            "token": "ást",
-            "token_id": 56503,
-            "logprob": -2.7031,
-            "prob": 0.0674
-          },
-          {
-            "token": "dr",
-            "token_id": 3696,
-            "logprob": -2.8281,
-            "prob": 0.0596
-          },
-          {
-            "token": "ák",
-            "token_id": 72542,
-            "logprob": -3.0156,
-            "prob": 0.0493
-          },
-          {
-            "token": "dro",
-            "token_id": 11513,
-            "logprob": -3.0781,
-            "prob": 0.0464
-          },
-          {
-            "token": "ahr",
-            "token_id": 15464,
-            "logprob": -3.3906,
-            "prob": 0.0339
-          },
-          {
-            "token": "án",
-            "token_id": 11644,
-            "logprob": -3.5156,
-            "prob": 0.0299
-          },
-          {
-            "token": "ás",
-            "token_id": 7206,
-            "logprob": -3.7031,
-            "prob": 0.0248
-          },
-          {
-            "token": "aby",
-            "token_id": 6243,
-            "logprob": -3.7656,
-            "prob": 0.0233
-          },
-          {
-            "token": "etě",
-            "token_id": 126796,
-            "logprob": -4.25,
-            "prob": 0.0141
-          },
-          {
-            "token": "pr",
-            "token_id": 652,
-            "logprob": -4.3125,
-            "prob": 0.0132
-          }
-        ]
-      },
-      "selected_token": {
-        "token": "ák",
-        "token_id": 72542,
-        "selection_method": "sampling"
-      }
-    },
-    {
-      "step": 12,
-      "input_text": "Kdo jsi?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nNaše conversation se centered around otec nebo jeho zák",
-      "tokens": [
-        "K",
-        "do",
-        "Ġjsi",
-        "?",
-        "<|eot_id|>",
-        "<|start_header_id|>",
-        "assistant",
-        "<|end_header_id|>",
-        "\n\n",
-        "Na",
-        "še",
-        "Ġconversation",
-        "Ġse",
-        "Ġcentered",
-        "Ġaround",
-        "Ġo",
-        "tec",
-        "Ġnebo",
-        "Ġjeho",
-        "Ġz",
-        "ák"
-      ],
-      "token_ids": [
-        42,
-        3055,
-        115366,
-        30,
-        128009,
-        128006,
-        78191,
-        128007,
-        271,
-        16589,
-        58067,
-        10652,
-        513,
-        31288,
-        2212,
-        297,
-        55300,
-        100872,
-        101503,
-        1167,
-        72542
-      ],
-      "output_distribution": {
-        "top_k": 10,
-        "candidates": [
-          {
-            "token": "az",
-            "token_id": 1394,
-            "logprob": -0.7695,
-            "prob": 0.4629
-          },
-          {
-            "token": "onn",
-            "token_id": 27476,
-            "logprob": -1.6406,
-            "prob": 0.1934
-          },
-          {
-            "token": "azu",
-            "token_id": 40229,
-            "logprob": -2.2656,
-            "prob": 0.1035
-          },
-          {
-            "token": "onom",
-            "token_id": 14609,
-            "logprob": -3.3281,
-            "prob": 0.0356
-          },
-          {
-            "token": "ulis",
-            "token_id": 65130,
-            "logprob": -3.5781,
-            "prob": 0.0278
-          },
-          {
-            "token": "ony",
-            "token_id": 3633,
-            "logprob": -4.4688,
-            "prob": 0.0116
-          },
-          {
-            "token": "lad",
-            "token_id": 18599,
-            "logprob": -4.6562,
-            "prob": 0.0096
-          },
-          {
-            "token": "upa",
-            "token_id": 46931,
-            "logprob": -5.3438,
-            "prob": 0.0048
-          },
-          {
-            "token": "one",
-            "token_id": 606,
-            "logprob": -5.4062,
-            "prob": 0.0045
-          },
-          {
-            "token": "use",
-            "token_id": 817,
-            "logprob": -5.4062,
-            "prob": 0.0045
-          }
-        ]
-      },
-      "selected_token": {
-        "token": "onn",
-        "token_id": 27476,
-        "selection_method": "sampling"
-      }
-    },
-    {
-      "step": 13,
-      "input_text": "Kdo jsi?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nNaše conversation se centered around otec nebo jeho zákonn",
-      "tokens": [
-        "K",
-        "do",
-        "Ġjsi",
-        "?",
-        "<|eot_id|>",
-        "<|start_header_id|>",
-        "assistant",
-        "<|end_header_id|>",
-        "\n\n",
-        "Na",
-        "še",
-        "Ġconversation",
-        "Ġse",
-        "Ġcentered",
-        "Ġaround",
-        "Ġo",
-        "tec",
-        "Ġnebo",
-        "Ġjeho",
-        "Ġz",
-        "ák",
-        "onn"
-      ],
-      "token_ids": [
-        42,
-        3055,
-        115366,
-        30,
-        128009,
-        128006,
-        78191,
-        128007,
-        271,
-        16589,
-        58067,
-        10652,
-        513,
-        31288,
-        2212,
-        297,
-        55300,
-        100872,
-        101503,
-        1167,
-        72542,
-        27476
-      ],
-      "output_distribution": {
-        "top_k": 10,
-        "candidates": [
-          {
-            "token": "ý",
-            "token_id": 20195,
-            "logprob": -0.4863,
-            "prob": 0.6133
-          },
-          {
-            "token": "é",
-            "token_id": 978,
-            "logprob": -1.7344,
-            "prob": 0.1758
-          },
-          {
-            "token": "á",
-            "token_id": 1995,
-            "logprob": -2.2344,
-            "prob": 0.1069
-          },
-          {
-            "token": "ou",
-            "token_id": 283,
-            "logprob": -2.7344,
-            "prob": 0.0649
-          },
-          {
-            "token": "ém",
-            "token_id": 17060,
-            "logprob": -5.0625,
-            "prob": 0.0064
-          },
-          {
-            "token": "ých",
-            "token_id": 98955,
-            "logprob": -5.1875,
-            "prob": 0.0057
-          },
-          {
-            "token": "ého",
-            "token_id": 100448,
-            "logprob": -5.5625,
-            "prob": 0.0039
-          },
-          {
-            "token": "ým",
-            "token_id": 100434,
-            "logprob": -5.6875,
-            "prob": 0.0034
-          },
-          {
-            "token": "í",
-            "token_id": 2483,
-            "logprob": -5.9375,
-            "prob": 0.0027
-          },
-          {
-            "token": "ích",
-            "token_id": 100489,
-            "logprob": -6.0625,
-            "prob": 0.0024
-          }
-        ]
-      },
-      "selected_token": {
-        "token": "ých",
-        "token_id": 98955,
-        "selection_method": "sampling"
-      }
-    },
-    {
-      "step": 14,
-      "input_text": "Kdo jsi?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nNaše conversation se centered around otec nebo jeho zákonných",
-      "tokens": [
-        "K",
-        "do",
-        "Ġjsi",
-        "?",
-        "<|eot_id|>",
-        "<|start_header_id|>",
-        "assistant",
-        "<|end_header_id|>",
-        "\n\n",
-        "Na",
-        "še",
-        "Ġconversation",
-        "Ġse",
-        "Ġcentered",
-        "Ġaround",
-        "Ġo",
-        "tec",
-        "Ġnebo",
-        "Ġjeho",
-        "Ġz",
-        "ák",
-        "onn",
-        "ých"
-      ],
-      "token_ids": [
-        42,
-        3055,
-        115366,
-        30,
-        128009,
-        128006,
-        78191,
-        128007,
-        271,
-        16589,
-        58067,
-        10652,
-        513,
-        31288,
-        2212,
-        297,
-        55300,
-        100872,
-        101503,
-        1167,
-        72542,
-        27476,
-        98955
-      ],
-      "output_distribution": {
-        "top_k": 10,
-        "candidates": [
-          {
-            "token": "Ġrod",
-            "token_id": 21236,
-            "logprob": -2.375,
-            "prob": 0.0933
-          },
-          {
-            "token": "Ġrodi",
-            "token_id": 116932,
-            "logprob": -3.0,
-            "prob": 0.0498
-          },
-          {
-            "token": "Ġprogen",
-            "token_id": 84360,
-            "logprob": -3.5625,
-            "prob": 0.0284
-          },
-          {
-            "token": "Ġpřed",
-            "token_id": 100668,
-            "logprob": -4.4688,
-            "prob": 0.0115
-          },
-          {
-            "token": "Ġpotom",
-            "token_id": 117786,
-            "logprob": -4.6562,
-            "prob": 0.0095
-          },
-          {
-            "token": "Ġp",
-            "token_id": 281,
-            "logprob": -4.7188,
-            "prob": 0.009
-          },
-          {
-            "token": "Ġpří",
-            "token_id": 100578,
-            "logprob": -4.8125,
-            "prob": 0.0081
-          },
-          {
-            "token": "Ġo",
-            "token_id": 297,
-            "logprob": -4.875,
-            "prob": 0.0077
-          },
-          {
-            "token": "Ġs",
-            "token_id": 274,
-            "logprob": -4.875,
-            "prob": 0.0077
-          },
-          {
-            "token": "Ġd",
-            "token_id": 294,
+            "token": "tem",
+            "token_id": 880,
             "logprob": -4.9062,
             "prob": 0.0074
           }
         ]
       },
       "selected_token": {
-        "token": "Ġp",
-        "token_id": 281,
+        "token": "rt",
+        "token_id": 3423,
         "selection_method": "sampling"
       }
     },
     {
-      "step": 15,
-      "input_text": "Kdo jsi?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nNaše conversation se centered around otec nebo jeho zákonných p",
+      "step": 7,
+      "input_text": "<|start_header_id|>user<|end_header_id|>Kdo jsi?<|eot_id|><|start_header_id|>assistant<|end_header_id|>Je suis capable aider načrt",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "K",
         "do",
         "Ġjsi",
@@ -1674,24 +769,18 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
-        "Na",
-        "še",
-        "Ġconversation",
-        "Ġse",
-        "Ġcentered",
-        "Ġaround",
-        "Ġo",
-        "tec",
-        "Ġnebo",
-        "Ġjeho",
-        "Ġz",
-        "ák",
-        "onn",
-        "ých",
-        "Ġp"
+        "Je",
+        "Ġsuis",
+        "Ġcapable",
+        "Ġaider",
+        "Ġna",
+        "č",
+        "rt"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         42,
         3055,
         115366,
@@ -1700,226 +789,92 @@
         128006,
         78191,
         128007,
-        271,
-        16589,
-        58067,
-        10652,
-        513,
-        31288,
-        2212,
-        297,
-        55300,
-        100872,
-        101503,
-        1167,
-        72542,
-        27476,
-        98955,
-        281
+        30854,
+        36731,
+        13171,
+        91878,
+        4415,
+        13453,
+        3423
       ],
       "output_distribution": {
         "top_k": 10,
         "candidates": [
           {
-            "token": "ůvodu",
-            "token_id": 115659,
-            "logprob": -1.6094,
-            "prob": 0.1992
+            "token": "ovat",
+            "token_id": 100794,
+            "logprob": -1.4375,
+            "prob": 0.2373
           },
           {
-            "token": "ohl",
-            "token_id": 40437,
-            "logprob": -3.5469,
-            "prob": 0.0288
-          },
-          {
-            "token": "í",
-            "token_id": 2483,
-            "logprob": -3.7969,
-            "prob": 0.0223
-          },
-          {
-            "token": "ach",
-            "token_id": 613,
-            "logprob": -3.9219,
-            "prob": 0.0198
-          },
-          {
-            "token": "ô",
-            "token_id": 9769,
-            "logprob": -3.9844,
-            "prob": 0.0186
-          },
-          {
-            "token": "ý",
-            "token_id": 20195,
-            "logprob": -4.125,
-            "prob": 0.0164
-          },
-          {
-            "token": "ater",
-            "token_id": 977,
-            "logprob": -4.125,
-            "prob": 0.0164
-          },
-          {
-            "token": "ite",
-            "token_id": 635,
-            "logprob": -4.1875,
-            "prob": 0.0154
-          },
-          {
-            "token": "achat",
-            "token_id": 97264,
-            "logprob": -4.3125,
-            "prob": 0.0136
-          },
-          {
-            "token": "lyn",
-            "token_id": 18499,
-            "logprob": -4.4375,
-            "prob": 0.012
-          }
-        ]
-      },
-      "selected_token": {
-        "token": "achat",
-        "token_id": 97264,
-        "selection_method": "sampling"
-      }
-    },
-    {
-      "step": 16,
-      "input_text": "Kdo jsi?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nNaše conversation se centered around otec nebo jeho zákonných pachat",
-      "tokens": [
-        "K",
-        "do",
-        "Ġjsi",
-        "?",
-        "<|eot_id|>",
-        "<|start_header_id|>",
-        "assistant",
-        "<|end_header_id|>",
-        "\n\n",
-        "Na",
-        "še",
-        "Ġconversation",
-        "Ġse",
-        "Ġcentered",
-        "Ġaround",
-        "Ġo",
-        "tec",
-        "Ġnebo",
-        "Ġjeho",
-        "Ġz",
-        "ák",
-        "onn",
-        "ých",
-        "Ġp",
-        "achat"
-      ],
-      "token_ids": [
-        42,
-        3055,
-        115366,
-        30,
-        128009,
-        128006,
-        78191,
-        128007,
-        271,
-        16589,
-        58067,
-        10652,
-        513,
-        31288,
-        2212,
-        297,
-        55300,
-        100872,
-        101503,
-        1167,
-        72542,
-        27476,
-        98955,
-        281,
-        97264
-      ],
-      "output_distribution": {
-        "top_k": 10,
-        "candidates": [
-          {
-            "token": "ů",
-            "token_id": 52353,
-            "logprob": -0.6016,
-            "prob": 0.5469
-          },
-          {
-            "token": ".",
-            "token_id": 13,
-            "logprob": -1.9766,
-            "prob": 0.1387
-          },
-          {
-            "token": ",",
-            "token_id": 11,
-            "logprob": -3.0469,
-            "prob": 0.0479
-          },
-          {
-            "token": "ích",
-            "token_id": 100489,
-            "logprob": -3.9844,
-            "prob": 0.0187
-          },
-          {
-            "token": "eln",
-            "token_id": 17912,
-            "logprob": -3.9844,
-            "prob": 0.0187
-          },
-          {
-            "token": "ých",
-            "token_id": 98955,
-            "logprob": -4.6562,
-            "prob": 0.0094
-          },
-          {
-            "token": "ách",
-            "token_id": 54161,
-            "logprob": -4.7188,
-            "prob": 0.0089
-          },
-          {
-            "token": "í",
-            "token_id": 2483,
-            "logprob": -4.7812,
-            "prob": 0.0083
-          },
-          {
-            "token": "ě",
-            "token_id": 22161,
-            "logprob": -4.7812,
-            "prob": 0.0083
+            "token": "ování",
+            "token_id": 100956,
+            "logprob": -1.75,
+            "prob": 0.1738
           },
           {
             "token": "ov",
             "token_id": 869,
-            "logprob": -4.8438,
-            "prob": 0.0078
+            "logprob": -2.375,
+            "prob": 0.0933
+          },
+          {
+            "token": "ový",
+            "token_id": 102028,
+            "logprob": -2.8125,
+            "prob": 0.0601
+          },
+          {
+            "token": "owanie",
+            "token_id": 55489,
+            "logprob": -3.6875,
+            "prob": 0.025
+          },
+          {
+            "token": "ujte",
+            "token_id": 119509,
+            "logprob": -3.6875,
+            "prob": 0.025
+          },
+          {
+            "token": "ová",
+            "token_id": 100779,
+            "logprob": -3.75,
+            "prob": 0.0236
+          },
+          {
+            "token": "ovací",
+            "token_id": 108097,
+            "logprob": -3.9375,
+            "prob": 0.0195
+          },
+          {
+            "token": "ovan",
+            "token_id": 43757,
+            "logprob": -4.375,
+            "prob": 0.0126
+          },
+          {
+            "token": "ować",
+            "token_id": 50247,
+            "logprob": -4.8125,
+            "prob": 0.0081
           }
         ]
       },
       "selected_token": {
-        "token": "ov",
-        "token_id": 869,
+        "token": "ovací",
+        "token_id": 108097,
         "selection_method": "sampling"
       }
     },
     {
-      "step": 17,
-      "input_text": "Kdo jsi?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nNaše conversation se centered around otec nebo jeho zákonných pachatov",
+      "step": 8,
+      "input_text": "<|start_header_id|>user<|end_header_id|>Kdo jsi?<|eot_id|><|start_header_id|>assistant<|end_header_id|>Je suis capable aider načrtovací",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "K",
         "do",
         "Ġjsi",
@@ -1928,26 +883,19 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
-        "Na",
-        "še",
-        "Ġconversation",
-        "Ġse",
-        "Ġcentered",
-        "Ġaround",
-        "Ġo",
-        "tec",
-        "Ġnebo",
-        "Ġjeho",
-        "Ġz",
-        "ák",
-        "onn",
-        "ých",
-        "Ġp",
-        "achat",
-        "ov"
+        "Je",
+        "Ġsuis",
+        "Ġcapable",
+        "Ġaider",
+        "Ġna",
+        "č",
+        "rt",
+        "ovací"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         42,
         3055,
         115366,
@@ -1956,24 +904,498 @@
         128006,
         78191,
         128007,
-        271,
-        16589,
-        58067,
-        10652,
-        513,
-        31288,
-        2212,
-        297,
-        55300,
-        100872,
-        101503,
-        1167,
-        72542,
-        27476,
-        98955,
-        281,
-        97264,
-        869
+        30854,
+        36731,
+        13171,
+        91878,
+        4415,
+        13453,
+        3423,
+        108097
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġa",
+            "token_id": 264,
+            "logprob": -1.3516,
+            "prob": 0.2578
+          },
+          {
+            "token": ",",
+            "token_id": 11,
+            "logprob": -1.7266,
+            "prob": 0.1777
+          },
+          {
+            "token": ".",
+            "token_id": 13,
+            "logprob": -3.2031,
+            "prob": 0.041
+          },
+          {
+            "token": "Ġproces",
+            "token_id": 29394,
+            "logprob": -4.9062,
+            "prob": 0.0074
+          },
+          {
+            "token": "ho",
+            "token_id": 6292,
+            "logprob": -4.9688,
+            "prob": 0.0069
+          },
+          {
+            "token": "Ġprogram",
+            "token_id": 2068,
+            "logprob": -5.0312,
+            "prob": 0.0065
+          },
+          {
+            "token": "Ġyour",
+            "token_id": 701,
+            "logprob": -5.3125,
+            "prob": 0.0049
+          },
+          {
+            "token": "Ġv",
+            "token_id": 348,
+            "logprob": -5.375,
+            "prob": 0.0046
+          },
+          {
+            "token": "Ġpro",
+            "token_id": 463,
+            "logprob": -5.4375,
+            "prob": 0.0043
+          },
+          {
+            "token": "Ġmodel",
+            "token_id": 1646,
+            "logprob": -5.4688,
+            "prob": 0.0042
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġa",
+        "token_id": 264,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 9,
+      "input_text": "<|start_header_id|>user<|end_header_id|>Kdo jsi?<|eot_id|><|start_header_id|>assistant<|end_header_id|>Je suis capable aider načrtovací a",
+      "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
+        "K",
+        "do",
+        "Ġjsi",
+        "?",
+        "<|eot_id|>",
+        "<|start_header_id|>",
+        "assistant",
+        "<|end_header_id|>",
+        "Je",
+        "Ġsuis",
+        "Ġcapable",
+        "Ġaider",
+        "Ġna",
+        "č",
+        "rt",
+        "ovací",
+        "Ġa"
+      ],
+      "token_ids": [
+        128006,
+        882,
+        128007,
+        42,
+        3055,
+        115366,
+        30,
+        128009,
+        128006,
+        78191,
+        128007,
+        30854,
+        36731,
+        13171,
+        91878,
+        4415,
+        13453,
+        3423,
+        108097,
+        264
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġkomunik",
+            "token_id": 117058,
+            "logprob": -3.5625,
+            "prob": 0.0282
+          },
+          {
+            "token": "Ġvy",
+            "token_id": 46359,
+            "logprob": -4.7188,
+            "prob": 0.0089
+          },
+          {
+            "token": "Ġprogram",
+            "token_id": 2068,
+            "logprob": -4.8125,
+            "prob": 0.0081
+          },
+          {
+            "token": "Ġtaké",
+            "token_id": 101969,
+            "logprob": -4.875,
+            "prob": 0.0076
+          },
+          {
+            "token": "Ġdalší",
+            "token_id": 102291,
+            "logprob": -5.125,
+            "prob": 0.0059
+          },
+          {
+            "token": "Ġtext",
+            "token_id": 1495,
+            "logprob": -5.125,
+            "prob": 0.0059
+          },
+          {
+            "token": "Ġv",
+            "token_id": 348,
+            "logprob": -5.1562,
+            "prob": 0.0057
+          },
+          {
+            "token": "Ġdatab",
+            "token_id": 72340,
+            "logprob": -5.4688,
+            "prob": 0.0042
+          },
+          {
+            "token": "Ġred",
+            "token_id": 2579,
+            "logprob": -5.4688,
+            "prob": 0.0042
+          },
+          {
+            "token": "Ġre",
+            "token_id": 312,
+            "logprob": -5.4688,
+            "prob": 0.0042
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġdalší",
+        "token_id": 102291,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 10,
+      "input_text": "<|start_header_id|>user<|end_header_id|>Kdo jsi?<|eot_id|><|start_header_id|>assistant<|end_header_id|>Je suis capable aider načrtovací a další",
+      "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
+        "K",
+        "do",
+        "Ġjsi",
+        "?",
+        "<|eot_id|>",
+        "<|start_header_id|>",
+        "assistant",
+        "<|end_header_id|>",
+        "Je",
+        "Ġsuis",
+        "Ġcapable",
+        "Ġaider",
+        "Ġna",
+        "č",
+        "rt",
+        "ovací",
+        "Ġa",
+        "Ġdalší"
+      ],
+      "token_ids": [
+        128006,
+        882,
+        128007,
+        42,
+        3055,
+        115366,
+        30,
+        128009,
+        128006,
+        78191,
+        128007,
+        30854,
+        36731,
+        13171,
+        91878,
+        4415,
+        13453,
+        3423,
+        108097,
+        264,
+        102291
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġinform",
+            "token_id": 6179,
+            "logprob": -3.3906,
+            "prob": 0.0339
+          },
+          {
+            "token": "Ġkon",
+            "token_id": 16947,
+            "logprob": -3.7656,
+            "prob": 0.0233
+          },
+          {
+            "token": "Ġfunkce",
+            "token_id": 118936,
+            "logprob": -4.2188,
+            "prob": 0.0146
+          },
+          {
+            "token": "Ġinformace",
+            "token_id": 107355,
+            "logprob": -4.3438,
+            "prob": 0.0129
+          },
+          {
+            "token": "Ġrady",
+            "token_id": 115846,
+            "logprob": -4.375,
+            "prob": 0.0125
+          },
+          {
+            "token": "Ġtechn",
+            "token_id": 2869,
+            "logprob": -4.5625,
+            "prob": 0.0103
+          },
+          {
+            "token": "Ġquestions",
+            "token_id": 4860,
+            "logprob": -4.5625,
+            "prob": 0.0103
+          },
+          {
+            "token": "Ġquestion",
+            "token_id": 3488,
+            "logprob": -5.0625,
+            "prob": 0.0063
+          },
+          {
+            "token": ".",
+            "token_id": 13,
+            "logprob": -5.125,
+            "prob": 0.0059
+          },
+          {
+            "token": "Ġot",
+            "token_id": 14479,
+            "logprob": -5.1875,
+            "prob": 0.0055
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġinform",
+        "token_id": 6179,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 11,
+      "input_text": "<|start_header_id|>user<|end_header_id|>Kdo jsi?<|eot_id|><|start_header_id|>assistant<|end_header_id|>Je suis capable aider načrtovací a další inform",
+      "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
+        "K",
+        "do",
+        "Ġjsi",
+        "?",
+        "<|eot_id|>",
+        "<|start_header_id|>",
+        "assistant",
+        "<|end_header_id|>",
+        "Je",
+        "Ġsuis",
+        "Ġcapable",
+        "Ġaider",
+        "Ġna",
+        "č",
+        "rt",
+        "ovací",
+        "Ġa",
+        "Ġdalší",
+        "Ġinform"
+      ],
+      "token_ids": [
+        128006,
+        882,
+        128007,
+        42,
+        3055,
+        115366,
+        30,
+        128009,
+        128006,
+        78191,
+        128007,
+        30854,
+        36731,
+        13171,
+        91878,
+        4415,
+        13453,
+        3423,
+        108097,
+        264,
+        102291,
+        6179
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "ační",
+            "token_id": 116104,
+            "logprob": -0.1475,
+            "prob": 0.8633
+          },
+          {
+            "token": "ace",
+            "token_id": 580,
+            "logprob": -3.3906,
+            "prob": 0.0334
+          },
+          {
+            "token": "ações",
+            "token_id": 34565,
+            "logprob": -3.7031,
+            "prob": 0.0245
+          },
+          {
+            "token": "a",
+            "token_id": 64,
+            "logprob": -4.2188,
+            "prob": 0.0148
+          },
+          {
+            "token": "ční",
+            "token_id": 100669,
+            "logprob": -5.0938,
+            "prob": 0.0062
+          },
+          {
+            "token": "acje",
+            "token_id": 70309,
+            "logprob": -5.2188,
+            "prob": 0.0055
+          },
+          {
+            "token": "acia",
+            "token_id": 28139,
+            "logprob": -5.2812,
+            "prob": 0.0051
+          },
+          {
+            "token": "ování",
+            "token_id": 100956,
+            "logprob": -5.3438,
+            "prob": 0.0048
+          },
+          {
+            "token": "aci",
+            "token_id": 25471,
+            "logprob": -5.4688,
+            "prob": 0.0042
+          },
+          {
+            "token": "ação",
+            "token_id": 13264,
+            "logprob": -6.0312,
+            "prob": 0.0024
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "acje",
+        "token_id": 70309,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 12,
+      "input_text": "<|start_header_id|>user<|end_header_id|>Kdo jsi?<|eot_id|><|start_header_id|>assistant<|end_header_id|>Je suis capable aider načrtovací a další informacje",
+      "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
+        "K",
+        "do",
+        "Ġjsi",
+        "?",
+        "<|eot_id|>",
+        "<|start_header_id|>",
+        "assistant",
+        "<|end_header_id|>",
+        "Je",
+        "Ġsuis",
+        "Ġcapable",
+        "Ġaider",
+        "Ġna",
+        "č",
+        "rt",
+        "ovací",
+        "Ġa",
+        "Ġdalší",
+        "Ġinform",
+        "acje"
+      ],
+      "token_ids": [
+        128006,
+        882,
+        128007,
+        42,
+        3055,
+        115366,
+        30,
+        128009,
+        128006,
+        78191,
+        128007,
+        30854,
+        36731,
+        13171,
+        91878,
+        4415,
+        13453,
+        3423,
+        108097,
+        264,
+        102291,
+        6179,
+        70309
       ],
       "output_distribution": {
         "top_k": 10,
@@ -1981,75 +1403,78 @@
           {
             "token": ".",
             "token_id": 13,
-            "logprob": -0.6719,
-            "prob": 0.5117
+            "logprob": -0.7422,
+            "prob": 0.4766
           },
           {
             "token": ",",
             "token_id": 11,
-            "logprob": -2.4844,
-            "prob": 0.0835
+            "logprob": -2.0625,
+            "prob": 0.1279
           },
           {
-            "token": "acích",
-            "token_id": 113779,
-            "logprob": -3.4219,
-            "prob": 0.0327
+            "token": "Ġo",
+            "token_id": 297,
+            "logprob": -2.625,
+            "prob": 0.0732
           },
           {
-            "token": "ých",
-            "token_id": 98955,
-            "logprob": -4.3438,
-            "prob": 0.0128
+            "token": "Ġna",
+            "token_id": 4415,
+            "logprob": -3.8125,
+            "prob": 0.0222
           },
           {
-            "token": "ité",
-            "token_id": 13109,
-            "logprob": -4.4062,
-            "prob": 0.012
+            "token": "Ġv",
+            "token_id": 348,
+            "logprob": -4.125,
+            "prob": 0.0162
           },
           {
-            "token": "Ġ(",
-            "token_id": 320,
-            "logprob": -4.4375,
-            "prob": 0.0117
+            "token": "Ġpro",
+            "token_id": 463,
+            "logprob": -4.5,
+            "prob": 0.0112
           },
           {
-            "token": "ostí",
-            "token_id": 106289,
-            "logprob": -4.4688,
-            "prob": 0.0113
+            "token": "Ġk",
+            "token_id": 597,
+            "logprob": -5.0312,
+            "prob": 0.0066
           },
           {
-            "token": "osti",
-            "token_id": 71779,
-            "logprob": -4.625,
-            "prob": 0.0096
+            "token": "!",
+            "token_id": 0,
+            "logprob": -5.75,
+            "prob": 0.0032
           },
           {
-            "token": "anych",
-            "token_id": 45553,
-            "logprob": -4.7188,
-            "prob": 0.0088
+            "token": "Ġale",
+            "token_id": 22180,
+            "logprob": -5.875,
+            "prob": 0.0028
           },
           {
-            "token": "ních",
-            "token_id": 100867,
-            "logprob": -5.0938,
-            "prob": 0.006
+            "token": "Ġza",
+            "token_id": 15036,
+            "logprob": -5.9375,
+            "prob": 0.0027
           }
         ]
       },
       "selected_token": {
-        "token": ".",
-        "token_id": 13,
+        "token": "!",
+        "token_id": 0,
         "selection_method": "sampling"
       }
     },
     {
-      "step": 18,
-      "input_text": "Kdo jsi?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nNaše conversation se centered around otec nebo jeho zákonných pachatov.",
+      "step": 13,
+      "input_text": "<|start_header_id|>user<|end_header_id|>Kdo jsi?<|eot_id|><|start_header_id|>assistant<|end_header_id|>Je suis capable aider načrtovací a další informacje!",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "K",
         "do",
         "Ġjsi",
@@ -2058,27 +1483,24 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
-        "Na",
-        "še",
-        "Ġconversation",
-        "Ġse",
-        "Ġcentered",
-        "Ġaround",
-        "Ġo",
-        "tec",
-        "Ġnebo",
-        "Ġjeho",
-        "Ġz",
-        "ák",
-        "onn",
-        "ých",
-        "Ġp",
-        "achat",
-        "ov",
-        "."
+        "Je",
+        "Ġsuis",
+        "Ġcapable",
+        "Ġaider",
+        "Ġna",
+        "č",
+        "rt",
+        "ovací",
+        "Ġa",
+        "Ġdalší",
+        "Ġinform",
+        "acje",
+        "!"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         42,
         3055,
         115366,
@@ -2087,88 +1509,82 @@
         128006,
         78191,
         128007,
-        271,
-        16589,
-        58067,
-        10652,
-        513,
-        31288,
-        2212,
-        297,
-        55300,
-        100872,
-        101503,
-        1167,
-        72542,
-        27476,
-        98955,
-        281,
-        97264,
-        869,
-        13
+        30854,
+        36731,
+        13171,
+        91878,
+        4415,
+        13453,
+        3423,
+        108097,
+        264,
+        102291,
+        6179,
+        70309,
+        0
       ],
       "output_distribution": {
         "top_k": 10,
         "candidates": [
           {
-            "token": "<|eot_id|>",
-            "token_id": 128009,
-            "logprob": -0.7383,
-            "prob": 0.4785
+            "token": "ĠJak",
+            "token_id": 35934,
+            "logprob": -1.8203,
+            "prob": 0.1621
           },
           {
             "token": "ĠJe",
             "token_id": 14465,
-            "logprob": -3.4844,
-            "prob": 0.0306
-          },
-          {
-            "token": "ĠV",
-            "token_id": 650,
-            "logprob": -3.5469,
-            "prob": 0.0287
-          },
-          {
-            "token": "ĠNa",
-            "token_id": 13106,
-            "logprob": -3.7344,
-            "prob": 0.0238
+            "logprob": -2.25,
+            "prob": 0.105
           },
           {
             "token": "ĠK",
             "token_id": 735,
-            "logprob": -4.125,
-            "prob": 0.0164
+            "logprob": -2.375,
+            "prob": 0.0928
+          },
+          {
+            "token": "ĠCo",
+            "token_id": 3623,
+            "logprob": -2.5625,
+            "prob": 0.0767
+          },
+          {
+            "token": "ĠNa",
+            "token_id": 13106,
+            "logprob": -3.0625,
+            "prob": 0.0466
+          },
+          {
+            "token": "<|eot_id|>",
+            "token_id": 128009,
+            "logprob": -3.0625,
+            "prob": 0.0466
+          },
+          {
+            "token": "ĠM",
+            "token_id": 386,
+            "logprob": -3.875,
+            "prob": 0.0206
+          },
+          {
+            "token": "ĠA",
+            "token_id": 362,
+            "logprob": -4.0625,
+            "prob": 0.0171
           },
           {
             "token": "ĠCh",
             "token_id": 921,
+            "logprob": -4.125,
+            "prob": 0.0161
+          },
+          {
+            "token": "ĠAle",
+            "token_id": 19623,
             "logprob": -4.1875,
-            "prob": 0.0154
-          },
-          {
-            "token": "ĠJak",
-            "token_id": 35934,
-            "logprob": -4.25,
-            "prob": 0.0145
-          },
-          {
-            "token": "ĠO",
-            "token_id": 507,
-            "logprob": -4.25,
-            "prob": 0.0145
-          },
-          {
-            "token": "ĠPro",
-            "token_id": 1322,
-            "logprob": -4.3125,
-            "prob": 0.0135
-          },
-          {
-            "token": "ĠNe",
-            "token_id": 4275,
-            "logprob": -4.5,
-            "prob": 0.0112
+            "prob": 0.0151
           }
         ]
       },
@@ -2179,9 +1595,12 @@
       }
     },
     {
-      "step": 19,
-      "input_text": "Kdo jsi?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nNaše conversation se centered around otec nebo jeho zákonných pachatov. Ch",
+      "step": 14,
+      "input_text": "<|start_header_id|>user<|end_header_id|>Kdo jsi?<|eot_id|><|start_header_id|>assistant<|end_header_id|>Je suis capable aider načrtovací a další informacje! Ch",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "K",
         "do",
         "Ġjsi",
@@ -2190,28 +1609,25 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
-        "Na",
-        "še",
-        "Ġconversation",
-        "Ġse",
-        "Ġcentered",
-        "Ġaround",
-        "Ġo",
-        "tec",
-        "Ġnebo",
-        "Ġjeho",
-        "Ġz",
-        "ák",
-        "onn",
-        "ých",
-        "Ġp",
-        "achat",
-        "ov",
-        ".",
+        "Je",
+        "Ġsuis",
+        "Ġcapable",
+        "Ġaider",
+        "Ġna",
+        "č",
+        "rt",
+        "ovací",
+        "Ġa",
+        "Ġdalší",
+        "Ġinform",
+        "acje",
+        "!",
         "ĠCh"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         42,
         3055,
         115366,
@@ -2220,25 +1636,19 @@
         128006,
         78191,
         128007,
-        271,
-        16589,
-        58067,
-        10652,
-        513,
-        31288,
-        2212,
-        297,
-        55300,
-        100872,
-        101503,
-        1167,
-        72542,
-        27476,
-        98955,
-        281,
-        97264,
-        869,
-        13,
+        30854,
+        36731,
+        13171,
+        91878,
+        4415,
+        13453,
+        3423,
+        108097,
+        264,
+        102291,
+        6179,
+        70309,
+        0,
         921
       ],
       "output_distribution": {
@@ -2247,1512 +1657,324 @@
           {
             "token": "ci",
             "token_id": 5979,
-            "logprob": -0.4902,
-            "prob": 0.6133
+            "logprob": -0.8867,
+            "prob": 0.4121
           },
           {
             "token": "cete",
             "token_id": 117570,
-            "logprob": -2.0469,
-            "prob": 0.1279
-          },
-          {
-            "token": "c",
-            "token_id": 66,
-            "logprob": -2.7344,
-            "prob": 0.0645
+            "logprob": -1.2578,
+            "prob": 0.2832
           },
           {
             "token": "ce",
             "token_id": 346,
-            "logprob": -3.2344,
-            "prob": 0.0391
-          },
-          {
-            "token": "á",
-            "token_id": 1995,
-            "logprob": -3.5469,
-            "prob": 0.0286
-          },
-          {
-            "token": "cé",
-            "token_id": 51084,
-            "logprob": -3.9844,
-            "prob": 0.0184
-          },
-          {
-            "token": "y",
-            "token_id": 88,
-            "logprob": -4.1875,
-            "prob": 0.0153
-          },
-          {
-            "token": "cia",
-            "token_id": 25088,
-            "logprob": -4.75,
-            "prob": 0.0087
-          },
-          {
-            "token": "cie",
-            "token_id": 25134,
-            "logprob": -5.125,
-            "prob": 0.006
-          },
-          {
-            "token": "yb",
-            "token_id": 85407,
-            "logprob": -5.625,
-            "prob": 0.0036
-          }
-        ]
-      },
-      "selected_token": {
-        "token": "cie",
-        "token_id": 25134,
-        "selection_method": "sampling"
-      }
-    },
-    {
-      "step": 20,
-      "input_text": "Kdo jsi?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nNaše conversation se centered around otec nebo jeho zákonných pachatov. Chcie",
-      "tokens": [
-        "K",
-        "do",
-        "Ġjsi",
-        "?",
-        "<|eot_id|>",
-        "<|start_header_id|>",
-        "assistant",
-        "<|end_header_id|>",
-        "\n\n",
-        "Na",
-        "še",
-        "Ġconversation",
-        "Ġse",
-        "Ġcentered",
-        "Ġaround",
-        "Ġo",
-        "tec",
-        "Ġnebo",
-        "Ġjeho",
-        "Ġz",
-        "ák",
-        "onn",
-        "ých",
-        "Ġp",
-        "achat",
-        "ov",
-        ".",
-        "ĠCh",
-        "cie"
-      ],
-      "token_ids": [
-        42,
-        3055,
-        115366,
-        30,
-        128009,
-        128006,
-        78191,
-        128007,
-        271,
-        16589,
-        58067,
-        10652,
-        513,
-        31288,
-        2212,
-        297,
-        55300,
-        100872,
-        101503,
-        1167,
-        72542,
-        27476,
-        98955,
-        281,
-        97264,
-        869,
-        13,
-        921,
-        25134
-      ],
-      "output_distribution": {
-        "top_k": 10,
-        "candidates": [
-          {
-            "token": "š",
-            "token_id": 11906,
-            "logprob": -0.2969,
-            "prob": 0.7422
-          },
-          {
-            "token": "j",
-            "token_id": 73,
-            "logprob": -3.2344,
-            "prob": 0.0393
-          },
-          {
-            "token": "ете",
-            "token_id": 103821,
-            "logprob": -3.5469,
-            "prob": 0.0288
-          },
-          {
-            "token": "-li",
-            "token_id": 76646,
-            "logprob": -5.1875,
-            "prob": 0.0057
-          },
-          {
-            "token": "holds",
-            "token_id": 54219,
-            "logprob": -5.3125,
-            "prob": 0.005
-          },
-          {
-            "token": "ste",
-            "token_id": 5455,
-            "logprob": -5.4375,
-            "prob": 0.0044
-          },
-          {
-            "token": "ch",
-            "token_id": 331,
-            "logprob": -5.5,
-            "prob": 0.0042
-          },
-          {
-            "token": "je",
-            "token_id": 3841,
-            "logprob": -5.625,
-            "prob": 0.0037
-          },
-          {
-            "token": "va",
-            "token_id": 6723,
-            "logprob": -5.75,
-            "prob": 0.0032
-          },
-          {
-            "token": "ли",
-            "token_id": 11320,
-            "logprob": -5.75,
-            "prob": 0.0032
-          }
-        ]
-      },
-      "selected_token": {
-        "token": "holds",
-        "token_id": 54219,
-        "selection_method": "sampling"
-      }
-    },
-    {
-      "step": 21,
-      "input_text": "Kdo jsi?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nNaše conversation se centered around otec nebo jeho zákonných pachatov. Chcieholds",
-      "tokens": [
-        "K",
-        "do",
-        "Ġjsi",
-        "?",
-        "<|eot_id|>",
-        "<|start_header_id|>",
-        "assistant",
-        "<|end_header_id|>",
-        "\n\n",
-        "Na",
-        "še",
-        "Ġconversation",
-        "Ġse",
-        "Ġcentered",
-        "Ġaround",
-        "Ġo",
-        "tec",
-        "Ġnebo",
-        "Ġjeho",
-        "Ġz",
-        "ák",
-        "onn",
-        "ých",
-        "Ġp",
-        "achat",
-        "ov",
-        ".",
-        "ĠCh",
-        "cie",
-        "holds"
-      ],
-      "token_ids": [
-        42,
-        3055,
-        115366,
-        30,
-        128009,
-        128006,
-        78191,
-        128007,
-        271,
-        16589,
-        58067,
-        10652,
-        513,
-        31288,
-        2212,
-        297,
-        55300,
-        100872,
-        101503,
-        1167,
-        72542,
-        27476,
-        98955,
-        281,
-        97264,
-        869,
-        13,
-        921,
-        25134,
-        54219
-      ],
-      "output_distribution": {
-        "top_k": 10,
-        "candidates": [
-          {
-            "token": "me",
-            "token_id": 2727,
-            "logprob": -2.3125,
-            "prob": 0.0986
-          },
-          {
-            "token": "ím",
-            "token_id": 56094,
-            "logprob": -2.6562,
-            "prob": 0.0698
-          },
-          {
-            "token": ",",
-            "token_id": 11,
-            "logprob": -2.9688,
-            "prob": 0.0513
-          },
-          {
-            "token": "Ġna",
-            "token_id": 4415,
-            "logprob": -3.4062,
-            "prob": 0.0332
-          },
-          {
-            "token": "é",
-            "token_id": 978,
-            "logprob": -3.4375,
-            "prob": 0.032
-          },
-          {
-            "token": "ť",
-            "token_id": 75901,
-            "logprob": -3.6875,
-            "prob": 0.025
-          },
-          {
-            "token": "ē",
-            "token_id": 79083,
-            "logprob": -4.3125,
-            "prob": 0.0134
-          },
-          {
-            "token": "Ġjsi",
-            "token_id": 115366,
-            "logprob": -4.3125,
-            "prob": 0.0134
-          },
-          {
-            "token": "Ġbych",
-            "token_id": 106420,
-            "logprob": -4.5938,
-            "prob": 0.0101
-          },
-          {
-            "token": "ne",
-            "token_id": 818,
-            "logprob": -4.9062,
-            "prob": 0.0074
-          }
-        ]
-      },
-      "selected_token": {
-        "token": "ne",
-        "token_id": 818,
-        "selection_method": "sampling"
-      }
-    },
-    {
-      "step": 22,
-      "input_text": "Kdo jsi?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nNaše conversation se centered around otec nebo jeho zákonných pachatov. Chcieholdsne",
-      "tokens": [
-        "K",
-        "do",
-        "Ġjsi",
-        "?",
-        "<|eot_id|>",
-        "<|start_header_id|>",
-        "assistant",
-        "<|end_header_id|>",
-        "\n\n",
-        "Na",
-        "še",
-        "Ġconversation",
-        "Ġse",
-        "Ġcentered",
-        "Ġaround",
-        "Ġo",
-        "tec",
-        "Ġnebo",
-        "Ġjeho",
-        "Ġz",
-        "ák",
-        "onn",
-        "ých",
-        "Ġp",
-        "achat",
-        "ov",
-        ".",
-        "ĠCh",
-        "cie",
-        "holds",
-        "ne"
-      ],
-      "token_ids": [
-        42,
-        3055,
-        115366,
-        30,
-        128009,
-        128006,
-        78191,
-        128007,
-        271,
-        16589,
-        58067,
-        10652,
-        513,
-        31288,
-        2212,
-        297,
-        55300,
-        100872,
-        101503,
-        1167,
-        72542,
-        27476,
-        98955,
-        281,
-        97264,
-        869,
-        13,
-        921,
-        25134,
-        54219,
-        818
-      ],
-      "output_distribution": {
-        "top_k": 10,
-        "candidates": [
-          {
-            "token": "Ġsi",
-            "token_id": 4502,
-            "logprob": -2.5781,
-            "prob": 0.0757
-          },
-          {
-            "token": "Ġse",
-            "token_id": 513,
-            "logprob": -2.7656,
-            "prob": 0.0625
-          },
-          {
-            "token": "Ġpros",
-            "token_id": 8882,
-            "logprob": -3.0156,
-            "prob": 0.0488
-          },
-          {
-            "token": "Ġpoz",
-            "token_id": 41821,
-            "logprob": -3.3906,
-            "prob": 0.0334
-          },
-          {
-            "token": "Ġz",
-            "token_id": 1167,
-            "logprob": -3.9844,
-            "prob": 0.0186
-          },
-          {
-            "token": "š",
-            "token_id": 11906,
-            "logprob": -4.5625,
-            "prob": 0.0106
-          },
-          {
-            "token": "Ġup",
-            "token_id": 709,
-            "logprob": -4.6562,
-            "prob": 0.0096
-          },
-          {
-            "token": "Ġje",
-            "token_id": 4864,
-            "logprob": -4.7812,
-            "prob": 0.0085
-          },
-          {
-            "token": "Ġby",
-            "token_id": 555,
-            "logprob": -4.8125,
-            "prob": 0.0082
-          },
-          {
-            "token": "Ġpou",
-            "token_id": 17258,
-            "logprob": -5.0,
-            "prob": 0.0068
-          }
-        ]
-      },
-      "selected_token": {
-        "token": "š",
-        "token_id": 11906,
-        "selection_method": "sampling"
-      }
-    },
-    {
-      "step": 23,
-      "input_text": "Kdo jsi?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nNaše conversation se centered around otec nebo jeho zákonných pachatov. Chcieholdsneš",
-      "tokens": [
-        "K",
-        "do",
-        "Ġjsi",
-        "?",
-        "<|eot_id|>",
-        "<|start_header_id|>",
-        "assistant",
-        "<|end_header_id|>",
-        "\n\n",
-        "Na",
-        "še",
-        "Ġconversation",
-        "Ġse",
-        "Ġcentered",
-        "Ġaround",
-        "Ġo",
-        "tec",
-        "Ġnebo",
-        "Ġjeho",
-        "Ġz",
-        "ák",
-        "onn",
-        "ých",
-        "Ġp",
-        "achat",
-        "ov",
-        ".",
-        "ĠCh",
-        "cie",
-        "holds",
-        "ne",
-        "š"
-      ],
-      "token_ids": [
-        42,
-        3055,
-        115366,
-        30,
-        128009,
-        128006,
-        78191,
-        128007,
-        271,
-        16589,
-        58067,
-        10652,
-        513,
-        31288,
-        2212,
-        297,
-        55300,
-        100872,
-        101503,
-        1167,
-        72542,
-        27476,
-        98955,
-        281,
-        97264,
-        869,
-        13,
-        921,
-        25134,
-        54219,
-        818,
-        11906
-      ],
-      "output_distribution": {
-        "top_k": 10,
-        "candidates": [
-          {
-            "token": "Ġo",
-            "token_id": 297,
-            "logprob": -2.7188,
-            "prob": 0.0659
-          },
-          {
-            "token": "Ġpros",
-            "token_id": 8882,
-            "logprob": -2.7812,
-            "prob": 0.062
-          },
-          {
-            "token": "Ġse",
-            "token_id": 513,
-            "logprob": -3.2188,
-            "prob": 0.04
-          },
-          {
-            "token": ",",
-            "token_id": 11,
-            "logprob": -3.375,
-            "prob": 0.0342
-          },
-          {
-            "token": "Ġkontakt",
-            "token_id": 41846,
-            "logprob": -3.5312,
-            "prob": 0.0293
-          },
-          {
-            "token": "Ġz",
-            "token_id": 1167,
-            "logprob": -3.9688,
-            "prob": 0.0189
-          },
-          {
-            "token": "Ġinform",
-            "token_id": 6179,
-            "logprob": -4.25,
-            "prob": 0.0143
-          },
-          {
-            "token": "Ġvíce",
-            "token_id": 104630,
-            "logprob": -4.5625,
-            "prob": 0.0104
-          },
-          {
-            "token": "Ġsi",
-            "token_id": 4502,
-            "logprob": -4.7812,
-            "prob": 0.0084
-          },
-          {
-            "token": "Ġpoz",
-            "token_id": 41821,
-            "logprob": -4.8125,
-            "prob": 0.0081
-          }
-        ]
-      },
-      "selected_token": {
-        "token": "Ġpros",
-        "token_id": 8882,
-        "selection_method": "sampling"
-      }
-    },
-    {
-      "step": 24,
-      "input_text": "Kdo jsi?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nNaše conversation se centered around otec nebo jeho zákonných pachatov. Chcieholdsneš pros",
-      "tokens": [
-        "K",
-        "do",
-        "Ġjsi",
-        "?",
-        "<|eot_id|>",
-        "<|start_header_id|>",
-        "assistant",
-        "<|end_header_id|>",
-        "\n\n",
-        "Na",
-        "še",
-        "Ġconversation",
-        "Ġse",
-        "Ġcentered",
-        "Ġaround",
-        "Ġo",
-        "tec",
-        "Ġnebo",
-        "Ġjeho",
-        "Ġz",
-        "ák",
-        "onn",
-        "ých",
-        "Ġp",
-        "achat",
-        "ov",
-        ".",
-        "ĠCh",
-        "cie",
-        "holds",
-        "ne",
-        "š",
-        "Ġpros"
-      ],
-      "token_ids": [
-        42,
-        3055,
-        115366,
-        30,
-        128009,
-        128006,
-        78191,
-        128007,
-        271,
-        16589,
-        58067,
-        10652,
-        513,
-        31288,
-        2212,
-        297,
-        55300,
-        100872,
-        101503,
-        1167,
-        72542,
-        27476,
-        98955,
-        281,
-        97264,
-        869,
-        13,
-        921,
-        25134,
-        54219,
-        818,
-        11906,
-        8882
-      ],
-      "output_distribution": {
-        "top_k": 10,
-        "candidates": [
-          {
-            "token": "ím",
-            "token_id": 56094,
-            "logprob": -0.0664,
-            "prob": 0.9375
-          },
-          {
-            "token": "im",
-            "token_id": 318,
-            "logprob": -3.25,
-            "prob": 0.0386
-          },
-          {
-            "token": "í",
-            "token_id": 2483,
-            "logprob": -5.625,
-            "prob": 0.0036
-          },
-          {
-            "token": "um",
-            "token_id": 372,
-            "logprob": -6.625,
-            "prob": 0.0013
-          },
-          {
-            "token": "imm",
-            "token_id": 12828,
-            "logprob": -7.125,
-            "prob": 0.0008
-          },
-          {
-            "token": "pe",
-            "token_id": 375,
-            "logprob": -7.1875,
-            "prob": 0.0008
-          },
-          {
-            "token": "il",
-            "token_id": 321,
-            "logprob": -7.1875,
-            "prob": 0.0008
-          },
-          {
-            "token": "led",
-            "token_id": 839,
-            "logprob": -7.5625,
-            "prob": 0.0005
-          },
-          {
-            "token": "my",
-            "token_id": 2465,
-            "logprob": -7.5625,
-            "prob": 0.0005
-          },
-          {
-            "token": "ke",
-            "token_id": 441,
-            "logprob": -7.9375,
-            "prob": 0.0004
-          }
-        ]
-      },
-      "selected_token": {
-        "token": "il",
-        "token_id": 321,
-        "selection_method": "sampling"
-      }
-    },
-    {
-      "step": 25,
-      "input_text": "Kdo jsi?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nNaše conversation se centered around otec nebo jeho zákonných pachatov. Chcieholdsneš prosil",
-      "tokens": [
-        "K",
-        "do",
-        "Ġjsi",
-        "?",
-        "<|eot_id|>",
-        "<|start_header_id|>",
-        "assistant",
-        "<|end_header_id|>",
-        "\n\n",
-        "Na",
-        "še",
-        "Ġconversation",
-        "Ġse",
-        "Ġcentered",
-        "Ġaround",
-        "Ġo",
-        "tec",
-        "Ġnebo",
-        "Ġjeho",
-        "Ġz",
-        "ák",
-        "onn",
-        "ých",
-        "Ġp",
-        "achat",
-        "ov",
-        ".",
-        "ĠCh",
-        "cie",
-        "holds",
-        "ne",
-        "š",
-        "Ġpros",
-        "il"
-      ],
-      "token_ids": [
-        42,
-        3055,
-        115366,
-        30,
-        128009,
-        128006,
-        78191,
-        128007,
-        271,
-        16589,
-        58067,
-        10652,
-        513,
-        31288,
-        2212,
-        297,
-        55300,
-        100872,
-        101503,
-        1167,
-        72542,
-        27476,
-        98955,
-        281,
-        97264,
-        869,
-        13,
-        921,
-        25134,
-        54219,
-        818,
-        11906,
-        8882,
-        321
-      ],
-      "output_distribution": {
-        "top_k": 10,
-        "candidates": [
-          {
-            "token": "Ġo",
-            "token_id": 297,
-            "logprob": -1.1641,
-            "prob": 0.3105
-          },
-          {
-            "token": "ím",
-            "token_id": 56094,
             "logprob": -3.1406,
             "prob": 0.0435
           },
           {
-            "token": ",",
-            "token_id": 11,
+            "token": "y",
+            "token_id": 88,
+            "logprob": -3.2656,
+            "prob": 0.0383
+          },
+          {
+            "token": "c",
+            "token_id": 66,
+            "logprob": -3.2656,
+            "prob": 0.0383
+          },
+          {
+            "token": "cé",
+            "token_id": 51084,
             "logprob": -3.8281,
             "prob": 0.0219
           },
           {
-            "token": "te",
-            "token_id": 668,
-            "logprob": -4.125,
-            "prob": 0.016
-          },
-          {
-            "token": "me",
-            "token_id": 2727,
-            "logprob": -4.2188,
-            "prob": 0.0145
-          },
-          {
-            "token": "ovat",
-            "token_id": 100794,
-            "logprob": -4.25,
-            "prob": 0.0141
-          },
-          {
-            "token": "Ġpros",
-            "token_id": 8882,
-            "logprob": -4.3125,
-            "prob": 0.0132
-          },
-          {
-            "token": "Ġpo",
-            "token_id": 3273,
-            "logprob": -4.375,
-            "prob": 0.0125
-          },
-          {
-            "token": "ps",
-            "token_id": 1725,
-            "logprob": -4.4375,
-            "prob": 0.0117
-          },
-          {
-            "token": "ám",
-            "token_id": 36334,
-            "logprob": -5.1875,
-            "prob": 0.0055
-          }
-        ]
-      },
-      "selected_token": {
-        "token": "te",
-        "token_id": 668,
-        "selection_method": "sampling"
-      }
-    },
-    {
-      "step": 26,
-      "input_text": "Kdo jsi?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nNaše conversation se centered around otec nebo jeho zákonných pachatov. Chcieholdsneš prosilte",
-      "tokens": [
-        "K",
-        "do",
-        "Ġjsi",
-        "?",
-        "<|eot_id|>",
-        "<|start_header_id|>",
-        "assistant",
-        "<|end_header_id|>",
-        "\n\n",
-        "Na",
-        "še",
-        "Ġconversation",
-        "Ġse",
-        "Ġcentered",
-        "Ġaround",
-        "Ġo",
-        "tec",
-        "Ġnebo",
-        "Ġjeho",
-        "Ġz",
-        "ák",
-        "onn",
-        "ých",
-        "Ġp",
-        "achat",
-        "ov",
-        ".",
-        "ĠCh",
-        "cie",
-        "holds",
-        "ne",
-        "š",
-        "Ġpros",
-        "il",
-        "te"
-      ],
-      "token_ids": [
-        42,
-        3055,
-        115366,
-        30,
-        128009,
-        128006,
-        78191,
-        128007,
-        271,
-        16589,
-        58067,
-        10652,
-        513,
-        31288,
-        2212,
-        297,
-        55300,
-        100872,
-        101503,
-        1167,
-        72542,
-        27476,
-        98955,
-        281,
-        97264,
-        869,
-        13,
-        921,
-        25134,
-        54219,
-        818,
-        11906,
-        8882,
-        321,
-        668
-      ],
-      "output_distribution": {
-        "top_k": 10,
-        "candidates": [
-          {
-            "token": "Ġo",
-            "token_id": 297,
-            "logprob": -0.6875,
-            "prob": 0.5039
-          },
-          {
-            "token": ",",
-            "token_id": 11,
-            "logprob": -3.1875,
-            "prob": 0.0413
-          },
-          {
-            "token": "Ġmne",
-            "token_id": 125369,
-            "logprob": -3.7812,
-            "prob": 0.0228
-          },
-          {
-            "token": "Ġpros",
-            "token_id": 8882,
-            "logprob": -4.0938,
-            "prob": 0.0167
-          },
-          {
-            "token": "Ġmo",
-            "token_id": 4647,
-            "logprob": -4.125,
-            "prob": 0.0162
-          },
-          {
-            "token": "Ġmi",
-            "token_id": 9686,
-            "logprob": -4.75,
-            "prob": 0.0087
-          },
-          {
-            "token": "Ġmůj",
-            "token_id": 127736,
-            "logprob": -4.9688,
-            "prob": 0.007
-          },
-          {
-            "token": "Ġz",
-            "token_id": 1167,
-            "logprob": -5.0312,
-            "prob": 0.0065
-          },
-          {
-            "token": "Ġna",
-            "token_id": 4415,
-            "logprob": -5.3125,
-            "prob": 0.0049
-          },
-          {
-            "token": "Ġmé",
-            "token_id": 32118,
-            "logprob": -5.375,
-            "prob": 0.0046
-          }
-        ]
-      },
-      "selected_token": {
-        "token": "Ġmi",
-        "token_id": 9686,
-        "selection_method": "sampling"
-      }
-    },
-    {
-      "step": 27,
-      "input_text": "Kdo jsi?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nNaše conversation se centered around otec nebo jeho zákonných pachatov. Chcieholdsneš prosilte mi",
-      "tokens": [
-        "K",
-        "do",
-        "Ġjsi",
-        "?",
-        "<|eot_id|>",
-        "<|start_header_id|>",
-        "assistant",
-        "<|end_header_id|>",
-        "\n\n",
-        "Na",
-        "še",
-        "Ġconversation",
-        "Ġse",
-        "Ġcentered",
-        "Ġaround",
-        "Ġo",
-        "tec",
-        "Ġnebo",
-        "Ġjeho",
-        "Ġz",
-        "ák",
-        "onn",
-        "ých",
-        "Ġp",
-        "achat",
-        "ov",
-        ".",
-        "ĠCh",
-        "cie",
-        "holds",
-        "ne",
-        "š",
-        "Ġpros",
-        "il",
-        "te",
-        "Ġmi"
-      ],
-      "token_ids": [
-        42,
-        3055,
-        115366,
-        30,
-        128009,
-        128006,
-        78191,
-        128007,
-        271,
-        16589,
-        58067,
-        10652,
-        513,
-        31288,
-        2212,
-        297,
-        55300,
-        100872,
-        101503,
-        1167,
-        72542,
-        27476,
-        98955,
-        281,
-        97264,
-        869,
-        13,
-        921,
-        25134,
-        54219,
-        818,
-        11906,
-        8882,
-        321,
-        668,
-        9686
-      ],
-      "output_distribution": {
-        "top_k": 10,
-        "candidates": [
-          {
-            "token": "Ġo",
-            "token_id": 297,
-            "logprob": -0.377,
-            "prob": 0.6875
-          },
-          {
-            "token": ",",
-            "token_id": 11,
-            "logprob": -2.9375,
-            "prob": 0.053
-          },
-          {
-            "token": "Ġpros",
-            "token_id": 8882,
-            "logprob": -4.5938,
-            "prob": 0.0101
-          },
-          {
-            "token": "Ġpro",
-            "token_id": 463,
-            "logprob": -4.6875,
-            "prob": 0.0092
-          },
-          {
-            "token": "Ġza",
-            "token_id": 15036,
-            "logprob": -4.8125,
-            "prob": 0.0081
-          },
-          {
-            "token": "Ġk",
-            "token_id": 597,
-            "logprob": -5.3125,
-            "prob": 0.0049
-          },
-          {
-            "token": "Ġvíce",
-            "token_id": 104630,
-            "logprob": -5.4062,
-            "prob": 0.0045
-          },
-          {
-            "token": "Ġna",
-            "token_id": 4415,
-            "logprob": -5.5938,
-            "prob": 0.0037
-          },
-          {
-            "token": "Ġjak",
-            "token_id": 19958,
-            "logprob": -6.125,
-            "prob": 0.0022
-          },
-          {
-            "token": "Ġv",
-            "token_id": 348,
-            "logprob": -6.2812,
-            "prob": 0.0019
-          }
-        ]
-      },
-      "selected_token": {
-        "token": "Ġo",
-        "token_id": 297,
-        "selection_method": "sampling"
-      }
-    },
-    {
-      "step": 28,
-      "input_text": "Kdo jsi?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nNaše conversation se centered around otec nebo jeho zákonných pachatov. Chcieholdsneš prosilte mi o",
-      "tokens": [
-        "K",
-        "do",
-        "Ġjsi",
-        "?",
-        "<|eot_id|>",
-        "<|start_header_id|>",
-        "assistant",
-        "<|end_header_id|>",
-        "\n\n",
-        "Na",
-        "še",
-        "Ġconversation",
-        "Ġse",
-        "Ġcentered",
-        "Ġaround",
-        "Ġo",
-        "tec",
-        "Ġnebo",
-        "Ġjeho",
-        "Ġz",
-        "ák",
-        "onn",
-        "ých",
-        "Ġp",
-        "achat",
-        "ov",
-        ".",
-        "ĠCh",
-        "cie",
-        "holds",
-        "ne",
-        "š",
-        "Ġpros",
-        "il",
-        "te",
-        "Ġmi",
-        "Ġo"
-      ],
-      "token_ids": [
-        42,
-        3055,
-        115366,
-        30,
-        128009,
-        128006,
-        78191,
-        128007,
-        271,
-        16589,
-        58067,
-        10652,
-        513,
-        31288,
-        2212,
-        297,
-        55300,
-        100872,
-        101503,
-        1167,
-        72542,
-        27476,
-        98955,
-        281,
-        97264,
-        869,
-        13,
-        921,
-        25134,
-        54219,
-        818,
-        11906,
-        8882,
-        321,
-        668,
-        9686,
-        297
-      ],
-      "output_distribution": {
-        "top_k": 10,
-        "candidates": [
-          {
-            "token": "Ġjin",
-            "token_id": 102309,
-            "logprob": -4.125,
-            "prob": 0.0164
-          },
-          {
-            "token": "Ġvíce",
-            "token_id": 104630,
-            "logprob": -4.25,
-            "prob": 0.0144
-          },
-          {
-            "token": "Ġdalší",
-            "token_id": 102291,
-            "logprob": -4.3125,
-            "prob": 0.0135
-          },
-          {
-            "token": "Ġinform",
-            "token_id": 6179,
-            "logprob": -4.625,
-            "prob": 0.0099
-          },
-          {
-            "token": "Ġo",
-            "token_id": 297,
-            "logprob": -4.6875,
-            "prob": 0.0093
-          },
-          {
-            "token": "Ġdetails",
-            "token_id": 3649,
-            "logprob": -4.8125,
-            "prob": 0.0082
-          },
-          {
-            "token": "Ġpos",
-            "token_id": 1153,
-            "logprob": -4.875,
-            "prob": 0.0077
-          },
-          {
-            "token": "Ġz",
-            "token_id": 1167,
-            "logprob": -4.9375,
-            "prob": 0.0072
-          },
-          {
-            "token": "Ġdal",
-            "token_id": 25769,
-            "logprob": -4.9375,
-            "prob": 0.0072
-          },
-          {
-            "token": "Ġdetail",
-            "token_id": 7872,
-            "logprob": -5.1875,
-            "prob": 0.0056
-          }
-        ]
-      },
-      "selected_token": {
-        "token": "Ġjin",
-        "token_id": 102309,
-        "selection_method": "sampling"
-      }
-    },
-    {
-      "step": 29,
-      "input_text": "Kdo jsi?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nNaše conversation se centered around otec nebo jeho zákonných pachatov. Chcieholdsneš prosilte mi o jin",
-      "tokens": [
-        "K",
-        "do",
-        "Ġjsi",
-        "?",
-        "<|eot_id|>",
-        "<|start_header_id|>",
-        "assistant",
-        "<|end_header_id|>",
-        "\n\n",
-        "Na",
-        "še",
-        "Ġconversation",
-        "Ġse",
-        "Ġcentered",
-        "Ġaround",
-        "Ġo",
-        "tec",
-        "Ġnebo",
-        "Ġjeho",
-        "Ġz",
-        "ák",
-        "onn",
-        "ých",
-        "Ġp",
-        "achat",
-        "ov",
-        ".",
-        "ĠCh",
-        "cie",
-        "holds",
-        "ne",
-        "š",
-        "Ġpros",
-        "il",
-        "te",
-        "Ġmi",
-        "Ġo",
-        "Ġjin"
-      ],
-      "token_ids": [
-        42,
-        3055,
-        115366,
-        30,
-        128009,
-        128006,
-        78191,
-        128007,
-        271,
-        16589,
-        58067,
-        10652,
-        513,
-        31288,
-        2212,
-        297,
-        55300,
-        100872,
-        101503,
-        1167,
-        72542,
-        27476,
-        98955,
-        281,
-        97264,
-        869,
-        13,
-        921,
-        25134,
-        54219,
-        818,
-        11906,
-        8882,
-        321,
-        668,
-        9686,
-        297,
-        102309
-      ],
-      "output_distribution": {
-        "top_k": 10,
-        "candidates": [
-          {
-            "token": "ou",
-            "token_id": 283,
-            "logprob": -0.2852,
-            "prob": 0.7539
-          },
-          {
-            "token": "ý",
-            "token_id": 20195,
-            "logprob": -2.7812,
-            "prob": 0.0618
+            "token": "cie",
+            "token_id": 25134,
+            "logprob": -4.5,
+            "prob": 0.011
           },
           {
             "token": "á",
             "token_id": 1995,
-            "logprob": -3.1562,
-            "prob": 0.0425
+            "logprob": -4.625,
+            "prob": 0.0097
           },
           {
-            "token": "ém",
-            "token_id": 17060,
-            "logprob": -3.8438,
-            "prob": 0.0214
+            "token": "cia",
+            "token_id": 25088,
+            "logprob": -4.625,
+            "prob": 0.0097
           },
           {
-            "token": "omu",
-            "token_id": 115585,
-            "logprob": -4.0312,
-            "prob": 0.0177
+            "token": "ces",
+            "token_id": 1634,
+            "logprob": -4.8125,
+            "prob": 0.0081
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "ci",
+        "token_id": 5979,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 15,
+      "input_text": "<|start_header_id|>user<|end_header_id|>Kdo jsi?<|eot_id|><|start_header_id|>assistant<|end_header_id|>Je suis capable aider načrtovací a další informacje! Chci",
+      "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
+        "K",
+        "do",
+        "Ġjsi",
+        "?",
+        "<|eot_id|>",
+        "<|start_header_id|>",
+        "assistant",
+        "<|end_header_id|>",
+        "Je",
+        "Ġsuis",
+        "Ġcapable",
+        "Ġaider",
+        "Ġna",
+        "č",
+        "rt",
+        "ovací",
+        "Ġa",
+        "Ġdalší",
+        "Ġinform",
+        "acje",
+        "!",
+        "ĠCh",
+        "ci"
+      ],
+      "token_ids": [
+        128006,
+        882,
+        128007,
+        42,
+        3055,
+        115366,
+        30,
+        128009,
+        128006,
+        78191,
+        128007,
+        30854,
+        36731,
+        13171,
+        91878,
+        4415,
+        13453,
+        3423,
+        108097,
+        264,
+        102291,
+        6179,
+        70309,
+        0,
+        921,
+        5979
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "š",
+            "token_id": 11906,
+            "logprob": -2.0,
+            "prob": 0.1348
+          },
+          {
+            "token": "ết",
+            "token_id": 52680,
+            "logprob": -2.9375,
+            "prob": 0.0527
+          },
+          {
+            "token": "Ġbychom",
+            "token_id": 120883,
+            "logprob": -3.3125,
+            "prob": 0.0364
+          },
+          {
+            "token": "ím",
+            "token_id": 56094,
+            "logprob": -3.6875,
+            "prob": 0.0249
+          },
+          {
+            "token": "Ġbyste",
+            "token_id": 119200,
+            "logprob": -4.2812,
+            "prob": 0.0138
+          },
+          {
+            "token": "elo",
+            "token_id": 20782,
+            "logprob": -4.375,
+            "prob": 0.0126
+          },
+          {
+            "token": "eln",
+            "token_id": 17912,
+            "logprob": -4.4688,
+            "prob": 0.0114
+          },
+          {
+            "token": "pto",
+            "token_id": 59091,
+            "logprob": -4.625,
+            "prob": 0.0098
+          },
+          {
+            "token": "el",
+            "token_id": 301,
+            "logprob": -4.6562,
+            "prob": 0.0095
+          },
+          {
+            "token": "ela",
+            "token_id": 8458,
+            "logprob": -4.6875,
+            "prob": 0.0092
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "eln",
+        "token_id": 17912,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 16,
+      "input_text": "<|start_header_id|>user<|end_header_id|>Kdo jsi?<|eot_id|><|start_header_id|>assistant<|end_header_id|>Je suis capable aider načrtovací a další informacje! Chcieln",
+      "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
+        "K",
+        "do",
+        "Ġjsi",
+        "?",
+        "<|eot_id|>",
+        "<|start_header_id|>",
+        "assistant",
+        "<|end_header_id|>",
+        "Je",
+        "Ġsuis",
+        "Ġcapable",
+        "Ġaider",
+        "Ġna",
+        "č",
+        "rt",
+        "ovací",
+        "Ġa",
+        "Ġdalší",
+        "Ġinform",
+        "acje",
+        "!",
+        "ĠCh",
+        "ci",
+        "eln"
+      ],
+      "token_ids": [
+        128006,
+        882,
+        128007,
+        42,
+        3055,
+        115366,
+        30,
+        128009,
+        128006,
+        78191,
+        128007,
+        30854,
+        36731,
+        13171,
+        91878,
+        4415,
+        13453,
+        3423,
+        108097,
+        264,
+        102291,
+        6179,
+        70309,
+        0,
+        921,
+        5979,
+        17912
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "ě",
+            "token_id": 22161,
+            "logprob": -1.2031,
+            "prob": 0.3008
+          },
+          {
+            "token": "ím",
+            "token_id": 56094,
+            "logprob": -1.3281,
+            "prob": 0.2656
+          },
+          {
+            "token": "out",
+            "token_id": 412,
+            "logprob": -3.0781,
+            "prob": 0.0461
+          },
+          {
+            "token": "á",
+            "token_id": 1995,
+            "logprob": -3.3281,
+            "prob": 0.0359
+          },
+          {
+            "token": "ý",
+            "token_id": 20195,
+            "logprob": -3.6406,
+            "prob": 0.0262
+          },
+          {
+            "token": "í",
+            "token_id": 2483,
+            "logprob": -3.8906,
+            "prob": 0.0204
+          },
+          {
+            "token": "ите",
+            "token_id": 27055,
+            "logprob": -4.5312,
+            "prob": 0.0109
           },
           {
             "token": "é",
             "token_id": 978,
-            "logprob": -4.8438,
-            "prob": 0.0079
+            "logprob": -4.7812,
+            "prob": 0.0085
           },
           {
-            "token": "ú",
-            "token_id": 6792,
+            "token": "ích",
+            "token_id": 100489,
             "logprob": -4.9062,
-            "prob": 0.0074
+            "prob": 0.0075
           },
           {
-            "token": "ým",
-            "token_id": 100434,
-            "logprob": -6.2188,
-            "prob": 0.002
-          },
-          {
-            "token": "u",
-            "token_id": 84,
-            "logprob": -6.2812,
-            "prob": 0.0019
-          },
-          {
-            "token": "om",
-            "token_id": 316,
-            "logprob": -6.2812,
-            "prob": 0.0019
+            "token": "ou",
+            "token_id": 283,
+            "logprob": -5.0,
+            "prob": 0.0068
           }
         ]
       },
@@ -3763,9 +1985,12 @@
       }
     },
     {
-      "step": 30,
-      "input_text": "Kdo jsi?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nNaše conversation se centered around otec nebo jeho zákonných pachatov. Chcieholdsneš prosilte mi o jinou",
+      "step": 17,
+      "input_text": "<|start_header_id|>user<|end_header_id|>Kdo jsi?<|eot_id|><|start_header_id|>assistant<|end_header_id|>Je suis capable aider načrtovací a další informacje! Chcielnou",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "K",
         "do",
         "Ġjsi",
@@ -3774,39 +1999,28 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
-        "Na",
-        "še",
-        "Ġconversation",
-        "Ġse",
-        "Ġcentered",
-        "Ġaround",
-        "Ġo",
-        "tec",
-        "Ġnebo",
-        "Ġjeho",
-        "Ġz",
-        "ák",
-        "onn",
-        "ých",
-        "Ġp",
-        "achat",
-        "ov",
-        ".",
+        "Je",
+        "Ġsuis",
+        "Ġcapable",
+        "Ġaider",
+        "Ġna",
+        "č",
+        "rt",
+        "ovací",
+        "Ġa",
+        "Ġdalší",
+        "Ġinform",
+        "acje",
+        "!",
         "ĠCh",
-        "cie",
-        "holds",
-        "ne",
-        "š",
-        "Ġpros",
-        "il",
-        "te",
-        "Ġmi",
-        "Ġo",
-        "Ġjin",
+        "ci",
+        "eln",
         "ou"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         42,
         3055,
         115366,
@@ -3815,113 +2029,102 @@
         128006,
         78191,
         128007,
-        271,
-        16589,
-        58067,
-        10652,
-        513,
-        31288,
-        2212,
-        297,
-        55300,
-        100872,
-        101503,
-        1167,
-        72542,
-        27476,
-        98955,
-        281,
-        97264,
-        869,
-        13,
+        30854,
+        36731,
+        13171,
+        91878,
+        4415,
+        13453,
+        3423,
+        108097,
+        264,
+        102291,
+        6179,
+        70309,
+        0,
         921,
-        25134,
-        54219,
-        818,
-        11906,
-        8882,
-        321,
-        668,
-        9686,
-        297,
-        102309,
+        5979,
+        17912,
         283
       ],
       "output_distribution": {
         "top_k": 10,
         "candidates": [
           {
-            "token": "Ġinform",
-            "token_id": 6179,
-            "logprob": -1.1328,
-            "prob": 0.3242
+            "token": "Ġz",
+            "token_id": 1167,
+            "logprob": -3.3594,
+            "prob": 0.0347
           },
           {
             "token": "Ġodpově",
             "token_id": 108614,
-            "logprob": -3.5,
-            "prob": 0.03
+            "logprob": -3.7031,
+            "prob": 0.0245
           },
           {
-            "token": "Ġinformation",
-            "token_id": 2038,
-            "logprob": -3.6875,
-            "prob": 0.0249
+            "token": "Ġa",
+            "token_id": 264,
+            "logprob": -4.3438,
+            "prob": 0.0132
           },
           {
-            "token": "Ġinformace",
-            "token_id": 107355,
-            "logprob": -4.375,
-            "prob": 0.0125
+            "token": ",",
+            "token_id": 11,
+            "logprob": -4.8125,
+            "prob": 0.0082
           },
           {
-            "token": "Ġinformací",
-            "token_id": 118833,
-            "logprob": -4.4375,
-            "prob": 0.0118
+            "token": "Ġpros",
+            "token_id": 8882,
+            "logprob": -4.9688,
+            "prob": 0.007
           },
           {
-            "token": "Ġassist",
-            "token_id": 7945,
-            "logprob": -4.9375,
-            "prob": 0.0071
+            "token": "Ġform",
+            "token_id": 1376,
+            "logprob": -5.0,
+            "prob": 0.0068
+          },
+          {
+            "token": "Ġpo",
+            "token_id": 3273,
+            "logprob": -5.0,
+            "prob": 0.0068
           },
           {
             "token": "Ġo",
             "token_id": 297,
-            "logprob": -5.0,
-            "prob": 0.0067
-          },
-          {
-            "token": "Ġhelp",
-            "token_id": 1520,
             "logprob": -5.0625,
-            "prob": 0.0063
+            "prob": 0.0064
           },
           {
-            "token": "Ġz",
-            "token_id": 1167,
-            "logprob": -5.1875,
-            "prob": 0.0056
+            "token": "Ġinform",
+            "token_id": 6179,
+            "logprob": -5.2188,
+            "prob": 0.0055
           },
           {
-            "token": "Ġinfo",
-            "token_id": 3630,
-            "logprob": -5.1875,
-            "prob": 0.0056
+            "token": "Ġpro",
+            "token_id": 463,
+            "logprob": -5.4062,
+            "prob": 0.0045
           }
         ]
       },
       "selected_token": {
-        "token": "Ġinformací",
-        "token_id": 118833,
+        "token": "Ġodpově",
+        "token_id": 108614,
         "selection_method": "sampling"
       }
     },
     {
-      "step": 31,
-      "input_text": "Kdo jsi?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nNaše conversation se centered around otec nebo jeho zákonných pachatov. Chcieholdsneš prosilte mi o jinou informací",
+      "step": 18,
+      "input_text": "<|start_header_id|>user<|end_header_id|>Kdo jsi?<|eot_id|><|start_header_id|>assistant<|end_header_id|>Je suis capable aider načrtovací a další informacje! Chcielnou odpově",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "K",
         "do",
         "Ġjsi",
@@ -3930,40 +2133,29 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
-        "Na",
-        "še",
-        "Ġconversation",
-        "Ġse",
-        "Ġcentered",
-        "Ġaround",
-        "Ġo",
-        "tec",
-        "Ġnebo",
-        "Ġjeho",
-        "Ġz",
-        "ák",
-        "onn",
-        "ých",
-        "Ġp",
-        "achat",
-        "ov",
-        ".",
+        "Je",
+        "Ġsuis",
+        "Ġcapable",
+        "Ġaider",
+        "Ġna",
+        "č",
+        "rt",
+        "ovací",
+        "Ġa",
+        "Ġdalší",
+        "Ġinform",
+        "acje",
+        "!",
         "ĠCh",
-        "cie",
-        "holds",
-        "ne",
-        "š",
-        "Ġpros",
-        "il",
-        "te",
-        "Ġmi",
-        "Ġo",
-        "Ġjin",
+        "ci",
+        "eln",
         "ou",
-        "Ġinformací"
+        "Ġodpově"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         42,
         3055,
         115366,
@@ -3972,101 +2164,1095 @@
         128006,
         78191,
         128007,
-        271,
-        16589,
-        58067,
-        10652,
-        513,
-        31288,
-        2212,
-        297,
-        55300,
-        100872,
-        101503,
-        1167,
-        72542,
-        27476,
-        98955,
-        281,
-        97264,
-        869,
-        13,
+        30854,
+        36731,
+        13171,
+        91878,
+        4415,
+        13453,
+        3423,
+        108097,
+        264,
+        102291,
+        6179,
+        70309,
+        0,
         921,
-        25134,
-        54219,
-        818,
-        11906,
-        8882,
-        321,
-        668,
-        9686,
-        297,
-        102309,
+        5979,
+        17912,
         283,
-        118833
+        108614
       ],
       "output_distribution": {
         "top_k": 10,
         "candidates": [
           {
-            "token": "?",
-            "token_id": 30,
-            "logprob": -0.8867,
-            "prob": 0.4121
+            "token": "ď",
+            "token_id": 102093,
+            "logprob": -0.9922,
+            "prob": 0.3711
           },
           {
-            "token": ".",
-            "token_id": 13,
-            "logprob": -1.1328,
-            "prob": 0.3203
+            "token": "dí",
+            "token_id": 106539,
+            "logprob": -1.1797,
+            "prob": 0.3066
           },
+          {
+            "token": "ť",
+            "token_id": 75901,
+            "logprob": -2.875,
+            "prob": 0.0569
+          },
+          {
+            "token": "di",
+            "token_id": 8747,
+            "logprob": -3.0625,
+            "prob": 0.0471
+          },
+          {
+            "token": "dn",
+            "token_id": 17851,
+            "logprob": -4.0625,
+            "prob": 0.0173
+          },
+          {
+            "token": "ní",
+            "token_id": 55122,
+            "logprob": -4.5625,
+            "prob": 0.0105
+          },
+          {
+            "token": "dě",
+            "token_id": 101390,
+            "logprob": -4.875,
+            "prob": 0.0077
+          },
+          {
+            "token": "ří",
+            "token_id": 100355,
+            "logprob": -4.9375,
+            "prob": 0.0072
+          },
+          {
+            "token": "d",
+            "token_id": 67,
+            "logprob": -5.0,
+            "prob": 0.0068
+          },
+          {
+            "token": "dem",
+            "token_id": 28531,
+            "logprob": -5.0625,
+            "prob": 0.0064
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "ní",
+        "token_id": 55122,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 19,
+      "input_text": "<|start_header_id|>user<|end_header_id|>Kdo jsi?<|eot_id|><|start_header_id|>assistant<|end_header_id|>Je suis capable aider načrtovací a další informacje! Chcielnou odpovění",
+      "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
+        "K",
+        "do",
+        "Ġjsi",
+        "?",
+        "<|eot_id|>",
+        "<|start_header_id|>",
+        "assistant",
+        "<|end_header_id|>",
+        "Je",
+        "Ġsuis",
+        "Ġcapable",
+        "Ġaider",
+        "Ġna",
+        "č",
+        "rt",
+        "ovací",
+        "Ġa",
+        "Ġdalší",
+        "Ġinform",
+        "acje",
+        "!",
+        "ĠCh",
+        "ci",
+        "eln",
+        "ou",
+        "Ġodpově",
+        "ní"
+      ],
+      "token_ids": [
+        128006,
+        882,
+        128007,
+        42,
+        3055,
+        115366,
+        30,
+        128009,
+        128006,
+        78191,
+        128007,
+        30854,
+        36731,
+        13171,
+        91878,
+        4415,
+        13453,
+        3423,
+        108097,
+        264,
+        102291,
+        6179,
+        70309,
+        0,
+        921,
+        5979,
+        17912,
+        283,
+        108614,
+        55122
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġje",
+            "token_id": 4864,
+            "logprob": -2.9375,
+            "prob": 0.0535
+          },
+          {
+            "token": "Ġpro",
+            "token_id": 463,
+            "logprob": -3.2188,
+            "prob": 0.0403
+          },
+          {
+            "token": "Ġza",
+            "token_id": 15036,
+            "logprob": -3.4062,
+            "prob": 0.0334
+          },
+          {
+            "token": ":",
+            "token_id": 25,
+            "logprob": -3.625,
+            "prob": 0.0269
+          },
+          {
+            "token": "Ġcould",
+            "token_id": 1436,
+            "logprob": -3.6562,
+            "prob": 0.026
+          },
+          {
+            "token": "Ġmůže",
+            "token_id": 103100,
+            "logprob": -4.6562,
+            "prob": 0.0096
+          },
+          {
+            "token": "ím",
+            "token_id": 56094,
+            "logprob": -4.7188,
+            "prob": 0.009
+          },
+          {
+            "token": "Ġbisa",
+            "token_id": 41088,
+            "logprob": -4.75,
+            "prob": 0.0087
+          },
+          {
+            "token": "Ġse",
+            "token_id": 513,
+            "logprob": -4.8125,
+            "prob": 0.0082
+          },
+          {
+            "token": "Ġbych",
+            "token_id": 106420,
+            "logprob": -5.0312,
+            "prob": 0.0066
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "ím",
+        "token_id": 56094,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 20,
+      "input_text": "<|start_header_id|>user<|end_header_id|>Kdo jsi?<|eot_id|><|start_header_id|>assistant<|end_header_id|>Je suis capable aider načrtovací a další informacje! Chcielnou odpověníím",
+      "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
+        "K",
+        "do",
+        "Ġjsi",
+        "?",
+        "<|eot_id|>",
+        "<|start_header_id|>",
+        "assistant",
+        "<|end_header_id|>",
+        "Je",
+        "Ġsuis",
+        "Ġcapable",
+        "Ġaider",
+        "Ġna",
+        "č",
+        "rt",
+        "ovací",
+        "Ġa",
+        "Ġdalší",
+        "Ġinform",
+        "acje",
+        "!",
+        "ĠCh",
+        "ci",
+        "eln",
+        "ou",
+        "Ġodpově",
+        "ní",
+        "ím"
+      ],
+      "token_ids": [
+        128006,
+        882,
+        128007,
+        42,
+        3055,
+        115366,
+        30,
+        128009,
+        128006,
+        78191,
+        128007,
+        30854,
+        36731,
+        13171,
+        91878,
+        4415,
+        13453,
+        3423,
+        108097,
+        264,
+        102291,
+        6179,
+        70309,
+        0,
+        921,
+        5979,
+        17912,
+        283,
+        108614,
+        55122,
+        56094
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġří",
+            "token_id": 101819,
+            "logprob": -3.5312,
+            "prob": 0.0293
+          },
+          {
+            "token": "Ġpos",
+            "token_id": 1153,
+            "logprob": -3.875,
+            "prob": 0.0209
+          },
+          {
+            "token": "Ġmůžete",
+            "token_id": 108074,
+            "logprob": -4.0625,
+            "prob": 0.0172
+          },
+          {
+            "token": "Ġse",
+            "token_id": 513,
+            "logprob": -4.125,
+            "prob": 0.0162
+          },
+          {
+            "token": "Ġje",
+            "token_id": 4864,
+            "logprob": -4.375,
+            "prob": 0.0126
+          },
+          {
+            "token": "Ġze",
+            "token_id": 14017,
+            "logprob": -4.5625,
+            "prob": 0.0104
+          },
+          {
+            "token": "Ġodp",
+            "token_id": 52006,
+            "logprob": -4.875,
+            "prob": 0.0077
+          },
+          {
+            "token": "Ġpuedo",
+            "token_id": 81915,
+            "logprob": -4.9375,
+            "prob": 0.0072
+          },
+          {
+            "token": "Ġřek",
+            "token_id": 108225,
+            "logprob": -5.0,
+            "prob": 0.0067
+          },
+          {
+            "token": "Ġoz",
+            "token_id": 25616,
+            "logprob": -5.0312,
+            "prob": 0.0066
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġří",
+        "token_id": 101819,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 21,
+      "input_text": "<|start_header_id|>user<|end_header_id|>Kdo jsi?<|eot_id|><|start_header_id|>assistant<|end_header_id|>Je suis capable aider načrtovací a další informacje! Chcielnou odpověníím ří",
+      "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
+        "K",
+        "do",
+        "Ġjsi",
+        "?",
+        "<|eot_id|>",
+        "<|start_header_id|>",
+        "assistant",
+        "<|end_header_id|>",
+        "Je",
+        "Ġsuis",
+        "Ġcapable",
+        "Ġaider",
+        "Ġna",
+        "č",
+        "rt",
+        "ovací",
+        "Ġa",
+        "Ġdalší",
+        "Ġinform",
+        "acje",
+        "!",
+        "ĠCh",
+        "ci",
+        "eln",
+        "ou",
+        "Ġodpově",
+        "ní",
+        "ím",
+        "Ġří"
+      ],
+      "token_ids": [
+        128006,
+        882,
+        128007,
+        42,
+        3055,
+        115366,
+        30,
+        128009,
+        128006,
+        78191,
+        128007,
+        30854,
+        36731,
+        13171,
+        91878,
+        4415,
+        13453,
+        3423,
+        108097,
+        264,
+        102291,
+        6179,
+        70309,
+        0,
+        921,
+        5979,
+        17912,
+        283,
+        108614,
+        55122,
+        56094,
+        101819
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "kám",
+            "token_id": 121210,
+            "logprob": -0.957,
+            "prob": 0.3848
+          },
+          {
+            "token": "ci",
+            "token_id": 5979,
+            "logprob": -2.2656,
+            "prob": 0.1035
+          },
+          {
+            "token": "kn",
+            "token_id": 19639,
+            "logprob": -3.2656,
+            "prob": 0.0381
+          },
+          {
+            "token": "ku",
+            "token_id": 12407,
+            "logprob": -3.3281,
+            "prob": 0.0356
+          },
+          {
+            "token": "ká",
+            "token_id": 102868,
+            "logprob": -3.5781,
+            "prob": 0.0278
+          },
+          {
+            "token": "ct",
+            "token_id": 302,
+            "logprob": -3.8281,
+            "prob": 0.0217
+          },
+          {
+            "token": "ms",
+            "token_id": 1026,
+            "logprob": -3.9531,
+            "prob": 0.0192
+          },
+          {
+            "token": "ka",
+            "token_id": 4657,
+            "logprob": -4.2188,
+            "prob": 0.0149
+          },
+          {
+            "token": "ke",
+            "token_id": 441,
+            "logprob": -4.2188,
+            "prob": 0.0149
+          },
+          {
+            "token": "zen",
+            "token_id": 5797,
+            "logprob": -4.3438,
+            "prob": 0.0132
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "ms",
+        "token_id": 1026,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 22,
+      "input_text": "<|start_header_id|>user<|end_header_id|>Kdo jsi?<|eot_id|><|start_header_id|>assistant<|end_header_id|>Je suis capable aider načrtovací a další informacje! Chcielnou odpověníím říms",
+      "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
+        "K",
+        "do",
+        "Ġjsi",
+        "?",
+        "<|eot_id|>",
+        "<|start_header_id|>",
+        "assistant",
+        "<|end_header_id|>",
+        "Je",
+        "Ġsuis",
+        "Ġcapable",
+        "Ġaider",
+        "Ġna",
+        "č",
+        "rt",
+        "ovací",
+        "Ġa",
+        "Ġdalší",
+        "Ġinform",
+        "acje",
+        "!",
+        "ĠCh",
+        "ci",
+        "eln",
+        "ou",
+        "Ġodpově",
+        "ní",
+        "ím",
+        "Ġří",
+        "ms"
+      ],
+      "token_ids": [
+        128006,
+        882,
+        128007,
+        42,
+        3055,
+        115366,
+        30,
+        128009,
+        128006,
+        78191,
+        128007,
+        30854,
+        36731,
+        13171,
+        91878,
+        4415,
+        13453,
+        3423,
+        108097,
+        264,
+        102291,
+        6179,
+        70309,
+        0,
+        921,
+        5979,
+        17912,
+        283,
+        108614,
+        55122,
+        56094,
+        101819,
+        1026
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "te",
+            "token_id": 668,
+            "logprob": -1.6328,
+            "prob": 0.1963
+          },
+          {
+            "token": "k",
+            "token_id": 74,
+            "logprob": -2.0,
+            "prob": 0.1348
+          },
+          {
+            "token": "ím",
+            "token_id": 56094,
+            "logprob": -2.8125,
+            "prob": 0.0598
+          },
+          {
+            "token": "ké",
+            "token_id": 103770,
+            "logprob": -3.3125,
+            "prob": 0.0361
+          },
+          {
+            "token": "kou",
+            "token_id": 101655,
+            "logprob": -3.4375,
+            "prob": 0.032
+          },
+          {
+            "token": "ký",
+            "token_id": 111489,
+            "logprob": -3.6875,
+            "prob": 0.0249
+          },
+          {
+            "token": "ke",
+            "token_id": 441,
+            "logprob": -4.125,
+            "prob": 0.0161
+          },
+          {
+            "token": "ky",
+            "token_id": 8050,
+            "logprob": -4.3125,
+            "prob": 0.0133
+          },
+          {
+            "token": "ka",
+            "token_id": 4657,
+            "logprob": -4.375,
+            "prob": 0.0125
+          },
+          {
+            "token": "ou",
+            "token_id": 283,
+            "logprob": -4.5625,
+            "prob": 0.0104
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "te",
+        "token_id": 668,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 23,
+      "input_text": "<|start_header_id|>user<|end_header_id|>Kdo jsi?<|eot_id|><|start_header_id|>assistant<|end_header_id|>Je suis capable aider načrtovací a další informacje! Chcielnou odpověníím římste",
+      "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
+        "K",
+        "do",
+        "Ġjsi",
+        "?",
+        "<|eot_id|>",
+        "<|start_header_id|>",
+        "assistant",
+        "<|end_header_id|>",
+        "Je",
+        "Ġsuis",
+        "Ġcapable",
+        "Ġaider",
+        "Ġna",
+        "č",
+        "rt",
+        "ovací",
+        "Ġa",
+        "Ġdalší",
+        "Ġinform",
+        "acje",
+        "!",
+        "ĠCh",
+        "ci",
+        "eln",
+        "ou",
+        "Ġodpově",
+        "ní",
+        "ím",
+        "Ġří",
+        "ms",
+        "te"
+      ],
+      "token_ids": [
+        128006,
+        882,
+        128007,
+        42,
+        3055,
+        115366,
+        30,
+        128009,
+        128006,
+        78191,
+        128007,
+        30854,
+        36731,
+        13171,
+        91878,
+        4415,
+        13453,
+        3423,
+        108097,
+        264,
+        102291,
+        6179,
+        70309,
+        0,
+        921,
+        5979,
+        17912,
+        283,
+        108614,
+        55122,
+        56094,
+        101819,
+        1026,
+        668
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
           {
             "token": ",",
             "token_id": 11,
-            "logprob": -2.1406,
-            "prob": 0.1182
+            "logprob": -1.9062,
+            "prob": 0.1484
           },
           {
-            "token": "Ġnebo",
-            "token_id": 100872,
-            "logprob": -3.8906,
-            "prob": 0.0205
+            "token": "Ġpros",
+            "token_id": 8882,
+            "logprob": -2.9062,
+            "prob": 0.0544
+          },
+          {
+            "token": ":",
+            "token_id": 25,
+            "logprob": -4.25,
+            "prob": 0.0142
+          },
+          {
+            "token": "Ġmô",
+            "token_id": 105158,
+            "logprob": -4.3438,
+            "prob": 0.0129
+          },
+          {
+            "token": "Ġří",
+            "token_id": 101819,
+            "logprob": -4.4375,
+            "prob": 0.0118
+          },
+          {
+            "token": "Ġpou",
+            "token_id": 17258,
+            "logprob": -4.5,
+            "prob": 0.011
+          },
+          {
+            "token": "že",
+            "token_id": 51492,
+            "logprob": -4.5625,
+            "prob": 0.0104
           },
           {
             "token": "Ġo",
             "token_id": 297,
-            "logprob": -4.0625,
-            "prob": 0.017
+            "logprob": -4.625,
+            "prob": 0.0098
           },
           {
-            "token": "Ġnež",
-            "token_id": 102242,
-            "logprob": -4.5625,
-            "prob": 0.0103
+            "token": "Ġmi",
+            "token_id": 9686,
+            "logprob": -4.625,
+            "prob": 0.0098
           },
           {
-            "token": "?.",
-            "token_id": 4710,
-            "logprob": -5.25,
-            "prob": 0.0052
+            "token": "Ġpos",
+            "token_id": 1153,
+            "logprob": -4.9062,
+            "prob": 0.0074
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġmô",
+        "token_id": 105158,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 24,
+      "input_text": "<|start_header_id|>user<|end_header_id|>Kdo jsi?<|eot_id|><|start_header_id|>assistant<|end_header_id|>Je suis capable aider načrtovací a další informacje! Chcielnou odpověníím římste mô",
+      "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
+        "K",
+        "do",
+        "Ġjsi",
+        "?",
+        "<|eot_id|>",
+        "<|start_header_id|>",
+        "assistant",
+        "<|end_header_id|>",
+        "Je",
+        "Ġsuis",
+        "Ġcapable",
+        "Ġaider",
+        "Ġna",
+        "č",
+        "rt",
+        "ovací",
+        "Ġa",
+        "Ġdalší",
+        "Ġinform",
+        "acje",
+        "!",
+        "ĠCh",
+        "ci",
+        "eln",
+        "ou",
+        "Ġodpově",
+        "ní",
+        "ím",
+        "Ġří",
+        "ms",
+        "te",
+        "Ġmô"
+      ],
+      "token_ids": [
+        128006,
+        882,
+        128007,
+        42,
+        3055,
+        115366,
+        30,
+        128009,
+        128006,
+        78191,
+        128007,
+        30854,
+        36731,
+        13171,
+        91878,
+        4415,
+        13453,
+        3423,
+        108097,
+        264,
+        102291,
+        6179,
+        70309,
+        0,
+        921,
+        5979,
+        17912,
+        283,
+        108614,
+        55122,
+        56094,
+        101819,
+        1026,
+        668,
+        105158
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "ž",
+            "token_id": 12453,
+            "logprob": -0.5703,
+            "prob": 0.5664
           },
           {
-            "token": "Ġa",
-            "token_id": 264,
-            "logprob": -5.5625,
-            "prob": 0.0038
+            "token": "že",
+            "token_id": 51492,
+            "logprob": -1.7578,
+            "prob": 0.1719
           },
           {
-            "token": ".?",
-            "token_id": 82508,
-            "logprob": -5.75,
-            "prob": 0.0031
+            "token": "ji",
+            "token_id": 7910,
+            "logprob": -4.4375,
+            "prob": 0.0117
           },
           {
-            "token": "Ġ?",
-            "token_id": 949,
-            "logprob": -6.1562,
-            "prob": 0.0021
+            "token": "je",
+            "token_id": 3841,
+            "logprob": -4.5,
+            "prob": 0.011
+          },
+          {
+            "token": "jeta",
+            "token_id": 65334,
+            "logprob": -4.8125,
+            "prob": 0.0081
+          },
+          {
+            "token": "ж",
+            "token_id": 17394,
+            "logprob": -4.9375,
+            "prob": 0.0071
+          },
+          {
+            "token": "č",
+            "token_id": 13453,
+            "logprob": -5.125,
+            "prob": 0.0059
+          },
+          {
+            "token": "znám",
+            "token_id": 107583,
+            "logprob": -5.125,
+            "prob": 0.0059
+          },
+          {
+            "token": "жу",
+            "token_id": 107799,
+            "logprob": -5.1875,
+            "prob": 0.0055
+          },
+          {
+            "token": "gu",
+            "token_id": 8890,
+            "logprob": -5.4375,
+            "prob": 0.0043
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "gu",
+        "token_id": 8890,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 25,
+      "input_text": "<|start_header_id|>user<|end_header_id|>Kdo jsi?<|eot_id|><|start_header_id|>assistant<|end_header_id|>Je suis capable aider načrtovací a další informacje! Chcielnou odpověníím římste môgu",
+      "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
+        "K",
+        "do",
+        "Ġjsi",
+        "?",
+        "<|eot_id|>",
+        "<|start_header_id|>",
+        "assistant",
+        "<|end_header_id|>",
+        "Je",
+        "Ġsuis",
+        "Ġcapable",
+        "Ġaider",
+        "Ġna",
+        "č",
+        "rt",
+        "ovací",
+        "Ġa",
+        "Ġdalší",
+        "Ġinform",
+        "acje",
+        "!",
+        "ĠCh",
+        "ci",
+        "eln",
+        "ou",
+        "Ġodpově",
+        "ní",
+        "ím",
+        "Ġří",
+        "ms",
+        "te",
+        "Ġmô",
+        "gu"
+      ],
+      "token_ids": [
+        128006,
+        882,
+        128007,
+        42,
+        3055,
+        115366,
+        30,
+        128009,
+        128006,
+        78191,
+        128007,
+        30854,
+        36731,
+        13171,
+        91878,
+        4415,
+        13453,
+        3423,
+        108097,
+        264,
+        102291,
+        6179,
+        70309,
+        0,
+        921,
+        5979,
+        17912,
+        283,
+        108614,
+        55122,
+        56094,
+        101819,
+        1026,
+        668,
+        105158,
+        8890
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": ",",
+            "token_id": 11,
+            "logprob": -1.9766,
+            "prob": 0.1387
+          },
+          {
+            "token": ":",
+            "token_id": 25,
+            "logprob": -3.1094,
+            "prob": 0.0449
+          },
+          {
+            "token": "Ġ\"",
+            "token_id": 330,
+            "logprob": -4.0938,
+            "prob": 0.0166
+          },
+          {
+            "token": ".",
+            "token_id": 13,
+            "logprob": -4.3125,
+            "prob": 0.0133
+          },
+          {
+            "token": "?",
+            "token_id": 30,
+            "logprob": -4.4375,
+            "prob": 0.0117
+          },
+          {
+            "token": "Ġo",
+            "token_id": 297,
+            "logprob": -4.5312,
+            "prob": 0.0107
+          },
+          {
+            "token": "Ġpou",
+            "token_id": 17258,
+            "logprob": -4.5312,
+            "prob": 0.0107
+          },
+          {
+            "token": "Ġna",
+            "token_id": 4415,
+            "logprob": -4.5312,
+            "prob": 0.0107
+          },
+          {
+            "token": "Ġ'",
+            "token_id": 364,
+            "logprob": -4.6562,
+            "prob": 0.0094
+          },
+          {
+            "token": "Ġpo",
+            "token_id": 3273,
+            "logprob": -4.9062,
+            "prob": 0.0074
           }
         ]
       },
@@ -4077,9 +3263,12 @@
       }
     },
     {
-      "step": 32,
-      "input_text": "Kdo jsi?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nNaše conversation se centered around otec nebo jeho zákonných pachatov. Chcieholdsneš prosilte mi o jinou informací.",
+      "step": 26,
+      "input_text": "<|start_header_id|>user<|end_header_id|>Kdo jsi?<|eot_id|><|start_header_id|>assistant<|end_header_id|>Je suis capable aider načrtovací a další informacje! Chcielnou odpověníím římste môgu.",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "K",
         "do",
         "Ġjsi",
@@ -4088,41 +3277,37 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
-        "Na",
-        "še",
-        "Ġconversation",
-        "Ġse",
-        "Ġcentered",
-        "Ġaround",
-        "Ġo",
-        "tec",
-        "Ġnebo",
-        "Ġjeho",
-        "Ġz",
-        "ák",
-        "onn",
-        "ých",
-        "Ġp",
-        "achat",
-        "ov",
-        ".",
+        "Je",
+        "Ġsuis",
+        "Ġcapable",
+        "Ġaider",
+        "Ġna",
+        "č",
+        "rt",
+        "ovací",
+        "Ġa",
+        "Ġdalší",
+        "Ġinform",
+        "acje",
+        "!",
         "ĠCh",
-        "cie",
-        "holds",
-        "ne",
-        "š",
-        "Ġpros",
-        "il",
-        "te",
-        "Ġmi",
-        "Ġo",
-        "Ġjin",
+        "ci",
+        "eln",
         "ou",
-        "Ġinformací",
+        "Ġodpově",
+        "ní",
+        "ím",
+        "Ġří",
+        "ms",
+        "te",
+        "Ġmô",
+        "gu",
         "."
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         42,
         3055,
         115366,
@@ -4131,38 +3316,31 @@
         128006,
         78191,
         128007,
-        271,
-        16589,
-        58067,
-        10652,
-        513,
-        31288,
-        2212,
-        297,
-        55300,
-        100872,
-        101503,
-        1167,
-        72542,
-        27476,
-        98955,
-        281,
-        97264,
-        869,
-        13,
+        30854,
+        36731,
+        13171,
+        91878,
+        4415,
+        13453,
+        3423,
+        108097,
+        264,
+        102291,
+        6179,
+        70309,
+        0,
         921,
-        25134,
-        54219,
-        818,
-        11906,
-        8882,
-        321,
-        668,
-        9686,
-        297,
-        102309,
+        5979,
+        17912,
         283,
-        118833,
+        108614,
+        55122,
+        56094,
+        101819,
+        1026,
+        668,
+        105158,
+        8890,
         13
       ],
       "output_distribution": {
@@ -4171,61 +3349,851 @@
           {
             "token": "<|eot_id|>",
             "token_id": 128009,
-            "logprob": -0.0027,
-            "prob": 0.9961
+            "logprob": -0.0815,
+            "prob": 0.9219
           },
           {
-            "token": "ĠNa",
-            "token_id": 13106,
-            "logprob": -8.25,
-            "prob": 0.0003
+            "token": "ĠJak",
+            "token_id": 35934,
+            "logprob": -4.5312,
+            "prob": 0.0109
+          },
+          {
+            "token": "ĠJe",
+            "token_id": 14465,
+            "logprob": -5.0312,
+            "prob": 0.0066
           },
           {
             "token": "ĠCh",
             "token_id": 921,
-            "logprob": -8.25,
-            "prob": 0.0003
+            "logprob": -5.2188,
+            "prob": 0.0055
           },
           {
-            "token": "Ġ\n\n",
-            "token_id": 4815,
-            "logprob": -8.4375,
-            "prob": 0.0002
+            "token": "ĠK",
+            "token_id": 735,
+            "logprob": -5.5312,
+            "prob": 0.004
+          },
+          {
+            "token": "ĠCo",
+            "token_id": 3623,
+            "logprob": -5.7812,
+            "prob": 0.0031
+          },
+          {
+            "token": "ĠNa",
+            "token_id": 13106,
+            "logprob": -6.0312,
+            "prob": 0.0024
+          },
+          {
+            "token": "ĠO",
+            "token_id": 507,
+            "logprob": -6.1562,
+            "prob": 0.0022
           },
           {
             "token": "ĠV",
             "token_id": 650,
-            "logprob": -9.125,
-            "prob": 0.0001
+            "logprob": -6.4062,
+            "prob": 0.0017
           },
           {
-            "token": "<|start_header_id|>",
-            "token_id": 128006,
-            "logprob": -9.5,
+            "token": "Ġ\n\n",
+            "token_id": 4815,
+            "logprob": -6.4062,
+            "prob": 0.0017
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "ĠCo",
+        "token_id": 3623,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 27,
+      "input_text": "<|start_header_id|>user<|end_header_id|>Kdo jsi?<|eot_id|><|start_header_id|>assistant<|end_header_id|>Je suis capable aider načrtovací a další informacje! Chcielnou odpověníím římste môgu. Co",
+      "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
+        "K",
+        "do",
+        "Ġjsi",
+        "?",
+        "<|eot_id|>",
+        "<|start_header_id|>",
+        "assistant",
+        "<|end_header_id|>",
+        "Je",
+        "Ġsuis",
+        "Ġcapable",
+        "Ġaider",
+        "Ġna",
+        "č",
+        "rt",
+        "ovací",
+        "Ġa",
+        "Ġdalší",
+        "Ġinform",
+        "acje",
+        "!",
+        "ĠCh",
+        "ci",
+        "eln",
+        "ou",
+        "Ġodpově",
+        "ní",
+        "ím",
+        "Ġří",
+        "ms",
+        "te",
+        "Ġmô",
+        "gu",
+        ".",
+        "ĠCo"
+      ],
+      "token_ids": [
+        128006,
+        882,
+        128007,
+        42,
+        3055,
+        115366,
+        30,
+        128009,
+        128006,
+        78191,
+        128007,
+        30854,
+        36731,
+        13171,
+        91878,
+        4415,
+        13453,
+        3423,
+        108097,
+        264,
+        102291,
+        6179,
+        70309,
+        0,
+        921,
+        5979,
+        17912,
+        283,
+        108614,
+        55122,
+        56094,
+        101819,
+        1026,
+        668,
+        105158,
+        8890,
+        13,
+        3623
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġch",
+            "token_id": 523,
+            "logprob": -0.334,
+            "prob": 0.7148
+          },
+          {
+            "token": "Ġchce",
+            "token_id": 115794,
+            "logprob": -3.0156,
+            "prob": 0.0488
+          },
+          {
+            "token": "ch",
+            "token_id": 331,
+            "logprob": -3.6406,
+            "prob": 0.0261
+          },
+          {
+            "token": "ž",
+            "token_id": 12453,
+            "logprob": -4.2812,
+            "prob": 0.014
+          },
+          {
+            "token": "ĠCh",
+            "token_id": 921,
+            "logprob": -4.6562,
+            "prob": 0.0096
+          },
+          {
+            "token": "cete",
+            "token_id": 117570,
+            "logprob": -4.9688,
+            "prob": 0.007
+          },
+          {
+            "token": "Ġsi",
+            "token_id": 4502,
+            "logprob": -5.1562,
+            "prob": 0.0058
+          },
+          {
+            "token": "Ġse",
+            "token_id": 513,
+            "logprob": -5.8438,
+            "prob": 0.0029
+          },
+          {
+            "token": "Ġrá",
+            "token_id": 49769,
+            "logprob": -5.9062,
+            "prob": 0.0027
+          },
+          {
+            "token": "Ġje",
+            "token_id": 4864,
+            "logprob": -6.0312,
+            "prob": 0.0024
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġch",
+        "token_id": 523,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 28,
+      "input_text": "<|start_header_id|>user<|end_header_id|>Kdo jsi?<|eot_id|><|start_header_id|>assistant<|end_header_id|>Je suis capable aider načrtovací a další informacje! Chcielnou odpověníím římste môgu. Co ch",
+      "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
+        "K",
+        "do",
+        "Ġjsi",
+        "?",
+        "<|eot_id|>",
+        "<|start_header_id|>",
+        "assistant",
+        "<|end_header_id|>",
+        "Je",
+        "Ġsuis",
+        "Ġcapable",
+        "Ġaider",
+        "Ġna",
+        "č",
+        "rt",
+        "ovací",
+        "Ġa",
+        "Ġdalší",
+        "Ġinform",
+        "acje",
+        "!",
+        "ĠCh",
+        "ci",
+        "eln",
+        "ou",
+        "Ġodpově",
+        "ní",
+        "ím",
+        "Ġří",
+        "ms",
+        "te",
+        "Ġmô",
+        "gu",
+        ".",
+        "ĠCo",
+        "Ġch"
+      ],
+      "token_ids": [
+        128006,
+        882,
+        128007,
+        42,
+        3055,
+        115366,
+        30,
+        128009,
+        128006,
+        78191,
+        128007,
+        30854,
+        36731,
+        13171,
+        91878,
+        4415,
+        13453,
+        3423,
+        108097,
+        264,
+        102291,
+        6179,
+        70309,
+        0,
+        921,
+        5979,
+        17912,
+        283,
+        108614,
+        55122,
+        56094,
+        101819,
+        1026,
+        668,
+        105158,
+        8890,
+        13,
+        3623,
+        523
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "cete",
+            "token_id": 117570,
+            "logprob": -0.4258,
+            "prob": 0.6523
+          },
+          {
+            "token": "ci",
+            "token_id": 5979,
+            "logprob": -1.8047,
+            "prob": 0.165
+          },
+          {
+            "token": "cie",
+            "token_id": 25134,
+            "logprob": -3.2344,
+            "prob": 0.0393
+          },
+          {
+            "token": "c",
+            "token_id": 66,
+            "logprob": -4.3125,
+            "prob": 0.0135
+          },
+          {
+            "token": "á",
+            "token_id": 1995,
+            "logprob": -5.1875,
+            "prob": 0.0056
+          },
+          {
+            "token": "ces",
+            "token_id": 1634,
+            "logprob": -5.25,
+            "prob": 0.0053
+          },
+          {
+            "token": "ете",
+            "token_id": 103821,
+            "logprob": -5.375,
+            "prob": 0.0047
+          },
+          {
+            "token": "cia",
+            "token_id": 25088,
+            "logprob": -5.75,
+            "prob": 0.0032
+          },
+          {
+            "token": "ete",
+            "token_id": 7870,
+            "logprob": -6.125,
+            "prob": 0.0022
+          },
+          {
+            "token": "CI",
+            "token_id": 11487,
+            "logprob": -6.25,
+            "prob": 0.002
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "cete",
+        "token_id": 117570,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 29,
+      "input_text": "<|start_header_id|>user<|end_header_id|>Kdo jsi?<|eot_id|><|start_header_id|>assistant<|end_header_id|>Je suis capable aider načrtovací a další informacje! Chcielnou odpověníím římste môgu. Co chcete",
+      "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
+        "K",
+        "do",
+        "Ġjsi",
+        "?",
+        "<|eot_id|>",
+        "<|start_header_id|>",
+        "assistant",
+        "<|end_header_id|>",
+        "Je",
+        "Ġsuis",
+        "Ġcapable",
+        "Ġaider",
+        "Ġna",
+        "č",
+        "rt",
+        "ovací",
+        "Ġa",
+        "Ġdalší",
+        "Ġinform",
+        "acje",
+        "!",
+        "ĠCh",
+        "ci",
+        "eln",
+        "ou",
+        "Ġodpově",
+        "ní",
+        "ím",
+        "Ġří",
+        "ms",
+        "te",
+        "Ġmô",
+        "gu",
+        ".",
+        "ĠCo",
+        "Ġch",
+        "cete"
+      ],
+      "token_ids": [
+        128006,
+        882,
+        128007,
+        42,
+        3055,
+        115366,
+        30,
+        128009,
+        128006,
+        78191,
+        128007,
+        30854,
+        36731,
+        13171,
+        91878,
+        4415,
+        13453,
+        3423,
+        108097,
+        264,
+        102291,
+        6179,
+        70309,
+        0,
+        921,
+        5979,
+        17912,
+        283,
+        108614,
+        55122,
+        56094,
+        101819,
+        1026,
+        668,
+        105158,
+        8890,
+        13,
+        3623,
+        523,
+        117570
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "?",
+            "token_id": 30,
+            "logprob": -0.9961,
+            "prob": 0.3691
+          },
+          {
+            "token": "Ġz",
+            "token_id": 1167,
+            "logprob": -2.875,
+            "prob": 0.0566
+          },
+          {
+            "token": "Ġvěd",
+            "token_id": 116151,
+            "logprob": -3.1875,
+            "prob": 0.0413
+          },
+          {
+            "token": "Ġknow",
+            "token_id": 1440,
+            "logprob": -4.125,
+            "prob": 0.0162
+          },
+          {
+            "token": "Ġudělat",
+            "token_id": 124595,
+            "logprob": -4.3125,
+            "prob": 0.0134
+          },
+          {
+            "token": "Ġknowing",
+            "token_id": 14392,
+            "logprob": -4.8438,
+            "prob": 0.0079
+          },
+          {
+            "token": "Ġří",
+            "token_id": 101819,
+            "logprob": -4.9375,
+            "prob": 0.0072
+          },
+          {
+            "token": "Ġpot",
+            "token_id": 3419,
+            "logprob": -5.0312,
+            "prob": 0.0065
+          },
+          {
+            "token": "Ġzn",
+            "token_id": 30974,
+            "logprob": -5.0625,
+            "prob": 0.0063
+          },
+          {
+            "token": "?\n",
+            "token_id": 5380,
+            "logprob": -5.375,
+            "prob": 0.0046
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġknowing",
+        "token_id": 14392,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 30,
+      "input_text": "<|start_header_id|>user<|end_header_id|>Kdo jsi?<|eot_id|><|start_header_id|>assistant<|end_header_id|>Je suis capable aider načrtovací a další informacje! Chcielnou odpověníím římste môgu. Co chcete knowing",
+      "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
+        "K",
+        "do",
+        "Ġjsi",
+        "?",
+        "<|eot_id|>",
+        "<|start_header_id|>",
+        "assistant",
+        "<|end_header_id|>",
+        "Je",
+        "Ġsuis",
+        "Ġcapable",
+        "Ġaider",
+        "Ġna",
+        "č",
+        "rt",
+        "ovací",
+        "Ġa",
+        "Ġdalší",
+        "Ġinform",
+        "acje",
+        "!",
+        "ĠCh",
+        "ci",
+        "eln",
+        "ou",
+        "Ġodpově",
+        "ní",
+        "ím",
+        "Ġří",
+        "ms",
+        "te",
+        "Ġmô",
+        "gu",
+        ".",
+        "ĠCo",
+        "Ġch",
+        "cete",
+        "Ġknowing"
+      ],
+      "token_ids": [
+        128006,
+        882,
+        128007,
+        42,
+        3055,
+        115366,
+        30,
+        128009,
+        128006,
+        78191,
+        128007,
+        30854,
+        36731,
+        13171,
+        91878,
+        4415,
+        13453,
+        3423,
+        108097,
+        264,
+        102291,
+        6179,
+        70309,
+        0,
+        921,
+        5979,
+        17912,
+        283,
+        108614,
+        55122,
+        56094,
+        101819,
+        1026,
+        668,
+        105158,
+        8890,
+        13,
+        3623,
+        523,
+        117570,
+        14392
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "?",
+            "token_id": 30,
+            "logprob": -0.1045,
+            "prob": 0.9023
+          },
+          {
+            "token": "Ġo",
+            "token_id": 297,
+            "logprob": -3.8594,
+            "prob": 0.0212
+          },
+          {
+            "token": "?.",
+            "token_id": 4710,
+            "logprob": -4.7188,
+            "prob": 0.0089
+          },
+          {
+            "token": ".",
+            "token_id": 13,
+            "logprob": -4.8438,
+            "prob": 0.0078
+          },
+          {
+            "token": "Ġ?",
+            "token_id": 949,
+            "logprob": -5.4688,
+            "prob": 0.0042
+          },
+          {
+            "token": "?:",
+            "token_id": 4925,
+            "logprob": -5.4688,
+            "prob": 0.0042
+          },
+          {
+            "token": ",",
+            "token_id": 11,
+            "logprob": -5.5312,
+            "prob": 0.0039
+          },
+          {
+            "token": "?\n\n",
+            "token_id": 1980,
+            "logprob": -6.0312,
+            "prob": 0.0024
+          },
+          {
+            "token": "?,",
+            "token_id": 12909,
+            "logprob": -6.4062,
+            "prob": 0.0016
+          },
+          {
+            "token": "؟",
+            "token_id": 101735,
+            "logprob": -6.4062,
+            "prob": 0.0016
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "?",
+        "token_id": 30,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 31,
+      "input_text": "<|start_header_id|>user<|end_header_id|>Kdo jsi?<|eot_id|><|start_header_id|>assistant<|end_header_id|>Je suis capable aider načrtovací a další informacje! Chcielnou odpověníím římste môgu. Co chcete knowing?",
+      "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
+        "K",
+        "do",
+        "Ġjsi",
+        "?",
+        "<|eot_id|>",
+        "<|start_header_id|>",
+        "assistant",
+        "<|end_header_id|>",
+        "Je",
+        "Ġsuis",
+        "Ġcapable",
+        "Ġaider",
+        "Ġna",
+        "č",
+        "rt",
+        "ovací",
+        "Ġa",
+        "Ġdalší",
+        "Ġinform",
+        "acje",
+        "!",
+        "ĠCh",
+        "ci",
+        "eln",
+        "ou",
+        "Ġodpově",
+        "ní",
+        "ím",
+        "Ġří",
+        "ms",
+        "te",
+        "Ġmô",
+        "gu",
+        ".",
+        "ĠCo",
+        "Ġch",
+        "cete",
+        "Ġknowing",
+        "?"
+      ],
+      "token_ids": [
+        128006,
+        882,
+        128007,
+        42,
+        3055,
+        115366,
+        30,
+        128009,
+        128006,
+        78191,
+        128007,
+        30854,
+        36731,
+        13171,
+        91878,
+        4415,
+        13453,
+        3423,
+        108097,
+        264,
+        102291,
+        6179,
+        70309,
+        0,
+        921,
+        5979,
+        17912,
+        283,
+        108614,
+        55122,
+        56094,
+        101819,
+        1026,
+        668,
+        105158,
+        8890,
+        13,
+        3623,
+        523,
+        117570,
+        14392,
+        30
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "<|eot_id|>",
+            "token_id": 128009,
+            "logprob": -0.0018,
+            "prob": 1.0
+          },
+          {
+            "token": "ĠNa",
+            "token_id": 13106,
+            "logprob": -8.5625,
+            "prob": 0.0002
+          },
+          {
+            "token": "ĠCh",
+            "token_id": 921,
+            "logprob": -8.5625,
+            "prob": 0.0002
+          },
+          {
+            "token": "Ġ\n\n",
+            "token_id": 4815,
+            "logprob": -9.0625,
             "prob": 0.0001
           },
           {
             "token": "ĠJe",
             "token_id": 14465,
-            "logprob": -9.5,
+            "logprob": -9.1875,
             "prob": 0.0001
           },
           {
-            "token": "ĠO",
-            "token_id": 507,
-            "logprob": -9.5,
+            "token": "Ġ(",
+            "token_id": 320,
+            "logprob": -9.6875,
             "prob": 0.0001
           },
           {
-            "token": "ĠPro",
-            "token_id": 1322,
-            "logprob": -9.75,
-            "prob": 0.0001
+            "token": "ĠZ",
+            "token_id": 1901,
+            "logprob": -9.9375,
+            "prob": 0.0
           },
           {
-            "token": "ĠK",
-            "token_id": 735,
-            "logprob": -10.0625,
+            "token": "<|start_header_id|>",
+            "token_id": 128006,
+            "logprob": -10.3125,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġ",
+            "token_id": 220,
+            "logprob": -10.375,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠM",
+            "token_id": 386,
+            "logprob": -10.5,
             "prob": 0.0
           }
         ]

@@ -1,5 +1,5 @@
 {
-  "id": "generated_20251203_120605",
+  "id": "generated_20251204_095019",
   "prompt": "Hlavní město Česka je",
   "language": "cs",
   "temperature": 0.0,
@@ -14,8 +14,11 @@
   "generation_steps": [
     {
       "step": 0,
-      "input_text": "Hlavní město Česka je<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+      "input_text": "<|start_header_id|>user<|end_header_id|>Hlavní město Česka je<|eot_id|><|start_header_id|>assistant<|end_header_id|>",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "H",
         "l",
         "avn",
@@ -27,10 +30,12 @@
         "<|eot_id|>",
         "<|start_header_id|>",
         "assistant",
-        "<|end_header_id|>",
-        "\n\n"
+        "<|end_header_id|>"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         39,
         75,
         31697,
@@ -42,8 +47,7 @@
         128009,
         128006,
         78191,
-        128007,
-        271
+        128007
       ],
       "output_distribution": {
         "top_k": 10,
@@ -51,7 +55,7 @@
           {
             "token": "H",
             "token_id": 39,
-            "logprob": -1.3281,
+            "logprob": -1.3359,
             "prob": 0.2637
           },
           {
@@ -61,28 +65,28 @@
             "prob": 0.0806
           },
           {
+            "token": "Č",
+            "token_id": 102290,
+            "logprob": -2.8281,
+            "prob": 0.0588
+          },
+          {
             "token": "Česk",
             "token_id": 122664,
             "logprob": -2.8281,
-            "prob": 0.0591
-          },
-          {
-            "token": "Č",
-            "token_id": 102290,
-            "logprob": -2.8906,
-            "prob": 0.0554
+            "prob": 0.0588
           },
           {
             "token": "V",
             "token_id": 53,
-            "logprob": -3.2031,
-            "prob": 0.0405
+            "logprob": -3.2656,
+            "prob": 0.0378
           },
           {
             "token": "D",
             "token_id": 35,
             "logprob": -3.5156,
-            "prob": 0.0297
+            "prob": 0.0295
           },
           {
             "token": "B",
@@ -93,20 +97,20 @@
           {
             "token": "č",
             "token_id": 13453,
-            "logprob": -4.0938,
-            "prob": 0.0168
+            "logprob": -4.0312,
+            "prob": 0.0179
           },
           {
             "token": "J",
             "token_id": 41,
             "logprob": -4.2188,
-            "prob": 0.0149
+            "prob": 0.0148
           },
           {
             "token": "K",
             "token_id": 42,
-            "logprob": -4.2188,
-            "prob": 0.0149
+            "logprob": -4.2812,
+            "prob": 0.014
           }
         ]
       },
@@ -118,8 +122,11 @@
     },
     {
       "step": 1,
-      "input_text": "Hlavní město Česka je<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nH",
+      "input_text": "<|start_header_id|>user<|end_header_id|>Hlavní město Česka je<|eot_id|><|start_header_id|>assistant<|end_header_id|>H",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "H",
         "l",
         "avn",
@@ -132,10 +139,12 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "H"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         39,
         75,
         31697,
@@ -148,7 +157,6 @@
         128006,
         78191,
         128007,
-        271,
         39
       ],
       "output_distribution": {
@@ -157,14 +165,14 @@
           {
             "token": "l",
             "token_id": 75,
-            "logprob": -0.0398,
-            "prob": 0.9609
+            "logprob": -0.0356,
+            "prob": 0.9648
           },
           {
             "token": "lav",
             "token_id": 79936,
-            "logprob": -4.0938,
-            "prob": 0.0165
+            "logprob": -4.2812,
+            "prob": 0.0137
           },
           {
             "token": "lava",
@@ -181,8 +189,8 @@
           {
             "token": "avl",
             "token_id": 68411,
-            "logprob": -6.3438,
-            "prob": 0.0017
+            "logprob": -6.5938,
+            "prob": 0.0014
           },
           {
             "token": "lub",
@@ -193,25 +201,25 @@
           {
             "token": "las",
             "token_id": 14833,
-            "logprob": -7.5938,
+            "logprob": -7.6562,
             "prob": 0.0005
           },
           {
             "token": "av",
             "token_id": 402,
-            "logprob": -7.5938,
-            "prob": 0.0005
+            "logprob": -7.7812,
+            "prob": 0.0004
           },
           {
             "token": "lí",
             "token_id": 101061,
-            "logprob": -7.7188,
+            "logprob": -7.7812,
             "prob": 0.0004
           },
           {
             "token": "osp",
             "token_id": 4890,
-            "logprob": -7.8438,
+            "logprob": -7.9062,
             "prob": 0.0004
           }
         ]
@@ -224,8 +232,11 @@
     },
     {
       "step": 2,
-      "input_text": "Hlavní město Česka je<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nHl",
+      "input_text": "<|start_header_id|>user<|end_header_id|>Hlavní město Česka je<|eot_id|><|start_header_id|>assistant<|end_header_id|>Hl",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "H",
         "l",
         "avn",
@@ -238,11 +249,13 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "H",
         "l"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         39,
         75,
         31697,
@@ -255,7 +268,6 @@
         128006,
         78191,
         128007,
-        271,
         39,
         75
       ],
@@ -301,7 +313,7 @@
           {
             "token": "avi",
             "token_id": 6321,
-            "logprob": -12.4375,
+            "logprob": -12.5,
             "prob": 0.0
           },
           {
@@ -313,13 +325,13 @@
           {
             "token": "avan",
             "token_id": 32005,
-            "logprob": -12.8125,
+            "logprob": -12.9375,
             "prob": 0.0
           },
           {
             "token": "avar",
             "token_id": 37332,
-            "logprob": -13.3125,
+            "logprob": -13.25,
             "prob": 0.0
           }
         ]
@@ -332,8 +344,11 @@
     },
     {
       "step": 3,
-      "input_text": "Hlavní město Česka je<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nHlavn",
+      "input_text": "<|start_header_id|>user<|end_header_id|>Hlavní město Česka je<|eot_id|><|start_header_id|>assistant<|end_header_id|>Hlavn",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "H",
         "l",
         "avn",
@@ -346,12 +361,14 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "H",
         "l",
         "avn"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         39,
         75,
         31697,
@@ -364,7 +381,6 @@
         128006,
         78191,
         128007,
-        271,
         39,
         75,
         31697
@@ -387,32 +403,32 @@
           {
             "token": "é",
             "token_id": 978,
-            "logprob": -5.8438,
-            "prob": 0.0029
+            "logprob": -6.0312,
+            "prob": 0.0024
           },
           {
             "token": "ě",
             "token_id": 22161,
-            "logprob": -6.5938,
-            "prob": 0.0014
+            "logprob": -6.6562,
+            "prob": 0.0013
           },
           {
             "token": "ý",
             "token_id": 20195,
-            "logprob": -6.7188,
-            "prob": 0.0012
+            "logprob": -6.8438,
+            "prob": 0.0011
           },
           {
             "token": "ým",
             "token_id": 100434,
-            "logprob": -7.4062,
+            "logprob": -7.4688,
             "prob": 0.0006
           },
           {
             "token": "ík",
             "token_id": 111086,
-            "logprob": -7.9688,
-            "prob": 0.0003
+            "logprob": -7.9062,
+            "prob": 0.0004
           },
           {
             "token": "ost",
@@ -429,7 +445,7 @@
           {
             "token": "im",
             "token_id": 318,
-            "logprob": -8.4375,
+            "logprob": -8.375,
             "prob": 0.0002
           }
         ]
@@ -442,8 +458,11 @@
     },
     {
       "step": 4,
-      "input_text": "Hlavní město Česka je<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nHlavním",
+      "input_text": "<|start_header_id|>user<|end_header_id|>Hlavní město Česka je<|eot_id|><|start_header_id|>assistant<|end_header_id|>Hlavním",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "H",
         "l",
         "avn",
@@ -456,13 +475,15 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "H",
         "l",
         "avn",
         "ím"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         39,
         75,
         31697,
@@ -475,7 +496,6 @@
         128006,
         78191,
         128007,
-        271,
         39,
         75,
         31697,
@@ -487,62 +507,62 @@
           {
             "token": "Ġmě",
             "token_id": 100729,
-            "logprob": -0.7344,
-            "prob": 0.4805
+            "logprob": -0.7188,
+            "prob": 0.4863
           },
           {
             "token": "Ġměstě",
             "token_id": 117290,
-            "logprob": -1.9844,
-            "prob": 0.1377
+            "logprob": -2.0312,
+            "prob": 0.1309
           },
           {
             "token": "Ġměsto",
             "token_id": 116007,
-            "logprob": -2.6094,
-            "prob": 0.0737
+            "logprob": -2.6562,
+            "prob": 0.0703
           },
           {
             "token": "Ġmest",
             "token_id": 61113,
-            "logprob": -3.1719,
-            "prob": 0.042
+            "logprob": -3.2188,
+            "prob": 0.04
           },
           {
             "token": "-m",
             "token_id": 1474,
-            "logprob": -3.6719,
-            "prob": 0.0254
+            "logprob": -3.5938,
+            "prob": 0.0275
           },
           {
             "token": "Ġměst",
             "token_id": 102838,
-            "logprob": -3.9219,
-            "prob": 0.0198
+            "logprob": -3.9062,
+            "prob": 0.0201
           },
           {
             "token": "Ġm",
             "token_id": 296,
             "logprob": -4.0312,
-            "prob": 0.0175
-          },
-          {
-            "token": "Ġmé",
-            "token_id": 32118,
-            "logprob": -4.7812,
-            "prob": 0.0082
+            "prob": 0.0177
           },
           {
             "token": "ě",
             "token_id": 22161,
             "logprob": -4.8438,
-            "prob": 0.0078
+            "prob": 0.0079
+          },
+          {
+            "token": "Ġmé",
+            "token_id": 32118,
+            "logprob": -4.8438,
+            "prob": 0.0079
           },
           {
             "token": "ĠMěst",
             "token_id": 115236,
             "logprob": -5.0312,
-            "prob": 0.0064
+            "prob": 0.0065
           }
         ]
       },
@@ -554,8 +574,11 @@
     },
     {
       "step": 5,
-      "input_text": "Hlavní město Česka je<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nHlavním mě",
+      "input_text": "<|start_header_id|>user<|end_header_id|>Hlavní město Česka je<|eot_id|><|start_header_id|>assistant<|end_header_id|>Hlavním mě",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "H",
         "l",
         "avn",
@@ -568,7 +591,6 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "H",
         "l",
         "avn",
@@ -576,6 +598,9 @@
         "Ġmě"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         39,
         75,
         31697,
@@ -588,7 +613,6 @@
         128006,
         78191,
         128007,
-        271,
         39,
         75,
         31697,
@@ -601,14 +625,14 @@
           {
             "token": "stem",
             "token_id": 65188,
-            "logprob": -0.0195,
+            "logprob": -0.0178,
             "prob": 0.9805
           },
           {
             "token": "st",
             "token_id": 267,
-            "logprob": -4.2812,
-            "prob": 0.014
+            "logprob": -4.4062,
+            "prob": 0.0124
           },
           {
             "token": "sty",
@@ -619,19 +643,19 @@
           {
             "token": "sten",
             "token_id": 16172,
-            "logprob": -7.2188,
+            "logprob": -7.2812,
             "prob": 0.0007
           },
           {
             "token": "stu",
             "token_id": 61782,
-            "logprob": -7.8438,
+            "logprob": -7.9062,
             "prob": 0.0004
           },
           {
             "token": "stk",
             "token_id": 76409,
-            "logprob": -8.1875,
+            "logprob": -8.25,
             "prob": 0.0003
           },
           {
@@ -643,7 +667,7 @@
           {
             "token": "ром",
             "token_id": 100908,
-            "logprob": -8.5625,
+            "logprob": -8.625,
             "prob": 0.0002
           },
           {
@@ -655,7 +679,7 @@
           {
             "token": "rem",
             "token_id": 1864,
-            "logprob": -9.25,
+            "logprob": -9.3125,
             "prob": 0.0001
           }
         ]
@@ -668,8 +692,11 @@
     },
     {
       "step": 6,
-      "input_text": "Hlavní město Česka je<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nHlavním městem",
+      "input_text": "<|start_header_id|>user<|end_header_id|>Hlavní město Česka je<|eot_id|><|start_header_id|>assistant<|end_header_id|>Hlavním městem",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "H",
         "l",
         "avn",
@@ -682,7 +709,6 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "H",
         "l",
         "avn",
@@ -691,6 +717,9 @@
         "stem"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         39,
         75,
         31697,
@@ -703,7 +732,6 @@
         128006,
         78191,
         128007,
-        271,
         39,
         75,
         31697,
@@ -723,32 +751,32 @@
           {
             "token": "ĠČeské",
             "token_id": 107358,
-            "logprob": -1.7266,
-            "prob": 0.1777
+            "logprob": -1.7891,
+            "prob": 0.167
           },
           {
             "token": "ĠČ",
             "token_id": 100713,
-            "logprob": -2.5938,
-            "prob": 0.0742
+            "logprob": -2.5469,
+            "prob": 0.0791
           },
           {
             "token": "ĠCzech",
             "token_id": 34250,
-            "logprob": -2.7812,
-            "prob": 0.0615
+            "logprob": -2.8594,
+            "prob": 0.0576
           },
           {
             "token": "ĠČesko",
             "token_id": 116005,
-            "logprob": -3.2188,
+            "logprob": -3.2344,
             "prob": 0.0398
           },
           {
             "token": "ĠČech",
             "token_id": 115899,
-            "logprob": -3.5938,
-            "prob": 0.0273
+            "logprob": -3.6094,
+            "prob": 0.0272
           },
           {
             "token": "ĠČR",
@@ -763,16 +791,16 @@
             "prob": 0.0137
           },
           {
-            "token": "ĠCộng",
-            "token_id": 116657,
+            "token": "Ġje",
+            "token_id": 4864,
             "logprob": -4.875,
             "prob": 0.0076
           },
           {
-            "token": "ĠČeská",
-            "token_id": 116777,
-            "logprob": -4.9062,
-            "prob": 0.0074
+            "token": "ĠCộng",
+            "token_id": 116657,
+            "logprob": -4.875,
+            "prob": 0.0076
           }
         ]
       },
@@ -784,8 +812,11 @@
     },
     {
       "step": 7,
-      "input_text": "Hlavní město Česka je<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nHlavním městem Čes",
+      "input_text": "<|start_header_id|>user<|end_header_id|>Hlavní město Česka je<|eot_id|><|start_header_id|>assistant<|end_header_id|>Hlavním městem Čes",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "H",
         "l",
         "avn",
@@ -798,7 +829,6 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "H",
         "l",
         "avn",
@@ -808,6 +838,9 @@
         "ĠČes"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         39,
         75,
         31697,
@@ -820,7 +853,6 @@
         128006,
         78191,
         128007,
-        271,
         39,
         75,
         31697,
@@ -835,14 +867,14 @@
           {
             "token": "ka",
             "token_id": 4657,
-            "logprob": -0.0109,
+            "logprob": -0.0099,
             "prob": 0.9883
           },
           {
             "token": "kos",
             "token_id": 57778,
-            "logprob": -6.5,
-            "prob": 0.0015
+            "logprob": -6.6875,
+            "prob": 0.0012
           },
           {
             "token": "KA",
@@ -859,26 +891,26 @@
           {
             "token": "ky",
             "token_id": 8050,
-            "logprob": -7.3125,
-            "prob": 0.0007
+            "logprob": -7.5,
+            "prob": 0.0005
           },
           {
             "token": "ká",
             "token_id": 102868,
-            "logprob": -7.375,
-            "prob": 0.0006
+            "logprob": -7.5,
+            "prob": 0.0005
           },
           {
             "token": "kom",
             "token_id": 22873,
-            "logprob": -7.875,
-            "prob": 0.0004
+            "logprob": -8.0,
+            "prob": 0.0003
           },
           {
             "token": "ke",
             "token_id": 441,
-            "logprob": -7.875,
-            "prob": 0.0004
+            "logprob": -8.0,
+            "prob": 0.0003
           },
           {
             "token": "kok",
@@ -889,7 +921,7 @@
           {
             "token": "kes",
             "token_id": 12841,
-            "logprob": -8.3125,
+            "logprob": -8.4375,
             "prob": 0.0002
           }
         ]
@@ -902,8 +934,11 @@
     },
     {
       "step": 8,
-      "input_text": "Hlavní město Česka je<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nHlavním městem Česka",
+      "input_text": "<|start_header_id|>user<|end_header_id|>Hlavní město Česka je<|eot_id|><|start_header_id|>assistant<|end_header_id|>Hlavním městem Česka",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "H",
         "l",
         "avn",
@@ -916,7 +951,6 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "H",
         "l",
         "avn",
@@ -927,6 +961,9 @@
         "ka"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         39,
         75,
         31697,
@@ -939,7 +976,6 @@
         128006,
         78191,
         128007,
-        271,
         39,
         75,
         31697,
@@ -955,20 +991,20 @@
           {
             "token": "Ġje",
             "token_id": 4864,
-            "logprob": -0.0269,
+            "logprob": -0.0281,
             "prob": 0.9727
           },
           {
             "token": "Ġjest",
             "token_id": 13599,
-            "logprob": -5.9688,
-            "prob": 0.0026
+            "logprob": -6.0312,
+            "prob": 0.0024
           },
           {
             "token": "Ġse",
             "token_id": 513,
-            "logprob": -6.3438,
-            "prob": 0.0018
+            "logprob": -6.2188,
+            "prob": 0.002
           },
           {
             "token": "Ġjsou",
@@ -979,37 +1015,37 @@
           {
             "token": "Ġmá",
             "token_id": 29830,
-            "logprob": -7.625,
-            "prob": 0.0005
+            "logprob": -7.5,
+            "prob": 0.0006
           },
           {
             "token": "Ġa",
             "token_id": 264,
-            "logprob": -7.7812,
-            "prob": 0.0004
+            "logprob": -7.6562,
+            "prob": 0.0005
           },
           {
             "token": "Ġ(",
             "token_id": 320,
-            "logprob": -7.8438,
+            "logprob": -7.75,
             "prob": 0.0004
           },
           {
             "token": "čka",
             "token_id": 105710,
-            "logprob": -7.875,
+            "logprob": -7.8125,
             "prob": 0.0004
-          },
-          {
-            "token": "Ġrepublika",
-            "token_id": 124691,
-            "logprob": -8.125,
-            "prob": 0.0003
           },
           {
             "token": "Ġnení",
             "token_id": 103237,
-            "logprob": -8.125,
+            "logprob": -8.0625,
+            "prob": 0.0003
+          },
+          {
+            "token": "Ġrepublika",
+            "token_id": 124691,
+            "logprob": -8.0625,
             "prob": 0.0003
           }
         ]
@@ -1022,8 +1058,11 @@
     },
     {
       "step": 9,
-      "input_text": "Hlavní město Česka je<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nHlavním městem Česka je",
+      "input_text": "<|start_header_id|>user<|end_header_id|>Hlavní město Česka je<|eot_id|><|start_header_id|>assistant<|end_header_id|>Hlavním městem Česka je",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "H",
         "l",
         "avn",
@@ -1036,7 +1075,6 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "H",
         "l",
         "avn",
@@ -1048,6 +1086,9 @@
         "Ġje"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         39,
         75,
         31697,
@@ -1060,7 +1101,6 @@
         128006,
         78191,
         128007,
-        271,
         39,
         75,
         31697,
@@ -1077,62 +1117,62 @@
           {
             "token": "ĠPraha",
             "token_id": 104804,
-            "logprob": -1.2969,
-            "prob": 0.2734
+            "logprob": -1.3359,
+            "prob": 0.2617
           },
           {
             "token": "ĠBr",
             "token_id": 3320,
-            "logprob": -1.5469,
-            "prob": 0.2129
+            "logprob": -1.5234,
+            "prob": 0.2178
           },
           {
             "token": "ĠBrno",
             "token_id": 115358,
-            "logprob": -1.7969,
-            "prob": 0.166
+            "logprob": -1.7734,
+            "prob": 0.1689
           },
           {
             "token": "ĠPraze",
             "token_id": 111651,
-            "logprob": -3.1719,
-            "prob": 0.042
+            "logprob": -3.2188,
+            "prob": 0.0403
           },
           {
             "token": "ĠPra",
             "token_id": 41465,
-            "logprob": -3.2969,
-            "prob": 0.0371
+            "logprob": -3.3438,
+            "prob": 0.0354
           },
           {
             "token": "ĠPrague",
             "token_id": 68389,
-            "logprob": -3.5469,
-            "prob": 0.0289
+            "logprob": -3.5312,
+            "prob": 0.0294
           },
           {
             "token": "ĠP",
             "token_id": 393,
             "logprob": -4.0312,
-            "prob": 0.0175
+            "prob": 0.0178
           },
           {
             "token": "ĠPr",
             "token_id": 2394,
-            "logprob": -4.4688,
-            "prob": 0.0113
+            "logprob": -4.4062,
+            "prob": 0.0123
           },
           {
             "token": "ĠO",
             "token_id": 507,
-            "logprob": -4.5938,
-            "prob": 0.0099
+            "logprob": -4.5312,
+            "prob": 0.0108
           },
           {
             "token": "ĠČ",
             "token_id": 100713,
-            "logprob": -4.6562,
-            "prob": 0.0094
+            "logprob": -4.5938,
+            "prob": 0.0102
           }
         ]
       },
@@ -1144,8 +1184,11 @@
     },
     {
       "step": 10,
-      "input_text": "Hlavní město Česka je<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nHlavním městem Česka je Praha",
+      "input_text": "<|start_header_id|>user<|end_header_id|>Hlavní město Česka je<|eot_id|><|start_header_id|>assistant<|end_header_id|>Hlavním městem Česka je Praha",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "H",
         "l",
         "avn",
@@ -1158,7 +1201,6 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "H",
         "l",
         "avn",
@@ -1171,6 +1213,9 @@
         "ĠPraha"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         39,
         75,
         31697,
@@ -1183,7 +1228,6 @@
         128006,
         78191,
         128007,
-        271,
         39,
         75,
         31697,
@@ -1201,49 +1245,49 @@
           {
             "token": ".",
             "token_id": 13,
-            "logprob": -0.042,
+            "logprob": -0.0444,
             "prob": 0.957
           },
           {
             "token": ",",
             "token_id": 11,
-            "logprob": -3.6719,
-            "prob": 0.0255
+            "logprob": -3.6094,
+            "prob": 0.0271
           },
           {
             "token": "Ġ(",
             "token_id": 320,
-            "logprob": -5.3438,
-            "prob": 0.0047
+            "logprob": -5.2188,
+            "prob": 0.0053
           },
           {
             "token": "<|eot_id|>",
             "token_id": 128009,
-            "logprob": -5.7188,
-            "prob": 0.0033
+            "logprob": -5.8438,
+            "prob": 0.0029
           },
           {
             "token": ".\n\n",
             "token_id": 382,
-            "logprob": -6.6562,
-            "prob": 0.0013
+            "logprob": -6.5312,
+            "prob": 0.0014
           },
           {
             "token": "Ġa",
             "token_id": 264,
-            "logprob": -6.8438,
-            "prob": 0.0011
+            "logprob": -6.6562,
+            "prob": 0.0013
           },
           {
             "token": "!",
             "token_id": 0,
-            "logprob": -8.375,
-            "prob": 0.0002
+            "logprob": -8.0625,
+            "prob": 0.0003
           },
           {
             "token": "Ġ-",
             "token_id": 482,
-            "logprob": -8.5,
+            "logprob": -8.3125,
             "prob": 0.0002
           },
           {
@@ -1253,9 +1297,9 @@
             "prob": 0.0001
           },
           {
-            "token": "Ġs",
-            "token_id": 274,
-            "logprob": -9.3125,
+            "token": "..",
+            "token_id": 497,
+            "logprob": -9.25,
             "prob": 0.0001
           }
         ]
@@ -1268,8 +1312,11 @@
     },
     {
       "step": 11,
-      "input_text": "Hlavní město Česka je<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nHlavním městem Česka je Praha.",
+      "input_text": "<|start_header_id|>user<|end_header_id|>Hlavní město Česka je<|eot_id|><|start_header_id|>assistant<|end_header_id|>Hlavním městem Česka je Praha.",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "H",
         "l",
         "avn",
@@ -1282,7 +1329,6 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "H",
         "l",
         "avn",
@@ -1296,6 +1342,9 @@
         "."
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         39,
         75,
         31697,
@@ -1308,7 +1357,6 @@
         128006,
         78191,
         128007,
-        271,
         39,
         75,
         31697,
@@ -1327,62 +1375,62 @@
           {
             "token": "<|eot_id|>",
             "token_id": 128009,
-            "logprob": -0.5195,
-            "prob": 0.5938
+            "logprob": -0.4941,
+            "prob": 0.6094
           },
           {
             "token": "ĠPraha",
             "token_id": 104804,
-            "logprob": -2.3281,
-            "prob": 0.0972
+            "logprob": -2.4375,
+            "prob": 0.0879
           },
           {
             "token": "ĠJe",
             "token_id": 14465,
-            "logprob": -2.9531,
-            "prob": 0.052
+            "logprob": -3.0,
+            "prob": 0.05
           },
           {
             "token": "ĠTo",
             "token_id": 2057,
-            "logprob": -4.9062,
-            "prob": 0.0075
+            "logprob": -4.9375,
+            "prob": 0.0072
           },
           {
             "token": "ĠPro",
             "token_id": 1322,
-            "logprob": -4.9688,
-            "prob": 0.007
+            "logprob": -4.9375,
+            "prob": 0.0072
           },
           {
             "token": "ĠZ",
             "token_id": 1901,
-            "logprob": -5.0312,
-            "prob": 0.0066
+            "logprob": -5.0,
+            "prob": 0.0068
           },
           {
             "token": "ĠPr",
             "token_id": 2394,
-            "logprob": -5.0312,
-            "prob": 0.0066
+            "logprob": -5.0625,
+            "prob": 0.0064
           },
           {
             "token": "ĠV",
             "token_id": 650,
-            "logprob": -5.1562,
-            "prob": 0.0058
+            "logprob": -5.0625,
+            "prob": 0.0064
           },
           {
             "token": "ĠO",
             "token_id": 507,
-            "logprob": -5.4062,
-            "prob": 0.0045
+            "logprob": -5.375,
+            "prob": 0.0047
           },
           {
             "token": "ĠS",
             "token_id": 328,
-            "logprob": -5.4688,
-            "prob": 0.0043
+            "logprob": -5.4375,
+            "prob": 0.0044
           }
         ]
       },

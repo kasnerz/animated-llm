@@ -1,5 +1,5 @@
 {
-  "id": "generated_20251203_120618",
+  "id": "generated_20251204_095031",
   "prompt": "Tell me a joke",
   "language": "en",
   "temperature": 1.0,
@@ -14,8 +14,11 @@
   "generation_steps": [
     {
       "step": 0,
-      "input_text": "Tell me a joke<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+      "input_text": "<|start_header_id|>user<|end_header_id|>Tell me a joke<|eot_id|><|start_header_id|>assistant<|end_header_id|>",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "Tell",
         "Ġme",
         "Ġa",
@@ -23,10 +26,12 @@
         "<|eot_id|>",
         "<|start_header_id|>",
         "assistant",
-        "<|end_header_id|>",
-        "\n\n"
+        "<|end_header_id|>"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         41551,
         757,
         264,
@@ -34,8 +39,7 @@
         128009,
         128006,
         78191,
-        128007,
-        271
+        128007
       ],
       "output_distribution": {
         "top_k": 10,
@@ -43,50 +47,50 @@
           {
             "token": "A",
             "token_id": 32,
-            "logprob": -0.0977,
-            "prob": 0.9062
+            "logprob": -0.1157,
+            "prob": 0.8906
           },
           {
             "token": "Here",
             "token_id": 8586,
-            "logprob": -3.3438,
-            "prob": 0.0352
+            "logprob": -2.8594,
+            "prob": 0.0569
           },
           {
             "token": "Why",
             "token_id": 10445,
-            "logprob": -3.4688,
-            "prob": 0.031
+            "logprob": -3.6094,
+            "prob": 0.0269
           },
           {
             "token": "What",
             "token_id": 3923,
-            "logprob": -3.9688,
-            "prob": 0.0188
+            "logprob": -4.125,
+            "prob": 0.0164
           },
           {
             "token": "I",
             "token_id": 40,
-            "logprob": -5.9688,
-            "prob": 0.0025
+            "logprob": -5.625,
+            "prob": 0.0036
           },
           {
             "token": "One",
             "token_id": 4054,
-            "logprob": -6.0938,
-            "prob": 0.0022
-          },
-          {
-            "token": "Two",
-            "token_id": 11874,
-            "logprob": -6.7188,
-            "prob": 0.0012
+            "logprob": -6.0,
+            "prob": 0.0025
           },
           {
             "token": "An",
             "token_id": 2127,
-            "logprob": -6.8438,
-            "prob": 0.0011
+            "logprob": -7.0,
+            "prob": 0.0009
+          },
+          {
+            "token": "Two",
+            "token_id": 11874,
+            "logprob": -7.0,
+            "prob": 0.0009
           },
           {
             "token": "You",
@@ -97,7 +101,7 @@
           {
             "token": "There",
             "token_id": 3947,
-            "logprob": -9.4375,
+            "logprob": -9.25,
             "prob": 0.0001
           }
         ]
@@ -110,8 +114,11 @@
     },
     {
       "step": 1,
-      "input_text": "Tell me a joke<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nA",
+      "input_text": "<|start_header_id|>user<|end_header_id|>Tell me a joke<|eot_id|><|start_header_id|>assistant<|end_header_id|>A",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "Tell",
         "Ġme",
         "Ġa",
@@ -120,10 +127,12 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "A"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         41551,
         757,
         264,
@@ -132,7 +141,6 @@
         128006,
         78191,
         128007,
-        271,
         32
       ],
       "output_distribution": {
@@ -141,61 +149,61 @@
           {
             "token": "Ġman",
             "token_id": 893,
-            "logprob": -0.0052,
-            "prob": 0.9961
-          },
-          {
-            "token": "Ġfriend",
-            "token_id": 4333,
-            "logprob": -7.5,
-            "prob": 0.0005
+            "logprob": -0.0063,
+            "prob": 0.9922
           },
           {
             "token": "Ġchicken",
             "token_id": 16553,
-            "logprob": -7.625,
-            "prob": 0.0005
+            "logprob": -7.3125,
+            "prob": 0.0007
+          },
+          {
+            "token": "Ġfriend",
+            "token_id": 4333,
+            "logprob": -7.375,
+            "prob": 0.0006
           },
           {
             "token": "Ġgroup",
             "token_id": 1912,
-            "logprob": -8.0625,
-            "prob": 0.0003
+            "logprob": -7.8125,
+            "prob": 0.0004
           },
           {
             "token": "Ġfarmer",
             "token_id": 37500,
-            "logprob": -8.1875,
+            "logprob": -8.0,
             "prob": 0.0003
           },
           {
             "token": "Ġguy",
             "token_id": 7564,
-            "logprob": -8.25,
+            "logprob": -8.0625,
             "prob": 0.0003
           },
           {
             "token": "Ġchef",
             "token_id": 30806,
-            "logprob": -8.25,
+            "logprob": -8.0625,
             "prob": 0.0003
           },
           {
             "token": "Ġwoman",
             "token_id": 5333,
+            "logprob": -8.3125,
+            "prob": 0.0002
+          },
+          {
+            "token": "Ġperson",
+            "token_id": 1732,
             "logprob": -8.4375,
             "prob": 0.0002
           },
           {
             "token": "Ġcat",
             "token_id": 8415,
-            "logprob": -8.5625,
-            "prob": 0.0002
-          },
-          {
-            "token": "Ġperson",
-            "token_id": 1732,
-            "logprob": -8.625,
+            "logprob": -8.4375,
             "prob": 0.0002
           }
         ]
@@ -208,8 +216,11 @@
     },
     {
       "step": 2,
-      "input_text": "Tell me a joke<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nA man",
+      "input_text": "<|start_header_id|>user<|end_header_id|>Tell me a joke<|eot_id|><|start_header_id|>assistant<|end_header_id|>A man",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "Tell",
         "Ġme",
         "Ġa",
@@ -218,11 +229,13 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "A",
         "Ġman"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         41551,
         757,
         264,
@@ -231,7 +244,6 @@
         128006,
         78191,
         128007,
-        271,
         32,
         893
       ],
@@ -241,14 +253,20 @@
           {
             "token": "Ġwalked",
             "token_id": 15203,
-            "logprob": -0.084,
+            "logprob": -0.0845,
             "prob": 0.918
           },
           {
             "token": "Ġwalks",
             "token_id": 23291,
             "logprob": -2.5781,
-            "prob": 0.0757
+            "prob": 0.0752
+          },
+          {
+            "token": "Ġwent",
+            "token_id": 4024,
+            "logprob": -7.1562,
+            "prob": 0.0008
           },
           {
             "token": "Ġis",
@@ -257,22 +275,16 @@
             "prob": 0.0007
           },
           {
-            "token": "Ġwent",
-            "token_id": 4024,
-            "logprob": -7.2188,
-            "prob": 0.0007
-          },
-          {
             "token": "Ġwalking",
             "token_id": 11689,
-            "logprob": -7.2812,
+            "logprob": -7.3438,
             "prob": 0.0007
           },
           {
             "token": "Ġdecided",
             "token_id": 6773,
-            "logprob": -7.5938,
-            "prob": 0.0005
+            "logprob": -7.4062,
+            "prob": 0.0006
           },
           {
             "token": "Ġput",
@@ -281,14 +293,14 @@
             "prob": 0.0003
           },
           {
-            "token": "Ġwalk",
-            "token_id": 4321,
-            "logprob": -8.5625,
+            "token": "'s",
+            "token_id": 596,
+            "logprob": -8.75,
             "prob": 0.0002
           },
           {
-            "token": "'s",
-            "token_id": 596,
+            "token": "Ġwalk",
+            "token_id": 4321,
             "logprob": -8.75,
             "prob": 0.0002
           },
@@ -308,8 +320,11 @@
     },
     {
       "step": 3,
-      "input_text": "Tell me a joke<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nA man walked",
+      "input_text": "<|start_header_id|>user<|end_header_id|>Tell me a joke<|eot_id|><|start_header_id|>assistant<|end_header_id|>A man walked",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "Tell",
         "Ġme",
         "Ġa",
@@ -318,12 +333,14 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "A",
         "Ġman",
         "Ġwalked"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         41551,
         757,
         264,
@@ -332,7 +349,6 @@
         128006,
         78191,
         128007,
-        271,
         32,
         893,
         15203
@@ -355,49 +371,49 @@
           {
             "token": "Ġin",
             "token_id": 304,
-            "logprob": -10.9375,
-            "prob": 0.0
-          },
-          {
-            "token": "into",
-            "token_id": 18614,
-            "logprob": -11.25,
+            "logprob": -10.75,
             "prob": 0.0
           },
           {
             "token": "Ġdown",
             "token_id": 1523,
-            "logprob": -11.5,
+            "logprob": -11.1875,
             "prob": 0.0
           },
           {
-            "token": "Ġhis",
-            "token_id": 813,
-            "logprob": -12.25,
-            "prob": 0.0
-          },
-          {
-            "token": "Ġacross",
-            "token_id": 4028,
-            "logprob": -12.3125,
+            "token": "into",
+            "token_id": 18614,
+            "logprob": -11.3125,
             "prob": 0.0
           },
           {
             "token": "Ġthrough",
             "token_id": 1555,
-            "logprob": -12.3125,
+            "logprob": -12.0,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġhis",
+            "token_id": 813,
+            "logprob": -12.0,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġacross",
+            "token_id": 4028,
+            "logprob": -12.125,
             "prob": 0.0
           },
           {
             "token": "Ġup",
             "token_id": 709,
-            "logprob": -12.75,
+            "logprob": -12.4375,
             "prob": 0.0
           },
           {
             "token": "Ġuphill",
             "token_id": 77758,
-            "logprob": -12.8125,
+            "logprob": -12.6875,
             "prob": 0.0
           }
         ]
@@ -410,8 +426,11 @@
     },
     {
       "step": 4,
-      "input_text": "Tell me a joke<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nA man walked into",
+      "input_text": "<|start_header_id|>user<|end_header_id|>Tell me a joke<|eot_id|><|start_header_id|>assistant<|end_header_id|>A man walked into",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "Tell",
         "Ġme",
         "Ġa",
@@ -420,13 +439,15 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "A",
         "Ġman",
         "Ġwalked",
         "Ġinto"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         41551,
         757,
         264,
@@ -435,7 +456,6 @@
         128006,
         78191,
         128007,
-        271,
         32,
         893,
         15203,
@@ -447,61 +467,61 @@
           {
             "token": "Ġa",
             "token_id": 264,
-            "logprob": -0.0004,
+            "logprob": -0.0007,
             "prob": 1.0
           },
           {
             "token": "Ġan",
             "token_id": 459,
-            "logprob": -8.125,
-            "prob": 0.0003
+            "logprob": -7.75,
+            "prob": 0.0004
           },
           {
             "token": "Ġthe",
             "token_id": 279,
-            "logprob": -9.8125,
+            "logprob": -9.4375,
             "prob": 0.0001
           },
           {
             "token": "Ġhis",
             "token_id": 813,
-            "logprob": -10.0625,
-            "prob": 0.0
+            "logprob": -9.5,
+            "prob": 0.0001
           },
           {
             "token": "Ġtherapy",
             "token_id": 15419,
-            "logprob": -10.875,
+            "logprob": -10.625,
             "prob": 0.0
           },
           {
             "token": "ĠMcDonald",
             "token_id": 32014,
-            "logprob": -12.0625,
+            "logprob": -11.8125,
             "prob": 0.0
           },
           {
             "token": "ĠA",
             "token_id": 362,
-            "logprob": -12.3125,
+            "logprob": -12.1875,
             "prob": 0.0
           },
           {
             "token": "Ġ",
             "token_id": 220,
-            "logprob": -13.375,
+            "logprob": -13.125,
             "prob": 0.0
           },
           {
             "token": "Ġwhy",
             "token_id": 3249,
-            "logprob": -13.5,
+            "logprob": -13.25,
             "prob": 0.0
           },
           {
             "token": "Ġlibrary",
             "token_id": 6875,
-            "logprob": -14.0,
+            "logprob": -13.6875,
             "prob": 0.0
           }
         ]
@@ -514,8 +534,11 @@
     },
     {
       "step": 5,
-      "input_text": "Tell me a joke<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nA man walked into a",
+      "input_text": "<|start_header_id|>user<|end_header_id|>Tell me a joke<|eot_id|><|start_header_id|>assistant<|end_header_id|>A man walked into a",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "Tell",
         "Ġme",
         "Ġa",
@@ -524,7 +547,6 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "A",
         "Ġman",
         "Ġwalked",
@@ -532,6 +554,9 @@
         "Ġa"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         41551,
         757,
         264,
@@ -540,7 +565,6 @@
         128006,
         78191,
         128007,
-        271,
         32,
         893,
         15203,
@@ -553,61 +577,61 @@
           {
             "token": "Ġlibrary",
             "token_id": 6875,
-            "logprob": -0.0038,
+            "logprob": -0.0051,
             "prob": 0.9961
           },
           {
             "token": "Ġbar",
             "token_id": 3703,
-            "logprob": -6.0,
-            "prob": 0.0025
+            "logprob": -5.625,
+            "prob": 0.0036
           },
           {
             "token": "Ġdoctor",
             "token_id": 10896,
-            "logprob": -8.0,
-            "prob": 0.0003
+            "logprob": -7.75,
+            "prob": 0.0004
           },
           {
             "token": "ĠLibrary",
             "token_id": 11896,
-            "logprob": -8.125,
+            "logprob": -8.1875,
             "prob": 0.0003
           },
           {
             "token": "Ġlibrarian",
             "token_id": 95307,
-            "logprob": -8.75,
+            "logprob": -8.6875,
             "prob": 0.0002
           },
           {
             "token": "library",
             "token_id": 18556,
-            "logprob": -9.0625,
+            "logprob": -9.1875,
             "prob": 0.0001
           },
           {
             "token": "Ġpub",
             "token_id": 6814,
-            "logprob": -9.75,
+            "logprob": -9.375,
             "prob": 0.0001
-          },
-          {
-            "token": "Ġbakery",
-            "token_id": 66244,
-            "logprob": -10.75,
-            "prob": 0.0
           },
           {
             "token": "Ġrestaurant",
             "token_id": 10960,
-            "logprob": -10.8125,
+            "logprob": -10.5,
             "prob": 0.0
           },
           {
             "token": "Ġtherapist",
             "token_id": 42863,
-            "logprob": -10.875,
+            "logprob": -10.5625,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġbakery",
+            "token_id": 66244,
+            "logprob": -10.5625,
             "prob": 0.0
           }
         ]
@@ -620,8 +644,11 @@
     },
     {
       "step": 6,
-      "input_text": "Tell me a joke<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nA man walked into a library",
+      "input_text": "<|start_header_id|>user<|end_header_id|>Tell me a joke<|eot_id|><|start_header_id|>assistant<|end_header_id|>A man walked into a library",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "Tell",
         "Ġme",
         "Ġa",
@@ -630,7 +657,6 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "A",
         "Ġman",
         "Ġwalked",
@@ -639,6 +665,9 @@
         "Ġlibrary"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         41551,
         757,
         264,
@@ -647,7 +676,6 @@
         128006,
         78191,
         128007,
-        271,
         32,
         893,
         15203,
@@ -661,61 +689,61 @@
           {
             "token": "Ġand",
             "token_id": 323,
-            "logprob": -0.0006,
+            "logprob": -0.0007,
             "prob": 1.0
           },
           {
             "token": ".",
             "token_id": 13,
-            "logprob": -8.8125,
-            "prob": 0.0001
+            "logprob": -8.5625,
+            "prob": 0.0002
           },
           {
             "token": "Ġwearing",
             "token_id": 12512,
-            "logprob": -8.9375,
-            "prob": 0.0001
+            "logprob": -8.6875,
+            "prob": 0.0002
           },
           {
             "token": ",",
             "token_id": 11,
-            "logprob": -9.3125,
+            "logprob": -9.0625,
             "prob": 0.0001
           },
           {
             "token": "Ġlooking",
             "token_id": 3411,
-            "logprob": -10.125,
-            "prob": 0.0
+            "logprob": -9.875,
+            "prob": 0.0001
           },
           {
             "token": "Ġbecause",
             "token_id": 1606,
-            "logprob": -10.625,
+            "logprob": -10.5,
             "prob": 0.0
           },
           {
             "token": "Ġwith",
             "token_id": 449,
-            "logprob": -11.0,
+            "logprob": -10.8125,
             "prob": 0.0
           },
           {
             "token": "Ġto",
             "token_id": 311,
-            "logprob": -11.0,
+            "logprob": -10.875,
             "prob": 0.0
           },
           {
             "token": ".\n\n",
             "token_id": 382,
-            "logprob": -11.3125,
+            "logprob": -11.0,
             "prob": 0.0
           },
           {
             "token": "Ġlate",
             "token_id": 3389,
-            "logprob": -11.4375,
+            "logprob": -11.125,
             "prob": 0.0
           }
         ]
@@ -728,8 +756,11 @@
     },
     {
       "step": 7,
-      "input_text": "Tell me a joke<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nA man walked into a library and",
+      "input_text": "<|start_header_id|>user<|end_header_id|>Tell me a joke<|eot_id|><|start_header_id|>assistant<|end_header_id|>A man walked into a library and",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "Tell",
         "Ġme",
         "Ġa",
@@ -738,7 +769,6 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "A",
         "Ġman",
         "Ġwalked",
@@ -748,6 +778,9 @@
         "Ġand"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         41551,
         757,
         264,
@@ -756,7 +789,6 @@
         128006,
         78191,
         128007,
-        271,
         32,
         893,
         15203,
@@ -777,19 +809,19 @@
           {
             "token": "Ġasking",
             "token_id": 10371,
-            "logprob": -9.125,
+            "logprob": -9.25,
             "prob": 0.0001
           },
           {
             "token": "Ġasks",
             "token_id": 17501,
-            "logprob": -9.5,
+            "logprob": -9.625,
             "prob": 0.0001
           },
           {
             "token": "Ġask",
             "token_id": 2610,
-            "logprob": -9.75,
+            "logprob": -9.875,
             "prob": 0.0001
           },
           {
@@ -801,25 +833,25 @@
           {
             "token": "ĠAsked",
             "token_id": 53763,
-            "logprob": -10.125,
+            "logprob": -10.25,
             "prob": 0.0
           },
           {
             "token": "Ġsaid",
             "token_id": 1071,
-            "logprob": -10.8125,
+            "logprob": -10.5625,
             "prob": 0.0
           },
           {
             "token": "Ġsaw",
             "token_id": 5602,
-            "logprob": -11.4375,
+            "logprob": -11.125,
             "prob": 0.0
           },
           {
             "token": "Ġdemanded",
             "token_id": 30526,
-            "logprob": -12.0,
+            "logprob": -11.875,
             "prob": 0.0
           },
           {
@@ -838,8 +870,11 @@
     },
     {
       "step": 8,
-      "input_text": "Tell me a joke<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nA man walked into a library and asked",
+      "input_text": "<|start_header_id|>user<|end_header_id|>Tell me a joke<|eot_id|><|start_header_id|>assistant<|end_header_id|>A man walked into a library and asked",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "Tell",
         "Ġme",
         "Ġa",
@@ -848,7 +883,6 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "A",
         "Ġman",
         "Ġwalked",
@@ -859,6 +893,9 @@
         "Ġasked"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         41551,
         757,
         264,
@@ -867,7 +904,6 @@
         128006,
         78191,
         128007,
-        271,
         32,
         893,
         15203,
@@ -883,61 +919,61 @@
           {
             "token": "Ġthe",
             "token_id": 279,
-            "logprob": -0.0015,
+            "logprob": -0.0017,
             "prob": 1.0
           },
           {
             "token": ",",
             "token_id": 11,
-            "logprob": -6.625,
-            "prob": 0.0013
+            "logprob": -6.5,
+            "prob": 0.0015
           },
           {
             "token": "Ġa",
             "token_id": 264,
-            "logprob": -9.375,
+            "logprob": -9.1875,
             "prob": 0.0001
           },
           {
             "token": "Ġfor",
             "token_id": 369,
-            "logprob": -9.625,
+            "logprob": -9.5,
             "prob": 0.0001
           },
           {
             "token": "Ġhis",
             "token_id": 813,
-            "logprob": -12.0,
+            "logprob": -11.875,
             "prob": 0.0
           },
           {
             "token": "Ġto",
             "token_id": 311,
-            "logprob": -12.6875,
+            "logprob": -12.5625,
             "prob": 0.0
           },
           {
             "token": "Ġpolitely",
             "token_id": 81867,
-            "logprob": -12.9375,
+            "logprob": -12.8125,
             "prob": 0.0
           },
           {
             "token": "Ġan",
             "token_id": 459,
-            "logprob": -13.0,
+            "logprob": -12.875,
             "prob": 0.0
           },
           {
             "token": "Ġif",
             "token_id": 422,
-            "logprob": -13.25,
+            "logprob": -13.0625,
             "prob": 0.0
           },
           {
-            "token": "Ġhim",
-            "token_id": 1461,
-            "logprob": -13.4375,
+            "token": "Ġnot",
+            "token_id": 539,
+            "logprob": -13.3125,
             "prob": 0.0
           }
         ]
@@ -950,8 +986,11 @@
     },
     {
       "step": 9,
-      "input_text": "Tell me a joke<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nA man walked into a library and asked the",
+      "input_text": "<|start_header_id|>user<|end_header_id|>Tell me a joke<|eot_id|><|start_header_id|>assistant<|end_header_id|>A man walked into a library and asked the",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "Tell",
         "Ġme",
         "Ġa",
@@ -960,7 +999,6 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "A",
         "Ġman",
         "Ġwalked",
@@ -972,6 +1010,9 @@
         "Ġthe"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         41551,
         757,
         264,
@@ -980,7 +1021,6 @@
         128006,
         78191,
         128007,
-        271,
         32,
         893,
         15203,
@@ -997,31 +1037,31 @@
           {
             "token": "Ġlibrarian",
             "token_id": 95307,
-            "logprob": -0.0013,
+            "logprob": -0.0012,
             "prob": 1.0
           },
           {
             "token": "Ġlibr",
             "token_id": 61459,
-            "logprob": -7.4375,
+            "logprob": -7.5,
             "prob": 0.0006
           },
           {
             "token": "ĠLib",
             "token_id": 5806,
-            "logprob": -8.125,
+            "logprob": -8.25,
             "prob": 0.0003
           },
           {
             "token": "Ġlibrary",
             "token_id": 6875,
-            "logprob": -9.6875,
+            "logprob": -9.75,
             "prob": 0.0001
           },
           {
             "token": "Ġstaff",
             "token_id": 5687,
-            "logprob": -10.0,
+            "logprob": -10.125,
             "prob": 0.0
           },
           {
@@ -1033,7 +1073,7 @@
           {
             "token": "Ġpatron",
             "token_id": 36380,
-            "logprob": -10.75,
+            "logprob": -10.8125,
             "prob": 0.0
           },
           {
@@ -1051,7 +1091,7 @@
           {
             "token": "Ġlib",
             "token_id": 3127,
-            "logprob": -11.3125,
+            "logprob": -11.4375,
             "prob": 0.0
           }
         ]
@@ -1064,8 +1104,11 @@
     },
     {
       "step": 10,
-      "input_text": "Tell me a joke<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nA man walked into a library and asked the librarian",
+      "input_text": "<|start_header_id|>user<|end_header_id|>Tell me a joke<|eot_id|><|start_header_id|>assistant<|end_header_id|>A man walked into a library and asked the librarian",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "Tell",
         "Ġme",
         "Ġa",
@@ -1074,7 +1117,6 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "A",
         "Ġman",
         "Ġwalked",
@@ -1087,6 +1129,9 @@
         "Ġlibrarian"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         41551,
         757,
         264,
@@ -1095,7 +1140,6 @@
         128006,
         78191,
         128007,
-        271,
         32,
         893,
         15203,
@@ -1117,57 +1161,57 @@
             "prob": 1.0
           },
           {
-            "token": ",\n\n",
-            "token_id": 3638,
+            "token": ":",
+            "token_id": 25,
             "logprob": -9.125,
             "prob": 0.0001
           },
           {
-            "token": ":",
-            "token_id": 25,
-            "logprob": -9.25,
-            "prob": 0.0001
-          },
-          {
-            "token": ",\n",
-            "token_id": 345,
-            "logprob": -9.875,
+            "token": ",\n\n",
+            "token_id": 3638,
+            "logprob": -9.1875,
             "prob": 0.0001
           },
           {
             "token": "Ġif",
             "token_id": 422,
-            "logprob": -10.0625,
+            "logprob": -9.875,
+            "prob": 0.0001
+          },
+          {
+            "token": ",\n",
+            "token_id": 345,
+            "logprob": -10.0,
             "prob": 0.0
           },
           {
             "token": "Ġfor",
             "token_id": 369,
-            "logprob": -10.5625,
+            "logprob": -10.25,
             "prob": 0.0
           },
           {
             "token": ":\n\n",
             "token_id": 1473,
-            "logprob": -11.0625,
+            "logprob": -10.8125,
             "prob": 0.0
           },
           {
             "token": "Ġto",
             "token_id": 311,
-            "logprob": -11.3125,
+            "logprob": -11.125,
             "prob": 0.0
           },
           {
             "token": "Ġhow",
             "token_id": 1268,
-            "logprob": -11.5,
+            "logprob": -11.375,
             "prob": 0.0
           },
           {
             "token": "Ġthe",
             "token_id": 279,
-            "logprob": -11.6875,
+            "logprob": -11.5625,
             "prob": 0.0
           }
         ]
@@ -1180,8 +1224,11 @@
     },
     {
       "step": 11,
-      "input_text": "Tell me a joke<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nA man walked into a library and asked the librarian,",
+      "input_text": "<|start_header_id|>user<|end_header_id|>Tell me a joke<|eot_id|><|start_header_id|>assistant<|end_header_id|>A man walked into a library and asked the librarian,",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "Tell",
         "Ġme",
         "Ġa",
@@ -1190,7 +1237,6 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "A",
         "Ġman",
         "Ġwalked",
@@ -1204,6 +1250,9 @@
         ","
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         41551,
         757,
         264,
@@ -1212,7 +1261,6 @@
         128006,
         78191,
         128007,
-        271,
         32,
         893,
         15203,
@@ -1231,37 +1279,37 @@
           {
             "token": "Ġ\"",
             "token_id": 330,
-            "logprob": -0.1279,
-            "prob": 0.8789
+            "logprob": -0.1436,
+            "prob": 0.8672
           },
           {
             "token": "Ġ'",
             "token_id": 364,
-            "logprob": -2.125,
-            "prob": 0.1191
+            "logprob": -2.0156,
+            "prob": 0.1328
           },
           {
             "token": "Ġ\n\n",
             "token_id": 4815,
-            "logprob": -7.75,
+            "logprob": -7.9062,
             "prob": 0.0004
           },
           {
             "token": "Ġ\"'",
             "token_id": 7326,
-            "logprob": -9.5,
-            "prob": 0.0001
-          },
-          {
-            "token": "Ġ",
-            "token_id": 220,
-            "logprob": -9.5,
+            "logprob": -9.375,
             "prob": 0.0001
           },
           {
             "token": "Ġ“",
             "token_id": 1054,
-            "logprob": -9.875,
+            "logprob": -9.75,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġ",
+            "token_id": 220,
+            "logprob": -9.75,
             "prob": 0.0001
           },
           {
@@ -1271,14 +1319,14 @@
             "prob": 0.0
           },
           {
-            "token": "Ġ\"(",
-            "token_id": 12262,
-            "logprob": -11.125,
+            "token": "Ġ‘",
+            "token_id": 3451,
+            "logprob": -11.0,
             "prob": 0.0
           },
           {
-            "token": "Ġ‘",
-            "token_id": 3451,
+            "token": "Ġ\"(",
+            "token_id": 12262,
             "logprob": -11.25,
             "prob": 0.0
           },
@@ -1298,8 +1346,11 @@
     },
     {
       "step": 12,
-      "input_text": "Tell me a joke<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nA man walked into a library and asked the librarian, \"",
+      "input_text": "<|start_header_id|>user<|end_header_id|>Tell me a joke<|eot_id|><|start_header_id|>assistant<|end_header_id|>A man walked into a library and asked the librarian, \"",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "Tell",
         "Ġme",
         "Ġa",
@@ -1308,7 +1359,6 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "A",
         "Ġman",
         "Ġwalked",
@@ -1323,6 +1373,9 @@
         "Ġ\""
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         41551,
         757,
         264,
@@ -1331,7 +1384,6 @@
         128006,
         78191,
         128007,
-        271,
         32,
         893,
         15203,
@@ -1363,49 +1415,49 @@
           {
             "token": "Does",
             "token_id": 22186,
-            "logprob": -8.75,
-            "prob": 0.0002
+            "logprob": -8.875,
+            "prob": 0.0001
           },
           {
             "token": "Can",
             "token_id": 6854,
-            "logprob": -9.5625,
-            "prob": 0.0001
-          },
-          {
-            "token": "Are",
-            "token_id": 11787,
-            "logprob": -9.6875,
+            "logprob": -9.4375,
             "prob": 0.0001
           },
           {
             "token": "I",
             "token_id": 40,
-            "logprob": -9.75,
+            "logprob": -9.625,
+            "prob": 0.0001
+          },
+          {
+            "token": "Are",
+            "token_id": 11787,
+            "logprob": -9.625,
             "prob": 0.0001
           },
           {
             "token": "If",
             "token_id": 2746,
-            "logprob": -9.875,
+            "logprob": -9.6875,
             "prob": 0.0001
           },
           {
             "token": "How",
             "token_id": 4438,
-            "logprob": -10.0625,
+            "logprob": -10.0,
             "prob": 0.0
           },
           {
             "token": "Did",
             "token_id": 7131,
-            "logprob": -10.0625,
+            "logprob": -10.125,
             "prob": 0.0
           },
           {
             "token": "Where",
             "token_id": 9241,
-            "logprob": -10.3125,
+            "logprob": -10.25,
             "prob": 0.0
           }
         ]
@@ -1418,8 +1470,11 @@
     },
     {
       "step": 13,
-      "input_text": "Tell me a joke<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nA man walked into a library and asked the librarian, \"Do",
+      "input_text": "<|start_header_id|>user<|end_header_id|>Tell me a joke<|eot_id|><|start_header_id|>assistant<|end_header_id|>A man walked into a library and asked the librarian, \"Do",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "Tell",
         "Ġme",
         "Ġa",
@@ -1428,7 +1483,6 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "A",
         "Ġman",
         "Ġwalked",
@@ -1444,6 +1498,9 @@
         "Do"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         41551,
         757,
         264,
@@ -1452,7 +1509,6 @@
         128006,
         78191,
         128007,
-        271,
         32,
         893,
         15203,
@@ -1479,55 +1535,55 @@
           {
             "token": "Ġany",
             "token_id": 904,
-            "logprob": -12.6875,
+            "logprob": -12.375,
             "prob": 0.0
           },
           {
             "token": "Ġye",
             "token_id": 20043,
+            "logprob": -13.0625,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġwe",
+            "token_id": 584,
             "logprob": -13.3125,
             "prob": 0.0
           },
           {
             "token": "ĠYou",
             "token_id": 1472,
-            "logprob": -13.375,
-            "prob": 0.0
-          },
-          {
-            "token": "Ġwe",
-            "token_id": 584,
-            "logprob": -13.625,
-            "prob": 0.0
-          },
-          {
-            "token": "ĠYOU",
-            "token_id": 15334,
-            "logprob": -13.875,
+            "logprob": -13.3125,
             "prob": 0.0
           },
           {
             "token": "ĠI",
             "token_id": 358,
-            "logprob": -14.0,
+            "logprob": -13.375,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠYOU",
+            "token_id": 15334,
+            "logprob": -13.75,
             "prob": 0.0
           },
           {
             "token": "Ġthey",
             "token_id": 814,
-            "logprob": -14.3125,
+            "logprob": -14.0,
             "prob": 0.0
           },
           {
             "token": "Ġy",
             "token_id": 379,
-            "logprob": -14.875,
+            "logprob": -14.5,
             "prob": 0.0
           },
           {
             "token": "Ġya",
             "token_id": 13835,
-            "logprob": -14.875,
+            "logprob": -14.6875,
             "prob": 0.0
           }
         ]
@@ -1540,8 +1596,11 @@
     },
     {
       "step": 14,
-      "input_text": "Tell me a joke<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nA man walked into a library and asked the librarian, \"Do you",
+      "input_text": "<|start_header_id|>user<|end_header_id|>Tell me a joke<|eot_id|><|start_header_id|>assistant<|end_header_id|>A man walked into a library and asked the librarian, \"Do you",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "Tell",
         "Ġme",
         "Ġa",
@@ -1550,7 +1609,6 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "A",
         "Ġman",
         "Ġwalked",
@@ -1567,6 +1625,9 @@
         "Ġyou"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         41551,
         757,
         264,
@@ -1575,7 +1636,6 @@
         128006,
         78191,
         128007,
-        271,
         32,
         893,
         15203,
@@ -1603,19 +1663,19 @@
           {
             "token": "Ġknow",
             "token_id": 1440,
-            "logprob": -8.875,
+            "logprob": -8.8125,
             "prob": 0.0001
           },
           {
             "token": "ĠHave",
             "token_id": 12522,
-            "logprob": -10.3125,
+            "logprob": -10.375,
             "prob": 0.0
           },
           {
             "token": "Ġmind",
             "token_id": 4059,
-            "logprob": -10.625,
+            "logprob": -10.5625,
             "prob": 0.0
           },
           {
@@ -1631,27 +1691,27 @@
             "prob": 0.0
           },
           {
-            "token": "Ġread",
-            "token_id": 1373,
-            "logprob": -11.1875,
-            "prob": 0.0
-          },
-          {
             "token": "Ġoffer",
             "token_id": 3085,
             "logprob": -11.1875,
             "prob": 0.0
           },
           {
+            "token": "Ġread",
+            "token_id": 1373,
+            "logprob": -11.1875,
+            "prob": 0.0
+          },
+          {
             "token": "Ġguys",
             "token_id": 7752,
-            "logprob": -11.3125,
+            "logprob": -11.25,
             "prob": 0.0
           },
           {
             "token": "Have",
             "token_id": 12389,
-            "logprob": -11.3125,
+            "logprob": -11.375,
             "prob": 0.0
           }
         ]
@@ -1664,8 +1724,11 @@
     },
     {
       "step": 15,
-      "input_text": "Tell me a joke<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nA man walked into a library and asked the librarian, \"Do you have",
+      "input_text": "<|start_header_id|>user<|end_header_id|>Tell me a joke<|eot_id|><|start_header_id|>assistant<|end_header_id|>A man walked into a library and asked the librarian, \"Do you have",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "Tell",
         "Ġme",
         "Ġa",
@@ -1674,7 +1737,6 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "A",
         "Ġman",
         "Ġwalked",
@@ -1692,6 +1754,9 @@
         "Ġhave"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         41551,
         757,
         264,
@@ -1700,7 +1765,6 @@
         128006,
         78191,
         128007,
-        271,
         32,
         893,
         15203,
@@ -1723,19 +1787,19 @@
           {
             "token": "Ġany",
             "token_id": 904,
-            "logprob": -0.0009,
+            "logprob": -0.0012,
             "prob": 1.0
           },
           {
             "token": "Ġbooks",
             "token_id": 6603,
-            "logprob": -7.75,
-            "prob": 0.0004
+            "logprob": -7.375,
+            "prob": 0.0006
           },
           {
             "token": "Ġa",
             "token_id": 264,
-            "logprob": -8.75,
+            "logprob": -8.375,
             "prob": 0.0002
           },
           {
@@ -1747,31 +1811,31 @@
           {
             "token": "Ġanything",
             "token_id": 4205,
-            "logprob": -9.5,
+            "logprob": -9.375,
             "prob": 0.0001
           },
           {
             "token": "Ġanyone",
             "token_id": 5606,
-            "logprob": -11.5625,
+            "logprob": -11.5,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġmany",
+            "token_id": 1690,
+            "logprob": -11.625,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġanymore",
+            "token_id": 14926,
+            "logprob": -11.8125,
             "prob": 0.0
           },
           {
             "token": "ĠAny",
             "token_id": 5884,
             "logprob": -11.875,
-            "prob": 0.0
-          },
-          {
-            "token": "Ġanymore",
-            "token_id": 14926,
-            "logprob": -11.875,
-            "prob": 0.0
-          },
-          {
-            "token": "Ġmany",
-            "token_id": 1690,
-            "logprob": -11.9375,
             "prob": 0.0
           },
           {
@@ -1790,8 +1854,11 @@
     },
     {
       "step": 16,
-      "input_text": "Tell me a joke<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nA man walked into a library and asked the librarian, \"Do you have any",
+      "input_text": "<|start_header_id|>user<|end_header_id|>Tell me a joke<|eot_id|><|start_header_id|>assistant<|end_header_id|>A man walked into a library and asked the librarian, \"Do you have any",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "Tell",
         "Ġme",
         "Ġa",
@@ -1800,7 +1867,6 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "A",
         "Ġman",
         "Ġwalked",
@@ -1819,6 +1885,9 @@
         "Ġany"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         41551,
         757,
         264,
@@ -1827,7 +1896,6 @@
         128006,
         78191,
         128007,
-        271,
         32,
         893,
         15203,
@@ -1851,8 +1919,14 @@
           {
             "token": "Ġbooks",
             "token_id": 6603,
-            "logprob": -0.001,
+            "logprob": -0.0013,
             "prob": 1.0
+          },
+          {
+            "token": "Ġdictionaries",
+            "token_id": 58614,
+            "logprob": -9.0625,
+            "prob": 0.0001
           },
           {
             "token": "Ġbook",
@@ -1861,27 +1935,27 @@
             "prob": 0.0001
           },
           {
-            "token": "Ġdictionaries",
-            "token_id": 58614,
-            "logprob": -9.375,
-            "prob": 0.0001
-          },
-          {
             "token": "Ġjokes",
             "token_id": 32520,
-            "logprob": -9.5625,
+            "logprob": -9.3125,
             "prob": 0.0001
           },
           {
             "token": "Ġnovels",
             "token_id": 32963,
-            "logprob": -9.875,
+            "logprob": -9.625,
             "prob": 0.0001
           },
           {
             "token": "ĠBooks",
             "token_id": 18312,
             "logprob": -10.3125,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġcheese",
+            "token_id": 17604,
+            "logprob": -10.5625,
             "prob": 0.0
           },
           {
@@ -1893,19 +1967,13 @@
           {
             "token": "Ġcards",
             "token_id": 7563,
-            "logprob": -10.8125,
+            "logprob": -10.6875,
             "prob": 0.0
           },
           {
-            "token": "Ġcheese",
-            "token_id": 17604,
-            "logprob": -10.9375,
-            "prob": 0.0
-          },
-          {
-            "token": "Ġcopies",
-            "token_id": 11236,
-            "logprob": -11.0,
+            "token": "Ġtools",
+            "token_id": 7526,
+            "logprob": -10.75,
             "prob": 0.0
           }
         ]
@@ -1918,8 +1986,11 @@
     },
     {
       "step": 17,
-      "input_text": "Tell me a joke<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nA man walked into a library and asked the librarian, \"Do you have any books",
+      "input_text": "<|start_header_id|>user<|end_header_id|>Tell me a joke<|eot_id|><|start_header_id|>assistant<|end_header_id|>A man walked into a library and asked the librarian, \"Do you have any books",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "Tell",
         "Ġme",
         "Ġa",
@@ -1928,7 +1999,6 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "A",
         "Ġman",
         "Ġwalked",
@@ -1948,6 +2018,9 @@
         "Ġbooks"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         41551,
         757,
         264,
@@ -1956,7 +2029,6 @@
         128006,
         78191,
         128007,
-        271,
         32,
         893,
         15203,
@@ -1987,55 +2059,55 @@
           {
             "token": "Ġabout",
             "token_id": 922,
-            "logprob": -9.875,
+            "logprob": -9.625,
             "prob": 0.0001
           },
           {
             "token": "Ġthat",
             "token_id": 430,
-            "logprob": -14.5,
+            "logprob": -14.0625,
             "prob": 0.0
           },
           {
             "token": "Ġby",
             "token_id": 555,
-            "logprob": -15.1875,
+            "logprob": -14.9375,
             "prob": 0.0
           },
           {
             "token": "Ġin",
             "token_id": 304,
-            "logprob": -15.25,
+            "logprob": -14.9375,
             "prob": 0.0
           },
           {
             "token": "Ġavailable",
             "token_id": 2561,
-            "logprob": -15.6875,
+            "logprob": -15.5,
             "prob": 0.0
           },
           {
             "token": "Ġab",
             "token_id": 671,
-            "logprob": -16.125,
+            "logprob": -15.5625,
             "prob": 0.0
           },
           {
             "token": "Ġfor",
             "token_id": 369,
-            "logprob": -16.25,
-            "prob": 0.0
-          },
-          {
-            "token": "Ġhere",
-            "token_id": 1618,
-            "logprob": -16.25,
+            "logprob": -15.9375,
             "prob": 0.0
           },
           {
             "token": "Ġto",
             "token_id": 311,
-            "logprob": -16.375,
+            "logprob": -16.0,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġand",
+            "token_id": 323,
+            "logprob": -16.0,
             "prob": 0.0
           }
         ]
@@ -2048,8 +2120,11 @@
     },
     {
       "step": 18,
-      "input_text": "Tell me a joke<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nA man walked into a library and asked the librarian, \"Do you have any books on",
+      "input_text": "<|start_header_id|>user<|end_header_id|>Tell me a joke<|eot_id|><|start_header_id|>assistant<|end_header_id|>A man walked into a library and asked the librarian, \"Do you have any books on",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "Tell",
         "Ġme",
         "Ġa",
@@ -2058,7 +2133,6 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "A",
         "Ġman",
         "Ġwalked",
@@ -2079,6 +2153,9 @@
         "Ġon"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         41551,
         757,
         264,
@@ -2087,7 +2164,6 @@
         128006,
         78191,
         128007,
-        271,
         32,
         893,
         15203,
@@ -2119,31 +2195,25 @@
           {
             "token": "Ġpav",
             "token_id": 40216,
-            "logprob": -8.9375,
+            "logprob": -9.0625,
             "prob": 0.0001
           },
           {
             "token": "ĠViking",
             "token_id": 65450,
-            "logprob": -10.9375,
+            "logprob": -11.125,
             "prob": 0.0
           },
           {
             "token": "Ġvegan",
             "token_id": 30249,
-            "logprob": -11.125,
-            "prob": 0.0
-          },
-          {
-            "token": "Ġvampire",
-            "token_id": 51587,
             "logprob": -11.3125,
             "prob": 0.0
           },
           {
             "token": "Ġpizza",
             "token_id": 23317,
-            "logprob": -11.375,
+            "logprob": -11.3125,
             "prob": 0.0
           },
           {
@@ -2153,20 +2223,26 @@
             "prob": 0.0
           },
           {
+            "token": "Ġvampire",
+            "token_id": 51587,
+            "logprob": -11.5,
+            "prob": 0.0
+          },
+          {
             "token": "Ġmagic",
             "token_id": 11204,
             "logprob": -11.625,
             "prob": 0.0
           },
           {
-            "token": "Ġwitch",
-            "token_id": 37482,
-            "logprob": -12.3125,
+            "token": "Ġthe",
+            "token_id": 279,
+            "logprob": -12.375,
             "prob": 0.0
           },
           {
-            "token": "Ġthe",
-            "token_id": 279,
+            "token": "Ġwitch",
+            "token_id": 37482,
             "logprob": -12.375,
             "prob": 0.0
           }
@@ -2180,8 +2256,11 @@
     },
     {
       "step": 19,
-      "input_text": "Tell me a joke<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nA man walked into a library and asked the librarian, \"Do you have any books on Pav",
+      "input_text": "<|start_header_id|>user<|end_header_id|>Tell me a joke<|eot_id|><|start_header_id|>assistant<|end_header_id|>A man walked into a library and asked the librarian, \"Do you have any books on Pav",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "Tell",
         "Ġme",
         "Ġa",
@@ -2190,7 +2269,6 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "A",
         "Ġman",
         "Ġwalked",
@@ -2212,6 +2290,9 @@
         "ĠPav"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         41551,
         757,
         264,
@@ -2220,7 +2301,6 @@
         128006,
         78191,
         128007,
-        271,
         32,
         893,
         15203,
@@ -2253,13 +2333,13 @@
           {
             "token": "lo",
             "token_id": 385,
-            "logprob": -7.625,
-            "prob": 0.0005
+            "logprob": -7.5,
+            "prob": 0.0006
           },
           {
             "token": "ement",
             "token_id": 1133,
-            "logprob": -11.0625,
+            "logprob": -10.9375,
             "prob": 0.0
           },
           {
@@ -2271,25 +2351,25 @@
           {
             "token": "LO",
             "token_id": 1623,
-            "logprob": -12.1875,
+            "logprob": -12.125,
             "prob": 0.0
           },
           {
             "token": "l",
             "token_id": 75,
-            "logprob": -12.4375,
+            "logprob": -12.375,
             "prob": 0.0
           },
           {
             "token": "los",
             "token_id": 2353,
-            "logprob": -12.5625,
+            "logprob": -12.6875,
             "prob": 0.0
           },
           {
             "token": "lot",
             "token_id": 9363,
-            "logprob": -12.75,
+            "logprob": -12.6875,
             "prob": 0.0
           },
           {
@@ -2301,7 +2381,7 @@
           {
             "token": "Ġlov",
             "token_id": 98892,
-            "logprob": -13.1875,
+            "logprob": -13.125,
             "prob": 0.0
           }
         ]
@@ -2314,8 +2394,11 @@
     },
     {
       "step": 20,
-      "input_text": "Tell me a joke<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nA man walked into a library and asked the librarian, \"Do you have any books on Pavlov",
+      "input_text": "<|start_header_id|>user<|end_header_id|>Tell me a joke<|eot_id|><|start_header_id|>assistant<|end_header_id|>A man walked into a library and asked the librarian, \"Do you have any books on Pavlov",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "Tell",
         "Ġme",
         "Ġa",
@@ -2324,7 +2407,6 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "A",
         "Ġman",
         "Ġwalked",
@@ -2347,6 +2429,9 @@
         "lov"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         41551,
         757,
         264,
@@ -2355,7 +2440,6 @@
         128006,
         78191,
         128007,
-        271,
         32,
         893,
         15203,
@@ -2389,31 +2473,43 @@
           {
             "token": "’s",
             "token_id": 753,
-            "logprob": -10.4375,
+            "logprob": -10.3125,
             "prob": 0.0
           },
           {
             "token": "ic",
             "token_id": 292,
-            "logprob": -12.125,
+            "logprob": -12.0625,
             "prob": 0.0
           },
           {
             "token": "ia",
             "token_id": 689,
-            "logprob": -12.375,
-            "prob": 0.0
-          },
-          {
-            "token": "ice",
-            "token_id": 560,
-            "logprob": -12.6875,
+            "logprob": -12.1875,
             "prob": 0.0
           },
           {
             "token": "Ġand",
             "token_id": 323,
-            "logprob": -12.6875,
+            "logprob": -12.5,
+            "prob": 0.0
+          },
+          {
+            "token": "ice",
+            "token_id": 560,
+            "logprob": -12.5625,
+            "prob": 0.0
+          },
+          {
+            "token": "?\"",
+            "token_id": 7673,
+            "logprob": -12.8125,
+            "prob": 0.0
+          },
+          {
+            "token": "ian",
+            "token_id": 1122,
+            "logprob": -12.9375,
             "prob": 0.0
           },
           {
@@ -2423,21 +2519,9 @@
             "prob": 0.0
           },
           {
-            "token": "?\"",
-            "token_id": 7673,
-            "logprob": -13.125,
-            "prob": 0.0
-          },
-          {
-            "token": "ian",
-            "token_id": 1122,
-            "logprob": -13.1875,
-            "prob": 0.0
-          },
-          {
             "token": "?s",
             "token_id": 56470,
-            "logprob": -13.25,
+            "logprob": -13.125,
             "prob": 0.0
           }
         ]
@@ -2450,8 +2534,11 @@
     },
     {
       "step": 21,
-      "input_text": "Tell me a joke<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nA man walked into a library and asked the librarian, \"Do you have any books on Pavlov's",
+      "input_text": "<|start_header_id|>user<|end_header_id|>Tell me a joke<|eot_id|><|start_header_id|>assistant<|end_header_id|>A man walked into a library and asked the librarian, \"Do you have any books on Pavlov's",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "Tell",
         "Ġme",
         "Ġa",
@@ -2460,7 +2547,6 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "A",
         "Ġman",
         "Ġwalked",
@@ -2484,6 +2570,9 @@
         "'s"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         41551,
         757,
         264,
@@ -2492,7 +2581,6 @@
         128006,
         78191,
         128007,
-        271,
         32,
         893,
         15203,
@@ -2521,61 +2609,61 @@
           {
             "token": "Ġdogs",
             "token_id": 12875,
-            "logprob": -0.0004,
+            "logprob": -0.0005,
             "prob": 1.0
           },
           {
             "token": "Ġcats",
             "token_id": 19987,
-            "logprob": -8.625,
+            "logprob": -8.375,
             "prob": 0.0002
           },
           {
             "token": "ĠDogs",
             "token_id": 39525,
-            "logprob": -9.75,
+            "logprob": -9.375,
             "prob": 0.0001
           },
           {
             "token": "Ġdog",
             "token_id": 5679,
-            "logprob": -9.875,
+            "logprob": -9.5,
             "prob": 0.0001
           },
           {
             "token": "Ġrats",
             "token_id": 32510,
-            "logprob": -10.625,
+            "logprob": -10.375,
             "prob": 0.0
           },
           {
             "token": "Ġanimals",
             "token_id": 10099,
-            "logprob": -11.0625,
+            "logprob": -10.75,
             "prob": 0.0
           },
           {
             "token": "Ġpuppies",
             "token_id": 57725,
-            "logprob": -11.3125,
+            "logprob": -10.9375,
             "prob": 0.0
           },
           {
             "token": "Ġclasses",
             "token_id": 6989,
-            "logprob": -12.5,
+            "logprob": -11.9375,
             "prob": 0.0
           },
           {
             "token": "Ġchickens",
             "token_id": 54623,
-            "logprob": -12.5,
+            "logprob": -12.0625,
             "prob": 0.0
           },
           {
             "token": "Ġmice",
             "token_id": 24548,
-            "logprob": -12.875,
+            "logprob": -12.5,
             "prob": 0.0
           }
         ]
@@ -2588,8 +2676,11 @@
     },
     {
       "step": 22,
-      "input_text": "Tell me a joke<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nA man walked into a library and asked the librarian, \"Do you have any books on Pavlov's dogs",
+      "input_text": "<|start_header_id|>user<|end_header_id|>Tell me a joke<|eot_id|><|start_header_id|>assistant<|end_header_id|>A man walked into a library and asked the librarian, \"Do you have any books on Pavlov's dogs",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "Tell",
         "Ġme",
         "Ġa",
@@ -2598,7 +2689,6 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "A",
         "Ġman",
         "Ġwalked",
@@ -2623,6 +2713,9 @@
         "Ġdogs"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         41551,
         757,
         264,
@@ -2631,7 +2724,6 @@
         128006,
         78191,
         128007,
-        271,
         32,
         893,
         15203,
@@ -2667,55 +2759,55 @@
           {
             "token": "?\"",
             "token_id": 7673,
-            "logprob": -9.625,
+            "logprob": -9.5,
             "prob": 0.0001
           },
           {
             "token": "?\"\n\n",
             "token_id": 12241,
-            "logprob": -10.0,
-            "prob": 0.0
+            "logprob": -9.875,
+            "prob": 0.0001
           },
           {
             "token": "?",
             "token_id": 30,
-            "logprob": -12.25,
+            "logprob": -11.9375,
             "prob": 0.0
           },
           {
             "token": ",",
             "token_id": 11,
-            "logprob": -12.8125,
+            "logprob": -12.5625,
             "prob": 0.0
           },
           {
             "token": "?\"\n",
             "token_id": 48469,
-            "logprob": -13.6875,
-            "prob": 0.0
-          },
-          {
-            "token": "Ġor",
-            "token_id": 477,
-            "logprob": -14.375,
+            "logprob": -13.4375,
             "prob": 0.0
           },
           {
             "token": "\"?",
             "token_id": 44969,
-            "logprob": -14.5,
+            "logprob": -14.1875,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġor",
+            "token_id": 477,
+            "logprob": -14.25,
             "prob": 0.0
           },
           {
             "token": "Ġwho",
             "token_id": 889,
-            "logprob": -14.75,
+            "logprob": -14.5,
             "prob": 0.0
           },
           {
-            "token": "Ġvà",
-            "token_id": 48842,
-            "logprob": -14.75,
+            "token": "Ġtraining",
+            "token_id": 4967,
+            "logprob": -14.5,
             "prob": 0.0
           }
         ]
@@ -2728,8 +2820,11 @@
     },
     {
       "step": 23,
-      "input_text": "Tell me a joke<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nA man walked into a library and asked the librarian, \"Do you have any books on Pavlov's dogs and",
+      "input_text": "<|start_header_id|>user<|end_header_id|>Tell me a joke<|eot_id|><|start_header_id|>assistant<|end_header_id|>A man walked into a library and asked the librarian, \"Do you have any books on Pavlov's dogs and",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "Tell",
         "Ġme",
         "Ġa",
@@ -2738,7 +2833,6 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "A",
         "Ġman",
         "Ġwalked",
@@ -2764,6 +2858,9 @@
         "Ġand"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         41551,
         757,
         264,
@@ -2772,7 +2869,6 @@
         128006,
         78191,
         128007,
-        271,
         32,
         893,
         15203,
@@ -2803,61 +2899,61 @@
           {
             "token": "ĠSch",
             "token_id": 5124,
-            "logprob": -0.0004,
+            "logprob": -0.0005,
             "prob": 1.0
           },
           {
             "token": "Ġsch",
             "token_id": 5817,
-            "logprob": -8.875,
-            "prob": 0.0001
+            "logprob": -8.6875,
+            "prob": 0.0002
           },
           {
             "token": "Sch",
             "token_id": 31224,
-            "logprob": -9.0625,
+            "logprob": -8.9375,
             "prob": 0.0001
           },
           {
             "token": "ĠShakespeare",
             "token_id": 42482,
-            "logprob": -10.75,
+            "logprob": -10.4375,
             "prob": 0.0
           },
           {
             "token": "sch",
             "token_id": 21740,
-            "logprob": -10.75,
+            "logprob": -10.625,
             "prob": 0.0
           },
           {
             "token": "ĠSh",
             "token_id": 1443,
-            "logprob": -11.375,
+            "logprob": -11.0,
             "prob": 0.0
           },
           {
             "token": "Ġschizophrenia",
             "token_id": 58533,
-            "logprob": -11.375,
+            "logprob": -11.0625,
             "prob": 0.0
           },
           {
             "token": "ĠFreud",
             "token_id": 72634,
-            "logprob": -11.6875,
+            "logprob": -11.3125,
             "prob": 0.0
           },
           {
             "token": "ĠSchul",
             "token_id": 54090,
-            "logprob": -11.8125,
+            "logprob": -11.5,
             "prob": 0.0
           },
           {
             "token": "ĠSchro",
             "token_id": 95682,
-            "logprob": -11.875,
+            "logprob": -11.6875,
             "prob": 0.0
           }
         ]
@@ -2870,8 +2966,11 @@
     },
     {
       "step": 24,
-      "input_text": "Tell me a joke<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nA man walked into a library and asked the librarian, \"Do you have any books on Pavlov's dogs and Sch",
+      "input_text": "<|start_header_id|>user<|end_header_id|>Tell me a joke<|eot_id|><|start_header_id|>assistant<|end_header_id|>A man walked into a library and asked the librarian, \"Do you have any books on Pavlov's dogs and Sch",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "Tell",
         "Ġme",
         "Ġa",
@@ -2880,7 +2979,6 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "A",
         "Ġman",
         "Ġwalked",
@@ -2907,6 +3005,9 @@
         "ĠSch"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         41551,
         757,
         264,
@@ -2915,7 +3016,6 @@
         128006,
         78191,
         128007,
-        271,
         32,
         893,
         15203,
@@ -2959,25 +3059,25 @@
           {
             "token": "re",
             "token_id": 265,
-            "logprob": -11.3125,
+            "logprob": -11.1875,
             "prob": 0.0
           },
           {
             "token": "rage",
             "token_id": 48468,
-            "logprob": -11.5,
+            "logprob": -11.375,
             "prob": 0.0
           },
           {
             "token": "rag",
             "token_id": 4193,
-            "logprob": -11.75,
+            "logprob": -11.6875,
             "prob": 0.0
           },
           {
             "token": "openh",
             "token_id": 43170,
-            "logprob": -12.0,
+            "logprob": -11.8125,
             "prob": 0.0
           },
           {
@@ -2989,19 +3089,19 @@
           {
             "token": "reck",
             "token_id": 25662,
-            "logprob": -12.5625,
+            "logprob": -12.4375,
             "prob": 0.0
           },
           {
             "token": "rade",
             "token_id": 50176,
-            "logprob": -12.6875,
+            "logprob": -12.625,
             "prob": 0.0
           },
           {
             "token": "rod",
             "token_id": 24409,
-            "logprob": -13.0,
+            "logprob": -12.75,
             "prob": 0.0
           }
         ]
@@ -3014,8 +3114,11 @@
     },
     {
       "step": 25,
-      "input_text": "Tell me a joke<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nA man walked into a library and asked the librarian, \"Do you have any books on Pavlov's dogs and Schr",
+      "input_text": "<|start_header_id|>user<|end_header_id|>Tell me a joke<|eot_id|><|start_header_id|>assistant<|end_header_id|>A man walked into a library and asked the librarian, \"Do you have any books on Pavlov's dogs and Schr",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "Tell",
         "Ġme",
         "Ġa",
@@ -3024,7 +3127,6 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "A",
         "Ġman",
         "Ġwalked",
@@ -3052,6 +3154,9 @@
         "r"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         41551,
         757,
         264,
@@ -3060,7 +3165,6 @@
         128006,
         78191,
         128007,
-        271,
         32,
         893,
         15203,
@@ -3099,55 +3203,55 @@
           {
             "token": "ø",
             "token_id": 6282,
-            "logprob": -8.625,
+            "logprob": -8.6875,
             "prob": 0.0002
           },
           {
             "token": "ode",
             "token_id": 536,
-            "logprob": -9.625,
+            "logprob": -9.875,
             "prob": 0.0001
           },
           {
             "token": "oding",
             "token_id": 3785,
-            "logprob": -10.5625,
+            "logprob": -10.6875,
             "prob": 0.0
           },
           {
             "token": "ød",
             "token_id": 75820,
-            "logprob": -10.6875,
+            "logprob": -10.75,
             "prob": 0.0
           },
           {
             "token": "Ġö",
             "token_id": 17372,
-            "logprob": -11.75,
+            "logprob": -11.8125,
             "prob": 0.0
           },
           {
             "token": "ader",
             "token_id": 1013,
-            "logprob": -11.875,
-            "prob": 0.0
-          },
-          {
-            "token": "ODE",
-            "token_id": 2951,
             "logprob": -12.0,
             "prob": 0.0
           },
           {
-            "token": "oder",
-            "token_id": 4414,
-            "logprob": -12.0,
+            "token": "Ġode",
+            "token_id": 73994,
+            "logprob": -12.0625,
             "prob": 0.0
           },
           {
             "token": "ög",
             "token_id": 62997,
             "logprob": -12.0625,
+            "prob": 0.0
+          },
+          {
+            "token": "ODE",
+            "token_id": 2951,
+            "logprob": -12.1875,
             "prob": 0.0
           }
         ]
@@ -3160,8 +3264,11 @@
     },
     {
       "step": 26,
-      "input_text": "Tell me a joke<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nA man walked into a library and asked the librarian, \"Do you have any books on Pavlov's dogs and Schrö",
+      "input_text": "<|start_header_id|>user<|end_header_id|>Tell me a joke<|eot_id|><|start_header_id|>assistant<|end_header_id|>A man walked into a library and asked the librarian, \"Do you have any books on Pavlov's dogs and Schrö",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "Tell",
         "Ġme",
         "Ġa",
@@ -3170,7 +3277,6 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "A",
         "Ġman",
         "Ġwalked",
@@ -3199,6 +3305,9 @@
         "ö"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         41551,
         757,
         264,
@@ -3207,7 +3316,6 @@
         128006,
         78191,
         128007,
-        271,
         32,
         893,
         15203,
@@ -3245,27 +3353,27 @@
             "prob": 1.0
           },
           {
-            "token": "der",
-            "token_id": 1126,
-            "logprob": -10.125,
-            "prob": 0.0
-          },
-          {
             "token": "ed",
             "token_id": 291,
-            "logprob": -10.125,
+            "logprob": -9.875,
+            "prob": 0.0001
+          },
+          {
+            "token": "der",
+            "token_id": 1126,
+            "logprob": -10.0,
             "prob": 0.0
           },
           {
             "token": "ded",
             "token_id": 9988,
-            "logprob": -10.375,
+            "logprob": -10.25,
             "prob": 0.0
           },
           {
             "token": "ding",
             "token_id": 7113,
-            "logprob": -11.5,
+            "logprob": -11.4375,
             "prob": 0.0
           },
           {
@@ -3283,19 +3391,19 @@
           {
             "token": "ddie",
             "token_id": 29554,
-            "logprob": -12.5625,
+            "logprob": -12.4375,
             "prob": 0.0
           },
           {
             "token": "dd",
             "token_id": 634,
-            "logprob": -12.625,
+            "logprob": -12.5625,
             "prob": 0.0
           },
           {
             "token": "del",
             "token_id": 9783,
-            "logprob": -12.6875,
+            "logprob": -12.5625,
             "prob": 0.0
           }
         ]
@@ -3308,8 +3416,11 @@
     },
     {
       "step": 27,
-      "input_text": "Tell me a joke<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nA man walked into a library and asked the librarian, \"Do you have any books on Pavlov's dogs and Schröd",
+      "input_text": "<|start_header_id|>user<|end_header_id|>Tell me a joke<|eot_id|><|start_header_id|>assistant<|end_header_id|>A man walked into a library and asked the librarian, \"Do you have any books on Pavlov's dogs and Schröd",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "Tell",
         "Ġme",
         "Ġa",
@@ -3318,7 +3429,6 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "A",
         "Ġman",
         "Ġwalked",
@@ -3348,6 +3458,9 @@
         "d"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         41551,
         757,
         264,
@@ -3356,7 +3469,6 @@
         128006,
         78191,
         128007,
-        271,
         32,
         893,
         15203,
@@ -3403,7 +3515,7 @@
           {
             "token": "INGER",
             "token_id": 77380,
-            "logprob": -9.875,
+            "logprob": -9.75,
             "prob": 0.0001
           },
           {
@@ -3415,13 +3527,13 @@
           {
             "token": "der",
             "token_id": 1126,
-            "logprob": -12.6875,
+            "logprob": -12.625,
             "prob": 0.0
           },
           {
             "token": "enger",
             "token_id": 10214,
-            "logprob": -13.4375,
+            "logprob": -13.375,
             "prob": 0.0
           },
           {
@@ -3433,19 +3545,19 @@
           {
             "token": "ler",
             "token_id": 1565,
-            "logprob": -14.0,
+            "logprob": -13.9375,
             "prob": 0.0
           },
           {
             "token": "ager",
             "token_id": 1435,
-            "logprob": -14.125,
+            "logprob": -14.0625,
             "prob": 0.0
           },
           {
             "token": "ter",
             "token_id": 466,
-            "logprob": -14.3125,
+            "logprob": -14.25,
             "prob": 0.0
           }
         ]
@@ -3458,8 +3570,11 @@
     },
     {
       "step": 28,
-      "input_text": "Tell me a joke<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nA man walked into a library and asked the librarian, \"Do you have any books on Pavlov's dogs and Schrödinger",
+      "input_text": "<|start_header_id|>user<|end_header_id|>Tell me a joke<|eot_id|><|start_header_id|>assistant<|end_header_id|>A man walked into a library and asked the librarian, \"Do you have any books on Pavlov's dogs and Schrödinger",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "Tell",
         "Ġme",
         "Ġa",
@@ -3468,7 +3583,6 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "A",
         "Ġman",
         "Ġwalked",
@@ -3499,6 +3613,9 @@
         "inger"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         41551,
         757,
         264,
@@ -3507,7 +3624,6 @@
         128006,
         78191,
         128007,
-        271,
         32,
         893,
         15203,
@@ -3549,55 +3665,55 @@
           {
             "token": "’s",
             "token_id": 753,
-            "logprob": -14.75,
+            "logprob": -15.0,
             "prob": 0.0
           },
           {
             "token": "'S",
             "token_id": 13575,
-            "logprob": -15.375,
-            "prob": 0.0
-          },
-          {
-            "token": "Ġsuper",
-            "token_id": 2307,
-            "logprob": -16.875,
+            "logprob": -15.625,
             "prob": 0.0
           },
           {
             "token": "\\'",
             "token_id": 10379,
-            "logprob": -17.25,
+            "logprob": -17.375,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġsuper",
+            "token_id": 2307,
+            "logprob": -17.5,
             "prob": 0.0
           },
           {
             "token": "'m",
             "token_id": 2846,
-            "logprob": -18.0,
+            "logprob": -18.25,
             "prob": 0.0
           },
           {
             "token": "'re",
             "token_id": 2351,
-            "logprob": -18.5,
+            "logprob": -18.75,
             "prob": 0.0
           },
           {
             "token": "Ġparticles",
             "token_id": 19252,
-            "logprob": -18.5,
+            "logprob": -18.875,
             "prob": 0.0
           },
           {
             "token": "的",
             "token_id": 9554,
-            "logprob": -18.5,
+            "logprob": -18.875,
             "prob": 0.0
           },
           {
             "token": "?s",
             "token_id": 56470,
-            "logprob": -19.25,
+            "logprob": -19.5,
             "prob": 0.0
           }
         ]
@@ -3610,8 +3726,11 @@
     },
     {
       "step": 29,
-      "input_text": "Tell me a joke<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nA man walked into a library and asked the librarian, \"Do you have any books on Pavlov's dogs and Schrödinger's",
+      "input_text": "<|start_header_id|>user<|end_header_id|>Tell me a joke<|eot_id|><|start_header_id|>assistant<|end_header_id|>A man walked into a library and asked the librarian, \"Do you have any books on Pavlov's dogs and Schrödinger's",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "Tell",
         "Ġme",
         "Ġa",
@@ -3620,7 +3739,6 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "A",
         "Ġman",
         "Ġwalked",
@@ -3652,6 +3770,9 @@
         "'s"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         41551,
         757,
         264,
@@ -3660,7 +3781,6 @@
         128006,
         78191,
         128007,
-        271,
         32,
         893,
         15203,
@@ -3703,7 +3823,7 @@
           {
             "token": "ĠCat",
             "token_id": 17810,
-            "logprob": -8.625,
+            "logprob": -8.75,
             "prob": 0.0002
           },
           {
@@ -3715,7 +3835,7 @@
           {
             "token": "Cat",
             "token_id": 27899,
-            "logprob": -9.125,
+            "logprob": -9.25,
             "prob": 0.0001
           },
           {
@@ -3733,13 +3853,13 @@
           {
             "token": "_cat",
             "token_id": 21492,
-            "logprob": -10.0,
+            "logprob": -10.125,
             "prob": 0.0
           },
           {
             "token": "Ġcats",
             "token_id": 19987,
-            "logprob": -10.5,
+            "logprob": -10.5625,
             "prob": 0.0
           },
           {
@@ -3751,7 +3871,7 @@
           {
             "token": "(cat",
             "token_id": 54700,
-            "logprob": -10.875,
+            "logprob": -10.9375,
             "prob": 0.0
           }
         ]
@@ -3764,8 +3884,11 @@
     },
     {
       "step": 30,
-      "input_text": "Tell me a joke<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nA man walked into a library and asked the librarian, \"Do you have any books on Pavlov's dogs and Schrödinger's cat",
+      "input_text": "<|start_header_id|>user<|end_header_id|>Tell me a joke<|eot_id|><|start_header_id|>assistant<|end_header_id|>A man walked into a library and asked the librarian, \"Do you have any books on Pavlov's dogs and Schrödinger's cat?\"",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "Tell",
         "Ġme",
         "Ġa",
@@ -3774,7 +3897,6 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "A",
         "Ġman",
         "Ġwalked",
@@ -3807,6 +3929,9 @@
         "Ġcat"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         41551,
         757,
         264,
@@ -3815,7 +3940,6 @@
         128006,
         78191,
         128007,
-        271,
         32,
         893,
         15203,
@@ -3851,381 +3975,63 @@
         "top_k": 10,
         "candidates": [
           {
-            "token": "?\"\n\n",
-            "token_id": 12241,
-            "logprob": -0.5234,
-            "prob": 0.5938
-          },
-          {
-            "token": "?\"",
-            "token_id": 7673,
-            "logprob": -0.8984,
-            "prob": 0.4062
-          },
-          {
-            "token": "?\"\n",
-            "token_id": 48469,
-            "logprob": -8.5625,
-            "prob": 0.0002
-          },
-          {
-            "token": "\"?\n\n",
-            "token_id": 94770,
-            "logprob": -9.3125,
-            "prob": 0.0001
-          },
-          {
-            "token": "?",
-            "token_id": 30,
-            "logprob": -9.75,
-            "prob": 0.0001
-          },
-          {
-            "token": ".\"\n\n",
-            "token_id": 2266,
-            "logprob": -10.0,
-            "prob": 0.0
-          },
-          {
-            "token": "?\"\n\n\n\n",
-            "token_id": 93479,
-            "logprob": -10.3125,
-            "prob": 0.0
-          },
-          {
-            "token": "?\",",
-            "token_id": 32111,
-            "logprob": -10.8125,
-            "prob": 0.0
-          },
-          {
-            "token": ".\"",
-            "token_id": 1210,
-            "logprob": -10.9375,
-            "prob": 0.0
-          },
-          {
-            "token": "?\n\n",
-            "token_id": 1980,
-            "logprob": -11.0,
-            "prob": 0.0
-          }
-        ]
-      },
-      "selected_token": {
-        "token": "?\"",
-        "token_id": 7673,
-        "selection_method": "sampling"
-      }
-    },
-    {
-      "step": 31,
-      "input_text": "Tell me a joke<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nA man walked into a library and asked the librarian, \"Do you have any books on Pavlov's dogs and Schrödinger's cat?\"",
-      "tokens": [
-        "Tell",
-        "Ġme",
-        "Ġa",
-        "Ġjoke",
-        "<|eot_id|>",
-        "<|start_header_id|>",
-        "assistant",
-        "<|end_header_id|>",
-        "\n\n",
-        "A",
-        "Ġman",
-        "Ġwalked",
-        "Ġinto",
-        "Ġa",
-        "Ġlibrary",
-        "Ġand",
-        "Ġasked",
-        "Ġthe",
-        "Ġlibrarian",
-        ",",
-        "Ġ\"",
-        "Do",
-        "Ġyou",
-        "Ġhave",
-        "Ġany",
-        "Ġbooks",
-        "Ġon",
-        "ĠPav",
-        "lov",
-        "'s",
-        "Ġdogs",
-        "Ġand",
-        "ĠSch",
-        "r",
-        "ö",
-        "d",
-        "inger",
-        "'s",
-        "Ġcat",
-        "?\""
-      ],
-      "token_ids": [
-        41551,
-        757,
-        264,
-        22380,
-        128009,
-        128006,
-        78191,
-        128007,
-        271,
-        32,
-        893,
-        15203,
-        1139,
-        264,
-        6875,
-        323,
-        4691,
-        279,
-        95307,
-        11,
-        330,
-        5519,
-        499,
-        617,
-        904,
-        6603,
-        389,
-        43856,
-        36247,
-        596,
-        12875,
-        323,
-        5124,
-        81,
-        3029,
-        67,
-        5248,
-        596,
-        8415,
-        7673
-      ],
-      "output_distribution": {
-        "top_k": 10,
-        "candidates": [
-          {
-            "token": "Ġ\n\n",
-            "token_id": 4815,
-            "logprob": -0.5469,
-            "prob": 0.5781
-          },
-          {
-            "token": "ĠThe",
-            "token_id": 578,
-            "logprob": -1.2969,
-            "prob": 0.2734
-          },
-          {
-            "token": "<|eot_id|>",
-            "token_id": 128009,
-            "logprob": -1.9219,
-            "prob": 0.1465
-          },
-          {
-            "token": "Ġ\n",
-            "token_id": 720,
-            "logprob": -6.5625,
-            "prob": 0.0014
-          },
-          {
-            "token": "Ġ \n\n",
-            "token_id": 19124,
-            "logprob": -7.1875,
-            "prob": 0.0008
-          },
-          {
-            "token": "\r\n\r\n",
-            "token_id": 881,
-            "logprob": -8.1875,
-            "prob": 0.0003
-          },
-          {
-            "token": "Ġ",
-            "token_id": 220,
-            "logprob": -8.5625,
-            "prob": 0.0002
-          },
-          {
-            "token": " \n\n",
-            "token_id": 126595,
-            "logprob": -9.4375,
-            "prob": 0.0001
-          },
-          {
             "token": "The",
             "token_id": 791,
-            "logprob": -9.6875,
-            "prob": 0.0001
-          },
-          {
-            "token": "Ġ \n",
-            "token_id": 2355,
-            "logprob": -9.6875,
-            "prob": 0.0001
-          }
-        ]
-      },
-      "selected_token": {
-        "token": "Ġ\n\n",
-        "token_id": 4815,
-        "selection_method": "sampling"
-      }
-    },
-    {
-      "step": 32,
-      "input_text": "Tell me a joke<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nA man walked into a library and asked the librarian, \"Do you have any books on Pavlov's dogs and Schrödinger's cat?\" \n\n",
-      "tokens": [
-        "Tell",
-        "Ġme",
-        "Ġa",
-        "Ġjoke",
-        "<|eot_id|>",
-        "<|start_header_id|>",
-        "assistant",
-        "<|end_header_id|>",
-        "\n\n",
-        "A",
-        "Ġman",
-        "Ġwalked",
-        "Ġinto",
-        "Ġa",
-        "Ġlibrary",
-        "Ġand",
-        "Ġasked",
-        "Ġthe",
-        "Ġlibrarian",
-        ",",
-        "Ġ\"",
-        "Do",
-        "Ġyou",
-        "Ġhave",
-        "Ġany",
-        "Ġbooks",
-        "Ġon",
-        "ĠPav",
-        "lov",
-        "'s",
-        "Ġdogs",
-        "Ġand",
-        "ĠSch",
-        "r",
-        "ö",
-        "d",
-        "inger",
-        "'s",
-        "Ġcat",
-        "?\"",
-        "Ġ\n\n"
-      ],
-      "token_ids": [
-        41551,
-        757,
-        264,
-        22380,
-        128009,
-        128006,
-        78191,
-        128007,
-        271,
-        32,
-        893,
-        15203,
-        1139,
-        264,
-        6875,
-        323,
-        4691,
-        279,
-        95307,
-        11,
-        330,
-        5519,
-        499,
-        617,
-        904,
-        6603,
-        389,
-        43856,
-        36247,
-        596,
-        12875,
-        323,
-        5124,
-        81,
-        3029,
-        67,
-        5248,
-        596,
-        8415,
-        7673,
-        4815
-      ],
-      "output_distribution": {
-        "top_k": 10,
-        "candidates": [
-          {
-            "token": "The",
-            "token_id": 791,
-            "logprob": -0.005,
-            "prob": 0.9961
-          },
-          {
-            "token": "She",
-            "token_id": 8100,
-            "logprob": -5.5,
-            "prob": 0.0041
-          },
-          {
-            "token": "\"The",
-            "token_id": 10227,
-            "logprob": -8.625,
-            "prob": 0.0002
+            "logprob": -0.0007,
+            "prob": 1.0
           },
           {
             "token": "\"",
             "token_id": 1,
-            "logprob": -8.75,
-            "prob": 0.0002
+            "logprob": -8.875,
+            "prob": 0.0001
+          },
+          {
+            "token": "She",
+            "token_id": 8100,
+            "logprob": -9.125,
+            "prob": 0.0001
+          },
+          {
+            "token": "\"The",
+            "token_id": 10227,
+            "logprob": -9.375,
+            "prob": 0.0001
+          },
+          {
+            "token": "Lib",
+            "token_id": 9374,
+            "logprob": -9.5,
+            "prob": 0.0001
+          },
+          {
+            "token": "There",
+            "token_id": 3947,
+            "logprob": -9.5,
+            "prob": 0.0001
           },
           {
             "token": "\"I",
             "token_id": 7189,
-            "logprob": -9.625,
-            "prob": 0.0001
+            "logprob": -10.125,
+            "prob": 0.0
           },
           {
-            "token": "To",
-            "token_id": 1271,
-            "logprob": -9.75,
-            "prob": 0.0001
+            "token": "(The",
+            "token_id": 83696,
+            "logprob": -11.0625,
+            "prob": 0.0
           },
           {
             "token": "He",
             "token_id": 1548,
-            "logprob": -9.9375,
-            "prob": 0.0
-          },
-          {
-            "token": "'",
-            "token_id": 6,
-            "logprob": -10.3125,
+            "logprob": -11.6875,
             "prob": 0.0
           },
           {
             "token": "\"Well",
             "token_id": 56084,
-            "logprob": -10.75,
-            "prob": 0.0
-          },
-          {
-            "token": "Lib",
-            "token_id": 9374,
-            "logprob": -10.8125,
+            "logprob": -11.8125,
             "prob": 0.0
           }
         ]
@@ -4237,9 +4043,12 @@
       }
     },
     {
-      "step": 33,
-      "input_text": "Tell me a joke<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nA man walked into a library and asked the librarian, \"Do you have any books on Pavlov's dogs and Schrödinger's cat?\" \n\nThe",
+      "step": 31,
+      "input_text": "<|start_header_id|>user<|end_header_id|>Tell me a joke<|eot_id|><|start_header_id|>assistant<|end_header_id|>A man walked into a library and asked the librarian, \"Do you have any books on Pavlov's dogs and Schrödinger's cat?\"The",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "Tell",
         "Ġme",
         "Ġa",
@@ -4248,7 +4057,6 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "A",
         "Ġman",
         "Ġwalked",
@@ -4279,11 +4087,12 @@
         "inger",
         "'s",
         "Ġcat",
-        "?\"",
-        "Ġ\n\n",
         "The"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         41551,
         757,
         264,
@@ -4292,7 +4101,6 @@
         128006,
         78191,
         128007,
-        271,
         32,
         893,
         15203,
@@ -4323,8 +4131,6 @@
         5248,
         596,
         8415,
-        7673,
-        4815,
         791
       ],
       "output_distribution": {
@@ -4339,55 +4145,55 @@
           {
             "token": "Ġlibr",
             "token_id": 61459,
-            "logprob": -9.75,
+            "logprob": -9.375,
             "prob": 0.0001
           },
           {
             "token": "Ġlibrary",
             "token_id": 6875,
-            "logprob": -10.25,
-            "prob": 0.0
-          },
-          {
-            "token": "Ġwoman",
-            "token_id": 5333,
-            "logprob": -11.5,
+            "logprob": -10.75,
             "prob": 0.0
           },
           {
             "token": "Ġman",
             "token_id": 893,
-            "logprob": -11.625,
+            "logprob": -11.5625,
             "prob": 0.0
           },
           {
-            "token": "ĠLib",
-            "token_id": 5806,
+            "token": "Ġwoman",
+            "token_id": 5333,
             "logprob": -11.75,
-            "prob": 0.0
-          },
-          {
-            "token": "Ġresponse",
-            "token_id": 2077,
-            "logprob": -12.3125,
             "prob": 0.0
           },
           {
             "token": "Ġlib",
             "token_id": 3127,
-            "logprob": -12.625,
-            "prob": 0.0
-          },
-          {
-            "token": "Ġbook",
-            "token_id": 2363,
-            "logprob": -12.8125,
+            "logprob": -12.25,
             "prob": 0.0
           },
           {
             "token": "Ġliberal",
             "token_id": 18250,
-            "logprob": -12.8125,
+            "logprob": -12.375,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠLib",
+            "token_id": 5806,
+            "logprob": -12.375,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġlady",
+            "token_id": 17240,
+            "logprob": -13.6875,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġauthor",
+            "token_id": 3229,
+            "logprob": -13.75,
             "prob": 0.0
           }
         ]
@@ -4399,9 +4205,12 @@
       }
     },
     {
-      "step": 34,
-      "input_text": "Tell me a joke<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nA man walked into a library and asked the librarian, \"Do you have any books on Pavlov's dogs and Schrödinger's cat?\" \n\nThe librarian",
+      "step": 32,
+      "input_text": "<|start_header_id|>user<|end_header_id|>Tell me a joke<|eot_id|><|start_header_id|>assistant<|end_header_id|>A man walked into a library and asked the librarian, \"Do you have any books on Pavlov's dogs and Schrödinger's cat?\"The librarian",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "Tell",
         "Ġme",
         "Ġa",
@@ -4410,7 +4219,6 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "A",
         "Ġman",
         "Ġwalked",
@@ -4441,12 +4249,13 @@
         "inger",
         "'s",
         "Ġcat",
-        "?\"",
-        "Ġ\n\n",
         "The",
         "Ġlibrarian"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         41551,
         757,
         264,
@@ -4455,7 +4264,6 @@
         128006,
         78191,
         128007,
-        271,
         32,
         893,
         15203,
@@ -4486,8 +4294,6 @@
         5248,
         596,
         8415,
-        7673,
-        4815,
         791,
         95307
       ],
@@ -4497,14 +4303,8 @@
           {
             "token": "Ġreplied",
             "token_id": 20592,
-            "logprob": -0.0025,
-            "prob": 0.9961
-          },
-          {
-            "token": "Ġreplies",
-            "token_id": 31737,
-            "logprob": -6.875,
-            "prob": 0.001
+            "logprob": -0.0019,
+            "prob": 1.0
           },
           {
             "token": "Ġresponded",
@@ -4513,45 +4313,51 @@
             "prob": 0.001
           },
           {
-            "token": "Ġlooked",
-            "token_id": 7111,
-            "logprob": -9.0,
-            "prob": 0.0001
+            "token": "Ġreplies",
+            "token_id": 31737,
+            "logprob": -7.25,
+            "prob": 0.0007
           },
           {
-            "token": "Ġsmiled",
-            "token_id": 31645,
-            "logprob": -9.5,
+            "token": "Ġlooked",
+            "token_id": 7111,
+            "logprob": -9.625,
             "prob": 0.0001
           },
           {
             "token": "Ġsaid",
             "token_id": 1071,
-            "logprob": -9.625,
-            "prob": 0.0001
+            "logprob": -10.375,
+            "prob": 0.0
           },
           {
-            "token": ",",
-            "token_id": 11,
-            "logprob": -9.875,
-            "prob": 0.0001
+            "token": "Ġsmiled",
+            "token_id": 31645,
+            "logprob": -10.375,
+            "prob": 0.0
           },
           {
             "token": "Ġanswered",
             "token_id": 19089,
-            "logprob": -10.625,
+            "logprob": -11.125,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġreply",
+            "token_id": 10052,
+            "logprob": -11.1875,
             "prob": 0.0
           },
           {
             "token": "Ġthought",
             "token_id": 3463,
-            "logprob": -10.875,
+            "logprob": -11.9375,
             "prob": 0.0
           },
           {
-            "token": "Ġasked",
-            "token_id": 4691,
-            "logprob": -11.0625,
+            "token": ",",
+            "token_id": 11,
+            "logprob": -12.3125,
             "prob": 0.0
           }
         ]
@@ -4563,9 +4369,12 @@
       }
     },
     {
-      "step": 35,
-      "input_text": "Tell me a joke<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nA man walked into a library and asked the librarian, \"Do you have any books on Pavlov's dogs and Schrödinger's cat?\" \n\nThe librarian replied",
+      "step": 33,
+      "input_text": "<|start_header_id|>user<|end_header_id|>Tell me a joke<|eot_id|><|start_header_id|>assistant<|end_header_id|>A man walked into a library and asked the librarian, \"Do you have any books on Pavlov's dogs and Schrödinger's cat?\"The librarian replied",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "Tell",
         "Ġme",
         "Ġa",
@@ -4574,7 +4383,6 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "A",
         "Ġman",
         "Ġwalked",
@@ -4605,13 +4413,14 @@
         "inger",
         "'s",
         "Ġcat",
-        "?\"",
-        "Ġ\n\n",
         "The",
         "Ġlibrarian",
         "Ġreplied"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         41551,
         757,
         264,
@@ -4620,7 +4429,6 @@
         128006,
         78191,
         128007,
-        271,
         32,
         893,
         15203,
@@ -4651,8 +4459,6 @@
         5248,
         596,
         8415,
-        7673,
-        4815,
         791,
         95307,
         20592
@@ -4663,61 +4469,61 @@
           {
             "token": ",",
             "token_id": 11,
-            "logprob": -0.0016,
+            "logprob": -0.0004,
             "prob": 1.0
           },
           {
             "token": "Ġwith",
             "token_id": 449,
-            "logprob": -7.0,
-            "prob": 0.0009
+            "logprob": -8.375,
+            "prob": 0.0002
           },
           {
             "token": ":",
             "token_id": 25,
-            "logprob": -7.5,
-            "prob": 0.0006
+            "logprob": -8.875,
+            "prob": 0.0001
           },
           {
             "token": "Ġcalmly",
             "token_id": 73170,
-            "logprob": -9.75,
-            "prob": 0.0001
-          },
-          {
-            "token": "Ġby",
-            "token_id": 555,
             "logprob": -11.0,
             "prob": 0.0
           },
           {
             "token": "Ġquietly",
             "token_id": 30666,
-            "logprob": -11.125,
+            "logprob": -12.375,
             "prob": 0.0
           },
           {
-            "token": "Ġ\"",
-            "token_id": 330,
-            "logprob": -11.75,
-            "prob": 0.0
-          },
-          {
-            "token": "Ġpatiently",
-            "token_id": 79261,
-            "logprob": -11.75,
+            "token": "Ġby",
+            "token_id": 555,
+            "logprob": -13.375,
             "prob": 0.0
           },
           {
             "token": "Ġslowly",
             "token_id": 14297,
-            "logprob": -12.0625,
+            "logprob": -13.375,
             "prob": 0.0
           },
           {
-            "token": "Ġthat",
-            "token_id": 430,
-            "logprob": -12.4375,
+            "token": "Ġpatiently",
+            "token_id": 79261,
+            "logprob": -13.5,
+            "prob": 0.0
+          },
+          {
+            "token": ":\n\n",
+            "token_id": 1473,
+            "logprob": -14.125,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġseriously",
+            "token_id": 14243,
+            "logprob": -14.125,
             "prob": 0.0
           }
         ]
@@ -4729,9 +4535,12 @@
       }
     },
     {
-      "step": 36,
-      "input_text": "Tell me a joke<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nA man walked into a library and asked the librarian, \"Do you have any books on Pavlov's dogs and Schrödinger's cat?\" \n\nThe librarian replied,",
+      "step": 34,
+      "input_text": "<|start_header_id|>user<|end_header_id|>Tell me a joke<|eot_id|><|start_header_id|>assistant<|end_header_id|>A man walked into a library and asked the librarian, \"Do you have any books on Pavlov's dogs and Schrödinger's cat?\"The librarian replied,",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "Tell",
         "Ġme",
         "Ġa",
@@ -4740,7 +4549,6 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "A",
         "Ġman",
         "Ġwalked",
@@ -4771,14 +4579,15 @@
         "inger",
         "'s",
         "Ġcat",
-        "?\"",
-        "Ġ\n\n",
         "The",
         "Ġlibrarian",
         "Ġreplied",
         ","
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         41551,
         757,
         264,
@@ -4787,7 +4596,6 @@
         128006,
         78191,
         128007,
-        271,
         32,
         893,
         15203,
@@ -4818,8 +4626,6 @@
         5248,
         596,
         8415,
-        7673,
-        4815,
         791,
         95307,
         20592,
@@ -4831,61 +4637,61 @@
           {
             "token": "Ġ\"",
             "token_id": 330,
-            "logprob": -0.0043,
-            "prob": 0.9961
+            "logprob": -0.0011,
+            "prob": 1.0
           },
           {
             "token": "Ġ\n",
             "token_id": 720,
-            "logprob": -6.75,
-            "prob": 0.0012
-          },
-          {
-            "token": "Ġ",
-            "token_id": 220,
-            "logprob": -6.875,
-            "prob": 0.001
+            "logprob": -7.25,
+            "prob": 0.0007
           },
           {
             "token": "Ġ'",
             "token_id": 364,
-            "logprob": -7.0,
-            "prob": 0.0009
+            "logprob": -8.5,
+            "prob": 0.0002
           },
           {
             "token": "Ġ\n\n",
             "token_id": 4815,
-            "logprob": -7.125,
-            "prob": 0.0008
+            "logprob": -9.875,
+            "prob": 0.0001
           },
           {
-            "token": "Ġwith",
-            "token_id": 449,
-            "logprob": -9.75,
-            "prob": 0.0001
+            "token": "Ġ",
+            "token_id": 220,
+            "logprob": -10.25,
+            "prob": 0.0
           },
           {
             "token": "Ġ\"'",
             "token_id": 7326,
-            "logprob": -10.0,
+            "logprob": -10.75,
             "prob": 0.0
           },
           {
-            "token": "<|eot_id|>",
-            "token_id": 128009,
-            "logprob": -10.875,
+            "token": "Ġ\".",
+            "token_id": 6058,
+            "logprob": -11.875,
             "prob": 0.0
           },
           {
-            "token": "Ġ\"**",
-            "token_id": 69061,
-            "logprob": -10.875,
+            "token": "Ġ\"*",
+            "token_id": 16004,
+            "logprob": -12.0625,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġwith",
+            "token_id": 449,
+            "logprob": -12.0625,
             "prob": 0.0
           },
           {
             "token": "Ġ \n",
             "token_id": 2355,
-            "logprob": -10.875,
+            "logprob": -12.125,
             "prob": 0.0
           }
         ]
@@ -4897,9 +4703,12 @@
       }
     },
     {
-      "step": 37,
-      "input_text": "Tell me a joke<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nA man walked into a library and asked the librarian, \"Do you have any books on Pavlov's dogs and Schrödinger's cat?\" \n\nThe librarian replied, \"",
+      "step": 35,
+      "input_text": "<|start_header_id|>user<|end_header_id|>Tell me a joke<|eot_id|><|start_header_id|>assistant<|end_header_id|>A man walked into a library and asked the librarian, \"Do you have any books on Pavlov's dogs and Schrödinger's cat?\"The librarian replied, \"",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "Tell",
         "Ġme",
         "Ġa",
@@ -4908,7 +4717,6 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "A",
         "Ġman",
         "Ġwalked",
@@ -4939,8 +4747,6 @@
         "inger",
         "'s",
         "Ġcat",
-        "?\"",
-        "Ġ\n\n",
         "The",
         "Ġlibrarian",
         "Ġreplied",
@@ -4948,6 +4754,9 @@
         "Ġ\""
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         41551,
         757,
         264,
@@ -4956,7 +4765,6 @@
         128006,
         78191,
         128007,
-        271,
         32,
         893,
         15203,
@@ -4987,8 +4795,6 @@
         5248,
         596,
         8415,
-        7673,
-        4815,
         791,
         95307,
         20592,
@@ -5001,7 +4807,7 @@
           {
             "token": "It",
             "token_id": 2181,
-            "logprob": -0.0011,
+            "logprob": -0.0009,
             "prob": 1.0
           },
           {
@@ -5013,49 +4819,49 @@
           {
             "token": "If",
             "token_id": 2746,
-            "logprob": -8.625,
-            "prob": 0.0002
+            "logprob": -8.875,
+            "prob": 0.0001
           },
           {
             "token": "Let",
             "token_id": 10267,
-            "logprob": -9.0,
+            "logprob": -9.75,
             "prob": 0.0001
           },
           {
             "token": "Yes",
             "token_id": 9642,
-            "logprob": -10.125,
+            "logprob": -10.5,
             "prob": 0.0
           },
           {
             "token": "Actually",
             "token_id": 53692,
-            "logprob": -10.125,
+            "logprob": -10.75,
             "prob": 0.0
           },
           {
             "token": "ĠIt",
             "token_id": 1102,
-            "logprob": -10.6875,
-            "prob": 0.0
-          },
-          {
-            "token": "it",
-            "token_id": 275,
-            "logprob": -11.3125,
+            "logprob": -11.1875,
             "prob": 0.0
           },
           {
             "token": "No",
             "token_id": 2822,
-            "logprob": -11.375,
+            "logprob": -11.6875,
+            "prob": 0.0
+          },
+          {
+            "token": "it",
+            "token_id": 275,
+            "logprob": -12.0625,
             "prob": 0.0
           },
           {
             "token": "Unfortunately",
             "token_id": 31140,
-            "logprob": -11.5,
+            "logprob": -12.0625,
             "prob": 0.0
           }
         ]
@@ -5067,9 +4873,12 @@
       }
     },
     {
-      "step": 38,
-      "input_text": "Tell me a joke<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nA man walked into a library and asked the librarian, \"Do you have any books on Pavlov's dogs and Schrödinger's cat?\" \n\nThe librarian replied, \"It",
+      "step": 36,
+      "input_text": "<|start_header_id|>user<|end_header_id|>Tell me a joke<|eot_id|><|start_header_id|>assistant<|end_header_id|>A man walked into a library and asked the librarian, \"Do you have any books on Pavlov's dogs and Schrödinger's cat?\"The librarian replied, \"It",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "Tell",
         "Ġme",
         "Ġa",
@@ -5078,7 +4887,6 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "A",
         "Ġman",
         "Ġwalked",
@@ -5109,8 +4917,6 @@
         "inger",
         "'s",
         "Ġcat",
-        "?\"",
-        "Ġ\n\n",
         "The",
         "Ġlibrarian",
         "Ġreplied",
@@ -5119,6 +4925,9 @@
         "It"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         41551,
         757,
         264,
@@ -5127,7 +4936,6 @@
         128006,
         78191,
         128007,
-        271,
         32,
         893,
         15203,
@@ -5158,8 +4966,6 @@
         5248,
         596,
         8415,
-        7673,
-        4815,
         791,
         95307,
         20592,
@@ -5173,32 +4979,50 @@
           {
             "token": "Ġrings",
             "token_id": 25562,
-            "logprob": -0.0009,
+            "logprob": -0.0012,
             "prob": 1.0
           },
           {
             "token": "ĠRings",
             "token_id": 47380,
+            "logprob": -8.0,
+            "prob": 0.0003
+          },
+          {
+            "token": "'s",
+            "token_id": 596,
             "logprob": -8.0625,
             "prob": 0.0003
           },
           {
             "token": "Ġring",
             "token_id": 10264,
-            "logprob": -8.4375,
+            "logprob": -8.5,
             "prob": 0.0002
-          },
-          {
-            "token": "'s",
-            "token_id": 596,
-            "logprob": -9.4375,
-            "prob": 0.0001
           },
           {
             "token": "-ring",
             "token_id": 77029,
-            "logprob": -9.625,
+            "logprob": -9.5,
             "prob": 0.0001
+          },
+          {
+            "token": "Ġjumps",
+            "token_id": 35308,
+            "logprob": -10.125,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġexists",
+            "token_id": 6866,
+            "logprob": -10.4375,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġrains",
+            "token_id": 62555,
+            "logprob": -10.5625,
+            "prob": 0.0
           },
           {
             "token": "Ġasks",
@@ -5207,27 +5031,9 @@
             "prob": 0.0
           },
           {
-            "token": "Ġexists",
-            "token_id": 6866,
-            "logprob": -10.75,
-            "prob": 0.0
-          },
-          {
-            "token": "Ġjumps",
-            "token_id": 35308,
-            "logprob": -10.75,
-            "prob": 0.0
-          },
-          {
-            "token": "ĠRing",
-            "token_id": 22249,
-            "logprob": -11.625,
-            "prob": 0.0
-          },
-          {
-            "token": "Ġrains",
-            "token_id": 62555,
-            "logprob": -11.625,
+            "token": "Ġsays",
+            "token_id": 2795,
+            "logprob": -11.375,
             "prob": 0.0
           }
         ]
@@ -5239,9 +5045,12 @@
       }
     },
     {
-      "step": 39,
-      "input_text": "Tell me a joke<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nA man walked into a library and asked the librarian, \"Do you have any books on Pavlov's dogs and Schrödinger's cat?\" \n\nThe librarian replied, \"It rings",
+      "step": 37,
+      "input_text": "<|start_header_id|>user<|end_header_id|>Tell me a joke<|eot_id|><|start_header_id|>assistant<|end_header_id|>A man walked into a library and asked the librarian, \"Do you have any books on Pavlov's dogs and Schrödinger's cat?\"The librarian replied, \"It rings",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "Tell",
         "Ġme",
         "Ġa",
@@ -5250,7 +5059,6 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "A",
         "Ġman",
         "Ġwalked",
@@ -5281,8 +5089,6 @@
         "inger",
         "'s",
         "Ġcat",
-        "?\"",
-        "Ġ\n\n",
         "The",
         "Ġlibrarian",
         "Ġreplied",
@@ -5292,6 +5098,9 @@
         "Ġrings"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         41551,
         757,
         264,
@@ -5300,7 +5109,6 @@
         128006,
         78191,
         128007,
-        271,
         32,
         893,
         15203,
@@ -5331,8 +5139,6 @@
         5248,
         596,
         8415,
-        7673,
-        4815,
         791,
         95307,
         20592,
@@ -5353,55 +5159,55 @@
           {
             "token": "Ġup",
             "token_id": 709,
-            "logprob": -13.875,
+            "logprob": -13.0625,
             "prob": 0.0
           },
           {
             "token": "Ġthe",
             "token_id": 279,
-            "logprob": -14.6875,
+            "logprob": -14.5625,
             "prob": 0.0
           },
           {
             "token": "Ġin",
             "token_id": 304,
-            "logprob": -15.75,
-            "prob": 0.0
-          },
-          {
-            "token": "Ġbut",
-            "token_id": 719,
-            "logprob": -16.125,
-            "prob": 0.0
-          },
-          {
-            "token": "-a",
-            "token_id": 7561,
-            "logprob": -16.5,
+            "logprob": -15.3125,
             "prob": 0.0
           },
           {
             "token": "Ġwith",
             "token_id": 449,
-            "logprob": -16.75,
+            "logprob": -16.375,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġbut",
+            "token_id": 719,
+            "logprob": -16.5,
+            "prob": 0.0
+          },
+          {
+            "token": "-a",
+            "token_id": 7561,
+            "logprob": -16.625,
             "prob": 0.0
           },
           {
             "token": "Ġsome",
             "token_id": 1063,
-            "logprob": -17.0,
+            "logprob": -16.75,
             "prob": 0.0
           },
           {
-            "token": "Ġoff",
-            "token_id": 1022,
-            "logprob": -17.125,
+            "token": "Ġthem",
+            "token_id": 1124,
+            "logprob": -16.75,
             "prob": 0.0
           },
           {
             "token": ",",
             "token_id": 11,
-            "logprob": -17.125,
+            "logprob": -17.0,
             "prob": 0.0
           }
         ]
@@ -5413,9 +5219,12 @@
       }
     },
     {
-      "step": 40,
-      "input_text": "Tell me a joke<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nA man walked into a library and asked the librarian, \"Do you have any books on Pavlov's dogs and Schrödinger's cat?\" \n\nThe librarian replied, \"It rings a",
+      "step": 38,
+      "input_text": "<|start_header_id|>user<|end_header_id|>Tell me a joke<|eot_id|><|start_header_id|>assistant<|end_header_id|>A man walked into a library and asked the librarian, \"Do you have any books on Pavlov's dogs and Schrödinger's cat?\"The librarian replied, \"It rings a",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "Tell",
         "Ġme",
         "Ġa",
@@ -5424,7 +5233,6 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "A",
         "Ġman",
         "Ġwalked",
@@ -5455,8 +5263,6 @@
         "inger",
         "'s",
         "Ġcat",
-        "?\"",
-        "Ġ\n\n",
         "The",
         "Ġlibrarian",
         "Ġreplied",
@@ -5467,6 +5273,9 @@
         "Ġa"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         41551,
         757,
         264,
@@ -5475,7 +5284,6 @@
         128006,
         78191,
         128007,
-        271,
         32,
         893,
         15203,
@@ -5506,8 +5314,6 @@
         5248,
         596,
         8415,
-        7673,
-        4815,
         791,
         95307,
         20592,
@@ -5523,61 +5329,61 @@
           {
             "token": "Ġbell",
             "token_id": 29519,
-            "logprob": -0.0009,
+            "logprob": -0.0008,
             "prob": 1.0
           },
           {
             "token": "ĠBell",
             "token_id": 18366,
-            "logprob": -7.625,
-            "prob": 0.0005
+            "logprob": -7.75,
+            "prob": 0.0004
           },
           {
             "token": "Ġbells",
             "token_id": 61794,
-            "logprob": -8.5,
-            "prob": 0.0002
+            "logprob": -8.8125,
+            "prob": 0.0001
           },
           {
             "token": "Ġdoor",
             "token_id": 6134,
-            "logprob": -9.8125,
-            "prob": 0.0001
+            "logprob": -10.0,
+            "prob": 0.0
           },
           {
             "token": "bell",
             "token_id": 17696,
-            "logprob": -10.125,
+            "logprob": -10.375,
             "prob": 0.0
           },
           {
             "token": "Bell",
             "token_id": 85238,
-            "logprob": -10.1875,
-            "prob": 0.0
-          },
-          {
-            "token": "Ġbit",
-            "token_id": 2766,
-            "logprob": -11.0,
+            "logprob": -10.4375,
             "prob": 0.0
           },
           {
             "token": "Ġtone",
             "token_id": 16630,
-            "logprob": -11.1875,
+            "logprob": -11.3125,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġbit",
+            "token_id": 2766,
+            "logprob": -11.8125,
             "prob": 0.0
           },
           {
             "token": "Ġlot",
             "token_id": 2763,
-            "logprob": -11.8125,
+            "logprob": -12.3125,
             "prob": 0.0
           },
           {
             "token": "Ġfew",
             "token_id": 2478,
-            "logprob": -12.0625,
+            "logprob": -12.5,
             "prob": 0.0
           }
         ]
@@ -5589,9 +5395,12 @@
       }
     },
     {
-      "step": 41,
-      "input_text": "Tell me a joke<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nA man walked into a library and asked the librarian, \"Do you have any books on Pavlov's dogs and Schrödinger's cat?\" \n\nThe librarian replied, \"It rings a bell",
+      "step": 39,
+      "input_text": "<|start_header_id|>user<|end_header_id|>Tell me a joke<|eot_id|><|start_header_id|>assistant<|end_header_id|>A man walked into a library and asked the librarian, \"Do you have any books on Pavlov's dogs and Schrödinger's cat?\"The librarian replied, \"It rings a bell",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "Tell",
         "Ġme",
         "Ġa",
@@ -5600,7 +5409,6 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "A",
         "Ġman",
         "Ġwalked",
@@ -5631,8 +5439,6 @@
         "inger",
         "'s",
         "Ġcat",
-        "?\"",
-        "Ġ\n\n",
         "The",
         "Ġlibrarian",
         "Ġreplied",
@@ -5644,6 +5450,9 @@
         "Ġbell"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         41551,
         757,
         264,
@@ -5652,7 +5461,6 @@
         128006,
         78191,
         128007,
-        271,
         32,
         893,
         15203,
@@ -5683,8 +5491,6 @@
         5248,
         596,
         8415,
-        7673,
-        4815,
         791,
         95307,
         20592,
@@ -5701,61 +5507,61 @@
           {
             "token": ",",
             "token_id": 11,
-            "logprob": -0.0004,
+            "logprob": -0.0001,
             "prob": 1.0
           },
           {
             "token": ".\"",
             "token_id": 1210,
-            "logprob": -8.0,
-            "prob": 0.0003
+            "logprob": -9.125,
+            "prob": 0.0001
           },
           {
             "token": ",\"",
             "token_id": 1359,
-            "logprob": -10.375,
+            "logprob": -11.375,
             "prob": 0.0
           },
           {
             "token": "Ġbut",
             "token_id": 719,
-            "logprob": -10.5,
+            "logprob": -11.75,
             "prob": 0.0
           },
           {
             "token": ".\"\n\n",
             "token_id": 2266,
-            "logprob": -11.875,
+            "logprob": -12.25,
             "prob": 0.0
           },
           {
             "token": ".",
             "token_id": 13,
-            "logprob": -12.1875,
-            "prob": 0.0
-          },
-          {
-            "token": "...\"",
-            "token_id": 21908,
-            "logprob": -13.875,
+            "logprob": -13.0,
             "prob": 0.0
           },
           {
             "token": "Ġand",
             "token_id": 323,
-            "logprob": -14.0,
-            "prob": 0.0
-          },
-          {
-            "token": "...",
-            "token_id": 1131,
-            "logprob": -14.1875,
+            "logprob": -14.75,
             "prob": 0.0
           },
           {
             "token": "Ġsomewhere",
             "token_id": 15038,
-            "logprob": -14.5,
+            "logprob": -14.9375,
+            "prob": 0.0
+          },
+          {
+            "token": "...\"",
+            "token_id": 21908,
+            "logprob": -15.1875,
+            "prob": 0.0
+          },
+          {
+            "token": "...",
+            "token_id": 1131,
+            "logprob": -15.625,
             "prob": 0.0
           }
         ]
@@ -5767,9 +5573,12 @@
       }
     },
     {
-      "step": 42,
-      "input_text": "Tell me a joke<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nA man walked into a library and asked the librarian, \"Do you have any books on Pavlov's dogs and Schrödinger's cat?\" \n\nThe librarian replied, \"It rings a bell,",
+      "step": 40,
+      "input_text": "<|start_header_id|>user<|end_header_id|>Tell me a joke<|eot_id|><|start_header_id|>assistant<|end_header_id|>A man walked into a library and asked the librarian, \"Do you have any books on Pavlov's dogs and Schrödinger's cat?\"The librarian replied, \"It rings a bell,",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "Tell",
         "Ġme",
         "Ġa",
@@ -5778,7 +5587,6 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "A",
         "Ġman",
         "Ġwalked",
@@ -5809,8 +5617,6 @@
         "inger",
         "'s",
         "Ġcat",
-        "?\"",
-        "Ġ\n\n",
         "The",
         "Ġlibrarian",
         "Ġreplied",
@@ -5823,6 +5629,9 @@
         ","
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         41551,
         757,
         264,
@@ -5831,7 +5640,6 @@
         128006,
         78191,
         128007,
-        271,
         32,
         893,
         15203,
@@ -5862,8 +5670,6 @@
         5248,
         596,
         8415,
-        7673,
-        4815,
         791,
         95307,
         20592,
@@ -5887,55 +5693,55 @@
           {
             "token": "Ġit",
             "token_id": 433,
-            "logprob": -10.75,
+            "logprob": -11.75,
             "prob": 0.0
           },
           {
             "token": "ĠBut",
             "token_id": 2030,
-            "logprob": -11.75,
+            "logprob": -12.25,
             "prob": 0.0
           },
           {
             "token": "Ġand",
             "token_id": 323,
-            "logprob": -12.25,
-            "prob": 0.0
-          },
-          {
-            "token": "Ġ",
-            "token_id": 220,
-            "logprob": -12.75,
-            "prob": 0.0
-          },
-          {
-            "token": "Ġno",
-            "token_id": 912,
-            "logprob": -13.125,
+            "logprob": -13.0,
             "prob": 0.0
           },
           {
             "token": "ĠI",
             "token_id": 358,
-            "logprob": -13.1875,
+            "logprob": -14.75,
             "prob": 0.0
           },
           {
-            "token": "Ġyes",
-            "token_id": 10035,
-            "logprob": -13.75,
+            "token": "but",
+            "token_id": 8248,
+            "logprob": -15.0,
             "prob": 0.0
           },
           {
-            "token": "ĠBUT",
-            "token_id": 11155,
-            "logprob": -14.375,
+            "token": "Ġno",
+            "token_id": 912,
+            "logprob": -15.0625,
             "prob": 0.0
           },
           {
             "token": "Ġно",
             "token_id": 101188,
-            "logprob": -14.375,
+            "logprob": -15.1875,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠBUT",
+            "token_id": 11155,
+            "logprob": -15.1875,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġyes",
+            "token_id": 10035,
+            "logprob": -15.375,
             "prob": 0.0
           }
         ]
@@ -5947,9 +5753,12 @@
       }
     },
     {
-      "step": 43,
-      "input_text": "Tell me a joke<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nA man walked into a library and asked the librarian, \"Do you have any books on Pavlov's dogs and Schrödinger's cat?\" \n\nThe librarian replied, \"It rings a bell, but",
+      "step": 41,
+      "input_text": "<|start_header_id|>user<|end_header_id|>Tell me a joke<|eot_id|><|start_header_id|>assistant<|end_header_id|>A man walked into a library and asked the librarian, \"Do you have any books on Pavlov's dogs and Schrödinger's cat?\"The librarian replied, \"It rings a bell, but",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "Tell",
         "Ġme",
         "Ġa",
@@ -5958,7 +5767,6 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "A",
         "Ġman",
         "Ġwalked",
@@ -5989,8 +5797,6 @@
         "inger",
         "'s",
         "Ġcat",
-        "?\"",
-        "Ġ\n\n",
         "The",
         "Ġlibrarian",
         "Ġreplied",
@@ -6004,6 +5810,9 @@
         "Ġbut"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         41551,
         757,
         264,
@@ -6012,7 +5821,6 @@
         128006,
         78191,
         128007,
-        271,
         32,
         893,
         15203,
@@ -6043,8 +5851,6 @@
         5248,
         596,
         8415,
-        7673,
-        4815,
         791,
         95307,
         20592,
@@ -6069,13 +5875,13 @@
           {
             "token": "Ġit",
             "token_id": 433,
-            "logprob": -11.75,
+            "logprob": -11.6875,
             "prob": 0.0
           },
           {
             "token": "Ġwe",
             "token_id": 584,
-            "logprob": -13.125,
+            "logprob": -13.1875,
             "prob": 0.0
           },
           {
@@ -6085,39 +5891,39 @@
             "prob": 0.0
           },
           {
-            "token": "Ġcan",
-            "token_id": 649,
+            "token": "Ġyou",
+            "token_id": 499,
             "logprob": -14.0625,
             "prob": 0.0
           },
           {
-            "token": "Ġyou",
-            "token_id": 499,
-            "logprob": -14.625,
-            "prob": 0.0
-          },
-          {
-            "token": "Ġi",
-            "token_id": 602,
-            "logprob": -14.9375,
+            "token": "Ġcan",
+            "token_id": 649,
+            "logprob": -14.4375,
             "prob": 0.0
           },
           {
             "token": "Ġhe",
             "token_id": 568,
-            "logprob": -15.1875,
+            "logprob": -15.125,
             "prob": 0.0
           },
           {
-            "token": "Ġthat",
-            "token_id": 430,
-            "logprob": -15.25,
+            "token": "Ġme",
+            "token_id": 757,
+            "logprob": -15.375,
             "prob": 0.0
           },
           {
-            "token": "Ġsince",
-            "token_id": 2533,
+            "token": "Ġi",
+            "token_id": 602,
             "logprob": -15.5,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġcannot",
+            "token_id": 4250,
+            "logprob": -15.875,
             "prob": 0.0
           }
         ]
@@ -6129,9 +5935,12 @@
       }
     },
     {
-      "step": 44,
-      "input_text": "Tell me a joke<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nA man walked into a library and asked the librarian, \"Do you have any books on Pavlov's dogs and Schrödinger's cat?\" \n\nThe librarian replied, \"It rings a bell, but I",
+      "step": 42,
+      "input_text": "<|start_header_id|>user<|end_header_id|>Tell me a joke<|eot_id|><|start_header_id|>assistant<|end_header_id|>A man walked into a library and asked the librarian, \"Do you have any books on Pavlov's dogs and Schrödinger's cat?\"The librarian replied, \"It rings a bell, but I",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "Tell",
         "Ġme",
         "Ġa",
@@ -6140,7 +5949,6 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "A",
         "Ġman",
         "Ġwalked",
@@ -6171,8 +5979,6 @@
         "inger",
         "'s",
         "Ġcat",
-        "?\"",
-        "Ġ\n\n",
         "The",
         "Ġlibrarian",
         "Ġreplied",
@@ -6187,6 +5993,9 @@
         "ĠI"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         41551,
         757,
         264,
@@ -6195,7 +6004,6 @@
         128006,
         78191,
         128007,
-        271,
         32,
         893,
         15203,
@@ -6226,8 +6034,6 @@
         5248,
         596,
         8415,
-        7673,
-        4815,
         791,
         95307,
         20592,
@@ -6253,55 +6059,55 @@
           {
             "token": "Ġdon",
             "token_id": 1541,
-            "logprob": -9.375,
-            "prob": 0.0001
-          },
-          {
-            "token": "Ġam",
-            "token_id": 1097,
-            "logprob": -9.875,
+            "logprob": -9.3125,
             "prob": 0.0001
           },
           {
             "token": "Ġcouldn",
             "token_id": 7846,
-            "logprob": -9.9375,
+            "logprob": -9.75,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġam",
+            "token_id": 1097,
+            "logprob": -10.25,
             "prob": 0.0
           },
           {
             "token": "Ġthink",
             "token_id": 1781,
-            "logprob": -10.5625,
-            "prob": 0.0
-          },
-          {
-            "token": "’m",
-            "token_id": 4344,
-            "logprob": -10.625,
+            "logprob": -10.5,
             "prob": 0.0
           },
           {
             "token": "'re",
             "token_id": 2351,
-            "logprob": -10.6875,
+            "logprob": -10.5,
+            "prob": 0.0
+          },
+          {
+            "token": "’m",
+            "token_id": 4344,
+            "logprob": -11.0,
             "prob": 0.0
           },
           {
             "token": "Ġwasn",
             "token_id": 5828,
-            "logprob": -11.8125,
+            "logprob": -11.5625,
             "prob": 0.0
           },
           {
             "token": "Ġdidn",
             "token_id": 3287,
-            "logprob": -13.0,
+            "logprob": -12.6875,
             "prob": 0.0
           },
           {
-            "token": "'d",
-            "token_id": 4265,
-            "logprob": -13.0625,
+            "token": "Ġforgot",
+            "token_id": 29695,
+            "logprob": -12.6875,
             "prob": 0.0
           }
         ]
@@ -6313,9 +6119,12 @@
       }
     },
     {
-      "step": 45,
-      "input_text": "Tell me a joke<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nA man walked into a library and asked the librarian, \"Do you have any books on Pavlov's dogs and Schrödinger's cat?\" \n\nThe librarian replied, \"It rings a bell, but I'm",
+      "step": 43,
+      "input_text": "<|start_header_id|>user<|end_header_id|>Tell me a joke<|eot_id|><|start_header_id|>assistant<|end_header_id|>A man walked into a library and asked the librarian, \"Do you have any books on Pavlov's dogs and Schrödinger's cat?\"The librarian replied, \"It rings a bell, but I'm",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "Tell",
         "Ġme",
         "Ġa",
@@ -6324,7 +6133,6 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "A",
         "Ġman",
         "Ġwalked",
@@ -6355,8 +6163,6 @@
         "inger",
         "'s",
         "Ġcat",
-        "?\"",
-        "Ġ\n\n",
         "The",
         "Ġlibrarian",
         "Ġreplied",
@@ -6372,6 +6178,9 @@
         "'m"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         41551,
         757,
         264,
@@ -6380,7 +6189,6 @@
         128006,
         78191,
         128007,
-        271,
         32,
         893,
         15203,
@@ -6411,8 +6219,6 @@
         5248,
         596,
         8415,
-        7673,
-        4815,
         791,
         95307,
         20592,
@@ -6439,19 +6245,19 @@
           {
             "token": "Ġafraid",
             "token_id": 16984,
-            "logprob": -7.375,
-            "prob": 0.0006
+            "logprob": -7.625,
+            "prob": 0.0005
           },
           {
             "token": "Ġunsure",
             "token_id": 44003,
-            "logprob": -8.0,
-            "prob": 0.0003
+            "logprob": -7.75,
+            "prob": 0.0004
           },
           {
             "token": "Ġuncertain",
             "token_id": 36218,
-            "logprob": -9.8125,
+            "logprob": -9.4375,
             "prob": 0.0001
           },
           {
@@ -6463,31 +6269,31 @@
           {
             "token": "ĠNot",
             "token_id": 2876,
-            "logprob": -10.375,
-            "prob": 0.0
-          },
-          {
-            "token": "Ġsure",
-            "token_id": 2771,
-            "logprob": -10.75,
-            "prob": 0.0
-          },
-          {
-            "token": "-not",
-            "token_id": 30269,
-            "logprob": -11.125,
+            "logprob": -10.1875,
             "prob": 0.0
           },
           {
             "token": "Ġun",
             "token_id": 653,
-            "logprob": -11.25,
+            "logprob": -10.75,
             "prob": 0.0
           },
           {
-            "token": "_not",
-            "token_id": 8072,
-            "logprob": -11.3125,
+            "token": "Ġunclear",
+            "token_id": 25420,
+            "logprob": -10.875,
+            "prob": 0.0
+          },
+          {
+            "token": "-not",
+            "token_id": 30269,
+            "logprob": -11.0625,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġsure",
+            "token_id": 2771,
+            "logprob": -11.1875,
             "prob": 0.0
           }
         ]
@@ -6499,9 +6305,12 @@
       }
     },
     {
-      "step": 46,
-      "input_text": "Tell me a joke<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nA man walked into a library and asked the librarian, \"Do you have any books on Pavlov's dogs and Schrödinger's cat?\" \n\nThe librarian replied, \"It rings a bell, but I'm not",
+      "step": 44,
+      "input_text": "<|start_header_id|>user<|end_header_id|>Tell me a joke<|eot_id|><|start_header_id|>assistant<|end_header_id|>A man walked into a library and asked the librarian, \"Do you have any books on Pavlov's dogs and Schrödinger's cat?\"The librarian replied, \"It rings a bell, but I'm not",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "Tell",
         "Ġme",
         "Ġa",
@@ -6510,7 +6319,6 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "A",
         "Ġman",
         "Ġwalked",
@@ -6541,8 +6349,6 @@
         "inger",
         "'s",
         "Ġcat",
-        "?\"",
-        "Ġ\n\n",
         "The",
         "Ġlibrarian",
         "Ġreplied",
@@ -6559,6 +6365,9 @@
         "Ġnot"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         41551,
         757,
         264,
@@ -6567,7 +6376,6 @@
         128006,
         78191,
         128007,
-        271,
         32,
         893,
         15203,
@@ -6598,8 +6406,6 @@
         5248,
         596,
         8415,
-        7673,
-        4815,
         791,
         95307,
         20592,
@@ -6627,19 +6433,19 @@
           {
             "token": "ĠSure",
             "token_id": 23371,
-            "logprob": -9.9375,
-            "prob": 0.0
+            "logprob": -9.75,
+            "prob": 0.0001
           },
           {
             "token": "Ġaware",
             "token_id": 8010,
-            "logprob": -10.6875,
+            "logprob": -10.3125,
             "prob": 0.0
           },
           {
             "token": "Ġcertain",
             "token_id": 3738,
-            "logprob": -11.375,
+            "logprob": -11.4375,
             "prob": 0.0
           },
           {
@@ -6657,25 +6463,25 @@
           {
             "token": "sure",
             "token_id": 19643,
-            "logprob": -12.625,
+            "logprob": -12.4375,
             "prob": 0.0
           },
           {
             "token": "Ġconfident",
             "token_id": 16913,
-            "logprob": -12.9375,
+            "logprob": -12.875,
             "prob": 0.0
           },
           {
             "token": "Ġpositive",
             "token_id": 6928,
-            "logprob": -13.0625,
+            "logprob": -12.9375,
             "prob": 0.0
           },
           {
-            "token": "Ġsûr",
-            "token_id": 97717,
-            "logprob": -13.3125,
+            "token": "Ġconvinced",
+            "token_id": 22954,
+            "logprob": -13.1875,
             "prob": 0.0
           }
         ]
@@ -6687,9 +6493,12 @@
       }
     },
     {
-      "step": 47,
-      "input_text": "Tell me a joke<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nA man walked into a library and asked the librarian, \"Do you have any books on Pavlov's dogs and Schrödinger's cat?\" \n\nThe librarian replied, \"It rings a bell, but I'm not sure",
+      "step": 45,
+      "input_text": "<|start_header_id|>user<|end_header_id|>Tell me a joke<|eot_id|><|start_header_id|>assistant<|end_header_id|>A man walked into a library and asked the librarian, \"Do you have any books on Pavlov's dogs and Schrödinger's cat?\"The librarian replied, \"It rings a bell, but I'm not sure",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "Tell",
         "Ġme",
         "Ġa",
@@ -6698,7 +6507,6 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "A",
         "Ġman",
         "Ġwalked",
@@ -6729,8 +6537,6 @@
         "inger",
         "'s",
         "Ġcat",
-        "?\"",
-        "Ġ\n\n",
         "The",
         "Ġlibrarian",
         "Ġreplied",
@@ -6748,6 +6554,9 @@
         "Ġsure"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         41551,
         757,
         264,
@@ -6756,7 +6565,6 @@
         128006,
         78191,
         128007,
-        271,
         32,
         893,
         15203,
@@ -6787,8 +6595,6 @@
         5248,
         596,
         8415,
-        7673,
-        4815,
         791,
         95307,
         20592,
@@ -6829,31 +6635,31 @@
           {
             "token": "Ġit",
             "token_id": 433,
-            "logprob": -9.875,
+            "logprob": -9.5,
             "prob": 0.0001
           },
           {
             "token": "Ġwhether",
             "token_id": 3508,
-            "logprob": -10.375,
+            "logprob": -10.25,
             "prob": 0.0
           },
           {
             "token": ".\"\n\n",
             "token_id": 2266,
-            "logprob": -11.0,
+            "logprob": -10.625,
             "prob": 0.0
           },
           {
             "token": "Ġabout",
             "token_id": 922,
-            "logprob": -13.0625,
+            "logprob": -13.0,
             "prob": 0.0
           },
           {
             "token": "Ġwho",
             "token_id": 889,
-            "logprob": -13.25,
+            "logprob": -13.3125,
             "prob": 0.0
           },
           {
@@ -6865,7 +6671,7 @@
           {
             "token": "ĠIf",
             "token_id": 1442,
-            "logprob": -13.6875,
+            "logprob": -13.75,
             "prob": 0.0
           }
         ]
@@ -6877,9 +6683,12 @@
       }
     },
     {
-      "step": 48,
-      "input_text": "Tell me a joke<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nA man walked into a library and asked the librarian, \"Do you have any books on Pavlov's dogs and Schrödinger's cat?\" \n\nThe librarian replied, \"It rings a bell, but I'm not sure if",
+      "step": 46,
+      "input_text": "<|start_header_id|>user<|end_header_id|>Tell me a joke<|eot_id|><|start_header_id|>assistant<|end_header_id|>A man walked into a library and asked the librarian, \"Do you have any books on Pavlov's dogs and Schrödinger's cat?\"The librarian replied, \"It rings a bell, but I'm not sure if",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "Tell",
         "Ġme",
         "Ġa",
@@ -6888,7 +6697,6 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "A",
         "Ġman",
         "Ġwalked",
@@ -6919,8 +6727,6 @@
         "inger",
         "'s",
         "Ġcat",
-        "?\"",
-        "Ġ\n\n",
         "The",
         "Ġlibrarian",
         "Ġreplied",
@@ -6939,6 +6745,9 @@
         "Ġif"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         41551,
         757,
         264,
@@ -6947,7 +6756,6 @@
         128006,
         78191,
         128007,
-        271,
         32,
         893,
         15203,
@@ -6978,8 +6786,6 @@
         5248,
         596,
         8415,
-        7673,
-        4815,
         791,
         95307,
         20592,
@@ -7009,55 +6815,55 @@
           {
             "token": "ĠI",
             "token_id": 358,
-            "logprob": -13.0,
-            "prob": 0.0
-          },
-          {
-            "token": "Ġwe",
-            "token_id": 584,
-            "logprob": -13.25,
+            "logprob": -14.125,
             "prob": 0.0
           },
           {
             "token": "Ġthe",
             "token_id": 279,
-            "logprob": -13.375,
+            "logprob": -14.125,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġwe",
+            "token_id": 584,
+            "logprob": -14.375,
             "prob": 0.0
           },
           {
             "token": "Ġthat",
             "token_id": 430,
-            "logprob": -15.0,
+            "logprob": -15.5,
             "prob": 0.0
           },
           {
             "token": "Ġthey",
             "token_id": 814,
-            "logprob": -15.25,
+            "logprob": -15.875,
             "prob": 0.0
           },
           {
             "token": "Ġhe",
             "token_id": 568,
-            "logprob": -15.25,
+            "logprob": -16.0,
             "prob": 0.0
           },
           {
             "token": "Ġthere",
             "token_id": 1070,
-            "logprob": -15.625,
+            "logprob": -16.0,
             "prob": 0.0
           },
           {
             "token": "ĠIt",
             "token_id": 1102,
-            "logprob": -16.25,
+            "logprob": -16.625,
             "prob": 0.0
           },
           {
             "token": "Ġto",
             "token_id": 311,
-            "logprob": -16.75,
+            "logprob": -17.25,
             "prob": 0.0
           }
         ]
@@ -7069,9 +6875,12 @@
       }
     },
     {
-      "step": 49,
-      "input_text": "Tell me a joke<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nA man walked into a library and asked the librarian, \"Do you have any books on Pavlov's dogs and Schrödinger's cat?\" \n\nThe librarian replied, \"It rings a bell, but I'm not sure if it",
+      "step": 47,
+      "input_text": "<|start_header_id|>user<|end_header_id|>Tell me a joke<|eot_id|><|start_header_id|>assistant<|end_header_id|>A man walked into a library and asked the librarian, \"Do you have any books on Pavlov's dogs and Schrödinger's cat?\"The librarian replied, \"It rings a bell, but I'm not sure if it",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "Tell",
         "Ġme",
         "Ġa",
@@ -7080,7 +6889,6 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "A",
         "Ġman",
         "Ġwalked",
@@ -7111,8 +6919,6 @@
         "inger",
         "'s",
         "Ġcat",
-        "?\"",
-        "Ġ\n\n",
         "The",
         "Ġlibrarian",
         "Ġreplied",
@@ -7132,6 +6938,9 @@
         "Ġit"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         41551,
         757,
         264,
@@ -7140,7 +6949,6 @@
         128006,
         78191,
         128007,
-        271,
         32,
         893,
         15203,
@@ -7171,8 +6979,6 @@
         5248,
         596,
         8415,
-        7673,
-        4815,
         791,
         95307,
         20592,
@@ -7197,31 +7003,31 @@
           {
             "token": "'s",
             "token_id": 596,
-            "logprob": -0.0002,
+            "logprob": -0.0003,
             "prob": 1.0
           },
           {
             "token": "Ġexists",
             "token_id": 6866,
-            "logprob": -8.75,
+            "logprob": -8.5,
             "prob": 0.0002
           },
           {
             "token": "'S",
             "token_id": 13575,
-            "logprob": -10.25,
+            "logprob": -10.4375,
             "prob": 0.0
           },
           {
             "token": "Ġanswers",
             "token_id": 11503,
-            "logprob": -12.0,
+            "logprob": -12.125,
             "prob": 0.0
           },
           {
             "token": "Ġhas",
             "token_id": 706,
-            "logprob": -12.1875,
+            "logprob": -12.375,
             "prob": 0.0
           },
           {
@@ -7233,25 +7039,25 @@
           {
             "token": "Ġbelongs",
             "token_id": 17623,
-            "logprob": -13.0,
+            "logprob": -12.9375,
             "prob": 0.0
           },
           {
             "token": "’s",
             "token_id": 753,
-            "logprob": -13.4375,
+            "logprob": -13.5,
             "prob": 0.0
           },
           {
             "token": "Ġapplies",
             "token_id": 17208,
-            "logprob": -14.1875,
+            "logprob": -14.125,
             "prob": 0.0
           },
           {
             "token": "Ġis",
             "token_id": 374,
-            "logprob": -14.75,
+            "logprob": -14.8125,
             "prob": 0.0
           }
         ]
@@ -7263,9 +7069,12 @@
       }
     },
     {
-      "step": 50,
-      "input_text": "Tell me a joke<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nA man walked into a library and asked the librarian, \"Do you have any books on Pavlov's dogs and Schrödinger's cat?\" \n\nThe librarian replied, \"It rings a bell, but I'm not sure if it's",
+      "step": 48,
+      "input_text": "<|start_header_id|>user<|end_header_id|>Tell me a joke<|eot_id|><|start_header_id|>assistant<|end_header_id|>A man walked into a library and asked the librarian, \"Do you have any books on Pavlov's dogs and Schrödinger's cat?\"The librarian replied, \"It rings a bell, but I'm not sure if it's",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "Tell",
         "Ġme",
         "Ġa",
@@ -7274,7 +7083,6 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "A",
         "Ġman",
         "Ġwalked",
@@ -7305,8 +7113,6 @@
         "inger",
         "'s",
         "Ġcat",
-        "?\"",
-        "Ġ\n\n",
         "The",
         "Ġlibrarian",
         "Ġreplied",
@@ -7327,6 +7133,9 @@
         "'s"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         41551,
         757,
         264,
@@ -7335,7 +7144,6 @@
         128006,
         78191,
         128007,
-        271,
         32,
         893,
         15203,
@@ -7366,8 +7174,6 @@
         5248,
         596,
         8415,
-        7673,
-        4815,
         791,
         95307,
         20592,
@@ -7393,61 +7199,61 @@
           {
             "token": "Ġhere",
             "token_id": 1618,
-            "logprob": -0.0009,
+            "logprob": -0.0013,
             "prob": 1.0
           },
           {
             "token": "Ġchecked",
             "token_id": 10273,
-            "logprob": -8.75,
-            "prob": 0.0002
+            "logprob": -8.25,
+            "prob": 0.0003
           },
           {
             "token": "Ġavailable",
             "token_id": 2561,
-            "logprob": -8.875,
-            "prob": 0.0001
+            "logprob": -8.3125,
+            "prob": 0.0002
           },
           {
             "token": "Ġon",
             "token_id": 389,
-            "logprob": -9.0625,
-            "prob": 0.0001
-          },
-          {
-            "token": "Ġin",
-            "token_id": 304,
-            "logprob": -9.3125,
+            "logprob": -8.9375,
             "prob": 0.0001
           },
           {
             "token": "Ġthere",
             "token_id": 1070,
-            "logprob": -9.375,
-            "prob": 0.0001
-          },
-          {
-            "token": "Ġbeen",
-            "token_id": 1027,
-            "logprob": -9.6875,
+            "logprob": -9.0,
             "prob": 0.0001
           },
           {
             "token": "Ġborrowed",
             "token_id": 46664,
-            "logprob": -9.75,
+            "logprob": -9.1875,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġbeen",
+            "token_id": 1027,
+            "logprob": -9.25,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġin",
+            "token_id": 304,
+            "logprob": -9.25,
             "prob": 0.0001
           },
           {
             "token": "ĠHere",
             "token_id": 5810,
-            "logprob": -10.5,
+            "logprob": -10.3125,
             "prob": 0.0
           },
           {
             "token": "Ġcat",
             "token_id": 8415,
-            "logprob": -11.3125,
+            "logprob": -10.9375,
             "prob": 0.0
           }
         ]
@@ -7459,9 +7265,12 @@
       }
     },
     {
-      "step": 51,
-      "input_text": "Tell me a joke<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nA man walked into a library and asked the librarian, \"Do you have any books on Pavlov's dogs and Schrödinger's cat?\" \n\nThe librarian replied, \"It rings a bell, but I'm not sure if it's here",
+      "step": 49,
+      "input_text": "<|start_header_id|>user<|end_header_id|>Tell me a joke<|eot_id|><|start_header_id|>assistant<|end_header_id|>A man walked into a library and asked the librarian, \"Do you have any books on Pavlov's dogs and Schrödinger's cat?\"The librarian replied, \"It rings a bell, but I'm not sure if it's here",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "Tell",
         "Ġme",
         "Ġa",
@@ -7470,7 +7279,6 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "A",
         "Ġman",
         "Ġwalked",
@@ -7501,8 +7309,6 @@
         "inger",
         "'s",
         "Ġcat",
-        "?\"",
-        "Ġ\n\n",
         "The",
         "Ġlibrarian",
         "Ġreplied",
@@ -7524,6 +7330,9 @@
         "Ġhere"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         41551,
         757,
         264,
@@ -7532,7 +7341,6 @@
         128006,
         78191,
         128007,
-        271,
         32,
         893,
         15203,
@@ -7563,8 +7371,6 @@
         5248,
         596,
         8415,
-        7673,
-        4815,
         791,
         95307,
         20592,
@@ -7591,61 +7397,61 @@
           {
             "token": "Ġor",
             "token_id": 477,
-            "logprob": -0.0005,
+            "logprob": -0.0003,
             "prob": 1.0
           },
           {
             "token": ".\"",
             "token_id": 1210,
-            "logprob": -7.625,
-            "prob": 0.0005
+            "logprob": -8.0,
+            "prob": 0.0003
           },
           {
             "token": ".\"\n\n",
             "token_id": 2266,
-            "logprob": -12.625,
+            "logprob": -12.9375,
             "prob": 0.0
           },
           {
             "token": "Ġand",
             "token_id": 323,
-            "logprob": -13.6875,
-            "prob": 0.0
-          },
-          {
-            "token": ",",
-            "token_id": 11,
-            "logprob": -14.375,
+            "logprob": -13.5,
             "prob": 0.0
           },
           {
             "token": "Ġoder",
             "token_id": 12666,
-            "logprob": -14.5625,
-            "prob": 0.0
-          },
-          {
-            "token": ".",
-            "token_id": 13,
-            "logprob": -14.625,
+            "logprob": -14.5,
             "prob": 0.0
           },
           {
             "token": "Ġyet",
             "token_id": 3686,
+            "logprob": -14.625,
+            "prob": 0.0
+          },
+          {
+            "token": ",",
+            "token_id": 11,
             "logprob": -15.0,
             "prob": 0.0
           },
           {
-            "token": "...\"",
-            "token_id": 21908,
-            "logprob": -15.5,
+            "token": ".",
+            "token_id": 13,
+            "logprob": -15.0625,
             "prob": 0.0
           },
           {
-            "token": ",\"",
-            "token_id": 1359,
-            "logprob": -15.625,
+            "token": "Ġright",
+            "token_id": 1314,
+            "logprob": -15.6875,
+            "prob": 0.0
+          },
+          {
+            "token": ".\"\n",
+            "token_id": 10246,
+            "logprob": -15.75,
             "prob": 0.0
           }
         ]
@@ -7657,9 +7463,12 @@
       }
     },
     {
-      "step": 52,
-      "input_text": "Tell me a joke<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nA man walked into a library and asked the librarian, \"Do you have any books on Pavlov's dogs and Schrödinger's cat?\" \n\nThe librarian replied, \"It rings a bell, but I'm not sure if it's here or",
+      "step": 50,
+      "input_text": "<|start_header_id|>user<|end_header_id|>Tell me a joke<|eot_id|><|start_header_id|>assistant<|end_header_id|>A man walked into a library and asked the librarian, \"Do you have any books on Pavlov's dogs and Schrödinger's cat?\"The librarian replied, \"It rings a bell, but I'm not sure if it's here or",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "Tell",
         "Ġme",
         "Ġa",
@@ -7668,7 +7477,6 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "A",
         "Ġman",
         "Ġwalked",
@@ -7699,8 +7507,6 @@
         "inger",
         "'s",
         "Ġcat",
-        "?\"",
-        "Ġ\n\n",
         "The",
         "Ġlibrarian",
         "Ġreplied",
@@ -7723,6 +7529,9 @@
         "Ġor"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         41551,
         757,
         264,
@@ -7731,7 +7540,6 @@
         128006,
         78191,
         128007,
-        271,
         32,
         893,
         15203,
@@ -7762,8 +7570,6 @@
         5248,
         596,
         8415,
-        7673,
-        4815,
         791,
         95307,
         20592,
@@ -7797,25 +7603,25 @@
           {
             "token": "Ġin",
             "token_id": 304,
-            "logprob": -9.75,
-            "prob": 0.0001
-          },
-          {
-            "token": "Ġjust",
-            "token_id": 1120,
-            "logprob": -11.75,
+            "logprob": -10.0,
             "prob": 0.0
           },
           {
             "token": "Ġon",
             "token_id": 389,
-            "logprob": -11.8125,
+            "logprob": -11.875,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġjust",
+            "token_id": 1120,
+            "logprob": -12.0625,
             "prob": 0.0
           },
           {
             "token": "Ġnowhere",
             "token_id": 28211,
-            "logprob": -12.125,
+            "logprob": -12.25,
             "prob": 0.0
           },
           {
@@ -7825,27 +7631,27 @@
             "prob": 0.0
           },
           {
-            "token": "Ġwhere",
-            "token_id": 1405,
-            "logprob": -12.875,
-            "prob": 0.0
-          },
-          {
-            "token": "Ġif",
-            "token_id": 422,
-            "logprob": -12.875,
-            "prob": 0.0
-          },
-          {
             "token": "Ġelsewhere",
             "token_id": 18403,
-            "logprob": -13.0,
+            "logprob": -12.9375,
             "prob": 0.0
           },
           {
             "token": "Ġsomewhere",
             "token_id": 15038,
-            "logprob": -13.0625,
+            "logprob": -13.1875,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġhere",
+            "token_id": 1618,
+            "logprob": -13.25,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġif",
+            "token_id": 422,
+            "logprob": -13.3125,
             "prob": 0.0
           }
         ]
@@ -7857,9 +7663,12 @@
       }
     },
     {
-      "step": 53,
-      "input_text": "Tell me a joke<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nA man walked into a library and asked the librarian, \"Do you have any books on Pavlov's dogs and Schrödinger's cat?\" \n\nThe librarian replied, \"It rings a bell, but I'm not sure if it's here or not",
+      "step": 51,
+      "input_text": "<|start_header_id|>user<|end_header_id|>Tell me a joke<|eot_id|><|start_header_id|>assistant<|end_header_id|>A man walked into a library and asked the librarian, \"Do you have any books on Pavlov's dogs and Schrödinger's cat?\"The librarian replied, \"It rings a bell, but I'm not sure if it's here or not",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "Tell",
         "Ġme",
         "Ġa",
@@ -7868,7 +7677,6 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "A",
         "Ġman",
         "Ġwalked",
@@ -7899,8 +7707,6 @@
         "inger",
         "'s",
         "Ġcat",
-        "?\"",
-        "Ġ\n\n",
         "The",
         "Ġlibrarian",
         "Ġreplied",
@@ -7924,6 +7730,9 @@
         "Ġnot"
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         41551,
         757,
         264,
@@ -7932,7 +7741,6 @@
         128006,
         78191,
         128007,
-        271,
         32,
         893,
         15203,
@@ -7963,8 +7771,6 @@
         5248,
         596,
         8415,
-        7673,
-        4815,
         791,
         95307,
         20592,
@@ -7993,26 +7799,32 @@
           {
             "token": ".\"",
             "token_id": 1210,
-            "logprob": -0.0221,
-            "prob": 0.9766
+            "logprob": -0.0265,
+            "prob": 0.9727
           },
           {
             "token": ".\"\n\n",
             "token_id": 2266,
-            "logprob": -3.8906,
-            "prob": 0.0203
+            "logprob": -3.7812,
+            "prob": 0.0229
           },
           {
             "token": ".\"\n\n\n\n",
             "token_id": 28212,
-            "logprob": -6.7812,
-            "prob": 0.0011
+            "logprob": -6.0312,
+            "prob": 0.0024
+          },
+          {
+            "token": ".\"\n",
+            "token_id": 10246,
+            "logprob": -8.125,
+            "prob": 0.0003
           },
           {
             "token": "!\"",
             "token_id": 9135,
-            "logprob": -8.75,
-            "prob": 0.0002
+            "logprob": -8.125,
+            "prob": 0.0003
           },
           {
             "token": ".",
@@ -8021,33 +7833,27 @@
             "prob": 0.0001
           },
           {
-            "token": ".\"\n",
-            "token_id": 10246,
-            "logprob": -9.375,
-            "prob": 0.0001
-          },
-          {
             "token": ",\"",
             "token_id": 1359,
-            "logprob": -10.375,
+            "logprob": -11.0,
             "prob": 0.0
           },
           {
             "token": "...\"",
             "token_id": 21908,
-            "logprob": -11.125,
-            "prob": 0.0
-          },
-          {
-            "token": ".\")",
-            "token_id": 39839,
-            "logprob": -11.75,
+            "logprob": -11.0,
             "prob": 0.0
           },
           {
             "token": "!\"\n\n",
             "token_id": 17642,
-            "logprob": -12.0,
+            "logprob": -11.625,
+            "prob": 0.0
+          },
+          {
+            "token": ".\")",
+            "token_id": 39839,
+            "logprob": -11.625,
             "prob": 0.0
           }
         ]
@@ -8059,9 +7865,12 @@
       }
     },
     {
-      "step": 54,
-      "input_text": "Tell me a joke<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nA man walked into a library and asked the librarian, \"Do you have any books on Pavlov's dogs and Schrödinger's cat?\" \n\nThe librarian replied, \"It rings a bell, but I'm not sure if it's here or not.\"",
+      "step": 52,
+      "input_text": "<|start_header_id|>user<|end_header_id|>Tell me a joke<|eot_id|><|start_header_id|>assistant<|end_header_id|>A man walked into a library and asked the librarian, \"Do you have any books on Pavlov's dogs and Schrödinger's cat?\"The librarian replied, \"It rings a bell, but I'm not sure if it's here or not.\"",
       "tokens": [
+        "<|start_header_id|>",
+        "user",
+        "<|end_header_id|>",
         "Tell",
         "Ġme",
         "Ġa",
@@ -8070,7 +7879,6 @@
         "<|start_header_id|>",
         "assistant",
         "<|end_header_id|>",
-        "\n\n",
         "A",
         "Ġman",
         "Ġwalked",
@@ -8101,8 +7909,6 @@
         "inger",
         "'s",
         "Ġcat",
-        "?\"",
-        "Ġ\n\n",
         "The",
         "Ġlibrarian",
         "Ġreplied",
@@ -8127,6 +7933,9 @@
         ".\""
       ],
       "token_ids": [
+        128006,
+        882,
+        128007,
         41551,
         757,
         264,
@@ -8135,7 +7944,6 @@
         128006,
         78191,
         128007,
-        271,
         32,
         893,
         15203,
@@ -8166,8 +7974,6 @@
         5248,
         596,
         8415,
-        7673,
-        4815,
         791,
         95307,
         20592,
@@ -8197,61 +8003,61 @@
           {
             "token": "<|eot_id|>",
             "token_id": 128009,
-            "logprob": -0.001,
+            "logprob": -0.0001,
             "prob": 1.0
           },
           {
             "token": "Ġ\n\n",
             "token_id": 4815,
-            "logprob": -6.875,
-            "prob": 0.001
+            "logprob": -9.875,
+            "prob": 0.0001
           },
           {
-            "token": "Ġ\n",
-            "token_id": 720,
-            "logprob": -12.625,
-            "prob": 0.0
-          },
-          {
-            "token": "Ġ \n\n",
-            "token_id": 19124,
-            "logprob": -12.875,
+            "token": "Ġ(",
+            "token_id": 320,
+            "logprob": -13.375,
             "prob": 0.0
           },
           {
             "token": "ĠI",
             "token_id": 358,
-            "logprob": -13.5,
+            "logprob": -14.125,
             "prob": 0.0
           },
           {
             "token": "<|eom_id|>",
             "token_id": 128008,
-            "logprob": -13.75,
+            "logprob": -14.75,
             "prob": 0.0
           },
           {
-            "token": "Ġ(",
-            "token_id": 320,
-            "logprob": -13.875,
+            "token": "Ġ\n",
+            "token_id": 720,
+            "logprob": -15.625,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġ \n\n",
+            "token_id": 19124,
+            "logprob": -15.6875,
             "prob": 0.0
           },
           {
             "token": "\r\n\r\n",
             "token_id": 881,
-            "logprob": -14.5,
+            "logprob": -15.9375,
             "prob": 0.0
           },
           {
-            "token": "Ġ\n\n\n",
-            "token_id": 15073,
-            "logprob": -14.5,
+            "token": "Ġ�",
+            "token_id": 27623,
+            "logprob": -16.125,
             "prob": 0.0
           },
           {
-            "token": "Ġ\n\n\n\n",
-            "token_id": 23535,
-            "logprob": -14.625,
+            "token": "Ġ*",
+            "token_id": 353,
+            "logprob": -16.5,
             "prob": 0.0
           }
         ]

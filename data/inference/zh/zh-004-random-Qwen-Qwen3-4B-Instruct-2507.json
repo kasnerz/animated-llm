@@ -1,5 +1,5 @@
 {
-  "id": "generated_20251203_120848",
+  "id": "generated_20251204_095639",
   "prompt": "翻译成英语：永和九年，岁在癸丑",
   "language": "zh",
   "temperature": 5.0,
@@ -14,8 +14,10 @@
   "generation_steps": [
     {
       "step": 0,
-      "input_text": "翻译成英语：永和九年，岁在癸丑<|im_end|>\n<|im_start|>assistant\n",
+      "input_text": "<|im_start|>user翻译成英语：永和九年，岁在癸丑<|im_end|><|im_start|>assistant",
       "tokens": [
+        "<|im_start|>",
+        "user",
         "翻译",
         "成",
         "英语",
@@ -29,12 +31,12 @@
         "癸",
         "丑",
         "<|im_end|>",
-        "\n",
         "<|im_start|>",
-        "assistant",
-        "\n"
+        "assistant"
       ],
       "token_ids": [
+        151644,
+        872,
         105395,
         12857,
         104105,
@@ -48,10 +50,8 @@
         119090,
         105500,
         151645,
-        198,
         151644,
-        77091,
-        198
+        77091
       ],
       "output_distribution": {
         "top_k": 10,
@@ -126,8 +126,10 @@
     },
     {
       "step": 1,
-      "input_text": "翻译成英语：永和九年，岁在癸丑<|im_end|>\n<|im_start|>assistant\nIn",
+      "input_text": "<|im_start|>user翻译成英语：永和九年，岁在癸丑<|im_end|><|im_start|>assistantIn",
       "tokens": [
+        "<|im_start|>",
+        "user",
         "翻译",
         "成",
         "英语",
@@ -141,13 +143,13 @@
         "癸",
         "丑",
         "<|im_end|>",
-        "\n",
         "<|im_start|>",
         "assistant",
-        "\n",
         "In"
       ],
       "token_ids": [
+        151644,
+        872,
         105395,
         12857,
         104105,
@@ -161,10 +163,8 @@
         119090,
         105500,
         151645,
-        198,
         151644,
         77091,
-        198,
         641
       ],
       "output_distribution": {
@@ -240,8 +240,10 @@
     },
     {
       "step": 2,
-      "input_text": "翻译成英语：永和九年，岁在癸丑<|im_end|>\n<|im_start|>assistant\nIn the",
+      "input_text": "<|im_start|>user翻译成英语：永和九年，岁在癸丑<|im_end|><|im_start|>assistantIn the",
       "tokens": [
+        "<|im_start|>",
+        "user",
         "翻译",
         "成",
         "英语",
@@ -255,14 +257,14 @@
         "癸",
         "丑",
         "<|im_end|>",
-        "\n",
         "<|im_start|>",
         "assistant",
-        "\n",
         "In",
         "Ġthe"
       ],
       "token_ids": [
+        151644,
+        872,
         105395,
         12857,
         104105,
@@ -276,10 +278,8 @@
         119090,
         105500,
         151645,
-        198,
         151644,
         77091,
-        198,
         641,
         279
       ],
@@ -349,15 +349,17 @@
         ]
       },
       "selected_token": {
-        "token": "Ġninth",
-        "token_id": 42541,
+        "token": "Ġtenth",
+        "token_id": 55666,
         "selection_method": "sampling"
       }
     },
     {
       "step": 3,
-      "input_text": "翻译成英语：永和九年，岁在癸丑<|im_end|>\n<|im_start|>assistant\nIn the ninth",
+      "input_text": "<|im_start|>user翻译成英语：永和九年，岁在癸丑<|im_end|><|im_start|>assistantIn the tenth",
       "tokens": [
+        "<|im_start|>",
+        "user",
         "翻译",
         "成",
         "英语",
@@ -371,15 +373,15 @@
         "癸",
         "丑",
         "<|im_end|>",
-        "\n",
         "<|im_start|>",
         "assistant",
-        "\n",
         "In",
         "Ġthe",
-        "Ġninth"
+        "Ġtenth"
       ],
       "token_ids": [
+        151644,
+        872,
         105395,
         12857,
         104105,
@@ -393,13 +395,11 @@
         119090,
         105500,
         151645,
-        198,
         151644,
         77091,
-        198,
         641,
         279,
-        42541
+        55666
       ],
       "output_distribution": {
         "top_k": 10,
@@ -411,71 +411,73 @@
             "prob": 1.0
           },
           {
-            "token": "ĠYear",
-            "token_id": 9742,
-            "logprob": -12.25,
-            "prob": 0.0
-          },
-          {
-            "token": "year",
-            "token_id": 3157,
-            "logprob": -14.25,
-            "prob": 0.0
-          },
-          {
-            "token": ".year",
-            "token_id": 24414,
-            "logprob": -14.375,
+            "token": "Ġninth",
+            "token_id": 42541,
+            "logprob": -11.125,
             "prob": 0.0
           },
           {
             "token": "Ġmonth",
             "token_id": 2254,
-            "logprob": -14.625,
-            "prob": 0.0
-          },
-          {
-            "token": "Ġyears",
-            "token_id": 1635,
-            "logprob": -14.875,
-            "prob": 0.0
-          },
-          {
-            "token": "-year",
-            "token_id": 4666,
-            "logprob": -15.625,
+            "logprob": -11.5,
             "prob": 0.0
           },
           {
             "token": "Ġlunar",
             "token_id": 56711,
-            "logprob": -15.875,
+            "logprob": -12.5,
             "prob": 0.0
           },
           {
-            "token": "Ġera",
-            "token_id": 11385,
-            "logprob": -16.5,
+            "token": "ĠYear",
+            "token_id": 9742,
+            "logprob": -13.125,
             "prob": 0.0
           },
           {
-            "token": "Ġdecade",
-            "token_id": 13212,
-            "logprob": -16.625,
+            "token": "-year",
+            "token_id": 4666,
+            "logprob": -13.375,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġnine",
+            "token_id": 11627,
+            "logprob": -13.375,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġyears",
+            "token_id": 1635,
+            "logprob": -13.375,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġday",
+            "token_id": 1899,
+            "logprob": -13.625,
+            "prob": 0.0
+          },
+          {
+            "token": "year",
+            "token_id": 3157,
+            "logprob": -13.875,
             "prob": 0.0
           }
         ]
       },
       "selected_token": {
-        "token": "year",
-        "token_id": 3157,
+        "token": "Ġyear",
+        "token_id": 1042,
         "selection_method": "sampling"
       }
     },
     {
       "step": 4,
-      "input_text": "翻译成英语：永和九年，岁在癸丑<|im_end|>\n<|im_start|>assistant\nIn the ninthyear",
+      "input_text": "<|im_start|>user翻译成英语：永和九年，岁在癸丑<|im_end|><|im_start|>assistantIn the tenth year",
       "tokens": [
+        "<|im_start|>",
+        "user",
         "翻译",
         "成",
         "英语",
@@ -489,16 +491,16 @@
         "癸",
         "丑",
         "<|im_end|>",
-        "\n",
         "<|im_start|>",
         "assistant",
-        "\n",
         "In",
         "Ġthe",
-        "Ġninth",
-        "year"
+        "Ġtenth",
+        "Ġyear"
       ],
       "token_ids": [
+        151644,
+        872,
         105395,
         12857,
         104105,
@@ -512,14 +514,12 @@
         119090,
         105500,
         151645,
-        198,
         151644,
         77091,
-        198,
         641,
         279,
-        42541,
-        3157
+        55666,
+        1042
       ],
       "output_distribution": {
         "top_k": 10,
@@ -527,61 +527,61 @@
           {
             "token": "Ġof",
             "token_id": 315,
-            "logprob": -0.0,
+            "logprob": 0.0,
             "prob": 1.0
-          },
-          {
-            "token": "of",
-            "token_id": 1055,
-            "logprob": -10.875,
-            "prob": 0.0
-          },
-          {
-            "token": ",",
-            "token_id": 11,
-            "logprob": -19.75,
-            "prob": 0.0
-          },
-          {
-            "token": ".of",
-            "token_id": 10229,
-            "logprob": -21.5,
-            "prob": 0.0
           },
           {
             "token": "Ġafter",
             "token_id": 1283,
-            "logprob": -22.25,
+            "logprob": -19.375,
             "prob": 0.0
           },
           {
             "token": "Ġ(",
             "token_id": 320,
-            "logprob": -22.25,
+            "logprob": -20.125,
             "prob": 0.0
           },
           {
-            "token": "ĠYong",
-            "token_id": 67954,
-            "logprob": -22.25,
+            "token": ",",
+            "token_id": 11,
+            "logprob": -21.0,
+            "prob": 0.0
+          },
+          {
+            "token": "of",
+            "token_id": 1055,
+            "logprob": -22.0,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġduring",
+            "token_id": 2337,
+            "logprob": -22.0,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġunder",
+            "token_id": 1212,
+            "logprob": -22.375,
             "prob": 0.0
           },
           {
             "token": "Ġin",
             "token_id": 304,
-            "logprob": -23.375,
+            "logprob": -22.5,
             "prob": 0.0
           },
           {
-            "token": "ĠOf",
-            "token_id": 4940,
-            "logprob": -23.5,
+            "token": "Ġand",
+            "token_id": 323,
+            "logprob": -23.125,
             "prob": 0.0
           },
           {
-            "token": "Ġcủa",
-            "token_id": 59735,
-            "logprob": -23.625,
+            "token": "Ġat",
+            "token_id": 518,
+            "logprob": -23.25,
             "prob": 0.0
           }
         ]
@@ -594,8 +594,10 @@
     },
     {
       "step": 5,
-      "input_text": "翻译成英语：永和九年，岁在癸丑<|im_end|>\n<|im_start|>assistant\nIn the ninthyear of",
+      "input_text": "<|im_start|>user翻译成英语：永和九年，岁在癸丑<|im_end|><|im_start|>assistantIn the tenth year of",
       "tokens": [
+        "<|im_start|>",
+        "user",
         "翻译",
         "成",
         "英语",
@@ -609,17 +611,17 @@
         "癸",
         "丑",
         "<|im_end|>",
-        "\n",
         "<|im_start|>",
         "assistant",
-        "\n",
         "In",
         "Ġthe",
-        "Ġninth",
-        "year",
+        "Ġtenth",
+        "Ġyear",
         "Ġof"
       ],
       "token_ids": [
+        151644,
+        872,
         105395,
         12857,
         104105,
@@ -633,14 +635,12 @@
         119090,
         105500,
         151645,
-        198,
         151644,
         77091,
-        198,
         641,
         279,
-        42541,
-        3157,
+        55666,
+        1042,
         315
       ],
       "output_distribution": {
@@ -649,75 +649,77 @@
           {
             "token": "ĠYong",
             "token_id": 67954,
-            "logprob": -0.0034,
-            "prob": 0.9961
-          },
-          {
-            "token": "ĠY",
-            "token_id": 809,
-            "logprob": -6.25,
-            "prob": 0.0019
+            "logprob": -0.006,
+            "prob": 0.9922
           },
           {
             "token": "Ġthe",
             "token_id": 279,
-            "logprob": -7.125,
-            "prob": 0.0008
+            "logprob": -5.375,
+            "prob": 0.0046
           },
           {
-            "token": "ĠYing",
-            "token_id": 87670,
-            "logprob": -8.375,
-            "prob": 0.0002
-          },
-          {
-            "token": "ĠYun",
-            "token_id": 53992,
-            "logprob": -8.625,
-            "prob": 0.0002
-          },
-          {
-            "token": "ĠYin",
-            "token_id": 82858,
-            "logprob": -9.25,
-            "prob": 0.0001
+            "token": "ĠY",
+            "token_id": 809,
+            "logprob": -7.25,
+            "prob": 0.0007
           },
           {
             "token": "ĠYuan",
             "token_id": 68884,
-            "logprob": -9.5,
+            "logprob": -8.75,
+            "prob": 0.0002
+          },
+          {
+            "token": "ĠYing",
+            "token_id": 87670,
+            "logprob": -9.0,
+            "prob": 0.0001
+          },
+          {
+            "token": "ĠYun",
+            "token_id": 53992,
+            "logprob": -9.375,
             "prob": 0.0001
           },
           {
             "token": "ĠYan",
             "token_id": 24213,
-            "logprob": -9.875,
+            "logprob": -9.5,
+            "prob": 0.0001
+          },
+          {
+            "token": "ĠYu",
+            "token_id": 27273,
+            "logprob": -9.625,
+            "prob": 0.0001
+          },
+          {
+            "token": "ĠYin",
+            "token_id": 82858,
+            "logprob": -9.625,
             "prob": 0.0001
           },
           {
             "token": "ĠYang",
             "token_id": 24474,
-            "logprob": -11.125,
-            "prob": 0.0
-          },
-          {
-            "token": "ĠYu",
-            "token_id": 27273,
-            "logprob": -11.375,
+            "logprob": -10.75,
             "prob": 0.0
           }
         ]
       },
       "selected_token": {
-        "token": "ĠYing",
-        "token_id": 87670,
+        "token": "ĠYan",
+        "token_id": 24213,
         "selection_method": "sampling"
       }
     },
     {
       "step": 6,
-      "input_text": "翻译成英语：永和九年，岁在癸丑<|im_end|>\n<|im_start|>assistant\nIn the ninthyear of Ying",
+      "input_text": "<|im_start|>user翻译成英语：永和九年，岁在癸丑<|im_end|><|im_start|>assistantIn the tenth year of Yan",
       "tokens": [
+        "<|im_start|>",
+        "user",
         "翻译",
         "成",
         "英语",
@@ -731,18 +733,18 @@
         "癸",
         "丑",
         "<|im_end|>",
-        "\n",
         "<|im_start|>",
         "assistant",
-        "\n",
         "In",
         "Ġthe",
-        "Ġninth",
-        "year",
+        "Ġtenth",
+        "Ġyear",
         "Ġof",
-        "ĠYing"
+        "ĠYan"
       ],
       "token_ids": [
+        151644,
+        872,
         105395,
         12857,
         104105,
@@ -756,16 +758,14 @@
         119090,
         105500,
         151645,
-        198,
         151644,
         77091,
-        198,
         641,
         279,
-        42541,
-        3157,
+        55666,
+        1042,
         315,
-        87670
+        24213
       ],
       "output_distribution": {
         "top_k": 10,
@@ -773,75 +773,77 @@
           {
             "token": "he",
             "token_id": 383,
-            "logprob": -0.0042,
-            "prob": 0.9961
-          },
-          {
-            "token": "ho",
-            "token_id": 6161,
-            "logprob": -5.875,
-            "prob": 0.0028
-          },
-          {
-            "token": "h",
-            "token_id": 71,
-            "logprob": -7.625,
-            "prob": 0.0005
+            "logprob": -0.0122,
+            "prob": 0.9883
           },
           {
             "token": "hu",
             "token_id": 16739,
-            "logprob": -8.0,
-            "prob": 0.0003
-          },
-          {
-            "token": "hua",
-            "token_id": 91236,
-            "logprob": -8.625,
-            "prob": 0.0002
-          },
-          {
-            "token": "hang",
-            "token_id": 20658,
-            "logprob": -9.25,
-            "prob": 0.0001
+            "logprob": -5.5,
+            "prob": 0.004
           },
           {
             "token": "ĠHe",
             "token_id": 1260,
-            "logprob": -9.375,
-            "prob": 0.0001
+            "logprob": -5.5,
+            "prob": 0.004
           },
           {
-            "token": "ĠHo",
-            "token_id": 17275,
+            "token": "h",
+            "token_id": 71,
+            "logprob": -6.0,
+            "prob": 0.0024
+          },
+          {
+            "token": "ho",
+            "token_id": 6161,
+            "logprob": -6.875,
+            "prob": 0.001
+          },
+          {
+            "token": "ĠHu",
+            "token_id": 21793,
+            "logprob": -8.75,
+            "prob": 0.0002
+          },
+          {
+            "token": "ĠHong",
+            "token_id": 19180,
             "logprob": -9.875,
             "prob": 0.0001
           },
           {
             "token": "ĠHao",
             "token_id": 93709,
-            "logprob": -10.625,
-            "prob": 0.0
+            "logprob": -9.875,
+            "prob": 0.0001
           },
           {
-            "token": "uo",
-            "token_id": 23137,
-            "logprob": -11.25,
+            "token": "-he",
+            "token_id": 37335,
+            "logprob": -9.875,
+            "prob": 0.0001
+          },
+          {
+            "token": "ĠHo",
+            "token_id": 17275,
+            "logprob": -10.0,
             "prob": 0.0
           }
         ]
       },
       "selected_token": {
-        "token": "ĠHo",
-        "token_id": 17275,
+        "token": "-he",
+        "token_id": 37335,
         "selection_method": "sampling"
       }
     },
     {
       "step": 7,
-      "input_text": "翻译成英语：永和九年，岁在癸丑<|im_end|>\n<|im_start|>assistant\nIn the ninthyear of Ying Ho",
+      "input_text": "<|im_start|>user翻译成英语：永和九年，岁在癸丑<|im_end|><|im_start|>assistantIn the tenth year of Yan-he",
       "tokens": [
+        "<|im_start|>",
+        "user",
         "翻译",
         "成",
         "英语",
@@ -855,19 +857,19 @@
         "癸",
         "丑",
         "<|im_end|>",
-        "\n",
         "<|im_start|>",
         "assistant",
-        "\n",
         "In",
         "Ġthe",
-        "Ġninth",
-        "year",
+        "Ġtenth",
+        "Ġyear",
         "Ġof",
-        "ĠYing",
-        "ĠHo"
+        "ĠYan",
+        "-he"
       ],
       "token_ids": [
+        151644,
+        872,
         105395,
         12857,
         104105,
@@ -881,17 +883,15 @@
         119090,
         105500,
         151645,
-        198,
         151644,
         77091,
-        198,
         641,
         279,
-        42541,
-        3157,
+        55666,
+        1042,
         315,
-        87670,
-        17275
+        24213,
+        37335
       ],
       "output_distribution": {
         "top_k": 10,
@@ -903,57 +903,57 @@
             "prob": 1.0
           },
           {
-            "token": ";",
-            "token_id": 26,
-            "logprob": -15.875,
-            "prob": 0.0
-          },
-          {
             "token": "Ġ(",
             "token_id": 320,
-            "logprob": -16.875,
+            "logprob": -13.25,
             "prob": 0.0
           },
           {
-            "token": "Ġ,",
-            "token_id": 1154,
-            "logprob": -17.5,
+            "token": "Ġof",
+            "token_id": 315,
+            "logprob": -17.375,
+            "prob": 0.0
+          },
+          {
+            "token": ";",
+            "token_id": 26,
+            "logprob": -18.125,
             "prob": 0.0
           },
           {
             "token": "Ġand",
             "token_id": 323,
-            "logprob": -17.5,
+            "logprob": -18.5,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġ,",
+            "token_id": 1154,
+            "logprob": -20.25,
             "prob": 0.0
           },
           {
             "token": ",a",
             "token_id": 15012,
-            "logprob": -17.875,
+            "logprob": -21.25,
             "prob": 0.0
           },
           {
-            "token": "，",
-            "token_id": 3837,
-            "logprob": -19.0,
-            "prob": 0.0
-          },
-          {
-            "token": ",,",
-            "token_id": 10631,
-            "logprob": -19.875,
-            "prob": 0.0
-          },
-          {
-            "token": ",the",
-            "token_id": 62638,
-            "logprob": -20.0,
+            "token": "Ġ[",
+            "token_id": 508,
+            "logprob": -21.375,
             "prob": 0.0
           },
           {
             "token": ".",
             "token_id": 13,
-            "logprob": -20.125,
+            "logprob": -21.5,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠDynasty",
+            "token_id": 73395,
+            "logprob": -21.75,
             "prob": 0.0
           }
         ]
@@ -966,8 +966,10 @@
     },
     {
       "step": 8,
-      "input_text": "翻译成英语：永和九年，岁在癸丑<|im_end|>\n<|im_start|>assistant\nIn the ninthyear of Ying Ho,",
+      "input_text": "<|im_start|>user翻译成英语：永和九年，岁在癸丑<|im_end|><|im_start|>assistantIn the tenth year of Yan-he,",
       "tokens": [
+        "<|im_start|>",
+        "user",
         "翻译",
         "成",
         "英语",
@@ -981,20 +983,20 @@
         "癸",
         "丑",
         "<|im_end|>",
-        "\n",
         "<|im_start|>",
         "assistant",
-        "\n",
         "In",
         "Ġthe",
-        "Ġninth",
-        "year",
+        "Ġtenth",
+        "Ġyear",
         "Ġof",
-        "ĠYing",
-        "ĠHo",
+        "ĠYan",
+        "-he",
         ","
       ],
       "token_ids": [
+        151644,
+        872,
         105395,
         12857,
         104105,
@@ -1008,18 +1010,146 @@
         119090,
         105500,
         151645,
-        198,
         151644,
         77091,
-        198,
         641,
         279,
-        42541,
-        3157,
+        55666,
+        1042,
         315,
-        87670,
-        17275,
+        24213,
+        37335,
         11
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġthe",
+            "token_id": 279,
+            "logprob": -0.0002,
+            "prob": 1.0
+          },
+          {
+            "token": "Ġwhen",
+            "token_id": 979,
+            "logprob": -8.5,
+            "prob": 0.0002
+          },
+          {
+            "token": "Ġin",
+            "token_id": 304,
+            "logprob": -11.5,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġduring",
+            "token_id": 2337,
+            "logprob": -12.0,
+            "prob": 0.0
+          },
+          {
+            "token": "the",
+            "token_id": 1782,
+            "logprob": -13.375,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġwith",
+            "token_id": 448,
+            "logprob": -13.875,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġon",
+            "token_id": 389,
+            "logprob": -14.875,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġit",
+            "token_id": 432,
+            "logprob": -15.125,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġat",
+            "token_id": 518,
+            "logprob": -15.75,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġthere",
+            "token_id": 1052,
+            "logprob": -15.875,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġwith",
+        "token_id": 448,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 9,
+      "input_text": "<|im_start|>user翻译成英语：永和九年，岁在癸丑<|im_end|><|im_start|>assistantIn the tenth year of Yan-he, with",
+      "tokens": [
+        "<|im_start|>",
+        "user",
+        "翻译",
+        "成",
+        "英语",
+        "：",
+        "永",
+        "和",
+        "九年",
+        "，",
+        "岁",
+        "在",
+        "癸",
+        "丑",
+        "<|im_end|>",
+        "<|im_start|>",
+        "assistant",
+        "In",
+        "Ġthe",
+        "Ġtenth",
+        "Ġyear",
+        "Ġof",
+        "ĠYan",
+        "-he",
+        ",",
+        "Ġwith"
+      ],
+      "token_ids": [
+        151644,
+        872,
+        105395,
+        12857,
+        104105,
+        5122,
+        99906,
+        33108,
+        113297,
+        3837,
+        92015,
+        18493,
+        119090,
+        105500,
+        151645,
+        151644,
+        77091,
+        641,
+        279,
+        55666,
+        1042,
+        315,
+        24213,
+        37335,
+        11,
+        448
       ],
       "output_distribution": {
         "top_k": 10,
@@ -1031,201 +1161,73 @@
             "prob": 1.0
           },
           {
-            "token": "Ġwhen",
-            "token_id": 979,
-            "logprob": -10.25,
+            "token": "Ġa",
+            "token_id": 264,
+            "logprob": -11.75,
             "prob": 0.0
           },
-          {
-            "token": "the",
-            "token_id": 1782,
-            "logprob": -11.375,
-            "prob": 0.0
-          },
-          {
-            "token": "Ġin",
-            "token_id": 304,
-            "logprob": -14.25,
-            "prob": 0.0
-          },
-          {
-            "token": "Ġduring",
-            "token_id": 2337,
-            "logprob": -14.875,
-            "prob": 0.0
-          },
-          {
-            "token": "Ġwith",
-            "token_id": 448,
-            "logprob": -15.125,
-            "prob": 0.0
-          },
-          {
-            "token": "Ġthere",
-            "token_id": 1052,
-            "logprob": -17.5,
-            "prob": 0.0
-          },
-          {
-            "token": "Ġit",
-            "token_id": 432,
-            "logprob": -17.5,
-            "prob": 0.0
-          },
-          {
-            "token": "Ġon",
-            "token_id": 389,
-            "logprob": -17.75,
-            "prob": 0.0
-          },
-          {
-            "token": "when",
-            "token_id": 9309,
-            "logprob": -18.25,
-            "prob": 0.0
-          }
-        ]
-      },
-      "selected_token": {
-        "token": "Ġthe",
-        "token_id": 279,
-        "selection_method": "sampling"
-      }
-    },
-    {
-      "step": 9,
-      "input_text": "翻译成英语：永和九年，岁在癸丑<|im_end|>\n<|im_start|>assistant\nIn the ninthyear of Ying Ho, the",
-      "tokens": [
-        "翻译",
-        "成",
-        "英语",
-        "：",
-        "永",
-        "和",
-        "九年",
-        "，",
-        "岁",
-        "在",
-        "癸",
-        "丑",
-        "<|im_end|>",
-        "\n",
-        "<|im_start|>",
-        "assistant",
-        "\n",
-        "In",
-        "Ġthe",
-        "Ġninth",
-        "year",
-        "Ġof",
-        "ĠYing",
-        "ĠHo",
-        ",",
-        "Ġthe"
-      ],
-      "token_ids": [
-        105395,
-        12857,
-        104105,
-        5122,
-        99906,
-        33108,
-        113297,
-        3837,
-        92015,
-        18493,
-        119090,
-        105500,
-        151645,
-        198,
-        151644,
-        77091,
-        198,
-        641,
-        279,
-        42541,
-        3157,
-        315,
-        87670,
-        17275,
-        11,
-        279
-      ],
-      "output_distribution": {
-        "top_k": 10,
-        "candidates": [
           {
             "token": "Ġyear",
             "token_id": 1042,
-            "logprob": -0.0227,
-            "prob": 0.9766
+            "logprob": -12.625,
+            "prob": 0.0
           },
           {
-            "token": "Ġcalendar",
-            "token_id": 13168,
-            "logprob": -4.4062,
-            "prob": 0.0123
-          },
-          {
-            "token": "Ġheavenly",
-            "token_id": 66598,
-            "logprob": -5.6562,
-            "prob": 0.0035
-          },
-          {
-            "token": "ĠHeavenly",
-            "token_id": 87050,
-            "logprob": -6.0312,
-            "prob": 0.0024
-          },
-          {
-            "token": "Ġlunar",
-            "token_id": 56711,
-            "logprob": -6.7812,
-            "prob": 0.0011
-          },
-          {
-            "token": "Ġsolar",
-            "token_id": 12941,
-            "logprob": -7.0312,
-            "prob": 0.0009
+            "token": "ĠYin",
+            "token_id": 82858,
+            "logprob": -14.75,
+            "prob": 0.0
           },
           {
             "token": "ĠYear",
             "token_id": 9742,
-            "logprob": -7.2812,
-            "prob": 0.0007
+            "logprob": -14.875,
+            "prob": 0.0
           },
           {
-            "token": "Ġera",
-            "token_id": 11385,
-            "logprob": -7.6562,
-            "prob": 0.0005
+            "token": "Ġlunar",
+            "token_id": 56711,
+            "logprob": -14.875,
+            "prob": 0.0
           },
           {
-            "token": "Ġcelestial",
-            "token_id": 76380,
-            "logprob": -8.5,
-            "prob": 0.0002
+            "token": "Ġwood",
+            "token_id": 7579,
+            "logprob": -15.0,
+            "prob": 0.0
           },
           {
-            "token": "Ġz",
-            "token_id": 1147,
-            "logprob": -8.875,
-            "prob": 0.0001
+            "token": "Ġan",
+            "token_id": 458,
+            "logprob": -15.625,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠGui",
+            "token_id": 49998,
+            "logprob": -15.6875,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġcalendar",
+            "token_id": 13168,
+            "logprob": -15.875,
+            "prob": 0.0
           }
         ]
       },
       "selected_token": {
-        "token": "Ġheavenly",
-        "token_id": 66598,
+        "token": "Ġa",
+        "token_id": 264,
         "selection_method": "sampling"
       }
     },
     {
       "step": 10,
-      "input_text": "翻译成英语：永和九年，岁在癸丑<|im_end|>\n<|im_start|>assistant\nIn the ninthyear of Ying Ho, the heavenly",
+      "input_text": "<|im_start|>user翻译成英语：永和九年，岁在癸丑<|im_end|><|im_start|>assistantIn the tenth year of Yan-he, with a",
       "tokens": [
+        "<|im_start|>",
+        "user",
         "翻译",
         "成",
         "英语",
@@ -1239,22 +1241,22 @@
         "癸",
         "丑",
         "<|im_end|>",
-        "\n",
         "<|im_start|>",
         "assistant",
-        "\n",
         "In",
         "Ġthe",
-        "Ġninth",
-        "year",
+        "Ġtenth",
+        "Ġyear",
         "Ġof",
-        "ĠYing",
-        "ĠHo",
+        "ĠYan",
+        "-he",
         ",",
-        "Ġthe",
-        "Ġheavenly"
+        "Ġwith",
+        "Ġa"
       ],
       "token_ids": [
+        151644,
+        872,
         105395,
         12857,
         104105,
@@ -1268,83 +1270,215 @@
         119090,
         105500,
         151645,
-        198,
         151644,
         77091,
-        198,
         641,
         279,
-        42541,
-        3157,
+        55666,
+        1042,
         315,
-        87670,
-        17275,
+        24213,
+        37335,
         11,
-        279,
-        66598
+        448,
+        264
       ],
       "output_distribution": {
         "top_k": 10,
         "candidates": [
           {
-            "token": "Ġstem",
-            "token_id": 19101,
-            "logprob": -0.0299,
-            "prob": 0.9688
-          },
-          {
             "token": "Ġyear",
             "token_id": 1042,
-            "logprob": -4.2812,
-            "prob": 0.0139
+            "logprob": -0.7266,
+            "prob": 0.4844
           },
           {
-            "token": "Ġstems",
-            "token_id": 43714,
-            "logprob": -4.5312,
-            "prob": 0.0108
+            "token": "Ġlunar",
+            "token_id": 56711,
+            "logprob": -1.9766,
+            "prob": 0.1387
           },
           {
-            "token": "Ġstalk",
-            "token_id": 54872,
-            "logprob": -6.0312,
-            "prob": 0.0024
-          },
-          {
-            "token": "stem",
-            "token_id": 64088,
-            "logprob": -7.0312,
-            "prob": 0.0009
+            "token": "Ġheavenly",
+            "token_id": 66598,
+            "logprob": -2.0938,
+            "prob": 0.1226
           },
           {
             "token": "Ġcalendar",
             "token_id": 13168,
-            "logprob": -7.1562,
-            "prob": 0.0008
+            "logprob": -2.4688,
+            "prob": 0.084
           },
           {
-            "token": "Ġelement",
-            "token_id": 2392,
-            "logprob": -8.375,
-            "prob": 0.0002
+            "token": "ĠHeavenly",
+            "token_id": 87050,
+            "logprob": -2.9688,
+            "prob": 0.051
+          },
+          {
+            "token": "Ġsolar",
+            "token_id": 12941,
+            "logprob": -3.3438,
+            "prob": 0.0352
+          },
+          {
+            "token": "Ġdry",
+            "token_id": 9058,
+            "logprob": -4.0938,
+            "prob": 0.0166
+          },
+          {
+            "token": "Ġcelestial",
+            "token_id": 76380,
+            "logprob": -4.3438,
+            "prob": 0.0129
+          },
+          {
+            "token": "Ġz",
+            "token_id": 1147,
+            "logprob": -4.7812,
+            "prob": 0.0084
+          },
+          {
+            "token": "Ġdate",
+            "token_id": 2400,
+            "logprob": -5.2812,
+            "prob": 0.0051
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġdry",
+        "token_id": 9058,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 11,
+      "input_text": "<|im_start|>user翻译成英语：永和九年，岁在癸丑<|im_end|><|im_start|>assistantIn the tenth year of Yan-he, with a dry",
+      "tokens": [
+        "<|im_start|>",
+        "user",
+        "翻译",
+        "成",
+        "英语",
+        "：",
+        "永",
+        "和",
+        "九年",
+        "，",
+        "岁",
+        "在",
+        "癸",
+        "丑",
+        "<|im_end|>",
+        "<|im_start|>",
+        "assistant",
+        "In",
+        "Ġthe",
+        "Ġtenth",
+        "Ġyear",
+        "Ġof",
+        "ĠYan",
+        "-he",
+        ",",
+        "Ġwith",
+        "Ġa",
+        "Ġdry"
+      ],
+      "token_ids": [
+        151644,
+        872,
+        105395,
+        12857,
+        104105,
+        5122,
+        99906,
+        33108,
+        113297,
+        3837,
+        92015,
+        18493,
+        119090,
+        105500,
+        151645,
+        151644,
+        77091,
+        641,
+        279,
+        55666,
+        1042,
+        315,
+        24213,
+        37335,
+        11,
+        448,
+        264,
+        9058
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "Ġbranch",
+            "token_id": 8870,
+            "logprob": -0.2236,
+            "prob": 0.8008
+          },
+          {
+            "token": "Ġyear",
+            "token_id": 1042,
+            "logprob": -1.9766,
+            "prob": 0.1387
+          },
+          {
+            "token": "Ġwood",
+            "token_id": 7579,
+            "logprob": -3.7188,
+            "prob": 0.0242
+          },
+          {
+            "token": "-",
+            "token_id": 12,
+            "logprob": -4.9688,
+            "prob": 0.0069
+          },
+          {
+            "token": "Ġstem",
+            "token_id": 19101,
+            "logprob": -5.4688,
+            "prob": 0.0042
+          },
+          {
+            "token": "Ġand",
+            "token_id": 323,
+            "logprob": -5.7812,
+            "prob": 0.0031
           },
           {
             "token": "Ġcycle",
             "token_id": 10775,
-            "logprob": -9.375,
-            "prob": 0.0001
+            "logprob": -6.2188,
+            "prob": 0.002
           },
           {
-            "token": "Ġst",
-            "token_id": 357,
-            "logprob": -9.875,
-            "prob": 0.0
+            "token": "Ġtwig",
+            "token_id": 51246,
+            "logprob": -6.5312,
+            "prob": 0.0014
           },
           {
-            "token": "Ġera",
-            "token_id": 11385,
-            "logprob": -10.125,
-            "prob": 0.0
+            "token": "-b",
+            "token_id": 1455,
+            "logprob": -6.5312,
+            "prob": 0.0014
+          },
+          {
+            "token": "-year",
+            "token_id": 4666,
+            "logprob": -6.7188,
+            "prob": 0.0012
           }
         ]
       },
@@ -1355,9 +1489,11 @@
       }
     },
     {
-      "step": 11,
-      "input_text": "翻译成英语：永和九年，岁在癸丑<|im_end|>\n<|im_start|>assistant\nIn the ninthyear of Ying Ho, the heavenly year",
+      "step": 12,
+      "input_text": "<|im_start|>user翻译成英语：永和九年，岁在癸丑<|im_end|><|im_start|>assistantIn the tenth year of Yan-he, with a dry year",
       "tokens": [
+        "<|im_start|>",
+        "user",
         "翻译",
         "成",
         "英语",
@@ -1371,23 +1507,24 @@
         "癸",
         "丑",
         "<|im_end|>",
-        "\n",
         "<|im_start|>",
         "assistant",
-        "\n",
         "In",
         "Ġthe",
-        "Ġninth",
-        "year",
+        "Ġtenth",
+        "Ġyear",
         "Ġof",
-        "ĠYing",
-        "ĠHo",
+        "ĠYan",
+        "-he",
         ",",
-        "Ġthe",
-        "Ġheavenly",
+        "Ġwith",
+        "Ġa",
+        "Ġdry",
         "Ġyear"
       ],
       "token_ids": [
+        151644,
+        872,
         105395,
         12857,
         104105,
@@ -1401,233 +1538,98 @@
         119090,
         105500,
         151645,
-        198,
         151644,
         77091,
-        198,
         641,
         279,
-        42541,
-        3157,
+        55666,
+        1042,
         315,
-        87670,
-        17275,
+        24213,
+        37335,
         11,
-        279,
-        66598,
+        448,
+        264,
+        9058,
         1042
       ],
       "output_distribution": {
         "top_k": 10,
         "candidates": [
           {
-            "token": "Ġwas",
-            "token_id": 572,
-            "logprob": -0.0001,
-            "prob": 1.0
+            "token": "Ġof",
+            "token_id": 315,
+            "logprob": -0.7812,
+            "prob": 0.457
           },
           {
-            "token": "Ġbeing",
-            "token_id": 1660,
-            "logprob": -9.625,
-            "prob": 0.0001
-          },
-          {
-            "token": "Ġis",
-            "token_id": 374,
-            "logprob": -11.375,
-            "prob": 0.0
+            "token": "Ġin",
+            "token_id": 304,
+            "logprob": -1.2812,
+            "prob": 0.2773
           },
           {
             "token": "Ġmarked",
             "token_id": 12864,
-            "logprob": -13.125,
-            "prob": 0.0
+            "logprob": -2.7812,
+            "prob": 0.062
           },
           {
-            "token": "Ġcoinc",
-            "token_id": 22970,
-            "logprob": -13.625,
-            "prob": 0.0
+            "token": "Ġ(",
+            "token_id": 320,
+            "logprob": -2.9062,
+            "prob": 0.0547
           },
           {
-            "token": "Ġof",
-            "token_id": 315,
-            "logprob": -14.0,
-            "prob": 0.0
+            "token": ",",
+            "token_id": 11,
+            "logprob": -3.2812,
+            "prob": 0.0376
           },
           {
-            "token": "Ġhappened",
-            "token_id": 6932,
-            "logprob": -14.875,
-            "prob": 0.0
+            "token": "Ġnamed",
+            "token_id": 6941,
+            "logprob": -3.2812,
+            "prob": 0.0376
+          },
+          {
+            "token": "Ġcorresponding",
+            "token_id": 12159,
+            "logprob": -3.9062,
+            "prob": 0.0201
           },
           {
             "token": "Ġdesignated",
             "token_id": 23195,
-            "logprob": -14.875,
-            "prob": 0.0
+            "logprob": -5.1562,
+            "prob": 0.0058
           },
           {
-            "token": "Ġbelonged",
-            "token_id": 45859,
-            "logprob": -15.0,
-            "prob": 0.0
+            "token": "Ġbeing",
+            "token_id": 1660,
+            "logprob": -5.2812,
+            "prob": 0.0051
           },
           {
-            "token": "Ġbegan",
-            "token_id": 6009,
-            "logprob": -15.5,
-            "prob": 0.0
+            "token": "Ġknown",
+            "token_id": 3881,
+            "logprob": -5.2812,
+            "prob": 0.0051
           }
         ]
       },
       "selected_token": {
-        "token": "Ġis",
-        "token_id": 374,
-        "selection_method": "sampling"
-      }
-    },
-    {
-      "step": 12,
-      "input_text": "翻译成英语：永和九年，岁在癸丑<|im_end|>\n<|im_start|>assistant\nIn the ninthyear of Ying Ho, the heavenly year is",
-      "tokens": [
-        "翻译",
-        "成",
-        "英语",
-        "：",
-        "永",
-        "和",
-        "九年",
-        "，",
-        "岁",
-        "在",
-        "癸",
-        "丑",
-        "<|im_end|>",
-        "\n",
-        "<|im_start|>",
-        "assistant",
-        "\n",
-        "In",
-        "Ġthe",
-        "Ġninth",
-        "year",
-        "Ġof",
-        "ĠYing",
-        "ĠHo",
-        ",",
-        "Ġthe",
-        "Ġheavenly",
-        "Ġyear",
-        "Ġis"
-      ],
-      "token_ids": [
-        105395,
-        12857,
-        104105,
-        5122,
-        99906,
-        33108,
-        113297,
-        3837,
-        92015,
-        18493,
-        119090,
-        105500,
-        151645,
-        198,
-        151644,
-        77091,
-        198,
-        641,
-        279,
-        42541,
-        3157,
-        315,
-        87670,
-        17275,
-        11,
-        279,
-        66598,
-        1042,
-        374
-      ],
-      "output_distribution": {
-        "top_k": 10,
-        "candidates": [
-          {
-            "token": "ĠGui",
-            "token_id": 49998,
-            "logprob": -0.126,
-            "prob": 0.8828
-          },
-          {
-            "token": "ĠG",
-            "token_id": 479,
-            "logprob": -2.625,
-            "prob": 0.0723
-          },
-          {
-            "token": "ĠB",
-            "token_id": 425,
-            "logprob": -3.375,
-            "prob": 0.0342
-          },
-          {
-            "token": "ĠGu",
-            "token_id": 4570,
-            "logprob": -4.5,
-            "prob": 0.0111
-          },
-          {
-            "token": "ĠBing",
-            "token_id": 53487,
-            "logprob": -8.25,
-            "prob": 0.0003
-          },
-          {
-            "token": "ĠBai",
-            "token_id": 84908,
-            "logprob": -8.375,
-            "prob": 0.0002
-          },
-          {
-            "token": "Gui",
-            "token_id": 13728,
-            "logprob": -8.625,
-            "prob": 0.0002
-          },
-          {
-            "token": "Ġthe",
-            "token_id": 279,
-            "logprob": -9.875,
-            "prob": 0.0001
-          },
-          {
-            "token": "ĠBi",
-            "token_id": 12100,
-            "logprob": -9.875,
-            "prob": 0.0001
-          },
-          {
-            "token": "Ġgui",
-            "token_id": 19229,
-            "logprob": -10.125,
-            "prob": 0.0
-          }
-        ]
-      },
-      "selected_token": {
-        "token": "ĠB",
-        "token_id": 425,
+        "token": "Ġin",
+        "token_id": 304,
         "selection_method": "sampling"
       }
     },
     {
       "step": 13,
-      "input_text": "翻译成英语：永和九年，岁在癸丑<|im_end|>\n<|im_start|>assistant\nIn the ninthyear of Ying Ho, the heavenly year is B",
+      "input_text": "<|im_start|>user翻译成英语：永和九年，岁在癸丑<|im_end|><|im_start|>assistantIn the tenth year of Yan-he, with a dry year in",
       "tokens": [
+        "<|im_start|>",
+        "user",
         "翻译",
         "成",
         "英语",
@@ -1641,25 +1643,25 @@
         "癸",
         "丑",
         "<|im_end|>",
-        "\n",
         "<|im_start|>",
         "assistant",
-        "\n",
         "In",
         "Ġthe",
-        "Ġninth",
-        "year",
-        "Ġof",
-        "ĠYing",
-        "ĠHo",
-        ",",
-        "Ġthe",
-        "Ġheavenly",
+        "Ġtenth",
         "Ġyear",
-        "Ġis",
-        "ĠB"
+        "Ġof",
+        "ĠYan",
+        "-he",
+        ",",
+        "Ġwith",
+        "Ġa",
+        "Ġdry",
+        "Ġyear",
+        "Ġin"
       ],
       "token_ids": [
+        151644,
+        872,
         105395,
         12857,
         104105,
@@ -1673,99 +1675,99 @@
         119090,
         105500,
         151645,
-        198,
         151644,
         77091,
-        198,
         641,
         279,
-        42541,
-        3157,
-        315,
-        87670,
-        17275,
-        11,
-        279,
-        66598,
+        55666,
         1042,
-        374,
-        425
+        315,
+        24213,
+        37335,
+        11,
+        448,
+        264,
+        9058,
+        1042,
+        304
       ],
       "output_distribution": {
         "top_k": 10,
         "candidates": [
           {
-            "token": "ǐ",
-            "token_id": 145145,
-            "logprob": -0.8164,
-            "prob": 0.4414
+            "token": "Ġthe",
+            "token_id": 279,
+            "logprob": -0.0815,
+            "prob": 0.9219
           },
           {
-            "token": "ì",
-            "token_id": 23531,
-            "logprob": -2.0625,
-            "prob": 0.127
+            "token": "ĠGui",
+            "token_id": 49998,
+            "logprob": -2.7031,
+            "prob": 0.0669
           },
           {
-            "token": "ich",
-            "token_id": 713,
-            "logprob": -2.1875,
-            "prob": 0.1118
+            "token": "ĠG",
+            "token_id": 479,
+            "logprob": -5.8438,
+            "prob": 0.0029
           },
           {
-            "token": "iao",
-            "token_id": 22516,
-            "logprob": -2.6875,
-            "prob": 0.0679
+            "token": "ĠBing",
+            "token_id": 53487,
+            "logprob": -6.4688,
+            "prob": 0.0016
           },
           {
-            "token": "ing",
-            "token_id": 287,
-            "logprob": -2.8125,
-            "prob": 0.0598
+            "token": "ĠGu",
+            "token_id": 4570,
+            "logprob": -6.5938,
+            "prob": 0.0014
           },
           {
-            "token": "ù",
-            "token_id": 14926,
-            "logprob": -3.3125,
-            "prob": 0.0361
+            "token": "ĠB",
+            "token_id": 425,
+            "logprob": -6.5938,
+            "prob": 0.0014
           },
           {
-            "token": "ingu",
-            "token_id": 12810,
-            "logprob": -3.4375,
-            "prob": 0.032
+            "token": "ĠJi",
+            "token_id": 54451,
+            "logprob": -6.9688,
+            "prob": 0.001
           },
           {
-            "token": "ih",
-            "token_id": 6996,
-            "logprob": -4.0625,
-            "prob": 0.0171
+            "token": "ĠCh",
+            "token_id": 910,
+            "logprob": -7.0938,
+            "prob": 0.0008
           },
           {
-            "token": "ici",
-            "token_id": 3375,
-            "logprob": -4.375,
-            "prob": 0.0125
+            "token": "Ġterms",
+            "token_id": 3793,
+            "logprob": -7.9688,
+            "prob": 0.0004
           },
           {
-            "token": "ao",
-            "token_id": 3441,
-            "logprob": -4.5,
-            "prob": 0.011
+            "token": "ĠYi",
+            "token_id": 47834,
+            "logprob": -8.0625,
+            "prob": 0.0003
           }
         ]
       },
       "selected_token": {
-        "token": "ici",
-        "token_id": 3375,
+        "token": "ĠYi",
+        "token_id": 47834,
         "selection_method": "sampling"
       }
     },
     {
       "step": 14,
-      "input_text": "翻译成英语：永和九年，岁在癸丑<|im_end|>\n<|im_start|>assistant\nIn the ninthyear of Ying Ho, the heavenly year is Bici",
+      "input_text": "<|im_start|>user翻译成英语：永和九年，岁在癸丑<|im_end|><|im_start|>assistantIn the tenth year of Yan-he, with a dry year in Yi",
       "tokens": [
+        "<|im_start|>",
+        "user",
         "翻译",
         "成",
         "英语",
@@ -1779,26 +1781,26 @@
         "癸",
         "丑",
         "<|im_end|>",
-        "\n",
         "<|im_start|>",
         "assistant",
-        "\n",
         "In",
         "Ġthe",
-        "Ġninth",
-        "year",
-        "Ġof",
-        "ĠYing",
-        "ĠHo",
-        ",",
-        "Ġthe",
-        "Ġheavenly",
+        "Ġtenth",
         "Ġyear",
-        "Ġis",
-        "ĠB",
-        "ici"
+        "Ġof",
+        "ĠYan",
+        "-he",
+        ",",
+        "Ġwith",
+        "Ġa",
+        "Ġdry",
+        "Ġyear",
+        "Ġin",
+        "ĠYi"
       ],
       "token_ids": [
+        151644,
+        872,
         105395,
         12857,
         104105,
@@ -1812,24 +1814,164 @@
         119090,
         105500,
         151645,
-        198,
         151644,
         77091,
-        198,
         641,
         279,
-        42541,
-        3157,
-        315,
-        87670,
-        17275,
-        11,
-        279,
-        66598,
+        55666,
         1042,
-        374,
-        425,
-        3375
+        315,
+        24213,
+        37335,
+        11,
+        448,
+        264,
+        9058,
+        1042,
+        304,
+        47834
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": "-ch",
+            "token_id": 11582,
+            "logprob": -0.031,
+            "prob": 0.9688
+          },
+          {
+            "token": "ĠCh",
+            "token_id": 910,
+            "logprob": -3.9062,
+            "prob": 0.0201
+          },
+          {
+            "token": "-Ch",
+            "token_id": 29553,
+            "logprob": -4.9062,
+            "prob": 0.0074
+          },
+          {
+            "token": "Ġch",
+            "token_id": 521,
+            "logprob": -6.7812,
+            "prob": 0.0011
+          },
+          {
+            "token": "-",
+            "token_id": 12,
+            "logprob": -6.9062,
+            "prob": 0.001
+          },
+          {
+            "token": "ĠChu",
+            "token_id": 61011,
+            "logprob": -7.4062,
+            "prob": 0.0006
+          },
+          {
+            "token": "Ch",
+            "token_id": 1143,
+            "logprob": -9.875,
+            "prob": 0.0
+          },
+          {
+            "token": "ĠChun",
+            "token_id": 89354,
+            "logprob": -10.75,
+            "prob": 0.0
+          },
+          {
+            "token": "-z",
+            "token_id": 9141,
+            "logprob": -10.9375,
+            "prob": 0.0
+          },
+          {
+            "token": "Ġchu",
+            "token_id": 95799,
+            "logprob": -11.0,
+            "prob": 0.0
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "Ġchu",
+        "token_id": 95799,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 15,
+      "input_text": "<|im_start|>user翻译成英语：永和九年，岁在癸丑<|im_end|><|im_start|>assistantIn the tenth year of Yan-he, with a dry year in Yi chu",
+      "tokens": [
+        "<|im_start|>",
+        "user",
+        "翻译",
+        "成",
+        "英语",
+        "：",
+        "永",
+        "和",
+        "九年",
+        "，",
+        "岁",
+        "在",
+        "癸",
+        "丑",
+        "<|im_end|>",
+        "<|im_start|>",
+        "assistant",
+        "In",
+        "Ġthe",
+        "Ġtenth",
+        "Ġyear",
+        "Ġof",
+        "ĠYan",
+        "-he",
+        ",",
+        "Ġwith",
+        "Ġa",
+        "Ġdry",
+        "Ġyear",
+        "Ġin",
+        "ĠYi",
+        "Ġchu"
+      ],
+      "token_ids": [
+        151644,
+        872,
+        105395,
+        12857,
+        104105,
+        5122,
+        99906,
+        33108,
+        113297,
+        3837,
+        92015,
+        18493,
+        119090,
+        105500,
+        151645,
+        151644,
+        77091,
+        641,
+        279,
+        55666,
+        1042,
+        315,
+        24213,
+        37335,
+        11,
+        448,
+        264,
+        9058,
+        1042,
+        304,
+        47834,
+        95799
       ],
       "output_distribution": {
         "top_k": 10,
@@ -1837,75 +1979,77 @@
           {
             "token": ".",
             "token_id": 13,
-            "logprob": -0.0014,
-            "prob": 1.0
+            "logprob": -0.2598,
+            "prob": 0.7734
           },
           {
             "token": "<|im_end|>",
             "token_id": 151645,
-            "logprob": -7.125,
-            "prob": 0.0008
+            "logprob": -1.5078,
+            "prob": 0.2207
           },
           {
             "token": "Ġ(",
             "token_id": 320,
+            "logprob": -5.75,
+            "prob": 0.0032
+          },
+          {
+            "token": "och",
+            "token_id": 4953,
+            "logprob": -6.875,
+            "prob": 0.001
+          },
+          {
+            "token": "oc",
+            "token_id": 509,
             "logprob": -7.5,
-            "prob": 0.0006
+            "prob": 0.0005
           },
           {
-            "token": "u",
-            "token_id": 84,
-            "logprob": -11.625,
-            "prob": 0.0
+            "token": "o",
+            "token_id": 78,
+            "logprob": -8.5,
+            "prob": 0.0002
           },
           {
-            "token": "uo",
-            "token_id": 23137,
-            "logprob": -13.5,
-            "prob": 0.0
+            "token": "ǒ",
+            "token_id": 145040,
+            "logprob": -8.625,
+            "prob": 0.0002
           },
           {
-            "token": ".*",
-            "token_id": 4908,
-            "logprob": -13.625,
-            "prob": 0.0
+            "token": "oci",
+            "token_id": 2119,
+            "logprob": -8.875,
+            "prob": 0.0001
           },
           {
-            "token": "uos",
-            "token_id": 83708,
-            "logprob": -13.75,
-            "prob": 0.0
+            "token": "og",
+            "token_id": 538,
+            "logprob": -8.875,
+            "prob": 0.0001
           },
           {
-            "token": "。",
-            "token_id": 1773,
-            "logprob": -14.0,
-            "prob": 0.0
-          },
-          {
-            "token": "wu",
-            "token_id": 65465,
-            "logprob": -14.0,
-            "prob": 0.0
-          },
-          {
-            "token": "hua",
-            "token_id": 91236,
-            "logprob": -14.375,
-            "prob": 0.0
+            "token": ",",
+            "token_id": 11,
+            "logprob": -8.875,
+            "prob": 0.0001
           }
         ]
       },
       "selected_token": {
-        "token": ".",
-        "token_id": 13,
+        "token": "och",
+        "token_id": 4953,
         "selection_method": "sampling"
       }
     },
     {
-      "step": 15,
-      "input_text": "翻译成英语：永和九年，岁在癸丑<|im_end|>\n<|im_start|>assistant\nIn the ninthyear of Ying Ho, the heavenly year is Bici.",
+      "step": 16,
+      "input_text": "<|im_start|>user翻译成英语：永和九年，岁在癸丑<|im_end|><|im_start|>assistantIn the tenth year of Yan-he, with a dry year in Yi chuoch",
       "tokens": [
+        "<|im_start|>",
+        "user",
         "翻译",
         "成",
         "英语",
@@ -1919,27 +2063,28 @@
         "癸",
         "丑",
         "<|im_end|>",
-        "\n",
         "<|im_start|>",
         "assistant",
-        "\n",
         "In",
         "Ġthe",
-        "Ġninth",
-        "year",
-        "Ġof",
-        "ĠYing",
-        "ĠHo",
-        ",",
-        "Ġthe",
-        "Ġheavenly",
+        "Ġtenth",
         "Ġyear",
-        "Ġis",
-        "ĠB",
-        "ici",
-        "."
+        "Ġof",
+        "ĠYan",
+        "-he",
+        ",",
+        "Ġwith",
+        "Ġa",
+        "Ġdry",
+        "Ġyear",
+        "Ġin",
+        "ĠYi",
+        "Ġchu",
+        "och"
       ],
       "token_ids": [
+        151644,
+        872,
         105395,
         12857,
         104105,
@@ -1953,87 +2098,232 @@
         119090,
         105500,
         151645,
-        198,
         151644,
         77091,
-        198,
         641,
         279,
-        42541,
-        3157,
-        315,
-        87670,
-        17275,
-        11,
-        279,
-        66598,
+        55666,
         1042,
-        374,
-        425,
-        3375,
-        13
+        315,
+        24213,
+        37335,
+        11,
+        448,
+        264,
+        9058,
+        1042,
+        304,
+        47834,
+        95799,
+        4953
       ],
       "output_distribution": {
         "top_k": 10,
         "candidates": [
           {
+            "token": "u",
+            "token_id": 84,
+            "logprob": -0.5312,
+            "prob": 0.5859
+          },
+          {
+            "token": "i",
+            "token_id": 72,
+            "logprob": -1.1562,
+            "prob": 0.3145
+          },
+          {
+            "token": "ou",
+            "token_id": 283,
+            "logprob": -2.5312,
+            "prob": 0.0796
+          },
+          {
+            "token": ".",
+            "token_id": 13,
+            "logprob": -4.6562,
+            "prob": 0.0095
+          },
+          {
+            "token": "eng",
+            "token_id": 826,
+            "logprob": -5.1562,
+            "prob": 0.0058
+          },
+          {
+            "token": "uo",
+            "token_id": 23137,
+            "logprob": -7.0312,
+            "prob": 0.0009
+          },
+          {
+            "token": "un",
+            "token_id": 359,
+            "logprob": -7.6562,
+            "prob": 0.0005
+          },
+          {
+            "token": "ong",
+            "token_id": 644,
+            "logprob": -7.6562,
+            "prob": 0.0005
+          },
+          {
+            "token": "ao",
+            "token_id": 3441,
+            "logprob": -8.4375,
+            "prob": 0.0002
+          },
+          {
+            "token": "uang",
+            "token_id": 68610,
+            "logprob": -8.4375,
+            "prob": 0.0002
+          }
+        ]
+      },
+      "selected_token": {
+        "token": "eng",
+        "token_id": 826,
+        "selection_method": "sampling"
+      }
+    },
+    {
+      "step": 17,
+      "input_text": "<|im_start|>user翻译成英语：永和九年，岁在癸丑<|im_end|><|im_start|>assistantIn the tenth year of Yan-he, with a dry year in Yi chuocheng",
+      "tokens": [
+        "<|im_start|>",
+        "user",
+        "翻译",
+        "成",
+        "英语",
+        "：",
+        "永",
+        "和",
+        "九年",
+        "，",
+        "岁",
+        "在",
+        "癸",
+        "丑",
+        "<|im_end|>",
+        "<|im_start|>",
+        "assistant",
+        "In",
+        "Ġthe",
+        "Ġtenth",
+        "Ġyear",
+        "Ġof",
+        "ĠYan",
+        "-he",
+        ",",
+        "Ġwith",
+        "Ġa",
+        "Ġdry",
+        "Ġyear",
+        "Ġin",
+        "ĠYi",
+        "Ġchu",
+        "och",
+        "eng"
+      ],
+      "token_ids": [
+        151644,
+        872,
+        105395,
+        12857,
+        104105,
+        5122,
+        99906,
+        33108,
+        113297,
+        3837,
+        92015,
+        18493,
+        119090,
+        105500,
+        151645,
+        151644,
+        77091,
+        641,
+        279,
+        55666,
+        1042,
+        315,
+        24213,
+        37335,
+        11,
+        448,
+        264,
+        9058,
+        1042,
+        304,
+        47834,
+        95799,
+        4953,
+        826
+      ],
+      "output_distribution": {
+        "top_k": 10,
+        "candidates": [
+          {
+            "token": ".",
+            "token_id": 13,
+            "logprob": -0.0732,
+            "prob": 0.9297
+          },
+          {
             "token": "<|im_end|>",
             "token_id": 151645,
-            "logprob": -0.0,
-            "prob": 1.0
-          },
-          {
-            "token": "Ġ�",
-            "token_id": 11162,
-            "logprob": -16.25,
-            "prob": 0.0
-          },
-          {
-            "token": "Ġ�",
-            "token_id": 25521,
-            "logprob": -17.375,
-            "prob": 0.0
+            "logprob": -2.7031,
+            "prob": 0.0674
           },
           {
             "token": "Ġ(",
             "token_id": 320,
-            "logprob": -18.125,
+            "logprob": -6.0625,
+            "prob": 0.0023
+          },
+          {
+            "token": ",",
+            "token_id": 11,
+            "logprob": -8.6875,
+            "prob": 0.0002
+          },
+          {
+            "token": "Ġyear",
+            "token_id": 1042,
+            "logprob": -8.9375,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġof",
+            "token_id": 315,
+            "logprob": -9.1875,
+            "prob": 0.0001
+          },
+          {
+            "token": "'s",
+            "token_id": 594,
+            "logprob": -9.6875,
+            "prob": 0.0001
+          },
+          {
+            "token": "Ġperiod",
+            "token_id": 4168,
+            "logprob": -10.1875,
             "prob": 0.0
           },
           {
-            "token": "✅",
-            "token_id": 144247,
-            "logprob": -18.375,
+            "token": ".*",
+            "token_id": 4908,
+            "logprob": -10.3125,
             "prob": 0.0
           },
           {
-            "token": "Ġ�",
-            "token_id": 63039,
-            "logprob": -18.625,
-            "prob": 0.0
-          },
-          {
-            "token": "Ġ�",
-            "token_id": 26525,
-            "logprob": -19.875,
-            "prob": 0.0
-          },
-          {
-            "token": "ĠSiber",
-            "token_id": 67500,
-            "logprob": -20.125,
-            "prob": 0.0
-          },
-          {
-            "token": "ĠMoscow",
-            "token_id": 22415,
-            "logprob": -20.25,
-            "prob": 0.0
-          },
-          {
-            "token": "<|im_start|>",
-            "token_id": 151644,
-            "logprob": -20.25,
+            "token": "Ġera",
+            "token_id": 11385,
+            "logprob": -10.9375,
             "prob": 0.0
           }
         ]
