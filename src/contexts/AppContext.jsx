@@ -27,6 +27,7 @@ const ActionTypes = {
 
   // Generation control
   NEXT_STEP: 'NEXT_STEP',
+  PREV_STEP: 'PREV_STEP',
   NEXT_ANIMATION_SUB_STEP: 'NEXT_ANIMATION_SUB_STEP',
   PREV_ANIMATION_SUB_STEP: 'PREV_ANIMATION_SUB_STEP',
   SKIP_TO_NEXT_TOKEN: 'SKIP_TO_NEXT_TOKEN',
@@ -159,6 +160,20 @@ function appReducer(state, action) {
         currentTransformerLayer: 0,
         isPlaying: state.isPlaying,
         instantTransition: false,
+      };
+    }
+
+    case ActionTypes.PREV_STEP: {
+      if (!state.currentExample) return state;
+      if (state.currentStep <= 0) return state;
+
+      return {
+        ...state,
+        currentStep: state.currentStep - 1,
+        currentAnimationSubStep: 0,
+        currentTransformerLayer: 0,
+        isPlaying: false,
+        instantTransition: true,
       };
     }
 
@@ -619,6 +634,13 @@ export function AppProvider({ children, initialViewType = 'inference' }) {
   }, []);
 
   /**
+   * Go back to previous step in current example
+   */
+  const prevStep = useCallback(() => {
+    dispatch({ type: ActionTypes.PREV_STEP });
+  }, []);
+
+  /**
    * Advance to next animation sub-step
    */
   const nextAnimationSubStep = useCallback(() => {
@@ -810,6 +832,7 @@ export function AppProvider({ children, initialViewType = 'inference' }) {
       loadExample,
       loadExamples,
       nextStep,
+      prevStep,
       nextAnimationSubStep,
       prevAnimationSubStep,
       skipToNextToken,
@@ -832,6 +855,7 @@ export function AppProvider({ children, initialViewType = 'inference' }) {
       loadExample,
       loadExamples,
       nextStep,
+      prevStep,
       nextAnimationSubStep,
       prevAnimationSubStep,
       skipToNextToken,

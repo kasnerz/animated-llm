@@ -4,6 +4,19 @@
 import * as d3 from 'd3';
 
 /**
+ * SATURATION CONTROL for vector backgrounds
+ */
+export const VECTOR_SATURATION = {
+  // Light mode: interpolation toward white (higher = less saturated)
+  lighten: 0.65, // Background fill
+  strokeLighten: 0.4, // Border stroke
+
+  // Dark mode: interpolation toward black (higher = darker)
+  darken: 0.5, // Background fill
+  strokeDarken: 0.3, // Border stroke
+};
+
+/**
  * Color scale for token visualization (cycling through predefined colors)
  * @param {number} index - Token index
  * @returns {string} Hex color
@@ -65,10 +78,10 @@ export function getAttentionColor(weight) {
  * @param {string} tokenColor - Base color (hex/rgb)
  * @param {Object} options
  * @param {boolean} options.isDarkMode - Whether dark mode is active
- * @param {number} [options.lighten=0.85] - Interpolation toward white for light mode
- * @param {number} [options.darken=0.5] - Interpolation toward black for dark mode
- * @param {number} [options.strokeLighten=0.6] - Stroke interpolation toward white (light mode)
- * @param {number} [options.strokeDarken=0.3] - Stroke interpolation toward black (dark mode)
+ * @param {number} [options.lighten] - Interpolation toward white for light mode (uses VECTOR_SATURATION.lighten if not specified)
+ * @param {number} [options.darken] - Interpolation toward black for dark mode (uses VECTOR_SATURATION.darken if not specified)
+ * @param {number} [options.strokeLighten] - Stroke interpolation toward white (uses VECTOR_SATURATION.strokeLighten if not specified)
+ * @param {number} [options.strokeDarken] - Stroke interpolation toward black (uses VECTOR_SATURATION.strokeDarken if not specified)
  * @param {string} [options.fallbackFillLight='#f2f3f5']
  * @param {string} [options.fallbackStrokeLight='#e0e0e0']
  * @param {string} [options.fallbackFillDark='#2d2d2d']
@@ -79,10 +92,10 @@ export function getVectorBoxColors(
   tokenColor,
   {
     isDarkMode,
-    lighten = 0.75,
-    darken = 0.5,
-    strokeLighten = 0.6,
-    strokeDarken = 0.3,
+    lighten = VECTOR_SATURATION.lighten,
+    darken = VECTOR_SATURATION.darken,
+    strokeLighten = VECTOR_SATURATION.strokeLighten,
+    strokeDarken = VECTOR_SATURATION.strokeDarken,
     fallbackFillLight = '#f2f3f5',
     fallbackStrokeLight = '#e0e0e0',
     fallbackFillDark = '#2d2d2d',

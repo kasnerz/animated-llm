@@ -92,6 +92,7 @@ body {
 .logo-center-button img {
   height: 32px;
   display: block;
+  filter: var(--logo-filter);
 }
 
 .app-logo-content {
@@ -106,6 +107,7 @@ body {
   width: auto;
   cursor: pointer;
   user-select: none;
+  filter: var(--logo-filter);
 }
 
 /* Canvas Input Section - prompt input moved to canvas area */
@@ -221,6 +223,10 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.header-icon {
+  color: var(--icon-color);
 }
 
 .menu-item-with-label .menu-label {

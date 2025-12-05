@@ -348,7 +348,7 @@ function AppContent() {
                   aria-label={t('keyboard_shortcuts')}
                 >
                   <div className="menu-icon-container">
-                    <Icon path={mdiKeyboard} size={1.2} color="#555" />
+                    <Icon path={mdiKeyboard} size={1.2} className="header-icon" />
                   </div>
                   <span className="menu-label">{t('keyboard_shortcuts')}</span>
                 </button>
@@ -400,7 +400,7 @@ function AppContent() {
                   aria-label={t('about')}
                 >
                   <div className="menu-icon-container">
-                    <Icon path={mdiInformationOutline} size={1.2} color="#555" />
+                    <Icon path={mdiInformationOutline} size={1.2} className="header-icon" />
                   </div>
                   <span className="menu-label">{t('about')}</span>
                 </button>

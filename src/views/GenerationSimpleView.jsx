@@ -139,7 +139,13 @@ function GenerationSimpleView() {
 
   if (state.currentStep !== prevGlobalStep) {
     setPrevGlobalStep(state.currentStep);
-    setSubStep(state.currentStep > 1 ? 1 : 0);
+    // When moving forward, start from substep 1 (show probabilities immediately if not first step)
+    // When moving backward or to step 0, start from substep 0
+    if (state.currentStep > prevGlobalStep) {
+      setSubStep(state.currentStep > 1 ? 1 : 0);
+    } else {
+      setSubStep(0);
+    }
   }
 
   // Drive local animation steps when global play is active
@@ -191,9 +197,6 @@ function GenerationSimpleView() {
           setSubStep((s) => s - 1);
         } else {
           // Move to previous global step (if possible)
-          // We don't have easy access to prevStep logic that resets subStep to 2,
-          // so we just rely on global prevStep which resets subStep to 0 via the other useEffect.
-          // Ideally we would set subStep to 2 after prevStep, but that requires more state sync.
           actions.prevStep();
         }
       }

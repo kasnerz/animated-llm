@@ -15,6 +15,7 @@
   --light-text-tertiary: #999999;
   --light-border: #e0e0e0;
   --light-shadow: rgba(0, 0, 0, 0.1);
+  --light-icon-color: #555555;
 
   /* Dark theme colors */
   --dark-bg-primary: #1a1a1a;
@@ -24,6 +25,7 @@
   --dark-text-tertiary: #a0a0a0;
   --dark-border: #404040;
   --dark-shadow: rgba(0, 0, 0, 0.5);
+  --dark-icon-color: #c0c0c0;
 
   /* Accent colors (same for both themes) */
   --accent-primary: #006d5d;
@@ -91,14 +93,21 @@ body[data-theme='light'] {
   --text-tertiary: var(--light-text-tertiary);
   --border-color: var(--light-border);
   --shadow-color: var(--light-shadow);
+  --icon-color: var(--light-icon-color);
 
   /* Special token styling for light theme */
   --bg-special-token: rgba(128, 128, 128, 0.08);
   --viz-special-token-bg: rgba(128, 128, 128, 0.1);
   --viz-special-token-text: #888888;
+  --token-bg: #f6f6f6;
+
+  /* Dropdown active item styling for light theme */
+  --dropdown-active-bg: #e8f4ff;
+  --dropdown-active-text: #1677ff;
 
   /* GitHub icon filter for light theme (dark icon) */
   --github-icon-filter: none;
+  --logo-filter: none;
 }
 
 /* Dark theme */
@@ -110,11 +119,22 @@ body[data-theme='dark'] {
   --text-tertiary: var(--dark-text-tertiary);
   --border-color: var(--dark-border);
   --shadow-color: var(--dark-shadow);
+  --icon-color: var(--dark-icon-color);
+
+  /* Accent colors for dark theme */
+  --accent-primary: #008578;
+  --accent-secondary: #008578;
+  --accent-hover: #009688;
 
   /* Special token styling for dark theme */
   --bg-special-token: rgba(128, 128, 128, 0.15);
   --viz-special-token-bg: rgba(255, 255, 255, 0.1);
   --viz-special-token-text: #aaaaaa;
+  --token-bg: #3a3a3a;
+
+  /* Dropdown active item styling for dark theme */
+  --dropdown-active-bg: rgba(0, 133, 120, 0.3);
+  --dropdown-active-text: #00b4a2;
 
   /* Token and transformer colors (dark theme) */
   --viz-token-text: #e0e0e0;
@@ -129,4 +149,5 @@ body[data-theme='dark'] {
 
   /* GitHub icon filter for dark theme (invert to white) */
   --github-icon-filter: invert(1);
+  --logo-filter: brightness(1.3);
 }
