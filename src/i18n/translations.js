@@ -83,6 +83,18 @@ const translations = {
     shortcut_toggle_theme: 'Toggle theme',
     shortcut_toggle_language: 'Cycle language',
     shortcut_show_shortcuts: 'Show keyboard shortcuts',
+    // About modal
+    about: 'About',
+    about_title: 'About',
+    about_tagline: 'Interactive visualization of language models',
+    // Single HTML/Markdown content for the About modal (editable)
+    about_content: `
+      <p>This educational app contains a collection of animations that show how large language models (LLMs) work.</p><br>
+      <p>No data is sent to external servers — everything runs in your browser!</p><br>
+      <p><strong>Contact:</strong> <a href="mailto:kasner@ufal.mff.cuni.cz">kasner@ufal.mff.cuni.cz</a></p>
+    `,
+    about_credits:
+      'Created by <a href="https://kasnerz.github.io" target="_blank" rel="noopener noreferrer">Zdeněk Kasner</a> (<a href="https://ufal.mff.cuni.cz" target="_blank" rel="noopener noreferrer">UFAL MFF UK</a>) with substantial help from LLMs.',
     // Initial hint
     hint_press_play: 'Press the Play button to start animation',
     hint_keyboard_shortcuts: 'Keyboard shortcuts',
@@ -186,6 +198,18 @@ const translations = {
     shortcut_toggle_theme: 'Přepnout téma',
     shortcut_toggle_language: 'Přepnout jazyk',
     shortcut_show_shortcuts: 'Zobrazit klávesové zkratky',
+    // About modal
+    about: 'O aplikaci',
+    about_title: 'O aplikaci',
+    about_tagline: 'Interaktivní vizualizace velkých jazykových modelů',
+    // Single HTML/Markdown content for the About modal (editable)
+    about_content: `
+      <p>Tato vzdělávací aplikace obsahuje kolekci animací, které ukazují, jak fungují velké jazykové modely (LLMs).</p><br>
+      <p>Žádná data nejsou odesílána na externí servery — vše běží ve vašem prohlížeči!</p><br>
+      <p><strong>Kontakt:</strong> <a href="mailto:kasner@ufal.mff.cuni.cz">kasner@ufal.mff.cuni.cz</a></p>
+    `,
+    about_credits:
+      'Vytvořil <a href="https://kasnerz.github.io" target="_blank" rel="noopener noreferrer">Zdeněk Kasner</a> (<a href="https://ufal.mff.cuni.cz" target="_blank" rel="noopener noreferrer">ÚFAL MFF UK</a>) s vydatnou pomocí velkých jazykových modelů.',
     // Initial hint
     hint_press_play: 'Stiskněte tlačítko Přehrát pro začátek animace',
     hint_keyboard_shortcuts: 'Klávesové zkratky',

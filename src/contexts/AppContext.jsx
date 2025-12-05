@@ -86,9 +86,9 @@ const initialState = {
   error: null,
 
   // Model and temperature configuration (decoupled from examples)
-  // Default to first model (index 0) and temperature 0.0 🧊
+  // Default to first model (index 0) and temperature 0.0 (snowflake icon)
   selectedModelIndex: 0,
-  selectedTemperatureEmoji: '🧊',
+  selectedTemperatureEmoji: 'snowflake',
 
   // Special tokens visibility
   showSpecialTokens: false,
@@ -735,7 +735,7 @@ export function AppProvider({ children, initialViewType = 'inference' }) {
     });
   }, []);
 
-  /** Set selected temperature emoji (🧊 | 🌡️ | 🌶️) */
+  /** Set selected temperature icon (snowflake | thermometer | fire) */
   const setSelectedTemperatureEmoji = useCallback((emoji) => {
     dispatch({
       type: ActionTypes.SET_SELECTED_TEMPERATURE_EMOJI,

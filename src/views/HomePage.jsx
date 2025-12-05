@@ -1,8 +1,12 @@
 import { Link } from 'react-router-dom';
+import React from 'react';
 import { useI18n } from '../i18n/I18nProvider';
 import { useApp } from '../contexts/AppContext';
 import Logo from '../components/Logo';
+import AboutModal from '../components/AboutModal';
 import LanguageSelector from '../components/LanguageSelector';
+import Icon from '@mdi/react';
+import { mdiInformationOutline } from '@mdi/js';
 import githubMark from '../assets/github-mark.png';
 import pretrainingSimpleIcon from '../assets/views/pretraining-simple.png';
 import pretrainingModelIcon from '../assets/views/pretraining-model.png';
@@ -16,6 +20,7 @@ import '../styles/home-page.css';
 function HomePage() {
   const { t } = useI18n();
   const { state, actions } = useApp();
+  const [isAboutOpen, setIsAboutOpen] = React.useState(false);
 
   const sections = [
     {
@@ -62,6 +67,9 @@ function HomePage() {
 
   return (
     <div className="home-page">
+      {/* About Modal */}
+      <AboutModal isOpen={isAboutOpen} onClose={() => setIsAboutOpen(false)} />
+
       {/* Header controls for home page */}
       <div className="home-header-controls">
         <button
@@ -85,6 +93,14 @@ function HomePage() {
         >
           <img src={githubMark} alt="GitHub" className="github-icon" />
         </a>
+        <button
+          onClick={() => setIsAboutOpen(true)}
+          className="home-control-button"
+          title={t('about')}
+          aria-label={t('about')}
+        >
+          <Icon path={mdiInformationOutline} size={1} />
+        </button>
       </div>
 
       <div className="home-content">

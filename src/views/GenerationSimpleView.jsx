@@ -6,12 +6,38 @@ import { getViridisColor } from '../utils/colorSchemes';
 import { LAYOUT } from '../visualization/core/constants';
 import { MODEL_REGISTRY, getModelInfo, getTemperatureEmoji } from '../config/modelConfig';
 import Icon from '@mdi/react';
-import { mdiPlay, mdiPause, mdiChevronDown, mdiCodeTags } from '@mdi/js';
+import {
+  mdiPlay,
+  mdiPause,
+  mdiChevronDown,
+  mdiCodeTags,
+  mdiSnowflake,
+  mdiThermometer,
+  mdiFire,
+} from '@mdi/js';
 import InitialHint from '../components/InitialHint';
 import { Tooltip } from 'react-tooltip';
 import '../styles/visualization.css';
 import '../styles/main.css';
 import '../styles/decoding-view.css';
+
+/**
+ * Get icon path for temperature icon identifier
+ * @param {string} iconId - Icon identifier ('snowflake', 'thermometer', 'fire')
+ * @returns {string} MDI icon path
+ */
+function getTemperatureIconPath(iconId) {
+  switch (iconId) {
+    case 'snowflake':
+      return mdiSnowflake;
+    case 'thermometer':
+      return mdiThermometer;
+    case 'fire':
+      return mdiFire;
+    default:
+      return mdiThermometer;
+  }
+}
 
 /**
  * GenerationSimpleView Component
@@ -255,10 +281,10 @@ function GenerationSimpleView() {
   // Determine if we should show tokenized view
   const shouldShowTokens = state.currentStep > 0;
 
-  // Get current temperature emoji for the transformer box
-  const currentTempEmoji = state.currentExample
+  // Get current temperature icon for the transformer box
+  const currentTempIcon = state.currentExample
     ? getTemperatureEmoji(state.currentExample.temperature)
-    : '🌡️';
+    : 'thermometer';
 
   return (
     <div className="decoding-view-container">
@@ -443,29 +469,29 @@ function GenerationSimpleView() {
             data-tooltip-content={t('tooltip_temperature')}
           >
             <span className="temp-emoji-btn" aria-hidden>
-              {currentTempEmoji}
+              <Icon path={getTemperatureIconPath(currentTempIcon)} size={0.7} color="#666" />
             </span>
           </button>
 
           {isTempDropdownOpen && (
             <div className="temp-dropdown-menu">
               {[
-                { emoji: '🧊', value: '0.0' },
-                { emoji: '🌡️', value: '1.0' },
-                { emoji: '🌶️', value: '5.0' },
-              ].map(({ emoji, value }) => (
+                { icon: 'snowflake', value: '0.0' },
+                { icon: 'thermometer', value: '1.0' },
+                { icon: 'fire', value: '5.0' },
+              ].map(({ icon, value }) => (
                 <button
-                  key={emoji}
-                  className={`temp-dropdown-item ${state.selectedTemperatureEmoji === emoji ? 'active' : ''}`}
+                  key={icon}
+                  className={`temp-dropdown-item ${state.selectedTemperatureEmoji === icon ? 'active' : ''}`}
                   onClick={() => {
-                    actions.setSelectedTemperatureEmoji(emoji);
+                    actions.setSelectedTemperatureEmoji(icon);
                     setIsTempDropdownOpen(false);
                   }}
                   aria-label={`Temperature ${value}`}
                   title={`Temperature ${value}`}
                 >
                   <span className="temp-emoji" aria-hidden>
-                    {emoji}
+                    <Icon path={getTemperatureIconPath(icon)} size={0.7} color="#666" />
                   </span>
                   <span className="temp-value">{value}</span>
                 </button>

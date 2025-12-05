@@ -6,7 +6,34 @@ import { processTokenForText, isSpecialTokenContextual } from '../utils/tokenPro
 import { MODEL_REGISTRY, getModelInfo, getTemperatureEmoji } from '../config/modelConfig';
 import '../styles/main.css';
 import Icon from '@mdi/react';
-import { mdiPlay, mdiPause, mdiChevronDown, mdiTune, mdiDotsHorizontal } from '@mdi/js';
+import {
+  mdiPlay,
+  mdiPause,
+  mdiChevronDown,
+  mdiTune,
+  mdiDotsHorizontal,
+  mdiSnowflake,
+  mdiThermometer,
+  mdiFire,
+} from '@mdi/js';
+
+/**
+ * Get icon path for temperature icon identifier
+ * @param {string} iconId - Icon identifier ('snowflake', 'thermometer', 'fire')
+ * @returns {string} MDI icon path
+ */
+function getTemperatureIconPath(iconId) {
+  switch (iconId) {
+    case 'snowflake':
+      return mdiSnowflake;
+    case 'thermometer':
+      return mdiThermometer;
+    case 'fire':
+      return mdiFire;
+    default:
+      return mdiThermometer;
+  }
+}
 
 /**
  * InputSection Component
@@ -268,22 +295,22 @@ function InputSection({ disableTokenization = false }) {
                     <div className="settings-label">Temperature</div>
                     <div className="temp-options">
                       {[
-                        { emoji: '🧊', value: '0.0' },
-                        { emoji: '🌡️', value: '1.0' },
-                        { emoji: '🌶️', value: '5.0' },
-                      ].map(({ emoji, value }) => (
+                        { icon: 'snowflake', value: '0.0' },
+                        { icon: 'thermometer', value: '1.0' },
+                        { icon: 'fire', value: '5.0' },
+                      ].map(({ icon, value }) => (
                         <button
-                          key={emoji}
-                          className={`temp-option ${state.selectedTemperatureEmoji === emoji ? 'selected' : ''}`}
+                          key={icon}
+                          className={`temp-option ${state.selectedTemperatureEmoji === icon ? 'selected' : ''}`}
                           onClick={() => {
-                            actions.setSelectedTemperatureEmoji(emoji);
+                            actions.setSelectedTemperatureEmoji(icon);
                             setIsSettingsOpen(false);
                           }}
                           aria-label={`Temperature ${value}`}
                           title={`Temperature ${value}`}
                         >
                           <span className="temp-emoji" aria-hidden>
-                            {emoji}
+                            <Icon path={getTemperatureIconPath(icon)} size={0.7} color="#666" />
                           </span>
                           <span className="temp-value">{value}</span>
                         </button>

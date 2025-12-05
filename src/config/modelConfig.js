@@ -96,30 +96,30 @@ export function getModelInfo(modelId) {
 }
 
 /**
- * Get temperature emoji based on temperature value
+ * Get temperature icon identifier based on value
  * @param {number} temperature - Temperature value
- * @returns {string} Emoji representing the temperature range
+ * @returns {string} Icon identifier representing the temperature range
  */
 export function getTemperatureEmoji(temperature) {
   if (temperature == null) return '';
 
   const temp = typeof temperature === 'number' ? temperature : parseFloat(temperature);
 
-  if (temp < 1.0) return '🧊'; // Ice cube for cold/deterministic
-  if (temp === 1.0) return '🌡️'; // Thermometer for neutral
-  return '🌶️'; // Hot pepper for creative/random
+  if (temp < 1.0) return 'snowflake'; // Snowflake for cold/deterministic
+  if (temp === 1.0) return 'thermometer'; // Thermometer for neutral
+  return 'fire'; // Fire for creative/hot
 }
 
 /**
  * Format temperature display
  * @param {number} temperature - Temperature value
- * @returns {string} Formatted temperature string with emoji
+ * @returns {string} Formatted temperature string with icon identifier
  */
 export function formatTemperature(temperature) {
   if (temperature == null) return '';
 
-  const emoji = getTemperatureEmoji(temperature);
+  const icon = getTemperatureEmoji(temperature);
   const value = typeof temperature === 'number' ? temperature.toFixed(1) : String(temperature);
 
-  return `${emoji} ${value}`;
+  return `${icon} ${value}`;
 }

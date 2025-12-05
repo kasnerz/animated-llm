@@ -11,11 +11,12 @@ import GenerationSimpleView from './views/GenerationSimpleView';
 import PretrainingSimpleView from './views/PretrainingSimpleView';
 import InputSection from './components/InputSection';
 import KeyboardShortcutsModal from './components/KeyboardShortcutsModal';
+import AboutModal from './components/AboutModal';
 import LanguageSelector from './components/LanguageSelector';
 import ViewSelectorPopup from './components/ViewSelectorPopup';
 import Logo from './components/Logo';
 import Icon from '@mdi/react';
-import { mdiKeyboard } from '@mdi/js';
+import { mdiKeyboard, mdiInformationOutline } from '@mdi/js';
 import { TRAINING_STEPS, TEXT_GEN_STEPS } from './visualization/core/constants';
 import githubMark from './assets/github-mark.png';
 import logoSmall from './assets/logo-small.png';
@@ -31,6 +32,7 @@ function AppContent() {
   const { currentView, setCurrentView } = useView();
   const location = useLocation();
   const [isKeyboardShortcutsOpen, setIsKeyboardShortcutsOpen] = useState(false);
+  const [isAboutOpen, setIsAboutOpen] = useState(false);
   const [isHamburgerOpen, setIsHamburgerOpen] = useState(false);
   // Guard to avoid invoking step completion multiple times while state is catching up
   const completionGuardRef = useRef({ step: -1, sub: -1 });
@@ -303,6 +305,9 @@ function AppContent() {
         onClose={() => setIsKeyboardShortcutsOpen(false)}
       />
 
+      {/* About Modal */}
+      <AboutModal isOpen={isAboutOpen} onClose={() => setIsAboutOpen(false)} />
+
       {/* Floating top section - only show on non-home pages */}
       {!isHomePage && (
         <div className="floating-top-section">
@@ -388,6 +393,17 @@ function AppContent() {
                   </div>
                   <span className="menu-label">GitHub</span>
                 </a>
+                <button
+                  onClick={() => setIsAboutOpen(true)}
+                  className="menu-item-with-label"
+                  title={t('about')}
+                  aria-label={t('about')}
+                >
+                  <div className="menu-icon-container">
+                    <Icon path={mdiInformationOutline} size={1.2} color="#555" />
+                  </div>
+                  <span className="menu-label">{t('about')}</span>
+                </button>
               </div>
             </div>
           </div>

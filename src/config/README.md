@@ -6,10 +6,10 @@ This directory contains the configuration for displaying model information in th
 
 The system provides:
 
-1. **Temperature Display**: Emoji-based temperature indicators with values
-   - 🧊 for temperature < 1.0 (deterministic/cold)
-   - 🌡️ for temperature = 1.0 (neutral)
-   - 🌶️ for temperature > 1.0 (creative/hot)
+1. **Temperature Display**: Icon-based temperature indicators with values
+   - Snowflake icon for temperature < 1.0 (deterministic/cold)
+   - Thermometer icon for temperature = 1.0 (neutral)
+   - Fire icon for temperature > 1.0 (creative/hot)
 
 2. **Model Display**: Logo + size for known models, identifier for unknown ones
    - Known models: Show logo image + size (e.g., "8b", "70b")
@@ -78,8 +78,8 @@ Returns model display info (logo, size, name) for a given model ID, or null if u
 
 ### `formatTemperature(temperature)`
 
-Returns emoji + value string for temperature display (e.g., "🌶️ 1.5").
+Returns icon identifier + value string for temperature display (e.g., "fire 1.5").
 
 ### `getTemperatureEmoji(temperature)`
 
-Returns just the emoji for a temperature value.
+Returns just the icon identifier for a temperature value ('snowflake', 'thermometer', or 'fire').
