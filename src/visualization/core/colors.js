@@ -8,8 +8,8 @@ import * as d3 from 'd3';
  */
 export const VECTOR_SATURATION = {
   // Light mode: interpolation toward white (higher = less saturated)
-  lighten: 0.65, // Background fill
-  strokeLighten: 0.4, // Border stroke
+  lighten: 0.75, // Background fill
+  strokeLighten: 0.6, // Border stroke
 
   // Dark mode: interpolation toward black (higher = darker)
   darken: 0.5, // Background fill
