@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { Routes, Route, useLocation, Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import { AppProvider, useApp } from './contexts/AppContext';
 import { I18nProvider, useI18n } from './i18n/I18nProvider';
 import { ViewProvider, useView } from './contexts/ViewContext';
@@ -297,8 +298,27 @@ function AppContent() {
   // Check if we're on the home page
   const isHomePage = location.pathname === '/';
 
+  const getPageTitle = (pathname) => {
+    switch (pathname) {
+      case '/pretraining-model':
+        return 'Pretraining (Model) - AnimatedLLM';
+      case '/generation-model':
+        return 'Generation (Model) - AnimatedLLM';
+      case '/generation-simple':
+        return 'Generation (Simple) - AnimatedLLM';
+      case '/pretraining-simple':
+        return 'Pretraining (Simple) - AnimatedLLM';
+      default:
+        return 'AnimatedLLM - Interactive Transformer Visualization';
+    }
+  };
+
   return (
     <div className={`app-container ${isHamburgerOpen ? 'hamburger-open' : ''}`}>
+      <Helmet>
+        <title>{getPageTitle(location.pathname)}</title>
+      </Helmet>
+
       {/* Keyboard Shortcuts Modal */}
       <KeyboardShortcutsModal
         isOpen={isKeyboardShortcutsOpen}
@@ -310,7 +330,7 @@ function AppContent() {
 
       {/* Floating top section - only show on non-home pages */}
       {!isHomePage && (
-        <div className="floating-top-section">
+        <header className="floating-top-section">
           <div className="floating-top-content">
             {/* Logo on the left (mobile only) */}
             <div className="app-logo">
@@ -407,7 +427,7 @@ function AppContent() {
               </div>
             </div>
           </div>
-        </div>
+        </header>
       )}
 
       {/* Main content - render routes */}

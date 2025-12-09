@@ -11,15 +11,16 @@ import iconImage from '../assets/icon.png';
  */
 function Logo({ variant = 'header', className = '' }) {
   const isHome = variant === 'home';
+  const Wrapper = isHome ? 'h1' : 'div';
 
   return (
-    <div className={`${isHome ? 'home-logo' : 'app-logo-content'} ${className}`.trim()}>
+    <Wrapper className={`${isHome ? 'home-logo' : 'app-logo-content'} ${className}`.trim()}>
       <img
         src={isHome ? logoImage : iconImage}
         alt="AnimatedLLM"
         className={isHome ? 'home-logo-image' : 'logo-image'}
       />
-    </div>
+    </Wrapper>
   );
 }
 
