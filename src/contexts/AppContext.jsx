@@ -69,7 +69,12 @@ const initialState = {
   autoGenerate: false,
 
   // UI settings
-  theme: config.defaults.theme,
+  theme:
+    typeof window !== 'undefined' &&
+    window.matchMedia &&
+    window.matchMedia('(prefers-color-scheme: dark)').matches
+      ? 'dark'
+      : config.defaults.theme,
   language: config.defaults.language,
   animationSpeed: config.defaults.animationSpeed,
   viewType: 'inference', // 'inference' or 'training'

@@ -433,9 +433,12 @@ function App() {
   // Determine initial view from current URL path
   const getInitialViewFromPath = () => {
     const path = window.location.pathname;
-    // Remove basename if present
-    const basename = '/animated-llm';
-    const cleanPath = path.startsWith(basename) ? path.slice(basename.length) : path;
+    // Use Vite's BASE_URL so this works both in dev ("/") and production (may be '/animated-llm/')
+    const rawBase = import.meta.env.BASE_URL || '/';
+    // Trim trailing slash for comparison (so '/' -> '')
+    const trimmedBase = rawBase.endsWith('/') ? rawBase.slice(0, -1) : rawBase;
+    const cleanPath =
+      trimmedBase && path.startsWith(trimmedBase) ? path.slice(trimmedBase.length) : path;
 
     const pathToView = {
       '/pretraining-model': VIEW_TYPES.TRAINING,
