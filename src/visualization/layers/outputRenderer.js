@@ -159,7 +159,7 @@ export function renderOutputLayer(
           const targetTopY = percentageY + 40;
           const tv = drawHorizontalVector(group, horizCenterX, targetTopY, targetValues, {
             className: 'target-vector',
-            tokenColor: '#dc2626ff', // red
+            tokenColor: '#ff6868ff', // red
             format: (v) => (typeof v === 'number' ? v.toFixed(3) : ''),
             isLogprob: true,
             // Mirror the logprob row when ellipsis is last; otherwise we'll overlay ⋯ manually

@@ -3,12 +3,11 @@
  */
 
 .home-page {
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   padding: 2rem;
   background-color: var(--bg-primary);
-  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .home-content {
@@ -205,6 +204,15 @@
 .home-button-label,
 .home-subtitle {
   display: none;
+}
+
+/* Override app-main styles when on home page to prevent unnecessary scrolling */
+.app-main.home-layout {
+  padding: 0;
+  /* Remove the bottom padding reserved for playback controls */
+  padding-bottom: 0;
+  /* Ensure no horizontal overflow from main container */
+  overflow-x: hidden;
 }
 
 /* Responsive design */

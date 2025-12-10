@@ -431,7 +431,7 @@ function AppContent() {
       )}
 
       {/* Main content - render routes */}
-      <main className="app-main">
+      <main className={`app-main ${isHomePage ? 'home-layout' : ''}`}>
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/generation-model" element={<GenerationModelView />} />

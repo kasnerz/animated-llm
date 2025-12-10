@@ -23,12 +23,12 @@ export const VECTOR_SATURATION = {
  */
 export function getTokenColor(index) {
   const colors = [
-    '#FF6B6B', // red
     '#4ECDC4', // teal
-    '#45B7D1', // blue
-    '#FFA07A', // light salmon
-    '#98D8C8', // mint
     '#F7DC6F', // yellow
+    '#FFA07A', // light salmon
+    '#45B7D1', // blue
+    '#98D8C8', // mint
+    '#FF6B6B', // red
     '#BB8FCE', // purple
     '#85C1E2', // sky blue
     '#F8B195', // peach
