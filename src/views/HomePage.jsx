@@ -169,7 +169,7 @@ function HomePage() {
           ÚFAL MFF UK
         </a>
         {' | '}
-        MIT License
+        2025
       </footer>
     </div>
   );

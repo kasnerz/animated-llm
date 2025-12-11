@@ -239,10 +239,12 @@ function GenerationSimpleView() {
     }
 
     // If we are at the end of the local animation cycle (step 2)
+    const delay = (state.animationSpeed || 15) * 40;
+
     if (subStep >= 2) {
       const timer = setTimeout(() => {
         actions.nextStep();
-      }, 600);
+      }, delay);
       return () => clearTimeout(timer);
     }
 
@@ -251,9 +253,9 @@ function GenerationSimpleView() {
       setSubStep((s) => s + 1);
       // If global currentStep still 0, advance it so InputSection shows tokens underline style consistently
       if (state.currentStep === 0) actions.nextStep();
-    }, 600);
+    }, delay);
     return () => clearTimeout(timer);
-  }, [state.isPlaying, subStep, currentGen, state.currentStep, actions]);
+  }, [state.isPlaying, subStep, currentGen, state.currentStep, actions, state.animationSpeed]);
 
   // Keyboard shortcuts for manual stepping
   useEffect(() => {

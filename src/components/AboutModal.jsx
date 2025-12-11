@@ -35,7 +35,6 @@ function AboutModal({ isOpen, onClose }) {
           {/* Credits/Footer */}
           <div className="about-footer">
             <p dangerouslySetInnerHTML={{ __html: t('about_credits') }} />
-            <p className="about-version">Version 1.0.0</p>
           </div>
         </div>
       </div>

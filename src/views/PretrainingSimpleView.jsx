@@ -166,11 +166,12 @@ function PretrainingSimpleView() {
     if (!state.isPlaying) return;
     if (!state.currentExample) return;
     const maxLocalSubStep = 3; // 0..3
+    const delay = (state.animationSpeed || 15) * 45;
 
     if (subStep >= maxLocalSubStep) {
       const timer = setTimeout(() => {
         actions.nextStep();
-      }, 700);
+      }, delay);
       return () => clearTimeout(timer);
     }
 
@@ -179,9 +180,16 @@ function PretrainingSimpleView() {
       if (state.currentStep === 0) {
         actions.nextStep();
       }
-    }, 700);
+    }, delay);
     return () => clearTimeout(timer);
-  }, [state.isPlaying, subStep, state.currentExample, state.currentStep, actions]);
+  }, [
+    state.isPlaying,
+    subStep,
+    state.currentExample,
+    state.currentStep,
+    actions,
+    state.animationSpeed,
+  ]);
 
   // Get current model info for displaying in transformer box
   // If the selected model doesn't have training_view enabled, fall back to the first valid model
