@@ -1,0 +1,10373 @@
+{
+  "id": "training_20251211_091119",
+  "type": "training",
+  "text": "def factorial(n):\n    \"\"\"Calculate the factorial of a number.\"\"\"\n    if n == 0 or n == 1:\n        return 1\n    else:\n        return n * factorial(n - 1)",
+  "source": "Код Python - рекурсивне обчислення факторіала",
+  "tokens": [
+    "def",
+    "Ġfact",
+    "orial",
+    "(",
+    "n",
+    "):",
+    "\n",
+    "Ġ",
+    "Ġ",
+    "Ġ",
+    "Ġ\"\"\"",
+    "Cal",
+    "cul",
+    "ate",
+    "Ġthe",
+    "Ġfact",
+    "orial",
+    "Ġof",
+    "Ġa",
+    "Ġnumber",
+    ".\"",
+    "\"\"",
+    "\n",
+    "Ġ",
+    "Ġ",
+    "Ġ",
+    "Ġif",
+    "Ġn",
+    "Ġ==",
+    "Ġ0",
+    "Ġor",
+    "Ġn",
+    "Ġ==",
+    "Ġ1",
+    ":",
+    "\n",
+    "Ġ",
+    "Ġ",
+    "Ġ",
+    "Ġ",
+    "Ġ",
+    "Ġ",
+    "Ġ",
+    "Ġreturn",
+    "Ġ1",
+    "\n",
+    "Ġ",
+    "Ġ",
+    "Ġ",
+    "Ġelse",
+    ":",
+    "\n",
+    "Ġ",
+    "Ġ",
+    "Ġ",
+    "Ġ",
+    "Ġ",
+    "Ġ",
+    "Ġ",
+    "Ġreturn",
+    "Ġn",
+    "Ġ*",
+    "Ġfact",
+    "orial",
+    "(",
+    "n",
+    "Ġ-",
+    "Ġ1",
+    ")"
+  ],
+  "token_ids": [
+    4299,
+    1109,
+    5132,
+    7,
+    77,
+    2599,
+    198,
+    220,
+    220,
+    220,
+    37227,
+    9771,
+    3129,
+    378,
+    262,
+    1109,
+    5132,
+    286,
+    257,
+    1271,
+    526,
+    15931,
+    198,
+    220,
+    220,
+    220,
+    611,
+    299,
+    6624,
+    657,
+    393,
+    299,
+    6624,
+    352,
+    25,
+    198,
+    220,
+    220,
+    220,
+    220,
+    220,
+    220,
+    220,
+    1441,
+    352,
+    198,
+    220,
+    220,
+    220,
+    2073,
+    25,
+    198,
+    220,
+    220,
+    220,
+    220,
+    220,
+    220,
+    220,
+    1441,
+    299,
+    1635,
+    1109,
+    5132,
+    7,
+    77,
+    532,
+    352,
+    8
+  ],
+  "num_tokens": 69,
+  "model_info": {
+    "name": "openai-community/gpt2-xl",
+    "architecture": "gpt2",
+    "num_layers": 48,
+    "hidden_size": 1600,
+    "num_attention_heads": 25,
+    "vocab_size": 50257,
+    "max_position_embeddings": 1024,
+    "intermediate_size": null,
+    "total_parameters": 1557611200,
+    "pretrained": true
+  },
+  "training_steps": [
+    {
+      "step": 0,
+      "input_tokens": [],
+      "input_token_ids": [],
+      "target_token": "def",
+      "target_token_id": 4299,
+      "predictions": [
+        {
+          "token": "initions",
+          "token_id": 50101,
+          "logprob": -2.9316,
+          "prob": 0.0533
+        },
+        {
+          "token": "end",
+          "token_id": 437,
+          "logprob": -3.2949,
+          "prob": 0.037
+        },
+        {
+          "token": "erred",
+          "token_id": 17436,
+          "logprob": -3.3535,
+          "prob": 0.0349
+        },
+        {
+          "token": "initely",
+          "token_id": 12998,
+          "logprob": -3.5605,
+          "prob": 0.0284
+        },
+        {
+          "token": "eat",
+          "token_id": 4098,
+          "logprob": -3.5762,
+          "prob": 0.028
+        },
+        {
+          "token": "ensive",
+          "token_id": 2021,
+          "logprob": -3.6074,
+          "prob": 0.0271
+        },
+        {
+          "token": "ining",
+          "token_id": 3191,
+          "logprob": -3.9902,
+          "prob": 0.0185
+        },
+        {
+          "token": "en",
+          "token_id": 268,
+          "logprob": -4.0078,
+          "prob": 0.0182
+        },
+        {
+          "token": "e",
+          "token_id": 68,
+          "logprob": -4.1094,
+          "prob": 0.0164
+        },
+        {
+          "token": "ending",
+          "token_id": 1571,
+          "logprob": -4.2383,
+          "prob": 0.0145
+        }
+      ],
+      "target_token_prediction": {
+        "token": "def",
+        "token_id": 4299,
+        "logprob": -5.875,
+        "prob": 0.0028
+      },
+      "target_prob": 0.0028,
+      "target_logprob": -5.875,
+      "loss": 5.875
+    },
+    {
+      "step": 1,
+      "input_tokens": [
+        "def"
+      ],
+      "input_token_ids": [
+        4299
+      ],
+      "target_token": "Ġfact",
+      "target_token_id": 1109,
+      "predictions": [
+        {
+          "token": "initions",
+          "token_id": 50101,
+          "logprob": -2.9316,
+          "prob": 0.0533
+        },
+        {
+          "token": "end",
+          "token_id": 437,
+          "logprob": -3.2949,
+          "prob": 0.037
+        },
+        {
+          "token": "erred",
+          "token_id": 17436,
+          "logprob": -3.3535,
+          "prob": 0.0349
+        },
+        {
+          "token": "initely",
+          "token_id": 12998,
+          "logprob": -3.5605,
+          "prob": 0.0284
+        },
+        {
+          "token": "eat",
+          "token_id": 4098,
+          "logprob": -3.5762,
+          "prob": 0.028
+        },
+        {
+          "token": "ensive",
+          "token_id": 2021,
+          "logprob": -3.6074,
+          "prob": 0.0271
+        },
+        {
+          "token": "ining",
+          "token_id": 3191,
+          "logprob": -3.9902,
+          "prob": 0.0185
+        },
+        {
+          "token": "en",
+          "token_id": 268,
+          "logprob": -4.0078,
+          "prob": 0.0182
+        },
+        {
+          "token": "e",
+          "token_id": 68,
+          "logprob": -4.1094,
+          "prob": 0.0164
+        },
+        {
+          "token": "ending",
+          "token_id": 1571,
+          "logprob": -4.2383,
+          "prob": 0.0145
+        }
+      ],
+      "target_token_prediction": {
+        "token": "Ġfact",
+        "token_id": 1109,
+        "logprob": -11.7031,
+        "prob": 0.0
+      },
+      "target_prob": 0.0,
+      "target_logprob": -11.7031,
+      "loss": 11.7031
+    },
+    {
+      "step": 2,
+      "input_tokens": [
+        "def",
+        "Ġfact"
+      ],
+      "input_token_ids": [
+        4299,
+        1109
+      ],
+      "target_token": "orial",
+      "target_token_id": 5132,
+      "predictions": [
+        {
+          "token": "orial",
+          "token_id": 5132,
+          "logprob": -2.4434,
+          "prob": 0.087
+        },
+        {
+          "token": "_",
+          "token_id": 62,
+          "logprob": -2.584,
+          "prob": 0.0756
+        },
+        {
+          "token": ",",
+          "token_id": 11,
+          "logprob": -2.791,
+          "prob": 0.0614
+        },
+        {
+          "token": "-",
+          "token_id": 12,
+          "logprob": -2.7988,
+          "prob": 0.0609
+        },
+        {
+          "token": "Ġthat",
+          "token_id": 326,
+          "logprob": -3.2363,
+          "prob": 0.0393
+        },
+        {
+          "token": ".",
+          "token_id": 13,
+          "logprob": -3.2871,
+          "prob": 0.0374
+        },
+        {
+          "token": "oring",
+          "token_id": 3255,
+          "logprob": -3.3965,
+          "prob": 0.0335
+        },
+        {
+          "token": ":",
+          "token_id": 25,
+          "logprob": -3.5332,
+          "prob": 0.0292
+        },
+        {
+          "token": ")",
+          "token_id": 8,
+          "logprob": -3.5996,
+          "prob": 0.0274
+        },
+        {
+          "token": "ored",
+          "token_id": 1850,
+          "logprob": -3.7832,
+          "prob": 0.0228
+        }
+      ],
+      "target_token_prediction": {
+        "token": "orial",
+        "token_id": 5132,
+        "logprob": -2.4434,
+        "prob": 0.087
+      },
+      "target_prob": 0.087,
+      "target_logprob": -2.4434,
+      "loss": 2.4434
+    },
+    {
+      "step": 3,
+      "input_tokens": [
+        "def",
+        "Ġfact",
+        "orial"
+      ],
+      "input_token_ids": [
+        4299,
+        1109,
+        5132
+      ],
+      "target_token": "(",
+      "target_token_id": 7,
+      "predictions": [
+        {
+          "token": "(",
+          "token_id": 7,
+          "logprob": -1.0977,
+          "prob": 0.3337
+        },
+        {
+          "token": "Ġ(",
+          "token_id": 357,
+          "logprob": -2.2227,
+          "prob": 0.1083
+        },
+        {
+          "token": "Ġ=",
+          "token_id": 796,
+          "logprob": -3.668,
+          "prob": 0.0255
+        },
+        {
+          "token": "_",
+          "token_id": 62,
+          "logprob": -3.7383,
+          "prob": 0.0238
+        },
+        {
+          "token": "Ġn",
+          "token_id": 299,
+          "logprob": -3.9336,
+          "prob": 0.0196
+        },
+        {
+          "token": ":",
+          "token_id": 25,
+          "logprob": -3.9844,
+          "prob": 0.0186
+        },
+        {
+          "token": "Ġ::",
+          "token_id": 7904,
+          "logprob": -4.0508,
+          "prob": 0.0174
+        },
+        {
+          "token": ")",
+          "token_id": 8,
+          "logprob": -4.1055,
+          "prob": 0.0165
+        },
+        {
+          "token": "\n",
+          "token_id": 198,
+          "logprob": -4.1484,
+          "prob": 0.0158
+        },
+        {
+          "token": ".",
+          "token_id": 13,
+          "logprob": -4.2031,
+          "prob": 0.015
+        }
+      ],
+      "target_token_prediction": {
+        "token": "(",
+        "token_id": 7,
+        "logprob": -1.0977,
+        "prob": 0.3337
+      },
+      "target_prob": 0.3337,
+      "target_logprob": -1.0977,
+      "loss": 1.0977
+    },
+    {
+      "step": 4,
+      "input_tokens": [
+        "def",
+        "Ġfact",
+        "orial",
+        "("
+      ],
+      "input_token_ids": [
+        4299,
+        1109,
+        5132,
+        7
+      ],
+      "target_token": "n",
+      "target_token_id": 77,
+      "predictions": [
+        {
+          "token": "n",
+          "token_id": 77,
+          "logprob": -0.5249,
+          "prob": 0.5913
+        },
+        {
+          "token": "x",
+          "token_id": 87,
+          "logprob": -2.8066,
+          "prob": 0.0604
+        },
+        {
+          "token": "a",
+          "token_id": 64,
+          "logprob": -2.8613,
+          "prob": 0.0572
+        },
+        {
+          "token": "int",
+          "token_id": 600,
+          "logprob": -3.2441,
+          "prob": 0.039
+        },
+        {
+          "token": "N",
+          "token_id": 45,
+          "logprob": -3.5488,
+          "prob": 0.0288
+        },
+        {
+          "token": "num",
+          "token_id": 22510,
+          "logprob": -4.5,
+          "prob": 0.0111
+        },
+        {
+          "token": "m",
+          "token_id": 76,
+          "logprob": -4.5391,
+          "prob": 0.0107
+        },
+        {
+          "token": "fact",
+          "token_id": 22584,
+          "logprob": -4.7422,
+          "prob": 0.0087
+        },
+        {
+          "token": "i",
+          "token_id": 72,
+          "logprob": -4.9375,
+          "prob": 0.0072
+        },
+        {
+          "token": "f",
+          "token_id": 69,
+          "logprob": -5.0938,
+          "prob": 0.0061
+        }
+      ],
+      "target_token_prediction": {
+        "token": "n",
+        "token_id": 77,
+        "logprob": -0.5249,
+        "prob": 0.5913
+      },
+      "target_prob": 0.5913,
+      "target_logprob": -0.5249,
+      "loss": 0.5249
+    },
+    {
+      "step": 5,
+      "input_tokens": [
+        "def",
+        "Ġfact",
+        "orial",
+        "(",
+        "n"
+      ],
+      "input_token_ids": [
+        4299,
+        1109,
+        5132,
+        7,
+        77
+      ],
+      "target_token": "):",
+      "target_token_id": 2599,
+      "predictions": [
+        {
+          "token": ")",
+          "token_id": 8,
+          "logprob": -1.001,
+          "prob": 0.3677
+        },
+        {
+          "token": "):",
+          "token_id": 2599,
+          "logprob": -1.1807,
+          "prob": 0.3071
+        },
+        {
+          "token": ",",
+          "token_id": 11,
+          "logprob": -2.7266,
+          "prob": 0.0654
+        },
+        {
+          "token": ":",
+          "token_id": 25,
+          "logprob": -2.8125,
+          "prob": 0.06
+        },
+        {
+          "token": "){",
+          "token_id": 19953,
+          "logprob": -3.0547,
+          "prob": 0.0471
+        },
+        {
+          "token": ");",
+          "token_id": 1776,
+          "logprob": -3.1719,
+          "prob": 0.0419
+        },
+        {
+          "token": "=",
+          "token_id": 28,
+          "logprob": -3.8203,
+          "prob": 0.0219
+        },
+        {
+          "token": "Ġ:",
+          "token_id": 1058,
+          "logprob": -3.8984,
+          "prob": 0.0203
+        },
+        {
+          "token": "Ġ=",
+          "token_id": 796,
+          "logprob": -4.4688,
+          "prob": 0.0115
+        },
+        {
+          "token": "_",
+          "token_id": 62,
+          "logprob": -5.6641,
+          "prob": 0.0035
+        }
+      ],
+      "target_token_prediction": {
+        "token": "):",
+        "token_id": 2599,
+        "logprob": -1.1807,
+        "prob": 0.3071
+      },
+      "target_prob": 0.3071,
+      "target_logprob": -1.1807,
+      "loss": 1.1807
+    },
+    {
+      "step": 6,
+      "input_tokens": [
+        "def",
+        "Ġfact",
+        "orial",
+        "(",
+        "n",
+        "):"
+      ],
+      "input_token_ids": [
+        4299,
+        1109,
+        5132,
+        7,
+        77,
+        2599
+      ],
+      "target_token": "\n",
+      "target_token_id": 198,
+      "predictions": [
+        {
+          "token": "Ġif",
+          "token_id": 611,
+          "logprob": -1.6201,
+          "prob": 0.1978
+        },
+        {
+          "token": "Ġreturn",
+          "token_id": 1441,
+          "logprob": -1.7451,
+          "prob": 0.1746
+        },
+        {
+          "token": "\n",
+          "token_id": 198,
+          "logprob": -2.1445,
+          "prob": 0.1172
+        },
+        {
+          "token": "Ġ#",
+          "token_id": 1303,
+          "logprob": -2.543,
+          "prob": 0.0787
+        },
+        {
+          "token": "Ġ\"\"\"",
+          "token_id": 37227,
+          "logprob": -2.9727,
+          "prob": 0.0512
+        },
+        {
+          "token": "Ġfor",
+          "token_id": 329,
+          "logprob": -2.9883,
+          "prob": 0.0504
+        },
+        {
+          "token": "Ġn",
+          "token_id": 299,
+          "logprob": -3.6758,
+          "prob": 0.0253
+        },
+        {
+          "token": "Ġ...",
+          "token_id": 2644,
+          "logprob": -4.3555,
+          "prob": 0.0128
+        },
+        {
+          "token": "Ġprint",
+          "token_id": 3601,
+          "logprob": -4.3672,
+          "prob": 0.0127
+        },
+        {
+          "token": "Ġ'",
+          "token_id": 705,
+          "logprob": -4.6328,
+          "prob": 0.0097
+        }
+      ],
+      "target_token_prediction": {
+        "token": "\n",
+        "token_id": 198,
+        "logprob": -2.1445,
+        "prob": 0.1172
+      },
+      "target_prob": 0.1172,
+      "target_logprob": -2.1445,
+      "loss": 2.1445
+    },
+    {
+      "step": 7,
+      "input_tokens": [
+        "def",
+        "Ġfact",
+        "orial",
+        "(",
+        "n",
+        "):",
+        "\n"
+      ],
+      "input_token_ids": [
+        4299,
+        1109,
+        5132,
+        7,
+        77,
+        2599,
+        198
+      ],
+      "target_token": "Ġ",
+      "target_token_id": 220,
+      "predictions": [
+        {
+          "token": "\n",
+          "token_id": 198,
+          "logprob": -0.0006,
+          "prob": 0.9995
+        },
+        {
+          "token": "The",
+          "token_id": 464,
+          "logprob": -10.3125,
+          "prob": 0.0
+        },
+        {
+          "token": "-",
+          "token_id": 12,
+          "logprob": -10.6172,
+          "prob": 0.0
+        },
+        {
+          "token": "\"",
+          "token_id": 1,
+          "logprob": -10.6328,
+          "prob": 0.0
+        },
+        {
+          "token": ".",
+          "token_id": 13,
+          "logprob": -11.0781,
+          "prob": 0.0
+        },
+        {
+          "token": "A",
+          "token_id": 32,
+          "logprob": -11.625,
+          "prob": 0.0
+        },
+        {
+          "token": "I",
+          "token_id": 40,
+          "logprob": -11.8203,
+          "prob": 0.0
+        },
+        {
+          "token": "This",
+          "token_id": 1212,
+          "logprob": -11.9609,
+          "prob": 0.0
+        },
+        {
+          "token": ",",
+          "token_id": 11,
+          "logprob": -11.9531,
+          "prob": 0.0
+        },
+        {
+          "token": "In",
+          "token_id": 818,
+          "logprob": -12.0156,
+          "prob": 0.0
+        }
+      ],
+      "target_token_prediction": {
+        "token": "Ġ",
+        "token_id": 220,
+        "logprob": -15.2422,
+        "prob": 0.0
+      },
+      "target_prob": 0.0,
+      "target_logprob": -15.2422,
+      "loss": 15.2422
+    },
+    {
+      "step": 8,
+      "input_tokens": [
+        "def",
+        "Ġfact",
+        "orial",
+        "(",
+        "n",
+        "):",
+        "\n",
+        "Ġ"
+      ],
+      "input_token_ids": [
+        4299,
+        1109,
+        5132,
+        7,
+        77,
+        2599,
+        198,
+        220
+      ],
+      "target_token": "Ġ",
+      "target_token_id": 220,
+      "predictions": [
+        {
+          "token": " ",
+          "token_id": 1849,
+          "logprob": -0.1646,
+          "prob": 0.8481
+        },
+        {
+          "token": "Ġ",
+          "token_id": 220,
+          "logprob": -3.6406,
+          "prob": 0.0262
+        },
+        {
+          "token": "________________________________",
+          "token_id": 10221,
+          "logprob": -4.375,
+          "prob": 0.0126
+        },
+        {
+          "token": "------------------------",
+          "token_id": 22369,
+          "logprob": -4.5078,
+          "prob": 0.011
+        },
+        {
+          "token": "________",
+          "token_id": 2602,
+          "logprob": -4.8594,
+          "prob": 0.0078
+        },
+        {
+          "token": "~~~~~~~~~~~~~~~~",
+          "token_id": 27156,
+          "logprob": -4.9062,
+          "prob": 0.0074
+        },
+        {
+          "token": "____",
+          "token_id": 1427,
+          "logprob": -5.0312,
+          "prob": 0.0065
+        },
+        {
+          "token": "--------------",
+          "token_id": 26171,
+          "logprob": -5.2109,
+          "prob": 0.0055
+        },
+        {
+          "token": "------------",
+          "token_id": 10541,
+          "logprob": -5.3594,
+          "prob": 0.0047
+        },
+        {
+          "token": "________________",
+          "token_id": 4841,
+          "logprob": -5.4062,
+          "prob": 0.0045
+        }
+      ],
+      "target_token_prediction": {
+        "token": "Ġ",
+        "token_id": 220,
+        "logprob": -3.6406,
+        "prob": 0.0262
+      },
+      "target_prob": 0.0262,
+      "target_logprob": -3.6406,
+      "loss": 3.6406
+    },
+    {
+      "step": 9,
+      "input_tokens": [
+        "def",
+        "Ġfact",
+        "orial",
+        "(",
+        "n",
+        "):",
+        "\n",
+        "Ġ",
+        "Ġ"
+      ],
+      "input_token_ids": [
+        4299,
+        1109,
+        5132,
+        7,
+        77,
+        2599,
+        198,
+        220,
+        220
+      ],
+      "target_token": "Ġ",
+      "target_token_id": 220,
+      "predictions": [
+        {
+          "token": "Ġ",
+          "token_id": 220,
+          "logprob": -1.0176,
+          "prob": 0.3616
+        },
+        {
+          "token": "Ġ=",
+          "token_id": 796,
+          "logprob": -2.4082,
+          "prob": 0.09
+        },
+        {
+          "token": " ",
+          "token_id": 1849,
+          "logprob": -3.0449,
+          "prob": 0.0476
+        },
+        {
+          "token": "\n",
+          "token_id": 198,
+          "logprob": -3.248,
+          "prob": 0.0389
+        },
+        {
+          "token": "Ġif",
+          "token_id": 611,
+          "logprob": -3.7754,
+          "prob": 0.0229
+        },
+        {
+          "token": "Ġn",
+          "token_id": 299,
+          "logprob": -3.8184,
+          "prob": 0.022
+        },
+        {
+          "token": "Ġ1",
+          "token_id": 352,
+          "logprob": -3.9746,
+          "prob": 0.0188
+        },
+        {
+          "token": "Ġ(",
+          "token_id": 357,
+          "logprob": -4.1914,
+          "prob": 0.0151
+        },
+        {
+          "token": "Ġ ",
+          "token_id": 5624,
+          "logprob": -4.5234,
+          "prob": 0.0108
+        },
+        {
+          "token": "ĠIf",
+          "token_id": 1002,
+          "logprob": -4.6992,
+          "prob": 0.0091
+        }
+      ],
+      "target_token_prediction": {
+        "token": "Ġ",
+        "token_id": 220,
+        "logprob": -1.0176,
+        "prob": 0.3616
+      },
+      "target_prob": 0.3616,
+      "target_logprob": -1.0176,
+      "loss": 1.0176
+    },
+    {
+      "step": 10,
+      "input_tokens": [
+        "def",
+        "Ġfact",
+        "orial",
+        "(",
+        "n",
+        "):",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ"
+      ],
+      "input_token_ids": [
+        4299,
+        1109,
+        5132,
+        7,
+        77,
+        2599,
+        198,
+        220,
+        220,
+        220
+      ],
+      "target_token": "Ġ\"\"\"",
+      "target_token_id": 37227,
+      "predictions": [
+        {
+          "token": "Ġ",
+          "token_id": 220,
+          "logprob": -0.6069,
+          "prob": 0.5449
+        },
+        {
+          "token": " ",
+          "token_id": 1849,
+          "logprob": -3.1621,
+          "prob": 0.0424
+        },
+        {
+          "token": "\n",
+          "token_id": 198,
+          "logprob": -3.2051,
+          "prob": 0.0406
+        },
+        {
+          "token": "Ġ=",
+          "token_id": 796,
+          "logprob": -3.2715,
+          "prob": 0.038
+        },
+        {
+          "token": "Ġif",
+          "token_id": 611,
+          "logprob": -4.1523,
+          "prob": 0.0157
+        },
+        {
+          "token": "Ġ1",
+          "token_id": 352,
+          "logprob": -4.3203,
+          "prob": 0.0133
+        },
+        {
+          "token": "Ġ(",
+          "token_id": 357,
+          "logprob": -4.4336,
+          "prob": 0.0119
+        },
+        {
+          "token": "Ġn",
+          "token_id": 299,
+          "logprob": -4.5664,
+          "prob": 0.0104
+        },
+        {
+          "token": "Ġ ",
+          "token_id": 5624,
+          "logprob": -4.7383,
+          "prob": 0.0087
+        },
+        {
+          "token": "ĠIf",
+          "token_id": 1002,
+          "logprob": -4.8984,
+          "prob": 0.0074
+        }
+      ],
+      "target_token_prediction": {
+        "token": "Ġ\"\"\"",
+        "token_id": 37227,
+        "logprob": -6.9023,
+        "prob": 0.001
+      },
+      "target_prob": 0.001,
+      "target_logprob": -6.9023,
+      "loss": 6.9023
+    },
+    {
+      "step": 11,
+      "input_tokens": [
+        "def",
+        "Ġfact",
+        "orial",
+        "(",
+        "n",
+        "):",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ\"\"\""
+      ],
+      "input_token_ids": [
+        4299,
+        1109,
+        5132,
+        7,
+        77,
+        2599,
+        198,
+        220,
+        220,
+        220,
+        37227
+      ],
+      "target_token": "Cal",
+      "target_token_id": 9771,
+      "predictions": [
+        {
+          "token": "Ġ",
+          "token_id": 220,
+          "logprob": -2.0195,
+          "prob": 0.1328
+        },
+        {
+          "token": "\n",
+          "token_id": 198,
+          "logprob": -2.5586,
+          "prob": 0.0775
+        },
+        {
+          "token": "Fact",
+          "token_id": 29054,
+          "logprob": -3.0742,
+          "prob": 0.0462
+        },
+        {
+          "token": "ĠReturn",
+          "token_id": 8229,
+          "logprob": -3.2695,
+          "prob": 0.038
+        },
+        {
+          "token": "ĠFact",
+          "token_id": 19020,
+          "logprob": -3.3867,
+          "prob": 0.0338
+        },
+        {
+          "token": "ĠReturns",
+          "token_id": 16409,
+          "logprob": -3.5234,
+          "prob": 0.0295
+        },
+        {
+          "token": "Return",
+          "token_id": 13615,
+          "logprob": -3.6602,
+          "prob": 0.0257
+        },
+        {
+          "token": "ĠThe",
+          "token_id": 383,
+          "logprob": -3.9648,
+          "prob": 0.019
+        },
+        {
+          "token": "Returns",
+          "token_id": 35561,
+          "logprob": -4.1719,
+          "prob": 0.0154
+        },
+        {
+          "token": "ĠCalcul",
+          "token_id": 27131,
+          "logprob": -4.3281,
+          "prob": 0.0132
+        }
+      ],
+      "target_token_prediction": {
+        "token": "Cal",
+        "token_id": 9771,
+        "logprob": -5.2266,
+        "prob": 0.0054
+      },
+      "target_prob": 0.0054,
+      "target_logprob": -5.2266,
+      "loss": 5.2266
+    },
+    {
+      "step": 12,
+      "input_tokens": [
+        "def",
+        "Ġfact",
+        "orial",
+        "(",
+        "n",
+        "):",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ\"\"\"",
+        "Cal"
+      ],
+      "input_token_ids": [
+        4299,
+        1109,
+        5132,
+        7,
+        77,
+        2599,
+        198,
+        220,
+        220,
+        220,
+        37227,
+        9771
+      ],
+      "target_token": "cul",
+      "target_token_id": 3129,
+      "predictions": [
+        {
+          "token": "cul",
+          "token_id": 3129,
+          "logprob": -0.0153,
+          "prob": 0.9849
+        },
+        {
+          "token": "c",
+          "token_id": 66,
+          "logprob": -5.2031,
+          "prob": 0.0055
+        },
+        {
+          "token": "culation",
+          "token_id": 14902,
+          "logprob": -5.4219,
+          "prob": 0.0044
+        },
+        {
+          "token": "culus",
+          "token_id": 17576,
+          "logprob": -5.7422,
+          "prob": 0.0032
+        },
+        {
+          "token": "culated",
+          "token_id": 49262,
+          "logprob": -6.5938,
+          "prob": 0.0014
+        },
+        {
+          "token": "cs",
+          "token_id": 6359,
+          "logprob": -8.8906,
+          "prob": 0.0001
+        },
+        {
+          "token": "m",
+          "token_id": 76,
+          "logprob": -9.4922,
+          "prob": 0.0001
+        },
+        {
+          "token": "endar",
+          "token_id": 9239,
+          "logprob": -10.7578,
+          "prob": 0.0
+        },
+        {
+          "token": "ibr",
+          "token_id": 2889,
+          "logprob": -10.8281,
+          "prob": 0.0
+        },
+        {
+          "token": "ib",
+          "token_id": 571,
+          "logprob": -11.0859,
+          "prob": 0.0
+        }
+      ],
+      "target_token_prediction": {
+        "token": "cul",
+        "token_id": 3129,
+        "logprob": -0.0153,
+        "prob": 0.9849
+      },
+      "target_prob": 0.9849,
+      "target_logprob": -0.0153,
+      "loss": 0.0153
+    },
+    {
+      "step": 13,
+      "input_tokens": [
+        "def",
+        "Ġfact",
+        "orial",
+        "(",
+        "n",
+        "):",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ\"\"\"",
+        "Cal",
+        "cul"
+      ],
+      "input_token_ids": [
+        4299,
+        1109,
+        5132,
+        7,
+        77,
+        2599,
+        198,
+        220,
+        220,
+        220,
+        37227,
+        9771,
+        3129
+      ],
+      "target_token": "ate",
+      "target_token_id": 378,
+      "predictions": [
+        {
+          "token": "ate",
+          "token_id": 378,
+          "logprob": -0.3052,
+          "prob": 0.7368
+        },
+        {
+          "token": "ates",
+          "token_id": 689,
+          "logprob": -1.4463,
+          "prob": 0.2356
+        },
+        {
+          "token": "ating",
+          "token_id": 803,
+          "logprob": -4.2969,
+          "prob": 0.0136
+        },
+        {
+          "token": "ations",
+          "token_id": 602,
+          "logprob": -4.9688,
+          "prob": 0.0069
+        },
+        {
+          "token": "ator",
+          "token_id": 1352,
+          "logprob": -5.3516,
+          "prob": 0.0047
+        },
+        {
+          "token": "ated",
+          "token_id": 515,
+          "logprob": -7.6875,
+          "prob": 0.0005
+        },
+        {
+          "token": "ators",
+          "token_id": 2024,
+          "logprob": -7.7188,
+          "prob": 0.0004
+        },
+        {
+          "token": "ation",
+          "token_id": 341,
+          "logprob": -8.5781,
+          "prob": 0.0002
+        },
+        {
+          "token": "ative",
+          "token_id": 876,
+          "logprob": -9.0547,
+          "prob": 0.0001
+        },
+        {
+          "token": "at",
+          "token_id": 265,
+          "logprob": -9.25,
+          "prob": 0.0001
+        }
+      ],
+      "target_token_prediction": {
+        "token": "ate",
+        "token_id": 378,
+        "logprob": -0.3052,
+        "prob": 0.7368
+      },
+      "target_prob": 0.7368,
+      "target_logprob": -0.3052,
+      "loss": 0.3052
+    },
+    {
+      "step": 14,
+      "input_tokens": [
+        "def",
+        "Ġfact",
+        "orial",
+        "(",
+        "n",
+        "):",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ\"\"\"",
+        "Cal",
+        "cul",
+        "ate"
+      ],
+      "input_token_ids": [
+        4299,
+        1109,
+        5132,
+        7,
+        77,
+        2599,
+        198,
+        220,
+        220,
+        220,
+        37227,
+        9771,
+        3129,
+        378
+      ],
+      "target_token": "Ġthe",
+      "target_token_id": 262,
+      "predictions": [
+        {
+          "token": "Ġthe",
+          "token_id": 262,
+          "logprob": -0.7202,
+          "prob": 0.4866
+        },
+        {
+          "token": "Ġfact",
+          "token_id": 1109,
+          "logprob": -1.8926,
+          "prob": 0.1508
+        },
+        {
+          "token": "Ġn",
+          "token_id": 299,
+          "logprob": -2.041,
+          "prob": 0.1299
+        },
+        {
+          "token": "Ġa",
+          "token_id": 257,
+          "logprob": -3.2441,
+          "prob": 0.039
+        },
+        {
+          "token": "Ġ`",
+          "token_id": 4600,
+          "logprob": -4.3164,
+          "prob": 0.0133
+        },
+        {
+          "token": "Ġf",
+          "token_id": 277,
+          "logprob": -4.6562,
+          "prob": 0.0095
+        },
+        {
+          "token": "Ġ",
+          "token_id": 220,
+          "logprob": -4.9492,
+          "prob": 0.0071
+        },
+        {
+          "token": "ĠFact",
+          "token_id": 19020,
+          "logprob": -4.9766,
+          "prob": 0.0069
+        },
+        {
+          "token": "Ġfib",
+          "token_id": 12900,
+          "logprob": -5.2969,
+          "prob": 0.005
+        },
+        {
+          "token": "Ġan",
+          "token_id": 281,
+          "logprob": -5.3438,
+          "prob": 0.0048
+        }
+      ],
+      "target_token_prediction": {
+        "token": "Ġthe",
+        "token_id": 262,
+        "logprob": -0.7202,
+        "prob": 0.4866
+      },
+      "target_prob": 0.4866,
+      "target_logprob": -0.7202,
+      "loss": 0.7202
+    },
+    {
+      "step": 15,
+      "input_tokens": [
+        "def",
+        "Ġfact",
+        "orial",
+        "(",
+        "n",
+        "):",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ\"\"\"",
+        "Cal",
+        "cul",
+        "ate",
+        "Ġthe"
+      ],
+      "input_token_ids": [
+        4299,
+        1109,
+        5132,
+        7,
+        77,
+        2599,
+        198,
+        220,
+        220,
+        220,
+        37227,
+        9771,
+        3129,
+        378,
+        262
+      ],
+      "target_token": "Ġfact",
+      "target_token_id": 1109,
+      "predictions": [
+        {
+          "token": "Ġfact",
+          "token_id": 1109,
+          "logprob": -0.8921,
+          "prob": 0.4099
+        },
+        {
+          "token": "Ġproduct",
+          "token_id": 1720,
+          "logprob": -2.5098,
+          "prob": 0.0814
+        },
+        {
+          "token": "Ġn",
+          "token_id": 299,
+          "logprob": -2.9395,
+          "prob": 0.0529
+        },
+        {
+          "token": "Ġnumber",
+          "token_id": 1271,
+          "logprob": -3.166,
+          "prob": 0.0422
+        },
+        {
+          "token": "ĠFib",
+          "token_id": 41566,
+          "logprob": -3.4316,
+          "prob": 0.0323
+        },
+        {
+          "token": "Ġvalue",
+          "token_id": 1988,
+          "logprob": -3.5723,
+          "prob": 0.0281
+        },
+        {
+          "token": "Ġlargest",
+          "token_id": 4387,
+          "logprob": -3.627,
+          "prob": 0.0266
+        },
+        {
+          "token": "Ġremainder",
+          "token_id": 17675,
+          "logprob": -3.916,
+          "prob": 0.0199
+        },
+        {
+          "token": "Ġinteger",
+          "token_id": 18253,
+          "logprob": -4.3281,
+          "prob": 0.0132
+        },
+        {
+          "token": "Ġsum",
+          "token_id": 2160,
+          "logprob": -4.3359,
+          "prob": 0.0131
+        }
+      ],
+      "target_token_prediction": {
+        "token": "Ġfact",
+        "token_id": 1109,
+        "logprob": -0.8921,
+        "prob": 0.4099
+      },
+      "target_prob": 0.4099,
+      "target_logprob": -0.8921,
+      "loss": 0.8921
+    },
+    {
+      "step": 16,
+      "input_tokens": [
+        "def",
+        "Ġfact",
+        "orial",
+        "(",
+        "n",
+        "):",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ\"\"\"",
+        "Cal",
+        "cul",
+        "ate",
+        "Ġthe",
+        "Ġfact"
+      ],
+      "input_token_ids": [
+        4299,
+        1109,
+        5132,
+        7,
+        77,
+        2599,
+        198,
+        220,
+        220,
+        220,
+        37227,
+        9771,
+        3129,
+        378,
+        262,
+        1109
+      ],
+      "target_token": "orial",
+      "target_token_id": 5132,
+      "predictions": [
+        {
+          "token": "orial",
+          "token_id": 5132,
+          "logprob": -0.0006,
+          "prob": 0.9995
+        },
+        {
+          "token": "oring",
+          "token_id": 3255,
+          "logprob": -8.6094,
+          "prob": 0.0002
+        },
+        {
+          "token": "ored",
+          "token_id": 1850,
+          "logprob": -8.7344,
+          "prob": 0.0002
+        },
+        {
+          "token": "Ġthat",
+          "token_id": 326,
+          "logprob": -10.2031,
+          "prob": 0.0
+        },
+        {
+          "token": "orable",
+          "token_id": 10475,
+          "logprob": -11.25,
+          "prob": 0.0
+        },
+        {
+          "token": "Ġof",
+          "token_id": 286,
+          "logprob": -11.6328,
+          "prob": 0.0
+        },
+        {
+          "token": "Ġnumber",
+          "token_id": 1271,
+          "logprob": -11.8047,
+          "prob": 0.0
+        },
+        {
+          "token": "Ġn",
+          "token_id": 299,
+          "logprob": -11.8047,
+          "prob": 0.0
+        },
+        {
+          "token": "(",
+          "token_id": 7,
+          "logprob": -12.1016,
+          "prob": 0.0
+        },
+        {
+          "token": "Ġ(",
+          "token_id": 357,
+          "logprob": -12.1797,
+          "prob": 0.0
+        }
+      ],
+      "target_token_prediction": {
+        "token": "orial",
+        "token_id": 5132,
+        "logprob": -0.0006,
+        "prob": 0.9995
+      },
+      "target_prob": 0.9995,
+      "target_logprob": -0.0006,
+      "loss": 0.0006
+    },
+    {
+      "step": 17,
+      "input_tokens": [
+        "def",
+        "Ġfact",
+        "orial",
+        "(",
+        "n",
+        "):",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ\"\"\"",
+        "Cal",
+        "cul",
+        "ate",
+        "Ġthe",
+        "Ġfact",
+        "orial"
+      ],
+      "input_token_ids": [
+        4299,
+        1109,
+        5132,
+        7,
+        77,
+        2599,
+        198,
+        220,
+        220,
+        220,
+        37227,
+        9771,
+        3129,
+        378,
+        262,
+        1109,
+        5132
+      ],
+      "target_token": "Ġof",
+      "target_token_id": 286,
+      "predictions": [
+        {
+          "token": "Ġof",
+          "token_id": 286,
+          "logprob": -0.0964,
+          "prob": 0.9082
+        },
+        {
+          "token": "Ġn",
+          "token_id": 299,
+          "logprob": -4.0977,
+          "prob": 0.0166
+        },
+        {
+          "token": "Ġfunction",
+          "token_id": 2163,
+          "logprob": -4.9727,
+          "prob": 0.0069
+        },
+        {
+          "token": "Ġnumber",
+          "token_id": 1271,
+          "logprob": -5.2773,
+          "prob": 0.0051
+        },
+        {
+          "token": ".",
+          "token_id": 13,
+          "logprob": -5.457,
+          "prob": 0.0043
+        },
+        {
+          "token": "Ġ`",
+          "token_id": 4600,
+          "logprob": -5.4648,
+          "prob": 0.0042
+        },
+        {
+          "token": "Ġ(",
+          "token_id": 357,
+          "logprob": -5.4648,
+          "prob": 0.0042
+        },
+        {
+          "token": "Ġvalue",
+          "token_id": 1988,
+          "logprob": -5.5508,
+          "prob": 0.0039
+        },
+        {
+          "token": "s",
+          "token_id": 82,
+          "logprob": -5.6406,
+          "prob": 0.0036
+        },
+        {
+          "token": "Ġ\"\"\"",
+          "token_id": 37227,
+          "logprob": -5.6641,
+          "prob": 0.0035
+        }
+      ],
+      "target_token_prediction": {
+        "token": "Ġof",
+        "token_id": 286,
+        "logprob": -0.0964,
+        "prob": 0.9082
+      },
+      "target_prob": 0.9082,
+      "target_logprob": -0.0964,
+      "loss": 0.0964
+    },
+    {
+      "step": 18,
+      "input_tokens": [
+        "def",
+        "Ġfact",
+        "orial",
+        "(",
+        "n",
+        "):",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ\"\"\"",
+        "Cal",
+        "cul",
+        "ate",
+        "Ġthe",
+        "Ġfact",
+        "orial",
+        "Ġof"
+      ],
+      "input_token_ids": [
+        4299,
+        1109,
+        5132,
+        7,
+        77,
+        2599,
+        198,
+        220,
+        220,
+        220,
+        37227,
+        9771,
+        3129,
+        378,
+        262,
+        1109,
+        5132,
+        286
+      ],
+      "target_token": "Ġa",
+      "target_token_id": 257,
+      "predictions": [
+        {
+          "token": "Ġn",
+          "token_id": 299,
+          "logprob": -0.5181,
+          "prob": 0.5957
+        },
+        {
+          "token": "Ġa",
+          "token_id": 257,
+          "logprob": -1.8926,
+          "prob": 0.1506
+        },
+        {
+          "token": "Ġthe",
+          "token_id": 262,
+          "logprob": -2.3691,
+          "prob": 0.0935
+        },
+        {
+          "token": "Ġ`",
+          "token_id": 4600,
+          "logprob": -2.9004,
+          "prob": 0.055
+        },
+        {
+          "token": "Ġan",
+          "token_id": 281,
+          "logprob": -3.9473,
+          "prob": 0.0193
+        },
+        {
+          "token": "Ġ'",
+          "token_id": 705,
+          "logprob": -4.6211,
+          "prob": 0.0099
+        },
+        {
+          "token": "Ġx",
+          "token_id": 2124,
+          "logprob": -5.3555,
+          "prob": 0.0047
+        },
+        {
+          "token": "Ġnumber",
+          "token_id": 1271,
+          "logprob": -5.4258,
+          "prob": 0.0044
+        },
+        {
+          "token": "Ġinteger",
+          "token_id": 18253,
+          "logprob": -5.5508,
+          "prob": 0.0039
+        },
+        {
+          "token": "ĠN",
+          "token_id": 399,
+          "logprob": -5.5625,
+          "prob": 0.0038
+        }
+      ],
+      "target_token_prediction": {
+        "token": "Ġa",
+        "token_id": 257,
+        "logprob": -1.8926,
+        "prob": 0.1506
+      },
+      "target_prob": 0.1506,
+      "target_logprob": -1.8926,
+      "loss": 1.8926
+    },
+    {
+      "step": 19,
+      "input_tokens": [
+        "def",
+        "Ġfact",
+        "orial",
+        "(",
+        "n",
+        "):",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ\"\"\"",
+        "Cal",
+        "cul",
+        "ate",
+        "Ġthe",
+        "Ġfact",
+        "orial",
+        "Ġof",
+        "Ġa"
+      ],
+      "input_token_ids": [
+        4299,
+        1109,
+        5132,
+        7,
+        77,
+        2599,
+        198,
+        220,
+        220,
+        220,
+        37227,
+        9771,
+        3129,
+        378,
+        262,
+        1109,
+        5132,
+        286,
+        257
+      ],
+      "target_token": "Ġnumber",
+      "target_token_id": 1271,
+      "predictions": [
+        {
+          "token": "Ġnumber",
+          "token_id": 1271,
+          "logprob": -0.3513,
+          "prob": 0.7036
+        },
+        {
+          "token": "Ġgiven",
+          "token_id": 1813,
+          "logprob": -2.7812,
+          "prob": 0.062
+        },
+        {
+          "token": "Ġpositive",
+          "token_id": 3967,
+          "logprob": -3.0,
+          "prob": 0.0498
+        },
+        {
+          "token": "Ġnon",
+          "token_id": 1729,
+          "logprob": -3.8984,
+          "prob": 0.0203
+        },
+        {
+          "token": "Ġn",
+          "token_id": 299,
+          "logprob": -4.2188,
+          "prob": 0.0147
+        },
+        {
+          "token": "Ġinteger",
+          "token_id": 18253,
+          "logprob": -4.2656,
+          "prob": 0.014
+        },
+        {
+          "token": "Ġvalue",
+          "token_id": 1988,
+          "logprob": -4.4062,
+          "prob": 0.0122
+        },
+        {
+          "token": "Ġnatural",
+          "token_id": 3288,
+          "logprob": -4.5703,
+          "prob": 0.0104
+        },
+        {
+          "token": "Ġnegative",
+          "token_id": 4633,
+          "logprob": -4.8672,
+          "prob": 0.0077
+        },
+        {
+          "token": "Ġsequence",
+          "token_id": 8379,
+          "logprob": -5.2578,
+          "prob": 0.0052
+        }
+      ],
+      "target_token_prediction": {
+        "token": "Ġnumber",
+        "token_id": 1271,
+        "logprob": -0.3513,
+        "prob": 0.7036
+      },
+      "target_prob": 0.7036,
+      "target_logprob": -0.3513,
+      "loss": 0.3513
+    },
+    {
+      "step": 20,
+      "input_tokens": [
+        "def",
+        "Ġfact",
+        "orial",
+        "(",
+        "n",
+        "):",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ\"\"\"",
+        "Cal",
+        "cul",
+        "ate",
+        "Ġthe",
+        "Ġfact",
+        "orial",
+        "Ġof",
+        "Ġa",
+        "Ġnumber"
+      ],
+      "input_token_ids": [
+        4299,
+        1109,
+        5132,
+        7,
+        77,
+        2599,
+        198,
+        220,
+        220,
+        220,
+        37227,
+        9771,
+        3129,
+        378,
+        262,
+        1109,
+        5132,
+        286,
+        257,
+        1271
+      ],
+      "target_token": ".\"",
+      "target_token_id": 526,
+      "predictions": [
+        {
+          "token": ".\"",
+          "token_id": 526,
+          "logprob": -1.4932,
+          "prob": 0.2247
+        },
+        {
+          "token": ".",
+          "token_id": 13,
+          "logprob": -1.5791,
+          "prob": 0.2062
+        },
+        {
+          "token": "Ġn",
+          "token_id": 299,
+          "logprob": -1.626,
+          "prob": 0.1968
+        },
+        {
+          "token": "Ġ\"\"\"",
+          "token_id": 37227,
+          "logprob": -2.9766,
+          "prob": 0.0509
+        },
+        {
+          "token": ",",
+          "token_id": 11,
+          "logprob": -3.0234,
+          "prob": 0.0486
+        },
+        {
+          "token": "Ġin",
+          "token_id": 287,
+          "logprob": -3.9141,
+          "prob": 0.0199
+        },
+        {
+          "token": "\"",
+          "token_id": 1,
+          "logprob": -4.1523,
+          "prob": 0.0157
+        },
+        {
+          "token": ":",
+          "token_id": 25,
+          "logprob": -4.2227,
+          "prob": 0.0146
+        },
+        {
+          "token": "\"\"\"",
+          "token_id": 37811,
+          "logprob": -4.3008,
+          "prob": 0.0135
+        },
+        {
+          "token": "Ġusing",
+          "token_id": 1262,
+          "logprob": -4.5312,
+          "prob": 0.0108
+        }
+      ],
+      "target_token_prediction": {
+        "token": ".\"",
+        "token_id": 526,
+        "logprob": -1.4932,
+        "prob": 0.2247
+      },
+      "target_prob": 0.2247,
+      "target_logprob": -1.4932,
+      "loss": 1.4932
+    },
+    {
+      "step": 21,
+      "input_tokens": [
+        "def",
+        "Ġfact",
+        "orial",
+        "(",
+        "n",
+        "):",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ\"\"\"",
+        "Cal",
+        "cul",
+        "ate",
+        "Ġthe",
+        "Ġfact",
+        "orial",
+        "Ġof",
+        "Ġa",
+        "Ġnumber",
+        ".\""
+      ],
+      "input_token_ids": [
+        4299,
+        1109,
+        5132,
+        7,
+        77,
+        2599,
+        198,
+        220,
+        220,
+        220,
+        37227,
+        9771,
+        3129,
+        378,
+        262,
+        1109,
+        5132,
+        286,
+        257,
+        1271,
+        526
+      ],
+      "target_token": "\"\"",
+      "target_token_id": 15931,
+      "predictions": [
+        {
+          "token": "\"\"",
+          "token_id": 15931,
+          "logprob": -0.002,
+          "prob": 0.998
+        },
+        {
+          "token": "\"",
+          "token_id": 1,
+          "logprob": -7.3711,
+          "prob": 0.0006
+        },
+        {
+          "token": "''",
+          "token_id": 7061,
+          "logprob": -8.0,
+          "prob": 0.0003
+        },
+        {
+          "token": "\"\"\"",
+          "token_id": 37811,
+          "logprob": -8.1172,
+          "prob": 0.0003
+        },
+        {
+          "token": "Ġ",
+          "token_id": 220,
+          "logprob": -8.5938,
+          "prob": 0.0002
+        },
+        {
+          "token": "Ġ\"\"\"",
+          "token_id": 37227,
+          "logprob": -9.2266,
+          "prob": 0.0001
+        },
+        {
+          "token": ".\"",
+          "token_id": 526,
+          "logprob": -9.4375,
+          "prob": 0.0001
+        },
+        {
+          "token": "\n",
+          "token_id": 198,
+          "logprob": -9.8281,
+          "prob": 0.0001
+        },
+        {
+          "token": "Ġ\"\"",
+          "token_id": 13538,
+          "logprob": -9.8672,
+          "prob": 0.0001
+        },
+        {
+          "token": "\".",
+          "token_id": 1911,
+          "logprob": -10.2969,
+          "prob": 0.0
+        }
+      ],
+      "target_token_prediction": {
+        "token": "\"\"",
+        "token_id": 15931,
+        "logprob": -0.002,
+        "prob": 0.998
+      },
+      "target_prob": 0.998,
+      "target_logprob": -0.002,
+      "loss": 0.002
+    },
+    {
+      "step": 22,
+      "input_tokens": [
+        "def",
+        "Ġfact",
+        "orial",
+        "(",
+        "n",
+        "):",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ\"\"\"",
+        "Cal",
+        "cul",
+        "ate",
+        "Ġthe",
+        "Ġfact",
+        "orial",
+        "Ġof",
+        "Ġa",
+        "Ġnumber",
+        ".\"",
+        "\"\""
+      ],
+      "input_token_ids": [
+        4299,
+        1109,
+        5132,
+        7,
+        77,
+        2599,
+        198,
+        220,
+        220,
+        220,
+        37227,
+        9771,
+        3129,
+        378,
+        262,
+        1109,
+        5132,
+        286,
+        257,
+        1271,
+        526,
+        15931
+      ],
+      "target_token": "\n",
+      "target_token_id": 198,
+      "predictions": [
+        {
+          "token": "Ġ",
+          "token_id": 220,
+          "logprob": -1.4326,
+          "prob": 0.2386
+        },
+        {
+          "token": "\n",
+          "token_id": 198,
+          "logprob": -1.4873,
+          "prob": 0.226
+        },
+        {
+          "token": "Ġn",
+          "token_id": 299,
+          "logprob": -2.3242,
+          "prob": 0.0979
+        },
+        {
+          "token": "Ġif",
+          "token_id": 611,
+          "logprob": -2.5664,
+          "prob": 0.0768
+        },
+        {
+          "token": "Ġreturn",
+          "token_id": 1441,
+          "logprob": -2.707,
+          "prob": 0.0668
+        },
+        {
+          "token": "Ġfor",
+          "token_id": 329,
+          "logprob": -3.2305,
+          "prob": 0.0396
+        },
+        {
+          "token": "Ġ#",
+          "token_id": 1303,
+          "logprob": -3.8086,
+          "prob": 0.0222
+        },
+        {
+          "token": "Ġprint",
+          "token_id": 3601,
+          "logprob": -3.9414,
+          "prob": 0.0194
+        },
+        {
+          "token": "Ġ ",
+          "token_id": 5624,
+          "logprob": -4.3594,
+          "prob": 0.0128
+        },
+        {
+          "token": "Ġa",
+          "token_id": 257,
+          "logprob": -4.5,
+          "prob": 0.0111
+        }
+      ],
+      "target_token_prediction": {
+        "token": "\n",
+        "token_id": 198,
+        "logprob": -1.4873,
+        "prob": 0.226
+      },
+      "target_prob": 0.226,
+      "target_logprob": -1.4873,
+      "loss": 1.4873
+    },
+    {
+      "step": 23,
+      "input_tokens": [
+        "def",
+        "Ġfact",
+        "orial",
+        "(",
+        "n",
+        "):",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ\"\"\"",
+        "Cal",
+        "cul",
+        "ate",
+        "Ġthe",
+        "Ġfact",
+        "orial",
+        "Ġof",
+        "Ġa",
+        "Ġnumber",
+        ".\"",
+        "\"\"",
+        "\n"
+      ],
+      "input_token_ids": [
+        4299,
+        1109,
+        5132,
+        7,
+        77,
+        2599,
+        198,
+        220,
+        220,
+        220,
+        37227,
+        9771,
+        3129,
+        378,
+        262,
+        1109,
+        5132,
+        286,
+        257,
+        1271,
+        526,
+        15931,
+        198
+      ],
+      "target_token": "Ġ",
+      "target_token_id": 220,
+      "predictions": [
+        {
+          "token": "\n",
+          "token_id": 198,
+          "logprob": -0.1854,
+          "prob": 0.8306
+        },
+        {
+          "token": "    ",
+          "token_id": 8828,
+          "logprob": -4.6289,
+          "prob": 0.0098
+        },
+        {
+          "token": " ",
+          "token_id": 1849,
+          "logprob": -4.9492,
+          "prob": 0.0071
+        },
+        {
+          "token": "Ġ",
+          "token_id": 220,
+          "logprob": -5.0703,
+          "prob": 0.0063
+        },
+        {
+          "token": "        ",
+          "token_id": 17811,
+          "logprob": -5.0859,
+          "prob": 0.0062
+        },
+        {
+          "token": "The",
+          "token_id": 464,
+          "logprob": -5.1602,
+          "prob": 0.0057
+        },
+        {
+          "token": "  ",
+          "token_id": 4603,
+          "logprob": -5.2305,
+          "prob": 0.0053
+        },
+        {
+          "token": "   ",
+          "token_id": 33477,
+          "logprob": -5.2383,
+          "prob": 0.0053
+        },
+        {
+          "token": "1",
+          "token_id": 16,
+          "logprob": -5.8008,
+          "prob": 0.003
+        },
+        {
+          "token": "#",
+          "token_id": 2,
+          "logprob": -5.8945,
+          "prob": 0.0027
+        }
+      ],
+      "target_token_prediction": {
+        "token": "Ġ",
+        "token_id": 220,
+        "logprob": -5.0703,
+        "prob": 0.0063
+      },
+      "target_prob": 0.0063,
+      "target_logprob": -5.0703,
+      "loss": 5.0703
+    },
+    {
+      "step": 24,
+      "input_tokens": [
+        "def",
+        "Ġfact",
+        "orial",
+        "(",
+        "n",
+        "):",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ\"\"\"",
+        "Cal",
+        "cul",
+        "ate",
+        "Ġthe",
+        "Ġfact",
+        "orial",
+        "Ġof",
+        "Ġa",
+        "Ġnumber",
+        ".\"",
+        "\"\"",
+        "\n",
+        "Ġ"
+      ],
+      "input_token_ids": [
+        4299,
+        1109,
+        5132,
+        7,
+        77,
+        2599,
+        198,
+        220,
+        220,
+        220,
+        37227,
+        9771,
+        3129,
+        378,
+        262,
+        1109,
+        5132,
+        286,
+        257,
+        1271,
+        526,
+        15931,
+        198,
+        220
+      ],
+      "target_token": "Ġ",
+      "target_token_id": 220,
+      "predictions": [
+        {
+          "token": "Ġ",
+          "token_id": 220,
+          "logprob": -0.3555,
+          "prob": 0.7007
+        },
+        {
+          "token": "Ġif",
+          "token_id": 611,
+          "logprob": -3.2148,
+          "prob": 0.0402
+        },
+        {
+          "token": " ",
+          "token_id": 1849,
+          "logprob": -3.707,
+          "prob": 0.0246
+        },
+        {
+          "token": "Ġdef",
+          "token_id": 825,
+          "logprob": -3.7617,
+          "prob": 0.0232
+        },
+        {
+          "token": "Ġreturn",
+          "token_id": 1441,
+          "logprob": -4.2422,
+          "prob": 0.0144
+        },
+        {
+          "token": "Ġ=",
+          "token_id": 796,
+          "logprob": -4.6367,
+          "prob": 0.0097
+        },
+        {
+          "token": "Ġ ",
+          "token_id": 5624,
+          "logprob": -4.6641,
+          "prob": 0.0094
+        },
+        {
+          "token": "Ġn",
+          "token_id": 299,
+          "logprob": -4.6992,
+          "prob": 0.0091
+        },
+        {
+          "token": "Ġ__",
+          "token_id": 11593,
+          "logprob": -5.0391,
+          "prob": 0.0065
+        },
+        {
+          "token": "Ġ\"\"\"",
+          "token_id": 37227,
+          "logprob": -5.0938,
+          "prob": 0.0061
+        }
+      ],
+      "target_token_prediction": {
+        "token": "Ġ",
+        "token_id": 220,
+        "logprob": -0.3555,
+        "prob": 0.7007
+      },
+      "target_prob": 0.7007,
+      "target_logprob": -0.3555,
+      "loss": 0.3555
+    },
+    {
+      "step": 25,
+      "input_tokens": [
+        "def",
+        "Ġfact",
+        "orial",
+        "(",
+        "n",
+        "):",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ\"\"\"",
+        "Cal",
+        "cul",
+        "ate",
+        "Ġthe",
+        "Ġfact",
+        "orial",
+        "Ġof",
+        "Ġa",
+        "Ġnumber",
+        ".\"",
+        "\"\"",
+        "\n",
+        "Ġ",
+        "Ġ"
+      ],
+      "input_token_ids": [
+        4299,
+        1109,
+        5132,
+        7,
+        77,
+        2599,
+        198,
+        220,
+        220,
+        220,
+        37227,
+        9771,
+        3129,
+        378,
+        262,
+        1109,
+        5132,
+        286,
+        257,
+        1271,
+        526,
+        15931,
+        198,
+        220,
+        220
+      ],
+      "target_token": "Ġ",
+      "target_token_id": 220,
+      "predictions": [
+        {
+          "token": "Ġ",
+          "token_id": 220,
+          "logprob": -0.5371,
+          "prob": 0.5845
+        },
+        {
+          "token": "Ġif",
+          "token_id": 611,
+          "logprob": -2.8652,
+          "prob": 0.057
+        },
+        {
+          "token": "Ġdef",
+          "token_id": 825,
+          "logprob": -3.248,
+          "prob": 0.0388
+        },
+        {
+          "token": "Ġ\"\"\"",
+          "token_id": 37227,
+          "logprob": -3.5762,
+          "prob": 0.028
+        },
+        {
+          "token": "Ġreturn",
+          "token_id": 1441,
+          "logprob": -3.7559,
+          "prob": 0.0234
+        },
+        {
+          "token": "Ġ=",
+          "token_id": 796,
+          "logprob": -3.9629,
+          "prob": 0.019
+        },
+        {
+          "token": "Ġ#",
+          "token_id": 1303,
+          "logprob": -4.1562,
+          "prob": 0.0157
+        },
+        {
+          "token": "Ġn",
+          "token_id": 299,
+          "logprob": -4.3047,
+          "prob": 0.0135
+        },
+        {
+          "token": " ",
+          "token_id": 1849,
+          "logprob": -4.3789,
+          "prob": 0.0126
+        },
+        {
+          "token": "Ġ ",
+          "token_id": 5624,
+          "logprob": -4.7266,
+          "prob": 0.0089
+        }
+      ],
+      "target_token_prediction": {
+        "token": "Ġ",
+        "token_id": 220,
+        "logprob": -0.5371,
+        "prob": 0.5845
+      },
+      "target_prob": 0.5845,
+      "target_logprob": -0.5371,
+      "loss": 0.5371
+    },
+    {
+      "step": 26,
+      "input_tokens": [
+        "def",
+        "Ġfact",
+        "orial",
+        "(",
+        "n",
+        "):",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ\"\"\"",
+        "Cal",
+        "cul",
+        "ate",
+        "Ġthe",
+        "Ġfact",
+        "orial",
+        "Ġof",
+        "Ġa",
+        "Ġnumber",
+        ".\"",
+        "\"\"",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ"
+      ],
+      "input_token_ids": [
+        4299,
+        1109,
+        5132,
+        7,
+        77,
+        2599,
+        198,
+        220,
+        220,
+        220,
+        37227,
+        9771,
+        3129,
+        378,
+        262,
+        1109,
+        5132,
+        286,
+        257,
+        1271,
+        526,
+        15931,
+        198,
+        220,
+        220,
+        220
+      ],
+      "target_token": "Ġif",
+      "target_token_id": 611,
+      "predictions": [
+        {
+          "token": "Ġ",
+          "token_id": 220,
+          "logprob": -0.9258,
+          "prob": 0.3962
+        },
+        {
+          "token": "Ġif",
+          "token_id": 611,
+          "logprob": -2.0898,
+          "prob": 0.1237
+        },
+        {
+          "token": "Ġreturn",
+          "token_id": 1441,
+          "logprob": -3.0898,
+          "prob": 0.0455
+        },
+        {
+          "token": "Ġn",
+          "token_id": 299,
+          "logprob": -3.293,
+          "prob": 0.0371
+        },
+        {
+          "token": "Ġ#",
+          "token_id": 1303,
+          "logprob": -3.5117,
+          "prob": 0.0298
+        },
+        {
+          "token": "Ġ\"\"\"",
+          "token_id": 37227,
+          "logprob": -3.5664,
+          "prob": 0.0283
+        },
+        {
+          "token": "Ġdef",
+          "token_id": 825,
+          "logprob": -3.6602,
+          "prob": 0.0257
+        },
+        {
+          "token": "Ġ=",
+          "token_id": 796,
+          "logprob": -3.9531,
+          "prob": 0.0192
+        },
+        {
+          "token": " ",
+          "token_id": 1849,
+          "logprob": -3.9883,
+          "prob": 0.0185
+        },
+        {
+          "token": "Ġfor",
+          "token_id": 329,
+          "logprob": -4.3789,
+          "prob": 0.0125
+        }
+      ],
+      "target_token_prediction": {
+        "token": "Ġif",
+        "token_id": 611,
+        "logprob": -2.0898,
+        "prob": 0.1237
+      },
+      "target_prob": 0.1237,
+      "target_logprob": -2.0898,
+      "loss": 2.0898
+    },
+    {
+      "step": 27,
+      "input_tokens": [
+        "def",
+        "Ġfact",
+        "orial",
+        "(",
+        "n",
+        "):",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ\"\"\"",
+        "Cal",
+        "cul",
+        "ate",
+        "Ġthe",
+        "Ġfact",
+        "orial",
+        "Ġof",
+        "Ġa",
+        "Ġnumber",
+        ".\"",
+        "\"\"",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġif"
+      ],
+      "input_token_ids": [
+        4299,
+        1109,
+        5132,
+        7,
+        77,
+        2599,
+        198,
+        220,
+        220,
+        220,
+        37227,
+        9771,
+        3129,
+        378,
+        262,
+        1109,
+        5132,
+        286,
+        257,
+        1271,
+        526,
+        15931,
+        198,
+        220,
+        220,
+        220,
+        611
+      ],
+      "target_token": "Ġn",
+      "target_token_id": 299,
+      "predictions": [
+        {
+          "token": "Ġn",
+          "token_id": 299,
+          "logprob": -0.1608,
+          "prob": 0.8516
+        },
+        {
+          "token": "Ġnot",
+          "token_id": 407,
+          "logprob": -3.5117,
+          "prob": 0.0298
+        },
+        {
+          "token": "Ġis",
+          "token_id": 318,
+          "logprob": -4.0898,
+          "prob": 0.0167
+        },
+        {
+          "token": "Ġ(",
+          "token_id": 357,
+          "logprob": -4.1758,
+          "prob": 0.0154
+        },
+        {
+          "token": "Ġ__",
+          "token_id": 11593,
+          "logprob": -4.4883,
+          "prob": 0.0112
+        },
+        {
+          "token": "Ġlen",
+          "token_id": 18896,
+          "logprob": -4.7305,
+          "prob": 0.0088
+        },
+        {
+          "token": "Ġ1",
+          "token_id": 352,
+          "logprob": -5.3789,
+          "prob": 0.0046
+        },
+        {
+          "token": "Ġx",
+          "token_id": 2124,
+          "logprob": -5.9883,
+          "prob": 0.0025
+        },
+        {
+          "token": "Ġhas",
+          "token_id": 468,
+          "logprob": -6.1016,
+          "prob": 0.0022
+        },
+        {
+          "token": "Ġint",
+          "token_id": 493,
+          "logprob": -6.1289,
+          "prob": 0.0022
+        }
+      ],
+      "target_token_prediction": {
+        "token": "Ġn",
+        "token_id": 299,
+        "logprob": -0.1608,
+        "prob": 0.8516
+      },
+      "target_prob": 0.8516,
+      "target_logprob": -0.1608,
+      "loss": 0.1608
+    },
+    {
+      "step": 28,
+      "input_tokens": [
+        "def",
+        "Ġfact",
+        "orial",
+        "(",
+        "n",
+        "):",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ\"\"\"",
+        "Cal",
+        "cul",
+        "ate",
+        "Ġthe",
+        "Ġfact",
+        "orial",
+        "Ġof",
+        "Ġa",
+        "Ġnumber",
+        ".\"",
+        "\"\"",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġif",
+        "Ġn"
+      ],
+      "input_token_ids": [
+        4299,
+        1109,
+        5132,
+        7,
+        77,
+        2599,
+        198,
+        220,
+        220,
+        220,
+        37227,
+        9771,
+        3129,
+        378,
+        262,
+        1109,
+        5132,
+        286,
+        257,
+        1271,
+        526,
+        15931,
+        198,
+        220,
+        220,
+        220,
+        611,
+        299
+      ],
+      "target_token": "Ġ==",
+      "target_token_id": 6624,
+      "predictions": [
+        {
+          "token": "Ġ==",
+          "token_id": 6624,
+          "logprob": -0.8604,
+          "prob": 0.4229
+        },
+        {
+          "token": "Ġ<",
+          "token_id": 1279,
+          "logprob": -1.8604,
+          "prob": 0.1556
+        },
+        {
+          "token": "Ġ<=",
+          "token_id": 19841,
+          "logprob": -2.0098,
+          "prob": 0.1342
+        },
+        {
+          "token": "Ġ>",
+          "token_id": 1875,
+          "logprob": -2.5879,
+          "prob": 0.0753
+        },
+        {
+          "token": "Ġ%",
+          "token_id": 4064,
+          "logprob": -2.8691,
+          "prob": 0.0568
+        },
+        {
+          "token": "Ġis",
+          "token_id": 318,
+          "logprob": -3.3457,
+          "prob": 0.0352
+        },
+        {
+          "token": "Ġ!=",
+          "token_id": 14512,
+          "logprob": -3.7441,
+          "prob": 0.0237
+        },
+        {
+          "token": ":",
+          "token_id": 25,
+          "logprob": -3.7441,
+          "prob": 0.0237
+        },
+        {
+          "token": "Ġ>=",
+          "token_id": 18189,
+          "logprob": -4.0312,
+          "prob": 0.0177
+        },
+        {
+          "token": ".",
+          "token_id": 13,
+          "logprob": -4.8672,
+          "prob": 0.0077
+        }
+      ],
+      "target_token_prediction": {
+        "token": "Ġ==",
+        "token_id": 6624,
+        "logprob": -0.8604,
+        "prob": 0.4229
+      },
+      "target_prob": 0.4229,
+      "target_logprob": -0.8604,
+      "loss": 0.8604
+    },
+    {
+      "step": 29,
+      "input_tokens": [
+        "def",
+        "Ġfact",
+        "orial",
+        "(",
+        "n",
+        "):",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ\"\"\"",
+        "Cal",
+        "cul",
+        "ate",
+        "Ġthe",
+        "Ġfact",
+        "orial",
+        "Ġof",
+        "Ġa",
+        "Ġnumber",
+        ".\"",
+        "\"\"",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġif",
+        "Ġn",
+        "Ġ=="
+      ],
+      "input_token_ids": [
+        4299,
+        1109,
+        5132,
+        7,
+        77,
+        2599,
+        198,
+        220,
+        220,
+        220,
+        37227,
+        9771,
+        3129,
+        378,
+        262,
+        1109,
+        5132,
+        286,
+        257,
+        1271,
+        526,
+        15931,
+        198,
+        220,
+        220,
+        220,
+        611,
+        299,
+        6624
+      ],
+      "target_token": "Ġ0",
+      "target_token_id": 657,
+      "predictions": [
+        {
+          "token": "Ġ0",
+          "token_id": 657,
+          "logprob": -0.5117,
+          "prob": 0.5996
+        },
+        {
+          "token": "Ġ1",
+          "token_id": 352,
+          "logprob": -1.1367,
+          "prob": 0.321
+        },
+        {
+          "token": "Ġ2",
+          "token_id": 362,
+          "logprob": -3.2539,
+          "prob": 0.0386
+        },
+        {
+          "token": "Ġ3",
+          "token_id": 513,
+          "logprob": -5.2148,
+          "prob": 0.0054
+        },
+        {
+          "token": "Ġn",
+          "token_id": 299,
+          "logprob": -5.8555,
+          "prob": 0.0029
+        },
+        {
+          "token": "Ġint",
+          "token_id": 493,
+          "logprob": -5.9727,
+          "prob": 0.0025
+        },
+        {
+          "token": "ĠNone",
+          "token_id": 6045,
+          "logprob": -6.043,
+          "prob": 0.0024
+        },
+        {
+          "token": "Ġ-",
+          "token_id": 532,
+          "logprob": -6.0586,
+          "prob": 0.0023
+        },
+        {
+          "token": "Ġ5",
+          "token_id": 642,
+          "logprob": -6.2305,
+          "prob": 0.002
+        },
+        {
+          "token": "Ġ4",
+          "token_id": 604,
+          "logprob": -6.2695,
+          "prob": 0.0019
+        }
+      ],
+      "target_token_prediction": {
+        "token": "Ġ0",
+        "token_id": 657,
+        "logprob": -0.5117,
+        "prob": 0.5996
+      },
+      "target_prob": 0.5996,
+      "target_logprob": -0.5117,
+      "loss": 0.5117
+    },
+    {
+      "step": 30,
+      "input_tokens": [
+        "def",
+        "Ġfact",
+        "orial",
+        "(",
+        "n",
+        "):",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ\"\"\"",
+        "Cal",
+        "cul",
+        "ate",
+        "Ġthe",
+        "Ġfact",
+        "orial",
+        "Ġof",
+        "Ġa",
+        "Ġnumber",
+        ".\"",
+        "\"\"",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġif",
+        "Ġn",
+        "Ġ==",
+        "Ġ0"
+      ],
+      "input_token_ids": [
+        4299,
+        1109,
+        5132,
+        7,
+        77,
+        2599,
+        198,
+        220,
+        220,
+        220,
+        37227,
+        9771,
+        3129,
+        378,
+        262,
+        1109,
+        5132,
+        286,
+        257,
+        1271,
+        526,
+        15931,
+        198,
+        220,
+        220,
+        220,
+        611,
+        299,
+        6624,
+        657
+      ],
+      "target_token": "Ġor",
+      "target_token_id": 393,
+      "predictions": [
+        {
+          "token": ":",
+          "token_id": 25,
+          "logprob": -0.1095,
+          "prob": 0.8965
+        },
+        {
+          "token": "Ġ:",
+          "token_id": 1058,
+          "logprob": -2.5234,
+          "prob": 0.0802
+        },
+        {
+          "token": "Ġor",
+          "token_id": 393,
+          "logprob": -4.2656,
+          "prob": 0.014
+        },
+        {
+          "token": "Ġand",
+          "token_id": 290,
+          "logprob": -5.8281,
+          "prob": 0.0029
+        },
+        {
+          "token": "Ġthen",
+          "token_id": 788,
+          "logprob": -6.0938,
+          "prob": 0.0023
+        },
+        {
+          "token": "Ġelse",
+          "token_id": 2073,
+          "logprob": -7.3398,
+          "prob": 0.0006
+        },
+        {
+          "token": "x",
+          "token_id": 87,
+          "logprob": -7.3555,
+          "prob": 0.0006
+        },
+        {
+          "token": ".",
+          "token_id": 13,
+          "logprob": -7.9336,
+          "prob": 0.0004
+        },
+        {
+          "token": "Ġ||",
+          "token_id": 8614,
+          "logprob": -8.3359,
+          "prob": 0.0002
+        },
+        {
+          "token": "Ġ{",
+          "token_id": 1391,
+          "logprob": -8.5625,
+          "prob": 0.0002
+        }
+      ],
+      "target_token_prediction": {
+        "token": "Ġor",
+        "token_id": 393,
+        "logprob": -4.2656,
+        "prob": 0.014
+      },
+      "target_prob": 0.014,
+      "target_logprob": -4.2656,
+      "loss": 4.2656
+    },
+    {
+      "step": 31,
+      "input_tokens": [
+        "def",
+        "Ġfact",
+        "orial",
+        "(",
+        "n",
+        "):",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ\"\"\"",
+        "Cal",
+        "cul",
+        "ate",
+        "Ġthe",
+        "Ġfact",
+        "orial",
+        "Ġof",
+        "Ġa",
+        "Ġnumber",
+        ".\"",
+        "\"\"",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġif",
+        "Ġn",
+        "Ġ==",
+        "Ġ0",
+        "Ġor"
+      ],
+      "input_token_ids": [
+        4299,
+        1109,
+        5132,
+        7,
+        77,
+        2599,
+        198,
+        220,
+        220,
+        220,
+        37227,
+        9771,
+        3129,
+        378,
+        262,
+        1109,
+        5132,
+        286,
+        257,
+        1271,
+        526,
+        15931,
+        198,
+        220,
+        220,
+        220,
+        611,
+        299,
+        6624,
+        657,
+        393
+      ],
+      "target_token": "Ġn",
+      "target_token_id": 299,
+      "predictions": [
+        {
+          "token": "Ġn",
+          "token_id": 299,
+          "logprob": -0.1454,
+          "prob": 0.8647
+        },
+        {
+          "token": "Ġnot",
+          "token_id": 407,
+          "logprob": -3.0508,
+          "prob": 0.0473
+        },
+        {
+          "token": "Ġ1",
+          "token_id": 352,
+          "logprob": -3.6992,
+          "prob": 0.0247
+        },
+        {
+          "token": "Ġis",
+          "token_id": 318,
+          "logprob": -4.2617,
+          "prob": 0.0141
+        },
+        {
+          "token": "Ġ(",
+          "token_id": 357,
+          "logprob": -5.1523,
+          "prob": 0.0058
+        },
+        {
+          "token": "Ġlen",
+          "token_id": 18896,
+          "logprob": -5.4648,
+          "prob": 0.0042
+        },
+        {
+          "token": "Ġ0",
+          "token_id": 657,
+          "logprob": -5.832,
+          "prob": 0.0029
+        },
+        {
+          "token": "Ġ_",
+          "token_id": 4808,
+          "logprob": -6.5234,
+          "prob": 0.0015
+        },
+        {
+          "token": "Ġabs",
+          "token_id": 2352,
+          "logprob": -6.6289,
+          "prob": 0.0013
+        },
+        {
+          "token": "Ġx",
+          "token_id": 2124,
+          "logprob": -6.7422,
+          "prob": 0.0012
+        }
+      ],
+      "target_token_prediction": {
+        "token": "Ġn",
+        "token_id": 299,
+        "logprob": -0.1454,
+        "prob": 0.8647
+      },
+      "target_prob": 0.8647,
+      "target_logprob": -0.1454,
+      "loss": 0.1454
+    },
+    {
+      "step": 32,
+      "input_tokens": [
+        "def",
+        "Ġfact",
+        "orial",
+        "(",
+        "n",
+        "):",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ\"\"\"",
+        "Cal",
+        "cul",
+        "ate",
+        "Ġthe",
+        "Ġfact",
+        "orial",
+        "Ġof",
+        "Ġa",
+        "Ġnumber",
+        ".\"",
+        "\"\"",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġif",
+        "Ġn",
+        "Ġ==",
+        "Ġ0",
+        "Ġor",
+        "Ġn"
+      ],
+      "input_token_ids": [
+        4299,
+        1109,
+        5132,
+        7,
+        77,
+        2599,
+        198,
+        220,
+        220,
+        220,
+        37227,
+        9771,
+        3129,
+        378,
+        262,
+        1109,
+        5132,
+        286,
+        257,
+        1271,
+        526,
+        15931,
+        198,
+        220,
+        220,
+        220,
+        611,
+        299,
+        6624,
+        657,
+        393,
+        299
+      ],
+      "target_token": "Ġ==",
+      "target_token_id": 6624,
+      "predictions": [
+        {
+          "token": "Ġ==",
+          "token_id": 6624,
+          "logprob": -0.2539,
+          "prob": 0.7759
+        },
+        {
+          "token": "Ġ%",
+          "token_id": 4064,
+          "logprob": -2.9336,
+          "prob": 0.0532
+        },
+        {
+          "token": "Ġ>",
+          "token_id": 1875,
+          "logprob": -2.9961,
+          "prob": 0.05
+        },
+        {
+          "token": "Ġ<",
+          "token_id": 1279,
+          "logprob": -3.3008,
+          "prob": 0.0369
+        },
+        {
+          "token": "Ġ!=",
+          "token_id": 14512,
+          "logprob": -3.7539,
+          "prob": 0.0234
+        },
+        {
+          "token": "Ġ<=",
+          "token_id": 19841,
+          "logprob": -4.0977,
+          "prob": 0.0166
+        },
+        {
+          "token": "Ġ>=",
+          "token_id": 18189,
+          "logprob": -4.4727,
+          "prob": 0.0114
+        },
+        {
+          "token": "Ġin",
+          "token_id": 287,
+          "logprob": -4.6836,
+          "prob": 0.0092
+        },
+        {
+          "token": "Ġis",
+          "token_id": 318,
+          "logprob": -5.9258,
+          "prob": 0.0027
+        },
+        {
+          "token": "==",
+          "token_id": 855,
+          "logprob": -6.2109,
+          "prob": 0.002
+        }
+      ],
+      "target_token_prediction": {
+        "token": "Ġ==",
+        "token_id": 6624,
+        "logprob": -0.2539,
+        "prob": 0.7759
+      },
+      "target_prob": 0.7759,
+      "target_logprob": -0.2539,
+      "loss": 0.2539
+    },
+    {
+      "step": 33,
+      "input_tokens": [
+        "def",
+        "Ġfact",
+        "orial",
+        "(",
+        "n",
+        "):",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ\"\"\"",
+        "Cal",
+        "cul",
+        "ate",
+        "Ġthe",
+        "Ġfact",
+        "orial",
+        "Ġof",
+        "Ġa",
+        "Ġnumber",
+        ".\"",
+        "\"\"",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġif",
+        "Ġn",
+        "Ġ==",
+        "Ġ0",
+        "Ġor",
+        "Ġn",
+        "Ġ=="
+      ],
+      "input_token_ids": [
+        4299,
+        1109,
+        5132,
+        7,
+        77,
+        2599,
+        198,
+        220,
+        220,
+        220,
+        37227,
+        9771,
+        3129,
+        378,
+        262,
+        1109,
+        5132,
+        286,
+        257,
+        1271,
+        526,
+        15931,
+        198,
+        220,
+        220,
+        220,
+        611,
+        299,
+        6624,
+        657,
+        393,
+        299,
+        6624
+      ],
+      "target_token": "Ġ1",
+      "target_token_id": 352,
+      "predictions": [
+        {
+          "token": "Ġ1",
+          "token_id": 352,
+          "logprob": -0.1632,
+          "prob": 0.8496
+        },
+        {
+          "token": "Ġ-",
+          "token_id": 532,
+          "logprob": -3.2734,
+          "prob": 0.0379
+        },
+        {
+          "token": "Ġ2",
+          "token_id": 362,
+          "logprob": -3.6641,
+          "prob": 0.0257
+        },
+        {
+          "token": "Ġn",
+          "token_id": 299,
+          "logprob": -4.6328,
+          "prob": 0.0097
+        },
+        {
+          "token": "ĠInfinity",
+          "token_id": 22385,
+          "logprob": -4.7891,
+          "prob": 0.0083
+        },
+        {
+          "token": "Ġint",
+          "token_id": 493,
+          "logprob": -4.9453,
+          "prob": 0.0071
+        },
+        {
+          "token": "Ġlen",
+          "token_id": 18896,
+          "logprob": -5.4062,
+          "prob": 0.0045
+        },
+        {
+          "token": "Ġ0",
+          "token_id": 657,
+          "logprob": -5.7266,
+          "prob": 0.0033
+        },
+        {
+          "token": "Ġ3",
+          "token_id": 513,
+          "logprob": -5.7656,
+          "prob": 0.0031
+        },
+        {
+          "token": "Ġinfinity",
+          "token_id": 37174,
+          "logprob": -5.8672,
+          "prob": 0.0028
+        }
+      ],
+      "target_token_prediction": {
+        "token": "Ġ1",
+        "token_id": 352,
+        "logprob": -0.1632,
+        "prob": 0.8496
+      },
+      "target_prob": 0.8496,
+      "target_logprob": -0.1632,
+      "loss": 0.1632
+    },
+    {
+      "step": 34,
+      "input_tokens": [
+        "def",
+        "Ġfact",
+        "orial",
+        "(",
+        "n",
+        "):",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ\"\"\"",
+        "Cal",
+        "cul",
+        "ate",
+        "Ġthe",
+        "Ġfact",
+        "orial",
+        "Ġof",
+        "Ġa",
+        "Ġnumber",
+        ".\"",
+        "\"\"",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġif",
+        "Ġn",
+        "Ġ==",
+        "Ġ0",
+        "Ġor",
+        "Ġn",
+        "Ġ==",
+        "Ġ1"
+      ],
+      "input_token_ids": [
+        4299,
+        1109,
+        5132,
+        7,
+        77,
+        2599,
+        198,
+        220,
+        220,
+        220,
+        37227,
+        9771,
+        3129,
+        378,
+        262,
+        1109,
+        5132,
+        286,
+        257,
+        1271,
+        526,
+        15931,
+        198,
+        220,
+        220,
+        220,
+        611,
+        299,
+        6624,
+        657,
+        393,
+        299,
+        6624,
+        352
+      ],
+      "target_token": ":",
+      "target_token_id": 25,
+      "predictions": [
+        {
+          "token": ":",
+          "token_id": 25,
+          "logprob": -0.2764,
+          "prob": 0.7583
+        },
+        {
+          "token": "Ġ:",
+          "token_id": 1058,
+          "logprob": -1.6904,
+          "prob": 0.1844
+        },
+        {
+          "token": "Ġor",
+          "token_id": 393,
+          "logprob": -2.9961,
+          "prob": 0.05
+        },
+        {
+          "token": "Ġthen",
+          "token_id": 788,
+          "logprob": -6.7852,
+          "prob": 0.0011
+        },
+        {
+          "token": "Ġand",
+          "token_id": 290,
+          "logprob": -7.3906,
+          "prob": 0.0006
+        },
+        {
+          "token": "Ġelse",
+          "token_id": 2073,
+          "logprob": -7.8672,
+          "prob": 0.0004
+        },
+        {
+          "token": "Ġreturn",
+          "token_id": 1441,
+          "logprob": -7.9258,
+          "prob": 0.0004
+        },
+        {
+          "token": ".",
+          "token_id": 13,
+          "logprob": -8.2266,
+          "prob": 0.0003
+        },
+        {
+          "token": "Ġ{",
+          "token_id": 1391,
+          "logprob": -8.2734,
+          "prob": 0.0003
+        },
+        {
+          "token": "Ġ||",
+          "token_id": 8614,
+          "logprob": -8.2734,
+          "prob": 0.0003
+        }
+      ],
+      "target_token_prediction": {
+        "token": ":",
+        "token_id": 25,
+        "logprob": -0.2764,
+        "prob": 0.7583
+      },
+      "target_prob": 0.7583,
+      "target_logprob": -0.2764,
+      "loss": 0.2764
+    },
+    {
+      "step": 35,
+      "input_tokens": [
+        "def",
+        "Ġfact",
+        "orial",
+        "(",
+        "n",
+        "):",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ\"\"\"",
+        "Cal",
+        "cul",
+        "ate",
+        "Ġthe",
+        "Ġfact",
+        "orial",
+        "Ġof",
+        "Ġa",
+        "Ġnumber",
+        ".\"",
+        "\"\"",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġif",
+        "Ġn",
+        "Ġ==",
+        "Ġ0",
+        "Ġor",
+        "Ġn",
+        "Ġ==",
+        "Ġ1",
+        ":"
+      ],
+      "input_token_ids": [
+        4299,
+        1109,
+        5132,
+        7,
+        77,
+        2599,
+        198,
+        220,
+        220,
+        220,
+        37227,
+        9771,
+        3129,
+        378,
+        262,
+        1109,
+        5132,
+        286,
+        257,
+        1271,
+        526,
+        15931,
+        198,
+        220,
+        220,
+        220,
+        611,
+        299,
+        6624,
+        657,
+        393,
+        299,
+        6624,
+        352,
+        25
+      ],
+      "target_token": "\n",
+      "target_token_id": 198,
+      "predictions": [
+        {
+          "token": "Ġreturn",
+          "token_id": 1441,
+          "logprob": -0.9551,
+          "prob": 0.3848
+        },
+        {
+          "token": "\n",
+          "token_id": 198,
+          "logprob": -0.9629,
+          "prob": 0.3816
+        },
+        {
+          "token": "Ġ",
+          "token_id": 220,
+          "logprob": -2.9473,
+          "prob": 0.0525
+        },
+        {
+          "token": "Ġ#",
+          "token_id": 1303,
+          "logprob": -3.5723,
+          "prob": 0.0281
+        },
+        {
+          "token": "Ġn",
+          "token_id": 299,
+          "logprob": -3.5723,
+          "prob": 0.0281
+        },
+        {
+          "token": "Ġraise",
+          "token_id": 5298,
+          "logprob": -3.666,
+          "prob": 0.0256
+        },
+        {
+          "token": "Ġprint",
+          "token_id": 3601,
+          "logprob": -3.7285,
+          "prob": 0.024
+        },
+        {
+          "token": "Ġ ",
+          "token_id": 5624,
+          "logprob": -4.707,
+          "prob": 0.009
+        },
+        {
+          "token": "Ġresult",
+          "token_id": 1255,
+          "logprob": -5.207,
+          "prob": 0.0055
+        },
+        {
+          "token": "Ġ   ",
+          "token_id": 11504,
+          "logprob": -6.0508,
+          "prob": 0.0024
+        }
+      ],
+      "target_token_prediction": {
+        "token": "\n",
+        "token_id": 198,
+        "logprob": -0.9629,
+        "prob": 0.3816
+      },
+      "target_prob": 0.3816,
+      "target_logprob": -0.9629,
+      "loss": 0.9629
+    },
+    {
+      "step": 36,
+      "input_tokens": [
+        "def",
+        "Ġfact",
+        "orial",
+        "(",
+        "n",
+        "):",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ\"\"\"",
+        "Cal",
+        "cul",
+        "ate",
+        "Ġthe",
+        "Ġfact",
+        "orial",
+        "Ġof",
+        "Ġa",
+        "Ġnumber",
+        ".\"",
+        "\"\"",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġif",
+        "Ġn",
+        "Ġ==",
+        "Ġ0",
+        "Ġor",
+        "Ġn",
+        "Ġ==",
+        "Ġ1",
+        ":",
+        "\n"
+      ],
+      "input_token_ids": [
+        4299,
+        1109,
+        5132,
+        7,
+        77,
+        2599,
+        198,
+        220,
+        220,
+        220,
+        37227,
+        9771,
+        3129,
+        378,
+        262,
+        1109,
+        5132,
+        286,
+        257,
+        1271,
+        526,
+        15931,
+        198,
+        220,
+        220,
+        220,
+        611,
+        299,
+        6624,
+        657,
+        393,
+        299,
+        6624,
+        352,
+        25,
+        198
+      ],
+      "target_token": "Ġ",
+      "target_token_id": 220,
+      "predictions": [
+        {
+          "token": "Ġ",
+          "token_id": 220,
+          "logprob": -1.8105,
+          "prob": 0.1636
+        },
+        {
+          "token": "return",
+          "token_id": 7783,
+          "logprob": -2.2012,
+          "prob": 0.1107
+        },
+        {
+          "token": "\n",
+          "token_id": 198,
+          "logprob": -2.2559,
+          "prob": 0.1047
+        },
+        {
+          "token": "if",
+          "token_id": 361,
+          "logprob": -2.623,
+          "prob": 0.0726
+        },
+        {
+          "token": "    ",
+          "token_id": 8828,
+          "logprob": -2.9395,
+          "prob": 0.0529
+        },
+        {
+          "token": "#",
+          "token_id": 2,
+          "logprob": -3.0332,
+          "prob": 0.0482
+        },
+        {
+          "token": "   ",
+          "token_id": 33477,
+          "logprob": -3.6934,
+          "prob": 0.0249
+        },
+        {
+          "token": " ",
+          "token_id": 1849,
+          "logprob": -4.0703,
+          "prob": 0.0171
+        },
+        {
+          "token": "print",
+          "token_id": 4798,
+          "logprob": -4.3906,
+          "prob": 0.0124
+        },
+        {
+          "token": "n",
+          "token_id": 77,
+          "logprob": -4.6484,
+          "prob": 0.0096
+        }
+      ],
+      "target_token_prediction": {
+        "token": "Ġ",
+        "token_id": 220,
+        "logprob": -1.8105,
+        "prob": 0.1636
+      },
+      "target_prob": 0.1636,
+      "target_logprob": -1.8105,
+      "loss": 1.8105
+    },
+    {
+      "step": 37,
+      "input_tokens": [
+        "def",
+        "Ġfact",
+        "orial",
+        "(",
+        "n",
+        "):",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ\"\"\"",
+        "Cal",
+        "cul",
+        "ate",
+        "Ġthe",
+        "Ġfact",
+        "orial",
+        "Ġof",
+        "Ġa",
+        "Ġnumber",
+        ".\"",
+        "\"\"",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġif",
+        "Ġn",
+        "Ġ==",
+        "Ġ0",
+        "Ġor",
+        "Ġn",
+        "Ġ==",
+        "Ġ1",
+        ":",
+        "\n",
+        "Ġ"
+      ],
+      "input_token_ids": [
+        4299,
+        1109,
+        5132,
+        7,
+        77,
+        2599,
+        198,
+        220,
+        220,
+        220,
+        37227,
+        9771,
+        3129,
+        378,
+        262,
+        1109,
+        5132,
+        286,
+        257,
+        1271,
+        526,
+        15931,
+        198,
+        220,
+        220,
+        220,
+        611,
+        299,
+        6624,
+        657,
+        393,
+        299,
+        6624,
+        352,
+        25,
+        198,
+        220
+      ],
+      "target_token": "Ġ",
+      "target_token_id": 220,
+      "predictions": [
+        {
+          "token": "Ġ",
+          "token_id": 220,
+          "logprob": -0.0496,
+          "prob": 0.9517
+        },
+        {
+          "token": "Ġ ",
+          "token_id": 5624,
+          "logprob": -5.1523,
+          "prob": 0.0058
+        },
+        {
+          "token": " ",
+          "token_id": 1849,
+          "logprob": -5.1602,
+          "prob": 0.0057
+        },
+        {
+          "token": "Ġreturn",
+          "token_id": 1441,
+          "logprob": -5.5469,
+          "prob": 0.0039
+        },
+        {
+          "token": "Ġif",
+          "token_id": 611,
+          "logprob": -6.0664,
+          "prob": 0.0023
+        },
+        {
+          "token": "\n",
+          "token_id": 198,
+          "logprob": -6.207,
+          "prob": 0.002
+        },
+        {
+          "token": "Ġ=",
+          "token_id": 796,
+          "logprob": -6.6836,
+          "prob": 0.0013
+        },
+        {
+          "token": "Ġ__",
+          "token_id": 11593,
+          "logprob": -6.9219,
+          "prob": 0.001
+        },
+        {
+          "token": "Ġn",
+          "token_id": 299,
+          "logprob": -7.168,
+          "prob": 0.0008
+        },
+        {
+          "token": "Ġ\"\"\"",
+          "token_id": 37227,
+          "logprob": -7.2422,
+          "prob": 0.0007
+        }
+      ],
+      "target_token_prediction": {
+        "token": "Ġ",
+        "token_id": 220,
+        "logprob": -0.0496,
+        "prob": 0.9517
+      },
+      "target_prob": 0.9517,
+      "target_logprob": -0.0496,
+      "loss": 0.0496
+    },
+    {
+      "step": 38,
+      "input_tokens": [
+        "def",
+        "Ġfact",
+        "orial",
+        "(",
+        "n",
+        "):",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ\"\"\"",
+        "Cal",
+        "cul",
+        "ate",
+        "Ġthe",
+        "Ġfact",
+        "orial",
+        "Ġof",
+        "Ġa",
+        "Ġnumber",
+        ".\"",
+        "\"\"",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġif",
+        "Ġn",
+        "Ġ==",
+        "Ġ0",
+        "Ġor",
+        "Ġn",
+        "Ġ==",
+        "Ġ1",
+        ":",
+        "\n",
+        "Ġ",
+        "Ġ"
+      ],
+      "input_token_ids": [
+        4299,
+        1109,
+        5132,
+        7,
+        77,
+        2599,
+        198,
+        220,
+        220,
+        220,
+        37227,
+        9771,
+        3129,
+        378,
+        262,
+        1109,
+        5132,
+        286,
+        257,
+        1271,
+        526,
+        15931,
+        198,
+        220,
+        220,
+        220,
+        611,
+        299,
+        6624,
+        657,
+        393,
+        299,
+        6624,
+        352,
+        25,
+        198,
+        220,
+        220
+      ],
+      "target_token": "Ġ",
+      "target_token_id": 220,
+      "predictions": [
+        {
+          "token": "Ġ",
+          "token_id": 220,
+          "logprob": -0.0758,
+          "prob": 0.9268
+        },
+        {
+          "token": "Ġreturn",
+          "token_id": 1441,
+          "logprob": -3.7793,
+          "prob": 0.0228
+        },
+        {
+          "token": "Ġif",
+          "token_id": 611,
+          "logprob": -5.2695,
+          "prob": 0.0051
+        },
+        {
+          "token": "Ġ ",
+          "token_id": 5624,
+          "logprob": -5.7148,
+          "prob": 0.0033
+        },
+        {
+          "token": " ",
+          "token_id": 1849,
+          "logprob": -6.0938,
+          "prob": 0.0023
+        },
+        {
+          "token": "Ġ\"\"\"",
+          "token_id": 37227,
+          "logprob": -6.25,
+          "prob": 0.0019
+        },
+        {
+          "token": "Ġ=",
+          "token_id": 796,
+          "logprob": -6.3867,
+          "prob": 0.0017
+        },
+        {
+          "token": "Ġ__",
+          "token_id": 11593,
+          "logprob": -6.582,
+          "prob": 0.0014
+        },
+        {
+          "token": "Ġprint",
+          "token_id": 3601,
+          "logprob": -6.6289,
+          "prob": 0.0013
+        },
+        {
+          "token": "Ġn",
+          "token_id": 299,
+          "logprob": -6.7734,
+          "prob": 0.0011
+        }
+      ],
+      "target_token_prediction": {
+        "token": "Ġ",
+        "token_id": 220,
+        "logprob": -0.0758,
+        "prob": 0.9268
+      },
+      "target_prob": 0.9268,
+      "target_logprob": -0.0758,
+      "loss": 0.0758
+    },
+    {
+      "step": 39,
+      "input_tokens": [
+        "def",
+        "Ġfact",
+        "orial",
+        "(",
+        "n",
+        "):",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ\"\"\"",
+        "Cal",
+        "cul",
+        "ate",
+        "Ġthe",
+        "Ġfact",
+        "orial",
+        "Ġof",
+        "Ġa",
+        "Ġnumber",
+        ".\"",
+        "\"\"",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġif",
+        "Ġn",
+        "Ġ==",
+        "Ġ0",
+        "Ġor",
+        "Ġn",
+        "Ġ==",
+        "Ġ1",
+        ":",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ"
+      ],
+      "input_token_ids": [
+        4299,
+        1109,
+        5132,
+        7,
+        77,
+        2599,
+        198,
+        220,
+        220,
+        220,
+        37227,
+        9771,
+        3129,
+        378,
+        262,
+        1109,
+        5132,
+        286,
+        257,
+        1271,
+        526,
+        15931,
+        198,
+        220,
+        220,
+        220,
+        611,
+        299,
+        6624,
+        657,
+        393,
+        299,
+        6624,
+        352,
+        25,
+        198,
+        220,
+        220,
+        220
+      ],
+      "target_token": "Ġ",
+      "target_token_id": 220,
+      "predictions": [
+        {
+          "token": "Ġreturn",
+          "token_id": 1441,
+          "logprob": -0.7026,
+          "prob": 0.4954
+        },
+        {
+          "token": "Ġ",
+          "token_id": 220,
+          "logprob": -1.3828,
+          "prob": 0.251
+        },
+        {
+          "token": "Ġprint",
+          "token_id": 3601,
+          "logprob": -3.2578,
+          "prob": 0.0385
+        },
+        {
+          "token": "Ġif",
+          "token_id": 611,
+          "logprob": -3.4844,
+          "prob": 0.0307
+        },
+        {
+          "token": "Ġraise",
+          "token_id": 5298,
+          "logprob": -4.4922,
+          "prob": 0.0112
+        },
+        {
+          "token": "Ġresult",
+          "token_id": 1255,
+          "logprob": -4.668,
+          "prob": 0.0094
+        },
+        {
+          "token": "Ġ ",
+          "token_id": 5624,
+          "logprob": -4.9297,
+          "prob": 0.0072
+        },
+        {
+          "token": "Ġn",
+          "token_id": 299,
+          "logprob": -4.9531,
+          "prob": 0.0071
+        },
+        {
+          "token": "Ġ\"\"\"",
+          "token_id": 37227,
+          "logprob": -4.9727,
+          "prob": 0.0069
+        },
+        {
+          "token": "Ġ#",
+          "token_id": 1303,
+          "logprob": -5.0195,
+          "prob": 0.0066
+        }
+      ],
+      "target_token_prediction": {
+        "token": "Ġ",
+        "token_id": 220,
+        "logprob": -1.3828,
+        "prob": 0.251
+      },
+      "target_prob": 0.251,
+      "target_logprob": -1.3828,
+      "loss": 1.3828
+    },
+    {
+      "step": 40,
+      "input_tokens": [
+        "def",
+        "Ġfact",
+        "orial",
+        "(",
+        "n",
+        "):",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ\"\"\"",
+        "Cal",
+        "cul",
+        "ate",
+        "Ġthe",
+        "Ġfact",
+        "orial",
+        "Ġof",
+        "Ġa",
+        "Ġnumber",
+        ".\"",
+        "\"\"",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġif",
+        "Ġn",
+        "Ġ==",
+        "Ġ0",
+        "Ġor",
+        "Ġn",
+        "Ġ==",
+        "Ġ1",
+        ":",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ"
+      ],
+      "input_token_ids": [
+        4299,
+        1109,
+        5132,
+        7,
+        77,
+        2599,
+        198,
+        220,
+        220,
+        220,
+        37227,
+        9771,
+        3129,
+        378,
+        262,
+        1109,
+        5132,
+        286,
+        257,
+        1271,
+        526,
+        15931,
+        198,
+        220,
+        220,
+        220,
+        611,
+        299,
+        6624,
+        657,
+        393,
+        299,
+        6624,
+        352,
+        25,
+        198,
+        220,
+        220,
+        220,
+        220
+      ],
+      "target_token": "Ġ",
+      "target_token_id": 220,
+      "predictions": [
+        {
+          "token": "Ġreturn",
+          "token_id": 1441,
+          "logprob": -1.1631,
+          "prob": 0.3125
+        },
+        {
+          "token": "Ġ",
+          "token_id": 220,
+          "logprob": -1.7881,
+          "prob": 0.1672
+        },
+        {
+          "token": " ",
+          "token_id": 1849,
+          "logprob": -2.1562,
+          "prob": 0.1158
+        },
+        {
+          "token": "Ġif",
+          "token_id": 611,
+          "logprob": -2.9766,
+          "prob": 0.051
+        },
+        {
+          "token": "Ġprint",
+          "token_id": 3601,
+          "logprob": -3.1406,
+          "prob": 0.0433
+        },
+        {
+          "token": "Ġ=",
+          "token_id": 796,
+          "logprob": -3.4688,
+          "prob": 0.0312
+        },
+        {
+          "token": "Ġ#",
+          "token_id": 1303,
+          "logprob": -4.1484,
+          "prob": 0.0158
+        },
+        {
+          "token": "Ġraise",
+          "token_id": 5298,
+          "logprob": -4.4453,
+          "prob": 0.0117
+        },
+        {
+          "token": "Ġ ",
+          "token_id": 5624,
+          "logprob": -4.4961,
+          "prob": 0.0112
+        },
+        {
+          "token": "return",
+          "token_id": 7783,
+          "logprob": -4.5742,
+          "prob": 0.0103
+        }
+      ],
+      "target_token_prediction": {
+        "token": "Ġ",
+        "token_id": 220,
+        "logprob": -1.7881,
+        "prob": 0.1672
+      },
+      "target_prob": 0.1672,
+      "target_logprob": -1.7881,
+      "loss": 1.7881
+    },
+    {
+      "step": 41,
+      "input_tokens": [
+        "def",
+        "Ġfact",
+        "orial",
+        "(",
+        "n",
+        "):",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ\"\"\"",
+        "Cal",
+        "cul",
+        "ate",
+        "Ġthe",
+        "Ġfact",
+        "orial",
+        "Ġof",
+        "Ġa",
+        "Ġnumber",
+        ".\"",
+        "\"\"",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġif",
+        "Ġn",
+        "Ġ==",
+        "Ġ0",
+        "Ġor",
+        "Ġn",
+        "Ġ==",
+        "Ġ1",
+        ":",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ"
+      ],
+      "input_token_ids": [
+        4299,
+        1109,
+        5132,
+        7,
+        77,
+        2599,
+        198,
+        220,
+        220,
+        220,
+        37227,
+        9771,
+        3129,
+        378,
+        262,
+        1109,
+        5132,
+        286,
+        257,
+        1271,
+        526,
+        15931,
+        198,
+        220,
+        220,
+        220,
+        611,
+        299,
+        6624,
+        657,
+        393,
+        299,
+        6624,
+        352,
+        25,
+        198,
+        220,
+        220,
+        220,
+        220,
+        220
+      ],
+      "target_token": "Ġ",
+      "target_token_id": 220,
+      "predictions": [
+        {
+          "token": "Ġ",
+          "token_id": 220,
+          "logprob": -0.8711,
+          "prob": 0.4185
+        },
+        {
+          "token": "Ġreturn",
+          "token_id": 1441,
+          "logprob": -2.1367,
+          "prob": 0.118
+        },
+        {
+          "token": " ",
+          "token_id": 1849,
+          "logprob": -2.8086,
+          "prob": 0.0603
+        },
+        {
+          "token": "Ġ=",
+          "token_id": 796,
+          "logprob": -2.832,
+          "prob": 0.0589
+        },
+        {
+          "token": "Ġif",
+          "token_id": 611,
+          "logprob": -3.0508,
+          "prob": 0.0473
+        },
+        {
+          "token": "\n",
+          "token_id": 198,
+          "logprob": -3.6836,
+          "prob": 0.0251
+        },
+        {
+          "token": "Ġ\"\"\"",
+          "token_id": 37227,
+          "logprob": -4.1875,
+          "prob": 0.0152
+        },
+        {
+          "token": "Ġ ",
+          "token_id": 5624,
+          "logprob": -4.2109,
+          "prob": 0.0148
+        },
+        {
+          "token": "Ġ#",
+          "token_id": 1303,
+          "logprob": -4.3633,
+          "prob": 0.0127
+        },
+        {
+          "token": "Ġprint",
+          "token_id": 3601,
+          "logprob": -4.5547,
+          "prob": 0.0105
+        }
+      ],
+      "target_token_prediction": {
+        "token": "Ġ",
+        "token_id": 220,
+        "logprob": -0.8711,
+        "prob": 0.4185
+      },
+      "target_prob": 0.4185,
+      "target_logprob": -0.8711,
+      "loss": 0.8711
+    },
+    {
+      "step": 42,
+      "input_tokens": [
+        "def",
+        "Ġfact",
+        "orial",
+        "(",
+        "n",
+        "):",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ\"\"\"",
+        "Cal",
+        "cul",
+        "ate",
+        "Ġthe",
+        "Ġfact",
+        "orial",
+        "Ġof",
+        "Ġa",
+        "Ġnumber",
+        ".\"",
+        "\"\"",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġif",
+        "Ġn",
+        "Ġ==",
+        "Ġ0",
+        "Ġor",
+        "Ġn",
+        "Ġ==",
+        "Ġ1",
+        ":",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ"
+      ],
+      "input_token_ids": [
+        4299,
+        1109,
+        5132,
+        7,
+        77,
+        2599,
+        198,
+        220,
+        220,
+        220,
+        37227,
+        9771,
+        3129,
+        378,
+        262,
+        1109,
+        5132,
+        286,
+        257,
+        1271,
+        526,
+        15931,
+        198,
+        220,
+        220,
+        220,
+        611,
+        299,
+        6624,
+        657,
+        393,
+        299,
+        6624,
+        352,
+        25,
+        198,
+        220,
+        220,
+        220,
+        220,
+        220,
+        220
+      ],
+      "target_token": "Ġ",
+      "target_token_id": 220,
+      "predictions": [
+        {
+          "token": "Ġ",
+          "token_id": 220,
+          "logprob": -0.4695,
+          "prob": 0.6255
+        },
+        {
+          "token": "Ġreturn",
+          "token_id": 1441,
+          "logprob": -3.0625,
+          "prob": 0.0468
+        },
+        {
+          "token": "Ġ=",
+          "token_id": 796,
+          "logprob": -3.1719,
+          "prob": 0.0419
+        },
+        {
+          "token": "Ġ\"\"\"",
+          "token_id": 37227,
+          "logprob": -3.3281,
+          "prob": 0.0358
+        },
+        {
+          "token": "Ġif",
+          "token_id": 611,
+          "logprob": -3.4453,
+          "prob": 0.0319
+        },
+        {
+          "token": "Ġ ",
+          "token_id": 5624,
+          "logprob": -4.4648,
+          "prob": 0.0115
+        },
+        {
+          "token": "\n",
+          "token_id": 198,
+          "logprob": -4.4766,
+          "prob": 0.0114
+        },
+        {
+          "token": " ",
+          "token_id": 1849,
+          "logprob": -4.5,
+          "prob": 0.0111
+        },
+        {
+          "token": "Ġelse",
+          "token_id": 2073,
+          "logprob": -4.6133,
+          "prob": 0.0099
+        },
+        {
+          "token": "Ġ__",
+          "token_id": 11593,
+          "logprob": -4.9492,
+          "prob": 0.0071
+        }
+      ],
+      "target_token_prediction": {
+        "token": "Ġ",
+        "token_id": 220,
+        "logprob": -0.4695,
+        "prob": 0.6255
+      },
+      "target_prob": 0.6255,
+      "target_logprob": -0.4695,
+      "loss": 0.4695
+    },
+    {
+      "step": 43,
+      "input_tokens": [
+        "def",
+        "Ġfact",
+        "orial",
+        "(",
+        "n",
+        "):",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ\"\"\"",
+        "Cal",
+        "cul",
+        "ate",
+        "Ġthe",
+        "Ġfact",
+        "orial",
+        "Ġof",
+        "Ġa",
+        "Ġnumber",
+        ".\"",
+        "\"\"",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġif",
+        "Ġn",
+        "Ġ==",
+        "Ġ0",
+        "Ġor",
+        "Ġn",
+        "Ġ==",
+        "Ġ1",
+        ":",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ"
+      ],
+      "input_token_ids": [
+        4299,
+        1109,
+        5132,
+        7,
+        77,
+        2599,
+        198,
+        220,
+        220,
+        220,
+        37227,
+        9771,
+        3129,
+        378,
+        262,
+        1109,
+        5132,
+        286,
+        257,
+        1271,
+        526,
+        15931,
+        198,
+        220,
+        220,
+        220,
+        611,
+        299,
+        6624,
+        657,
+        393,
+        299,
+        6624,
+        352,
+        25,
+        198,
+        220,
+        220,
+        220,
+        220,
+        220,
+        220,
+        220
+      ],
+      "target_token": "Ġreturn",
+      "target_token_id": 1441,
+      "predictions": [
+        {
+          "token": "Ġ",
+          "token_id": 220,
+          "logprob": -0.3669,
+          "prob": 0.6929
+        },
+        {
+          "token": "Ġreturn",
+          "token_id": 1441,
+          "logprob": -3.4688,
+          "prob": 0.0312
+        },
+        {
+          "token": "Ġ=",
+          "token_id": 796,
+          "logprob": -3.4766,
+          "prob": 0.0309
+        },
+        {
+          "token": "Ġ\"\"\"",
+          "token_id": 37227,
+          "logprob": -3.5781,
+          "prob": 0.0279
+        },
+        {
+          "token": "Ġif",
+          "token_id": 611,
+          "logprob": -3.7109,
+          "prob": 0.0245
+        },
+        {
+          "token": "Ġ ",
+          "token_id": 5624,
+          "logprob": -4.4375,
+          "prob": 0.0118
+        },
+        {
+          "token": "\n",
+          "token_id": 198,
+          "logprob": -4.5117,
+          "prob": 0.011
+        },
+        {
+          "token": "Ġelse",
+          "token_id": 2073,
+          "logprob": -4.6055,
+          "prob": 0.01
+        },
+        {
+          "token": " ",
+          "token_id": 1849,
+          "logprob": -4.6992,
+          "prob": 0.0091
+        },
+        {
+          "token": "Ġ__",
+          "token_id": 11593,
+          "logprob": -4.9922,
+          "prob": 0.0068
+        }
+      ],
+      "target_token_prediction": {
+        "token": "Ġreturn",
+        "token_id": 1441,
+        "logprob": -3.4688,
+        "prob": 0.0312
+      },
+      "target_prob": 0.0312,
+      "target_logprob": -3.4688,
+      "loss": 3.4688
+    },
+    {
+      "step": 44,
+      "input_tokens": [
+        "def",
+        "Ġfact",
+        "orial",
+        "(",
+        "n",
+        "):",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ\"\"\"",
+        "Cal",
+        "cul",
+        "ate",
+        "Ġthe",
+        "Ġfact",
+        "orial",
+        "Ġof",
+        "Ġa",
+        "Ġnumber",
+        ".\"",
+        "\"\"",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġif",
+        "Ġn",
+        "Ġ==",
+        "Ġ0",
+        "Ġor",
+        "Ġn",
+        "Ġ==",
+        "Ġ1",
+        ":",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġreturn"
+      ],
+      "input_token_ids": [
+        4299,
+        1109,
+        5132,
+        7,
+        77,
+        2599,
+        198,
+        220,
+        220,
+        220,
+        37227,
+        9771,
+        3129,
+        378,
+        262,
+        1109,
+        5132,
+        286,
+        257,
+        1271,
+        526,
+        15931,
+        198,
+        220,
+        220,
+        220,
+        611,
+        299,
+        6624,
+        657,
+        393,
+        299,
+        6624,
+        352,
+        25,
+        198,
+        220,
+        220,
+        220,
+        220,
+        220,
+        220,
+        220,
+        1441
+      ],
+      "target_token": "Ġ1",
+      "target_token_id": 352,
+      "predictions": [
+        {
+          "token": "Ġ1",
+          "token_id": 352,
+          "logprob": -0.7334,
+          "prob": 0.4802
+        },
+        {
+          "token": "Ġ0",
+          "token_id": 657,
+          "logprob": -1.5459,
+          "prob": 0.2131
+        },
+        {
+          "token": "Ġn",
+          "token_id": 299,
+          "logprob": -2.3438,
+          "prob": 0.0961
+        },
+        {
+          "token": "Ġ2",
+          "token_id": 362,
+          "logprob": -3.8438,
+          "prob": 0.0214
+        },
+        {
+          "token": "Ġ-",
+          "token_id": 532,
+          "logprob": -4.1406,
+          "prob": 0.0159
+        },
+        {
+          "token": "Ġ(",
+          "token_id": 357,
+          "logprob": -4.1875,
+          "prob": 0.0152
+        },
+        {
+          "token": "ĠFalse",
+          "token_id": 10352,
+          "logprob": -4.6797,
+          "prob": 0.0093
+        },
+        {
+          "token": "Ġ",
+          "token_id": 220,
+          "logprob": -4.7539,
+          "prob": 0.0086
+        },
+        {
+          "token": "Ġfact",
+          "token_id": 1109,
+          "logprob": -4.8906,
+          "prob": 0.0075
+        },
+        {
+          "token": "Ġ[",
+          "token_id": 685,
+          "logprob": -4.9531,
+          "prob": 0.0071
+        }
+      ],
+      "target_token_prediction": {
+        "token": "Ġ1",
+        "token_id": 352,
+        "logprob": -0.7334,
+        "prob": 0.4802
+      },
+      "target_prob": 0.4802,
+      "target_logprob": -0.7334,
+      "loss": 0.7334
+    },
+    {
+      "step": 45,
+      "input_tokens": [
+        "def",
+        "Ġfact",
+        "orial",
+        "(",
+        "n",
+        "):",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ\"\"\"",
+        "Cal",
+        "cul",
+        "ate",
+        "Ġthe",
+        "Ġfact",
+        "orial",
+        "Ġof",
+        "Ġa",
+        "Ġnumber",
+        ".\"",
+        "\"\"",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġif",
+        "Ġn",
+        "Ġ==",
+        "Ġ0",
+        "Ġor",
+        "Ġn",
+        "Ġ==",
+        "Ġ1",
+        ":",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġreturn",
+        "Ġ1"
+      ],
+      "input_token_ids": [
+        4299,
+        1109,
+        5132,
+        7,
+        77,
+        2599,
+        198,
+        220,
+        220,
+        220,
+        37227,
+        9771,
+        3129,
+        378,
+        262,
+        1109,
+        5132,
+        286,
+        257,
+        1271,
+        526,
+        15931,
+        198,
+        220,
+        220,
+        220,
+        611,
+        299,
+        6624,
+        657,
+        393,
+        299,
+        6624,
+        352,
+        25,
+        198,
+        220,
+        220,
+        220,
+        220,
+        220,
+        220,
+        220,
+        1441,
+        352
+      ],
+      "target_token": "\n",
+      "target_token_id": 198,
+      "predictions": [
+        {
+          "token": "\n",
+          "token_id": 198,
+          "logprob": -0.2527,
+          "prob": 0.7769
+        },
+        {
+          "token": ";",
+          "token_id": 26,
+          "logprob": -2.0723,
+          "prob": 0.1259
+        },
+        {
+          "token": "Ġ",
+          "token_id": 220,
+          "logprob": -4.1289,
+          "prob": 0.0161
+        },
+        {
+          "token": ".",
+          "token_id": 13,
+          "logprob": -4.2148,
+          "prob": 0.0148
+        },
+        {
+          "token": "Ġ+",
+          "token_id": 1343,
+          "logprob": -4.7383,
+          "prob": 0.0088
+        },
+        {
+          "token": "Ġ*",
+          "token_id": 1635,
+          "logprob": -5.1328,
+          "prob": 0.0059
+        },
+        {
+          "token": ",",
+          "token_id": 11,
+          "logprob": -5.4219,
+          "prob": 0.0044
+        },
+        {
+          "token": "<|endoftext|>",
+          "token_id": 50256,
+          "logprob": -5.7891,
+          "prob": 0.0031
+        },
+        {
+          "token": "Ġ-",
+          "token_id": 532,
+          "logprob": -5.875,
+          "prob": 0.0028
+        },
+        {
+          "token": "\n\n",
+          "token_id": 628,
+          "logprob": -5.8906,
+          "prob": 0.0028
+        }
+      ],
+      "target_token_prediction": {
+        "token": "\n",
+        "token_id": 198,
+        "logprob": -0.2527,
+        "prob": 0.7769
+      },
+      "target_prob": 0.7769,
+      "target_logprob": -0.2527,
+      "loss": 0.2527
+    },
+    {
+      "step": 46,
+      "input_tokens": [
+        "def",
+        "Ġfact",
+        "orial",
+        "(",
+        "n",
+        "):",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ\"\"\"",
+        "Cal",
+        "cul",
+        "ate",
+        "Ġthe",
+        "Ġfact",
+        "orial",
+        "Ġof",
+        "Ġa",
+        "Ġnumber",
+        ".\"",
+        "\"\"",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġif",
+        "Ġn",
+        "Ġ==",
+        "Ġ0",
+        "Ġor",
+        "Ġn",
+        "Ġ==",
+        "Ġ1",
+        ":",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġreturn",
+        "Ġ1",
+        "\n"
+      ],
+      "input_token_ids": [
+        4299,
+        1109,
+        5132,
+        7,
+        77,
+        2599,
+        198,
+        220,
+        220,
+        220,
+        37227,
+        9771,
+        3129,
+        378,
+        262,
+        1109,
+        5132,
+        286,
+        257,
+        1271,
+        526,
+        15931,
+        198,
+        220,
+        220,
+        220,
+        611,
+        299,
+        6624,
+        657,
+        393,
+        299,
+        6624,
+        352,
+        25,
+        198,
+        220,
+        220,
+        220,
+        220,
+        220,
+        220,
+        220,
+        1441,
+        352,
+        198
+      ],
+      "target_token": "Ġ",
+      "target_token_id": 220,
+      "predictions": [
+        {
+          "token": "Ġ",
+          "token_id": 220,
+          "logprob": -0.2207,
+          "prob": 0.8018
+        },
+        {
+          "token": "else",
+          "token_id": 17772,
+          "logprob": -3.1738,
+          "prob": 0.0418
+        },
+        {
+          "token": "\n",
+          "token_id": 198,
+          "logprob": -4.3633,
+          "prob": 0.0127
+        },
+        {
+          "token": " ",
+          "token_id": 1849,
+          "logprob": -4.5586,
+          "prob": 0.0105
+        },
+        {
+          "token": "if",
+          "token_id": 361,
+          "logprob": -4.5938,
+          "prob": 0.0101
+        },
+        {
+          "token": "Ġ ",
+          "token_id": 5624,
+          "logprob": -4.9102,
+          "prob": 0.0074
+        },
+        {
+          "token": "Ġelse",
+          "token_id": 2073,
+          "logprob": -5.1172,
+          "prob": 0.006
+        },
+        {
+          "token": "n",
+          "token_id": 77,
+          "logprob": -5.625,
+          "prob": 0.0036
+        },
+        {
+          "token": "return",
+          "token_id": 7783,
+          "logprob": -5.7656,
+          "prob": 0.0031
+        },
+        {
+          "token": "#",
+          "token_id": 2,
+          "logprob": -5.8477,
+          "prob": 0.0029
+        }
+      ],
+      "target_token_prediction": {
+        "token": "Ġ",
+        "token_id": 220,
+        "logprob": -0.2207,
+        "prob": 0.8018
+      },
+      "target_prob": 0.8018,
+      "target_logprob": -0.2207,
+      "loss": 0.2207
+    },
+    {
+      "step": 47,
+      "input_tokens": [
+        "def",
+        "Ġfact",
+        "orial",
+        "(",
+        "n",
+        "):",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ\"\"\"",
+        "Cal",
+        "cul",
+        "ate",
+        "Ġthe",
+        "Ġfact",
+        "orial",
+        "Ġof",
+        "Ġa",
+        "Ġnumber",
+        ".\"",
+        "\"\"",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġif",
+        "Ġn",
+        "Ġ==",
+        "Ġ0",
+        "Ġor",
+        "Ġn",
+        "Ġ==",
+        "Ġ1",
+        ":",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġreturn",
+        "Ġ1",
+        "\n",
+        "Ġ"
+      ],
+      "input_token_ids": [
+        4299,
+        1109,
+        5132,
+        7,
+        77,
+        2599,
+        198,
+        220,
+        220,
+        220,
+        37227,
+        9771,
+        3129,
+        378,
+        262,
+        1109,
+        5132,
+        286,
+        257,
+        1271,
+        526,
+        15931,
+        198,
+        220,
+        220,
+        220,
+        611,
+        299,
+        6624,
+        657,
+        393,
+        299,
+        6624,
+        352,
+        25,
+        198,
+        220,
+        220,
+        220,
+        220,
+        220,
+        220,
+        220,
+        1441,
+        352,
+        198,
+        220
+      ],
+      "target_token": "Ġ",
+      "target_token_id": 220,
+      "predictions": [
+        {
+          "token": "Ġ",
+          "token_id": 220,
+          "logprob": -0.0202,
+          "prob": 0.98
+        },
+        {
+          "token": "Ġif",
+          "token_id": 611,
+          "logprob": -5.7461,
+          "prob": 0.0032
+        },
+        {
+          "token": "Ġ ",
+          "token_id": 5624,
+          "logprob": -5.8594,
+          "prob": 0.0029
+        },
+        {
+          "token": " ",
+          "token_id": 1849,
+          "logprob": -6.4805,
+          "prob": 0.0015
+        },
+        {
+          "token": "Ġelse",
+          "token_id": 2073,
+          "logprob": -6.5078,
+          "prob": 0.0015
+        },
+        {
+          "token": "\n",
+          "token_id": 198,
+          "logprob": -6.6523,
+          "prob": 0.0013
+        },
+        {
+          "token": "Ġn",
+          "token_id": 299,
+          "logprob": -7.5977,
+          "prob": 0.0005
+        },
+        {
+          "token": "Ġ__",
+          "token_id": 11593,
+          "logprob": -7.6094,
+          "prob": 0.0005
+        },
+        {
+          "token": "Ġ=",
+          "token_id": 796,
+          "logprob": -8.1875,
+          "prob": 0.0003
+        },
+        {
+          "token": "Ġdef",
+          "token_id": 825,
+          "logprob": -8.25,
+          "prob": 0.0003
+        }
+      ],
+      "target_token_prediction": {
+        "token": "Ġ",
+        "token_id": 220,
+        "logprob": -0.0202,
+        "prob": 0.98
+      },
+      "target_prob": 0.98,
+      "target_logprob": -0.0202,
+      "loss": 0.0202
+    },
+    {
+      "step": 48,
+      "input_tokens": [
+        "def",
+        "Ġfact",
+        "orial",
+        "(",
+        "n",
+        "):",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ\"\"\"",
+        "Cal",
+        "cul",
+        "ate",
+        "Ġthe",
+        "Ġfact",
+        "orial",
+        "Ġof",
+        "Ġa",
+        "Ġnumber",
+        ".\"",
+        "\"\"",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġif",
+        "Ġn",
+        "Ġ==",
+        "Ġ0",
+        "Ġor",
+        "Ġn",
+        "Ġ==",
+        "Ġ1",
+        ":",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġreturn",
+        "Ġ1",
+        "\n",
+        "Ġ",
+        "Ġ"
+      ],
+      "input_token_ids": [
+        4299,
+        1109,
+        5132,
+        7,
+        77,
+        2599,
+        198,
+        220,
+        220,
+        220,
+        37227,
+        9771,
+        3129,
+        378,
+        262,
+        1109,
+        5132,
+        286,
+        257,
+        1271,
+        526,
+        15931,
+        198,
+        220,
+        220,
+        220,
+        611,
+        299,
+        6624,
+        657,
+        393,
+        299,
+        6624,
+        352,
+        25,
+        198,
+        220,
+        220,
+        220,
+        220,
+        220,
+        220,
+        220,
+        1441,
+        352,
+        198,
+        220,
+        220
+      ],
+      "target_token": "Ġ",
+      "target_token_id": 220,
+      "predictions": [
+        {
+          "token": "Ġ",
+          "token_id": 220,
+          "logprob": -0.0434,
+          "prob": 0.9575
+        },
+        {
+          "token": "Ġif",
+          "token_id": 611,
+          "logprob": -4.2148,
+          "prob": 0.0148
+        },
+        {
+          "token": "Ġelse",
+          "token_id": 2073,
+          "logprob": -5.875,
+          "prob": 0.0028
+        },
+        {
+          "token": "Ġ ",
+          "token_id": 5624,
+          "logprob": -5.9336,
+          "prob": 0.0026
+        },
+        {
+          "token": "Ġreturn",
+          "token_id": 1441,
+          "logprob": -6.1953,
+          "prob": 0.002
+        },
+        {
+          "token": " ",
+          "token_id": 1849,
+          "logprob": -6.4023,
+          "prob": 0.0017
+        },
+        {
+          "token": "\n",
+          "token_id": 198,
+          "logprob": -6.9062,
+          "prob": 0.001
+        },
+        {
+          "token": "Ġn",
+          "token_id": 299,
+          "logprob": -6.9727,
+          "prob": 0.0009
+        },
+        {
+          "token": "Ġ=",
+          "token_id": 796,
+          "logprob": -7.1914,
+          "prob": 0.0008
+        },
+        {
+          "token": "Ġ__",
+          "token_id": 11593,
+          "logprob": -7.3438,
+          "prob": 0.0006
+        }
+      ],
+      "target_token_prediction": {
+        "token": "Ġ",
+        "token_id": 220,
+        "logprob": -0.0434,
+        "prob": 0.9575
+      },
+      "target_prob": 0.9575,
+      "target_logprob": -0.0434,
+      "loss": 0.0434
+    },
+    {
+      "step": 49,
+      "input_tokens": [
+        "def",
+        "Ġfact",
+        "orial",
+        "(",
+        "n",
+        "):",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ\"\"\"",
+        "Cal",
+        "cul",
+        "ate",
+        "Ġthe",
+        "Ġfact",
+        "orial",
+        "Ġof",
+        "Ġa",
+        "Ġnumber",
+        ".\"",
+        "\"\"",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġif",
+        "Ġn",
+        "Ġ==",
+        "Ġ0",
+        "Ġor",
+        "Ġn",
+        "Ġ==",
+        "Ġ1",
+        ":",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġreturn",
+        "Ġ1",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ"
+      ],
+      "input_token_ids": [
+        4299,
+        1109,
+        5132,
+        7,
+        77,
+        2599,
+        198,
+        220,
+        220,
+        220,
+        37227,
+        9771,
+        3129,
+        378,
+        262,
+        1109,
+        5132,
+        286,
+        257,
+        1271,
+        526,
+        15931,
+        198,
+        220,
+        220,
+        220,
+        611,
+        299,
+        6624,
+        657,
+        393,
+        299,
+        6624,
+        352,
+        25,
+        198,
+        220,
+        220,
+        220,
+        220,
+        220,
+        220,
+        220,
+        1441,
+        352,
+        198,
+        220,
+        220,
+        220
+      ],
+      "target_token": "Ġelse",
+      "target_token_id": 2073,
+      "predictions": [
+        {
+          "token": "Ġ",
+          "token_id": 220,
+          "logprob": -0.2474,
+          "prob": 0.7808
+        },
+        {
+          "token": "Ġif",
+          "token_id": 611,
+          "logprob": -2.3809,
+          "prob": 0.0925
+        },
+        {
+          "token": "Ġelse",
+          "token_id": 2073,
+          "logprob": -3.1777,
+          "prob": 0.0417
+        },
+        {
+          "token": "Ġreturn",
+          "token_id": 1441,
+          "logprob": -4.0039,
+          "prob": 0.0182
+        },
+        {
+          "token": "Ġn",
+          "token_id": 299,
+          "logprob": -5.4336,
+          "prob": 0.0044
+        },
+        {
+          "token": "Ġ ",
+          "token_id": 5624,
+          "logprob": -5.5352,
+          "prob": 0.0039
+        },
+        {
+          "token": "Ġel",
+          "token_id": 1288,
+          "logprob": -5.6289,
+          "prob": 0.0036
+        },
+        {
+          "token": "\n",
+          "token_id": 198,
+          "logprob": -5.6758,
+          "prob": 0.0034
+        },
+        {
+          "token": "Ġfor",
+          "token_id": 329,
+          "logprob": -5.8633,
+          "prob": 0.0028
+        },
+        {
+          "token": "Ġ=",
+          "token_id": 796,
+          "logprob": -6.0039,
+          "prob": 0.0025
+        }
+      ],
+      "target_token_prediction": {
+        "token": "Ġelse",
+        "token_id": 2073,
+        "logprob": -3.1777,
+        "prob": 0.0417
+      },
+      "target_prob": 0.0417,
+      "target_logprob": -3.1777,
+      "loss": 3.1777
+    },
+    {
+      "step": 50,
+      "input_tokens": [
+        "def",
+        "Ġfact",
+        "orial",
+        "(",
+        "n",
+        "):",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ\"\"\"",
+        "Cal",
+        "cul",
+        "ate",
+        "Ġthe",
+        "Ġfact",
+        "orial",
+        "Ġof",
+        "Ġa",
+        "Ġnumber",
+        ".\"",
+        "\"\"",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġif",
+        "Ġn",
+        "Ġ==",
+        "Ġ0",
+        "Ġor",
+        "Ġn",
+        "Ġ==",
+        "Ġ1",
+        ":",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġreturn",
+        "Ġ1",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġelse"
+      ],
+      "input_token_ids": [
+        4299,
+        1109,
+        5132,
+        7,
+        77,
+        2599,
+        198,
+        220,
+        220,
+        220,
+        37227,
+        9771,
+        3129,
+        378,
+        262,
+        1109,
+        5132,
+        286,
+        257,
+        1271,
+        526,
+        15931,
+        198,
+        220,
+        220,
+        220,
+        611,
+        299,
+        6624,
+        657,
+        393,
+        299,
+        6624,
+        352,
+        25,
+        198,
+        220,
+        220,
+        220,
+        220,
+        220,
+        220,
+        220,
+        1441,
+        352,
+        198,
+        220,
+        220,
+        220,
+        2073
+      ],
+      "target_token": ":",
+      "target_token_id": 25,
+      "predictions": [
+        {
+          "token": ":",
+          "token_id": 25,
+          "logprob": -0.2544,
+          "prob": 0.7754
+        },
+        {
+          "token": "Ġ:",
+          "token_id": 1058,
+          "logprob": -1.582,
+          "prob": 0.2054
+        },
+        {
+          "token": "Ġif",
+          "token_id": 611,
+          "logprob": -4.4805,
+          "prob": 0.0113
+        },
+        {
+          "token": "if",
+          "token_id": 361,
+          "logprob": -5.293,
+          "prob": 0.005
+        },
+        {
+          "token": "Ġ",
+          "token_id": 220,
+          "logprob": -7.5625,
+          "prob": 0.0005
+        },
+        {
+          "token": "\n",
+          "token_id": 198,
+          "logprob": -7.793,
+          "prob": 0.0004
+        },
+        {
+          "token": ":-",
+          "token_id": 21912,
+          "logprob": -8.8281,
+          "prob": 0.0001
+        },
+        {
+          "token": "Ġ{",
+          "token_id": 1391,
+          "logprob": -9.3984,
+          "prob": 0.0001
+        },
+        {
+          "token": "ĠIf",
+          "token_id": 1002,
+          "logprob": -9.625,
+          "prob": 0.0001
+        },
+        {
+          "token": "Ġ ",
+          "token_id": 5624,
+          "logprob": -9.8125,
+          "prob": 0.0001
+        }
+      ],
+      "target_token_prediction": {
+        "token": ":",
+        "token_id": 25,
+        "logprob": -0.2544,
+        "prob": 0.7754
+      },
+      "target_prob": 0.7754,
+      "target_logprob": -0.2544,
+      "loss": 0.2544
+    },
+    {
+      "step": 51,
+      "input_tokens": [
+        "def",
+        "Ġfact",
+        "orial",
+        "(",
+        "n",
+        "):",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ\"\"\"",
+        "Cal",
+        "cul",
+        "ate",
+        "Ġthe",
+        "Ġfact",
+        "orial",
+        "Ġof",
+        "Ġa",
+        "Ġnumber",
+        ".\"",
+        "\"\"",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġif",
+        "Ġn",
+        "Ġ==",
+        "Ġ0",
+        "Ġor",
+        "Ġn",
+        "Ġ==",
+        "Ġ1",
+        ":",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġreturn",
+        "Ġ1",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġelse",
+        ":"
+      ],
+      "input_token_ids": [
+        4299,
+        1109,
+        5132,
+        7,
+        77,
+        2599,
+        198,
+        220,
+        220,
+        220,
+        37227,
+        9771,
+        3129,
+        378,
+        262,
+        1109,
+        5132,
+        286,
+        257,
+        1271,
+        526,
+        15931,
+        198,
+        220,
+        220,
+        220,
+        611,
+        299,
+        6624,
+        657,
+        393,
+        299,
+        6624,
+        352,
+        25,
+        198,
+        220,
+        220,
+        220,
+        220,
+        220,
+        220,
+        220,
+        1441,
+        352,
+        198,
+        220,
+        220,
+        220,
+        2073,
+        25
+      ],
+      "target_token": "\n",
+      "target_token_id": 198,
+      "predictions": [
+        {
+          "token": "\n",
+          "token_id": 198,
+          "logprob": -0.026,
+          "prob": 0.9741
+        },
+        {
+          "token": "Ġ",
+          "token_id": 220,
+          "logprob": -4.5742,
+          "prob": 0.0103
+        },
+        {
+          "token": "Ġ\"\"\"",
+          "token_id": 37227,
+          "logprob": -6.0977,
+          "prob": 0.0023
+        },
+        {
+          "token": "\n ",
+          "token_id": 44320,
+          "logprob": -6.1289,
+          "prob": 0.0022
+        },
+        {
+          "token": "Ġ ",
+          "token_id": 5624,
+          "logprob": -6.1758,
+          "prob": 0.0021
+        },
+        {
+          "token": "<|endoftext|>",
+          "token_id": 50256,
+          "logprob": -6.3789,
+          "prob": 0.0017
+        },
+        {
+          "token": "Ġ#",
+          "token_id": 1303,
+          "logprob": -6.457,
+          "prob": 0.0016
+        },
+        {
+          "token": "Ġreturn",
+          "token_id": 1441,
+          "logprob": -7.4648,
+          "prob": 0.0006
+        },
+        {
+          "token": " ",
+          "token_id": 1849,
+          "logprob": -7.8867,
+          "prob": 0.0004
+        },
+        {
+          "token": "Ġ   ",
+          "token_id": 11504,
+          "logprob": -7.8945,
+          "prob": 0.0004
+        }
+      ],
+      "target_token_prediction": {
+        "token": "\n",
+        "token_id": 198,
+        "logprob": -0.026,
+        "prob": 0.9741
+      },
+      "target_prob": 0.9741,
+      "target_logprob": -0.026,
+      "loss": 0.026
+    },
+    {
+      "step": 52,
+      "input_tokens": [
+        "def",
+        "Ġfact",
+        "orial",
+        "(",
+        "n",
+        "):",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ\"\"\"",
+        "Cal",
+        "cul",
+        "ate",
+        "Ġthe",
+        "Ġfact",
+        "orial",
+        "Ġof",
+        "Ġa",
+        "Ġnumber",
+        ".\"",
+        "\"\"",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġif",
+        "Ġn",
+        "Ġ==",
+        "Ġ0",
+        "Ġor",
+        "Ġn",
+        "Ġ==",
+        "Ġ1",
+        ":",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġreturn",
+        "Ġ1",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġelse",
+        ":",
+        "\n"
+      ],
+      "input_token_ids": [
+        4299,
+        1109,
+        5132,
+        7,
+        77,
+        2599,
+        198,
+        220,
+        220,
+        220,
+        37227,
+        9771,
+        3129,
+        378,
+        262,
+        1109,
+        5132,
+        286,
+        257,
+        1271,
+        526,
+        15931,
+        198,
+        220,
+        220,
+        220,
+        611,
+        299,
+        6624,
+        657,
+        393,
+        299,
+        6624,
+        352,
+        25,
+        198,
+        220,
+        220,
+        220,
+        220,
+        220,
+        220,
+        220,
+        1441,
+        352,
+        198,
+        220,
+        220,
+        220,
+        2073,
+        25,
+        198
+      ],
+      "target_token": "Ġ",
+      "target_token_id": 220,
+      "predictions": [
+        {
+          "token": "Ġ",
+          "token_id": 220,
+          "logprob": -0.2493,
+          "prob": 0.7793
+        },
+        {
+          "token": "\n",
+          "token_id": 198,
+          "logprob": -3.6172,
+          "prob": 0.0269
+        },
+        {
+          "token": " ",
+          "token_id": 1849,
+          "logprob": -3.8906,
+          "prob": 0.0204
+        },
+        {
+          "token": "if",
+          "token_id": 361,
+          "logprob": -4.0938,
+          "prob": 0.0167
+        },
+        {
+          "token": "Ġ ",
+          "token_id": 5624,
+          "logprob": -4.2812,
+          "prob": 0.0138
+        },
+        {
+          "token": "#",
+          "token_id": 2,
+          "logprob": -4.9688,
+          "prob": 0.007
+        },
+        {
+          "token": "return",
+          "token_id": 7783,
+          "logprob": -5.1289,
+          "prob": 0.0059
+        },
+        {
+          "token": "    ",
+          "token_id": 8828,
+          "logprob": -5.4219,
+          "prob": 0.0044
+        },
+        {
+          "token": "n",
+          "token_id": 77,
+          "logprob": -5.6523,
+          "prob": 0.0035
+        },
+        {
+          "token": "   ",
+          "token_id": 33477,
+          "logprob": -5.6719,
+          "prob": 0.0034
+        }
+      ],
+      "target_token_prediction": {
+        "token": "Ġ",
+        "token_id": 220,
+        "logprob": -0.2493,
+        "prob": 0.7793
+      },
+      "target_prob": 0.7793,
+      "target_logprob": -0.2493,
+      "loss": 0.2493
+    },
+    {
+      "step": 53,
+      "input_tokens": [
+        "def",
+        "Ġfact",
+        "orial",
+        "(",
+        "n",
+        "):",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ\"\"\"",
+        "Cal",
+        "cul",
+        "ate",
+        "Ġthe",
+        "Ġfact",
+        "orial",
+        "Ġof",
+        "Ġa",
+        "Ġnumber",
+        ".\"",
+        "\"\"",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġif",
+        "Ġn",
+        "Ġ==",
+        "Ġ0",
+        "Ġor",
+        "Ġn",
+        "Ġ==",
+        "Ġ1",
+        ":",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġreturn",
+        "Ġ1",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġelse",
+        ":",
+        "\n",
+        "Ġ"
+      ],
+      "input_token_ids": [
+        4299,
+        1109,
+        5132,
+        7,
+        77,
+        2599,
+        198,
+        220,
+        220,
+        220,
+        37227,
+        9771,
+        3129,
+        378,
+        262,
+        1109,
+        5132,
+        286,
+        257,
+        1271,
+        526,
+        15931,
+        198,
+        220,
+        220,
+        220,
+        611,
+        299,
+        6624,
+        657,
+        393,
+        299,
+        6624,
+        352,
+        25,
+        198,
+        220,
+        220,
+        220,
+        220,
+        220,
+        220,
+        220,
+        1441,
+        352,
+        198,
+        220,
+        220,
+        220,
+        2073,
+        25,
+        198,
+        220
+      ],
+      "target_token": "Ġ",
+      "target_token_id": 220,
+      "predictions": [
+        {
+          "token": "Ġ",
+          "token_id": 220,
+          "logprob": -0.0152,
+          "prob": 0.9849
+        },
+        {
+          "token": " ",
+          "token_id": 1849,
+          "logprob": -5.2852,
+          "prob": 0.0051
+        },
+        {
+          "token": "Ġ ",
+          "token_id": 5624,
+          "logprob": -5.4414,
+          "prob": 0.0043
+        },
+        {
+          "token": "Ġn",
+          "token_id": 299,
+          "logprob": -8.0312,
+          "prob": 0.0003
+        },
+        {
+          "token": "\n",
+          "token_id": 198,
+          "logprob": -8.3203,
+          "prob": 0.0002
+        },
+        {
+          "token": "Ġ__",
+          "token_id": 11593,
+          "logprob": -8.5703,
+          "prob": 0.0002
+        },
+        {
+          "token": "Ġif",
+          "token_id": 611,
+          "logprob": -8.7109,
+          "prob": 0.0002
+        },
+        {
+          "token": "Ġ   ",
+          "token_id": 11504,
+          "logprob": -9.0391,
+          "prob": 0.0001
+        },
+        {
+          "token": "Ġ\"",
+          "token_id": 366,
+          "logprob": -9.125,
+          "prob": 0.0001
+        },
+        {
+          "token": "Ġ\"\"\"",
+          "token_id": 37227,
+          "logprob": -9.5078,
+          "prob": 0.0001
+        }
+      ],
+      "target_token_prediction": {
+        "token": "Ġ",
+        "token_id": 220,
+        "logprob": -0.0152,
+        "prob": 0.9849
+      },
+      "target_prob": 0.9849,
+      "target_logprob": -0.0152,
+      "loss": 0.0152
+    },
+    {
+      "step": 54,
+      "input_tokens": [
+        "def",
+        "Ġfact",
+        "orial",
+        "(",
+        "n",
+        "):",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ\"\"\"",
+        "Cal",
+        "cul",
+        "ate",
+        "Ġthe",
+        "Ġfact",
+        "orial",
+        "Ġof",
+        "Ġa",
+        "Ġnumber",
+        ".\"",
+        "\"\"",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġif",
+        "Ġn",
+        "Ġ==",
+        "Ġ0",
+        "Ġor",
+        "Ġn",
+        "Ġ==",
+        "Ġ1",
+        ":",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġreturn",
+        "Ġ1",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġelse",
+        ":",
+        "\n",
+        "Ġ",
+        "Ġ"
+      ],
+      "input_token_ids": [
+        4299,
+        1109,
+        5132,
+        7,
+        77,
+        2599,
+        198,
+        220,
+        220,
+        220,
+        37227,
+        9771,
+        3129,
+        378,
+        262,
+        1109,
+        5132,
+        286,
+        257,
+        1271,
+        526,
+        15931,
+        198,
+        220,
+        220,
+        220,
+        611,
+        299,
+        6624,
+        657,
+        393,
+        299,
+        6624,
+        352,
+        25,
+        198,
+        220,
+        220,
+        220,
+        220,
+        220,
+        220,
+        220,
+        1441,
+        352,
+        198,
+        220,
+        220,
+        220,
+        2073,
+        25,
+        198,
+        220,
+        220
+      ],
+      "target_token": "Ġ",
+      "target_token_id": 220,
+      "predictions": [
+        {
+          "token": "Ġ",
+          "token_id": 220,
+          "logprob": -0.0114,
+          "prob": 0.9888
+        },
+        {
+          "token": " ",
+          "token_id": 1849,
+          "logprob": -6.0625,
+          "prob": 0.0023
+        },
+        {
+          "token": "Ġ ",
+          "token_id": 5624,
+          "logprob": -6.082,
+          "prob": 0.0023
+        },
+        {
+          "token": "Ġif",
+          "token_id": 611,
+          "logprob": -7.2344,
+          "prob": 0.0007
+        },
+        {
+          "token": "Ġ\"\"\"",
+          "token_id": 37227,
+          "logprob": -8.0859,
+          "prob": 0.0003
+        },
+        {
+          "token": "Ġ__",
+          "token_id": 11593,
+          "logprob": -8.1016,
+          "prob": 0.0003
+        },
+        {
+          "token": "Ġn",
+          "token_id": 299,
+          "logprob": -8.2344,
+          "prob": 0.0003
+        },
+        {
+          "token": "Ġreturn",
+          "token_id": 1441,
+          "logprob": -8.2969,
+          "prob": 0.0002
+        },
+        {
+          "token": "\n",
+          "token_id": 198,
+          "logprob": -8.6953,
+          "prob": 0.0002
+        },
+        {
+          "token": "Ġ   ",
+          "token_id": 11504,
+          "logprob": -8.7734,
+          "prob": 0.0002
+        }
+      ],
+      "target_token_prediction": {
+        "token": "Ġ",
+        "token_id": 220,
+        "logprob": -0.0114,
+        "prob": 0.9888
+      },
+      "target_prob": 0.9888,
+      "target_logprob": -0.0114,
+      "loss": 0.0114
+    },
+    {
+      "step": 55,
+      "input_tokens": [
+        "def",
+        "Ġfact",
+        "orial",
+        "(",
+        "n",
+        "):",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ\"\"\"",
+        "Cal",
+        "cul",
+        "ate",
+        "Ġthe",
+        "Ġfact",
+        "orial",
+        "Ġof",
+        "Ġa",
+        "Ġnumber",
+        ".\"",
+        "\"\"",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġif",
+        "Ġn",
+        "Ġ==",
+        "Ġ0",
+        "Ġor",
+        "Ġn",
+        "Ġ==",
+        "Ġ1",
+        ":",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġreturn",
+        "Ġ1",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġelse",
+        ":",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ"
+      ],
+      "input_token_ids": [
+        4299,
+        1109,
+        5132,
+        7,
+        77,
+        2599,
+        198,
+        220,
+        220,
+        220,
+        37227,
+        9771,
+        3129,
+        378,
+        262,
+        1109,
+        5132,
+        286,
+        257,
+        1271,
+        526,
+        15931,
+        198,
+        220,
+        220,
+        220,
+        611,
+        299,
+        6624,
+        657,
+        393,
+        299,
+        6624,
+        352,
+        25,
+        198,
+        220,
+        220,
+        220,
+        220,
+        220,
+        220,
+        220,
+        1441,
+        352,
+        198,
+        220,
+        220,
+        220,
+        2073,
+        25,
+        198,
+        220,
+        220,
+        220
+      ],
+      "target_token": "Ġ",
+      "target_token_id": 220,
+      "predictions": [
+        {
+          "token": "Ġ",
+          "token_id": 220,
+          "logprob": -0.153,
+          "prob": 0.8579
+        },
+        {
+          "token": "Ġif",
+          "token_id": 611,
+          "logprob": -2.9883,
+          "prob": 0.0504
+        },
+        {
+          "token": "Ġreturn",
+          "token_id": 1441,
+          "logprob": -4.0508,
+          "prob": 0.0174
+        },
+        {
+          "token": "Ġ ",
+          "token_id": 5624,
+          "logprob": -5.0,
+          "prob": 0.0067
+        },
+        {
+          "token": "Ġn",
+          "token_id": 299,
+          "logprob": -5.2656,
+          "prob": 0.0052
+        },
+        {
+          "token": "Ġ\"\"\"",
+          "token_id": 37227,
+          "logprob": -5.3125,
+          "prob": 0.0049
+        },
+        {
+          "token": " ",
+          "token_id": 1849,
+          "logprob": -5.4609,
+          "prob": 0.0042
+        },
+        {
+          "token": "Ġprint",
+          "token_id": 3601,
+          "logprob": -6.25,
+          "prob": 0.0019
+        },
+        {
+          "token": "Ġfor",
+          "token_id": 329,
+          "logprob": -6.4141,
+          "prob": 0.0016
+        },
+        {
+          "token": "Ġ__",
+          "token_id": 11593,
+          "logprob": -6.582,
+          "prob": 0.0014
+        }
+      ],
+      "target_token_prediction": {
+        "token": "Ġ",
+        "token_id": 220,
+        "logprob": -0.153,
+        "prob": 0.8579
+      },
+      "target_prob": 0.8579,
+      "target_logprob": -0.153,
+      "loss": 0.153
+    },
+    {
+      "step": 56,
+      "input_tokens": [
+        "def",
+        "Ġfact",
+        "orial",
+        "(",
+        "n",
+        "):",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ\"\"\"",
+        "Cal",
+        "cul",
+        "ate",
+        "Ġthe",
+        "Ġfact",
+        "orial",
+        "Ġof",
+        "Ġa",
+        "Ġnumber",
+        ".\"",
+        "\"\"",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġif",
+        "Ġn",
+        "Ġ==",
+        "Ġ0",
+        "Ġor",
+        "Ġn",
+        "Ġ==",
+        "Ġ1",
+        ":",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġreturn",
+        "Ġ1",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġelse",
+        ":",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ"
+      ],
+      "input_token_ids": [
+        4299,
+        1109,
+        5132,
+        7,
+        77,
+        2599,
+        198,
+        220,
+        220,
+        220,
+        37227,
+        9771,
+        3129,
+        378,
+        262,
+        1109,
+        5132,
+        286,
+        257,
+        1271,
+        526,
+        15931,
+        198,
+        220,
+        220,
+        220,
+        611,
+        299,
+        6624,
+        657,
+        393,
+        299,
+        6624,
+        352,
+        25,
+        198,
+        220,
+        220,
+        220,
+        220,
+        220,
+        220,
+        220,
+        1441,
+        352,
+        198,
+        220,
+        220,
+        220,
+        2073,
+        25,
+        198,
+        220,
+        220,
+        220,
+        220
+      ],
+      "target_token": "Ġ",
+      "target_token_id": 220,
+      "predictions": [
+        {
+          "token": "Ġ",
+          "token_id": 220,
+          "logprob": -0.1892,
+          "prob": 0.8276
+        },
+        {
+          "token": "Ġif",
+          "token_id": 611,
+          "logprob": -2.6504,
+          "prob": 0.0706
+        },
+        {
+          "token": "Ġreturn",
+          "token_id": 1441,
+          "logprob": -3.9629,
+          "prob": 0.019
+        },
+        {
+          "token": " ",
+          "token_id": 1849,
+          "logprob": -4.4375,
+          "prob": 0.0118
+        },
+        {
+          "token": "Ġ ",
+          "token_id": 5624,
+          "logprob": -5.0508,
+          "prob": 0.0064
+        },
+        {
+          "token": "Ġn",
+          "token_id": 299,
+          "logprob": -5.707,
+          "prob": 0.0033
+        },
+        {
+          "token": "Ġprint",
+          "token_id": 3601,
+          "logprob": -5.9336,
+          "prob": 0.0026
+        },
+        {
+          "token": "Ġ\"\"\"",
+          "token_id": 37227,
+          "logprob": -5.9609,
+          "prob": 0.0026
+        },
+        {
+          "token": "Ġfor",
+          "token_id": 329,
+          "logprob": -6.0977,
+          "prob": 0.0022
+        },
+        {
+          "token": "Ġ__",
+          "token_id": 11593,
+          "logprob": -6.1641,
+          "prob": 0.0021
+        }
+      ],
+      "target_token_prediction": {
+        "token": "Ġ",
+        "token_id": 220,
+        "logprob": -0.1892,
+        "prob": 0.8276
+      },
+      "target_prob": 0.8276,
+      "target_logprob": -0.1892,
+      "loss": 0.1892
+    },
+    {
+      "step": 57,
+      "input_tokens": [
+        "def",
+        "Ġfact",
+        "orial",
+        "(",
+        "n",
+        "):",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ\"\"\"",
+        "Cal",
+        "cul",
+        "ate",
+        "Ġthe",
+        "Ġfact",
+        "orial",
+        "Ġof",
+        "Ġa",
+        "Ġnumber",
+        ".\"",
+        "\"\"",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġif",
+        "Ġn",
+        "Ġ==",
+        "Ġ0",
+        "Ġor",
+        "Ġn",
+        "Ġ==",
+        "Ġ1",
+        ":",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġreturn",
+        "Ġ1",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġelse",
+        ":",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ"
+      ],
+      "input_token_ids": [
+        4299,
+        1109,
+        5132,
+        7,
+        77,
+        2599,
+        198,
+        220,
+        220,
+        220,
+        37227,
+        9771,
+        3129,
+        378,
+        262,
+        1109,
+        5132,
+        286,
+        257,
+        1271,
+        526,
+        15931,
+        198,
+        220,
+        220,
+        220,
+        611,
+        299,
+        6624,
+        657,
+        393,
+        299,
+        6624,
+        352,
+        25,
+        198,
+        220,
+        220,
+        220,
+        220,
+        220,
+        220,
+        220,
+        1441,
+        352,
+        198,
+        220,
+        220,
+        220,
+        2073,
+        25,
+        198,
+        220,
+        220,
+        220,
+        220,
+        220
+      ],
+      "target_token": "Ġ",
+      "target_token_id": 220,
+      "predictions": [
+        {
+          "token": "Ġ",
+          "token_id": 220,
+          "logprob": -0.0908,
+          "prob": 0.9131
+        },
+        {
+          "token": "Ġif",
+          "token_id": 611,
+          "logprob": -3.8242,
+          "prob": 0.0218
+        },
+        {
+          "token": " ",
+          "token_id": 1849,
+          "logprob": -4.5664,
+          "prob": 0.0104
+        },
+        {
+          "token": "Ġ ",
+          "token_id": 5624,
+          "logprob": -4.8555,
+          "prob": 0.0078
+        },
+        {
+          "token": "Ġreturn",
+          "token_id": 1441,
+          "logprob": -4.9023,
+          "prob": 0.0074
+        },
+        {
+          "token": "Ġ__",
+          "token_id": 11593,
+          "logprob": -6.0234,
+          "prob": 0.0024
+        },
+        {
+          "token": "Ġ\"\"\"",
+          "token_id": 37227,
+          "logprob": -6.1328,
+          "prob": 0.0022
+        },
+        {
+          "token": "Ġn",
+          "token_id": 299,
+          "logprob": -6.207,
+          "prob": 0.002
+        },
+        {
+          "token": "Ġ=",
+          "token_id": 796,
+          "logprob": -6.3594,
+          "prob": 0.0017
+        },
+        {
+          "token": "Ġdef",
+          "token_id": 825,
+          "logprob": -6.8867,
+          "prob": 0.001
+        }
+      ],
+      "target_token_prediction": {
+        "token": "Ġ",
+        "token_id": 220,
+        "logprob": -0.0908,
+        "prob": 0.9131
+      },
+      "target_prob": 0.9131,
+      "target_logprob": -0.0908,
+      "loss": 0.0908
+    },
+    {
+      "step": 58,
+      "input_tokens": [
+        "def",
+        "Ġfact",
+        "orial",
+        "(",
+        "n",
+        "):",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ\"\"\"",
+        "Cal",
+        "cul",
+        "ate",
+        "Ġthe",
+        "Ġfact",
+        "orial",
+        "Ġof",
+        "Ġa",
+        "Ġnumber",
+        ".\"",
+        "\"\"",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġif",
+        "Ġn",
+        "Ġ==",
+        "Ġ0",
+        "Ġor",
+        "Ġn",
+        "Ġ==",
+        "Ġ1",
+        ":",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġreturn",
+        "Ġ1",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġelse",
+        ":",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ"
+      ],
+      "input_token_ids": [
+        4299,
+        1109,
+        5132,
+        7,
+        77,
+        2599,
+        198,
+        220,
+        220,
+        220,
+        37227,
+        9771,
+        3129,
+        378,
+        262,
+        1109,
+        5132,
+        286,
+        257,
+        1271,
+        526,
+        15931,
+        198,
+        220,
+        220,
+        220,
+        611,
+        299,
+        6624,
+        657,
+        393,
+        299,
+        6624,
+        352,
+        25,
+        198,
+        220,
+        220,
+        220,
+        220,
+        220,
+        220,
+        220,
+        1441,
+        352,
+        198,
+        220,
+        220,
+        220,
+        2073,
+        25,
+        198,
+        220,
+        220,
+        220,
+        220,
+        220,
+        220
+      ],
+      "target_token": "Ġ",
+      "target_token_id": 220,
+      "predictions": [
+        {
+          "token": "Ġ",
+          "token_id": 220,
+          "logprob": -1.1367,
+          "prob": 0.3208
+        },
+        {
+          "token": "Ġreturn",
+          "token_id": 1441,
+          "logprob": -1.1992,
+          "prob": 0.3015
+        },
+        {
+          "token": "Ġif",
+          "token_id": 611,
+          "logprob": -1.793,
+          "prob": 0.1665
+        },
+        {
+          "token": "Ġn",
+          "token_id": 299,
+          "logprob": -3.7695,
+          "prob": 0.0231
+        },
+        {
+          "token": "Ġfor",
+          "token_id": 329,
+          "logprob": -4.0664,
+          "prob": 0.0171
+        },
+        {
+          "token": "Ġ ",
+          "token_id": 5624,
+          "logprob": -4.5664,
+          "prob": 0.0104
+        },
+        {
+          "token": "Ġresult",
+          "token_id": 1255,
+          "logprob": -4.7695,
+          "prob": 0.0085
+        },
+        {
+          "token": "Ġdef",
+          "token_id": 825,
+          "logprob": -4.8359,
+          "prob": 0.0079
+        },
+        {
+          "token": " ",
+          "token_id": 1849,
+          "logprob": -4.875,
+          "prob": 0.0076
+        },
+        {
+          "token": "\n",
+          "token_id": 198,
+          "logprob": -4.9336,
+          "prob": 0.0072
+        }
+      ],
+      "target_token_prediction": {
+        "token": "Ġ",
+        "token_id": 220,
+        "logprob": -1.1367,
+        "prob": 0.3208
+      },
+      "target_prob": 0.3208,
+      "target_logprob": -1.1367,
+      "loss": 1.1367
+    },
+    {
+      "step": 59,
+      "input_tokens": [
+        "def",
+        "Ġfact",
+        "orial",
+        "(",
+        "n",
+        "):",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ\"\"\"",
+        "Cal",
+        "cul",
+        "ate",
+        "Ġthe",
+        "Ġfact",
+        "orial",
+        "Ġof",
+        "Ġa",
+        "Ġnumber",
+        ".\"",
+        "\"\"",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġif",
+        "Ġn",
+        "Ġ==",
+        "Ġ0",
+        "Ġor",
+        "Ġn",
+        "Ġ==",
+        "Ġ1",
+        ":",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġreturn",
+        "Ġ1",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġelse",
+        ":",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ"
+      ],
+      "input_token_ids": [
+        4299,
+        1109,
+        5132,
+        7,
+        77,
+        2599,
+        198,
+        220,
+        220,
+        220,
+        37227,
+        9771,
+        3129,
+        378,
+        262,
+        1109,
+        5132,
+        286,
+        257,
+        1271,
+        526,
+        15931,
+        198,
+        220,
+        220,
+        220,
+        611,
+        299,
+        6624,
+        657,
+        393,
+        299,
+        6624,
+        352,
+        25,
+        198,
+        220,
+        220,
+        220,
+        220,
+        220,
+        220,
+        220,
+        1441,
+        352,
+        198,
+        220,
+        220,
+        220,
+        2073,
+        25,
+        198,
+        220,
+        220,
+        220,
+        220,
+        220,
+        220,
+        220
+      ],
+      "target_token": "Ġreturn",
+      "target_token_id": 1441,
+      "predictions": [
+        {
+          "token": "Ġreturn",
+          "token_id": 1441,
+          "logprob": -1.2402,
+          "prob": 0.2893
+        },
+        {
+          "token": "Ġ",
+          "token_id": 220,
+          "logprob": -1.6152,
+          "prob": 0.1989
+        },
+        {
+          "token": "Ġif",
+          "token_id": 611,
+          "logprob": -1.6465,
+          "prob": 0.1927
+        },
+        {
+          "token": "Ġn",
+          "token_id": 299,
+          "logprob": -3.209,
+          "prob": 0.0404
+        },
+        {
+          "token": "Ġfor",
+          "token_id": 329,
+          "logprob": -3.4277,
+          "prob": 0.0325
+        },
+        {
+          "token": "Ġfact",
+          "token_id": 1109,
+          "logprob": -3.8184,
+          "prob": 0.022
+        },
+        {
+          "token": "Ġresult",
+          "token_id": 1255,
+          "logprob": -4.3438,
+          "prob": 0.013
+        },
+        {
+          "token": "\n",
+          "token_id": 198,
+          "logprob": -4.3789,
+          "prob": 0.0125
+        },
+        {
+          "token": " ",
+          "token_id": 1849,
+          "logprob": -4.5938,
+          "prob": 0.0101
+        },
+        {
+          "token": "Ġ ",
+          "token_id": 5624,
+          "logprob": -4.6484,
+          "prob": 0.0096
+        }
+      ],
+      "target_token_prediction": {
+        "token": "Ġreturn",
+        "token_id": 1441,
+        "logprob": -1.2402,
+        "prob": 0.2893
+      },
+      "target_prob": 0.2893,
+      "target_logprob": -1.2402,
+      "loss": 1.2402
+    },
+    {
+      "step": 60,
+      "input_tokens": [
+        "def",
+        "Ġfact",
+        "orial",
+        "(",
+        "n",
+        "):",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ\"\"\"",
+        "Cal",
+        "cul",
+        "ate",
+        "Ġthe",
+        "Ġfact",
+        "orial",
+        "Ġof",
+        "Ġa",
+        "Ġnumber",
+        ".\"",
+        "\"\"",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġif",
+        "Ġn",
+        "Ġ==",
+        "Ġ0",
+        "Ġor",
+        "Ġn",
+        "Ġ==",
+        "Ġ1",
+        ":",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġreturn",
+        "Ġ1",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġelse",
+        ":",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġreturn"
+      ],
+      "input_token_ids": [
+        4299,
+        1109,
+        5132,
+        7,
+        77,
+        2599,
+        198,
+        220,
+        220,
+        220,
+        37227,
+        9771,
+        3129,
+        378,
+        262,
+        1109,
+        5132,
+        286,
+        257,
+        1271,
+        526,
+        15931,
+        198,
+        220,
+        220,
+        220,
+        611,
+        299,
+        6624,
+        657,
+        393,
+        299,
+        6624,
+        352,
+        25,
+        198,
+        220,
+        220,
+        220,
+        220,
+        220,
+        220,
+        220,
+        1441,
+        352,
+        198,
+        220,
+        220,
+        220,
+        2073,
+        25,
+        198,
+        220,
+        220,
+        220,
+        220,
+        220,
+        220,
+        220,
+        1441
+      ],
+      "target_token": "Ġn",
+      "target_token_id": 299,
+      "predictions": [
+        {
+          "token": "Ġn",
+          "token_id": 299,
+          "logprob": -0.5981,
+          "prob": 0.5498
+        },
+        {
+          "token": "Ġfact",
+          "token_id": 1109,
+          "logprob": -2.0586,
+          "prob": 0.1276
+        },
+        {
+          "token": "Ġ(",
+          "token_id": 357,
+          "logprob": -2.9336,
+          "prob": 0.0532
+        },
+        {
+          "token": "Ġ0",
+          "token_id": 657,
+          "logprob": -3.0195,
+          "prob": 0.0488
+        },
+        {
+          "token": "Ġ2",
+          "token_id": 362,
+          "logprob": -3.7305,
+          "prob": 0.024
+        },
+        {
+          "token": "Ġ1",
+          "token_id": 352,
+          "logprob": -3.7461,
+          "prob": 0.0236
+        },
+        {
+          "token": "Ġint",
+          "token_id": 493,
+          "logprob": -4.2461,
+          "prob": 0.0143
+        },
+        {
+          "token": "Ġsum",
+          "token_id": 2160,
+          "logprob": -4.2617,
+          "prob": 0.0141
+        },
+        {
+          "token": "Ġ",
+          "token_id": 220,
+          "logprob": -4.5273,
+          "prob": 0.0108
+        },
+        {
+          "token": "ĠFact",
+          "token_id": 19020,
+          "logprob": -4.8867,
+          "prob": 0.0075
+        }
+      ],
+      "target_token_prediction": {
+        "token": "Ġn",
+        "token_id": 299,
+        "logprob": -0.5981,
+        "prob": 0.5498
+      },
+      "target_prob": 0.5498,
+      "target_logprob": -0.5981,
+      "loss": 0.5981
+    },
+    {
+      "step": 61,
+      "input_tokens": [
+        "def",
+        "Ġfact",
+        "orial",
+        "(",
+        "n",
+        "):",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ\"\"\"",
+        "Cal",
+        "cul",
+        "ate",
+        "Ġthe",
+        "Ġfact",
+        "orial",
+        "Ġof",
+        "Ġa",
+        "Ġnumber",
+        ".\"",
+        "\"\"",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġif",
+        "Ġn",
+        "Ġ==",
+        "Ġ0",
+        "Ġor",
+        "Ġn",
+        "Ġ==",
+        "Ġ1",
+        ":",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġreturn",
+        "Ġ1",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġelse",
+        ":",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġreturn",
+        "Ġn"
+      ],
+      "input_token_ids": [
+        4299,
+        1109,
+        5132,
+        7,
+        77,
+        2599,
+        198,
+        220,
+        220,
+        220,
+        37227,
+        9771,
+        3129,
+        378,
+        262,
+        1109,
+        5132,
+        286,
+        257,
+        1271,
+        526,
+        15931,
+        198,
+        220,
+        220,
+        220,
+        611,
+        299,
+        6624,
+        657,
+        393,
+        299,
+        6624,
+        352,
+        25,
+        198,
+        220,
+        220,
+        220,
+        220,
+        220,
+        220,
+        220,
+        1441,
+        352,
+        198,
+        220,
+        220,
+        220,
+        2073,
+        25,
+        198,
+        220,
+        220,
+        220,
+        220,
+        220,
+        220,
+        220,
+        1441,
+        299
+      ],
+      "target_token": "Ġ*",
+      "target_token_id": 1635,
+      "predictions": [
+        {
+          "token": "Ġ*",
+          "token_id": 1635,
+          "logprob": -0.4993,
+          "prob": 0.6069
+        },
+        {
+          "token": "\n",
+          "token_id": 198,
+          "logprob": -1.6787,
+          "prob": 0.1866
+        },
+        {
+          "token": "Ġ/",
+          "token_id": 1220,
+          "logprob": -3.2578,
+          "prob": 0.0385
+        },
+        {
+          "token": "Ġ**",
+          "token_id": 12429,
+          "logprob": -3.4375,
+          "prob": 0.0322
+        },
+        {
+          "token": "*",
+          "token_id": 9,
+          "logprob": -3.4453,
+          "prob": 0.0319
+        },
+        {
+          "token": "Ġ-",
+          "token_id": 532,
+          "logprob": -4.2109,
+          "prob": 0.0148
+        },
+        {
+          "token": "/",
+          "token_id": 14,
+          "logprob": -4.3203,
+          "prob": 0.0133
+        },
+        {
+          "token": "**",
+          "token_id": 1174,
+          "logprob": -4.5547,
+          "prob": 0.0105
+        },
+        {
+          "token": "Ġ+",
+          "token_id": 1343,
+          "logprob": -4.625,
+          "prob": 0.0098
+        },
+        {
+          "token": "Ġ%",
+          "token_id": 4064,
+          "logprob": -5.1953,
+          "prob": 0.0055
+        }
+      ],
+      "target_token_prediction": {
+        "token": "Ġ*",
+        "token_id": 1635,
+        "logprob": -0.4993,
+        "prob": 0.6069
+      },
+      "target_prob": 0.6069,
+      "target_logprob": -0.4993,
+      "loss": 0.4993
+    },
+    {
+      "step": 62,
+      "input_tokens": [
+        "def",
+        "Ġfact",
+        "orial",
+        "(",
+        "n",
+        "):",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ\"\"\"",
+        "Cal",
+        "cul",
+        "ate",
+        "Ġthe",
+        "Ġfact",
+        "orial",
+        "Ġof",
+        "Ġa",
+        "Ġnumber",
+        ".\"",
+        "\"\"",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġif",
+        "Ġn",
+        "Ġ==",
+        "Ġ0",
+        "Ġor",
+        "Ġn",
+        "Ġ==",
+        "Ġ1",
+        ":",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġreturn",
+        "Ġ1",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġelse",
+        ":",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġreturn",
+        "Ġn",
+        "Ġ*"
+      ],
+      "input_token_ids": [
+        4299,
+        1109,
+        5132,
+        7,
+        77,
+        2599,
+        198,
+        220,
+        220,
+        220,
+        37227,
+        9771,
+        3129,
+        378,
+        262,
+        1109,
+        5132,
+        286,
+        257,
+        1271,
+        526,
+        15931,
+        198,
+        220,
+        220,
+        220,
+        611,
+        299,
+        6624,
+        657,
+        393,
+        299,
+        6624,
+        352,
+        25,
+        198,
+        220,
+        220,
+        220,
+        220,
+        220,
+        220,
+        220,
+        1441,
+        352,
+        198,
+        220,
+        220,
+        220,
+        2073,
+        25,
+        198,
+        220,
+        220,
+        220,
+        220,
+        220,
+        220,
+        220,
+        1441,
+        299,
+        1635
+      ],
+      "target_token": "Ġfact",
+      "target_token_id": 1109,
+      "predictions": [
+        {
+          "token": "Ġfact",
+          "token_id": 1109,
+          "logprob": -0.0349,
+          "prob": 0.9658
+        },
+        {
+          "token": "Ġ(",
+          "token_id": 357,
+          "logprob": -4.1445,
+          "prob": 0.0159
+        },
+        {
+          "token": "Ġn",
+          "token_id": 299,
+          "logprob": -5.1992,
+          "prob": 0.0055
+        },
+        {
+          "token": "fact",
+          "token_id": 22584,
+          "logprob": -6.5742,
+          "prob": 0.0014
+        },
+        {
+          "token": "Ġ2",
+          "token_id": 362,
+          "logprob": -6.582,
+          "prob": 0.0014
+        },
+        {
+          "token": "ĠFact",
+          "token_id": 19020,
+          "logprob": -6.6445,
+          "prob": 0.0013
+        },
+        {
+          "token": "Ġ1",
+          "token_id": 352,
+          "logprob": -7.4805,
+          "prob": 0.0006
+        },
+        {
+          "token": "Ġfactor",
+          "token_id": 5766,
+          "logprob": -7.7773,
+          "prob": 0.0004
+        },
+        {
+          "token": "Ġ",
+          "token_id": 220,
+          "logprob": -7.8242,
+          "prob": 0.0004
+        },
+        {
+          "token": "Ġint",
+          "token_id": 493,
+          "logprob": -7.9297,
+          "prob": 0.0004
+        }
+      ],
+      "target_token_prediction": {
+        "token": "Ġfact",
+        "token_id": 1109,
+        "logprob": -0.0349,
+        "prob": 0.9658
+      },
+      "target_prob": 0.9658,
+      "target_logprob": -0.0349,
+      "loss": 0.0349
+    },
+    {
+      "step": 63,
+      "input_tokens": [
+        "def",
+        "Ġfact",
+        "orial",
+        "(",
+        "n",
+        "):",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ\"\"\"",
+        "Cal",
+        "cul",
+        "ate",
+        "Ġthe",
+        "Ġfact",
+        "orial",
+        "Ġof",
+        "Ġa",
+        "Ġnumber",
+        ".\"",
+        "\"\"",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġif",
+        "Ġn",
+        "Ġ==",
+        "Ġ0",
+        "Ġor",
+        "Ġn",
+        "Ġ==",
+        "Ġ1",
+        ":",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġreturn",
+        "Ġ1",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġelse",
+        ":",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġreturn",
+        "Ġn",
+        "Ġ*",
+        "Ġfact"
+      ],
+      "input_token_ids": [
+        4299,
+        1109,
+        5132,
+        7,
+        77,
+        2599,
+        198,
+        220,
+        220,
+        220,
+        37227,
+        9771,
+        3129,
+        378,
+        262,
+        1109,
+        5132,
+        286,
+        257,
+        1271,
+        526,
+        15931,
+        198,
+        220,
+        220,
+        220,
+        611,
+        299,
+        6624,
+        657,
+        393,
+        299,
+        6624,
+        352,
+        25,
+        198,
+        220,
+        220,
+        220,
+        220,
+        220,
+        220,
+        220,
+        1441,
+        352,
+        198,
+        220,
+        220,
+        220,
+        2073,
+        25,
+        198,
+        220,
+        220,
+        220,
+        220,
+        220,
+        220,
+        220,
+        1441,
+        299,
+        1635,
+        1109
+      ],
+      "target_token": "orial",
+      "target_token_id": 5132,
+      "predictions": [
+        {
+          "token": "orial",
+          "token_id": 5132,
+          "logprob": -0.0209,
+          "prob": 0.9795
+        },
+        {
+          "token": "(",
+          "token_id": 7,
+          "logprob": -3.9746,
+          "prob": 0.0188
+        },
+        {
+          "token": "()",
+          "token_id": 3419,
+          "logprob": -8.1484,
+          "prob": 0.0003
+        },
+        {
+          "token": "((",
+          "token_id": 19510,
+          "logprob": -8.7344,
+          "prob": 0.0002
+        },
+        {
+          "token": "_",
+          "token_id": 62,
+          "logprob": -8.8906,
+          "prob": 0.0001
+        },
+        {
+          "token": "Ġ=",
+          "token_id": 796,
+          "logprob": -8.9141,
+          "prob": 0.0001
+        },
+        {
+          "token": "Ġ(",
+          "token_id": 357,
+          "logprob": -9.0625,
+          "prob": 0.0001
+        },
+        {
+          "token": "\n",
+          "token_id": 198,
+          "logprob": -9.75,
+          "prob": 0.0001
+        },
+        {
+          "token": ".",
+          "token_id": 13,
+          "logprob": -9.8984,
+          "prob": 0.0001
+        },
+        {
+          "token": "(*",
+          "token_id": 46491,
+          "logprob": -9.9688,
+          "prob": 0.0
+        }
+      ],
+      "target_token_prediction": {
+        "token": "orial",
+        "token_id": 5132,
+        "logprob": -0.0209,
+        "prob": 0.9795
+      },
+      "target_prob": 0.9795,
+      "target_logprob": -0.0209,
+      "loss": 0.0209
+    },
+    {
+      "step": 64,
+      "input_tokens": [
+        "def",
+        "Ġfact",
+        "orial",
+        "(",
+        "n",
+        "):",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ\"\"\"",
+        "Cal",
+        "cul",
+        "ate",
+        "Ġthe",
+        "Ġfact",
+        "orial",
+        "Ġof",
+        "Ġa",
+        "Ġnumber",
+        ".\"",
+        "\"\"",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġif",
+        "Ġn",
+        "Ġ==",
+        "Ġ0",
+        "Ġor",
+        "Ġn",
+        "Ġ==",
+        "Ġ1",
+        ":",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġreturn",
+        "Ġ1",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġelse",
+        ":",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġreturn",
+        "Ġn",
+        "Ġ*",
+        "Ġfact",
+        "orial"
+      ],
+      "input_token_ids": [
+        4299,
+        1109,
+        5132,
+        7,
+        77,
+        2599,
+        198,
+        220,
+        220,
+        220,
+        37227,
+        9771,
+        3129,
+        378,
+        262,
+        1109,
+        5132,
+        286,
+        257,
+        1271,
+        526,
+        15931,
+        198,
+        220,
+        220,
+        220,
+        611,
+        299,
+        6624,
+        657,
+        393,
+        299,
+        6624,
+        352,
+        25,
+        198,
+        220,
+        220,
+        220,
+        220,
+        220,
+        220,
+        220,
+        1441,
+        352,
+        198,
+        220,
+        220,
+        220,
+        2073,
+        25,
+        198,
+        220,
+        220,
+        220,
+        220,
+        220,
+        220,
+        220,
+        1441,
+        299,
+        1635,
+        1109,
+        5132
+      ],
+      "target_token": "(",
+      "target_token_id": 7,
+      "predictions": [
+        {
+          "token": "(",
+          "token_id": 7,
+          "logprob": -0.0176,
+          "prob": 0.9824
+        },
+        {
+          "token": "((",
+          "token_id": 19510,
+          "logprob": -4.6133,
+          "prob": 0.0099
+        },
+        {
+          "token": "Ġ(",
+          "token_id": 357,
+          "logprob": -6.4492,
+          "prob": 0.0016
+        },
+        {
+          "token": "_",
+          "token_id": 62,
+          "logprob": -6.543,
+          "prob": 0.0014
+        },
+        {
+          "token": "(-",
+          "token_id": 32590,
+          "logprob": -6.7695,
+          "prob": 0.0012
+        },
+        {
+          "token": "()",
+          "token_id": 3419,
+          "logprob": -7.2148,
+          "prob": 0.0007
+        },
+        {
+          "token": "(*",
+          "token_id": 46491,
+          "logprob": -7.4336,
+          "prob": 0.0006
+        },
+        {
+          "token": "Ġof",
+          "token_id": 286,
+          "logprob": -7.6367,
+          "prob": 0.0005
+        },
+        {
+          "token": "([",
+          "token_id": 26933,
+          "logprob": -8.1875,
+          "prob": 0.0003
+        },
+        {
+          "token": "_(",
+          "token_id": 41052,
+          "logprob": -8.3203,
+          "prob": 0.0002
+        }
+      ],
+      "target_token_prediction": {
+        "token": "(",
+        "token_id": 7,
+        "logprob": -0.0176,
+        "prob": 0.9824
+      },
+      "target_prob": 0.9824,
+      "target_logprob": -0.0176,
+      "loss": 0.0176
+    },
+    {
+      "step": 65,
+      "input_tokens": [
+        "def",
+        "Ġfact",
+        "orial",
+        "(",
+        "n",
+        "):",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ\"\"\"",
+        "Cal",
+        "cul",
+        "ate",
+        "Ġthe",
+        "Ġfact",
+        "orial",
+        "Ġof",
+        "Ġa",
+        "Ġnumber",
+        ".\"",
+        "\"\"",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġif",
+        "Ġn",
+        "Ġ==",
+        "Ġ0",
+        "Ġor",
+        "Ġn",
+        "Ġ==",
+        "Ġ1",
+        ":",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġreturn",
+        "Ġ1",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġelse",
+        ":",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġreturn",
+        "Ġn",
+        "Ġ*",
+        "Ġfact",
+        "orial",
+        "("
+      ],
+      "input_token_ids": [
+        4299,
+        1109,
+        5132,
+        7,
+        77,
+        2599,
+        198,
+        220,
+        220,
+        220,
+        37227,
+        9771,
+        3129,
+        378,
+        262,
+        1109,
+        5132,
+        286,
+        257,
+        1271,
+        526,
+        15931,
+        198,
+        220,
+        220,
+        220,
+        611,
+        299,
+        6624,
+        657,
+        393,
+        299,
+        6624,
+        352,
+        25,
+        198,
+        220,
+        220,
+        220,
+        220,
+        220,
+        220,
+        220,
+        1441,
+        352,
+        198,
+        220,
+        220,
+        220,
+        2073,
+        25,
+        198,
+        220,
+        220,
+        220,
+        220,
+        220,
+        220,
+        220,
+        1441,
+        299,
+        1635,
+        1109,
+        5132,
+        7
+      ],
+      "target_token": "n",
+      "target_token_id": 77,
+      "predictions": [
+        {
+          "token": "n",
+          "token_id": 77,
+          "logprob": -0.0143,
+          "prob": 0.9858
+        },
+        {
+          "token": "fact",
+          "token_id": 22584,
+          "logprob": -5.8203,
+          "prob": 0.003
+        },
+        {
+          "token": "i",
+          "token_id": 72,
+          "logprob": -6.0859,
+          "prob": 0.0023
+        },
+        {
+          "token": "Ġn",
+          "token_id": 299,
+          "logprob": -6.6562,
+          "prob": 0.0013
+        },
+        {
+          "token": "1",
+          "token_id": 16,
+          "logprob": -6.9453,
+          "prob": 0.001
+        },
+        {
+          "token": "2",
+          "token_id": 17,
+          "logprob": -7.6797,
+          "prob": 0.0005
+        },
+        {
+          "token": "int",
+          "token_id": 600,
+          "logprob": -7.7109,
+          "prob": 0.0004
+        },
+        {
+          "token": "m",
+          "token_id": 76,
+          "logprob": -7.8047,
+          "prob": 0.0004
+        },
+        {
+          "token": "x",
+          "token_id": 87,
+          "logprob": -7.8672,
+          "prob": 0.0004
+        },
+        {
+          "token": "self",
+          "token_id": 944,
+          "logprob": -8.0,
+          "prob": 0.0003
+        }
+      ],
+      "target_token_prediction": {
+        "token": "n",
+        "token_id": 77,
+        "logprob": -0.0143,
+        "prob": 0.9858
+      },
+      "target_prob": 0.9858,
+      "target_logprob": -0.0143,
+      "loss": 0.0143
+    },
+    {
+      "step": 66,
+      "input_tokens": [
+        "def",
+        "Ġfact",
+        "orial",
+        "(",
+        "n",
+        "):",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ\"\"\"",
+        "Cal",
+        "cul",
+        "ate",
+        "Ġthe",
+        "Ġfact",
+        "orial",
+        "Ġof",
+        "Ġa",
+        "Ġnumber",
+        ".\"",
+        "\"\"",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġif",
+        "Ġn",
+        "Ġ==",
+        "Ġ0",
+        "Ġor",
+        "Ġn",
+        "Ġ==",
+        "Ġ1",
+        ":",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġreturn",
+        "Ġ1",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġelse",
+        ":",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġreturn",
+        "Ġn",
+        "Ġ*",
+        "Ġfact",
+        "orial",
+        "(",
+        "n"
+      ],
+      "input_token_ids": [
+        4299,
+        1109,
+        5132,
+        7,
+        77,
+        2599,
+        198,
+        220,
+        220,
+        220,
+        37227,
+        9771,
+        3129,
+        378,
+        262,
+        1109,
+        5132,
+        286,
+        257,
+        1271,
+        526,
+        15931,
+        198,
+        220,
+        220,
+        220,
+        611,
+        299,
+        6624,
+        657,
+        393,
+        299,
+        6624,
+        352,
+        25,
+        198,
+        220,
+        220,
+        220,
+        220,
+        220,
+        220,
+        220,
+        1441,
+        352,
+        198,
+        220,
+        220,
+        220,
+        2073,
+        25,
+        198,
+        220,
+        220,
+        220,
+        220,
+        220,
+        220,
+        220,
+        1441,
+        299,
+        1635,
+        1109,
+        5132,
+        7,
+        77
+      ],
+      "target_token": "Ġ-",
+      "target_token_id": 532,
+      "predictions": [
+        {
+          "token": "Ġ-",
+          "token_id": 532,
+          "logprob": -0.542,
+          "prob": 0.5815
+        },
+        {
+          "token": "-",
+          "token_id": 12,
+          "logprob": -0.917,
+          "prob": 0.3997
+        },
+        {
+          "token": ")",
+          "token_id": 8,
+          "logprob": -5.1914,
+          "prob": 0.0056
+        },
+        {
+          "token": "Ġ/",
+          "token_id": 1220,
+          "logprob": -5.7773,
+          "prob": 0.0031
+        },
+        {
+          "token": "/",
+          "token_id": 14,
+          "logprob": -5.9648,
+          "prob": 0.0026
+        },
+        {
+          "token": "Ġ–",
+          "token_id": 784,
+          "logprob": -6.168,
+          "prob": 0.0021
+        },
+        {
+          "token": "+",
+          "token_id": 10,
+          "logprob": -6.793,
+          "prob": 0.0011
+        },
+        {
+          "token": "Ġ+",
+          "token_id": 1343,
+          "logprob": -6.832,
+          "prob": 0.0011
+        },
+        {
+          "token": "--",
+          "token_id": 438,
+          "logprob": -7.6758,
+          "prob": 0.0005
+        },
+        {
+          "token": "–",
+          "token_id": 1906,
+          "logprob": -8.0469,
+          "prob": 0.0003
+        }
+      ],
+      "target_token_prediction": {
+        "token": "Ġ-",
+        "token_id": 532,
+        "logprob": -0.542,
+        "prob": 0.5815
+      },
+      "target_prob": 0.5815,
+      "target_logprob": -0.542,
+      "loss": 0.542
+    },
+    {
+      "step": 67,
+      "input_tokens": [
+        "def",
+        "Ġfact",
+        "orial",
+        "(",
+        "n",
+        "):",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ\"\"\"",
+        "Cal",
+        "cul",
+        "ate",
+        "Ġthe",
+        "Ġfact",
+        "orial",
+        "Ġof",
+        "Ġa",
+        "Ġnumber",
+        ".\"",
+        "\"\"",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġif",
+        "Ġn",
+        "Ġ==",
+        "Ġ0",
+        "Ġor",
+        "Ġn",
+        "Ġ==",
+        "Ġ1",
+        ":",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġreturn",
+        "Ġ1",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġelse",
+        ":",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġreturn",
+        "Ġn",
+        "Ġ*",
+        "Ġfact",
+        "orial",
+        "(",
+        "n",
+        "Ġ-"
+      ],
+      "input_token_ids": [
+        4299,
+        1109,
+        5132,
+        7,
+        77,
+        2599,
+        198,
+        220,
+        220,
+        220,
+        37227,
+        9771,
+        3129,
+        378,
+        262,
+        1109,
+        5132,
+        286,
+        257,
+        1271,
+        526,
+        15931,
+        198,
+        220,
+        220,
+        220,
+        611,
+        299,
+        6624,
+        657,
+        393,
+        299,
+        6624,
+        352,
+        25,
+        198,
+        220,
+        220,
+        220,
+        220,
+        220,
+        220,
+        220,
+        1441,
+        352,
+        198,
+        220,
+        220,
+        220,
+        2073,
+        25,
+        198,
+        220,
+        220,
+        220,
+        220,
+        220,
+        220,
+        220,
+        1441,
+        299,
+        1635,
+        1109,
+        5132,
+        7,
+        77,
+        532
+      ],
+      "target_token": "Ġ1",
+      "target_token_id": 352,
+      "predictions": [
+        {
+          "token": "Ġ1",
+          "token_id": 352,
+          "logprob": -0.0407,
+          "prob": 0.96
+        },
+        {
+          "token": "1",
+          "token_id": 16,
+          "logprob": -3.3301,
+          "prob": 0.0358
+        },
+        {
+          "token": "Ġ2",
+          "token_id": 362,
+          "logprob": -6.0859,
+          "prob": 0.0023
+        },
+        {
+          "token": "Ġfirst",
+          "token_id": 717,
+          "logprob": -8.0312,
+          "prob": 0.0003
+        },
+        {
+          "token": "Ġstart",
+          "token_id": 923,
+          "logprob": -8.1719,
+          "prob": 0.0003
+        },
+        {
+          "token": "Ġi",
+          "token_id": 1312,
+          "logprob": -8.7812,
+          "prob": 0.0002
+        },
+        {
+          "token": "Ġ(",
+          "token_id": 357,
+          "logprob": -9.6641,
+          "prob": 0.0001
+        },
+        {
+          "token": "Ġ0",
+          "token_id": 657,
+          "logprob": -9.6875,
+          "prob": 0.0001
+        },
+        {
+          "token": "2",
+          "token_id": 17,
+          "logprob": -9.7969,
+          "prob": 0.0001
+        },
+        {
+          "token": "Ġn",
+          "token_id": 299,
+          "logprob": -10.0703,
+          "prob": 0.0
+        }
+      ],
+      "target_token_prediction": {
+        "token": "Ġ1",
+        "token_id": 352,
+        "logprob": -0.0407,
+        "prob": 0.96
+      },
+      "target_prob": 0.96,
+      "target_logprob": -0.0407,
+      "loss": 0.0407
+    },
+    {
+      "step": 68,
+      "input_tokens": [
+        "def",
+        "Ġfact",
+        "orial",
+        "(",
+        "n",
+        "):",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ\"\"\"",
+        "Cal",
+        "cul",
+        "ate",
+        "Ġthe",
+        "Ġfact",
+        "orial",
+        "Ġof",
+        "Ġa",
+        "Ġnumber",
+        ".\"",
+        "\"\"",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġif",
+        "Ġn",
+        "Ġ==",
+        "Ġ0",
+        "Ġor",
+        "Ġn",
+        "Ġ==",
+        "Ġ1",
+        ":",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġreturn",
+        "Ġ1",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġelse",
+        ":",
+        "\n",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġ",
+        "Ġreturn",
+        "Ġn",
+        "Ġ*",
+        "Ġfact",
+        "orial",
+        "(",
+        "n",
+        "Ġ-",
+        "Ġ1"
+      ],
+      "input_token_ids": [
+        4299,
+        1109,
+        5132,
+        7,
+        77,
+        2599,
+        198,
+        220,
+        220,
+        220,
+        37227,
+        9771,
+        3129,
+        378,
+        262,
+        1109,
+        5132,
+        286,
+        257,
+        1271,
+        526,
+        15931,
+        198,
+        220,
+        220,
+        220,
+        611,
+        299,
+        6624,
+        657,
+        393,
+        299,
+        6624,
+        352,
+        25,
+        198,
+        220,
+        220,
+        220,
+        220,
+        220,
+        220,
+        220,
+        1441,
+        352,
+        198,
+        220,
+        220,
+        220,
+        2073,
+        25,
+        198,
+        220,
+        220,
+        220,
+        220,
+        220,
+        220,
+        220,
+        1441,
+        299,
+        1635,
+        1109,
+        5132,
+        7,
+        77,
+        532,
+        352
+      ],
+      "target_token": ")",
+      "target_token_id": 8,
+      "predictions": [
+        {
+          "token": ")",
+          "token_id": 8,
+          "logprob": -0.0359,
+          "prob": 0.9648
+        },
+        {
+          "token": "Ġ)",
+          "token_id": 1267,
+          "logprob": -3.5586,
+          "prob": 0.0285
+        },
+        {
+          "token": ");",
+          "token_id": 1776,
+          "logprob": -6.793,
+          "prob": 0.0011
+        },
+        {
+          "token": ")+",
+          "token_id": 47762,
+          "logprob": -7.2148,
+          "prob": 0.0007
+        },
+        {
+          "token": ").",
+          "token_id": 737,
+          "logprob": -7.2617,
+          "prob": 0.0007
+        },
+        {
+          "token": ")/",
+          "token_id": 20679,
+          "logprob": -7.4961,
+          "prob": 0.0006
+        },
+        {
+          "token": "Ġ+",
+          "token_id": 1343,
+          "logprob": -7.6211,
+          "prob": 0.0005
+        },
+        {
+          "token": "Ġ-",
+          "token_id": 532,
+          "logprob": -7.6602,
+          "prob": 0.0005
+        },
+        {
+          "token": ",",
+          "token_id": 11,
+          "logprob": -7.668,
+          "prob": 0.0005
+        },
+        {
+          "token": "Ġor",
+          "token_id": 393,
+          "logprob": -7.9336,
+          "prob": 0.0004
+        }
+      ],
+      "target_token_prediction": {
+        "token": ")",
+        "token_id": 8,
+        "logprob": -0.0359,
+        "prob": 0.9648
+      },
+      "target_prob": 0.9648,
+      "target_logprob": -0.0359,
+      "loss": 0.0359
+    }
+  ]
+}
