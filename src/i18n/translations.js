@@ -40,7 +40,7 @@ const translations = {
     tooltip_projection: 'Projecting token representation to probabilities',
     tooltip_transformer_shadow: 'Previous Transformer block',
     // Home page
-    home_tagline: 'Interactive visualization of language models',
+    home_tagline: 'Understand the mechanics of LLMs',
     // Home page sections
     home_training_title: 'Training',
     home_generation_title: 'Text Generation',
@@ -94,7 +94,7 @@ const translations = {
       <p><strong>Contact:</strong> <a href="mailto:kasner@ufal.mff.cuni.cz">kasner@ufal.mff.cuni.cz</a></p>
     `,
     about_credits:
-      'Created by <a href="https://kasnerz.github.io" target="_blank" rel="noopener noreferrer">Zdeněk Kasner</a> (<a href="https://ufal.mff.cuni.cz" target="_blank" rel="noopener noreferrer">UFAL MFF UK</a>) with substantial help from LLMs.',
+      'Created by <a href="https://kasnerz.github.io" target="_blank">Zdeněk Kasner</a> with substantial help from LLMs.',
     // Initial hint
     hint_press_play: 'Press the Play button to start animation',
     hint_keyboard_shortcuts: 'Keyboard shortcuts',
@@ -163,7 +163,7 @@ const translations = {
     tooltip_projection: 'Projekce reprezentace tokenu na pravděpodobnosti',
     tooltip_transformer_shadow: 'Předchozí Transformer blok',
     // Home page
-    home_tagline: 'Interaktivní vizualizace velkých jazykových modelů',
+    home_tagline: 'Pochop, jak fungují velké jazykové modely',
     // Home page sections
     home_training_title: 'Trénování',
     home_generation_title: 'Generování textu',
@@ -201,7 +201,6 @@ const translations = {
     // About modal
     about: 'O aplikaci',
     about_title: 'O aplikaci',
-    about_tagline: 'Interaktivní vizualizace velkých jazykových modelů',
     // Single HTML/Markdown content for the About modal (editable)
     about_content: `
       <p>Tato vzdělávací aplikace obsahuje kolekci animací, které ukazují, jak fungují velké jazykové modely (LLMs).</p><br>
@@ -209,7 +208,7 @@ const translations = {
       <p><strong>Kontakt:</strong> <a href="mailto:kasner@ufal.mff.cuni.cz">kasner@ufal.mff.cuni.cz</a></p>
     `,
     about_credits:
-      'Vytvořil <a href="https://kasnerz.github.io" target="_blank" rel="noopener noreferrer">Zdeněk Kasner</a> (<a href="https://ufal.mff.cuni.cz" target="_blank" rel="noopener noreferrer">ÚFAL MFF UK</a>) s vydatnou pomocí velkých jazykových modelů.',
+      'Vytvořil <a href="https://kasnerz.github.io">Zdeněk Kasner</a> s vydatnou pomocí velkých jazykových modelů.',
     // Initial hint
     hint_press_play: 'Stiskněte tlačítko Přehrát pro začátek animace',
     hint_keyboard_shortcuts: 'Klávesové zkratky',

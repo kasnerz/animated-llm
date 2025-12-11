@@ -142,10 +142,11 @@ mkdir -p "${OUTPUT_DIR}/training"
 
 # Define all languages
 declare -A LANGUAGES=(
-    ["en"]="prompts/training/training_en.jsonl"
-    ["cs"]="prompts/training/training_cs.jsonl"
-    ["fr"]="prompts/training/training_fr.jsonl"
-    ["zh"]="prompts/training/training_zh.jsonl"
+    # ["en"]="prompts/training/training_en.jsonl"
+    # ["cs"]="prompts/training/training_cs.jsonl"
+    # ["fr"]="prompts/training/training_fr.jsonl"
+    ["uk"]="prompts/training/training_uk.jsonl"
+    # ["zh"]="prompts/training/training_zh.jsonl"
 )
 
 # Check if server is running
@@ -183,6 +184,7 @@ for model_spec in "${MODELS[@]}"; do
                 en) lang_name="English" ;;
                 cs) lang_name="Czech" ;;
                 fr) lang_name="French" ;;
+                uk) lang_name="Ukrainian" ;;
                 zh) lang_name="Chinese" ;;
                 *) lang_name="Unknown" ;;
             esac

@@ -287,7 +287,7 @@ export const STROKE = {
  */
 export const FONTS = {
   MONO: "'Consolas', 'Courier New', monospace",
-  FAMILY_UI: "'Roboto', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI',  sans-serif",
+  FAMILY_UI: "'Fira Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
   SIZE_SMALL: '8px',
   SIZE_NORMAL: '12px',
   SIZE_MEDIUM: '14px',

@@ -8,10 +8,11 @@ import LanguageSelector from '../components/LanguageSelector';
 import Icon from '@mdi/react';
 import { mdiInformationOutline } from '@mdi/js';
 import githubMark from '../assets/github-mark.png';
-import pretrainingSimpleIcon from '../assets/views/pretraining-simple.png';
-import pretrainingModelIcon from '../assets/views/pretraining-model.png';
-import decodingSimpleIcon from '../assets/views/decoding-simple.png';
-import decodingModelIcon from '../assets/views/decoding-model.png';
+import pretrainingSimplePreview from '../assets/previews/pretraining-simple.png';
+import pretrainingModelPreview from '../assets/previews/pretraining-model.png';
+import generationSimplePreview from '../assets/previews/generation-simple.png';
+import generationModelPreview from '../assets/previews/generation-model.png';
+import AnimatedWave from '../components/lightswind/AnimatedWave';
 import '../styles/home-page.css';
 
 /**
@@ -32,14 +33,14 @@ function HomePage() {
           titleKey: 'home_generation_simple_title',
           descriptionKey: 'home_generation_simple_desc',
           path: '/generation-simple',
-          icon: decodingSimpleIcon,
+          preview: generationSimplePreview,
         },
         {
           id: 'generation-model',
           titleKey: 'home_generation_model_title',
           descriptionKey: 'home_generation_model_desc',
           path: '/generation-model',
-          icon: decodingModelIcon,
+          preview: generationModelPreview,
         },
       ],
     },
@@ -52,21 +53,36 @@ function HomePage() {
           titleKey: 'home_pretraining_simple_title',
           descriptionKey: 'home_pretraining_simple_desc',
           path: '/pretraining-simple',
-          icon: pretrainingSimpleIcon,
+          preview: pretrainingSimplePreview,
         },
         {
           id: 'pretraining-model',
           titleKey: 'home_pretraining_model_title',
           descriptionKey: 'home_pretraining_model_desc',
           path: '/pretraining-model',
-          icon: pretrainingModelIcon,
+          preview: pretrainingModelPreview,
         },
       ],
     },
   ];
 
+  const isDark = state.theme === 'dark';
+
   return (
     <div className="home-page">
+      <div className="home-background-wave-container">
+        <AnimatedWave
+          waveColor={isDark ? '#4a8a70' : '#92C4A7'}
+          backgroundColor="transparent"
+          opacity={isDark ? 0.2 : 0.3}
+          magnitude={100}
+          waveOffsetY={250}
+          waveRotation={50}
+          quality="high"
+          speed={0.01}
+        />
+      </div>
+
       {/* About Modal */}
       <AboutModal isOpen={isAboutOpen} onClose={() => setIsAboutOpen(false)} />
 
@@ -120,12 +136,17 @@ function HomePage() {
               <div className="section-items">
                 {section.items.map((item) => (
                   <Link key={item.id} to={item.path} className="section-item">
-                    <div className="item-icon-wrapper">
-                      <img src={item.icon} alt="" className="item-icon-img" />
+                    <div className="item-main-content">
+                      <div className="item-preview-wrapper">
+                        <img src={item.preview} alt="" className="item-preview-img" />
+                      </div>
+                      <div className="item-content">
+                        <h3 className="item-title">{t(item.titleKey)}</h3>
+                        <p className="item-description">{t(item.descriptionKey)}</p>
+                      </div>
                     </div>
-                    <div className="item-content">
-                      <h3 className="item-title">{t(item.titleKey)}</h3>
-                      <p className="item-description">{t(item.descriptionKey)}</p>
+                    <div className="item-footer">
+                      <span className="item-action">Start →</span>
                     </div>
                   </Link>
                 ))}
@@ -134,6 +155,22 @@ function HomePage() {
           ))}
         </div>
       </div>
+
+      {/* Footer */}
+      <footer className="home-footer">
+        {' '}
+        ©
+        <a href="https://kasnerz.github.io" target="_blank" rel="noopener noreferrer">
+          {' '}
+          Zdeněk Kasner
+        </a>
+        {' | '}
+        <a href="https://ufal.mff.cuni.cz" target="_blank" rel="noopener noreferrer">
+          ÚFAL MFF UK
+        </a>
+        {' | '}
+        MIT License
+      </footer>
     </div>
   );
 }

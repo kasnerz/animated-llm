@@ -5,6 +5,7 @@
 
 :root {
   /* Fonts */
+  --font-sans: 'Fira Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --font-mono: 'Consolas', 'Monaco', 'Menlo', 'Courier New', monospace;
 
   /* Light theme colors */
@@ -91,6 +92,7 @@ body[data-theme='light'] {
   --text-primary: var(--light-text-primary);
   --text-secondary: var(--light-text-secondary);
   --text-tertiary: var(--light-text-tertiary);
+  --text-muted: var(--light-text-tertiary);
   --border-color: var(--light-border);
   --shadow-color: var(--light-shadow);
   --icon-color: var(--light-icon-color);
@@ -117,6 +119,7 @@ body[data-theme='dark'] {
   --text-primary: var(--dark-text-primary);
   --text-secondary: var(--dark-text-secondary);
   --text-tertiary: var(--dark-text-tertiary);
+  --text-muted: var(--dark-text-tertiary);
   --border-color: var(--dark-border);
   --shadow-color: var(--dark-shadow);
   --icon-color: var(--dark-icon-color);

@@ -117,10 +117,11 @@ mkdir -p "${OUTPUT_DIR}/inference"
 
 # Define all languages
 declare -A LANGUAGES=(
-    ["en"]="prompts/inference/prompts_en.txt"
-    ["cs"]="prompts/inference/prompts_cs.txt"
-    ["fr"]="prompts/inference/prompts_fr.txt"
-    ["zh"]="prompts/inference/prompts_zh.txt"
+    # ["en"]="prompts/inference/prompts_en.txt"
+    # ["cs"]="prompts/inference/prompts_cs.txt"
+    # ["fr"]="prompts/inference/prompts_fr.txt"
+    # ["zh"]="prompts/inference/prompts_zh.txt"
+    ["uk"]="prompts/inference/prompts_uk.txt"
 )
 
 # Check if server is running
@@ -159,6 +160,7 @@ for model_id in "${MODELS[@]}"; do
                 cs) lang_name="Czech" ;;
                 fr) lang_name="French" ;;
                 zh) lang_name="Chinese" ;;
+                uk) lang_name="Ukrainian" ;;
                 *) lang_name="Unknown" ;;
             esac
             echo ""
