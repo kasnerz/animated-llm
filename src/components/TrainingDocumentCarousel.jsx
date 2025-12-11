@@ -3,11 +3,21 @@ import { useI18n } from '../i18n/I18nProvider';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { processTokenForText } from '../utils/tokenProcessing';
 import { MODEL_REGISTRY, getTemperatureEmoji } from '../config/modelConfig';
+import { ANIMATION_SPEEDS } from '../visualization/core/constants';
 import translations from '../i18n/translations';
 import { Tooltip } from 'react-tooltip';
 import '../styles/training-carousel.css';
 import Icon from '@mdi/react';
-import { mdiPlay, mdiPause, mdiChevronLeft, mdiChevronRight } from '@mdi/js';
+import {
+  mdiPlay,
+  mdiPause,
+  mdiChevronLeft,
+  mdiChevronRight,
+  mdiTune,
+  mdiSpeedometerSlow,
+  mdiSpeedometerMedium,
+  mdiSpeedometer,
+} from '@mdi/js';
 
 // Import document source icons
 import wikipediaIcon from '../assets/docs/wikipedia.png';
@@ -42,6 +52,24 @@ const getSourceIcon = (source) => {
 };
 
 /**
+ * Get icon path for speed icon identifier
+ * @param {string} iconId - Icon identifier
+ * @returns {string} MDI icon path
+ */
+function getSpeedIconPath(iconId) {
+  switch (iconId) {
+    case 'mdiSpeedometerSlow':
+      return mdiSpeedometerSlow;
+    case 'mdiSpeedometerMedium':
+      return mdiSpeedometerMedium;
+    case 'mdiSpeedometer':
+      return mdiSpeedometer;
+    default:
+      return mdiSpeedometerMedium;
+  }
+}
+
+/**
  * TrainingDocumentCarousel Component
  *
  * Displays a carousel of document excerpts with left/center/right positioning
@@ -56,6 +84,9 @@ function TrainingDocumentCarousel({ showPlayButton = true }) {
   const centerWrapRef = useRef(null);
   const rightWrapRef = useRef(null);
 
+  const [isSettingsOpen, setIsSettingsOpen] = useState(false);
+  const settingsPopoverRef = useRef(null);
+
   // internal sliding state to animate between documents smoothly
   const [isSliding, setIsSliding] = useState(false);
 
@@ -65,6 +96,18 @@ function TrainingDocumentCarousel({ showPlayButton = true }) {
     const fallbackLang = translations.en;
     return currentLang?.training?.[key] || fallbackLang?.training?.[key] || key;
   };
+
+  // Close settings popup on outside click
+  useEffect(() => {
+    if (!isSettingsOpen) return;
+    const handleClick = (event) => {
+      if (settingsPopoverRef.current && !settingsPopoverRef.current.contains(event.target)) {
+        setIsSettingsOpen(false);
+      }
+    };
+    window.addEventListener('click', handleClick);
+    return () => window.removeEventListener('click', handleClick);
+  }, [isSettingsOpen]);
 
   const handlePlayPause = () => {
     if (!state.currentExample) return;
@@ -275,6 +318,53 @@ function TrainingDocumentCarousel({ showPlayButton = true }) {
           {/* Play button - only for active document and when enabled */}
           {isActive && showPlayButton && (
             <div className="document-play-button">
+              {/* Settings button */}
+              <button
+                className="btn-settings-document"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setIsSettingsOpen(!isSettingsOpen);
+                }}
+                aria-label="Settings"
+              >
+                <Icon path={mdiTune} size={0.8} />
+              </button>
+
+              {/* Settings Popup */}
+              {isSettingsOpen && (
+                <div
+                  className="settings-popover"
+                  ref={settingsPopoverRef}
+                  onClick={(e) => e.stopPropagation()}
+                  style={{ right: '0', top: 'calc(100% + 10px)', minWidth: '200px' }}
+                >
+                  <div className="settings-section">
+                    <div className="settings-label">
+                      {t('animation_speed') || 'Animation Speed'}
+                    </div>
+                    <div className="speed-options">
+                      {ANIMATION_SPEEDS.map((speed) => (
+                        <button
+                          key={speed.id}
+                          className={`speed-option ${state.animationSpeed === speed.value ? 'selected' : ''}`}
+                          onClick={() => {
+                            actions.setAnimationSpeed(speed.value);
+                            setIsSettingsOpen(false);
+                          }}
+                          aria-label={`Speed ${speed.label}`}
+                          title={`Speed ${speed.label}`}
+                        >
+                          <span className="speed-icon" aria-hidden>
+                            <Icon path={getSpeedIconPath(speed.icon)} size={0.7} color="#666" />
+                          </span>
+                          <span className="speed-label">{t(speed.label) || speed.label}</span>
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              )}
+
               <button
                 className="btn-play-document"
                 onClick={handlePlayPause}

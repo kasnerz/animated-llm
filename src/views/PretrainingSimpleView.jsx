@@ -1,8 +1,16 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import Icon from '@mdi/react';
-import { mdiChevronDown, mdiPause, mdiPlay } from '@mdi/js';
+import {
+  mdiChevronDown,
+  mdiPause,
+  mdiPlay,
+  mdiSpeedometerSlow,
+  mdiSpeedometerMedium,
+  mdiSpeedometer,
+} from '@mdi/js';
 import { useApp } from '../contexts/AppContext';
 import { useI18n } from '../i18n/I18nProvider';
+import { ANIMATION_SPEEDS } from '../visualization/core/constants';
 import InitialHint from '../components/InitialHint';
 import TrainingDocumentCarousel from '../components/TrainingDocumentCarousel';
 import { MODEL_REGISTRY, getModelInfo } from '../config/modelConfig';
@@ -13,11 +21,31 @@ import '../styles/pretraining-simple.css';
 
 const MAX_DISTRIBUTION_ROWS = 10;
 
+/**
+ * Get icon path for speed icon identifier
+ * @param {string} iconId - Icon identifier
+ * @returns {string} MDI icon path
+ */
+function getSpeedIconPath(iconId) {
+  switch (iconId) {
+    case 'mdiSpeedometerSlow':
+      return mdiSpeedometerSlow;
+    case 'mdiSpeedometerMedium':
+      return mdiSpeedometerMedium;
+    case 'mdiSpeedometer':
+      return mdiSpeedometer;
+    default:
+      return mdiSpeedometerMedium;
+  }
+}
+
 function PretrainingSimpleView() {
   const { state, actions } = useApp();
   const { t } = useI18n();
   const [isModelDropdownOpen, setIsModelDropdownOpen] = useState(false);
+  const [isSpeedDropdownOpen, setIsSpeedDropdownOpen] = useState(false);
   const modelDropdownRef = useRef(null);
+  const speedDropdownRef = useRef(null);
 
   // Use state to track previous values for comparison
   const [prevState, setPrevState] = useState({
@@ -62,6 +90,9 @@ function PretrainingSimpleView() {
   const targetTokenLabel =
     currentTrainStep?.target_token || currentTrainStep?.target_token_prediction?.token;
 
+  const currentSpeedEntry =
+    ANIMATION_SPEEDS.find((s) => s.value === state.animationSpeed) || ANIMATION_SPEEDS[1];
+
   // Close dropdown on outside click
   useEffect(() => {
     if (!isModelDropdownOpen) return;
@@ -73,6 +104,18 @@ function PretrainingSimpleView() {
     window.addEventListener('pointerdown', handleClick);
     return () => window.removeEventListener('pointerdown', handleClick);
   }, [isModelDropdownOpen]);
+
+  // Close speed dropdown on outside click
+  useEffect(() => {
+    if (!isSpeedDropdownOpen) return;
+    const handleClick = (event) => {
+      if (speedDropdownRef.current && !speedDropdownRef.current.contains(event.target)) {
+        setIsSpeedDropdownOpen(false);
+      }
+    };
+    window.addEventListener('pointerdown', handleClick);
+    return () => window.removeEventListener('pointerdown', handleClick);
+  }, [isSpeedDropdownOpen]);
 
   const handlePlayPause = useCallback(() => {
     if (!state.currentExample) return;
@@ -344,6 +387,41 @@ function PretrainingSimpleView() {
               </div>
 
               <div className="transformer-right">
+                {/* Speed selector */}
+                <div
+                  className="speed-selector-wrapper"
+                  ref={speedDropdownRef}
+                  style={{ position: 'relative', marginRight: '8px' }}
+                >
+                  <button
+                    className="speed-selector-btn"
+                    onClick={() => setIsSpeedDropdownOpen(!isSpeedDropdownOpen)}
+                    aria-label="Select speed"
+                    data-tooltip-id="speed-tooltip"
+                    data-tooltip-content={t('tooltip_speed') || 'Animation Speed'}
+                  >
+                    <Icon path={getSpeedIconPath(currentSpeedEntry.icon)} size={0.8} color="#666" />
+                  </button>
+
+                  {isSpeedDropdownOpen && (
+                    <div className="speed-dropdown-menu">
+                      {ANIMATION_SPEEDS.map((speed) => (
+                        <button
+                          key={speed.id}
+                          className={`speed-dropdown-item ${state.animationSpeed === speed.value ? 'active' : ''}`}
+                          onClick={() => {
+                            actions.setAnimationSpeed(speed.value);
+                            setIsSpeedDropdownOpen(false);
+                          }}
+                        >
+                          <Icon path={getSpeedIconPath(speed.icon)} size={0.7} color="#666" />
+                          <span>{t(speed.label) || speed.label}</span>
+                        </button>
+                      ))}
+                    </div>
+                  )}
+                </div>
+
                 <button
                   onClick={handlePlayPause}
                   className="btn-play-transformer"

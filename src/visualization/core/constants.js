@@ -48,27 +48,19 @@ export const LAYOUT = {
   MAX_OUTPUT_TOKENS: 7, // Show at most this many tokens (+ ellipsis if more exist)
   MAX_OUTPUT_TOKENS_MOBILE: 3, // Limit to 3 tokens on mobile for tighter layout
   OUTPUT_MARGIN: 20, // Margin for output distribution
-  OUTPUT_BAR_SPACING: 4, // Spacing between distribution bars
-  OUTPUT_MAX_BAR_WIDTH: 80, // Maximum width of distribution bars
-  OUTPUT_MAX_HEIGHT: 200, // Maximum height of distribution visualization
-  // Content width calculations
-  CONTENT_PADDING: 0, // Padding added to estimated content width
-  EXPANDED_EXTRA_PADDING: 40, // Extra padding when tokens are expanded (to ensure scrollbar appears)
-  // Sizing and thresholds
-  MIN_VISUALIZATION_WIDTH: 0,
-  MIN_SCROLL_AREA_WIDTH: 500,
-  DEFAULT_CONTAINER_WIDTH: 800,
-  MIN_LABELS_WIDTH: 340,
-  MAX_LABELS_WIDTH: 360,
-  MAX_LABELS_WIDTH_RATIO: 0.5, // Max labels width as ratio of total width
-  // Collapse button
-  COLLAPSE_BUTTON_SIZE: 32, // Full size of collapse button (buttonHalf = 16)
-  COLLAPSE_BUTTON_EDGE_MARGIN: 4, // Minimum margin from edges
 };
 
 /**
- * Training Animation Steps
- * Linear sequence of animation steps for Training.
+ * Animation speeds configuration
+ */
+export const ANIMATION_SPEEDS = [
+  { id: 'slow', value: 30, label: 'slow', icon: 'mdiSpeedometerSlow' },
+  { id: 'medium', value: 15, label: 'medium', icon: 'mdiSpeedometerMedium' },
+  { id: 'fast', value: 5, label: 'fast', icon: 'mdiSpeedometer' },
+];
+
+/**
+ * Training steps
  */
 export const TRAINING_STEPS = {
   TOKEN: 0,

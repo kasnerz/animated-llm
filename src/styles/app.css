@@ -841,6 +841,37 @@ body {
   font-size: 0.9rem;
 }
 
+.speed-options {
+  display: flex;
+  gap: 6px;
+}
+
+.speed-option {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 8px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-secondary);
+  cursor: pointer;
+}
+
+.speed-option.selected {
+  outline: 2px solid var(--accent-primary);
+  background: rgba(78, 205, 196, 0.08);
+}
+
+.speed-icon {
+  font-size: 18px;
+  line-height: 1;
+}
+
+.speed-label {
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+}
+
 .settings-toggle {
   padding: 4px 0;
 }

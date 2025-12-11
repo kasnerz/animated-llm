@@ -21,6 +21,7 @@ const AnimatedWave = ({
   const simplex = useRef(createNoise2D()).current;
   const phaseRef = useRef(0);
   const animationFrameRef = useRef();
+  const pointsBufferRef = useRef(null);
 
   // Use magnitude if provided, otherwise fallback to amplitude
   const effectiveAmplitude = magnitude !== undefined ? magnitude : amplitude;
@@ -30,7 +31,7 @@ const AnimatedWave = ({
       case 'low':
         return { width: 60, height: 30 };
       case 'high':
-        return { width: 150, height: 75 };
+        return { width: 180, height: 75 };
       default:
         return { width: 100, height: 50 };
     }
@@ -48,11 +49,9 @@ const AnimatedWave = ({
     const height = container.clientHeight;
 
     // Handle high DPI displays
-    const dpr = window.devicePixelRatio || 1;
-    // Only resize if dimensions changed to avoid clearing canvas unnecessarily if we were not clearing it manually
-    // But we clear it manually anyway.
-    // However, setting width/height clears the canvas context state (like scale), so we must be careful.
-    // To optimize, we check if resize is needed.
+    // Optimization: Cap dpr at 2 to avoid performance issues on very high density screens
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+
     const displayWidth = Math.floor(width * dpr);
     const displayHeight = Math.floor(height * dpr);
 
@@ -75,75 +74,86 @@ const AnimatedWave = ({
     const planeWidth = 4000;
     const planeHeight = 2000;
 
-    // 3D Projection Helper
-    // Simple perspective projection
-    // Camera is at (0,0,0) looking down -Z
-    const project = (x, y, z) => {
-      // 1. Apply Rotation (around X axis)
-      const rad = (waveRotation * Math.PI) / 180;
-      const cos = Math.cos(rad);
-      const sin = Math.sin(rad);
+    // Optimization: Pre-calculate constants outside the loop
+    const rad = (waveRotation * Math.PI) / 180;
+    const cos = Math.cos(rad);
+    const sin = Math.sin(rad);
 
-      const yRot = y * cos - z * sin;
-      const zRot = y * sin + z * cos;
+    const fovRad = (fov * Math.PI) / 180;
+    const focalLength = height / 2 / Math.tan(fovRad / 2);
+    const halfWidth = width / 2;
+    const halfHeight = height / 2;
 
-      // 2. Apply Translation
-      const xTrans = x;
-      const yTrans = yRot + waveOffsetY;
-      const zTrans = zRot + cameraDistance;
+    // Optimization: Use Float32Array for points to reduce GC pressure
+    // Storing x, y for each point. Size: (segW + 1) * (segH + 1) * 2
+    const numPointsX = segW + 1;
+    const numPointsY = segH + 1;
+    const requiredSize = numPointsX * numPointsY * 2;
 
-      // 3. Perspective Projection
-      // fov to focal length: f = (height/2) / tan(fov/2)
-      // But we can just use a constant scale factor for simplicity or derive it
-      const fovRad = (fov * Math.PI) / 180;
-      const focalLength = height / 2 / Math.tan(fovRad / 2);
+    if (!pointsBufferRef.current || pointsBufferRef.current.length !== requiredSize) {
+      pointsBufferRef.current = new Float32Array(requiredSize);
+    }
+    const projectedPoints = pointsBufferRef.current;
+    // Initialize with NaN to indicate invalid/behind camera points
+    projectedPoints.fill(NaN);
 
-      if (zTrans >= 0) return null; // Behind camera
-
-      const scale = focalLength / Math.abs(zTrans);
-      const xProj = xTrans * scale + width / 2;
-      const yProj = -yTrans * scale + height / 2; // Invert Y for screen coords
-
-      return { x: xProj, y: yProj };
-    };
-
-    // Generate Grid Points
-    const points = [];
     const phase = phaseRef.current;
 
-    for (let y = 0; y <= segH; y++) {
-      const row = [];
-      for (let x = 0; x <= segW; x++) {
+    // Generate and Project Points
+    for (let y = 0; y < numPointsY; y++) {
+      const v = y / segH;
+      const py = (v - 0.5) * planeHeight;
+      const noiseY = py / smoothness - phase;
+
+      // Optimization: Calculate row-constant parts of rotation if possible
+      // But z depends on x, so we can't fully pre-calc rotation
+
+      for (let x = 0; x < numPointsX; x++) {
         const u = x / segW;
-        const v = y / segH;
-
         const px = (u - 0.5) * planeWidth;
-        const py = (v - 0.5) * planeHeight;
 
-        // Apply noise to Z with phase for animation
-        // Moving along Y axis (v) creates a "flowing" effect
         const noiseX = px / smoothness;
-        const noiseY = py / smoothness - phase;
         const pz = simplex(noiseX, noiseY) * effectiveAmplitude;
 
-        row.push({ x: px, y: py, z: pz });
+        // 3D Transformation & Projection inline
+        // 1. Rotation (around X axis)
+        const yRot = py * cos - pz * sin;
+        const zRot = py * sin + pz * cos;
+
+        // 2. Translation
+        const xTrans = px;
+        const yTrans = yRot + waveOffsetY;
+        const zTrans = zRot + cameraDistance;
+
+        // 3. Projection
+        if (zTrans < 0) {
+          // Only draw points in front of camera
+          const scale = focalLength / Math.abs(zTrans);
+          const xProj = xTrans * scale + halfWidth;
+          const yProj = -yTrans * scale + halfHeight;
+
+          const index = (y * numPointsX + x) * 2;
+          projectedPoints[index] = xProj;
+          projectedPoints[index + 1] = yProj;
+        }
       }
-      points.push(row);
     }
 
     // Draw Horizontal Lines
     ctx.beginPath();
-    for (let y = 0; y <= segH; y++) {
+    for (let y = 0; y < numPointsY; y++) {
       let first = true;
-      for (let x = 0; x <= segW; x++) {
-        const p = points[y][x];
-        const proj = project(p.x, p.y, p.z);
-        if (proj) {
+      for (let x = 0; x < numPointsX; x++) {
+        const index = (y * numPointsX + x) * 2;
+        const px = projectedPoints[index];
+        const py = projectedPoints[index + 1];
+
+        if (!isNaN(px)) {
           if (first) {
-            ctx.moveTo(proj.x, proj.y);
+            ctx.moveTo(px, py);
             first = false;
           } else {
-            ctx.lineTo(proj.x, proj.y);
+            ctx.lineTo(px, py);
           }
         } else {
           first = true;
@@ -154,17 +164,19 @@ const AnimatedWave = ({
 
     // Draw Vertical Lines
     ctx.beginPath();
-    for (let x = 0; x <= segW; x++) {
+    for (let x = 0; x < numPointsX; x++) {
       let first = true;
-      for (let y = 0; y <= segH; y++) {
-        const p = points[y][x];
-        const proj = project(p.x, p.y, p.z);
-        if (proj) {
+      for (let y = 0; y < numPointsY; y++) {
+        const index = (y * numPointsX + x) * 2;
+        const px = projectedPoints[index];
+        const py = projectedPoints[index + 1];
+
+        if (!isNaN(px)) {
           if (first) {
-            ctx.moveTo(proj.x, proj.y);
+            ctx.moveTo(px, py);
             first = false;
           } else {
-            ctx.lineTo(proj.x, proj.y);
+            ctx.lineTo(px, py);
           }
         } else {
           first = true;

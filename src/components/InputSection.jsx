@@ -4,6 +4,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { getTokenColor } from '../visualization/core/colors';
 import { processTokenForText, isSpecialTokenContextual } from '../utils/tokenProcessing';
 import { MODEL_REGISTRY, getModelInfo, getTemperatureEmoji } from '../config/modelConfig';
+import { ANIMATION_SPEEDS } from '../visualization/core/constants';
 import '../styles/main.css';
 import Icon from '@mdi/react';
 import {
@@ -15,6 +16,9 @@ import {
   mdiSnowflake,
   mdiThermometer,
   mdiFire,
+  mdiSpeedometerSlow,
+  mdiSpeedometerMedium,
+  mdiSpeedometer,
 } from '@mdi/js';
 
 /**
@@ -32,6 +36,24 @@ function getTemperatureIconPath(iconId) {
       return mdiFire;
     default:
       return mdiThermometer;
+  }
+}
+
+/**
+ * Get icon path for speed icon identifier
+ * @param {string} iconId - Icon identifier
+ * @returns {string} MDI icon path
+ */
+function getSpeedIconPath(iconId) {
+  switch (iconId) {
+    case 'mdiSpeedometerSlow':
+      return mdiSpeedometerSlow;
+    case 'mdiSpeedometerMedium':
+      return mdiSpeedometerMedium;
+    case 'mdiSpeedometer':
+      return mdiSpeedometer;
+    default:
+      return mdiSpeedometerMedium;
   }
 }
 
@@ -313,6 +335,30 @@ function InputSection({ disableTokenization = false }) {
                             <Icon path={getTemperatureIconPath(icon)} size={0.7} color="#666" />
                           </span>
                           <span className="temp-value">{value}</span>
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                  <div className="settings-section">
+                    <div className="settings-label">
+                      {t('animation_speed') || 'Animation Speed'}
+                    </div>
+                    <div className="speed-options">
+                      {ANIMATION_SPEEDS.map((speed) => (
+                        <button
+                          key={speed.id}
+                          className={`speed-option ${state.animationSpeed === speed.value ? 'selected' : ''}`}
+                          onClick={() => {
+                            actions.setAnimationSpeed(speed.value);
+                            setIsSettingsOpen(false);
+                          }}
+                          aria-label={`Speed ${speed.label}`}
+                          title={`Speed ${speed.label}`}
+                        >
+                          <span className="speed-icon" aria-hidden>
+                            <Icon path={getSpeedIconPath(speed.icon)} size={0.7} color="#666" />
+                          </span>
+                          <span className="speed-label">{t(speed.label) || speed.label}</span>
                         </button>
                       ))}
                     </div>

@@ -169,13 +169,17 @@ const translations = {
     home_generation_title: 'Generování textu',
     // Home page items
     home_pretraining_model_title: 'Jak se trénuje Transformer?',
-    home_pretraining_model_desc: 'Trénování krok za krokem.',
+    home_pretraining_model_desc:
+      'Chceš jít více do hloubky? Zde zjistíš, jak Transformer při trénování zpracovává jednotlivé tokeny a učí se z chyb.',
     home_pretraining_simple_title: 'Základy trénování',
-    home_pretraining_simple_desc: 'Zjednodušená vizualizace trénování.',
+    home_pretraining_simple_desc:
+      'Jak se trénuje jazykový model? Prohlédni si jednoduchou vizualizaci trénovacího procesu na ukázkových dokumentech.',
     home_generation_model_title: 'Jak Transformer generuje text?',
-    home_generation_model_desc: 'Generování textu krok za krokem.',
+    home_generation_model_desc:
+      'Chceš jít více do hloubky? Zde zjistíš, jak Transformer při generování textu zpracovává jednotlivé tokeny.',
     home_generation_simple_title: 'Základy generování textu',
-    home_generation_simple_desc: 'Zjednodušená vizualizace generování textu.',
+    home_generation_simple_desc:
+      'Jak jazykový model generuje text text? Prohlédni si jednoduchou vizualizaci generovacího procesu na ukázkových promptech.',
     // Category labels
     category_training: 'Trénování',
     category_text_generation: 'Generování textu',

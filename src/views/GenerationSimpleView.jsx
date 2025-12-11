@@ -3,8 +3,8 @@ import { useApp } from '../contexts/AppContext';
 import { useI18n } from '../i18n/I18nProvider';
 import { processTokenForText, isSpecialTokenContextual } from '../utils/tokenProcessing';
 import { getViridisColor } from '../utils/colorSchemes';
-import { LAYOUT } from '../visualization/core/constants';
-import { MODEL_REGISTRY, getModelInfo, getTemperatureEmoji } from '../config/modelConfig';
+import { LAYOUT, ANIMATION_SPEEDS } from '../visualization/core/constants';
+import { MODEL_REGISTRY, getTemperatureEmoji } from '../config/modelConfig';
 import Icon from '@mdi/react';
 import {
   mdiPlay,
@@ -14,6 +14,9 @@ import {
   mdiSnowflake,
   mdiThermometer,
   mdiFire,
+  mdiSpeedometerSlow,
+  mdiSpeedometerMedium,
+  mdiSpeedometer,
 } from '@mdi/js';
 import InitialHint from '../components/InitialHint';
 import { Tooltip } from 'react-tooltip';
@@ -40,6 +43,24 @@ function getTemperatureIconPath(iconId) {
 }
 
 /**
+ * Get icon path for speed icon identifier
+ * @param {string} iconId - Icon identifier
+ * @returns {string} MDI icon path
+ */
+function getSpeedIconPath(iconId) {
+  switch (iconId) {
+    case 'mdiSpeedometerSlow':
+      return mdiSpeedometerSlow;
+    case 'mdiSpeedometerMedium':
+      return mdiSpeedometerMedium;
+    case 'mdiSpeedometer':
+      return mdiSpeedometer;
+    default:
+      return mdiSpeedometerMedium;
+  }
+}
+
+/**
  * GenerationSimpleView Component
  * Simplified decoding algorithms visualization
  * Steps:
@@ -60,10 +81,12 @@ function GenerationSimpleView() {
   const [isPromptDropdownOpen, setIsPromptDropdownOpen] = useState(false);
   const [isModelDropdownOpen, setIsModelDropdownOpen] = useState(false);
   const [isTempDropdownOpen, setIsTempDropdownOpen] = useState(false);
+  const [isSpeedDropdownOpen, setIsSpeedDropdownOpen] = useState(false);
 
   // Refs for click outside detection
   const modelDropdownRef = useRef(null);
   const tempDropdownRef = useRef(null);
+  const speedDropdownRef = useRef(null);
 
   // Filter examples by selected model and temperature
   const filteredExamples = useMemo(() => {
@@ -80,6 +103,14 @@ function GenerationSimpleView() {
       return byModel && byTemp;
     });
   }, [state.examples, state.selectedModelIndex, state.selectedTemperatureEmoji]);
+
+  // Find current example index within filtered list
+  const currentIndex = filteredExamples.findIndex((ex) => ex.id === state.currentExampleId);
+
+  const handleExampleChange = (exampleId) => {
+    actions.loadExample(exampleId);
+    setIsPromptDropdownOpen(false);
+  };
 
   // Ensure current example matches filter; if not, auto-load first matching
   useEffect(() => {
@@ -118,6 +149,56 @@ function GenerationSimpleView() {
     window.addEventListener('pointerdown', handleWindowClick);
     return () => window.removeEventListener('pointerdown', handleWindowClick);
   }, [isTempDropdownOpen]);
+
+  // Close speed dropdown when clicking outside
+  useEffect(() => {
+    if (!isSpeedDropdownOpen) return;
+
+    const handleWindowClick = (event) => {
+      if (speedDropdownRef.current && !speedDropdownRef.current.contains(event.target)) {
+        setIsSpeedDropdownOpen(false);
+      }
+    };
+
+    window.addEventListener('click', handleWindowClick);
+    return () => window.removeEventListener('click', handleWindowClick);
+  }, [isSpeedDropdownOpen]);
+
+  /**
+   * Get style for a token based on whether it's generated and its probability
+   * @param {boolean} isGenerated - Whether the token is generated
+   * @param {object} genStep - Generation step data
+   * @param {number} tokenId - Token ID
+   * @returns {object} Style object
+   */
+  const getTokenStyle = (isGenerated, genStep, tokenId) => {
+    if (!isGenerated || !genStep) return {};
+
+    const candidate = genStep.output_distribution?.candidates?.find((c) => c.token_id === tokenId);
+
+    if (candidate) {
+      const bgColor = getViridisColor(candidate.prob);
+      // Viridis is dark at low values and light at high values
+      // Use white text for low probabilities (dark background)
+      const color = candidate.prob < 0.5 ? '#fff' : '#000';
+      return {
+        backgroundColor: bgColor,
+        color: color,
+      };
+    }
+    return {};
+  };
+
+  const handlePlayPause = () => {
+    if (!state.currentExample) return;
+    // If generation hasn't started yet, start and begin playing
+    if (state.currentStep === 0) {
+      actions.nextStep();
+      actions.setIsPlaying(true);
+      return;
+    }
+    actions.setIsPlaying(!state.isPlaying);
+  };
 
   // Calculate current generation step index
   // state.currentStep is 1-based index of the step being displayed/generated
@@ -218,6 +299,8 @@ function GenerationSimpleView() {
 
   const tokens = currentGen?.tokens || [];
   const tokenIds = currentGen?.token_ids || [];
+  const promptLength = state.currentExample?.generation_steps?.[0]?.tokens?.length || 0;
+  const shouldShowTokens = tokens.length > 0 && (state.currentStep > 0 || subStep > 0);
   const candidates = displayGen?.output_distribution?.candidates || [];
   const maxBars = LAYOUT.MAX_OUTPUT_TOKENS || 7;
   const shownCandidates = candidates.slice(0, maxBars);
@@ -226,68 +309,10 @@ function GenerationSimpleView() {
 
   // Get current model info for displaying in transformer box
   // If the selected model doesn't have decoding_view enabled, fall back to the first valid model
-  const currentModelEntry = MODEL_REGISTRY[state.selectedModelIndex]?.decoding_view
-    ? MODEL_REGISTRY[state.selectedModelIndex]
-    : MODEL_REGISTRY.find((entry) => entry.decoding_view);
-  const currentModelInfo = state.currentExample?.model_id
-    ? getModelInfo(state.currentExample.model_id)
-    : currentModelEntry
-      ? { name: currentModelEntry.name, logo: currentModelEntry.logo, size: currentModelEntry.size }
-      : null;
-
-  // Handler functions
-  const handleExampleChange = (exampleId) => {
-    actions.loadExample(exampleId);
-    setIsPromptDropdownOpen(false);
-  };
-
-  const handlePlayPause = () => {
-    if (!state.currentExample) return;
-    // If generation hasn't started yet, start and begin playing
-    if (state.currentStep === 0) {
-      actions.nextStep();
-      actions.setIsPlaying(true);
-      return;
-    }
-    actions.setIsPlaying(!state.isPlaying);
-  };
-
-  // Find current example index within filtered list
-  const currentIndex = filteredExamples.findIndex((ex) => ex.id === state.currentExampleId);
-
-  // Helper to determine token style based on probability
-  const getTokenStyle = (isGenerated, genStep, tokenId) => {
-    if (!isGenerated || !genStep) return {};
-
-    // Find candidate with this token_id in the generation step that produced it
-    const candidate = genStep.output_distribution?.candidates?.find((c) => c.token_id === tokenId);
-
-    if (candidate) {
-      const color = getViridisColor(candidate.prob);
-      // Determine text color for contrast
-      // Viridis stops: 0-2 are dark (white text), 3-5 are light (black text)
-      // Stops length is 6.
-      const idx = Math.floor(candidate.prob * 5);
-      const textColor = idx <= 2 ? '#fff' : '#000';
-
-      return {
-        backgroundColor: color,
-        color: textColor,
-        borderColor: color,
-      };
-    }
-    return {};
-  };
-
-  const promptLength = state.currentExample?.generation_steps?.[0]?.tokens?.length || 0;
-
-  // Determine if we should show tokenized view
-  const shouldShowTokens = state.currentStep > 0;
-
-  // Get current temperature icon for the transformer box
-  const currentTempIcon = state.currentExample
-    ? getTemperatureEmoji(state.currentExample.temperature)
-    : 'thermometer';
+  const currentModelEntry = MODEL_REGISTRY[state.selectedModelIndex];
+  const currentTempIcon = state.selectedTemperatureEmoji;
+  const currentSpeedEntry =
+    ANIMATION_SPEEDS.find((s) => s.value === state.animationSpeed) || ANIMATION_SPEEDS[1];
 
   return (
     <div className="decoding-view-container">
@@ -432,7 +457,7 @@ function GenerationSimpleView() {
               alt=""
               className="model-logo-btn"
             />
-            <span className="model-name">{currentModelInfo?.name || 'Model'}</span>
+            <span className="model-name">{currentModelEntry?.name || 'Model'}</span>
             <Icon path={mdiChevronDown} size={0.6} />
           </button>
 
@@ -464,9 +489,50 @@ function GenerationSimpleView() {
 
         {/* Temperature selector on the right */}
         <div className="transformer-right" ref={tempDropdownRef}>
+          {/* Speed selector */}
+          <div
+            className="speed-selector-wrapper"
+            ref={speedDropdownRef}
+            style={{ position: 'relative' }}
+          >
+            <button
+              className="speed-selector-btn"
+              onClick={() => {
+                setIsTempDropdownOpen(false);
+                setIsSpeedDropdownOpen(!isSpeedDropdownOpen);
+              }}
+              aria-label="Select speed"
+              data-tooltip-id="speed-tooltip"
+              data-tooltip-content={t('tooltip_speed') || 'Animation Speed'}
+            >
+              <Icon path={getSpeedIconPath(currentSpeedEntry.icon)} size={0.8} color="#666" />
+            </button>
+
+            {isSpeedDropdownOpen && (
+              <div className="speed-dropdown-menu">
+                {ANIMATION_SPEEDS.map((speed) => (
+                  <button
+                    key={speed.id}
+                    className={`speed-dropdown-item ${state.animationSpeed === speed.value ? 'active' : ''}`}
+                    onClick={() => {
+                      actions.setAnimationSpeed(speed.value);
+                      setIsSpeedDropdownOpen(false);
+                    }}
+                  >
+                    <Icon path={getSpeedIconPath(speed.icon)} size={0.7} color="#666" />
+                    <span>{t(speed.label) || speed.label}</span>
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
+
           <button
             className="temp-selector-btn"
-            onClick={() => setIsTempDropdownOpen(!isTempDropdownOpen)}
+            onClick={() => {
+              setIsSpeedDropdownOpen(false);
+              setIsTempDropdownOpen(!isTempDropdownOpen);
+            }}
             aria-label="Select temperature"
             data-tooltip-id="temperature-tooltip"
             data-tooltip-content={t('tooltip_temperature')}

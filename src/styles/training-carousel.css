@@ -261,6 +261,34 @@
   top: 50%;
   transform: translateY(-50%);
   z-index: 5;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.carousel-document .document-play-button .btn-settings-document {
+  --btn-size: 36px;
+  width: var(--btn-size);
+  height: var(--btn-size);
+  min-width: var(--btn-size);
+  min-height: var(--btn-size);
+  border-radius: 50%;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.carousel-document .document-play-button .btn-settings-document:hover {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .carousel-document .document-play-button .btn-play-document {
