@@ -21,18 +21,42 @@
   --document-border: #d0d0d0;
   --document-text: #2c2c2c;
   --grid-color: #f3f3f3;
+  --jagged-height: 12px;
 }
 
-/* Document paper with realistic appearance */
-.document-paper {
+/* Wrapper for the document shape */
+.document-shape-wrapper {
   position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Background with grid and clip-path */
+.document-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background: var(--document-bg);
-  border: 1px solid var(--document-border);
-  border-bottom: none;
-  border-radius: 4px 4px 0 0;
-  /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08); */
-  overflow: visible;
-  padding: 0;
+  /* Clip path to create the jagged bottom edge */
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% calc(100% - var(--jagged-height)),
+    90% calc(100% - var(--jagged-height) + 9.6px),
+    80% calc(100% - var(--jagged-height) + 4.8px),
+    70% 100%,
+    60% calc(100% - var(--jagged-height)),
+    50% calc(100% - var(--jagged-height) + 9.6px),
+    40% calc(100% - var(--jagged-height) + 4.8px),
+    30% 100%,
+    20% calc(100% - var(--jagged-height) + 2.4px),
+    10% calc(100% - var(--jagged-height) + 9.6px),
+    0% calc(100% - var(--jagged-height))
+  );
+  z-index: 0;
 }
 
 /* Paper texture overlay - subtle grid pattern */
@@ -48,7 +72,44 @@
   background-size: 20px 20px;
   pointer-events: none;
   opacity: 1;
+}
+
+/* Top/Side Borders */
+.document-border-main {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: var(--jagged-height);
+  border: 1px solid var(--document-border);
+  border-bottom: none;
   border-radius: 4px 4px 0 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Bottom Border SVG */
+.document-border-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: var(--jagged-height);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.torn-edge-svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* Content Layer */
+.document-content-layer {
+  position: relative;
+  z-index: 2;
+  padding-bottom: var(--jagged-height);
 }
 
 /* Document header with embedded selector */
@@ -210,20 +271,6 @@
   opacity: 0.7;
 }
 
-/* Torn/ragged edge separated below the paper */
-.torn-edge-wrapper {
-  position: relative;
-  /* Pull up by 1px to visually snug against the paper border */
-  margin-top: -1px;
-}
-
-.torn-edge-compact {
-  display: block;
-  width: 100%;
-  height: 20px;
-  pointer-events: none;
-}
-
 /* Control buttons */
 .document-controls {
   display: flex;
@@ -272,8 +319,8 @@
   --grid-color: #333333;
 }
 
-[data-theme='dark'] .document-paper {
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+[data-theme='dark'] .document-background {
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3));
 }
 
 [data-theme='dark'] .selector-button-embedded:hover {

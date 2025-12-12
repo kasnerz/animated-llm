@@ -126,102 +126,110 @@ function DocumentExcerpt() {
     <section className="document-excerpt-section">
       {state.currentExample && (
         <div className="document-excerpt-container">
-          {/* Document paper (content only) */}
-          <div className="document-paper">
-            {/* Paper texture overlay */}
-            <div className="paper-texture"></div>
-
-            {/* Embedded selector at the top */}
-            <div className="document-header">
-              <div className="selector-wrapper-embedded">
-                <button
-                  className="selector-button-embedded"
-                  onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                  aria-label="Select document"
-                >
-                  <span className="selector-text-embedded">
-                    {`${getTrainingTranslation('document')} ${currentIndex + 1}/${filteredExamples.length}`}
-                  </span>
-                  <Icon path={mdiChevronDown} size={0.55} />
-                </button>
-
-                {isDropdownOpen && (
-                  <div className="selector-dropdown-embedded">
-                    {filteredExamples.map((example, index) => (
-                      <button
-                        key={example.id}
-                        className={`selector-item ${index === currentIndex ? 'active' : ''}`}
-                        onClick={() => handleExampleChange(example.id)}
-                      >
-                        <span className="selector-item-number">#{index + 1}</span>
-                        <span className="selector-item-text">{example.prompt}</span>
-                      </button>
-                    ))}
-                  </div>
-                )}
-              </div>
+          {/* Document shape wrapper containing background, borders and content */}
+          <div className="document-shape-wrapper">
+            {/* Background with grid and clip-path */}
+            <div className="document-background">
+              <div className="paper-texture"></div>
             </div>
 
-            {/* Document content - single line */}
-            <div className="document-content-compact">
-              <div className="document-text-compact">
-                {shouldShowInferenceTokens ? (
-                  <span className="tokenized-text">
-                    {inferenceTokens.map((token, index) => (
-                      <span
-                        key={index}
-                        className="token-with-highlight"
-                        style={{
-                          backgroundColor: `${getTokenColor(index)}20`,
-                          borderBottom: `2px solid ${getTokenColor(index)}`,
-                        }}
-                      >
-                        {processTokenForText(token)}
-                      </span>
-                    ))}
-                  </span>
-                ) : shouldShowTrainingTokens ? (
-                  <span className="tokenized-text">
-                    {allDocTokens.map((tok, idx) => {
-                      const isInput = idx < inputCount;
-                      const isTarget = idx === inputCount; // predict next token
-                      const cls = isTarget
-                        ? 'doc-token-target'
-                        : isInput
-                          ? 'doc-token-input'
-                          : 'doc-token-muted';
-                      return (
-                        <span key={idx} className={`token-with-highlight ${cls}`}>
-                          {processTokenForText(tok)}
+            {/* Top/Side Borders */}
+            <div className="document-border-main"></div>
+
+            {/* Bottom Border SVG */}
+            <div className="document-border-bottom">
+              <svg
+                className="torn-edge-svg"
+                viewBox="0 0 100 5"
+                preserveAspectRatio="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <polyline
+                  points="0,0 10,4 20,1 30,5 40,2 50,4 60,0 70,5 80,2 90,4 100,0"
+                  fill="none"
+                  stroke="var(--document-border)"
+                  strokeWidth="1.25"
+                  strokeLinecap="square"
+                  strokeLinejoin="bevel"
+                  vectorEffect="non-scaling-stroke"
+                />
+              </svg>
+            </div>
+
+            {/* Content Layer */}
+            <div className="document-content-layer">
+              {/* Embedded selector at the top */}
+              <div className="document-header">
+                <div className="selector-wrapper-embedded">
+                  <button
+                    className="selector-button-embedded"
+                    onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                    aria-label="Select document"
+                  >
+                    <span className="selector-text-embedded">
+                      {`${getTrainingTranslation('document')} ${currentIndex + 1}/${filteredExamples.length}`}
+                    </span>
+                    <Icon path={mdiChevronDown} size={0.55} />
+                  </button>
+
+                  {isDropdownOpen && (
+                    <div className="selector-dropdown-embedded">
+                      {filteredExamples.map((example, index) => (
+                        <button
+                          key={example.id}
+                          className={`selector-item ${index === currentIndex ? 'active' : ''}`}
+                          onClick={() => handleExampleChange(example.id)}
+                        >
+                          <span className="selector-item-number">#{index + 1}</span>
+                          <span className="selector-item-text">{example.prompt}</span>
+                        </button>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              </div>
+
+              {/* Document content - single line */}
+              <div className="document-content-compact">
+                <div className="document-text-compact">
+                  {shouldShowInferenceTokens ? (
+                    <span className="tokenized-text">
+                      {inferenceTokens.map((token, index) => (
+                        <span
+                          key={index}
+                          className="token-with-highlight"
+                          style={{
+                            backgroundColor: `${getTokenColor(index)}20`,
+                            borderBottom: `2px solid ${getTokenColor(index)}`,
+                          }}
+                        >
+                          {processTokenForText(token)}
                         </span>
-                      );
-                    })}
-                  </span>
-                ) : (
-                  displayText
-                )}
+                      ))}
+                    </span>
+                  ) : shouldShowTrainingTokens ? (
+                    <span className="tokenized-text">
+                      {allDocTokens.map((tok, idx) => {
+                        const isInput = idx < inputCount;
+                        const isTarget = idx === inputCount; // predict next token
+                        const cls = isTarget
+                          ? 'doc-token-target'
+                          : isInput
+                            ? 'doc-token-input'
+                            : 'doc-token-muted';
+                        return (
+                          <span key={idx} className={`token-with-highlight ${cls}`}>
+                            {processTokenForText(tok)}
+                          </span>
+                        );
+                      })}
+                    </span>
+                  ) : (
+                    displayText
+                  )}
+                </div>
               </div>
             </div>
-          </div>
-
-          {/* Torn/ragged edge rendered as a separate element directly below the document */}
-          <div className="torn-edge-wrapper" aria-hidden="true">
-            <svg
-              className="torn-edge-compact"
-              viewBox="0 0 100 8"
-              preserveAspectRatio="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <polyline
-                points="0,0 10,4 20,1 30,5 40,2 50,4 60,0 70,5 80,2 90,4 100,0"
-                fill="none"
-                stroke="var(--document-border)"
-                strokeWidth="1.25"
-                strokeLinecap="square"
-                strokeLinejoin="bevel"
-                vectorEffect="non-scaling-stroke"
-              />
-            </svg>
           </div>
 
           {/* Control buttons */}

@@ -304,89 +304,100 @@ function TrainingDocumentCarousel({ showPlayButton = true }) {
         key={example.id}
         className={`carousel-document ${position} ${isActive ? 'active' : 'inactive'}`}
       >
-        {/* Document paper */}
+        {/* Document shape wrapper containing background, borders and content */}
         <div
-          className="document-paper"
+          className="document-shape-wrapper"
           data-tooltip-id={isActive && !isMobile ? 'training-document-tooltip' : undefined}
         >
-          {/* Paper texture overlay */}
-          <div className="paper-texture"></div>
-
-          {/* Document header with source label */}
-          <div className="document-header">
-            {sourceIcon && <img src={sourceIcon} alt="" className="document-source-icon" />}
-            <div className="document-source-label">{sourceLabel}</div>
+          {/* Background with grid and clip-path */}
+          <div className="document-background">
+            <div className="paper-texture"></div>
           </div>
 
-          {/* Document content */}
-          <div className="document-content-compact">
-            <div className="document-text-compact" ref={isActive ? activeDocContentRef : undefined}>
-              {isActive && shouldShowTrainingTokens ? (
-                <span className="tokenized-text">
-                  {allDocTokens.map((tok, idx) => {
-                    const isInput = idx < inputCount;
-                    const isTarget = idx === inputCount; // predict next token
-                    const cls = isTarget
-                      ? 'doc-token-target'
-                      : isInput
-                        ? 'doc-token-input'
-                        : 'doc-token-muted';
-                    return (
-                      <span key={idx} className={`token-with-highlight ${cls}`}>
-                        {processTokenForText(tok)}
-                      </span>
-                    );
-                  })}
-                </span>
-              ) : (
-                displayText
-              )}
-            </div>
+          {/* Top/Side Borders */}
+          <div className="document-border-main"></div>
+
+          {/* Bottom Border SVG */}
+          <div className="document-border-bottom">
+            <svg
+              className="torn-edge-svg"
+              viewBox="0 0 100 5"
+              preserveAspectRatio="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <polyline
+                points="0,0 10,4 20,1 30,5 40,2 50,4 60,0 70,5 80,2 90,4 100,0"
+                fill="none"
+                stroke="var(--document-border)"
+                strokeWidth="1.25"
+                strokeLinecap="square"
+                strokeLinejoin="bevel"
+                vectorEffect="non-scaling-stroke"
+              />
+            </svg>
           </div>
 
-          {/* Play button - only for active document and when enabled */}
-          {isActive && showPlayButton && (
-            <div className="document-play-button">
-              {/* Settings button */}
-              <button
-                ref={isActive ? settingsBtnRef : null}
-                className="btn-settings-document"
-                onClick={toggleSettings}
-                aria-label={t('settings') || 'Settings'}
-              >
-                <Icon path={mdiTune} size={0.8} />
-              </button>
-
-              <button
-                className="btn-play-document"
-                onClick={handlePlayPause}
-                disabled={!state.currentExample}
-                aria-label={state.isPlaying ? t('pause') : t('play')}
-              >
-                <Icon path={state.isPlaying ? mdiPause : mdiPlay} size={1} />
-              </button>
+          {/* Content Layer */}
+          <div className="document-content-layer">
+            {/* Document header with source label */}
+            <div className="document-header">
+              {sourceIcon && <img src={sourceIcon} alt="" className="document-source-icon" />}
+              <div className="document-source-label">{sourceLabel}</div>
             </div>
-          )}
-        </div>
 
-        {/* Torn edge */}
-        <div className="torn-edge-wrapper" aria-hidden="true">
-          <svg
-            className="torn-edge-compact"
-            viewBox="0 0 100 8"
-            preserveAspectRatio="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <polyline
-              points="0,0 10,4 20,1 30,5 40,2 50,4 60,0 70,5 80,2 90,4 100,0"
-              fill="none"
-              stroke="var(--document-border)"
-              strokeWidth="1.25"
-              strokeLinecap="square"
-              strokeLinejoin="bevel"
-              vectorEffect="non-scaling-stroke"
-            />
-          </svg>
+            {/* Document content */}
+            <div className="document-content-compact">
+              <div
+                className="document-text-compact"
+                ref={isActive ? activeDocContentRef : undefined}
+              >
+                {isActive && shouldShowTrainingTokens ? (
+                  <span className="tokenized-text">
+                    {allDocTokens.map((tok, idx) => {
+                      const isInput = idx < inputCount;
+                      const isTarget = idx === inputCount; // predict next token
+                      const cls = isTarget
+                        ? 'doc-token-target'
+                        : isInput
+                          ? 'doc-token-input'
+                          : 'doc-token-muted';
+                      return (
+                        <span key={idx} className={`token-with-highlight ${cls}`}>
+                          {processTokenForText(tok)}
+                        </span>
+                      );
+                    })}
+                  </span>
+                ) : (
+                  displayText
+                )}
+              </div>
+            </div>
+
+            {/* Play button - only for active document and when enabled */}
+            {isActive && showPlayButton && (
+              <div className="document-play-button">
+                {/* Settings button */}
+                <button
+                  ref={isActive ? settingsBtnRef : null}
+                  className="btn-settings-document"
+                  onClick={toggleSettings}
+                  aria-label={t('settings') || 'Settings'}
+                >
+                  <Icon path={mdiTune} size={0.8} />
+                </button>
+
+                <button
+                  className="btn-play-document"
+                  onClick={handlePlayPause}
+                  disabled={!state.currentExample}
+                  aria-label={state.isPlaying ? t('pause') : t('play')}
+                >
+                  <Icon path={state.isPlaying ? mdiPause : mdiPlay} size={1} />
+                </button>
+              </div>
+            )}
+          </div>
         </div>
       </div>
     );
