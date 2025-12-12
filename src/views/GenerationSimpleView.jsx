@@ -74,6 +74,16 @@ function GenerationSimpleView() {
   const { state, actions } = useApp();
   const { t } = useI18n();
 
+  // Mobile detection for arrow animation
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth <= 760);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
   // Local sub-step state for decoding animation
   const [subStep, setSubStep] = useState(0);
 
@@ -392,7 +402,9 @@ function GenerationSimpleView() {
                           className={`io-token ${isSpecialTokenContextual(tok, prevTok) ? 'special' : ''}`}
                           style={style}
                           data-tooltip-id={
-                            isGenerated && probability ? 'token-probability-tooltip' : undefined
+                            isGenerated && probability && !isMobile
+                              ? 'token-probability-tooltip'
+                              : undefined
                           }
                           data-tooltip-content={
                             probability ? `${t('tooltip_probability')}: ${probability}%` : undefined
@@ -407,7 +419,7 @@ function GenerationSimpleView() {
                       <span
                         className="io-token appended"
                         style={getTokenStyle(true, currentGen, selectedTokenId)}
-                        data-tooltip-id="token-probability-tooltip"
+                        data-tooltip-id={!isMobile ? 'token-probability-tooltip' : undefined}
                         data-tooltip-content={(() => {
                           const candidate = currentGen?.output_distribution?.candidates?.find(
                             (c) => c.token_id === selectedTokenId
@@ -449,7 +461,7 @@ function GenerationSimpleView() {
             className="model-selector-btn"
             onClick={() => setIsModelDropdownOpen(!isModelDropdownOpen)}
             aria-label="Select model"
-            data-tooltip-id="model-selector-tooltip"
+            data-tooltip-id={isMobile ? undefined : 'model-selector-tooltip'}
             data-tooltip-content={t('tooltip_select_model')}
           >
             <img
@@ -504,7 +516,7 @@ function GenerationSimpleView() {
                 setIsSpeedDropdownOpen(!isSpeedDropdownOpen);
               }}
               aria-label="Select speed"
-              data-tooltip-id="speed-tooltip"
+              data-tooltip-id={isMobile ? undefined : 'speed-tooltip'}
               data-tooltip-content={t('tooltip_speed') || 'Animation Speed'}
             >
               <Icon path={getSpeedIconPath(currentSpeedEntry.icon)} size={0.8} color="#666" />
@@ -536,7 +548,7 @@ function GenerationSimpleView() {
               setIsTempDropdownOpen(!isTempDropdownOpen);
             }}
             aria-label="Select temperature"
-            data-tooltip-id="temperature-tooltip"
+            data-tooltip-id={isMobile ? undefined : 'temperature-tooltip'}
             data-tooltip-content={t('tooltip_temperature')}
           >
             <span className="temp-emoji-btn" aria-hidden>
@@ -575,7 +587,7 @@ function GenerationSimpleView() {
             onClick={() => actions.setShowSpecialTokens(!state.showSpecialTokens)}
             className={`btn-special-tokens ${state.showSpecialTokens ? 'active' : ''}`}
             aria-label={t('show_special_tokens') || 'Toggle special tokens'}
-            data-tooltip-id="special-tokens-tooltip"
+            data-tooltip-id={isMobile ? undefined : 'special-tokens-tooltip'}
             data-tooltip-content={t('tooltip_show_special_tokens')}
           >
             <Icon path={mdiCodeTags} size={1} />
@@ -586,7 +598,7 @@ function GenerationSimpleView() {
             onClick={handlePlayPause}
             className="btn-play-transformer"
             aria-label={state.isPlaying ? t('pause') : t('play')}
-            data-tooltip-id="play-pause-tooltip"
+            data-tooltip-id={isMobile ? undefined : 'play-pause-tooltip'}
             data-tooltip-content={t('tooltip_start_animation')}
           >
             <Icon path={state.isPlaying ? mdiPause : mdiPlay} size={0.85} />
@@ -634,7 +646,11 @@ function GenerationSimpleView() {
                     <div className="append-arrow-container">
                       <svg className="append-arrow-svg">
                         <path
-                          d={`M 0 -15 h 110 q 20 0 20 -20 V -${190 + idx * 30} q 0 -20 -20 -20 h -5`}
+                          d={
+                            isMobile
+                              ? `M 0 -15 h 3 V -${260 + idx * 30} h -20`
+                              : `M 0 -15 h 110 q 20 0 20 -20 V -${190 + idx * 30} q 0 -20 -20 -20 h -5`
+                          }
                           fill="none"
                           stroke="#969595"
                           strokeWidth="1.5"

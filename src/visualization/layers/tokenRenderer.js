@@ -30,7 +30,8 @@ export function renderTokensLayer(
   width,
   shouldCollapse,
   maxVisibleTokens,
-  tokensLayoutRef
+  tokensLayoutRef,
+  isMobile = false
 ) {
   const tokens = step.tokens;
   const lastActualIndex = tokens.length - 1;
@@ -127,19 +128,22 @@ export function renderTokensLayer(
       .style('stroke', 'none');
 
     // Token text
-    tokenG
+    const textNode = tokenG
       .append('text')
       .attr('text-anchor', 'middle')
       .attr('y', TOKEN.TEXT_Y_OFFSET)
       .attr('class', `token-text ${isSpecial ? 'special-token-text' : ''}`)
-      .attr('data-tooltip-id', 'viz-token-tooltip')
       .style('font-size', isSpecial ? `${baseTextSize * 0.6}px` : TOKEN.TEXT_SIZE)
       .style('font-family', FONTS.FAMILY_UI)
       .style('font-weight', isSpecial ? FONTS.WEIGHT_NORMAL : FONTS.WEIGHT_MEDIUM)
       .style('fill', isSpecial ? 'var(--viz-special-token-text, #888)' : 'var(--viz-token-text)')
       .style('cursor', 'help')
-      .style('pointer-events', 'none')
+      .style('pointer-events', 'auto')
       .text(processTokenForVisualization(token));
+
+    if (!isMobile) {
+      textNode.attr('data-tooltip-id', 'viz-token-tooltip');
+    }
 
     // Colored heavy underline (more muted for special tokens)
     tokenG
@@ -155,7 +159,7 @@ export function renderTokensLayer(
       .style('opacity', isSpecial ? 0.4 : 1);
 
     // Inline Token ID (smaller and muted for special tokens)
-    tokenG
+    const idNode = tokenG
       .append('text')
       .attr('text-anchor', 'middle')
       .attr('y', TOKEN.ID_Y_OFFSET)
@@ -163,14 +167,17 @@ export function renderTokensLayer(
         'class',
         `token-id-inline ${isNew ? 'new-token' : 'prev-token'} ${isSpecial ? 'special-token-id' : ''}`
       )
-      .attr('data-tooltip-id', 'viz-token-id-tooltip')
       .style('font-size', isSpecial ? `${baseIdSize * 0.75}px` : TOKEN.ID_TEXT_SIZE)
       .style('font-weight', FONTS.WEIGHT_BOLD)
       .style('fill', isSpecial ? 'var(--viz-special-token-text, #888)' : tokenColor)
       .style('opacity', isSpecial ? 0.6 : 1)
       .style('cursor', 'help')
-      .style('pointer-events', 'none')
+      .style('pointer-events', 'auto')
       .text(step.token_ids[actualIndex]);
+
+    if (!isMobile) {
+      idNode.attr('data-tooltip-id', 'viz-token-id-tooltip');
+    }
   });
 
   return { positions, widths, visibleIndices: tokenIndices };

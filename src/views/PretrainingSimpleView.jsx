@@ -47,6 +47,16 @@ function PretrainingSimpleView() {
   const modelDropdownRef = useRef(null);
   const speedDropdownRef = useRef(null);
 
+  // Mobile detection
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth <= 760);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
   // Use state to track previous values for comparison
   const [prevState, setPrevState] = useState({
     currentStep: state.currentStep,
@@ -298,7 +308,7 @@ function PretrainingSimpleView() {
   );
 
   const isSubsequentStep = state.currentStep > 1;
-  const showDocArrow = state.currentStep > 0 && state.currentExample;
+  const showDocArrow = !!state.currentExample;
   const showTransformer = state.currentExample; // Always show when example is loaded
   const showDistributions = (subStep >= 2 || isSubsequentStep) && distributionRows.length > 0;
   const showFeedback = subStep >= 3;
@@ -333,7 +343,7 @@ function PretrainingSimpleView() {
                   className="model-selector-btn"
                   onClick={() => setIsModelDropdownOpen(!isModelDropdownOpen)}
                   aria-label="Select model"
-                  data-tooltip-id="model-selector-tooltip"
+                  data-tooltip-id={isMobile ? undefined : 'model-selector-tooltip'}
                   data-tooltip-content={t('tooltip_select_model')}
                 >
                   {transformerLogo && (
@@ -405,7 +415,7 @@ function PretrainingSimpleView() {
                     className="speed-selector-btn"
                     onClick={() => setIsSpeedDropdownOpen(!isSpeedDropdownOpen)}
                     aria-label="Select speed"
-                    data-tooltip-id="speed-tooltip"
+                    data-tooltip-id={isMobile ? undefined : 'speed-tooltip'}
                     data-tooltip-content={t('tooltip_speed') || 'Animation Speed'}
                   >
                     <Icon path={getSpeedIconPath(currentSpeedEntry.icon)} size={0.8} color="#666" />
@@ -434,7 +444,7 @@ function PretrainingSimpleView() {
                   onClick={handlePlayPause}
                   className="btn-play-transformer"
                   aria-label={state.isPlaying ? t('pause') : t('play')}
-                  data-tooltip-id="play-pause-tooltip"
+                  data-tooltip-id={isMobile ? undefined : 'play-pause-tooltip'}
                   data-tooltip-content={t('tooltip_start_animation')}
                 >
                   <Icon path={state.isPlaying ? mdiPause : mdiPlay} size={0.85} />
@@ -512,7 +522,7 @@ function PretrainingSimpleView() {
                         >
                           <div
                             className="value-label"
-                            data-tooltip-id="difference-tooltip"
+                            data-tooltip-id={isMobile ? undefined : 'difference-tooltip'}
                             data-tooltip-content={t('tooltip_difference')}
                           >
                             {diffLabel}

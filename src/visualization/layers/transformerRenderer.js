@@ -35,7 +35,8 @@ export function renderTransformerBlockLayer(
   computedEmbeddings,
   numLayers,
   isDarkMode = null,
-  subStep = null
+  subStep = null,
+  isMobile = false
 ) {
   // Store layer info in DOM attributes
   try {
@@ -78,7 +79,8 @@ export function renderTransformerBlockLayer(
     blockTopY,
     tokensLayoutRef,
     isDarkMode,
-    subStep
+    subStep,
+    isMobile
   );
 
   // Draw feedback arrowheads on top of vectors
@@ -103,11 +105,12 @@ export function renderTransformerBlockLayer(
     insideBottomY,
     computedEmbeddings,
     isDarkMode,
-    step
+    step,
+    isMobile
   );
 
   // Render attention connections
-  renderAttentionLayer(underlays, step, tokensLayoutRef, insideTopMeta, insideBottomMeta);
+  renderAttentionLayer(underlays, step, tokensLayoutRef, insideTopMeta, insideBottomMeta, isMobile);
 
   // Render FFN layer
   const ffnY = insideBottomY + maxInsideBottomHeight + TRANSFORMER.FFN_ARROW_GAP;
@@ -122,7 +125,8 @@ export function renderTransformerBlockLayer(
     computedEmbeddings,
     isDarkMode,
     currentLayer,
-    numLayers
+    numLayers,
+    isMobile
   );
 
   const blockBottomY = ffnY + maxFfnHeight + layout.blockPadding;
@@ -131,7 +135,7 @@ export function renderTransformerBlockLayer(
   drawPositionalGuides(backUnderlays, currentLayer, tokensLayoutRef, columnsMeta);
 
   // Render shadow layers and main box
-  renderTransformerBox(group, validXs, blockTopY, blockBottomY, numLayers, columnsMeta);
+  renderTransformerBox(group, validXs, blockTopY, blockBottomY, numLayers, columnsMeta, isMobile);
 
   // Add stack size label
   const boxRightX = Math.max(...validXs) + 60;
@@ -176,7 +180,8 @@ function renderInsideTopEmbeddings(
   blockTopY,
   tokensLayoutRef,
   isDarkMode,
-  subStep
+  subStep,
+  isMobile = false
 ) {
   const insideTopGroup = group.append('g').attr('class', 'inside-top-embeddings');
   const insideTopMeta = [];
@@ -205,6 +210,7 @@ function renderInsideTopEmbeddings(
       tokenColor,
       className: isNew ? 'new-token' : 'prev-token',
       isDarkMode,
+      isMobile,
     });
 
     insideTopMeta.push(meta);
@@ -299,7 +305,8 @@ function renderInsideBottomEmbeddings(
   insideBottomY,
   computedEmbeddings,
   isDarkMode,
-  step
+  step,
+  isMobile = false
 ) {
   const insideBottomGroup = group.append('g').attr('class', 'inside-bottom-embeddings');
   const insideBottomMeta = [];
@@ -322,6 +329,7 @@ function renderInsideBottomEmbeddings(
       tokenColor,
       className: isNew ? 'new-token' : 'prev-token',
       isDarkMode,
+      isMobile,
     });
 
     // Tag last-token bottom embeddings group for backprop highlighting if needed
@@ -340,12 +348,19 @@ function renderInsideBottomEmbeddings(
 }
 
 // Helper: Render attention layer
-function renderAttentionLayer(underlays, step, tokensLayoutRef, insideTopMeta, insideBottomMeta) {
+function renderAttentionLayer(
+  underlays,
+  step,
+  tokensLayoutRef,
+  insideTopMeta,
+  insideBottomMeta,
+  isMobile = false
+) {
   const attentionGroup = underlays.append('g').attr('class', 'attention-mash');
 
   // Add tooltip to the attention group (only if positions are available)
   if (insideTopMeta?.positions?.length > 0 && insideBottomMeta?.baseY && insideTopMeta?.baseY) {
-    attentionGroup
+    const rect = attentionGroup
       .append('rect')
       .attr('class', 'attention-mash-tooltip-area')
       .attr('x', insideTopMeta.positions[0] - 50)
@@ -357,10 +372,13 @@ function renderAttentionLayer(underlays, step, tokensLayoutRef, insideTopMeta, i
           100
       )
       .attr('height', insideBottomMeta.baseY - insideTopMeta.baseY + 60)
-      .attr('data-tooltip-id', 'viz-attention-tooltip')
       .style('fill', 'transparent')
       .style('pointer-events', 'none')
       .style('cursor', 'help');
+
+    if (!isMobile) {
+      rect.attr('data-tooltip-id', 'viz-attention-tooltip');
+    }
   }
 
   const isFirstGenStep = Number(step?.step) === 0;
@@ -419,7 +437,8 @@ function renderFFNLayer(
   computedEmbeddings,
   isDarkMode,
   currentLayer,
-  numLayers
+  numLayers,
+  isMobile = false
 ) {
   const ffnGroup = group.append('g').attr('class', 'inside-ffn-embeddings');
   const ffnMeta = [];
@@ -444,6 +463,7 @@ function renderFFNLayer(
       tokenColor,
       className: isNew ? 'new-token' : 'prev-token',
       isDarkMode,
+      isMobile,
     });
 
     const insideBottom = insideBottomMeta[i];
@@ -475,7 +495,16 @@ function renderFFNLayer(
 }
 
 // Helper: Render FFN connectors (lines + projection box)
-function renderFFNConnectors(underlays, x, insideBottom, meta, isNew, tokenIdx, tagOptions = {}) {
+function renderFFNConnectors(
+  underlays,
+  x,
+  insideBottom,
+  meta,
+  isNew,
+  tokenIdx,
+  tagOptions = {},
+  isMobile = false
+) {
   const { tagBackprop = false, tagFirst = false, tagLast = false } = tagOptions || {};
   const inCenters = insideBottom.cellCentersX?.length ? insideBottom.cellCentersX : [x];
   const outCenters = meta.cellCentersX?.length ? meta.cellCentersX : [x];
@@ -497,7 +526,6 @@ function renderFFNConnectors(underlays, x, insideBottom, meta, isNew, tokenIdx, 
     const inLine = underlays
       .append('line')
       .attr('class', `ffn-arrow-in ${isNew ? 'new-token' : 'prev-token'}`)
-      .attr('data-tooltip-id', 'viz-feedforward-tooltip')
       .attr('x1', inCenters[k])
       .attr('y1', startY)
       .attr('x2', x)
@@ -507,6 +535,10 @@ function renderFFNConnectors(underlays, x, insideBottom, meta, isNew, tokenIdx, 
       .style('opacity', 0)
       .style('cursor', 'help');
 
+    if (!isMobile) {
+      inLine.attr('data-tooltip-id', 'viz-feedforward-tooltip');
+    }
+
     if (tagBackprop) {
       const colorClass = (tokenIdx + k) % 2 === 0 ? 'green' : 'red';
       if (tagLast) inLine.classed(`bp-last-block-ffn-connection ${colorClass}`, true);
@@ -515,10 +547,9 @@ function renderFFNConnectors(underlays, x, insideBottom, meta, isNew, tokenIdx, 
   }
 
   // Projection box
-  underlays
+  const projBox = underlays
     .append('rect')
     .attr('class', `projection-box ffn ${isNew ? 'new-token' : 'prev-token'}`)
-    .attr('data-tooltip-id', 'viz-feedforward-tooltip')
     .attr('x', x - boxSize / 2)
     .attr('y', boxTopY)
     .attr('width', boxSize)
@@ -528,6 +559,10 @@ function renderFFNConnectors(underlays, x, insideBottom, meta, isNew, tokenIdx, 
     .style('opacity', 0)
     .style('cursor', 'help');
 
+  if (!isMobile) {
+    projBox.attr('data-tooltip-id', 'viz-feedforward-tooltip');
+  }
+
   // Outgoing lines
   for (let k = 0; k < lineCount; k++) {
     const color = '#797b7dff';
@@ -535,7 +570,6 @@ function renderFFNConnectors(underlays, x, insideBottom, meta, isNew, tokenIdx, 
     const outLine = underlays
       .append('line')
       .attr('class', `ffn-arrow-out ${isNew ? 'new-token' : 'prev-token'}`)
-      .attr('data-tooltip-id', 'viz-feedforward-tooltip')
       .attr('x1', x)
       .attr('y1', boxBottomY + 4)
       .attr('x2', outCenters[k])
@@ -544,6 +578,10 @@ function renderFFNConnectors(underlays, x, insideBottom, meta, isNew, tokenIdx, 
       .style('stroke-width', 0.5)
       .style('opacity', 0)
       .style('cursor', 'help');
+
+    if (!isMobile) {
+      outLine.attr('data-tooltip-id', 'viz-feedforward-tooltip');
+    }
 
     if (tagBackprop) {
       const colorClass = (tokenIdx + k * 3) % 2 === 0 ? 'green' : 'red';
@@ -589,7 +627,8 @@ function renderTransformerBox(
   blockTopY,
   blockBottomY,
   numLayers,
-  columnsMeta = []
+  columnsMeta = [],
+  isMobile = false
 ) {
   // Calculate proper bounds using column metadata (which includes token widths)
   // If columnsMeta is available, use it to get the actual left and right edges
@@ -628,7 +667,7 @@ function renderTransformerBox(
       .attr('class', `transformer-shadow-layer layer-${s}`)
       .attr('transform', `translate(${offsetX}, ${offsetY})`);
 
-    shadowGroup
+    const shadowRect = shadowGroup
       .append('rect')
       .attr('x', minX - TRANSFORMER.SHADOW_PADDING)
       .attr('y', blockTopY)
@@ -636,16 +675,19 @@ function renderTransformerBox(
       .attr('height', blockBottomY - blockTopY)
       .attr('rx', TRANSFORMER_BOX.BORDER_RADIUS)
       .attr('class', 'transformer-shadow-box')
-      .attr('data-tooltip-id', 'viz-transformer-shadow-tooltip')
       .style('fill', 'var(--viz-transformer-bg)')
       .style('stroke', 'var(--viz-transformer-border)')
       .style('stroke-width', TRANSFORMER_BOX.STROKE_WIDTH)
       .style('cursor', 'help')
       .style('pointer-events', 'none');
+
+    if (!isMobile) {
+      shadowRect.attr('data-tooltip-id', 'viz-transformer-shadow-tooltip');
+    }
   }
 
   // Main transformer box
-  group
+  const mainBox = group
     .insert('rect', '.inside-top-embeddings')
     .attr('x', minX - TRANSFORMER.SHADOW_PADDING)
     .attr('y', blockTopY)
@@ -653,12 +695,15 @@ function renderTransformerBox(
     .attr('height', blockBottomY - blockTopY)
     .attr('rx', TRANSFORMER_BOX.BORDER_RADIUS)
     .attr('class', 'viz-transformer-box')
-    .attr('data-tooltip-id', 'viz-transformer-box-tooltip')
     .style('fill', 'var(--viz-transformer-bg)')
     .style('stroke', 'var(--viz-transformer-border)')
     .style('stroke-width', TRANSFORMER_BOX.STROKE_WIDTH)
     .style('cursor', 'help')
     .style('pointer-events', 'none');
+
+  if (!isMobile) {
+    mainBox.attr('data-tooltip-id', 'viz-transformer-box-tooltip');
+  }
 
   // Ensure positional guide lines sit behind the transformer box
   try {

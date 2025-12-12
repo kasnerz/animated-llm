@@ -266,7 +266,8 @@ export default function TextGenerationCanvas() {
       visualizationWidth,
       shouldCollapse,
       maxVisibleTokens,
-      tokensLayoutRef
+      tokensLayoutRef,
+      isMobile
     );
 
     // 2. Render embeddings
@@ -279,7 +280,8 @@ export default function TextGenerationCanvas() {
       embeddingExpanded,
       setEmbeddingExpanded,
       computedEmbeddings,
-      isDarkMode
+      isDarkMode,
+      isMobile
     );
 
     // 3. New transformer block pipeline with layer stacking
@@ -293,7 +295,8 @@ export default function TextGenerationCanvas() {
       computedEmbeddings,
       numLayers,
       isDarkMode,
-      subStep
+      subStep,
+      isMobile
     );
 
     // 4. Project directly from FFN inside the transformer block (no outside bottom embeddings)

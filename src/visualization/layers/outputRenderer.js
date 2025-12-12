@@ -120,6 +120,7 @@ export function renderOutputLayer(
       drawArrow(underlays, horizCenterX, startY, horizCenterX, endY, {
         withBox: true,
         className: 'logprob-arrow',
+        isMobile,
       });
     }
   }

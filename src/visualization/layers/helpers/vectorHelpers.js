@@ -17,7 +17,7 @@ import { VECTOR } from '../../core/constants';
  * @returns {Object} Geometry metadata
  */
 export function drawEmbeddingColumn(group, centerX, topY, values, options = {}) {
-  const { className = '', tokenColor = '#ddd', isDarkMode = false } = options;
+  const { className = '', tokenColor = '#ddd', isDarkMode = false, isMobile = false } = options;
 
   const cellWidth = VECTOR.CELL_WIDTH;
   const cellHeight = VECTOR.CELL_HEIGHT;
@@ -39,17 +39,20 @@ export function drawEmbeddingColumn(group, centerX, topY, values, options = {}) 
 
   const { fill: outerFill, stroke: outerStroke } = getVectorBoxColors(tokenColor, { isDarkMode });
 
-  colG
+  const rect = colG
     .append('rect')
     .attr('x', leftX)
     .attr('y', topY)
     .attr('width', width)
     .attr('height', height)
     .attr('rx', VECTOR.BOX_RADIUS)
-    .attr('data-tooltip-id', 'viz-embedding-tooltip')
     .style('fill', outerFill)
     .style('stroke', outerStroke)
     .style('cursor', 'help');
+
+  if (!isMobile) {
+    rect.attr('data-tooltip-id', 'viz-embedding-tooltip');
+  }
 
   const cellCentersX = [];
   displayValues.forEach((v, i) => {
@@ -58,31 +61,37 @@ export function drawEmbeddingColumn(group, centerX, topY, values, options = {}) 
     const cy = topY + paddingY + cellHeight / 2;
     cellCentersX.push(cx);
 
-    colG
+    const cell = colG
       .append('rect')
       .attr('x', x)
       .attr('y', topY + paddingY)
       .attr('width', cellWidth)
       .attr('height', cellHeight)
       .attr('rx', VECTOR.CELL_RADIUS)
-      .attr('data-tooltip-id', 'viz-embedding-tooltip')
       .style('fill', 'transparent')
       .style('cursor', 'help');
 
+    if (!isMobile) {
+      cell.attr('data-tooltip-id', 'viz-embedding-tooltip');
+    }
+
     const isEllipsis = v === 'ELLIPSIS';
-    colG
+    const text = colG
       .append('text')
       .attr('x', cx)
       .attr('y', isEllipsis ? cy : cy + VECTOR.TEXT_Y_OFFSET)
       .attr('text-anchor', 'middle')
       .attr('dominant-baseline', isEllipsis ? 'central' : 'auto')
-      .attr('data-tooltip-id', 'viz-embedding-tooltip')
       .style('font-size', isEllipsis ? '16px' : VECTOR.TEXT_SIZE)
       .style('font-weight', 'normal')
       .style('fill', getVectorTextColor(isDarkMode))
       .style('cursor', 'help')
       .style('pointer-events', 'none')
       .text(isEllipsis ? '⋯' : typeof v === 'number' ? v.toFixed(1) : '');
+
+    if (!isMobile) {
+      text.attr('data-tooltip-id', 'viz-embedding-tooltip');
+    }
   });
 
   const centerY = topY + height / 2;

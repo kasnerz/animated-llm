@@ -86,6 +86,18 @@ function TrainingDocumentCarousel({ showPlayButton = true }) {
 
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
   const settingsPopoverRef = useRef(null);
+  const settingsBtnRef = useRef(null);
+  const [settingsPos, setSettingsPos] = useState({ top: 0, left: 0 });
+
+  // Mobile detection
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth <= 760);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   // internal sliding state to animate between documents smoothly
   const [isSliding, setIsSliding] = useState(false);
@@ -108,6 +120,23 @@ function TrainingDocumentCarousel({ showPlayButton = true }) {
     window.addEventListener('click', handleClick);
     return () => window.removeEventListener('click', handleClick);
   }, [isSettingsOpen]);
+
+  const toggleSettings = (e) => {
+    e.stopPropagation();
+    if (isSettingsOpen) {
+      setIsSettingsOpen(false);
+    } else {
+      if (settingsBtnRef.current) {
+        const rect = settingsBtnRef.current.getBoundingClientRect();
+        // Position to the left of the button, aligned with top
+        setSettingsPos({
+          top: rect.top,
+          left: rect.left - 250, // Approximate width + gap
+        });
+      }
+      setIsSettingsOpen(true);
+    }
+  };
 
   const handlePlayPause = () => {
     if (!state.currentExample) return;
@@ -278,7 +307,7 @@ function TrainingDocumentCarousel({ showPlayButton = true }) {
         {/* Document paper */}
         <div
           className="document-paper"
-          data-tooltip-id={isActive ? 'training-document-tooltip' : undefined}
+          data-tooltip-id={isActive && !isMobile ? 'training-document-tooltip' : undefined}
         >
           {/* Paper texture overlay */}
           <div className="paper-texture"></div>
@@ -320,56 +349,19 @@ function TrainingDocumentCarousel({ showPlayButton = true }) {
             <div className="document-play-button">
               {/* Settings button */}
               <button
+                ref={isActive ? settingsBtnRef : null}
                 className="btn-settings-document"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  setIsSettingsOpen(!isSettingsOpen);
-                }}
-                aria-label="Settings"
+                onClick={toggleSettings}
+                aria-label={t('settings') || 'Settings'}
               >
                 <Icon path={mdiTune} size={0.8} />
               </button>
-
-              {/* Settings Popup */}
-              {isSettingsOpen && (
-                <div
-                  className="settings-popover"
-                  ref={settingsPopoverRef}
-                  onClick={(e) => e.stopPropagation()}
-                  style={{ right: '0', top: 'calc(100% + 10px)', minWidth: '200px' }}
-                >
-                  <div className="settings-section">
-                    <div className="settings-label">
-                      {t('animation_speed') || 'Animation Speed'}
-                    </div>
-                    <div className="speed-options">
-                      {ANIMATION_SPEEDS.map((speed) => (
-                        <button
-                          key={speed.id}
-                          className={`speed-option ${state.animationSpeed === speed.value ? 'selected' : ''}`}
-                          onClick={() => {
-                            actions.setAnimationSpeed(speed.value);
-                            setIsSettingsOpen(false);
-                          }}
-                          aria-label={`Speed ${speed.label}`}
-                          title={`Speed ${speed.label}`}
-                        >
-                          <span className="speed-icon" aria-hidden>
-                            <Icon path={getSpeedIconPath(speed.icon)} size={0.7} color="#666" />
-                          </span>
-                          <span className="speed-label">{t(speed.label) || speed.label}</span>
-                        </button>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              )}
 
               <button
                 className="btn-play-document"
                 onClick={handlePlayPause}
                 disabled={!state.currentExample}
-                aria-label={state.isPlaying ? 'Pause' : 'Play'}
+                aria-label={state.isPlaying ? t('pause') : t('play')}
               >
                 <Icon path={state.isPlaying ? mdiPause : mdiPlay} size={1} />
               </button>
@@ -443,6 +435,89 @@ function TrainingDocumentCarousel({ showPlayButton = true }) {
         place="top"
         content={t('tooltip_training_document')}
       />
+
+      {/* Settings Popup - Rendered at root level with fixed position to avoid clipping */}
+      {isSettingsOpen && (
+        <div
+          className="settings-popover"
+          ref={settingsPopoverRef}
+          onClick={(e) => e.stopPropagation()}
+          style={{
+            position: 'fixed',
+            top: `${settingsPos.top}px`,
+            left: `${settingsPos.left}px`,
+            minWidth: '240px',
+            zIndex: 9999, // Ensure it's on top of everything
+          }}
+        >
+          {/* Model Selection Section */}
+          <div className="settings-section">
+            <div className="settings-label">{t('model') || 'Model'}</div>
+            <div className="model-options">
+              {MODEL_REGISTRY.map((entry, idx) =>
+                entry.training_view ? (
+                  <button
+                    key={idx}
+                    className={`model-option ${state.selectedModelIndex === idx ? 'selected' : ''}`}
+                    onClick={() => {
+                      actions.setSelectedModelIndex(idx);
+                      // When switching models, try to load a matching example
+                      if (state.viewType === 'training') {
+                        try {
+                          const pattern =
+                            typeof entry.pattern === 'string'
+                              ? new RegExp(entry.pattern, 'i')
+                              : entry.pattern;
+                          const match = (state.examples || []).find((ex) =>
+                            pattern ? pattern.test(ex.model_id || '') : true
+                          );
+                          if (match?.id) {
+                            actions.loadExample(match.id);
+                          }
+                        } catch {
+                          // no-op
+                        }
+                      }
+                    }}
+                    title={entry.name || 'Model'}
+                  >
+                    <img
+                      src={new URL(`../assets/model-logos/${entry.logo}`, import.meta.url).href}
+                      alt=""
+                      style={{ width: '16px', height: '16px', objectFit: 'contain' }}
+                    />
+                    <span>{entry.name || entry.size}</span>
+                  </button>
+                ) : null
+              )}
+            </div>
+          </div>
+
+          {/* Animation Speed Section */}
+          <div className="settings-section">
+            <div className="settings-label">{t('animation_speed') || 'Animation Speed'}</div>
+            <div className="speed-options">
+              {ANIMATION_SPEEDS.map((speed) => (
+                <button
+                  key={speed.id}
+                  className={`speed-option ${state.animationSpeed === speed.value ? 'selected' : ''}`}
+                  onClick={() => {
+                    actions.setAnimationSpeed(speed.value);
+                    setIsSettingsOpen(false);
+                  }}
+                  aria-label={t(speed.label) || speed.label}
+                  title={t(speed.label) || speed.label}
+                >
+                  <span className="speed-icon" aria-hidden>
+                    <Icon path={getSpeedIconPath(speed.icon)} size={0.7} color="currentColor" />
+                  </span>
+                  <span className="speed-label">{t(speed.label) || speed.label}</span>
+                </button>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 }

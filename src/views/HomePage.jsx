@@ -75,11 +75,11 @@ function HomePage() {
           waveColor={isDark ? '#4a8a70' : '#92C4A7'}
           backgroundColor="transparent"
           opacity={isDark ? 0.2 : 0.3}
-          magnitude={50}
+          magnitude={30}
           waveOffsetY={250}
           waveRotation={50}
           quality="high"
-          speed={0.01}
+          speed={0.003}
         />
       </div>
 

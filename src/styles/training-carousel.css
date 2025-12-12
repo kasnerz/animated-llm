@@ -6,7 +6,7 @@
   align-items: flex-start;
   justify-content: center;
   gap: 0;
-  padding: 20px 0;
+  padding: 20px 0 0 0;
   position: relative;
 }
 
@@ -187,6 +187,11 @@
   padding-right: 80px;
 }
 
+/* In simple view (no play button), reduce the right padding */
+.pretraining-simple-docs .carousel-document.active .document-content-compact {
+  padding-right: 24px;
+}
+
 .carousel-document .document-text-compact {
   font-family: 'Georgia', 'Times New Roman', serif;
   font-size: 1.05rem;
@@ -259,36 +264,44 @@
   position: absolute;
   right: 12px;
   top: 50%;
-  transform: translateY(-50%);
-  z-index: 5;
+  transform: translateY(-55%);
+  z-index: 20;
+  /* Increased z-index to ensure menu visibility */
   display: flex;
+  flex-direction: column;
+  /* Stack buttons vertically */
   align-items: center;
-  gap: 8px;
+  gap: 0px;
 }
 
 .carousel-document .document-play-button .btn-settings-document {
-  --btn-size: 36px;
+  --btn-size: 32px;
   width: var(--btn-size);
   height: var(--btn-size);
   min-width: var(--btn-size);
   min-height: var(--btn-size);
   border-radius: 50%;
-  background: var(--bg-secondary);
-  border: 1px solid var(--border-color);
+  background: transparent;
+  /* Remove background */
+  border: none;
+  /* Remove border */
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--text-secondary);
   transition: all 0.2s ease;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  box-shadow: none;
+  /* Remove shadow */
+  opacity: 0.7;
 }
 
 .carousel-document .document-play-button .btn-settings-document:hover {
-  background: var(--bg-primary);
+  background: rgba(0, 0, 0, 0.05);
   color: var(--text-primary);
-  transform: scale(1.05);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: scale(1.1);
+  box-shadow: none;
+  opacity: 1;
 }
 
 .carousel-document .document-play-button .btn-play-document {
@@ -377,14 +390,22 @@
   .carousel-nav-arrow.left {
     /* Nudge arrows closer to the screen edge on mobile to avoid overlapping the document excerpt */
     left: 2px;
-    /* fallback for browsers without env() support */
-    left: calc(env(safe-area-inset-left) - 40px);
   }
 
   .carousel-nav-arrow.right {
     right: 2px;
-    /* fallback for browsers without env() support */
-    right: calc(env(safe-area-inset-right) - 40px);
+  }
+
+  /* Squeeze the document to make room for arrows */
+  .carousel-document-wrapper.center {
+    padding: 0 44px;
+  }
+
+  /* Ensure icon stays small */
+  .carousel-document .document-source-icon {
+    width: 16px !important;
+    height: 16px !important;
+    min-width: 16px;
   }
 
   .carousel-document .document-content-compact {

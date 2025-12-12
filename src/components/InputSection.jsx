@@ -352,8 +352,8 @@ function InputSection({ disableTokenization = false }) {
                             actions.setAnimationSpeed(speed.value);
                             setIsSettingsOpen(false);
                           }}
-                          aria-label={`Speed ${speed.label}`}
-                          title={`Speed ${speed.label}`}
+                          aria-label={t(speed.label) || speed.label}
+                          title={t(speed.label) || speed.label}
                         >
                           <span className="speed-icon" aria-hidden>
                             <Icon path={getSpeedIconPath(speed.icon)} size={0.7} color="#666" />

@@ -21,6 +21,7 @@ export function drawArrow(group, x1, y1, x2, y2, opts = {}) {
     markerSize = STROKE.MARKER_SIZE,
     opacity = STROKE.OPACITY_DEFAULT,
     withBox = false,
+    isMobile = false,
   } = opts;
 
   const markerId = `arrowhead-${Math.random().toString(36).slice(2, 9)}`;
@@ -58,7 +59,7 @@ export function drawArrow(group, x1, y1, x2, y2, opts = {}) {
       .attr('opacity', opacity);
 
     // Draw projection box
-    group
+    const projBox = group
       .append('rect')
       .attr('class', `${className} projection-box`)
       .attr('x', x2 - boxSize / 2)
@@ -67,11 +68,14 @@ export function drawArrow(group, x1, y1, x2, y2, opts = {}) {
       .attr('height', boxSize)
       .attr('rx', boxRadius)
       .attr('ry', boxRadius)
-      .attr('data-tooltip-id', 'viz-projection-tooltip')
       .style('fill', color)
       .style('opacity', opacity)
       .style('cursor', 'help')
       .style('pointer-events', 'none');
+
+    if (!isMobile) {
+      projBox.attr('data-tooltip-id', 'viz-projection-tooltip');
+    }
 
     // Draw second segment (from box to end with arrowhead)
     group

@@ -20,7 +20,8 @@ export function renderOuterEmbeddingsLayer(
   embeddingExpanded,
   setEmbeddingExpanded,
   computedEmbeddings,
-  isDarkMode
+  isDarkMode,
+  isMobile = false
 ) {
   // Underlays container to ensure arrows are behind vectors
   const underlays = group.append('g').attr('class', 'outer-underlays');
@@ -47,6 +48,7 @@ export function renderOuterEmbeddingsLayer(
       tokenColor,
       className: isNew ? 'new-token' : 'prev-token',
       isDarkMode,
+      isMobile,
     });
 
     // Arrow from token to embedding

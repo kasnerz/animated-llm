@@ -220,7 +220,8 @@ export default function TrainingCanvas() {
       width,
       shouldCollapse,
       maxVisibleTokens,
-      tokensLayoutRef
+      tokensLayoutRef,
+      isMobile
     );
 
     // 2) Outer embeddings
@@ -234,7 +235,8 @@ export default function TrainingCanvas() {
       {},
       () => {},
       computedEmbeddings,
-      isDarkMode
+      isDarkMode,
+      isMobile
     );
 
     // 3) Transformer block (with layer stacking)
@@ -248,7 +250,9 @@ export default function TrainingCanvas() {
       currentLayer,
       computedEmbeddings,
       numLayers,
-      isDarkMode
+      isDarkMode,
+      null,
+      isMobile
     );
 
     // 4) Output distribution (no append preview in training)
