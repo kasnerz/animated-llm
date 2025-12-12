@@ -218,7 +218,10 @@ export default function VisualizationCanvas() {
     const visualizationWidth = width; // Full width available for visualization
 
     // Determine if we need to collapse tokens
-    const maxVisibleTokens = Math.floor(visualizationWidth / CONSTS.TOKEN_SPACING_ESTIMATE) - 1;
+    const maxVisibleTokens = Math.max(
+      3,
+      Math.floor(visualizationWidth / CONSTS.TOKEN_SPACING_ESTIMATE) - 1
+    );
     const shouldCollapse = step.tokens.length > maxVisibleTokens && !isExpanded;
 
     // Layout configuration with proper spacing
@@ -503,7 +506,10 @@ export default function VisualizationCanvas() {
         const widthForCalc = containerWidth || CONSTS.DEFAULT_CONTAINER_WIDTH;
         const scrollAreaWidth = widthForCalc; // Full width now since labels are floating
 
-        const maxVisibleTokens = Math.floor(scrollAreaWidth / CONSTS.TOKEN_SPACING_ESTIMATE) - 1;
+        const maxVisibleTokens = Math.max(
+          3,
+          Math.floor(scrollAreaWidth / CONSTS.TOKEN_SPACING_ESTIMATE) - 1
+        );
         // Show button whenever there are enough tokens that collapsing would be beneficial
         const shouldShow = tokens.length > maxVisibleTokens;
         if (!shouldShow) return null;

@@ -113,6 +113,10 @@ export default function TrainingCanvas() {
     const tStep = trainSteps[effectiveIdx];
     if (!tStep) return;
 
+    const width = containerWidth || CONSTS.DEFAULT_CONTAINER_WIDTH;
+    const isMobile = width <= 1000;
+    const maxTokens = isMobile ? CONSTS.MAX_OUTPUT_TOKENS_MOBILE : CONSTS.MAX_OUTPUT_TOKENS;
+
     // Build a step-like structure expected by reusable layers
     const predictions = tStep.predictions || [];
     const targetTokenPrediction = tStep.target_token_prediction;
@@ -128,8 +132,10 @@ export default function TrainingCanvas() {
 
       if (!targetInPredictions) {
         // Add ellipsis marker and target token
+        // Slice predictions to maxTokens to avoid overflow on mobile
+        const slicedPredictions = predictions.slice(0, maxTokens);
         candidates = [
-          ...predictions.map((p) => ({ token: p.token, prob: p.prob })),
+          ...slicedPredictions.map((p) => ({ token: p.token, prob: p.prob })),
           { token: '...', prob: 0, isEllipsis: true },
           { token: targetTokenPrediction.token, prob: targetTokenPrediction.prob },
         ];
@@ -190,8 +196,6 @@ export default function TrainingCanvas() {
     const outputGroup = g.append('g').attr('class', 'output-group');
     const labelsGroup = labelsSvg.append('g').attr('class', 'stage-labels-group');
 
-    const width = containerWidth || CONSTS.DEFAULT_CONTAINER_WIDTH;
-    const isMobile = width <= 1000;
     const layout = {
       tokenY: CONSTS.TOKEN_Y,
       embeddingY: CONSTS.EMBEDDING_Y,
@@ -209,7 +213,7 @@ export default function TrainingCanvas() {
     const labelsPanelWidth = labelsVisible ? 300 : 50;
     const availableWidth = width - labelsPanelWidth;
 
-    const maxVisibleTokens = Math.floor(availableWidth / spacingEstimate) - 1;
+    const maxVisibleTokens = Math.max(3, Math.floor(availableWidth / spacingEstimate) - 1);
     const shouldCollapse = stepForRender.tokens.length > maxVisibleTokens && !isExpanded;
 
     // 1) Tokens
@@ -459,7 +463,7 @@ export default function TrainingCanvas() {
         const labelsPanelWidth = labelsVisible ? 300 : 50;
         const availableWidth = widthForCalc - labelsPanelWidth;
 
-        const maxVisibleTokens = Math.floor(availableWidth / spacingEstimate) - 1;
+        const maxVisibleTokens = Math.max(3, Math.floor(availableWidth / spacingEstimate) - 1);
         const shouldCollapse = tokens.length > maxVisibleTokens;
         if (!shouldCollapse) return null;
         return (

@@ -245,7 +245,7 @@ export default function TextGenerationCanvas() {
     const labelsPanelWidth = labelsVisible ? 300 : 50;
     const availableWidth = visualizationWidth - labelsPanelWidth;
 
-    const maxVisibleTokens = Math.floor(availableWidth / spacingEstimate) - 1;
+    const maxVisibleTokens = Math.max(3, Math.floor(availableWidth / spacingEstimate) - 1);
     const shouldCollapse = step.tokens.length > maxVisibleTokens && !isExpanded;
 
     // Layout configuration with proper spacing
@@ -501,7 +501,7 @@ export default function TextGenerationCanvas() {
         const spacingEstimate = isMobile ? 120 : CONSTS.TOKEN_SPACING_ESTIMATE;
         const labelsPanelWidth = labelsVisible ? 300 : 50;
         const availableWidth = widthForCalc - labelsPanelWidth;
-        const maxVisibleTokens = Math.floor(availableWidth / spacingEstimate) - 1;
+        const maxVisibleTokens = Math.max(3, Math.floor(availableWidth / spacingEstimate) - 1);
         const shouldCollapse = tokens.length > maxVisibleTokens;
 
         if (!shouldCollapse) return null;

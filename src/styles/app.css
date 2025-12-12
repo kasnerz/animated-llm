@@ -1139,7 +1139,7 @@ body {
      so alignment is preserved while keeping scroll behavior intact. */
   .viz-scale {
     transform: scale(var(--viz-zoom));
-    transform-origin: top left;
+    transform-origin: top center;
     /* Use fit-content to avoid unnecessary scrollbar when content is smaller than the scaled width */
     width: fit-content;
     min-width: 100%;
