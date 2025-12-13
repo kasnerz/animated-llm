@@ -33,11 +33,11 @@
 
 An educational web application designed to teach the how large language models (LLMs) work.
 
+👉 **Try it yourself at** **[animatedllm.com](https://animatedllm.com)**
+
 Instead of static diagrams or abstract equations, it provides a dynamic, step-by-step visualizations of the Transformer architecture in action.
 
 The application runs **entirely in your browser** using pre-computed data.
-
-👉 **Try it yourself at** **[animatedllm.com](https://animatedllm.com)**
 
 ## ⌨️ Controls
 
@@ -56,7 +56,7 @@ Navigate the animation using your keyboard:
 
 ## 🚀 Running locally
 
-You can also run the app locally in just a few minutes. You will need [Node.js](https://nodejs.org/) (version 20.9.0 or higher) and npm installed.
+For running the app on your own device, you will need [Node.js](https://nodejs.org/) (version 20.9.0 or higher) and npm installed.
 
 1. **Install dependencies:**
 
@@ -68,6 +68,10 @@ You can also run the app locally in just a few minutes. You will need [Node.js](
    ```bash
    npm run dev
    ```
+
+## 🤝 Contributing
+
+Contributions are welcome! Please read our [Contributing Guide](CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
 
 ## 📚 Cite Us
 
