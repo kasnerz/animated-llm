@@ -1,0 +1,144 @@
+// Internationalization utilities
+// Simple translation system for English and Czech
+
+/**
+ * Detect the user's preferred language from browser settings
+ * @param {string[]} supportedLanguages - Array of supported language codes
+ * @param {string} fallback - Fallback language code (default: 'en')
+ * @returns {string} Detected language code or fallback
+ */
+export function detectBrowserLanguage(supportedLanguages = [], fallback = 'en') {
+  // Get browser languages in order of preference
+  const browserLanguages = navigator.languages || [navigator.language || navigator.userLanguage];
+
+  for (const browserLang of browserLanguages) {
+    // Extract the language code (e.g., 'en' from 'en-US')
+    const langCode = browserLang.toLowerCase().split(/[-_]/)[0];
+
+    // Check if this language is supported
+    if (supportedLanguages.includes(langCode)) {
+      return langCode;
+    }
+  }
+
+  // Fallback to default language
+  return fallback;
+}
+
+const translations = {
+  en: {
+    app_title: 'Interactive Transformer Visualization',
+    title: 'Interactive Transformer Visualization',
+    subtitle: 'Watch how language models generate text, token by token',
+    generate_next_token: 'Generate Next Token',
+    start_generation: 'Start Generation',
+    next_token: 'Next Token',
+    reset: 'Reset',
+    pause: 'Pause',
+    resume: 'Resume',
+    speed: 'Animation Speed',
+    animation_speed: 'Animation Speed',
+    theme_dark: 'Dark Mode',
+    theme_light: 'Light Mode',
+    toggle_theme: 'Toggle Theme',
+    toggle_language: 'Toggle Language',
+    language_english: 'English',
+    language_czech: 'Czech',
+    tokens: 'Tokens',
+    token_ids: 'Token IDs',
+    embeddings: 'Embeddings',
+    transformer: 'Transformer',
+    output_distribution: 'Output Distribution',
+    selected_token: 'Selected Token',
+    probability: 'Probability',
+    loading: 'Loading...',
+    error: 'Error',
+    retry: 'Retry',
+    select_example: 'Select Example',
+    prompt: 'Prompt',
+    step: 'Step',
+    visualization: 'Visualization',
+    click_generate_to_start: "Click 'Start Generation' to begin",
+    footer_text: 'Educational demo showing how LLMs generate text token by token',
+    shortcuts: 'Shortcuts',
+    play_pause: 'Play/Pause',
+    theme: 'Theme',
+    language: 'Language',
+  },
+  cs: {
+    app_title: 'Interaktivní Vizualizace Transformeru',
+    title: 'Interaktivní Vizualizace Transformeru',
+    subtitle: 'Sledujte, jak jazykové modely generují text, token po tokenu',
+    generate_next_token: 'Generovat další token',
+    start_generation: 'Začít generování',
+    next_token: 'Další token',
+    reset: 'Resetovat',
+    pause: 'Pozastavit',
+    resume: 'Pokračovat',
+    speed: 'Rychlost animace',
+    animation_speed: 'Rychlost animace',
+    theme_dark: 'Tmavý režim',
+    theme_light: 'Světlý režim',
+    toggle_theme: 'Přepnout téma',
+    toggle_language: 'Přepnout jazyk',
+    language_english: 'Angličtina',
+    language_czech: 'Čeština',
+    tokens: 'Tokeny',
+    token_ids: 'ID tokenů',
+    embeddings: 'Embeddingy',
+    transformer: 'Transformer',
+    output_distribution: 'Distribuce výstupu',
+    selected_token: 'Vybraný token',
+    probability: 'Pravděpodobnost',
+    loading: 'Načítání...',
+    error: 'Chyba',
+    retry: 'Zkusit znovu',
+    select_example: 'Vybrat příklad',
+    prompt: 'Prompt',
+    step: 'Krok',
+    visualization: 'Vizualizace',
+    click_generate_to_start: "Klikněte na 'Začít generování' pro spuštění",
+    footer_text: 'Vzdělávací demo ukazující, jak LLM generují text token po tokenu',
+    shortcuts: 'Zkratky',
+    play_pause: 'Přehrát/Pozastavit',
+    theme: 'Téma',
+    language: 'Jazyk',
+  },
+};
+
+/**
+ * Get translated text for a key
+ * @param {string} key - Translation key
+ * @param {string} language - Language code ('en' or 'cs')
+ * @returns {string} Translated text
+ */
+export function translate(key, language = 'en') {
+  return translations[language]?.[key] || translations.en[key] || key;
+}
+
+/**
+ * React hook for translations
+ * Returns a translate function that uses the current language from context
+ * Note: This creates a dependency on AppContext, imported dynamically to avoid circular deps
+ */
+export function useTranslation() {
+  // Dynamically import to avoid circular dependency
+  let language = 'en';
+  try {
+    // Dynamic require is intentional here to avoid circular deps (will be refactored in Phase 2)
+    // eslint-disable-next-line no-undef
+    const { useApp } = require('../contexts/AppContext');
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    const { state } = useApp();
+    language = state.language || 'en';
+  } catch {
+    // Context not available, use default
+    language = 'en';
+  }
+
+  const t = (key) => translate(key, language);
+
+  return { t };
+}
+
+export default translations;

@@ -1,0 +1,92 @@
+/**
+ * Initial hint screen styles
+ * Centered overlay with keyboard shortcuts guidance
+ */
+
+.initial-hint {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.initial-hint-content {
+  text-align: center;
+  color: var(--text-tertiary);
+  max-width: 600px;
+  padding: 0 20px;
+}
+
+.initial-hint-main {
+  font-size: 17px;
+  font-weight: 400;
+  margin-bottom: 32px;
+  opacity: 0.7;
+}
+
+.initial-hint-shortcuts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.initial-hint-shortcut {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  opacity: 0.6;
+}
+
+.initial-hint-key {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 32px;
+  height: 28px;
+  padding: 0 8px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 500;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  box-shadow: 0 1px 2px var(--shadow-color);
+  color: var(--text-secondary);
+  flex-shrink: 0;
+}
+
+.initial-hint-desc {
+  font-size: 13px;
+  color: var(--text-tertiary);
+  text-align: left;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .initial-hint-main {
+    font-size: 16px;
+  }
+
+  .initial-hint-shortcuts {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .initial-hint-shortcut {
+    justify-content: flex-start;
+  }
+}
+
+/* Position initial hint lower in simple views for better visual separation */
+.decoding-view-container .initial-hint,
+.pretraining-simple-container .initial-hint {
+  align-items: flex-start;
+  padding-top: 370px;
+}

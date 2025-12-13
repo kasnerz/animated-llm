@@ -1,0 +1,150 @@
+/* View Selector Styles */
+.view-selector {
+  position: relative;
+  display: inline-block;
+}
+
+.view-selector-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: transparent;
+  border: none;
+  border-radius: 0.5rem;
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.view-selector-button:hover {
+  background: var(--bg-hover);
+}
+
+.view-selector-button:focus {
+  outline: none;
+}
+
+.view-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.view-label {
+  line-height: 1;
+}
+
+.view-separator {
+  opacity: 0.5;
+  font-weight: 400;
+}
+
+.view-chevron {
+  font-size: 0.7rem;
+  opacity: 0.6;
+  transition: transform 0.2s ease;
+}
+
+.view-selector-button[aria-expanded='true'] .view-chevron {
+  transform: rotate(180deg);
+}
+
+.view-dropdown {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  left: 0;
+  min-width: 200px;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  z-index: 1000;
+  animation: fadeIn 0.15s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.view-category {
+  display: none;
+  /* Hide category structure in new design */
+}
+
+.view-category-header {
+  display: none;
+}
+
+.view-category-icon {
+  opacity: 0.9;
+}
+
+.view-category-label {
+  line-height: 1;
+}
+
+.view-option {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: var(--bg-primary);
+  border: none;
+  border-bottom: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+
+.view-option:last-child {
+  border-bottom: none;
+}
+
+.view-option:hover {
+  background: var(--bg-hover);
+  color: var(--text-primary);
+}
+
+.view-option.active {
+  background: var(--accent-primary);
+  font-weight: 600;
+  color: var(--bg-primary);
+}
+
+.view-option-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: currentColor;
+}
+
+.view-option-label {
+  flex: 1;
+  line-height: 1;
+}
+
+.view-checkmark {
+  color: currentColor;
+  font-weight: bold;
+  flex-shrink: 0;
+}

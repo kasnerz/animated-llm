@@ -1,0 +1,475 @@
+/* Training Document Carousel Styles */
+
+.training-carousel-section {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0;
+  padding: 20px 0 0 0;
+  position: relative;
+}
+
+/* Navigation arrows on edges */
+.carousel-nav-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #999;
+  transition: all 0.2s ease;
+  z-index: 10;
+}
+
+.carousel-nav-arrow.left {
+  left: 20px;
+}
+
+.carousel-nav-arrow.right {
+  right: 20px;
+}
+
+.carousel-nav-arrow:hover:not(.disabled) {
+  color: #555;
+  transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-nav-arrow.disabled {
+  opacity: 0.2;
+  cursor: not-allowed;
+}
+
+.carousel-nav-arrow:active:not(.disabled) {
+  transform: translateY(-50%) scale(0.95);
+}
+
+/* Carousel container */
+.carousel-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1400px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  /* hide sliding overflow */
+}
+
+/* Carousel track - holds all documents */
+.carousel-track {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 30px;
+  width: 100%;
+  position: relative;
+  transition: transform 150ms ease;
+  will-change: transform;
+}
+
+/* Document wrapper */
+.carousel-document-wrapper {
+  flex-shrink: 0;
+}
+
+.carousel-document-wrapper.left,
+.carousel-document-wrapper.right {
+  width: 300px;
+}
+
+.carousel-document-wrapper.center {
+  width: 700px;
+  max-width: 100%;
+}
+
+/* Document styles */
+.carousel-document {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+
+  /* Expose variables at container level so sibling torn-edge can inherit */
+  --document-bg: #ffffff;
+  --document-border: #d0d0d0;
+  --document-text: #2c2c2c;
+  --grid-color: #f3f3f3;
+  --jagged-height: 12px;
+}
+
+/* Inactive documents - greyed out */
+.carousel-document.inactive {
+  opacity: 0.6;
+  --document-bg: #f5f5f5;
+  --document-text: #888;
+  --grid-color: #e8e8e8;
+}
+
+/* Active document - uses default colors defined in .carousel-document */
+
+/* Wrapper for the document shape */
+.document-shape-wrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Background with grid and clip-path */
+.document-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--document-bg);
+  /* Clip path to create the jagged bottom edge */
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% calc(100% - var(--jagged-height)),
+    90% calc(100% - var(--jagged-height) + 9.6px),
+    80% calc(100% - var(--jagged-height) + 4.8px),
+    70% 100%,
+    60% calc(100% - var(--jagged-height)),
+    50% calc(100% - var(--jagged-height) + 9.6px),
+    40% calc(100% - var(--jagged-height) + 4.8px),
+    30% 100%,
+    20% calc(100% - var(--jagged-height) + 2.4px),
+    10% calc(100% - var(--jagged-height) + 9.6px),
+    0% calc(100% - var(--jagged-height))
+  );
+  z-index: 0;
+}
+
+/* Paper texture overlay - subtle grid pattern */
+.paper-texture {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image:
+    linear-gradient(var(--grid-color, #f5f5f5) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-color, #f5f5f5) 1px, transparent 1px);
+  background-size: 20px 20px;
+  pointer-events: none;
+  opacity: 1;
+}
+
+/* Top/Side Borders */
+.document-border-main {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: var(--jagged-height);
+  border: 1px solid var(--document-border);
+  border-bottom: none;
+  border-radius: 4px 4px 0 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Bottom Border SVG */
+.document-border-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: var(--jagged-height);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.torn-edge-svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* Content Layer */
+.document-content-layer {
+  position: relative;
+  z-index: 2;
+  padding-bottom: var(--jagged-height);
+}
+
+/* Document header with source label */
+.carousel-document .document-header {
+  position: relative;
+  padding: 8px 24px 0;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 6px;
+}
+
+.carousel-document .document-source-icon {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+  opacity: 0.5;
+  flex-shrink: 0;
+}
+
+.carousel-document .document-source-label {
+  padding: 4px 8px;
+  color: var(--document-text);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  opacity: 0.6;
+  border-radius: 4px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 100%;
+}
+
+/* Compact document content - single line */
+.carousel-document .document-content-compact {
+  position: relative;
+  padding: 8px 24px 16px;
+  z-index: 1;
+}
+
+/* For active document, add right padding to prevent overlap with play button */
+.carousel-document.active .document-content-compact {
+  padding-right: 80px;
+}
+
+/* In simple view (no play button), reduce the right padding */
+.pretraining-simple-docs .carousel-document.active .document-content-compact {
+  padding-right: 24px;
+}
+
+.carousel-document .document-text-compact {
+  font-family: 'Georgia', 'Times New Roman', serif;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--document-text, #2c2c2c);
+  text-align: left;
+  word-spacing: 0.05em;
+  white-space: nowrap;
+  /* Allow programmatic horizontal scrolling to reveal later tokens */
+  overflow-x: auto;
+  overflow-y: hidden;
+  text-overflow: clip;
+  /* Hide scrollbars while keeping scrollLeft functional */
+  -ms-overflow-style: none;
+  /* IE/Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+.carousel-document .document-text-compact::-webkit-scrollbar {
+  display: none;
+  /* Chrome/Safari */
+}
+
+/* Tokenized text in document */
+.carousel-document .document-text-compact .tokenized-text {
+  display: inline;
+  white-space: nowrap;
+}
+
+.carousel-document .document-text-compact .token-with-highlight {
+  display: inline;
+  padding: 2px 0;
+  border-radius: 2px;
+  margin: 0 1px;
+}
+
+/* Training view token styles */
+.carousel-document .document-text-compact .doc-token-input {
+  border-bottom: 2px solid var(--document-text);
+}
+
+.carousel-document .document-text-compact .doc-token-target {
+  color: #b91c1c;
+  /* red-700 */
+  font-weight: 700;
+}
+
+.carousel-document .document-text-compact .doc-token-muted {
+  color: var(--document-text-secondary, #888);
+  opacity: 0.7;
+}
+
+/* Play button positioned at right edge of active document */
+.carousel-document .document-play-button {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-55%);
+  z-index: 20;
+  /* Increased z-index to ensure menu visibility */
+  display: flex;
+  flex-direction: column;
+  /* Stack buttons vertically */
+  align-items: center;
+  gap: 0px;
+}
+
+.carousel-document .document-play-button .btn-settings-document {
+  --btn-size: 32px;
+  width: var(--btn-size);
+  height: var(--btn-size);
+  min-width: var(--btn-size);
+  min-height: var(--btn-size);
+  border-radius: 50%;
+  background: transparent;
+  /* Remove background */
+  border: none;
+  /* Remove border */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+  transition: all 0.2s ease;
+  box-shadow: none;
+  /* Remove shadow */
+  opacity: 0.7;
+}
+
+.carousel-document .document-play-button .btn-settings-document:hover {
+  background: rgba(0, 0, 0, 0.05);
+  color: var(--text-primary);
+  transform: scale(1.1);
+  box-shadow: none;
+  opacity: 1;
+}
+
+.carousel-document .document-play-button .btn-play-document {
+  --btn-size: 44px;
+  width: var(--btn-size);
+  height: var(--btn-size);
+  min-width: var(--btn-size);
+  min-height: var(--btn-size);
+  border-radius: 50%;
+  background: var(--accent-primary);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.carousel-document .document-play-button .btn-play-document:hover:not(:disabled) {
+  background: var(--accent-hover);
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-document .document-play-button .btn-play-document:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.carousel-document .document-play-button .btn-play-document:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+/* Dark theme adjustments */
+[data-theme='dark'] .carousel-document {
+  --document-bg: #2a2a2a;
+  --document-border: #404040;
+  --document-text: #e8e6e3;
+  --document-text-secondary: #999;
+  --grid-color: #333333;
+}
+
+[data-theme='dark'] .carousel-document.inactive {
+  --document-bg: #1a1a1a;
+  --document-text: #666;
+  --grid-color: #222222;
+}
+
+[data-theme='dark'] .document-background {
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3));
+}
+
+[data-theme='dark'] .carousel-nav-arrow {
+  color: #777;
+}
+
+[data-theme='dark'] .carousel-nav-arrow:hover:not(.disabled) {
+  color: #aaa;
+}
+
+/* Mobile responsive - hide side documents, keep arrows */
+@media (max-width: 1200px) {
+  .carousel-document-wrapper.left,
+  .carousel-document-wrapper.right {
+    display: none;
+  }
+
+  .carousel-document-wrapper.center {
+    width: 100%;
+    max-width: 700px;
+  }
+}
+
+@media (max-width: 768px) {
+  .training-carousel-section {
+    padding: 10px 0;
+  }
+
+  .carousel-nav-arrow {
+    width: 40px;
+    height: 40px;
+  }
+
+  .carousel-nav-arrow.left {
+    /* Nudge arrows closer to the screen edge on mobile to avoid overlapping the document excerpt */
+    left: 2px;
+  }
+
+  .carousel-nav-arrow.right {
+    right: 2px;
+  }
+
+  /* Squeeze the document to make room for arrows */
+  .carousel-document-wrapper.center {
+    padding: 0 44px;
+  }
+
+  /* Ensure icon stays small */
+  .carousel-document .document-source-icon {
+    width: 16px !important;
+    height: 16px !important;
+    min-width: 16px;
+  }
+
+  .carousel-document .document-content-compact {
+    padding: 6px 16px 12px;
+  }
+
+  .carousel-document .document-text-compact {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  .carousel-document.active .document-content-compact {
+    padding-right: 64px;
+  }
+
+  .carousel-document .document-play-button .btn-play-document {
+    --btn-size: 40px;
+  }
+}

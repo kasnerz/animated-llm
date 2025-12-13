@@ -1,0 +1,1354 @@
+/* App-level styles - Minimal & Clean */
+
+/* Prevent unwanted page-level horizontal scrollbars; local containers handle overflow */
+html,
+body {
+  overflow-x: hidden;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+}
+
+/* Floating top section */
+.floating-top-section {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 200;
+  background: var(--bg-primary);
+  /* More compact top/bottom padding */
+  padding: 0.6rem 10px 0.6rem 10px;
+  /* 10px gap from screen edges */
+  /* box-shadow: 0 2px 12px var(--shadow-color); */
+  transition: box-shadow 0.3s ease;
+}
+
+.floating-top-content {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1.25rem;
+  width: 100%;
+  margin: 0;
+  position: relative;
+  /* allow absolute positioning of header controls */
+}
+
+/* App Logo */
+.app-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-left: 1.5rem;
+}
+
+/* View selector popup container */
+.view-selector-popup-container {
+  position: relative;
+  left: auto;
+  top: auto;
+  transform: none;
+}
+
+.logo-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.logo-icon:hover {
+  opacity: 0.8;
+  transition: opacity 0.2s ease;
+}
+
+/* Centered logo button (desktop only) */
+.logo-center-button {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: none;
+  /* Hidden by default, shown on desktop */
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  cursor: pointer;
+  padding: 0.25rem;
+  border-radius: 8px;
+  transition: background-color 0.2s ease;
+}
+
+.logo-center-button:hover {
+  background-color: var(--bg-hover);
+}
+
+.logo-center-button img {
+  height: 32px;
+  display: block;
+  filter: var(--logo-filter);
+}
+
+.app-logo-content {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+}
+
+.logo-image {
+  height: 32px;
+  width: auto;
+  cursor: pointer;
+  user-select: none;
+  filter: var(--logo-filter);
+}
+
+/* Canvas Input Section - prompt input moved to canvas area */
+.canvas-input-section {
+  max-width: min(800px, calc(100vw - 40px));
+  margin: 0 auto 2.5rem auto;
+  /* Tighter top margin, larger bottom margin for better separation */
+  margin-top: calc(var(--header-height) + 2rem);
+}
+
+.canvas-input-section .input-section-minimal {
+  width: 100%;
+}
+
+/* Floating bottom section */
+.floating-bottom-section {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  background: var(--bg-primary);
+  padding: 1rem 1rem;
+  box-shadow: 0 -2px 5px var(--shadow-color);
+  transition: box-shadow 0.3s ease;
+  display: flex;
+  justify-content: center;
+}
+
+/* Minimal header controls */
+.header-controls {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  /* ~10px from right screen edge due to section padding */
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  min-width: fit-content;
+}
+
+.header-controls-list {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.header-controls-list > * {
+  flex: 0 0 auto;
+}
+
+.header-controls .language-selector {
+  display: flex;
+}
+
+.hamburger-toggle {
+  display: none;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 1.35rem;
+  color: var(--text-primary);
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.2s ease;
+}
+
+.hamburger-toggle:hover {
+  opacity: 0.8;
+}
+
+.icon-button-minimal {
+  background: transparent;
+  border: none;
+  padding: 0.5rem;
+  cursor: pointer;
+  font-size: 1.5rem;
+  transition: opacity 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-button-minimal:hover {
+  opacity: 0.7;
+}
+
+/* Menu items with labels (for hamburger menu) */
+.menu-item-with-label {
+  background: transparent;
+  border: none;
+  padding: 0.5rem;
+  cursor: pointer;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0rem;
+  transition: opacity 0.2s ease;
+  text-align: left;
+}
+
+.menu-item-with-label:hover {
+  opacity: 0.7;
+}
+
+.menu-item-with-label .menu-icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-icon {
+  color: var(--icon-color);
+}
+
+.menu-item-with-label .menu-label {
+  display: none;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.menu-item-with-label .theme-icon {
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.github-icon {
+  width: 24px;
+  height: 24px;
+  display: block;
+  filter: var(--github-icon-filter);
+  pointer-events: none;
+}
+
+.language-menu-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem;
+  background: transparent;
+  border: none;
+}
+
+.language-menu-wrapper .menu-label {
+  display: none;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.language-menu-wrapper .language-selector {
+  pointer-events: auto;
+}
+
+.view-menu-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem;
+  background: transparent;
+  border: none;
+  /* Hide by default - only show in hamburger menu */
+  display: none;
+}
+
+.view-menu-wrapper .menu-label {
+  display: none;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.view-menu-wrapper .view-selector {
+  pointer-events: auto;
+}
+
+/* Main content */
+.app-main {
+  width: 100%;
+  margin: 0 auto;
+  padding-top: 0rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-bottom: 120px;
+  /* Space for bottom panel */
+  transition: margin-left 0.3s ease;
+}
+
+/* Loading and error states */
+.loading-container,
+.error-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 2rem;
+  text-align: center;
+}
+
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid var(--border-color);
+  border-top-color: var(--accent-primary);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.error-container h2 {
+  color: var(--error-color, #e74c3c);
+  margin-bottom: 1rem;
+}
+
+.error-container button {
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  background: var(--accent-primary);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.error-container button:hover {
+  background: var(--accent-hover);
+}
+
+/* Minimal Input Section */
+.input-section-minimal {
+  margin-bottom: 0;
+  width: 100%;
+}
+
+/* ChatGPT-style prompt container */
+.prompt-container {
+  /* Reduce bottom spacing so input box sits closer to floating panel edge */
+  margin-bottom: 0;
+  width: 100%;
+  max-width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.chat-input-wrapper {
+  margin-bottom: 0;
+}
+
+.chat-input-box {
+  position: relative;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  /* Reduce vertical padding to make the box less high */
+  padding: 6px 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+  transition: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  /* Prevent overflow */
+  width: 100%;
+  overflow: visible;
+  flex-wrap: nowrap;
+}
+
+/* No hover effect on the prompt input box (rule removed) */
+
+/* Dropdown selector */
+.prompt-dropdown {
+  position: static;
+  /* Changed from relative to static so dropdown positions relative to chat-input-box */
+  flex-shrink: 0;
+}
+
+.dropdown-toggle {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-tertiary);
+  padding: 0;
+  opacity: 0.6;
+}
+
+.dropdown-toggle:hover {
+  opacity: 1;
+  color: var(--text-secondary);
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: calc(100% + 6px);
+  /* Position below the chat-input-box with a small gap */
+  left: 0;
+  right: 0;
+  width: 100%;
+  /* Full width of chat-input-box */
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  overflow: hidden;
+}
+
+.dropdown-item {
+  width: 100%;
+  padding: 8px 12px;
+  text-align: left;
+  background: transparent;
+  border: none;
+  color: var(--text-primary);
+  cursor: pointer;
+  font-size: 0.9rem;
+  line-height: 1.3;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.dropdown-item-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 20px;
+}
+
+.dropdown-item-prompt {
+  flex: 1;
+  min-width: 0;
+}
+
+/* Renamed from dropdown-item-model to dropdown-item-meta for consistency */
+.dropdown-item-meta {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  opacity: 0.7;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.dropdown-item.active .dropdown-item-meta {
+  color: rgba(255, 255, 255, 0.8);
+  opacity: 1;
+}
+
+/* Model info with logo */
+.model-info {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.model-logo {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+  display: block;
+}
+
+.model-size {
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+}
+
+/* Fallback for unknown models */
+.model-id {
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+}
+
+/* Temperature display */
+.temperature-display {
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+}
+
+/* Separator between meta items */
+.meta-separator {
+  opacity: 0.5;
+}
+
+/* Keep old class for backward compatibility */
+.dropdown-item-model {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  opacity: 0.7;
+  white-space: nowrap;
+  font-family: var(--font-mono);
+}
+
+.dropdown-item.active .dropdown-item-model {
+  color: rgba(255, 255, 255, 0.8);
+  opacity: 1;
+}
+
+.dropdown-item:last-child {
+  border-bottom: none;
+}
+
+.dropdown-item:hover {
+  background: var(--bg-secondary);
+}
+
+.dropdown-item.active {
+  background: var(--accent-primary);
+  color: white;
+}
+
+.dropdown-item.active:hover {
+  background: var(--accent-hover);
+}
+
+.prompt-main {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.prompt-text-chat {
+  flex: 1 1 auto;
+  font-size: 1rem;
+  line-height: 1.4;
+  color: var(--text-primary);
+  font-weight: 400;
+  min-height: 22px;
+  padding-right: 8px;
+  min-width: 0;
+  /* Allow flex item to shrink below content size */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: block;
+}
+
+.prompt-text-chat.has-tokens {
+  text-overflow: clip;
+  white-space: normal;
+}
+
+.prompt-text-chat.has-tokens .token-with-underline {
+  display: inline-block;
+  padding-bottom: 2px;
+  border-bottom-width: 4px;
+  border-bottom-style: solid;
+  border-radius: 2px;
+  margin-right: 2px;
+}
+
+.prompt-text-chat.has-tokens .token-with-underline.special-token {
+  font-size: 0.75em;
+  color: var(--text-tertiary, #888);
+  background-color: var(--bg-special-token, rgba(128, 128, 128, 0.08));
+  padding: 1px 2px 3px 2px;
+  border-radius: 3px;
+  font-weight: normal;
+}
+
+.prompt-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex: 0 0 auto;
+  margin-left: 4px;
+  position: relative;
+}
+
+.prompt-cursor {
+  display: inline-block;
+  margin-left: 2px;
+  animation: blink 1s step-end infinite;
+  color: var(--text-primary);
+}
+
+@keyframes blink {
+  0%,
+  50% {
+    opacity: 1;
+  }
+
+  51%,
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Play button */
+.btn-play {
+  position: static;
+  /* participate in flex layout to avoid subpixel jump on hover */
+  --btn-play-size: 40px;
+  width: var(--btn-play-size) !important;
+  height: var(--btn-play-size) !important;
+  min-width: var(--btn-play-size) !important;
+  min-height: var(--btn-play-size) !important;
+  max-width: var(--btn-play-size) !important;
+  max-height: var(--btn-play-size) !important;
+  border-radius: 50% !important;
+  background: var(--accent-primary);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  padding: 0;
+  flex: 0 0 auto;
+  flex-shrink: 0;
+  aspect-ratio: 1 / 1;
+}
+
+.btn-play:hover:not(:disabled) {
+  background: var(--accent-hover);
+  filter: brightness(0.9);
+}
+
+.btn-play:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background: var(--text-tertiary);
+}
+
+.btn-play svg {
+  margin-left: 1px;
+  width: 12px;
+  height: 12px;
+}
+
+/* Settings (model & temperature) */
+.btn-settings {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-tertiary);
+  transition:
+    color 0.2s ease,
+    opacity 0.2s ease;
+  padding: 0;
+  flex: 0 0 auto;
+  margin-right: 4px;
+  opacity: 1;
+  font-size: 24px;
+  /* controls @mdi/react Icon (1em) */
+  line-height: 1;
+}
+
+.btn-action-toggle {
+  display: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--text-tertiary);
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  transition:
+    color 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease;
+  flex: 0 0 auto;
+  padding: 0;
+}
+
+.btn-action-toggle:hover,
+.btn-action-toggle.open {
+  color: var(--text-primary);
+  border-color: var(--border-color);
+  background: rgba(0, 0, 0, 0.02);
+}
+
+.prompt-actions-menu {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 6px);
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  padding: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 150px;
+  z-index: 1200;
+}
+
+.prompt-actions-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  border: none;
+  background: transparent;
+  color: var(--text-primary);
+  cursor: pointer;
+  padding: 6px 8px;
+  border-radius: 8px;
+}
+
+.prompt-actions-item:hover {
+  background: var(--bg-secondary);
+}
+
+.btn-settings:hover {
+  color: var(--text-primary);
+  opacity: 1;
+}
+
+.btn-settings svg {
+  display: block;
+}
+
+.settings-popover {
+  position: absolute;
+  right: 8px;
+  top: calc(100% + 6px);
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  z-index: 1100;
+  padding: 8px 10px;
+  min-width: 220px;
+  max-width: 500px;
+}
+
+.settings-section + .settings-section {
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px dashed var(--border-color);
+}
+
+.settings-label {
+  font-size: 0.7rem;
+  color: var(--text-tertiary);
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.model-options {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.model-option {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 8px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  cursor: pointer;
+}
+
+.model-option.selected {
+  outline: 2px solid var(--accent-primary);
+  background: rgba(78, 205, 196, 0.08);
+}
+
+.temp-options {
+  display: flex;
+  gap: 6px;
+}
+
+.temp-option {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 8px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-secondary);
+  cursor: pointer;
+}
+
+.temp-option.selected {
+  outline: 2px solid var(--accent-primary);
+  background: rgba(78, 205, 196, 0.08);
+}
+
+.temp-emoji {
+  font-size: 18px;
+  line-height: 1;
+}
+
+.temp-value {
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+}
+
+.speed-options {
+  display: flex;
+  gap: 6px;
+}
+
+.speed-option {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 8px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-secondary);
+  cursor: pointer;
+}
+
+.speed-option.selected {
+  outline: 2px solid var(--accent-primary);
+  background: rgba(78, 205, 196, 0.08);
+}
+
+.speed-icon {
+  font-size: 18px;
+  line-height: 1;
+}
+
+.speed-label {
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+}
+
+.settings-toggle {
+  padding: 4px 0;
+}
+
+.toggle-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.toggle-checkbox {
+  appearance: none;
+  width: 36px;
+  height: 20px;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  position: relative;
+  cursor: pointer;
+}
+
+.toggle-checkbox::before {
+  content: '';
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--text-secondary);
+  top: 2px;
+  left: 2px;
+  transition: left 0.2s ease;
+}
+
+.toggle-checkbox:checked {
+  background: var(--accent-primary);
+  border-color: var(--accent-primary);
+}
+
+.toggle-checkbox:checked::before {
+  left: 18px;
+  background: white;
+}
+
+.toggle-text {
+  font-size: 0.85rem;
+  color: var(--text-primary);
+}
+
+.prompt-display-minimal {
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.prompt-text-large {
+  font-size: 2rem;
+  line-height: 1.4;
+  color: var(--text-primary);
+  margin-bottom: 2rem;
+  font-weight: 300;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Subtle example selector bar - hidden, replaced by dropdown */
+.example-selector-bar {
+  display: none;
+}
+
+/* Minimal action buttons */
+.btn-minimal {
+  padding: 0;
+  border: none;
+  background: transparent;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+  font-weight: 400;
+}
+
+.btn-minimal:hover:not(:disabled) {
+  opacity: 0.7;
+}
+
+.btn-minimal:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+/* Visualization Section */
+.visualization-section {
+  background: transparent;
+  padding: 0;
+  min-height: auto;
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  /* Allow content to overflow horizontally for scrolling */
+  overflow: visible;
+}
+
+.visualization-section.expanded {
+  justify-content: flex-start;
+}
+
+/* Scrollable content area - centered */
+.viz-scroll {
+  flex: 1;
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: visible;
+  display: block;
+  /* Changed from flex to block to avoid centering issues */
+  position: relative;
+}
+
+.viz-scroll > svg {
+  transform: scaleY(1);
+  display: block;
+  /* Center the SVG when it's smaller than the container */
+  margin: 0 auto;
+  /* SVG width is controlled by inline styles in the component */
+}
+
+/* Stage labels panel - expandable from right (overlay, doesn't affect centering) */
+.viz-labels-panel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  align-items: flex-start;
+  z-index: 0;
+  /* stay below floating bottom answer panel */
+  pointer-events: none;
+  /* keep canvas interactions; inner elements will re-enable */
+}
+
+.viz-labels-toggle {
+  position: sticky;
+  top: calc(50vh - 16px);
+  /* vertically center (button is 32px) */
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-tertiary);
+  margin-left: 0;
+  margin-right: -16px;
+  /* center over delimiter (container left border) */
+  flex-shrink: 0;
+  box-shadow: 0 2px 4px var(--shadow-color);
+  pointer-events: auto;
+  /* allow clicking */
+  z-index: 2;
+  /* ensure the arrow sits above the delimiter line */
+}
+
+.viz-labels-toggle:hover {
+  background: var(--bg-hover);
+  color: var(--text-primary);
+  border-color: var(--accent-primary);
+}
+
+.viz-labels-container {
+  position: relative;
+  top: 0;
+  /* align with visualization top */
+  width: 0;
+  overflow: hidden;
+  transition: width 0.3s ease;
+  background: var(--bg-primary);
+  border-left: 1px solid var(--border-color);
+  /* delimiter line */
+  display: flex;
+  flex-direction: column;
+  pointer-events: auto;
+  /* enable scrolling inside if needed */
+  z-index: 1;
+  /* sits below the toggle button */
+}
+
+.viz-labels-container.expanded {
+  width: 280px;
+  margin-left: 8px;
+}
+
+.viz-labels-content {
+  flex: 1;
+  overflow: visible;
+}
+
+.visualization-labels-canvas {
+  width: 100%;
+  display: block;
+}
+
+/* collapse-toggle styles are defined in visualization.css to avoid conflicts */
+
+/* Custom scrollbar for viz-scroll */
+.viz-scroll::-webkit-scrollbar {
+  height: 10px;
+}
+
+.viz-scroll::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+  border-radius: 4px;
+}
+
+.viz-scroll::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 4px;
+}
+
+.viz-scroll::-webkit-scrollbar-thumb:hover {
+  background: var(--text-tertiary);
+}
+
+.visualization-canvas {
+  background: transparent;
+  display: block;
+}
+
+/* Ensure horizontal scrolling works even when content extends beyond viewport */
+.viz-scroll {
+  /* Explicitly set scroll behavior */
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  /* Smooth scrolling on iOS */
+}
+
+/* Responsive design */
+
+/* Desktop styles (above mobile breakpoint) */
+@media (min-width: 1001px) {
+  /* Hide left logo on desktop */
+  .app-logo {
+    display: none;
+  }
+
+  /* Show centered logo button on desktop */
+  .logo-center-button {
+    display: flex;
+  }
+}
+
+@media (max-width: 1000px) {
+  /* Global zoom for visualization canvas on mobile */
+  :root {
+    --viz-zoom: 0.9;
+    --viz-token-spacing-mobile: 120;
+    /* Tighter spacing estimate for mobile collapse calc */
+  }
+
+  /* Scale the entire visualization content (SVG + overlay controls) together
+     so alignment is preserved while keeping scroll behavior intact. */
+  .viz-scale {
+    transform: scale(var(--viz-zoom));
+    transform-origin: top center;
+    /* Use fit-content to avoid unnecessary scrollbar when content is smaller than the scaled width */
+    width: fit-content;
+    min-width: 100%;
+  }
+
+  /* Edge-to-edge layout on mobile */
+  .app-main {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .viz-scroll {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .visualization-section {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  /* Layout adjustments */
+  .floating-top-content {
+    gap: 0.5rem;
+  }
+
+  .floating-top-section,
+  .floating-bottom-section {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  /* Logo adjustments */
+  .logo-image {
+    height: 32px;
+  }
+
+  /* Input section adjustments */
+  .canvas-input-section {
+    max-width: min(600px, calc(100vw - 40px));
+  }
+
+  .chat-input-box {
+    gap: 6px;
+  }
+
+  .prompt-text-chat {
+    font-size: 0.95rem;
+  }
+
+  /* View selector positioning */
+  .view-selector-popup-container {
+    left: 0.5rem;
+  }
+
+  /* Ensure logo text doesn't overlap with view selector on very narrow screens */
+  .logo-icon {
+    margin-left: 0.5rem;
+  }
+
+  /* Header controls - hamburger menu */
+  .header-controls {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .header-controls-list {
+    display: none;
+  }
+
+  .header-controls.open .header-controls-list {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    right: 0;
+    padding: 0.75rem;
+    background: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+    min-width: 200px;
+    gap: 0.75rem;
+    z-index: 101;
+  }
+
+  .header-controls.open .header-controls-list > * {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .header-controls.open .menu-item-with-label {
+    width: 100%;
+    justify-content: flex-start;
+    padding: 0.75rem;
+    border-radius: 6px;
+    transition:
+      background-color 0.15s ease,
+      opacity 0.2s ease;
+  }
+
+  .header-controls.open .menu-item-with-label:hover {
+    background: var(--bg-hover, rgba(0, 0, 0, 0.05));
+    opacity: 1;
+  }
+
+  .header-controls.open .menu-item-with-label .menu-label {
+    display: block;
+  }
+
+  /* Ensure icons have consistent width for alignment in hamburger menu */
+  .header-controls.open .menu-icon-container {
+    width: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+  }
+
+  /* Ensure consistent gap in hamburger menu */
+  .header-controls.open .menu-item-with-label {
+    gap: 0.75rem;
+  }
+
+  .header-controls.open .language-menu-wrapper {
+    width: 100%;
+    justify-content: flex-start;
+    padding: 0.75rem;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+
+  .header-controls.open .language-menu-wrapper:hover {
+    background: var(--bg-hover, rgba(0, 0, 0, 0.05));
+  }
+
+  .header-controls.open .language-menu-wrapper .menu-label {
+    display: block;
+  }
+
+  .header-controls.open .language-selector {
+    width: auto;
+    pointer-events: auto;
+  }
+
+  .header-controls.open .language-selector .icon-button-minimal {
+    pointer-events: auto;
+  }
+
+  .header-controls.open .view-menu-wrapper {
+    display: flex;
+    width: 100%;
+    justify-content: flex-start;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+
+  .header-controls.open .view-menu-wrapper:hover {
+    background: var(--bg-hover, rgba(0, 0, 0, 0.05));
+  }
+
+  .header-controls.open .view-menu-wrapper .menu-label {
+    display: block;
+  }
+
+  .header-controls.open .view-menu-wrapper .menu-label {
+    display: none;
+  }
+
+  .header-controls.open .view-selector {
+    width: auto;
+    pointer-events: auto;
+  }
+
+  .header-controls.open .language-dropdown {
+    pointer-events: auto;
+  }
+
+  .hamburger-toggle {
+    display: inline-flex;
+  }
+
+  /* Visualization adjustments */
+  .visualization-section {
+    min-height: 600px;
+  }
+
+  .visualization-canvas {
+    min-height: 600px;
+    height: auto;
+  }
+
+  /* Hide the stage labels panel on mobile */
+  .viz-labels-panel {
+    display: none;
+  }
+
+  /* No need to reserve space on small screens */
+  .visualization-section.expanded .viz-scroll {
+    padding-right: 0;
+  }
+}
+
+/* Slightly stronger zoom-out on very narrow screens */
+@media (max-width: 640px) {
+  :root {
+    --viz-zoom: 0.85;
+  }
+}

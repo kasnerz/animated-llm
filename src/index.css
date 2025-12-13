@@ -1,0 +1,30 @@
+/* Global styles */
+/* @import url('https://fonts.googleapis.com/css2?family=Mountains+of+Christmas&display=swap'); */
+@import './assets/fonts/fonts.css';
+/* @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap'); */
+@import './styles/themes.css';
+@import './styles/main.css';
+@import './styles/visualization.css';
+@import './styles/app.css';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  /* Prevent transient page-level horizontal scrollbar during zoom/layout shifts */
+  overflow-x: hidden;
+}
+
+#root {
+  width: 100%;
+  /* min-height removed to prevent excess whitespace - content determines height */
+}

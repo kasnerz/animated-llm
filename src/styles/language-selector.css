@@ -1,0 +1,85 @@
+/**
+ * Language Selector Styles
+ */
+
+.language-selector {
+  position: relative;
+}
+
+.language-button {
+  position: relative;
+}
+
+.language-flag {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.language-dropdown {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  right: 0;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  min-width: 180px;
+  padding: 0.5rem;
+  z-index: 1001;
+}
+
+.language-option {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  padding: 0.625rem 0.75rem;
+  background: transparent;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  text-align: left;
+}
+
+.language-option:hover {
+  background: var(--bg-hover);
+}
+
+.language-option.active {
+  background: var(--bg-active);
+  font-weight: 500;
+}
+
+.language-option .language-flag {
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+
+.language-option .language-name {
+  flex: 1;
+}
+
+.language-option .language-checkmark {
+  color: var(--accent-color);
+  font-weight: bold;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+/* Theme-specific variables */
+:root {
+  --bg-hover: rgba(0, 0, 0, 0.05);
+  --bg-active: rgba(0, 0, 0, 0.08);
+  --accent-color: #007e66;
+}
+
+[data-theme='dark'] {
+  --bg-hover: rgba(255, 255, 255, 0.08);
+  --bg-active: rgba(255, 255, 255, 0.12);
+  --accent-color: #10b981;
+}

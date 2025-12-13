@@ -1,0 +1,352 @@
+/* Document Excerpt Styles */
+/* Compact, realistic document excerpt with torn/ragged edge for PretrainingModelView */
+
+.document-excerpt-section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.document-excerpt-container {
+  width: 100%;
+  max-width: 700px;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+
+  /* Expose variables at container level so sibling torn-edge can inherit */
+  --document-bg: #ffffff;
+  --document-border: #d0d0d0;
+  --document-text: #2c2c2c;
+  --grid-color: #f3f3f3;
+  --jagged-height: 12px;
+}
+
+/* Wrapper for the document shape */
+.document-shape-wrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Background with grid and clip-path */
+.document-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--document-bg);
+  /* Clip path to create the jagged bottom edge */
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% calc(100% - var(--jagged-height)),
+    90% calc(100% - var(--jagged-height) + 9.6px),
+    80% calc(100% - var(--jagged-height) + 4.8px),
+    70% 100%,
+    60% calc(100% - var(--jagged-height)),
+    50% calc(100% - var(--jagged-height) + 9.6px),
+    40% calc(100% - var(--jagged-height) + 4.8px),
+    30% 100%,
+    20% calc(100% - var(--jagged-height) + 2.4px),
+    10% calc(100% - var(--jagged-height) + 9.6px),
+    0% calc(100% - var(--jagged-height))
+  );
+  z-index: 0;
+}
+
+/* Paper texture overlay - subtle grid pattern */
+.paper-texture {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image:
+    linear-gradient(var(--grid-color, #f5f5f5) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-color, #f5f5f5) 1px, transparent 1px);
+  background-size: 20px 20px;
+  pointer-events: none;
+  opacity: 1;
+}
+
+/* Top/Side Borders */
+.document-border-main {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: var(--jagged-height);
+  border: 1px solid var(--document-border);
+  border-bottom: none;
+  border-radius: 4px 4px 0 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Bottom Border SVG */
+.document-border-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: var(--jagged-height);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.torn-edge-svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* Content Layer */
+.document-content-layer {
+  position: relative;
+  z-index: 2;
+  padding-bottom: var(--jagged-height);
+}
+
+/* Document header with embedded selector */
+.document-header {
+  position: relative;
+  padding: 8px 12px 0;
+  z-index: 2;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.selector-wrapper-embedded {
+  position: relative;
+}
+
+.selector-button-embedded {
+  padding: 4px 8px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--document-text-secondary, #888);
+  font-size: 0.75rem;
+  border-radius: 4px;
+  opacity: 0.6;
+}
+
+.selector-button-embedded:hover {
+  opacity: 1;
+  background: rgba(0, 0, 0, 0.03);
+}
+
+.selector-text-embedded {
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.selector-dropdown-embedded {
+  position: absolute;
+  top: calc(100% + 4px);
+  right: 0;
+  min-width: 280px;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  z-index: 100;
+  overflow: hidden;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.selector-item {
+  width: 100%;
+  padding: 10px 14px;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--border-color);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-align: left;
+  color: var(--text-primary);
+}
+
+.selector-item:last-child {
+  border-bottom: none;
+}
+
+.selector-item:hover {
+  background: var(--bg-secondary);
+}
+
+.selector-item.active {
+  background: var(--accent-primary);
+  color: white;
+}
+
+.selector-item.active:hover {
+  background: var(--accent-hover);
+}
+
+.selector-item-number {
+  font-size: 0.8rem;
+  font-weight: 600;
+  opacity: 0.7;
+  min-width: 32px;
+}
+
+.selector-item-text {
+  flex: 1;
+  font-size: 0.9rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Compact document content - single line */
+.document-content-compact {
+  position: relative;
+  padding: 8px 24px 16px;
+  z-index: 1;
+}
+
+.document-text-compact {
+  font-family: 'Georgia', 'Times New Roman', serif;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--document-text, #2c2c2c);
+  text-align: left;
+  word-spacing: 0.05em;
+  white-space: nowrap;
+  /* Allow programmatic horizontal scrolling to reveal later tokens */
+  overflow-x: auto;
+  overflow-y: hidden;
+  text-overflow: clip;
+  /* Hide scrollbars while keeping scrollLeft functional */
+  -ms-overflow-style: none;
+  /* IE/Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+.document-text-compact::-webkit-scrollbar {
+  display: none;
+  /* Chrome/Safari */
+}
+
+/* Tokenized text in document */
+.document-text-compact .tokenized-text {
+  display: inline;
+  white-space: nowrap;
+}
+
+.document-text-compact .token-with-highlight {
+  display: inline;
+  padding: 2px 0;
+  border-radius: 2px;
+  margin: 0 1px;
+}
+
+/* Training view token styles */
+.document-text-compact .doc-token-input {
+  border-bottom: 2px solid var(--document-text);
+}
+
+.document-text-compact .doc-token-target {
+  color: #b91c1c;
+  /* red-700 */
+  font-weight: 700;
+}
+
+.document-text-compact .doc-token-muted {
+  color: var(--document-text-secondary, #888);
+  opacity: 0.7;
+}
+
+/* Control buttons */
+.document-controls {
+  display: flex;
+  justify-content: center;
+  padding: 16px 0 0;
+}
+
+.btn-play-document {
+  --btn-size: 56px;
+  width: var(--btn-size);
+  height: var(--btn-size);
+  min-width: var(--btn-size);
+  min-height: var(--btn-size);
+  border-radius: 50%;
+  background: var(--accent-primary);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn-play-document:hover:not(:disabled) {
+  background: var(--accent-hover);
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.btn-play-document:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-play-document:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+/* Dark theme adjustments */
+[data-theme='dark'] .document-excerpt-container {
+  --document-bg: #2a2a2a;
+  --document-border: #404040;
+  --document-text: #e8e6e3;
+  --document-text-secondary: #999;
+  --grid-color: #333333;
+}
+
+[data-theme='dark'] .document-background {
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3));
+}
+
+[data-theme='dark'] .selector-button-embedded:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .document-excerpt-container {
+    max-width: 100%;
+  }
+
+  .document-content-compact {
+    padding: 6px 16px 12px;
+  }
+
+  .document-text-compact {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  .btn-play-document {
+    --btn-size: 48px;
+  }
+
+  .selector-dropdown-embedded {
+    min-width: 240px;
+  }
+}

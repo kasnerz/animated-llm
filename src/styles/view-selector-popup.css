@@ -1,0 +1,216 @@
+/* View Selector Popup Styles */
+
+.view-selector-popup {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.view-selector-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  background: transparent;
+  border: none;
+  border-radius: 0.375rem;
+  color: var(--accent-primary);
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+  max-width: 100%;
+}
+
+.view-selector-button:hover {
+  background: var(--bg-secondary);
+}
+
+.view-selector-button:focus {
+  outline: 2px solid var(--accent-primary);
+  outline-offset: 2px;
+}
+
+.view-current-icon {
+  color: var(--accent-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.view-current-icon-img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.view-current-label {
+  line-height: 1;
+  font-size: 1em;
+  font-weight: bold;
+}
+
+.view-chevron {
+  transition: transform 0.2s ease;
+  color: var(--accent-primary);
+}
+
+.view-chevron.open {
+  transform: rotate(180deg);
+}
+
+/* Popup container */
+.view-popup {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  left: 0;
+  min-width: 280px;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 20px var(--shadow-color);
+  padding: 1rem;
+  z-index: 1000;
+  animation: popupFadeIn 0.15s ease-out;
+}
+
+@keyframes popupFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Section container */
+.view-section {
+  margin-bottom: 1rem;
+}
+
+.view-section:last-child {
+  margin-bottom: 0;
+}
+
+.view-section-title {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-secondary);
+  margin: 0 0 0.5rem 0;
+  padding: 0 0.25rem;
+}
+
+/* Section items - list view */
+.view-section-items {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+/* Individual view item button - list item */
+.view-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 0.75rem;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  font-weight: 400;
+  text-align: left;
+  width: 100%;
+}
+
+.view-item:hover {
+  background: var(--bg-secondary);
+  border-color: var(--accent-primary);
+}
+
+.view-item:focus {
+  outline: 2px solid var(--accent-primary);
+  outline-offset: 2px;
+}
+
+.view-item.active {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  border-color: var(--accent-primary);
+  font-weight: 500;
+}
+
+/* Icon SVG - inline with text */
+.view-item-icon-svg {
+  flex-shrink: 0;
+  color: var(--text-secondary);
+  transition: color 0.2s ease;
+}
+
+.view-item-icon-img {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  opacity: 0.5;
+  transition: opacity 0.2s ease;
+}
+
+.view-item:hover .view-item-icon-svg {
+  color: var(--accent-primary);
+}
+
+.view-item:hover .view-item-icon-img {
+  opacity: 1;
+}
+
+.view-item.active .view-item-icon-img {
+  opacity: 1;
+}
+
+.view-item.active .view-item-icon-svg {
+  color: var(--accent-primary);
+}
+
+.view-item-label {
+  text-align: left;
+  line-height: 1.2;
+  flex: 1;
+  font-family: var(--font-sans);
+}
+
+/* Hide view selector popup on mobile when hamburger menu is displayed */
+@media (max-width: 1000px) {
+  /* Show icon and label on mobile, hide only the chevron */
+  .view-chevron {
+    display: none;
+  }
+
+  .view-selector-button {
+    padding: 0.5rem;
+    min-width: auto;
+    max-width: calc(100vw - 170px);
+    /* Leave space for hamburger menu and margins */
+  }
+
+  .view-current-label {
+    font-size: 0.875rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  /* Adjust popup position for mobile */
+  .view-popup {
+    min-width: 180px;
+  }
+}
