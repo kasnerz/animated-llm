@@ -1,42 +1,80 @@
-# Animated LLM - Interactive Transformer Visualization
+<div align="center">
+  <img src="src/assets/logo.png" alt="Animated LLM Logo" width="120" />
 
-An educational demo showing how large language models based on a Transformer architecture work under the hood.
+  <h1>AnimatedLLM</h1>
 
-This demo is designed for:
+  <p>
+    <strong>Understand the mechanics of LLMs.</strong>
+  </p>
 
-- Non-technical audiences curious about LLMs
-- Kids learning about AI
-- Students studying natural language processing
-- Anyone wanting to understand how transformers work
+  <p>
+    <a href="https://opensource.org/licenses/MIT">
+      <img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License: MIT" />
+    </a>
+    <a href="http://makeapullrequest.com">
+      <img src="https://img.shields.io/badge/PRs-welcome-yellow.svg" alt="PRs Welcome" />
+    </a>
+    <a href="https://animatedllm.com">
+      <img src="https://img.shields.io/website?url=https%3A%2F%2Fanimatedllm.com&label=animatedllm.com" alt="Website" />
+    </a>
+    <a href="#">
+      <img src="https://img.shields.io/badge/arXiv-TBD-red.svg" alt="arXiv" />
+    </a>
+  </p>
 
-This is a client-only application that uses pre-computed generation data.
+  <br />
 
-More info TBA.
+  <img src="public/peek.gif" alt="Animated LLM Preview" width="100%" />
+</div>
 
-## Getting Started
+<br />
 
-### Prerequisites
+## 🎓 What is this?
 
-- Node.js 20.9.0 or higher
-- npm
+An educational web application designed to teach the mechanics of large language models (LLMs work.
 
-### Installation
+Instead of static diagrams or abstract equations, it provides a dynamic, step-by-step visualization of the Transformer architecture in action.
 
-```bash
-npm install
-npm run dev
-```
+The application runs **entirely in your browser** using pre-computed data.
 
-The app will be available at `http://localhost:5173/`
+👉 **Try it yourself at** **[animatedllm.com](https://animatedllm.com)**
 
-### Keyboard Shortcuts
+We built this for:
 
-- `Space` - Play / Pause animation
-- `→` - Step forward
-- `←` -Step backward
-- `N` - Skip to next token
-- `G` - Skip to end of generation
-- `R` - Reset animation
-- `T` - Toggle theme
-- `L` - Switch language
-- `H` - Show keyboard shortcuts
+- **Students** who want to build intuition for NLP concepts.
+- **Educators** looking for visual aids to explain attention mechanisms and token generation.
+- **Curious minds** who want to peek under the hood of modern AI.
+
+## ⌨️ Controls
+
+Navigate the animation using your keyboard:
+
+| Key       | Action                    |
+| :-------- | :------------------------ |
+| `Space`   | Play / Pause animation    |
+| `→` / `←` | Step forward / backward   |
+| `N`       | Skip to next token        |
+| `G`       | Skip to end of generation |
+| `R`       | Reset animation           |
+| `T`       | Toggle theme (Light/Dark) |
+| `L`       | Switch language           |
+| `H`       | Show shortcuts help       |
+
+## 🚀 Running locally
+
+You can also run the app locally in just a few minutes. You will need [Node.js](https://nodejs.org/) (version 20.9.0 or higher) and npm installed.
+
+1. **Install dependencies:**
+
+   ```bash
+   npm install
+   ```
+
+2. **Start the development server:**
+   ```bash
+   npm run dev
+   ```
+
+## 📚 Cite Us
+
+If you use AnimatedLLM in your research or teaching, please cite our paper: link TBA.
