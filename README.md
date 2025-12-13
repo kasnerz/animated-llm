@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="src/assets/logo.png" alt="Animated LLM Logo" width="120" />
+  <img src="src/assets/icon.png" alt="Animated LLM Logo" width="50" />
 
   <h1>AnimatedLLM</h1>
 
@@ -31,19 +31,13 @@
 
 ## 🎓 What is this?
 
-An educational web application designed to teach the mechanics of large language models (LLMs work.
+An educational web application designed to teach the how large language models (LLMs) work.
 
-Instead of static diagrams or abstract equations, it provides a dynamic, step-by-step visualization of the Transformer architecture in action.
+Instead of static diagrams or abstract equations, it provides a dynamic, step-by-step visualizations of the Transformer architecture in action.
 
 The application runs **entirely in your browser** using pre-computed data.
 
 👉 **Try it yourself at** **[animatedllm.com](https://animatedllm.com)**
-
-We built this for:
-
-- **Students** who want to build intuition for NLP concepts.
-- **Educators** looking for visual aids to explain attention mechanisms and token generation.
-- **Curious minds** who want to peek under the hood of modern AI.
 
 ## ⌨️ Controls
 
