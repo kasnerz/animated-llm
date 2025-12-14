@@ -220,6 +220,7 @@ function PretrainingSimpleView() {
 
   const distributionRows = useMemo(() => {
     if (!currentTrainStep) return [];
+    const maxRows = isMobile ? 5 : MAX_DISTRIBUTION_ROWS;
     const predictions = currentTrainStep.predictions || [];
     const targetId = currentTrainStep.target_token_id;
     const targetToken = currentTrainStep.target_token;
@@ -240,12 +241,12 @@ function PretrainingSimpleView() {
       return false;
     });
 
-    let rows = predictions.slice(0, MAX_DISTRIBUTION_ROWS);
+    let rows = predictions.slice(0, maxRows);
 
     if (!hasTargetInPredictions && targetCandidate) {
-      if (predictions.length >= MAX_DISTRIBUTION_ROWS) {
+      if (predictions.length >= maxRows) {
         rows = [
-          ...predictions.slice(0, MAX_DISTRIBUTION_ROWS - 2),
+          ...predictions.slice(0, maxRows - 2),
           { token: '...', token_id: null, prob: 0, isEllipsis: true },
           { ...targetCandidate, isInjectedTarget: true },
         ];
@@ -270,7 +271,7 @@ function PretrainingSimpleView() {
       normalized.push(row);
     });
 
-    return normalized.slice(0, MAX_DISTRIBUTION_ROWS).map((row, index) => {
+    return normalized.slice(0, maxRows).map((row, index) => {
       const isEllipsis = row.isEllipsis || row.token === '...';
       const isTarget =
         !isEllipsis &&
@@ -292,7 +293,7 @@ function PretrainingSimpleView() {
         isEllipsis,
       };
     });
-  }, [currentTrainStep]);
+  }, [currentTrainStep, isMobile]);
 
   const maxPredictionProb = Math.max(
     0.001,

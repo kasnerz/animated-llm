@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { Routes, Route, useLocation, Link } from 'react-router-dom';
+import { Routes, Route, useLocation, Link, useNavigationType } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { AppProvider, useApp } from './contexts/AppContext';
 import { I18nProvider, useI18n } from './i18n/I18nProvider';
@@ -32,6 +32,7 @@ function AppContent() {
   const { t, language, toggleLanguage } = useI18n();
   const { currentView, setCurrentView } = useView();
   const location = useLocation();
+  const navigationType = useNavigationType();
   const [isKeyboardShortcutsOpen, setIsKeyboardShortcutsOpen] = useState(false);
   const [isAboutOpen, setIsAboutOpen] = useState(false);
   const [isHamburgerOpen, setIsHamburgerOpen] = useState(false);
@@ -53,6 +54,13 @@ function AppContent() {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [location.pathname, currentView]);
+
+  // Scroll to top on route change
+  useEffect(() => {
+    if (navigationType !== 'POP') {
+      window.scrollTo(0, 0);
+    }
+  }, [location.pathname, navigationType]);
 
   // Note: We intentionally avoid syncing context -> URL here to prevent race conditions
   // when deep-linking. Navigation is handled explicitly in view selectors.

@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import { useEffect, useRef, useState } from 'react';
 import { useApp } from '../contexts/AppContext';
 import { useI18n } from '../i18n/I18nProvider';
@@ -14,7 +13,7 @@ import {
   renderOutputLayer,
   renderStageLabels,
 } from '../visualization/layers';
-import { processTokenForVisualization } from '../utils/tokenProcessing';
+import { processTokenForVisualization, isSpecialTokenContextual } from '../utils/tokenProcessing';
 import Icon from '@mdi/react';
 import {
   mdiArrowExpandHorizontal,
@@ -115,6 +114,29 @@ export default function TrainingCanvas() {
 
     const width = containerWidth || CONSTS.DEFAULT_CONTAINER_WIDTH;
     const isMobile = width <= 1000;
+
+    // When expanded, widen layout to fit all tokens so the right side paints and scrolls
+    let expandedLayoutWidth = width;
+    if (isExpanded && tStep?.input_tokens) {
+      const tokens = tStep.input_tokens;
+      const widths = tokens.map((tok, idx) => {
+        const prevTok = idx > 0 ? tokens[idx - 1] : null;
+        const special = isSpecialTokenContextual(tok, prevTok);
+        const fontScale = special ? 0.6 : 1.0;
+        const padding = special ? Math.max(2, TOKEN.HORIZ_PADDING * 0.3) : TOKEN.HORIZ_PADDING;
+        const minWidth = special ? Math.max(20, TOKEN.MIN_BOX_WIDTH * 0.5) : TOKEN.MIN_BOX_WIDTH;
+        const contentChars = processTokenForVisualization(tok).length;
+        return Math.max(minWidth, contentChars * TOKEN.CHAR_WIDTH * fontScale + padding);
+      });
+      const tokensSpan =
+        widths.reduce((a, b) => a + b, 0) + TOKEN.GAP * Math.max(0, tokens.length - 1);
+      expandedLayoutWidth = Math.max(
+        width,
+        tokensSpan + CONSTS.MARGIN * 2 + CONSTS.BLOCK_PADDING * 2 + 200
+      );
+    }
+
+    const visualizationWidth = isExpanded ? expandedLayoutWidth : width;
     const maxTokens = isMobile ? CONSTS.MAX_OUTPUT_TOKENS_MOBILE : CONSTS.MAX_OUTPUT_TOKENS;
 
     // Build a step-like structure expected by reusable layers
@@ -211,7 +233,7 @@ export default function TrainingCanvas() {
 
     // Account for labels panel overlay
     const labelsPanelWidth = labelsVisible ? 300 : 50;
-    const availableWidth = width - labelsPanelWidth;
+    const availableWidth = visualizationWidth - labelsPanelWidth;
 
     const maxVisibleTokens = Math.max(3, Math.floor(availableWidth / spacingEstimate) - 1);
     const shouldCollapse = stepForRender.tokens.length > maxVisibleTokens && !isExpanded;
@@ -221,7 +243,7 @@ export default function TrainingCanvas() {
       tokenGroup,
       stepForRender,
       layout,
-      width,
+      visualizationWidth,
       shouldCollapse,
       maxVisibleTokens,
       tokensLayoutRef,
@@ -277,7 +299,7 @@ export default function TrainingCanvas() {
     const contentCenterX =
       minEdge !== Number.POSITIVE_INFINITY && maxEdge !== Number.NEGATIVE_INFINITY
         ? (minEdge + maxEdge) / 2
-        : width / 2;
+        : visualizationWidth / 2;
 
     const ffnInfo = {
       afterBottomY: blockMeta.blockBottomY,
@@ -297,7 +319,7 @@ export default function TrainingCanvas() {
       outputGroup,
       stepForRender,
       layoutLocal,
-      width,
+      visualizationWidth,
       svgRef.current,
       ffnInfo,
       // Allow full training sub-step range (including backprop skeleton 11-16)
@@ -392,22 +414,12 @@ export default function TrainingCanvas() {
     svg.attr('height', dynamicHeight);
     labelsSvg.attr('height', dynamicHeight);
 
-    // Update SVG width style directly to avoid refs-in-render and setState-in-effect
+    // Update SVG width: align intrinsic and styled width to the expanded layout size
     if (isExpanded) {
-      const { positions = [], widths = [], visibleIndices = [] } = tokensLayoutRef.current || {};
-      let rightmostEdge = 0;
-      positions.forEach((centerX, i) => {
-        if (visibleIndices[i] >= 0) {
-          const w = widths[i] || 0;
-          rightmostEdge = Math.max(rightmostEdge, centerX + w / 2);
-        }
-      });
-      const extraPadding = 500;
-      const calculatedWidth = rightmostEdge + extraPadding;
-      const svgWidth = Math.max(containerWidth, calculatedWidth);
-      d3.select(svgRef.current).style('width', `${svgWidth}px`);
+      const svgWidth = Math.max(visualizationWidth + 200, containerWidth);
+      d3.select(svgRef.current).attr('width', svgWidth).style('width', `${svgWidth}px`);
     } else {
-      d3.select(svgRef.current).style('width', '100%');
+      d3.select(svgRef.current).attr('width', visualizationWidth).style('width', '100%');
     }
 
     // Build and run training timeline for current sub-step (0..18)

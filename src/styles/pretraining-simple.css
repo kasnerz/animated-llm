@@ -159,15 +159,17 @@
 
 .pretraining-simple-distributions {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.25rem;
+  grid-template-columns: 1fr 1.5fr 0.4fr;
+  gap: 0.25rem;
   width: min(1200px, 100%);
   margin: 0 auto;
+  padding: 0 0.5rem;
 }
 
 @media (min-width: 900px) {
   .pretraining-simple-distributions {
     grid-template-columns: 1.5fr 0.8fr 1.5fr;
+    gap: 1.25rem;
   }
 }
 
@@ -278,12 +280,39 @@
 }
 
 @media (max-width: 768px) {
+  .distribution-column {
+    padding: 0.75rem 0.25rem;
+    min-height: auto;
+  }
+
+  .distribution-column .column-header {
+    font-size: 0.8rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
   .distribution-row {
-    grid-template-columns: minmax(50px, 1fr) minmax(60px, 2fr) auto;
-    font-size: 0.85rem;
+    grid-template-columns: 45px 25px 35px;
+    gap: 0.25rem;
+    font-size: 0.75rem;
+  }
+
+  .distribution-row .token-label {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 
   .distribution-row .value-label {
-    min-width: 46px;
+    min-width: 0;
+    font-size: 0.7rem;
+    text-align: right;
+  }
+
+  .distribution-column.diff .distribution-row .value-label {
+    font-size: 0.7rem;
   }
 }

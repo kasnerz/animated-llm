@@ -16,8 +16,12 @@ import {
 } from '../visualization/layers';
 import { computeEmbeddingsForStep } from '../visualization/core/embeddings';
 import '../styles/visualization.css';
-import { processTokenForVisualization, isSpecialToken } from '../utils/tokenProcessing';
-import { LAYOUT as CONSTS, TEXT_GEN_STEPS } from '../visualization/core/constants';
+import {
+  processTokenForVisualization,
+  isSpecialToken,
+  isSpecialTokenContextual,
+} from '../utils/tokenProcessing';
+import { LAYOUT as CONSTS, TEXT_GEN_STEPS, TOKEN } from '../visualization/core/constants';
 import Icon from '@mdi/react';
 import {
   mdiArrowExpandHorizontal,
@@ -234,7 +238,29 @@ export default function TextGenerationCanvas() {
 
     // Get SVG dimensions - use full container width for layout (labels are now in a side panel)
     const width = containerWidth || CONSTS.DEFAULT_CONTAINER_WIDTH;
-    const visualizationWidth = width; // Full width available for visualization
+
+    // When expanded, widen the layout to fit all tokens so the right side paints and scrolls
+    let expandedLayoutWidth = width;
+    if (isExpanded && step?.tokens) {
+      const tokens = step.tokens;
+      const widths = tokens.map((tok, idx) => {
+        const prevTok = idx > 0 ? tokens[idx - 1] : null;
+        const special = isSpecialTokenContextual(tok, prevTok);
+        const fontScale = special ? 0.6 : 1.0;
+        const padding = special ? Math.max(2, TOKEN.HORIZ_PADDING * 0.3) : TOKEN.HORIZ_PADDING;
+        const minWidth = special ? Math.max(20, TOKEN.MIN_BOX_WIDTH * 0.5) : TOKEN.MIN_BOX_WIDTH;
+        const contentChars = processTokenForVisualization(tok).length;
+        return Math.max(minWidth, contentChars * TOKEN.CHAR_WIDTH * fontScale + padding);
+      });
+      const tokensSpan =
+        widths.reduce((a, b) => a + b, 0) + TOKEN.GAP * Math.max(0, tokens.length - 1);
+      expandedLayoutWidth = Math.max(
+        width,
+        tokensSpan + CONSTS.MARGIN * 2 + CONSTS.BLOCK_PADDING * 2 + 100
+      );
+    }
+
+    const visualizationWidth = isExpanded ? expandedLayoutWidth : width; // Full width available for visualization
 
     // Determine if we need to collapse tokens
     // Use tighter spacing estimate on mobile for more aggressive collapse
@@ -446,6 +472,18 @@ export default function TextGenerationCanvas() {
     const dynamicHeight = Math.max(600, Math.ceil(contentBottom + CONSTS.BOTTOM_PADDING));
     svg.attr('height', dynamicHeight);
     labelsSvg.attr('height', dynamicHeight);
+
+    // Update SVG width style directly to avoid refs-in-render and setState-in-effect
+    // This ensures horizontal scrolling works when the model is expanded
+    if (isExpanded) {
+      // Use the expanded layout width (already includes margins) plus a small buffer
+      const svgWidth = Math.max(visualizationWidth + 200, containerWidth);
+      svg.attr('width', svgWidth);
+      svg.style('width', `${svgWidth}px`);
+    } else {
+      svg.attr('width', visualizationWidth);
+      svg.style('width', '100%');
+    }
 
     // Animation
     if (gsapRef.current) {
