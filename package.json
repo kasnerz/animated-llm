@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist",
+    "deploy": "gh-pages -d dist -r https://github.com/animatedllm/animatedllm.github.io.git -b main",
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
