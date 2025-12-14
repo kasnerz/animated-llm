@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
-// IMPORTANT: Now using custom domain (animatedllm.com) instead of /animated-llm/ subdirectory
+// IMPORTANT: Now using organization domain (animatedllm.github.io) instead of /animated-llm/ subdirectory
 // For custom domains on GitHub Pages, base should be '/' in all modes
 // For development, use '/' to avoid trailing slash issues
 

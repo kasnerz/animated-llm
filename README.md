@@ -14,8 +14,8 @@
     <a href="http://makeapullrequest.com">
       <img src="https://img.shields.io/badge/PRs-welcome-yellow.svg" alt="PRs Welcome" />
     </a>
-    <a href="https://animatedllm.com">
-      <img src="https://img.shields.io/website?url=https%3A%2F%2Fanimatedllm.com&label=animatedllm.com" alt="Website" />
+    <a href="https://animatedllm.github.io">
+      <img src="https://img.shields.io/website?url=https%3A%2F%2Fanimatedllm.github.io&label=animatedllm.github.io" alt="Website" />
     </a>
     <a href="#">
       <img src="https://img.shields.io/badge/arXiv-TBD-red.svg" alt="arXiv" />
@@ -33,7 +33,7 @@
 
 An educational web application designed to teach the how large language models (LLMs) work.
 
-👉 **Try it yourself at** **[animatedllm.com](https://animatedllm.com)**
+👉 **Try it yourself at** **[animatedllm.github.io](https://animatedllm.github.io)**
 
 Instead of static diagrams or abstract equations, it provides a dynamic, step-by-step visualizations of the Transformer architecture in action.
 
