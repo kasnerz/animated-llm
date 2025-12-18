@@ -424,7 +424,7 @@ export default function TextGenerationCanvas() {
       [TEXT_GEN_STEPS.ATTENTION_FIRST]: 'attention',
       [TEXT_GEN_STEPS.FFN_FIRST]: 'feed_forward',
       // Stack reveal doesn't map to a specific stage label change, keeps previous
-      [TEXT_GEN_STEPS.BLOCK_INPUT_LAST]: 'positional_embedding',
+      // [TEXT_GEN_STEPS.BLOCK_INPUT_LAST]: 'positional_embedding', // Removed to prevent double highlighting
       [TEXT_GEN_STEPS.ATTENTION_LAST]: 'attention',
       [TEXT_GEN_STEPS.FFN_LAST]: 'feed_forward',
       [TEXT_GEN_STEPS.EXTRACTION]: 'output_embedding',

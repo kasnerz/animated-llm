@@ -360,7 +360,7 @@ export default function TrainingCanvas() {
       [TRAINING_STEPS.ATTENTION_FIRST]: 'attention',
       [TRAINING_STEPS.FFN_FIRST]: 'feed_forward',
       // Stack reveal doesn't map to a specific stage label change, keeps previous
-      [TRAINING_STEPS.BLOCK_INPUT_LAST]: 'positional_embedding',
+      // [TRAINING_STEPS.BLOCK_INPUT_LAST]: 'positional_embedding', // Removed to prevent double highlighting
       [TRAINING_STEPS.ATTENTION_LAST]: 'attention',
       [TRAINING_STEPS.FFN_LAST]: 'feed_forward',
       [TRAINING_STEPS.EXTRACTION]: 'output_embedding',
