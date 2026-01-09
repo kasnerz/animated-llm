@@ -7,6 +7,7 @@
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist -r https://github.com/animatedllm/animatedllm.github.io.git -b main",
+    "deploy:redirect": "gh-pages -d public_redirect -r https://github.com/kasnerz/animated-llm.git -b gh-pages",
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
