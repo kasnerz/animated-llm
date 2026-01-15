@@ -75,4 +75,16 @@ Contributions are welcome! Please read our [Contributing Guide](CONTRIBUTING.md)
 
 ## 📚 Cite Us
 
-If you use AnimatedLLM in your research or teaching, please cite our paper: link TBA.
+If you use AnimatedLLM in your research or teaching, please cite our [paper](https://arxiv.org/abs/2601.04213):
+
+```bibtex
+@misc{kasner2025animated,
+      title={AnimatedLLM: Explaining LLMs with Interactive Visualizations},
+      author={Zdeněk Kasner and Ondřej Dušek},
+      year={2025},
+      eprint={2601.04213},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2601.04213},
+}
+```

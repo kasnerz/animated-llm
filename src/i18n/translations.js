@@ -45,6 +45,9 @@ const translations = {
     // Home page sections
     home_training_title: 'Training',
     home_generation_title: 'Text Generation',
+    home_materials_title: 'How-to and Materials',
+    home_how_to_title: 'How-to',
+    home_extra_materials_title: 'Extra Materials',
     // Home page items
     home_pretraining_model_title: 'How is Transformer trained?',
     home_pretraining_model_desc:
@@ -58,20 +61,30 @@ const translations = {
     home_generation_simple_title: 'Text generation basics',
     home_generation_simple_desc:
       'How does a language model generate text? Check out a simple visualization of the generation process on sample prompts.',
+    home_cheatsheet_title: 'LLM Cheatsheet',
+    home_cheatsheet_desc:
+      'A handy overview of how language models work that you can download as a PDF.',
+    home_how_to_use_app_title: 'How to use the app',
+    home_how_to_use_app_desc:
+      'Want to learn more about the app? Understand how it was created and how to use it.',
     // Category labels
     category_training: 'Training',
     category_text_generation: 'Text generation',
+    category_materials: 'How-to and Materials',
     // Category descriptions
     category_training_desc: 'Understand the training process of language models',
     category_text_generation_desc: 'Visualize how LLMs generate text token by token',
+    category_materials_desc: 'Educational materials and guides',
     // View labels
     view_text_generation: 'Model',
     view_training: 'Model',
     view_decoding: 'Algorithms',
+    view_cheatsheet: 'Cheatsheet',
     // View descriptions
     view_text_generation_desc: 'Visualize how LLMs generate text token by token',
     view_training_desc: 'Understand the training process of language models',
     view_decoding_desc: 'Explore different decoding strategies and algorithms',
+    view_cheatsheet_desc: 'Cheatsheet',
     decoding_view_placeholder: 'Decoding algorithms visualization will be displayed here.',
     model_input: 'Model Input',
     model_output: 'Model Output',
@@ -100,8 +113,9 @@ const translations = {
     about_tagline: 'Interactive visualization of language models',
     // Single HTML/Markdown content for the About modal (editable)
     about_content: `
-      <p>This educational app contains a collection of animations that show how large language models (LLMs) work.</p><br>
-      <p>No data is sent to external servers — everything runs in your browser!</p><br>
+      <p>This educational app contains a collection of animations that show how large language models (LLMs) work.</p>
+      <p>No data is sent to external servers — everything runs in your browser!</p>
+      <p>Want to know more? Read the <a href="/how-to"><b>app manual.</b></a></p>
       <p>Use the <b><a href="https://github.com/kasnerz/animated-llm/discussions">project Github</a></b> for questions and comments.</p>
     `,
     about_credits:
@@ -138,6 +152,13 @@ const translations = {
       selectDocument: 'Select document',
       document: 'Document',
     },
+    // Cheatsheet
+    cheatsheet_title: 'LLM Cheatsheet',
+    cheatsheet_description:
+      'A handy overview of how language models work that you can download as a PDF or print as a flyer.',
+    cheatsheet_english_only_note: 'Note: This material is currently available in English only.',
+    download_cheatsheet: 'Download Cheatsheet (PDF)',
+    pdf_preview_unavailable: 'PDF preview is not available in your browser.',
   },
   cs: {
     play: 'Přehrát',
@@ -180,6 +201,9 @@ const translations = {
     // Home page sections
     home_training_title: 'Trénování',
     home_generation_title: 'Generování textu',
+    home_materials_title: 'Návody a materiály',
+    home_how_to_title: 'Jak používat aplikaci',
+    home_extra_materials_title: 'Další materiály',
     // Home page items
     home_pretraining_model_title: 'Jak se trénuje Transformer?',
     home_pretraining_model_desc:
@@ -192,14 +216,27 @@ const translations = {
       'Chceš jít více do hloubky? Zde zjistíš, jak Transformer při generování textu zpracovává jednotlivé tokeny.',
     home_generation_simple_title: 'Základy generování textu',
     home_generation_simple_desc:
-      'Jak jazykový model generuje text text? Prohlédni si jednoduchou vizualizaci generovacího procesu na ukázkových promptech.',
+      'Jak jazykový model generuje text? Prohlédni si jednoduchou vizualizaci generovacího procesu na ukázkových promptech.',
+    home_cheatsheet_title: 'Tahák na jazykové modely',
+    home_cheatsheet_desc: 'Stručný přehled fungování jazykových modelů ke stažení v PDF.',
+    home_how_to_use_app_title: 'Jak používat aplikaci',
+    home_how_to_use_app_desc:
+      'Chceš se s aplikací naučit víc? Pochop, jak tato aplikace vznikla a jak s ní pracovat.',
     // Category labels
     category_training: 'Trénování',
     category_text_generation: 'Generování textu',
+    category_materials: 'Návody a materiály',
     // Category descriptions
+    category_training_desc: 'Understand the training process of language models',
+    category_text_generation_desc: 'Visualize how LLMs generate text token by token',
+    category_materials_desc: 'Educational materials and guides',
+    // View labels
     view_text_generation: 'Model',
     view_training: 'Model',
     view_decoding: 'Algoritmy',
+    view_cheatsheet: 'Tahák',
+    // View descriptions
+    view_cheatsheet_desc: 'Tahák',
     model_input: 'Vstup modelu',
     model_output: 'Výstup modelu',
     target_distribution: 'Cílové rozdělení',
@@ -226,8 +263,9 @@ const translations = {
     about_title: 'O aplikaci',
     // Single HTML/Markdown content for the About modal (editable)
     about_content: `
-      <p>Tato vzdělávací aplikace obsahuje kolekci animací, které ukazují, jak fungují velké jazykové modely (LLMs).</p><br>
-      <p>Žádná data nejsou odesílána na externí servery — vše běží ve vašem prohlížeči!</p><br>
+      <p>Tato vzdělávací aplikace obsahuje kolekci animací, které ukazují, jak fungují velké jazykové modely (LLMs).</p>
+      <p>Žádná data nejsou odesílána na externí servery — vše běží ve vašem prohlížeči!</p>
+      <p>Chcete vědět víc? Přečtěte si <a href="/how-to"><b>manuál k aplikaci.</b></a></p>
       <p>Dotazy a připomínky směřujte na <b><a href="https://github.com/kasnerz/animated-llm/discussions">Github projektu</a></b>.</p>
     `,
     about_credits:
@@ -263,6 +301,14 @@ const translations = {
       selectDocument: 'Vybrat dokument',
       document: 'Dokument',
     },
+    // Cheatsheet
+    cheatsheet_title: 'Tahák na jazykové modely',
+    cheatsheet_description:
+      'Stručný přehled o fungování jazykových modelů, který si můžeš stáhnout jako PDF nebo vytisknout v podobě letáku.',
+    cheatsheet_english_only_note:
+      'Poznámka: Tento materiál je v současné době k dispozici pouze v angličtině.',
+    download_cheatsheet: 'Stáhnout tahák (PDF)',
+    pdf_preview_unavailable: 'Náhled PDF není ve vašem prohlížeči k dispozici.',
   },
   fr: {
     play: 'Lecture',
@@ -305,6 +351,9 @@ const translations = {
     // Home page sections
     home_training_title: 'Entraînement',
     home_generation_title: 'Génération de texte',
+    home_materials_title: 'Tutoriels et Matériels',
+    home_how_to_title: 'Tutoriels',
+    home_extra_materials_title: 'Matériaux supplémentaires',
     // Home page items
     home_pretraining_model_title: 'Comment le Transformer est-il entraîné ?',
     home_pretraining_model_desc:
@@ -318,20 +367,31 @@ const translations = {
     home_generation_simple_title: 'Bases de la génération de texte',
     home_generation_simple_desc:
       'Comment un modèle de langage génère-t-il du texte ? Découvrez une visualisation simple du processus de génération sur des exemples de prompts.',
+    home_cheatsheet_title: 'LLM Cheatsheet',
+    home_cheatsheet_desc:
+      'Un aperçu pratique du fonctionnement des modèles de langage que vous pouvez télécharger au format PDF.',
+    home_how_to_use_app_title: "Comment utiliser l'application",
+    home_how_to_use_app_desc:
+      "Vous voulez en savoir plus sur l'application ? Découvrez comment elle a été créée et comment l'utiliser.",
     // Category labels
     category_training: 'Entraînement',
     category_text_generation: 'Génération de texte',
+    category_materials: 'Tutoriels et Matériels',
     // Category descriptions
     category_training_desc: "Comprendre le processus d'entraînement des modèles de langage",
     category_text_generation_desc: 'Visualiser comment les LLM génèrent du texte token par token',
+    category_materials_desc: 'Matériaux et guides éducatifs',
     // View labels
     view_text_generation: 'Modèle',
     view_training: 'Modèle',
-    view_decoding: 'Algoritmy',
+    view_decoding: 'Algorithmes',
+    view_cheatsheet: 'LLM Cheatsheet',
     // View descriptions
     view_text_generation_desc: 'Visualiser comment les LLM génèrent du texte token par token',
     view_training_desc: "Comprendre le processus d'entraînement des modèles de langage",
     view_decoding_desc: 'Explorer différentes stratégies et algorithmes de décodage',
+    view_cheatsheet_desc:
+      'Un aperçu pratique des concepts et termes les plus importants liés aux grands modèles de langage.',
     decoding_view_placeholder: 'La visualisation des algorithmes de décodage sera affichée ici.',
     model_input: 'Entrée du modèle',
     model_output: 'Sortie du modèle',
@@ -360,8 +420,9 @@ const translations = {
     about_tagline: 'Visualisation interactive des modèles de langage',
     // Single HTML/Markdown content for the About modal (editable)
     about_content: `
-      <p>Cette application éducative contient une collection d'animations qui montrent comment fonctionnent les grands modèles de langage (LLM).</p><br>
-      <p>Aucune donnée n'est envoyée à des serveurs externes — tout s'exécute dans votre navigateur !</p><br>
+      <p>Cette application éducative contient une collection d'animations qui montrent comment fonctionnent les grands modèles de langage (LLM).</p>
+      <p>Aucune donnée n'est envoyée à des serveurs externes — tout s'exécute dans votre navigateur !</p>
+      <p>Vous voulez en savoir plus ? Lisez le <a href="/how-to"><b>manuel de l'application.</b></a></p>
       <p>Veuillez adresser vos questions et commentaires sur le <b><a href="https://github.com/kasnerz/animated-llm/discussions">Github du projet</a></b>.</p>
     `,
     about_credits:
@@ -398,6 +459,13 @@ const translations = {
       selectDocument: 'Sélectionner un document',
       document: 'Document',
     },
+    // Cheatsheet
+    cheatsheet_title: 'LLM Cheatsheet',
+    cheatsheet_description:
+      'Un aperçu pratique du fonctionnement des modèles de langage que vous pouvez télécharger au format PDF ou imprimer sous forme de dépliant.',
+    cheatsheet_english_only_note: 'Note : Ce document est disponible uniquement en anglais.',
+    download_cheatsheet: 'Télécharger le Cheatsheet (PDF)',
+    pdf_preview_unavailable: "L'aperçu PDF n'est pas disponible dans votre navigateur.",
   },
   uk: {
     play: 'Відтворити',
@@ -440,6 +508,9 @@ const translations = {
     // Home page sections
     home_training_title: 'Навчання',
     home_generation_title: 'Генерація тексту',
+    home_materials_title: 'Інструкції та матеріали',
+    home_how_to_title: 'Інструкції',
+    home_extra_materials_title: 'Додаткові матеріали',
     // Home page items
     home_pretraining_model_title: 'Як навчається Transformer?',
     home_pretraining_model_desc:
@@ -453,20 +524,31 @@ const translations = {
     home_generation_simple_title: 'Основи генерації тексту',
     home_generation_simple_desc:
       'Як мовна модель генерує текст? Перегляньте просту візуалізацію процесу генерації на прикладах запитів.',
+    home_cheatsheet_title: 'LLM Cheatsheet',
+    home_cheatsheet_desc:
+      'Зручний огляд функціонування мовних моделей, який можна завантажити у форматі PDF.',
+    home_how_to_use_app_title: 'Як користуватися додатком',
+    home_how_to_use_app_desc:
+      'Хочете дізнатися більше про додаток? Зрозумійте, як він був створений і як ним користуватися.',
     // Category labels
     category_training: 'Навчання',
     category_text_generation: 'Генерація тексту',
+    category_materials: 'Інструкції та матеріали',
     // Category descriptions
     category_training_desc: 'Зрозумійте процес навчання мовних моделей',
     category_text_generation_desc: 'Візуалізуйте, як LLM генерують текст токен за токеном',
+    category_materials_desc: 'Освітні матеріали та посібники',
     // View labels
     view_text_generation: 'Модель',
     view_training: 'Модель',
     view_decoding: 'Алгоритми',
+    view_cheatsheet: 'LLM Cheatsheet',
     // View descriptions
     view_text_generation_desc: 'Візуалізуйте, як LLM генерують текст токен за токеном',
     view_training_desc: 'Зрозумійте процес навчання мовних моделей',
     view_decoding_desc: 'Досліджуйте різні стратегії та алгоритми декодування',
+    view_cheatsheet_desc:
+      "Зручний огляд найважливіших концепцій і термінів, пов'язаних з великими мовними моделями.",
     decoding_view_placeholder: 'Візуалізація алгоритмів декодування буде відображена тут.',
     model_input: 'Вхід моделі',
     model_output: 'Вихід моделі',
@@ -497,6 +579,7 @@ const translations = {
     about_content: `
       <p>Цей освітній додаток містить колекцію анімацій, які показують, як працюють великі мовні моделі (LLM).</p><br>
       <p>Жодні дані не надсилаються на зовнішні сервери — все працює у вашому браузері!</p><br>
+      <p>Хочете дізнатися більше? Прочитайте <a href="/how-to"><b>інструкцію до додатку.</b></a></p>
       <p>Запитання та коментарі надсилайте на <b><a href="https://github.com/kasnerz/animated-llm/discussions">Github проекту</a></b>.</p>
     `,
     about_credits:
@@ -532,6 +615,13 @@ const translations = {
       selectDocument: 'Вибрати документ',
       document: 'Документ',
     },
+    // Cheatsheet
+    cheatsheet_title: 'LLM Cheatsheet',
+    cheatsheet_description:
+      'Зручний огляд функціонування мовних моделей, який можна завантажити у форматі PDF або роздрукувати у вигляді листівки.',
+    cheatsheet_english_only_note: 'Примітка: Цей матеріал наразі доступний лише англійською мовою.',
+    download_cheatsheet: 'Завантажити Cheatsheet (PDF)',
+    pdf_preview_unavailable: 'Попередній перегляд PDF недоступний у вашому браузері.',
   },
   zh: {
     play: '播放',
@@ -574,6 +664,9 @@ const translations = {
     // Home page sections
     home_training_title: '训练',
     home_generation_title: '文本生成',
+    home_materials_title: '使用说明和材料',
+    home_how_to_title: '使用说明',
+    home_extra_materials_title: '额外资料',
     // Home page items
     home_pretraining_model_title: 'Transformer 是如何训练的？',
     home_pretraining_model_desc:
@@ -585,20 +678,28 @@ const translations = {
       '想深入了解吗？在这里，您将了解 Transformer 在文本生成过程中如何处理单个 Token。',
     home_generation_simple_title: '文本生成基础',
     home_generation_simple_desc: '语言模型如何生成文本？查看基于示例提示的生成过程的简单可视化。',
+    home_cheatsheet_title: 'LLM Cheatsheet',
+    home_cheatsheet_desc: '语言模型运作机制的便捷概览，可下载 PDF 格式。',
+    home_how_to_use_app_title: '如何使用此应用',
+    home_how_to_use_app_desc: '想了解更多关于此应用的信息？了解它是如何创建的以及如何使用它。',
     // Category labels
     category_training: '训练',
     category_text_generation: '文本生成',
+    category_materials: '使用说明和材料',
     // Category descriptions
     category_training_desc: '了解语言模型的训练过程',
     category_text_generation_desc: '可视化 LLM 如何逐个 Token 生成文本',
+    category_materials_desc: '教育材料和指南',
     // View labels
     view_text_generation: '模型',
     view_training: '模型',
     view_decoding: '算法',
+    view_cheatsheet: 'LLM Cheatsheet',
     // View descriptions
     view_text_generation_desc: '可视化 LLM 如何逐个 Token 生成文本',
     view_training_desc: '了解语言模型的训练过程',
     view_decoding_desc: '探索不同的解码策略和算法',
+    view_cheatsheet_desc: '关于大型语言模型最重要概念和术语的便捷概述。',
     decoding_view_placeholder: '解码算法可视化将显示在这里。',
     model_input: '模型输入',
     model_output: '模型输出',
@@ -629,6 +730,7 @@ const translations = {
     about_content: `
       <p>这个教育应用包含一系列动画，展示了大型语言模型 (LLM) 的工作原理。</p><br>
       <p>没有数据发送到外部服务器 — 一切都在您的浏览器中运行！</p><br>
+      <p>想了解更多？请阅读 <a href="/how-to"><b>应用手册。</b></a></p>
       <p>如有疑问和建议，请前往 <b><a href="https://github.com/kasnerz/animated-llm/discussions">项目 Github</a></b>。</p>
     `,
     about_credits:
@@ -664,6 +766,12 @@ const translations = {
       selectDocument: '选择文档',
       document: '文档',
     },
+    // Cheatsheet
+    cheatsheet_title: 'LLM Cheatsheet',
+    cheatsheet_description: '语言模型运作机制的便捷概览，可下载 PDF 格式或打印为传单。',
+    cheatsheet_english_only_note: '注意：此资料目前仅提供英文版本。',
+    download_cheatsheet: '下载备忘单 (PDF)',
+    pdf_preview_unavailable: '您的浏览器不支持 PDF 预览。',
   },
 };
 

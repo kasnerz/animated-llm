@@ -1,15 +1,18 @@
-import { mdiTextBoxEditOutline, mdiAbacus, mdiCogPlay } from '@mdi/js';
+import { mdiTextBoxEditOutline, mdiAbacus, mdiCogPlay, mdiSchool } from '@mdi/js';
 
 export const VIEW_TYPES = {
   TEXT_GENERATION: 'text-generation',
   TRAINING: 'training',
   DECODING: 'decoding',
   PRETRAINING_SIMPLE: 'pretraining-simple',
+  CHEATSHEET: 'cheatsheet',
+  HOW_TO: 'how-to',
 };
 
 export const VIEW_CATEGORIES = {
   TRAINING: 'training-category',
   TEXT_GENERATION: 'text-generation-category',
+  MATERIALS: 'materials-category',
 };
 
 export const VIEW_INFO = {
@@ -49,6 +52,24 @@ export const VIEW_INFO = {
     descriptionKey: 'view_pretraining_simple_desc',
     defaultDescription: 'Simplified pretraining visualization',
   },
+  [VIEW_TYPES.HOW_TO]: {
+    id: VIEW_TYPES.HOW_TO,
+    category: VIEW_CATEGORIES.MATERIALS,
+    icon: mdiSchool,
+    labelKey: 'home_how_to_title',
+    defaultLabel: 'How-to',
+    descriptionKey: 'home_how_to_use_app_desc',
+    defaultDescription: 'Learn how to use the app',
+  },
+  [VIEW_TYPES.CHEATSHEET]: {
+    id: VIEW_TYPES.CHEATSHEET,
+    category: VIEW_CATEGORIES.MATERIALS,
+    icon: mdiSchool,
+    labelKey: 'view_cheatsheet',
+    defaultLabel: 'Cheatsheet',
+    descriptionKey: 'view_cheatsheet_desc',
+    defaultDescription: 'LLM Cheatsheet',
+  },
 };
 
 export const CATEGORY_INFO = {
@@ -67,5 +88,13 @@ export const CATEGORY_INFO = {
     defaultLabel: 'Text generation',
     descriptionKey: 'category_text_generation_desc',
     defaultDescription: 'Visualize how LLMs generate text token by token',
+  },
+  [VIEW_CATEGORIES.MATERIALS]: {
+    id: VIEW_CATEGORIES.MATERIALS,
+    icon: mdiSchool,
+    labelKey: 'category_materials',
+    defaultLabel: 'Materials',
+    descriptionKey: 'category_materials_desc',
+    defaultDescription: 'Educational materials and guides',
   },
 };

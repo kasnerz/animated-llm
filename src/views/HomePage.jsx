@@ -13,6 +13,8 @@ import pretrainingModelPreview from '../assets/previews/pretraining-model.png';
 import generationSimplePreview from '../assets/previews/generation-simple.png';
 import generationModelPreview from '../assets/previews/generation-model.png';
 import AnimatedWave from '../components/lightswind/AnimatedWave';
+import howToPreview from '../assets/previews/how-to.png';
+import llmCheatSheetPreview from '../assets/previews/llm-cheatsheet.png';
 import '../styles/home-page.css';
 
 /**
@@ -61,6 +63,26 @@ function HomePage() {
           descriptionKey: 'home_pretraining_model_desc',
           path: '/pretraining-model',
           preview: pretrainingModelPreview,
+        },
+      ],
+    },
+    {
+      id: 'materials',
+      titleKey: 'home_materials_title',
+      items: [
+        {
+          id: 'how-to-use',
+          titleKey: 'home_how_to_use_app_title',
+          descriptionKey: 'home_how_to_use_app_desc',
+          path: '/how-to',
+          preview: howToPreview,
+        },
+        {
+          id: 'llm-cheatsheet',
+          titleKey: 'home_cheatsheet_title',
+          descriptionKey: 'home_cheatsheet_desc',
+          path: '/llm-cheatsheet',
+          preview: llmCheatSheetPreview,
         },
       ],
     },
@@ -129,29 +151,31 @@ function HomePage() {
         {/* Learning sections */}
         <div className="home-sections">
           {sections.map((section) => (
-            <div key={section.id} className="home-section">
-              <div className="section-header">
-                <h2 className="section-title">{t(section.titleKey)}</h2>
-              </div>
-              <div className="section-items">
-                {section.items.map((item) => (
-                  <Link key={item.id} to={item.path} className="section-item">
-                    <div className="item-main-content">
-                      <div className="item-preview-wrapper">
-                        <img src={item.preview} alt="" className="item-preview-img" />
+            <React.Fragment key={section.id}>
+              <div className="home-section">
+                <div className="section-header">
+                  <h2 className="section-title">{t(section.titleKey)}</h2>
+                </div>
+                <div className="section-items">
+                  {section.items.map((item) => (
+                    <Link key={item.id} to={item.path} className="section-item">
+                      <div className="item-main-content">
+                        <div className="item-preview-wrapper">
+                          <img src={item.preview} alt="" className="item-preview-img" />
+                        </div>
+                        <div className="item-content">
+                          <h3 className="item-title">{t(item.titleKey)}</h3>
+                          <p className="item-description">{t(item.descriptionKey)}</p>
+                        </div>
                       </div>
-                      <div className="item-content">
-                        <h3 className="item-title">{t(item.titleKey)}</h3>
-                        <p className="item-description">{t(item.descriptionKey)}</p>
+                      <div className="item-footer">
+                        <span className="item-action">Start →</span>
                       </div>
-                    </div>
-                    <div className="item-footer">
-                      <span className="item-action">Start →</span>
-                    </div>
-                  </Link>
-                ))}
+                    </Link>
+                  ))}
+                </div>
               </div>
-            </div>
+            </React.Fragment>
           ))}
         </div>
       </div>

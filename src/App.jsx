@@ -10,6 +10,8 @@ import GenerationModelView from './views/GenerationModelView';
 import PretrainingModelView from './views/PretrainingModelView';
 import GenerationSimpleView from './views/GenerationSimpleView';
 import PretrainingSimpleView from './views/PretrainingSimpleView';
+import LlmCheatsheetView from './views/LlmCheatsheetView';
+import HowToView from './views/HowToView';
 import InputSection from './components/InputSection';
 import KeyboardShortcutsModal from './components/KeyboardShortcutsModal';
 import AboutModal from './components/AboutModal';
@@ -46,6 +48,8 @@ function AppContent() {
       '/generation-model': VIEW_TYPES.TEXT_GENERATION,
       '/generation-simple': VIEW_TYPES.DECODING,
       '/pretraining-simple': VIEW_TYPES.PRETRAINING_SIMPLE,
+      '/llm-cheatsheet': VIEW_TYPES.CHEATSHEET,
+      '/how-to': VIEW_TYPES.HOW_TO,
     };
 
     const viewFromPath = pathToView[location.pathname];
@@ -427,6 +431,8 @@ function AppContent() {
           <Route path="/pretraining-model" element={<PretrainingModelView />} />
           <Route path="/generation-simple" element={<GenerationSimpleView />} />
           <Route path="/pretraining-simple" element={<PretrainingSimpleView />} />
+          <Route path="/llm-cheatsheet" element={<LlmCheatsheetView />} />
+          <Route path="/how-to" element={<HowToView />} />
         </Routes>
       </main>
 

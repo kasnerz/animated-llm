@@ -60,6 +60,22 @@ function ViewSelectorPopup() {
         },
       ],
     },
+    {
+      id: 'materials',
+      titleKey: 'home_materials_title',
+      views: [
+        {
+          id: VIEW_TYPES.HOW_TO,
+          titleKey: 'home_how_to_title',
+          path: '/how-to',
+        },
+        {
+          id: VIEW_TYPES.CHEATSHEET,
+          titleKey: 'home_cheatsheet_title',
+          path: '/llm-cheatsheet',
+        },
+      ],
+    },
   ];
 
   // Close dropdown when clicking outside
@@ -106,9 +122,6 @@ function ViewSelectorPopup() {
         aria-expanded={isOpen}
         aria-haspopup="true"
       >
-        {currentViewInfo.icon && (
-          <img src={currentViewInfo.icon} alt="" className="view-current-icon-img" />
-        )}
         <span className="view-current-label">{currentViewInfo.label}</span>
         <Icon path={mdiChevronDown} size={0.8} className={`view-chevron ${isOpen ? 'open' : ''}`} />
       </button>
@@ -128,7 +141,6 @@ function ViewSelectorPopup() {
                       className={`view-item ${isActive ? 'active' : ''}`}
                       aria-current={isActive ? 'true' : 'false'}
                     >
-                      <img src={view.icon} alt="" className="view-item-icon-img" />
                       <span className="view-item-label">{t(view.titleKey)}</span>
                     </button>
                   );

@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useView, VIEW_TYPES } from '../contexts/ViewContext';
-import { VIEW_CATEGORIES, CATEGORY_INFO } from '../contexts/viewTypes';
+import { useView } from '../contexts/ViewContext';
+import { VIEW_TYPES, VIEW_CATEGORIES, CATEGORY_INFO } from '../contexts/viewTypes';
 import { useI18n } from '../i18n/I18nProvider';
 import Icon from '@mdi/react';
 import '../styles/view-selector.css';
