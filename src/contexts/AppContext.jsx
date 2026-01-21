@@ -12,6 +12,8 @@ import * as examplesApi from '../services/examplesApi';
 import { MODEL_REGISTRY } from '../config/modelConfig';
 import { useThemeEffect } from '../hooks/useThemeEffect';
 import { TRAINING_STEPS, TEXT_GEN_STEPS } from '../visualization/core/constants';
+import translations from '../i18n/translations';
+import { detectBrowserLanguage } from '../utils/i18n';
 
 const AppContext = createContext();
 
@@ -75,7 +77,7 @@ const initialState = {
     window.matchMedia('(prefers-color-scheme: dark)').matches
       ? 'dark'
       : config.defaults.theme,
-  language: config.defaults.language,
+  language: detectBrowserLanguage(Object.keys(translations), 'en'),
   animationSpeed: config.defaults.animationSpeed,
   viewType: 'inference', // 'inference' or 'training'
 
