@@ -300,6 +300,15 @@ function PretrainingSimpleView() {
     ...distributionRows.map((row) => row.predictedProb || 0)
   );
 
+  const diffSummary = useMemo(() => {
+    const targetRow = distributionRows.find((r) => r.isTarget);
+    const p = targetRow?.predictedProb ?? 0;
+    const predictedProbPct = (p * 100).toFixed(1);
+    const diffPct = ((1 - p) * 100).toFixed(1);
+    const modelError = p > 0 ? (-Math.log(p)).toFixed(3) : '∞';
+    return { predictedProbPct, diffPct, modelError };
+  }, [distributionRows]);
+
   const placeholderMessage = (
     <div className="decoding-placeholder">
       <p className="placeholder-text">
@@ -503,34 +512,35 @@ function PretrainingSimpleView() {
                 </div>
 
                 <div className="distribution-column diff">
-                  <div className="column-header">{t('difference') || 'Difference'}</div>
-                  <div className="distribution-body">
-                    {distributionRows.map((row) => {
-                      if (row.isEllipsis) {
-                        return (
-                          <div key={`diff-${row.id}`} className="distribution-row ellipsis">
-                            <div className="value-label">⋯</div>
-                          </div>
-                        );
-                      }
-
-                      const diffLabel = `${row.diff > 0 ? '+' : ''}${row.diff.toFixed(1)}%`;
-                      const trendClass = row.diff >= 0 ? 'positive' : 'negative';
-                      return (
-                        <div
-                          key={`diff-${row.id}`}
-                          className={`distribution-row diff-row ${trendClass}`}
-                        >
-                          <div
-                            className="value-label"
-                            data-tooltip-id={isMobile ? undefined : 'difference-tooltip'}
-                            data-tooltip-content={t('tooltip_difference')}
-                          >
-                            {diffLabel}
-                          </div>
-                        </div>
-                      );
-                    })}
+                  <div className="diff-summary-list">
+                    <div className="diff-summary-item">
+                      <div className="diff-summary-label">
+                        {t('predicted_probability_of') || 'Predicted probability of'}{' '}
+                        <strong>{processTokenForText(targetTokenLabel)}</strong>:
+                      </div>
+                      <div className="diff-summary-value correct">
+                        {diffSummary.predictedProbPct}%
+                      </div>
+                    </div>
+                    <div className="diff-summary-item">
+                      <div className="diff-summary-label">
+                        {t('desired_probability_of') || 'Desired probability of'}{' '}
+                        <strong>{processTokenForText(targetTokenLabel)}</strong>:
+                      </div>
+                      <div className="diff-summary-value ">100.0%</div>
+                    </div>
+                    <div className="diff-summary-item">
+                      <div className="diff-summary-label">
+                        {t('difference_d') || 'Difference (d):'}
+                      </div>
+                      <div className="diff-summary-value error">{diffSummary.diffPct}%</div>
+                    </div>
+                    <div className="diff-summary-item">
+                      <div className="diff-summary-label">
+                        {t('model_error_log_d') || 'Model error (−log(d)):'}
+                      </div>
+                      <div className="diff-summary-value error">{diffSummary.modelError}</div>
+                    </div>
                   </div>
                 </div>
 
@@ -550,8 +560,14 @@ function PretrainingSimpleView() {
                           className={`distribution-row ${row.isTarget ? 'is-target' : ''}`}
                         >
                           <div className="token-label">{row.displayToken}</div>
-                          <div className="bar-track target">
-                            <div className="bar-fill target" style={{ width: `${width}%` }} />
+                          <div className="bar-track">
+                            <div
+                              className="bar-fill"
+                              style={{
+                                width: `${width}%`,
+                                backgroundColor: getViridisColor(row.targetProb || 0),
+                              }}
+                            />
                           </div>
                           <div className="value-label">
                             {row.targetProb > 0 ? '100%' : row.isEllipsis ? '' : '0%'}
@@ -572,7 +588,6 @@ function PretrainingSimpleView() {
       {/* Tooltips */}
       <Tooltip id="model-selector-tooltip" place="bottom" />
       <Tooltip id="play-pause-tooltip" place="bottom" />
-      <Tooltip id="difference-tooltip" place="top" />
     </div>
   );
 }

@@ -159,7 +159,7 @@
 
 .pretraining-simple-distributions {
   display: grid;
-  grid-template-columns: 1fr 1.5fr 0.4fr;
+  grid-template-columns: 0.8fr 2fr 0.8fr;
   gap: 0.25rem;
   width: min(1200px, 100%);
   margin: 0 auto;
@@ -168,7 +168,7 @@
 
 @media (min-width: 900px) {
   .pretraining-simple-distributions {
-    grid-template-columns: 1.5fr 0.8fr 1.5fr;
+    grid-template-columns: 1fr 1.1fr 1fr;
     gap: 1.25rem;
   }
 }
@@ -188,6 +188,48 @@
   text-align: center;
   padding-right: 0;
   padding-left: 0;
+}
+
+.diff-summary-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  gap: 1.25rem;
+  padding: 0.5rem;
+}
+
+.diff-summary-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.diff-summary-label {
+  font-size: 0.95rem;
+  color: var(--text-secondary, #888);
+  text-align: center;
+  margin: 0;
+}
+
+.diff-summary-value {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-primary, #333);
+  margin: 0;
+  font-variant-numeric: tabular-nums;
+}
+
+.diff-summary-value.error {
+  font-size: 1.5rem;
+  color: #ef4444;
+}
+
+.diff-summary-value.correct {
+  font-size: 1.5rem;
+  color: #128d45;
 }
 
 .distribution-column .column-header {
@@ -234,14 +276,6 @@
   transition: width 0.4s ease;
 }
 
-.distribution-row .bar-track.target {
-  background: rgba(34, 197, 94, 0.08);
-}
-
-.distribution-row .bar-fill.target {
-  background: linear-gradient(90deg, rgba(34, 197, 94, 0.9), rgba(34, 197, 94, 0.5));
-}
-
 .distribution-row .value-label {
   font-variant-numeric: tabular-nums;
   min-width: 60px;
@@ -280,6 +314,15 @@
 }
 
 @media (max-width: 768px) {
+  .pretraining-simple-distributions {
+    grid-template-columns: 1fr;
+  }
+
+  .distribution-column.output,
+  .distribution-column.target {
+    display: none;
+  }
+
   .distribution-column {
     padding: 0.75rem 0.25rem;
     min-height: auto;
