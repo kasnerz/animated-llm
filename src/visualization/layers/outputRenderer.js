@@ -278,17 +278,19 @@ export function renderOutputLayer(
             const c = candidates[ci];
             if (!hv2.centers || typeof hv2.centers[ci] !== 'number') return;
             if (c && (c.isEllipsis || c.token === '...')) return; // skip ellipsis cell
+
+            // Only show the diff for the target token (cross-entropy only considers target)
+            if (ci !== targetIdx) return;
+
             const pred = typeof c?.prob === 'number' ? c.prob : 0;
-            const tval = ci === targetIdx ? 1 : 0;
-            const deltaPct = (tval - pred) * 100;
+            const deltaPct = (1 - pred) * 100;
             const sign = deltaPct > 0 ? '+' : '';
-            const color = deltaPct >= 0 ? '#16a34aff' : '#dc2626ff';
 
             const sel = d3.select(this).select('text.distribution-percentage-label');
             sel
               .attr('class', 'distribution-percentage-label target-diff-label')
               .style('font-weight', '700')
-              .style('fill', color)
+              .style('fill', '#dc2626ff')
               .text(`${sign}${deltaPct.toFixed(1)}%`);
           });
 
@@ -302,6 +304,8 @@ export function renderOutputLayer(
 
             candidates.forEach((c, i) => {
               if (c && (c.isEllipsis || c.token === '...')) return; // skip ellipsis cell
+              // Only draw the arrow for the target token
+              if (i !== targetIdx) return;
               const cx = hv2.centers[i];
               if (typeof cx !== 'number') return;
 
