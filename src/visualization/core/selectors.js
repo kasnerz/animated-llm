@@ -104,13 +104,17 @@ export const OUTPUT_SELECTORS = {
   extractedHorizontal: '.extracted-horizontal',
   logprobArrow: '.logprob-arrow',
   logprobVector: '.logprob-vector',
-  // Training-specific additions
+  // Training-specific: vertical bar chart (replaces old target vector)
+  trainingBarChart: '.training-bar-chart',
+  trainingBarItem: '.training-bar-item',
+  trainingBar: '.training-bar',
+  trainingBarArrow: '.training-bar-arrow, .training-bar-arrow-head',
+  trainingBarPercentage: '.training-bar-percentage',
+  // Legacy selectors kept for backward compatibility with animation code
   targetVector: '.target-vector',
   targetToProbArrow: '.target-to-prob-arrow, .target-to-prob-arrow-head',
   targetDiffLabel: '.target-diff-label',
   targetDiffArrow: '.target-diff-arrow, .target-diff-arrow-head',
-  // Training-specific highlight rectangle around the target token column spanning
-  // from the output distribution vector to the target vector
   trainingTargetHighlightRect: '.training-target-highlight-rect',
   distributionItem: '.distribution-item',
   distributionItemSelected: '.distribution-item.selected',

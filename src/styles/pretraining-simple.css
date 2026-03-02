@@ -252,12 +252,16 @@
 .distribution-row .bar-track {
   background: rgba(255, 255, 255, 0.08);
   border-radius: 999px;
-  height: 11px;
+  height: 15px;
   position: relative;
   overflow: hidden;
 }
 
 .distribution-row.is-target .bar-track {
+  overflow: visible;
+}
+
+.distribution-row .bar-track.has-push-arrow {
   overflow: visible;
 }
 
@@ -274,24 +278,55 @@
   transform: translateY(-50%);
   display: flex;
   align-items: center;
-  height: 10px;
+  height: 11px;
   pointer-events: none;
+  overflow: visible;
 }
 
 .goal-arrow-shaft {
   flex: 1;
-  height: 5px;
-  background: rgba(245, 241, 0, 0.75);
-  min-width: 4px;
+  height: 4px;
+  background: #00da61;
+  min-width: 0;
 }
 
 .goal-arrow-head {
   width: 0;
   height: 0;
-  border-top: 7px solid transparent;
-  border-bottom: 7px solid transparent;
-  border-left: 10px solid rgba(245, 241, 0, 0.75);
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-left: 11px solid #00da61;
   flex-shrink: 0;
+}
+
+/* Red left-pointing arrow: pushes non-target probabilities down */
+.push-down-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  height: 11px;
+  pointer-events: none;
+  left: 0;
+  overflow: visible;
+}
+
+.push-down-arrow-head {
+  width: 0;
+  height: 0;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-right: 11px solid rgba(239, 68, 68, 0.85);
+  flex-shrink: 0;
+}
+
+.push-down-arrow-shaft {
+  flex: 1;
+  height: 4px;
+  background: rgba(239, 68, 68, 0.75);
+  min-width: 0;
 }
 
 .distribution-row .value-label {

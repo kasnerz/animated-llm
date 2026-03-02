@@ -386,3 +386,43 @@
 [data-tooltip-id][style*='opacity:0'] {
   pointer-events: none !important;
 }
+
+/* Training vertical bar chart */
+.training-bar-chart {
+  opacity: 0;
+}
+
+.training-bar {
+  shape-rendering: geometricPrecision;
+  stroke: rgba(0, 0, 0, 0.06);
+  stroke-width: 1px;
+}
+
+.training-bar-item.target .training-bar {
+  stroke: rgba(0, 126, 102, 0.2);
+}
+
+.training-bar-arrow,
+.training-bar-arrow-head {
+  opacity: 0;
+}
+
+.training-bar-percentage {
+  font-family: var(--mono-font, 'Consolas', 'Monaco', monospace);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Training target highlight rectangle (around target column) */
+.training-target-highlight-rect {
+  pointer-events: none;
+}
+
+/* Yellow highlight behind target token label in distribution */
+.distribution-token-highlight-bg {
+  pointer-events: none;
+}
+
+/* Target token label styling in distribution (mirrors doc-token-target) */
+.distribution-token-label.doc-token-target {
+  font-weight: 700;
+}

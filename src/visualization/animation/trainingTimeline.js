@@ -222,13 +222,17 @@ export function setInitialStates(svgElement, subStep, isInitialStep, labelsSvgEl
   setIfAny(svgElement, SEL.distributionLabels, { opacity: showDist ? 1 : 0 });
   setIfAny(svgElement, SEL.distributionItem, { opacity: showDist ? 1 : 0 });
 
-  // Step 12: Target
+  // Step 12: Target → now shows vertical bar chart + highlight rect
   const showTarget = isVisible(TRAINING_STEPS.TARGET);
-  setIfAny(svgElement, SEL.targetVector, { opacity: showTarget ? 1 : 0 });
-  setIfAny(svgElement, SEL.targetToProbArrow, { opacity: showTarget ? 0.7 : 0 });
+  setIfAny(svgElement, SEL.trainingBarChart, { opacity: showTarget ? 1 : 0 });
+  setIfAny(svgElement, SEL.trainingBar, {
+    opacity: showTarget ? 1 : 0,
+    scaleY: showTarget ? 1 : 0,
+    transformOrigin: '50% 100%',
+  });
+  setIfAny(svgElement, SEL.trainingBarArrow, { opacity: showTarget ? 0.85 : 0 });
+  setIfAny(svgElement, SEL.trainingBarPercentage, { opacity: showTarget ? 1 : 0 });
   setIfAny(svgElement, SEL.trainingTargetHighlightRect, { opacity: showTarget ? 1 : 0 });
-  setIfAny(svgElement, SEL.targetDiffLabel, { opacity: showTarget ? 1 : 0 });
-  setIfAny(svgElement, SEL.targetDiffArrow, { opacity: showTarget ? 0.7 : 0 });
 
   // --- 2. Classes & Backprop States (Step 10+) ---
 
@@ -390,10 +394,20 @@ export function buildTimeline(
       add(SEL.distributionLabels, { opacity: 1, duration: animDuration }, '<');
       break;
     case TRAINING_STEPS.TARGET:
-      add(SEL.targetVector, { opacity: 1, duration: animDuration });
-      add(SEL.targetToProbArrow, { opacity: 0.7, duration: animDuration }, '<');
-      add(SEL.targetDiffLabel, { opacity: 1, duration: animDuration }, '<');
-      add(SEL.targetDiffArrow, { opacity: 0.7, duration: animDuration }, '<');
+      add(SEL.trainingBarChart, { opacity: 1, duration: animDuration * 0.3 });
+      add(
+        SEL.trainingBar,
+        {
+          opacity: 1,
+          scaleY: 1,
+          transformOrigin: '50% 100%',
+          duration: animDuration,
+          ease: 'power2.out',
+        },
+        '<'
+      );
+      add(SEL.trainingBarArrow, { opacity: 0.85, duration: animDuration * 0.6 }, '>-0.2');
+      add(SEL.trainingBarPercentage, { opacity: 1, duration: animDuration * 0.5 }, '<');
       add(
         SEL.trainingTargetHighlightRect,
         { opacity: 1, duration: animDuration * 0.45, ease: 'power1.out' },
@@ -428,6 +442,7 @@ export function buildTimeline(
           '<'
         );
       }
+      add(SEL.trainingBarChart, { opacity: 1, duration: 0.001 });
       add(SEL.trainingTargetHighlightRect, { opacity: 1, duration: 0.001 });
       add(
         `.extracted-path-arrow, ${SEL.insideBottomEmbeddingColNew} rect`,

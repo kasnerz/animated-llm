@@ -127,94 +127,65 @@ export function renderOutputLayer(
 
   // Render distribution labels and selection
   if (subStep >= 8 && hv2) {
-    renderDistributionLabels(group, candidates, hv2, selectedIdx);
+    // Determine target index for training mode
+    let trainingTargetIdx = -1;
+    const isTrainingMode = !!step.training_target_token;
+    if (isTrainingMode) {
+      const targetId = step.training_target_token.token_id;
+      const targetTok = step.training_target_token.token;
+      if (targetId != null) {
+        trainingTargetIdx = candidates.findIndex((c) => c && c.token_id === targetId);
+      }
+      if (trainingTargetIdx === -1 && targetTok != null) {
+        trainingTargetIdx = candidates.findIndex((c) => c && c.token === targetTok);
+      }
+    }
 
-    // Training view: two-step rendering
-    if (step.training_target_token) {
+    renderDistributionLabels(
+      group,
+      candidates,
+      hv2,
+      selectedIdx,
+      isTrainingMode
+        ? {
+            isTraining: true,
+            targetIdx: trainingTargetIdx,
+          }
+        : undefined
+    );
+
+    // Training view: render vertical bar chart showing predicted probabilities
+    if (isTrainingMode) {
       try {
         const arrowStartY = hv2.bottomY + OUTPUT.ARROW_START_OFFSET;
         const arrowEndY = arrowStartY + OUTPUT.ARROW_HEIGHT;
         const tokenY = arrowEndY + OUTPUT.LABEL_GAP + 10;
-        const percentageY = tokenY + OUTPUT.LABEL_SPACING;
 
-        // Determine target index by id or token string
-        const targetId = step.training_target_token.token_id;
-        const targetTok = step.training_target_token.token;
-        const targetIdx = (() => {
-          let idx = -1;
-          if (targetId != null) {
-            idx = candidates.findIndex((c) => c && c.token_id === targetId);
-          }
-          if (idx === -1 && targetTok != null) {
-            idx = candidates.findIndex((c) => c && c.token === targetTok);
-          }
-          return idx;
-        })();
-
-        // Build target vector aligned with candidates (use logprob sizing for alignment)
-        const targetValues = candidates.map((c, i) => (i === targetIdx ? 1 : 0));
-
-        // Step 9: Show target vector + arrow to target token probability
+        // Step 9: Show vertical bar chart below token labels
         if (subStep >= 9) {
-          // Move target vector a bit lower to fit upward arrows
-          const targetTopY = percentageY + 40;
-          const tv = drawHorizontalVector(group, horizCenterX, targetTopY, targetValues, {
-            className: 'target-vector',
-            tokenColor: '#ff6868ff', // red
-            format: (v) => (typeof v === 'number' ? v.toFixed(3) : ''),
-            isLogprob: true,
-            // Mirror the logprob row when ellipsis is last; otherwise we'll overlay ⋯ manually
-            ellipsisLast: isEllipsisLast,
-            isDarkMode,
-          });
+          const barChartMeta = renderTrainingBarChart(
+            group,
+            candidates,
+            hv2,
+            trainingTargetIdx,
+            tokenY,
+            isDarkMode
+          );
 
-          // If ellipsis exists but is not last, overlay a centered ⋯ in the target vector too
+          // Draw highlight rectangle around target token column
           if (
-            tv &&
-            ellipsisIdxForCandidates >= 0 &&
-            !isEllipsisLast &&
-            tv.centers &&
-            ellipsisIdxForCandidates < tv.centers.length
-          ) {
-            const ex = tv.centers[ellipsisIdxForCandidates];
-            const ey = (tv.topY + tv.bottomY) / 2;
-            group
-              .append('text')
-              .attr('x', ex)
-              .attr('y', ey + 6)
-              .attr('text-anchor', 'middle')
-              .attr('class', 'target-ellipsis-label')
-              .style('font-size', OUTPUT.ELLIPSIS_SIZE)
-              .style('font-weight', 'normal')
-              .style('fill', 'var(--viz-text-color)')
-              .text('⋯');
-          }
-
-          // Draw highlight rectangle around the TARGET token column spanning from
-          // the output distribution vector down to the target vector. This mirrors
-          // the rounded outline used for the selected token in text generation,
-          // but centers on the training target token instead.
-          if (
-            hv2 &&
-            tv &&
+            barChartMeta &&
+            trainingTargetIdx >= 0 &&
             hv2.centers &&
-            tv.centers &&
-            targetIdx >= 0 &&
-            targetIdx < hv2.centers.length &&
-            targetIdx < tv.centers.length
+            trainingTargetIdx < hv2.centers.length
           ) {
-            const cxTop = hv2.centers[targetIdx];
-            const cxBottom = tv.centers[targetIdx];
-            const halfTop = (hv2.cellWidth || 26) / 2;
-            const halfBottom = (tv.cellWidth || hv2.cellWidth || 26) / 2;
-
-            const left =
-              Math.min(cxTop - halfTop, cxBottom - halfBottom) - OUTPUT.HIGHLIGHT_PADDING;
-            const right =
-              Math.max(cxTop + halfTop, cxBottom + halfBottom) + OUTPUT.HIGHLIGHT_PADDING;
+            const cx = hv2.centers[trainingTargetIdx];
+            const cellHalf = (hv2.cellWidth || 26) / 2;
+            const hlPad = OUTPUT.HIGHLIGHT_PADDING;
+            const left = cx - cellHalf - hlPad;
+            const right = cx + cellHalf + hlPad;
             const top = hv2.topY - OUTPUT.ARROW_START_OFFSET;
-            const bottom = tv.bottomY + OUTPUT.ARROW_START_OFFSET;
-
+            const bottom = barChartMeta.bottomY + OUTPUT.ARROW_START_OFFSET;
             const rectW = Math.max(28, right - left);
             const rectH = Math.max(28, bottom - top);
 
@@ -231,105 +202,6 @@ export function renderOutputLayer(
               .style('stroke-width', OUTPUT.HIGHLIGHT_STROKE_WIDTH)
               .style('opacity', 0)
               .style('pointer-events', 'none');
-          }
-
-          // Draw single arrow from target cell to its probability label
-          if (tv && hv2 && hv2.centers && targetIdx >= 0 && targetIdx < hv2.centers.length) {
-            const cx = hv2.centers[targetIdx];
-            if (typeof cx === 'number') {
-              // Match down arrows style and fixed length but shift the up arrows slightly
-              // downward so they appear closer to the bottom (more visually balanced).
-              // We anchor the up-arrow tip a bit below the percentage label and keep
-              // the same arrow height as the down arrows.
-              const arrowEndYUp = percentageY + OUTPUT.ARROW_START_OFFSET;
-              const arrowStartYUp = arrowEndYUp + OUTPUT.ARROW_HEIGHT;
-
-              group
-                .append('line')
-                .attr('x1', cx)
-                .attr('y1', arrowStartYUp)
-                .attr('x2', cx)
-                .attr('y2', arrowEndYUp)
-                .attr('class', 'target-to-prob-arrow')
-                .style('stroke', OUTPUT_ARROWS.DISTRIBUTION_STROKE)
-                .style('stroke-width', OUTPUT_ARROWS.DISTRIBUTION_WIDTH)
-                .style('opacity', OUTPUT_ARROWS.DISTRIBUTION_OPACITY);
-
-              group
-                .append('polygon')
-                .attr(
-                  'points',
-                  `${cx},${arrowEndYUp} ${cx - OUTPUT_ARROWS.DISTRIBUTION_HEAD_SIZE},${arrowEndYUp + 6} ${cx + OUTPUT_ARROWS.DISTRIBUTION_HEAD_SIZE},${arrowEndYUp + 6}`
-                )
-                .attr('class', 'target-to-prob-arrow-head')
-                .style('fill', OUTPUT_ARROWS.DISTRIBUTION_STROKE)
-                .style('opacity', OUTPUT_ARROWS.DISTRIBUTION_OPACITY);
-            }
-          }
-        }
-
-        // Step 9+: Replace percentages with diffs + arrows from all target cells to diffs
-        if (subStep >= 9) {
-          // Replace percentage labels with differences (target - predicted)
-          const items = group.selectAll('.distribution-item');
-          items.each(function () {
-            const ci = Number(d3.select(this).attr('data-index'));
-            if (Number.isNaN(ci)) return;
-            const c = candidates[ci];
-            if (!hv2.centers || typeof hv2.centers[ci] !== 'number') return;
-            if (c && (c.isEllipsis || c.token === '...')) return; // skip ellipsis cell
-
-            // Only show the diff for the target token (cross-entropy only considers target)
-            if (ci !== targetIdx) return;
-
-            const pred = typeof c?.prob === 'number' ? c.prob : 0;
-            const deltaPct = (1 - pred) * 100;
-            const sign = deltaPct > 0 ? '+' : '';
-
-            const sel = d3.select(this).select('text.distribution-percentage-label');
-            sel
-              .attr('class', 'distribution-percentage-label target-diff-label')
-              .style('font-weight', '700')
-              .style('fill', '#dc2626ff')
-              .text(`${sign}${deltaPct.toFixed(1)}%`);
-          });
-
-          // Draw upward arrows from all target vector cells to difference labels
-          const tv = group.select('.target-vector');
-          if (tv && tv.node() && hv2 && hv2.centers) {
-            // Use the same length and offsets as the down arrows but shift them
-            // slightly downward so the up arrows sit closer to the bottom area.
-            const arrowEndYUp = percentageY + OUTPUT.ARROW_START_OFFSET;
-            const arrowStartYUp = arrowEndYUp + OUTPUT.ARROW_HEIGHT;
-
-            candidates.forEach((c, i) => {
-              if (c && (c.isEllipsis || c.token === '...')) return; // skip ellipsis cell
-              // Only draw the arrow for the target token
-              if (i !== targetIdx) return;
-              const cx = hv2.centers[i];
-              if (typeof cx !== 'number') return;
-
-              group
-                .append('line')
-                .attr('x1', cx)
-                .attr('y1', arrowStartYUp)
-                .attr('x2', cx)
-                .attr('y2', arrowEndYUp)
-                .attr('class', 'target-diff-arrow')
-                .style('stroke', OUTPUT_ARROWS.DISTRIBUTION_STROKE)
-                .style('stroke-width', OUTPUT_ARROWS.DISTRIBUTION_WIDTH)
-                .style('opacity', OUTPUT_ARROWS.DISTRIBUTION_OPACITY);
-
-              group
-                .append('polygon')
-                .attr(
-                  'points',
-                  `${cx},${arrowEndYUp} ${cx - OUTPUT_ARROWS.DISTRIBUTION_HEAD_SIZE},${arrowEndYUp + 6} ${cx + OUTPUT_ARROWS.DISTRIBUTION_HEAD_SIZE},${arrowEndYUp + 6}`
-                )
-                .attr('class', 'target-diff-arrow-head')
-                .style('fill', OUTPUT_ARROWS.DISTRIBUTION_STROKE)
-                .style('opacity', OUTPUT_ARROWS.DISTRIBUTION_OPACITY);
-            });
           }
         }
       } catch {
@@ -467,11 +339,13 @@ function renderExtractedEmbedding(
 }
 
 // Helper: Render distribution labels
-function renderDistributionLabels(group, candidates, hv2, selectedIdx) {
+function renderDistributionLabels(group, candidates, hv2, selectedIdx, trainingOpts) {
   const arrowStartY = hv2.bottomY + OUTPUT.ARROW_START_OFFSET;
   const arrowEndY = arrowStartY + OUTPUT.ARROW_HEIGHT;
   const labelGap = OUTPUT.LABEL_GAP;
   const labelSpacing = OUTPUT.LABEL_SPACING;
+  const isTraining = trainingOpts?.isTraining || false;
+  const targetIdx = trainingOpts?.targetIdx ?? -1;
 
   // Find ellipsis index if it exists
   const ellipsisIdx = candidates.findIndex((c) => c.isEllipsis || c.token === '...');
@@ -487,6 +361,7 @@ function renderDistributionLabels(group, candidates, hv2, selectedIdx) {
     const prob = candidate?.prob ?? 0;
     const percentage = (prob * 100).toFixed(1) + '%';
     const isSelected = i === selectedIdx;
+    const isTarget = isTraining && i === targetIdx;
 
     const itemG = group
       .append('g')
@@ -521,28 +396,46 @@ function renderDistributionLabels(group, candidates, hv2, selectedIdx) {
     const truncatedToken =
       displayToken.length > maxChars ? displayToken.substring(0, maxChars - 1) + '…' : displayToken;
 
+    const tokenLabelY = arrowEndY + labelGap + 10;
+
+    // Yellow highlight background for training target token (like doc-token-target)
+    if (isTarget) {
+      const approxTextWidth = Math.max(truncatedToken.length * 7.5, 20);
+      itemG
+        .append('rect')
+        .attr('class', 'distribution-token-highlight-bg')
+        .attr('x', cx - approxTextWidth / 2 - 4)
+        .attr('y', tokenLabelY - 11)
+        .attr('width', approxTextWidth + 8)
+        .attr('height', 16)
+        .attr('rx', 3)
+        .style('fill', 'rgba(245, 241, 0, 0.527)');
+    }
+
     itemG
       .append('text')
       .attr('x', cx)
-      .attr('y', arrowEndY + labelGap + 10)
+      .attr('y', tokenLabelY)
       .attr('text-anchor', 'middle')
-      .attr('class', 'distribution-token-label')
+      .attr('class', `distribution-token-label${isTarget ? ' doc-token-target' : ''}`)
       .style('font-size', OUTPUT.TOKEN_LABEL_SIZE)
-      .style('font-weight', 'normal')
-      .style('fill', 'var(--viz-text-color)')
+      .style('font-weight', isTarget ? '700' : 'normal')
+      .style('fill', isTarget ? '#323301' : 'var(--viz-text-color)')
       .text(truncatedToken);
 
-    // Percentage label
-    itemG
-      .append('text')
-      .attr('x', cx)
-      .attr('y', arrowEndY + labelGap + 10 + labelSpacing)
-      .attr('text-anchor', 'middle')
-      .attr('class', 'distribution-percentage-label')
-      .style('font-size', OUTPUT.PERCENTAGE_LABEL_SIZE)
-      .style('font-weight', 'normal')
-      .style('fill', 'var(--viz-muted-color)')
-      .text(percentage);
+    // Percentage label (skip in training mode - shown below bars instead)
+    if (!isTraining) {
+      itemG
+        .append('text')
+        .attr('x', cx)
+        .attr('y', arrowEndY + labelGap + 10 + labelSpacing)
+        .attr('text-anchor', 'middle')
+        .attr('class', 'distribution-percentage-label')
+        .style('font-size', OUTPUT.PERCENTAGE_LABEL_SIZE)
+        .style('font-weight', 'normal')
+        .style('fill', 'var(--viz-muted-color)')
+        .text(percentage);
+    }
   });
 
   // Highlight rectangle around selected candidate
@@ -596,6 +489,131 @@ function renderDistributionLabels(group, candidates, hv2, selectedIdx) {
       .style('fill', OUTPUT_ARROWS.ELLIPSIS_COLOR)
       .text('⋯');
   }
+}
+
+// Helper: Render vertical bar chart for training view (replaces target vector)
+// Returns { bottomY } for highlight rect positioning
+function renderTrainingBarChart(group, candidates, hv2, targetIdx, tokenLabelY, isDarkMode) {
+  const BAR_MAX_HEIGHT = 100; // maximum bar height in pixels
+  const BAR_GAP_FROM_LABELS = 12; // gap between token labels and bar area
+  const BAR_AREA_TOP_Y = tokenLabelY + BAR_GAP_FROM_LABELS; // 100% level
+  const BAR_WIDTH = Math.min(hv2.cellWidth * 0.55, 20); // compact bar width
+  const ARROW_HEAD_SIZE = 5;
+  const MIN_ARROW_LENGTH = 12; // minimum arrow length so it's always visible
+  const LABEL_OFFSET = 14; // distance below bar bottom for percentage label
+
+  const barChartGroup = group.append('g').attr('class', 'training-bar-chart');
+
+  // Baseline (0% level) is at the bottom of the bar area
+  const barBottomY = BAR_AREA_TOP_Y + BAR_MAX_HEIGHT;
+  // The percentage labels sit below the bar area
+  const percentageLabelY = barBottomY + LABEL_OFFSET;
+
+  candidates.forEach((candidate, i) => {
+    if (!hv2.centers || typeof hv2.centers[i] !== 'number') return;
+    // Skip ellipsis
+    if (candidate && (candidate.isEllipsis || candidate.token === '...')) return;
+
+    const cx = hv2.centers[i];
+    const prob = candidate?.prob ?? 0;
+    const barHeight = Math.max(2, prob * BAR_MAX_HEIGHT);
+    const isTarget = i === targetIdx;
+    const percentage = (prob * 100).toFixed(1) + '%';
+
+    const itemG = barChartGroup
+      .append('g')
+      .attr('class', `training-bar-item${isTarget ? ' target' : ''}`)
+      .attr('data-index', String(i));
+
+    // Bar grows upward from the baseline
+    const barTopY = barBottomY - barHeight;
+
+    // Bar fill
+    itemG
+      .append('rect')
+      .attr('class', 'training-bar')
+      .attr('x', cx - BAR_WIDTH / 2)
+      .attr('y', barTopY)
+      .attr('width', BAR_WIDTH)
+      .attr('height', barHeight)
+      .attr('rx', 2)
+      .style('fill', isTarget ? '#007E66' : '#bbb')
+      .style('opacity', 1);
+
+    // Arrow showing probability shift direction
+    if (isTarget) {
+      // Green upward arrow: from top of bar up to the 100% level (BAR_AREA_TOP_Y)
+      // Represents "probability should increase toward 100%"
+      const distanceToTop = barTopY - BAR_AREA_TOP_Y;
+      const arrowTipY = BAR_AREA_TOP_Y; // always points to 100%
+      // If bar is very close to 100%, ensure minimum arrow visibility
+      const arrowBaseY =
+        distanceToTop < MIN_ARROW_LENGTH
+          ? BAR_AREA_TOP_Y + Math.max(MIN_ARROW_LENGTH, distanceToTop)
+          : barTopY;
+
+      itemG
+        .append('line')
+        .attr('class', 'training-bar-arrow training-bar-arrow-up')
+        .attr('x1', cx)
+        .attr('y1', arrowBaseY)
+        .attr('x2', cx)
+        .attr('y2', arrowTipY)
+        .style('stroke', '#00DA61')
+        .style('stroke-width', 2.5)
+        .style('stroke-linecap', 'round');
+
+      itemG
+        .append('polygon')
+        .attr('class', 'training-bar-arrow-head training-bar-arrow-up')
+        .attr(
+          'points',
+          `${cx},${arrowTipY} ${cx - ARROW_HEAD_SIZE},${arrowTipY + ARROW_HEAD_SIZE * 1.5} ${cx + ARROW_HEAD_SIZE},${arrowTipY + ARROW_HEAD_SIZE * 1.5}`
+        )
+        .style('fill', '#00DA61');
+    } else {
+      // Red downward arrow: from top of bar down to the baseline (barBottomY)
+      // Represents "probability should decrease toward 0%"
+      const arrowTipY = barBottomY; // always points to baseline
+      // If bar is very short, ensure minimum arrow visibility by extending above bar
+      const arrowStartY =
+        barHeight < MIN_ARROW_LENGTH ? barBottomY - Math.max(MIN_ARROW_LENGTH, barHeight) : barTopY;
+
+      itemG
+        .append('line')
+        .attr('class', 'training-bar-arrow training-bar-arrow-down')
+        .attr('x1', cx)
+        .attr('y1', arrowStartY)
+        .attr('x2', cx)
+        .attr('y2', arrowTipY)
+        .style('stroke', 'rgba(239, 68, 68, 0.9)')
+        .style('stroke-width', 2.5)
+        .style('stroke-linecap', 'round');
+
+      itemG
+        .append('polygon')
+        .attr('class', 'training-bar-arrow-head training-bar-arrow-down')
+        .attr(
+          'points',
+          `${cx},${arrowTipY} ${cx - ARROW_HEAD_SIZE},${arrowTipY - ARROW_HEAD_SIZE * 1.5} ${cx + ARROW_HEAD_SIZE},${arrowTipY - ARROW_HEAD_SIZE * 1.5}`
+        )
+        .style('fill', 'rgba(239, 68, 68, 0.9)');
+    }
+
+    // Percentage label below bar area
+    itemG
+      .append('text')
+      .attr('class', 'training-bar-percentage')
+      .attr('x', cx)
+      .attr('y', percentageLabelY)
+      .attr('text-anchor', 'middle')
+      .style('font-size', '11px')
+      .style('font-weight', isTarget ? '700' : 'normal')
+      .style('fill', isTarget ? (isDarkMode ? '#4ade80' : '#007E66') : 'var(--viz-muted-color)')
+      .text(percentage);
+  });
+
+  return { bottomY: percentageLabelY + 4 };
 }
 
 // Helper: Render append arrow

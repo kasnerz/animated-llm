@@ -533,15 +533,17 @@ function PretrainingSimpleView() {
                               row.displayToken
                             )}
                           </div>
-                          <div className="bar-track">
+                          <div
+                            className={`bar-track ${showFeedback && !row.isTarget && !row.isEllipsis ? 'has-push-arrow' : ''}`}
+                          >
                             <div
                               className="bar-fill"
                               style={{
                                 width: `${widthPct}%`,
-                                backgroundColor: row.isTarget ? '#007E66' : '#666',
+                                backgroundColor: row.isTarget ? '#007E66' : '#bbb',
                               }}
                             />
-                            {row.isTarget && widthPct < 96 && (
+                            {showFeedback && row.isTarget && (
                               <div
                                 className="goal-arrow"
                                 style={{
@@ -551,6 +553,12 @@ function PretrainingSimpleView() {
                               >
                                 <div className="goal-arrow-shaft" />
                                 <div className="goal-arrow-head" />
+                              </div>
+                            )}
+                            {showFeedback && !row.isTarget && !row.isEllipsis && (
+                              <div className="push-down-arrow" style={{ width: `${widthPct}%` }}>
+                                <div className="push-down-arrow-head" />
+                                <div className="push-down-arrow-shaft" />
                               </div>
                             )}
                           </div>
