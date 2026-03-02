@@ -15,11 +15,10 @@ import InitialHint from '../components/InitialHint';
 import TrainingDocumentCarousel from '../components/TrainingDocumentCarousel';
 import { MODEL_REGISTRY, getModelInfo } from '../config/modelConfig';
 import { processTokenForText } from '../utils/tokenProcessing';
-import { getViridisColor } from '../utils/colorSchemes';
 import { Tooltip } from 'react-tooltip';
 import '../styles/pretraining-simple.css';
 
-const MAX_DISTRIBUTION_ROWS = 10;
+const MAX_DISTRIBUTION_ROWS = 8;
 
 /**
  * Get icon path for speed icon identifier
@@ -295,19 +294,19 @@ function PretrainingSimpleView() {
     });
   }, [currentTrainStep, isMobile]);
 
-  const maxPredictionProb = Math.max(
-    0.001,
-    ...distributionRows.map((row) => row.predictedProb || 0)
-  );
-
   const diffSummary = useMemo(() => {
     const targetRow = distributionRows.find((r) => r.isTarget);
-    const p = targetRow?.predictedProb ?? 0;
+    const p = currentTrainStep?.target_prob ?? targetRow?.predictedProb ?? 0;
     const predictedProbPct = (p * 100).toFixed(1);
     const diffPct = ((1 - p) * 100).toFixed(1);
-    const modelError = p > 0 ? (-Math.log(p)).toFixed(3) : '∞';
+    const modelError =
+      currentTrainStep?.loss != null
+        ? Number(currentTrainStep.loss).toFixed(3)
+        : p > 0
+          ? (-Math.log(p)).toFixed(3)
+          : '∞';
     return { predictedProbPct, diffPct, modelError };
-  }, [distributionRows]);
+  }, [distributionRows, currentTrainStep]);
 
   const placeholderMessage = (
     <div className="decoding-placeholder">
@@ -483,95 +482,79 @@ function PretrainingSimpleView() {
           {showDistributions && (
             <div className="pretraining-distribution-stage">
               <div className="pretraining-simple-distributions">
+                <div className="distribution-column-header">
+                  <div className="distribution-header-row">
+                    <span className="distribution-header-label">
+                      {t('target_token') || 'Target token'}:
+                    </span>
+                    <span className="distribution-header-value target-token-highlight">
+                      {processTokenForText(targetTokenLabel)}
+                    </span>
+                  </div>
+                  <div className="distribution-header-row">
+                    <span className="distribution-header-label">
+                      {t('predicted_probability_of') || 'Predicted probability of'}{' '}
+                      <span className="target-token-highlight">
+                        {processTokenForText(targetTokenLabel)}
+                      </span>{' '}
+                      (p):
+                    </span>
+                    <span className="distribution-header-value">
+                      {diffSummary.predictedProbPct}%
+                    </span>
+                  </div>
+                  <div className="distribution-header-row">
+                    <span className="distribution-header-label">
+                      {t('model_error_log_p') || 'Model error (−log(p)):'}
+                    </span>
+                    <span className="distribution-header-value error">
+                      {diffSummary.modelError}
+                    </span>
+                  </div>
+                </div>
                 <div className="distribution-column output">
-                  <div className="column-header">{t('model_output') || 'Model Output'}</div>
+                  <div className="column-header">
+                    {t('predicted_probabilities_top_tokens') ||
+                      'Predicted probabilities (top tokens)'}
+                  </div>
                   <div className="distribution-body">
                     {distributionRows.map((row) => {
                       const pctLabel = `${(row.predictedProb * 100).toFixed(1)}%`;
-                      const widthPct = Math.max(4, (row.predictedProb / maxPredictionProb) * 90);
+                      const widthPct = Math.max(2, row.predictedProb * 100);
                       return (
                         <div
                           key={`out-${row.id}`}
                           className={`distribution-row ${row.isTarget ? 'is-target' : ''}`}
                         >
-                          <div className="token-label">{row.displayToken}</div>
+                          <div className="token-label">
+                            {row.isTarget ? (
+                              <span className="target-token-highlight">{row.displayToken}</span>
+                            ) : (
+                              row.displayToken
+                            )}
+                          </div>
                           <div className="bar-track">
                             <div
                               className="bar-fill"
                               style={{
                                 width: `${widthPct}%`,
-                                backgroundColor: getViridisColor(row.predictedProb || 0),
+                                backgroundColor: row.isTarget ? '#007E66' : '#666',
                               }}
                             />
+                            {row.isTarget && widthPct < 96 && (
+                              <div
+                                className="goal-arrow"
+                                style={{
+                                  left: `${widthPct}%`,
+                                  width: `${100 - widthPct}%`,
+                                }}
+                              >
+                                <div className="goal-arrow-shaft" />
+                                <div className="goal-arrow-head" />
+                              </div>
+                            )}
                           </div>
                           <div className="value-label">{row.isEllipsis ? '' : pctLabel}</div>
-                        </div>
-                      );
-                    })}
-                  </div>
-                </div>
-
-                <div className="distribution-column diff">
-                  <div className="diff-summary-list">
-                    <div className="diff-summary-item">
-                      <div className="diff-summary-label">
-                        {t('predicted_probability_of') || 'Predicted probability of'}{' '}
-                        <strong>{processTokenForText(targetTokenLabel)}</strong>:
-                      </div>
-                      <div className="diff-summary-value correct">
-                        {diffSummary.predictedProbPct}%
-                      </div>
-                    </div>
-                    <div className="diff-summary-item">
-                      <div className="diff-summary-label">
-                        {t('desired_probability_of') || 'Desired probability of'}{' '}
-                        <strong>{processTokenForText(targetTokenLabel)}</strong>:
-                      </div>
-                      <div className="diff-summary-value ">100.0%</div>
-                    </div>
-                    <div className="diff-summary-item">
-                      <div className="diff-summary-label">
-                        {t('difference_d') || 'Difference (d):'}
-                      </div>
-                      <div className="diff-summary-value error">{diffSummary.diffPct}%</div>
-                    </div>
-                    <div className="diff-summary-item">
-                      <div className="diff-summary-label">
-                        {t('model_error_log_d') || 'Model error (−log(d)):'}
-                      </div>
-                      <div className="diff-summary-value error">{diffSummary.modelError}</div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="distribution-column target">
-                  <div className="column-header">
-                    {t('target_token') || 'Target token'}:{' '}
-                    <span className="target-token-highlight">
-                      {processTokenForText(targetTokenLabel)}
-                    </span>
-                  </div>
-                  <div className="distribution-body">
-                    {distributionRows.map((row) => {
-                      const width = row.targetProb * 100;
-                      return (
-                        <div
-                          key={`target-${row.id}`}
-                          className={`distribution-row ${row.isTarget ? 'is-target' : ''}`}
-                        >
-                          <div className="token-label">{row.displayToken}</div>
-                          <div className="bar-track">
-                            <div
-                              className="bar-fill"
-                              style={{
-                                width: `${width}%`,
-                                backgroundColor: getViridisColor(row.targetProb || 0),
-                              }}
-                            />
-                          </div>
-                          <div className="value-label">
-                            {row.targetProb > 0 ? '100%' : row.isEllipsis ? '' : '0%'}
-                          </div>
                         </div>
                       );
                     })}

@@ -15,15 +15,6 @@
 export const MODEL_REGISTRY = [
   // Example entries - populate with actual models
   {
-    pattern: /vanilla/i,
-    logo: 'transformer.png',
-    size: '1b',
-    id: 'meta-llama/Llama-3.2-1B-Instruct',
-    name: 'Transformer 1B (random)',
-    training_view: true,
-    decoding_view: false,
-  },
-  {
     pattern: /aya-expanse-8b/i,
     logo: 'aya.png',
     size: '8b',
@@ -67,6 +58,15 @@ export const MODEL_REGISTRY = [
     name: 'GPT-2-XL',
     training_view: true,
     decoding_view: true,
+  },
+  {
+    pattern: /vanilla/i,
+    logo: 'transformer.png',
+    size: '1b',
+    id: 'meta-llama/Llama-3.2-1B-Instruct',
+    name: 'Transformer 1B (random)',
+    training_view: true,
+    decoding_view: false,
   },
   // Add more model patterns here
 ];

@@ -29,7 +29,7 @@
 }
 
 .pretraining-doc-arrow .shaft {
-  width: 2px;
+  width: 4px;
   height: 16px;
   background: var(--border-color, #ccc);
   transition: all 0.3s ease;
@@ -38,9 +38,9 @@
 .pretraining-doc-arrow .head {
   width: 0;
   height: 0;
-  border-left: 6px solid transparent;
-  border-right: 6px solid transparent;
-  border-top: 8px solid var(--border-color, #ccc);
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 9px solid var(--border-color, #ccc);
   margin-top: -2px;
   transition: all 0.3s ease;
 }
@@ -80,7 +80,7 @@
 }
 
 .arrow.arrow-down .shaft {
-  width: 2px;
+  width: 4px;
   height: 16px;
   background: var(--border-color, #ccc);
   transition: all 0.3s ease;
@@ -89,9 +89,9 @@
 .arrow.arrow-down .head {
   width: 0;
   height: 0;
-  border-left: 6px solid transparent;
-  border-right: 6px solid transparent;
-  border-top: 8px solid var(--border-color, #ccc);
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 9px solid var(--border-color, #ccc);
   margin-top: -2px;
   transition: all 0.3s ease;
 }
@@ -120,7 +120,7 @@
 }
 
 .arrow.arrow-up.gradient-feedback .shaft {
-  width: 3px;
+  width: 4px;
   height: 16px;
   background: linear-gradient(180deg, #22c55e, #ef4444);
   animation: pulse-arrow 1.6s ease-in-out infinite;
@@ -129,9 +129,9 @@
 .arrow.arrow-up.gradient-feedback .head {
   width: 0;
   height: 0;
-  border-left: 6px solid transparent;
-  border-right: 6px solid transparent;
-  border-bottom: 8px solid #22c55e;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 9px solid #22c55e;
   border-top: 0;
   margin-top: 0;
   margin-bottom: -2px;
@@ -154,99 +154,85 @@
 
 .pretraining-distribution-stage {
   position: relative;
-  padding: 1rem 0 2rem;
+  padding: 1rem 0 0.5rem;
 }
 
 .pretraining-simple-distributions {
-  display: grid;
-  grid-template-columns: 0.8fr 2fr 0.8fr;
-  gap: 0.25rem;
-  width: min(1200px, 100%);
+  width: min(700px, 100%);
   margin: 0 auto;
   padding: 0 0.5rem;
 }
 
-@media (min-width: 900px) {
-  .pretraining-simple-distributions {
-    grid-template-columns: 1fr 1.1fr 1fr;
-    gap: 1.25rem;
-  }
+.distribution-column {
+  background: transparent;
+  border: none;
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  min-height: 220px;
+  overflow: hidden;
 }
 
-.distribution-column {
+.distribution-column-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
   background: var(--panel-background, rgba(255, 255, 255, 0.04));
   border: 1px solid var(--border-color);
   border-radius: 12px;
   padding: 1rem 1.25rem;
-  min-height: 220px;
 }
 
-.distribution-column.diff {
-  border: none;
-  background: transparent;
-  padding: 1rem 0.5rem;
-  text-align: center;
-  padding-right: 0;
-  padding-left: 0;
-}
-
-.diff-summary-list {
+.distribution-header-row {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  gap: 1.25rem;
-  padding: 0.5rem;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
 }
 
-.diff-summary-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.25rem;
+.distribution-header-label {
+  font-size: 0.9rem;
+  /* font-weight: 600; */
+  color: var(--text-primary, #333);
 }
 
-.diff-summary-label {
-  font-size: 0.95rem;
-  color: var(--text-secondary, #888);
-  text-align: center;
-  margin: 0;
-}
-
-.diff-summary-value {
-  font-size: 1.5rem;
+.distribution-header-value {
   font-weight: 600;
   color: var(--text-primary, #333);
-  margin: 0;
   font-variant-numeric: tabular-nums;
+  text-align: right;
+  white-space: nowrap;
 }
 
-.diff-summary-value.error {
-  font-size: 1.5rem;
+.distribution-header-value.error {
   color: #ef4444;
-}
-
-.diff-summary-value.correct {
-  font-size: 1.5rem;
-  color: #128d45;
 }
 
 .distribution-column .column-header {
   font-weight: 600;
   margin-bottom: 0.75rem;
+  color: #555;
+}
+
+.target-token-highlight {
+  color: #323301;
+  font-weight: 700;
+  /* font-family: var(--mono-font, 'Consolas', 'Monaco', monospace); */
+  background: rgba(245, 241, 0, 0.527);
+  padding: 0.1em 0.4em;
+  border-radius: 4px;
 }
 
 .distribution-column.target .column-header .target-token-highlight {
-  color: #b91c1c;
+  color: #323301;
   font-weight: 700;
-  font-family: var(--mono-font, 'Consolas', 'Monaco', monospace);
+  /* font-family: var(--mono-font, 'Consolas', 'Monaco', monospace); */
 }
 
 .distribution-body {
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: 0.5rem;
 }
 
 .distribution-row {
@@ -260,14 +246,19 @@
 .distribution-row .token-label {
   font-variant-numeric: tabular-nums;
   font-weight: 500;
+  color: #555;
 }
 
 .distribution-row .bar-track {
   background: rgba(255, 255, 255, 0.08);
   border-radius: 999px;
-  height: 10px;
+  height: 11px;
   position: relative;
   overflow: hidden;
+}
+
+.distribution-row.is-target .bar-track {
+  overflow: visible;
 }
 
 .distribution-row .bar-fill {
@@ -276,14 +267,42 @@
   transition: width 0.4s ease;
 }
 
+/* Red goal arrow: shows the gap from predicted prob to 100% */
+.goal-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  height: 10px;
+  pointer-events: none;
+}
+
+.goal-arrow-shaft {
+  flex: 1;
+  height: 5px;
+  background: rgba(245, 241, 0, 0.75);
+  min-width: 4px;
+}
+
+.goal-arrow-head {
+  width: 0;
+  height: 0;
+  border-top: 7px solid transparent;
+  border-bottom: 7px solid transparent;
+  border-left: 10px solid rgba(245, 241, 0, 0.75);
+  flex-shrink: 0;
+}
+
 .distribution-row .value-label {
   font-variant-numeric: tabular-nums;
   min-width: 60px;
   text-align: right;
+  color: #555;
 }
 
 .distribution-row.is-target .token-label {
-  color: var(--accent-color, #22c55e);
+  font-weight: 700;
 }
 
 .distribution-row.diff-row {
@@ -295,67 +314,6 @@
   justify-items: center;
 }
 
-.distribution-column.diff .distribution-row .value-label {
-  font-weight: 600;
-  text-align: center;
-  width: 100%;
-}
-
-.distribution-column.diff .distribution-row.positive .value-label {
-  color: #22c55e;
-}
-
-.distribution-column.diff .distribution-row.negative .value-label {
-  color: #ef4444;
-}
-
 .distribution-row.ellipsis {
   opacity: 0.6;
-}
-
-@media (max-width: 768px) {
-  .pretraining-simple-distributions {
-    grid-template-columns: 1fr;
-  }
-
-  .distribution-column.output,
-  .distribution-column.target {
-    display: none;
-  }
-
-  .distribution-column {
-    padding: 0.75rem 0.25rem;
-    min-height: auto;
-  }
-
-  .distribution-column .column-header {
-    font-size: 0.8rem;
-    margin-bottom: 0.5rem;
-    text-align: center;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-
-  .distribution-row {
-    grid-template-columns: 45px 25px 35px;
-    gap: 0.25rem;
-    font-size: 0.75rem;
-  }
-
-  .distribution-row .token-label {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
-
-  .distribution-row .value-label {
-    min-width: 0;
-    font-size: 0.7rem;
-    text-align: right;
-  }
-
-  .distribution-column.diff .distribution-row .value-label {
-    font-size: 0.7rem;
-  }
 }
