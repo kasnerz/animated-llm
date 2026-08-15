@@ -213,8 +213,11 @@
 .transformer-left {
   flex: 1;
   display: flex;
+  align-items: center;
+  gap: 2px;
   justify-content: flex-start;
   position: relative;
+  min-width: 0;
 }
 
 .model-selector-btn {
@@ -253,6 +256,128 @@
   font-size: 15px;
   letter-spacing: 0.5px;
   color: var(--text-secondary, #666);
+}
+
+/* Hint marker next to the model selector, revealing the model properties.
+   Pulled in against the selector button's own padding so it reads as part of
+   the control rather than a separate item. */
+.model-hint {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  margin-left: -8px;
+}
+
+.model-hint-btn {
+  background: transparent;
+  border: none;
+  padding: 2px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-tertiary, #999);
+  /* Kept faint so it does not compete with the model name */
+  opacity: 0.45;
+  transition:
+    opacity 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.model-hint-btn svg {
+  fill: currentColor;
+}
+
+.model-hint-btn:hover,
+.model-hint-btn.is-open {
+  opacity: 0.9;
+  background: var(--bg-secondary, #f8f8f8);
+}
+
+.model-hint-btn:focus-visible {
+  outline: 2px solid var(--accent-primary, #006d5d);
+  outline-offset: 2px;
+}
+
+.model-hint-popover {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 8px;
+  background: var(--bg-primary, #fff);
+  border: 1px solid var(--border-color, #e0e0e0);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  z-index: 1000;
+  white-space: nowrap;
+  font-family: var(--font-ui, system-ui, sans-serif);
+}
+
+/* Transparent bridge over the gap, so moving the pointer from the marker into
+   the popover does not leave the hover area and close it before the link is
+   reachable. */
+.model-hint-popover::before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: 0;
+  right: 0;
+  height: 8px;
+}
+
+.model-hint-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+.model-hint-heading {
+  /* Headings and items share the popover's font; only size, weight and colour
+     separate them. */
+  font-family: inherit;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  color: var(--text-tertiary, #999);
+  padding: 0 4px;
+}
+
+/* One row style for both the properties and the source link */
+.model-hint-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0 4px;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.3;
+  white-space: nowrap;
+  color: var(--text-primary, #222);
+  text-decoration: none;
+}
+
+/* Lucide icons are stroke-based, so they follow the text colour via stroke */
+.model-hint-item svg {
+  flex-shrink: 0;
+  color: var(--text-secondary, #666);
+}
+
+.model-hint-link:hover {
+  color: var(--accent-primary, #006d5d);
+  text-decoration: underline;
+}
+
+.model-hint-link:hover svg {
+  color: inherit;
 }
 
 .model-dropdown-menu {
@@ -631,6 +756,7 @@
   .transformer-left {
     order: -1;
     justify-content: center;
+    gap: 6px;
   }
 
   .transformer-right {

@@ -162,14 +162,25 @@ def main():
         except Exception as e:
             print(f"Warning: Could not read existing examples.json: {e}")
 
+    # Drop entries whose JSON file is no longer on disk, so removing a model's
+    # outputs also removes it from the index.
+    pruned_examples = [
+        ex
+        for ex in existing_examples
+        if "file" in ex and (Path(data_dir) / ex["file"]).exists()
+    ]
+    num_pruned = len(existing_examples) - len(pruned_examples)
+    if num_pruned:
+        print(f"Pruned {num_pruned} entries whose files no longer exist")
+
     # Create a set of existing file paths to avoid duplicates
-    existing_files = {ex.get("file") for ex in existing_examples if "file" in ex}
+    existing_files = {ex.get("file") for ex in pruned_examples if "file" in ex}
 
     # Filter out examples that already exist (by file path)
     new_examples = [ex for ex in examples if ex.get("file") not in existing_files]
 
     # Combine existing and new examples
-    all_examples = existing_examples + new_examples
+    all_examples = pruned_examples + new_examples
 
     # Create the output structure
     output = {"examples": all_examples}
