@@ -5,12 +5,18 @@ OUTPUT_DIR="../../public/data"
 SERVER_URL="http://localhost:8712"
 MAX_NEW_TOKENS=100
 
+# Existing output files are skipped, so a rerun resumes an interrupted job and
+# leaves already-generated outputs untouched. Set to 0 to regenerate everything.
+SKIP_EXISTING=1
+
 # Model IDs from MODEL_REGISTRY
+# gpt2-xl is listed so that any language it is missing gets filled in; its
+# already-generated outputs are left alone by SKIP_EXISTING.
 MODELS=(
-    "CohereForAI/aya-expanse-8b"
-    "meta-llama/Llama-3.2-1B-Instruct"
-    "Qwen/Qwen3-4B-Instruct-2507"
-    "allenai/Olmo-3-7B-Think"
+    "google/gemma-4-E4B-it"
+    "google/gemma-4-E4B"
+    "HuggingFaceTB/SmolLM-1.7B-Instruct"
+    "Qwen/Qwen3.5-9B"
     "openai-community/gpt2-xl"
 )
 
@@ -73,41 +79,27 @@ process_prompts() {
         local lang_dir="${OUTPUT_DIR}/inference/${lang}"
         mkdir -p "$lang_dir"
         
-        # Generate three variants: greedy, sampling, and random
-        
-        # Variant 1: Greedy (temperature = 0)
-        local output_file_greedy="${lang_dir}/${lang}-${num}-greedy-${MODEL_ID}.json"
-        echo "Processing $lang prompt $num (greedy): $prompt"
-        python llm_inference_client.py "$prompt" \
-            --server "$SERVER_URL" \
-            --max-new-tokens "$MAX_NEW_TOKENS" \
-            --language "$lang" \
-            --top-k 10 \
-            --temperature 0 \
-            -o "$output_file_greedy"
-        
-        # Variant 2: Sampling (temperature = 1)
-        local output_file_sampling="${lang_dir}/${lang}-${num}-sampling-${MODEL_ID}.json"
-        echo "Processing $lang prompt $num (sampling): $prompt"
-        python llm_inference_client.py "$prompt" \
-            --server "$SERVER_URL" \
-            --max-new-tokens "$MAX_NEW_TOKENS" \
-            --language "$lang" \
-            --top-k 10 \
-            --temperature 1.0 \
-            -o "$output_file_sampling"
-        
-        # Variant 3: Random
-        local output_file_random="${lang_dir}/${lang}-${num}-random-${MODEL_ID}.json"
-        echo "Processing $lang prompt $num (random): $prompt"
-        python llm_inference_client.py "$prompt" \
-            --server "$SERVER_URL" \
-            --max-new-tokens "$MAX_NEW_TOKENS" \
-            --language "$lang" \
-            --top-k 10 \
-            --temperature 5 \
-            -o "$output_file_random"
-        
+        # Generate three variants: greedy (temp 0), sampling (temp 1), random (temp 5)
+        for variant in "greedy:0" "sampling:1.0" "random:5"; do
+            local variant_name="${variant%%:*}"
+            local temperature="${variant##*:}"
+            local output_file="${lang_dir}/${lang}-${num}-${variant_name}-${MODEL_ID}.json"
+
+            if [ "$SKIP_EXISTING" = "1" ] && [ -s "$output_file" ]; then
+                echo "Skipping existing $(basename "$output_file")"
+                continue
+            fi
+
+            echo "Processing $lang prompt $num ($variant_name): $prompt"
+            python llm_inference_client.py "$prompt" \
+                --server "$SERVER_URL" \
+                --max-new-tokens "$MAX_NEW_TOKENS" \
+                --language "$lang" \
+                --top-k 10 \
+                --temperature "$temperature" \
+                -o "$output_file"
+        done
+
         counter=$((counter + 1))
     done < "$prompts_file"
 }
@@ -117,10 +109,10 @@ mkdir -p "${OUTPUT_DIR}/inference"
 
 # Define all languages
 declare -A LANGUAGES=(
-    # ["en"]="prompts/inference/prompts_en.txt"
-    # ["cs"]="prompts/inference/prompts_cs.txt"
-    # ["fr"]="prompts/inference/prompts_fr.txt"
-    # ["zh"]="prompts/inference/prompts_zh.txt"
+    ["en"]="prompts/inference/prompts_en.txt"
+    ["cs"]="prompts/inference/prompts_cs.txt"
+    ["fr"]="prompts/inference/prompts_fr.txt"
+    ["zh"]="prompts/inference/prompts_zh.txt"
     ["uk"]="prompts/inference/prompts_uk.txt"
 )
 

@@ -1,6 +1,7 @@
 """
 FastAPI server for generating training visualization data.
-Uses pre-trained Meta-Llama/Llama-3.2-1B and collects predictions for training examples.
+Collects next-token predictions over a text for whichever model is loaded via
+/load_model, optionally with randomly initialized weights (Vanilla Transformer).
 """
 
 import argparse
@@ -12,7 +13,16 @@ import torch.nn.functional as F
 import uvicorn
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
-from transformers import AutoConfig, AutoModelForCausalLM, AutoTokenizer
+from transformers import AutoConfig, AutoModelForCausalLM
+
+from model_utils import (
+    describe_config,
+    get_display_tokens,
+    get_special_token_ids,
+    load_causal_lm,
+    load_tokenizer,
+    special_indices,
+)
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
@@ -24,6 +34,7 @@ app = FastAPI(title="LLM Training Visualization API")
 tokenizer = None
 model = None
 display_model_name = None
+special_token_ids = set()
 
 # Global configuration
 config_args = None
@@ -59,85 +70,68 @@ class TrainingStep(BaseModel):
     loss: float
 
 
-def get_display_tokens(tokenizer, token_ids: List[int]) -> List[str]:
-    """
-    Decodes token IDs into strings, replacing leading spaces with 'Ġ' for display.
-    """
-    tokens = []
-    for token_id in token_ids:
-        # Decode the single token
-        decoded_token = tokenizer.decode([token_id])
-        # convert_ids_to_tokens gives the raw token, which might be what we want for display
-        raw_token = tokenizer.convert_ids_to_tokens([token_id])[0]
+def load_model_and_tokenizer(model_id: str, random_weights: bool):
+    """Load `model_id` into the module globals, replacing anything already loaded."""
+    global tokenizer, model, display_model_name, special_token_ids
 
-        # If the raw token starts with Ġ, it signifies a space.
-        # The decoded token will have a space " " at the beginning.
-        # We prefer the raw token for display if it's valid unicode
-        if raw_token.startswith("Ġ"):
-            # We want to show the Ġ, but the rest of the token might be garbled
-            # if we just use the raw token. So we take the decoded token and prepend Ġ.
-            # The decoded token will have a leading space if the raw token had a Ġ.
-            if decoded_token.startswith(" "):
-                tokens.append("Ġ" + decoded_token[1:])
-            else:
-                # This case is unlikely but as a fallback, use the raw token
-                tokens.append(raw_token)
-        else:
-            tokens.append(decoded_token)
-    return tokens
+    logger.info(f"Loading model configuration: {model_id}")
+    logger.info(f"Device: {config_args.device}")
+    logger.info(f"Use random weights: {random_weights}")
+
+    # Clear previous model from memory
+    if model is not None:
+        del model
+        model = None
+        if torch.cuda.is_available():
+            torch.cuda.empty_cache()
+
+    tokenizer = load_tokenizer(model_id)
+
+    if random_weights:
+        logger.info("Initializing random weights (Vanilla Transformer)...")
+        config = AutoConfig.from_pretrained(model_id)
+        model = AutoModelForCausalLM.from_config(config)
+        display_model_name = "Vanilla Transformer"
+    else:
+        logger.info(f"Loading pre-trained {model_id} model...")
+        # "auto" keeps each model in the dtype it was released in. Forcing
+        # float16 would be wrong for bf16-native models such as Gemma 4, whose
+        # logit softcapping makes it sensitive to the narrower fp16 range.
+        model = load_causal_lm(model_id, config_args.device)
+        display_model_name = model_id
+
+    if random_weights:
+        model = model.to(config_args.device)
+        if config_args.device == "cuda":
+            model = model.half()
+
+    # Set to evaluation mode (no dropout)
+    model.eval()
+    special_token_ids = get_special_token_ids(tokenizer)
+
+    config_args.model = model_id
+    config_args.random_weights = random_weights
+
+    # Log model size
+    num_params = sum(p.numel() for p in model.parameters())
+
+    if random_weights:
+        display_model_name = f"Vanilla Transformer ({num_params/1e9:.1f}B)"
+
+    logger.info(f"Model loaded successfully: {display_model_name}")
+    logger.info(f"Total parameters: {num_params:,}")
+    logger.info(f"Model size: ~{num_params * 2 / (1024**3):.2f} GB (float16)")
+    logger.info(f"Special/control token ids: {len(special_token_ids)}")
 
 
 @app.on_event("startup")
-async def load_model():
-    """Load the model and tokenizer on startup."""
-    global tokenizer, model, display_model_name
+async def startup_load_model():
+    """Optionally preload a model on startup; otherwise wait for /load_model."""
+    if not config_args.preload:
+        logger.info("Starting without a model - POST /load_model to load one")
+        return
 
-    logger.info(f"Loading model configuration: {config_args.model}")
-    logger.info(f"Device: {config_args.device}")
-    logger.info(f"Use random weights: {config_args.random_weights}")
-
-    try:
-        # Load tokenizer
-        tokenizer = AutoTokenizer.from_pretrained(config_args.model)
-
-        if config_args.random_weights:
-            logger.info("Initializing random weights (Vanilla Transformer)...")
-            config = AutoConfig.from_pretrained(config_args.model)
-            model = AutoModelForCausalLM.from_config(config)
-            display_model_name = "Vanilla Transformer"
-        else:
-            # Load pre-trained model
-            logger.info(f"Loading pre-trained {config_args.model} model...")
-            model = AutoModelForCausalLM.from_pretrained(
-                config_args.model,
-                torch_dtype=(
-                    torch.float16 if config_args.device == "cuda" else torch.float32
-                ),
-                device_map="auto" if config_args.device == "cuda" else None,
-            )
-            display_model_name = config_args.model
-
-        if config_args.device == "cpu" or config_args.random_weights:
-            model = model.to(config_args.device)
-            if config_args.device == "cuda" and config_args.random_weights:
-                model = model.half()
-
-        # Set to evaluation mode (no dropout)
-        model.eval()
-
-        # Log model size
-        num_params = sum(p.numel() for p in model.parameters())
-
-        if config_args.random_weights:
-            display_model_name = f"Vanilla Transformer ({num_params/1e9:.1f}B)"
-
-        logger.info(f"Model loaded successfully: {display_model_name}")
-        logger.info(f"Total parameters: {num_params:,}")
-        logger.info(f"Model size: ~{num_params * 2 / (1024**3):.2f} GB (float16)")
-
-    except Exception as e:
-        logger.error(f"Error loading model: {e}")
-        raise
+    load_model_and_tokenizer(config_args.model, config_args.random_weights)
 
 
 @app.get("/")
@@ -161,17 +155,17 @@ async def get_model_info():
         raise HTTPException(status_code=503, detail="Model not loaded")
 
     num_params = sum(p.numel() for p in model.parameters())
-    config = model.config
+    description = describe_config(model.config)
 
     return {
         "name": display_model_name,
-        "architecture": config.model_type,
-        "num_layers": config.num_hidden_layers,
-        "hidden_size": config.hidden_size,
-        "num_attention_heads": config.num_attention_heads,
-        "vocab_size": config.vocab_size,
-        "max_position_embeddings": config.max_position_embeddings,
-        "intermediate_size": config.intermediate_size,
+        "architecture": model.config.model_type,
+        "num_layers": description["num_layers"],
+        "hidden_size": description["hidden_size"],
+        "num_attention_heads": description["num_attention_heads"],
+        "vocab_size": description["vocab_size"],
+        "max_position_embeddings": description["max_position_embeddings"],
+        "intermediate_size": description["intermediate_size"],
         "total_parameters": num_params,
         "pretrained": not config_args.random_weights,
     }
@@ -180,72 +174,16 @@ async def get_model_info():
 @app.post("/load_model")
 async def load_model_endpoint(request: LoadModelRequest):
     """Load a new model dynamically."""
-    global tokenizer, model, display_model_name
-
     logger.info(f"Loading new model: {request.model_id}")
     logger.info(f"Random weights: {request.random_weights}")
 
     try:
-        # Clear previous model from memory
-        if model is not None:
-            del model
-            del tokenizer
-            torch.cuda.empty_cache() if torch.cuda.is_available() else None
-
-        # Update config
-        config_args.model = request.model_id
-        config_args.random_weights = request.random_weights
-
-        # Load tokenizer
-        tokenizer = AutoTokenizer.from_pretrained(
-            request.model_id,
-            use_fast=True,
-            trust_remote_code=True,
-        )
-
-        if request.random_weights:
-            logger.info("Initializing random weights (Vanilla Transformer)...")
-            from transformers import AutoConfig
-
-            config = AutoConfig.from_pretrained(request.model_id)
-            model = AutoModelForCausalLM.from_config(config)
-            display_model_name = "Vanilla Transformer"
-        else:
-            # Load pre-trained model
-            logger.info(f"Loading pre-trained {request.model_id} model...")
-            model = AutoModelForCausalLM.from_pretrained(
-                request.model_id,
-                torch_dtype=(
-                    torch.float16 if config_args.device == "cuda" else torch.float32
-                ),
-                device_map="auto" if config_args.device == "cuda" else None,
-                low_cpu_mem_usage=True,
-                use_safetensors=True,
-                trust_remote_code=True,
-            )
-            display_model_name = request.model_id
-
-        if config_args.device == "cpu" or request.random_weights:
-            model = model.to(config_args.device)
-            if config_args.device == "cuda" and request.random_weights:
-                model = model.half()
-
-        # Set to evaluation mode (no dropout)
-        model.eval()
-
-        # Log model size
-        num_params = sum(p.numel() for p in model.parameters())
-
-        if request.random_weights:
-            display_model_name = f"Vanilla Transformer ({num_params/1e9:.1f}B)"
-
-        logger.info(f"Model loaded successfully: {display_model_name}")
-        logger.info(f"Total parameters: {num_params:,}")
+        load_model_and_tokenizer(request.model_id, request.random_weights)
 
         return {
             "status": "success",
             "model": display_model_name,
-            "message": f"Model loaded successfully",
+            "message": "Model loaded successfully",
         }
 
     except Exception as e:
@@ -272,6 +210,16 @@ async def process_training(request: TrainingRequest):
         # Tokenize the input text
         encoding = tokenizer(request.text, return_tensors="pt")
         token_ids = encoding.input_ids[0].tolist()
+
+        # Make sure the sequence starts with BOS. Some instruction-tuned
+        # tokenizers leave it out of the post-processor because their chat
+        # template emits it literally (gemma-4-E4B-it does this, while the base
+        # gemma-4-E4B adds it). Without BOS these models predict from an
+        # out-of-distribution first position and the probabilities are garbage.
+        bos_token_id = getattr(tokenizer, "bos_token_id", None)
+        if bos_token_id is not None and (not token_ids or token_ids[0] != bos_token_id):
+            token_ids.insert(0, bos_token_id)
+
         tokens = get_display_tokens(tokenizer, token_ids)
 
         # Limit tokens if max_tokens is specified
@@ -376,6 +324,9 @@ async def process_training(request: TrainingRequest):
             "source": request.source,
             "tokens": tokens,
             "token_ids": token_ids,
+            # Positions of control tokens (e.g. the <bos> the tokenizer prepends)
+            # so the frontend can hide them without pattern-matching strings.
+            "special_idx": special_indices(token_ids, special_token_ids),
             "num_tokens": num_tokens,
             "training_steps": training_steps,
         }
@@ -392,8 +343,14 @@ if __name__ == "__main__":
     parser.add_argument(
         "--model",
         type=str,
-        default="meta-llama/Llama-3.2-1B",
-        help="Model ID from Hugging Face Hub",
+        default="openai-community/gpt2-xl",
+        help="Model ID from Hugging Face Hub (only loaded at startup with --preload)",
+    )
+    parser.add_argument(
+        "--preload",
+        action="store_true",
+        help="Load --model at startup. Off by default: the generation scripts "
+        "POST /load_model for every model, so preloading only wastes time.",
     )
     parser.add_argument(
         "--device",

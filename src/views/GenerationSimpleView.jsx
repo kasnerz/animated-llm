@@ -19,6 +19,7 @@ import {
   mdiSpeedometer,
 } from '@mdi/js';
 import InitialHint from '../components/InitialHint';
+import ModelCapabilities from '../components/ModelCapabilities';
 import { Tooltip } from 'react-tooltip';
 import '../styles/visualization.css';
 import '../styles/main.css';
@@ -499,6 +500,8 @@ function GenerationSimpleView() {
               )}
             </div>
           )}
+
+          <ModelCapabilities model={currentModelEntry} />
         </div>
 
         {/* Temperature selector on the right */}

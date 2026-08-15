@@ -335,7 +335,9 @@ function appReducer(state, action) {
 
       steps.forEach((step, idx) => {
         const selectedTok = step?.selected_token?.token ?? '';
-        fullAnswer += selectedTok;
+        // Control tokens the model emits (e.g. Qwen's </think>) are still shown
+        // as the selected token, but must not appear in the answer text.
+        fullAnswer += step?.selected_token?.special ? '' : selectedTok;
         const tokenIndex = inputTokensCount + idx;
         allGeneratedTokens.push({ token: selectedTok, index: tokenIndex });
       });
@@ -403,7 +405,10 @@ function appReducer(state, action) {
       if (idx < 0 || idx >= steps.length) return { ...state, isPlaying: false };
 
       const selectedTok = steps[idx]?.selected_token?.token ?? '';
-      const newAnswer = state.generatedAnswer + (selectedTok || '');
+      // Control tokens the model emits (e.g. Qwen's </think>) are still shown as
+      // the selected token, but must not appear in the answer text.
+      const isSpecialSelection = steps[idx]?.selected_token?.special === true;
+      const newAnswer = state.generatedAnswer + (isSpecialSelection ? '' : selectedTok || '');
 
       // Track the generated token with its index (based on input tokens count + generated count)
       const inputTokensCount = steps[0]?.tokens?.length || 0;

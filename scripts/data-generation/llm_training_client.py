@@ -107,6 +107,7 @@ class TrainingClient:
             "source": training_data["source"],
             "tokens": training_data["tokens"],
             "token_ids": training_data["token_ids"],
+            "special_idx": training_data.get("special_idx", []),
             "num_tokens": training_data["num_tokens"],
             "model_info": model_info,
             "training_steps": training_data["training_steps"],

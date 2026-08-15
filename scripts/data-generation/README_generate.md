@@ -17,6 +17,14 @@ This directory contains scripts for generating visualization data for the animat
    - For inference: `python llm_inference_server.py`
    - For training: `python llm_training_server.py`
 
+   Neither server loads a model at startup — the generation scripts POST to
+   `/load_model` for each model in turn. Pass `--preload` to load `--model`
+   up front instead.
+
+   On a Slurm cluster, submit `smoke_test.sh` first: it loads every model
+   through both servers and generates one short example each, so loading and
+   token parsing can be checked before the full run.
+
 ## Inference Data Generation
 
 Generates data showing how different LLMs respond to prompts using various decoding strategies.
@@ -28,6 +36,8 @@ Generates data showing how different LLMs respond to prompts using various decod
 - `OUTPUT_DIR`: Output directory (default: `../../public/data`)
 - `SERVER_URL`: URL of the inference server (default: `http://localhost:8712`)
 - `MAX_NEW_TOKENS`: Maximum tokens to generate (default: `100`)
+- `SKIP_EXISTING`: Skip prompts whose output file already exists (default: `1`),
+  which makes an interrupted run resumable. Set to `0` to regenerate everything.
 - `MODELS`: List of model IDs to generate data for
 
 **Prompt Files** (in `prompts/inference/`):
@@ -61,6 +71,7 @@ Generates data showing how LLMs process text during training (next-token predict
 
 - `OUTPUT_DIR`: Output directory (default: `../../public/data`)
 - `SERVER_URL`: URL of the training server (default: `http://localhost:8712`)
+- `SKIP_EXISTING`: Skip examples whose output file already exists (default: `1`)
 - `MODELS`: List of model IDs, including special `:random` variant for vanilla transformers
 
 **Training Files** (in `prompts/training/`):
@@ -84,6 +95,26 @@ bash generate_training_data.sh
 - `{lang}-{num}-full-{model}.json` - Complete training visualization
 
 Files are saved to `../../public/data/training/{lang}/`
+
+## Special Token Handling
+
+Both servers emit a `special_idx` field listing the positions the frontend should
+hide unless "show special tokens" is enabled. It is derived from the tokenizer's
+own inventory (`all_special_ids` plus the added vocab) rather than by pattern
+matching the decoded strings, which matters because:
+
+- Markers differ per model family: ChatML `<|im_start|>`, Llama `<|eot_id|>`,
+  Gemma 4's asymmetric `<|turn>` / `<turn|>` / `<|channel>` / `<channel|>`.
+- Thinking tags may or may not be single tokens. Qwen3.5 has `<think>` and
+  `</think>` in its added vocab; Olmo 3 splits `<think>` into `<th` + `ink` + `>`.
+- Role names are not always one token: SmolLM encodes "assistant" as
+  `ass` + `istant`, which no string pattern would catch. The inference server
+  therefore also marks the chat-template header regions as special.
+
+`model_utils.py` holds this logic, plus model loading (falling back to
+`AutoModelForImageTextToText` for the `*ForConditionalGeneration` classes used by
+Gemma 4 and Qwen3.5) and config introspection (reading `text_config` for
+multimodal configs that nest the decoder hyperparameters).
 
 ## Client Scripts
 

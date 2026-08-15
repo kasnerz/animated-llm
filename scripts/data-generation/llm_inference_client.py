@@ -127,6 +127,12 @@ class LLMClient:
             filtered_tokens = [tokens[i] for i in keep_idx]
             filtered_token_ids = [token_ids[i] for i in keep_idx] if token_ids else token_ids
 
+            # Re-base the special-token positions onto the filtered token list
+            special_idx = set(step.get("special_idx") or [])
+            filtered_special_idx = [
+                new_i for new_i, old_i in enumerate(keep_idx) if old_i in special_idx
+            ]
+
             # Filter embeddings arrays if present
             embeddings = step.get("embeddings")
             filtered_embeddings = None
@@ -145,6 +151,7 @@ class LLMClient:
             new_step["tokens"] = filtered_tokens
             if token_ids is not None:
                 new_step["token_ids"] = filtered_token_ids
+            new_step["special_idx"] = filtered_special_idx
             new_step["input_text"] = input_text
             if filtered_embeddings is not None:
                 new_step["embeddings"] = filtered_embeddings

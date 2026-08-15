@@ -4,14 +4,19 @@
 OUTPUT_DIR="../../public/data"
 SERVER_URL="http://localhost:8712"
 
+# Existing output files are skipped, so a rerun resumes an interrupted job and
+# leaves already-generated outputs untouched. Set to 0 to regenerate everything.
+SKIP_EXISTING=1
+
 # Model IDs from MODEL_REGISTRY
-# Prepend Vanilla Transformer option
+# The Vanilla Transformer (random weights) outputs are reused as-is and are not
+# regenerated, so its entry is commented out rather than removed.
 MODELS=(
-    "meta-llama/Llama-3.2-1B-Instruct:random"  # Vanilla Transformer with random weights
-    "CohereForAI/aya-expanse-8b"
-    "meta-llama/Llama-3.2-1B-Instruct"
-    "Qwen/Qwen3-4B-Instruct-2507"
-    "allenai/Olmo-3-7B-Think"
+    # "meta-llama/Llama-3.2-1B-Instruct:random"  # Vanilla Transformer with random weights
+    "google/gemma-4-E4B-it"
+    "google/gemma-4-E4B"
+    "HuggingFaceTB/SmolLM-1.7B-Instruct"
+    "Qwen/Qwen3.5-9B"
     "openai-community/gpt2-xl"
 )
 
@@ -118,11 +123,15 @@ process_language() {
         
         # Full example (all tokens)
         local output_file_full="${lang_dir}/${lang}-${num}-full-${MODEL_ID}.json"
-        echo "Creating full training example $lang-$num..."
-        process_training_example \
-            "$text" \
-            "$source" \
-            "$output_file_full"
+        if [ "$SKIP_EXISTING" = "1" ] && [ -s "$output_file_full" ]; then
+            echo "Skipping existing $(basename "$output_file_full")"
+        else
+            echo "Creating full training example $lang-$num..."
+            process_training_example \
+                "$text" \
+                "$source" \
+                "$output_file_full"
+        fi
         
         # # Limited example (first 30 tokens for quicker visualization)
         # local output_file_limited="${lang_dir}/${lang}-${num}-limited-${MODEL_ID}.json"
@@ -142,11 +151,11 @@ mkdir -p "${OUTPUT_DIR}/training"
 
 # Define all languages
 declare -A LANGUAGES=(
-    # ["en"]="prompts/training/training_en.jsonl"
-    # ["cs"]="prompts/training/training_cs.jsonl"
-    # ["fr"]="prompts/training/training_fr.jsonl"
+    ["en"]="prompts/training/training_en.jsonl"
+    ["cs"]="prompts/training/training_cs.jsonl"
+    ["fr"]="prompts/training/training_fr.jsonl"
+    ["zh"]="prompts/training/training_zh.jsonl"
     ["uk"]="prompts/training/training_uk.jsonl"
-    # ["zh"]="prompts/training/training_zh.jsonl"
 )
 
 # Check if server is running
@@ -186,6 +195,7 @@ for model_spec in "${MODELS[@]}"; do
                 fr) lang_name="French" ;;
                 uk) lang_name="Ukrainian" ;;
                 zh) lang_name="Chinese" ;;
+                uk) lang_name="Ukrainian" ;;
                 *) lang_name="Unknown" ;;
             esac
             echo ""

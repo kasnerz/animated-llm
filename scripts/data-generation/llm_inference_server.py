@@ -5,13 +5,21 @@ Provides endpoints for tokenization, token IDs, and token probability distributi
 
 import argparse
 import logging
-from typing import Dict, List, Optional
+from typing import Dict, List
 
 import torch
 import uvicorn
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
-from transformers import AutoModelForCausalLM, AutoTokenizer
+
+from model_utils import (
+    describe_config,
+    get_display_tokens,
+    get_special_token_ids,
+    load_causal_lm,
+    load_tokenizer,
+    special_indices,
+)
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
@@ -22,6 +30,7 @@ app = FastAPI(title="LLM Visualization API")
 # Global variables for model and tokenizer
 tokenizer = None
 model = None
+special_token_ids = set()
 
 # Global configuration
 config_args = None
@@ -72,85 +81,44 @@ def has_chat_template(tokenizer) -> bool:
     return hasattr(tokenizer, "chat_template") and tokenizer.chat_template is not None
 
 
-def get_display_tokens(tokenizer, token_ids: List[int]) -> List[str]:
-    """
-    Decodes token IDs into strings, replacing leading spaces with 'Ġ' for display.
-    """
-    tokens = []
-    for token_id in token_ids:
-        # Decode the single token
-        decoded_token = tokenizer.decode([token_id])
-        # convert_ids_to_tokens gives the raw token, which might be what we want for display
-        raw_token = tokenizer.convert_ids_to_tokens([token_id])[0]
+def load_model_and_tokenizer(model_id: str):
+    """Load `model_id` into the module globals, replacing anything already loaded."""
+    global tokenizer, model, special_token_ids
 
-        # If the raw token starts with Ġ, it signifies a space.
-        # The decoded token will have a space " " at the beginning.
-        # We prefer the raw token for display if it's valid unicode
-        if raw_token.startswith("Ġ"):
-            # We want to show the Ġ, but the rest of the token might be garbled
-            # if we just use the raw token. So we take the decoded token and prepend Ġ.
-            # The decoded token will have a leading space if the raw token had a Ġ.
-            if decoded_token.startswith(" "):
-                tokens.append("Ġ" + decoded_token[1:])
-            else:
-                # This case is unlikely but as a fallback, use the raw token
-                tokens.append(raw_token)
-        else:
-            tokens.append(decoded_token)
-    return tokens
+    logger.info(f"Loading model: {model_id}")
+    logger.info(f"Device: {config_args.device}")
+
+    # Clear previous model from memory
+    if model is not None:
+        del model
+        model = None
+        if torch.cuda.is_available():
+            torch.cuda.empty_cache()
+
+    tokenizer = load_tokenizer(model_id)
+    model = load_causal_lm(model_id, config_args.device)
+    model.eval()
+    special_token_ids = get_special_token_ids(tokenizer)
+    config_args.model = model_id
+
+    logger.info("Model loaded successfully")
+    logger.info(f"Model dtype: {model.dtype}")
+    logger.info(f"Special/control token ids: {len(special_token_ids)}")
+
+    if has_chat_template(tokenizer):
+        logger.info("Chat template is available")
+    else:
+        logger.info("No chat template available - will use direct text generation")
 
 
 @app.on_event("startup")
-async def load_model():
-    """Load the model and tokenizer on startup."""
-    global tokenizer, model
+async def startup_load_model():
+    """Optionally preload a model on startup; otherwise wait for /load_model."""
+    if not config_args.preload:
+        logger.info("Starting without a model - POST /load_model to load one")
+        return
 
-    logger.info(f"Loading model: {config_args.model}")
-    logger.info(f"Device: {config_args.device}")
-
-    try:
-        # Enable remote code to support repositories that ship custom model/tokenizer code
-        tokenizer = AutoTokenizer.from_pretrained(
-            config_args.model,
-            use_fast=True,
-            trust_remote_code=True,
-        )
-        model = AutoModelForCausalLM.from_pretrained(
-            config_args.model,
-            torch_dtype="auto" if config_args.device == "cuda" else torch.float32,
-            device_map="auto" if config_args.device == "cuda" else None,
-            low_cpu_mem_usage=True,
-            use_safetensors=True,
-            trust_remote_code=True,
-        )
-
-        if config_args.device == "cpu":
-            model = model.to(config_args.device)
-
-        model.eval()
-        logger.info("Model loaded successfully")
-        logger.info(f"Model dtype: {model.dtype}")
-
-        # Check if chat template is available
-        if has_chat_template(tokenizer):
-            logger.info("Chat template is available")
-        else:
-            logger.info("No chat template available - will use direct text generation")
-
-    except Exception as e:
-        err_name = e.__class__.__name__
-        logger.error(f"Error loading model [{config_args.model}] ({err_name}): {e}")
-        # Provide a more actionable hint for common Cohere/Aya import issues
-        hint = None
-        msg = str(e)
-        if "CohereForCausalLM" in msg or isinstance(e, ModuleNotFoundError):
-            hint = (
-                "If you're using a Cohere/Aya model, ensure optional deps are installed: "
-                "pip install -U 'transformers>=4.44' accelerate einops sentencepiece safetensors huggingface-hub tiktoken"
-            )
-        if hint:
-            logger.error(hint)
-        raise
+    load_model_and_tokenizer(config_args.model)
 
 
 @app.get("/")
@@ -174,53 +142,23 @@ async def get_model_info():
     if model is None:
         raise HTTPException(status_code=503, detail="Model not loaded")
 
-    config = model.config
+    description = describe_config(model.config)
     return {
         "name": config_args.model,
-        "num_layers": config.num_hidden_layers,
-        "hidden_size": config.hidden_size,
-        "num_attention_heads": config.num_attention_heads,
-        "vocab_size": config.vocab_size,
+        "num_layers": description["num_layers"],
+        "hidden_size": description["hidden_size"],
+        "num_attention_heads": description["num_attention_heads"],
+        "vocab_size": description["vocab_size"],
     }
 
 
 @app.post("/load_model")
 async def load_model_endpoint(request: LoadModelRequest):
     """Load a new model dynamically."""
-    global tokenizer, model
-
     logger.info(f"Loading new model: {request.model_id}")
 
     try:
-        # Clear previous model from memory
-        if model is not None:
-            del model
-            del tokenizer
-            torch.cuda.empty_cache() if torch.cuda.is_available() else None
-
-        # Update config
-        config_args.model = request.model_id
-
-        # Load new model
-        tokenizer = AutoTokenizer.from_pretrained(
-            request.model_id,
-            use_fast=True,
-            trust_remote_code=True,
-        )
-        model = AutoModelForCausalLM.from_pretrained(
-            request.model_id,
-            torch_dtype="auto" if config_args.device == "cuda" else torch.float32,
-            device_map="auto" if config_args.device == "cuda" else None,
-            low_cpu_mem_usage=True,
-            use_safetensors=True,
-            trust_remote_code=True,
-        )
-
-        if config_args.device == "cpu":
-            model = model.to(config_args.device)
-
-        model.eval()
-        logger.info(f"Model {request.model_id} loaded successfully")
+        load_model_and_tokenizer(request.model_id)
 
         return {
             "status": "success",
@@ -310,6 +248,7 @@ async def generate(request: GenerateRequest):
         chat_template_applied = False
         user_message_start_idx = 0  # Index where user message starts in token list
         assistant_header_start_idx = -1  # Index where assistant header starts
+        user_content_start_idx = 0  # Index where the user's own text starts
 
         if request.apply_chat_template and has_chat_template(tokenizer):
             messages = [{"role": "user", "content": request.prompt}]
@@ -338,7 +277,8 @@ async def generate(request: GenerateRequest):
             # Common patterns for chat templates
             possible_headers = [
                 "<|start_header_id|>user<|end_header_id|>",  # Llama 3.x style
-                "<|im_start|>user",  # ChatML style
+                "<|im_start|>user",  # ChatML style (Qwen, SmolLM, Olmo)
+                "<|turn>user",  # Gemma 4 style
             ]
             for pat in possible_headers:
                 idx = text_without_assistant.find(pat)
@@ -355,6 +295,20 @@ async def generate(request: GenerateRequest):
                 ).input_ids
                 user_message_start_idx = prefix_ids.shape[1]
 
+            # Locate where the user's own text begins, so the role header in
+            # between can be marked as scaffolding. This matters for tokenizers
+            # that split the role name into several ordinary tokens (SmolLM
+            # encodes "assistant" as 'ass' + 'istant'), which no string pattern
+            # on the decoded token would catch.
+            content_pos = text_without_assistant.find(request.prompt)
+            if content_pos > 0:
+                content_prefix_ids = tokenizer(
+                    text_without_assistant[:content_pos],
+                    return_tensors="pt",
+                    add_special_tokens=False,
+                ).input_ids
+                user_content_start_idx = content_prefix_ids.shape[1]
+
         # Encode input
         # If chat template was applied, it already includes special tokens, so don't add them again
         input_ids = tokenizer(
@@ -363,12 +317,37 @@ async def generate(request: GenerateRequest):
             add_special_tokens=not chat_template_applied,
         ).input_ids.to(config_args.device)
 
+        # Gemma 4 ends a turn with <turn|> rather than <eos>, and declares both in
+        # its generation config, so collect every id that terminates generation.
+        eos_token_ids = set()
+        for candidate in (
+            tokenizer.eos_token_id,
+            getattr(model.generation_config, "eos_token_id", None),
+        ):
+            if candidate is None:
+                continue
+            if isinstance(candidate, (list, tuple, set)):
+                eos_token_ids.update(int(c) for c in candidate)
+            else:
+                eos_token_ids.add(int(candidate))
+
         generation_steps = []
         current_ids = input_ids.clone()
 
         # Track generated tokens separately from the formatted prompt
         generated_tokens = []
         generated_token_ids = []
+
+        # Positions of the prompt that are chat-template scaffolding rather than
+        # user content: the role header before the user's text, and everything
+        # from the assistant header onwards.
+        prompt_scaffold = set()
+        if chat_template_applied:
+            prompt_scaffold.update(range(0, user_content_start_idx))
+            if assistant_header_start_idx != -1:
+                prompt_scaffold.update(
+                    range(assistant_header_start_idx, input_ids.shape[1])
+                )
 
         with torch.no_grad():
             for step in range(request.max_new_tokens):
@@ -447,6 +426,13 @@ async def generate(request: GenerateRequest):
                         user_input_token_ids + generated_token_ids,
                         skip_special_tokens=False,
                     )
+
+                    # Re-base the scaffold positions onto the displayed slice
+                    display_scaffold = {
+                        i - user_message_start_idx
+                        for i in prompt_scaffold
+                        if i >= user_message_start_idx
+                    }
                 else:
                     # Without chat template, show the input up to now (exclude current selection)
                     display_token_ids = current_ids[0].tolist()
@@ -454,6 +440,13 @@ async def generate(request: GenerateRequest):
                     display_text = tokenizer.decode(
                         current_ids[0], skip_special_tokens=False
                     )
+                    display_scaffold = set()
+
+                # Positions the frontend should hide unless "show special tokens"
+                # is on: control tokens plus chat-template scaffolding.
+                display_special_idx = special_indices(
+                    display_token_ids, special_token_ids, display_scaffold
+                )
 
                 # Build candidates list (from base model probabilities; independent of temperature)
                 candidates = [
@@ -477,6 +470,7 @@ async def generate(request: GenerateRequest):
                     "input_text": display_text,
                     "tokens": display_tokens,
                     "token_ids": display_token_ids,
+                    "special_idx": display_special_idx,
                     "output_distribution": {
                         "top_k": request.top_k,
                         "candidates": candidates,
@@ -485,6 +479,7 @@ async def generate(request: GenerateRequest):
                         "token": selected_token,
                         "token_id": selected_token_id,
                         "selection_method": selection_method,
+                        "special": selected_token_id in special_token_ids,
                     },
                 }
 
@@ -504,7 +499,7 @@ async def generate(request: GenerateRequest):
                 )
 
                 # Check for EOS token
-                if selected_token_id == tokenizer.eos_token_id:
+                if selected_token_id in eos_token_ids:
                     logger.info(f"EOS token reached at step {step}")
                     break
 
@@ -529,8 +524,14 @@ if __name__ == "__main__":
     parser.add_argument(
         "--model",
         type=str,
-        default="meta-llama/Llama-3.2-1B",
-        help="Model ID from Hugging Face Hub",
+        default="openai-community/gpt2-xl",
+        help="Model ID from Hugging Face Hub (only loaded at startup with --preload)",
+    )
+    parser.add_argument(
+        "--preload",
+        action="store_true",
+        help="Load --model at startup. Off by default: the generation scripts "
+        "POST /load_model for every model, so preloading only wastes time.",
     )
     parser.add_argument(
         "--device",

@@ -33,16 +33,24 @@ import {
 } from '../utils/tokenProcessing.js';
 
 /**
- * Filter special tokens from a generation step
- * @param {Object} step - Generation step object
- * @returns {Object} Filtered step
+ * Compute the indices of `tokens` to keep, dropping special/scaffolding tokens.
+ *
+ * When the data carries `specialIdx` (emitted by the generation servers from the
+ * tokenizer's own inventory) that list is authoritative — it catches markers no
+ * string pattern could, such as a role name split into several plain tokens.
+ * Otherwise fall back to pattern matching for data generated before that field.
+ *
+ * @param {Array<string>} tokens - Token strings
+ * @param {Array<number>|undefined} specialIdx - Authoritative special positions
+ * @returns {Array<number>} Indices to keep
  */
-function filterStepTokens(step) {
-  if (!step || !Array.isArray(step.tokens)) return step;
+function computeKeepIndices(tokens, specialIdx) {
+  if (Array.isArray(specialIdx)) {
+    const special = new Set(specialIdx);
+    return tokens.map((_, i) => i).filter((i) => !special.has(i));
+  }
 
   const keepIdx = [];
-  const tokens = step.tokens;
-  const ids = Array.isArray(step.token_ids) ? step.token_ids : null;
   let i = 0;
   while (i < tokens.length) {
     const tok = tokens[i];
@@ -74,6 +82,21 @@ function filterStepTokens(step) {
     i += 1;
   }
 
+  return keepIdx;
+}
+
+/**
+ * Filter special tokens from a generation step
+ * @param {Object} step - Generation step object
+ * @returns {Object} Filtered step
+ */
+function filterStepTokens(step) {
+  if (!step || !Array.isArray(step.tokens)) return step;
+
+  const tokens = step.tokens;
+  const ids = Array.isArray(step.token_ids) ? step.token_ids : null;
+  const keepIdx = computeKeepIndices(tokens, step.special_idx);
+
   const filteredTokens = keepIdx.map((k) => tokens[k]);
   const filteredTokenIds = ids
     ? keepIdx.map((k) => ids[k]).filter((v) => v !== undefined)
@@ -100,25 +123,9 @@ function filterStepTokens(step) {
 /**
  * Filter an arbitrary token array (and optional ids) with the same chat-header logic.
  */
-function filterTokenArray(tokens, tokenIds = null) {
+function filterTokenArray(tokens, tokenIds = null, specialIdx = undefined) {
   if (!Array.isArray(tokens)) return { tokens, tokenIds };
-  const keepIdx = [];
-  let i = 0;
-  while (i < tokens.length) {
-    const tok = tokens[i];
-    if (isChatStartMarker(tok)) {
-      i += 1;
-      if (i < tokens.length && isChatRoleToken(tokens[i])) i += 1;
-      if (i < tokens.length && isChatEndMarker(tokens[i])) i += 1;
-      continue;
-    }
-    if (isSpecialToken(tok)) {
-      i += 1;
-      continue;
-    }
-    keepIdx.push(i);
-    i += 1;
-  }
+  const keepIdx = computeKeepIndices(tokens, specialIdx);
   const filteredTokens = keepIdx.map((k) => tokens[k]);
   const filteredIds = Array.isArray(tokenIds)
     ? keepIdx.map((k) => tokenIds[k]).filter((v) => v !== undefined)
@@ -141,11 +148,18 @@ function filterSpecialTokens(data) {
     result.generation_steps = result.generation_steps.map(filterStepTokens);
   }
 
+  // Training data carries one `special_idx` list for the whole token sequence.
+  // A step's target is tokens[step] and its input is tokens[0..step), so the
+  // per-step masks are slices of that same list.
+  const trainingSpecialIdx = Array.isArray(result.special_idx) ? result.special_idx : null;
+  const trainingSpecial = trainingSpecialIdx ? new Set(trainingSpecialIdx) : null;
+
   // Training data: filter top-level tokens and each training step (with chat-header logic)
   if (Array.isArray(result.tokens)) {
     const { tokens: topTokens, tokenIds: topTokenIds } = filterTokenArray(
       result.tokens,
-      Array.isArray(result.token_ids) ? result.token_ids : null
+      Array.isArray(result.token_ids) ? result.token_ids : null,
+      trainingSpecialIdx ?? undefined
     );
     result.tokens = topTokens;
     if (Array.isArray(result.token_ids)) {
@@ -164,15 +178,22 @@ function filterSpecialTokens(data) {
     const filteredTrainingSteps = [];
     for (const step of result.training_steps) {
       const targetTok = step?.target_token;
-      if (isSpecialToken(targetTok)) {
+      const targetIsSpecial = trainingSpecial
+        ? trainingSpecial.has(step?.step)
+        : isSpecialToken(targetTok);
+      if (targetIsSpecial) {
         continue; // skip this step entirely
       }
       const newStep = { ...step };
       // Filter input tokens (with chat-header logic)
       if (Array.isArray(step.input_tokens)) {
+        const inputSpecialIdx = trainingSpecialIdx
+          ? trainingSpecialIdx.filter((i) => i < step.input_tokens.length)
+          : undefined;
         const { tokens: toks, tokenIds: ids } = filterTokenArray(
           step.input_tokens,
-          Array.isArray(step.input_token_ids) ? step.input_token_ids : null
+          Array.isArray(step.input_token_ids) ? step.input_token_ids : null,
+          inputSpecialIdx
         );
         newStep.input_tokens = toks;
         if (Array.isArray(step.input_token_ids)) {

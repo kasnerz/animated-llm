@@ -12,6 +12,7 @@ import { useApp } from '../contexts/AppContext';
 import { useI18n } from '../i18n/I18nProvider';
 import { ANIMATION_SPEEDS } from '../visualization/core/constants';
 import InitialHint from '../components/InitialHint';
+import ModelCapabilities from '../components/ModelCapabilities';
 import TrainingDocumentCarousel from '../components/TrainingDocumentCarousel';
 import { MODEL_REGISTRY, getModelInfo } from '../config/modelConfig';
 import { processTokenForText } from '../utils/tokenProcessing';
@@ -212,6 +213,10 @@ function PretrainingSimpleView() {
           name: currentModelEntry.name,
           logo: currentModelEntry.logo,
           size: currentModelEntry.size,
+          id: currentModelEntry.id,
+          repo: currentModelEntry.repo,
+          instruction_tuned: currentModelEntry.instruction_tuned,
+          reasoning: currentModelEntry.reasoning,
         }
       : null;
   const transformerLogo = currentModelInfo?.logo || currentModelEntry?.logo;
@@ -411,6 +416,8 @@ function PretrainingSimpleView() {
                     )}
                   </div>
                 )}
+
+                <ModelCapabilities model={currentModelInfo} />
               </div>
 
               <div className="transformer-right">

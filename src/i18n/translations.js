@@ -20,6 +20,12 @@ const translations = {
     toggle_dark_light_mode: 'Dark mode',
     view_label: 'View',
     show_special_tokens: 'Special tokens',
+    // Model properties shown in the model hint popover
+    model_capabilities: 'Model properties',
+    model_source: 'Model source',
+    capability_base_model: 'Base model',
+    capability_instruction_tuned: 'Instruction-tuned',
+    capability_reasoning: 'Reasoning',
     // Tooltips
     tooltip_select_model: 'Model type',
     tooltip_temperature: 'Temperature',
@@ -182,6 +188,12 @@ const translations = {
     toggle_dark_light_mode: 'Tmavý režim',
     view_label: 'Zobrazení',
     show_special_tokens: 'Speciální tokeny',
+    // Model properties shown in the model hint popover
+    model_capabilities: 'Vlastnosti modelu',
+    model_source: 'Zdroj modelu',
+    capability_base_model: 'Základní model',
+    capability_instruction_tuned: 'Dotrénovaný na instrukce',
+    capability_reasoning: 'S přemýšlením',
     // Tooltips
     tooltip_select_model: 'Typ modelu',
     tooltip_temperature: 'Teplota',
@@ -338,6 +350,12 @@ const translations = {
     toggle_dark_light_mode: 'Mode sombre',
     view_label: 'Vue',
     show_special_tokens: 'Tokens spéciaux',
+    // Model properties shown in the model hint popover
+    model_capabilities: 'Caractéristiques du modèle',
+    model_source: 'Source du modèle',
+    capability_base_model: 'Modèle de base',
+    capability_instruction_tuned: 'Ajusté aux instructions',
+    capability_reasoning: 'Avec raisonnement',
     // Tooltips
     tooltip_select_model: 'Type de modèle',
     tooltip_temperature: 'Température',
@@ -501,6 +519,12 @@ const translations = {
     toggle_dark_light_mode: 'Темний режим',
     view_label: 'Вигляд',
     show_special_tokens: 'Спеціальні токени',
+    // Model properties shown in the model hint popover
+    model_capabilities: 'Характеристики моделі',
+    model_source: 'Джерело моделі',
+    capability_base_model: 'Базова модель',
+    capability_instruction_tuned: 'Дотренований на інструкції',
+    capability_reasoning: 'З міркуванням',
     // Tooltips
     tooltip_select_model: 'Тип моделі',
     tooltip_temperature: 'Температура',
@@ -663,6 +687,12 @@ const translations = {
     toggle_dark_light_mode: '深色模式',
     view_label: '视图',
     show_special_tokens: '特殊 Token',
+    // Model properties shown in the model hint popover
+    model_capabilities: '模型特性',
+    model_source: '模型来源',
+    capability_base_model: '基础模型',
+    capability_instruction_tuned: '指令微调',
+    capability_reasoning: '思考推理',
     // Tooltips
     tooltip_select_model: '模型类型',
     tooltip_temperature: '温度',
