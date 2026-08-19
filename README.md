@@ -17,8 +17,8 @@
     <a href="https://animatedllm.github.io">
       <img src="https://img.shields.io/website?url=https%3A%2F%2Fanimatedllm.github.io&label=animatedllm.github.io" alt="Website" />
     </a>
-    <a href="#">
-      <img src="https://img.shields.io/badge/arXiv-TBD-red.svg" alt="arXiv" />
+    <a href="https://arxiv.org/abs/2601.04213">
+      <img src="https://img.shields.io/badge/arXiv-2601.04213-b31b1b.svg" alt="arXiv" />
     </a>
   </p>
 
