@@ -102,6 +102,8 @@ const translations = {
     model_error_log_d: 'Model error (−log(d)):',
     model_error_log_p: 'Model error (−log(p)):',
     predicted_probabilities_top_tokens: 'Predicted probabilities',
+    top_n_predicted_tokens: 'Top {n} predicted tokens',
+    other_tokens: 'other tokens',
     target_token: 'Target token',
     animation_speed: 'Animation Speed',
     slow: 'Slow',

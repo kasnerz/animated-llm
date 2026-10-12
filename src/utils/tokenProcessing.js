@@ -128,6 +128,20 @@ export function processTokenForText(token) {
 }
 
 /**
+ * Process a token for display in a probability list
+ * Shows every space as "▁" regardless of the tokenizer's own marker ("Ġ", "▁" or a plain
+ * space), so tokens like "Model" and "▁Model" stay distinguishable. Line breaks and tabs
+ * are made visible as well.
+ * @param {string} token - The raw token string
+ * @returns {string} Processed token for list display
+ */
+export function processTokenForList(token) {
+  if (!token) return token;
+
+  return token.replace(/[Ġ▁ ]/g, '▁').replace(/\n/g, '↵').replace(/\t/g, '⇥');
+}
+
+/**
  * Check if a token contains a space marker
  * @param {string} token - The raw token string
  * @returns {boolean} True if token starts with a space marker

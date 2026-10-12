@@ -15,7 +15,8 @@ import InitialHint from '../components/InitialHint';
 import ModelCapabilities from '../components/ModelCapabilities';
 import TrainingDocumentCarousel from '../components/TrainingDocumentCarousel';
 import { MODEL_REGISTRY, getModelInfo } from '../config/modelConfig';
-import { processTokenForText } from '../utils/tokenProcessing';
+import { processTokenForList } from '../utils/tokenProcessing';
+import { probabilityScale, formatProbability } from '../utils/probabilityFormat';
 import { Tooltip } from 'react-tooltip';
 import '../styles/pretraining-simple.css';
 
@@ -222,8 +223,8 @@ function PretrainingSimpleView() {
   const transformerLogo = currentModelInfo?.logo || currentModelEntry?.logo;
   const transformerName = currentModelInfo?.name || currentModelEntry?.name || 'Model';
 
-  const distributionRows = useMemo(() => {
-    if (!currentTrainStep) return [];
+  const distribution = useMemo(() => {
+    if (!currentTrainStep) return { rows: [], probScale: 1, shownTokenCount: 0 };
     const maxRows = isMobile ? 5 : MAX_DISTRIBUTION_ROWS;
     const predictions = currentTrainStep.predictions || [];
     const targetId = currentTrainStep.target_token_id;
@@ -275,16 +276,24 @@ function PretrainingSimpleView() {
       normalized.push(row);
     });
 
-    return normalized.slice(0, maxRows).map((row, index) => {
+    // Renormalize when the stored probabilities sum above 1 (low-precision softmax)
+    const probScale = probabilityScale([
+      ...predictions.map((p) => p?.prob ?? 0),
+      ...(!hasTargetInPredictions && targetCandidate ? [targetCandidate.prob ?? 0] : []),
+    ]);
+
+    const visible = normalized.slice(0, maxRows);
+
+    const displayRows = visible.map((row, index) => {
       const isEllipsis = row.isEllipsis || row.token === '...';
       const isTarget =
         !isEllipsis &&
         ((targetId != null && row.token_id === targetId) ||
           (targetId == null && targetToken && row.token === targetToken));
-      const predictedProb = typeof row.prob === 'number' && row.prob > 0 ? row.prob : 0;
+      const predictedProb = typeof row.prob === 'number' && row.prob > 0 ? row.prob * probScale : 0;
       const targetProb = isTarget ? 1 : 0;
       const deltaPct = (targetProb - predictedProb) * 100;
-      const displayToken = isEllipsis ? '⋯' : processTokenForText(row.token);
+      const displayToken = isEllipsis ? '⋯' : processTokenForList(row.token);
 
       return {
         id: `${row.token_id ?? row.token ?? index}-${index}`,
@@ -297,12 +306,33 @@ function PretrainingSimpleView() {
         isEllipsis,
       };
     });
+
+    // Aggregate everything not listed into a final "other tokens" row
+    const tokenRows = displayRows.filter((row) => !row.isEllipsis);
+    const shownProb = tokenRows.reduce((acc, row) => acc + row.predictedProb, 0);
+    const otherProb = Math.max(0, 1 - shownProb);
+    displayRows.push({
+      id: 'other-tokens',
+      predictedProb: otherProb,
+      targetProb: 0,
+      diff: -otherProb * 100,
+      isTarget: false,
+      isEllipsis: false,
+      isOther: true,
+    });
+
+    return { rows: displayRows, probScale, shownTokenCount: tokenRows.length };
   }, [currentTrainStep, isMobile]);
+
+  const distributionRows = distribution.rows;
 
   const diffSummary = useMemo(() => {
     const targetRow = distributionRows.find((r) => r.isTarget);
-    const p = currentTrainStep?.target_prob ?? targetRow?.predictedProb ?? 0;
-    const predictedProbPct = (p * 100).toFixed(1);
+    const p =
+      currentTrainStep?.target_prob != null
+        ? currentTrainStep.target_prob * distribution.probScale
+        : (targetRow?.predictedProb ?? 0);
+    const predictedProbPct = formatProbability(p, 1);
     const diffPct = ((1 - p) * 100).toFixed(1);
     const modelError =
       currentTrainStep?.loss != null
@@ -311,7 +341,7 @@ function PretrainingSimpleView() {
           ? (-Math.log(p)).toFixed(3)
           : '∞';
     return { predictedProbPct, diffPct, modelError };
-  }, [distributionRows, currentTrainStep]);
+  }, [distributionRows, distribution.probScale, currentTrainStep]);
 
   const placeholderMessage = (
     <div className="decoding-placeholder">
@@ -324,7 +354,7 @@ function PretrainingSimpleView() {
   const isSubsequentStep = state.currentStep > 1;
   const showDocArrow = !!state.currentExample;
   const showTransformer = state.currentExample; // Always show when example is loaded
-  const showDistributions = (subStep >= 2 || isSubsequentStep) && distributionRows.length > 0;
+  const showDistributions = (subStep >= 2 || isSubsequentStep) && distribution.shownTokenCount > 0;
   const showFeedback = subStep >= 3;
   const showProcessing = subStep === 2;
 
@@ -495,19 +525,19 @@ function PretrainingSimpleView() {
                       {t('target_token') || 'Target token'}:
                     </span>
                     <span className="distribution-header-value target-token-highlight">
-                      {processTokenForText(targetTokenLabel)}
+                      {processTokenForList(targetTokenLabel)}
                     </span>
                   </div>
                   <div className="distribution-header-row">
                     <span className="distribution-header-label">
                       {t('predicted_probability_of') || 'Predicted probability of'}{' '}
                       <span className="target-token-highlight">
-                        {processTokenForText(targetTokenLabel)}
+                        {processTokenForList(targetTokenLabel)}
                       </span>{' '}
                       (p):
                     </span>
                     <span className="distribution-header-value">
-                      {diffSummary.predictedProbPct}%
+                      {diffSummary.predictedProbPct}
                     </span>
                   </div>
                   <div className="distribution-header-row">
@@ -526,15 +556,21 @@ function PretrainingSimpleView() {
                   </div>
                   <div className="distribution-body">
                     {distributionRows.map((row) => {
-                      const pctLabel = `${(row.predictedProb * 100).toFixed(1)}%`;
+                      const pctLabel = formatProbability(row.predictedProb, 1);
                       const widthPct = Math.max(2, row.predictedProb * 100);
+                      const rowClasses = [
+                        'distribution-row',
+                        row.isTarget && 'is-target',
+                        row.isOther && 'other-row',
+                      ]
+                        .filter(Boolean)
+                        .join(' ');
                       return (
-                        <div
-                          key={`out-${row.id}`}
-                          className={`distribution-row ${row.isTarget ? 'is-target' : ''}`}
-                        >
-                          <div className="token-label">
-                            {row.isTarget ? (
+                        <div key={`out-${row.id}`} className={rowClasses}>
+                          <div className={`token-label ${row.isOther ? 'other-label' : ''}`}>
+                            {row.isOther ? (
+                              t('other_tokens')
+                            ) : row.isTarget ? (
                               <span className="target-token-highlight">{row.displayToken}</span>
                             ) : (
                               row.displayToken
@@ -544,10 +580,14 @@ function PretrainingSimpleView() {
                             className={`bar-track ${showFeedback && !row.isTarget && !row.isEllipsis ? 'has-push-arrow' : ''}`}
                           >
                             <div
-                              className="bar-fill"
+                              className={`bar-fill ${row.isOther ? 'other-fill' : ''}`}
                               style={{
                                 width: `${widthPct}%`,
-                                backgroundColor: row.isTarget ? '#007E66' : '#bbb',
+                                backgroundColor: row.isOther
+                                  ? undefined
+                                  : row.isTarget
+                                    ? '#007E66'
+                                    : '#bbb',
                               }}
                             />
                             {showFeedback && row.isTarget && (

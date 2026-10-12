@@ -352,3 +352,35 @@
 .distribution-row.ellipsis {
   opacity: 0.6;
 }
+
+.distribution-row .token-label {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Aggregated row for all tokens that are not listed */
+.distribution-row.other-row {
+  position: relative;
+  margin-top: 0.5rem;
+}
+
+.distribution-row.other-row::before {
+  content: '';
+  position: absolute;
+  top: -0.5rem;
+  left: 0;
+  right: 0;
+  border-top: 1px dashed var(--border-color, #ddd);
+}
+
+.distribution-row .token-label.other-label {
+  font-size: 0.85rem;
+  font-style: italic;
+  font-weight: 400;
+  white-space: normal;
+}
+
+.distribution-row .bar-fill.other-fill {
+  background: repeating-linear-gradient(-45deg, #9a9a9a 0 3px, #c8c8c8 3px 6px);
+}

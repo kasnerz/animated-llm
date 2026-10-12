@@ -648,24 +648,25 @@
   writing-mode: vertical-rl;
   transform: rotate(180deg);
   white-space: nowrap;
-  height: 100px;
-  /* Ensure it takes some vertical space */
   text-align: center;
 }
 
 .probability-bars {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
+  /* Rows share one label column (subgrid) so all bars start at the same x */
+  display: grid;
+  grid-template-columns: minmax(140px, max-content) 1fr;
+  row-gap: 2px;
   width: 100%;
   /* Removed max-width constraint here, controlled by wrapper */
   flex: 1;
 }
 
 .prob-row {
-  display: flex;
+  display: grid;
+  grid-column: 1 / -1;
+  grid-template-columns: subgrid;
   align-items: center;
-  gap: 12px;
+  column-gap: 12px;
   position: relative;
   padding: 2px 8px;
   border-radius: 6px;
@@ -676,7 +677,7 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  min-width: 140px;
+  min-width: 0;
   font-size: 16px;
   z-index: 2;
   gap: 8px;
@@ -685,6 +686,35 @@
 .prob-token {
   font-family: var(--mono-font, monospace);
   color: var(--text-primary, #222);
+  max-width: 220px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Aggregated row for all tokens that are not listed */
+.prob-row.other-row {
+  margin-top: 8px;
+}
+
+.prob-row.other-row::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: 8px;
+  right: 8px;
+  border-top: 1px dashed var(--border-color, #ddd);
+}
+
+.prob-token.other-label {
+  font-family: inherit;
+  font-size: 13px;
+  font-style: italic;
+  color: var(--text-secondary, #666);
+}
+
+.prob-bar.other-bar {
+  background: repeating-linear-gradient(-45deg, #9a9a9a 0 3px, #c8c8c8 3px 6px);
 }
 
 .prob-percent {
