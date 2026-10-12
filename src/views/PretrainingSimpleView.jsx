@@ -13,6 +13,7 @@ import { useI18n } from '../i18n/I18nProvider';
 import { ANIMATION_SPEEDS } from '../visualization/core/constants';
 import InitialHint from '../components/InitialHint';
 import ModelCapabilities from '../components/ModelCapabilities';
+import LossCurve from '../components/LossCurve';
 import TrainingDocumentCarousel from '../components/TrainingDocumentCarousel';
 import { MODEL_REGISTRY, getModelInfo } from '../config/modelConfig';
 import { processTokenForList } from '../utils/tokenProcessing';
@@ -21,6 +22,29 @@ import { Tooltip } from 'react-tooltip';
 import '../styles/pretraining-simple.css';
 
 const MAX_DISTRIBUTION_ROWS = 8;
+
+/**
+ * Get a candidate's probability. Very small probabilities are stored as 0 in the data
+ * (low-precision softmax), so fall back to the more precise log-probability.
+ * @param {object} candidate - Object with `prob` and optionally `logprob`
+ * @returns {number} Probability in [0, 1]
+ */
+function candidateProb(candidate) {
+  if (candidate?.prob > 0) return candidate.prob;
+  if (typeof candidate?.logprob === 'number') return Math.exp(candidate.logprob);
+  return 0;
+}
+
+/**
+ * Format a probability for the training view with one decimal place.
+ * Non-zero values below 0.1% are shown as "<0.1%" instead of a misleading "0.0%".
+ * @param {number} prob - Probability in [0, 1]
+ * @returns {string} Formatted percentage
+ */
+function formatTrainingProbability(prob) {
+  if (prob > 0 && prob < 0.001) return '<0.1%';
+  return formatProbability(prob, 1);
+}
 
 /**
  * Get icon path for speed icon identifier
@@ -64,12 +88,17 @@ function PretrainingSimpleView() {
     currentExampleId: state.currentExampleId,
   });
   const [subStep, setSubStep] = useState(0);
+  // The probability list starts collapsed and stays open until another document is selected
+  const [showProbabilities, setShowProbabilities] = useState(false);
 
   // Check if we need to reset substep based on state changes
   if (
     state.currentStep !== prevState.currentStep ||
     state.currentExampleId !== prevState.currentExampleId
   ) {
+    if (state.currentExampleId !== prevState.currentExampleId && showProbabilities) {
+      setShowProbabilities(false);
+    }
     // Update previous state and reset substep
     setPrevState({
       currentStep: state.currentStep,
@@ -278,8 +307,8 @@ function PretrainingSimpleView() {
 
     // Renormalize when the stored probabilities sum above 1 (low-precision softmax)
     const probScale = probabilityScale([
-      ...predictions.map((p) => p?.prob ?? 0),
-      ...(!hasTargetInPredictions && targetCandidate ? [targetCandidate.prob ?? 0] : []),
+      ...predictions.map((p) => candidateProb(p)),
+      ...(!hasTargetInPredictions && targetCandidate ? [candidateProb(targetCandidate)] : []),
     ]);
 
     const visible = normalized.slice(0, maxRows);
@@ -290,7 +319,7 @@ function PretrainingSimpleView() {
         !isEllipsis &&
         ((targetId != null && row.token_id === targetId) ||
           (targetId == null && targetToken && row.token === targetToken));
-      const predictedProb = typeof row.prob === 'number' && row.prob > 0 ? row.prob * probScale : 0;
+      const predictedProb = candidateProb(row) * probScale;
       const targetProb = isTarget ? 1 : 0;
       const deltaPct = (targetProb - predictedProb) * 100;
       const displayToken = isEllipsis ? '⋯' : processTokenForList(row.token);
@@ -326,22 +355,25 @@ function PretrainingSimpleView() {
 
   const distributionRows = distribution.rows;
 
-  const diffSummary = useMemo(() => {
+  const lossSummary = useMemo(() => {
     const targetRow = distributionRows.find((r) => r.isTarget);
     const p =
       currentTrainStep?.target_prob != null
-        ? currentTrainStep.target_prob * distribution.probScale
+        ? candidateProb({
+            prob: currentTrainStep.target_prob,
+            logprob: currentTrainStep.target_logprob,
+          }) * distribution.probScale
         : (targetRow?.predictedProb ?? 0);
-    const predictedProbPct = formatProbability(p, 1);
-    const diffPct = ((1 - p) * 100).toFixed(1);
-    const modelError =
+    const error =
       currentTrainStep?.loss != null
-        ? Number(currentTrainStep.loss).toFixed(3)
+        ? Number(currentTrainStep.loss)
         : p > 0
-          ? (-Math.log(p)).toFixed(3)
-          : '∞';
-    return { predictedProbPct, diffPct, modelError };
+          ? -Math.log(p)
+          : Infinity;
+    return { prob: p, error };
   }, [distributionRows, distribution.probScale, currentTrainStep]);
+
+  const errorLabel = (t('model_error_log_p') || 'Model error (−log(p))').replace(/:\s*$/, '');
 
   const placeholderMessage = (
     <div className="decoding-placeholder">
@@ -518,103 +550,123 @@ function PretrainingSimpleView() {
 
           {showDistributions && (
             <div className="pretraining-distribution-stage">
-              <div className="pretraining-simple-distributions">
-                <div className="distribution-column-header">
-                  <div className="distribution-header-row">
-                    <span className="distribution-header-label">
-                      {t('target_token') || 'Target token'}:
-                    </span>
-                    <span className="distribution-header-value target-token-highlight">
-                      {processTokenForList(targetTokenLabel)}
-                    </span>
+              <div className="pretraining-stage-column">
+                <div className="loss-panel">
+                  <div className="loss-stats">
+                    <div className="loss-stat">
+                      <span className="training-stat-label">
+                        {t('target_token') || 'Target token'}
+                      </span>
+                      <span className="loss-stat-value">
+                        <span className="target-token-highlight">
+                          {processTokenForList(targetTokenLabel)}
+                        </span>
+                      </span>
+                    </div>
+                    <div className="loss-stat">
+                      <span className="training-stat-label">{t('predicted_probability_p')}</span>
+                      <span className="loss-stat-value prob">
+                        {formatTrainingProbability(lossSummary.prob)}
+                      </span>
+                    </div>
+                    <div className="loss-stat">
+                      <span className="training-stat-label">{errorLabel}</span>
+                      <span className="loss-stat-value error">
+                        {Number.isFinite(lossSummary.error) ? lossSummary.error.toFixed(3) : '∞'}
+                      </span>
+                    </div>
                   </div>
-                  <div className="distribution-header-row">
-                    <span className="distribution-header-label">
-                      {t('predicted_probability_of') || 'Predicted probability of'}{' '}
-                      <span className="target-token-highlight">
-                        {processTokenForList(targetTokenLabel)}
-                      </span>{' '}
-                      (p):
-                    </span>
-                    <span className="distribution-header-value">
-                      {diffSummary.predictedProbPct}
-                    </span>
-                  </div>
-                  <div className="distribution-header-row">
-                    <span className="distribution-header-label">
-                      {t('model_error_log_p') || 'Model error (−log(p)):'}
-                    </span>
-                    <span className="distribution-header-value error">
-                      {diffSummary.modelError}
-                    </span>
-                  </div>
+                  <figure className="loss-chart">
+                    <LossCurve
+                      prob={lossSummary.prob}
+                      error={lossSummary.error}
+                      probLabel={t('loss_chart_x_label')}
+                      errorLabel={t('loss_chart_y_label')}
+                    />
+                  </figure>
                 </div>
-                <div className="distribution-column output">
-                  <div className="column-header">
-                    {t('predicted_probabilities_top_tokens') ||
-                      'Predicted probabilities (top tokens)'}
-                  </div>
-                  <div className="distribution-body">
-                    {distributionRows.map((row) => {
-                      const pctLabel = formatProbability(row.predictedProb, 1);
-                      const widthPct = Math.max(2, row.predictedProb * 100);
-                      const rowClasses = [
-                        'distribution-row',
-                        row.isTarget && 'is-target',
-                        row.isOther && 'other-row',
-                      ]
-                        .filter(Boolean)
-                        .join(' ');
-                      return (
-                        <div key={`out-${row.id}`} className={rowClasses}>
-                          <div className={`token-label ${row.isOther ? 'other-label' : ''}`}>
-                            {row.isOther ? (
-                              t('other_tokens')
-                            ) : row.isTarget ? (
-                              <span className="target-token-highlight">{row.displayToken}</span>
-                            ) : (
-                              row.displayToken
-                            )}
-                          </div>
-                          <div
-                            className={`bar-track ${showFeedback && !row.isTarget && !row.isEllipsis ? 'has-push-arrow' : ''}`}
-                          >
-                            <div
-                              className={`bar-fill ${row.isOther ? 'other-fill' : ''}`}
-                              style={{
-                                width: `${widthPct}%`,
-                                backgroundColor: row.isOther
-                                  ? undefined
-                                  : row.isTarget
-                                    ? '#007E66'
-                                    : '#bbb',
-                              }}
-                            />
-                            {showFeedback && row.isTarget && (
+
+                <button
+                  type="button"
+                  className={`probabilities-toggle ${showProbabilities ? 'open' : ''}`}
+                  onClick={() => setShowProbabilities((open) => !open)}
+                  aria-expanded={showProbabilities}
+                  aria-controls="pretraining-probabilities"
+                >
+                  <Icon path={mdiChevronDown} size={0.75} className="probabilities-toggle-icon" />
+                  {showProbabilities ? t('hide_probabilities') : t('show_probabilities')}
+                </button>
+
+                {showProbabilities && (
+                  <div id="pretraining-probabilities" className="distribution-column output">
+                    <div className="distribution-side-label">
+                      {t('predicted_probabilities_top_tokens') || 'Predicted probabilities'}
+                    </div>
+                    <div className="distribution-body">
+                      {distributionRows.map((row) => {
+                        if (row.isEllipsis) {
+                          return (
+                            <div key={`out-${row.id}`} className="distribution-row ellipsis">
+                              <div className="token-label">⋮</div>
+                            </div>
+                          );
+                        }
+                        const widthPct = Math.max(2, row.predictedProb * 100);
+                        // Training raises the target's probability and lowers all the others
+                        const change = showFeedback ? (row.isTarget ? 'push-up' : 'push-down') : '';
+                        const rowClasses = [
+                          'distribution-row',
+                          row.isTarget && 'is-target',
+                          row.isOther && 'other-row',
+                          change,
+                        ]
+                          .filter(Boolean)
+                          .join(' ');
+                        return (
+                          <div key={`out-${row.id}`} className={rowClasses}>
+                            <div className={`token-label ${row.isOther ? 'other-label' : ''}`}>
+                              {row.isOther ? (
+                                t('other_tokens')
+                              ) : row.isTarget ? (
+                                <span className="target-token-highlight">{row.displayToken}</span>
+                              ) : (
+                                row.displayToken
+                              )}
+                            </div>
+                            <div className="value-label">
+                              {change && (
+                                <span className="change-glyph" aria-hidden="true">
+                                  {row.isTarget ? '▲' : '▼'}
+                                </span>
+                              )}
+                              {formatTrainingProbability(row.predictedProb)}
+                            </div>
+                            <div className="bar-track">
+                              {showFeedback && row.isTarget && <div className="goal-outline" />}
                               <div
-                                className="goal-arrow"
-                                style={{
-                                  left: `${widthPct}%`,
-                                  width: `${100 - widthPct}%`,
-                                }}
-                              >
-                                <div className="goal-arrow-shaft" />
-                                <div className="goal-arrow-head" />
-                              </div>
-                            )}
-                            {showFeedback && !row.isTarget && !row.isEllipsis && (
-                              <div className="push-down-arrow" style={{ width: `${widthPct}%` }}>
-                                <div className="push-down-arrow-head" />
-                                <div className="push-down-arrow-shaft" />
-                              </div>
-                            )}
+                                className={`bar-fill ${row.isOther ? 'other-fill' : ''}`}
+                                style={{ width: `${widthPct}%` }}
+                              />
+                              {/* Only draw the arrow when there is room for it next to the bar */}
+                              {showFeedback && row.isTarget && widthPct < 92 && (
+                                <div
+                                  className="goal-arrow"
+                                  style={{
+                                    left: `${widthPct}%`,
+                                    width: `${100 - widthPct}%`,
+                                  }}
+                                >
+                                  <div className="goal-arrow-shaft" />
+                                  <div className="goal-arrow-head" />
+                                </div>
+                              )}
+                            </div>
                           </div>
-                          <div className="value-label">{row.isEllipsis ? '' : pctLabel}</div>
-                        </div>
-                      );
-                    })}
+                        );
+                      })}
+                    </div>
                   </div>
-                </div>
+                )}
               </div>
             </div>
           )}
