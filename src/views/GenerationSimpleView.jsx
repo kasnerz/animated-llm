@@ -1,9 +1,14 @@
 import { useEffect, useState, useRef, useMemo } from 'react';
 import { useApp } from '../contexts/AppContext';
 import { useI18n } from '../i18n/I18nProvider';
-import { processTokenForText, isSpecialTokenContextual } from '../utils/tokenProcessing';
+import {
+  processTokenForText,
+  processTokenForList,
+  isSpecialTokenContextual,
+} from '../utils/tokenProcessing';
+import { probabilityScale, formatProbability } from '../utils/probabilityFormat';
 import { getViridisColor } from '../utils/colorSchemes';
-import { LAYOUT, ANIMATION_SPEEDS } from '../visualization/core/constants';
+import { ANIMATION_SPEEDS } from '../visualization/core/constants';
 import { MODEL_REGISTRY, getTemperatureEmoji } from '../config/modelConfig';
 import Icon from '@mdi/react';
 import {
@@ -24,6 +29,21 @@ import { Tooltip } from 'react-tooltip';
 import '../styles/visualization.css';
 import '../styles/main.css';
 import '../styles/decoding-view.css';
+
+// Number of top candidates shown as bars (all that the data files contain)
+const MAX_PROB_BARS = 10;
+
+/**
+ * Get the formatted probability of a candidate token for tooltips
+ * @param {Array} candidates - Output distribution candidates of a generation step
+ * @param {number} tokenId - Token ID to look up
+ * @returns {string|null} Formatted percentage, or null if the token is not a candidate
+ */
+function getCandidateProbLabel(candidates, tokenId) {
+  const candidate = candidates?.find((c) => c.token_id === tokenId);
+  if (!candidate) return null;
+  return formatProbability(candidate.prob * probabilityScale(candidates.map((c) => c.prob)));
+}
 
 /**
  * Get icon path for temperature icon identifier
@@ -315,8 +335,12 @@ function GenerationSimpleView() {
   const promptLength = state.currentExample?.generation_steps?.[0]?.tokens?.length || 0;
   const shouldShowTokens = tokens.length > 0 && (state.currentStep > 0 || subStep > 0);
   const candidates = displayGen?.output_distribution?.candidates || [];
-  const maxBars = LAYOUT.MAX_OUTPUT_TOKENS || 7;
-  const shownCandidates = candidates.slice(0, maxBars);
+  const probScale = probabilityScale(candidates.map((c) => c.prob));
+  const shownCandidates = candidates
+    .slice(0, MAX_PROB_BARS)
+    .map((c) => ({ ...c, prob: c.prob * probScale }));
+  // Everything outside the shown bars is aggregated into a single "other tokens" row
+  const otherProb = Math.max(0, 1 - shownCandidates.reduce((acc, c) => acc + c.prob, 0));
   const selectedToken = currentGen?.selected_token?.token;
   const selectedTokenId = currentGen?.selected_token?.token_id;
 
@@ -384,18 +408,10 @@ function GenerationSimpleView() {
                       const prevTok = i > 0 ? tokens[i - 1] : null;
 
                       // Get probability for tooltip
-                      let probability = null;
-                      if (isGenerated && genStep) {
-                        const candidate = genStep.output_distribution?.candidates?.find(
-                          (c) => c.token_id === tokenId
-                        );
-                        if (candidate) {
-                          probability = (candidate.prob * 100).toFixed(2);
-                          if (probability === '0.00' && candidate.prob > 0) {
-                            probability = (candidate.prob * 100).toPrecision(2);
-                          }
-                        }
-                      }
+                      const probability =
+                        isGenerated && genStep
+                          ? getCandidateProbLabel(genStep.output_distribution?.candidates, tokenId)
+                          : null;
 
                       return (
                         <span
@@ -408,7 +424,7 @@ function GenerationSimpleView() {
                               : undefined
                           }
                           data-tooltip-content={
-                            probability ? `${t('tooltip_probability')}: ${probability}%` : undefined
+                            probability ? `${t('tooltip_probability')}: ${probability}` : undefined
                           }
                         >
                           {processTokenForText(tok)}
@@ -422,17 +438,11 @@ function GenerationSimpleView() {
                         style={getTokenStyle(true, currentGen, selectedTokenId)}
                         data-tooltip-id={!isMobile ? 'token-probability-tooltip' : undefined}
                         data-tooltip-content={(() => {
-                          const candidate = currentGen?.output_distribution?.candidates?.find(
-                            (c) => c.token_id === selectedTokenId
+                          const prob = getCandidateProbLabel(
+                            currentGen?.output_distribution?.candidates,
+                            selectedTokenId
                           );
-                          if (candidate) {
-                            let prob = (candidate.prob * 100).toFixed(2);
-                            if (prob === '0.00' && candidate.prob > 0) {
-                              prob = (candidate.prob * 100).toPrecision(2);
-                            }
-                            return `${t('tooltip_probability')}: ${prob}%`;
-                          }
-                          return undefined;
+                          return prob ? `${t('tooltip_probability')}: ${prob}` : undefined;
                         })()}
                       >
                         {processTokenForText(selectedToken)}
@@ -620,20 +630,18 @@ function GenerationSimpleView() {
       {/* Probability bars */}
       {(subStep >= 1 || isSubsequentStep) && (
         <div className="probabilities-wrapper">
-          <div className="probabilities-label-side">{t('model_output') || 'Model Output'}</div>
+          <div className="probabilities-label-side">
+            {t('top_n_predicted_tokens').replace('{n}', shownCandidates.length)}
+          </div>
           <div className="probability-bars">
             {shownCandidates.map((c, idx) => {
-              let pct = (c.prob * 100).toFixed(2);
-              if (pct === '0.00' && c.prob > 0) {
-                pct = (c.prob * 100).toPrecision(1);
-              }
               const isSelected = subStep >= 1 && c.token === selectedToken;
               return (
                 <div key={idx} className={`prob-row ${isSelected ? 'selected' : ''}`}>
                   {isSelected && <div className="row-selection-outline" />}
                   <div className="prob-label">
-                    <span className="prob-token">{processTokenForText(c.token)}</span>
-                    <span className="prob-percent">{pct}%</span>
+                    <span className="prob-token">{processTokenForList(c.token)}</span>
+                    <span className="prob-percent">{formatProbability(c.prob)}</span>
                   </div>
                   <div className="prob-bar-wrapper">
                     <div
@@ -678,6 +686,19 @@ function GenerationSimpleView() {
                 </div>
               );
             })}
+            {/* Aggregated probability of all tokens not shown above */}
+            <div className="prob-row other-row">
+              <div className="prob-label">
+                <span className="prob-token other-label">{t('other_tokens')}</span>
+                <span className="prob-percent">{formatProbability(otherProb)}</span>
+              </div>
+              <div className="prob-bar-wrapper">
+                <div
+                  className="prob-bar other-bar"
+                  style={{ width: `${Math.max(4, otherProb * 100)}%` }}
+                />
+              </div>
+            </div>
           </div>
         </div>
       )}
